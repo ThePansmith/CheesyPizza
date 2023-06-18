@@ -1,0 +1,10 @@
+scr_initenemy();
+usepalette = true;
+stunfallspr = spr_smoreknight_stun;
+walkspr = spr_smoreknight_walk;
+scaredspr = spr_smoreknight_scared;
+idlespr = spr_smoreknight_idle;
+spr_dead = spr_smoreknight_dead;
+paletteselect = 0;
+spr_palette = palette_cheeseslime;
+sprite_index = walkspr;

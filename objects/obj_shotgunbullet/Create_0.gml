@@ -1,0 +1,11 @@
+image_speed = 0.5;
+playerid = !place_meeting(x, y, obj_player) ? instance_nearest(x, y, obj_player) : instance_place(x, y, obj_player);
+image_xscale = playerid.xscale;
+is_solid = true;
+spd = 25;
+spdh = 0;
+pistol = false;
+shotgun = false;
+brick = false;
+brickid = obj_null;
+collision_list = [obj_pizzafaceboss_p2, obj_vigilanteboss, obj_vigilantecow, obj_johnecheese, obj_targetguy];

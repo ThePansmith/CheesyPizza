@@ -1,0 +1,1 @@
+shiny = irandom_range(0, 1023) == 1;
