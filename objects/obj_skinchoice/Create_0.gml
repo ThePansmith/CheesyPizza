@@ -43,7 +43,7 @@ characters = [
 	["V", spr_playerV_idle, spr_vigipalette, [1, 6]],
 	["G", spr_player_ratmountidle, spr_ratmountpalette, [1, 3]],
 	["SP", spr_playerSP_idle, spr_pizzypalette, [1, 3]],
-	["PP", spr_playerPN_idle, spr_peppalette, [1, 3]]
+	["PP", spr_playerPP_idle, spr_peppalette, [1, 3]]
 ];
 if Debug // snick. unfinished
 	array_push(characters, ["S", spr_snick_idle, spr_snickpalette, [1, 4]]);

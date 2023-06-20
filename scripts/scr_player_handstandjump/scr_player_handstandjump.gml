@@ -88,8 +88,10 @@ function scr_player_handstandjump()
 		vsp = -11;
 		state = states.mach2;
 		
-		if character == "P" && ispeppino
+		if (character == "P" && ispeppino)
 			sprite_index = spr_player_longjump;
+		else if (character == "PP")
+			sprite_index = spr_playerPP_longjump;
 		else
 			sprite_index = spr_mach2jump;
 	}

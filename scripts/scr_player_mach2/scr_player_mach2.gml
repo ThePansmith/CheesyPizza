@@ -74,6 +74,8 @@ function scr_player_mach2()
 		sprite_index = spr_mach;
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_longjump)
 		sprite_index = spr_player_longjumpend;
+	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerPP_longjump)
+		sprite_index = spr_playerPP_longjumpend;
 	if (!grounded)
 		machpunchAnim = false;
 	if (grounded)
