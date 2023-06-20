@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "Stage",
-    "path": "folders/Sprites/PTT/Palettes/Encore/Stage.yy",
+    "path": "folders/Sprites/CheesyPizza/Palettes/Encore/Stage.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

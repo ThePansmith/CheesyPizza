@@ -12,7 +12,7 @@ if (room == Realtitlescreen or room == Longintro or room == Mainmenu or room == 
 }
 else
 	visible = true;
-if ((instance_exists(obj_chat) && !obj_chat.showhud) or !global.option_hud)
+if !global.option_hud
 	visible = false;
 
 image_speed = 0.35;

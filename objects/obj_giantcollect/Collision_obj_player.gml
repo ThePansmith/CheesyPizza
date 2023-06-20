@@ -10,7 +10,7 @@ if (other.state != states.gotoplayer)
 	if other.character == "SP"
 	{
 		scr_sound_multiple("event:/sfx/misc/collectSP", x, y);
-		fmod_event_one_shot("event:/ptt/sfx/collectgiantpizzaSP");
+		fmod_event_one_shot("event:/modded/sfx/collectgiantpizzaSP");
 	}
 	else
 	{

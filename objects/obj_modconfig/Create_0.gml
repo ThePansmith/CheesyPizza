@@ -173,7 +173,7 @@ var opt = add_option("Attack Style", "attackstyle", "Alternatives to the basic g
 			if val == 1
 			{
 				p.timer = -5;
-				sound_play_centered_oneshot("event:/ptt/sfx/kungfu");
+				sound_play_centered_oneshot("event:/modded/sfx/kungfu");
 				
 				p.state = states.punch;
 				p.sprite = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);

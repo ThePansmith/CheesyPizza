@@ -29,7 +29,7 @@
   "origin": 0,
   "parent": {
     "name": "HUD",
-    "path": "folders/Sprites/PTT/HUD.yy",
+    "path": "folders/Sprites/CheesyPizza/HUD.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -57,7 +57,7 @@
   "origin": 4,
   "parent": {
     "name": "Blue Spheres",
-    "path": "folders/Sprites/PTT/Blue Spheres.yy",
+    "path": "folders/Sprites/CheesyPizza/Blue Spheres.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

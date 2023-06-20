@@ -170,7 +170,7 @@ switch character
 		add_palette(5, "", noone, "Inverted", "Ooo... scary...!");
 		add_palette(6, "", noone, "Naked", "Wow. Yikes.");
 		add_palette(7, "", noone, "The Goise", "Unused character in final game!");
-		add_palette(8, "", noone, "Soapy", "She make-a the mod!!!", "CUTE");
+		add_palette(8, "", noone, "ARG", "I got the key piece!", "VILE");
 		add_palette(9, "", noone, "Radie", "Go has C-LIKE PERFORMANCE!!!", "SKY");
 		add_palette(10, "", noone, "Spicy", "This adds a whole new layer to the heat meter.", "SPICED");
 		add_palette(11, "", noone, "Mad Milk", "That's not milk.", "MILKY");

@@ -1,7 +1,5 @@
 function scr_getinput2()
 {
-	if (instance_exists(obj_chat) && obj_chat.active)
-		exit;
 	var _dvc = obj_inputAssigner.player_input_device[1];
 	gamepad_set_axis_deadzone(_dvc, 0.4);
 	key_up = keyboard_check(global.key_upN) || gamepad_button_check(_dvc, global.key_upCN) || gamepad_axis_value(_dvc, gp_axislv) < 0;

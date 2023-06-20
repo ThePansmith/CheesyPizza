@@ -68,7 +68,7 @@
   ],
   "parent": {
     "name": "Basement",
-    "path": "folders/Rooms/PTT/Basement.yy",
+    "path": "folders/Rooms/CheesyPizza/Basement.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

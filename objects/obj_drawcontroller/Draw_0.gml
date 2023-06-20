@@ -129,10 +129,6 @@ with (obj_pizzagoblinbomb)
 	draw_self();
 }
 
-// other players
-with obj_player_other
-	event_user(0);
-
 with (obj_player1)
 {
 	if (visible && state != states.titlescreen && bbox_in_camera(view_camera[0], 32))

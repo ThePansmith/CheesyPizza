@@ -1,5 +1,5 @@
+/*
 #region functions
-
 failed_once = false;
 open_file = function()
 {
@@ -56,7 +56,7 @@ check = function(file)
 
 #endregion
 
-/*
+
 ini_open("saveData.ini");
 
 var file = "";

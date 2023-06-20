@@ -1,7 +1,4 @@
 var forgot = false;
-if room == tower_entrancehall && global.Net_Mode == 1
-	forgot = true;
-
 if (image_index == 1 && global.panic == false && room != war_13 && !forgot)
 {
 	with (obj_player)

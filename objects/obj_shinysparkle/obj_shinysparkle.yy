@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "PTT",
-    "path": "folders/Objects/PTT.yy",
+    "name": "CheesyPizza",
+    "path": "folders/Objects/CheesyPizza.yy",
   },
   "parentObjectId": null,
   "persistent": false,

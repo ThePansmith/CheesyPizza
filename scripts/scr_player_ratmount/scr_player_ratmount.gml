@@ -314,7 +314,7 @@ function ratmount_dotaunt()
 		{
 			scr_create_parryhitbox();
 			if global.palettetexture == spr_pattern_supreme
-				fmod_event_one_shot_3d("event:/ptt/sfx/instinct", x, y);
+				fmod_event_one_shot_3d("event:/modded/sfx/instinct", x, y);
 			else
 				fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y);
 			sprite_index = spr_player_ratmounttaunt;

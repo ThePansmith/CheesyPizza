@@ -7,7 +7,7 @@ if (!ds_list_empty(global.debris_list))
 			draw_sprite_ext(q.sprite_index, q.image_index, q.x, q.y, 1, 1, q.image_angle, get_dark(c_white, obj_drawcontroller.use_dark), q.alpha);
 	}
 }
-if (!global.option_hud || (instance_exists(obj_chat) && !obj_chat.showhud))
+if !global.option_hud
 	exit;
 if (!ds_list_empty(global.collect_list))
 {

@@ -37,7 +37,7 @@
   "origin": 4,
   "parent": {
     "name": "Decorations",
-    "path": "folders/Sprites/PTT/Sugary Spire/Decorations.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Decorations.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

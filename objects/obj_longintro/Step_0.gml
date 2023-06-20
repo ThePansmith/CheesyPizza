@@ -40,7 +40,7 @@ switch (scene)
 				fade = 2;
 				deccel = 0.1;
 			}
-			room_goto(OfflineBuild ? Mainmenu : characterselect);
+			room_goto(Mainmenu);
 			
 			/*
 			scenebuffer = 340;

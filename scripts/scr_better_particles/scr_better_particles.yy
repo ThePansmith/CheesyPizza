@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "PTT",
-    "path": "folders/Scripts/PTT.yy",
+    "name": "CheesyPizza",
+    "path": "folders/Scripts/CheesyPizza.yy",
   },
 }

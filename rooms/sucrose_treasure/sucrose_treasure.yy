@@ -14,7 +14,7 @@
   ],
   "parent": {
     "name": "Sucrose Snowstorm",
-    "path": "folders/Rooms/PTT/Sucrose Snowstorm.yy",
+    "path": "folders/Rooms/CheesyPizza/Sucrose Snowstorm.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

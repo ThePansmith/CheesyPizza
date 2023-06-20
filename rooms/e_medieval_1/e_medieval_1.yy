@@ -191,7 +191,7 @@
   ],
   "parent": {
     "name": "Medieval",
-    "path": "folders/Rooms/PTT/Encore/Medieval.yy",
+    "path": "folders/Rooms/CheesyPizza/Encore/Medieval.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

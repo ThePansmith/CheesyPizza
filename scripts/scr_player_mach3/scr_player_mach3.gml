@@ -364,7 +364,7 @@ function scr_player_mach3()
 		if (key_jump2 && fightball == 0)
 		{
 			sound_play_3d(sfx_jump, x, y);
-			sound_play_3d("event:/ptt/sfx/kungfu", x, y);
+			sound_play_3d("event:/modded/sfx/kungfu", x, y);
 			
 			dir = xscale;
 			momemtum = false;

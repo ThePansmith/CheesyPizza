@@ -13,8 +13,8 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"93227ac5-3d05-4cb7-87f6-6a5fac8e0a30",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"05dd6ab1-3017-4dd4-830b-fcb90203d5a7",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"54de22af-0ebc-45ef-93e0-07932a66601b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"328b7868-bf92-4055-b8c6-0d3817eaf776",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"93227ac5-3d05-4cb7-87f6-6a5fac8e0a30","path":"sprites/spr_controlseggplant/spr_controlseggplant.yy",},},},"Disabled":false,"id":"6265c202-ab8b-441d-a023-ec8886b595e3","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"05dd6ab1-3017-4dd4-830b-fcb90203d5a7","path":"sprites/spr_controlseggplant/spr_controlseggplant.yy",},},},"Disabled":false,"id":"ac6847f0-4f47-40b0-9885-64c6c8efb33c","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"54de22af-0ebc-45ef-93e0-07932a66601b","path":"sprites/spr_controlseggplant/spr_controlseggplant.yy",},},},"Disabled":false,"id":"7536fb36-2a63-4161-9976-ffac88c150d8","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"328b7868-bf92-4055-b8c6-0d3817eaf776","path":"sprites/spr_controlseggplant/spr_controlseggplant.yy",},},},"Disabled":false,"id":"02917931-e8ae-4eb8-a9db-40dda6208e8e","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

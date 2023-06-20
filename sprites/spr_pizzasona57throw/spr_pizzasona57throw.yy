@@ -31,7 +31,7 @@
   "origin": 9,
   "parent": {
     "name": "Pizzasona",
-    "path": "folders/Sprites/PTT/Sonas/Pizzasona.yy",
+    "path": "folders/Sprites/CheesyPizza/Sonas/Pizzasona.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -29,7 +29,7 @@
   "origin": 0,
   "parent": {
     "name": "Level Gates",
-    "path": "folders/Sprites/PTT/Level Gates.yy",
+    "path": "folders/Sprites/CheesyPizza/Level Gates.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

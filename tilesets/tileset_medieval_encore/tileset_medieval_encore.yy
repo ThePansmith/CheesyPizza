@@ -13,7 +13,7 @@
   "out_tilevborder": 2,
   "parent": {
     "name": "Medieval",
-    "path": "folders/Tile Sets/PTT/Encore/Medieval.yy",
+    "path": "folders/Tile Sets/CheesyPizza/Encore/Medieval.yy",
   },
   "spriteId": {
     "name": "tile_medieval_encore",

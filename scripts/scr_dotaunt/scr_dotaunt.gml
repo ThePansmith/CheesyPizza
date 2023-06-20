@@ -36,7 +36,7 @@ function scr_dotaunt()
 				ini_write_real("Game", "supertaunt", true);
 				obj_savesystem.ini_str = ini_close();
 				if character == "SP"
-					fmod_event_one_shot_3d("event:/ptt/sfx/pizzysupertaunt", x, y);
+					fmod_event_one_shot_3d("event:/modded/sfx/pizzysupertaunt", x, y);
 				else
 					fmod_event_one_shot_3d("event:/sfx/pep/supertaunt", x, y);
 				image_index = 0;
@@ -50,12 +50,8 @@ function scr_dotaunt()
 			else
 			{
 				scr_create_parryhitbox();
-				if global.palettetexture == spr_pattern_supreme
-					fmod_event_one_shot_3d("event:/ptt/sfx/instinct", x, y);
-				else if character == "SP"
-					fmod_event_one_shot_3d("event:/ptt/sfx/pizzytaunt", x, y);
-				else if character == "P" && !ispeppino && paletteselect == 8
-					fmod_event_one_shot_3d("event:/ptt/sfx/soapytaunt", x, y);
+				if character == "SP"
+					fmod_event_one_shot_3d("event:/modded/sfx/pizzytaunt", x, y);
 				else
 					fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y);
 				taunttimer = 20;

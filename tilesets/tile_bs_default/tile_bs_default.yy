@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "PTT",
-    "path": "folders/Tile Sets/PTT.yy",
+    "name": "CheesyPizza",
+    "path": "folders/Tile Sets/CheesyPizza.yy",
   },
   "spriteId": {
     "name": "spr_bs_tile_default",

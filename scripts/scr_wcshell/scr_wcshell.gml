@@ -264,13 +264,6 @@ function scr_wc_step()
 	depth = -16000;
 	WC_debug = Debug;
 	
-	// close chat
-	if isOpen
-	{
-		with obj_chat
-			active = false;
-	}
-	
 	#region bound keys
 	
 	for(var i = ds_map_find_first(WC_binds); !is_undefined(i); i = ds_map_find_next(WC_binds, i))
@@ -280,7 +273,7 @@ function scr_wc_step()
 			var val = ds_map_find_value(WC_binds, i);
 			if is_method(val)
 				val();
-			else if !isOpen && WC_bindsenabled && !safe_get(obj_chat, "active") && !instance_exists(obj_serverlist)
+			else if !isOpen && WC_bindsenabled
 			{
 				var args = _input_string_split(val);
 				

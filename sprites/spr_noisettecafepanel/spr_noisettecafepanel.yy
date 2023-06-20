@@ -2,8 +2,8 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_noisettecafepanel",
-  "bbox_bottom": 207,
-  "bbox_left": 52,
+  "bbox_bottom": 218,
+  "bbox_left": 45,
   "bbox_right": 270,
   "bbox_top": 0,
   "bboxMode": 0,
@@ -13,20 +13,20 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"dd0bbcd5-0b5e-44ed-a694-df943cc1eb4b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0ac24111-c681-462f-b308-edeae39127d0",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 222,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"42ee5920-ad3d-4452-8ff8-6bb509533416","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"c20e9aef-ed59-4337-8c45-9fea9234694c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
   "parent": {
     "name": "RadieCafe",
-    "path": "folders/Sprites/PTT/RadieCafe.yy",
+    "path": "folders/Sprites/CheesyPizza/RadieCafe.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"dd0bbcd5-0b5e-44ed-a694-df943cc1eb4b","path":"sprites/spr_noisettecafepanel/spr_noisettecafepanel.yy",},},},"Disabled":false,"id":"70d516c1-2dc8-49ff-8665-543276c9ecf9","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0ac24111-c681-462f-b308-edeae39127d0","path":"sprites/spr_noisettecafepanel/spr_noisettecafepanel.yy",},},},"Disabled":false,"id":"994d202e-80fe-4a70-9abb-8d0749957d4b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

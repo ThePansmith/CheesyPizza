@@ -27,7 +27,7 @@
   "origin": 0,
   "parent": {
     "name": "Sonas",
-    "path": "folders/Sprites/PTT/Sonas.yy",
+    "path": "folders/Sprites/CheesyPizza/Sonas.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

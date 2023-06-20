@@ -694,7 +694,7 @@ noisebossscream = false;
 gallopingsnd = fmod_event_create_instance("event:/sfx/misc/galloping");
 
 // ptt new
-flippingsnd = fmod_event_create_instance("event:/ptt/sfx/pizzyflip");
+flippingsnd = fmod_event_create_instance("event:/modded/sfx/pizzyflip");
 snd_jetpackloop = fmod_event_create_instance("event:/sfx/noise/jetpackloop");
 smoothx = 0;
 oldHallway = false;

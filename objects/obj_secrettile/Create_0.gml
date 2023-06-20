@@ -35,4 +35,4 @@ if array_length(tiles) == 0
 	instance_destroy();
 }
 
-sound = fmod_event_create_instance("event:/ptt/sfx/secretwall");
+sound = fmod_event_create_instance("event:/modded/sfx/secretwall");

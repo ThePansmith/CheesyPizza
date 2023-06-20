@@ -28,7 +28,7 @@
   "origin": 9,
   "parent": {
     "name": "Smoreknight",
-    "path": "folders/Sprites/PTT/Sugary Spire/Baddie/Smoreknight.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Smoreknight.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

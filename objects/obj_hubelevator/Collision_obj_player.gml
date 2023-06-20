@@ -13,7 +13,7 @@ if state == 0
 				}
 			}
 			
-			sound_play("event:/ptt/sfx/diagopen");
+			sound_play("event:/modded/sfx/diagopen");
 			other.state = 1;
 		}
 	}

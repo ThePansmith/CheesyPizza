@@ -49,7 +49,7 @@
   "origin": 0,
   "parent": {
     "name": "Palette Patterns",
-    "path": "folders/Sprites/PTT/Palette Patterns.yy",
+    "path": "folders/Sprites/CheesyPizza/Palette Patterns.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

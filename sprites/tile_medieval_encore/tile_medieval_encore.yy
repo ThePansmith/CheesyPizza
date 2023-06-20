@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "Medieval",
-    "path": "folders/Sprites/PTT/Tilesets/Encore/Medieval.yy",
+    "path": "folders/Sprites/CheesyPizza/Tilesets/Encore/Medieval.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

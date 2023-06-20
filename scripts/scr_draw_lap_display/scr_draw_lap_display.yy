@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "HUD",
-    "path": "folders/Scripts/PTT/HUD.yy",
+    "path": "folders/Scripts/CheesyPizza/HUD.yy",
   },
 }

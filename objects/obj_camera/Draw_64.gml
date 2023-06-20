@@ -60,9 +60,9 @@ if (obj_player.state != states.dead)
 	if global.heatmeter
 	{
 		shader_set(global.Pal_Shader);
-		pal_swap_set(sugary ? spr_heatmeter_candypal : spr_heatmeter_palette, min(global.stylethreshold, 3) + (global.stylethreshold >= 3 && global.style >= 55), false);
-		draw_sprite_part(sugary ? spr_heatmeter_candyfill : spr_heatmeter_fill, pizzascore_index, 0, 0, sw * b, sh, hud_xx - 95, hud_yy + 24);
-		draw_sprite_ext(sugary ? spr_heatmeter_candy : spr_heatmeter, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
+		pal_swap_set(sugary ? spr_heatmeterSPpal : spr_heatmeter_palette, min(global.stylethreshold, 3) + (global.stylethreshold >= 3 && global.style >= 55), false);
+		draw_sprite_part(sugary ? spr_heatmeter_fillSP : spr_heatmeter_fill, pizzascore_index, 0, 0, sw * b, sh, hud_xx - 95, hud_yy + 24);
+		draw_sprite_ext(sugary ? spr_heatmeterSP : spr_heatmeter, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
 		reset_shader_fix();
 	}
 	

@@ -7,8 +7,6 @@ largeimage = "big_icon";
 
 // status
 details = "Offline";
-if global.Net_Online
-	details = global.Net_Name; // your name
 
 // level
 switch safe_get(global, "leveltosave")

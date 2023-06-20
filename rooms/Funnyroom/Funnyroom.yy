@@ -21,8 +21,8 @@
       ],"spriteId":{"name":"spr_finaljudgement2","path":"sprites/spr_finaljudgement2/spr_finaljudgement2.yy",},"stretch":false,"userdefinedAnimFPS":true,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],
   "parent": {
-    "name": "PTT",
-    "path": "folders/Rooms/PTT.yy",
+    "name": "CheesyPizza",
+    "path": "folders/Rooms/CheesyPizza.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

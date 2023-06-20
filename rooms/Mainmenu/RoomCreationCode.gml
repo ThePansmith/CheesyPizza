@@ -1,4 +1,3 @@
-pal_swap_init_system(shd_pal_swapper);
 instance_destroy(obj_pigtotal);
 global.gameframe_caption_text = "Select your Pizza Tower";
 with (instance_create(0, 0, obj_loadingscreen))

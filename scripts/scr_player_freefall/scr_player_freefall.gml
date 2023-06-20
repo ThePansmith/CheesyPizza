@@ -86,7 +86,7 @@ function scr_player_freefall()
 			jumpstop = true;
 			dir = xscale;
 			
-			sound_play_3d("event:/ptt/sfx/kungfu", x, y)
+			sound_play_3d("event:/modded/sfx/kungfu", x, y)
 			movespeed = 10
 			sprite_index = spr_mach2jump
 			

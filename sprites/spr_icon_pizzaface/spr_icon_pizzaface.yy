@@ -27,7 +27,7 @@
   "origin": 4,
   "parent": {
     "name": "Misc",
-    "path": "folders/Sprites/PTT/Misc.yy",
+    "path": "folders/Sprites/CheesyPizza/Misc.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

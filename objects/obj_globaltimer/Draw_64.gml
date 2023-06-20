@@ -1,6 +1,6 @@
 if (!global.option_timer || room == Realtitlescreen || room == Longintro || room == Finalintro || room == Mainmenu || room == hub_loadingscreen || room == Creditsroom || room == Johnresurrectionroom || room == rank_room || instance_exists(obj_titlecard) || !global.option_hud || room == characterselect)
 	exit;
-if (!global.option_hud || (instance_exists(obj_chat) && !obj_chat.showhud))
+if !global.option_hud
 	exit;
 draw_set_color(c_white);
 var seconds = 0;

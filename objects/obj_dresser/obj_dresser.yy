@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "PTT",
-    "path": "folders/Objects/PTT.yy",
+    "name": "CheesyPizza",
+    "path": "folders/Objects/CheesyPizza.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_dresser",
-    "path": "sprites/spr_dresser/spr_dresser.yy",
+    "name": "spr_palettedresser",
+    "path": "sprites/spr_palettedresser/spr_palettedresser.yy",
   },
   "spriteMaskId": null,
   "visible": true,

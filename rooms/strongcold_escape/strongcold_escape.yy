@@ -51,7 +51,7 @@
   ],
   "parent": {
     "name": "Old",
-    "path": "folders/Rooms/PTT/Strongcold/Old.yy",
+    "path": "folders/Rooms/CheesyPizza/Strongcold/Old.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

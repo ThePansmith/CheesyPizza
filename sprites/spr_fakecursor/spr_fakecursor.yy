@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "PTT",
-    "path": "folders/Sprites/PTT.yy",
+    "name": "CheesyPizza",
+    "path": "folders/Sprites/CheesyPizza.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

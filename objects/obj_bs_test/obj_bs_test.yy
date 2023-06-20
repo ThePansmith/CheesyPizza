@@ -11,7 +11,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Blue Spheres",
-    "path": "folders/Objects/PTT/Blue Spheres.yy",
+    "path": "folders/Objects/CheesyPizza/Blue Spheres.yy",
   },
   "parentObjectId": null,
   "persistent": false,

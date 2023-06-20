@@ -39,7 +39,7 @@
   "origin": 4,
   "parent": {
     "name": "Secret Portal",
-    "path": "folders/Sprites/PTT/Sugary Spire/Secret Portal.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Secret Portal.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

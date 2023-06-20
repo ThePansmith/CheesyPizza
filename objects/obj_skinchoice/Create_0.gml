@@ -1,7 +1,7 @@
 if live_call() return live_result;
 
 // animation / background
-sound_play("event:/ptt/sfx/diagopen");
+sound_play("event:/modded/sfx/diagopen");
 
 charshift = [0, 0, 0];
 anim_con = 0;
@@ -161,14 +161,13 @@ select = function()
 			visible = false;
 			
 			// save
-			/*
 			ini_open_from_string(obj_savesystem.ini_str);
 			ini_write_string("Game", "character", character);
 			ini_write_real("Game", "palette", paletteselect);
 			ini_write_string("Game", "palettetexture", other.palettes[other.sel.pal].entry);
 			obj_savesystem.ini_str = ini_close();
 			gamesave_async_save();
-			*/
+			
 		}
 		sound_play_3d(sfx_collecttoppin, x, y);
 	}

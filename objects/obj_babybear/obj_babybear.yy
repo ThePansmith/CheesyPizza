@@ -12,7 +12,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Baddie",
-    "path": "folders/Objects/PTT/Sugary Spire/Baddie.yy",
+    "path": "folders/Objects/CheesyPizza/Sugary Spire/Baddie.yy",
   },
   "parentObjectId": {
     "name": "obj_baddie",

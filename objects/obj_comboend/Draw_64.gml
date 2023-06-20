@@ -1,4 +1,4 @@
-if (!global.option_hud || (instance_exists(obj_chat) && !obj_chat.showhud))
+if !global.option_hud
 	exit;
 var xx = x;
 var yy = y;

@@ -86,7 +86,7 @@
   ],
   "parent": {
     "name": "Dragon's Lair",
-    "path": "folders/Rooms/PTT/Dragon's Lair.yy",
+    "path": "folders/Rooms/CheesyPizza/Dragon's Lair.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

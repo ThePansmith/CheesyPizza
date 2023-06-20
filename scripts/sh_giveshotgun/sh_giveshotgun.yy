@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Shell",
-    "path": "folders/Scripts/PTT/Shell.yy",
+    "path": "folders/Scripts/CheesyPizza/Shell.yy",
   },
 }

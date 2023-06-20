@@ -23,7 +23,7 @@ function scr_perform_move(move, prestate)
 				particle_set_scale(particle.crazyrunothereffect, xscale, 1);
 				create_particle(x, y, particle.crazyrunothereffect);
 					
-				sound_play_3d("event:/ptt/sfx/kungfu", x, y);
+				sound_play_3d("event:/modded/sfx/kungfu", x, y);
 				state = states.punch;
 				movespeed = max(movespeed, 10);
 				if vsp > 0

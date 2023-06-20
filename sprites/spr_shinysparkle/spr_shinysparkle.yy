@@ -72,7 +72,7 @@
   "origin": 4,
   "parent": {
     "name": "Pizzasona",
-    "path": "folders/Sprites/PTT/Palettes/Pizzasona.yy",
+    "path": "folders/Sprites/CheesyPizza/Palettes/Pizzasona.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

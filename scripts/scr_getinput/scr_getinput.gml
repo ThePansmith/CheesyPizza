@@ -53,8 +53,7 @@ function scr_check_groundpound2()
 
 function scr_getinput(is_menu = false)
 {
-	if (instance_exists(obj_chat) && obj_chat.active)
-	or (safe_get(obj_shell, "isOpen"))
+	if (safe_get(obj_shell, "isOpen"))
 	or (global.in_menu && !is_menu)
 	{
 		scr_init_input();

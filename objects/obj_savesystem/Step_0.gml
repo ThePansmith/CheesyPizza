@@ -13,9 +13,9 @@ if (room == hub_loadingscreen && state != 2)
 		{
 			ini_open_from_string(obj_savesystem.ini_str);
 			var _intro = ini_read_real("Tutorial", "finished", false);
-			//paletteselect = ini_read_real("Game", "palette", 1);
-			//var _texture = ini_read_string("Game", "palettetexture", "none");
-			//global.palettetexture = scr_get_texture_palette(_texture);
+			paletteselect = ini_read_real("Game", "palette", 1);
+			var _texture = ini_read_string("Game", "palettetexture", "none");
+			global.palettetexture = scr_get_texture_palette(_texture);
 			ini_close();
 			if (_intro)
 			{

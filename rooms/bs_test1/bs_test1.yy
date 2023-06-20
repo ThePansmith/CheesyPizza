@@ -41,7 +41,7 @@
   ],
   "parent": {
     "name": "Blue Spheres",
-    "path": "folders/Rooms/PTT/Blue Spheres.yy",
+    "path": "folders/Rooms/CheesyPizza/Blue Spheres.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

@@ -38,7 +38,7 @@
   "origin": 0,
   "parent": {
     "name": "RadieCafe",
-    "path": "folders/Sprites/PTT/RadieCafe.yy",
+    "path": "folders/Sprites/CheesyPizza/RadieCafe.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

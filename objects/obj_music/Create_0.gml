@@ -232,10 +232,10 @@ add_music(kidsparty_1, "event:/music/w5/kidsparty", "event:/music/w5/kidspartyse
 add_music(war_1, "event:/music/w5/war", "event:/music/w5/warsecret", 0)
 
 // PTT
-add_music(characterselect, "event:/music/ptt/serverlist", -4, 0)
+add_music(characterselect, "event:/music/characterselect", -4, 0)
 add_music(tower_soapyroom, "event:/music/w3/golfsecret", -4, 0)
 
-add_music(strongcold_10, "event:/music/ptt/strongcold", "event:/music/ptt/strongcoldsecret", 0, function(room, event, event_secret)
+add_music(strongcold_10, "event:/music/pto/strongcold", "event:/music/pto/strongcoldsecret", 0, function(room, event, event_secret)
 {
 	var s = 1;
 	switch room
@@ -260,7 +260,7 @@ add_music(strongcold_10, "event:/music/ptt/strongcold", "event:/music/ptt/strong
 		fmod_event_instance_set_parameter(event, "state", s, true);
 });
 
-add_music(dragonlair_1, "event:/music/ptt/dragonlair", "event:/music/w1/medievalsecret", 0);
+add_music(dragonlair_1, "event:/music/pto/dragonlair", "event:/music/w1/medievalsecret", 0);
 add_music(beach_1, "event:/music/w3/beach", "event:/music/w3/beachsecret", 0);
 
 add_music(entryway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);

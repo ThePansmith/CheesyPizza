@@ -18,12 +18,3 @@ with (obj_player1)
 		image_index = 10;
 	}
 }
-
-if !global.Net_ChatHint && Online
-{
-	global.Net_ChatHint = true
-	//if string_lower(global.Net_Name) == "player"
-	//	create_transformation_tip("{s}Edit the config.ini file to change your name!/");
-	//else
-		create_transformation_tip("{s}Press TAB to chat!/");
-}

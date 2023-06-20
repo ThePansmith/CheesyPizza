@@ -34,7 +34,6 @@
     {"name":"inst_4554F79B_1","path":"rooms/basement_1/basement_1.yy",},
     {"name":"inst_D92A461_1","path":"rooms/basement_1/basement_1.yy",},
     {"name":"inst_463D563D","path":"rooms/basement_1/basement_1.yy",},
-    {"name":"inst_2F99822A","path":"rooms/basement_1/basement_1.yy",},
     {"name":"inst_77418DCB","path":"rooms/basement_1/basement_1.yy",},
     {"name":"inst_7626F434","path":"rooms/basement_1/basement_1.yy",},
     {"name":"inst_691E64D9","path":"rooms/basement_1/basement_1.yy",},
@@ -79,7 +78,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4554F79B_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_slope","path":"objects/obj_slope/obj_slope.yy",},"properties":[],"rotation":0.0,"scaleX":-3.0,"scaleY":2.0,"x":192.0,"y":544.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_D92A461_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_dresser","path":"objects/obj_dresser/obj_dresser.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1792.0,"y":896.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_463D563D","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_startgate_treasure","path":"objects/obj_startgate_treasure/obj_startgate_treasure.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1920.0,"y":320.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2F99822A","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_mocha","path":"objects/obj_mocha/obj_mocha.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":1696.0,"y":935.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_77418DCB","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_tutorialbook","path":"objects/obj_tutorialbook/obj_tutorialbook.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1344.0,"y":586.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7626F434","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":15.000001,"scaleY":2.0,"x":256.0,"y":416.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_691E64D9","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_startgate","path":"objects/obj_startgate/obj_startgate.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":480.0,"y":272.0,},
@@ -134,7 +132,7 @@
   ],
   "parent": {
     "name": "Basement",
-    "path": "folders/Rooms/PTT/Basement.yy",
+    "path": "folders/Rooms/CheesyPizza/Basement.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

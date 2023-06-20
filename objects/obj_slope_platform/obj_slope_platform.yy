@@ -7,7 +7,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Sugary Spire",
-    "path": "folders/Objects/PTT/Sugary Spire.yy",
+    "path": "folders/Objects/CheesyPizza/Sugary Spire.yy",
   },
   "parentObjectId": {
     "name": "obj_slope_parent",
