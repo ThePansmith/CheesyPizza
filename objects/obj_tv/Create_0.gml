@@ -80,7 +80,7 @@ bar_surface = -4;
 barfill_x = 0;
 showtime_buffer = 0;
 
-// ptt
+// pto
 lapflag_index = 0;
 sleepingjohnface_index = 0;
 targetspr = spr_tv_off;

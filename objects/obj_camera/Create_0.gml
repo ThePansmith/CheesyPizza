@@ -62,7 +62,7 @@ healthold = 8;
 healthshaketime = 0;
 playerhealthup = false;
 
-// ptt
+// pto
 crouchcamera = 0;
 crouchcamera_goingback = false;
 lockx = 0;

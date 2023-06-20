@@ -3,9 +3,9 @@
   "resourceVersion": "1.0",
   "name": "spr_dresser",
   "bbox_bottom": 95,
-  "bbox_left": 17,
+  "bbox_left": 21,
   "bbox_right": 93,
-  "bbox_top": 18,
+  "bbox_top": 19,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f4813443-c478-4410-a303-aced830bcb72",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f655af3a-49e4-4011-b8bd-6ee8e1014bb5",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 100,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"38a00f4e-0720-4dd5-8f06-379d5dde8331","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e2098a00-8682-41be-98f9-26003250c7cb","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f4813443-c478-4410-a303-aced830bcb72","path":"sprites/spr_dresser/spr_dresser.yy",},},},"Disabled":false,"id":"e3801f9e-e814-4eea-989c-19f96437fd2b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f655af3a-49e4-4011-b8bd-6ee8e1014bb5","path":"sprites/spr_dresser/spr_dresser.yy",},},},"Disabled":false,"id":"7c6f859b-3bf2-450b-95f0-5c3e55984496","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

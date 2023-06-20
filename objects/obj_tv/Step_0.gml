@@ -5,7 +5,7 @@ timer_x = timer_xstart;
 timer_ystart = SCREEN_HEIGHT + timer_yplus;
 if (global.combotime > 0 && global.combo > 0)
 	visualcombo = global.combo;
-if (room == Realtitlescreen or room == Longintro or room == Mainmenu or room == rank_room or room == rm_levelselect or room == timesuproom or room == boss_room1 or room == characterselect or room == basement_entrance or room == basement_1 or room == hub_loadingscreen or (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic))
+if (room == Realtitlescreen or room == Longintro or room == Mainmenu or room == rank_room or room == rm_levelselect or room == timesuproom or room == boss_room1 or room == characterselect or room == basement_1 or room == hub_loadingscreen or (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic))
 {
 	visible = false;
 	targetspr = spr_tv_off;
@@ -492,6 +492,6 @@ combofill_index += 0.35;
 if (combofill_index > (sprite_get_number(spr_tv_combobubblefill) - 1))
 	combofill_index = frac(combofill_index);
 
-// ptt
+// pto
 sleepingjohnface_index += 0.15;
 lapflag_index = (lapflag_index + 0.35) % sprite_get_number(spr_lapflag);

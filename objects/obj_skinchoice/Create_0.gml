@@ -38,12 +38,12 @@ sel = {
 	mix: 0
 };
 characters = [
-	["P", spr_player_panic, spr_peppalette, [1, 3]], // character, idle, palette sprite, [main color, mixing color]
-	["N", spr_noise_vulnerable2, spr_noisepalette, [1, 4]],
-	["V", spr_playerV_panic, spr_vigipalette, [1, 6]],
-	["G", spr_gustavoswitch1, spr_ratmountpalette, [1, 3]],
+	["P", spr_player_idle, spr_peppalette, [1, 3]], // character, idle, palette sprite, [main color, mixing color]
+	["N", spr_playerN_idle, spr_noisepalette, [1, 4]],
+	["V", spr_playerV_idle, spr_vigipalette, [1, 6]],
+	["G", spr_player_ratmountidle, spr_ratmountpalette, [1, 3]],
 	["SP", spr_playerSP_idle, spr_pizzypalette, [1, 3]],
-	["PN", spr_playerPN_idle, spr_peppalette, [1, 3]]
+	["PP", spr_playerPN_idle, spr_peppalette, [1, 3]]
 ];
 if Debug // snick. unfinished
 	array_push(characters, ["S", spr_snick_idle, spr_snickpalette, [1, 4]]);

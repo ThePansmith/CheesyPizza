@@ -39,7 +39,7 @@ else
 
 // visibility
 visible = true;
-if room == strongcold_endscreen or room == Longintro or room == Mainmenu or room == rm_levelselect or room == rank_room or room == timesuproom or room == Realtitlescreen or room == characterselect or room == basement_entrance or room == basement_1 or room == hub_loadingscreen or (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic)
+if room == strongcold_endscreen or room == Longintro or room == Mainmenu or room == rm_levelselect or room == rank_room or room == timesuproom or room == Realtitlescreen or room == characterselect or room == basement_1 or room == hub_loadingscreen or (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic)
 	visible = false;
 if !global.option_hud
 	visible = false;

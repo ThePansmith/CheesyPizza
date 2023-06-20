@@ -125,14 +125,12 @@
 580,581,582,],"TileDataFormat":1,},"tilesetId":{"name":"tile_exit","path":"tilesets/tile_exit/tile_exit.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_2","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":41,"SerialiseWidth":94,"TileCompressedData":[
 -1251,-2147483648,1,196,-93,-2147483648,1,216,-93,-2147483648,1,236,-93,-2147483648,1,256,-93,-2147483648,1,216,-93,-2147483648,1,236,-93,-2147483648,1,256,-93,-2147483648,1,216,-93,-2147483648,1,236,-93,-2147483648,1,256,-93,-2147483648,1,216,-93,-2147483648,1,236,-93,-2147483648,1,256,-93,-2147483648,1,216,-93,-2147483648,1,216,-93,-2147483648,1,236,-93,-2147483648,1,256,-93,-2147483648,4,276,-2147483648,-2147483648,0,-93,-2147483648,1,0,-907,-2147483648,],"TileDataFormat":1,},"tilesetId":{"name":"tile_factory_tileset","path":"tilesets/tile_factory_tileset/tile_factory_tileset.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
-    {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
-        {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_E168C15_1","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":0.2639225,"scaleY":0.26717556,"spriteId":{"name":"spr_boys","path":"sprites/spr_boys/spr_boys.yy",},"x":1972.0,"y":498.0,},
-      ],"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
+    {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[],"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Backgrounds_1","animationFPS":0.25,"animationSpeedType":1,"colour":4294967295,"depth":300,"effectEnabled":true,"effectType":"none","gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":{"name":"bg_exit1","path":"sprites/bg_exit1/bg_exit1.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":true,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],
   "parent": {
-    "name": "Basement",
-    "path": "folders/Rooms/CheesyPizza/Basement.yy",
+    "name": "Tower",
+    "path": "folders/Rooms/Tower.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

@@ -67,7 +67,6 @@ switch character
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Oh, fiddlesticks! What now?");
 		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "You bring a bucket?");
 		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "Don't fuck it up.");
-		add_palette(12, "", spr_pattern_supreme, "Supreme", "He got that drip.");
 		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -144,7 +143,6 @@ switch character
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", " ");
 		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "You bring a bucket?");
 		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "Don't fuck it up.");
-		add_palette(12, "", spr_pattern_supreme, "Supreme", "Clash of Gods.");
 		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -171,7 +169,7 @@ switch character
 		add_palette(6, "", noone, "Naked", "Wow. Yikes.");
 		add_palette(7, "", noone, "The Goise", "Unused character in final game!");
 		add_palette(8, "", noone, "ARG", "I got the key piece!", "VILE");
-		add_palette(9, "", noone, "Radie", "Go has C-LIKE PERFORMANCE!!!", "SKY");
+		add_palette(9, "", noone, "Radie", "Do NOT eat it.", "CUTE");
 		add_palette(10, "", noone, "Spicy", "This adds a whole new layer to the heat meter.", "SPICED");
 		add_palette(11, "", noone, "Mad Milk", "That's not milk.", "MILKY");
 		add_palette(13, "", noone, "Minted", "Scraped from under the table.", "MINTY");
@@ -200,7 +198,6 @@ switch character
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
 		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "DO NOT drop it.");
 		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "How do you do this, anyway...?");
-		add_palette(12, "", spr_pattern_supreme, "Supreme", "He got that drip.");
 		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -268,7 +265,6 @@ switch character
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "You can find them online, don't worry.");
 		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "Did you ever put cheese in water?");
 		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "Honestly. Relatable.");
-		add_palette(12, "", spr_pattern_supreme, "Supreme", "That's not quite how you wear it.");
 		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -320,7 +316,6 @@ switch character
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Oh, fiddlesticks! What now?");
 		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "You bring a bucket?");
 		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "Don't fuck it up.");
-		add_palette(12, "", spr_pattern_supreme, "Supreme", "He got that drip.");
 		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -385,7 +380,6 @@ switch character
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Use the previous palette instead.");
 		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "You bring a bucket?");
 		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "Don't fuck it up.");
-		add_palette(12, "", spr_pattern_supreme, "Supreme", "She got that drip.");
 		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -401,13 +395,13 @@ switch character
 		break;
 	
 	#endregion
-	#region Pinolino
+	#region Pissino
 	
-	case "PN":
+	case "PP":
 		var desc = "God is dead and we killed him.";
 		
 		add_palette(0, "yellow", noone, "Yellow", desc);
-		add_palette(1, "classic", noone, "Pinolino", desc);
+		add_palette(1, "classic", noone, "Pissino", desc);
 		add_palette(3, "unfunny", noone, "Unfunny", desc);
 		add_palette(4, "money", noone, "Money Green", desc);
 		add_palette(5, "sage", noone, "Sage Blue", desc);
@@ -459,11 +453,10 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", desc);
 		add_palette(12, "war", spr_peppattern8, "War Camo", desc);
 		add_palette(12, "john", spr_peppattern9, "John Suit", desc);
-		add_palette(12, "", spr_pattern_trans, "Trans Flag", "God is alive :)");
+		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Trans flag.");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", desc);
 		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", desc);
 		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", desc);
-		add_palette(12, "", spr_pattern_supreme, "Supreme", desc);
 		add_palette(12, "", spr_pattern_dogma, "Dogma", desc);
 		add_palette(12, "", spr_pattern_giygas, "Giygas", desc);
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", desc);
@@ -484,7 +477,7 @@ pal_swap_index_palette(characters[sel.char][2]);
 init = true;
 
 // automatically select current palette
-sel.pal = ((character == "P" or character == "SP" or character == "G" or character == "PN") ? 1 : 0);
+sel.pal = ((character == "P" or character == "SP" or character == "G" or character == "PP") ? 1 : 0);
 
 var pchar = obj_player1.character;
 if pchar == "P"

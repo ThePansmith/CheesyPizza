@@ -313,10 +313,7 @@ function ratmount_dotaunt()
 		if (!supercharged || !key_up)
 		{
 			scr_create_parryhitbox();
-			if global.palettetexture == spr_pattern_supreme
-				fmod_event_one_shot_3d("event:/modded/sfx/instinct", x, y);
-			else
-				fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y);
+			fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y);
 			sprite_index = spr_player_ratmounttaunt;
 			image_index = irandom(sprite_get_number(sprite_index) - 1);
 			with (instance_create(x, y, obj_taunteffect))

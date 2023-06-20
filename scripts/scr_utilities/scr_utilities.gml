@@ -192,7 +192,7 @@ function heat_calculate(heat)
 	return heat;
 }
 
-// PTT
+// PTO
 function draw_set_align(halign = fa_left, valign = fa_top)
 {
 	draw_set_halign(halign);

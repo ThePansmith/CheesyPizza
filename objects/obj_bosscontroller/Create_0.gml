@@ -63,7 +63,7 @@ vstitle = spr_vstitle_noise;
 playerspr = spr_vspeppino;
 bossspr = spr_vsnoise;
 
-// ptt
+// pto
 pal_playerhp = spr_peppalette;
 spr_playerhp = spr_bossfight_playerhp;
 

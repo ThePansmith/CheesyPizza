@@ -231,9 +231,8 @@ add_music(chateau_1, "event:/music/w5/chateau", REMIX ? "event:/music/w5/chateau
 add_music(kidsparty_1, "event:/music/w5/kidsparty", "event:/music/w5/kidspartysecret", 0)
 add_music(war_1, "event:/music/w5/war", "event:/music/w5/warsecret", 0)
 
-// PTT
+// PTO
 add_music(characterselect, "event:/music/characterselect", -4, 0)
-add_music(tower_soapyroom, "event:/music/w3/golfsecret", -4, 0)
 
 add_music(strongcold_10, "event:/music/pto/strongcold", "event:/music/pto/strongcoldsecret", 0, function(room, event, event_secret)
 {
@@ -266,7 +265,7 @@ add_music(beach_1, "event:/music/w3/beach", "event:/music/w3/beachsecret", 0);
 add_music(entryway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
 
 // Encore
-add_music(e_medieval_1, "event:/music/w1/medieval", "event:/music/w1/medievalsecret", 0, function(room, event, event_secret) //anon_gml_Object_obj_music_Create_0_3410_gml_Object_obj_music_Create_0
+add_music(e_medieval_1, "event:/music/w1/medieval", "event:/music/w1/medievalsecret", 0, function(room, event, event_secret)
 {
 	var s = -1;
 	switch room

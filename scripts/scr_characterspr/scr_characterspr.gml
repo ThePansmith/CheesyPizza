@@ -1145,9 +1145,9 @@ function scr_characterspr()
 	}
 	
 	#endregion
-	#region PINOLINO
+	#region PISSINO
 	
-	if (character == "PN")
+	if (character == "PP")
 	{
 		global.mach_color1 = make_colour_rgb(96, 208, 72);
 		global.mach_color2 = make_colour_rgb(248, 0, 0);

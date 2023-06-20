@@ -1314,14 +1314,9 @@ if smoothx != 0
 	xscale = -sign(smoothx);
 smoothx = Approach(smoothx, 0, 4);
 
-// ptt extra
+// pto extra
 if state != states.mach3 && state != states.Sjump
 	jetpackcancel = false;
-
-/*
-	if you want to add a new move to the player, learn about states!!
-	ask loypoll if you want me to teach you
-*/
 
 if !variable_global_exists("pastdisclaimer")
 {

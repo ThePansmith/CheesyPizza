@@ -231,9 +231,10 @@ if (global.panic)
 	draw_sprite(spr_timer_bar, -1, timer_x, timer_y);
 	
 	// john
+	/*
 	if (timer_x + 13 + _barpos < timer_x + 13)
 		draw_sprite(spr_timer_johnface_sleep, sleepingjohnface_index, timer_x + 13, timer_y + 20);
-	else
+	else*/
 		draw_sprite(johnface_sprite, johnface_index, clamp(timer_x + 13 + _barpos, timer_x + 13, 9999999), timer_y + 20);
 	
 	// pizzaface

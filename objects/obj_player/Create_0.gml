@@ -693,7 +693,7 @@ boxxedspinbuffer = 0;
 noisebossscream = false;
 gallopingsnd = fmod_event_create_instance("event:/sfx/misc/galloping");
 
-// ptt new
+// pto new
 flippingsnd = fmod_event_create_instance("event:/modded/sfx/pizzyflip");
 snd_jetpackloop = fmod_event_create_instance("event:/sfx/noise/jetpackloop");
 smoothx = 0;

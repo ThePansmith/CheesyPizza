@@ -6,7 +6,22 @@ var state = "", details = "", largeimage = "", smallimage = "";
 largeimage = "big_icon";
 
 // status
-details = "Offline";
+details = "Playing Solo";
+if safe_get(obj_pause, "pause")
+	details = "Paused";
+else if safe_get(global, "panic")
+{
+	var minutes = 0;
+	for (var seconds = ceil(global.fill / 12); seconds > 59; seconds -= 60)
+		minutes++;
+	if seconds < 10
+		seconds = concat("0", seconds);
+	
+	if global.laps > 0
+		details = string("Lap {0} - {1}:{2} left", global.laps + 1, minutes, seconds);
+	else
+		details = string("Escaping - {0}:{1} left", minutes, seconds);
+}
 
 // level
 switch safe_get(global, "leveltosave")
@@ -32,7 +47,7 @@ switch safe_get(global, "leveltosave")
 	case "war": state = "WAR"; break;
 	case "exit": state = "The Crumbling Tower of Pizza"; break;
 	
-	// ptt
+	// pto
 	case "desert": details = "Old Desert"; break;
 	case "beach": details = "Pineapple Beach"; break;
 	case "factory": details = "April Factory"; break;
@@ -46,7 +61,10 @@ switch safe_get(global, "leveltosave")
 	case "oldexit": details = "Exit"; break;
 	case "strongcold": details = "Strongcold"; break;
 	case "dragonlair": details = "Dragon's Lair"; break;
+	case "snickchallenge": details = "Snick Challenge"; break;
 	
+	case "midway": details = "Midway"; break;
+	case "sky": details = "Sky"; break;
 	case "ancient": details = "Ancient Tower"; break;
 	case "etb": details = "Early Test Build"; break;
 }
@@ -120,7 +138,7 @@ if state == ""
 		if string_pos("tutorial", r) > 0
 			state = "Tutorial";
 		
-		// ptt
+		// pto
 		if room == basement_1
 			state = "Tower Basement";
 	}
