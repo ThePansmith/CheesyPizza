@@ -24,8 +24,6 @@ if state == 1
 		
 		if key_jump
 		{
-			sound_play_3d(sfx_keyunlock, x, y);
-			
 			state = 2;
 			close_menu();
 		}
@@ -46,6 +44,7 @@ if state == 2
 	
 	if obj_player1.targetRoom != room
 	{
+		sound_play_3d(sfx_keyunlock, x, y);
 		sound_play_3d("event:/sfx/misc/elevatorstart", x, y);
 		
 		state = 3;
@@ -72,7 +71,9 @@ if state == 2
 	}
 	else
 	{
-		state = 0;
+		sound_play_centered(sfx_enemyprojectile);
+		state = 3;
+		close_menu();
 		if obj_player1.isgustavo
 			obj_player1.state = states.ratmount;
 		else

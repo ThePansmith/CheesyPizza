@@ -6,7 +6,7 @@ if (use_collision)
 		if (grounded && vsp > 0)
 		{
 			with (obj_player1)
-				sprite_index = spr_player_gnomecutscene1;
+				sprite_index = spr_gnomecutscene1;
 			alarm[1] = -1;
 			create_particle(x, y, particle.landcloud);
 			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);

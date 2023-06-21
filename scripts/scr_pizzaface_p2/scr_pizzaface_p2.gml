@@ -97,10 +97,10 @@ function scr_pizzaface_p2_fall()
 	{
 		if (floor(image_index) == (image_number - 1))
 		{
-			if (sprite_index == spr_player_gnomecutscene2)
+			if (sprite_index == spr_gnomecutscene2)
 				image_index = image_number - 1;
-			else if (sprite_index == spr_player_gnomecutscene3)
-				sprite_index = spr_player_gnomecutscene4;
+			else if (sprite_index == spr_gnomecutscene3)
+				sprite_index = spr_gnomecutscene4;
 			else if (sprite_index == spr_pepbossintro2)
 				image_index = image_number - 2;
 		}
@@ -146,7 +146,7 @@ function scr_pizzaface_p2_fall()
 				}
 				with (obj_player1)
 				{
-					sprite_index = spr_player_gnomecutscene3;
+					sprite_index = spr_gnomecutscene3;
 					image_index = 0;
 					fmod_event_one_shot("event:/sfx/pep/screamboss");
 				}
@@ -175,7 +175,7 @@ function scr_pizzaface_p2_fall()
 				{
 					state = states.animation;
 					tauntstoredstate = states.normal;
-					sprite_index = spr_player_screamtransition;
+					sprite_index = spr_screamtransition;
 					image_index = 0;
 					image_speed = 0.35;
 					landAnim = false;

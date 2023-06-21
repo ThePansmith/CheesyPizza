@@ -268,8 +268,18 @@ function scr_characterspr()
 		spr_airattack = spr_player_airattack;
 		spr_longjump = spr_player_longjump;
 		spr_longjumpend = spr_player_longjumpend;
-		spr_backslide = spr_player_backslide
-		spr_backslideland = spr_player_backslideland
+		spr_backslide = spr_player_backslide;
+		spr_backslideland = spr_player_backslideland;
+		spr_gnomecutscene1 = spr_player_gnomecutscene1;
+		spr_gnomecutscene2 = spr_player_gnomecutscene2;
+		spr_gnomecutscene3 = spr_player_gnomecutscene3;
+		spr_gnomecutscene4 = spr_player_gnomecutscene4;
+		spr_screamtransition = spr_player_screamtransition;
+		spr_kungfu1 = spr_player_kungfu1;
+		spr_kungfu2 = spr_player_kungfu2;
+		spr_kungfu3 = spr_player_kungfu3;
+		spr_lungehit = spr_player_lungehit;
+		spr_throw = spr_player_throw;
 		spr_palette = spr_peppalette
 		paletteselect = 1;
 	}
@@ -525,6 +535,16 @@ function scr_characterspr()
 		spr_longjumpend = spr_player_longjumpend;
 		spr_backslide = spr_player_backslide;
 		spr_backslideland = spr_player_backslideland;
+		spr_gnomecutscene1 = spr_player_gnomecutscene1;
+		spr_gnomecutscene2 = spr_player_gnomecutscene2;
+		spr_gnomecutscene3 = spr_player_gnomecutscene3;
+		spr_gnomecutscene4 = spr_player_gnomecutscene4;
+		spr_screamtransition = spr_player_screamtransition;
+		spr_kungfu1 = spr_player_kungfu1;
+		spr_kungfu2 = spr_player_kungfu2;
+		spr_kungfu3 = spr_player_kungfu3;
+		spr_lungehit = spr_player_lungehit;
+		spr_throw = spr_player_throw;
 		spr_palette = spr_noisepalette;
 		paletteselect = 0;
 	}
@@ -714,6 +734,16 @@ function scr_characterspr()
 		spr_longjumpend = spr_player_longjumpend;
 		spr_backslide = spr_player_backslide
 		spr_backslideland = spr_player_backslideland
+		spr_gnomecutscene1 = spr_player_gnomecutscene1;
+		spr_gnomecutscene2 = spr_player_gnomecutscene2;
+		spr_gnomecutscene3 = spr_player_gnomecutscene3;
+		spr_gnomecutscene4 = spr_player_gnomecutscene4;
+		spr_screamtransition = spr_player_screamtransition;
+		spr_kungfu1 = spr_player_kungfu1;
+		spr_kungfu2 = spr_player_kungfu2;
+		spr_kungfu3 = spr_player_kungfu3;
+		spr_lungehit = spr_player_lungehit;
+		spr_throw = spr_player_throw;
 		spr_palette = spr_vigipalette;
 		paletteselect = 0;
 	}
@@ -1155,6 +1185,16 @@ function scr_characterspr()
 		spr_longjumpend = spr_player_longjumpend;
 		spr_backslide = spr_player_backslide;
 		spr_backslideland = spr_player_backslideland;
+		spr_gnomecutscene1 = spr_player_gnomecutscene1;
+		spr_gnomecutscene2 = spr_player_gnomecutscene2;
+		spr_gnomecutscene3 = spr_player_gnomecutscene3;
+		spr_gnomecutscene4 = spr_player_gnomecutscene4;
+		spr_screamtransition = spr_player_screamtransition;
+		spr_kungfu1 = spr_player_kungfu1;
+		spr_kungfu2 = spr_player_kungfu2;
+		spr_kungfu3 = spr_player_kungfu3;
+		spr_lungehit = spr_player_lungehit;
+		spr_throw = spr_player_throw;
 		spr_palette = spr_pizzypalette;
 		paletteselect = 1;
 	}
@@ -1306,11 +1346,11 @@ function scr_characterspr()
 		spr_haulingfall = spr_playerPP_haulingfall;
 		spr_haulingland = spr_playerPP_haulingland;
 		spr_uppercutfinishingblow = spr_playerPP_uppercutfinishingblow;
-		spr_finishingblow1 = spr_playerPP_suplexmash1;
-		spr_finishingblow2 = spr_playerPP_suplexmash2;
-		spr_finishingblow3 = spr_playerPP_suplexmash3;
-		spr_finishingblow4 = spr_playerPP_suplexmash4;
-		spr_finishingblow5 = spr_playerPP_suplexmash5;
+		spr_finishingblow1 = spr_playerPP_finishingblow1;
+		spr_finishingblow2 = spr_playerPP_finishingblow2;
+		spr_finishingblow3 = spr_playerPP_finishingblow3;
+		spr_finishingblow4 = spr_playerPP_finishingblow4;
+		spr_finishingblow5 = spr_playerPP_finishingblow5;
 		spr_winding = spr_playerPP_winding;
 		spr_3hpwalk = spr_playerPP_3hpwalk;
 		spr_3hpidle = spr_playerPP_3hpidle;
@@ -1395,8 +1435,8 @@ function scr_characterspr()
 		spr_machslideboost3fall = spr_playerPP_machslideboost3fall;
 		spr_breakdanceuppercut = spr_playerPP_breakdanceuppercut;
 		spr_breakdanceuppercutend = spr_playerPP_breakdanceuppercutend;
-		spr_poundcancel1 = spr_playerPP_poundcancel2;
-		spr_poundcancel2 = spr_playerPP_poundcancel1;
+		spr_poundcancel1 = spr_playerPP_poundcancel1;
+		spr_poundcancel2 = spr_playerPP_poundcancel2;
 		spr_Sjumpcancelstart = spr_playerPP_Sjumpcancelstart;
 		spr_Sjumpcancel = spr_playerPP_Sjumpcancel;
 		spr_freezeridle = spr_player_freezeridle;
@@ -1406,8 +1446,18 @@ function scr_characterspr()
 		spr_longjumpend = spr_playerPP_longjumpend;
 		spr_backslide = spr_playerPP_backslide;
 		spr_backslideland = spr_playerPP_backslideland;
-		spr_palette = spr_peppalette;
-		paletteselect = 1;
+		spr_gnomecutscene1 = spr_playerPP_gnomecutscene1;
+		spr_gnomecutscene2 = spr_playerPP_gnomecutscene2;
+		spr_gnomecutscene3 = spr_playerPP_gnomecutscene3;
+		spr_gnomecutscene4 = spr_playerPP_gnomecutscene4;
+		spr_screamtransition = spr_playerPP_screamtransition;
+		spr_kungfu1 = spr_playerPP_kungfu1;
+		spr_kungfu2 = spr_playerPP_kungfu2;
+		spr_kungfu3 = spr_playerPP_kungfu3;
+		spr_lungehit = spr_playerPP_lungehit;
+		spr_throw = spr_playerPP_throw;
+		spr_palette = spr_pisspalette;
+		paletteselect = 0;
 	}
 	
 	#endregion
@@ -1620,7 +1670,15 @@ function scr_characterspr()
 		spr_pmortthrow = spr_player_mortthrow;
 				
 		spr_superspringplayer = spr_snick_superjump;
-		
+		spr_gnomecutscene1 = spr_player_gnomecutscene1;
+		spr_gnomecutscene2 = spr_player_gnomecutscene2;
+		spr_gnomecutscene3 = spr_player_gnomecutscene3;
+		spr_gnomecutscene4 = spr_player_gnomecutscene4;
+		spr_screamtransition = spr_player_screamtransition;
+		spr_kungfu1 = spr_player_kungfu1;
+		spr_kungfu2 = spr_player_kungfu2;
+		spr_kungfu3 = spr_player_kungfu3;
+		spr_lungehit = spr_player_lungehit;
 		spr_palette = spr_snickpalette
 	}
 	

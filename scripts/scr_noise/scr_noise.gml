@@ -98,7 +98,7 @@ function scr_noise_arenaintro()
 				x = roomstartx;
 				image_speed = 0.35;
 				xscale = 1;
-				sprite_index = spr_player_gnomecutscene2;
+				sprite_index = spr_gnomecutscene2;
 				image_index = 0;
 			}
 		}
@@ -120,10 +120,10 @@ function scr_noise_arenaintro()
 			{
 				if (floor(image_index) == (image_number - 1))
 				{
-					if (sprite_index == spr_player_gnomecutscene2)
+					if (sprite_index == spr_gnomecutscene2)
 						image_index = image_number - 1;
-					else if (sprite_index == spr_player_gnomecutscene3)
-						sprite_index = spr_player_gnomecutscene4;
+					else if (sprite_index == spr_gnomecutscene3)
+						sprite_index = spr_gnomecutscene4;
 					else if (sprite_index == spr_player_idlefrown)
 						sprite_index = spr_idle;
 				}
@@ -131,9 +131,9 @@ function scr_noise_arenaintro()
 				movespeed = 0;
 				flash = false;
 				x = roomstartx;
-				if (other.sprite_index == spr_noise_intro1 && sprite_index == spr_player_gnomecutscene2 && floor(other.image_index) > 16)
+				if (other.sprite_index == spr_noise_intro1 && sprite_index == spr_gnomecutscene2 && floor(other.image_index) > 16)
 				{
-					sprite_index = spr_player_gnomecutscene3;
+					sprite_index = spr_gnomecutscene3;
 					image_index = 0;
 					fmod_event_one_shot("event:/sfx/pep/screamboss");
 				}
@@ -945,10 +945,10 @@ function scr_noise_finale()
 {
 	with (obj_player1)
 	{
-		if (sprite_index == spr_player_gnomecutscene2 && floor(image_index) == (image_number - 1))
+		if (sprite_index == spr_gnomecutscene2 && floor(image_index) == (image_number - 1))
 			image_index = image_number - 1;
-		if (sprite_index == spr_player_gnomecutscene3 && floor(image_index) == (image_number - 1))
-			sprite_index = spr_player_gnomecutscene4;
+		if (sprite_index == spr_gnomecutscene3 && floor(image_index) == (image_number - 1))
+			sprite_index = spr_gnomecutscene4;
 	}
 	switch (substate)
 	{
@@ -1016,7 +1016,7 @@ function scr_noise_finale()
 				substate = states.shotgun;
 				with (obj_player1)
 				{
-					sprite_index = spr_player_gnomecutscene2;
+					sprite_index = spr_gnomecutscene2;
 					image_index = 0;
 				}
 				instance_destroy(obj_noisebosscrate);
@@ -1029,7 +1029,7 @@ function scr_noise_finale()
 				substate = states.shotgunshoot;
 				with (obj_player1)
 				{
-					sprite_index = spr_player_gnomecutscene3;
+					sprite_index = spr_gnomecutscene3;
 					image_index = 0;
 					fmod_event_one_shot("event:/sfx/pep/screamboss");
 				}
@@ -1041,7 +1041,7 @@ function scr_noise_finale()
 			with (obj_player1)
 			{
 				if (floor(image_index) == (image_number - 1))
-					sprite_index = spr_player_gnomecutscene4;
+					sprite_index = spr_gnomecutscene4;
 			}
 			if (obj_noisettefinale.x <= x)
 			{

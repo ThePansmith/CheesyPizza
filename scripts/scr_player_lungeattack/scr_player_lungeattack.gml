@@ -118,7 +118,7 @@ function DoFinisher()
 	else if ((key_left + key_right) == xscale)
 	{
 		state = states.punch;
-		sprite_index = spr_player_lungehit;
+		sprite_index = spr_lungehit;
 		image_index = 0;
 		movespeed = 14;
 		with (instance_create(x, y, obj_superdashcloud))
@@ -139,7 +139,7 @@ function DoFinisher()
 	else
 	{
 		state = states.punch;
-		sprite_index = spr_player_lungehit;
+		sprite_index = spr_lungehit;
 		image_index = 0;
 		movespeed = 14;
 		with (instance_create(x, y, obj_superdashcloud))

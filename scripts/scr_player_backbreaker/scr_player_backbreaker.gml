@@ -107,7 +107,7 @@ function scr_player_backbreaker()
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_eatspaghetti)
 		state = states.normal;
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_throw)
+	if (floor(image_index) == (image_number - 1) && sprite_index == spr_throw)
 		state = states.normal;
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_Timesup && place_meeting(x, y, obj_exitgate))
 		state = states.normal;

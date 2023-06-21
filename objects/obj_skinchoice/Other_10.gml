@@ -400,75 +400,16 @@ switch character
 	case "PP":
 		var desc = "God is dead and we killed him.";
 		
-		add_palette(0, "yellow", noone, "Yellow", desc);
-		add_palette(1, "classic", noone, "Pissino", desc);
-		add_palette(3, "unfunny", noone, "Unfunny", desc);
-		add_palette(4, "money", noone, "Money Green", desc);
-		add_palette(5, "sage", noone, "Sage Blue", desc);
-		add_palette(6, "blood", noone, "Blood Red", desc);
-		add_palette(7, "tv", noone, "TV Purple", desc);
-		add_palette(8, "dark", noone, "Dark", desc);
-		add_palette(9, "shitty", noone, "Shitty", desc);
-		add_palette(10, "golden", noone, "Golden God", desc);
-		add_palette(11, "garish", noone, "Garish", desc);
-		add_palette(15, "mooney", noone, "Mooney Orange", desc);
-		add_palette(16, "", noone, "Freezer Burn", desc, "FUCKED UP");
-		add_palette(17, "", noone, "Dark Gray", desc, "FUCKED UP");
-		add_palette(18, "", noone, "Speed Demon", desc, "FUCKED UP");
-		add_palette(19, "", noone, "Blazing Heat", desc, "FUCKED UP");
-		add_palette(20, "", noone, "Bread Winner", desc, "FUCKED UP");
-		add_palette(21, "", noone, "Cheesed Up", desc, "FUCKED UP");
-		add_palette(22, "", noone, "Chalk Eater", desc, "FUCKED UP");
-		add_palette(23, "", noone, "Snottino", desc, "FUCKED UP");
-		add_palette(24, "", noone, "Majin", desc, "FUCKED UP");
-		add_palette(25, "", noone, "Brulo", desc, "FUCKED UP");
-		add_palette(26, "", noone, "Super Meat Boy", desc, "FUCKED UP");
-		add_palette(27, "", noone, "Creamsicle", desc, "FUCKED UP");
-		add_palette(28, "", noone, "So Retro", desc, "FUCKED UP");
-		add_palette(29, "", noone, "Gabaghoul", desc, "FUCKED UP");
-		add_palette(30, "", noone, "Grinch", desc, "FUCKED UP");
-		add_palette(31, "", noone, "Monster Mash", desc, "FUCKED UP");
-		add_palette(32, "", noone, "Dreamland Duo", desc, "FUCKED UP");
-		add_palette(33, "", noone, "Purple Pros", desc, "FUCKED UP");
-		add_palette(34, "", noone, "Bold And Brash", desc, "FUCKED UP");
-		add_palette(35, "", noone, "Fallen Down", desc, "FUCKED UP");
-		add_palette(36, "", noone, "Untextured", desc, "FUCKED UP");
-		add_palette(37, "", noone, "Dead Meat", desc, "FUCKED UP");
-		add_palette(38, "", noone, "Unshaded", desc, "FUCKED UP");
-		add_palette(39, "", noone, "Warzone", desc, "FUCKED UP");
-		add_palette(40, "", noone, "Block Party", desc, "FUCKED UP");
-		add_palette(41, "", noone, "Machine Code", desc, "FUCKED UP");
-		add_palette(42, "", noone, "Button Masher", desc, "FUCKED UP");
-		add_palette(43, "", noone, "Orange", desc, "FUCKED UP");
-		add_palette(44, "", noone, "Pasta Power", desc, "FUCKED UP");
-		add_palette(45, "", noone, "Sucrose Snowstorm", desc, "FUCKED UP");
+		add_palette(0, "", noone, "Pissino", desc);
+		add_palette(1, "", noone, "White", "A somewhat overweight italian failure.");
+		add_palette(3, "", noone, "Red", "It could also be-a him, for all we know.");
+		add_palette(4, "", noone, "Blue", "The day he forgot his purpose.");
+		add_palette(5, "", noone, "Freddy", "hor hor horhor hor hor horhor horhor");
+		add_palette(6, "", noone, "Sketch", "He wouldn't have crashed into somebody.\nHe would've shot a whole convenience store down.");
+		add_palette(7, "", noone, "Grand Dad", "FLINTSTONES HAHAHAHA");
+		add_palette(8, "", noone, "Dorito", "Undertale");
+		add_palette(9, "", noone, "Black", "I dislike them.");
 		
-		// Patterns
-		add_palette(12, "funny", spr_peppattern1, "Funny Polka", desc);
-		add_palette(12, "itchy", spr_peppattern2, "Itchy Sweater", desc);
-		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", desc);
-		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", desc);
-		add_palette(12, "goldemanne", spr_peppattern5, "Goldemanne", desc);
-		add_palette(12, "bones", spr_peppattern6, "Bad Bones", desc);
-		add_palette(12, "pp", spr_peppattern7, "PP Shirt", desc);
-		add_palette(12, "war", spr_peppattern8, "War Camo", desc);
-		add_palette(12, "john", spr_peppattern9, "John Suit", desc);
-		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Trans flag.");
-		add_palette(12, "", spr_pattern_missing, "Missing Texture", desc);
-		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", desc);
-		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", desc);
-		add_palette(12, "", spr_pattern_dogma, "Dogma", desc);
-		add_palette(12, "", spr_pattern_giygas, "Giygas", desc);
-		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", desc);
-		add_palette(12, "", spr_pattern_nether, "Nether Portal", desc);
-		add_palette(12, "", spr_pattern_snick, "Snick", desc);
-		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", desc);
-		add_palette(12, "", spr_pattern_warped, "Warped", desc);
-		add_palette(12, "", spr_pattern_hackerman, "Hackerman", desc);
-		add_palette(12, "", spr_pattern_reddeath, "Red Death", desc);
-		add_palette(12, "", spr_pattern_livewire, "Livewire", desc);
-		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", desc);
-		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", desc);
 		break;
 	
 	#endregion
@@ -477,7 +418,7 @@ pal_swap_index_palette(characters[sel.char][2]);
 init = true;
 
 // automatically select current palette
-sel.pal = ((character == "P" or character == "SP" or character == "G" or character == "PP") ? 1 : 0);
+sel.pal = ((character == "P" or character == "SP" or character == "G") ? 1 : 0);
 
 var pchar = obj_player1.character;
 if pchar == "P"

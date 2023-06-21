@@ -92,13 +92,13 @@ function scr_pepperman_arenaintro()
 			x = roomstartx;
 			xscale = -other.image_xscale;
 			if (other.sprite_index == spr_pepperman_intro1)
-				sprite_index = spr_player_gnomecutscene1;
+				sprite_index = spr_gnomecutscene1;
 			if (floor(image_index) == (image_number - 1))
 			{
-				if (sprite_index == spr_player_gnomecutscene2)
+				if (sprite_index == spr_gnomecutscene2)
 					image_index = image_number - 1;
-				else if (sprite_index == spr_player_gnomecutscene3)
-					sprite_index = spr_player_gnomecutscene4;
+				else if (sprite_index == spr_gnomecutscene3)
+					sprite_index = spr_gnomecutscene4;
 			}
 		}
 		if (introbuffer > 0)
@@ -114,7 +114,7 @@ function scr_pepperman_arenaintro()
 			introbuffer = 70;
 			with (obj_player)
 			{
-				sprite_index = spr_player_gnomecutscene2;
+				sprite_index = spr_gnomecutscene2;
 				image_index = 0;
 			}
 		}
@@ -126,7 +126,7 @@ function scr_pepperman_arenaintro()
 			with (obj_player)
 			{
 				fmod_event_one_shot("event:/sfx/pep/screamboss");
-				sprite_index = spr_player_gnomecutscene3;
+				sprite_index = spr_gnomecutscene3;
 				image_index = 0;
 			}
 		}
@@ -146,7 +146,7 @@ function scr_pepperman_arenaintro()
 					spotlightID.expand = true;
 					with (obj_player)
 					{
-						sprite_index = spr_player_screamtransition;
+						sprite_index = spr_screamtransition;
 						image_index = 0;
 						image_speed = 0.35;
 						landAnim = false;

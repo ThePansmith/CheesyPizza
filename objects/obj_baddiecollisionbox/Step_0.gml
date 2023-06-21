@@ -150,7 +150,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 						else
 						{
 							state = states.finishingblow;
-							sprite_index = spr_player_lungehit;
+							sprite_index = spr_lungehit;
 							image_index = 0;
 						}
 					}
@@ -182,7 +182,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 					else
 					{
 						state = states.finishingblow;
-						sprite_index = spr_player_lungehit;
+						sprite_index = spr_lungehit;
 						image_index = 0;
 					}
 				}

@@ -78,7 +78,7 @@ function scr_player_punch()
 		}
 		hsp = xscale * movespeed;
 				
-		var _kungfuground = sprite_index == spr_player_kungfu1 or sprite_index == spr_player_kungfu2 or sprite_index == spr_player_kungfu3 or sprite_index == spr_shotgunsuplexdash;
+		var _kungfuground = sprite_index == spr_kungfu1 or sprite_index == spr_kungfu2 or sprite_index == spr_kungfu3 or sprite_index == spr_shotgunsuplexdash;
 		var _kungfuair = sprite_index == spr_player_kungfuair1 or sprite_index == spr_player_kungfuair2 or sprite_index == spr_player_kungfuair3 or sprite_index == spr_player_kungfuair1transition or sprite_index == spr_player_kungfuair2transition or sprite_index == spr_player_kungfuair3transition;
 		var _Sjumpcancel = sprite_index == spr_player_Sjumpcancel or sprite_index == spr_player_Sjumpcancelland or sprite_index == spr_player_Sjumpcancelslide;
 				
@@ -151,9 +151,9 @@ function scr_player_punch()
 		{
 			switch (sprite_index)
 			{
-				case spr_player_kungfu1:
-				case spr_player_kungfu2:
-				case spr_player_kungfu3:
+				case spr_kungfu1:
+				case spr_kungfu2:
+				case spr_kungfu3:
 				case spr_shotgunsuplexdash:
 					/*
 					state = states.normal;

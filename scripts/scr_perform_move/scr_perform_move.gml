@@ -14,7 +14,7 @@ function scr_perform_move(move, prestate)
 				{
 					with instance_create(x, y, obj_superdashcloud)
 						image_xscale = other.xscale;
-					sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
+					sprite_index = choose(spr_kungfu1, spr_kungfu2, spr_kungfu3);
 				}
 				else
 					sprite_index = choose(spr_player_kungfuair1transition, spr_player_kungfuair2transition, spr_player_kungfuair3transition);

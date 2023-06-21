@@ -129,7 +129,7 @@ function scr_player_supergrab()
 						}
 						if (baddiegrabbedID.elitehit <= 1 && baddiegrabbedID.object_index != obj_pizzafaceboss_p3)
 							baddiegrabbedID.destroyable = true;
-						sprite_index = choose(spr_player_lungehit, spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
+						sprite_index = choose(spr_lungehit, spr_kungfu1, spr_kungfu2, spr_kungfu3);
 						image_index = 0;
 						supergrabstate = states.finishingblow;
 						shot = false;
@@ -236,7 +236,7 @@ function scr_player_supergrab()
 			}
 			if (floor(image_index) == (image_number - 1))
 			{
-				if (sprite_index == spr_player_lungehit)
+				if (sprite_index == spr_lungehit)
 					image_index = image_number - 3;
 				else
 					image_index = image_number - 1;
