@@ -1,8 +1,6 @@
 function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 {
 	var char = player.character;
-	if char == "P" && !player.ispeppino
-		char = "N";
 	
 	var spr = spr_shroomcollect;
 	switch obj

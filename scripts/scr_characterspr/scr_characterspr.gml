@@ -12,7 +12,7 @@ function scr_characterspr()
 	
 	#region PEPPINO
 	
-	if (character == "P" && ispeppino) or check_char("G")
+	if character == "P" or check_char("G")
 	{
 		snd_voiceok = fmod_event_create_instance("event:/sfx/voice/ok");
 		snd_voicetransfo = fmod_event_create_instance("event:/sfx/voice/transfo");
@@ -100,7 +100,7 @@ function scr_characterspr()
 		spr_mach4 = spr_player_mach4;
 		spr_machclimbwall = spr_player_climbwall;
 		spr_dive = spr_player_dive;
-		spr_machroll = spr_player_backslide;
+		spr_machroll = spr_player_machroll;
 		spr_hitwall = spr_player_mach3hitwall;
 		spr_superjumpland = spr_player_superjumpland;
 		spr_walljumpstart = spr_player_walljumpstart;
@@ -266,14 +266,18 @@ function scr_characterspr()
 		spr_attackdash = spr_player_attackdash;
 		spr_airattackstart = spr_player_airattackstart;
 		spr_airattack = spr_player_airattack;
-		spr_palette = spr_peppalette;
+		spr_longjump = spr_player_longjump;
+		spr_longjumpend = spr_player_longjumpend;
+		spr_backslide = spr_player_backslide
+		spr_backslideland = spr_player_backslideland
+		spr_palette = spr_peppalette
 		paletteselect = 1;
 	}
 	
 	#endregion
 	#region NOISE
 	
-	if (character == "N" || (character == "P" && !ispeppino))
+	if (character == "N")
 	{
 		global.mach_color1 = make_colour_rgb(255, 155, 20);
 		global.mach_color2 = make_colour_rgb(90, 165, 255);
@@ -517,7 +521,10 @@ function scr_characterspr()
 		spr_Sjumpcancel = spr_playerN_jetpackboost;
 		spr_poundcancel1 = spr_noise_crusherfall;
 		spr_poundcancel2 = spr_noise_crusherland_short;
-		
+		spr_longjump = spr_player_longjump;
+		spr_longjumpend = spr_player_longjumpend;
+		spr_backslide = spr_player_backslide;
+		spr_backslideland = spr_player_backslideland;
 		spr_palette = spr_noisepalette;
 		paletteselect = 0;
 	}
@@ -703,6 +710,10 @@ function scr_characterspr()
 		spr_machslideboostfall = spr_playerV_machslideboostfall;
 		spr_machslideboost3fall = spr_playerV_mach3slideboostfall;
 		spr_rideweenie = spr_player_weeniemount;
+		spr_longjump = spr_player_longjump;
+		spr_longjumpend = spr_player_longjumpend;
+		spr_backslide = spr_player_backslide
+		spr_backslideland = spr_player_backslideland
 		spr_palette = spr_vigipalette;
 		paletteselect = 0;
 	}
@@ -1140,6 +1151,10 @@ function scr_characterspr()
 		spr_freezeridle = spr_playerSP_freezeridle;
 		spr_rampjump = spr_playerSP_rampjump;
 		spr_wallsplat = spr_playerSP_wallsplat;
+		spr_longjump = spr_player_longjump;
+		spr_longjumpend = spr_player_longjumpend;
+		spr_backslide = spr_player_backslide;
+		spr_backslideland = spr_player_backslideland;
 		spr_palette = spr_pizzypalette;
 		paletteselect = 1;
 	}
@@ -1278,7 +1293,7 @@ function scr_characterspr()
 		spr_facehurt = spr_playerPP_facehurt;
 		spr_walljumpend = spr_playerPP_walljumpend;
 		spr_suplexdash = spr_playerPP_suplexdash;
-		spr_suplexdashjumpstart = spr_player_suplexgrabjumpstart;
+		spr_suplexdashjumpstart = spr_playerPP_suplexgrabjumpstart;
 		spr_suplexdashjump = spr_playerPP_suplexgrabjump;
 		spr_shotgunsuplexdash = spr_shotgun_suplexdash;
 		spr_rollgetup = spr_playerPP_rollgetup;
@@ -1387,6 +1402,10 @@ function scr_characterspr()
 		spr_freezeridle = spr_player_freezeridle;
 		spr_rampjump = spr_player_rampjump;
 		spr_wallsplat = spr_playerPP_wallsplat;
+		spr_longjump = spr_playerPP_longjump;
+		spr_longjumpend = spr_playerPP_longjumpend;
+		spr_backslide = spr_playerPP_backslide;
+		spr_backslideland = spr_playerPP_backslideland;
 		spr_palette = spr_peppalette;
 		paletteselect = 1;
 	}

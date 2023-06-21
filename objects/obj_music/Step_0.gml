@@ -40,8 +40,6 @@ if (global.panic && global.leveltosave != "dragonlair")
 		fmod_event_instance_release(panicmusicID);
 		
 		var char = obj_player1.character;
-		if char == "P" && !obj_player1.ispeppino
-			char = "N";
 		switch char
 		{
 			default: panicmusicID = fmod_event_create_instance("event:/music/pizzatime"); break;

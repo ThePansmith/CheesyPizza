@@ -62,7 +62,7 @@ var entrance_func = function(room, event, event_secret)
 	var s = 0;
 	switch obj_player1.character
 	{
-		case "P": if !obj_player1.ispeppino s = 1; break;
+		case "P": break;
 		case "N": s = 1; break;
 		case "V": s = 2; break;
 		case "SP": s = 3; break;

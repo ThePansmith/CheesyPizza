@@ -482,8 +482,6 @@ sel.pal = ((character == "P" or character == "SP" or character == "G" or charact
 var pchar = obj_player1.character;
 if pchar == "P"
 {
-	if !obj_player1.ispeppino
-		pchar = "N";
 	if obj_player1.isgustavo
 		pchar = "G";
 }

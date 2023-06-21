@@ -27,7 +27,7 @@ function scr_player_mach3()
 				else
 					movespeed += 0.1;
 				
-				if character == "P" && !ispeppino
+				if character == "N"
 					movespeed += 0.05;
 			}
 		}
@@ -144,7 +144,7 @@ function scr_player_mach3()
 			vsp = 10;
 			if (!grounded)
 				sprite_index = spr_mach2jump;
-			else if character == "P" && ispeppino
+			else if character == "P"
 				sprite_index = spr_player_machroll;
 			else
 				sprite_index = spr_machroll;

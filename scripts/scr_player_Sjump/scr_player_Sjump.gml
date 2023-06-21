@@ -75,7 +75,7 @@ function scr_player_Sjump()
 	{
 		image_index = 0;
 		sprite_index = spr_Sjumpcancelstart;
-		if (!ispeppino && character == "P") or character == "N"
+		if character == "N"
 		{
 			fmod_event_one_shot_3d(sfx_woag, x, y);
 			

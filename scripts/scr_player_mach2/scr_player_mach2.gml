@@ -72,10 +72,8 @@ function scr_player_mach2()
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_mach1)
 		sprite_index = spr_mach;
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_longjump)
-		sprite_index = spr_player_longjumpend;
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerPP_longjump)
-		sprite_index = spr_playerPP_longjumpend;
+	if (floor(image_index) == (image_number - 1) && sprite_index == spr_longjump)
+		sprite_index = spr_longjumpend;
 	if (!grounded)
 		machpunchAnim = false;
 	if (grounded)
@@ -89,7 +87,7 @@ function scr_player_mach2()
 			else
 				movespeed += 0.2;
 			
-			if character == "P" && !ispeppino
+			if character == "N"
 				movespeed += 0.1;
 		}
 		if (abs(hsp) >= 12 && skateboarding == 0 && sprite_index != spr_suplexdash)
@@ -133,7 +131,7 @@ function scr_player_mach2()
 		sprite_index = spr_mach;
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_suplexdash)
 		sprite_index = spr_mach;
-	if (!grounded && sprite_index != spr_secondjump2 && sprite_index != spr_clownjump && sprite_index != spr_clownfall && sprite_index != spr_mach2jump && sprite_index != spr_mach2jump && sprite_index != spr_walljumpstart && sprite_index != spr_taunt && sprite_index != spr_Sjumpcancelstart && sprite_index != spr_walljumpend && sprite_index != spr_player_longjump && sprite_index != spr_player_longjumpend)
+	if (!grounded && sprite_index != spr_secondjump2 && sprite_index != spr_clownjump && sprite_index != spr_clownfall && sprite_index != spr_mach2jump && sprite_index != spr_mach2jump && sprite_index != spr_walljumpstart && sprite_index != spr_taunt && sprite_index != spr_Sjumpcancelstart && sprite_index != spr_walljumpend && sprite_index != spr_longjump && sprite_index != spr_longjumpend)
 	{
 		sprite_index = spr_secondjump1;
 		if (skateboarding)
@@ -155,7 +153,7 @@ function scr_player_mach2()
 		image_index = 0;
 		if (!grounded)
 			sprite_index = spr_mach2jump;
-		else if character == "P" && ispeppino
+		else if character == "N"
 			sprite_index = spr_player_machroll;
 		else
 			sprite_index = spr_machroll;
@@ -224,7 +222,7 @@ function scr_player_mach2()
 			vsp = -6;
 		}
 	}
-	if (sprite_index == spr_rollgetup || sprite_index == spr_player_longjumpend || sprite_index == spr_player_longjump || sprite_index == spr_suplexdash)
+	if (sprite_index == spr_rollgetup || sprite_index == spr_longjumpend || sprite_index == spr_longjump || sprite_index == spr_suplexdash)
 		image_speed = 0.4;
 	else
 		image_speed = abs(movespeed) / 15;

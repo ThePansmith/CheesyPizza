@@ -2,7 +2,7 @@ draw_set_alpha(1);
 if (start)
 {
 	shader_set(global.Pal_Shader);
-	pal_swap_set(spr_peppalette, REMIX && instance_exists(obj_player1) && obj_player1.character == "P" && obj_player1.ispeppino ? obj_player1.paletteselect : 1, false);
+	pal_swap_set(spr_peppalette, REMIX && instance_exists(obj_player1) && obj_player1.character == "P" && obj_player1.character == "P" ? obj_player1.paletteselect : 1, false);
 	if REMIX
 		pattern_set_temp(global.Pattern_Color_Array, titlecard_sprite, titlecard_index, 1, 1, global.palettetexture);
 	draw_sprite(titlecard_sprite, titlecard_index, 0, 0);

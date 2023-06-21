@@ -283,10 +283,6 @@ function scr_hurtplayer(player)
 				var char = "Peppino";
 				switch character
 				{
-					case "P":
-						if !ispeppino
-							char = "The Noise";
-						break;
 					case "N":
 						char = "The Noise";
 						break;

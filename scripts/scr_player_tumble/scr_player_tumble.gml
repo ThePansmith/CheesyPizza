@@ -1,6 +1,6 @@
 function scr_player_tumble()
 {
-	var machrollspr = (character == "P" && ispeppino) ? spr_player_machroll : spr_machroll;
+	var machrollspr = (character == "P") ? spr_player_machroll : spr_machroll;
 	var divespr = spr_dive;
 	if isgustavo
 	{
@@ -19,7 +19,7 @@ function scr_player_tumble()
 	mask_index = spr_crouchmask;
 	if (sprite_index == spr_tumblestart)
 		movespeed = 6;
-	if (!grounded && (sprite_index == spr_crouchslip || sprite_index == machrollspr || sprite_index == spr_mach2jump || sprite_index == spr_player_backslide || sprite_index == spr_player_backslideland))
+	if (!grounded && (sprite_index == spr_crouchslip || sprite_index == machrollspr || sprite_index == spr_mach2jump || sprite_index == spr_backslide || sprite_index == spr_backslideland))
 	{
 		vsp = 10;
 		sprite_index = divespr;
@@ -69,15 +69,15 @@ function scr_player_tumble()
 		sprite_index = spr_player_Sjumpcancelslide;
 	if (sprite_index == spr_player_jumpdive2 && grounded)
 		sprite_index = spr_crouchslip;
-	if (floor(image_index) == (image_number - 1) && sprite_index == machrollspr && movespeed > 12 && character == "P" && ispeppino)
+	if (floor(image_index) == (image_number - 1) && sprite_index == machrollspr && movespeed > 12 && character != "N" && character != "V" && character != "S")
 	{
-		sprite_index = spr_player_backslideland;
+		sprite_index = spr_backslideland;
 		image_index = 0;
 	}
 	if (sprite_index == machrollspr && !grounded)
 		sprite_index = spr_mach2jump;
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_backslideland)
-		sprite_index = spr_player_backslide;
+	if (floor(image_index) == (image_number - 1) && sprite_index == spr_backslideland)
+		sprite_index = spr_backslide;
 	if (sprite_index == spr_player_Sjumpcancel && grounded)
 		sprite_index = spr_player_Sjumpcancelland;
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_Sjumpcancelland)

@@ -95,8 +95,6 @@ if instance_exists(obj_player1)
 	var pchar = obj_player1.character;
 	if pchar == "P"
 	{
-		if !obj_player1.ispeppino
-			pchar = "N";
 		if obj_player1.isgustavo
 			pchar = "G";
 	}
@@ -125,14 +123,7 @@ select = function()
 			state = states.normal;
 		
 		isgustavo = false;
-		ispeppino = true;
-		
-		if character == "N"
-		{
-			character = "P";
-			ispeppino = false;
-		}
-		else if check_char("G")
+		if check_char("G")
 		{
 			ratmount_movespeed = 8;
 			gustavodash = 0;

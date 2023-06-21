@@ -113,8 +113,8 @@ function scr_player_punch()
 			state = states.mach2;
 			movespeed = max(movespeed, 6);
 			
-			if character == "P" && ispeppino
-				sprite_index = spr_player_longjump;
+			if character != "N"
+				sprite_index = spr_longjump;
 			else
 				sprite_index = spr_mach2jump;
 		}

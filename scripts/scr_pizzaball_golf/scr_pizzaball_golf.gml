@@ -5,7 +5,7 @@ function scr_pizzaball_golf()
 	vsp = 0;
 	hsp = 0;
 	var _i = 9;
-	if (!player.ispeppino)
+	if (player.character == "N")
 		_i = 7;
 	if (player.key_up || shootup)
 		arrow = true;

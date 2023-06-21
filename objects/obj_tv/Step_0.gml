@@ -359,8 +359,6 @@ switch (state)
 if targetspr != -1
 {
 	var char = obj_player1.character;
-	if char == "P" && !obj_player1.ispeppino
-		char = "N";
 	
 	var charspr = asset_get_index(sprite_get_name(targetspr) + char);
 	if charspr > -1

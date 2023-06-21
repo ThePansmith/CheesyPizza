@@ -149,7 +149,7 @@ function scr_playersounds()
 			}
 			tumbleintro = false;
 		}
-		if (sprite_index == spr_machroll || sprite_index == spr_player_backslide || sprite_index == spr_player_backslideland)
+		if (sprite_index == spr_machroll || sprite_index == spr_backslide || sprite_index == spr_backslideland)
 		{
 			if (!fmod_event_instance_is_playing(machrollsnd))
 				fmod_event_instance_play(machrollsnd);

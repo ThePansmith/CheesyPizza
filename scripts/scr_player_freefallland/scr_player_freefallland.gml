@@ -23,7 +23,7 @@ function scr_player_freefallland()
         jumpstop = true;
 		scr_fmod_soundeffect(jumpsnd, x, y);
 		
-		if character == "P" && ispeppino
+		if character == "N"
 			sprite_index = spr_player_groundpoundjump;
 		else
 			sprite_index = spr_machfreefall;

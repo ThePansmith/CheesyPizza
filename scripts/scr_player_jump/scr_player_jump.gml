@@ -58,7 +58,7 @@ function state_player_jump()
 			jumpstop = true;
 		}
 	}
-	if character == "N" or (character == "P" && !ispeppino)
+	if character == "N"
 	{
 		if (key_jump && wallclingcooldown == 10)
 		{
@@ -552,7 +552,6 @@ function state_pepperman_jump()
 		fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y)
 			
 		show_debug_message(character)
-		show_debug_message(ispeppino)
 		show_debug_message(paletteselect)
 		taunttimer = 20;
 		tauntstoredmovespeed = movespeed;

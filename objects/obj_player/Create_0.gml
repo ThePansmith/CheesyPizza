@@ -84,7 +84,6 @@ previcemovespeed = 0;
 icedir = 1;
 icemomentum = false;
 savedicedir = 1;
-ispeppino = true;
 isgustavo = false;
 jumped = true;
 grav = 0.5;

@@ -108,7 +108,7 @@ function scr_player_grabbed()
 	}
 	if (_obj_player.state == states.superslam && _obj_player.sprite_index == _obj_player.spr_piledriver)
 	{
-		if (_obj_player.character == "P" && _obj_player.ispeppino)
+		if (_obj_player.character == "P")
 		{
 			if (floor(_obj_player.image_index) == 0)
 			{

@@ -25,8 +25,6 @@ switch (state)
 }
 
 var char = obj_player1.character;
-if char == "P" && !obj_player.ispeppino
-	char = "N";
 switch char
 {
 	case "P": sprite_index = spr_bossfight_playerhp; break;
