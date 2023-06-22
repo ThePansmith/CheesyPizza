@@ -89,4 +89,5 @@ goo_surface = noone;
 hand_x = 0;
 hand_y = 0;
 fill_lerp = 0;
+lap_x = timer_x;
 lap_y = SCREEN_HEIGHT + 212;

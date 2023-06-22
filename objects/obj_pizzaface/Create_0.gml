@@ -13,3 +13,4 @@ treasure = false;
 snd = fmod_event_create_instance("event:/sfx/pizzaface/moving");
 
 tracker = noone;
+frozen = false;

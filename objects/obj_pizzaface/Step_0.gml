@@ -1,12 +1,14 @@
 var playerid = obj_player1;
 if (obj_player1.spotlight == 0)
 	playerid = obj_player2;
+
 fmod_event_instance_set_3d_attributes(snd, x, y);
 if (!fmod_event_instance_is_playing(snd))
 	fmod_event_instance_play(snd);
 if (!instance_exists(playerid))
 	exit;
-var _move = true;
+
+var _move = !frozen;
 with (obj_player)
 {
 	if (state == states.taxi || state == states.victory || state == states.keyget || state == states.gottreasure || state == states.door || state == states.spaceshuttle)
@@ -90,3 +92,5 @@ if (REMIX or global.laps >= 2) && !instance_exists(tracker)
 	tracker.objectID = id;
 	tracker.sprite_index = spr_icon_pizzaface;
 }
+if keyboard_check_pressed(ord("F")) && Debug
+	frozen = !frozen;

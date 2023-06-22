@@ -1,4 +1,5 @@
-live_auto_call
+live_auto_call;
+
 if (room == editor_room)
 	exit;
 
@@ -275,11 +276,16 @@ if (global.panic)
 			lap_y = Approach(lap_y, timer_ystart, 1);
 		else
 			lap_y = Approach(lap_y, timer_ystart + 212, 4);
-		scr_draw_lap_display(timer_x, lap_y, lapflag_index);
+		
+		if !instance_exists(obj_pizzaface) or showtime_buffer > 0
+			lap_x = timer_x;
+		else
+			lap_x = Approach(lap_x, (SCREEN_WIDTH / 2) + 32, 1);
+		
+		scr_draw_lap_display(lap_x, lap_y, lapflag_index);
 	}
 }
 else if (surface_exists(bar_surface))
 	surface_free(bar_surface);
 
-draw_set_halign(0);
-draw_set_valign(0);
+draw_set_align();

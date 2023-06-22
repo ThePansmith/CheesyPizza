@@ -1,3 +1,5 @@
+live_auto_call;
+
 tv_x = SCREEN_WIDTH - 115;
 tv_y = 80;
 timer_xstart = (SCREEN_WIDTH / 2) + timer_xplus;

@@ -157,6 +157,7 @@ function pause_unpause_music()
 		{
 			fmod_event_instance_set_paused(music.event, other.savedmusicpause);
 			fmod_event_instance_set_paused(music.event_secret, other.savedsecretpause);
+			fmod_event_instance_set_paused(pissinosecretID, other.savedsecretpause);
 		}
 		fmod_event_instance_set_paused(pillarmusicID, other.savedpillarpause);
 		fmod_event_instance_set_paused(panicmusicID, other.savedpanicpause);

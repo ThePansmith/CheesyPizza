@@ -8,6 +8,7 @@ if (fmod_event_instance_is_playing(kidspartychaseID) && instance_exists(obj_paus
 	{
 		fmod_event_instance_set_paused(music.event, savedmusicpause);
 		fmod_event_instance_set_paused(music.event_secret, savedsecretpause);
+		fmod_event_instance_set_paused(pissinosecretID, savedsecretpause);
 	}
 	fmod_event_instance_set_paused(pillarmusicID, savedpillarpause);
 	fmod_event_instance_set_paused(panicmusicID, savedpanicpause);
@@ -63,6 +64,7 @@ if (global.panic && global.leveltosave != "dragonlair")
 		{
 			fmod_event_instance_stop(music.event, true);
 			fmod_event_instance_stop(music.event_secret, true);
+			fmod_event_instance_stop(pissinosecretID, true);
 		}
 		if (room == tower_finalhallway)
 		{

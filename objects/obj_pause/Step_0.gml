@@ -46,9 +46,10 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 			if (music != -4)
 			{
 				other.savedmusicpause = fmod_event_instance_get_paused(music.event);
-				other.savedsecretpause = fmod_event_instance_get_paused(music.event_secret);
+				other.savedsecretpause = fmod_event_instance_get_paused(obj_player1.character == "PP" ? pissinosecretID : music.event_secret);
 				fmod_event_instance_set_paused(music.event, true);
 				fmod_event_instance_set_paused(music.event_secret, true);
+				fmod_event_instance_set_paused(pissinosecretID, true);
 			}
 			other.savedpillarpause = fmod_event_instance_get_paused(pillarmusicID);
 			other.savedkidspartypause = fmod_event_instance_get_paused(kidspartychaseID);

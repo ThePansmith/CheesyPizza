@@ -54,6 +54,7 @@ function scr_monster_stop_music()
 			{
 				fmod_event_instance_set_paused(music.event, savedmusicpause);
 				fmod_event_instance_set_paused(music.event_secret, savedsecretpause);
+				fmod_event_instance_set_paused(pissinosecretID, savedsecretpause);
 			}
 			fmod_event_instance_set_paused(pillarmusicID, savedpillarpause);
 			fmod_event_instance_set_paused(panicmusicID, savedpanicpause);
@@ -95,7 +96,7 @@ function scr_monster_activate()
 			if (music != -4)
 			{
 				savedmusicpause = fmod_event_instance_get_paused(music.event);
-				savedsecretpause = fmod_event_instance_get_paused(music.event_secret);
+				savedsecretpause = fmod_event_instance_get_paused(obj_player1.character == "PP" ? pissinosecretID : music.event_secret);
 				fmod_event_instance_set_paused(music.event, true);
 				fmod_event_instance_set_paused(music.event_secret, true);
 			}

@@ -43,21 +43,30 @@ if (secret)
 {
 	if (music != -4 && music.event_secret != -4)
 	{
+		var ev = music.event_secret, evname = music.event_secret_name;
+		
 		// secrets
 		if obj_player1.character == "SP"
-			fmod_event_instance_set_parameter(music.event_secret, "state", 1, true);
+			fmod_event_instance_set_parameter(ev, "state", 1, true);
 		else if obj_player1.character == "BN"
-			fmod_event_instance_set_parameter(music.event_secret, "state", 2, true);
+			fmod_event_instance_set_parameter(ev, "state", 2, true);
+		else if obj_player1.character == "PP"
+		{
+			ev = pissinosecretID;
+			evname = "event:/modded/pissinosecret";
+			
+			fmod_event_instance_set_parameter(ev, "state", global.panic ? 20 : 0, true);
+		}
 		else
-			fmod_event_instance_set_parameter(music.event_secret, "state", 0, true);
+			fmod_event_instance_set_parameter(ev, "state", 0, true);
 		
 		// start playing or resume secret song
-		fmod_event_instance_play(music.event_secret);
-		fmod_event_instance_set_paused(music.event_secret, false);
+		fmod_event_instance_play(ev);
+		fmod_event_instance_set_paused(ev, false);
 		pos = fmod_event_instance_get_timeline_pos(music.event);
 		savedmusicpos = pos;
-		pos = music_get_pos_wrap(pos, fmod_event_get_length(music.event_secret_name));
-		fmod_event_instance_set_timeline_pos(music.event_secret, pos);
+		pos = music_get_pos_wrap(pos, fmod_event_get_length(evname));
+		fmod_event_instance_set_timeline_pos(ev, pos);
 		fmod_event_instance_set_paused(music.event, true);
 	}
 	if (global.panic)
@@ -72,6 +81,7 @@ else if (secretend)
 	secretend = false;
 	if (music != -4)
 	{
+		fmod_event_instance_stop(pissinosecretID, true);
 		fmod_event_instance_stop(music.event_secret, true);
 		fmod_event_instance_set_paused(music.event, false);
 		fmod_event_instance_set_timeline_pos(music.event, savedmusicpos);
@@ -89,5 +99,6 @@ if (room == rank_room || room == boss_pizzaface || room == boss_noise || room ==
 	{
 		fmod_event_instance_stop(music.event, true);
 		fmod_event_instance_stop(music.event_secret, true);
+		fmod_event_instance_stop(pissinosecretID, true);
 	}
 }
