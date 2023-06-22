@@ -53,7 +53,7 @@ if (_transfo)
 		global.combotime = 60;
 		with (instance_create(x + 16, y, obj_smallnumber))
 			number = string(val);
-		scr_sound_multiple("event:/sfx/misc/collect", x, y);
+		scr_sound_multiple(global.snd_collect, x, y);
 		if (escape)
 			ds_list_add(global.escaperoom, id);
 		var d = round(val / 16);

@@ -75,6 +75,8 @@ function scr_player_Sjump()
 	{
 		image_index = 0;
 		sprite_index = spr_Sjumpcancelstart;
+		
+		fmod_event_instance_set_3d_attributes(sjumpcancelsnd, x, y);
 		if character == "N"
 		{
 			fmod_event_one_shot_3d(sfx_woag, x, y);
@@ -85,10 +87,10 @@ function scr_player_Sjump()
 				fmod_event_one_shot_3d(sfx_jetpackstart, x, y);
 			}
 			else
-				fmod_event_one_shot_3d(sfx_superjumpcancel, x, y);
+				fmod_event_instance_play(sjumpcancelsnd);
 		}
 		else
-			fmod_event_one_shot_3d(sfx_superjumpcancel, x, y);
+			fmod_event_instance_play(sjumpcancelsnd);
 		input_buffer_slap = 0;
 	}
 	if (sprite_index == spr_Sjumpcancelstart)

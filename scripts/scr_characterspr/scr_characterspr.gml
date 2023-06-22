@@ -1,10 +1,7 @@
 function scr_characterspr()
 {
-	fmod_event_instance_release(snd_voiceok);
-	fmod_event_instance_release(snd_voicetransfo);
-	fmod_event_instance_release(snd_voiceouttransfo);
-	fmod_event_instance_release(snd_voicehurt);
-	fmod_event_instance_release(global.snd_fireass);
+	player_destroy_sounds();
+	player_init_sounds();
 	
 	// default green red
 	global.mach_color1 = make_colour_rgb(96, 208, 72);
@@ -14,12 +11,6 @@ function scr_characterspr()
 	
 	if character == "P" or check_char("G")
 	{
-		snd_voiceok = fmod_event_create_instance("event:/sfx/voice/ok");
-		snd_voicetransfo = fmod_event_create_instance("event:/sfx/voice/transfo");
-		snd_voiceouttransfo = fmod_event_create_instance("event:/sfx/voice/outtransfo");
-		snd_voicehurt = fmod_event_create_instance("event:/sfx/voice/hurt");
-		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireass");
-		
 		spr_idle = spr_player_idle;
 		spr_move = spr_player_move;
 		spr_crawl = spr_player_crawl;
@@ -293,12 +284,6 @@ function scr_characterspr()
 		global.mach_color1 = make_colour_rgb(255, 155, 20);
 		global.mach_color2 = make_colour_rgb(90, 165, 255);
 		
-		snd_voiceok = fmod_event_create_instance("event:/sfx/voice/noisepositive");
-		snd_voicetransfo = fmod_event_create_instance("event:/sfx/voice/noisenegative");
-		snd_voiceouttransfo = fmod_event_create_instance("event:/sfx/voice/noisepositive");
-		snd_voicehurt = fmod_event_create_instance("event:/sfx/voice/noisenegative");
-		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireassN");
-		
 		spr_idle = spr_playerN_idle;
 		spr_move = spr_playerN_move;
 		spr_crawl = spr_playerN_crawl;
@@ -556,12 +541,6 @@ function scr_characterspr()
 	
 	if (character == "V")
 	{
-		snd_voiceok = fmod_event_create_instance("event:/sfx/voice/vigiduel");
-		snd_voicetransfo = fmod_event_create_instance("event:/sfx/voice/vigiangry");
-		snd_voiceouttransfo = fmod_event_create_instance("event:/sfx/voice/vigiduel");
-		snd_voicehurt = fmod_event_create_instance("event:/sfx/voice/vigiduel");
-		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireassN");
-		
 		spr_idle = spr_playerV_idle;
 		spr_move = spr_playerV_move;
 		spr_crawl = spr_playerV_crouchmove;
@@ -751,194 +730,12 @@ function scr_characterspr()
 	}
 	
 	#endregion
-	#region PEPPERMAN
-	
-	if (character == "M")
-	{
-		spr_idle = spr_pepperman_idle;
-		spr_move = spr_pepperman_move;
-		spr_crawl = spr_player_crawl;
-		spr_hurt = spr_player_hurt;
-		spr_jump = spr_pepperman_jump;
-		spr_jump2 = spr_pepperman_jump;
-		spr_fall = spr_pepperman_fall;
-		spr_fall2 = spr_pepperman_fall;
-		spr_crouch = spr_player_crouch;
-		spr_crouchjump = spr_player_crouchjump;
-		spr_crouchfall = spr_player_crouchfall;
-		spr_couchstart = spr_player_couchstart;
-		spr_bump = spr_player_bump;
-		spr_land = spr_player_land;
-		spr_land2 = spr_player_land2;
-		spr_lookdoor = spr_pepperman_lookdoor;
-		spr_walkfront = spr_pepperman_walkfront;
-		spr_victory = spr_player_victory;
-		spr_Ladder = spr_player_ladder;
-		spr_laddermove = spr_player_laddermove;
-		spr_ladderdown = spr_player_ladderdown;
-		spr_keyget = spr_player_keyget;
-		spr_crouchslip = spr_player_crouchslip;
-		spr_mach1 = spr_player_mach1;
-		spr_mach = spr_player_mach;
-		spr_secondjump1 = spr_player_secondjump1;
-		spr_secondjump2 = spr_player_secondjump2;
-		spr_machslidestart = spr_player_machslidestart;
-		spr_machslide = spr_player_machslide;
-		spr_machslideend = spr_player_machslideend;
-		spr_machslideboost = spr_player_machslideboost;
-		spr_land2 = spr_player_land2;
-		spr_punch = spr_player_punch;
-		spr_backkick = spr_player_backkick;
-		spr_shoulder = spr_player_shoulder;
-		spr_uppunch = spr_player_uppunch;
-		spr_stomp = spr_pepperman_fall;
-		spr_stompprep = spr_pepperman_jump;
-		spr_crouchslide = spr_player_crouchslide;
-		spr_crouch = spr_player_crouch;
-		spr_bump = spr_pepperman_hurtplayer;
-		spr_victory = spr_player_victory;
-		spr_hurt = spr_pepperman_hurtplayer;
-		spr_climbwall = spr_player_climbwall;
-		spr_grab = spr_player_grab;
-		spr_mach2jump = spr_player_mach2jump;
-		spr_Timesup = spr_pepperman_timesup;
-		spr_deathstart = spr_player_deathstart;
-		spr_deathend = spr_player_deathend;
-		spr_machpunch1 = spr_player_machpunch1;
-		spr_machpunch2 = spr_player_machpunch2;
-		spr_hurtjump = spr_player_jumphurt;
-		spr_entergate = spr_pepperman_lookdoor;
-		spr_gottreasure = spr_player_gottreasure;
-		spr_bossintro = spr_player_bossintro;
-		spr_hurtidle = spr_player_hurtidle;
-		spr_hurtwalk = spr_player_hurtwalk;
-		spr_suplexmash1 = spr_player_suplexmash1;
-		spr_suplexmash2 = spr_player_suplexmash2;
-		spr_suplexmash3 = spr_player_suplexmash3;
-		spr_suplexmash4 = spr_player_suplexmash4;
-		spr_tackle = spr_player_tackle;
-		spr_airdash1 = spr_player_airdash1;
-		spr_airdash2 = spr_player_airdash2;
-		spr_keyget = spr_player_keyget;
-		spr_idle1 = spr_player_idlefrown;
-		spr_idle2 = spr_player_idledance;
-		spr_idle3 = spr_player_handgesture1;
-		spr_idle4 = spr_player_handgesture2;
-		spr_idle5 = spr_player_handgesture3;
-		spr_idle6 = spr_player_handgesture4;
-		spr_piledriver = spr_player_piledriver;
-		spr_piledriverland = spr_player_piledriverland;
-		spr_charge = spr_player_charge;
-		spr_mach3jump = spr_player_mach3jump;
-		spr_mach4 = spr_player_mach4;
-		spr_machclimbwall = spr_player_climbwall;
-		spr_dive = spr_player_dive;
-		spr_machroll = spr_player_machroll;
-		spr_hitwall = spr_player_mach3hitwall;
-		spr_superjumpland = spr_player_superjumpland;
-		spr_walljumpstart = spr_player_walljumpstart;
-		spr_superjumpprep = spr_player_superjumpprep;
-		spr_superjump = spr_player_superjump;
-		spr_superjumppreplight = spr_player_superjumppreplight;
-		spr_superjumpright = spr_player_superjumpright;
-		spr_superjumpleft = spr_player_superjumpleft;
-		spr_machfreefall = spr_player_machfreefall;
-		spr_mach3hit = spr_player_mach3hit;
-		spr_knightpepwalk = spr_knightpep_walk;
-		spr_knightpepjump = spr_knightpep_jump;
-		spr_knightpepfall = spr_knightpep_fall;
-		spr_knightpepidle = spr_knightpep_idle;
-		spr_knightpepjumpstart = spr_knightpep_jumpstart;
-		spr_knightpepthunder = spr_knightpep_thunder;
-		spr_knightpepland = spr_knightpep_land;
-		spr_knightpepdownslope = spr_knightpep_downslope;
-		spr_knightpepstart = spr_knightpep_start;
-		spr_knightpepcharge = spr_knightpep_charge;
-		spr_bodyslamstart = spr_pepperman_groundpound;
-		spr_bodyslamfall = spr_pepperman_groundpound;
-		spr_bodyslamland = spr_pepperman_groundpound;
-		spr_crazyrun = spr_player_crazyrun;
-		spr_bombpeprun = spr_bombpep_run;
-		spr_bombpepintro = spr_bombpep_intro;
-		spr_bombpeprunabouttoexplode = spr_bombpep_runabouttoexplode;
-		spr_bombpepend = spr_bombpep_end;
-		spr_fireass = spr_player_fireass;
-		spr_fireassground = spr_player_fireassground;
-		spr_fireassend = spr_player_fireassend;
-		spr_tumblestart = spr_player_tumblestart;
-		spr_tumbleend = spr_player_tumbleend;
-		spr_tumble = spr_player_tumble;
-		spr_stunned = spr_player_stunned;
-		spr_downpizzabox = spr_player_downpizzabox;
-		spr_uppizzabox = spr_player_uppizzabox;
-		spr_slipnslide = spr_player_slipnslide;
-		spr_mach3boost = spr_player_machslideboost3;
-		spr_facehurtup = spr_player_facehurtup;
-		spr_facehurt = spr_player_facehurt;
-		spr_walljumpend = spr_player_walljumpend;
-		spr_suplexdash = spr_player_suplexdash;
-		spr_suplexdashjumpstart = spr_player_suplexgrabjumpstart;
-		spr_suplexdashjump = spr_player_suplexgrabjump;
-		spr_shotgunsuplexdash = spr_shotgun_suplexdash;
-		spr_rollgetup = spr_player_rollgetup;
-		spr_swingding = spr_player_swingding;
-		spr_swingdingend = spr_player_swingdingend;
-		spr_haulingjump = spr_player_haulingjump;
-		spr_haulingidle = spr_player_haulingidle;
-		spr_haulingwalk = spr_player_haulingwalk;
-		spr_haulingstart = spr_player_haulingstart;
-		spr_haulingfall = spr_player_haulingfall;
-		spr_haulingland = spr_player_haulingland;
-		spr_uppercutfinishingblow = spr_player_uppercutfinishingblow;
-		spr_finishingblow1 = spr_player_finishingblow1;
-		spr_finishingblow2 = spr_player_finishingblow2;
-		spr_finishingblow3 = spr_player_finishingblow3;
-		spr_finishingblow4 = spr_player_finishingblow4;
-		spr_finishingblow5 = spr_player_finishingblow5;
-		spr_winding = spr_player_winding;
-		spr_3hpwalk = spr_player_3hpwalk;
-		spr_3hpidle = spr_player_3hpidle;
-		spr_panic = spr_player_panic;
-		spr_facestomp = spr_player_facestomp;
-		spr_freefall = spr_player_freefall;
-		spr_shotgunland = spr_shotgun_land;
-		spr_shotgunshoot = spr_player_shotgun;
-		spr_shotgunidle = spr_shotgun_idle;
-		spr_shotgunwalk = spr_shotgun_walk;
-		spr_shotgunfall = spr_shotgun_fall;
-		spr_shotgunjump = spr_shotgun_jump;
-		spr_shotgunjump1 = spr_player_shotgunjump1;
-		spr_shotgunjump2 = spr_player_shotgunjump2;
-		spr_shotgunjump3 = spr_player_shotgunjump3;
-		spr_shotgunpullout = spr_shotgun_pullout;
-		spr_shotgunduck = spr_shotgun_duck;
-		spr_shotguncrawl = spr_shotgun_crawl;
-		spr_shotgungoduck = spr_shotgun_goduck;
-		spr_fightball = spr_player_fightball;
-		spr_squished = spr_player_squished;
-		spr_supertaunt1 = spr_player_supertaunt1;
-		spr_supertaunt2 = spr_player_supertaunt2;
-		spr_supertaunt3 = spr_player_supertaunt3;
-		spr_supertaunt4 = spr_player_supertaunt4;
-		spr_taunt = spr_pepperman_taunt;
-		spr_rideweenie = spr_player_weeniemount;
-		spr_palette = spr_peppalette;
-		paletteselect = 1;
-	}
-	
-	#endregion
 	#region PIZZELLE
 	
 	if (character == "SP")
 	{
 		global.mach_color1 = make_colour_rgb(232, 80, 152);
 		global.mach_color2 = make_colour_rgb(48, 168, 248);
-		
-		snd_voiceok = fmod_event_create_instance("event:/sfx/voice/ok");
-		snd_voicetransfo = fmod_event_create_instance("event:/sfx/voice/transfo");
-		snd_voiceouttransfo = fmod_event_create_instance("event:/sfx/voice/outtransfo");
-		snd_voicehurt = fmod_event_create_instance("event:/sfx/voice/hurt");
-		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireassSP");
 		
 		spr_idle = spr_playerSP_idle;
 		spr_move = spr_playerSP_walk;
@@ -1209,12 +1006,6 @@ function scr_characterspr()
 	{
 		global.mach_color1 = make_colour_rgb(96, 208, 72);
 		global.mach_color2 = make_colour_rgb(248, 0, 0);
-		
-		snd_voiceok = fmod_event_create_instance("event:/sfx/voice/ok");
-		snd_voicetransfo = fmod_event_create_instance("event:/sfx/voice/transfo");
-		snd_voiceouttransfo = fmod_event_create_instance("event:/sfx/voice/outtransfo");
-		snd_voicehurt = fmod_event_create_instance("event:/sfx/voice/hurt");
-		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireass");
 		
 		spr_idle = spr_playerPP_idle;
 		spr_move = spr_playerPP_move;
@@ -1688,16 +1479,11 @@ function scr_characterspr()
 	
 	#endregion
 	#region BO NOISE
+	
 	if (character == "BN")
 	{
 		global.mach_color1 = make_colour_rgb(255, 155, 20);
 		global.mach_color2 = make_colour_rgb(90, 165, 255);
-		
-		snd_voiceok = fmod_event_create_instance("event:/sfx/voice/noisepositive");
-		snd_voicetransfo = fmod_event_create_instance("event:/sfx/voice/noisenegative");
-		snd_voiceouttransfo = fmod_event_create_instance("event:/sfx/voice/noisepositive");
-		snd_voicehurt = fmod_event_create_instance("event:/sfx/voice/noisenegative");
-		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireassN");
 		
 		spr_idle = spr_playerBN_idle;
 		spr_move = spr_playerBN_move;

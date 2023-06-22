@@ -10,7 +10,7 @@ if (image_alpha == 1)
 		with (obj_camera)
 			healthshaketime = 60;
 		global.combotime = 60;
-		fmod_event_one_shot_3d("event:/sfx/misc/collectpizza", x, y);
+		fmod_event_one_shot_3d(global.snd_collectpizza, x, y);
 		fmod_event_one_shot_3d("event:/sfx/misc/bellcollectbig", x, y);
 		instance_destroy();
 		var val = heat_calculate(value);

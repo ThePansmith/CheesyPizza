@@ -1,12 +1,7 @@
 if (room == rm_editor)
 	exit;
 if (object_index != obj_escapecollect)
-{
-	if obj_player1.character == "SP"
-		scr_sound_multiple("event:/sfx/misc/collectSP", x, y);
-	else
-		scr_sound_multiple("event:/sfx/misc/collect", x, y);
-}
+	scr_sound_multiple(global.snd_collect, x, y);
 else
 	scr_sound_multiple("event:/sfx/misc/bellcollect", x, y);
 if (obj_player1.character == "V")

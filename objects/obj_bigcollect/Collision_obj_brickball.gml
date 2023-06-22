@@ -5,10 +5,7 @@ if (image_alpha == 1 && !place_meeting(x, y, obj_metalblock))
 	global.heattime = 60;
 	with (obj_camera)
 		healthshaketime = 60;
-	if obj_player1.character == "SP"
-		scr_sound_multiple("event:/sfx/misc/collectSP", x, y);
-	else
-		fmod_event_one_shot("event:/sfx/misc/collectpizza");
+	fmod_event_one_shot(global.snd_collectpizza);
 	if object_index == obj_escapecollectbig
 		fmod_event_one_shot_3d("event:/sfx/misc/bellcollectbig", x, y);
 	instance_destroy();

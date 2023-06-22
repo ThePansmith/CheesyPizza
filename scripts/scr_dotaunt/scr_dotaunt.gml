@@ -14,10 +14,7 @@ function scr_dotaunt()
 			with (instance_create(x + 16, y, obj_smallnumber))
 				number = string(25);
 			create_collect(x, y, spr_taunteffect, 25);
-			if character == "SP"
-				scr_sound_multiple("event:/sfx/misc/collectSP", x, y);
-			else
-				scr_sound_multiple("event:/sfx/misc/collect", x, y);
+			scr_sound_multiple(global.snd_collect, x, y);
 		}
 		if (!finisher)
 		{

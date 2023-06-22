@@ -13,10 +13,24 @@ if (room == hub_loadingscreen && state != 2)
 		{
 			ini_open_from_string(obj_savesystem.ini_str);
 			var _intro = ini_read_real("Tutorial", "finished", false);
-			paletteselect = ini_read_real("Game", "palette", 1);
+			
+			character = ini_read_real("Game", "character", "P");
+			scr_characterspr();
+			if character == "G"
+			{
+				ratmount_movespeed = 8;
+				gustavodash = 0;
+				isgustavo = true;
+				state = states.ratmount;
+				sprite_index = spr_player_ratmountidle;
+				brick = true;
+			}
+			
+			paletteselect = ini_read_real("Game", "palette", character == "P" ? 1 : 0);
 			var _texture = ini_read_string("Game", "palettetexture", "none");
 			global.palettetexture = scr_get_texture_palette(_texture);
 			ini_close();
+			
 			if (_intro)
 			{
 				targetRoom = tower_entrancehall;

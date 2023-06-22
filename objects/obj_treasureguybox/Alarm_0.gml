@@ -1,6 +1,6 @@
 if (current_arr > (array_length(content_arr) - 1))
 	exit;
-scr_sound_multiple("event:/sfx/misc/collect", x, y);
+scr_sound_multiple(global.snd_collect, x, y);
 global.heattime += 10;
 global.heattime = clamp(global.heattime, 0, 60);
 global.combotime += 10;

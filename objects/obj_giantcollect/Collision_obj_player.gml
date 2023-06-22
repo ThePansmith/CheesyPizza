@@ -7,16 +7,8 @@ if (other.state != states.gotoplayer)
 	with (obj_camera)
 		healthshaketime = 120;
 	
-	if other.character == "SP"
-	{
-		scr_sound_multiple("event:/sfx/misc/collectSP", x, y);
-		fmod_event_one_shot("event:/modded/sfx/collectgiantpizzaSP");
-	}
-	else
-	{
-		scr_sound_multiple("event:/sfx/misc/collect", x, y);
-		fmod_event_one_shot("event:/sfx/misc/collectgiantpizza");
-	}
+	scr_sound_multiple(global.snd_collect, x, y);
+	fmod_event_one_shot(global.snd_collectgiantpizza);
 	
 	var val = heat_calculate(1000);
 	if (other.object_index == obj_player1)

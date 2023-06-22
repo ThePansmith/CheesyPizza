@@ -7,7 +7,7 @@ if (collect > 0)
 	diff -= collect;
 	diff = round(diff);
 	global.collect += diff;
-	scr_sound_multiple("event:/sfx/misc/collect", obj_player1.x, obj_player1.y);
+	scr_sound_multiple(global.snd_collect, obj_player1.x, obj_player1.y);
 	global.heattime += 10;
 	global.heattime = clamp(global.heattime, 0, 60);
 	global.combotime += 10;

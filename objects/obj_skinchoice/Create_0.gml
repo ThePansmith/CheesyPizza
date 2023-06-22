@@ -156,7 +156,7 @@ select = function()
 			ini_open_from_string(obj_savesystem.ini_str);
 			ini_write_string("Game", "character", character);
 			ini_write_real("Game", "palette", paletteselect);
-			ini_write_string("Game", "palettetexture", other.palettes[other.sel.pal].entry);
+			ini_write_string("Game", "palettetexture", sprite_get_name(global.palettetexture));
 			obj_savesystem.ini_str = ini_close();
 			gamesave_async_save();
 			

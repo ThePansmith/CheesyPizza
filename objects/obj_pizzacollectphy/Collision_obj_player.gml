@@ -13,6 +13,6 @@ if (vsp > 0)
 		healthshaketime = 40;
 	with (instance_create(x + 16, y, obj_smallnumber))
 		number = string(val);
-	scr_sound_multiple("event:/sfx/misc/collect", x, y);
+	scr_sound_multiple(global.snd_collect, x, y);
 	instance_destroy();
 }

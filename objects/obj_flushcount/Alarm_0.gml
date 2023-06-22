@@ -1,7 +1,7 @@
 if (count > 0)
 {
 	count--;
-	scr_sound_multiple("event:/sfx/misc/collect", obj_player1.x, obj_player1.y);
+	scr_sound_multiple(global.snd_collect, obj_player1.x, obj_player1.y);
 	global.heattime += 10;
 	global.heattime = clamp(global.heattime, 0, 60);
 	global.combotime += 10;

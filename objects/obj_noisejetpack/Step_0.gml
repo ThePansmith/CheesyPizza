@@ -17,7 +17,7 @@ switch (state)
 		if (y == ty || movespeed <= 0)
 		{
 			create_particle(x, y, particle.genericpoofeffect);
-			scr_sound_multiple("event:/sfx/misc/collect", x, y);
+			scr_sound_multiple(global.snd_collect, x, y);
 			state = states.transition;
 			cutscenebuffer = 70;
 			flamebuffer = 0;

@@ -300,7 +300,7 @@ function scr_collect_hat(_persistent = false)
 		{
 			with (other)
 			{
-				scr_sound_multiple("event:/sfx/misc/collect", x, y)
+				scr_sound_multiple(global.snd_collect, x, y)
 				with (obj_camera)
 					healthshaketime = 30
 				var val = 50

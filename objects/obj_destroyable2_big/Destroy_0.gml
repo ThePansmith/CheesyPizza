@@ -13,7 +13,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 		global.combotime = clamp(global.combotime, 0, 60);
 		var val = heat_calculate(100);
 		global.collect += val;
-		scr_sound_multiple("event:/sfx/misc/collect", x, y);
+		scr_sound_multiple(global.snd_collect, x, y);
 		with (instance_create(x + 16, y, obj_smallnumber))
 			number = string(val);
 	}

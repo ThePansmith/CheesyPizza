@@ -3,7 +3,7 @@ if (obj_player1.character == "V")
 global.heattime = 60;
 with (obj_camera)
 	healthshaketime = 60;
-fmod_event_one_shot("event:/sfx/misc/collectpizza");
+fmod_event_one_shot(global.snd_collectpizza);
 instance_destroy();
 global.combotime = 60;
 var val = heat_calculate(100);

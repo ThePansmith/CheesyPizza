@@ -33,6 +33,8 @@ function scr_get_texture_palette(texture)
 			if (_arr[i][0] == texture)
 				return _arr[i][1];
 		}
+		if asset_get_type(texture) == asset_sprite
+			return asset_get_index(texture);
 	}
 	return -4;
 }
