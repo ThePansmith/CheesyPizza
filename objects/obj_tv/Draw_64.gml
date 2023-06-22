@@ -2,8 +2,8 @@ live_auto_call
 if (room == editor_room)
 	exit;
 
-var char = obj_player1.character;
-var sugary = char == "SP";
+var chara = obj_player1.character;
+var sugary = chara == "SP";
 
 draw_set_font(lang_get_font("bigfont"));
 draw_set_halign(1);
@@ -31,14 +31,14 @@ if !sugary
 	combofill_x = lerp(combofill_x, _minX + ((_maxX - _minX) * _perc), 0.5);
 	combofill_y = _cy;
 	
-	draw_sprite(char != "PP" ? spr_tv_combobubblefill : spr_tv_combobubblefillPP, combofill_index, combofill_x, combofill_y);
-	draw_sprite(char != "PP" ? spr_tv_combobubble : spr_tv_combobubblePP, -1, _cx, _cy);
-	draw_set_font(char != "PP" ? global.combofont2 : global.combofont2PP);
+	draw_sprite(chara != "PP" ? spr_tv_combobubblefill : spr_tv_combobubblefillPP, combofill_index, combofill_x, combofill_y);
+	draw_sprite(chara != "PP" ? spr_tv_combobubble : spr_tv_combobubblePP, -1, _cx, _cy);
+	draw_set_font(chara != "PP" ? global.combofont2 : global.combofont2PP);
 	draw_set_align(0);
 	
 	var _tx = _cx - 64;
 	var _ty = _cy - 12;
-	if char != "PP"
+	if chara != "PP"
 		_ty = _cy - 12;
 	else // pissino
 		_ty = _cy - 1;
@@ -171,7 +171,8 @@ if (room != strongcold_endscreen)
 	// static
 	if (state == states.tv_whitenoise)
 	{
-		var charspr = asset_get_index("spr_tv_whitenoise" + char);
+		var charspr = asset_get_index("spr_tv_whitenoise" + chara);
+		trace(chara);
 		draw_sprite(charspr > -1 ? charspr : spr_tv_whitenoise, tv_trans, tv_x + collect_x, tv_y + collect_y + hud_posY);
 	}
 	
