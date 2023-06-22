@@ -63,7 +63,7 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "Get it? It's funny because");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "drafted");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Finally, you can wear merch of dead people.");
-		add_palette(12, "", spr_pattern_trans, "Trans Flag", "What country is this, and why do all the cute people come from there...?");
+		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Peppino says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Oh, fiddlesticks! What now?");
 		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "You bring a bucket?");
 		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "Don't fuck it up.");
@@ -139,7 +139,7 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "Look, the rat's clearly laughing.");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "At one point, Gustavo was canonically Peppino's brother.");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "I mean, he only killed 2 of them.");
-		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Porn watches student and gets dressed.");
+		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Gustavo and Brick say Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", " ");
 		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "You bring a bucket?");
 		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "Don't fuck it up.");
@@ -216,7 +216,7 @@ switch character
 	#region Vigilante
 	
 	case "V":
-		add_palette(0, "", noone, "The Vigilante", "AKA Vigert Ebenezer Lantte.", "");
+		add_palette(0, "", noone, "Vigilante", "AKA Vigert Ebenezer Lantte.", "");
 		add_palette(1, "", noone, "Halloween", "Trick or treat... this is a threat.", "SCARY");
 		add_palette(2, "", noone, "MM8BDM", "A very exciting night.", "DEATHMATCH");
 		add_palette(3, "", noone, "Chocolante", "It's still cheese, trust me.", "CHOCOLATE");
@@ -261,7 +261,7 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Hat", "Who's been drawing ºººº");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "This doesn't fit.");
 		add_palette(12, "john", spr_peppattern9, "John Cap", "Now you can wear a HAT of dead people.");
-		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Student watches porn and gets naked.");
+		add_palette(12, "", spr_pattern_trans, "Trans Flag", "The Vigilante says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "You can find them online, don't worry.");
 		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "Did you ever put cheese in water?");
 		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "Honestly. Relatable.");
@@ -312,7 +312,7 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "Get it? It's funny because");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "drafted");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Finally, you can wear merch of dead people.");
-		add_palette(12, "", spr_pattern_trans, "Trans Flag", "What country is this, and why do all the cute people come from there...?");
+		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Snick says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Oh, fiddlesticks! What now?");
 		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "You bring a bucket?");
 		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "Don't fuck it up.");
@@ -456,7 +456,7 @@ switch character
 		add_palette(7, "pp", spr_peppattern7, "PP Shirt", "I'm trying really hard to laugh.");
 		add_palette(7, "war", spr_peppattern8, "War Camo", "Every war had a distraction clown.");
 		add_palette(7, "john", spr_peppattern9, "John Suit", "Genuinely, the concept of this is morbid.");
-		add_palette(7, "", spr_pattern_trans, "Trans Flag", "The Noise says Trans Rights!");
+		add_palette(7, "", spr_pattern_trans, "Trans Flag", "Bo Noise says Tuc Rights!");
 		add_palette(7, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
 		add_palette(7, "", spr_pattern_minecraft_water, "Minecraft Water", "DO NOT drop it.");
 		add_palette(7, "", spr_pattern_minecraft_lava, "Minecraft Lava", "How do you do this, anyway...?");
