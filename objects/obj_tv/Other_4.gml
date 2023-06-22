@@ -79,6 +79,7 @@ switch (global.leveltosave)
 		tv_bg_index = 19;
 		break;
 	
+	// old levels
 	case "beach": tv_bg_index = 9; break;
 	case "factory": tv_bg_index = 15; break;
 	case "city": tv_bg_index = 13; break;
@@ -86,7 +87,12 @@ switch (global.leveltosave)
 	case "oldfactory": tv_bg_index = 15; break;
 	case "oldfreezer": tv_bg_index = 16; break;
 	case "golf": tv_bg_index = 12; break;
-	case "pinball": tv_bg_index = 8; break; // replace.
+	case "pinball": tv_bg_index = 22; break;
+	case "mansion": tv_bg_index = 21; break;
+	case "strongcold": tv_bg_index = 23; break;
+	
+	// pto exclusive
+	case "midway": tv_bg_index = 24; break;
 }
 if (special_prompts == -4 && room != Realtitlescreen && room != characterselect)
 {
@@ -188,7 +194,7 @@ switch (room)
 		global.srank = 4;
 		break;
 		
-	//custom levels yipee!
+	// pto
 	case strongcold_10:
 		global.srank = 19500;
 		break;

@@ -1246,7 +1246,7 @@
     {"id":{"name":"obj_verticalhallway","path":"objects/obj_verticalhallway/obj_verticalhallway.yy",},},
     {"id":{"name":"obj_forkhitbox","path":"objects/obj_forkhitbox/obj_forkhitbox.yy",},},
     {"id":{"name":"obj_slipnslide","path":"objects/obj_slipnslide/obj_slipnslide.yy",},},
-    {"id":{"name":"spr_pizzytvstatic","path":"sprites/spr_pizzytvstatic/spr_pizzytvstatic.yy",},},
+    {"id":{"name":"spr_tv_whitenoiseSP","path":"sprites/spr_tv_whitenoiseSP/spr_tv_whitenoiseSP.yy",},},
     {"id":{"name":"obj_warplaser","path":"objects/obj_warplaser/obj_warplaser.yy",},},
     {"id":{"name":"obj_baddieragehitbox","path":"objects/obj_baddieragehitbox/obj_baddieragehitbox.yy",},},
     {"id":{"name":"obj_noisegoblin_arrow","path":"objects/obj_noisegoblin_arrow/obj_noisegoblin_arrow.yy",},},

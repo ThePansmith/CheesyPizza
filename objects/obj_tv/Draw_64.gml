@@ -2,9 +2,8 @@ live_auto_call
 if (room == editor_room)
 	exit;
 
-var sugary = (obj_player1.character == "SP");
-var piss = (obj_player1.character == "PP");
-
+var char = obj_player1.character;
+var sugary = char == "SP";
 
 draw_set_font(lang_get_font("bigfont"));
 draw_set_halign(1);
@@ -31,17 +30,19 @@ if !sugary
 	var _maxX = _cx + 59;
 	combofill_x = lerp(combofill_x, _minX + ((_maxX - _minX) * _perc), 0.5);
 	combofill_y = _cy;
-	draw_sprite(!piss ? spr_tv_combobubblefill : spr_tv_combobubblefillPP, combofill_index, combofill_x, combofill_y);
-	draw_sprite(!piss ? spr_tv_combobubble : spr_tv_combobubblePP, -1, _cx, _cy);
-	draw_set_font(!piss ? global.combofont2 : global.combofont2PP);
-	draw_set_halign(0);
-	draw_set_valign(0);
+	
+	draw_sprite(char != "PP" ? spr_tv_combobubblefill : spr_tv_combobubblefillPP, combofill_index, combofill_x, combofill_y);
+	draw_sprite(char != "PP" ? spr_tv_combobubble : spr_tv_combobubblePP, -1, _cx, _cy);
+	draw_set_font(char != "PP" ? global.combofont2 : global.combofont2PP);
+	draw_set_align(0);
+	
 	var _tx = _cx - 64;
 	var _ty = _cy - 12;
-	if piss
-		_ty = _cy - 1;
-	else
+	if char != "PP"
 		_ty = _cy - 12;
+	else // pissino
+		_ty = _cy - 1;
+	
 	var _str = string(visualcombo);
 	var num = string_length(_str);
 	for (var i = num; i > 0; i--)
@@ -170,15 +171,8 @@ if (room != strongcold_endscreen)
 	// static
 	if (state == states.tv_whitenoise)
 	{
-		// todo don't do this
-		var whitenoisespr = spr_tv_whitenoise
-		if sugary
-			whitenoisespr = spr_pizzytvstatic
-		else if piss
-			whitenoisespr = spr_tv_whitenoisePP
-		else
-			whitenoisespr = spr_tv_whitenoise
-		draw_sprite(whitenoisespr, tv_trans, tv_x + collect_x, tv_y + collect_y + hud_posY);
+		var charspr = asset_get_index("spr_tv_whitenoise" + char);
+		draw_sprite(charspr > -1 ? charspr : spr_tv_whitenoise, tv_trans, tv_x + collect_x, tv_y + collect_y + hud_posY);
 	}
 	
 	// propeller
