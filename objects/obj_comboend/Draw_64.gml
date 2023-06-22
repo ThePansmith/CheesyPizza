@@ -3,7 +3,10 @@ if !global.option_hud
 var xx = x;
 var yy = y;
 draw_set_color(c_white);
-draw_sprite(spr_comboend, 0, xx, yy);
+if (obj_player1.character == "BN")
+	draw_sprite(spr_comboendBN, 0, xx, yy);
+else
+	draw_sprite(spr_comboend, 0, xx, yy);
 
 var title = floor(combo / 5);
 if (title > (sprite_get_number(spr_comboend_title1) / 2))
@@ -15,6 +18,8 @@ if (combo >= 80)
 	very = true;
 if sugary
 	draw_sprite(spr_comboend_titleSP, min(floor(combo / 5), 24), xx, yy + 30);
+else if bo
+	draw_sprite(spr_comboend_titleBN, (title * 2) + title_index, xx, yy + 30);
 else
 	draw_sprite(spr_comboend_title1, (title * 2) + title_index, xx, yy + 30);
 draw_set_font(lang_get_font("smallfont"));

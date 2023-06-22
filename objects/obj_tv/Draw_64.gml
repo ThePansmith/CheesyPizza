@@ -3,6 +3,8 @@ if (room == editor_room)
 
 var chara = obj_player1.character;
 var sugary = chara == "SP";
+var piss = chara == "PP";
+var bo = chara == "BN";
 
 draw_set_font(lang_get_font("bigfont"));
 draw_set_halign(1);
@@ -27,12 +29,37 @@ if !sugary
 	var _perc = global.combotime / 60;
 	var _minX = _cx - 56;
 	var _maxX = _cx + 59;
+	if(bo) 
+	{
+		combofill_x = lerp(combofill_x, _maxX + ((_minX - _maxX) * _perc), 0.5);
+		combofill_y = _cy;
+	}
+	else
+	{	
 	combofill_x = lerp(combofill_x, _minX + ((_maxX - _minX) * _perc), 0.5);
 	combofill_y = _cy;
+	}
 	
-	draw_sprite(chara != "PP" ? spr_tv_combobubblefill : spr_tv_combobubblefillPP, combofill_index, combofill_x, combofill_y);
-	draw_sprite(chara != "PP" ? spr_tv_combobubble : spr_tv_combobubblePP, -1, _cx, _cy);
-	draw_set_font(chara != "PP" ? global.combofont2 : global.combofont2PP);
+	var combobubblefill, combobubble, combofont;
+	if piss {
+		combobubblefill = spr_tv_combobubblefillPP;
+		combobubble = spr_tv_combobubblePP;
+		combofont = global.combofont2PP;
+	}
+	else if bo {
+		combobubblefill = spr_tv_combobubblefillBN;
+		combobubble = spr_tv_combobubbleBN;
+		combofont = global.combofont2BN;
+	}
+	else {
+		combobubblefill = spr_tv_combobubblefill;
+		combobubble = spr_tv_combobubble;
+		combofont = global.combofont2;
+	}
+	
+	draw_sprite(combobubblefill, combofill_index, combofill_x, combofill_y);
+	draw_sprite(combobubble, -1, _cx, _cy);
+	draw_set_font(combofont);
 	draw_set_align(0);
 	
 	var _tx = _cx - 64;

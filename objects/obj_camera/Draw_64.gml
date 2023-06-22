@@ -4,6 +4,8 @@ if (is_bossroom() || room == editor_room || instance_exists(obj_tutorialbook))
 
 var sugary = (obj_player1.character == "SP");
 var piss = (obj_player1.character == "PP");
+var bo = (obj_player1.character == "BN");
+
 if (global.kungfu)
 {
 	if (global.hp == 8)
@@ -92,6 +94,8 @@ if (obj_player.state != states.dead)
 		pizzascorespr = spr_cakehud
 	else if piss
 		pizzascorespr = spr_pizzascorePP
+	else if bo
+		pizzascorespr = spr_pizzascoreBN;
 	else
 		pizzascorespr = spr_pizzascore
 	draw_sprite_ext(pizzascorespr, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
@@ -119,6 +123,12 @@ if (obj_player.state != states.dead)
 			pepperonisprite = spr_pizzascore_pepperoniPP
 			olivesprite = spr_pizzascore_olivePP
 			shroomsprite = spr_pizzascore_shroomPP
+			break;
+		case "BN":
+			peppersprite = spr_null
+			pepperonisprite = spr_null
+			olivesprite = spr_null
+			shroomsprite = spr_null
 			break;
 	}		
 	var _score = global.collect;
@@ -162,8 +172,6 @@ if (obj_player.state != states.dead)
 		ranksprite = spr_ranks_hudSP
 	else if piss
 		ranksprite = spr_ranks_hudPP
-	else
-		ranksprite = spr_ranks_hud
 	draw_sprite_ext(ranksprite, rank_ix, rx, ry, rank_scale, rank_scale, 0, c_white, 1);
 	var spr_w = sprite_get_width(spr_ranks_hudfill);
 	var spr_h = sprite_get_height(spr_ranks_hudfill);
@@ -204,6 +212,8 @@ if (obj_player.state != states.dead)
 		collectfont = global.collectfontSP 
 	else if piss
 		collectfont = global.collectfontPP
+	else if bo 
+		collectfont = global.collectfontBN
 	else
 		collectfont = global.collectfont
 	draw_set_font(collectfont);
