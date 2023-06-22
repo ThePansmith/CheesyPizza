@@ -6,7 +6,10 @@ else
 	shader_set(global.Pal_Shader);
 	var cx = obj_screensizer.normal_size_fix_x;
 	var cy = obj_screensizer.normal_size_fix_y;
-	draw_sprite(spr_technicaldifficulty_bg, 0, cx, cy);
+	var bg = spr_technicaldifficulty_bg
+	if obj_player1.character == "PP"
+		bg = spr_technicaldifficulty_bgPP
+	draw_sprite(bg, 0, cx, cy);
 	pattern_set(global.Base_Pattern_Color, sprite, 0, 1, 1, global.palettetexture);
 	if (sprite != spr_technicaldifficulty4)
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false);

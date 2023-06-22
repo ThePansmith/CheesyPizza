@@ -47,6 +47,7 @@
     {"name":"inst_2174D071","path":"rooms/basement_1/basement_1.yy",},
     {"name":"inst_52248D2C","path":"rooms/basement_1/basement_1.yy",},
     {"name":"inst_43332B47","path":"rooms/basement_1/basement_1.yy",},
+    {"name":"inst_61804AA","path":"rooms/basement_1/basement_1.yy",},
   ],
   "isDnd": false,
   "layers": [

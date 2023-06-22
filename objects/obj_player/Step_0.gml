@@ -1236,14 +1236,8 @@ if ((y > (room_height + 300) || y < -800) && !place_meeting(x, y, obj_verticalha
 		hsp = 0;
 		vsp = 0;
 		sound_play_3d("event:/sfx/pep/groundpound", x, room_height - 100);
-		with (instance_create(x, y + 540, obj_technicaldifficulty))
-		{
-			playerid = other.id;
-			if (!other.isgustavo)
-				sprite = choose(spr_technicaldifficulty1, spr_technicaldifficulty2, spr_technicaldifficulty3);
-			else
-				sprite = spr_technicaldifficulty4;
-		}
+		with instance_create(x, y + 540, obj_technicaldifficulty)
+			playerid = other.id
 		vsp = 10;
 	}
 	else
