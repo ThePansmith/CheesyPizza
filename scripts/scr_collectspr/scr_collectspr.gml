@@ -43,6 +43,10 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 				case "SP":
 					spr = choose(spr_bigcollect1SP, spr_bigcollect2SP, spr_bigcollect3SP, spr_bigcollect4SP, spr_bigcollect5SP, spr_bigcollect6SP);
 					break;
+				
+				case "PP":
+					spr = choose(spr_bigcollect1PP, spr_bigcollect2PP, spr_bigcollect3PP, spr_bigcollect4PP, spr_bigcollect5PP);
+					break;
 			}
 			break;
 		
@@ -59,6 +63,10 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 				
 				case "SP":
 					spr = choose(spr_giantcollect1SP, spr_giantcollect2SP, spr_giantcollect3SP, spr_giantcollect4SP);
+					break;
+				
+				case "PP":
+					spr = spr_giantpizzaPP;
 					break;
 			}
 			break;

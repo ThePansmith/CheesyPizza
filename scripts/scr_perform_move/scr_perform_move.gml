@@ -17,7 +17,7 @@ function scr_perform_move(move, prestate)
 					sprite_index = choose(spr_kungfu1, spr_kungfu2, spr_kungfu3);
 				}
 				else
-					sprite_index = choose(spr_player_kungfuair1transition, spr_player_kungfuair2transition, spr_player_kungfuair3transition);
+					sprite_index = choose(spr_kungfuair1transition, spr_kungfuair2transition, spr_kungfuair3transition);
 				suplexmove = true;
 							
 				particle_set_scale(particle.crazyrunothereffect, xscale, 1);

@@ -272,6 +272,12 @@ function scr_characterspr()
 		spr_kungfu3 = spr_player_kungfu3;
 		spr_lungehit = spr_player_lungehit;
 		spr_throw = spr_player_throw;
+		spr_kungfuair1 = spr_player_kungfuair1;
+		spr_kungfuair2 = spr_player_kungfuair2;
+		spr_kungfuair3 = spr_player_kungfuair3;
+		spr_kungfuair1transition = spr_player_kungfuair1transition;
+		spr_kungfuair2transition = spr_player_kungfuair2transition;
+		spr_kungfuair3transition = spr_player_kungfuair3transition;
 		spr_palette = spr_peppalette
 		paletteselect = 1;
 	}
@@ -532,6 +538,12 @@ function scr_characterspr()
 		spr_kungfu3 = spr_player_kungfu3;
 		spr_lungehit = spr_player_lungehit;
 		spr_throw = spr_player_throw;
+		spr_kungfuair1 = spr_player_kungfuair1;
+		spr_kungfuair2 = spr_player_kungfuair2;
+		spr_kungfuair3 = spr_player_kungfuair3;
+		spr_kungfuair1transition = spr_player_kungfuair1transition;
+		spr_kungfuair2transition = spr_player_kungfuair2transition;
+		spr_kungfuair3transition = spr_player_kungfuair3transition;
 		spr_palette = spr_noisepalette;
 		paletteselect = 0;
 	}
@@ -725,6 +737,12 @@ function scr_characterspr()
 		spr_kungfu3 = spr_player_kungfu3;
 		spr_lungehit = spr_player_lungehit;
 		spr_throw = spr_player_throw;
+		spr_kungfuair1 = spr_player_kungfuair1;
+		spr_kungfuair2 = spr_player_kungfuair2;
+		spr_kungfuair3 = spr_player_kungfuair3;
+		spr_kungfuair1transition = spr_player_kungfuair1transition;
+		spr_kungfuair2transition = spr_player_kungfuair2transition;
+		spr_kungfuair3transition = spr_player_kungfuair3transition;
 		spr_palette = spr_vigipalette;
 		paletteselect = 0;
 	}
@@ -995,6 +1013,12 @@ function scr_characterspr()
 		spr_kungfu3 = spr_player_kungfu3;
 		spr_lungehit = spr_player_lungehit;
 		spr_throw = spr_player_throw;
+		spr_kungfuair1 = spr_player_kungfuair1;
+		spr_kungfuair2 = spr_player_kungfuair2;
+		spr_kungfuair3 = spr_player_kungfuair3;
+		spr_kungfuair1transition = spr_player_kungfuair1transition;
+		spr_kungfuair2transition = spr_player_kungfuair2transition;
+		spr_kungfuair3transition = spr_player_kungfuair3transition;
 		spr_palette = spr_pizzypalette;
 		paletteselect = 1;
 	}
@@ -1109,7 +1133,7 @@ function scr_characterspr()
 		spr_bombpeprunabouttoexplode = spr_bombpep_runabouttoexplode; //and again here (loypoll commenting) (this is a JOKE NOT A JAB)
 		spr_bombpepend = spr_bombpep_end;
 		spr_fireass = spr_playerPP_fireass;
-		spr_fireassground = spr_player_fireassend;
+		spr_fireassground = spr_playerPP_fireassground;
 		spr_tumblestart = spr_playerPP_tumblestart; // unused isn't it
 		spr_tumbleend = spr_playerPP_tumbleend;
 		spr_tumble = spr_playerPP_tumble;
@@ -1251,6 +1275,12 @@ function scr_characterspr()
 		spr_kungfu3 = spr_playerPP_kungfu3;
 		spr_lungehit = spr_playerPP_lungehit;
 		spr_throw = spr_playerPP_throw;
+		spr_kungfuair1 = spr_playerPP_kungfuair1;
+		spr_kungfuair2 = spr_playerPP_kungfuair2;
+		spr_kungfuair3 = spr_playerPP_kungfuair3;
+		spr_kungfuair1transition = spr_player_kungfuair1transition;
+		spr_kungfuair2transition = spr_player_kungfuair2transition;
+		spr_kungfuair3transition = spr_player_kungfuair3transition;
 		spr_palette = spr_pisspalette;
 		paletteselect = 0;
 	}
@@ -1474,6 +1504,12 @@ function scr_characterspr()
 		spr_kungfu2 = spr_player_kungfu2;
 		spr_kungfu3 = spr_player_kungfu3;
 		spr_lungehit = spr_player_lungehit;
+		spr_kungfuair1 = spr_player_kungfuair1;
+		spr_kungfuair2 = spr_player_kungfuair2;
+		spr_kungfuair3 = spr_player_kungfuair3;
+		spr_kungfuair1transition = spr_player_kungfuair1transition;
+		spr_kungfuair2transition = spr_player_kungfuair2transition;
+		spr_kungfuair3transition = spr_player_kungfuair3transition;
 		spr_palette = spr_snickpalette
 	}
 	
@@ -1732,6 +1768,12 @@ function scr_characterspr()
 		spr_kungfu3 = spr_playerBN_kungfu3;
 		spr_lungehit = spr_player_lungehit;
 		spr_throw = spr_player_throw;
+		spr_kungfuair1 = spr_player_kungfuair1;
+		spr_kungfuair2 = spr_player_kungfuair2;
+		spr_kungfuair3 = spr_player_kungfuair3;
+		spr_kungfuair1transition = spr_player_kungfuair1transition;
+		spr_kungfuair2transition = spr_player_kungfuair2transition;
+		spr_kungfuair3transition = spr_player_kungfuair3transition;
 		spr_palette = spr_bopalette;
 		paletteselect = 0;
 	}

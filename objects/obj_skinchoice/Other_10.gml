@@ -433,6 +433,7 @@ switch character
 		add_palette(12, "john", spr_peppattern9, "John Suit", "John who?");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Giving this a description would be very dangerous.");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Oh, fiddlesticks! What now?");
+		add_palette(12, "", spr_pattern_mario, "Mario Shirt", "After 6 months of development, it's finally here.");
 		break;
 	
 	#endregion

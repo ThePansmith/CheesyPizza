@@ -79,7 +79,7 @@ function scr_player_punch()
 		hsp = xscale * movespeed;
 				
 		var _kungfuground = sprite_index == spr_kungfu1 or sprite_index == spr_kungfu2 or sprite_index == spr_kungfu3 or sprite_index == spr_shotgunsuplexdash;
-		var _kungfuair = sprite_index == spr_player_kungfuair1 or sprite_index == spr_player_kungfuair2 or sprite_index == spr_player_kungfuair3 or sprite_index == spr_player_kungfuair1transition or sprite_index == spr_player_kungfuair2transition or sprite_index == spr_player_kungfuair3transition;
+		var _kungfuair = sprite_index == spr_kungfuair1 or sprite_index == spr_kungfuair2 or sprite_index == spr_kungfuair3 or sprite_index == spr_kungfuair1transition or sprite_index == spr_kungfuair2transition or sprite_index == spr_kungfuair3transition;
 		var _Sjumpcancel = sprite_index == spr_player_Sjumpcancel or sprite_index == spr_player_Sjumpcancelland or sprite_index == spr_player_Sjumpcancelslide;
 				
 		if (_kungfuground && image_index > 7 && !key_attack && movespeed > 0)
@@ -119,7 +119,7 @@ function scr_player_punch()
 				sprite_index = spr_mach2jump;
 		}
 		else if _kungfuground && vsp < 0
-			sprite_index = choose(spr_player_kungfuair1, spr_player_kungfuair2, spr_player_kungfuair3);
+			sprite_index = choose(spr_kungfuair1, spr_kungfuair2, spr_kungfuair3);
 		if (key_down && (_kungfuair or _kungfuground))
 		{
 			particle_set_scale(particle.jumpdust, xscale, 1);
@@ -174,14 +174,14 @@ function scr_player_punch()
 					}
 					break;
 						
-				case spr_player_kungfuair1transition:
-					sprite_index = spr_player_kungfuair1;
+				case spr_kungfuair1transition:
+					sprite_index = spr_kungfuair1;
 					break;
-				case spr_player_kungfuair2transition:
-					sprite_index = spr_player_kungfuair2;
+				case spr_kungfuair2transition:
+					sprite_index = spr_kungfuair2;
 					break;
-				case spr_player_kungfuair3transition:
-					sprite_index = spr_player_kungfuair3;
+				case spr_kungfuair3transition:
+					sprite_index = spr_kungfuair3;
 					break;
 				case spr_player_Sjumpcancelland:
 					sprite_index = spr_player_Sjumpcancelslide;

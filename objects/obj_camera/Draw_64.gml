@@ -265,7 +265,7 @@ if (obj_player.state != states.dead)
 	draw_set_alpha(1);
 	reset_shader_fix();
 	
-	if piss
+	if piss && global.heatmeter
 	{
 		draw_sprite_part(spr_heatmeter_fillPP, pizzascore_index, 0, 0, sw * b, sh, hud_xx - 89, hud_yy - 87);
 		draw_sprite_ext(spr_heatmeterPP, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
