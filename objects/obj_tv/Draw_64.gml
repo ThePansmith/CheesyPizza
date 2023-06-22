@@ -1,5 +1,3 @@
-live_auto_call;
-
 if (room == editor_room)
 	exit;
 
