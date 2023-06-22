@@ -32,6 +32,36 @@ if (global.collect >= global.collectN)
 		if (global.rank == "p")
 			sprite_index = spr_rankSPP;
 	}
+	else if obj_player1.character == "N"
+	{
+		if (global.rank == "s")
+			sprite_index = spr_rankNS;
+		if (global.rank == "a")
+			sprite_index = spr_rankNA;
+		if (global.rank == "b")
+			sprite_index = spr_rankNB;
+		if (global.rank == "c")
+			sprite_index = spr_rankNC;
+		if (global.rank == "d")
+			sprite_index = spr_rankND;
+		if (global.rank == "p")
+			sprite_index = spr_rankP;
+	}
+	else if obj_player1.character == "PP"
+	{
+		if (global.rank == "s")
+			sprite_index = spr_rankPPS;
+		if (global.rank == "a")
+			sprite_index = spr_rankPPA;
+		if (global.rank == "b")
+			sprite_index = spr_rankPPB;
+		if (global.rank == "c")
+			sprite_index = spr_rankPPC;
+		if (global.rank == "d")
+			sprite_index = spr_rankPPD;
+		if (global.rank == "p")
+			sprite_index = spr_rankPPP;
+	}
 	else
 	{
 		if (global.rank == "s")

@@ -15,12 +15,16 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 				case "N":
 					spr = choose(spr_halloweencollectibles1, spr_halloweencollectibles2, spr_halloweencollectibles3, spr_halloweencollectibles4, spr_halloweencollectibles5);
 					break;
-				
+				 
 				case "SP":
 					spr = choose(spr_collect1SP, spr_collect2SP, spr_collect3SP, spr_collect4SP, spr_collect5SP);
 					
 					spr_palette = spr_collectSP_palette;
 					paletteselect = choose(1, 2, 3, 4, 5);
+					break;
+				
+				case "PP":
+					spr = choose(spr_collect1PP, spr_collect2PP, spr_collect3PP, spr_collect4PP, spr_collect5PP);
 					break;
 			}
 			break;
