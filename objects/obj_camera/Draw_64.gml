@@ -50,8 +50,25 @@ if (obj_player.state != states.dead)
 			pizzascore_index = 0;
 	}
 	
-	var sw = sprite_get_width(spr_heatmeter_fill);
-	var sh = sprite_get_height(spr_heatmeter_fill);
+	var heatfill = spr_heatmeter_fill
+	var heatmeter = spr_heatmeter
+	switch obj_player1.character
+	{
+		default:
+			heatfill = spr_heatmeter_fill
+			heatmeter = spr_heatmeter
+			break;
+		case "SP":
+			heatfill = spr_heatmeter_fillSP
+			heatmeter = spr_heatmeterSP
+			break;
+		case "PP":
+			heatfill = spr_heatmeter_fillPP
+			heatmeter = spr_heatmeterPP
+			break;
+	}
+	var sw = sprite_get_width(heatfill);
+	var sh = sprite_get_height(heatfill);
 	var b = global.stylemultiplier;
 	var hud_xx = 121 + irandom_range(-collect_shake, collect_shake);
 	var hud_yy = 90 + irandom_range(-collect_shake, collect_shake) + hud_posY;
@@ -59,11 +76,14 @@ if (obj_player.state != states.dead)
 	// heat meter
 	if global.heatmeter
 	{
-		shader_set(global.Pal_Shader);
-		pal_swap_set(sugary ? spr_heatmeterSPpal : spr_heatmeter_palette, min(global.stylethreshold, 3) + (global.stylethreshold >= 3 && global.style >= 55), false);
-		draw_sprite_part(sugary ? spr_heatmeter_fillSP : spr_heatmeter_fill, pizzascore_index, 0, 0, sw * b, sh, hud_xx - 95, hud_yy + 24);
-		draw_sprite_ext(sugary ? spr_heatmeterSP : spr_heatmeter, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
-		reset_shader_fix();
+		if !piss
+		{
+			shader_set(global.Pal_Shader);
+			pal_swap_set(sugary ? spr_heatmeterSPpal : spr_heatmeter_palette, min(global.stylethreshold, 3) + (global.stylethreshold >= 3 && global.style >= 55), false);
+			draw_sprite_part(heatfill, pizzascore_index, 0, 0, sw * b, sh, hud_xx - 95, hud_yy + 24);
+			draw_sprite_ext(heatmeter, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
+			reset_shader_fix();
+		}
 	}
 	
 	// score
@@ -95,7 +115,7 @@ if (obj_player.state != states.dead)
 			shroomsprite = spr_cakehud_srank
 			break;
 		case "PP":
-			peppersprite = spr_pizzascore_pepper
+			peppersprite = spr_pizzascore_pepperPP
 			pepperonisprite = spr_pizzascore_pepperoniPP
 			olivesprite = spr_pizzascore_olivePP
 			shroomsprite = spr_pizzascore_shroomPP
@@ -141,7 +161,7 @@ if (obj_player.state != states.dead)
 	if sugary
 		ranksprite = spr_ranks_hudSP
 	else if piss
-		ranksprite = spr_ranks_hud
+		ranksprite = spr_ranks_hudPP
 	else
 		ranksprite = spr_ranks_hud
 	draw_sprite_ext(ranksprite, rank_ix, rx, ry, rank_scale, rank_scale, 0, c_white, 1);
@@ -169,7 +189,14 @@ if (obj_player.state != states.dead)
 	}
 	var t = spr_h * perc;
 	var top = spr_h - t;
-	draw_sprite_part(sugary ? spr_ranks_hudfillSP : spr_ranks_hudfill, rank_ix, 0, top, spr_w, spr_h - top, rx - spr_xo, (ry - spr_yo) + top);
+	var rankfillsprite = spr_ranks_hudfill
+	if sugary
+		rankfillsprite = spr_ranks_hudfillSP
+	else if piss
+		rankfillsprite = spr_ranks_hudfillPP
+	else
+		rankfillsprite = spr_ranks_hudfill
+	draw_sprite_part(rankfillsprite, rank_ix, 0, top, spr_w, spr_h - top, rx - spr_xo, (ry - spr_yo) + top);
 	draw_set_valign(0);
 	draw_set_halign(0);
 	var collectfont = global.collectfont
@@ -237,6 +264,12 @@ if (obj_player.state != states.dead)
 	}
 	draw_set_alpha(1);
 	reset_shader_fix();
+	
+	if piss
+	{
+		draw_sprite_part(spr_heatmeter_fillPP, pizzascore_index, 0, 0, sw * b, sh, hud_xx - 89, hud_yy - 87);
+		draw_sprite_ext(spr_heatmeterPP, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
+	}
 	
 	// bullets
 	if global.shootstyle == 1
