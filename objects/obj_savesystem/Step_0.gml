@@ -14,7 +14,7 @@ if (room == hub_loadingscreen && state != 2)
 			ini_open_from_string(obj_savesystem.ini_str);
 			var _intro = ini_read_real("Tutorial", "finished", false);
 			
-			character = ini_read_real("Game", "character", "P");
+			character = ini_read_string("Game", "character", "P");
 			scr_characterspr();
 			if character == "G"
 			{
