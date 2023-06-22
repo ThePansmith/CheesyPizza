@@ -66,6 +66,8 @@ var entrance_func = function(room, event, event_secret)
 		case "N": s = 1; break;
 		case "V": s = 2; break;
 		case "SP": s = 3; break;
+		case "PP": s = 4; break;
+		case "BN": s = 5; break;
 	}
 	
 	fmod_event_instance_set_parameter(event, "state", s, true);
