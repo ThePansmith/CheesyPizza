@@ -398,18 +398,41 @@ switch character
 	#region Pissino
 	
 	case "PP":
-		var desc = "God is dead and we killed him.";
-		
-		add_palette(0, "", noone, "Pissino", desc);
-		add_palette(1, "", noone, "White", "A somewhat overweight italian failure.");
+		add_palette(0, "", noone, "Pissino", "God is dead and we killed him.", "");
+		add_palette(1, "", noone, "White", "There's no joke here.");
 		add_palette(3, "", noone, "Red", "It could also be-a him, for all we know.");
-		add_palette(4, "", noone, "Blue", "The day he forgot his purpose.");
-		add_palette(5, "", noone, "Freddy", "hor hor horhor hor hor horhor horhor");
-		add_palette(6, "", noone, "Sketch", "He wouldn't have crashed into somebody.\nHe would've shot a whole convenience store down.");
-		add_palette(7, "", noone, "Grand Dad", "FLINTSTONES HAHAHAHA");
-		add_palette(8, "", noone, "Dorito", "Undertale");
-		add_palette(9, "", noone, "Black", "I dislike them.");
+		add_palette(4, "", noone, "Blue", "The day he forgot his purpose...");
+		add_palette(5, "", noone, "Freddy", "Hor, hor, hor-hor, hor.", "SHITTY");
+		add_palette(6, "", noone, "Sketch", "Please make sprite Please", "SKETCH");
+		add_palette(7, "", noone, "Grand Dad", "Hilarity ensues.", "GRAND");
+		add_palette(8, "", noone, "Dorito", "I do love chips with a side of piss.", "DORITO");
+		add_palette(9, "", noone, "Black", "Not the clothes.", "BLACK");
+		add_palette(10, "", noone, "Metal", "Balls of steel.", "METAL");
+		add_palette(11, "", noone, "???", "You can't get darker than this.", "SHADOW");
+		add_palette(15, "", noone, "Random", "This isn't even a joke, and I'm asking this personally. Who hurt you? What happened for things to be this way? Are you okay, mentally?");
+		add_palette(16, "", noone, "Grunt", "They must be living a pretty sad life right now.", "SAD");
+		add_palette(17, "", noone, "McDonalds", "Dogshit. Only their nuggets are good.", "PISS");
+		add_palette(18, "", noone, "Elmo", "You have come to his event. Now you must endure forceful cosplay.", "ELMO");
+		add_palette(19, "", noone, "Manual", "You ever just, uh, feel like emanating a STRONG stench of urine?");
+		add_palette(20, "", noone, "Snick", "It's not him. It's NOT HIM. RUN AWAY.", "SNICK");
+		add_palette(21, "", noone, "The Evil", "The past!");
+		add_palette(22, "", noone, "Super Mario", "HOLY FUCKING SHIT", "RETRO");
+		add_palette(23, "", noone, "Lean", "Jokes have a lifespan.", "LEAN");
+		add_palette(24, "", noone, "4chan Mystery Box", "Settle down, you're going insane.", "HIGH");
+		add_palette(24, "", noone, "Brody Foxx", "He died in 2006 from a severe ketamine overdose.", "YO MAMA SO");
 		
+		// Patterns
+		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "When you spam racial slurs in general.");
+		add_palette(12, "itchy", spr_peppattern2, "Itchy Sweater", "Just drench it with piss, that usually does the trick.");
+		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "Not quite.");
+		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "Facebook rat video.");
+		add_palette(12, "goldemanne", spr_peppattern5, "Goldemanne", "No, downvote him.");
+		add_palette(12, "bones", spr_peppattern6, "Bad Bones", "That's fitting.");
+		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "Time really is a flat circle.");
+		add_palette(12, "war", spr_peppattern8, "War Camo", "A piss bomb sounds like a war crime.");
+		add_palette(12, "john", spr_peppattern9, "John Suit", "John who?");
+		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Giving this a description would be very dangerous.");
+		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Oh, fiddlesticks! What now?");
 		break;
 	
 	#endregion
