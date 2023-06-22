@@ -413,6 +413,45 @@ switch character
 		break;
 	
 	#endregion
+	#region Bo Noise
+	
+	case "BN":
+		add_palette(0, "", noone, "Bo Noise", "Only the Bo-est of Noises.", "");
+		add_palette(2, "", noone, "Peppino", "The one and only...?");
+		add_palette(3, "", noone, "Snick", "It's him...?", "PURPLE");
+		add_palette(4, "", noone, "Bo Goise", "Kill Yourself", "UNWORTHY");
+		add_palette(5, "", noone, "Inverted", "Ooo... scary...!");
+		add_palette(6, "", noone, "Naked", "Wow. Yikes.");
+		
+		// Patterns
+		add_palette(7, "funny", spr_peppattern1, "Funny Polka", "10 years behind bars for spamming Big Chungus.");
+		add_palette(7, "itchy", spr_peppattern2, "Itchy Sweater", "Woven with Grandma's intestines.");
+		add_palette(7, "pizza", spr_peppattern3, "Pizza Man", "I thought he... collected candy?");
+		add_palette(7, "stripes", spr_peppattern4, "Bowling Stripes", "He committed genocide against RATS.");
+		add_palette(7, "goldemanne", spr_peppattern5, "Goldemanne", "Thanks for the gold, kind stranger.");
+		add_palette(7, "bones", spr_peppattern6, "Bad Bones", "Bad to the Noise.");
+		add_palette(7, "pp", spr_peppattern7, "PP Shirt", "I'm trying really hard to laugh.");
+		add_palette(7, "war", spr_peppattern8, "War Camo", "Every war had a distraction clown.");
+		add_palette(7, "john", spr_peppattern9, "John Suit", "Genuinely, the concept of this is morbid.");
+		add_palette(7, "", spr_pattern_trans, "Trans Flag", "The Noise says Trans Rights!");
+		add_palette(7, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
+		add_palette(7, "", spr_pattern_minecraft_water, "Minecraft Water", "DO NOT drop it.");
+		add_palette(7, "", spr_pattern_minecraft_lava, "Minecraft Lava", "How do you do this, anyway...?");
+		add_palette(7, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
+		add_palette(7, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
+		add_palette(7, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
+		add_palette(7, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
+		add_palette(7, "", spr_pattern_snick, "Snick", "Didn't know SAGE had merch.");
+		add_palette(7, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
+		add_palette(7, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
+		add_palette(7, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
+		add_palette(7, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
+		add_palette(7, "", spr_pattern_livewire, "Livewire", "Light up the night.");
+		add_palette(7, "", spr_pattern_mobius, "Mobius Strip", "Gotta' speed, Keed.");
+		add_palette(7, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		break;
+	
+	#endregion
 }
 pal_swap_index_palette(characters[sel.char][2]);
 init = true;
