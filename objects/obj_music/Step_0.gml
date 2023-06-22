@@ -46,6 +46,7 @@ if (global.panic && global.leveltosave != "dragonlair")
 			case "N": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeN"); break;
 			case "V": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeV"); break;
 			case "SP": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeSP"); break;
+			case "PP": panicmusicID = fmod_event_create_instance("event:/music/pizzatimePP"); break;
 		}
 		
 		trace("Starting panic music: step");
