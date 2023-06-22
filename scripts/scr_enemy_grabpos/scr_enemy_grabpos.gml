@@ -32,9 +32,9 @@ function scr_enemy_grabpos(_obj_player)
 	#endregion
 	#region Superslam
 	
-	else if (p.state == states.superslam || (p.state == states.chainsaw && sprite_index == spr_player_piledriver))
+	else if (p.state == states.superslam || (p.state == states.chainsaw && sprite_index == spr_piledriver))
 	{
-		if (p.character == "P")
+		if (p.character == "P") or (p.characater == "PP")
 		{
 			if (p.sprite_index != p.spr_piledriverland)
 			{

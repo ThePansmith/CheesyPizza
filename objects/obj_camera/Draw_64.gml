@@ -3,7 +3,7 @@ if (is_bossroom() || room == editor_room || instance_exists(obj_tutorialbook))
 	exit;
 
 var sugary = (obj_player1.character == "SP");
-
+var piss = (obj_player1.character == "PP");
 if (global.kungfu)
 {
 	if (global.hp == 8)
@@ -67,7 +67,14 @@ if (obj_player.state != states.dead)
 	}
 	
 	// score
-	draw_sprite_ext(!sugary ? spr_pizzascore : spr_cakehud, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
+	var pizzascorespr = spr_pizzascore
+	if sugary
+		pizzascorespr = spr_cakehud
+	else if piss
+		pizzascorespr = spr_pizzascorePP
+	else
+		pizzascorespr = spr_pizzascore
+	draw_sprite_ext(pizzascorespr, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
 	
 	var _score = global.collect;
 	if (global.coop)
@@ -133,7 +140,14 @@ if (obj_player.state != states.dead)
 	draw_sprite_part(sugary ? spr_ranks_hudfillSP : spr_ranks_hudfill, rank_ix, 0, top, spr_w, spr_h - top, rx - spr_xo, (ry - spr_yo) + top);
 	draw_set_valign(0);
 	draw_set_halign(0);
-	draw_set_font(sugary ? global.collectfontSP : global.collectfont);
+	var collectfont = global.collectfont
+	if sugary
+		collectfont = global.collectfontSP 
+	else if piss
+		collectfont = global.collectfontPP
+	else
+		collectfont = global.collectfont
+	draw_set_font(collectfont);
 	var text_y = 0;
 	switch (floor(pizzascore_index))
 	{

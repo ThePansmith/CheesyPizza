@@ -59,7 +59,7 @@ function boss_hurt(argument0, argument1)
 				scr_pummel();
 			else if (state == states.knightpep && vsp > 0 && y < (other.y - 30))
 			{
-				sprite_index = spr_knightpep_doublejump;
+				sprite_index = spr_knightpepdoublejump;
 				image_index = 0;
 				vsp = -11;
 				movespeed = 6;

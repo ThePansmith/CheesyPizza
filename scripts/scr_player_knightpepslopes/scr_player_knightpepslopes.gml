@@ -51,7 +51,7 @@ function scr_player_knightpepslopes()
 				}
 				vsp = -11;
 				doublejump = true;
-				sprite_index = spr_knightpep_doublejump;
+				sprite_index = spr_knightpepdoublejump;
 			}
 			if (!doublejump)
 			{
@@ -60,9 +60,9 @@ function scr_player_knightpepslopes()
 			}
 		}
 	}
-	if (sprite_index != spr_knightpepfly && sprite_index != spr_knightpep_doublejump && sprite_index != spr_knightpepjump && !grounded)
+	if (sprite_index != spr_knightpepfly && sprite_index != spr_knightpepdoublejump && sprite_index != spr_knightpepjump && !grounded)
 		sprite_index = spr_knightpepfly;
-	if ((sprite_index == spr_knightpep_doublejump || sprite_index == spr_knightpepfly) && floor(image_index) == (image_number - 1))
+	if ((sprite_index == spr_knightpepdoublejump || sprite_index == spr_knightpepfly) && floor(image_index) == (image_number - 1))
 		image_index = image_number - 1;
 	if (scr_solid(x + sign(hsp), y) && (!scr_slope() || place_meeting(x + sign(hsp), y - 2, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_slope_parent) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 	{

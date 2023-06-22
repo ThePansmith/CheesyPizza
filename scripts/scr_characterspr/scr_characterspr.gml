@@ -124,6 +124,7 @@ function scr_characterspr()
 		spr_knightpepfly = spr_knightpep_fly;
 		spr_knightpepdownthrust = spr_knightpep_downtrust;
 		spr_knightpepupslope = spr_knightpep_upslope;
+		spr_knightpepdoublejump = spr_knightpep_doublejump;
 		spr_bodyslamfall = spr_player_bodyslamfall;
 		spr_bodyslamstart = spr_player_bodyslamstart;
 		spr_bodyslamland = spr_player_bodyslamland;
@@ -397,6 +398,7 @@ function scr_characterspr()
 		spr_knightpepdownslope = spr_playerN_knightdownslope;
 		spr_knightpepstart = spr_playerN_knightsword;
 		spr_knightpepcharge = spr_playerN_knightslide;
+		spr_knightpepdoublejump = spr_knightpep_doublejump;
 		spr_bodyslamstart = spr_playerN_bodyslamstart;
 		spr_bodyslamfall = spr_playerN_bodyslam;
 		spr_bodyslamland = spr_playerN_bodyslamland;
@@ -1041,6 +1043,7 @@ function scr_characterspr()
 		spr_knightpepcharge = spr_knightpizzy_charge;
 		spr_knightpepfly = spr_knightpizzy_fly;
 		spr_knightpepdownthrust = spr_knightpizzy_downthrust;
+		spr_knightpepdoublejump = spr_knightpep_doublejump;
 		spr_knightpepupslope = spr_knightpizzy_upslope;
 		spr_bodyslamfall = spr_playerSP_bodyslamfall;
 		spr_bodyslamstart = spr_playerSP_bodyslamstart;
@@ -1305,6 +1308,7 @@ function scr_characterspr()
 		spr_knightpepfly = spr_knightpepPP_fly;
 		spr_knightpepdownthrust = spr_knightpepPP_downtrust;
 		spr_knightpepupslope = spr_knightpepPP_upslope;
+		spr_knightpepdoublejump = spr_knightpepPP_doublejump;
 		spr_bodyslamfall = spr_playerPP_bodyslamfall;
 		spr_bodyslamstart = spr_playerPP_bodyslamstart;
 		spr_bodyslamland = spr_playerPP_bodyslamland;
