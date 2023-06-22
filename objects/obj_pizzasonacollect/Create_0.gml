@@ -15,13 +15,7 @@ sparkleactive = false;
 
 var r = -1;
 while (r == -1 || r == 8) // pizzasona8 seems to be removed, what happened to it?
-	r = irandom_range(1, 57);
-
-if ((r == 56 || r == 57) && (irandom_range(1, 1024) == r))
-{
-	spr_palette = asset_get_index($"spr_pizzasona_{r}palette");
-	paletteselect = 1;
-}
+	r = irandom_range(1, 56);
 
 idlespr = asset_get_index(concat("spr_pizzasona", r));
 throwspr = asset_get_index(concat("spr_pizzasona", r, "throw"));

@@ -76,17 +76,42 @@ if (obj_player.state != states.dead)
 		pizzascorespr = spr_pizzascore
 	draw_sprite_ext(pizzascorespr, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
 	
+	var peppersprite = spr_pizzascore_pepper
+	var pepperonisprite = spr_pizzascore_pepperoni
+	var olivesprite = spr_pizzascore_olive
+	var shroomsprite = spr_pizzascore_shroom
+	switch obj_player1.character
+	{
+		default:
+			peppersprite = spr_pizzascore_pepper
+			pepperonisprite = spr_pizzascore_pepperoni
+			olivesprite = spr_pizzascore_olive
+			shroomsprite = spr_pizzascore_shroom
+			break;
+		case "SP":
+			peppersprite = spr_cakehud_crank
+			pepperonisprite = spr_cakehud_brank
+			olivesprite = spr_cakehud_arank
+			shroomsprite = spr_cakehud_srank
+			break;
+		case "PP":
+			peppersprite = spr_pizzascore_pepper
+			pepperonisprite = spr_pizzascore_pepperoniPP
+			olivesprite = spr_pizzascore_olivePP
+			shroomsprite = spr_pizzascore_shroomPP
+			break;
+	}		
 	var _score = global.collect;
 	if (global.coop)
 		_score += global.collectN;
 	if (_score >= global.crank)
-		draw_sprite_ext(!sugary ? spr_pizzascore_pepper : spr_cakehud_crank, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
+		draw_sprite_ext(peppersprite, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
 	if (_score >= global.brank)
-		draw_sprite_ext(!sugary ? spr_pizzascore_pepperoni : spr_cakehud_brank, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
+		draw_sprite_ext(pepperonisprite, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
 	if (_score >= global.arank)
-		draw_sprite_ext(!sugary ? spr_pizzascore_olive : spr_cakehud_arank, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
+		draw_sprite_ext(olivesprite, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
 	if (_score >= global.srank)
-		draw_sprite_ext(!sugary ? spr_pizzascore_shroom : spr_cakehud_srank, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
+		draw_sprite_ext(shroomsprite, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
 	
 	var rx = hud_xx + 142;
 	var ry = hud_yy - 22;
@@ -112,7 +137,14 @@ if (obj_player.state != states.dead)
 		rank_scale = 3;
 	}
 	rank_scale = Approach(rank_scale, 1, 0.2);
-	draw_sprite_ext(sugary ? spr_ranks_hudSP : spr_ranks_hud, rank_ix, rx, ry, rank_scale, rank_scale, 0, c_white, 1);
+	var ranksprite = spr_ranks_hud
+	if sugary
+		ranksprite = spr_ranks_hudSP
+	else if piss
+		ranksprite = spr_ranks_hud
+	else
+		ranksprite = spr_ranks_hud
+	draw_sprite_ext(ranksprite, rank_ix, rx, ry, rank_scale, rank_scale, 0, c_white, 1);
 	var spr_w = sprite_get_width(spr_ranks_hudfill);
 	var spr_h = sprite_get_height(spr_ranks_hudfill);
 	var spr_xo = sprite_get_xoffset(spr_ranks_hudfill);
