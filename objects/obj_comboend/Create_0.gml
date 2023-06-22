@@ -18,3 +18,5 @@ with (obj_player)
 		global.combodropped = true;
 }
 sugary = (obj_player1.character == "SP");
+piss = (obj_player1.character == "PP");
+bo = (obj_player1.character == "BN");

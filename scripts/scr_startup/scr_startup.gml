@@ -16,7 +16,7 @@ global.bigfont = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.1234
 global.smallfont = font_add_sprite_ext(spr_smallerfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.:?1234567890", true, 0);
 //global.Net_Font = font_add_sprite_ext(spr_pttfont, "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz!?.,)(*:\\/-1234567890", true, 0);
 global.lapfont = font_add_sprite_ext(spr_lapfont, "1234567890", true, 0);
-global.lapfont2 = font_add_sprite_ext(spr_lapfontbig, "0123456789", true, 0);
+global.lapfont2 = font_add_sprite_ext(spr_lapfontbig, "0123456789", true, -2);
 //global.monitorfont = font_add_sprite_ext(spr_monitorfont, "1234567890", true, 1);
 global.tutorialfont = font_add_sprite_ext(spr_tutorialfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!,.:0123456789'?-", true, 2);
 global.creditsfont = font_add_sprite_ext(spr_creditsfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.:!0123456789?'\"ÁÉÍÓÚáéíóú_-[]▼()&#风雨廊桥전태양*яиБжидГзвбнль", true, 2);
@@ -26,11 +26,13 @@ global.collectfont = font_add_sprite_ext(spr_font_collect, "0123456789", true, 0
 global.combofont = font_add_sprite_ext(spr_font_combo, "0123456789/:", true, 0);
 global.combofont2 = font_add_sprite_ext(spr_tv_combobubbletext, "0123456789", true, 0);
 global.combofont2PP = font_add_sprite_ext(spr_tv_combobubbletextPP, "0123456789", true, 0);
+global.combofont2BN = font_add_sprite_ext(spr_tv_combobubbletextBN, "0123456789", true, 0);
 global.wartimerfont1 = font_add_sprite_ext(spr_wartimer_font1, "1234567890", true, 0);
 global.wartimerfont2 = font_add_sprite_ext(spr_wartimer_font2, "1234567890", true, 0);
 global.collectfontSP = font_add_sprite_ext(spr_font_collectSP, "0123456789", true, 0);
 global.combofontSP = font_add_sprite_ext(spr_tv_combobubbletextSP, "1234567890x", true, 0);
 global.collectfontPP = font_add_sprite_ext(spr_font_collectPP, "0123456789", true, 0);
+global.collectfontBN = font_add_sprite_ext(spr_font_collectBN, "0123456789", true, 0);
 
 // language font map
 global.font_map = ds_map_create();
