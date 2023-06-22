@@ -9,8 +9,11 @@ if (instance_number(object_index) > 1)
 	}
 }
 
+soundinit = false;
 function player_destroy_sounds()
 {
+	if !soundinit exit;
+	
 	fmod_event_instance_release(snd_voiceok);
 	fmod_event_instance_release(snd_voicetransfo);
 	fmod_event_instance_release(snd_voiceouttransfo);
@@ -54,6 +57,8 @@ function player_destroy_sounds()
 }
 function player_init_sounds()
 {
+	soundinit = true;
+	
 	// collect
 	if character == "SP"
 	{
