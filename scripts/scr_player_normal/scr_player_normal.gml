@@ -368,10 +368,11 @@ function state_player_normal()
 		}
 		
 		// uppercut
-		else if (input_buffer_slap > 0 && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
+		else if ((input_buffer_slap > 0 or input_buffer_grab > 0) && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
 		{
 			state = states.punch;
 			input_buffer_slap = 0;
+			input_buffer_grab = 0;
 			image_index = 0;
 			sprite_index = spr_breakdanceuppercut;
 			fmod_event_instance_play(snd_uppercut);
