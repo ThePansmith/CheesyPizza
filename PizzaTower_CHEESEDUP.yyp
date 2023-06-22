@@ -5082,6 +5082,7 @@
     {"id":{"name":"spr_marbledebris","path":"sprites/spr_marbledebris/spr_marbledebris.yy",},},
     {"id":{"name":"spr_rubble","path":"sprites/spr_rubble/spr_rubble.yy",},},
     {"id":{"name":"spr_tv_exprhurt1PN","path":"sprites/spr_tv_exprhurt1PN/spr_tv_exprhurt1PN.yy",},},
+    {"id":{"name":"spr_lapfontbig","path":"sprites/spr_lapfontbig/spr_lapfontbig.yy",},},
     {"id":{"name":"spr_tv_idleanim1","path":"sprites/spr_tv_idleanim1/spr_tv_idleanim1.yy",},},
     {"id":{"name":"spr_pizzasona18throw","path":"sprites/spr_pizzasona18throw/spr_pizzasona18throw.yy",},},
     {"id":{"name":"spr_playerBN_Sjumpmoveleft","path":"sprites/spr_playerBN_Sjumpmoveleft/spr_playerBN_Sjumpmoveleft.yy",},},
