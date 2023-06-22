@@ -416,10 +416,10 @@ switch character
 		add_palette(19, "", noone, "Manual", "You ever just, uh, feel like emanating a STRONG stench of urine?");
 		add_palette(20, "", noone, "Snick", "It's not him. It's NOT HIM. RUN AWAY.", "SNICK");
 		add_palette(21, "", noone, "The Evil", "The past!");
-		add_palette(22, "", noone, "Super Mario", "HOLY FUCKING SHIT", "RETRO");
+		add_palette(22, "", noone, "Super Mario", "HOLY FUCKING SHIT");
 		add_palette(23, "", noone, "Lean", "Jokes have a lifespan.", "LEAN");
-		add_palette(24, "", noone, "4chan Mystery Box", "Settle down, you're going insane.", "HIGH");
-		add_palette(24, "", noone, "Brody Foxx", "He died in 2006 from a severe ketamine overdose.", "YO MAMA SO");
+		add_palette(24, "", noone, "4chan Mystery Box", "Settle down, you're going insane.");
+		add_palette(25, "", noone, "Brody Foxx", "He died in 2006 from a severe ketamine overdose.", "YO MAMA SO");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "When you spam racial slurs in general.");

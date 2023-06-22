@@ -43,8 +43,13 @@ if (secret)
 {
 	if (music != -4 && music.event_secret != -4)
 	{
-		// sugary spire secrets
-		fmod_event_instance_set_parameter(music.event_secret, "state", (obj_player1.character == "SP"), true);
+		// secrets
+		if obj_player1.character == "SP"
+			fmod_event_instance_set_parameter(music.event_secret, "state", 1, true);
+		else if obj_player1.character == "BN"
+			fmod_event_instance_set_parameter(music.event_secret, "state", 2, true);
+		else
+			fmod_event_instance_set_parameter(music.event_secret, "state", 0, true);
 		
 		// start playing or resume secret song
 		fmod_event_instance_play(music.event_secret);

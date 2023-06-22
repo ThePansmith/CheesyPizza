@@ -159,7 +159,6 @@ select = function()
 			ini_write_string("Game", "palettetexture", sprite_get_name(global.palettetexture));
 			obj_savesystem.ini_str = ini_close();
 			gamesave_async_save();
-			
 		}
 		sound_play_3d(sfx_collecttoppin, x, y);
 	}
