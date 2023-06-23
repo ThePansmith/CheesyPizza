@@ -17,6 +17,8 @@ kidspartychaseID = fmod_event_create_instance("event:/music/w5/kidspartychase");
 pissinosecretID = fmod_event_create_instance("event:/modded/pissinosecret");
 panicstart = false;
 
+#region PIZZA TOWER
+
 add_music(Endingroom, "event:/music/ending", -4, false);
 add_music(Creditsroom, "event:/music/credits", -4, false);
 add_music(Johnresurrectionroom, "event:/music/ending", -4, false);
@@ -33,8 +35,6 @@ add_music(tower_2, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_3, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_4, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_5, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
-add_music(basement_1, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
-add_music(tower_freerun, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_finalhallway, "event:/music/finalescape", -4, 0)
 add_music(tower_finalhallwaytitlecard, "event:/music/pillarmusic", -4, 0)
 add_music(tower_pizzafacehall, "event:/music/w5/finalhallway", -4, 0)
@@ -234,8 +234,24 @@ add_music(chateau_1, "event:/music/w5/chateau", REMIX ? "event:/music/w5/chateau
 add_music(kidsparty_1, "event:/music/w5/kidsparty", "event:/music/w5/kidspartysecret", 0)
 add_music(war_1, "event:/music/w5/war", "event:/music/w5/warsecret", 0)
 
-// PTO
+#endregion
+#region PTO
+
+add_music(tower_extra, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
+add_music(tower_freerun, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
+add_music(tower_hubroomE, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
+
 add_music(characterselect, "event:/music/characterselect", -4, 0)
+add_music(entryway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
+
+#endregion
+#region OLD LEVELS
+
+add_music(dragonlair_1, "event:/music/pto/dragonlair", "event:/music/w1/medievalsecret", 0);
+add_music(beach_1, "event:/music/w3/beach", "event:/music/w3/beachsecret", 0);
+add_music(golf_room1, "event:/music/w3/golf", "event:/music/w3/golfsecret", 0);
+add_music(mansion_1, "event:/music/pto/mansion", "event:/music/pto/mansionsecret", 0);
+add_music(mansion_weird2, "event:/music/pto/mansion", "event:/music/pto/mansionsecret", 0);
 
 add_music(strongcold_10, "event:/music/pto/strongcold", "event:/music/pto/strongcoldsecret", 0, function(room, event, event_secret)
 {
@@ -261,13 +277,45 @@ add_music(strongcold_10, "event:/music/pto/strongcold", "event:/music/pto/strong
 	if s != -1
 		fmod_event_instance_set_parameter(event, "state", s, true);
 });
+add_music(factory_1, "event:/music/w4/industrial", "event:/music/w4/industrialsecret", 0, function(room, event, event_secret)
+{
+	var s = -1;
+	switch room
+	{
+		case factory_1:
+			s = 0;
+			break;
+		case factory_2:
+			s = 1;
+			break;
+	}
 
-add_music(dragonlair_1, "event:/music/pto/dragonlair", "event:/music/w1/medievalsecret", 0);
-add_music(beach_1, "event:/music/w3/beach", "event:/music/w3/beachsecret", 0);
+	if s != -1
+		fmod_event_instance_set_parameter(event, "state", s, true);
+});
+add_music(desert_1, "event:/music/w2/desert", "event:/music/w2/desertsecret", 0, function(room, event)
+{
+	var s = -1;
+	switch room
+	{
+		case badland_1:
+		case badland_8b:
+		case badland_10:
+			s = 0;
+			break;
+		case badland_9:
+		case badland_mart4:
+			s = 1;
+			break;
+	}
+	
+	if s != -1
+		fmod_event_instance_set_parameter(event, "state", s, true);
+});
 
-add_music(entryway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
+#endregion
+#region ENCORE
 
-// Encore
 add_music(e_medieval_1, "event:/music/w1/medieval", "event:/music/w1/medievalsecret", 0, function(room, event, event_secret)
 {
 	var s = -1;
@@ -289,3 +337,5 @@ add_music(e_medieval_1, "event:/music/w1/medieval", "event:/music/w1/medievalsec
 	if (s != -1)
 		fmod_event_instance_set_parameter(event, "state", s, 1)
 });
+
+#endregion

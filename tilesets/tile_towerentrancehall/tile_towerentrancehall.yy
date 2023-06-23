@@ -19,10 +19,10 @@
     "name": "spr_towerentrancehall",
     "path": "sprites/spr_towerentrancehall/spr_towerentrancehall.yy",
   },
-  "spriteNoExport": false,
+  "spriteNoExport": true,
   "textureGroupId": {
-    "name": "entrancegroup",
-    "path": "texturegroups/entrancegroup",
+    "name": "hubgroup",
+    "path": "texturegroups/hubgroup",
   },
   "tile_count": 920,
   "tileAnimation": {

@@ -14,6 +14,7 @@ function sh_level(args)
 		case "street": targetRoom = street_intro; break;
 		case "exit": targetRoom = tower_finalhallway; break;
 		case "oldexit": targetRoom = exit_1; break;
+		case "strongcold": targetRoom = strongcold_10; break;
 	}
 	
 	if room_exists(targetRoom)

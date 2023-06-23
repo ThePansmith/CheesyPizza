@@ -19,7 +19,7 @@
     "name": "spr_taskroomtile",
     "path": "sprites/spr_taskroomtile/spr_taskroomtile.yy",
   },
-  "spriteNoExport": false,
+  "spriteNoExport": true,
   "textureGroupId": {
     "name": "hubgroup",
     "path": "texturegroups/hubgroup",

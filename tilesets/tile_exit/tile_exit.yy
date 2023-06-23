@@ -19,7 +19,7 @@
     "name": "spr_exittile",
     "path": "sprites/spr_exittile/spr_exittile.yy",
   },
-  "spriteNoExport": false,
+  "spriteNoExport": true,
   "textureGroupId": {
     "name": "hubgroup",
     "path": "texturegroups/hubgroup",

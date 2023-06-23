@@ -1,1 +1,1 @@
-targetRoom = basement_1;
+targetRoom = tower_extra;

@@ -5,6 +5,24 @@ var state = "", details = "", largeimage = "", smallimage = "";
 
 largeimage = "big_icon";
 
+// player character
+if instance_exists(obj_player1)
+	character = obj_player1.character;
+smallimage = "char_" + string_lower(character);
+
+switch character
+{
+	case "P": smallimagetext = "Playing as Peppino"; break;
+	case "N": smallimagetext = "Playing as The Noise"; break;
+	case "V": smallimagetext = "Playing as Vigilante"; break;
+	case "S": smallimagetext = "Playing as Snick"; break;
+	case "G": smallimagetext = "Playing as Gustavo"; break;
+	case "SP": smallimagetext = "Playing as Pizzelle"; break;
+	case "PP": smallimagetext = "Playing as Pissino"; break;
+	case "PN": smallimagetext = "Playing as Pinolino"; break;
+	case "BN": smallimagetext = "Playing as Bo Noise"; break;
+}
+
 // status
 details = "Playing Solo";
 if safe_get(obj_pause, "pause")
@@ -139,8 +157,10 @@ if state == ""
 			state = "Tutorial";
 		
 		// pto
-		if room == basement_1
-			state = "Tower Basement";
+		if room == tower_extra
+			state = "Scrapped Tower";
+		if room == tower_hubroomE
+			state = "Abandoned Tower";
 	}
 	
 	// cutscenes

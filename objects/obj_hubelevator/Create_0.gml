@@ -9,7 +9,7 @@ hub_array = [
 	[3, tower_3, "C"],
 	[2, tower_2, "E"],
 	[1, tower_1, "E"],
-	[0, basement_1, "A"],
+	[0, tower_extra, "G"],
 ]
 targetDoor = "A";
 sel = 0;
