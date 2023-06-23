@@ -6,3 +6,6 @@ if (obj_player.character == "S")
 	instance_destroy();
 player = 0;
 depth = -6;
+
+escape = false;
+state = 0;

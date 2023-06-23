@@ -8,3 +8,4 @@ savedy = 0;
 group_arr = -4;
 offload_arr = -4;
 sameroom = false;
+compatibility = false; // old rooms that still use target_x and target_y

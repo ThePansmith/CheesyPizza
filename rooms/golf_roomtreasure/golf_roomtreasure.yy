@@ -18,9 +18,6 @@
     {"name":"inst_FE7B3E4A","path":"rooms/golf_roomtreasure/golf_roomtreasure.yy",},
     {"name":"inst_723EACB2","path":"rooms/golf_roomtreasure/golf_roomtreasure.yy",},
     {"name":"inst_07E21A2A","path":"rooms/golf_roomtreasure/golf_roomtreasure.yy",},
-    {"name":"inst_07E21A2A","path":"rooms/golf_roomtreasure/golf_roomtreasure.yy",},
-    {"name":"inst_8C959892","path":"rooms/golf_roomtreasure/golf_roomtreasure.yy",},
-    {"name":"inst_0049060A","path":"rooms/golf_roomtreasure/golf_roomtreasure.yy",},
   ],
   "isDnd": false,
   "layers": [

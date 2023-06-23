@@ -40,13 +40,6 @@
     {"name":"inst_3037C647","path":"rooms/golf_room1/golf_room1.yy",},
     {"name":"inst_D24A057F","path":"rooms/golf_room1/golf_room1.yy",},
     {"name":"inst_570D73E7","path":"rooms/golf_room1/golf_room1.yy",},
-    {"name":"inst_ADBE65DE","path":"rooms/golf_room1/golf_room1.yy",},
-    {"name":"inst_2162D356","path":"rooms/golf_room1/golf_room1.yy",},
-    {"name":"inst_A61541CE","path":"rooms/golf_room1/golf_room1.yy",},
-    {"name":"inst_3BC9CF36","path":"rooms/golf_room1/golf_room1.yy",},
-    {"name":"inst_BF8C3DAE","path":"rooms/golf_room1/golf_room1.yy",},
-    {"name":"inst_343FAB16","path":"rooms/golf_room1/golf_room1.yy",},
-    {"name":"inst_C9E3199E","path":"rooms/golf_room1/golf_room1.yy",},
   ],
   "isDnd": false,
   "layers": [

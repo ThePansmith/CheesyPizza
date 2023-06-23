@@ -23,6 +23,14 @@ with (other)
 		targetRoom = other.targetRoom;
 		hallway = true;
 		hallwaydirection = other.image_xscale;
+		
+		if hall.compatibility
+		{
+			oldHallway = true;
+			player_x = hall.target_x;
+			player_y = hall.target_y;
+		}
+		
 		other.visited = true;
 		fmod_event_one_shot("event:/sfx/misc/door");
 		with (instance_create(x, y, obj_fadeout))

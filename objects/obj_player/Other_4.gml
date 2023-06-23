@@ -67,7 +67,7 @@ if (place_meeting(x, y, obj_boxofpizza) || place_meeting(x, y - 1, obj_boxofpizz
 	if isgustavo
 		state = states.ratmountcrouch;
 }
-if (object_index != obj_player2 || global.coop == 1)
+if object_index != obj_player2 or global.coop
 {
 	var door_obj = noone;
 	with obj_doorX
@@ -86,70 +86,102 @@ if (object_index != obj_player2 || global.coop == 1)
 		y = door_obj.y - 14;
 	}
 }
-if (verticalhallway)
+
+if verticalhallway
 {
 	verticalbuffer = 2;
+	
 	var _vinst = -4;
-	with (obj_verticalhallway)
+	with obj_verticalhallway
 	{
 		event_perform(3, 0);
-		if (targetDoor == other.targetDoor)
+		if targetDoor == other.targetDoor
 			_vinst = id;
 	}
-	if (_vinst != -4)
+	
+	if _vinst != noone
 	{
 		x = _vinst.x + (_vinst.sprite_width * vertical_x);
 		var bbox_size = abs(bbox_right - bbox_left);
 		x = clamp(x, _vinst.x + bbox_size, _vinst.bbox_right - bbox_size);
 		trace(x, _vinst.x);
-		if (vhallwaydirection > 0)
+		
+		if vhallwaydirection > 0
 			y = _vinst.bbox_bottom + 32;
 		else
 			y = _vinst.bbox_top - 78;
-		if (verticalstate == states.climbwall)
+		
+		if verticalstate == states.climbwall
 			state = states.climbwall;
-		if (state == states.climbwall)
+		if state == states.climbwall
 		{
-			x = round(x);
-			var i = 0;
-			while (!scr_solid(x + xscale, y))
+			var xx = x;
+			while !scr_solid(x + xscale, y)
 			{
 				x += xscale;
-				trace(x);
-				i++;
-				if (i > room_width)
+				if abs(x) > room_width
+				{
+					trace("wallclimbed out of bounds");
+					x = xx;
 					break;
+				}
 			}
 		}
 		y += verticalhall_vsp;
 		vsp = verticalhall_vsp;
 	}
-	y += (vhallwaydirection * 20);
+	y += vhallwaydirection * 20;
 	y = floor(y);
+	
 	verticalstate = states.normal;
 }
-if (character == "M" && place_meeting(x, y, obj_boxofpizza))
+
+if oldHallway
 {
-	while (place_meeting(x, y, obj_boxofpizza))
+	x = player_x;
+	y = player_y;
+	
+	if state == states.climbwall
+	{
+		var xx = x;
+		while !scr_solid(x + xscale, y)
+		{
+			x += xscale;
+			if abs(x) > room_width
+			{
+				trace("wallclimbed out of bounds");
+				x = xx;
+				break;
+			}
+		}
+	}
+}
+
+if character == "M" && place_meeting(x, y, obj_boxofpizza)
+{
+	while place_meeting(x, y, obj_boxofpizza)
 	{
 		var _inst = instance_place(x, y, obj_boxofpizza);
 		y -= _inst.image_yscale;
 	}
 }
-if (state == states.taxi)
+if state == states.taxi
 {
 	x = obj_stopsign.x;
 	y = obj_stopsign.y;
 }
-if (state == states.spaceshuttle)
+if state == states.spaceshuttle
 {
 	x = obj_spaceshuttlestop.x;
 	y = obj_spaceshuttlestop.y;
 }
+
 hallway = false;
 verticalhallway = false;
 box = false;
-if (isgustavo)
+oldHallway = false;
+
+if isgustavo
 {
 	if state != states.ratmountgroundpound
 		brick = true;
@@ -159,24 +191,29 @@ if (isgustavo)
 			wait = true;
 	}
 }
-if (place_meeting(x, y, obj_exitgate))
+
+if place_meeting(x, y, obj_exitgate)
 {
 	global.prank_cankillenemy = true;
-	with (instance_place(x, y, obj_exitgate))
+	with instance_place(x, y, obj_exitgate)
 		other.x = x;
 }
-if (room == rank_room)
+
+if room == rank_room
 {
 	x = rankpos_x;
 	y = rankpos_y;
 }
+
 x = floor(x);
 y = floor(y);
 roomstartx = x;
 roomstarty = y;
-if (state == states.chainsaw)
+
+if state == states.chainsaw
 {
 	hitX = x;
 	hitY = y;
 	hitLag = 0;
 }
+smoothx = 0;
