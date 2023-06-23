@@ -29,29 +29,32 @@ if !sugary
 	var _perc = global.combotime / 60;
 	var _minX = _cx - 56;
 	var _maxX = _cx + 59;
-	if(bo) 
+	if bo
 	{
 		combofill_x = lerp(combofill_x, _maxX + ((_minX - _maxX) * _perc), 0.5);
 		combofill_y = _cy;
 	}
 	else
 	{	
-	combofill_x = lerp(combofill_x, _minX + ((_maxX - _minX) * _perc), 0.5);
-	combofill_y = _cy;
+		combofill_x = lerp(combofill_x, _minX + ((_maxX - _minX) * _perc), 0.5);
+		combofill_y = _cy;
 	}
 	
 	var combobubblefill, combobubble, combofont;
-	if piss {
+	if piss
+	{
 		combobubblefill = spr_tv_combobubblefillPP;
 		combobubble = spr_tv_combobubblePP;
 		combofont = global.combofont2PP;
 	}
-	else if bo {
+	else if bo
+	{
 		combobubblefill = spr_tv_combobubblefillBN;
 		combobubble = spr_tv_combobubbleBN;
 		combofont = global.combofont2BN;
 	}
-	else {
+	else
+	{
 		combobubblefill = spr_tv_combobubblefill;
 		combobubble = spr_tv_combobubble;
 		combofont = global.combofont2;

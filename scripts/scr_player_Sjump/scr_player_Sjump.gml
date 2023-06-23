@@ -112,6 +112,7 @@ function scr_player_Sjump()
 				image_xscale = other.xscale;
 		}
 	}
+	/*
 	if (character == "N" && key_jump2)
 	{
 		jumpstop = false;
@@ -129,6 +130,7 @@ function scr_player_Sjump()
 		if (move == -1)
 			hsp = -3;
 	}
+	*/
 	if (character == "V" && floor(image_index) == (image_number - 1) && sprite_index != spr_superspringplayer)
 	{
 		state = states.jump;

@@ -427,6 +427,8 @@ else
 	pizzaface_sprite = spr_timer_pizzaface1;
 	hand_sprite = spr_timer_hand1;
 	timer_y = timer_ystart + 212;
+	lap_x = timer_x;
+	lap_y = SCREEN_HEIGHT + 212;
 }
 if (global.panic && global.fill < (chunkmax / 5))
 	hand_sprite = spr_timer_hand2;
