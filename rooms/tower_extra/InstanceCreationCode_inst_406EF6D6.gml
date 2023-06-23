@@ -1,4 +1,4 @@
-msg = "Old Saloon WIP";
+msg = "Space Pinball WIP";
 level = "pinball";
 targetRoom = pinball_1;
 door_index = 1;
@@ -9,6 +9,6 @@ group_arr = ["saloongroup"];
 sprite_index = spr_gate_pinball;
 bgsprite = spr_gate_pinballBG;
 titlecard_sprite = spr_titlecards_new;
-titlecard_index = 3;
+titlecard_index = 2;
 title_sprite = spr_titlecards_newtitles;
-title_index = 3;
+title_index = 2;

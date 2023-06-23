@@ -1,4 +1,4 @@
-msg = "Old Freezer WIP";
+msg = "The Noise-rator WIP";
 targetRoom = floor5_room1;
 level = "oldfreezer";
 door_index = 3;

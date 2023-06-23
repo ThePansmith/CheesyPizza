@@ -1,4 +1,4 @@
-msg = "Old Factory WIP";
+msg = "Cheesybot Factory WIP";
 targetRoom = floor3_room0;
 level = "oldfactory";
 door_index = 3;

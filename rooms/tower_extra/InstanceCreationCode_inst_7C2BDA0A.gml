@@ -1,5 +1,5 @@
 targetRoom = floor2_room9;
-msg = "Old Mansion WIP";
+msg = "Pepper Mansion WIP";
 level = "oldmansion";
 door_index = 4;
 

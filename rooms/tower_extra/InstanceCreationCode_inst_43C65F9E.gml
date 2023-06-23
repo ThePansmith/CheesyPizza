@@ -1,5 +1,5 @@
 targetRoom = mansion_weird2;
-msg = "Mansion WIP";
+msg = "Eggplant Mansion WIP";
 level = "mansion";
 door_index = 4;
 
