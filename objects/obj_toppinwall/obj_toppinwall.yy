@@ -30,5 +30,5 @@
     "path": "sprites/sprite10332478/sprite10332478.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }
