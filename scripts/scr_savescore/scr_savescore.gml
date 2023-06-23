@@ -97,6 +97,8 @@ function scr_play_rank_music()
 		var ranksnd = global.snd_rank;
 		if obj_player1.character == "SP"
 			ranksnd = global.snd_rankSP;
+		else if obj_player1.character == "PP"
+			ranksnd = global.snd_rankPP
 		fmod_event_instance_play(ranksnd);
 		fmod_event_instance_set_parameter(ranksnd, "rank", s, true);
 	}

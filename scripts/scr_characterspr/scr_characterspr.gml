@@ -1157,7 +1157,7 @@ function scr_characterspr()
 		spr_shotgunsuplexdash = spr_shotgun_suplexdash;
 		spr_rollgetup = spr_playerPP_rollgetup;
 		spr_swingding = spr_playerPP_swingding;
-		spr_swingdingend = spr_player_swingdingend;
+		spr_swingdingend = spr_playerPP_swingdingend;
 		spr_haulingjump = spr_playerPP_haulingjump;
 		spr_haulingidle = spr_playerPP_haulingidle;
 		spr_haulingwalk = spr_playerPP_haulingwalk;
@@ -1278,9 +1278,9 @@ function scr_characterspr()
 		spr_kungfuair1 = spr_playerPP_kungfuair1;
 		spr_kungfuair2 = spr_playerPP_kungfuair2;
 		spr_kungfuair3 = spr_playerPP_kungfuair3;
-		spr_kungfuair1transition = spr_player_kungfuair1transition;
-		spr_kungfuair2transition = spr_player_kungfuair2transition;
-		spr_kungfuair3transition = spr_player_kungfuair3transition;
+		spr_kungfuair1transition = spr_playerPP_kungfuair1transition;
+		spr_kungfuair2transition = spr_playerPP_kungfuair2transition;
+		spr_kungfuair3transition = spr_playerPP_kungfuair3transition;
 		spr_palette = spr_pisspalette;
 		paletteselect = 0;
 	}

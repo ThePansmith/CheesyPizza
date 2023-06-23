@@ -18,3 +18,7 @@ if sugary
 	sprite_index = spr_comboend_titleSP;
 else if (obj_player1.character == "BN")
 	sprite_index = spr_comboend_titleBN
+else if (obj_player1.character == "PP")
+	sprite_index = spr_comboend_titlePP
+else
+	sprite_index = spr_comboend_title1

@@ -39,7 +39,7 @@ else
 
 // visibility
 visible = true;
-if room == strongcold_endscreen or room == Longintro or room == Mainmenu or room == rm_levelselect or room == rank_room or room == timesuproom or room == Realtitlescreen or room == characterselect or room == tower_extra or room == hub_loadingscreen or (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic)
+if room == strongcold_endscreen or room == Longintro or room == Mainmenu or room == rm_levelselect or room == rank_room or room == timesuproom or room == Realtitlescreen or room == characterselect or room == tower_extra or room == rm_baby or room == tower_baby or room == hub_loadingscreen or (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic)
 	visible = false;
 if !global.option_hud
 	visible = false;
@@ -332,7 +332,7 @@ if instance_exists(player) && !lock && player.state != states.timesup && player.
 			break;
 	}
 }
-else if REMIX && room != rank_room && room != timesuproom && !instance_exists(obj_bosscontroller)
+else if REMIX && room != rank_room && room != timesuproom && room != rm_baby && !instance_exists(obj_bosscontroller)
 {
 	var cam_x = lockx, cam_y = locky;
 	if shake_mag != 0

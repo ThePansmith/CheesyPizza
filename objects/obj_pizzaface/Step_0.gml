@@ -64,24 +64,40 @@ if (_move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.sta
 	else if (!instance_exists(obj_toppinwarrior))
 	{
 	*/
-	
-	with (playerid)
+	if sprite_index == spr_babyface
 	{
-		instance_destroy(obj_fadeout);
-		targetDoor = "A";
-		room = timesuproom;
-		state = states.timesup;
-		sprite_index = spr_Timesup;
-		image_index = 0;
-		if (isgustavo)
-			sprite_index = spr_player_ratmounttimesup;
-		visible = true;
-		image_blend = c_white;
-		//audio_stop_all();
-		stop_music();
-		fmod_event_one_shot("event:/music/timesup");
+        with (playerid)
+        {
+            instance_destroy(obj_fadeout)
+            targetDoor = "A"
+            room = rm_baby
+            state = states.timesup
+            sprite_index = spr_Timesup
+            image_index = 0
+            audio_stop_all()
+        }
+        instance_destroy()
+    }
+	else
+	{
+		with (playerid)
+		{
+			instance_destroy(obj_fadeout);
+			targetDoor = "A";
+			room = timesuproom;
+			state = states.timesup;
+			sprite_index = spr_Timesup;
+			image_index = 0;
+			if (isgustavo)
+				sprite_index = spr_player_ratmounttimesup;
+			visible = true;
+			image_blend = c_white;
+			//audio_stop_all();
+			stop_music();
+			fmod_event_one_shot("event:/music/timesup");
+		}
+		instance_destroy();
 	}
-	instance_destroy();
 }
 if (maxspeed < 3 && image_alpha >= 1)
 	maxspeed += 0.01;

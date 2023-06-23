@@ -5,6 +5,8 @@ var yy = y;
 draw_set_color(c_white);
 if (obj_player1.character == "BN")
 	draw_sprite(spr_comboendBN, 0, xx, yy);
+else if (obj_player1.character == "PP")
+	draw_sprite(spr_comboendPP, 0, xx, yy);
 else
 	draw_sprite(spr_comboend, 0, xx, yy);
 
