@@ -20,6 +20,8 @@ if sugary
 	draw_sprite(spr_comboend_titleSP, min(floor(combo / 5), 24), xx, yy + 30);
 else if bo
 	draw_sprite(spr_comboend_titleBN, (title * 2) + title_index, xx, yy + 30);
+else if piss 
+	draw_sprite(spr_comboend_titlePP, (title * 2) + title_index, xx, yy + 30);
 else
 	draw_sprite(spr_comboend_title1, (title * 2) + title_index, xx, yy + 30);
 draw_set_font(lang_get_font("smallfont"));
