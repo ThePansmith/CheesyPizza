@@ -197,6 +197,7 @@ global.snd_pizzafacemoving = fmod_event_create_instance("event:/sfx/pizzaface/mo
 global.snd_rankdown = fmod_event_create_instance("event:/sfx/ui/rankdown");
 global.snd_rank = fmod_event_create_instance("event:/music/rank");
 global.snd_rankSP = fmod_event_create_instance("event:/music/rankSP");
+global.snd_rankBN = fmod_event_create_instance("event:/music/rankBN");
 global.snd_breakblock = fmod_event_create_instance("event:/sfx/misc/breakblock");
 global.snd_bellcollect = fmod_event_create_instance("event:/sfx/misc/bellcollect");
 global.snd_cardflip = fmod_event_create_instance("event:/sfx/misc/cardflip");
