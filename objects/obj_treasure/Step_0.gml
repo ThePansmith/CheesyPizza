@@ -14,7 +14,7 @@ switch state
 				with _p
 				{
 					state = states.actor;
-					sprite_index = spr_Timesup;
+					sprite_index = isgustavo ? spr_ratmount_doorclosed : spr_Timesup;
 					image_index = 0;
 					image_speed = 0.35;
 				}

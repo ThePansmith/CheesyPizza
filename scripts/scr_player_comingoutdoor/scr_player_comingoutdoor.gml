@@ -24,7 +24,7 @@ function scr_player_comingoutdoor()
 		c = 0;
 		image_blend = make_colour_hsv(0, 0, 255);
 	}
-	if (sprite_index != spr_Timesup)
+	if (sprite_index != spr_Timesup && sprite_index != spr_ratmount_doorclosed)
 	{
 		if (steppybuffer > 0)
 			steppybuffer--;
@@ -33,9 +33,7 @@ function scr_player_comingoutdoor()
 			steppybuffer = 16;
 			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
 		}
-	}
-	if (sprite_index != spr_Timesup)
-	{
+		
 		if (isgustavo)
 			sprite_index = spr_ratmount_exitdoor;
 		else

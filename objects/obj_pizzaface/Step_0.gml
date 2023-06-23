@@ -42,7 +42,6 @@ if (_move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.sta
 {
 	fmod_event_instance_stop(snd, true);
 	
-	/*
 	if (instance_exists(obj_toppinwarrior))
 	{
 		if (variable_global_exists("toppinwarriorid1") && instance_exists(global.toppinwarriorid1))
@@ -55,48 +54,46 @@ if (_move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.sta
 			instance_destroy(global.toppinwarriorid4);
 		else if (variable_global_exists("toppinwarriorid5") && instance_exists(global.toppinwarriorid5))
 			instance_destroy(global.toppinwarriorid5);
+		
 		instance_create(x, y, obj_flash);
-		global.seconds = 59;
-		obj_camera.alarm[1] = 60;
-		obj_camera.ded = false;
+		global.fill = (60 * 60) / 0.2;
 		instance_destroy();
 	}
-	else if (!instance_exists(obj_toppinwarrior))
+	else if !instance_exists(obj_toppinwarrior)
 	{
-	*/
-	if sprite_index == spr_babyface
-	{
-        with (playerid)
-        {
-            instance_destroy(obj_fadeout)
-            targetDoor = "A"
-            room = rm_baby
-            state = states.timesup
-            sprite_index = spr_Timesup
-            image_index = 0
-            audio_stop_all()
-        }
-        instance_destroy()
-    }
-	else
-	{
-		with (playerid)
+		if sprite_index == spr_babyface
 		{
-			instance_destroy(obj_fadeout);
-			targetDoor = "A";
-			room = timesuproom;
-			state = states.timesup;
-			sprite_index = spr_Timesup;
-			image_index = 0;
-			if (isgustavo)
-				sprite_index = spr_player_ratmounttimesup;
-			visible = true;
-			image_blend = c_white;
-			//audio_stop_all();
-			stop_music();
-			fmod_event_one_shot("event:/music/timesup");
+	        with (playerid)
+	        {
+	            instance_destroy(obj_fadeout)
+	            targetDoor = "A"
+	            room = rm_baby
+	            state = states.timesup
+	            sprite_index = spr_Timesup
+	            image_index = 0
+	            audio_stop_all()
+	        }
+	        instance_destroy()
+	    }
+		else
+		{
+			with (playerid)
+			{
+				instance_destroy(obj_fadeout);
+				targetDoor = "A";
+				room = timesuproom;
+				state = states.timesup;
+				sprite_index = spr_Timesup;
+				image_index = 0;
+				if (isgustavo)
+					sprite_index = spr_player_ratmounttimesup;
+				visible = true;
+				image_blend = c_white;
+				stop_music();
+				fmod_event_one_shot("event:/music/timesup");
+			}
+			instance_destroy();
 		}
-		instance_destroy();
 	}
 }
 if (maxspeed < 3 && image_alpha >= 1)
@@ -106,7 +103,7 @@ if (REMIX or global.laps >= 2) && !instance_exists(tracker)
 {
 	tracker = instance_create(0, 0, obj_objecticontracker);
 	tracker.objectID = id;
-	tracker.sprite_index = spr_icon_pizzaface;
+	tracker.sprite_index = (sprite_index == spr_babyface ? spr_icon_baba : spr_icon_pizzaface);
 }
 if keyboard_check_pressed(ord("F")) && Debug
 	frozen = !frozen;
