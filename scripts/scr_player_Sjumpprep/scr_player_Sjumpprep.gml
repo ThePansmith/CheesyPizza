@@ -48,5 +48,4 @@ function scr_player_Sjumpprep()
 		image_index = 0;
 	}
 	image_speed = 0.35;
-	break;
 }
