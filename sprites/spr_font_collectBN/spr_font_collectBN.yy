@@ -34,8 +34,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Point HUD",
-    "path": "folders/Sprites/Player/Bo Noise/Point HUD.yy",
+    "name": "HUD",
+    "path": "folders/Sprites/HUD.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

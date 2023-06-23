@@ -34,8 +34,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "TV HUD",
-    "path": "folders/Sprites/Player/Bo Noise/TV HUD.yy",
+    "name": "Bo Noise",
+    "path": "folders/Sprites/HUD/TV/Bo Noise.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

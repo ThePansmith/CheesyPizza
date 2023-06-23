@@ -62,6 +62,21 @@ if (global.collect >= global.collectN)
 		if (global.rank == "p")
 			sprite_index = spr_rankPPP;
 	}
+	else if (check_char("BN"))
+	{
+		if (global.rank == "s")
+			sprite_index = spr_rankBNS;
+		if (global.rank == "a")
+			sprite_index = spr_rankBNA;
+		if (global.rank == "b")
+			sprite_index = spr_rankBNB;
+		if (global.rank == "c")
+			sprite_index = spr_rankBNC;
+		if (global.rank == "d")
+			sprite_index = spr_rankBND;
+		if (global.rank == "p")
+			sprite_index = spr_rankBNP;
+	}
 	else
 	{
 		if (global.rank == "s")

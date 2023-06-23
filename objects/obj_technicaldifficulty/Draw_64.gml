@@ -15,7 +15,10 @@ else
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false);
 	else
 		pal_swap_set(spr_ratmountpalette, gustavo_palette(obj_player1.paletteselect), false);
-	draw_sprite(sprite, 0, cx + 300, cy + 352);
+	if(check_char("BN"))
+		draw_sprite(sprite, 0, 0, 0);
+	else
+		draw_sprite(sprite, 0, cx + 300, cy + 352);
 	pattern_reset();
 	reset_shader_fix();
 }

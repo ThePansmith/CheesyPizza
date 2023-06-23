@@ -172,6 +172,8 @@ if (obj_player.state != states.dead)
 		ranksprite = spr_ranks_hudSP
 	else if piss
 		ranksprite = spr_ranks_hudPP
+	else if bo
+		ranksprite = spr_ranks_hudBN
 	draw_sprite_ext(ranksprite, rank_ix, rx, ry, rank_scale, rank_scale, 0, c_white, 1);
 	var spr_w = sprite_get_width(spr_ranks_hudfill);
 	var spr_h = sprite_get_height(spr_ranks_hudfill);
@@ -202,6 +204,8 @@ if (obj_player.state != states.dead)
 		rankfillsprite = spr_ranks_hudfillSP
 	else if piss
 		rankfillsprite = spr_ranks_hudfillPP
+	else if bo
+		rankfillsprite = spr_ranks_hudfillBN
 	else
 		rankfillsprite = spr_ranks_hudfill
 	draw_sprite_part(rankfillsprite, rank_ix, 0, top, spr_w, spr_h - top, rx - spr_xo, (ry - spr_yo) + top);
