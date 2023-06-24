@@ -146,3 +146,21 @@ layer_vspeed("Backgrounds_stillZH2", 0);
 /*
 if (global.panic or global.snickchallenge) && global.panicbg && !instance_exists(obj_ghostcollectibles)
 	scr_panicbg_init();
+*/
+
+// coded in backgrounds
+if !instance_exists(obj_ghostcollectibles)
+{
+    // change color of entryway effect layer
+    if global.leveltosave == "entryway"
+    {
+        var layerfx = layer_get_fx("Effect_1");
+        if layerfx != -1
+        {
+            if global.panic or room == entryway_11 // nighttime color
+                fx_set_parameter(layerfx, "g_TintCol", [216 / 255, 183 / 255, 228 / 255, 1]);
+            else // normal sunset color
+                fx_set_parameter(layerfx, "g_TintCol", [255 / 255, 221 / 255, 204 / 255, 1]);
+        }
+    }
+}
