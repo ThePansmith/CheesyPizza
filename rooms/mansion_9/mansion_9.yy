@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "mansion_9",
-  "creationCodeFile": "${project_dir}/rooms/mansion_9/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/mansion_9/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
@@ -161,9 +161,9 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4E9CBFBC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cheeseslime","path":"objects/obj_cheeseslime/obj_cheeseslime.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2223.0,"y":818.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_4","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":38,"SerialiseWidth":110,"TileCompressedData":[
--137,0,6,794,795,796,797,798,799,-104,0,6,814,815,816,817,818,819,-197,0,2,752,753,-108,0,2,772,773,-56,0,3,671,672,673,-96,0,2,750,751,-9,0,3,691,692,693,-96,0,2,770,771,-9,0,3,711,712,713,-107,0,3,731,732,733,-13,0,2,752,753,-108,0,2,772,773,-108,0,2,752,753,-40,0,1,19,-67,0,2,772,773,-40,0,1,39,-109,0,1,59,-109,0,1,79,-83,0,2,792,793,-24,0,1,99,-63,0,2,
-709,710,-18,0,2,812,813,-88,0,2,729,730,-518,0,1,780,-4,0,3,783,784,785,-59,0,6,794,795,796,797,798,799,-37,0,1,800,-4,0,3,803,804,805,-59,0,6,814,815,816,817,818,819,-248,0,1,17,-109,0,1,37,-109,0,1,57,-29,0,1,744,-79,0,1,77,-29,0,1,764,-71,0,7,781,782,0,720,721,722,723,-103,0,7,801,802,0,740,741,742,743,-61,0,4,720,721,722,723,-41,0,4,760,761,762,763,-61,0,
-4,740,741,742,743,-106,0,4,760,761,762,763,-555,0,],"TileDataFormat":1,},"tilesetId":{"name":"tile_castle_tileset","path":"tilesets/tile_castle_tileset/tile_castle_tileset.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+-137,0,6,794,795,796,797,798,799,-104,0,6,814,815,816,817,818,819,-197,0,2,752,753,-108,0,2,772,773,-56,0,3,671,672,673,-96,0,2,750,751,-9,0,3,691,692,693,-96,0,2,770,771,-9,0,3,711,712,713,-107,0,3,731,732,733,-13,0,2,752,753,-108,0,2,772,773,-108,0,2,752,753,-40,0,1,19,-67,0,2,772,773,-40,0,1,39,-7,0,1,490,-6,510,1,511,-94,0,1,59,-14,0,2,551,511,-93,0,1,
+79,-15,0,2,551,511,-66,0,2,792,793,-24,0,1,99,-16,0,2,551,531,-45,0,2,709,710,-18,0,2,812,813,-88,0,2,729,730,-518,0,1,780,-4,0,3,783,784,785,-59,0,6,794,795,796,797,798,799,-37,0,1,800,-4,0,3,803,804,805,-59,0,6,814,815,816,817,818,819,-248,0,1,17,-109,0,1,37,-109,0,1,57,-29,0,1,744,-79,0,1,77,-29,0,1,764,-71,0,7,781,782,0,720,721,722,723,-103,0,7,
+801,802,0,740,741,742,743,-61,0,4,720,721,722,723,-41,0,4,760,761,762,763,-61,0,4,740,741,742,743,-106,0,4,760,761,762,763,-555,0,],"TileDataFormat":1,},"tilesetId":{"name":"tile_castle_tileset","path":"tilesets/tile_castle_tileset/tile_castle_tileset.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_3","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":38,"SerialiseWidth":110,"TileCompressedData":[
 -1441,0,4,110,111,112,113,-106,0,4,130,131,132,133,-106,0,4,150,151,152,153,-106,0,4,170,171,172,173,-2405,0,],"TileDataFormat":1,},"tilesetId":{"name":"tile_mansion2","path":"tilesets/tile_mansion2/tile_mansion2.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_2","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":38,"SerialiseWidth":110,"TileCompressedData":[
