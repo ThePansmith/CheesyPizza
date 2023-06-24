@@ -1,5 +1,5 @@
 tex_list = -4;
-var group_arr = ["hubgroup", "playergroup", "introgroup", "smallgroup", "hudgroup", "levelstructuregroup"];
+var group_arr = ["hudgroup", "playergroup", "introgroup", "smallgroup", "levelstructuregroup"];
 tex_list = array_create(0);
 tex_pos = 0;
 

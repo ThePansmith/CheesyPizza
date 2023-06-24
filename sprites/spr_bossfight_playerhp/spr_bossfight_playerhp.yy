@@ -101,8 +101,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "smallgroup",
-    "path": "texturegroups/smallgroup",
+    "name": "bossgroup",
+    "path": "texturegroups/bossgroup",
   },
   "type": 0,
   "VTile": false,

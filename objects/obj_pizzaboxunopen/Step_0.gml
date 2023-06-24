@@ -1,5 +1,5 @@
 var roomname = string_letters(room_get_name(room));
-if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
+if place_meeting(x, y, obj_player)
 {
 	global.combotime = 60;
 	fmod_event_one_shot(sugary ? "event:/modded/sfx/collecttoppinSP" : "event:/sfx/misc/collecttoppin");
@@ -70,7 +70,7 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
 		
 		if REMIX or sugary
 		{
-			var text = $"\{u}You have found {global.toppintotal} {sugary ? "Confecti" : (global.toppintotal == 1 ? "Toppin" : "Toppins")} out of 5!";
+			var text = $"\{u}You have found {global.toppintotal} {sugary ? "Confecti" : (global.toppintotal == 1 ? "Toppin" : "Toppins")} out of 5!/";
 			create_transformation_tip(text);
 		}
 	}
