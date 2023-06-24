@@ -19,10 +19,10 @@ with (other)
 	if (!instance_exists(obj_fadeout))
 	{
 		lastroom = room;
-		targetDoor = other.targetDoor;
-		targetRoom = other.targetRoom;
+		targetDoor = hall.targetDoor;
+		targetRoom = hall.targetRoom;
 		hallway = true;
-		hallwaydirection = other.image_xscale;
+		hallwaydirection = hall.image_xscale;
 		
 		if hall.compatibility
 		{
@@ -31,7 +31,7 @@ with (other)
 			player_y = hall.target_y;
 		}
 		
-		other.visited = true;
+		hall.visited = true;
 		fmod_event_one_shot("event:/sfx/misc/door");
 		with (instance_create(x, y, obj_fadeout))
 		{
@@ -41,7 +41,7 @@ with (other)
 		
 		if room == targetRoom
 		{
-			if other.sameroom
+			if hall.sameroom
 				xscale *= -1;
 			obj_fadeout.roomreset = true;
 		}

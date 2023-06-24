@@ -8,30 +8,13 @@ if ((image_index == 1 or sprite_index == spr_sugarygateopen) && global.panic == 
 			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
 			GamepadSetVibration(0, 1, 1, 0.9);
 			GamepadSetVibration(1, 1, 1, 0.9);
-			with (obj_player1)
+			lastroom = room;
+			sprite_index = isgustavo ? spr_ratmount_doorclosed : spr_Timesup;
+			image_index = 0;
+			with (obj_camera)
 			{
-				lastroom = room;
-				sprite_index = spr_Timesup;
-				image_index = 0;
-				with (obj_camera)
-				{
-					shake_mag = 10;
-					shake_mag_acc = 30 / room_speed;
-				}
-			}
-			if (global.coop == 1)
-			{
-				with (obj_player2)
-				{
-					lastroom = room;
-					sprite_index = spr_Timesup;
-					image_index = 0;
-					with (obj_camera)
-					{
-						shake_mag = 10;
-						shake_mag_acc = 30 / room_speed;
-					}
-				}
+				shake_mag = 10;
+				shake_mag_acc = 30 / room_speed;
 			}
 			if other.sprite_index == spr_sugarygateopen
 				other.sprite_index = spr_sugarygateclosing

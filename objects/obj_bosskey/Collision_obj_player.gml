@@ -4,7 +4,6 @@ if (state == states.normal)
 	{
 		fmod_event_one_shot("event:/sfx/misc/bosskey");
 		state = states.gottreasure;
-		sprite_index = spr_gottreasure;
 	}
 	state = states.gottreasure;
 	x = other.x;

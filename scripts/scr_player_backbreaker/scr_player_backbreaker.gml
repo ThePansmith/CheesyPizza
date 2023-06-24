@@ -109,7 +109,7 @@ function scr_player_backbreaker()
 		state = states.normal;
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_throw)
 		state = states.normal;
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_Timesup && place_meeting(x, y, obj_exitgate))
+	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_Timesup or sprite_index == spr_ratmount_doorclosed) && place_meeting(x, y, obj_exitgate))
 		state = states.normal;
 	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_player_levelcomplete or sprite_index == spr_playerN_victory))
 		state = states.normal;

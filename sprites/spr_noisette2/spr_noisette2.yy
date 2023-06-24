@@ -13,22 +13,22 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"1ac1e8e4-4701-4d6b-8754-c66f0307daf1",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"91585a96-ecfb-444f-bea9-66ea60bc9c4a",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"783d43c0-bda8-4e83-94d6-84bf4f6be9b9",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"08b530a1-25cd-46e4-940a-0cb59c750213",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d060db64-59d9-401d-aef4-af6e935099b6",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"acf32804-f6fb-4745-9483-bd9376289bc6",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 100,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"76113bae-b6af-4086-a99d-420bbbeb5732","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"8aa4a1de-a0f6-422f-9b6e-4eac44477282","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "RadieCafe",
-    "path": "folders/Sprites/CheesyPizza/RadieCafe.yy",
+    "name": "NPCs",
+    "path": "folders/Sprites/Level Structure/Tower/NPCs.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -56,9 +56,9 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"1ac1e8e4-4701-4d6b-8754-c66f0307daf1","path":"sprites/spr_noisette2/spr_noisette2.yy",},},},"Disabled":false,"id":"5a6b7d2c-ebf9-44c5-95f1-7d3618ace396","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"91585a96-ecfb-444f-bea9-66ea60bc9c4a","path":"sprites/spr_noisette2/spr_noisette2.yy",},},},"Disabled":false,"id":"9975dd35-7f86-42b1-b33f-3b22e0668629","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"783d43c0-bda8-4e83-94d6-84bf4f6be9b9","path":"sprites/spr_noisette2/spr_noisette2.yy",},},},"Disabled":false,"id":"55859a4f-8082-42ca-88a6-6c5a0bddcddc","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"08b530a1-25cd-46e4-940a-0cb59c750213","path":"sprites/spr_noisette2/spr_noisette2.yy",},},},"Disabled":false,"id":"ec84eb22-455a-4da4-affd-da1bbce5138b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d060db64-59d9-401d-aef4-af6e935099b6","path":"sprites/spr_noisette2/spr_noisette2.yy",},},},"Disabled":false,"id":"5bc826fa-0d13-41a4-b861-8532779979e4","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"acf32804-f6fb-4745-9483-bd9376289bc6","path":"sprites/spr_noisette2/spr_noisette2.yy",},},},"Disabled":false,"id":"47cd278e-69f6-4f1f-afa7-d1fd9ecdb21e","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -69,8 +69,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "hubgroup",
-    "path": "texturegroups/hubgroup",
+    "name": "Default",
+    "path": "texturegroups/Default",
   },
   "type": 0,
   "VTile": false,
