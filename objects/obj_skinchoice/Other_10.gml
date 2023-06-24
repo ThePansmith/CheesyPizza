@@ -334,13 +334,13 @@ switch character
 	#region Pizzelle
 	
 	case "SP":
-		add_palette(0, "", noone, "Yellow", "Take the first 4 letters of her name.");
+		add_palette(0, "", noone, "Yellow", "Take the first 4 letters of his name.");
 		add_palette(1, "", noone, "Pizzelle", "It's the Candy-making patisje!", "");
 		add_palette(2, "", noone, "Sugar", "Obviously sugar is green.");
 		add_palette(3, "", noone, "Familiar Gremlin", "Something's wrong.");
 		add_palette(4, "", noone, "Massacre", "SUGARY SPIRE 2: The Quest for Diabetes.");
 		add_palette(5, "", noone, "Rivals", "Did we find a coder yet?");
-		add_palette(6, "", noone, "Gum", "Don't actually chew her, please.");
+		add_palette(6, "", noone, "Gum", "Don't actually chew him, please.");
 		add_palette(7, "", noone, "Old School", "Also known as... grayscale.", "GRAYSCALE");
 		add_palette(8, "", noone, "Zombified", "Bruuuh.", "ZOMBIFIED");
 		add_palette(9, "", noone, "Forestation", "Made of sugarcane plants.");

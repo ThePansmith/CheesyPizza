@@ -2,7 +2,8 @@ var roomname = string_letters(room_get_name(room));
 if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
 {
 	global.combotime = 60;
-	fmod_event_one_shot("event:/sfx/misc/collecttoppin");
+	fmod_event_one_shot(sugary ? "event:/modded/sfx/collecttoppinSP" : "event:/sfx/misc/collecttoppin");
+	
 	if (content == obj_noisebomb)
 	{
 		with (obj_player)
@@ -40,132 +41,38 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
 		if (global.panicbg)
 			scr_panicbg_init();
 	}
-	if (content == obj_pizzakinshroom)
+	if object_is_ancestor(content, obj_pizzakinparent)
 	{
-		with (instance_create(x, y, obj_smallnumber))
+		with instance_create(x, y, obj_smallnumber)
 			number = "1000";
 		if (place_meeting(x, y, obj_player1))
 			global.collect += 1000;
 		else
 			global.collectN += 1000;
 		instance_create(x, y, obj_taunteffect);
-		with (instance_create(x, y - 25, content))
+		with instance_create(x, y - 25, content)
 		{
-			if (roomname == "strongcold")
-				sprite_index = spr_xmasshroomtoppin_intro;
+			if roomname == "strongcold"
+				sprite_index = spr_intro_strongcold;
 			else
-				sprite_index = spr_toppinshroom_intro;
+				sprite_index = spr_intro;
 		}
-		if (global.toppintotal < 5)
-			obj_tv.message = "YOU NEED " + string(5 - global.toppintotal) + " MORE TOPPINS!";
-		if (global.toppintotal == 5)
-			obj_tv.message = "YOU HAVE ALL TOPPINS!";
-		obj_tv.showtext = true;
-		obj_tv.alarm[0] = 150;
 		global.toppintotal += 1;
-		global.shroomfollow = true;
-	}
-	if (content == obj_pizzakincheese)
-	{
-		with (instance_create(x, y, obj_smallnumber))
-			number = "1000";
-		if (place_meeting(x, y, obj_player1))
-			global.collect += 1000;
-		else
-			global.collectN += 1000;
-		with (instance_create(x, y - 25, content))
+		
+		switch content
 		{
-			if (roomname == "strongcold")
-				sprite_index = spr_xmascheesetoppin_intro;
-			else
-				sprite_index = spr_toppincheese_intro;
+			case obj_pizzakinshroom: global.shroomfollow = true; break;
+			case obj_pizzakincheese: global.cheesefollow = true; break;
+			case obj_pizzakintomato: global.tomatofollow = true; break;
+			case obj_pizzakinsausage: global.sausagefollow = true; break;
+			case obj_pizzakinpineapple: global.pineapplefollow = true; break;
 		}
-		instance_create(x, y, obj_taunteffect);
-		if (global.toppintotal < 5)
-			obj_tv.message = "YOU NEED " + string(5 - global.toppintotal) + " MORE TOPPINS!";
-		if (global.toppintotal == 5)
-			obj_tv.message = "YOU HAVE ALL TOPPINS!";
-		obj_tv.showtext = true;
-		obj_tv.alarm[0] = 150;
-		global.toppintotal += 1;
-		global.cheesefollow = true;
-	}
-	if (content == obj_pizzakintomato)
-	{
-		with (instance_create(x, y, obj_smallnumber))
-			number = "1000";
-		if (place_meeting(x, y, obj_player1))
-			global.collect += 1000;
-		else
-			global.collectN += 1000;
-		with (instance_create(x, y - 25, content))
+		
+		if REMIX or sugary
 		{
-			if (roomname == "strongcold")
-				sprite_index = spr_xmastomatotoppin_intro;
-			else
-				sprite_index = spr_toppintomato_intro;
+			var text = $"\{u}You have found {global.toppintotal} {sugary ? "Confecti" : (global.toppintotal == 1 ? "Toppin" : "Toppins")} out of 5!";
+			create_transformation_tip(text);
 		}
-		instance_create(x, y, obj_taunteffect);
-		if (global.toppintotal < 5)
-			obj_tv.message = "YOU NEED " + string(5 - global.toppintotal) + " MORE TOPPINS!";
-		if (global.toppintotal == 5)
-			obj_tv.message = "YOU HAVE ALL TOPPINS!";
-		obj_tv.showtext = true;
-		obj_tv.alarm[0] = 150;
-		global.toppintotal += 1;
-		global.tomatofollow = true;
-	}
-	if (content == obj_pizzakinsausage)
-	{
-		with (instance_create(x, y, obj_smallnumber))
-			number = "1000";
-		if (place_meeting(x, y, obj_player1))
-			global.collect += 1000;
-		else
-			global.collectN += 1000;
-		with (instance_create(x, y - 25, content))
-		{
-			if (roomname == "strongcold")
-				sprite_index = spr_xmassausagetoppin_intro;
-			else
-				sprite_index = spr_toppinsausage_intro;
-		}
-		instance_create(x, y, obj_taunteffect);
-		if (global.toppintotal < 5)
-			obj_tv.message = "YOU NEED " + string(5 - global.toppintotal) + " MORE TOPPINS!";
-		if (global.toppintotal == 5)
-			obj_tv.message = "YOU HAVE ALL TOPPINS!";
-		obj_tv.showtext = true;
-		obj_tv.alarm[0] = 150;
-		global.toppintotal += 1;
-		global.sausagefollow = true;
-	}
-	if (content == obj_pizzakinpineapple)
-	{
-		with (instance_create(x, y, obj_smallnumber))
-			number = "1000";
-		if (place_meeting(x, y, obj_player1))
-			global.collect += 1000;
-		else
-			global.collectN += 1000;
-		with (instance_create(x, y - 25, content))
-		{
-			if (roomname == "strongcold")
-				sprite_index = spr_xmaspineappletoppin_intro;
-			else
-				sprite_index = spr_toppinpineapple_intro;
-		}
-		instance_create(x, y, obj_taunteffect);
-		global.heattime = 60;
-		global.style += 10;
-		if (global.toppintotal < 5)
-			obj_tv.message = "YOU NEED " + string(5 - global.toppintotal) + " MORE TOPPINS!";
-		if (global.toppintotal == 5)
-			obj_tv.message = "YOU HAVE ALL TOPPINS!";
-		obj_tv.showtext = true;
-		obj_tv.alarm[0] = 150;
-		global.toppintotal += 1;
-		global.pineapplefollow = true;
 	}
 	if (content == obj_noisey)
 	{

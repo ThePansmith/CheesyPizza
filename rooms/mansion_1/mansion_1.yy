@@ -82,6 +82,10 @@
     {"name":"inst_2EFD8D2A","path":"rooms/mansion_1/mansion_1.yy",},
     {"name":"inst_5BAA72A1","path":"rooms/mansion_1/mansion_1.yy",},
     {"name":"inst_67E0BC17","path":"rooms/mansion_1/mansion_1.yy",},
+    {"name":"inst_67E0BC17","path":"rooms/mansion_1/mansion_1.yy",},
+    {"name":"inst_37EA6B5C","path":"rooms/mansion_1/mansion_1.yy",},
+    {"name":"inst_2EFD8D2A","path":"rooms/mansion_1/mansion_1.yy",},
+    {"name":"inst_5BAA72A1","path":"rooms/mansion_1/mansion_1.yy",},
   ],
   "isDnd": false,
   "layers": [

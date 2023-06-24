@@ -128,6 +128,10 @@
     {"name":"inst_A192A066","path":"rooms/mansion_12/mansion_12.yy",},
     {"name":"inst_25461EDE","path":"rooms/mansion_12/mansion_12.yy",},
     {"name":"inst_BA098C46","path":"rooms/mansion_12/mansion_12.yy",},
+    {"name":"inst_1CEF32FE","path":"rooms/mansion_12/mansion_12.yy",},
+    {"name":"inst_A192A066","path":"rooms/mansion_12/mansion_12.yy",},
+    {"name":"inst_25461EDE","path":"rooms/mansion_12/mansion_12.yy",},
+    {"name":"inst_BA098C46","path":"rooms/mansion_12/mansion_12.yy",},
   ],
   "isDnd": false,
   "layers": [
