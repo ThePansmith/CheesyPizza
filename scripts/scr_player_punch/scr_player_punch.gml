@@ -113,7 +113,7 @@ function scr_player_punch()
 			state = states.mach2;
 			movespeed = max(movespeed, 6);
 			
-			if character != "N"
+			if character == "P" or character == "PP"
 				sprite_index = spr_longjump;
 			else
 				sprite_index = spr_mach2jump;

@@ -1,7 +1,8 @@
 image_speed = 0.35;
 visited = false;
 depth = 103;
-if check_sugary()
+sugary = check_sugary();
+if sugary
 	depth = 50;
 targetDoor = "A";
 group_arr = -4;
@@ -22,5 +23,5 @@ if (room == tower_5)
 }
 compatibility = false;
 targetRoom = room;
-if check_sugary()
+if sugary
 	sprite_index = spr_doorunvisited_ss;

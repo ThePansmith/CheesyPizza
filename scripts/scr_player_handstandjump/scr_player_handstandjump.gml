@@ -88,7 +88,7 @@ function scr_player_handstandjump()
 		vsp = -11;
 		state = states.mach2;
 		
-		if (character != "N")
+		if character == "P" or character == "PP"
 			sprite_index = spr_longjump;
 		else
 			sprite_index = spr_mach2jump;

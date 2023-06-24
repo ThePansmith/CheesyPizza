@@ -1,4 +1,4 @@
-if (active && sprite_index != spr_open && !instance_exists(obj_jumpscare) && ds_list_find_index(global.saveroom, id) == -1)
+if (active && !instance_exists(obj_jumpscare) && ds_list_find_index(global.saveroom, id) == -1)
 {
 	if (sprite_index != spr_close)
 	{
