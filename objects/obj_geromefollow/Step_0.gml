@@ -1,5 +1,5 @@
-if (sprite_index == spr_gerome_collected && floor(image_index) == (image_number - 1))
-	sprite_index = spr_gerome_keyidle;
+if (sprite_index == collectedspr && floor(image_index) == (image_number - 1))
+	sprite_index = idlespr;
 if (room == rank_room || room == timesuproom)
 	visible = false;
 if (obj_player1.spotlight == 1)
