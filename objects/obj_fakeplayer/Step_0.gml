@@ -54,4 +54,3 @@ if bbox_in_camera() && !move
 }
 else
 	alarm[0] = -1;
-
