@@ -19,3 +19,5 @@ if (image_xscale == -1)
 		other.solid_inst = id;
 	}
 }
+if check_sugary()
+	sprite_index = spr_onewaybigblock_ss;

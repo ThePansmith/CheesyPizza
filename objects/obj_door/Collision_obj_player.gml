@@ -79,6 +79,8 @@ if !place_meeting(x, y, obj_doorblocked)
 					state = states.gotoplayer;
 			}
 			other.visited = true;
+			if other.sprite_index == spr_doorunvisited_ss
+				other.sprite_index = spr_doorvisited_ss
 			if ds_list_find_index(global.saveroom, other.id) == -1
 				ds_list_add(global.saveroom, other.id);
 			with instance_create(x, y, obj_fadeout)

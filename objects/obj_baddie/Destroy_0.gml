@@ -11,6 +11,8 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite || elitehit <= 0)
 			paletteselect = other.paletteselect;
 			usepalette = other.usepalette;
 			image_alpha = other.image_alpha;
+			if variable_instance_exists(other, "sugary")
+				sugary = other.sugary
 			if (other.object_index == obj_ghostknight)
 				image_alpha = 0.3;
 		}

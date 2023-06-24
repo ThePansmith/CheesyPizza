@@ -8,3 +8,4 @@ spr_dead = spr_gumslime_dead;
 paletteselect = 0;
 spr_palette = palette_cheeseslime;
 sprite_index = walkspr;
+sugary = true;
