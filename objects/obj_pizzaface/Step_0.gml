@@ -38,6 +38,7 @@ else
 }
 if (!_move)
 	image_alpha = Approach(image_alpha, 0, 0.1);
+
 if (_move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.state != states.actor && !instance_exists(obj_fadeout) && !instance_exists(obj_endlevelfade) && image_alpha >= 1)
 {
 	fmod_event_instance_stop(snd, true);

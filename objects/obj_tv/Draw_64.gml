@@ -253,35 +253,6 @@ if (global.panic)
 	_perc = _currentbarpos / chunkmax;
 	var _max_x = 299;
 	var _barpos = _max_x * _perc;
-	if (!surface_exists(bar_surface))
-		bar_surface = surface_create(298, 30);
-	var _barfillpos = floor(_barpos) + 13;
-	if (_barfillpos > 0)
-	{
-		surface_resize(bar_surface, _barfillpos, 30);
-		surface_set_target(bar_surface);
-		draw_clear_alpha(0, 0);
-		var clip_x = timer_x + 3;
-		var clip_y = timer_y + 5;
-		for (i = 0; i < 3; i++)
-			draw_sprite(spr_timer_barfill, 0, barfill_x + (i * 173), 0);
-		surface_reset_target();
-		draw_surface(bar_surface, clip_x, clip_y);
-	}
-	draw_sprite(spr_timer_bar, -1, timer_x, timer_y);
-	
-	// john
-	/*
-	if (timer_x + 13 + _barpos < timer_x + 13)
-		draw_sprite(spr_timer_johnface_sleep, sleepingjohnface_index, timer_x + 13, timer_y + 20);
-	else*/
-		draw_sprite(johnface_sprite, johnface_index, clamp(timer_x + 13 + _barpos, timer_x + 13, 9999999), timer_y + 20);
-	
-	// pizzaface
-	var timerspr = pizzaface_sprite;
-	if (timer_tower)
-		timerspr = spr_timer_tower;
-	draw_sprite(timerspr, pizzaface_index, timer_x + 320, timer_y + 10);
 	
 	// M:SS timer
 	var minutes = 0;
@@ -291,10 +262,78 @@ if (global.panic)
 		seconds = concat("0", seconds);
 	else
 		seconds = string(seconds);
-	draw_set_halign(1);
-	draw_set_valign(1);
-	draw_set_font(global.bigfont);
-	draw_text(timer_x + 153, timer_y + 18, concat(minutes, ":", seconds));
+	
+	// draw them
+	if !sugarylevel
+	{
+		if (!surface_exists(bar_surface))
+			bar_surface = surface_create(298, 30);
+		var _barfillpos = floor(_barpos) + 13;
+		if (_barfillpos > 0)
+		{
+			surface_resize(bar_surface, _barfillpos, 30);
+			surface_set_target(bar_surface);
+			draw_clear_alpha(0, 0);
+			var clip_x = timer_x + 3;
+			var clip_y = timer_y + 5;
+			for (i = 0; i < 3; i++)
+				draw_sprite(spr_timer_barfill, 0, barfill_x + (i * 173), 0);
+			surface_reset_target();
+			draw_surface(bar_surface, clip_x, clip_y);
+		}
+		draw_sprite(spr_timer_bar, -1, timer_x, timer_y);
+		
+		// john
+		/*
+		if (timer_x + 13 + _barpos < timer_x + 13)
+			draw_sprite(spr_timer_johnface_sleep, sleepingjohnface_index, timer_x + 13, timer_y + 20);
+		else*/
+			draw_sprite(johnface_sprite, johnface_index, max(timer_x + 13 + _barpos, timer_x + 13), timer_y + 20);
+		
+		// pizzaface
+		var timerspr = pizzaface_sprite;
+		if (timer_tower)
+			timerspr = spr_timer_tower;
+		draw_sprite(timerspr, pizzaface_index, timer_x + 320, timer_y + 10);
+		
+		// timer
+		draw_set_align(1, 1);
+		draw_set_font(global.bigfont);
+		draw_text(timer_x + 153, timer_y + 18, concat(minutes, ":", seconds));
+	}
+	else
+	{
+		if pizzaface_sprite == spr_timer_pizzaface1
+		{
+			draw_sprite(spr_bartimer_normalBack, pizzaface_index, timer_x + 164, timer_y + 20);
+		
+			if (!surface_exists(bar_surface))
+				bar_surface = surface_create(298, 50);
+		
+			var _barfillpos = floor(_barpos) + 13;
+			if (_barfillpos > 0)
+			{
+				surface_resize(bar_surface, _barfillpos, 50);
+				surface_set_target(bar_surface);
+				draw_clear_alpha(0, 0);
+				draw_sprite(spr_bartimer_strip, 0, 184, 0);
+				surface_reset_target();
+				draw_surface(bar_surface, timer_x - 20, timer_y + 20);
+			}
+			draw_sprite(spr_bartimer_roll, johnface_index, timer_x + _barfillpos - 24, timer_y + 55 - 15 * _perc);
+		
+			draw_sprite(spr_bartimer_normalFront, pizzaface_index, timer_x + 164, timer_y + 20);
+		}
+		else if pizzaface_sprite == spr_timer_pizzaface2
+			draw_sprite(spr_bartimer_showtime, pizzaface_index, timer_x + 164, timer_y + 20);
+		else if pizzaface_sprite == spr_timer_pizzaface3
+			draw_sprite(spr_bartimer_showtime, 70, timer_x + 164, timer_y + 20);
+		
+		// timer
+		draw_set_align(1, 1);
+		draw_set_font(global.font_small);
+		draw_text(timer_x + 153, timer_y, concat(minutes, ":", seconds));
+	}
 	
 	// lap display
 	if global.lap > 0

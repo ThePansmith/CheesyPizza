@@ -281,6 +281,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Decorations","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/Decorations.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Door","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/Door.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Secret Portal","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/Secret Portal.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timer","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/Timer.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Toppins","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/Toppins.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Cutscene","folderPath":"folders/Sprites/Cutscene.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Ending","folderPath":"folders/Sprites/Cutscene/Ending.yy",},
@@ -495,7 +496,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timer","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/Timer.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"fmod.dll","CopyToMask":-1,"filePath":"datafiles",},
@@ -7539,6 +7539,7 @@
     {"id":{"name":"spr_player_barrelland","path":"sprites/spr_player_barrelland/spr_player_barrelland.yy",},},
     {"id":{"name":"spr_graffiti","path":"sprites/spr_graffiti/spr_graffiti.yy",},},
     {"id":{"name":"spr_fakepeppino_supertaunt1","path":"sprites/spr_fakepeppino_supertaunt1/spr_fakepeppino_supertaunt1.yy",},},
+    {"id":{"name":"spr_coneball","path":"sprites/spr_coneball/spr_coneball.yy",},},
     {"id":{"name":"spr_tv_fireassN","path":"sprites/spr_tv_fireassN/spr_tv_fireassN.yy",},},
     {"id":{"name":"spr_towerintro","path":"sprites/spr_towerintro/spr_towerintro.yy",},},
     {"id":{"name":"fg_entrance1","path":"sprites/fg_entrance1/fg_entrance1.yy",},},

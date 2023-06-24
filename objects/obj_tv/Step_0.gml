@@ -393,7 +393,8 @@ else
 // fill timer
 pizzaface_index += 0.35;
 hand_index += 0.35;
-johnface_index += 0.35;
+johnface_index += sugarylevel ? 0.015 : 0.35;
+
 if (global.panic && global.fill > 0 && !instance_exists(obj_pizzaface))
 {
 	showtime_buffer = 100;
@@ -411,7 +412,7 @@ else if (global.panic)
 	}
 	else if (pizzaface_sprite == spr_timer_pizzaface2)
 	{
-		if (floor(pizzaface_index) == (sprite_get_number(pizzaface_sprite) - 1))
+		if (floor(pizzaface_index) == sprite_get_number(pizzaface_sprite) - 1 && !sugarylevel) or floor(pizzaface_index) >= 70
 		{
 			pizzaface_sprite = spr_timer_pizzaface3;
 			pizzaface_index = 0;
@@ -435,11 +436,12 @@ if (global.panic && global.fill < (chunkmax / 5))
 barfill_x -= 0.2;
 if (barfill_x < -173)
 	barfill_x = 0;
-if (pizzaface_index > (sprite_get_number(pizzaface_sprite) - 1))
+
+if (pizzaface_index > (sprite_get_number(pizzaface_sprite) - 1) && !sugarylevel)
 	pizzaface_index = frac(pizzaface_index);
 if (hand_index > (sprite_get_number(hand_sprite) - 1))
 	hand_index = frac(hand_index);
-if (johnface_index > (sprite_get_number(johnface_sprite) - 1))
+if (johnface_index > (sprite_get_number(johnface_sprite) - 1) && !sugarylevel)
 	johnface_index = frac(johnface_index);
 
 // combo
