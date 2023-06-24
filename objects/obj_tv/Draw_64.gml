@@ -201,7 +201,6 @@ if (room != strongcold_endscreen)
 	if (state == states.tv_whitenoise)
 	{
 		var charspr = asset_get_index("spr_tv_whitenoise" + chara);
-		trace(chara);
 		draw_sprite(charspr > -1 ? charspr : spr_tv_whitenoise, tv_trans, tv_x + collect_x, tv_y + collect_y + hud_posY);
 	}
 	

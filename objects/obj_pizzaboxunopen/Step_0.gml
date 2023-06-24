@@ -70,7 +70,7 @@ if place_meeting(x, y, obj_player)
 		
 		if REMIX or sugary
 		{
-			var text = $"\{u}You have found {global.toppintotal} {sugary ? "Confecti" : (global.toppintotal == 1 ? "Toppin" : "Toppins")} out of 5!/";
+			var text = $"\{u}You have found {global.toppintotal - 1} {sugary ? "Confecti" : (global.toppintotal == 1 ? "Toppin" : "Toppins")} out of 5!/";
 			create_transformation_tip(text);
 		}
 	}

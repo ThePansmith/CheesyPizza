@@ -551,9 +551,6 @@ function state_pepperman_jump()
 	if (key_taunt2)
 	{
 		fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y)
-			
-		show_debug_message(character)
-		show_debug_message(paletteselect)
 		taunttimer = 20;
 		tauntstoredmovespeed = movespeed;
 		tauntstoredvsp = vsp;
