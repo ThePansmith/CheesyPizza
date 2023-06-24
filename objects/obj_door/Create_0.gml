@@ -22,3 +22,5 @@ if (room == tower_5)
 }
 compatibility = false;
 targetRoom = room;
+if check_sugary()
+	sprite_index = spr_doorunvisited_ss;

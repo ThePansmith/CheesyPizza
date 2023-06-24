@@ -21,3 +21,8 @@ uparrowID = -4;
 if (obj_player.character == "S")
 	instance_destroy();
 snd = false;
+if check_sugary()
+{
+	sprite_index = spr_sugarygateopen
+	image_speed = 0.35
+}

@@ -10,3 +10,8 @@ if (room == rm_editor)
 	}
 }
 deadspr = spr_hungrypillar_dead;
+if check_sugary()
+{
+	sprite_index = spr_hungrypillar_ss
+	deadspr = spr_hungrypillar_dead_ss
+}

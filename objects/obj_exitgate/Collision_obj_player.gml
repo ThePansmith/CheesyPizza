@@ -1,5 +1,5 @@
 var forgot = false;
-if (image_index == 1 && global.panic == false && room != war_13 && !forgot)
+if ((image_index == 1 or sprite_index == spr_sugarygateopen) && global.panic == false && room != war_13 && !forgot)
 {
 	with (obj_player)
 	{
@@ -16,7 +16,10 @@ if (image_index == 1 && global.panic == false && room != war_13 && !forgot)
 				shake_mag = 10;
 				shake_mag_acc = 30 / room_speed;
 			}
-			other.image_index = 0;
+			if other.sprite_index == spr_sugarygateopen
+				other.sprite_index = spr_sugarygateclosing
+			else
+				other.image_index = 0
 			ds_list_add(global.saveroom, other.id);
 		}
 	}

@@ -9,3 +9,4 @@ paletteselect = 0;
 spr_palette = palette_cheeseslime;
 sprite_index = walkspr;
 mask_index = spr_babybear_walk;
+sugary = true;
