@@ -104,7 +104,12 @@ if (REMIX or global.laps >= 2) && !instance_exists(tracker)
 {
 	tracker = instance_create(0, 0, obj_objecticontracker);
 	tracker.objectID = id;
-	tracker.sprite_index = (sprite_index == spr_babyface ? spr_icon_baba : spr_icon_pizzaface);
+	switch sprite_index
+	{
+		default: tracker.sprite_index = spr_icon_pizzaface; break;
+		case spr_babyface: tracker.sprite_index = spr_icon_baba; break;
+		case spr_coneball: tracker.sprite_index = spr_icon_coneball break;
+	}
 }
 if keyboard_check_pressed(ord("F")) && DEBUG
 	frozen = !frozen;

@@ -658,6 +658,7 @@
     {"id":{"name":"obj_pizzaball","path":"objects/obj_pizzaball/obj_pizzaball.yy",},},
     {"id":{"name":"obj_pizzaheadminigun","path":"objects/obj_pizzaheadminigun/obj_pizzaheadminigun.yy",},},
     {"id":{"name":"pattern_set","path":"scripts/pattern_set/pattern_set.yy",},},
+    {"id":{"name":"spr_icon_coneball","path":"sprites/spr_icon_coneball/spr_icon_coneball.yy",},},
     {"id":{"name":"obj_kentukylenny","path":"objects/obj_kentukylenny/obj_kentukylenny.yy",},},
     {"id":{"name":"obj_tutorialtargetblock","path":"objects/obj_tutorialtargetblock/obj_tutorialtargetblock.yy",},},
     {"id":{"name":"obj_fmod","path":"objects/obj_fmod/obj_fmod.yy",},},
