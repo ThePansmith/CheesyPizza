@@ -175,9 +175,7 @@
     {"name":"inst_3BAEAD30","path":"rooms/mansion_plain/mansion_plain.yy",},
     {"name":"inst_BF521BA8","path":"rooms/mansion_plain/mansion_plain.yy",},
     {"name":"inst_44059910","path":"rooms/mansion_plain/mansion_plain.yy",},
-    {"name":"inst_C9B90788","path":"rooms/mansion_plain/mansion_plain.yy",},
     {"name":"inst_F30101F5","path":"rooms/mansion_plain/mansion_plain.yy",},
-    {"name":"inst_4E6C7500","path":"rooms/mansion_plain/mansion_plain.yy",},
   ],
   "isDnd": false,
   "layers": [

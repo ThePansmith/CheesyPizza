@@ -9,3 +9,18 @@ movespeed = 3;
 state = states.normal;
 tauntID = -4;
 playerid = obj_player1;
+if check_sugary()
+{
+	collectedspr = spr_gerome_collected_ss
+	idlespr = spr_gerome_idle_ss
+	movespr = spr_gerome_keymove_ss
+	tauntspr = spr_gerome_taunt
+}
+else
+{
+	collectedspr = spr_gerome_collected
+	idlespr = spr_gerome_keyidle
+	movespr = spr_gerome_keymove
+	tauntspr = spr_gerome_taunt
+}
+sprite_index = collectedspr
