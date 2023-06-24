@@ -1,10 +1,6 @@
 index += 0.35;
-if (sparkleactive)
-	sparkleindex = (sparkleindex + 2) % sprite_get_number(spr_shinysparkle);
-
 if (x != obj_player1.x)
 	image_xscale = sign(obj_player1.x - x);
-
 switch (state)
 {
 	case states.normal:
@@ -36,8 +32,6 @@ switch (state)
 				image_index = 0;
 			}
 		}
-		
-		sparkleactive = paletteselect > 0;
 		break;
 	
 	case states.transition:

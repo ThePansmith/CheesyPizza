@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sprite10332577",
-    "path": "sprites/sprite10332577/sprite10332577.yy",
+    "name": "spr_meatgrinder",
+    "path": "sprites/spr_meatgrinder/spr_meatgrinder.yy",
   },
   "spriteMaskId": null,
   "visible": true,

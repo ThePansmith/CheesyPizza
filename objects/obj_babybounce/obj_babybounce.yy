@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "CheesyPizza",
-    "path": "folders/Objects/CheesyPizza.yy",
+    "name": "Baby",
+    "path": "folders/Objects/CheesyPizza/Baby.yy",
   },
   "parentObjectId": {
     "name": "obj_baddie",

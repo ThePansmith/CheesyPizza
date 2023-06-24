@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sprite1029",
-    "path": "sprites/sprite1029/sprite1029.yy",
+    "name": "spr_secretdestroyable",
+    "path": "sprites/spr_secretdestroyable/spr_secretdestroyable.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -46,7 +46,7 @@ characters = [
 	["PP", spr_playerPP_idle, spr_pisspalette, [1, 3]],
 	["BN", spr_playerBN_idle, spr_bopalette, [1, 3]],
 ];
-if Debug // snick. unfinished
+if DEBUG // snick. unfinished
 	array_push(characters, ["S", spr_snick_idle, spr_snickpalette, [1, 4]]);
 
 // set in user event 0

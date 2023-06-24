@@ -5,7 +5,7 @@ if room_first != Initroom
 }
 
 #macro REMIX global.gameplay
-#macro Debug (GM_build_type == "run")
+#macro DEBUG (GM_build_type == "run")
 
 // initialize
 scr_get_languages();

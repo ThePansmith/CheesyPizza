@@ -26,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sprite12242012",
-    "path": "sprites/sprite12242012/sprite12242012.yy",
+    "name": "spr_doorMonster",
+    "path": "sprites/spr_doorMonster/spr_doorMonster.yy",
   },
   "spriteMaskId": null,
   "visible": false,

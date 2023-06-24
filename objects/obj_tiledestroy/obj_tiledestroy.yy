@@ -28,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sprite10293",
-    "path": "sprites/sprite10293/sprite10293.yy",
+    "name": "spr_tiledestroy",
+    "path": "sprites/spr_tiledestroy/spr_tiledestroy.yy",
   },
   "spriteMaskId": null,
   "visible": false,

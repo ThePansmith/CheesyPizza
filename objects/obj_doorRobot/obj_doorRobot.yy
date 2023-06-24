@@ -26,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sprite12242013",
-    "path": "sprites/sprite12242013/sprite12242013.yy",
+    "name": "spr_doorRobot",
+    "path": "sprites/spr_doorRobot/spr_doorRobot.yy",
   },
   "spriteMaskId": null,
   "visible": false,

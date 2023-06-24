@@ -1,6 +1,6 @@
 if (instance_number(object_index) > 1)
 {
-	if Debug repeat 20
+	if DEBUG repeat 20
 		trace("!! NEW obj_player INSTANCE !! room: ", room);
 	else
 	{

@@ -1,4 +1,4 @@
-if !Debug
+if !DEBUG
 {
 	instance_destroy();
 	exit;

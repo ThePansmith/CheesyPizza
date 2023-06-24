@@ -10,7 +10,7 @@ function WCscr_altname(name, alt)
 
 function scr_wc_create()
 {
-	WC_debug = Debug;
+	WC_debug = DEBUG;
 	
 	// builtin list
 	WC_builtins = ds_map_create();
@@ -262,7 +262,7 @@ function scr_wc_create()
 function scr_wc_step()
 {
 	depth = -16000;
-	WC_debug = Debug;
+	WC_debug = DEBUG;
 	
 	#region bound keys
 	

@@ -364,10 +364,3 @@ if (pause)
 	scr_pauseicons_update(selected);
 else
 	scr_pauseicons_update(-1);
-
-// tell server we're paused
-if network_paused != pause
-{
-	alarm[6] = 1;
-	network_paused = pause;
-}

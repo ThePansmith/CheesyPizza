@@ -49,4 +49,5 @@ scr_pauseicon_add(spr_pauseicons, 2, -10);
 scr_pauseicon_add(spr_pauseicons, 3, -10);
 alarm[1] = 1;
 
-network_paused = false;
+screensprite = noone;
+screensprite2 = noone;

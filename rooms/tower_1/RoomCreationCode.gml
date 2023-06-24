@@ -1,4 +1,3 @@
-pal_swap_init_system(shd_pal_swapper);
 global.roommessage = lang_get_value("room_tower1");
 if (global.panic == false)
 	global.gameframe_caption_text = "Oldest part of the Pizza Tower";

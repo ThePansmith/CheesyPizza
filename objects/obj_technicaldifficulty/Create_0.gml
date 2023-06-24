@@ -9,21 +9,26 @@ alarm[0] = 80;
 fmod_event_one_shot("event:/sfx/ui/tvswitch");
 with (obj_player)
 	state = states.actor;
-var chara = obj_player1.character
-var isgustavo = obj_player1.isgustavo
+
+chara = obj_player1.character;
+if obj_player1.isgustavo
+	chara = "G";
 
 switch chara
 {
 	default:
-		if !isgustavo
-			sprite = choose(spr_technicaldifficulty1, spr_technicaldifficulty2, spr_technicaldifficulty3)
-		else
-			sprite = spr_technicaldifficulty4
+		sprite = choose(spr_technicaldifficulty1, spr_technicaldifficulty2, spr_technicaldifficulty3);
 		break;
 	case "PP":
-		sprite = choose(spr_technicaldifficulty1PP, spr_technicaldifficulty2PP, spr_technicaldifficulty3PP)
+		sprite = choose(spr_technicaldifficulty1PP, spr_technicaldifficulty2PP, spr_technicaldifficulty3PP);
 		break;
 	case "BN":
 		sprite = choose(spr_technicaldifficulty1BN, spr_technicaldifficulty2BN, spr_technicaldifficulty3BN, spr_technicaldifficulty4BN);
+		break;
+	case "N":
+		sprite = choose(spr_technicaldifficulty1N, spr_technicaldifficulty2N, spr_technicaldifficulty3N);
+		break;
+	case "G":
+		sprite = spr_technicaldifficulty4;
 		break;
 }

@@ -105,5 +105,5 @@ if (REMIX or global.laps >= 2) && !instance_exists(tracker)
 	tracker.objectID = id;
 	tracker.sprite_index = (sprite_index == spr_babyface ? spr_icon_baba : spr_icon_pizzaface);
 }
-if keyboard_check_pressed(ord("F")) && Debug
+if keyboard_check_pressed(ord("F")) && DEBUG
 	frozen = !frozen;

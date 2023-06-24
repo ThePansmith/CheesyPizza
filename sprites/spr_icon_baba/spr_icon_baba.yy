@@ -26,8 +26,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Misc",
-    "path": "folders/Sprites/CheesyPizza/Misc.yy",
+    "name": "HUD",
+    "path": "folders/Sprites/CheesyPizza/HUD.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

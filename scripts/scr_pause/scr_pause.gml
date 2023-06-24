@@ -35,12 +35,37 @@ function scr_create_pause_image()
 	if surface_exists(surface)
 	{
 		screensprite = sprite_create_from_surface(surface, 0, 0, wd, ht, false, false, 0, 0);
+		screensprite2 = noone;
+		
+		// second surface, to fade in the blur
+		if REMIX
+		{
+			var surface2 = surface_create(wd, ht);
+			surface_set_target(surface2);
+			
+			shader_set(shd_blur);
+			shader_set_uniform_f(shader_get_uniform(shd_blur, "size"), 960 / 3, 540 / 3, 2);
+			
+			draw_surface(surface, 0, 0);
+			surface_reset_target();
+			
+			// make sprite
+			screensprite2 = sprite_create_from_surface(surface2, 0, 0, wd, ht, false, false, 0, 0);
+			surface_free(surface2);
+		}
 		surface_free(surface);
 	}
 }
 function scr_draw_pause_image()
 {
-	if sprite_exists(screensprite)
+	if REMIX && sprite_exists(screensprite2)
+	{
+		if fade < 1 && sprite_exists(screensprite)
+			draw_sprite_ext(screensprite, 0, 0, 0, screenscale, screenscale, 0, c_white, 1);
+		else if fade != 0
+			draw_sprite_ext(screensprite2, 0, 0, 0, screenscale, screenscale, 0, c_white, fade);
+	}
+	else if sprite_exists(screensprite)
 		draw_sprite_ext(screensprite, 0, 0, 0, screenscale, screenscale, 0, c_white, 1);
 }
 function scr_pause_stop_sounds()
@@ -53,10 +78,10 @@ function scr_pause_stop_sounds()
 }
 function scr_delete_pause_image()
 {
-	if (sprite_exists(screensprite))
+	if sprite_exists(screensprite)
 		sprite_delete(screensprite);
-	//if (sprite_exists(guisprite))
-	//	sprite_delete(guisprite);
+	if sprite_exists(screensprite2)
+		sprite_delete(screensprite2);
 }
 function scr_pauseicon_add(sprite, index, xoffset = 0, yoffset = 0)
 {
