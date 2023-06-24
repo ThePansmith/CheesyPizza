@@ -3,6 +3,14 @@ if ((image_index == 1 or sprite_index == spr_sugarygateopen) && global.panic == 
 {
 	with (obj_player)
 	{
+		if (state == states.comingoutdoor && floor(image_index) == (image_number - 3))
+		{
+			if other.sprite_index == spr_sugarygateopen
+			{
+				other.image_index = 0;
+				other.sprite_index = spr_sugarygateclosing;
+			}
+		}
 		if (state == states.comingoutdoor && floor(image_index) == (image_number - 2))
 		{
 			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
@@ -16,10 +24,10 @@ if ((image_index == 1 or sprite_index == spr_sugarygateopen) && global.panic == 
 				shake_mag = 10;
 				shake_mag_acc = 30 / room_speed;
 			}
-			if other.sprite_index == spr_sugarygateopen
-				other.sprite_index = spr_sugarygateclosing
+			if other.sprite_index == spr_sugarygateclosing
+				other.image_index = 1;
 			else
-				other.image_index = 0
+				other.image_index = 0;
 			ds_list_add(global.saveroom, other.id);
 		}
 	}

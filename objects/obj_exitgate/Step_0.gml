@@ -1,9 +1,10 @@
 if global.panic == true || (instance_exists(obj_wartimer) && room != war_1)
 {
 	if sprite_index == spr_sugarygateclosed
-		sprite_index = spr_sugarygateopen
+		sprite_index = spr_sugarygateopen;
 	else
 		image_index = 1;
+	
 	if (!uparrow)
 	{
 		uparrowID = scr_create_uparrowhitbox();
@@ -93,4 +94,4 @@ if (drop && global.panic)
 	handindex += 0.35;
 }
 if (sprite_index == spr_sugarygateclosing && floor(image_index) == (image_number - 1))
-    sprite_index = spr_sugarygateclosed
+    sprite_index = spr_sugarygateclosed;
