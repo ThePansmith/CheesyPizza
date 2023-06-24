@@ -31,7 +31,7 @@ function toggle_collisions(enable)
 	var i_love_cock = [obj_solid, obj_slope, obj_platform, obj_ladder, obj_secretblock, obj_secretbigblock, obj_secretmetalblock, obj_grindrail, obj_grindrailslope, obj_slope_platform];
 	with all
 	{
-		if array_contains(i_love_cock, object_index)
+		if array_contains(i_love_cock, object_index) && !(object_index == obj_ladder && check_sugary())
 		{
 			visible = enable;
 			depth = 1;
