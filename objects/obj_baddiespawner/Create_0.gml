@@ -12,3 +12,5 @@ platformid = -4;
 hsp_carry = 0;
 vsp_carry = 0;
 countdown = 50;
+if check_sugary()
+	sprite_index = spr_baddiespawner_ss

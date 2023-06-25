@@ -331,7 +331,7 @@ if (global.panic)
 		
 		// timer
 		draw_set_align(1, 1);
-		draw_set_font(global.font_small);
+		draw_set_font(global.sugarypromptfont);
 		draw_text(timer_x + 153, timer_y, concat(minutes, ":", seconds));
 	}
 	

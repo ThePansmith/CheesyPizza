@@ -9,12 +9,12 @@ if (global.panic == false && player != 1)
 {
 	x = xstart;
 	y = ystart;
-	sprite_index = spr_minipillarwoke;
-	mask_index = spr_minipillarwoke;
+	sprite_index = wokespr;
+	mask_index = wokespr;
 }
 else
 {
-	x = -100;
-	y = -100;
-	sprite_index = spr_minipillarsleep;
+	x = -10000;
+	y = -10000;
+	sprite_index = sleepspr;
 }

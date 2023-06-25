@@ -1,6 +1,6 @@
 if (room == rm_editor)
 {
-	mask_index = spr_minipillarwoke;
+	mask_index = wokespr;
 	exit;
 }
 if (player < 2)
@@ -12,15 +12,15 @@ if (player < 2)
 }
 if (global.panic == false || player <= 1)
 {
-	x = -100;
-	y = -100;
-	sprite_index = spr_minipillarsleep;
-	mask_index = spr_minipillarsleep;
+	x = -10000;
+	y = -10000;
+	sprite_index = sleepspr;
+	mask_index = sleepspr;
 }
 else
 {
-	mask_index = spr_minipillarwoke;
-	sprite_index = spr_minipillarwoke;
+	mask_index = wokespr;
+	sprite_index = wokespr;
 	x = xstart;
 	y = ystart;
 }
