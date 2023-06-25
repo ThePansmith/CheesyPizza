@@ -443,7 +443,7 @@ function __global_object_depths()
 	global.__objectNames[194] = "obj_tutorialtrap";
 	global.__objectNames[195] = "obj_crashingplane";
 	global.__objectNames[196] = "obj_crashplaneblock";
-	global.__objectNames[197] = "obj_parrallax";
+	global.__objectNames[197] = "obj_parallax";
 	global.__objectNames[198] = "obj_lamp";
 	global.__objectNames[199] = "obj_lightlamp";
 	global.__objectNames[200] = "obj_speedlines";

@@ -320,7 +320,7 @@ if (global.panic)
 				surface_reset_target();
 				draw_surface(bar_surface, timer_x - 20, timer_y + 20);
 			}
-			draw_sprite(spr_bartimer_roll, johnface_index, timer_x + _barfillpos - 24, timer_y + 55 - 15 * _perc);
+			draw_sprite(spr_bartimer_roll, johnface_index, max(timer_x + _barfillpos, timer_x) - 24, timer_y + 55 - 15 * max(_perc, 0));
 		
 			draw_sprite(spr_bartimer_normalFront, pizzaface_index, timer_x + 164, timer_y + 20);
 		}

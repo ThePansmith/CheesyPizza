@@ -22,19 +22,19 @@ function layer_get_parallax(lay)
 		case "Backgrounds_sky": return [_cam_x * 0.25, _cam_y * 0.25]; break;
 		case "Backgrounds_sky2": return [_cam_x, _cam_y]; break;
 		
-		case "Backgrounds_stillscroll": return [_cam_x - calculate_parrallax_still_x(lay, 0.25), _cam_y - calculate_parrallax_still_y(lay, 0.25)]; break;
-		case "Backgrounds_stillH1": return [_cam_x * 0.3, _cam_y - calculate_parrallax_still_y(lay, 0.3)]; break;
-		case "Backgrounds_stillH2": return [_cam_x * 0.25, _cam_y - calculate_parrallax_still_y(lay, 0.25)]; break;
-		case "Backgrounds_stillH3": return [_cam_x * 0.2, _cam_y - calculate_parrallax_still_y(lay, 0.2)]; break;
-		case "Backgrounds_stillH4": return [_cam_x * 0.15, _cam_y - calculate_parrallax_still_y(lay, 0.15)]; break;
+		case "Backgrounds_stillscroll": return [_cam_x - calculate_parallax_still_x(lay, 0.25), _cam_y - calculate_parallax_still_y(lay, 0.25)]; break;
+		case "Backgrounds_stillH1": return [_cam_x * 0.3, _cam_y - calculate_parallax_still_y(lay, 0.3)]; break;
+		case "Backgrounds_stillH2": return [_cam_x * 0.25, _cam_y - calculate_parallax_still_y(lay, 0.25)]; break;
+		case "Backgrounds_stillH3": return [_cam_x * 0.2, _cam_y - calculate_parallax_still_y(lay, 0.2)]; break;
+		case "Backgrounds_stillH4": return [_cam_x * 0.15, _cam_y - calculate_parallax_still_y(lay, 0.15)]; break;
 		case "Backgrounds_scroll": return [_cam_x * 0.3, _cam_y * 0.3]; break;
 		case "Backgrounds_scroll2": return [_cam_x * 0.25, _cam_y * 0.25]; break;
 		case "Backgrounds_scroll3": return [_cam_x * 0.2, _cam_y * 0.2]; break;
 		case "Backgrounds_scroll4": return [_cam_x * 0.15, _cam_y * 0.15]; break;
 		case "Backgrounds_zigzag1": return [_cam_x * 0.35, _cam_y * 0.35 + Wave(-bg_zigzag1_offset, bg_zigzag1_offset, 4, 10)]; break;
 		case "Backgrounds_zigzag2": return [_cam_x * 0.35, _cam_y * 0.35 + Wave(-bg_zigzag2_offset, bg_zigzag2_offset, 4, 10)]; break;
-		case "Backgrounds_stillZH1": return [_cam_x * 0.35, _cam_y - calculate_parrallax_still_y(lay, 0.35) + Wave(-bg_ZH1_offset, bg_ZH1_offset, 4, 10)]; break;
-		case "Backgrounds_stillZH2": return [_cam_x * 0.35, _cam_y - calculate_parrallax_still_y(lay, 0.35) + Wave(-bg_ZH2_offset, bg_ZH2_offset, 4, 10)]; break;
+		case "Backgrounds_stillZH1": return [_cam_x * 0.35, _cam_y - calculate_parallax_still_y(lay, 0.35) + Wave(-bg_ZH1_offset, bg_ZH1_offset, 4, 10)]; break;
+		case "Backgrounds_stillZH2": return [_cam_x * 0.35, _cam_y - calculate_parallax_still_y(lay, 0.35) + Wave(-bg_ZH2_offset, bg_ZH2_offset, 4, 10)]; break;
 		
 		case "Foreground_1": case "Foreground_A": return [_cam_x * -0.15, _cam_y * -0.15]; break;
 		case "Foreground_2": return [_cam_x * -0.25, _cam_y * -0.25]; break;
@@ -47,8 +47,8 @@ function layer_get_parallax(lay)
 			
 			var per_x = _cam_x / (room_width - SCREEN_WIDTH);
 			var per_y = _cam_y / (room_height - SCREEN_HEIGHT);
-			var bg_x = calculate_parrallax_still_x(lay, per);
-			var bg_y = calculate_parrallax_still_y(lay, per);
+			var bg_x = calculate_parallax_still_x(lay, per);
+			var bg_y = calculate_parallax_still_y(lay, per);
 			return [_cam_x - bg_x, _cam_y - bg_y];
 			break;
 	}

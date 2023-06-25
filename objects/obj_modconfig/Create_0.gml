@@ -485,7 +485,6 @@ opt.value = global.shootbutton;
 add_section("Visual");
 #region PANIC BG
 
-/*
 var opt = add_option("Panic Background", "panicbg", "Brings back the wavy background effect from old builds when escaping.", function(val)
 {
 	if val
@@ -503,7 +502,6 @@ var opt = add_option("Panic Background", "panicbg", "Brings back the wavy backgr
 		draw_sprite_ext(bg_desert, -1, 0, 0, 0.4, 0.4, 0, c_white, 1);
 });
 opt.value = global.panicbg;
-*/
 
 #endregion
 #region SLOPE ROTATION

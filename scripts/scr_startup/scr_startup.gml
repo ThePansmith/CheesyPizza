@@ -81,3 +81,5 @@ global.saveloaded = false;
 #macro heat_nerf 5 // divides the style gain by this
 #macro heat_lossdrop 0.1 // speed of global.style loss
 #macro heat_timedrop 0.5 // speed of global.heattime countdown
+
+global.rick_and_morty = true;

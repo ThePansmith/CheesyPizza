@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "scr_parrallax",
+  "name": "scr_parallax",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

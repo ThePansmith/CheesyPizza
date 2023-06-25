@@ -1,8 +1,10 @@
+live_auto_call;
 
 if room_started
 	exit;
 room_started = true;
 
+// fuck
 var layers = layer_get_all();
 for (var i = 0; i < array_length(layers); i++)
 {
@@ -71,8 +73,16 @@ for (var i = 0; i < array_length(layers); i++)
 	// Backgrounds
 	if layer_background_get_id(lay) != -1 && room != boss_pizzafacefinale
 	{
+		/*
 		if 1000 + layer_get_depth(lay) < 16000
 			layer_depth(lay, 1000 + layer_get_depth(lay));
+		*/
+		
+		if layer_get_depth(lay) > 0
+		{
+			layer_depth(lay, 16000);
+			array_push(background_layers, lay);
+		}
 	}
 	
 	#endregion

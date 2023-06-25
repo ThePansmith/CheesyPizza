@@ -1,5 +1,7 @@
 function sh_panic(args)
 {
+	if live_call(args) return live_result;
+	
 	if !WC_debug
 		return "You do not have permission to use this command";
 	
@@ -52,12 +54,12 @@ function sh_panic(args)
 			{
 				global.minutes = minutes;
 				global.seconds = seconds;
+				
+				global.fill = ((minutes * 60 + seconds) * 60) * 0.2
 			}
 		}
 		
 		// fill based timer
-		if minutes != undefined && seconds != undefined
-			global.fill = ((minutes * 60 + seconds) * 60) / 0.2;
 		with obj_tv
 		    chunkmax = global.fill;
 		

@@ -241,6 +241,19 @@ function scr_boss_do_hurt_phase2(object, inv_time = 100)
 	instance_create_unique(0, 0, obj_superattackeffect)
 	image_xscale = -object.xscale;
 	instance_create(0, 0, obj_bossdark);
+	
+	// attempt clip out of ground
+	var i = y;
+	while place_meeting(x, y, obj_solid)
+	{
+		y--;
+		if y < i - 32
+		{
+			y = i;
+			while place_meeting(x, y, obj_solid)
+				y++;
+		}
+	}
 }
 function scr_boss_phase1hurt(func = noone)
 {
@@ -320,12 +333,11 @@ function scr_boss_phase1hurt(func = noone)
 			fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);
 			state = states.stun;
 			image_xscale = -player.xscale;
-			create_slapstar(x, y);
-			create_slapstar(x, y);
-			create_slapstar(x, y);
-			create_baddiegibs(x, y);
-			create_baddiegibs(x, y);
-			create_baddiegibs(x, y);
+			repeat 3
+			{
+				create_slapstar(x, y);
+				create_baddiegibs(x, y);
+			}
 			instance_create(x, y, obj_bangeffect);
 			instance_destroy(obj_bossdark);
 			repeat (4)
@@ -354,7 +366,6 @@ function scr_boss_phase1hurt(func = noone)
 				movespeed = 4;
 				state = states.tackle;
 			}
-			check_grabbed_solid(player);
 			check_grabbed_solid(player);
 			hsp = hithsp;
 			vsp = hitvsp;
