@@ -1,14 +1,26 @@
-if (app_scale <= 0)
+if app_scale <= 0
 	exit;
-draw_set_alpha(1);
-gpu_set_blendmode(bm_normal);
-draw_set_color(c_white);
-if (frac(app_scale) > 0 && global.option_texfilter)
-	gpu_set_texfilter(true);
-else
-	gpu_set_texfilter(false);
-draw_rectangle_color(-100, -100, savedwidth + 100, savedheight + 100, 0, 0, 0, 0, false);
-gpu_set_blendenable(false);
-draw_surface_ext(application_surface, (savedwidth / 2) - ((surface_get_width(application_surface) * app_scale) / 2), (savedheight / 2) - ((surface_get_height(application_surface) * app_scale) / 2), app_scale, app_scale, 0, c_white, 1);
+
+// panic bg
+#macro MAX_BLUR 2 / 4
+
+var appa = 1;
+if instance_exists(obj_player) && (global.panic or global.snickchallenge)
+&& global.panicbg && !instance_exists(obj_ghostcollectibles)
+	appa = clamp(lerp(1, 1 - MAX_BLUR, global.wave / global.maxwave), 0.01, 1);
+
+// black background
+if appa == 1
+{
+	draw_set_alpha(1);
+	gpu_set_blendmode(bm_normal);
+	draw_set_color(c_white);
+	gpu_set_texfilter(frac(app_scale) > 0 && global.option_texfilter);
+	draw_rectangle_color(-100, -100, savedwidth + 100, savedheight + 100, c_black, c_black, c_black, c_black, false);
+}
+
+// draw the game
+gpu_set_blendenable(appa != 1);
+draw_surface_ext(application_surface, savedwidth / 2 - (surface_get_width(application_surface) * app_scale) / 2, savedheight / 2 - (surface_get_height(application_surface) * app_scale) / 2, app_scale, app_scale, 0, c_white, appa);
 gpu_set_blendenable(true);
 gpu_set_texfilter(false);

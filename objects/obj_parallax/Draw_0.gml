@@ -75,7 +75,8 @@ for(var i = array_length(background_layers) - 1; i >= 0; i--)
 }
 draw_set_colour(c_white);
 
-if global.panic && global.panicbg
+if (global.panic or global.snickchallenge)
+&& global.panicbg && !instance_exists(obj_ghostcollectibles)
 {
 	shader_set(shd_panicbg);
 	var panic_id = shader_get_uniform(shd_panicbg, "panic");

@@ -3,7 +3,8 @@ live_auto_call;
 
 if surface_exists(fg_surface) && do_foreground
 {
-	if global.panic && global.panicbg
+	if (global.panic or global.snickchallenge)
+	&& global.panicbg && !instance_exists(obj_ghostcollectibles)
 	{
 		shader_set(shd_panicbg);
 		var panic_id = shader_get_uniform(shd_panicbg, "panic");
