@@ -119,7 +119,7 @@ function scr_player_mach3()
 			image_speed = 0.75;
 		else if (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit || sprite_index == spr_dashpadmach)
 			image_speed = 0.4;
-		if (((!key_attack && fightball == 0 && !launched) && sprite_index != spr_dashpadmach && grounded && vsp > 0) || ((character == "S" && (move == 0 || move != xscale) && grounded) && fightball == 0))
+		if (!key_attack && fightball == 0 && !launched) && sprite_index != spr_dashpadmach && grounded && vsp > 0
 		{
 			sprite_index = spr_machslidestart;
 			fmod_event_one_shot_3d("event:/sfx/pep/break", x, y);
@@ -170,7 +170,7 @@ function scr_player_mach3()
 			state = states.climbwall;
 		}
 			
-		if character != "V"
+		if character != "V" && character != "S"
 		{
 			if (input_buffer_grab > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)) && sprite_index != spr_dashpadmach && (!suplexmove or character != "SP"))
 			{

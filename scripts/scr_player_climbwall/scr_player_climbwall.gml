@@ -1,5 +1,7 @@
 function scr_player_climbwall()
 {
+	if live_call() return live_result;
+	
 	switch (character)
 	{
 		default:
@@ -109,7 +111,7 @@ function scr_player_climbwall()
 				wallspeed = 0;
 			if (input_buffer_jump > 8)
 			{
-				fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
+				sound_play_3d("event:/sfx/pep/jump", x, y);
 				input_buffer_jump = 0;
 				key_jump = false;
 				railmovespeed = 0;
@@ -164,7 +166,7 @@ function scr_player_climbwall()
 					sprite_index = spr_superjumpland;
 					if character == "SP"
 						sprite_index = spr_playerSP_ceilingcrash;
-					fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+					sound_play_3d("event:/sfx/pep/groundpound", x, y);
 					image_index = 0;
 					state = states.Sjumpland;
 					machhitAnim = false;
@@ -207,6 +209,141 @@ function scr_player_climbwall()
 				{
 					input_buffer_slap = 0;
 					scr_perform_move(moves.grabattack, states.climbwall);
+				}
+			}
+			
+			image_speed = 0.6;
+			if (steppybuffer > 0)
+				steppybuffer--;
+			else
+			{
+				create_particle(x + (xscale * 10), y + 43, particle.cloudeffect, 0);
+				steppybuffer = 10;
+			}
+			break;
+		
+		case "S":
+			move = key_left + key_right;
+			suplexmove = false;
+			vsp = -wallspeed;
+			
+			if instance_exists(obj_fadeout) && y < -50
+				vsp = 0;
+			
+			if place_meeting(x + xscale, y, obj_unclimbablewall)
+			{
+				wallspeed -= grav / 2;
+				if wallspeed > 6
+					wallspeed = 6;
+				
+				if grounded
+				{
+					state = states.normal
+					movespeed = 0
+				}
+				
+				var mv = wallspeed / 16;
+				image_speed = lerp(0.35, 0.75, clamp(mv, 0, 1));
+			}
+			else
+			{
+				if (wallspeed < 20)
+					wallspeed += 0.15;
+				if (wallspeed < 0)
+				{
+					if (mach4mode == 0)
+						movespeed += 0.2;
+					else
+						movespeed += 0.4;
+				}
+				image_speed = 0.6;
+				
+				if (wallspeed < 0)
+				{
+					if (!scr_solid(x + xscale, y + 50))
+						vsp = 0;
+				}
+			}
+			
+			crouchslideAnim = true;
+			sprite_index = spr_machclimbwall;
+			
+			if (grabclimbbuffer > 0)
+				grabclimbbuffer--;
+			if (move == 0 && grabclimbbuffer == 0)
+			{
+				state =	states.normal;
+				hsp = 0;
+			}
+			if (verticalbuffer <= 0 && !scr_solid(x + xscale, y) && !place_meeting(x, y, obj_verticalhallway) && !place_meeting(x, y - 12, obj_verticalhallway))
+			{
+				trace("climbwall out");
+				with instance_create(x, y, obj_jumpdust)
+					image_xscale = other.xscale;
+				
+				ledge_bump(32);
+				hsp = xscale * max(wallspeed, 6);
+				state = states.normal;
+				
+				if REMIX
+				{
+					if vsp < 0
+					{
+						for(var i = 0; i < 32; i++)
+						{
+							if scr_solid(x + xscale, y + i + 1)
+							{
+								y += i;
+								break;
+							}
+						}
+					}
+				}
+				vsp = 0;
+			}
+			if (wallspeed < 0 && place_meeting(x, y + 12, obj_solid))
+				wallspeed = 0;
+			if (input_buffer_jump > 8)
+			{
+				sound_play_3d("event:/sfx/pep/jump", x, y);
+				input_buffer_jump = 0;
+				key_jump = false;
+				railmovespeed = 0;
+				
+				hsp = -xscale * 10;
+				state = states.jump;
+				image_index = 0;
+				sprite_index = spr_walljumpstart;
+				vsp = -11;
+				
+				xscale *= -1;
+				jumpstop = false;
+				walljumpbuffer = 4;
+			}
+			if (state != states.normal && verticalbuffer <= 0 && place_meeting(x, y - 1, obj_solid) && scr_solid(x + xscale, y) && !place_meeting(x, y - 1, obj_verticalhallway) && !place_meeting(x, y - 1, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope_parent) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x - sign(hsp), y, obj_slope_parent))
+			{
+				trace("climbwall hit head");
+				if (!skateboarding)
+				{
+					sprite_index = spr_superjumpland;
+					sound_play_3d("event:/sfx/pep/groundpound", x, y);
+					image_index = 0;
+					state = states.Sjumpland;
+					machhitAnim = false;
+					
+					if REMIX with obj_camera
+					{
+						shake_mag = 3;
+						shake_mag_acc = 4 / room_speed;
+					}
+				}
+				else if (!key_jump)
+				{
+					state = states.bump;
+					hsp = -2.5 * xscale;
+					vsp = -3;
+					mach2 = 0;
+					image_index = 0;
 				}
 			}
 			

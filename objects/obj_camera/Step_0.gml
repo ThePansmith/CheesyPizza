@@ -299,7 +299,20 @@ if instance_exists(player) && !lock && player.state != states.timesup && player.
 					cam_y += (cam_height - room_height) / 2;
 			}
 			
-			camera_set_view_pos(view_camera[0], cam_x, cam_y);
+			if lag > 0
+				lagpos = undefined;
+			if lag-- <= 0
+			{
+				if lagpos == undefined
+					lagpos = camera_get_view_x(view_camera[0]) - cam_x;
+				camera_set_view_pos(view_camera[0], cam_x + lagpos, cam_y);
+			}
+			else
+				camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]), cam_y);
+			lag = max(lag, 0);
+			
+			if lagpos != undefined
+				lagpos = Approach(lagpos, 0, 25);
 			
 			lockx = cam_x;
 			locky = cam_y;

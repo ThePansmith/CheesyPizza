@@ -44,6 +44,8 @@ function scr_playerreset(roomstart = false)
 	{
 		lock = false;
 		state = states.normal;
+		lag = 0;
+		lagpos = undefined;
 	}
 	
 	with (obj_achievementtracker)

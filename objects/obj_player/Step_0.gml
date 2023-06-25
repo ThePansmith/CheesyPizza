@@ -55,6 +55,9 @@ if (place_meeting(x, y + 1, obj_slope_parent))
 	collision_flags |= colflag.sloped;
 
 // state machine
+if character == "S"
+	mask_index = spr_crouchmask;
+
 switch (state)
 {
 	case states.normal:	
@@ -1140,6 +1143,7 @@ else
 	grabbing = false;
 if ((state == states.ratmountbounce && vsp >= 0) || sprite_index == spr_Sjumpcancel || sprite_index == spr_swingding || sprite_index == spr_tumble || state == states.boxxedpepspin || state == states.trashroll || state == states.trashjump || state == states.shotgundash || (state == states.shotgunfreefall && (sprite_index == spr_shotgunjump2 || sprite_index == spr_shotgunjump3)) || state == states.Sjump || state == states.rocket || state == states.rocketslide || state == states.chainsawbump || (state == states.punch && ((sprite_index != spr_breakdanceuppercut && sprite_index != spr_breakdanceuppercutend) || vsp < 0)) || state == states.faceplant || state == states.rideweenie || state == states.mach3 || (state == states.jump && sprite_index == spr_playerN_noisebombspinjump) || state == states.freefall || state == states.fireass || state == states.jetpackjump || (state == states.firemouth && sprite_index != spr_firemouthintro) || state == states.hookshot || state == states.jetpackjump || state == states.skateboard || state == states.mach4 || state == states.Sjump || state == states.machfreefall || state == states.tacklecharge || (state == states.superslam && sprite_index == spr_piledriver) || state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.trickjump || state == states.cheesepep || state == states.cheeseball || state == states.ratmounttumble || state == states.ratmountgroundpound || global.noisejetpack == 1 || state == states.ratmountpunch || state == states.antigrav || holycross > 0 || state == states.barrelslide || state == states.barrelclimbwall || ratmount_movespeed >= 12 || ghostdash == 1 || state == states.slipbanan || state == states.shoulderbash || (state == states.machslide && (sprite_index == spr_mach3boost || sprite_index == spr_player_machslideboost3fall)))
 or (state == states.handstandjump && (sprite_index == spr_attackdash or sprite_index == spr_airattack or sprite_index == spr_airattackstart))
+or ((sprite_index == spr_jump or sprite_index == spr_tumble or sprite_index == spr_snick_spindash or abs(hsp) >= 16) && character == "S")
 	instakillmove = true;
 else
 	instakillmove = false;
@@ -1180,7 +1184,12 @@ if (ladderbuffer > 0)
 	ladderbuffer--;
 if (state != states.jump)
 	stompAnim = false;
-if (state == states.mach3 || (state == states.ghost && ghostdash && ghostpepper >= 3) || state == states.mach2 || state == states.Sjump || ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
+
+// mach effect
+var do_macheffect = (state == states.mach3 || (state == states.ghost && ghostdash && ghostpepper >= 3) || state == states.mach2 || state == states.Sjump || ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
+or ((abs(hsp) >= 10 or sprite_index == spr_crazyrun) && character == "S")
+
+if do_macheffect
 {
 	if (macheffect == 0)
 	{
@@ -1193,16 +1202,12 @@ if (state == states.mach3 || (state == states.ghost && ghostdash && ghostpepper 
 		}
 	}
 }
-if (!isgustavo)
-	gusdashpadbuffer = 0;
-else if (gusdashpadbuffer > 0)
-	gusdashpadbuffer--;
-if (!(state == states.mach3) && !(state == states.mach2) && ratmount_movespeed < 12 && (state != states.ghost || ghostpepper < 2) && gusdashpadbuffer <= 0 && state != states.Sjump)
+if !do_macheffect
 	macheffect = false;
 if (toomuchalarm1 > 0)
 {
 	toomuchalarm1 -= 1;
-	if (toomuchalarm1 <= 0 && (state == states.mach3 || (state == states.ghost && ghostdash == 1 && ghostpepper >= 3) || state == states.mach2 || state == states.Sjump || ratmount_movespeed >= 12 || gusdashpadbuffer > 0))
+	if (toomuchalarm1 <= 0 && do_macheffect)
 	{
 		with (create_mach3effect(x, y, sprite_index, image_index - 1))
 		{
@@ -1212,6 +1217,12 @@ if (toomuchalarm1 > 0)
 		toomuchalarm1 = 6;
 	}
 }
+
+if (!isgustavo)
+	gusdashpadbuffer = 0;
+else if (gusdashpadbuffer > 0)
+	gusdashpadbuffer--;
+
 if (restartbuffer > 0)
 	restartbuffer--;
 if ((y > (room_height + 300) || y < -800) && !place_meeting(x, y, obj_verticalhallway) && restartbuffer <= 0 && !verticalhallway && room != custom_lvl_room && state != states.dead && state != states.gotoplayer && !global.levelreset && room != boss_pizzaface && room != tower_outside && room != boss_pizzafacefinale && state != states.dead && !instance_exists(obj_backtohub_fadeout) && state != states.backtohub)
@@ -1254,9 +1265,9 @@ if (character == "S")
 }
 if (character != "M")
 {
-	if (!scr_solid_player(x, y))
+	if !scr_solid_player(x, y)
 	{
-		if (state != states.ratmountcrouch && state != states.boxxedpepjump && state != states.boxxedpepspin && !(state == states.bump && sprite_index == spr_tumbleend) && (state != states.barrelslide && state != states.barrelclimbwall) && sprite_index != spr_player_breakdancesuper && sprite_index != spr_player_barrelslipnslide && sprite_index != spr_player_barrelroll && sprite_index != spr_bombpepintro && sprite_index != spr_knightpepthunder && state != states.stunned && state != states.crouch && state != states.shotguncrouch && state != states.shotguncrouchjump && state != states.boxxedpep && (state != states.pistol && sprite_index != spr_player_crouchshoot) && state != states.Sjumpprep && state != states.crouchslide && state != states.chainsaw && state != states.machroll && state != states.hurt && state != states.crouchjump && state != states.cheesepepstickup && state != states.cheesepepstickside && state != states.tumble && sprite_index != spr_playerN_jetpackslide)
+		if (state != states.ratmountcrouch && state != states.boxxedpepjump && state != states.boxxedpepspin && !(state == states.bump && sprite_index == spr_tumbleend) && (state != states.barrelslide && state != states.barrelclimbwall) && sprite_index != spr_player_breakdancesuper && sprite_index != spr_player_barrelslipnslide && sprite_index != spr_player_barrelroll && sprite_index != spr_bombpepintro && sprite_index != spr_knightpepthunder && state != states.stunned && state != states.crouch && state != states.shotguncrouch && state != states.shotguncrouchjump && state != states.boxxedpep && (state != states.pistol && sprite_index != spr_player_crouchshoot) && state != states.Sjumpprep && state != states.crouchslide && state != states.chainsaw && (state != states.machroll or character == "S") && state != states.hurt && state != states.crouchjump && state != states.cheesepepstickup && state != states.cheesepepstickside && state != states.tumble && sprite_index != spr_playerN_jetpackslide)
 			mask_index = spr_player_mask;
 		else
 			mask_index = spr_crouchmask;
@@ -1278,7 +1289,7 @@ if ((state == states.normal || state == states.ratmount) && obj_player1.spotligh
 			playerid = other.object_index;
 	}
 }
-if (movespeed > 12 && abs(hsp) > 12 && state == states.mach3 && state != states.slipbanan && !instance_exists(speedlineseffectid) && !cutscene && (collision_flags & colflag.secret) <= 0)
+if (abs(hsp) > 12 && (movespeed > 12 && state == states.mach3 or (character == "S" && state == states.normal)) && !instance_exists(speedlineseffectid) && !cutscene && (collision_flags & colflag.secret) <= 0)
 {
 	with (instance_create(x, y, obj_speedlines))
 	{
@@ -1289,8 +1300,14 @@ if (movespeed > 12 && abs(hsp) > 12 && state == states.mach3 && state != states.
 with (obj_ratblock)
 	scr_ratblock_destroy();
 scr_collide_destructibles();
+
+var mask = mask_index;
+if character == "S"
+	mask_index = spr_crouchmask;
 if (state != states.backtohub && state != states.ghostpossess && state != states.gotoplayer && state != states.debugstate && state != states.titlescreen && state != states.tube && state != states.grabbed && state != states.door && state != states.Sjump && state != states.ejected && state != states.comingoutdoor && state != states.boulder && state != states.keyget && state != states.victory && state != states.portal && state != states.timesup && state != states.gottreasure && state != states.dead)
 	scr_collide_player();
+mask_index = mask;
+
 if (state == states.tube || state == states.gotoplayer || state == states.debugstate)
 {
 	x += hsp;

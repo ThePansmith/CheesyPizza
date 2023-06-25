@@ -300,6 +300,22 @@ if (global.panic)
 		draw_set_align(1, 1);
 		draw_set_font(global.bigfont);
 		draw_text(timer_x + 153, timer_y + 18, concat(minutes, ":", seconds));
+		
+		// lap display
+		if global.lap > 0
+		{
+			if !instance_exists(obj_ghostcollectibles)
+				lap_y = Approach(lap_y, timer_ystart, 1);
+			else
+				lap_y = Approach(lap_y, timer_ystart + 212, 4);
+		
+			if !instance_exists(obj_pizzaface) or showtime_buffer > 0
+				lap_x = timer_x;
+			else
+				lap_x = Approach(lap_x, (SCREEN_WIDTH / 2) + 32, 1);
+		
+			scr_draw_lap_display(lap_x, lap_y, lapflag_index);
+		}
 	}
 	else
 	{
@@ -333,22 +349,22 @@ if (global.panic)
 		draw_set_align(1, 1);
 		draw_set_font(global.sugarypromptfont);
 		draw_text(timer_x + 153, timer_y, concat(minutes, ":", seconds));
-	}
-	
-	// lap display
-	if global.lap > 0
-	{
-		if !instance_exists(obj_ghostcollectibles)
-			lap_y = Approach(lap_y, timer_ystart, 1);
-		else
-			lap_y = Approach(lap_y, timer_ystart + 212, 4);
 		
-		if !instance_exists(obj_pizzaface) or showtime_buffer > 0
-			lap_x = timer_x;
-		else
-			lap_x = Approach(lap_x, (SCREEN_WIDTH / 2) + 32, 1);
-		
-		scr_draw_lap_display(lap_x, lap_y, lapflag_index);
+		// lap display
+		if global.lap > 0
+		{
+			if !instance_exists(obj_ghostcollectibles)
+				lap_y = Approach(lap_y, timer_ystart + 24, 1);
+			else
+				lap_y = Approach(lap_y, timer_ystart + 212, 4);
+			
+			if !instance_exists(obj_pizzaface) or showtime_buffer > 0
+				lap_x = timer_x - 32;
+			else
+				lap_x = Approach(lap_x - 32, (SCREEN_WIDTH / 2) + 32, 1);
+			
+			scr_draw_lap_display(lap_x, lap_y, lapflag_index, true);
+		}
 	}
 }
 else if (surface_exists(bar_surface))

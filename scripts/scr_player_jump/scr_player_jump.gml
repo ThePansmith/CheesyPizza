@@ -107,7 +107,7 @@ function state_player_jump()
 			mort = true;
 		}
 	}
-	if (can_jump && input_buffer_jump > 0 && !key_down && !key_attack && vsp > 0 && !(sprite_index == spr_facestomp || sprite_index == spr_freefall))
+	if (can_jump && input_buffer_jump > 0 && ((!key_down && !key_attack) or character == "S") && vsp > 0 && !(sprite_index == spr_facestomp || sprite_index == spr_freefall))
 	{
 		input_buffer_jump = 0;
 		scr_fmod_soundeffect(jumpsnd, x, y);
@@ -134,7 +134,7 @@ function state_player_jump()
 	}
 	if (grounded && vsp > 0)
 	{
-		if (vsp > 0 && (!key_attack || sprite_index == spr_suplexbump))
+		if (vsp > 0 && (!key_attack || sprite_index == spr_suplexbump or character == "S"))
 		{
 			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
 			if (key_attack || sprite_index == spr_shotgunshoot)
@@ -275,7 +275,7 @@ function state_player_jump()
 		}
 	}
 	
-	if character != "V"
+	if character != "V" && character != "S"
 	{
 		// suplex dash
 		if (input_buffer_grab > 0 && !key_up && sprite_index != spr_suplexbump && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)) && (!suplexmove or character != "SP"))
@@ -473,6 +473,8 @@ function state_player_jump()
 				fmod_event_one_shot_3d("event:/sfx/pep/pistolshot", x + (xscale * 20), y);
 			}
 			break;
+		case "S":
+			break;
 	}
 	if (!key_attack || move != xscale)
 		mach2 = 0;
@@ -572,9 +574,17 @@ function state_pepperman_jump()
 			player = other.id;
 	}
 }
+function state_snick_jump()
+{
+	if live_call() return live_result;
+	
+	state_snick_normal();
+}
 function scr_player_jump()
 {
-	if (character != "M")
+	if character == "S"
+		state_snick_jump();
+	else if (character != "M")
 		state_player_jump();
 	else
 		state_pepperman_jump();

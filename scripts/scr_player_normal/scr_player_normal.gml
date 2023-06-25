@@ -293,7 +293,7 @@ function state_player_normal()
 	}
 	if (grounded)
 	{
-		if ((key_jump || (input_buffer_jump > 0 && !key_attack && vsp > 0)) && !key_down)
+		if ((key_jump || (input_buffer_jump > 0 && (!key_attack or character == "S") && vsp > 0)) && !key_down)
 		{
 			input_buffer_jump = 0;
 			scr_fmod_soundeffect(jumpsnd, x, y);
@@ -317,6 +317,7 @@ function state_player_normal()
 			freefallstart = 0;
 		}
 		if (key_down || (grounded && vsp > 0 && scr_solid(x, y - 3) && scr_solid(x, y)) || place_meeting(x, y, obj_solid))
+		&& character != "S"
 		{
 			state = states.crouch;
 			landAnim = false;
@@ -474,6 +475,8 @@ function state_player_normal()
 				state = states.revolver;
 			}
 			break;
+		case "S":
+			break;
 	}
 	scr_dotaunt();
 	if (sprite_index == spr_shotgunshoot)
@@ -551,9 +554,251 @@ function pepperman_grab_reset()
 			pepperman_grabID = -4;
 	}
 }
+function state_snick_normal()
+{
+	if live_call() return live_result;
+	
+	var acc = 4 * 0.046875;
+	var dec = 3 * 0.5;
+	var frc = 4 * 0.046875;
+	var top = 16;
+	var roll_frc = 4 * 0.0234375;
+	var roll_dec = 4 * 0.125;
+	
+	var move = key_left + key_right;
+	
+	// slope momentum
+	if grounded
+	{
+		with instance_place(x, y + 1, obj_slope_parent)
+			other.hsp += (other.state == states.machroll ? 0.3 : 0.1) * -sign(image_xscale);
+	}
+	
+	if sprite_index != spr_walljumpstart
+	{
+		if state != states.machroll
+		{
+			if move == -1
+			{
+				if hsp > 0
+				{
+					hsp -= dec;
+					if hsp <= 0
+						hsp = -0.5;
+				}
+				else if hsp > -top
+				{
+					hsp -= acc;
+					if hsp <= -top
+						hsp = -top;
+				}
+			}
+	
+			if move == 1
+			{
+				if hsp < 0
+				{
+					hsp += dec;
+					if hsp >= 0
+						hsp = 0.5;
+				}
+				else if hsp < top
+				{
+					hsp += acc;
+					if hsp >= top
+						hsp = top;
+				}
+			}
+	
+			if move == 0 && grounded
+			    hsp -= min(abs(hsp), frc) * sign(hsp);
+		}
+		else
+			hsp -= min(abs(hsp), move == -sign(hsp) ? roll_dec : roll_frc) * sign(hsp);
+	}
+	
+	// animation
+	if state == states.jump
+	{
+		if sprite_index == spr_fall or sprite_index == spr_move or sprite_index == spr_idle or sprite_index == spr_mach
+			sprite_index = spr_fall;
+		if move != 0 && sprite_index != spr_walljumpstart
+			xscale = sign(move);
+		
+		if !jumpstop
+		{
+			if !key_jump2 && vsp < 0.5 && !stompAnim
+			{
+				vsp /= 3;
+				jumpstop = true;
+			}
+			else if scr_solid(x, y - 1) && !jumpAnim
+			{
+				vsp = grav;
+				jumpstop = true;
+			}
+		}
+		
+		if grounded && vsp >= 0
+		{
+			state = states.normal;
+			sound_play_3d("event:/sfx/pep/step", x, y);
+			create_particle(x, y, particle.landcloud, 0);
+		}
+	}
+	else if state == states.machroll
+	{
+		sprite_index = spr_tumble;
+		if abs(hsp) <= 0 && !scr_slope()
+			state = states.normal;
+	}
+	else
+	{
+		if !grounded
+			state = states.jump;
+		
+		if abs(hsp) > 0
+		{
+			if move != xscale && move != 0 && (abs(hsp) > 3 or sprite_index == spr_machslide)
+			{
+				if sprite_index != spr_machslide
+					image_index = 0;
+				sprite_index = spr_machslide;
+				image_speed = 0.5;
+			}
+			else if abs(hsp) >= top
+			{
+				if abs(hsp) >= 20
+					sprite_index = spr_crazyrun;
+				else
+					sprite_index = spr_mach4;
+				image_speed = 0.5;
+				
+				if scr_check_superjump() && grounded
+				{
+					sprite_index = spr_superjumpprep;
+					state = states.Sjumpprep;
+					image_index = 0;
+					
+					dir = move;
+					movespeed = abs(hsp);
+				}
+				
+				if !instance_exists(chargeeffectid)
+				{
+					with instance_create(x, y, obj_chargeeffect)
+					{
+						playerid = other.object_index;
+						other.chargeeffectid = id;
+					}
+				}
+			}
+			else if abs(hsp) >= top / 2 && move == xscale
+			{
+				sprite_index = spr_mach;
+				image_speed = max(0.2, abs(hsp) / 30);
+			}
+			else
+			{
+				sprite_index = spr_move;
+				image_speed = max(0.2, abs(hsp) / 20);
+			}
+			
+			if move == sign(hsp)
+				xscale = sign(hsp);
+		}
+		else
+			sprite_index = spr_idle;
+	}
+	
+	if abs(hsp) > 2 && key_down && grounded
+	{
+		state = states.machroll;
+		sprite_index = spr_tumble;
+	}
+	image_speed = max(image_speed, 0.35);
+	
+	// peelout
+	if key_attack && state == states.normal && abs(hsp) < 8
+	{
+		// peelout
+		if move != 0
+			xscale = sign(move);
+			
+		state = states.machroll;
+		sprite_index = spr_move;
+		image_speed = 0.35;
+		movespeed = 0;
+	}
+	
+	// jump
+	if input_buffer_jump > 0 && grounded
+	{
+		input_buffer_jump = 0;
+		
+		if key_down && state != states.machroll
+		{
+			// spindash
+			if move != 0
+				xscale = sign(move);
+			
+			state = states.machroll;
+			sprite_index = spr_snick_spindash;
+			image_speed = 0.5;
+			movespeed = 0;
+		}
+		else
+		{
+			scr_fmod_soundeffect(jumpsnd, x, y);
+			particle_set_scale(particle.highjumpcloud2, xscale, 1);
+			create_particle(x, y, particle.highjumpcloud2, 0);
+		
+			sprite_index = spr_jump;
+			state = states.jump;
+			vsp = -11;
+			jumpstop = false;
+		
+			with instance_place(x, y + 1, obj_slope_parent)
+			{
+				if other.xscale == image_xscale
+					other.vsp -= abs(other.hsp) / 2;
+			}
+		}
+	}
+	
+	// bodyslam
+	if !grounded && scr_check_groundpound()
+	{
+		sprite_index = spr_bodyslamstart;
+		image_index = 0;
+		state = states.freefall;
+		pistolanim = -4;
+		vsp = -6;
+		dir = move;
+		movespeed = abs(hsp);
+	}
+	
+	// climbwall
+	if (abs(hsp) > 12 && move != 0) or sprite_index == spr_walljumpstart
+	{
+		if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && (!place_meeting(x + hsp, y, obj_metalblock) or abs(hsp) < 16))
+		|| (grounded && (place_meeting(x + hsp, y - 16, obj_solid) || scr_solid_slope(x + hsp, y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope_parent)))
+		{
+			wallspeed = abs(hsp);
+			grabclimbbuffer = 10;
+			state = states.climbwall;
+			if REMIX
+				vsp = -wallspeed;
+		}
+	}
+	
+	scr_dotaunt();
+}
 function scr_player_normal()
 {
-	if (character != "M")
+	if character == "S"
+		state_snick_normal();
+	else if (character != "M")
 		state_player_normal();
 	else
 		state_pepperman_normal();

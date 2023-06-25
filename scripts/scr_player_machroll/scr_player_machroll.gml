@@ -1,5 +1,12 @@
 function scr_player_machroll()
 {
+	if character == "S"
+		scr_snick_roll();
+	else
+		state_player_machroll();
+}
+function state_player_machroll()
+{
 	if (!place_meeting(x, y + 1, obj_railparent))
 		hsp = xscale * movespeed;
 	else

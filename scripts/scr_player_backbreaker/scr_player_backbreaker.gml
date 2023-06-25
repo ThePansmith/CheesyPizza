@@ -76,6 +76,8 @@ function scr_player_backbreaker()
 		if (isgustavo)
 			ratmount_movespeed = tauntstoredratmount_movespeed;
 		movespeed = tauntstoredmovespeed;
+		if character == "S"
+			hsp = tauntstoredhsp;
 		vsp = tauntstoredvsp;
 		sprite_index = tauntstoredsprite;
 		state = tauntstoredstate;

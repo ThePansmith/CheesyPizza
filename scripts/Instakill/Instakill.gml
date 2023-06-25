@@ -77,6 +77,7 @@ function Instakill()
 		tauntstoredmovespeed = movespeed;
 		tauntstoredsprite = sprite_index;
 		tauntstoredstate = state;
+		tauntstoredhsp = hsp;
 		tauntstoredvsp = vsp;
 	}
 	if (state == states.handstandjump && !key_slap)

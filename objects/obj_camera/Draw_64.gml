@@ -286,7 +286,7 @@ if (obj_player.state != states.dead)
 	}
 	
 	// bullets
-	if global.shootstyle == 1
+	if global.shootstyle == 1 && obj_player1.character != "V" && obj_player1.character != "S"
 	{
 		bulletimage += 0.35;
 		

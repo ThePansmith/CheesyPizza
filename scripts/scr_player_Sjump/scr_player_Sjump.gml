@@ -71,7 +71,7 @@ function scr_player_Sjump()
 		state = states.Sjumpland;
 		machhitAnim = false;
 	}
-	else if ((key_attack2 or input_buffer_slap > 0 or input_buffer_grab > 0	) && character != "V" && sprite_index != spr_superspringplayer && sprite_index != spr_Sjumpcancelstart)
+	else if ((key_attack2 or input_buffer_slap > 0 or input_buffer_grab > 0) && character != "V" && character != "S" && sprite_index != spr_superspringplayer && sprite_index != spr_Sjumpcancelstart)
 	{
 		image_index = 0;
 		sprite_index = spr_Sjumpcancelstart;
@@ -92,6 +92,16 @@ function scr_player_Sjump()
 		else
 			fmod_event_instance_play(sjumpcancelsnd);
 		input_buffer_slap = 0;
+	}
+	if character == "S" && sprite_index == spr_superjump && key_attack2
+	{
+		if move != 0
+			xscale = sign(move);
+		state = states.normal;
+		hsp = 12 * xscale;
+		jumpstop = false;
+		sprite_index = spr_mach4;
+		sound_play_3d("event:/modded/sfx/kungfu", x, y);
 	}
 	if (sprite_index == spr_Sjumpcancelstart)
 	{

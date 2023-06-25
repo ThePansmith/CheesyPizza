@@ -1292,8 +1292,7 @@ function scr_characterspr()
 	{
 		spr_idle = spr_snick_idle
 		spr_move = spr_snick_walk
-		spr_crawl =  spr_snick_idle
-		spr_idle = spr_snick_idle
+		spr_crawl = spr_snick_idle
 		spr_hurt = spr_snick_hurt
 		spr_jump = spr_snick_bodyslamstart
 		spr_jump2 = spr_snick_fall
@@ -1401,7 +1400,7 @@ function scr_characterspr()
 
 		spr_bodyslamstart = spr_snick_bodyslamstart
 		spr_bodyslamfall = spr_snick_bodyslam
-			spr_bodyslamland = spr_snick_bodyslamland
+		spr_bodyslamland = spr_snick_bodyslamland
 
 		spr_bombpeprun = spr_snick_bomb
 		spr_bombpepintro = spr_snick_bombstart
@@ -1411,7 +1410,7 @@ function scr_characterspr()
 		spr_fireass = spr_snick_fireass1
 		spr_fireassground = spr_snick_fireass2
 		spr_fireassend = spr_snick_recover
-		spr_tumblestart = spr_snick_idle
+		spr_tumblestart = spr_snick_tumble
 		spr_tumbleend = spr_snick_bump
 		spr_tumble = spr_snick_tumble
 
@@ -1421,10 +1420,10 @@ function scr_characterspr()
 
 		spr_squished = spr_snick_stunned
 
-		spr_supertaunt1 = spr_snick_taunt
-		spr_supertaunt2 = spr_snick_taunt
-		spr_supertaunt3 = spr_snick_taunt
-		spr_supertaunt4 = spr_snick_taunt
+		spr_supertaunt1 = spr_player_supertaunt1
+		spr_supertaunt2 = spr_player_supertaunt2
+		spr_supertaunt3 = spr_player_supertaunt3
+		spr_supertaunt4 = spr_player_supertaunt4
 
 		spr_taunt = spr_snick_taunt
 		spr_slipnslide = spr_snick_hurt
@@ -1494,7 +1493,7 @@ function scr_characterspr()
 		spr_pmortland = spr_player_mortland;
 		spr_pmortthrow = spr_player_mortthrow;
 				
-		spr_superspringplayer = spr_snick_superjump;
+		spr_superspringplayer = spr_snick_hurt;
 		spr_gnomecutscene1 = spr_player_gnomecutscene1;
 		spr_gnomecutscene2 = spr_player_gnomecutscene2;
 		spr_gnomecutscene3 = spr_player_gnomecutscene3;

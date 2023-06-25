@@ -292,6 +292,15 @@ function scr_hurtplayer(player)
 					case "SP":
 						char = "Pizzelle";
 						break;
+					case "PP":
+						char = "Pissino";
+						break;
+					case "BN":
+						char = "Bo Noise";
+						break;
+					case "S":
+						char = "Snick";
+						break;
 				}
 				if isgustavo
 					char = "Gustavo";

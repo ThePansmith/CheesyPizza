@@ -18,6 +18,8 @@ function scr_player_chainsaw()
 		sprite_index = tauntstoredsprite;
 		state = tauntstoredstate;
 		vsp = tauntstoredvsp;
+		if character == "S"
+			hsp = tauntstoredhsp;
 		
 		//if (global.attackstyle == 0)
 		{

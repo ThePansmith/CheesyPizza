@@ -16,6 +16,7 @@ global.bigfont = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.1234
 global.smallfont = font_add_sprite_ext(spr_smallerfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.:?1234567890", true, 0);
 //global.Net_Font = font_add_sprite_ext(spr_pttfont, "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz!?.,)(*:\\/-1234567890", true, 0);
 global.lapfont = font_add_sprite_ext(spr_lapfont, "1234567890", true, 0);
+global.lapfont_ss = font_add_sprite_ext(spr_lapfont_ss, "1234567890", true, 0);
 global.lapfont2 = font_add_sprite_ext(spr_lapfontbig, "0123456789", true, -2);
 //global.monitorfont = font_add_sprite_ext(spr_monitorfont, "1234567890", true, 1);
 global.tutorialfont = font_add_sprite_ext(spr_tutorialfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!,.:0123456789'?-", true, 2);

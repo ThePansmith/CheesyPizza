@@ -61,7 +61,8 @@ function scr_playersounds()
 		}
 		else
 			fmod_event_instance_stop(freefallsnd, true);
-		if (state == states.mach2 || state == states.mach3 || state == states.climbwall || state == states.rocket)
+		
+		if (state == states.mach2 || state == states.mach3 || state == states.climbwall || state == states.rocket or character == "S")
 		{
 			if sprite_index == spr_playerN_jetpackboost
 			{
@@ -83,11 +84,14 @@ function scr_playersounds()
 				if (state == states.mach2 && sprite_index == spr_mach1 && grounded)
 					s = 1;
 				else if ((state == states.mach2 && sprite_index == spr_mach) || state == states.climbwall)
+				or (sprite_index == spr_snick_mach2 && grounded)
 					s = 2;
 				else if (state == states.mach3 && sprite_index != spr_crazyrun)
+				or (sprite_index == spr_snick_mach3 && grounded)
 					s = 3;
 				else if (sprite_index == spr_crazyrun)
 					s = 4;
+				
 				if (state == states.rocket)
 					s = 4;
 				fmod_event_instance_set_3d_attributes(machsnd, x, y);
@@ -128,6 +132,7 @@ function scr_playersounds()
 		if (fmod_event_instance_is_playing(superjumpsnd))
 			fmod_event_instance_set_3d_attributes(superjumpsnd, x, y);
 		if (sprite_index == spr_tumblestart || sprite_index == spr_tumble)
+		&& (state == states.tumble or character != "S")
 		{
 			if (!fmod_event_instance_is_playing(tumblesnd))
 			{

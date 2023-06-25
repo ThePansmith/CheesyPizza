@@ -130,7 +130,7 @@ function scr_player_freefall()
 	}
 	if (grounded && vsp > 0 && (freefallsmash < 10 || !place_meeting(x, y + vsp, obj_metalblock)) && !place_meeting(x, y + vsp, obj_destructibles) && !place_meeting(x, y + vsp + 6, obj_destructibles))
 	{
-		if (scr_slope())
+		if (scr_slope() && character != "S")
 		{
 			with (instance_place(x, y + 1, obj_slope_parent))
 			{

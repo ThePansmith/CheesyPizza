@@ -160,12 +160,7 @@ function scr_player_mach2()
 		//if (character == "V")
 		//	sprite_index = spr_playerV_divekickstart;
 	}
-	if (key_attack && !place_meeting(x + xscale, y, obj_solid) && character == "S" && grounded)
-	{
-		state = states.handstandjump;
-		movespeed = 0;
-	}
-	if ((!key_attack && movespeed >= 8 && grounded && vsp > 0 && skateboarding == 0) || (character == "S" && move == 0 && grounded))
+	if !key_attack && movespeed >= 8 && grounded && vsp > 0 && skateboarding == 0
 	{
 		image_index = 0;
 		state = states.machslide;
