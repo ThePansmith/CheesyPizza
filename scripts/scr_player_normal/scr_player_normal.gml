@@ -556,8 +556,6 @@ function pepperman_grab_reset()
 }
 function state_snick_normal()
 {
-	if live_call() return live_result;
-	
 	var acc = 4 * 0.046875;
 	var dec = 3 * 0.5;
 	var frc = 4 * 0.046875;
@@ -566,12 +564,13 @@ function state_snick_normal()
 	var roll_dec = 4 * 0.125;
 	
 	var move = key_left + key_right;
+	hsp = movespeed;
 	
 	// slope momentum
 	if grounded
 	{
 		with instance_place(x, y + 1, obj_slope_parent)
-			other.hsp += (other.state == states.machroll ? 0.3 : 0.1) * -sign(image_xscale);
+			other.movespeed += (other.state == states.machroll ? 0.3 : 0.1) * -sign(image_xscale);
 	}
 	
 	if sprite_index != spr_walljumpstart
@@ -580,41 +579,41 @@ function state_snick_normal()
 		{
 			if move == -1
 			{
-				if hsp > 0
+				if movespeed > 0
 				{
-					hsp -= dec;
-					if hsp <= 0
-						hsp = -0.5;
+					movespeed -= dec;
+					if movespeed <= 0
+						movespeed = -0.5;
 				}
-				else if hsp > -top
+				else if movespeed > -top
 				{
-					hsp -= acc;
-					if hsp <= -top
-						hsp = -top;
+					movespeed -= acc;
+					if movespeed <= -top
+						movespeed = -top;
 				}
 			}
 	
 			if move == 1
 			{
-				if hsp < 0
+				if movespeed < 0
 				{
-					hsp += dec;
-					if hsp >= 0
-						hsp = 0.5;
+					movespeed += dec;
+					if movespeed >= 0
+						movespeed = 0.5;
 				}
-				else if hsp < top
+				else if movespeed < top
 				{
-					hsp += acc;
-					if hsp >= top
-						hsp = top;
+					movespeed += acc;
+					if movespeed >= top
+						movespeed = top;
 				}
 			}
 	
 			if move == 0 && grounded
-			    hsp -= min(abs(hsp), frc) * sign(hsp);
+			    movespeed -= min(abs(movespeed), frc) * sign(movespeed);
 		}
 		else
-			hsp -= min(abs(hsp), move == -sign(hsp) ? roll_dec : roll_frc) * sign(hsp);
+			movespeed -= min(abs(movespeed), move == -sign(movespeed) ? roll_dec : roll_frc) * sign(movespeed);
 	}
 	
 	// animation
@@ -649,7 +648,7 @@ function state_snick_normal()
 	else if state == states.machroll
 	{
 		sprite_index = spr_tumble;
-		if abs(hsp) <= 0 && !scr_slope()
+		if abs(movespeed) <= 0 && !scr_slope()
 			state = states.normal;
 	}
 	else
@@ -657,18 +656,18 @@ function state_snick_normal()
 		if !grounded
 			state = states.jump;
 		
-		if abs(hsp) > 0
+		if abs(movespeed) > 0
 		{
-			if move != xscale && move != 0 && (abs(hsp) > 3 or sprite_index == spr_machslide)
+			if move != xscale && move != 0 && (abs(movespeed) > 3 or sprite_index == spr_machslide)
 			{
 				if sprite_index != spr_machslide
 					image_index = 0;
 				sprite_index = spr_machslide;
 				image_speed = 0.5;
 			}
-			else if abs(hsp) >= top
+			else if abs(movespeed) >= top
 			{
-				if abs(hsp) >= 20
+				if abs(movespeed) >= 20
 					sprite_index = spr_crazyrun;
 				else
 					sprite_index = spr_mach4;
@@ -681,7 +680,7 @@ function state_snick_normal()
 					image_index = 0;
 					
 					dir = move;
-					movespeed = abs(hsp);
+					movespeed = abs(movespeed);
 				}
 				
 				if !instance_exists(chargeeffectid)
@@ -693,42 +692,57 @@ function state_snick_normal()
 					}
 				}
 			}
-			else if abs(hsp) >= top / 2 && move == xscale
+			else if abs(movespeed) >= top / 2 && move == xscale
 			{
 				sprite_index = spr_mach;
-				image_speed = max(0.2, abs(hsp) / 30);
+				image_speed = max(0.2, abs(movespeed) / 30);
 			}
 			else
 			{
 				sprite_index = spr_move;
-				image_speed = max(0.2, abs(hsp) / 20);
+				image_speed = max(0.2, abs(movespeed) / 20);
 			}
 			
-			if move == sign(hsp)
-				xscale = sign(hsp);
+			if move == sign(movespeed)
+				xscale = sign(movespeed);
 		}
 		else
 			sprite_index = spr_idle;
 	}
 	
-	if abs(hsp) > 2 && key_down && grounded
+	if abs(movespeed) > 2 && key_down && grounded && state != states.machroll && !place_meeting(x, y + 1, obj_ladder) && !place_meeting(x, y + 1, obj_boxofpizza)
 	{
+		sound_play_3d("event:/modded/sfx/snick/roll", x, y);
+		
 		state = states.machroll;
 		sprite_index = spr_tumble;
 	}
 	image_speed = max(image_speed, 0.35);
 	
+	// bump on wall
+	if (place_meeting(x + sign(hsp), y, obj_solid) or scr_solid_slope(x + sign(hsp), y))
+	&& (!place_meeting(x + hsp, y, obj_destructibles) or abs(movespeed) < 10)
+	&& (!place_meeting(x + hsp, y, obj_metalblock) or abs(movespeed) < 16)
+	{
+		movespeed = 0;
+		hsp = 0;
+	}
+	
 	// peelout
-	if key_attack && state == states.normal && abs(hsp) < 8
+	if key_attack && state == states.normal && abs(movespeed) < 8
 	{
 		// peelout
 		if move != 0
 			xscale = sign(move);
-			
-		state = states.machroll;
-		sprite_index = spr_move;
-		image_speed = 0.35;
-		movespeed = 0;
+		
+		if !place_meeting(x + xscale, y, obj_solid) or place_meeting(x + xscale, y, obj_destructibles) or place_meeting(x + xscale, y, obj_metalblock)
+		{
+			sound_play_3d("event:/modded/sfx/snick/peelrev", x, y);
+			state = states.machroll;
+			sprite_index = spr_move;
+			image_speed = 0.35;
+			movespeed = 0;
+		}
 	}
 	
 	// jump
@@ -746,22 +760,26 @@ function state_snick_normal()
 			sprite_index = spr_snick_spindash;
 			image_speed = 0.5;
 			movespeed = 0;
+			
+			fmod_event_instance_set_parameter(spindashsnd, "state", 0, true);
+			fmod_event_instance_set_3d_attributes(spindashsnd, x, y);
+			fmod_event_instance_play(spindashsnd);
 		}
 		else
 		{
 			scr_fmod_soundeffect(jumpsnd, x, y);
 			particle_set_scale(particle.highjumpcloud2, xscale, 1);
 			create_particle(x, y, particle.highjumpcloud2, 0);
-		
+			
 			sprite_index = spr_jump;
 			state = states.jump;
 			vsp = -11;
 			jumpstop = false;
-		
+			
 			with instance_place(x, y + 1, obj_slope_parent)
 			{
 				if other.xscale == image_xscale
-					other.vsp -= abs(other.hsp) / 2;
+					other.vsp -= abs(other.movespeed) / 2;
 			}
 		}
 	}
@@ -775,16 +793,18 @@ function state_snick_normal()
 		pistolanim = -4;
 		vsp = -6;
 		dir = move;
-		movespeed = abs(hsp);
+		movespeed = abs(movespeed);
 	}
 	
 	// climbwall
-	if (abs(hsp) > 12 && move != 0) or sprite_index == spr_walljumpstart
+	if ((abs(movespeed) > 12 && move != 0) or sprite_index == spr_walljumpstart)
+	&& sign(hsp) == xscale
 	{
 		if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && (!place_meeting(x + hsp, y, obj_metalblock) or abs(hsp) < 16))
 		|| (grounded && (place_meeting(x + hsp, y - 16, obj_solid) || scr_solid_slope(x + hsp, y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope_parent)))
 		{
-			wallspeed = abs(hsp);
+			input_buffer_jump = 0;
+			wallspeed = abs(movespeed);
 			grabclimbbuffer = 10;
 			state = states.climbwall;
 			if REMIX

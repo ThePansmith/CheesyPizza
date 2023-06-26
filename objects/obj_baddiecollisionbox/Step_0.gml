@@ -17,7 +17,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 		{
 			var _obj_player = id;
 			var _playerindex = (object_index == obj_player1) ? 1 : 2;
-			if (instance_exists(other.baddieID) && y < other.baddieID.y && other.baddieID.stompbuffer <= 0 && attacking == 0 && !global.kungfu && sprite_index != spr_mach2jump && ((state == states.boots && vsp > 0) or state == states.jump or (isgustavo && ratmount_movespeed < 12 && state == states.ratmountjump) or state == states.mach1 or state == states.grab) && vsp > 0 && sprite_index != spr_stompprep && !other.baddieID.invincible && other.baddieID.stompable)
+			if (instance_exists(other.baddieID) && !instakillmove && y < other.baddieID.y && other.baddieID.stompbuffer <= 0 && attacking == 0 && !global.kungfu && sprite_index != spr_mach2jump && ((state == states.boots && vsp > 0) or state == states.jump or (isgustavo && ratmount_movespeed < 12 && state == states.ratmountjump) or state == states.mach1 or state == states.grab) && vsp > 0 && sprite_index != spr_stompprep && !other.baddieID.invincible && other.baddieID.stompable)
 			{
 				sound_play_3d("event:/sfx/enemies/stomp", x, y);
 				image_index = 0;

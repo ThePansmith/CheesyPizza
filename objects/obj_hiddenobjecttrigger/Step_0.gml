@@ -23,4 +23,6 @@ if (_sound)
 		}
 		fmod_event_instance_play(sound);
 	}
+	else if !check_sugary()
+		sound_play_oneshot("event:/sfx/misc/collectpizza");
 }

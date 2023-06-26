@@ -1,3 +1,4 @@
+/*
 if (other.cutscene == 0 && other.state != states.actor && state != states.actor && other.state != states.gotoplayer && state != states.gotoplayer)
 {
 	if (hurted == 0 && other.hurted == 0 && fightballadvantage == 1 && (state == states.handstandjump || state == states.punch) && (other.state == states.handstandjump || other.state == states.punch))
@@ -77,3 +78,4 @@ if (other.cutscene == 0 && other.state != states.actor && state != states.actor 
 		}
 	}
 }
+*/

@@ -62,7 +62,7 @@ function scr_playersounds()
 		else
 			fmod_event_instance_stop(freefallsnd, true);
 		
-		if (state == states.mach2 || state == states.mach3 || state == states.climbwall || state == states.rocket or character == "S")
+		if (state == states.mach2 || state == states.mach3 || state == states.climbwall || state == states.rocket or (character == "S" && visible))
 		{
 			if sprite_index == spr_playerN_jetpackboost
 			{
@@ -98,10 +98,12 @@ function scr_playersounds()
 				fmod_event_instance_set_parameter(machsnd, "state", s, true);
 			}
 		}
-		else {
+		else
+		{
 			fmod_event_instance_stop(machsnd, true);
 			fmod_event_instance_stop(snd_jetpackloop, true)
 		}
+		
 		if ((state == states.knightpepslopes && grounded && vsp > 0) || state == states.grind || (state == states.trashroll && grounded && vsp > 0 && sprite_index == spr_player_trashslide))
 		{
 			if (!fmod_event_instance_is_playing(knightslidesnd))

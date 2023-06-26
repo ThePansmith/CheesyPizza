@@ -19,6 +19,8 @@ if (player && player.state != states.chainsaw) or active
 			{
 				if character == "SP"
 					fmod_event_instance_set_parameter(other.sound, "state", 1, false);
+				if character == "PP"
+					fmod_event_instance_set_parameter(other.sound, "state", 2, false);
 			}
 			fmod_event_instance_play(sound);
 		}

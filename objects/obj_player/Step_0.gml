@@ -831,6 +831,8 @@ if (state != states.door && state != states.chainsaw && state != states.hit && p
 	state = states.crouch;
 	if isgustavo
 		state = states.ratmountcrouch;
+	if character == "S"
+		state = states.normal;
 }
 if (shoot_buffer > 0)
 	shoot_buffer--;
@@ -1187,7 +1189,7 @@ if (state != states.jump)
 
 // mach effect
 var do_macheffect = (state == states.mach3 || (state == states.ghost && ghostdash && ghostpepper >= 3) || state == states.mach2 || state == states.Sjump || ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
-or ((abs(hsp) >= 10 or sprite_index == spr_crazyrun) && character == "S")
+or ((abs(movespeed) >= 10 or sprite_index == spr_crazyrun) && character == "S")
 
 if do_macheffect
 {

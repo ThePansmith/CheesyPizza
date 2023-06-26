@@ -7490,6 +7490,7 @@
     {"id":{"name":"spr_playerN_superspring","path":"sprites/spr_playerN_superspring/spr_playerN_superspring.yy",},},
     {"id":{"name":"bg_warlabpillar","path":"sprites/bg_warlabpillar/bg_warlabpillar.yy",},},
     {"id":{"name":"spr_beatbox","path":"sprites/spr_beatbox/spr_beatbox.yy",},},
+    {"id":{"name":"spr_confecticage_debris","path":"sprites/spr_confecticage_debris/spr_confecticage_debris.yy",},},
     {"id":{"name":"spr_hillbilly_introidle","path":"sprites/spr_hillbilly_introidle/spr_hillbilly_introidle.yy",},},
     {"id":{"name":"bg_space1","path":"sprites/bg_space1/bg_space1.yy",},},
     {"id":{"name":"spr_title_thepigcity","path":"sprites/spr_title_thepigcity/spr_title_thepigcity.yy",},},

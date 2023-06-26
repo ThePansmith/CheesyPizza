@@ -1,8 +1,11 @@
-if (room == rm_editor)
+//if (room == rm_editor)
 {
+	x = -1000;
+	y = -1000;
 	visible = 0;
 	exit;
 }
+/*
 scr_getinput2();
 event_inherited();
 if (!global.coop)
@@ -28,3 +31,4 @@ if (!visible && state == states.comingoutdoor)
 		coopdelay = 0;
 	}
 }
+*/

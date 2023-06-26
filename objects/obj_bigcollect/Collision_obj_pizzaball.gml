@@ -3,7 +3,10 @@ if (obj_player1.character == "V")
 global.heattime = 60;
 with (obj_camera)
 	healthshaketime = 60;
-fmod_event_one_shot(global.snd_collectpizza);
+if global.snd_collectpizza == global.snd_collect
+	scr_sound_multiple(global.snd_collectpizza, x, y);
+else
+	fmod_event_one_shot(global.snd_collectpizza);
 if object_index == obj_escapecollectbig
 	fmod_event_one_shot_3d("event:/sfx/misc/bellcollectbig", x, y);
 instance_destroy();

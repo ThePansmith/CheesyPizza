@@ -66,6 +66,8 @@ if (place_meeting(x, y, obj_boxofpizza) || place_meeting(x, y - 1, obj_boxofpizz
 	state = states.crouch;
 	if isgustavo
 		state = states.ratmountcrouch;
+	if character == "S"
+		state = states.normal;
 }
 if object_index != obj_player2 or global.coop
 {

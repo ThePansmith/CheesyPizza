@@ -1294,7 +1294,7 @@ function scr_characterspr()
 		spr_move = spr_snick_walk
 		spr_crawl = spr_snick_idle
 		spr_hurt = spr_snick_hurt
-		spr_jump = spr_snick_bodyslamstart
+		spr_jump = spr_snick_tumble
 		spr_jump2 = spr_snick_fall
 		spr_fall = spr_snick_fall
 		spr_fall2 = spr_snick_fall

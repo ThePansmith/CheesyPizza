@@ -1,5 +1,5 @@
 var forgot = false;
-if ((image_index == 1 or sprite_index == spr_sugarygateopen or sprite_index == spr_sugarygateclosing) && global.panic == false && room != war_13 && !forgot)
+if ((image_index == 1 or sprite_index == spr_sugarygateopen) && global.panic == false && room != war_13 && !forgot)
 {
 	with (obj_player)
 	{

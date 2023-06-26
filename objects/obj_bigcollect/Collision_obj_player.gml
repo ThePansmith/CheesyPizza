@@ -5,7 +5,10 @@ if (other.state != states.gotoplayer)
 	global.heattime = 60;
 	with (obj_camera)
 		healthshaketime = 60;
-	fmod_event_one_shot(global.snd_collectpizza);
+	if global.snd_collectpizza == global.snd_collect
+		scr_sound_multiple(global.snd_collectpizza, x, y);
+	else
+		fmod_event_one_shot(global.snd_collectpizza);
 	instance_destroy();
 	global.combotime = 60;
 	var val = heat_calculate(value);

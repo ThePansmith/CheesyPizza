@@ -15,21 +15,27 @@ function scr_snick_roll()
 			hsp = Approach(hsp, 0, 1);
 		
 		if movespeed > 0
-			movespeed -= 0.05;
+			movespeed -= 0.01;
 		if key_jump or key_slap2
 		{
 			image_index = 0;
 			movespeed = min(movespeed + 2, 8);
+			
+			fmod_event_instance_set_parameter(spindashsnd, "state", movespeed, true);
+			fmod_event_instance_set_3d_attributes(spindashsnd, x, y);
+			fmod_event_instance_play(spindashsnd);
 		}
 		
 		if !key_down
 		{
-			hsp = xscale * (8 + movespeed * 2);
+			movespeed = xscale * (8 + movespeed * 2);
 			state = states.machroll;
 			sprite_index = spr_tumble;
 			
 			with obj_camera
 				lag = 12;
+			
+			sound_play_3d("event:/modded/sfx/snick/release", x, y);
 		}
 	}
 	else if sprite_index == spr_move or sprite_index == spr_mach or sprite_index == spr_mach4 or sprite_index == spr_crazyrun
@@ -61,8 +67,13 @@ function scr_snick_roll()
 		
 		if !key_attack
 		{
-			hsp = xscale * movespeed;
+			movespeed = xscale * movespeed;
 			state = states.normal;
+			flash = true;
+			
+			sound_stop("event:/modded/sfx/snick/peelrev");
+			if abs(movespeed) >= 16
+				sound_play_3d("event:/modded/sfx/snick/peelrelease", x, y);
 		}
 	}
 	else

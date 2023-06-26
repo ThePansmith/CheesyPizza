@@ -1,3 +1,5 @@
+live_auto_call;
+
 draw_set_alpha(1);
 if (is_bossroom() || room == editor_room || instance_exists(obj_tutorialbook))
 	exit;
@@ -329,7 +331,7 @@ if (obj_player.state != states.dead)
 	}
 	
 	// chainsaw
-	if global.doublegrab == 3
+	if global.doublegrab == 3 && obj_player1.character != "V" && obj_player1.character != "S"
 	{
 		var bx = hud_xx - 63, by = hud_yy + 60, bpad = 25;
 	    var bspr = spr_fuelHUD;

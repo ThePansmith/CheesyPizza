@@ -98,7 +98,9 @@ function scr_player_Sjump()
 		if move != 0
 			xscale = sign(move);
 		state = states.normal;
-		hsp = 12 * xscale;
+		movespeed = 12 * xscale;
+		if !key_jump2
+			vsp = 0;
 		jumpstop = false;
 		sprite_index = spr_mach4;
 		sound_play_3d("event:/modded/sfx/kungfu", x, y);

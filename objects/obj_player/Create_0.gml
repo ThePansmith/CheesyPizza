@@ -54,6 +54,8 @@ function player_destroy_sounds()
 	fmod_event_instance_release(gallopingsnd);
 	fmod_event_instance_release(flippingsnd);
 	fmod_event_instance_release(snd_jetpackloop);
+	fmod_event_instance_release(sjumpcancelsnd);
+	fmod_event_instance_release(spindashsnd);
 }
 function player_init_sounds()
 {
@@ -160,6 +162,7 @@ function player_init_sounds()
 	flippingsnd = fmod_event_create_instance("event:/modded/sfx/pizzyflip");
 	snd_jetpackloop = fmod_event_create_instance("event:/sfx/noise/jetpackloop");
 	sjumpcancelsnd = fmod_event_create_instance(character == "PP" ? "event:/modded/sfx/superjumpcancelPP" : "event:/sfx/pep/superjumpcancel");
+	spindashsnd = fmod_event_create_instance("event:/modded/sfx/snick/spindashrev");
 }
 
 global.throwarc = 1;

@@ -6,7 +6,7 @@ with (obj_player1)
 		&& (state == states.mach3 || (ghostdash == 1 && ghostpepper >= 3) || ratmount_movespeed >= 12
 		|| state == states.rocket || state == states.knightpepslopes || state == states.shoulderbash
 		or (character == "SP" && sprite_index == spr_machroll && abs(hsp) >= 12)
-		or state == states.slipbanan or (abs(hsp) >= 16 && character == "S" && (state == states.normal or state == states.jump or state == states.machroll))))
+		or state == states.slipbanan or (abs(movespeed) >= 16 && character == "S" && (state == states.normal or state == states.jump or state == states.machroll))))
 		{
 			playerindex = 0;
 			instance_destroy(other);

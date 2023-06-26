@@ -238,8 +238,8 @@ function scr_player_climbwall()
 				
 				if grounded
 				{
-					state = states.normal
-					movespeed = 0
+					state = states.normal;
+					movespeed = 0;
 				}
 				
 				var mv = wallspeed / 16;
@@ -249,13 +249,6 @@ function scr_player_climbwall()
 			{
 				if (wallspeed < 20)
 					wallspeed += 0.15;
-				if (wallspeed < 0)
-				{
-					if (mach4mode == 0)
-						movespeed += 0.2;
-					else
-						movespeed += 0.4;
-				}
 				image_speed = 0.6;
 				
 				if (wallspeed < 0)
@@ -270,10 +263,11 @@ function scr_player_climbwall()
 			
 			if (grabclimbbuffer > 0)
 				grabclimbbuffer--;
-			if (move == 0 && grabclimbbuffer == 0)
+			if (move != xscale && grabclimbbuffer == 0)
 			{
 				state =	states.normal;
-				hsp = 0;
+				movespeed = 0;
+				exit;
 			}
 			if (verticalbuffer <= 0 && !scr_solid(x + xscale, y) && !place_meeting(x, y, obj_verticalhallway) && !place_meeting(x, y - 12, obj_verticalhallway))
 			{
@@ -282,7 +276,7 @@ function scr_player_climbwall()
 					image_xscale = other.xscale;
 				
 				ledge_bump(32);
-				hsp = xscale * max(wallspeed, 6);
+				movespeed = xscale * max(wallspeed, 6);
 				state = states.normal;
 				
 				if REMIX
@@ -298,6 +292,7 @@ function scr_player_climbwall()
 							}
 						}
 					}
+					hsp = movespeed;
 				}
 				vsp = 0;
 			}
@@ -310,7 +305,7 @@ function scr_player_climbwall()
 				key_jump = false;
 				railmovespeed = 0;
 				
-				hsp = -xscale * 10;
+				movespeed = -xscale * 10;
 				state = states.jump;
 				image_index = 0;
 				sprite_index = spr_walljumpstart;
@@ -330,20 +325,13 @@ function scr_player_climbwall()
 					image_index = 0;
 					state = states.Sjumpland;
 					machhitAnim = false;
+					movespeed = 0;
 					
 					if REMIX with obj_camera
 					{
 						shake_mag = 3;
 						shake_mag_acc = 4 / room_speed;
 					}
-				}
-				else if (!key_jump)
-				{
-					state = states.bump;
-					hsp = -2.5 * xscale;
-					vsp = -3;
-					mach2 = 0;
-					image_index = 0;
 				}
 			}
 			
