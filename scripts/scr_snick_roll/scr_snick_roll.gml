@@ -75,6 +75,24 @@ function scr_snick_roll()
 			if abs(movespeed) >= 16
 				sound_play_3d("event:/modded/sfx/snick/peelrelease", x, y);
 		}
+		else if key_jump && grounded
+		{
+			scr_fmod_soundeffect(jumpsnd, x, y);
+			particle_set_scale(particle.highjumpcloud2, xscale, 1);
+			create_particle(x, y, particle.highjumpcloud2, 0);
+			
+			sprite_index = spr_jump;
+			state = states.jump;
+			vsp = -11;
+			jumpstop = false;
+			
+			movespeed = xscale * movespeed;
+			flash = true;
+			
+			sound_stop("event:/modded/sfx/snick/peelrev");
+			if abs(movespeed) >= 16
+				sound_play_3d("event:/modded/sfx/snick/peelrelease", x, y);
+		}
 	}
 	else
 		state_snick_normal();

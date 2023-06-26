@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "spr_medievalcomputer",
   "bbox_bottom": 95,
-  "bbox_left": 1,
+  "bbox_left": 19,
   "bbox_right": 98,
   "bbox_top": 7,
   "bboxMode": 0,
@@ -14,7 +14,6 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2d7a0c74-df0a-4ebb-aeaa-c178403f88a3",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"66c4ebc5-dfdc-4039-866a-2a6828874812",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -44,7 +43,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 1.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -56,7 +55,6 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2d7a0c74-df0a-4ebb-aeaa-c178403f88a3","path":"sprites/spr_medievalcomputer/spr_medievalcomputer.yy",},},},"Disabled":false,"id":"4805f5f1-aeb8-49db-82f7-02362d8bf60f","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"66c4ebc5-dfdc-4039-866a-2a6828874812","path":"sprites/spr_medievalcomputer/spr_medievalcomputer.yy",},},},"Disabled":false,"id":"3039867d-8af0-40f1-b8be-cca5ff9f7eb1","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -67,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "unusedgroup",
-    "path": "texturegroups/unusedgroup",
+    "name": "hubgroup",
+    "path": "texturegroups/hubgroup",
   },
   "type": 0,
   "VTile": false,

@@ -137,8 +137,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "bossgroup",
-    "path": "texturegroups/bossgroup",
+    "name": "hudgroup",
+    "path": "texturegroups/hudgroup",
   },
   "type": 0,
   "VTile": false,

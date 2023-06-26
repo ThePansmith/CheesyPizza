@@ -55,7 +55,7 @@ if (place_meeting(x, y + 1, obj_slope_parent))
 	collision_flags |= colflag.sloped;
 
 // state machine
-if character == "S"
+if character == "S" && !isgustavo
 	mask_index = spr_crouchmask;
 
 // kill yourself
@@ -1306,7 +1306,7 @@ if (abs(hsp) > 12 && (movespeed > 12 && state == states.mach3 or (character == "
 scr_collide_destructibles();
 
 var mask = mask_index;
-if character == "S"
+if character == "S" && !isgustavo
 	mask_index = spr_crouchmask;
 if (state != states.backtohub && state != states.ghostpossess && state != states.gotoplayer && state != states.debugstate && state != states.titlescreen && state != states.tube && state != states.grabbed && state != states.door && state != states.Sjump && state != states.ejected && state != states.comingoutdoor && state != states.boulder && state != states.keyget && state != states.victory && state != states.portal && state != states.timesup && state != states.gottreasure && state != states.dead)
 	scr_collide_player();

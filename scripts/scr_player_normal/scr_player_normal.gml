@@ -556,6 +556,8 @@ function pepperman_grab_reset()
 }
 function state_snick_normal()
 {
+	if live_call() return live_result;
+	
 	var acc = 4 * 0.046875;
 	var dec = 3 * 0.5;
 	var frc = 4 * 0.046875;
@@ -791,7 +793,7 @@ function state_snick_normal()
 	}
 	
 	// climbwall
-	if (abs(movespeed) > (12 / (scr_slope() * 2)) && move != 0 && sign(movespeed) == xscale) or sprite_index == spr_walljumpstart
+	if (abs(movespeed) > (12 / (scr_slope() + 1)) && move != 0 && sign(movespeed) == xscale) or sprite_index == spr_walljumpstart
 	{
 		if ((!grounded && (place_meeting(x + movespeed, y, obj_solid) || scr_solid_slope(x + movespeed, y)) && !place_meeting(x + movespeed, y, obj_destructibles) && (!place_meeting(x + movespeed, y, obj_metalblock) or abs(movespeed) < 16))
 		|| (grounded && (place_meeting(x + movespeed, y - 16, obj_solid) || scr_solid_slope(x + movespeed, y - 16)) && !place_meeting(x + movespeed, y, obj_destructibles) && !place_meeting(x + movespeed, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope_parent)))

@@ -171,6 +171,10 @@ if state == ""
 			state = "Scrapped Tower";
 		if room == tower_hubroomE
 			state = "Abandoned Tower";
+		if room == tower_baby
+			state = "Baby Room";
+		if room == tower_baby
+			state = "Freerunning";
 	}
 	
 	// cutscenes

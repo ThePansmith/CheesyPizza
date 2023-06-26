@@ -3,6 +3,7 @@
 	x = -1000;
 	y = -1000;
 	visible = 0;
+	state = -1;
 	exit;
 }
 /*

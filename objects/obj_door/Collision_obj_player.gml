@@ -3,7 +3,7 @@ if locked
 
 var _actor = false;
 var door = id;
-with obj_player
+with other
 {
 	if state == states.actor
 		_actor = true;
@@ -42,42 +42,22 @@ if !place_meeting(x, y, obj_doorblocked)
 				x = door.x + door.sprite_width / 2;
 			}
 			
-			with obj_player
-			{
-				lastroom = room;
-				targetDoor = door.targetDoor;
-				targetRoom = door.targetRoom;
+			lastroom = room;
+			targetDoor = door.targetDoor;
+			targetRoom = door.targetRoom;
+		
+			image_index = 0;
+			if state != states.gotoplayer
+				state = states.door;
+			mach2 = 0;
 				
-				image_index = 0;
-				if state != states.gotoplayer
-					state = states.door;
-				mach2 = 0;
-				
-				if door.compatibility
-				{
-					oldHallway = true;
-					player_x = door.target_x;
-					player_y = door.target_y;
-				}
-			}
-			if instance_exists(obj_player2) && global.coop
+			if door.compatibility
 			{
-				if object_index == obj_player2
-				{
-					obj_player1.x = obj_player2.x;
-					obj_player1.y = obj_player2.y;
-				}
-				if object_index == obj_player1
-				{
-					obj_player2.x = obj_player1.x;
-					obj_player2.y = obj_player1.y;
-				}
+				oldHallway = true;
+				player_x = door.target_x;
+				player_y = door.target_y;
 			}
-			with obj_player2
-			{
-				if instance_exists(obj_coopplayerfollow)
-					state = states.gotoplayer;
-			}
+			
 			other.visited = true;
 			if other.sprite_index == spr_doorunvisited_ss
 				other.sprite_index = spr_doorvisited_ss
