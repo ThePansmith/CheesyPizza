@@ -12,7 +12,7 @@ if (room == rm_editor)
 skip = false;
 with obj_player1
 {
-	if character == "V" or isgustavo
+	if character == "V" or isgustavo or character == "S"
 		other.skip = true;
 }
 if !skip

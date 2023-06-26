@@ -1,6 +1,6 @@
 targetRoom = strongcold_10;
 level = "strongcold";
-group_arr = ["strongcoldgroup", "dungeongroup"];
+group_arr = ["strongcoldgroup", "dungeongroup", "freezergroup", "factorygroup", "chateaugroup"];
 
 sprite_index = spr_gate_strongcold;
 bgsprite = spr_gate_strongcoldBG;

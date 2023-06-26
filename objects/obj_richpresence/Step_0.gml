@@ -88,6 +88,13 @@ switch safe_get(global, "leveltosave")
 	case "sky": details = "Sky"; break;
 	case "ancient": details = "Ancient Tower"; break;
 	case "etb": details = "Early Test Build"; break;
+	
+	// sugary
+	case "entryway": details = "Crunchy Construction"; break;
+	case "steamy": details = "Cottontown"; break;
+	case "molasses": details = "Molasses Swamp"; break;
+	case "mines": details = "Sugarshack Mines"; break;
+	case "sucrose": details = "Sucrose Snowstorm"; break;
 }
 
 // add rank and score

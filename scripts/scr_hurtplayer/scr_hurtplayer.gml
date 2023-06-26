@@ -255,6 +255,7 @@ function scr_hurtplayer(player)
 				tv_do_expression(spr_tv_exprhurt);
 			else
 				tv_do_expression(spr_tv_hurtG);
+			
 			if (damage_n == 10)
 				tv_do_expression(spr_tv_exprhurt1);
 			else if (damage_n == 20)
@@ -275,6 +276,7 @@ function scr_hurtplayer(player)
 				tv_do_expression(spr_tv_exprhurt9);
 			else if (damage_n == 100)
 				tv_do_expression(spr_tv_exprhurt10);
+			
 			if (obj_tv.expressionsprite != spr_tv_exprhurt && obj_tv.expressionsprite != spr_tv_hurtG)
 			{
 				instance_destroy(obj_transfotip);
@@ -300,25 +302,22 @@ function scr_hurtplayer(player)
 				txt = embed_value_string(txt, [char, damage_n]);
 				create_transformation_tip(txt);
 			}
+			
 			var loseamount = 50 * (global.stylethreshold + 1);
-			if (instance_exists(obj_bosscontroller))
+			if instance_exists(obj_bosscontroller)
 				loseamount = 0;
-			if (!global.pizzadelivery)
+			else if !global.pizzadelivery
 			{
-				if (!instance_exists(obj_bosscontroller) && global.collect > 0)
+				if global.collect > 0
 				{
-					with (instance_create(121, 60, obj_negativenumber))
+					with instance_create(121, 60, obj_negativenumber)
 						number = concat("-", loseamount);
 				}
-				global.collect -= loseamount;
-				if (global.collect <= 0)
-					global.collect = 0;
-				if (global.collect != 0)
-				{
-					repeat (10)
-						instance_create(x, y, obj_pizzaloss);
-				}
+				repeat min(loseamount / 5, floor(global.collect / 10))
+					instance_create(x, y, obj_pizzaloss);
+				global.collect = max(global.collect - loseamount, 0);
 			}
+			
 			with (obj_bosscontroller)
 			{
 				if (!instance_exists(obj_hpeffect))

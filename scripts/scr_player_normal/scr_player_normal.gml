@@ -725,10 +725,15 @@ function state_snick_normal()
 	// bump on wall
 	if (place_meeting(x + sign(hsp), y, obj_solid) or scr_solid_slope(x + sign(hsp), y))
 	&& (!place_meeting(x + hsp, y, obj_destructibles) or abs(movespeed) < 10)
+	&& (!place_meeting(x + hsp, y, obj_ratblock) or abs(movespeed) < 12)
 	&& (!place_meeting(x + hsp, y, obj_metalblock) or abs(movespeed) < 16)
 	{
-		movespeed = 0;
-		hsp = 0;
+		var _bump = ledge_bump(vsp >= 0 ? 32 : 22);
+		if _bump
+		{
+			movespeed = 0;
+			hsp = 0;
+		}
 	}
 	
 	// peelout
@@ -738,7 +743,7 @@ function state_snick_normal()
 		if move != 0
 			xscale = sign(move);
 		
-		if !place_meeting(x + xscale, y, obj_solid) or place_meeting(x + xscale, y, obj_destructibles) or place_meeting(x + xscale, y, obj_metalblock)
+		if !place_meeting(x + xscale, y, obj_solid) or place_meeting(x + xscale, y, obj_destructibles) or place_meeting(x + xscale, y, obj_metalblock) or place_meeting(x + xscale, y, obj_ratblock)
 		{
 			sound_play_3d("event:/modded/sfx/snick/peelrev", x, y);
 			state = states.machroll;
@@ -802,8 +807,8 @@ function state_snick_normal()
 	// climbwall
 	if (abs(movespeed) > 12 && move != 0 && sign(movespeed) == xscale) or sprite_index == spr_walljumpstart
 	{
-		if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && (!place_meeting(x + hsp, y, obj_metalblock) or abs(hsp) < 16))
-		|| (grounded && (place_meeting(x + hsp, y - 16, obj_solid) || scr_solid_slope(x + hsp, y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope_parent)))
+		if ((!grounded && (place_meeting(x + movespeed, y, obj_solid) || scr_solid_slope(x + movespeed, y)) && !place_meeting(x + movespeed, y, obj_destructibles) && (!place_meeting(x + movespeed, y, obj_metalblock) or abs(movespeed) < 16))
+		|| (grounded && (place_meeting(x + movespeed, y - 16, obj_solid) || scr_solid_slope(x + movespeed, y - 16)) && !place_meeting(x + movespeed, y, obj_destructibles) && !place_meeting(x + movespeed, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope_parent)))
 		{
 			input_buffer_jump = 0;
 			wallspeed = abs(movespeed);
