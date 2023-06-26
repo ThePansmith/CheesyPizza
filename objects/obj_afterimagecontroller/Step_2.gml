@@ -17,7 +17,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 				or (playerid.character == "S")
 				{
 					var p = 4;
-					var m = playerid.movespeed - p;
+					var m = abs(playerid.movespeed) - p;
 					var t = 12 - p;
 					alpha = m / t;
 					alpha = clamp(alpha, 0, 1);
