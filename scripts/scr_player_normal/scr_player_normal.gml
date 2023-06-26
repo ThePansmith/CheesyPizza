@@ -570,7 +570,7 @@ function state_snick_normal()
 	if grounded
 	{
 		with instance_place(x, y + 1, obj_slope_parent)
-			other.movespeed += (other.state == states.machroll ? 0.3 : 0.1) * -sign(image_xscale);
+			other.movespeed += (other.state == states.machroll ? 0.25 : 0.1) * -sign(image_xscale);
 	}
 	
 	if sprite_index != spr_walljumpstart
@@ -613,7 +613,7 @@ function state_snick_normal()
 			    movespeed -= min(abs(movespeed), frc) * sign(movespeed);
 		}
 		else
-			movespeed -= min(abs(movespeed), move == -sign(movespeed) ? roll_dec : roll_frc) * sign(movespeed);
+			movespeed -= min(abs(movespeed), (move == -sign(movespeed) && !place_meeting(x, y + 1, obj_slope_parent)) ? roll_dec : roll_frc) * sign(movespeed);
 	}
 	
 	// animation
@@ -797,8 +797,7 @@ function state_snick_normal()
 	}
 	
 	// climbwall
-	if ((abs(movespeed) > 12 && move != 0) or sprite_index == spr_walljumpstart)
-	&& sign(hsp) == xscale
+	if (abs(movespeed) > 12 && move != 0 && sign(movespeed) == xscale) or sprite_index == spr_walljumpstart
 	{
 		if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && (!place_meeting(x + hsp, y, obj_metalblock) or abs(hsp) < 16))
 		|| (grounded && (place_meeting(x + hsp, y - 16, obj_solid) || scr_solid_slope(x + hsp, y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope_parent)))

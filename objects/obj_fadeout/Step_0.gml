@@ -76,6 +76,8 @@ if (instance_exists(obj_player))
 		{
 			if isgustavo
 				state = states.ratmountcrouch;
+			else if character == "S"
+				state = states.normal;
 			else
 			{
 				state = states.crouchjump;
