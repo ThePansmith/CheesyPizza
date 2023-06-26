@@ -722,20 +722,6 @@ function state_snick_normal()
 	}
 	image_speed = max(image_speed, 0.35);
 	
-	// bump on wall
-	if (place_meeting(x + sign(hsp), y, obj_solid) or scr_solid_slope(x + sign(hsp), y))
-	&& (!place_meeting(x + hsp, y, obj_destructibles) or abs(movespeed) < 10)
-	&& (!place_meeting(x + hsp, y, obj_ratblock) or abs(movespeed) < 12)
-	&& (!place_meeting(x + hsp, y, obj_metalblock) or abs(movespeed) < 16)
-	{
-		var _bump = ledge_bump(vsp >= 0 ? 32 : 22);
-		if _bump
-		{
-			movespeed = 0;
-			hsp = 0;
-		}
-	}
-	
 	// peelout
 	if key_attack && state == states.normal && abs(movespeed) < 8
 	{
@@ -805,7 +791,7 @@ function state_snick_normal()
 	}
 	
 	// climbwall
-	if (abs(movespeed) > 12 && move != 0 && sign(movespeed) == xscale) or sprite_index == spr_walljumpstart
+	if (abs(movespeed) > (12 / (scr_slope() * 2)) && move != 0 && sign(movespeed) == xscale) or sprite_index == spr_walljumpstart
 	{
 		if ((!grounded && (place_meeting(x + movespeed, y, obj_solid) || scr_solid_slope(x + movespeed, y)) && !place_meeting(x + movespeed, y, obj_destructibles) && (!place_meeting(x + movespeed, y, obj_metalblock) or abs(movespeed) < 16))
 		|| (grounded && (place_meeting(x + movespeed, y - 16, obj_solid) || scr_solid_slope(x + movespeed, y - 16)) && !place_meeting(x + movespeed, y, obj_destructibles) && !place_meeting(x + movespeed, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope_parent)))
@@ -816,6 +802,20 @@ function state_snick_normal()
 			state = states.climbwall;
 			if REMIX
 				vsp = -wallspeed;
+		}
+	}
+	
+	// bump on wall
+	else if (place_meeting(x + sign(movespeed), y, obj_solid) or scr_solid_slope(x + sign(movespeed), y))
+	&& (!place_meeting(x + movespeed, y, obj_destructibles) or abs(movespeed) < 10)
+	&& (!place_meeting(x + movespeed, y, obj_ratblock) or abs(movespeed) < 12)
+	&& (!place_meeting(x + movespeed, y, obj_metalblock) or abs(movespeed) < 16)
+	{
+		var _bump = ledge_bump(vsp >= 0 ? 32 : 22);
+		if _bump
+		{
+			movespeed = 0;
+			hsp = 0;
 		}
 	}
 	
