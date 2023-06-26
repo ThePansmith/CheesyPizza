@@ -58,6 +58,10 @@ if (place_meeting(x, y + 1, obj_slope_parent))
 if character == "S"
 	mask_index = spr_crouchmask;
 
+// kill yourself
+with (obj_ratblock)
+	scr_ratblock_destroy();
+
 switch (state)
 {
 	case states.normal:	
@@ -1299,8 +1303,6 @@ if (abs(hsp) > 12 && (movespeed > 12 && state == states.mach3 or (character == "
 		other.speedlineseffectid = id;
 	}
 }
-with (obj_ratblock)
-	scr_ratblock_destroy();
 scr_collide_destructibles();
 
 var mask = mask_index;
