@@ -280,27 +280,19 @@ function scr_hurtplayer(player)
 				instance_destroy(obj_transfotip);
 				var txt = lang_get_value("hurt");
 				
-				var char = "Peppino";
+				var char = "Yourself";
 				switch character
 				{
-					case "N":
-						char = "The Noise";
-						break;
-					case "V":
-						char = "Vigilante";
-						break;
-					case "SP":
-						char = "Pizzelle";
-						break;
-					case "PP":
-						char = "Pissino";
-						break;
-					case "BN":
-						char = "Bo Noise";
-						break;
-					case "S":
-						char = "Snick";
-						break;
+					case "P": char = "Peppino"; break;
+					case "N": char = "The Noise"; break;
+					case "V": char = "Vigilante"; break;
+					case "SP": char = "Pizzelle"; break;
+					case "SN": char = "Pizzano"; break;
+					case "PN": char = "Pinolino"; break;
+					case "PP": char = "Pissino"; break;
+					case "BN": char = "Bo Noise"; break;
+					case "S": char = "Snick"; break;
+					case "CT": char = "Chemstoon"; break;
 				}
 				if isgustavo
 					char = "Gustavo";

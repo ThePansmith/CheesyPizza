@@ -226,6 +226,7 @@ function scr_player_climbwall()
 			move = key_left + key_right;
 			suplexmove = false;
 			vsp = -wallspeed;
+			jumpstop = false;
 			
 			if instance_exists(obj_fadeout) && y < -50
 				vsp = 0;

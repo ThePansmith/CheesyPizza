@@ -661,7 +661,10 @@ function state_snick_normal()
 			if move != xscale && move != 0 && (abs(movespeed) > 3 or sprite_index == spr_machslide)
 			{
 				if sprite_index != spr_machslide
+				{
+					fmod_event_one_shot_3d("event:/sfx/pep/break", x, y);
 					image_index = 0;
+				}
 				sprite_index = spr_machslide;
 				image_speed = 0.5;
 			}

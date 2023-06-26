@@ -1,6 +1,6 @@
 if global.panic == true || (instance_exists(obj_wartimer) && room != war_1)
 {
-	if sprite_index == spr_sugarygateclosed
+	if sugary
 		sprite_index = spr_sugarygateopen;
 	else
 		image_index = 1;

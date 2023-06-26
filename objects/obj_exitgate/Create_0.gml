@@ -20,8 +20,9 @@ uparrow = false;
 uparrowID = -4;
 snd = false;
 
-if check_sugary()
+sugary = check_sugary()
+if sugary
 {
 	sprite_index = spr_sugarygateopen;
-	image_speed = 0.35;
+	image_index = 0;
 }

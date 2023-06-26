@@ -9,13 +9,14 @@ if (instance_exists(baddieID))
 	y = baddieID.y;
 	image_xscale = baddieID.image_xscale;
 }
-if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.cutscene == 0)
+
+var _obj_player = instance_place(x, y, obj_player);
+if (instance_exists(baddieID) && _obj_player && !_obj_player.cutscene)
 {
 	if (baddieID.state != states.grabbed && !baddieID.invincible && baddieID.state != states.ghostpossess)
 	{
-		with (obj_player)
+		with (_obj_player)
 		{
-			var _obj_player = id;
 			var _playerindex = (object_index == obj_player1) ? 1 : 2;
 			if (instance_exists(other.baddieID) && !instakillmove && y < other.baddieID.y && other.baddieID.stompbuffer <= 0 && attacking == 0 && !global.kungfu && sprite_index != spr_mach2jump && ((state == states.boots && vsp > 0) or state == states.jump or (isgustavo && ratmount_movespeed < 12 && state == states.ratmountjump) or state == states.mach1 or state == states.grab) && vsp > 0 && sprite_index != spr_stompprep && !other.baddieID.invincible && other.baddieID.stompable)
 			{

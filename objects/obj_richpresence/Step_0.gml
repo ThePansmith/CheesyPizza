@@ -18,9 +18,12 @@ switch character
 	case "S": smallimagetext = "Playing as Snick"; break;
 	case "G": smallimagetext = "Playing as Gustavo"; break;
 	case "SP": smallimagetext = "Playing as Pizzelle"; break;
+	case "SN": smallimagetext = "Playing as Pizzano"; break;
 	case "PP": smallimagetext = "Playing as Pissino"; break;
 	case "PN": smallimagetext = "Playing as Pinolino"; break;
 	case "BN": smallimagetext = "Playing as Bo Noise"; break;
+	case "CT": smallimagetext = "Playing as Chemstoon"; break;
+	case "PUFFER": smallimagetext = "Please do not ask"; break;
 }
 
 // status
