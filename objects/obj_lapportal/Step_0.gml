@@ -44,7 +44,7 @@ if (global.panic || instance_exists(obj_wartimer))
 			image_speed = 0;
 			if (!instance_exists(obj_fadeout))
 			{
-				with (obj_player)
+				with (playerid)
 				{
 					targetDoor = "LAP";
 					targetRoom = other.targetRoom;

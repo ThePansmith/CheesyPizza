@@ -163,7 +163,7 @@ function draw_superslam_enemy()
 }
 function draw_player()
 {
-	var b = get_dark(image_blend, other.use_dark);
+	var b = get_dark(image_blend, obj_drawcontroller.use_dark);
 	if (object_index == obj_player1)
 		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, (xscale * scale_xs), (yscale * scale_ys), global.palettetexture);
 	var ps = paletteselect;

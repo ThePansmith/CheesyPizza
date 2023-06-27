@@ -4,6 +4,7 @@
 	y = -1000;
 	visible = 0;
 	state = -1;
+	targetDoor = "";
 	exit;
 }
 /*
