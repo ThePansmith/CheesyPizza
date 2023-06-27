@@ -232,6 +232,25 @@ function scr_enemy_rage()
 				state = states.walk;
 			}
 			break;
+		
+		// sugary
+		case obj_gumslime:
+			if ragecooldown <= 0 && image_index >= 8
+			{
+				with instance_create(x, y, obj_bigspitcheesespike)
+				{
+					other.ragecooldown = 50;
+					hsp = other.image_xscale * 5;
+					vsp = -8;
+					sprite_index = spr_gumslime_gumball;
+				}
+			}
+			if floor(image_index) >= image_number - 1
+			{
+				state = states.walk;
+				sprite_index = walkspr;
+			}
+			break;
 	}
 	if (place_meeting(x, y + 1, obj_railparent))
 	{
