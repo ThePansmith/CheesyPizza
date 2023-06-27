@@ -23,7 +23,7 @@ depth = -99;
 scr_init_input();
 slidecount = 0;
 slidebuffer = 0;
-bg_alpha = [1, 0, 0, 0, 0];
+bg_alpha = [1, 0, 0, 0, 0, 0];
 bg_x = 0;
 bg_y = 0;
 menus = [];

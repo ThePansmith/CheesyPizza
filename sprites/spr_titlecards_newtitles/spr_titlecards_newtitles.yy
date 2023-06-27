@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "spr_titlecards_newtitles",
   "bbox_bottom": 388,
-  "bbox_left": 59,
+  "bbox_left": 27,
   "bbox_right": 928,
   "bbox_top": 18,
   "bboxMode": 0,

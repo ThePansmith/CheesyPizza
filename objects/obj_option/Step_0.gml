@@ -11,6 +11,8 @@ else if (m.menu_id == menus.audio)
     j = 1;
 else if (m.menu_id == menus.game)
     j = 3;
+if instance_exists(obj_modconfig)
+	j = 5;
 
 for (var i = 0; i < array_length(bg_alpha); i++)
 {
