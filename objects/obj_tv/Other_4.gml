@@ -93,6 +93,7 @@ switch (global.leveltosave)
 	
 	// pto exclusive
 	case "midway": tv_bg_index = 24; break;
+	case "entryway": tv_bg_index = 25; break;
 }
 if (special_prompts == -4 && room != Realtitlescreen && room != characterselect)
 {

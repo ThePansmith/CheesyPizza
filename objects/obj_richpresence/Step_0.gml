@@ -69,32 +69,32 @@ switch safe_get(global, "leveltosave")
 	case "exit": state = "The Crumbling Tower of Pizza"; break;
 	
 	// pto
-	case "desert": details = "Old Desert"; break;
-	case "beach": details = "Pineapple Beach"; break;
-	case "factory": details = "April Factory"; break;
-	case "city": details = "Old City"; break;
-	case "oldsewer": details = "Old Shit!"; break;
-	case "oldfactory": details = "Old Factory"; break;
-	case "oldfreezer": details = "Old Freezer"; break;
-	case "golf": details = "Old GOLF"; break;
-	case "pinball": details = "Space Pinball"; break;
-	case "top": details = "Top"; break;
-	case "oldexit": details = "Exit"; break;
-	case "strongcold": details = "Strongcold"; break;
-	case "dragonlair": details = "Dragon's Lair"; break;
-	case "snickchallenge": details = "Snick Challenge"; break;
+	case "desert": state = "Old Desert"; break;
+	case "beach": state = "Pineapple Beach"; break;
+	case "factory": state = "April Factory"; break;
+	case "city": state = "Old City"; break;
+	case "oldsewer": state = "Old Shit!"; break;
+	case "oldfactory": state = "Old Factory"; break;
+	case "oldfreezer": state = "Old Freezer"; break;
+	case "golf": state = "Old GOLF"; break;
+	case "pinball": state = "Space Pinball"; break;
+	case "top": state = "Top"; break;
+	case "oldexit": state = "Exit"; break;
+	case "strongcold": state = "Strongcold"; break;
+	case "dragonlair": state = "Dragon's Lair"; break;
+	case "snickchallenge": state = "Snick Challenge"; break;
 	
-	case "midway": details = "Midway"; break;
-	case "sky": details = "Sky"; break;
-	case "ancient": details = "Ancient Tower"; break;
-	case "etb": details = "Early Test Build"; break;
+	case "midway": state = "Midway"; break;
+	case "sky": state = "Sky"; break;
+	case "ancient": state = "Ancient Tower"; break;
+	case "etb": state = "Early Test Build"; break;
 	
 	// sugary
-	case "entryway": details = "Crunchy Construction"; break;
-	case "steamy": details = "Cottontown"; break;
-	case "molasses": details = "Molasses Swamp"; break;
-	case "mines": details = "Sugarshack Mines"; break;
-	case "sucrose": details = "Sucrose Snowstorm"; break;
+	case "entryway": state = "Crunchy Construction"; break;
+	case "steamy": state = "Cottontown"; break;
+	case "molasses": state = "Molasses Swamp"; break;
+	case "mines": state = "Sugarshack Mines"; break;
+	case "sucrose": state = "Sucrose Snowstorm"; break;
 }
 
 // add rank and score

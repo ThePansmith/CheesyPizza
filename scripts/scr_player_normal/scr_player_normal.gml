@@ -664,7 +664,7 @@ function state_snick_normal()
 			{
 				if sprite_index != spr_machslide
 				{
-					fmod_event_one_shot_3d("event:/sfx/pep/break", x, y);
+					sound_play_3d("event:/sfx/pep/break", x, y);
 					image_index = 0;
 				}
 				sprite_index = spr_machslide;
@@ -793,10 +793,10 @@ function state_snick_normal()
 	}
 	
 	// climbwall
-	if (abs(movespeed) > (12 / (scr_slope() + 1)) && move != 0 && sign(movespeed) == xscale) or sprite_index == spr_walljumpstart
+	if ((abs(movespeed) > (12 / (scr_slope() + 1)) && move != 0 && sign(movespeed) == xscale) or sprite_index == spr_walljumpstart)
+	&& ((!grounded && (place_meeting(x + movespeed, y, obj_solid) || scr_solid_slope(x + movespeed, y)) && !place_meeting(x + movespeed, y, obj_destructibles) && (!place_meeting(x + movespeed, y, obj_metalblock) or abs(movespeed) < 16))
+	|| (grounded && (place_meeting(x + movespeed, y - 16, obj_solid) || scr_solid_slope(x + movespeed, y - 16)) && !place_meeting(x + movespeed, y, obj_destructibles) && !place_meeting(x + movespeed, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope_parent)))
 	{
-		if ((!grounded && (place_meeting(x + movespeed, y, obj_solid) || scr_solid_slope(x + movespeed, y)) && !place_meeting(x + movespeed, y, obj_destructibles) && (!place_meeting(x + movespeed, y, obj_metalblock) or abs(movespeed) < 16))
-		|| (grounded && (place_meeting(x + movespeed, y - 16, obj_solid) || scr_solid_slope(x + movespeed, y - 16)) && !place_meeting(x + movespeed, y, obj_destructibles) && !place_meeting(x + movespeed, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope_parent)))
 		{
 			input_buffer_jump = 0;
 			wallspeed = abs(movespeed);
@@ -808,7 +808,7 @@ function state_snick_normal()
 	}
 	
 	// bump on wall
-	else if (place_meeting(x + sign(movespeed), y, obj_solid) or scr_solid_slope(x + sign(movespeed), y))
+	else if (place_meeting(x + movespeed, y, obj_solid) or scr_solid_slope(x + movespeed, y))
 	&& (!place_meeting(x + movespeed, y, obj_destructibles) or abs(movespeed) < 10)
 	&& (!place_meeting(x + movespeed, y, obj_ratblock) or abs(movespeed) < 12)
 	&& (!place_meeting(x + movespeed, y, obj_metalblock) or abs(movespeed) < 16)
