@@ -12,12 +12,12 @@ if (floor(image_index) == (image_number - 1))
 {
 	switch (sprite_index)
 	{
-		case spr_pizzaportal_appear:
+		case spr_appear:
 			fmod_event_one_shot_3d("event:/sfx/misc/secretexit", x, y);
-			sprite_index = spr_pizzaportalentrancestart;
+			sprite_index = spr_spit;
 			break;
-		case spr_pizzaportalentrancestart:
-			sprite_index = spr_pizzaportal_disappear;
+		case spr_spit:
+			sprite_index = spr_disappear;
 			with (obj_player)
 			{
 				state = states.normal;
@@ -27,7 +27,7 @@ if (floor(image_index) == (image_number - 1))
 			}
 			active = false;
 			break;
-		case spr_pizzaportal_disappear:
+		case spr_disappear:
 			instance_create_unique(0, 0, obj_lap2visual);
 			instance_destroy();
 			break;

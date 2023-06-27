@@ -28,8 +28,8 @@
   "nineSlice": null,
   "origin": 1,
   "parent": {
-    "name": "Sugary Spire",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire.yy",
+    "name": "HUD",
+    "path": "folders/Sprites/CheesyPizza/HUD.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

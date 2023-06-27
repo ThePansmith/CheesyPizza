@@ -34,6 +34,9 @@
     "name": "spr_pizzaportal",
     "path": "sprites/spr_pizzaportal/spr_pizzaportal.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_pizzaportal",
+    "path": "sprites/spr_pizzaportal/spr_pizzaportal.yy",
+  },
   "visible": true,
 }

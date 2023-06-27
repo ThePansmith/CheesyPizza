@@ -4,7 +4,7 @@
   "name": "spr_lappingportal_enter",
   "bbox_bottom": 95,
   "bbox_left": 0,
-  "bbox_right": 93,
+  "bbox_right": 99,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,

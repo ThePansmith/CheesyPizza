@@ -96,7 +96,7 @@ function Instakill()
 	
 	var lag = 5;
 	if (other.baddieID.heavy == 1 or (state == states.punch && global.attackstyle == 1))
-		lag = 15;
+		lag = 10;
 	if state == states.handstandjump
 		lag = 10;
 	

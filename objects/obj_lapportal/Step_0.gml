@@ -1,7 +1,7 @@
 if (global.panic || instance_exists(obj_wartimer))
 {
 	image_alpha = 1;
-	if (sprite_index == spr_pizzaportal)
+	if (sprite_index == spr_idle)
 	{
 		playerid = -4;
 		with (obj_player)
@@ -13,7 +13,7 @@ if (global.panic || instance_exists(obj_wartimer))
 					lock = true;
 				state = states.actor;
 				visible = false;
-				other.sprite_index = spr_pizzaportalend;
+				other.sprite_index = other.spr_enter;
 				other.image_index = 0;
 				other.playerid = id;
 				if (!instance_exists(obj_wartimer) && global.lap)
@@ -30,7 +30,7 @@ if (global.panic || instance_exists(obj_wartimer))
 			}
 		}
 	}
-	else if (sprite_index == spr_pizzaportalend)
+	else if (sprite_index == spr_enter)
 	{
 		with (playerid)
 		{
