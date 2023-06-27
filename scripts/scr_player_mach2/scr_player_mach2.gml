@@ -153,7 +153,7 @@ function scr_player_mach2()
 		image_index = 0;
 		if (!grounded)
 			sprite_index = spr_mach2jump;
-		else if character == "N"
+		else if character == "P"
 			sprite_index = spr_player_machroll;
 		else
 			sprite_index = spr_machroll;

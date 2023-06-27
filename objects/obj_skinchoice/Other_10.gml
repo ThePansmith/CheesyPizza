@@ -167,7 +167,7 @@ switch character
 		add_palette(4, "", noone, "Grinch", "IIIIIIT'S CHRIMMAAAAAAAA", "GRINCH");
 		add_palette(5, "", noone, "Inverted", "Ooo... scary...!");
 		add_palette(6, "", noone, "Naked", "Wow. Yikes.");
-		add_palette(7, "", noone, "The Goise", "Unused character in final game!");
+		add_palette(7, "", noone, "The Groise", "Piss Chuggers Association.");
 		add_palette(8, "", noone, "ARG", "I got the key piece!", "VILE");
 		add_palette(9, "", noone, "Radie", "Do NOT eat it.", "CUTE");
 		add_palette(10, "", noone, "Spicy", "This adds a whole new layer to the heat meter.", "SPICED");

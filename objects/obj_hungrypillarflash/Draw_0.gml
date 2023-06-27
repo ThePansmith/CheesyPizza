@@ -12,11 +12,6 @@ shader_set(global.Pal_Shader);
 with (obj_player)
 {
 	if (visible)
-	{
-		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, xscale, yscale, global.palettetexture);
-		pal_swap_set(spr_palette, paletteselect, false);
-		draw_sprite_ext(sprite_index, image_index, x, y, xscale, yscale, angle, image_blend, image_alpha);
-		pattern_reset();
-	}
+		draw_player();
 }
 shader_reset();

@@ -26,6 +26,10 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 				case "PP":
 					spr = choose(spr_collect1PP, spr_collect2PP, spr_collect3PP, spr_collect4PP, spr_collect5PP);
 					break;
+				
+				case "S":
+					spr = choose(spr_snickcollectible1);
+					break;
 			}
 			break;
 		
@@ -47,6 +51,10 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 				case "PP":
 					spr = choose(spr_bigcollect1PP, spr_bigcollect2PP, spr_bigcollect3PP, spr_bigcollect4PP, spr_bigcollect5PP);
 					break;
+				
+				case "S":
+					spr = choose(spr_snickcollectible2);
+					break;
 			}
 			break;
 		
@@ -67,6 +75,10 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 				
 				case "PP":
 					spr = spr_giantpizzaPP;
+					break;
+				
+				case "S":
+					spr = choose(spr_snickcollectible3);
 					break;
 			}
 			break;

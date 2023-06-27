@@ -1,9 +1,5 @@
 live_auto_call;
 
-// cut everything out (temporary)
-stop_music();
-sound_stop_all();
-
 open_menu();
 con = 0;
 fade = 0;

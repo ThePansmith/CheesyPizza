@@ -1480,9 +1480,6 @@ function scr_characterspr()
 		spr_rageidle = spr_snick_idle;
 		spr_ragemove = spr_snick_walk;
 				
-		spr_breakdanceuppercut = spr_snick_bodyslamstart;
-		spr_breakdanceuppercutend = spr_snick_fall;
-				
 		spr_suplexland = spr_player_backflip;
 				
 		spr_pmortwalk = spr_player_mortwalk;
