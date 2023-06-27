@@ -10,4 +10,4 @@ for (var i = 0; i < array_length(afterimages); i++)
 */
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, 1);
 if (very && !sugary)
-	draw_sprite(spr_combovery, 0, x - 65, y - 6);
+	draw_sprite(obj_player1.character == "PP" ? spr_comboveryPP : spr_combovery, 0, x - 65, y - 6);

@@ -31,4 +31,4 @@ draw_set_halign(1);
 draw_set_valign(0);
 draw_text(xx, yy + 70, comboscoremax);
 if (very && !sugary)
-	draw_sprite(spr_combovery, 0, xx - 65, (yy - 6) + 30);
+	draw_sprite(obj_player1.character == "PP" ? spr_comboveryPP : spr_combovery, 0, xx - 65, (yy - 6) + 30);
