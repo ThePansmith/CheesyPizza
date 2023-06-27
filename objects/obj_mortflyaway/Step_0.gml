@@ -5,5 +5,5 @@ vsp = Approach(vsp, 12, 0.1);
 if (instance_exists(obj_mort))
 {
 	instance_destroy();
-	instance_create(x, y, obj_genericpoofeffect);
+	create_particle(x, y, particle.genericpoofeffect);
 }

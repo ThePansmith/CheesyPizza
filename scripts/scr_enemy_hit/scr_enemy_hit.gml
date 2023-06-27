@@ -53,7 +53,7 @@ function scr_enemy_hit()
 		if (((!elite && (hp <= _hp or mach3destroy)) or (elite && (elitehit <= 0 or mach3destroy))) && object_get_parent(object_index) != par_boss && object_index != obj_pizzafaceboss && destroyable && !mach2)
 		{
 			instance_destroy();
-			instance_create(x, y, obj_genericpoofeffect);
+			create_particle(x, y, particle.genericpoofeffect);
 		}
 		stunned = 200;
 		state = states.stun;

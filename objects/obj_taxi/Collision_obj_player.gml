@@ -4,7 +4,7 @@ with (other)
 	{
 		with (other)
 		{
-			instance_create(x, y, obj_genericpoofeffect);
+			create_particle(x, y, particle.genericpoofeffect);
 			obj_player1.visible = false;
 			obj_player1.sprite_index = obj_player1.spr_idle;
 			obj_player1.hsp = 0;

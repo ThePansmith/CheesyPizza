@@ -49,8 +49,9 @@ function scr_player_trashroll()
 		sprite_index = spr_mach2jump;
 		jumpstop = false;
 		vsp = -11;
-		with instance_create(x, y, obj_jumpdust)
-			image_xscale = REMIX ? other.xscale : 1;
+		
+		particle_set_scale(particle.jumpdust, REMIX ? xscale : 1, 1);
+		create_particle(x, y, particle.jumpdust);
 	}
 	if (((place_meeting(x + xscale, y, obj_solid) || place_meeting(x + xscale, y, obj_ghostwall)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_rattumble)) || place_meeting(x, y, obj_timedgate))
 	{

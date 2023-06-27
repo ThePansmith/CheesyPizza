@@ -10,5 +10,5 @@ scr_collide();
 if (grounded && dust == 0)
 {
 	dust = true;
-	instance_create(x, y, obj_landcloud);
+	create_particle(x, y, particle.landcloud);
 }

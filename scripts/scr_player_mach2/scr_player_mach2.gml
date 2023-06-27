@@ -186,7 +186,7 @@ function scr_player_mach2()
 	if (clowntimer <= 0 && skateboarding == 1)
 	{
 		state = states.normal;
-		instance_create(x, y, obj_genericpoofeffect);
+		create_particle(x, y, particle.genericpoofeffect);
 	}
 	if (key_slap2 && character == "V")
 	{

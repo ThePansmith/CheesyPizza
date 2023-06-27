@@ -20,7 +20,7 @@ if (b)
 		spawnbuffer = spawnmax;
 		with (instance_create(x, y, obj_noisey))
 		{
-			instance_create(x, y, obj_genericpoofeffect);
+			create_particle(x, y, particle.genericpoofeffect);
 			important = true;
 			state = states.stun;
 			bounce = true;

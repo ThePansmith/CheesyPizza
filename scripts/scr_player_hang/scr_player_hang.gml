@@ -12,8 +12,9 @@ function scr_player_hang()
 		state = states.jump;
 		sprite_index = spr_playerN_noisebombspinjump;
 		image_index = 0;
-		with (instance_create(x, y, obj_jumpdust))
-			image_xscale = other.xscale;
+		
+		particle_set_scale(particle.jumpdust, xscale, 1);
+		create_particle(x, y, particle.jumpdust);
 	}
 	image_speed = 0.35;
 }

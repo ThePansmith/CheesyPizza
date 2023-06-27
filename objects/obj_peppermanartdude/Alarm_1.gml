@@ -1,2 +1,2 @@
-instance_create(x, y + 48, obj_cloudeffect);
+create_particle(x, y + 48, particle.cloudeffect);
 alarm[1] = 30;

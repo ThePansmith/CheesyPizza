@@ -74,7 +74,7 @@ if (charge == 1 && scr_solid(x, y + 1))
 	steppy--;
 if (steppy == 0)
 {
-	instance_create(x, y + 43, obj_cloudeffect);
+	create_particle(x, y + 43, particle.cloudeffect);
 	steppy = 20;
 }
 scr_collide();

@@ -56,8 +56,9 @@ function scr_player_ratmountgroundpound()
 					other.xscale = -sign(image_xscale);
 					other.state = states.ratmount;
 					other.movespeed = other.xscale * 8;
-					with (instance_create(other.x, other.y, obj_jumpdust))
-						image_xscale = -sign(other.image_xscale);
+					
+					particle_set_scale(particle.jumpdust, -sign(image_xscale), 1);
+					create_particle(other.x, other.y, particle.jumpdust);
 				}
 			}
 			else

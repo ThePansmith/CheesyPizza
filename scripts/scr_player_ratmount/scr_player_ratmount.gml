@@ -47,8 +47,8 @@ function scr_player_ratmount()
 	}
 	if (ratmount_movespeed >= 12 && gustavodash != 51)
 	{
-		with instance_create(x, y, obj_jumpdust)
-			image_xscale = REMIX ? other.xscale : 1;
+		particle_set_scale(particle.jumpdust, REMIX ? xscale : 1, 1);
+		create_particle(x, y, particle.jumpdust);
 		gustavodash = 51;
 	}
 	if (ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
@@ -261,8 +261,8 @@ function scr_player_ratmount()
 	{
 		if check_char("G") && ratmount_movespeed >= 12
 		{
-			with instance_create(x, y, obj_jumpdust)
-				image_xscale = other.xscale;
+			particle_set_scale(particle.jumpdust, xscale, 1);
+			create_particle(x, y, particle.jumpdust);
 			movespeed = max(abs(movespeed), 2);
 			crouchslipbuffer = 25;
 			sprite_index = spr_lonegustavo_crouchwalk;

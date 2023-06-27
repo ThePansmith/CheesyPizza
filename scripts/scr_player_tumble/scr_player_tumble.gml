@@ -140,8 +140,9 @@ function scr_player_tumble()
 	{
 		if (crouchslipbuffer == 0)
 		{
-			with (instance_create(x, y, obj_jumpdust))
-				image_xscale = other.xscale;
+			particle_set_scale(particle.jumpdust, xscale, 1);
+			create_particle(x, y, particle.jumpdust);
+			
 			if isgustavo
 			{
 				state = states.ratmount;

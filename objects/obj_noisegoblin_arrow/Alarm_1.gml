@@ -1,2 +1,2 @@
-instance_create(x, y, obj_genericpoofeffect);
+create_particle(x, y, particle.genericpoofeffect);
 instance_destroy();

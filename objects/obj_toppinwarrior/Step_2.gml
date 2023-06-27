@@ -12,7 +12,7 @@ if (sprite_index == spr_run && scr_solid(x, y + 1) && visible == 1)
 	steppy--;
 if (steppy == 0)
 {
-	instance_create(x, y + 43, obj_cloudeffect);
+	create_particle(x, y + 43, particle.cloudeffect);
 	steppy = 20;
 }
 if ((xprevious - x) != 0)

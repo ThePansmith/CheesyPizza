@@ -115,14 +115,14 @@ function pepperman_decide_attack_phase1()
 		{
 			if (shoulderpound_fakeout)
 				shoulderpound_buffer = shoulderpound_max;
-			if (shoulderbash_fakeout)
-			{
-				with (instance_create(x, y, obj_crazyrunothereffect))
-					playerid = other.id;
-			}
 			image_index = 0;
 			sprite_index = spr_pepperman_shoulderstart;
 			image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : image_xscale;
+			if (shoulderbash_fakeout)
+			{
+				particle_set_scale(particle.crazyrunothereffect, image_xscale, 1);
+				create_particle(x, y, particle.crazyrunothereffect);
+			}
 		}
 		else if (state == states.jump)
 		{
@@ -316,14 +316,14 @@ function boss_pepperman_freefallland()
 		if (jumping_pepper && superjumping_pepper)
 		{
 			state = states.shoulderbash;
-			if (shoulderbash_fakeout)
-			{
-				with (instance_create(x, y, obj_crazyrunothereffect))
-					playerid = other.id;
-			}
 			image_index = 0;
 			sprite_index = spr_pepperman_shoulderstart;
 			image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : image_xscale;
+			if (shoulderbash_fakeout)
+			{
+				particle_set_scale(particle.crazyrunothereffect, image_xscale, 1);
+				create_particle(x, y, particle.crazyrunothereffect);
+			}
 		}
 	}
 }
@@ -356,8 +356,6 @@ function boss_pepperman_shoulderbash()
 			shoulderpound_buffer--;
 		else
 		{
-			with (instance_create(x, y - 5, obj_crazyrunothereffect))
-				playerid = other.id;
 			state = states.jump;
 			image_index = 0;
 			sprite_index = spr_pepperman_jump;
@@ -370,6 +368,9 @@ function boss_pepperman_shoulderbash()
 			hsp = (target_x != x) ? (sign(target_x - x) * jump_spd) : (image_xscale * jump_spd);
 			if (hsp != 0)
 				image_xscale = sign(hsp);
+			
+			particle_set_scale(particle.crazyrunothereffect, image_xscale, 1);
+			create_particle(x, y - 5, particle.crazyrunothereffect);
 		}
 	}
 	if (shoulderbash_fakeout && !shoulderpound_fakeout && grounded && distance_to_pos(x, y, targetplayer.x, targetplayer.y, 180, 540))

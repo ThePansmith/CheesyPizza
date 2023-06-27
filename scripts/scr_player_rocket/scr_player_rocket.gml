@@ -49,7 +49,10 @@ function scr_player_rocket()
 		}
 		jumpstop = false;
 		vsp = -11;
-		instance_create(x, y, obj_jumpdust);
+		
+		particle_set_scale(particle.jumpdust, REMIX ? xscale : 1, 1);
+		create_particle(x, y, particle.jumpdust);
+		
 		with (instance_create(x, y + 12, obj_rocketdead))
 		{
 			hsp = other.xscale * 6;

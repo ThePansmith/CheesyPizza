@@ -7,4 +7,4 @@ state = states.walk;
 sprite_index = spr_pizzaball_idle1;
 sit = true;
 stunned = 0;
-instance_create(x, y, obj_genericpoofeffect);
+create_particle(x, y, particle.genericpoofeffect);

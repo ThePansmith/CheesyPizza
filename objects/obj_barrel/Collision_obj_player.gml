@@ -4,7 +4,7 @@ if (active)
 	{
 		with (other)
 		{
-			instance_create(x, y, obj_genericpoofeffect);
+			create_particle(x, y, particle.genericpoofeffect);
 			movespeed = hsp;
 			state = states.barrel;
 			image_index = 0;

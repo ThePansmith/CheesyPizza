@@ -12,7 +12,7 @@ if (playerid.visible == 0)
 		}
 		else
 			state = states.normal;
-		instance_create(x, y, obj_genericpoofeffect);
+		create_particle(x, y, particle.genericpoofeffect);
 		movespeed = 0;
 		ratmount_movespeed = 0;
 		cutscene = false;

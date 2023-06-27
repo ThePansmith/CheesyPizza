@@ -276,20 +276,15 @@ function scr_playerreset(roomstart = false)
 				instance_destroy(obj_gnome_checklist);
 		}
 		obj_timeattack.stop = false;
-		obj_player1.spotlight = true;
-		obj_player2.x = -1000;
-		obj_player2.y = 500;
+		spotlight = true;
 		global.SAGEshotgunsnicknumber = 0;
 		obj_music.fadeoff = 0;
 		audio_stop_all();
 		global.seconds = 59;
 		global.minutes = 1;
-		obj_player1.prevstate = states.comingoutdoor;
-		obj_player1.state = states.comingoutdoor;
-		obj_player2.prevstate = states.comingoutdoor;
-		obj_player2.state = states.comingoutdoor;
-		obj_player1.visible = true;
-		obj_player2.visible = true;
+		prevstate = states.comingoutdoor;
+		state = states.comingoutdoor;
+		visible = true;
 		ds_list_clear(global.saveroom);
 		ds_list_clear(global.escaperoom);
 		ds_list_clear(global.baddieroom);

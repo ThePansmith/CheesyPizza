@@ -49,7 +49,7 @@ function scr_player_secondjump()
 		jumpAnim = true;
 		jumpstop = false;
 		image_index = 0;
-		instance_create(x, y, obj_landcloud);
+		instance_create(x, y, obj_landcloud); // unused
 		freefallstart = 0;
 	}
 	if (key_jump)

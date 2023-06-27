@@ -114,14 +114,10 @@ function scr_do_rank(showtoppins = true, boss = false)
 			}
 		}
 	}
-	obj_player1.state = states.door;
-	obj_player1.sprite_index = obj_player1.spr_lookdoor;
-	if (instance_exists(obj_player2))
+	with obj_player
 	{
-		obj_player2.state = states.door;
-		obj_player2.sprite_index = obj_player2.spr_lookdoor;
-		if (global.coop)
-			obj_player2.visible = true;
+		state = states.door;
+		sprite_index = spr_lookdoor;
 	}
 	obj_endlevelfade.alarm[0] = 235;
 	if obj_player1.character == "SP"

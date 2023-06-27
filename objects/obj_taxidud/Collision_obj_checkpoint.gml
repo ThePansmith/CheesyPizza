@@ -6,7 +6,7 @@ if (playerid.visible == 0)
 	{
 		fmod_event_one_shot("event:/sfx/misc/taxibeep");
 		state = states.normal;
-		instance_create(x, y, obj_genericpoofeffect);
+		create_particle(x, y, particle.genericpoofeffect);
 		cutscene = false;
 		if (isgustavo)
 		{

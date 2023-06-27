@@ -55,7 +55,7 @@ function state_player_normal()
 	{
 		if (!instance_exists(obj_beatbox))
 		{
-			instance_create(x, y, obj_genericpoofeffect);
+			create_particle(x, y, particle.genericpoofeffect);
 			with (instance_create(x, y, obj_beatbox))
 				vsp = -11;
 		}
@@ -379,8 +379,17 @@ function state_player_normal()
 			fmod_event_instance_play(snd_uppercut);
 			vsp = -14;
 			movespeed = hsp;
-			particle_set_scale(particle.highjumpcloud2, xscale, 1);
-			create_particle(x, y, particle.highjumpcloud2, 0);
+			
+			if character == "SP"
+			{
+				with instance_create(x, y, obj_jumpdust)
+					sprite_index = spr_tornadocloud;
+			}
+			else
+			{
+				particle_set_scale(particle.highjumpcloud2, xscale, 1);
+				create_particle(x, y, particle.highjumpcloud2, 0);
+			}
 		}
 		
 		// kungfu
@@ -540,7 +549,7 @@ function state_pepperman_normal()
 		sprite_index = spr_pepperman_idle;
 	if (move != 0 && (floor(image_index) == 4 || floor(image_index) == 11) && steppy == 0 && character != "V")
 	{
-		instance_create(x, y + 38, obj_cloudeffect);
+		create_particle(x, y + 38, particle.cloudeffect);
 		steppy = true;
 	}
 	if (move != 0 && floor(image_index) != 4 && floor(image_index) != 11)

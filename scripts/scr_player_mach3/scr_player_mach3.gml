@@ -197,10 +197,11 @@ function scr_player_mach3()
 				fmod_event_instance_play(snd_uppercut);
 				vsp = -10;
 				movespeed = hsp;
+				
 				particle_set_scale(particle.highjumpcloud2, xscale, 1);
 				create_particle(x, y, particle.highjumpcloud2, 0);
 			}
-				
+			
 			// kungfu
 			else if input_buffer_slap > 0 && !key_up && !suplexmove && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
 			{

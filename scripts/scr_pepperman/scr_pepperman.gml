@@ -445,8 +445,9 @@ function scr_pepperman_shoulderbash()
 		hsp = image_xscale * attackspeed;
 		if (woosh == 0 && phase == 2)
 		{
-			with (instance_create(x, y, obj_crazyrunothereffect))
-				image_xscale = other.image_xscale;
+			particle_set_scale(particle.crazyrunothereffect, image_xscale, 1);
+			create_particle(x, y, particle.crazyrunothereffect);
+			
 			with (instance_create(x, y, obj_superdashcloud))
 				image_xscale = other.image_xscale;
 			woosh = true;
@@ -549,8 +550,8 @@ function scr_pepperman_shoulderturn()
 		if (phase == 2)
 		{
 			attackspeed = 24;
-			with (instance_create(x, y, obj_crazyrunothereffect))
-				image_xscale = other.image_xscale;
+			particle_set_scale(particle.crazyrunothereffect, image_xscale, 1);
+			create_particle(x, y, particle.crazyrunothereffect);
 		}
 		else
 			attackspeed = 12;

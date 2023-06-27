@@ -69,8 +69,8 @@ function scr_perform_move(move, prestate)
 						image_index = 0;
 						movespeed = max(movespeed, 10);
 						
-						with instance_create(x, y, obj_crazyrunothereffect)
-							image_xscale = other.xscale;
+						particle_set_scale(particle.crazyrunothereffect, xscale, 1);
+						create_particle(x, y, particle.crazyrunothereffect);
 						
 						if grounded
 						{
@@ -114,10 +114,11 @@ function scr_perform_move(move, prestate)
 				state = states.faceplant;
 				image_speed = 0.5;
 				
-				with instance_create(x, y, obj_jumpdust)
-					image_xscale = other.xscale;
-				with instance_create(x, y, obj_crazyrunothereffect)
-					image_xscale = other.xscale;
+				particle_set_scale(particle.jumpdust, xscale, 1);
+				create_particle(x, y, particle.jumpdust);
+				
+				particle_set_scale(particle.crazyrunothereffect, xscale, 1);
+				create_particle(x, y, particle.crazyrunothereffect);
 				break;
 			
 			case 3: // chainsaw

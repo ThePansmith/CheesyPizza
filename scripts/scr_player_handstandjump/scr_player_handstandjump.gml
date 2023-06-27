@@ -126,8 +126,9 @@ function scr_player_handstandjump()
 	}
 	if (key_down && grounded/* && global.attackstyle != 2*/)
 	{
-		with (instance_create(x, y, obj_jumpdust))
-			image_xscale = other.xscale;
+		particle_set_scale(particle.jumpdust, xscale, 1);
+		create_particle(x, y, particle.jumpdust);
+		
 		movespeed = 12;
 		crouchslipbuffer = 25;
 		grav = 0.5;

@@ -1,6 +1,6 @@
 if (obj_player.isgustavo == 0)
 {
-	instance_create(x, y, obj_genericpoofeffect);
+	create_particle(x, y, particle.genericpoofeffect);
 	instance_destroy();
 }
 if (!trapped)

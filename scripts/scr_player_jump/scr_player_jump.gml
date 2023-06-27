@@ -529,7 +529,7 @@ function state_pepperman_jump()
 	if (grounded && vsp > 0)
 	{
 		state = states.normal;
-		instance_create(x, y - 5, obj_landcloud);
+		instance_create(x, y - 5, obj_landcloud); // unused
 	}
 	if (scr_check_groundpound() && !grounded)
 	{

@@ -10,5 +10,6 @@ start = false;
 stunspr = -4;
 angryspr = -4;
 use_collision = true;
-with (instance_create(x, y + 10, obj_jumpdust))
-	image_xscale = -1;
+
+particle_set_scale(particle.jumpdust, -1, 1);
+create_particle(x, y + 10, particle.jumpdust);

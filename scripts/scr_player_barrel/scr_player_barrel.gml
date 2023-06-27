@@ -57,8 +57,8 @@ function scr_player_barrel()
 		{
 			movespeed = xscale * 7;
 			fmod_event_one_shot_3d("event:/sfx/barrel/start", x, y);
-			with (instance_create(x, y, obj_jumpdust))
-				image_xscale = other.xscale;
+			particle_set_scale(particle.jumpdust, xscale, 1);
+			create_particle(x, y, particle.jumpdust);
 			state = states.barrelslide;
 			sprite_index = spr_player_barrelslipnslide;
 			image_index = 0;

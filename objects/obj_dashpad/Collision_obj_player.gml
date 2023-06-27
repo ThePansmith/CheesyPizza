@@ -93,10 +93,13 @@ with (other)
 				create_particle(x, y, particle.jumpdust, 0);
 				xscale = sign(other.image_xscale);
 				dir = xscale;
-				with (instance_create(x, y, obj_crazyrunothereffect))
-					image_xscale = t.image_xscale;
+				
+				particle_set_scale(particle.crazyrunothereffect, t.image_xscale, 1);
+				create_particle(x, y, particle.crazyrunothereffect);
+				
 				with (instance_create(x, y, obj_superdashcloud))
 					image_xscale = t.image_xscale;
+				
 				other.buffer = 30;
 				ratmount_movespeed = max(ratmount_movespeed + 0.5, 12);
 				movespeed = ratmount_movespeed * xscale;

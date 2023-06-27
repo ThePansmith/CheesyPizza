@@ -1,6 +1,6 @@
 if (obj_player1.sprite_index != obj_player1.spr_breakdance)
 {
-	instance_create(x, y, obj_genericpoofeffect);
+	create_particle(x, y, particle.genericpoofeffect);
 	instance_destroy();
 }
 scr_collide();

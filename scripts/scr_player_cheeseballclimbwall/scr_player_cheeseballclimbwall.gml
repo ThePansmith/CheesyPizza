@@ -18,7 +18,8 @@ function scr_player_cheeseballclimbwall()
 	{
 		if (movespeed > 8)
 			movespeed = 8;
-		instance_create(x, y, obj_jumpdust);
+		particle_set_scale(particle.jumpdust, REMIX ? xscale : 1, 1);
+		create_particle(x, y, particle.jumpdust);
 		vsp = 0;
 		state = states.cheeseball;
 		movespeed = wallspeed;

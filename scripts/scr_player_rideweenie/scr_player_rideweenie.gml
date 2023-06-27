@@ -59,8 +59,10 @@ function scr_player_rideweenie()
 		sprite_index = spr_mach2jump;
 		jumpstop = false;
 		vsp = -11;
-		with instance_create(x, y, obj_jumpdust)
-			image_xscale = REMIX ? other.xscale : 1;
+		
+		particle_set_scale(particle.jumpdust, REMIX ? xscale : 1, 1);
+		create_particle(x, y, particle.jumpdust);
+		
 		with (instance_create(x, y, obj_weeniemount))
 		{
 			buffer = 30;
