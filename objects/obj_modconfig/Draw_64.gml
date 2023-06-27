@@ -12,7 +12,7 @@ draw_set_alpha(1);
 draw_set_colour(c_white);
 draw_set_align();
 
-var yy = 60;
+var yy = 60 - ceil(scroll);
 for(var i = 0; i < array_length(options_array); i++)
 {
 	var opt = options_array[i];
@@ -24,8 +24,8 @@ for(var i = 0; i < array_length(options_array); i++)
 			if sel == i
 			{
 				draw_set_colour(c_white);
-				draw_sprite_ext(spr_cursor, 4, 2 + 40 + xo, 2 + yy + 8 + yo, 1, 1, 0, c_black, 0.25);
-				draw_sprite(spr_cursor, 4, 40 + xo, yy + 8 + yo);
+				draw_sprite_ext(spr_cursor, -1, 2 + 40 + xo, 2 + yy + 8 + yo, 1, 1, 0, c_black, 0.25);
+				draw_sprite(spr_cursor, -1, 40 + xo, yy + 8 + yo);
 			}
 			else
 				draw_set_colour(c_ltgray);

@@ -76,6 +76,7 @@ for(var i = 0; i < array_length(options_array); i++)
 var move2 = key_left2 + key_right2;
 if move2 != 0
 {
+	image_index = 8;
 	xo = 10;
 	
 	simuplayer.changed = true;
@@ -89,9 +90,32 @@ if move2 != 0
 }
 if key_jump
 {
+	image_index = 8;
 	xo = 10;
 	
 	sound_play_oneshot(sfx_select);
 	var opt = options_array[sel];
 	opt.value = wrap(opt.value + 1, 0, array_length(opt.opts) - 1);
 }
+
+// figure out scroll
+var yy = -250;
+for(var i = 0; i < array_length(options_array); i++)
+{
+	var opt = options_array[i];
+	switch opt.type
+	{
+		case 0: // normal
+			yy += 20;
+			break;
+		
+		case 1: // SECTION
+			yy += 30;
+			yy += 40;
+			break;
+	}
+	
+	if i == sel
+		break;
+}
+scroll = lerp(scroll, max(yy, 0), 0.15);

@@ -305,7 +305,7 @@ var opt = add_option("Grab Special", "doublegrab", "Press the GRAB button twice 
 		{
 			if p.x > 75 && p.x + p.hsp > 75
 				p.move = -1;
-			else if p.x < 75 && p.x + p.hsp < 75
+			else if p.x <= 75 && p.x + p.hsp <= 75
 				p.move = 1;
 			else
 			{
@@ -481,6 +481,30 @@ opt.opts = [
 opt.value = global.shootbutton;
 
 #endregion
+#region INPUT DISPLAY
+
+var opt = add_option("Input Display", "inputdisplay", "An in-game input display. You can drag it around with your mouse.", function(val)
+{
+	if val
+	with obj_inputdisplay
+	{
+		for(var i = 0; i < array_length(inputkeys); i++)
+		{
+			var k = inputkeys[i];
+			
+			var xx = k.x * keysize + k.x * keysep;
+			var yy = k.y * keysize + k.y * keysep;
+			
+			xx += 232 / 3;
+			yy += 32;
+			
+			draw_inputdisplay_key(xx, yy, k.key, k.keyw * keysize + (k.keyw - 1) * keysep, k.keyh * keysize + (k.keyh - 1) * keysep);
+		}
+	}
+});
+opt.value = global.inputdisplay;
+
+#endregion
 
 add_section("Visual");
 #region PANIC BG
@@ -561,3 +585,4 @@ opt.value = global.sloperot;
 xo = 0;
 yo = 0;
 alpha = 1;
+scroll = 0;

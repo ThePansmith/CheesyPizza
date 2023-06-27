@@ -69,12 +69,13 @@ global.doublegrab = ini_read_real("Modded", "doublegrab", 0); // nothing, should
 global.autoparry = ini_read_real("Modded", "autoparry", false);
 global.shootbutton = ini_read_real("Modded", "shootbutton", 0); // 0 replace grab, 1 move to A, 2 only shotgun
 global.heatmeter = ini_read_real("Modded", "heatmeter", false);
-global.sloperot = ini_read_real("Modded", "sloperot", true);
 global.swapgrab = ini_read_real("Modded", "swapgrab", false);
 
 // visual settings
 global.panicbg = ini_read_real("Modded", "panicbg", true);
 global.panictilt = ini_read_real("Modded", "panictilt", false);
+global.sloperot = ini_read_real("Modded", "sloperot", true);
+global.inputdisplay = ini_read_real("Modded", "inputdisplay", false);
 ini_close();
 
 // etc
