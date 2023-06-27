@@ -46,19 +46,42 @@ function DOS_initstate()
 	output += "\n";
 	DOS_instruct(3, DOS_initstate2);
 }
-function DOS_command()
+function DOS_allargs(args, input = "", after = 1, sep = " ")
 {
-	output += input;
+	var ret = "";
+	if input == ""
+	{
+		for(var i = after; i < array_length(args); i++)
+		{
+			ret += args[i];
+			if i != array_length(args) - 1
+				ret += sep;
+		}
+		return ret;
+	}
+	else
+	{
+		for(var i = 0; i < after; i++)
+		{
+			ret += args[i];
+			if i != array_length(args) - 1
+				ret += sep;
+		}
+		return string_replace_all(input, ret, "");
+	}
+}
+function DOS_command(IN = input)
+{
 	input_mode = 0;
 	
-	if string_replace_all(input, " ", "") == ""
+	if string_replace_all(IN, " ", "") == ""
 		DOS_initstate2();
 	else
 	{
 		output += "\n";
 		
 		// process
-		var args_raw = string_split_ext(input, [" ", "\\"], true, infinity);
+		var args_raw = string_split_ext(IN, [" ", "\\", "/"], true, infinity);
 		var args = [];
 		
 		for(var i = 0; i < array_length(args_raw); i++)
@@ -80,7 +103,7 @@ function DOS_command()
 		
 		switch string_lower(args[0])
 		{
-			#region INVALID
+			#region RUN
 			
 			default:
 				var emptyhanded = true;
@@ -124,43 +147,50 @@ function DOS_command()
 			#region CD
 			
 			case "cd":
+			case "chdir":
 				var revert = currentdir;
-				for(var i = 1; i < array_length(args); i++)
+				if array_length(args) == 1
+					output += revert.ROOTNAME + "\n";
+				else
 				{
-					var cur = args[i], last = i == array_length(args) - 1;
-					if cur == "." && !last && args[i + 1] == "."
+					for(var i = 1; i < array_length(args); i++)
 					{
-						if currentdir.DIR == -1
+						var cur = args[i], last = i == array_length(args) - 1;
+						if cur == "." && !last && args[i + 1] == "."
 						{
-							output += "Invalid directory\n";
-							currentdir = revert;
-							break;
+							if currentdir.DIR == -1
+							{
+								output += "Invalid directory\n";
+								currentdir = revert;
+								break;
+							}
+							else
+								currentdir = currentdir.DIR;
+							i++;
+						}
+						else if cur == "."
+						{
+							// do nothing
 						}
 						else
-							currentdir = currentdir.DIR;
-					}
-					else if cur == "."
-					{
-						// do nothing
-					}
-					else
-					{
-						var emptyhanded = true;
-						for(var j = 0; j < array_length(currentdir.CONTENT); j++)
 						{
-							var file = currentdir.CONTENT[j];
-							if file.TYPE == 1 && file.NAME == args[i]
+							var emptyhanded = true;
+							for(var j = 0; j < array_length(currentdir.CONTENT); j++)
 							{
-								currentdir = file;
-								emptyhanded = false;
+								var file = currentdir.CONTENT[j];
+								if file.TYPE == 1 && string_upper(file.NAME) == string_upper(args[i])
+								{
+									currentdir = file;
+									emptyhanded = false;
+								}
 							}
-						}
 						
-						if emptyhanded
-						{
-							output += "Invalid directory\n";
-							currentdir = revert;
-							break;
+							if emptyhanded
+							{
+								output += "Invalid directory\n";
+								currentdir = revert;
+								break;
+							}
 						}
 					}
 				}
@@ -204,6 +234,11 @@ function DOS_command()
 						{
 							output += "We're golden";
 							progression = 7;
+						}
+						else if currentdir.NAME != root.NAME
+						{
+							output += "What the fuck are you doing";
+							progression = 6.1;
 						}
 						else
 						{
@@ -259,25 +294,110 @@ function DOS_command()
 				break;
 			
 			#endregion
-			#region DIR
+			#region CALL
+			
+			case "call":
+				DOS_command(DOS_allargs(args, IN));
+				break;
+			
+			#endregion
+			#region EXIT
+			
+			case "exit":
+				output += "\n";
+				DOS_instruct(50, function()
+				{
+					obj_player1.state = states.normal;
+					instance_destroy();
+				});
+				break;
+			
+			#endregion
+			#region MKDIR
+			
+			case "mkdir":
+			case "md":
+				if array_length(args) == 1
+					output += "Required parameter missing\n";
+				else
+				{
+					var emptyhanded = true;
+					for(var j = 0; j < array_length(currentdir.CONTENT); j++)
+					{
+						var allargs = string_upper(DOS_allargs(args, IN));
+						
+						var file = currentdir.CONTENT[j];
+						if file.TYPE == 1 && (file.NAME == allargs or file.ROOTNAME == allargs)
+						{
+							emptyhanded = false;
+							break;
+						}
+					}
+					
+					if emptyhanded
+						DOS_adddir(DOS_directory(string_upper(DOS_allargs(args, IN))), currentdir);
+					else
+						output += "Directory already exists\n";
+				}
+				DOS_instruct(3, DOS_initstate2);
+				break;
+			
+			#endregion
+			#region RMDIR
+			
+			case "rmdir":
+				if array_length(args) == 1
+					output += "Required parameter missing\n";
+				else
+				{
+					var revert = currentdir;
+					
+					var emptyhanded = true;
+					for(var j = 0; j < array_length(currentdir.CONTENT); j++)
+					{
+						var allargs = string_upper(DOS_allargs(args, IN));
+						
+						var file = currentdir.CONTENT[j];
+						if file.TYPE == 1 && (file.NAME == allargs or file.ROOTNAME == allargs)
+						{
+							currentdir = file;
+							emptyhanded = false;
+						}
+					}
+					if !emptyhanded && array_length(currentdir.CONTENT) == 0
+						currentdir.TYPE = -1; // mark as deleted
+					else
+						output += "Invalid path, not directory,\nor directory not empty\n";
+					currentdir = revert;
+				}
+				DOS_instruct(3, DOS_initstate2);
+				break;
+			
+			#endregion
+			#region UNSUPPORTED
 			
 			case "dir":
-				output += "No\n";
+			case "move":
+			case "del":
+			case "ren":
+				output += "M\n";
 				DOS_instruct(3, DOS_initstate2);
 				break;
 			
 			#endregion
 		}
 	}
-	input = "";
 }
 function DOS_directory(name)
 {
-	return {TYPE: 1, NAME: name, CONTENT: [], DIR: -1, ROOTNAME: name + "\\"};
+	return {TYPE: 1, NAME: name, CONTENT: [], DIR: -1, ROOTNAME: name};
 }
 function DOS_adddir(file, dir)
 {
-	file.ROOTNAME = dir.ROOTNAME + file.ROOTNAME;
+	if string_ends_with(dir.ROOTNAME, "\\")
+		file.ROOTNAME = dir.ROOTNAME + file.ROOTNAME;
+	else
+		file.ROOTNAME = dir.ROOTNAME + "\\" + file.ROOTNAME;
 	file.DIR = dir;
 	array_push(dir.CONTENT, file);
 }
@@ -288,9 +408,6 @@ function DOS_file(dir, name, func)
 	array_push(dir.CONTENT, file);
 	return file;
 }
-self.DOS_instruct = DOS_instruct;
-self.DOS_initstate = DOS_initstate;
-self.DOS_command = DOS_command;
 
 #endregion
 
@@ -299,7 +416,7 @@ DOS_instruct(100, DOS_initstate);
 
 #region FOLDER STRUCTURE
 
-root = DOS_directory("C:");
+root = DOS_directory("C:\\");
 
 var folder = DOS_directory("1985");
 DOS_adddir(folder, root);

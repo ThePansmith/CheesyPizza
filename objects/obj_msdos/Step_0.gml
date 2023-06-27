@@ -2,13 +2,20 @@ live_auto_call;
 
 if keyboard_check(vk_control) && keyboard_check_pressed(ord("R"))
 	room_restart();
+if keyboard_check_pressed(vk_escape)
+{
+	obj_player1.state = states.normal;
+	instance_destroy();
+}
 
 // input
 if input_mode == 0
 {
 	blink = 0;
 	input = "";
-	keyboard_string = "";
+	
+	if !safe_get(obj_shell, "isOpen")
+		keyboard_string = "";
 }
 else
 {
@@ -17,7 +24,6 @@ else
 	
 	if input_mode == 2 && keyboard_lastchar != ""
 	{
-		visible = false;
 		obj_player1.state = states.normal;
 		instance_destroy();
 	}
@@ -37,8 +43,12 @@ else
 	
 		// go
 		else if lastchar == 13
+		{
+			output += input;
 			DOS_command();
-	
+			input = "";
+		}
+		
 		else
 			input = keyboard_string;
 	}
@@ -49,7 +59,7 @@ if instructionT > 0
 	instructionT--;
 else
 {
-	if is_method(instructionF)
+	if is_callable(instructionF)
 	{
 		instructionF();
 		instructionF = -1;

@@ -24,6 +24,7 @@ if do_foreground
 }
 
 // draw the backgrounds
+gpu_set_blendmode(bm_normal);
 for(var i = array_length(background_layers) - 1; i >= 0; i--)
 {
 	var lay = background_layers[i], bg = layer_background_get_id(lay);
@@ -85,7 +86,5 @@ if (global.panic or global.snickchallenge)
 	shader_set_uniform_f(time_id, current_time / 1000);
 }
 
-gpu_set_blendmode_ext(bm_one, bm_inv_src_alpha);
 draw_surface(bg_surface, cam_x, cam_y);
-gpu_set_blendmode(bm_normal);
 shader_reset();
