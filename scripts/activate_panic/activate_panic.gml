@@ -86,7 +86,7 @@ function activate_panic()
 		case strongcold_1:
 			global.fill = 3240;
 			break;
-		case entryway_10:
+		case entryway_11:
 			global.fill = 2500;
 			break;
 	}

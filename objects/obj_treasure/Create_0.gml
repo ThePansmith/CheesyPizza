@@ -7,3 +7,6 @@ depth = -6;
 
 escape = false;
 state = 0;
+sugary = false;
+if check_sugary()
+	sugary = true;
