@@ -32,11 +32,3 @@ if (fadein == 0)
 	fadealpha += 0.1;
 else if (fadein == 1)
 	fadealpha -= 0.1;
-
-if keyboard_check_pressed(ord("R"))
-{
-	room_restart();
-	event_perform(ev_create, 0);
-	sugary = true;
-	alarm[0] = 150;
-}

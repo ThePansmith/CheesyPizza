@@ -9,9 +9,6 @@ else
 	
 	if sugary
 	{
-		alarm[0] = -1;
-		down = true;
-		
 		draw_set_font(global.lapfont2_ss);
 		
 		var w = 37 - string_width(global.laps + 1);
