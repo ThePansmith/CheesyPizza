@@ -6,6 +6,6 @@ scaredspr = spr_gumslime_scared;
 ragespr = spr_gumslime_rage;
 spr_dead = spr_gumslime_dead;
 paletteselect = 0;
-spr_palette = palette_cheeseslime;
+spr_palette = spr_gumslime_palette;
 sprite_index = walkspr;
 sugary = true;

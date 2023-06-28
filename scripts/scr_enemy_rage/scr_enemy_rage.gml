@@ -235,6 +235,7 @@ function scr_enemy_rage()
 		
 		// sugary
 		case obj_gumslime:
+			hsp = 0;
 			if ragecooldown <= 0 && image_index >= 8
 			{
 				with instance_create(x, y, obj_bigspitcheesespike)

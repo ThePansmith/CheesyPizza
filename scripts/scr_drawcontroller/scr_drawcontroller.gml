@@ -96,7 +96,6 @@ function draw_enemy(healthbar, palette, color = c_white)
 		else if (usepalette && palette)
 		{
 			shader_set(global.Pal_Shader);
-			pal_swap_set(spr_peppalette, 0);
 			if (object_index == obj_fakepepboss || object_index == obj_gustavograbbable)
 				pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale * xscale, image_yscale * yscale, global.palettetexture);
 			pal_swap_set(spr_palette, paletteselect, false);

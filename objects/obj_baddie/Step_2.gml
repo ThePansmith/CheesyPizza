@@ -87,3 +87,17 @@ if state == states.grabbed && obj_player1.state != states.finishingblow
 else
 	angle = 0;
 */
+
+// heat palettes
+if !(object_index == obj_cheeseslime && snotty)
+{
+	var newpalette = 0;
+	if (safe_get(id, "elite") or global.stylethreshold >= 3) && usepalette
+		newpalette = elitepal;
+	
+	if paletteselect != newpalette
+	{
+		create_particle(x, y, particle.genericpoofeffect);
+		paletteselect = newpalette;
+	}
+}

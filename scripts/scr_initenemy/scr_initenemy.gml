@@ -139,4 +139,5 @@ function scr_initenemy()
 	killbyenemybuffer = 0;
 	shoulderbashed = false;
 	stored_id = id;
+	elitepal = 1;
 }

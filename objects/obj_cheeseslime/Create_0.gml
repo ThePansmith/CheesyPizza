@@ -1,5 +1,6 @@
 scr_initenemy();
 usepalette = true;
+elitepal = 2;
 is_controllable = true;
 possess_movespeed = 0;
 grav = 0.5;

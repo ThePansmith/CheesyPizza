@@ -32,6 +32,7 @@ spr_dead = spr_forknight_dead;
 important = false;
 heavy = false;
 depth = 0;
+usepalette = true;
 paletteselect = 0;
 spr_palette = palette_forknight;
 grabbedby = 0;

@@ -47,6 +47,7 @@ if (elite)
 		{
 			if (state != states.rage && ragebuffer == 0)
 			{
+				hsp = 0;
 				ragecooldown = 0;
 				state = states.rage;
 				sprite_index = ragespr;

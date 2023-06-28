@@ -5,7 +5,8 @@ spr_appear = spr_pizzaportal_appear;
 spr_spit = spr_pizzaportalentrancestart;
 spr_disappear = spr_pizzaportal_disappear;
 
-if check_sugary()
+sugary = check_sugary();
+if sugary
 {
 	spr_appear = spr_lappingportal_create;
 	spr_spit = spr_lappingportal_exit;
