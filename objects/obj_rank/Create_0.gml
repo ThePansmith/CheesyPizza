@@ -62,12 +62,14 @@ if obj_player1.character == "SP"
 	if global.rank == "p" && !obj_endlevelfade.sugary
 		alarm[2] = room_speed * 3;
 }
+if obj_player.character == "BN" && (global.rank == "d" or global.rank == "c" or global.rank == "b")
+	alarm[2] = room_speed * 2;
 depth = -8;
 
 // sugary spire
 sugary = obj_endlevelfade.sugary;
 if sugary
-	alarm[2] += room_speed * 2;
+	alarm[2] += room_speed * 2.5;
 
 sugaryrank = -1;
 if sugary

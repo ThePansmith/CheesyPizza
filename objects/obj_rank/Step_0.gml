@@ -167,7 +167,7 @@ if (brown)
 		
 		if clipy <= 270 && event == 1
 		{
-			if global.rank == "p"
+			if global.rank == "p" && obj_player1.character != "BN"
 				x = Approach(x, 220, 25 - accel);
 			else if obj_player1.character != "SP"
 				x = Approach(x, 420, 3);
