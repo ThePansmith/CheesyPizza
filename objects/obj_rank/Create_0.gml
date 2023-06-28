@@ -1,3 +1,5 @@
+live_auto_call;
+
 image_speed = 0.5;
 toppinvisible = true;
 
@@ -57,7 +59,49 @@ alarm[2] = 400;
 if obj_player1.character == "SP"
 {
 	alarm[2] = room_speed * 2;
-	if global.rank == "p"
+	if global.rank == "p" && !obj_endlevelfade.sugary
 		alarm[2] = room_speed * 3;
 }
 depth = -8;
+
+// sugary spire
+sugary = obj_endlevelfade.sugary;
+if sugary
+	alarm[2] += room_speed * 2;
+
+sugaryrank = -1;
+if sugary
+	sugaryrank = fmod_event_create_instance("event:/modded/sugaryrank");
+
+cardimg = 0;
+event = 0;
+accel = 0;
+clipy = 809;
+
+colors = array_create_ext(9, function()
+{
+	return choose(0, 1, 2, 3, 4, 5, 6);
+});
+
+setcolors = function()
+{
+	realcol = 
+	{
+		r: argument0,
+		g: argument1,
+		b: argument2,
+		r2: argument3,
+		g2: argument4,
+		b2: argument5
+	};
+};
+setcolors(0, 0, 0, 0, 0, 0);
+
+afterimagesetup = function()
+{
+	shader_set(shd_mach3effect);
+	var colorblend1 = shader_get_uniform(shd_mach3effect, "color1");
+	shader_set_uniform_f(colorblend1, realcol.r / 255, realcol.g / 255, realcol.b / 255);
+	var colorblend2 = shader_get_uniform(shd_mach3effect, "color2");
+	shader_set_uniform_f(colorblend2, realcol.r2 / 255, realcol.g2 / 255, realcol.b2 / 255);
+};

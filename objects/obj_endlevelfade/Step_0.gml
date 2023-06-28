@@ -1,3 +1,5 @@
+live_auto_call;
+
 var accel = 2;
 with (obj_player)
 {
@@ -14,6 +16,9 @@ with (obj_player)
 		var ly = lengthdir_y(accel, dir);
 		x = Approach(x, tx, abs(lx));
 		y = Approach(y, ty, abs(ly));
+		
+		if x == tx && y == ty && other.sugary
+			other.rankwait = Approach(other.rankwait, 0, 0.1);
 	}
 }
 obj_camera.visible = false;
@@ -27,3 +32,11 @@ if (fadein == 0)
 	fadealpha += 0.1;
 else if (fadein == 1)
 	fadealpha -= 0.1;
+
+if keyboard_check_pressed(ord("R"))
+{
+	room_restart();
+	event_perform(ev_create, 0);
+	sugary = true;
+	alarm[0] = 150;
+}

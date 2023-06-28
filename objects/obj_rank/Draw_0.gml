@@ -1,3 +1,5 @@
+live_auto_call;
+
 if (brownfade < 1)
 {
 	shader_set(global.Pal_Shader);
@@ -10,70 +12,140 @@ if (brownfade < 1)
 	pattern_reset();
 	shader_reset();
 }
-if (brown)
+
+if sugary
 {
-	draw_set_alpha(brownfade);
-	shader_set(shd_rank);
-	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, c_white, c_white, c_white, c_white, false);
-	draw_self();
-	shader_reset();
-	draw_set_alpha(1);
-}
-var c = c_white;
-var xx = 523;
-var cash_y = 0;
-var sep = 89;
-if (toppinvisible)
-{
-	for (var i = array_length(toppin) - 1; i >= 0; i--)
+	if brown
 	{
-		if (toppin[i] == 0)
-			c = 0;
+		draw_set_alpha(brownfade);
+		afterimagesetup();
+		draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, c_white, c_white, c_white, c_white, false);
+		draw_self();
+		shader_reset();
+		draw_set_alpha(1);
+	}
+	
+	// clipboard
+	draw_sprite_ext(spr_rankclipboard, 0, 716, 271 + clipy, 1, 1, 0, c_white, 1);
+	
+	// D C B A S P
+	var r = obj_endlevelfade.rank;
+	if global.rank == "p"
+	{
+		if obj_player1.character == "SP"
+			r = 7;
 		else
-			c = c_white;
-		if (toppin[i] == 1)
-		{
-			switch (i)
-			{
-				case 0:
-					cash_y = -60;
-					break;
-				case 1:
-					cash_y = -40;
-					break;
-				case 2:
-					cash_y = -22;
-					break;
-				case 3:
-					cash_y = -52;
-					break;
-				case 4:
-					cash_y = -46;
-					break;
-			}
-			var _x = xx + (sep * i);
-			var _y = toppin_y[i] + cash_y;
-			draw_sprite_ext(spr_ranktoppins_cash, 0, _x, _y, 1, toppin_yscale[i], 0, c, 1);
-			if (createmoney[i])
-			{
-				global.pigtotal_add += 10;
-				createmoney[i] = false;
-				with (instance_create(_x, _y - 50, obj_moneynumber))
-				{
-					number = "$10";
-					depth = other.depth - 1;
-				}
-			}
-		}
-		draw_sprite_ext(spr_ranktoppins, i, xx + (sep * i), toppin_y[i], 1, toppin_yscale[i], 0, c, 1);
+			r = 6;
+	}
+	draw_sprite_ext(spr_rankletter, r, 725, 108 + clipy, 1, 1, 0, c_white, 1);
+	
+	// secret cards
+	cardimg += 0.35;
+	draw_sprite_ext(global.secretfound >= 1 ? spr_rankcardflipped : spr_rankcard, cardimg, 649, 325 + clipy, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(global.secretfound >= 2 ? spr_rankcardflipped : spr_rankcard, cardimg, 723, 325 + clipy, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(global.secretfound >= 3 ? spr_rankcardflipped : spr_rankcard, cardimg, 798, 327 + clipy, 1, 1, 0, c_white, 1);
+	
+	// gerome
+	if global.treasure
+		draw_sprite_ext(spr_rankrudejanitor, 0, 558, 88 + clipy, 1, 1, 0, c_white, 1);
+	
+	// rank cake
+	draw_sprite_ext(spr_rankcake, obj_endlevelfade.rank - 1, 499, 430 + clipy, 1, 1, 0, c_white, 1);
+	
+	// confectis
+	draw_sprite_ext(spr_confecti1rank, global.shroomfollow, 514, 190 + clipy, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(spr_confecti2rank, global.cheesefollow, 594, 186 + clipy, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(spr_confecti3rank, global.tomatofollow, 677, 187 + clipy, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(spr_confecti4rank, global.sausagefollow, 754, 195 + clipy, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(spr_confecti5rank, global.pineapplefollow, 828, 199 + clipy, 1, 1, 0, c_white, 1);
+	
+	// SCORE
+	var i = 0;
+	var _string = round(string(global.collect));
+	var _string_length = string_length(_string);
+	
+	draw_set_font(global.candlefont);
+	draw_set_alpha(1);
+	draw_set_align(1);
+	
+	for (i = 0; i < _string_length; i++)
+	{
+		var _xx = 750 + -string_width(_string) / 2 + ((string_width(_string) / _string_length) * i);
+		
+		shader_set(global.Pal_Shader);
+		pal_swap_set(spr_palcandle, colors[i], false);
+		draw_text(_xx, 385 + (i % 2 == 0 ? -4 : 0) + clipy, string_char_at(_string, i + 1));
+		shader_reset();
 	}
 }
-draw_set_font(lang_get_font("bigfont"));
-draw_set_halign(0);
-draw_set_valign(0);
-for (i = 0; i < array_length(text); i++)
+else
 {
-	var b = text[i];
-	if (b[0])
-		draw_text_color(48, 48 + (32 * i), b[1], c_white, c_white, c_white, c_white, 1);
+	if brown
+	{
+		draw_set_alpha(brownfade);
+		shader_set(shd_rank);
+		draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, c_white, c_white, c_white, c_white, false);
+		draw_self();
+		shader_reset();
+		draw_set_alpha(1);
+	}
+
+	var c = c_white;
+	var xx = 523;
+	var cash_y = 0;
+	var sep = 89;
+	if (toppinvisible)
+	{
+		for (var i = array_length(toppin) - 1; i >= 0; i--)
+		{
+			if (toppin[i] == 0)
+				c = 0;
+			else
+				c = c_white;
+			if (toppin[i] == 1)
+			{
+				switch (i)
+				{
+					case 0:
+						cash_y = -60;
+						break;
+					case 1:
+						cash_y = -40;
+						break;
+					case 2:
+						cash_y = -22;
+						break;
+					case 3:
+						cash_y = -52;
+						break;
+					case 4:
+						cash_y = -46;
+						break;
+				}
+				var _x = xx + (sep * i);
+				var _y = toppin_y[i] + cash_y;
+				draw_sprite_ext(spr_ranktoppins_cash, 0, _x, _y, 1, toppin_yscale[i], 0, c, 1);
+				if (createmoney[i])
+				{
+					global.pigtotal_add += 10;
+					createmoney[i] = false;
+					with (instance_create(_x, _y - 50, obj_moneynumber))
+					{
+						number = "$10";
+						depth = other.depth - 1;
+					}
+				}
+			}
+			draw_sprite_ext(spr_ranktoppins, i, xx + (sep * i), toppin_y[i], 1, toppin_yscale[i], 0, c, 1);
+		}
+	}
+	draw_set_font(lang_get_font("bigfont"));
+	draw_set_halign(0);
+	draw_set_valign(0);
+	for (i = 0; i < array_length(text); i++)
+	{
+		var b = text[i];
+		if (b[0])
+			draw_text_color(48, 48 + (32 * i), b[1], c_white, c_white, c_white, c_white, 1);
+	}
 }

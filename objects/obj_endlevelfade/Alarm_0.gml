@@ -8,7 +8,7 @@ if (do_rank)
 			array_delete(text, 0, 1);
 			array_pop(text);
 		}
-		depth = other.depth - 1;
+		depth = other.depth - 2;
 		ini_open_from_string(obj_savesystem.ini_str);
 		for (var i = 0; i < array_length(toppin); i++)
 		{
