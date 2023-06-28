@@ -7,5 +7,7 @@ targetDoor = "A";
 visited = false;
 uparrow = false;
 uparrowID = -4;
-if check_sugary()
-	sprite_index = spr_geromedoor_ss
+
+sugary = check_sugary();
+if sugary
+	sprite_index = spr_geromedoor_ss;

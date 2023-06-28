@@ -861,6 +861,7 @@
     {"id":{"name":"obj_exitfollower","path":"objects/obj_exitfollower/obj_exitfollower.yy",},},
     {"id":{"name":"obj_stick_target","path":"objects/obj_stick_target/obj_stick_target.yy",},},
     {"id":{"name":"obj_trapghost","path":"objects/obj_trapghost/obj_trapghost.yy",},},
+    {"id":{"name":"spr_geromedoor_shake_ss","path":"sprites/spr_geromedoor_shake_ss/spr_geromedoor_shake_ss.yy",},},
     {"id":{"name":"obj_exitfollowercollect","path":"objects/obj_exitfollowercollect/obj_exitfollowercollect.yy",},},
     {"id":{"name":"obj_horseydown","path":"objects/obj_horseydown/obj_horseydown.yy",},},
     {"id":{"name":"spr_player_chainsawrev","path":"sprites/spr_player_chainsawrev/spr_player_chainsawrev.yy",},},

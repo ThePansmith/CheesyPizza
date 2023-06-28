@@ -1,4 +1,3 @@
-pal_swap_init_system(shd_pal_swapper);
 global.roommessage = lang_get_value("room_tower3");
 if (global.panic == 0)
 	global.gameframe_caption_text = "There is no time to rest in the Pizza Tower";

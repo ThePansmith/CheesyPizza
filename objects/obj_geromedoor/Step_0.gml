@@ -22,11 +22,15 @@ if (player && !global.horse && (player.state == states.normal or player.state ==
 	{
 		obj_geromefollow.visible = false;
 		obj_geromefollow.do_end = true;
-		with (instance_create(player.x - 30, player.y, obj_geromeanim))
+		
+		if !sugary
 		{
-			sprite_index = spr_gerome_opendoor;
-			image_index = 0;
-			image_speed = 0.35;
+			with (instance_create(player.x - 30, player.y, obj_geromeanim))
+			{
+				sprite_index = spr_gerome_opendoor;
+				image_index = 0;
+				image_speed = 0.35;
+			}
 		}
 		
 		with player

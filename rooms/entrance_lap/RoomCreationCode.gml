@@ -1,4 +1,3 @@
-pal_swap_init_system(shd_pal_swapper);
 global.roommessage = "WELCOME TO PIZZA TOWER";
 if (!obj_secretmanager.init)
 {

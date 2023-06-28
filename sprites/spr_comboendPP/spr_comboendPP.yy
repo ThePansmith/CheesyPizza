@@ -23,7 +23,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2985edd2-ad08-4df6-aa92-48292004b6ba","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 9,
   "parent": {
     "name": "HUD",
     "path": "folders/Sprites/HUD.yy",
@@ -60,7 +60,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 67,
-    "yorigin": 13,
+    "yorigin": 24,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

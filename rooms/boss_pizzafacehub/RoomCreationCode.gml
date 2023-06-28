@@ -1,4 +1,3 @@
-pal_swap_init_system(shd_pal_swapper);
 notification_push(notifs.boss_dead, [boss_pizzafacehub]);
 global.gameframe_caption_text = "Defeated an idiot at the top of the Pizza Tower";
 ini_open_from_string(obj_savesystem.ini_str);

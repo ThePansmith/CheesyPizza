@@ -1,4 +1,3 @@
-pal_swap_init_system(shd_pal_swapper);
 global.roommessage = "WELCOME TO PIZZA TOWER";
 global.gameframe_caption_text = "A John graveyard... in the Pizza Tower";
 if (!obj_secretmanager.init)
