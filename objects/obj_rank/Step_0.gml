@@ -165,7 +165,7 @@ if (brown)
 		clipy = Approach(clipy, 0, 25 - accel);
 		accel = Approach(accel, 24, 0.4);
 		
-		if clipy <= 270
+		if clipy <= 270 && event == 1
 		{
 			if global.rank == "p"
 				x = Approach(x, 220, 25 - accel);

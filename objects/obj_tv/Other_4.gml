@@ -202,6 +202,9 @@ switch (room)
 	case beach_1:
 		global.srank = 22000;
 		break;
+	case entryway_1:
+		global.srank = 19500;
+		break;
 }
 global.arank = floor(global.srank / 2);
 global.brank = floor(global.arank / 2);
