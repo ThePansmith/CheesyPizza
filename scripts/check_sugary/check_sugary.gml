@@ -1,6 +1,6 @@
 function check_sugary()
 {
 	var r = room_get_name(room);
-	if string_starts_with(r, "entryway_")
+	if global.leveltosave == "entryway" or global.leveltosave == "steamy" or global.leveltosave == "sucrose"
 		return true;
 }

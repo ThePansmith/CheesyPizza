@@ -132,8 +132,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Font",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Font.yy",
+    "name": "Sugary Spire",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -36,6 +36,9 @@
     "name": "spr_boxofpizza",
     "path": "sprites/spr_boxofpizza/spr_boxofpizza.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_boxofpizza",
+    "path": "sprites/spr_boxofpizza/spr_boxofpizza.yy",
+  },
   "visible": true,
 }

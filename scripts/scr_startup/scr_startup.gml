@@ -18,6 +18,7 @@ global.smallfont = font_add_sprite_ext(spr_smallerfont, "ABCDEFGHIJKLMNOPQRSTUVW
 global.lapfont = font_add_sprite_ext(spr_lapfont, "1234567890", true, 0);
 global.lapfont_ss = font_add_sprite_ext(spr_lapfont_ss, "1234567890", true, 0);
 global.lapfont2 = font_add_sprite_ext(spr_lapfontbig, "0123456789", true, -2);
+global.lapfont2_ss = font_add_sprite_ext(spr_lapfontbig_ss, "0123456789", true, -2);
 //global.monitorfont = font_add_sprite_ext(spr_monitorfont, "1234567890", true, 1);
 global.tutorialfont = font_add_sprite_ext(spr_tutorialfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!,.:0123456789'?-", true, 2);
 global.creditsfont = font_add_sprite_ext(spr_creditsfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.:!0123456789?'\"ÁÉÍÓÚáéíóú_-[]▼()&#风雨廊桥전태양*яиБжидГзвбнль", true, 2);
