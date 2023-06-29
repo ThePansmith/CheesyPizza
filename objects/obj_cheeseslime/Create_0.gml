@@ -46,3 +46,12 @@ grabbedby = 0;
 stuntouchbuffer = 0;
 scaredbuffer = 0;
 snotty = false;
+
+if check_midway()
+{
+	walkspr = spr_grapemove;
+	stunfallspr = spr_grapestun;
+	scaredspr = spr_grape_scared;
+	spr_dead = spr_grapedead;
+	sprite_index = walkspr;
+}

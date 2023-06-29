@@ -279,14 +279,14 @@ var opt = add_option("Shoot Style", "shootstyle", "Extra attacks bound to the SH
 opt.opts = [
 	["NONE", 0],
 	["PISTOL", 1],
-	//["BREAKDANCE", 2]
+	["BREAKDANCE", 2]
 ];
 opt.value = global.shootstyle;
 
 #endregion
 #region DOUBLE GRAB
 
-var opt = add_option("Grab Special", "doublegrab", "Press the GRAB button twice to attack.", function(val)
+var opt = add_option("Grab Special", "doublegrab", "Press the GRAB button twice to attack with the chosen move.", function(val)
 {
 	var p = simuplayer;
 	
@@ -380,9 +380,9 @@ var opt = add_option("Grab Special", "doublegrab", "Press the GRAB button twice 
 });
 opt.opts = [
 	["NONE", 0],
+	["CHAINSAW", 3],
 	["SHOULDER BASH", 1],
-	["FACEPLANT", 2],
-	["CHAINSAW", 3]
+	["FACEPLANT", 2]
 ];
 opt.value = global.doublegrab;
 
@@ -408,7 +408,7 @@ opt.value = global.heatmeter;
 add_section("Input");
 #region SWAP GRAB
 
-var opt = add_option("Swap Grab", "swapgrab", "Binds the grab back to the normal bind, and moves whatever attack style you have to the special button.\n\nChange it in the key config.")
+var opt = add_option("Swap Grab", "swapgrab", "Binds the grab back to the normal bind, and moves whatever attack style you have to the CHAINSAW button.\n\nChange it in the key config.")
 opt.value = global.swapgrab;
 
 #endregion
@@ -525,6 +525,11 @@ var opt = add_option("Panic Background", "panicbg", "Brings back the wavy backgr
 	else
 		draw_sprite_ext(bg_desert, -1, 0, 0, 0.4, 0.4, 0, c_white, 1);
 });
+opt.opts = [
+	["OFF", false],
+	["ON", true],
+	["WITH BLUR", 2]
+]
 opt.value = global.panicbg;
 
 #endregion

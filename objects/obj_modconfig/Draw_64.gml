@@ -12,7 +12,7 @@ draw_set_alpha(1);
 draw_set_colour(c_white);
 draw_set_align();
 
-var yy = 60 - ceil(scroll);
+var yy = 40 - ceil(scroll);
 for(var i = 0; i < array_length(options_array); i++)
 {
 	var opt = options_array[i];
@@ -32,8 +32,8 @@ for(var i = 0; i < array_length(options_array); i++)
 			
 			var drop = sel == i ? 3 : 2;
 			
-			draw_text_color(drop + 80, drop + yy, string_upper(opt.name), 0, 0, 0, 0, 0.25);
-			draw_text(80, yy, string_upper(opt.name));
+			draw_text_color(drop + 80, drop + yy, opt.name, 0, 0, 0, 0, 0.25);
+			draw_text(80, yy, opt.name);
 			
 			// value
 			var valuewd = string_width(opt.opts[opt.value][0]);
@@ -64,24 +64,24 @@ var opt = options_array[sel];
 draw_set_font(global.bigfont);
 draw_set_align(fa_center);
 draw_set_alpha(alpha);
-draw_text_color(3 + 690, 3 + 80, string_upper(opt.name), 0, 0, 0, 0, 0.25);
-draw_text(690, 80, string_upper(opt.name));
+draw_text_color(3 + 700, 3 + 80, string_upper(opt.name), 0, 0, 0, 0, 0.25);
+draw_text(700, 80, string_upper(opt.name));
 
 draw_set_font(global.font_small);
-draw_text_ext_color(3 + 690, 3 + (is_callable(opt.drawfunc) ? 420 : 260), opt.desc, 18, 440, 0, 0, 0, 0, 0.25);
-draw_text_ext(690, (is_callable(opt.drawfunc) ? 420 : 260), opt.desc, 18, 440);
+draw_text_ext_color(3 + 700, 3 + (is_callable(opt.drawfunc) ? 420 : 260), opt.desc, 18, 440, 0, 0, 0, 0, 0.25);
+draw_text_ext(700, (is_callable(opt.drawfunc) ? 420 : 260), opt.desc, 18, 440);
 
 draw_set_font(global.smallfont);
 if opt.value < array_length(opt.opts)
 {
-	draw_text_color(2 + 690, 2 + 116, opt.opts[opt.value][0], 0, 0, 0, 0, 0.25);
-	draw_text(690, 116, opt.opts[opt.value][0]);
+	draw_text_color(2 + 700, 2 + 116, opt.opts[opt.value][0], 0, 0, 0, 0, 0.25);
+	draw_text(700, 116, opt.opts[opt.value][0]);
 }
 
 if is_callable(opt.drawfunc)
 {
 	// roundrect background
-	var xx = 690, wd = 960 / 2.5;
+	var xx = 700, wd = 960 / 2.5;
 	var yy = 260, ht = 540 / 2.5;
 	
 	draw_set_alpha(1);

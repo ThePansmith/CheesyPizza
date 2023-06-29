@@ -244,6 +244,7 @@ add_music(tower_hubroomE, "event:/music/hub", "event:/music/pillarmusic", 0, hub
 
 add_music(characterselect, "event:/music/characterselect", -4, 0)
 add_music(entryway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
+add_music(midway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
 
 #endregion
 #region OLD LEVELS

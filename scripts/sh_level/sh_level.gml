@@ -40,8 +40,8 @@ function meta_level()
 		arguments: ["level"],
 		suggestions: [
 			["entrance", "medieval", "ruin", "dungeon", "badland", "graveyard", "farm", "saloon", "plage", "forest", "space", "minigolf", "street", "sewer", "industrial", "freezer", "kidsparty", "chateau", "war", "exit",
-			"oldexit", "beach", "mansion", "strongcold", "dragonlair",
-			"entryway"]
+			"oldexit", "beach", "mansion", "strongcold", "dragonlair", "etb",
+			"entryway", "midway"]
 		]
 	}
 }

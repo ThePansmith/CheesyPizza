@@ -25,6 +25,7 @@ function scr_enemy_idle()
 		if sprite_index == spr_tank_spawnenemy or sprite_index == spr_forknight_turn
 		or sprite_index == spr_ghostknight_turn or sprite_index == spr_indiancheese_turn
 		or sprite_index == spr_tank_turn or sprite_index == spr_smoreknight_turn
+		or sprite_index == spr_pinhead_turn
 		{
 			sprite_index = walkspr;
 			state = states.walk;

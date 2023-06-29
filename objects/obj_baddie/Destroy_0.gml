@@ -2,7 +2,7 @@ if (room == rm_editor)
 	exit;
 if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite || elitehit <= 0) && destroyable)
 {
-	if (object_index != obj_peppinoclone && object_index != obj_ghoul && object_index != obj_bazookabaddie && object_index != obj_snowman)
+	if (object_index != obj_peppinoclone && object_index != obj_ghoul && object_index != obj_bazookabaddie && object_index != obj_snowman && object_index != obj_twoliterdog)
 	{
 		with (instance_create(x, y, obj_sausageman_dead))
 		{
@@ -12,7 +12,7 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite || elitehit <= 0)
 			usepalette = other.usepalette;
 			image_alpha = other.image_alpha;
 			if variable_instance_exists(other, "sugary")
-				sugary = other.sugary
+				sugary = other.sugary;
 			if (other.object_index == obj_ghostknight)
 				image_alpha = 0.3;
 		}
@@ -75,6 +75,19 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite || elitehit <= 0)
 		}
 		else
 			instance_create(x, y, obj_playerexplosion);
+	}
+	if object_index == obj_twoliterdog
+	{
+		var p = instance_nearest(x, y, obj_player);
+		if p && x != p.x
+			image_xscale = sign(x - p.x);
+		
+		with instance_create(x, y, obj_twoliterball)
+		{
+			if other.explodeInstant
+				instance_destroy();
+			image_xscale = other.image_xscale;
+		}
 	}
 	if (object_index == obj_cheeseslime && snotty)
 	{
