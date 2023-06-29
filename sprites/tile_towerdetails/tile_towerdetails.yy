@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"fc6085d3-b347-4e9d-a314-e1fa6f8a1601",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"dd0f677d-955c-4aeb-8f28-828f7e1e44e5",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 1000,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"43adcb31-a412-4620-8145-cfb583aa8f1e","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"add537ab-aaf4-4cb3-82f4-fca6cc857872","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"fc6085d3-b347-4e9d-a314-e1fa6f8a1601","path":"sprites/tile_towerdetails/tile_towerdetails.yy",},},},"Disabled":false,"id":"eb8564fa-05ab-439e-9b5b-e7b64c0fcbbc","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"dd0f677d-955c-4aeb-8f28-828f7e1e44e5","path":"sprites/tile_towerdetails/tile_towerdetails.yy",},},},"Disabled":false,"id":"cd49f552-d010-482b-bce4-f9ff22f0d0fb","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

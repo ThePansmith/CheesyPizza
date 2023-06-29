@@ -501,6 +501,15 @@ var opt = add_option("Input Display", "inputdisplay", "An in-game input display.
 			draw_inputdisplay_key(xx, yy, k.key, k.keyw * keysize + (k.keyw - 1) * keysep, k.keyh * keysize + (k.keyh - 1) * keysep);
 		}
 	}
+	else
+	{
+		draw_set_font(global.font_small);
+		draw_set_align(1, 1);
+		draw_set_alpha(0.75);
+		draw_text(960 / 2.5 / 2, 540 / 2.5 / 2, "(Disabled)");
+		draw_set_align();
+		draw_set_alpha(1);
+	}
 });
 opt.value = global.inputdisplay;
 

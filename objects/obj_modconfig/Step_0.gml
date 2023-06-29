@@ -99,7 +99,7 @@ if key_jump
 }
 
 // figure out scroll
-var yy = -250;
+var yy = -260;
 for(var i = 0; i < array_length(options_array); i++)
 {
 	var opt = options_array[i];
