@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_towerentrancehall",
-  "bbox_bottom": 1247,
+  "bbox_bottom": 1471,
   "bbox_left": 0,
   "bbox_right": 633,
   "bbox_top": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8bd3b520-a5a3-48f8-b046-a86519de56d0",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"51451660-96ea-485f-bc53-17a06045116b",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1248,
+  "height": 1474,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"01a4610c-cbdd-4087-bfd4-a7e98c759f30","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"c0be33c7-7aa5-460f-b9b5-2ed80531ce4d","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8bd3b520-a5a3-48f8-b046-a86519de56d0","path":"sprites/spr_towerentrancehall/spr_towerentrancehall.yy",},},},"Disabled":false,"id":"f0bb998c-f780-4e10-b431-d479f871d360","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"51451660-96ea-485f-bc53-17a06045116b","path":"sprites/spr_towerentrancehall/spr_towerentrancehall.yy",},},},"Disabled":false,"id":"ca0b7414-6bde-4559-9384-493afdbfc559","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
