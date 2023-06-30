@@ -43,6 +43,8 @@ if room == strongcold_endscreen or room == Longintro or room == Mainmenu or room
 	visible = false;
 if !global.option_hud
 	visible = false;
+if instance_exists(obj_endlevelfade)
+	visible = false;
 
 // combo ending
 if global.combo > 0

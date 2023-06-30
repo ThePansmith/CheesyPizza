@@ -539,11 +539,11 @@ function scr_characterspr()
 		spr_lungehit = spr_player_lungehit;
 		spr_throw = spr_player_throw;
 		spr_kungfuair1 = spr_player_kungfuair1;
-		spr_kungfuair2 = spr_player_kungfuair2;
-		spr_kungfuair3 = spr_player_kungfuair3;
+		spr_kungfuair2 = spr_playerN_kungfuair2;
+		spr_kungfuair3 = spr_playerN_kungfuair3;
 		spr_kungfuair1transition = spr_player_kungfuair1transition;
-		spr_kungfuair2transition = spr_player_kungfuair2transition;
-		spr_kungfuair3transition = spr_player_kungfuair3transition;
+		spr_kungfuair2transition = spr_playerN_kungfuair2transition;
+		spr_kungfuair3transition = spr_playerN_kungfuair3transition;
 		spr_palette = spr_noisepalette;
 		paletteselect = 0;
 	}
@@ -1750,8 +1750,8 @@ function scr_characterspr()
 		spr_Sjumpcancel = spr_playerN_jetpackboost;
 		spr_poundcancel1 = spr_noise_crusherfall;
 		spr_poundcancel2 = spr_noise_crusherland_short;
-		spr_longjump = spr_player_longjump;
-		spr_longjumpend = spr_player_longjumpend;
+		spr_longjump = spr_playerBN_longjump;
+		spr_longjumpend = spr_playerBN_longjumpend;
 		spr_backslide = spr_player_backslide;
 		spr_backslideland = spr_player_backslideland;
 		spr_gnomecutscene1 = spr_player_gnomecutscene1;
@@ -1764,12 +1764,12 @@ function scr_characterspr()
 		spr_kungfu3 = spr_playerBN_kungfu3;
 		spr_lungehit = spr_player_lungehit;
 		spr_throw = spr_player_throw;
-		spr_kungfuair1 = spr_player_kungfuair1;
-		spr_kungfuair2 = spr_player_kungfuair2;
-		spr_kungfuair3 = spr_player_kungfuair3;
-		spr_kungfuair1transition = spr_player_kungfuair1transition;
-		spr_kungfuair2transition = spr_player_kungfuair2transition;
-		spr_kungfuair3transition = spr_player_kungfuair3transition;
+		spr_kungfuair1 = spr_playerBN_kungfuair1;
+		spr_kungfuair2 = spr_playerBN_kungfuair2;
+		spr_kungfuair3 = spr_playerBN_kungfuair2;
+		spr_kungfuair1transition = spr_playerBN_kungfuair1transition;
+		spr_kungfuair2transition = spr_playerBN_kungfuair2transition;
+		spr_kungfuair3transition = spr_playerBN_kungfuair2transition;
 		spr_palette = spr_bopalette;
 		paletteselect = 0;
 	}

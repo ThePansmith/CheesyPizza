@@ -14,6 +14,8 @@ else
 	visible = true;
 if !global.option_hud
 	visible = false;
+if instance_exists(obj_endlevelfade) && REMIX
+	visible = false;
 
 image_speed = 0.35;
 if (targetgolf != -4 && !instance_exists(targetgolf))

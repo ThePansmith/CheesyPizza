@@ -13,4 +13,7 @@ if (buffer == 0 && other.instakillmove == 1)
 	buffer = 10;
 	if (x != obj_player.x)
 		image_xscale = -sign(x - obj_player.x);
+	
+	if REMIX
+		sound_play_3d("event:/sfx/enemies/stomp", x, y);
 }

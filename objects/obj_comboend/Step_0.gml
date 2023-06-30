@@ -27,3 +27,5 @@ if (title_index >= 2)
 	title_index = frac(title_index);
 if (room == rank_room || room == timesuproom)
 	instance_destroy();
+if instance_exists(obj_endlevelfade) && REMIX
+	instance_destroy();

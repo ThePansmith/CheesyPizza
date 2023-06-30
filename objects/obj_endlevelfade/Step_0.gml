@@ -21,7 +21,6 @@ with (obj_player)
 			other.rankwait = Approach(other.rankwait, 0, 0.1);
 	}
 }
-obj_camera.visible = false;
 if (fadealpha > 1)
 {
 	fadein = true;

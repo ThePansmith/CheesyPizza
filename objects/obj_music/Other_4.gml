@@ -50,7 +50,7 @@ if (secret)
 			fmod_event_instance_set_parameter(ev, "state", 1, true);
 		else if obj_player1.character == "BN"
 			fmod_event_instance_set_parameter(ev, "state", 2, true);
-		else if obj_player1.character == "PP"
+		else if obj_player1.character == "PP" && room != tower_soundtest
 		{
 			ev = pissinosecretID;
 			evname = "event:/modded/pissinosecret";

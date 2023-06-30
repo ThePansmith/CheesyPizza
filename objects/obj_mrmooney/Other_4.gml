@@ -3,7 +3,8 @@ var w = "w5stick";
 var unlocked = ini_read_real(w, "mooneyunlocked", false);
 var stickunlocked = ini_read_real(w, "unlocked", false);
 ini_close();
-if (!unlocked && stickunlocked)
+
+if !unlocked && stickunlocked && !global.sandbox
 {
 	if ((global.pigtotal - global.pigreduction) >= maxscore)
 	{

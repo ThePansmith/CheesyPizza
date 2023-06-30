@@ -1,4 +1,4 @@
-if (is_bossroom() || instance_exists(obj_achievementviewer))
+if (is_bossroom() || instance_exists(obj_achievementviewer) or global.sandbox)
 	exit;
 draw_set_font(global.moneyfont);
 draw_set_halign(1);
