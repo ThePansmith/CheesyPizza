@@ -1,3 +1,4 @@
+/*
 draw_set_font(global.smallfont);
 draw_set_halign(2);
 draw_set_valign(2);

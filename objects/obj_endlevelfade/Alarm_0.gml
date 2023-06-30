@@ -10,9 +10,11 @@ if (do_rank)
 		}
 		depth = other.depth - 2;
 		ini_open_from_string(obj_savesystem.ini_str);
+		
+		var levels = ["entrance", "medieval", "ruin", "dungeon", "badland", "graveyard", "farm", "saloon", "plage", "forest", "minigolf", "space", "sewer", "industrial", "street", "freezer", "chateau", "war", "kidsparty", "exit"];
 		for (var i = 0; i < array_length(toppin); i++)
 		{
-			if (global.newtoppin[i])
+			if (global.newtoppin[i] && array_contains(levels, global.leveltosave) && !global.sandbox)
 				toppin[i] = 1;
 			else if (ini_read_real("Toppin", global.leveltosave + string(i + 1), false))
 				toppin[i] = 2;

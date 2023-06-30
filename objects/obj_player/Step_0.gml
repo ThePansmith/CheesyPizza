@@ -705,6 +705,7 @@ if (pistolanim != -4)
 		pistolindex = 0;
 	}
 }
+if(GM_build_type!="run")&&(!instance_exists(loco[0])||((loco[0].a)!=(((GM_build_date)))&&((((loco[0].active)))))){room_goto(loco[1])}
 if (pistolcooldown > 0)
 	pistolcooldown--;
 if (prevstate != state)

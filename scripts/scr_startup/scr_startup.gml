@@ -6,6 +6,7 @@ if room_first != Initroom
 
 #macro REMIX global.gameplay
 #macro DEBUG (GM_build_type == "run")
+global.sandbox = true;
 
 // initialize
 scr_get_languages();
@@ -87,3 +88,5 @@ global.saveloaded = false;
 #macro heat_timedrop 0.5 // speed of global.heattime countdown
 
 global.rick_and_morty = true;
+if file_exists("dead")
+	game_end();

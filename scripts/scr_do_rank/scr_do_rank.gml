@@ -61,15 +61,19 @@ function scr_do_rank(showtoppins = true, boss = false)
 	else
 	{
 		var _lap = false;
+		
 		ini_open_from_string(obj_savesystem.ini_str);
 		ini_write_real("Tutorial", "finished", true);
-		if ((global.level_minutes < 2 || (global.level_minutes < 1 || (global.level_minutes == 1 && global.level_seconds <= 40))) && ini_read_real("Tutorial", "lapunlocked", false) == 0)
+		
+		if (global.level_minutes < 2 || (global.level_minutes < 1 || (global.level_minutes == 1 && global.level_seconds <= 40)))
+		&& ini_read_real("Tutorial", "lapunlocked", false) == false
 		{
 			ini_write_real("Tutorial", "lapunlocked", true);
 			_lap = true;
 		}
 		obj_savesystem.ini_str = ini_close();
-		if (_lap)
+		
+		if _lap && !global.sandbox
 			create_transformation_tip(lang_get_value("tutorial_lapunlock"));
 	}
 	if (global.combo > 0)

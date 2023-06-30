@@ -6,7 +6,7 @@ if app_scale <= 0
 
 var appa = 1;
 if instance_exists(obj_player) && (global.panic or global.snickchallenge)
-&& global.panicbg && !instance_exists(obj_ghostcollectibles)
+&& global.panicbg >= 2 && !instance_exists(obj_ghostcollectibles)
 	appa = clamp(lerp(1, 1 - MAX_BLUR, global.wave / global.maxwave), 0.01, 1);
 
 // black background

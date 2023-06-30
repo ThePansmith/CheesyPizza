@@ -1,3 +1,20 @@
+ini_open_from_string(obj_savesystem.ini_str);
+if !ini_key_exists("Ranks", "exit") && !global.sandbox // checks if you beat the game on this savefile
+{
+	var tr = room;
+	if variable_instance_exists(id, "targetRoom")
+		tr = targetRoom;
+	
+	instance_change(obj_door, true);
+	targetRoom = tr;
+	
+	event_perform_object(obj_door, ev_other, ev_room_start);
+	ini_close();
+	exit;
+}
+ini_close();
+
+// elevator here
 scr_create_uparrowhitbox();
 depth = 99;
 sprite_index = spr_elevatoropen;

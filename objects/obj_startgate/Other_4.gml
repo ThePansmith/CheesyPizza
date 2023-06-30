@@ -69,6 +69,7 @@ if (object_index != obj_bossdoor)
 		}
 	}
 }
+
 ini_open_from_string(obj_savesystem.ini_str);
 highscore = ini_read_real("Highscore", string(level), 0);
 hats = ini_read_real("Hats", string(level), 0);
@@ -80,6 +81,7 @@ toppin[3] = ini_read_real("Toppin", string(level) + "4", 0);
 toppin[4] = ini_read_real("Toppin", string(level) + "5", 0);
 rank = ini_read_string("Ranks", string(level), "d");
 ini_close();
+
 var _toppinspr = [
 	[spr_toppinshroom, spr_toppinshroom_run, spr_toppinshroom_taunt, -75],
 	[spr_toppincheese, spr_toppincheese_run, spr_toppincheese_taunt, -35],

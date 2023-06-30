@@ -384,7 +384,14 @@ opt.opts = [
 	["SHOULDER BASH", 1],
 	["FACEPLANT", 2]
 ];
-opt.value = global.doublegrab;
+for(var i = 0; i < array_length(opt.opts); i++)
+{
+	if opt.opts[i][1] == global.doublegrab
+	{
+		opt.value = i;
+		break;
+	}
+}
 
 #endregion
 #region HEAT METER

@@ -90,7 +90,7 @@ if is_callable(opt.drawfunc)
 	draw_clear_alpha(c_black, 0);
 	
 	gpu_set_blendmode(bm_normal);
-	opt.drawfunc(opt.value);
+	opt.drawfunc(opt.opts[opt.value][1]);
 	
 	draw_set_colour(c_white);
 	draw_roundrect(0, 0, wd - 2, ht - 2, true);

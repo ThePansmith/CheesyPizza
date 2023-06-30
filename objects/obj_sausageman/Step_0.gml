@@ -64,3 +64,17 @@ if (boundbox == 0)
 		other.boundbox = true;
 	}
 }
+
+// heat palettes but the sausageman is weird
+if !whoopass
+{
+	var newpalette = 1;
+	if global.stylethreshold >= 3
+		newpalette = 0;
+	
+	if paletteselect != newpalette
+	{
+		create_particle(x, y, particle.genericpoofeffect);
+		paletteselect = newpalette;
+	}
+}

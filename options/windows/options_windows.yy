@@ -9,7 +9,7 @@
   "option_windows_copy_exe_to_dest": false,
   "option_windows_copyright_info": "2023 loypoll / (c) 2022 Tour de Pizza",
   "option_windows_description_info": "It's Pizza Time!",
-  "option_windows_disable_sandbox": false,
+  "option_windows_disable_sandbox": true,
   "option_windows_display_cursor": true,
   "option_windows_display_name": "Pizza Tower: Cheesed Up",
   "option_windows_enable_steam": false,

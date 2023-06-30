@@ -7,4 +7,4 @@ title_sprite = spr_titlecards_title2;
 titlecard_index = 17;
 title_music = "event:/music/w4/freezertitle";
 group_arr = ["freezergroup"];
-msg = "R-R-Freezerator";
+msg = "Refrigerator-Refrigerador-Freezerator";

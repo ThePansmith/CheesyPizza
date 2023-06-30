@@ -2,6 +2,13 @@ ini_open_from_string(obj_savesystem.ini_str);
 unlocked = ini_read_real(save, "unlocked", false);
 first = ini_read_real(save, "first", false);
 ini_close();
+
+if global.sandbox
+{
+	first = true;
+	unlocked = true;
+}
+
 if (first && !unlocked)
 {
 	with (instance_create(obj_stick_target.x, obj_stick_target.y, obj_stick))

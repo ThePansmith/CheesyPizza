@@ -40,7 +40,7 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite || elitehit <= 0)
 			i++;
 		}
 	}
-	if (object_index == obj_sausageman && whoopass == 1)
+	if (object_index == obj_sausageman && (whoopass or global.stylethreshold >= 3))
 	{
 		with (instance_create(x, y, obj_whoop))
 		{

@@ -71,11 +71,19 @@ for(var i = array_length(background_layers) - 1; i >= 0; i--)
 		draw_rectangle(0, 0, 960, 540, false);
 		draw_set_alpha(1);
 	}
-	
 	surface_reset_target();
 }
 draw_set_colour(c_white);
 
+// background replacer
+with obj_backgroundreplace
+{
+	surface_set_target(other.bg_surface);
+	event_user(0);
+	surface_reset_target();
+}
+
+// prepare to draw with panicbg
 if (global.panic or global.snickchallenge)
 && global.panicbg && !instance_exists(obj_ghostcollectibles)
 {

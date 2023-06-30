@@ -31,7 +31,7 @@ if (room == hub_loadingscreen && state != 2)
 			global.palettetexture = scr_get_texture_palette(_texture);
 			ini_close();
 			
-			if (_intro)
+			if (_intro or global.sandbox)
 			{
 				targetRoom = tower_entrancehall;
 				targetDoor = "A";
