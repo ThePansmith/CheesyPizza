@@ -18,7 +18,8 @@ secret_close_portalID
 secret_open_portalID
 */
 
-if check_sugary()
+sugary = check_sugary();
+if sugary
 {
 	spr_open = spr_secretportal_open_ss;
 	spr_idle = spr_secretportal_idle_ss;

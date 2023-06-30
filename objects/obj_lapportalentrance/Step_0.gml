@@ -13,7 +13,8 @@ if (floor(image_index) == (image_number - 1))
 	switch (sprite_index)
 	{
 		case spr_appear:
-			fmod_event_one_shot_3d("event:/sfx/misc/secretexit", x, y);
+			if !sugary
+				fmod_event_one_shot_3d("event:/sfx/misc/secretexit", x, y);
 			sprite_index = spr_spit;
 			break;
 		

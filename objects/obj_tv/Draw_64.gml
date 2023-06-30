@@ -361,7 +361,7 @@ if (global.panic)
 			if !instance_exists(obj_pizzaface) or showtime_buffer > 0
 				lap_x = timer_x - 32;
 			else
-				lap_x = Approach(lap_x, (SCREEN_WIDTH / 2), 1);
+				lap_x = Approach(lap_x, (SCREEN_WIDTH / 2) + 32, 1);
 			
 			scr_draw_lap_display(lap_x, lap_y, lapflag_index, true);
 		}

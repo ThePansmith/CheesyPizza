@@ -23,7 +23,8 @@ switch (sprite_index)
 		drop = false;
 		if (floor(image_index) == (image_number - 1))
 		{
-			fmod_event_one_shot_3d("event:/sfx/misc/secretexit", x, y);
+			if !sugary
+				fmod_event_one_shot_3d("event:/sfx/misc/secretexit", x, y);
 			sprite_index = spr_idle;
 			with (obj_player)
 			{

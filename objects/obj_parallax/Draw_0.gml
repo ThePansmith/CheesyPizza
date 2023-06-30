@@ -89,7 +89,7 @@ if (global.panic or global.snickchallenge)
 {
 	shader_set(shd_panicbg);
 	var panic_id = shader_get_uniform(shd_panicbg, "panic");
-	shader_set_uniform_f(panic_id, global.wave / global.maxwave);
+	shader_set_uniform_f(panic_id, clamp(global.wave / global.maxwave, -0.5, 1));
 	var time_id = shader_get_uniform(shd_panicbg, "time");
 	shader_set_uniform_f(time_id, current_time / 1000);
 }

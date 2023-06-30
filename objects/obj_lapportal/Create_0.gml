@@ -4,7 +4,9 @@ targetRoom = room;
 
 spr_idle = spr_pizzaportal;
 spr_enter = spr_pizzaportalend;
-if check_sugary()
+
+sugary = check_sugary();
+if sugary
 {
 	spr_idle = spr_lappingportal_idle;
 	spr_enter = spr_lappingportal_enter;
