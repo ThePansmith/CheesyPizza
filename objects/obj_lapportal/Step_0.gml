@@ -18,7 +18,7 @@ if (global.panic || instance_exists(obj_wartimer))
 				other.playerid = id;
 				if (!instance_exists(obj_wartimer) && global.lap)
 					global.fill += 180;
-				fmod_event_one_shot_3d(sugary ? "event:/modded/sfx/secretenterSP" : "event:/sfx/misc/lapenter", x, y);
+				fmod_event_one_shot_3d(other.sugary ? "event:/modded/sfx/secretenterSP" : "event:/sfx/misc/lapenter", x, y);
 				//if (ds_list_find_index(global.saveroom, other.id) == -1)
 				{
 					//ds_list_add(global.saveroom, other.id);

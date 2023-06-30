@@ -1,6 +1,7 @@
 drawing = place_meeting(x, y, obj_player);
 image_index = 0;
 scr_hub_bg_step();
+
 if (!pizza && (highscore > 0 || (boss && hats > 0)) && bbox_in_camera(view_camera[0], 0) && distance_to_object(obj_player) < 150)
 {
 	pizza = true;

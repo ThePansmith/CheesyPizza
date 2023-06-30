@@ -29,7 +29,7 @@
   "origin": 0,
   "parent": {
     "name": "Early Test Build",
-    "path": "folders/Sprites/CheesyPizza/Early Test Build.yy",
+    "path": "folders/Sprites/CheesyPizza/Level Assets/Early Test Build.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

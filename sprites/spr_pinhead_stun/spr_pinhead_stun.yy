@@ -28,7 +28,7 @@
   "origin": 9,
   "parent": {
     "name": "Pinhead",
-    "path": "folders/Sprites/CheesyPizza/Midway/Pinhead.yy",
+    "path": "folders/Sprites/CheesyPizza/Level Assets/Midway/Pinhead.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

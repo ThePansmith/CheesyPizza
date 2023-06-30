@@ -20,7 +20,7 @@ if (sprite_index == spr_brickchase)
 		fmod_event_instance_play(sniffsnd);
 	fmod_event_instance_set_3d_attributes(sniffsnd, x, y);
 }
-if (sprite_index == spr_gustavochase && !instance_exists(obj_titlecard) && !instance_exists(obj_fadeout))
+if (sprite_index == spr_gustavochase && !instance_exists(obj_titlecard) && !instance_exists(obj_titlecard_ss) && !instance_exists(obj_fadeout))
 {
 	if (!fmod_event_instance_is_playing(snd))
 		fmod_event_instance_play(snd);

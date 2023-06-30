@@ -49,7 +49,7 @@ switch (state)
 		}
 		if (idle >= 200)
 		{
-			if (!instance_exists(obj_titlecard))
+			if (!instance_exists(obj_titlecard) && !instance_exists(obj_titlecard_ss))
 				fmod_event_one_shot_3d("event:/sfx/voice/mrstick", x, y);
 			sprite_index = choose(spr_stick_idleanim1, spr_stick_idleanim2, spr_stick_idleanim3);
 			image_index = 0;

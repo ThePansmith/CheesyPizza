@@ -18,10 +18,13 @@ function scr_hub_bg_reinit(xoffset, yoffset)
 	bgsprite_number = sprite_get_number(bgsprite);
 	bgsprite_width = sprite_get_width(bgsprite);
 	bgsprite_height = sprite_get_height(bgsprite);
+	
 	for (var i = 0; i < bgsprite_number; i++)
 	{
+		bgspriteposstart[i] = 0;
 		bgspritepos[i] = 0;
-		if (bg_useparallax)
+		
+		if bg_useparallax && i < array_length(bgparallax2)
 		{
 			var p = bgparallax2[i];
 			bgspriteposstart[i] = [xoffset - (xoffset * p) - ((SCREEN_WIDTH / 4) * p), yoffset - (yoffset * p) - ((SCREEN_HEIGHT / 4) * p)];
@@ -33,13 +36,9 @@ function scr_hub_bg_step()
 {
 	for (var i = 0; i < array_length(bgspritepos); i++)
 	{
-		if (!bg_useparallax)
-		{
-			bgspritepos[i] -= bgparallax[i];
-			if (bgspritepos[i] <= -(bgsprite_width + bgparallax[i]))
-				bgspritepos[i] = frac(bgspritepos[i]);
-		}
-		else
+		if !bg_useparallax && i < array_length(bgparallax)
+			bgspritepos[i] = (bgspritepos[i] - bgparallax[i]) % bgsprite_width;
+		else if i < array_length(bgparallax2)
 		{
 			var p = bgparallax2[i];
 			bgspritepos[i][0] = bgspriteposstart[i][0] + ((camera_get_view_x(view_camera[0]) + (SCREEN_WIDTH / 2)) * p) + ((SCREEN_WIDTH / 5) * p);

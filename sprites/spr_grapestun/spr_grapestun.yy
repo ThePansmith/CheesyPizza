@@ -28,7 +28,7 @@
   "origin": 9,
   "parent": {
     "name": "Grape",
-    "path": "folders/Sprites/CheesyPizza/Midway/Grape.yy",
+    "path": "folders/Sprites/CheesyPizza/Level Assets/Midway/Grape.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

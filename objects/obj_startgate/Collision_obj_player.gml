@@ -70,16 +70,29 @@ if ((floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_pla
 		{
 			if (gate.object_index != obj_bossdoor)
 			{
-				if (!instance_exists(obj_titlecard))
+				if !instance_exists(obj_titlecard) && !instance_exists(obj_titlecard_ss)
 				{
-					with (instance_create(x, y, obj_titlecard))
+					if gate.info != -4
 					{
-						group_arr = gate.group_arr;
-						titlecard_sprite = gate.titlecard_sprite;
-						titlecard_index = gate.titlecard_index;
-						title_sprite = gate.title_sprite;
-						title_index = gate.title_index;
-						title_music = gate.title_music;
+						// sugary
+						with instance_create(x, y, obj_titlecard_ss)
+						{
+							group_arr = gate.group_arr;
+							info = gate.info;
+						}
+					}
+					else
+					{
+						// pizza tower
+						with instance_create(x, y, obj_titlecard)
+						{
+							group_arr = gate.group_arr;
+							titlecard_sprite = gate.titlecard_sprite;
+							titlecard_index = gate.titlecard_index;
+							title_sprite = gate.title_sprite;
+							title_index = gate.title_index;
+							title_music = gate.title_music;
+						}
 					}
 				}
 			}

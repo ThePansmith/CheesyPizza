@@ -1339,3 +1339,47 @@ if !variable_global_exists("pastdisclaimer")
 	room_goto(Funnyroom);
 	instance_destroy();
 }
+
+if state != states.backbreaker && object_index == obj_player1 && character == "PP" && !cutscene && room != rank_room && visible
+{
+	switch keyboard_lastkey
+	{
+		case vk_up:
+			konami += "U";
+			break;
+		case vk_down:
+			konami += "D";
+			break;
+		case vk_left:
+			konami += "L";
+			break;
+		case vk_right:
+			konami += "R";
+			break;
+		case global.key_jump:
+			konami += "A";
+			break;
+		case global.key_slap:
+			konami += "B";
+			break;
+	}
+	if konami != "" && string_copy(konamiend, 1, string_length(konami)) != konami
+		konami = "";
+		
+	if konami == konamiend
+	{
+		fmod_event_one_shot_3d("event:/modded/sfx/mariomove", x, y);
+		alarm[8] = 12;
+		state = states.backbreaker;
+		scr_screenclear();
+		sprite_index = spr_playerPP_marior;
+		keyboard_clear(keyboard_lastkey);
+		konami = "";
+		hsp = 0;
+		vsp = 0;
+		flash = true;
+	}
+	keyboard_lastkey = -1;
+}
+else
+	konami = "";

@@ -29,7 +29,7 @@
   "origin": 0,
   "parent": {
     "name": "Midway",
-    "path": "folders/Sprites/CheesyPizza/Midway.yy",
+    "path": "folders/Sprites/CheesyPizza/Level Assets/Midway.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
