@@ -70,3 +70,4 @@ locky = 0;
 bulletimage = 0;
 lag = 0;
 lagpos = undefined;
+greyscale = 0;

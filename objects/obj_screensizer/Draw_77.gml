@@ -19,8 +19,20 @@ if appa == 1
 	draw_rectangle_color(-100, -100, savedwidth + 100, savedheight + 100, c_black, c_black, c_black, c_black, false);
 }
 
+// sugary spire greyscale
+with obj_camera
+{
+	if greyscale > 0
+	{
+		shader_set(shd_greyscale);
+		var fader = shader_get_uniform(shd_greyscale, "fade");
+		shader_set_uniform_f(fader, greyscale);
+	}
+}
+
 // draw the game
 gpu_set_blendenable(appa != 1);
 draw_surface_ext(application_surface, savedwidth / 2 - (surface_get_width(application_surface) * app_scale) / 2, savedheight / 2 - (surface_get_height(application_surface) * app_scale) / 2, app_scale, app_scale, 0, c_white, appa);
 gpu_set_blendenable(true);
 gpu_set_texfilter(false);
+shader_reset();

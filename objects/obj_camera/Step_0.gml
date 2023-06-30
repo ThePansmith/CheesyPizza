@@ -368,4 +368,27 @@ else if REMIX && room != rank_room && room != timesuproom && room != rm_baby && 
 
 // update wave
 if global.panic or global.snickchallenge
+{
 	global.wave = global.maxwave - global.fill;
+	
+	if check_sugary()
+	{
+		camera_set_view_angle(view_camera[0], scr_sin(3.5 * clamp(global.wave / global.maxwave, 0, 1), 65 - (5 * clamp(global.wave / global.maxwave, 0, 1))));
+		if instance_exists(obj_pizzaface)
+			greyscale = Approach(greyscale, 0.45, 0.005)
+		else
+			greyscale = Approach(greyscale, 0, 0.01)
+	}
+	else
+	{
+		camera_set_view_angle(view_camera[0], 0);
+		greyscale = 0;
+	}
+}
+else if !instance_exists(obj_endlevelfade)
+{
+	camera_set_view_angle(view_camera[0], 0);
+	greyscale = 0;
+}
+else
+	camera_set_view_angle(view_camera[0], Approach(camera_get_view_angle(view_camera[0]), 0, 15));
