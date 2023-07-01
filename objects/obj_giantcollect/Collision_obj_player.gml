@@ -1,5 +1,6 @@
 if (other.state != states.gotoplayer)
 {
+	fail_modifier(MOD.NoToppings);
 	if (obj_player1.character == "V")
 		global.playerhealth = 100;
 	global.heattime = 60;

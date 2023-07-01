@@ -1,6 +1,6 @@
 if global.panic == true || (instance_exists(obj_wartimer) && room != war_1)
 {
-	if global.mod_failed
+	if global.modifier_failed
 	{
 		if uparrow
 		{

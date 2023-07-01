@@ -6,3 +6,5 @@ if array_contains(levels, global.leveltosave) && !global.sandbox
 		instance_destroy();
 	ini_close();
 }
+if check_modifier(MOD.Lap3) && global.laps >= 2
+	instance_destroy();

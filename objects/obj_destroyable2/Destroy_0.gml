@@ -2,6 +2,8 @@ if (room == rm_editor)
 	exit;
 if (ds_list_find_index(global.saveroom, id) == -1)
 {
+	fail_modifier(MOD.NoToppings);
+	
 	if (sprite_exists(particlespr))
 	{
 		repeat (6)

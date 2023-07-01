@@ -94,6 +94,18 @@ function scr_getinput(is_menu = false)
 	key_groundpound = (global.key_groundpoundC != -4 ? gamepad_button_check_pressed(_dvc, global.key_groundpoundC) : false);
 	key_groundpound2 = (global.key_groundpoundC != -4 ? gamepad_button_check(_dvc, global.key_groundpoundC) : false);
 	
+	// mirror modifiers swaps left and right
+	if check_modifier(MOD.Mirror)
+	{
+		var uwu1 = key_left;
+		var uwu2 = key_left2;
+		
+		key_left = -key_right;
+		key_left2 = -key_right2;
+		key_right = -uwu1;
+		key_right2 = -uwu2;
+	}
+	
 	// single presses with the analog stick
 	if gamepad_axis_value(_dvc, gp_axislh) >= horizpress_dz || gamepad_axis_value(_dvc, gp_axislh) <= -horizpress_dz
 		stickpressed_horizontal = true;

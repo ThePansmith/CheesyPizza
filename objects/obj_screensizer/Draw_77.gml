@@ -32,7 +32,7 @@ with obj_camera
 
 // draw the game
 gpu_set_blendenable(appa != 1);
-draw_surface_ext(application_surface, savedwidth / 2 - (surface_get_width(application_surface) * app_scale) / 2, savedheight / 2 - (surface_get_height(application_surface) * app_scale) / 2, app_scale, app_scale, 0, c_white, appa);
+draw_surface_ext(application_surface, (savedwidth / 2 - (surface_get_width(application_surface) * app_scale) / 2) + (check_modifier(MOD.Mirror) ? surface_get_width(application_surface) : 0), savedheight / 2 - (surface_get_height(application_surface) * app_scale) / 2, app_scale * (check_modifier(MOD.Mirror) ? -1 : 1), app_scale, 0, c_white, appa);
 gpu_set_blendenable(true);
 gpu_set_texfilter(false);
 shader_reset();

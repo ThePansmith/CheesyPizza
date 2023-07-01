@@ -27,6 +27,8 @@ if (global.panic || instance_exists(obj_wartimer))
 					with (instance_create(x, y, obj_smallnumber))
 						number = string(3000);
 				}
+				if check_modifier(MOD.Lap3) && global.lap
+					global.fill = 0;
 			}
 		}
 	}

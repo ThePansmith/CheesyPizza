@@ -74,8 +74,6 @@
     {"name":"inst_24A02D4F","path":"rooms/oldfactory_3/oldfactory_3.yy",},
     {"name":"inst_673FD23F","path":"rooms/oldfactory_3/oldfactory_3.yy",},
     {"name":"inst_6743DA5D","path":"rooms/oldfactory_3/oldfactory_3.yy",},
-    {"name":"inst_EDC5BD3D","path":"rooms/oldfactory_3/oldfactory_3.yy",},
-    {"name":"inst_2EF162FC","path":"rooms/oldfactory_3/oldfactory_3.yy",},
   ],
   "isDnd": false,
   "layers": [

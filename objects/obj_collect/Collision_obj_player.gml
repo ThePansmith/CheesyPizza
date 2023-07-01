@@ -2,6 +2,8 @@ if (room == rm_editor)
 	exit;
 if (other.state != states.gotoplayer)
 {
+	fail_modifier(MOD.NoToppings);
+	
 	if (object_index != obj_escapecollect)
 		scr_sound_multiple(global.snd_collect, x, y);
 	else

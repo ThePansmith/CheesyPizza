@@ -92,6 +92,10 @@ function activate_panic()
 	}
 	instance_create_unique(0, 0, obj_hungrypillarflash);
 	
+	// if a hard modifier is on, extend timer a lot.
+	if check_modifier(MOD.Pacifist) or check_modifier(MOD.NoToppings)
+		global.fill *= 3;
+	
 	with obj_tv
 	{
 		chunkmax = global.fill;

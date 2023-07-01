@@ -1,5 +1,6 @@
 if (room == rm_editor)
 	exit;
+
 if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite || elitehit <= 0) && destroyable)
 {
 	if (object_index != obj_peppinoclone && object_index != obj_ghoul && object_index != obj_bazookabaddie && object_index != obj_snowman && object_index != obj_twoliterdog)
@@ -149,12 +150,11 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && important == 0)
 else if (ds_list_find_index(global.baddieroom, id) == -1 && important == 1)
 {
 	trace("destroy unimportant");
-	create_slapstar(x, y);
-	create_slapstar(x, y);
-	create_slapstar(x, y);
-	create_baddiegibs(x, y);
-	create_baddiegibs(x, y);
-	create_baddiegibs(x, y);
+	repeat 3
+	{
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
+	}
 	fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
 	with (obj_camera)
 	{
@@ -163,3 +163,5 @@ else if (ds_list_find_index(global.baddieroom, id) == -1 && important == 1)
 	}
 	ds_list_add(global.baddieroom, id);
 }
+if object_index != obj_pizzaball
+	fail_modifier(MOD.Pacifist);

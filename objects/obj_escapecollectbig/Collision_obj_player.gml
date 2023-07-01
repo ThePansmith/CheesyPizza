@@ -4,6 +4,7 @@ if (image_alpha == 1)
 {
 	if (other.state != states.gotoplayer)
 	{
+		fail_modifier(MOD.NoToppings);
 		if (obj_player1.character == "V")
 			global.playerhealth = clamp(global.playerhealth + 10, 0, 100);
 		global.heattime = 60;

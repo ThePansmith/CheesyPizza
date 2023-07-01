@@ -2,6 +2,8 @@ if (room == rm_editor)
 	exit;
 if (ds_list_find_index(global.saveroom, id) == -1)
 {
+	fail_modifier(MOD.NoToppings);
+	
 	scr_sleep(5);
 	with (instance_create(x + 32, y + 32, obj_parryeffect))
 		sprite_index = other.particlespr;
