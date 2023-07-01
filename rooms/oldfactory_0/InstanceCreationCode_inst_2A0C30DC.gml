@@ -1,1 +1,1 @@
-targetRoom = oldfactory_lap
+targetRoom = oldfactory_portal

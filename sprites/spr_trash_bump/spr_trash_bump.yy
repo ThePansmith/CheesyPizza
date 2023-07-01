@@ -26,7 +26,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f19d0046-21d3-4677-abdf-54bc23784880","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 9,
   "parent": {
     "name": "Trash",
     "path": "folders/Sprites/Baddie/Trash.yy",
@@ -66,7 +66,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 50,
-    "yorigin": 50,
+    "yorigin": 75,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

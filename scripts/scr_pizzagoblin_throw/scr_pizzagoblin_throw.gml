@@ -92,7 +92,7 @@ function scr_pizzagoblin_throw()
 					}
 				}
 				break;
-			case obj_trash:
+			case obj_trashOLD:
 			case obj_invtrash:
 				with (instance_create(x + (image_xscale * 6), y - 6, obj_cheeseball))
 				{
