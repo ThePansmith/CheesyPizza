@@ -28,7 +28,7 @@ gpu_set_blendmode(bm_normal);
 for(var i = array_length(background_layers) - 1; i >= 0; i--)
 {
 	var lay = background_layers[i], bg = layer_background_get_id(lay);
-	if !layer_get_visible(lay)
+	if !layer_get_visible(lay) or !layer_background_get_visible(bg)
 		continue;
 	
 	surface_set_target(do_foreground && layer_get_depth(lay) <= 0 ? fg_surface : bg_surface);
