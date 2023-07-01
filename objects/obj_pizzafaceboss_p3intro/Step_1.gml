@@ -31,15 +31,15 @@ switch (introstate)
 			keyshot = true;
 			fmod_event_one_shot("event:/sfx/pizzahead/recover");
 		}
-		if (floor(image_index) >= 50 && sprite_index != spr_gnomecutscene1)
+		if (floor(image_index) >= 50 && sprite_index != obj_player1.spr_gnomecutscene1)
 			image_xscale = -1;
-		else if (floor(image_index) >= 2 && sprite_index != spr_gnomecutscene1)
+		else if (floor(image_index) >= 2 && sprite_index != obj_player1.spr_gnomecutscene1)
 		{
 			with (obj_player)
 			{
-				if (sprite_index != spr_gnomecutscene2)
+				if (sprite_index != obj_player1.spr_gnomecutscene2)
 				{
-					sprite_index = spr_gnomecutscene2;
+					sprite_index = obj_player1.spr_gnomecutscene2;
 					image_index = 0;
 				}
 				else if (floor(image_index) == (image_number - 1))
@@ -73,7 +73,7 @@ switch (introstate)
 	case 4:
 		with (obj_player)
 		{
-			if (floor(image_index) == (image_number - 1) && sprite_index != spr_gnomecutscene1)
+			if (floor(image_index) == (image_number - 1) && sprite_index != obj_player1.spr_gnomecutscene1)
 				image_index = image_number - 1;
 		}
 		if (floor(image_index) == (image_number - 1))
@@ -103,7 +103,7 @@ switch (introstate)
 	case 5:
 		with (obj_player)
 		{
-			if (floor(image_index) == (image_number - 1) && sprite_index != spr_gnomecutscene1)
+			if (floor(image_index) == (image_number - 1) && sprite_index != obj_player1.spr_gnomecutscene1)
 				image_index = image_number - 1;
 		}
 		if (sprite_index == spr_pizzahead_grabitemtransition)
@@ -165,7 +165,7 @@ switch (introstate)
 	case 6:
 		with (obj_player)
 		{
-			if (floor(image_index) == (image_number - 1) && sprite_index != spr_gnomecutscene1)
+			if (floor(image_index) == (image_number - 1) && sprite_index != obj_player1.spr_gnomecutscene1)
 				image_index = image_number - 1;
 		}
 		var t = true;
@@ -186,7 +186,7 @@ switch (introstate)
 	case 7:
 		with (obj_player)
 		{
-			if (floor(image_index) == (image_number - 1) && sprite_index != spr_gnomecutscene1)
+			if (floor(image_index) == (image_number - 1) && sprite_index != obj_player1.spr_gnomecutscene1)
 				image_index = image_number - 1;
 		}
 		if (floor(image_index) == (image_number - 1))
@@ -211,7 +211,7 @@ switch (introstate)
 			if (sprite_index == spr_gnomecutscene3 && floor(image_index) == (image_number - 1))
 				sprite_index = spr_gnomecutscene4;
 		}
-		if (floor(image_index) == (image_number - 1) && sprite_index != spr_gnomecutscene1)
+		if (floor(image_index) == (image_number - 1) && sprite_index != obj_player1.spr_gnomecutscene1)
 			image_index = image_number - 1;
 		if (introbuffer > 0)
 			introbuffer--;
