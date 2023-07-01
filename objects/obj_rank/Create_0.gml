@@ -68,7 +68,7 @@ depth = -8;
 
 // sugary spire
 sugary = obj_endlevelfade.sugary;
-if sugary
+if sugary && obj_player1.character != "SP"
 	alarm[2] += room_speed * 2.5;
 
 sugaryrank = -1;

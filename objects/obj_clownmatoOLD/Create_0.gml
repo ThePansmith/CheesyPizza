@@ -1,3 +1,7 @@
+event_perform_object(obj_clownmato, ev_create, 0);
+instance_change(obj_clownmato, false);
+exit;
+
 depth = 0;
 hsp = 0;
 vsp = 0;

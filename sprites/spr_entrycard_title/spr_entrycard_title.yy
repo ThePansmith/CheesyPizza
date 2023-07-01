@@ -23,7 +23,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e7e76144-44bc-43de-8dbf-56b5c435e007","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 9,
   "parent": {
     "name": "Gates and Titlecards",
     "path": "folders/Sprites/CheesyPizza/Sugary Spire/Gates and Titlecards.yy",
@@ -60,7 +60,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 295,
-    "yorigin": 121,
+    "yorigin": 141,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

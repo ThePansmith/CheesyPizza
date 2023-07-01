@@ -1,14 +1,32 @@
 if global.panic == true || (instance_exists(obj_wartimer) && room != war_1)
 {
-	if sugary
-		sprite_index = spr_sugarygateopen;
-	else
-		image_index = 1;
-	
-	if (!uparrow)
+	if global.mod_failed
 	{
-		uparrowID = scr_create_uparrowhitbox();
-		uparrow = true;
+		if uparrow
+		{
+			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+			
+			uparrow = false;
+			instance_destroy(uparrowID);
+		}
+		
+		if sugary
+			sprite_index = spr_sugarygateclosed;
+		else
+			image_index = 0;
+	}
+	else
+	{
+		if sugary
+			sprite_index = spr_sugarygateopen;
+		else
+			image_index = 1;
+	
+		if !uparrow
+		{
+			uparrowID = scr_create_uparrowhitbox();
+			uparrow = true;
+		}
 	}
 }
 else if (uparrow)

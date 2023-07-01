@@ -1,1 +1,1 @@
-content = obj_trash;
+content = obj_trashOLD;

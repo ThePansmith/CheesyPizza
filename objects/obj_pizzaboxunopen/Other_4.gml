@@ -2,6 +2,7 @@ if (global.timeattack == 1)
 	instance_destroy();
 if (ds_list_find_index(global.saveroom, id) != -1)
 	instance_destroy();
+
 if (content == obj_pizzakinshroom && global.shroomfollow)
 	instance_destroy();
 if (content == obj_pizzakincheese && global.cheesefollow)
@@ -12,5 +13,12 @@ if (content == obj_pizzakinsausage && global.sausagefollow)
 	instance_destroy();
 if (content == obj_pizzakinpineapple && global.pineapplefollow)
 	instance_destroy();
+
 if (global.snickchallenge == 1)
 	instance_destroy();
+
+if content == obj_bigcollect
+{
+	instance_change(obj_bigcollect, false);
+	event_perform_object(obj_bigcollect, ev_create, 0);
+}

@@ -37,7 +37,10 @@ if ((image_index == 1 && !sugary) or (sugary && sprite_index != spr_sugarygatecl
 	}
 }
 if (drop && dropstate != states.idle)
+or global.mod_failed
 	exit;
+
+// exit
 with (other)
 {
 	if (grounded && (x > (other.x - 160) && x < (other.x + 160)) && key_up && (state == states.ratmount || state == states.normal || state == states.Sjumpprep || state == states.mach1 || state == states.mach2 || state == states.mach3) && (global.panic == true || global.snickchallenge == 1 || room == war_13))

@@ -72,7 +72,7 @@ if (levelselect == 1)
 				}
 				if (other.b == 2)
 				{
-					obj_player.targetRoom = floor3_room0;
+					obj_player.targetRoom = oldfactory_0;
 					obj_player.player_x = 976;
 					obj_player.player_y = 434;
 					obj_player.character = "P";

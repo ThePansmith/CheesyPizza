@@ -17,6 +17,9 @@ function scr_playerreset(roomstart = false)
 {
 	trace("playerreset");
 	
+	global.mod = 0;
+	global.mod_failed = false;
+	
 	global.lap = false;
 	if (room != boss_pizzaface && room != boss_noise && room != boss_pepperman && room != boss_fakepep && room != boss_vigilante)
 		global.bossintro = false;

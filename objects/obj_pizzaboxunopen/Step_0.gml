@@ -23,7 +23,7 @@ if place_meeting(x, y, obj_player)
 				global.minutes = 2;
 				global.seconds = 40;
 				break;
-			case floor3_roomtreasure:
+			case oldfactory_treasure:
 				global.minutes = 2;
 				global.seconds = 30;
 				break;
