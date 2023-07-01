@@ -38,5 +38,6 @@ if (object_index == obj_cheeseslime && snotty)
 	}
 	ini_close();
 }
-if (safe_get(id, "elite") or global.stylethreshold >= 3) && usepalette && object_index != obj_sausageman
+if (safe_get(id, "elite") or global.stylethreshold >= 3) && usepalette
+&& object_index != obj_sausageman && (object_index != obj_kentukylenny or !important)
 	paletteselect = elitepal;

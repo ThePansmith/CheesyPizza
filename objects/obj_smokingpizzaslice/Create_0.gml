@@ -44,3 +44,4 @@ spr_palette = spr_pizzaslug_palette;
 grabbedby = 0;
 stuntouchbuffer = 0;
 scaredbuffer = 0;
+usepalette = REMIX or global.heatmeter;

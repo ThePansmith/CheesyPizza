@@ -34,3 +34,4 @@ heavy = false;
 depth = 0;
 paletteselect = 0;
 spr_palette = spr_kentukykenny_palette;
+usepalette = true;

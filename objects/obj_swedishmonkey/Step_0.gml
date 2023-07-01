@@ -44,11 +44,6 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 }
 if (state != states.stun)
 	birdcreated = false;
-idlespr = spr_swedishmonkey_idle;
-stunfallspr = spr_swedishmonkey_stun;
-walkspr = spr_swedishmonkey_walk;
-stunspr = spr_swedishmonkey_stun;
-grabbedspr = spr_swedishmonkey_stun;
 scr_scareenemy();
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;

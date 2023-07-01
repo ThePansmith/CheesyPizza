@@ -33,3 +33,4 @@ important = false;
 depth = 0;
 grabbedby = 0;
 stuntouchbuffer = 0;
+usepalette = true;

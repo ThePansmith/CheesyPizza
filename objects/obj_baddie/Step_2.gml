@@ -90,6 +90,7 @@ else
 
 // heat palettes
 if !(object_index == obj_cheeseslime && snotty) && object_index != obj_sausageman
+&& !check_boss(object_index) && (object_index != obj_kentukylenny or !important)
 {
 	var newpalette = 0;
 	if (safe_get(id, "elite") or global.stylethreshold >= 3) && usepalette

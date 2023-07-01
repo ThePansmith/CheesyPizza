@@ -103,8 +103,20 @@ function scr_pizzagoblin_throw()
 				}
 				break;
 			case obj_kentukykenny:
-				with (instance_create(x, y, obj_kentukykenny_projectile))
-					image_xscale = other.image_xscale;
+				if global.stylethreshold >= 3 && !important
+				{
+					with (instance_create(x + (other.image_xscale * 8), y, obj_kentukylenny_projectile))
+					{
+						repeat (3)
+							instance_create(x, y, obj_firemouthflame);
+						image_xscale = other.image_xscale;
+					}
+				}
+				else
+				{
+					with (instance_create(x, y, obj_kentukykenny_projectile))
+						image_xscale = other.image_xscale;
+				}
 				break;
 			case obj_kentukylenny:
 				with (instance_create(x + (other.image_xscale * 8), y, obj_kentukylenny_projectile))
@@ -122,7 +134,7 @@ function scr_pizzagoblin_throw()
 				}
 				break;
 			case obj_swedishmonkey:
-				if (elite)
+				if (elite or global.stylethreshold >= 3)
 				{
 					with (instance_create(x, y, obj_evilbanana))
 					{

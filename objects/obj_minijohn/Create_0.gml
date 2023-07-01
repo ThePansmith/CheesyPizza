@@ -44,3 +44,4 @@ hitboxcreate = false;
 image_speed = 0.35;
 steppy = 0;
 stuntouchbuffer = 0;
+usepalette = true;
