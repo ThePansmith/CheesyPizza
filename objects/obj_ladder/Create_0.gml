@@ -5,3 +5,5 @@ if check_sugary()
 	sprite_index = spr_ladder_sugary;
 	depth = -1;
 }
+if global.leveltosave == "grinch"
+	visible = true;

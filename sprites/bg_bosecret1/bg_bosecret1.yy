@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "Secret",
-    "path": "folders/Sprites/Backgrounds/CheesyPizza/Midway/Secret.yy",
+    "path": "folders/Sprites/CheesyPizza/Level Assets/Midway/Scenery/Secret.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -51,16 +51,22 @@ if (!ds_list_empty(global.collect_list))
 			with (b)
 			{
 				var _dir = point_direction(x, y, 110, 80);
+				if check_modifier(MOD.Mirror)
+					_dir = point_direction(x, y, 960 - 110, 80);
+				
 				hsp = lengthdir_x(25, _dir);
 				vsp = lengthdir_y(25, _dir);
 				x += hsp;
 				y += vsp;
-				image_index += 0.35;
-				if (image_index > image_number - 1)
-					image_index = frac(image_index);
+				image_index = (image_index + 0.35) % image_number;
+				
 				outofx = x < 140;
 				outofy = y < 120;
-				if (outofx && outofy)
+				
+				if check_modifier(MOD.Mirror)
+					outofx = x > 960 - 140;
+			
+				if outofx && outofy
 				{
 					with (obj_camera)
 						collect_shake += 10;

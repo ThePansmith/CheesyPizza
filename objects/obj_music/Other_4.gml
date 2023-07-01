@@ -1,4 +1,4 @@
-if (!global.panic or global.leveltosave == "dragonlair")
+if (!global.panic or global.leveltosave == "dragonlair" or global.leveltosave == "grinch")
 {
 	var mu = ds_map_find_value(music_map, room);
 	if (!is_undefined(mu))

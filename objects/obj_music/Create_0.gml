@@ -249,6 +249,7 @@ add_music(midway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret"
 #endregion
 #region OLD LEVELS
 
+add_music(grinch_1, "event:/music/pto/grinch", "event:/music/w1/medievalsecret", 0);
 add_music(dragonlair_1, "event:/music/pto/dragonlair", "event:/music/w1/medievalsecret", 0);
 add_music(beach_1, "event:/music/w3/beach", "event:/music/w3/beachsecret", 0);
 add_music(golf_room1, "event:/music/w3/golf", "event:/music/w3/golfsecret", 0);

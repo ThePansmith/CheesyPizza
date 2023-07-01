@@ -83,6 +83,20 @@ with obj_backgroundreplace
 	surface_reset_target();
 }
 
+// grinch bg
+if string_starts_with(room_get_name(room), "grinch_") && room != grinch_10
+{
+	surface_set_target(bg_surface);
+	
+	shader_set(shd_wind);
+	var uTime = shader_get_uniform(shd_wind, "Time");
+	shader_set_uniform_f(uTime, current_time / 1000);
+	draw_sprite_tiled(bg_grinch_santa, 0, -cam_x * 0.25, -cam_y * 0.25);
+	shader_reset();
+	
+	surface_reset_target();
+}
+
 // prepare to draw with panicbg
 if (global.panic or global.snickchallenge)
 && global.panicbg && !instance_exists(obj_ghostcollectibles)

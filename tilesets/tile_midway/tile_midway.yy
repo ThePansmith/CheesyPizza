@@ -24,8 +24,8 @@
   },
   "spriteNoExport": true,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "midwaygroup",
+    "path": "texturegroups/midwaygroup",
   },
   "tile_count": 2576,
   "tileAnimation": {

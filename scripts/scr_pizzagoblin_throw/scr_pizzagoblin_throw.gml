@@ -1,19 +1,26 @@
 function scr_pizzagoblin_throw()
 {
 	hsp = 0;
-	if (place_meeting(x, y + 1, obj_railh))
+	if place_meeting(x, y + 1, obj_railh)
 		hsp = -5;
-	else if (place_meeting(x, y + 1, obj_railh2))
+	else if place_meeting(x, y + 1, obj_railh2)
 		hsp = 5;
-	if (floor(image_index) == (image_number - 1))
+	
+	if floor(image_index) >= image_number - 1
 	{
 		state = states.walk;
 		sprite_index = walkspr;
 	}
-	if (bombreset <= 0 && floor(image_index) == global.throw_frame[object_index])
+	
+	// failsafe
+	if object_index >= array_length(global.throw_data) or global.throw_data[object_index] == 0
+		global.throw_data[object_index] = global.throw_data[obj_pizzard];
+	
+	if bombreset <= 0 && floor(image_index) == global.throw_data[object_index].frame
 	{
-		bombreset = global.reset_timer[object_index];
-		sprite_index = global.throw_sprite[object_index];
+		bombreset = global.throw_data[object_index].time;
+		sprite_index = global.throw_data[object_index].sprite;
+		
 		switch (object_index)
 		{
 			case obj_rancher:
@@ -103,7 +110,7 @@ function scr_pizzagoblin_throw()
 				}
 				break;
 			case obj_kentukykenny:
-				if global.stylethreshold >= 3 && !important
+				if (elite or global.stylethreshold >= 3) && !important
 				{
 					with (instance_create(x + (other.image_xscale * 8), y, obj_kentukylenny_projectile))
 					{

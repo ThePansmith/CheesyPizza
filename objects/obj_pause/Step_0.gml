@@ -237,7 +237,6 @@ if (!instance_exists(obj_loadingscreen))
 }
 cursor_index += 0.35;
 pause_update_priests();
-var prevpause = pause;
 if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 {
 	scr_getinput();

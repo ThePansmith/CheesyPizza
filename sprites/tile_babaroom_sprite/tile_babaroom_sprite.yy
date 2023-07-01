@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "CheesyPizza",
-    "path": "folders/Sprites/Tilesets/CheesyPizza.yy",
+    "name": "Level Assets",
+    "path": "folders/Sprites/CheesyPizza/Level Assets.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

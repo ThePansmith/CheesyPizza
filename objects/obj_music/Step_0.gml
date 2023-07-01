@@ -34,22 +34,27 @@ if (prevpillar_on_camera != pillar_on_camera)
 	else
 		fmod_set_parameter("pillarfade", 0, false);
 }
-if (global.panic && global.leveltosave != "dragonlair")
+if ((global.panic or global.snickchallenge) && global.leveltosave != "dragonlair" && global.leveltosave != "grinch")
 {
 	if (!panicstart)
 	{
 		fmod_event_instance_release(panicmusicID);
 		
-		var char = obj_player1.character;
-		switch char
+		if global.snickchallenge
+			panicmusicID = fmod_event_create_instance("event:/music/pto/snickchallenge");
+		else
 		{
-			default: panicmusicID = fmod_event_create_instance("event:/music/pizzatime"); break;
-			case "N": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeN"); break;
-			case "V": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeV"); break;
-			case "S": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeS"); break;
-			case "SP": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeSP"); break;
-			case "PP": panicmusicID = fmod_event_create_instance("event:/music/pizzatimePP"); break;
-			case "BN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeBN"); break;
+			var char = obj_player1.character;
+			switch char
+			{
+				default: panicmusicID = fmod_event_create_instance("event:/music/pizzatime"); break;
+				case "N": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeN"); break;
+				case "V": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeV"); break;
+				case "S": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeS"); break;
+				case "SP": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeSP"); break;
+				case "PP": panicmusicID = fmod_event_create_instance("event:/music/pizzatimePP"); break;
+				case "BN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeBN"); break;
+			}
 		}
 		
 		trace("Starting panic music: step");

@@ -7,6 +7,8 @@ function scr_player_hang()
 	wallclingcooldown = 0;
 	if (floor(image_index) == (image_number - 1))
 	{
+		fmod_event_one_shot_3d("event:/modded/sfx/woosh", x, y);
+		
 		jumpstop = false;
 		vsp = -15;
 		state = states.jump;

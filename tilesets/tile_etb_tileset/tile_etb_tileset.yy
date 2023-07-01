@@ -15,8 +15,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Entrance",
-    "path": "folders/Tile Sets/Entrance.yy",
+    "name": "Early Test Build",
+    "path": "folders/Tile Sets/CheesyPizza/Early Test Build.yy",
   },
   "spriteId": {
     "name": "tile_etb",

@@ -1,5 +1,6 @@
 function activate_panic()
 {
+	var instapanic = global.leveltosave == "grinch";
 	if room == tower_finalhallway
 		global.leveltosave = "exit";
 	
@@ -13,11 +14,25 @@ function activate_panic()
 		}
 	}
 	*/
-	fmod_event_instance_play(global.snd_johndead);
+	
+	if !instapanic
+	{
+		fmod_event_instance_play(global.snd_escaperumble);
+		fmod_event_instance_play(global.snd_johndead);
+		
+		instance_create_unique(0, 0, obj_hungrypillarflash);
+		instance_create(0, 0, obj_itspizzatime);
+		
+		with obj_camera
+		{
+			alarm[1] = 60;
+			shake_mag = 3;
+			shake_mag_acc = 3 / room_speed;
+		}
+		notification_push(notifs.hungrypillar_dead, [room]);
+	}
 	
 	global.fill = 4000;
-	notification_push(notifs.hungrypillar_dead, [room]);
-	
 	switch room
 	{
 		case entrance_10:
@@ -89,8 +104,10 @@ function activate_panic()
 		case entryway_11:
 			global.fill = 2500;
 			break;
+		case grinch_1:
+			global.fill = 2148;
+			break;
 	}
-	instance_create_unique(0, 0, obj_hungrypillarflash);
 	
 	// if a hard modifier is on, extend timer a lot.
 	if check_modifier(MOD.Pacifist) or check_modifier(MOD.NoToppings)
@@ -113,19 +130,8 @@ function activate_panic()
 	global.wave = 0;
 	global.maxwave = global.fill;
 	
-	// panic backgrounds
 	with obj_persistent
 		event_user(1);
 	
-	fmod_event_instance_play(global.snd_escaperumble);
-	obj_camera.alarm[1] = 60;
-	
-	with obj_camera
-	{
-		shake_mag = 3;
-		shake_mag_acc = 3 / room_speed;
-	}
-	
-	instance_create(x, y + 600, obj_itspizzatime);
 	global.panic = true;
 }

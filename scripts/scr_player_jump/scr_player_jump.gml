@@ -74,6 +74,8 @@ function state_player_jump()
 			}
 			else if (!doublejump && sprite_index != spr_freefall && sprite_index != spr_facestomp)
 			{
+				fmod_event_one_shot_3d("event:/modded/sfx/woosh", x, y);
+				
 				sprite_index = spr_playerN_doublejump;
 				image_index = 0;
 				jumpstop = false;

@@ -23,7 +23,7 @@ function scr_create_pause_image()
 	draw_clear(c_black);
 	gpu_set_blendmode_ext(bm_one, bm_inv_src_alpha); // FIXES THE WEIRD DARKENING ISSUE!
 	
-	draw_surface(application_surface, 0, 0);
+	scr_draw_screen(0, 0, 1, 1);
 	draw_surface(obj_screensizer.gui_surf, 0, 0);
 	
 	shader_reset();

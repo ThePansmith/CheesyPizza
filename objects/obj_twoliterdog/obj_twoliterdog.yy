@@ -12,7 +12,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Midway",
-    "path": "folders/Objects/Baddie/Enemies/Midway.yy",
+    "path": "folders/Objects/CheesyPizza/Midway.yy",
   },
   "parentObjectId": {
     "name": "obj_baddie",

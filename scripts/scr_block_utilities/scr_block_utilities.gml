@@ -43,7 +43,46 @@ function scr_destroy_nearby_tiles()
 	instance_destroy(instance_place(x, y + 1, obj_tiledestroy));
 	instance_destroy(instance_place(x, y - 1, obj_tiledestroy));
 }
+
 function scr_cutoff()
+{
+	var big = (sprite_width % 64 == 0);
+	var smallblock = [0, 0, 0, 0];
+	
+	with instance_place(x, y + 1, obj_destructibles)
+		if (sprite_width % 64 != 0) smallblock[0] = true;
+	with instance_place(x + 1, y, obj_destructibles)
+		if (sprite_height % 64 != 0) smallblock[1] = true;
+	with instance_place(x, y - 1, obj_destructibles)
+		if (sprite_width % 64 != 0) smallblock[2] = true;
+	with instance_place(x - 1, y, obj_destructibles)
+		if (sprite_height % 64 != 0) smallblock[3] = true;
+	
+	with obj_cutoffsystem
+	{
+		// bottom
+		var b = big && !smallblock[0], r = (b ? 64 : 32);
+		for(var i = 0; i < other.sprite_width / r; i++)
+			add_cutoff(other.x + 32 * b + r * i, other.y + other.sprite_height, b, 0);
+		
+		// right
+		var b = big && !smallblock[1], r = (b ? 64 : 32);
+		for(var i = 0; i < other.sprite_height / r; i++)
+			add_cutoff(other.x + other.sprite_width, other.y + other.sprite_height - 32 * b - r * i, b, 90);
+		
+		// top
+		var b = big && !smallblock[2], r = (b ? 64 : 32);
+		for(var i = 0; i < other.sprite_width / r; i++)
+			add_cutoff(other.x + other.sprite_width - 32 * b - r * i, other.y, b, 180);
+		
+		// left
+		var b = big && !smallblock[3], r = (b ? 64 : 32);
+		for(var i = 0; i < other.sprite_height / r; i++)
+			add_cutoff(other.x, other.y + 32 * b + r * i, b, 270);
+	}
+}
+
+function scr_cutoff_old()
 {
 	with (instance_place(x, y, obj_cutoff))
 		instance_destroy();

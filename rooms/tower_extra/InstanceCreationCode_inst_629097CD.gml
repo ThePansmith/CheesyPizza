@@ -6,7 +6,7 @@ door_index = 3;
 sprite_index = spr_gate_street;
 bgsprite = spr_gate_streetBG;
 
-title_music = "event:/music/pto/citytitle";
+title_music = "event:/music/w4/streettitle";
 group_arr = ["citygroup"];
 
 title_index = 2;
