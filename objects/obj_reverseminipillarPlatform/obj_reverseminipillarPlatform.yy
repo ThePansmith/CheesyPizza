@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_minipillarwoke_bo",
-    "path": "sprites/spr_minipillarwoke_bo/spr_minipillarwoke_bo.yy",
+    "name": "spr_minipillarwoke_platform_bo",
+    "path": "sprites/spr_minipillarwoke_platform_bo/spr_minipillarwoke_platform_bo.yy",
   },
   "spriteMaskId": null,
   "visible": true,

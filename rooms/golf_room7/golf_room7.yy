@@ -28,7 +28,6 @@
     {"name":"inst_F26CDCF1","path":"rooms/golf_room7/golf_room7.yy",},
     {"name":"inst_FBD3B8D1","path":"rooms/golf_room7/golf_room7.yy",},
     {"name":"inst_80872649","path":"rooms/golf_room7/golf_room7.yy",},
-    {"name":"inst_F26CDCF1","path":"rooms/golf_room7/golf_room7.yy",},
   ],
   "isDnd": false,
   "layers": [

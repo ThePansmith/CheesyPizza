@@ -13,3 +13,9 @@ if (place_meeting(x + 1, y, object_index) && place_meeting(x - 1, y, object_inde
 	use_sound = false;
 if (use_sound && place_meeting(x + 1, y, object_index) && !place_meeting(x - 1, y, object_index))
 	use_sound = false;
+
+if check_midway()
+{
+	sprite_index = spr_ratblock_bo;
+	spr_dead = spr_ratblock_dead_bo;
+}

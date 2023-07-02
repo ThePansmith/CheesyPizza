@@ -12,5 +12,11 @@ else if obj_player1.character == "PP"
 	particlespr = -1;
 	spr_dead = spr_pizzablockdeadPP;
 }
+else if obj_player1.character == "BN"
+{
+	sprite_index = spr_destroyable2_bo;
+	particlespr = -1;
+	spr_dead = spr_pizzablockdead_bo;
+}
 image_index = random_range(0, image_number - 1);
 depth = 1;

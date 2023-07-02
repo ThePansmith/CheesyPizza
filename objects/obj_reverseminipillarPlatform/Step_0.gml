@@ -9,12 +9,12 @@ if (global.panic == false && player != 1)
 {
 	x = xstart;
 	y = ystart;
-	sprite_index = spr_minipillarplatformwoke;
-	mask_index = spr_minipillarplatformwoke;
+	sprite_index = spr_minipillarwoke_platform_bo;
+	mask_index = spr_minipillarwoke_platform_bo;
 }
 else
 {
 	x = -100;
 	y = -100;
-	sprite_index = spr_minipillarplatformsleep;
+	sprite_index = spr_minipillarsleep_platform_bo;
 }

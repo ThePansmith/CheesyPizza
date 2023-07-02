@@ -12,3 +12,10 @@ if check_sugary()
 	particlespr = spr_debris_ss;
 	particlespd = 0;
 }
+if check_midway()
+{
+	sprite_index = spr_towerblocksmall_bo;
+	image_speed = 0;
+	image_index = irandom(image_number);
+	particlespr = spr_towerblockdebris_bo;
+}

@@ -88,6 +88,7 @@ switch safe_get(global, "leveltosave")
 	case "sky": state = "Sky"; break;
 	case "ancient": state = "Ancient Tower"; break;
 	case "etb": state = "Early Test Build"; break;
+	case "grinch": state = "Grinch Race"; break;
 	
 	// sugary
 	case "entryway": state = "Crunchy Construction"; break;

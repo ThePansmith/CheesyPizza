@@ -1028,9 +1028,6 @@ function scr_characterspr()
 	
 	if (character == "PP")
 	{
-		global.mach_color1 = make_colour_rgb(96, 208, 72);
-		global.mach_color2 = make_colour_rgb(248, 0, 0);
-		
 		spr_idle = spr_playerPP_idle;
 		spr_move = spr_playerPP_move;
 		spr_crawl = spr_playerPP_crawl;
@@ -1514,9 +1511,6 @@ function scr_characterspr()
 	
 	if (character == "BN")
 	{
-		global.mach_color1 = make_colour_rgb(255, 155, 20);
-		global.mach_color2 = make_colour_rgb(90, 165, 255);
-		
 		spr_idle = spr_playerBN_idle;
 		spr_move = spr_playerBN_move;
 		spr_crawl = spr_playerBN_crawl;

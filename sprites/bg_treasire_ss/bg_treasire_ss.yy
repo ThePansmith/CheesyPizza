@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Backgrounds",
-    "path": "folders/Sprites/Backgrounds.yy",
+    "name": "BGs and Tiles",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

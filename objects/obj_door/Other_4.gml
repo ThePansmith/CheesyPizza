@@ -67,3 +67,5 @@ if string_ends_with(room_get_name(room), "_treasure")
 	visible = false;
 if variable_instance_exists(id, "target_x") && variable_instance_exists(id, "target_y")
 	compatibility = true;
+if check_midway()
+	sprite_index = spr_midwaydoor;

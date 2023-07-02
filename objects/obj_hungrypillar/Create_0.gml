@@ -9,9 +9,21 @@ if (room == rm_editor)
 			y += 1;
 	}
 }
+
+idlespr = spr_hungrypillar;
+angryspr = spr_hungrypillar_angry;
 deadspr = spr_hungrypillar_dead;
+
 if check_sugary()
 {
-	sprite_index = spr_hungrypillar_ss
-	deadspr = spr_hungrypillar_dead_ss
+	idlespr = spr_hungrypillar_ss;
+	angryspr = idlespr;
+	deadspr = spr_hungrypillar_dead_ss;
 }
+if check_midway()
+{
+	idlespr = spr_hungrypillar_bo;
+	angryspr = idlespr;
+	deadspr = spr_hungrypillar_angry_bo;
+}
+sprite_index = idlespr;

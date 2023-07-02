@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_minipillarsleep_bo",
-    "path": "sprites/spr_minipillarsleep_bo/spr_minipillarsleep_bo.yy",
+    "name": "spr_minipillarsleep_platform_bo",
+    "path": "sprites/spr_minipillarsleep_platform_bo/spr_minipillarsleep_platform_bo.yy",
   },
   "spriteMaskId": null,
   "visible": true,

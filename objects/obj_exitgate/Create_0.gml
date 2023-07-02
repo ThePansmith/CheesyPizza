@@ -26,3 +26,6 @@ if sugary
 	sprite_index = spr_sugarygateopen;
 	image_index = 0;
 }
+
+if check_midway()
+	sprite_index = spr_exitgate_bo;

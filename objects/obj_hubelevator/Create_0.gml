@@ -27,6 +27,7 @@ hub_array = [
 	[2, tower_2, "E"],
 	[1, tower_1, "E"],
 	[0, tower_extra, "G"],
+	[6, tower_sugary, "A"],
 ]
 targetDoor = "A";
 sel = 0;

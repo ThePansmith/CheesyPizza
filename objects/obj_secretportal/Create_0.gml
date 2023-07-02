@@ -27,3 +27,12 @@ if sugary
 	sprite_index = spr_idle;
 	mask_index = spr_idle;
 }
+
+if check_midway()
+{
+	spr_open = spr_secretportal_open_bo;
+	spr_idle = spr_secretportal_idle_bo;
+	spr_close = spr_secretportal_close_bo;
+	sprite_index = spr_idle;
+	mask_index = spr_idle;
+}

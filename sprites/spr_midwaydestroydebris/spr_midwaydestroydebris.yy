@@ -29,8 +29,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Scenery",
-    "path": "folders/Sprites/CheesyPizza/Level Assets/Midway/Scenery.yy",
+    "name": "Midway",
+    "path": "folders/Sprites/CheesyPizza/Level Assets/Midway.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

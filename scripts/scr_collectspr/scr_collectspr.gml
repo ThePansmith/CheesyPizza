@@ -28,7 +28,11 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 					break;
 				
 				case "S":
-					spr = choose(spr_snickcollectible1);
+					spr = spr_snickcollectible1;
+					break;
+				
+				case "BN":
+					spr = choose(spr_halloweencollectibles1_bo, spr_halloweencollectibles2_bo, spr_halloweencollectibles3_bo, spr_halloweencollectibles4_bo, spr_halloweencollectibles5_bo);
 					break;
 			}
 			break;
@@ -53,7 +57,11 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 					break;
 				
 				case "S":
-					spr = choose(spr_snickcollectible2);
+					spr = spr_snickcollectible2;
+					break;
+				
+				case "BN":
+					spr = choose(spr_pizzacollect1halloween_bo, spr_pizzacollect2halloween_bo, spr_pizzacollect3halloween_bo);
 					break;
 			}
 			break;
@@ -78,7 +86,7 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 					break;
 				
 				case "S":
-					spr = choose(spr_snickcollectible3);
+					spr = spr_snickcollectible3;
 					break;
 			}
 			break;

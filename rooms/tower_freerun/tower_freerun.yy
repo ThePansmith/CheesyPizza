@@ -47,7 +47,7 @@
   ],
   "parent": {
     "name": "Tower",
-    "path": "folders/Rooms/Tower.yy",
+    "path": "folders/Rooms/CheesyPizza/Tower.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

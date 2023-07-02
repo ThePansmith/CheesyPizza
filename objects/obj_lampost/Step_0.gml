@@ -1,3 +1,4 @@
+sprite_index = REMIX ? spr_lampostpanic_NEW : spr_lampostpanic;
 if global.panic
 {
 	if sprite_index == spr_lampostpanic_NEW

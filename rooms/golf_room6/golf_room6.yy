@@ -55,7 +55,6 @@
     {"name":"inst_7A01E910","path":"rooms/golf_room6/golf_room6.yy",},
     {"name":"inst_7468C5F0","path":"rooms/golf_room6/golf_room6.yy",},
     {"name":"inst_082C4378","path":"rooms/golf_room6/golf_room6.yy",},
-    {"name":"inst_7A01E910","path":"rooms/golf_room6/golf_room6.yy",},
   ],
   "isDnd": false,
   "layers": [
