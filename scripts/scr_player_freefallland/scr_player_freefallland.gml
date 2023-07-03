@@ -33,9 +33,12 @@ function scr_player_freefallland()
 	}
 	else if (floor(image_index) == (image_number - 1))
 	{
-		facehurt = true;
-		sprite_index = spr_facehurtup;
-		image_index = 0;
+		if character != "S"
+		{
+			facehurt = true;
+			sprite_index = spr_facehurtup;
+			image_index = 0;
+		}
 		state = states.normal;
 		jumpstop = true;
 	}

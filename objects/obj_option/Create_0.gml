@@ -12,6 +12,9 @@ enum menus
 	unused_2, // 9, related to controls.
 	deadzone,
 	unused_3, // 11, related to controls.
+	
+	// pto
+	inputdisplay
 }
 enum anchor
 {
@@ -451,5 +454,38 @@ add_option_slide(deadzones_menu, 5, "option_deadzone_crouch", function(val)
 }).value = (global.gamepad_deadzone_crouch * 100);
 
 array_push(menus, deadzones_menu);
+
+#endregion
+
+#region inputdisplay menu
+
+var inputdisplay_menu = create_menu_fixed(menus.inputdisplay, anchor.left, 150, 40, menus.options);
+add_option_press(inputdisplay_menu, 0, "option_back", function()
+{
+	with obj_inputdisplay
+		savekeys();
+	with obj_modconfig
+		visible = true;
+	
+	menu_goto(menus.options);
+});
+
+if instance_exists(obj_inputdisplay)
+{
+	add_option_toggle(inputdisplay_menu, 1, "ACTIVE", function(val)
+	{
+		global.inputdisplay = val;
+	}).value = global.inputdisplay;
+
+	add_option_slide(inputdisplay_menu, 2, "OPACITY", function(val)
+	{
+		if val >= 100
+			obj_inputdisplay.keyalpha = 1;
+		else
+			obj_inputdisplay.keyalpha = (val / 100) / 2;
+	}).value = obj_inputdisplay.keyalpha * 100;
+}
+
+array_push(menus, inputdisplay_menu);
 
 #endregion

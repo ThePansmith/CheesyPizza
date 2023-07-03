@@ -7,6 +7,7 @@ scr_init_input();
 stickpressed = false;
 con = 0;
 t = 0;
+buffer = 0;
 
 options_array = [];
 function add_option(name, variable, desc = "", drawfunc = noone)
@@ -19,6 +20,18 @@ function add_option(name, variable, desc = "", drawfunc = noone)
 		desc: desc,
 		opts: [["OFF", false], ["ON", true]],
 		drawfunc: drawfunc
+	}
+	array_push(options_array, struct);
+	return struct;
+}
+function add_button(name, desc = "", func = noone)
+{
+	var struct = {
+		type: 2,
+		value: 0,
+		name: name,
+		desc: desc,
+		func: func
 	}
 	array_push(options_array, struct);
 	return struct;
@@ -105,9 +118,12 @@ var opt = add_option("Remix", "gameplay", "Adds extra quality of life improvemen
 	}
 	else
 	{
-		draw_sprite_ext(spr_player_mach, 0, 240, 150, 1, 1, 0, global.mach_color1, 1);
-		draw_sprite_ext(spr_player_mach, 1, 290, 150, 1, 1, 0, global.mach_color2, 1);
-		draw_sprite_ext(spr_player_mach, 2, 340, 150, 1, 1, 0, global.mach_color1, 1);
+		var mach_color1 = make_colour_rgb(96, 208, 72);
+		var mach_color2 = make_colour_rgb(248, 0, 0);
+		
+		draw_sprite_ext(spr_player_mach, 0, 240, 150, 1, 1, 0, mach_color1, 1);
+		draw_sprite_ext(spr_player_mach, 2, 340, 150, 1, 1, 0, mach_color1, 1);
+		draw_sprite_ext(spr_player_mach, 1, 290, 150, 1, 1, 0, mach_color2, 1);
 	}
 });
 opt.value = global.gameplay;
@@ -490,35 +506,15 @@ opt.value = global.shootbutton;
 #endregion
 #region INPUT DISPLAY
 
-var opt = add_option("Input Display", "inputdisplay", "An in-game input display. You can drag it around with your mouse.", function(val)
+add_button("Input Display", "An in-game input display. You can drag it around with your mouse.", function()
 {
-	if val
-	with obj_inputdisplay
+	visible = false;
+	with obj_option
 	{
-		for(var i = 0; i < array_length(inputkeys); i++)
-		{
-			var k = inputkeys[i];
-			
-			var xx = k.x * keysize + k.x * keysep;
-			var yy = k.y * keysize + k.y * keysep;
-			
-			xx += 232 / 3;
-			yy += 32;
-			
-			draw_inputdisplay_key(xx, yy, k.key, k.keyw * keysize + (k.keyw - 1) * keysep, k.keyh * keysize + (k.keyh - 1) * keysep);
-		}
-	}
-	else
-	{
-		draw_set_font(global.font_small);
-		draw_set_align(1, 1);
-		draw_set_alpha(0.75);
-		draw_text(960 / 2.5 / 2, 540 / 2.5 / 2, "(Disabled)");
-		draw_set_align();
-		draw_set_alpha(1);
+		//menu_goto(menus.inputdisplay);
+		menu_goto(12);
 	}
 });
-opt.value = global.inputdisplay;
 
 #endregion
 
@@ -600,6 +596,40 @@ var opt = add_option("Slope Rotation", "sloperot", "Rotates the player when stan
 	draw_simuplayer();
 });
 opt.value = global.sloperot;
+
+#endregion
+#region SHOW FPS
+
+showfps = 60;
+showfps_t = 60;
+
+var opt = add_option("FPS Counter", "showfps", "Shows an FPS counter at the bottom right of the screen.", function(val)
+{
+	if showfps_t > 0
+		showfps_t--;
+	else
+	{
+		showfps = irandom_range(10, 60);
+		showfps_t = 60;
+	}
+	
+	simuplayer.image += 0.35 * (showfps / 60);
+	simuplayer.state = states.actor;
+	
+	if val
+	{
+		draw_set_font(global.font_small);
+		draw_set_colour(showfps < 30 ? showfps < 15 ? c_red : c_yellow : c_white);
+		draw_set_align(fa_right);
+		draw_text_transformed(960 / 2.5 - 20, 540 / 2.5 - 50, string(showfps), 2, 2, 0);
+		draw_set_align();
+	}
+	
+	shader_set(global.Pal_Shader);
+	pal_swap_set(spr_peppalette, 1, false);
+	draw_sprite_ext(spr_player_move, simuplayer.image, 960 / 2.5 / 4, 100, 2, 2, 0, c_white, 1);
+	pal_swap_reset();
+});
 
 #endregion
 

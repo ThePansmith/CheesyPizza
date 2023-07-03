@@ -77,8 +77,9 @@ global.swapgrab = ini_read_real("Modded", "swapgrab", false);
 // visual settings
 global.panicbg = ini_read_real("Modded", "panicbg", true);
 global.panictilt = ini_read_real("Modded", "panictilt", false);
-global.sloperot = ini_read_real("Modded", "sloperot", true);
+global.sloperot = ini_read_real("Modded", "sloperot", false);
 global.inputdisplay = ini_read_real("Modded", "inputdisplay", false);
+global.showfps = ini_read_real("Modded", "showfps", false);
 ini_close();
 
 // etc

@@ -1,9 +1,22 @@
 if live_call() return live_result;
-scr_getinput();
 
+// subsection
+if !visible
+{
+	buffer = 5;
+	exit;
+}
+if buffer > 0
+{
+	buffer--;
+	exit;
+}
+
+// get input
+scr_getinput();
 key_back = safe_get(obj_option, "key_back") or key_slap2;
 
-// go back
+// save and go back
 if key_back or keyboard_check_pressed(vk_escape)
 {
 	ini_open_from_string(obj_savesystem.ini_str_options);
@@ -21,6 +34,7 @@ if key_back or keyboard_check_pressed(vk_escape)
 				ini_write_string("Modded", opt.vari, value);
 		}
 	}
+	ini_write_string("Modded", "inputdisplay", global.inputdisplay);
 	obj_savesystem.ini_str_options = ini_close();
 	gamesave_async_save_options();
 	
@@ -79,14 +93,17 @@ if move2 != 0
 	image_index = 8;
 	xo = 10;
 	
-	simuplayer.changed = true;
 	var opt = options_array[sel];
+	if opt.type == 0
+	{
+		simuplayer.changed = true;
 	
-	var valueold = opt.value;
-	opt.value = clamp(opt.value + move2, 0, array_length(opt.opts) - 1);
+		var valueold = opt.value;
+		opt.value = clamp(opt.value + move2, 0, array_length(opt.opts) - 1);
 	
-	if valueold != opt.value
-		sound_play_oneshot(sfx_step);
+		if valueold != opt.value
+			sound_play_oneshot(sfx_step);
+	}
 }
 if key_jump
 {
@@ -94,8 +111,15 @@ if key_jump
 	xo = 10;
 	
 	sound_play_oneshot(sfx_select);
+	
 	var opt = options_array[sel];
-	opt.value = wrap(opt.value + 1, 0, array_length(opt.opts) - 1);
+	if opt.type == 0
+		opt.value = wrap(opt.value + 1, 0, array_length(opt.opts) - 1);
+	else if opt.type == 2
+	{
+		if is_callable(opt.func)
+			opt.func();
+	}
 }
 
 // figure out scroll
@@ -105,7 +129,7 @@ for(var i = 0; i < array_length(options_array); i++)
 	var opt = options_array[i];
 	switch opt.type
 	{
-		case 0: // normal
+		case 0: case 2: // normal
 			yy += 20;
 			break;
 		

@@ -1,15 +1,3 @@
-if live_call() return live_result;
-
-hub_array = [
-	[5, tower_5, "E"],
-	[4, tower_4, "B"],
-	[3, tower_3, "C"],
-	[2, tower_2, "E"],
-	[1, tower_1, "E"],
-	[0, tower_extra, "G"],
-	[6, tower_sugary, "A"],
-]
-
 if state == 1 or state == 3
 {
 	var len = array_length(hub_array);

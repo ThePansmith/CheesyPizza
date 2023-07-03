@@ -84,9 +84,9 @@ function Instakill()
 	{
 		image_index = random_range(0, image_number - 1);
 		if (grounded)
-			sprite_index = spr_player_groundedattack;
+			sprite_index = spr_groundedattack;
 		else
-			sprite_index = spr_player_ungroundedattack;
+			sprite_index = spr_ungroundedattack;
 	}
 	if (state == states.chainsawbump && !global.kungfu)
 	{

@@ -154,6 +154,7 @@ function scr_pause_deactivate_objects(pause_sounds = true)
 	instance_activate_object(obj_persistent);
 	instance_activate_object(obj_shell);
 	instance_activate_object(obj_richpresence);
+	instance_activate_object(obj_inputdisplay);
 }
 function pause_spawn_priests()
 {

@@ -56,7 +56,7 @@ if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 scr_scareenemy();
 var player = instance_nearest(x, y, obj_player);
-if (elite or global.stylethreshold >= 3)
+if (elite or global.stylethreshold >= 3) && !bo
 {
 	var check = (image_xscale > 0) ? (player.x > x && player.x < (x + 200)) : (player.x < x && player.x > (x - 200));
 	if (state == states.walk)

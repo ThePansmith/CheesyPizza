@@ -12,14 +12,13 @@ if other.object_index == obj_spitcheesespike or other.object_index == obj_bandit
 }
 if other.object_index == obj_forkhitbox
 	obj_player.parryID = other.ID;
-if REMIX && other.object_index == obj_pizzacutter2
+
+if REMIX && other.object_index == obj_pizzacutter2 && instance_exists(other.handleID)
 {
-	if instance_exists(other.handleID)
-	{
-		var dir = sign(lerp(bbox_left, bbox_right, 0.5) - obj_player1.x);
-		if dir != 0
-			other.handleID.spinspeed = abs(other.handleID.spinspeed) * dir;
-	}
+	//var dir = sign(lerp(other.handleID.bbox_left, other.handleID.bbox_right, 0.5) - obj_player1.x);
+	//if dir != 0
+	//	obj_player1.xscale = dir;
+	other.handleID.spinspeed *= -1;
 }
 
 if !collisioned

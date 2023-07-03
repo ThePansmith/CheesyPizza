@@ -54,7 +54,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 if (state != states.stun)
 	birdcreated = false;
 scr_scareenemy();
-if ((elite or global.stylethreshold >= 3) && ragecooldown == 0)
+if ((elite or global.stylethreshold >= 3) && ragecooldown == 0 && !bo)
 {
 	var player = instance_nearest(x, y, obj_player);
 	var check = (image_xscale > 0) ? (player.x > x && player.x < (x + 400)) : (player.x < x && player.x > (x - 400));

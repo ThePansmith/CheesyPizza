@@ -170,6 +170,10 @@ if state == ""
 		// pto
 		if room == tower_extra
 			state = "Scrapped Tower";
+		if room == tower_extra2
+			state = "Extra Tower";
+		if room == tower_sugary
+			state = "The Sugary Spire";
 		if room == tower_hubroomE
 			state = "Abandoned Tower";
 		if room == tower_baby

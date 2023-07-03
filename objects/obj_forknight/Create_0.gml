@@ -41,7 +41,8 @@ stuntouchbuffer = 0;
 ragedash = 0;
 ragecooldown = 0;
 
-if check_midway()
+bo = check_midway();
+if bo
 {
 	walkspr = spr_pinhead_walk;
 	grabbedspr = spr_pinhead_stun;
@@ -50,4 +51,5 @@ if check_midway()
 	spr_dead = spr_pinhead_dead;
 	turnspr = spr_pinhead_turn;
 	sprite_index = walkspr;
+	usepalette = false;
 }

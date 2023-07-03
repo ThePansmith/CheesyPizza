@@ -1,5 +1,5 @@
 live_auto_call;
-if instance_exists(obj_option)
+if instance_exists(obj_option) && obj_option.menus[obj_option.menu].menu_id != menus.inputdisplay
 	exit;
 
 scr_getinput(true);
@@ -35,14 +35,13 @@ if global.inputdisplay
 	// dont block the view
 	var left = x, right = x + maxx, top = y, bottom = y + maxy;
 	
+	image_alpha = keyalpha;
 	if instance_exists(obj_player1)
 	{
 		var px = obj_player1.x - _camx, py = obj_player1.y - _camy;
 		if px >= left - 25 && px <= right + 25
 		&& py >= top - 50 && py <= bottom + 25
-			image_alpha = 0.35;
-		else
-			image_alpha = 1;
+			image_alpha = min(keyalpha, 0.25);
 	}
 	
 	// customize

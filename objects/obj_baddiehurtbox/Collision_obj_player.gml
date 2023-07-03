@@ -1,2 +1,2 @@
-if (team == 0)
+if !team
 	scr_hurtplayer(other);

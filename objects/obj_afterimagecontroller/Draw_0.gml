@@ -60,13 +60,23 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			}
 			else if ((identifier == afterimage.mach3effect or identifier == afterimage.simple)/* && REMIX*/)
 			{
-				shader_set(shd_mach3effect);
-				shd = true;
+				if REMIX or check_char("SP")
+				{
+					shader_set(shd_mach3effect);
+					shd = true;
 				
-				shader_set_uniform_f(other.color1, color_get_red(b) / 255, color_get_green(b) / 255, color_get_blue(b) / 255);
-				b = make_color_hsv(color_get_hue(b), color_get_saturation(b) * 1.25, 35);
-				shader_set_uniform_f(other.color2, color_get_red(b) / 255, color_get_green(b) / 255, color_get_blue(b) / 255);
-				b = c_white;
+					shader_set_uniform_f(other.color1, color_get_red(b) / 255, color_get_green(b) / 255, color_get_blue(b) / 255);
+					b = make_color_hsv(color_get_hue(b), color_get_saturation(b) * 1.25, 35);
+					shader_set_uniform_f(other.color2, color_get_red(b) / 255, color_get_green(b) / 255, color_get_blue(b) / 255);
+					b = c_white;
+				}
+				else
+				{
+					if b == global.mach_color1
+						b = mach_color1;
+					if b == global.mach_color2
+						b = mach_color2;
+				}
 			}
 			draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, b, a);
 			if (shd)

@@ -1,1 +1,1 @@
-team = 0;
+team = false;

@@ -266,7 +266,7 @@ function scr_player_climbwall()
 			
 			if (grabclimbbuffer > 0)
 				grabclimbbuffer--;
-			if (move != xscale && grabclimbbuffer == 0)
+			if (move == 0 && !(-key_left && key_right) && grabclimbbuffer == 0)
 			{
 				state =	states.normal;
 				movespeed = 0;

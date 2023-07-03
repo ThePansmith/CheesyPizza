@@ -2,12 +2,12 @@ draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
 for (var i = 0; i < array_length(bg_alpha); i++)
 	draw_sprite_tiled_ext(spr_optionsBG, i, bg_x, bg_y, 1, 1, c_white, bg_alpha[i]);
 
-if (room != Mainmenu)
+if room != Mainmenu
 {
-	with (obj_keyconfig)
+	with obj_keyconfig
 		event_perform(ev_draw, ev_gui);
 }
-if (instance_exists(obj_keyconfig) or instance_exists(obj_screenconfirm) or instance_exists(obj_modconfig))
+if instance_exists(obj_keyconfig) or instance_exists(obj_screenconfirm) or safe_get(obj_modconfig, "visible")
 	exit;
 
 draw_set_font(lang_get_font("bigfont"));
@@ -58,10 +58,14 @@ switch (m.anchor)
 			if (i == _os)
 				c = c_white;
 			
-			if (o.type == menutype.press && !o.localization)
+			if o.type == menutype.press && !o.localization
                 var txt = o.name;
             else
+			{
                 var txt = lang_get_value(o.name);
+				if is_undefined(txt)
+					txt = o.name;
+			}
             draw_text_color(xx, yy + (m.ypad * i), txt, c, c, c, c, a);
 			
 			draw_set_halign(fa_right);

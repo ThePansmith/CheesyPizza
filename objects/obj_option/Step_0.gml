@@ -3,20 +3,24 @@ var m = menus[menu];
 
 if instance_exists(obj_keyconfig)
 	j = 4;
-if (m.menu_id >= menus.controls && m.menu_id <= menus.unused_3)
+
+if m.menu_id >= menus.controls && m.menu_id <= menus.unused_3
     j = 4;
-else if (m.menu_id >= menus.video && m.menu_id <= menus.unused_1)
+else if m.menu_id >= menus.video && m.menu_id <= menus.unused_1
     j = 2;
-else if (m.menu_id == menus.audio)
+else if m.menu_id == menus.audio
     j = 1;
-else if (m.menu_id == menus.game)
+else if m.menu_id == menus.game
     j = 3;
-if instance_exists(obj_modconfig)
+else if m.menu_id == menus.inputdisplay
+	j = 4;
+
+if safe_get(obj_modconfig, "visible")
 	j = 5;
 
 for (var i = 0; i < array_length(bg_alpha); i++)
 {
-	if (i == j)
+	if i == j
 		bg_alpha[i] = Approach(bg_alpha[i], 1, 0.1);
 	else
 		bg_alpha[i] = Approach(bg_alpha[i], 0, 0.05);
@@ -25,7 +29,7 @@ for (var i = 0; i < array_length(bg_alpha); i++)
 bg_x -= 1;
 bg_y -= 1;
 
-if (instance_exists(obj_keyconfig) or instance_exists(obj_screenconfirm) or instance_exists(obj_modconfig))
+if instance_exists(obj_keyconfig) or instance_exists(obj_screenconfirm) or safe_get(obj_modconfig, "visible")
 	exit;
 scr_getinput();
 
@@ -147,23 +151,39 @@ if (slidebuffer > 0)
 if ((key_back or key_slap2 or keyboard_check_pressed(vk_escape)) && !instance_exists(obj_keyconfig) && !instance_exists(obj_audioconfig))
 {
 	fmod_event_one_shot("event:/sfx/ui/back");
-	if (menu == menus.options)
+	if menu == menus.options
 	{
-		if (instance_exists(obj_mainmenuselect))
+		if instance_exists(obj_mainmenuselect)
 			obj_mainmenuselect.selected = false;
 		instance_destroy();
 	}
 	else
 	{
-		for (i = 0; i < array_length(m.options); i++)
+		// look for back button
+		var emptyhanded = true;
+		for(var i = 0; i < array_length(m.options); i++)
 		{
-			b = m.options[i];
-			if (b.type == menutype.slide)
+			if m.options[i].name == "option_back"
 			{
-				if (b.sound != -4)
-					fmod_event_instance_stop(b.sound, true);
+				emptyhanded = false;
+				m.options[i].func();
+				break;
 			}
 		}
-		menu_goto(m.backmenu);
+		
+		// fallback, old method
+		if emptyhanded
+		{
+			for (i = 0; i < array_length(m.options); i++)
+			{
+				b = m.options[i];
+				if b.type == menutype.slide
+				{
+					if b.sound != -4
+						fmod_event_instance_stop(b.sound, true);
+				}
+			}
+			menu_goto(m.backmenu);
+		}
 	}
 }

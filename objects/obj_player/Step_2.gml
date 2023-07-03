@@ -1,8 +1,8 @@
 /// @description slope rotation
-if global.sloperot && state != states.knightpepslopes && state != states.Sjumpprep && sprite_index != spr_playerN_jetpackboost
+if global.sloperot && state != states.knightpepslopes && state != states.Sjumpprep && state != states.Sjump && !(state == states.machroll && character == "S") && sprite_index != spr_playerN_jetpackboost
 {
 	var angle_target = 0, angle_spd = 0.6;
-	if state != states.backbreaker
+	if state != states.backbreaker && grounded && vsp >= 0
 	{
 		var slope = instance_place(x, y + 1, obj_slope_parent);
 		if slope

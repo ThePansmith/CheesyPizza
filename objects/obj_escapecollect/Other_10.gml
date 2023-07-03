@@ -1,39 +1,28 @@
 /// @description time gain
-if (global.laps > 1)
+if instance_exists(obj_pizzaface) or global.laps < 2
+	exit;
+
+if !instance_exists(obj_wartimer)
 {
-	if !instance_exists(obj_wartimer)
+	switch obj_player1.character
 	{
-		switch obj_player1.character
-		{
-			case "SP":
-				global.fill += 6;
-				break;
-			case "G":
-				global.fill += 9;
-				break;
-			default:
-				global.fill += 7;
-				break;
-		}
+		case "SP":
+			global.fill += 6;
+			break;
+		case "G":
+			global.fill += 9;
+			break;
+		default:
+			global.fill += 7;
+			break;
 	}
-	else with (obj_wartimer)
+}
+else with obj_wartimer
+{
+	seconds += 0.5;
+	while seconds >= 60
 	{
-		switch obj_player1.character
-		{
-			case "SP":
-				seconds += 0.4;
-				break;
-			case "G":
-				seconds += 0.6;
-				break;
-			default:
-				seconds += 0.5;
-				break;
-		}
-		while seconds >= 60
-		{
-			minutes++;
-			seconds -= 60;
-		}
+		minutes++;
+		seconds -= 60;
 	}
 }

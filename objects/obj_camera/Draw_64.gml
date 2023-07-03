@@ -45,10 +45,13 @@ if (obj_player.state != states.dead)
 	if global.heatmeter && cmb < global.stylethreshold
 		cmb = global.stylethreshold;
 	
+	if bo
+		cmb = 1;
+	
 	pizzascore_index = (pizzascore_index + (0.25 * cmb)) % pizzascore_number;
-	if (global.stylethreshold <= 0)
+	if cmb <= 0
 	{
-		if (floor(pizzascore_index) != 0)
+		if floor(pizzascore_index) != 0
 			pizzascore_index += 0.35;
 		else
 			pizzascore_index = 0;
@@ -147,6 +150,7 @@ if (obj_player.state != states.dead)
 	
 	var rx = hud_xx + 142;
 	var ry = hud_yy - 22;
+	
 	var rank_ix = 0;
 	if (_score >= global.srank && scr_is_p_rank())
 		rank_ix = 5;
@@ -158,6 +162,7 @@ if (obj_player.state != states.dead)
 		rank_ix = 2;
 	else if (_score >= global.crank)
 		rank_ix = 1;
+	
 	if (previousrank != rank_ix)
 	{
 		var _snd = global.snd_rankup;
@@ -169,6 +174,7 @@ if (obj_player.state != states.dead)
 		rank_scale = 3;
 	}
 	rank_scale = Approach(rank_scale, 1, 0.2);
+	
 	var ranksprite = spr_ranks_hud
 	if sugary
 		ranksprite = spr_ranks_hudSP
@@ -177,6 +183,7 @@ if (obj_player.state != states.dead)
 	else if bo
 		ranksprite = spr_ranks_hudBN
 	draw_sprite_ext(ranksprite, rank_ix, rx, ry, rank_scale, rank_scale, 0, c_white, 1);
+	
 	var spr_w = sprite_get_width(spr_ranks_hudfill);
 	var spr_h = sprite_get_height(spr_ranks_hudfill);
 	var spr_xo = sprite_get_xoffset(spr_ranks_hudfill);
@@ -199,6 +206,7 @@ if (obj_player.state != states.dead)
 		default:
 			perc = _score / global.crank;
 	}
+	
 	var t = spr_h * perc;
 	var top = spr_h - t;
 	var rankfillsprite = spr_ranks_hudfill
@@ -210,9 +218,11 @@ if (obj_player.state != states.dead)
 		rankfillsprite = spr_ranks_hudfillBN
 	else
 		rankfillsprite = spr_ranks_hudfill
+	
 	draw_sprite_part(rankfillsprite, rank_ix, 0, top, spr_w, spr_h - top, rx - spr_xo, (ry - spr_yo) + top);
 	draw_set_valign(0);
 	draw_set_halign(0);
+	
 	var collectfont = global.collectfont
 	if sugary
 		collectfont = global.collectfontSP 
@@ -222,30 +232,35 @@ if (obj_player.state != states.dead)
 		collectfont = global.collectfontBN
 	else
 		collectfont = global.collectfont
+		
 	draw_set_font(collectfont);
 	var text_y = 0;
-	switch (floor(pizzascore_index))
+	if !bo
 	{
-		case 1:
-		case 2:
-		case 3:
-			text_y = 1;
-			break;
-		case 5:
-		case 10:
-			text_y = -1;
-			break;
-		case 6:
-		case 9:
-			text_y = -2;
-			break;
-		case 7:
-			text_y = -3;
-			break;
-		case 8:
-			text_y = -5;
-			break;
+		switch floor(pizzascore_index)
+		{
+			case 1:
+			case 2:
+			case 3:
+				text_y = 1;
+				break;
+			case 5:
+			case 10:
+				text_y = -1;
+				break;
+			case 6:
+			case 9:
+				text_y = -2;
+				break;
+			case 7:
+				text_y = -3;
+				break;
+			case 8:
+				text_y = -5;
+				break;
+		}
 	}
+	
 	var cs = 0;
 	with (obj_comboend)
 		cs += comboscore;
