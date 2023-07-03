@@ -391,4 +391,7 @@ else if !instance_exists(obj_endlevelfade)
 	greyscale = 0;
 }
 else
+{
 	camera_set_view_angle(view_camera[0], Approach(camera_get_view_angle(view_camera[0]), 0, 15));
+	greyscale = Approach(greyscale, 0, 0.01);
+}

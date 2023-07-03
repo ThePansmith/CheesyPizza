@@ -4,6 +4,11 @@ if room_started
 	exit;
 room_started = true;
 
+// boss backgrounds ignore new system
+old_bg = false;
+if string_starts_with(room_get_name(room), "boss")
+	old_bg = true;
+
 // fuck
 var layers = layer_get_all();
 for (var i = 0; i < array_length(layers); i++)
@@ -71,7 +76,7 @@ for (var i = 0; i < array_length(layers); i++)
 	}
 	
 	// Backgrounds
-	if layer_background_get_id(lay) != -1 && room != boss_pizzafacefinale
+	if layer_background_get_id(lay) != -1 && !old_bg
 	{
 		/*
 		if 1000 + layer_get_depth(lay) < 16000

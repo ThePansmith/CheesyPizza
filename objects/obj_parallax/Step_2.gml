@@ -45,8 +45,6 @@ function layer_get_parallax(lay)
 			if n == "Backgrounds_still1"
 				per = 0.3;
 			
-			var per_x = _cam_x / (room_width - SCREEN_WIDTH);
-			var per_y = _cam_y / (room_height - SCREEN_HEIGHT);
 			var bg_x = calculate_parallax_still_x(lay, per);
 			var bg_y = calculate_parallax_still_y(lay, per);
 			return [_cam_x - bg_x, _cam_y - bg_y];

@@ -13,3 +13,4 @@ bg_surface = -1;
 fg_surface = -1;
 background_layers = [];
 do_foreground = false;
+old_bg = false;

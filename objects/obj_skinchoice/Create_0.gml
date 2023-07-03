@@ -211,7 +211,7 @@ draw = function(curve)
 		pattern_reset();
 		
 		// arrows
-		if sel.pal > 0 or (mixing && sel.mix > 0)
+		if (sel.pal > 0 && !mixing) or (mixing && sel.mix > 0)
 		{
 			var xx = 960 / 2 - 120 - sin(current_time / 200) * 4, yy = 540 / 2 + 16;
 			if charshift[0] < 0
@@ -225,7 +225,7 @@ draw = function(curve)
 			else
 				draw_sprite_ext(spr_palettearrow, 0, xx, yy, 1, 1, 90, pal_swap_get_pal_color(characters[sel.char][2], mixing ? mixables[sel.mix - 1].palette : palettes[sel.pal - 1].palette, characters[sel.char][3][mixing]), 1);
 		}
-		if sel.pal < array_length(palettes) - 1 or (mixing && sel.mix < array_length(mixables) - 1)
+		if (sel.pal < array_length(palettes) - 1 && !mixing) or (mixing && sel.mix < array_length(mixables) - 1)
 		{
 			var xx = 960 / 2 + 120 + sin(current_time / 200) * 4, yy = 540 / 2 + 16;
 			if charshift[0] > 0

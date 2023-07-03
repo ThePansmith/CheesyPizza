@@ -40,4 +40,5 @@ if (object_index == obj_cheeseslime && snotty)
 }
 if (safe_get(id, "elite") or global.stylethreshold >= 3) && usepalette
 && object_index != obj_sausageman && (object_index != obj_kentukykenny or !important)
+&& object_index != obj_ninja
 	paletteselect = elitepal;

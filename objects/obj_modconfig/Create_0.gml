@@ -619,7 +619,7 @@ var opt = add_option("FPS Counter", "showfps", "Shows an FPS counter at the bott
 	if val
 	{
 		draw_set_font(global.font_small);
-		draw_set_colour(showfps < 30 ? showfps < 15 ? c_red : c_yellow : c_white);
+		draw_set_colour(showfps < 30 ? (showfps < 15 ? c_red : c_yellow) : c_white);
 		draw_set_align(fa_right);
 		draw_text_transformed(960 / 2.5 - 20, 540 / 2.5 - 50, string(showfps), 2, 2, 0);
 		draw_set_align();
