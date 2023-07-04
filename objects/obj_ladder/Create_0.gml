@@ -5,5 +5,5 @@ if check_sugary()
 	sprite_index = spr_ladder_sugary;
 	depth = -1;
 }
-if global.leveltosave == "grinch"
+if global.leveltosave == "grinch" or global.leveltosave == "etb" or global.leveltosave == "ancient"
 	visible = true;

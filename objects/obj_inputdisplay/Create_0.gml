@@ -209,6 +209,8 @@ else
 	loadkeys();
 	if pos[0] < 0 or pos[1] < 0 or !is_array(inputkeys) or array_length(inputkeys) == 0
 	{
+		trace("Inputdisplay failed loading");
+		
 		defaultkeys();
 		savekeys();
 	}

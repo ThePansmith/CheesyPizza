@@ -1,11 +1,11 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "sprite1020",
-  "bbox_bottom": 63,
-  "bbox_left": 0,
-  "bbox_right": 63,
-  "bbox_top": 0,
+  "name": "spr_pepgoblin_kickhitbox",
+  "bbox_bottom": 46,
+  "bbox_left": 28,
+  "bbox_right": 58,
+  "bbox_top": 35,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ba1dcd1f-758d-40d5-be09-e4fd1b74ccb7",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9c5bea49-74dd-4768-a21a-92c199b30e2e",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 64,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5da9f47f-2a03-4a98-823b-64a7d74940fd","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"36b4aef4-696e-49ed-8eca-0f21d88b9d99","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "sprite1020",
+    "name": "spr_pepgoblin_kickhitbox",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ba1dcd1f-758d-40d5-be09-e4fd1b74ccb7","path":"sprites/sprite1020/sprite1020.yy",},},},"Disabled":false,"id":"945f1f95-1fe2-4a31-9083-85fb7a2cc1fb","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9c5bea49-74dd-4768-a21a-92c199b30e2e","path":"sprites/spr_pepgoblin_kickhitbox/spr_pepgoblin_kickhitbox.yy",},},},"Disabled":false,"id":"18c84474-7f16-4dbe-ba91-5232247785bf","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "unusedgroup",
-    "path": "texturegroups/unusedgroup",
+    "name": "debuggroup",
+    "path": "texturegroups/debuggroup",
   },
   "type": 0,
   "VTile": false,
