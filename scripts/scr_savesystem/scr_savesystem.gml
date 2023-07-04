@@ -97,7 +97,7 @@ function gamesave_async_save()
 }
 function gamesave_async_save_options()
 {
-	with (obj_savesystem)
+	with obj_savesystem
 	{
 		dirty = true;
 		saveoptions = true;

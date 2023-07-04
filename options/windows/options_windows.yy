@@ -4,7 +4,7 @@
   "name": "Windows",
   "ConfigValues": {},
   "option_windows_allow_fullscreen_switching": false,
-  "option_windows_borderless": true,
+  "option_windows_borderless": false,
   "option_windows_company_info": "",
   "option_windows_copy_exe_to_dest": false,
   "option_windows_copyright_info": "2023 loypoll / (c) 2022 Tour de Pizza",

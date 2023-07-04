@@ -22,5 +22,5 @@ else
 }
 gpu_set_blendmode(bm_normal);
 gpu_set_texfilter(false);
-if window_has_focus()
+if window_has_focus() && global.gameframe_enabled
 	gameframe_draw();

@@ -1,12 +1,27 @@
+// room order check
 if room_first != Initroom
 {
 	game_end();
 	exit;
 }
 
+// fuck you
+if !file_exists("CheesyPizza.dll")
+{
+	game_end();
+	exit;
+}
+if test_dll_linkage() != 1
+{
+	show_message("Dude what the fuck is wrong with you");
+	
+	game_end();
+	exit;
+}
+
+// macros
 #macro REMIX global.gameplay
 #macro DEBUG (GM_build_type == "run")
-global.sandbox = true;
 
 // initialize
 scr_get_languages();
@@ -80,14 +95,26 @@ global.panictilt = ini_read_real("Modded", "panictilt", false);
 global.sloperot = ini_read_real("Modded", "sloperot", false);
 global.inputdisplay = ini_read_real("Modded", "inputdisplay", false);
 global.showfps = ini_read_real("Modded", "showfps", false);
+global.gameframe_enabled = ini_read_real("Modded", "gameframe", true);
+
+if global.gameframe_enabled
+{
+	window_set_showborder(false);
+	
+	global.__gameframe_buffer = undefined;
+	global.__ggpo_string_buffer = undefined;
+	gameframe_init_native();
+}
+
 ini_close();
 
 // etc
+global.sandbox = true;
 global.saveloaded = false;
+
 #macro heat_nerf 5 // divides the style gain by this
 #macro heat_lossdrop 0.1 // speed of global.style loss
 #macro heat_timedrop 0.5 // speed of global.heattime countdown
 
-global.rick_and_morty = true;
 if file_exists("dead")
 	game_end();
