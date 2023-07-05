@@ -1,9 +1,21 @@
 // fps count
-if global.showfps
+if live_call() return live_result;
+
+if global.showfps && global.option_hud
 {
 	draw_set_font(global.font_small);
-	draw_set_colour(c_white);
+	draw_set_colour(fps < 30 ? c_yellow : c_white);
 	draw_set_align(fa_right, fa_bottom);
-	draw_text_transformed(960 - 10, 540 - 10, string(fps), 1, 1, 0);
+	
+	var xx = SCREEN_WIDTH - 10;
+	var yy = SCREEN_HEIGHT - 6;
+	
+	if global.option_timer && !(room == Realtitlescreen || room == Longintro || room == Finalintro || room == Mainmenu || room == hub_loadingscreen || room == Creditsroom || room == Johnresurrectionroom || room == rank_room || instance_exists(obj_titlecard) || instance_exists(obj_titlecard_ss) || !global.option_hud || room == characterselect)
+	{
+		xx -= 4;
+		yy -= 18;
+	}
+	
+	draw_text_transformed(xx, yy, string(fps), 1, 1, 0);
 }
 draw_set_align();

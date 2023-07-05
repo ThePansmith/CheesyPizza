@@ -25,10 +25,10 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"98d493ca-3e91-47b0-a7b4-2fd1499943b7","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 9,
   "parent": {
-    "name": "Warps",
-    "path": "folders/Sprites/Level Structure/Warps.yy",
+    "name": "Sugary Spire",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -64,7 +64,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 87,
-    "yorigin": 158,
+    "yorigin": 189,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

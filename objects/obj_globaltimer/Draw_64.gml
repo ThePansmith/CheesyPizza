@@ -2,6 +2,7 @@ if (!global.option_timer || room == Realtitlescreen || room == Longintro || room
 	exit;
 if !global.option_hud
 	exit;
+
 draw_set_color(c_white);
 var seconds = 0;
 var minutes = 0;

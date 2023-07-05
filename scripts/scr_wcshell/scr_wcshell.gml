@@ -751,13 +751,13 @@ function scr_wc_drawgui()
 	
 	#region debug view
 	
-	show_debug_overlay(WC_debugview);
+	//show_debug_overlay(WC_debugview);
 	if WC_debugview
 	{
 		draw_set_align();
 		draw_set_colour(c_white);
 		
-		draw_text_outline(4, 24, "room: " + room_get_name(room) + " (" + string(room) + ")" +
+		draw_text_outline(4, global.gameframe_enabled ? 24 : 4, "room: " + room_get_name(room) + " (" + string(room) + ")" +
 		"\nfps: " + string(fps) + " instances: " + string(instance_number(all)));
 		
 		if instance_exists(WC_debugview_target) or WC_debugview_target == global

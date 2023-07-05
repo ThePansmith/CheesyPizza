@@ -132,7 +132,7 @@ if (!isOpen) {
 			}
 			targetScrollPosition = maxScrollPosition;
 		}
-	} else if (self._key_combo_pressed(historyUpModifiers, historyUpKey)) {
+	} else if (self._key_combo_pressed(historyUpModifiers, historyUpKey) && !isAutocompleteOpen) {
 		if (historyPos == array_length(history)) {
 			savedConsoleString = consoleString;
 		}
@@ -142,7 +142,7 @@ if (!isOpen) {
 			cursorPos = string_length(consoleString) + 1;
 		}
 		targetScrollPosition = maxScrollPosition;
-	} else if (self._key_combo_pressed(historyDownModifiers, historyDownKey)) {
+	} else if (self._key_combo_pressed(historyDownModifiers, historyDownKey) && !isAutocompleteOpen) {
 		if (historyPos < array_length(history)) {
 			historyPos = min(array_length(history), historyPos + 1);
 			if (historyPos == array_length(history)) {
@@ -154,38 +154,45 @@ if (!isOpen) {
 		}
 		targetScrollPosition = maxScrollPosition;
 	} else if (keyboard_check_pressed(vk_enter)) {
-		/*if (isAutocompleteOpen) {
-			self._confirm_current_suggestion();
-		} else */{
-			var args = self._input_string_split(consoleString);
-			if (array_length(args) > 0) {
-				var metadata = functionData[$ args[0]];
-				if (!is_undefined(metadata)) {
-					var deferred = false;
-					if (variable_struct_exists(metadata, "deferred")) {
-						deferred = metadata.deferred;
-					}
-					if (deferred) {
-						ds_queue_enqueue(deferredQueue, args);
-						array_push(history, consoleString);
-						array_push(output, ">" + consoleString);
-						array_push(output, "Execution deferred until shell is closed.");
-						self._update_positions();
+		if (string_trim(consoleString) != "") {
+			/*if (isAutocompleteOpen) {
+				self._confirm_current_suggestion();
+			} else */{
+				var args = self._input_string_split(consoleString);
+				if (array_length(args) > 0) {
+					var metadata = functionData[$ args[0]];
+					if (!is_undefined(metadata)) {
+						var deferred = false;
+						if (variable_struct_exists(metadata, "deferred")) {
+							deferred = metadata.deferred;
+						}
+						if (deferred) {
+							ds_queue_enqueue(deferredQueue, args);
+							array_push(history, consoleString);
+							array_push(output, ">" + consoleString);
+							array_push(output, "Execution deferred until shell is closed.");
+							self._update_positions();
+						} else {
+							_execute_script(args);
+						}
 					} else {
 						_execute_script(args);
 					}
 				} else {
-					_execute_script(args);
+					array_push(output, ">");
+					consoleString = "";
+					savedConsoleString = "";
+					cursorPos = 1;
 				}
-			} else {
-				array_push(output, ">");
-				consoleString = "";
-				savedConsoleString = "";
-				cursorPos = 1;
 			}
+		} else {
+			array_push(output, ">");
+			consoleString = "";
+			savedConsoleString = "";
+			cursorPos = 1;
 		}
 		commandSubmitted = true;
-	} else if (self._key_combo_pressed(cycleSuggestionsModifiers, cycleSuggestionsKey)) {
+	} else if (self._key_combo_pressed(cycleSuggestionsModifiers, cycleSuggestionsKey) || keyboard_check_pressed(vk_down)) {
 		if (array_length(filteredSuggestions) != 0) {
 			// Auto-complete up to the common prefix of our suggestions
 			var uncompleted = consoleString;
@@ -199,7 +206,7 @@ if (!isOpen) {
 				}
 			}
 		}
-	} else if (self._key_combo_pressed(cycleSuggestionsReverseModifiers, cycleSuggestionsReverseKey)) {
+	} else if (self._key_combo_pressed(cycleSuggestionsReverseModifiers, cycleSuggestionsReverseKey) || keyboard_check_pressed(vk_up)) {
 		if (array_length(filteredSuggestions) != 0) {
 			suggestionIndex = (suggestionIndex + array_length(filteredSuggestions) - 1) % array_length(filteredSuggestions);
 			if (isAutocompleteOpen) {

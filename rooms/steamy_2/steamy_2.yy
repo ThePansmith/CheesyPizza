@@ -14,7 +14,7 @@
   ],
   "parent": {
     "name": "Cottontown",
-    "path": "folders/Rooms/CheesyPizza/Cottontown.yy",
+    "path": "folders/Rooms/Sugary Spire/Cottontown.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

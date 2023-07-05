@@ -10,7 +10,8 @@ global.resolutions[aspectratio.undertale] = [
 	[640, 480], [800, 600], [1024, 768], [1152, 864], [1440, 1080]
 ];
 
-gameframe_init();
+if global.gameframe_enabled
+	gameframe_init();
 global.gameframe_caption_font = fnt_caption;
 global.gameframe_caption_icon = spr_ico;
 global.gameframe_caption_icon_margin = 6;
