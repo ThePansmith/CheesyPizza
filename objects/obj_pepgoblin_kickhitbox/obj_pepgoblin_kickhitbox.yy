@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sprite1025",
-    "path": "sprites/sprite1025/sprite1025.yy",
+    "name": "spr_pepgoblin_kickhitbox",
+    "path": "sprites/spr_pepgoblin_kickhitbox/spr_pepgoblin_kickhitbox.yy",
   },
   "spriteMaskId": null,
   "visible": false,

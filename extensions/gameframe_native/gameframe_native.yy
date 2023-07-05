@@ -70,7 +70,7 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"gameframe_get_monitors","argCount":-1,"args":[],"documentation":"","externalName":"gameframe_get_monitors","help":"","hidden":true,"kind":11,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"gameframe_prepare_buffer","argCount":1,"args":[],"documentation":"","externalName":"gameframe_prepare_buffer","help":"","hidden":true,"kind":11,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"gameframe_buffer_read_chars","argCount":2,"args":[],"documentation":"","externalName":"gameframe_buffer_read_chars","help":"","hidden":true,"kind":11,"returnType":2,},
-      ],"init":"gameframe_init_native","kind":2,"order":[
+      ],"init":"","kind":2,"order":[
         {"name":"gameframe_init_native","path":"extensions/gameframe_native/gameframe_native.yy",},
         {"name":"gameframe_get_monitors","path":"extensions/gameframe_native/gameframe_native.yy",},
         {"name":"gameframe_prepare_buffer","path":"extensions/gameframe_native/gameframe_native.yy",},

@@ -1,5 +1,8 @@
 tex_list = -4;
 var group_arr = ["hudgroup", "playergroup", "introgroup", "smallgroup", "levelstructuregroup"];
+if DEBUG
+	array_push(group_arr, "debuggroup");
+
 tex_list = array_create(0);
 tex_pos = 0;
 

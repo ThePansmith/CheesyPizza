@@ -25,10 +25,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spr_mouthhitbox",
-    "path": "sprites/spr_mouthhitbox/spr_mouthhitbox.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": false,
 }

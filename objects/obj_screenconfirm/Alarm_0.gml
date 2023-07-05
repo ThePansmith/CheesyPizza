@@ -1,3 +1,5 @@
+if restart exit;
+
 alarm[0] = 60;
 timer--;
 if (timer <= 0)

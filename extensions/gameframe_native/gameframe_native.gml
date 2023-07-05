@@ -47,7 +47,6 @@ return _use_array ? _array : _count;
 
 #define gameframe_prepare_buffer
 var _size = argument0;
-gml_pragma("global", "global.__gameframe_buffer = undefined");
 var _buf = global.__gameframe_buffer;
 if (_buf == undefined) {
     _buf = buffer_create(_size, buffer_grow, 1);
@@ -60,7 +59,6 @@ return _buf;
 
 #define gameframe_buffer_read_chars
 var _buf = argument0, _len = argument1;
-gml_pragma("global", "global.__ggpo_string_buffer = undefined");
 var _tmp = global.__ggpo_string_buffer;
 if (_tmp == undefined) {
     _tmp = buffer_create(_len + 1, buffer_grow, 1);

@@ -28,7 +28,7 @@
   "origin": 4,
   "parent": {
     "name": "Demo Events",
-    "path": "folders/Sprites/Unused/Demo Events.yy",
+    "path": "folders/Sprites/CheesyPizza/Demo Events.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

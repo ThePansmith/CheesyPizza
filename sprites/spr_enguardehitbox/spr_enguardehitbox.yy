@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Debug",
-    "path": "folders/Sprites/Debug.yy",
+    "name": "Unused",
+    "path": "folders/Sprites/Unused.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "bossgroup",
-    "path": "texturegroups/bossgroup",
+    "name": "unusedgroup",
+    "path": "texturegroups/unusedgroup",
   },
   "type": 0,
   "VTile": false,

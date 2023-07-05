@@ -170,13 +170,37 @@ add_option_toggle(video_menu, 4, "option_texfilter", function(val)
 }
 ).value = global.option_texfilter;
 
-add_option_toggle(video_menu, 4, "option_hud", function(val)
+add_option_toggle(video_menu, 5, "option_hud", function(val)
 {
 	ini_open_from_string(obj_savesystem.ini_str_options);
 	ini_write_real("Option", "hud", val);
 	obj_savesystem.ini_str_options = ini_close();
 	global.option_hud = val;
 }).value = global.option_hud;
+
+add_option_toggle(video_menu, 6, "GAMEFRAME", function(val)
+{
+	if val != global.gameframe_enabled
+	{
+		with instance_create(0, 0, obj_screenconfirm)
+	    {
+	        savedoption = global.gameframe_enabled;
+	        section = "Modded";
+	        key = "gameframe";
+	        varname = "gameframe";
+	        depth = obj_option.depth - 1;
+		
+			restart = true;
+			saveto = val;
+	    }
+	}
+	else
+	{
+		ini_open_from_string(obj_savesystem.ini_str_options);
+	    ini_write_real("Modded", "gameframe", val);
+	    obj_savesystem.ini_str_options = ini_close();
+	}
+}).value = global.gameframe_enabled;
 
 array_push(menus, video_menu);
 
@@ -195,10 +219,15 @@ add_option_press(window_menu, 2, "option_fullscreen", function() {
     screen_option_apply_fullscreen(1);
 	screen_apply_size_delayed();
 });
-add_option_press(window_menu, 3, "option_borderless", function() {
-    screen_option_apply_fullscreen(2);
-	screen_apply_size_delayed();
-});
+
+if global.gameframe_enabled
+{
+	add_option_press(window_menu, 3, "option_borderless", function() {
+	    screen_option_apply_fullscreen(2);
+		screen_apply_size_delayed();
+	});
+}
+
 array_push(menus, window_menu);
 
 #endregion
@@ -207,7 +236,7 @@ array_push(menus, window_menu);
 var resolution_menu = create_menu_fixed(menus.resolution, anchor.left, 150, 40, menus.video);
 add_option_press(resolution_menu, 0, "option_back", function()
 {
-    menu_goto(menus.video)
+    menu_goto(menus.video);
 });
 
 for (i = 0; i < array_length(global.resolutions[obj_screensizer.aspect_ratio]); i++)
@@ -229,7 +258,7 @@ for (i = 0; i < array_length(global.resolutions[obj_screensizer.aspect_ratio]); 
         }
     }).localization = false;
 }
-array_push(menus, resolution_menu)
+array_push(menus, resolution_menu);
 
 #endregion
 #region game menu

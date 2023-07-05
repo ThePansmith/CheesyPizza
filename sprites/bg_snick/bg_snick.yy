@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "Demo Events",
-    "path": "folders/Sprites/Unused/Demo Events.yy",
+    "path": "folders/Sprites/CheesyPizza/Demo Events.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "unusedgroup",
-    "path": "texturegroups/unusedgroup",
+    "name": "hubgroup",
+    "path": "texturegroups/hubgroup",
   },
   "type": 0,
   "VTile": false,

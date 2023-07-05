@@ -18,9 +18,10 @@ function screen_apply_size()
 		{
 			if global.option_resolution == 0 && global.option_scale_mode == 1
 				global.option_resolution = 1;
-			if gameframe_get_fullscreen() == false
+			
+			if !gameframe_get_fullscreen() && global.gameframe_enabled
 				gameframe_restore();
-		
+			
 			var w = get_resolution_width(global.option_resolution, aspect_ratio);
 	        var h = get_resolution_height(global.option_resolution, aspect_ratio);
 	        trace("Setting Window Size: ", w, ", ", h);
@@ -54,15 +55,20 @@ function screen_option_apply_fullscreen(fullscreen)
 }
 function screen_apply_fullscreen(fullscreen)
 {
-	if (fullscreen == 0)
+	if global.gameframe_enabled
 	{
-		gameframe_set_fullscreen(0);
-		obj_screensizer.alarm[2] = 1;
+		if fullscreen == 0
+		{
+			gameframe_set_fullscreen(0);
+			obj_screensizer.alarm[2] = 1;
+		}
+		else if fullscreen == 1
+			gameframe_set_fullscreen(1);
+		else if fullscreen == 2
+			gameframe_set_fullscreen(2);
 	}
-	else if (fullscreen == 1)
-		gameframe_set_fullscreen(1);
-	else if (fullscreen == 2)
-		gameframe_set_fullscreen(2);
+	else
+		window_set_fullscreen(fullscreen);
 }
 function surface_safe_set_target(surface)
 {
