@@ -40,9 +40,9 @@ with (other)
 		exit;
 	}
 }
-if ((floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_player1.state == states.victory) || (floor(obj_player2.image_index) == (obj_player2.image_number - 1) && obj_player2.state == states.victory))
+if floor(other.image_index) == other.image_number - 1 && other.state == states.victory
 {
-	with (obj_player)
+	with other
 	{
 		if (other.level == "snickchallenge")
 		{
@@ -110,6 +110,15 @@ if ((floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_pla
 			with (instance_create_unique(0, 0, obj_fadeout))
 				restarttimer = true;
 		}
+	}
+}
+else if other.key_taunt2 && other.state == states.victory
+{
+	other.state = states.actor;
+	with instance_create(0, 0, obj_levelsettings)
+	{
+		level = other.level;
+		levelname = other.msg;
 	}
 }
 

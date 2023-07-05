@@ -12,15 +12,14 @@ draw_set_alpha(1);
 draw_set_colour(c_white);
 draw_set_align();
 
-var yy = 40 - ceil(scroll);
+var yy = 70 - ceil(scroll);
 for(var i = 0; i < array_length(options_array); i++)
 {
 	var opt = options_array[i];
 	
 	switch opt.type
 	{
-		case 0: // normal
-		case 2: // button
+		default:
 			draw_set_font(global.font_small);
 			if sel == i
 			{
@@ -35,7 +34,7 @@ for(var i = 0; i < array_length(options_array); i++)
 			draw_text(80, yy, opt.name);
 			
 			// value
-			if opt.type == 0
+			if opt.type != 2
 			{
 				var valuewd = string_width(opt.opts[opt.value][0]);
 				var newwd = min(valuewd, 100);
@@ -51,7 +50,8 @@ for(var i = 0; i < array_length(options_array); i++)
 			draw_set_colour(c_white);
 			draw_set_font(global.creditsfont);
 			
-			yy += 30;
+			if i != 0
+				yy += 30;
 			draw_text_color(2 + 60, 2 + yy, options_array[i].name, 0, 0, 0, 0, 0.25);
 			draw_text(60, yy, options_array[i].name);
 			yy += 40;
@@ -69,7 +69,7 @@ draw_set_alpha(alpha);
 draw_text_color(2 + 700, 2 + 80, string_upper(opt.name), 0, 0, 0, 0, 0.25);
 draw_text(700, 80, string_upper(opt.name));
 
-if opt.type == 0
+if opt.type != 2
 {
 	draw_set_font(global.font_small);
 	draw_text_ext_color(2 + 700, 2 + (is_callable(opt.drawfunc) ? 420 : 260), opt.desc, 18, 440, 0, 0, 0, 0, 0.25);

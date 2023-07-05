@@ -17,7 +17,8 @@ function scr_playerreset(roomstart = false)
 {
 	trace("playerreset");
 	
-	global.modifier = 0;
+	if !roomstart
+		global.modifier = 0;
 	global.modifier_failed = false;
 	
 	global.lap = false;

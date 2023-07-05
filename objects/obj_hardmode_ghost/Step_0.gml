@@ -1,3 +1,7 @@
+disable = safe_get(obj_player1, "cutscene");
+if disable
+	exit;
+
 highest_y = -270;
 var _instY = collision_line(obj_player1.x, obj_player1.y, obj_player1.x, obj_player1.y - 270, obj_solid, false, true);
 if (_instY != -4)

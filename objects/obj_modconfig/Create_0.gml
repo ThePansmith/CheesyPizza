@@ -47,7 +47,6 @@ function add_section(name)
 	return struct;
 }
 sel = 1;
-section = -1;
 surf = noone;
 
 // simuplayer

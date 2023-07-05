@@ -17,7 +17,7 @@ scr_getinput();
 key_back = safe_get(obj_option, "key_back") or key_slap2;
 
 // save and go back
-if key_back or keyboard_check_pressed(vk_escape)
+if (key_back or keyboard_check_pressed(vk_escape)) && object_index != obj_levelsettings
 {
 	ini_open_from_string(obj_savesystem.ini_str_options);
 	for(var i = 0; i < array_length(options_array); i++)
@@ -36,8 +36,8 @@ if key_back or keyboard_check_pressed(vk_escape)
 	}
 	ini_write_string("Modded", "inputdisplay", global.inputdisplay);
 	obj_savesystem.ini_str_options = ini_close();
-	gamesave_async_save_options();
 	
+	gamesave_async_save_options();
 	if instance_exists(obj_option)
 		obj_option.backbuffer = 2;
 	with create_transformation_tip("{u}Settings saved!/")
@@ -60,7 +60,9 @@ if move != 0
 	
 	sel += move;
 	if sel >= array_length(options_array)
-		sel = 1;
+		sel = 0;
+	if sel < 0
+		sel = array_length(options_array) - 1;
 	
 	yo = 10 * -move;
 }
@@ -70,20 +72,11 @@ yo = lerp(yo, 0, 0.25);
 alpha = lerp(alpha, 1, 0.25);
 
 // figure section
-for(var i = 0; i < array_length(options_array); i++)
+while options_array[sel].type == 1
 {
-	var opt = options_array[i];
-	if opt.type == 1
-	{
-		if sel == i
-		{
-			sel += move;
-			if sel < 0
-				sel = array_length(options_array) - 1;
-		}
-		if sel >= i
-			section = i;
-	}
+	sel += move;
+	if sel < 0
+		sel = array_length(options_array) - 1;
 }
 
 // change values
@@ -94,7 +87,7 @@ if move2 != 0
 	xo = 10;
 	
 	var opt = options_array[sel];
-	if opt.type == 0
+	if opt.type != 2
 	{
 		simuplayer.changed = true;
 	
@@ -113,9 +106,9 @@ if key_jump
 	sound_play_oneshot(sfx_select);
 	
 	var opt = options_array[sel];
-	if opt.type == 0
+	if opt.type != 2
 		opt.value = wrap(opt.value + 1, 0, array_length(opt.opts) - 1);
-	else if opt.type == 2
+	else
 	{
 		if is_callable(opt.func)
 			opt.func();
@@ -129,7 +122,7 @@ for(var i = 0; i < array_length(options_array); i++)
 	var opt = options_array[i];
 	switch opt.type
 	{
-		case 0: case 2: // normal
+		default: // normal
 			yy += 20;
 			break;
 		

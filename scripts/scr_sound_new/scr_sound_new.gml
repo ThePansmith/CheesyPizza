@@ -66,7 +66,12 @@ function sound_play_3d(event, x = undefined, y = undefined)
 	}
 	fmod_event_instance_set_paused(sound, false);
 	if x != undefined && y != undefined
-		fmod_event_instance_set_3d_attributes(sound, x, y);
+	{
+		if check_modifier(MOD.Mirror)
+			fmod_event_instance_set_3d_attributes(sound, room_width - x, y);
+		else
+			fmod_event_instance_set_3d_attributes(sound, x, y);
+	}
 	fmod_event_instance_play(sound);
 }
 function sound_play_centered(event) {

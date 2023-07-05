@@ -1,16 +1,25 @@
 draw_set_alpha(1);
-if (start)
+if start
 {
+	var mirror = check_modifier(MOD.Mirror);
+	
 	shader_set(global.Pal_Shader);
 	pal_swap_set(spr_peppalette, REMIX && instance_exists(obj_player1) && obj_player1.character == "P" && obj_player1.character == "P" ? obj_player1.paletteselect : 1, false);
 	if REMIX
 		pattern_set_temp(global.Base_Pattern_Color, titlecard_sprite, titlecard_index, 1, 1, global.palettetexture);
-	draw_sprite(titlecard_sprite, titlecard_index, 0, 0);
+	
+	if mirror
+		draw_sprite_ext(titlecard_sprite, titlecard_index, 960, 0, -1, 1, 0, c_white, 1);
+	else
+		draw_sprite(titlecard_sprite, titlecard_index, 0, 0);
+	
 	pal_swap_reset();
 	pattern_reset();
 	
-	var s = 1;
-	draw_sprite(title_sprite, title_index, 32 + irandom_range(-s, s), irandom_range(-s, s));
+	if mirror && sprite_get_width(title_sprite) != 960
+		draw_sprite(title_sprite, title_index, SCREEN_WIDTH - sprite_get_width(title_sprite) - 32 + irandom_range(-1, 1), irandom_range(-1, 1));
+	else
+		draw_sprite(title_sprite, title_index, 32 + irandom_range(-1, 1), irandom_range(-1, 1));
 }
 if !instance_exists(obj_fadeout)
 	draw_set_alpha(fadealpha);

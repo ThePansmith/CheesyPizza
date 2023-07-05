@@ -8,6 +8,7 @@ fake_y = y;
 random_max = 300;
 random_random = 120;
 random_buffer = random_max + irandom_range(-random_random + 1, random_random);
+disable = false;
 
 content[0] = obj_cheeseslime;
 content[1] = obj_forknight;

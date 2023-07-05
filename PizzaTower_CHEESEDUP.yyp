@@ -5230,6 +5230,7 @@
     {"id":{"name":"spr_carpet","path":"sprites/spr_carpet/spr_carpet.yy",},},
     {"id":{"name":"spr_playerN_suplexmash2","path":"sprites/spr_playerN_suplexmash2/spr_playerN_suplexmash2.yy",},},
     {"id":{"name":"spr_playerBN_idlemask","path":"sprites/spr_playerBN_idlemask/spr_playerBN_idlemask.yy",},},
+    {"id":{"name":"obj_levelsettings","path":"objects/obj_levelsettings/obj_levelsettings.yy",},},
     {"id":{"name":"spr_taxicop","path":"sprites/spr_taxicop/spr_taxicop.yy",},},
     {"id":{"name":"spr_pizzahead_phase3flicker","path":"sprites/spr_pizzahead_phase3flicker/spr_pizzahead_phase3flicker.yy",},},
     {"id":{"name":"spr_playerN_suplexmash3","path":"sprites/spr_playerN_suplexmash3/spr_playerN_suplexmash3.yy",},},

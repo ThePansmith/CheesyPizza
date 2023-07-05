@@ -132,7 +132,7 @@ if (!isOpen) {
 			}
 			targetScrollPosition = maxScrollPosition;
 		}
-	} else if (self._key_combo_pressed(historyUpModifiers, historyUpKey) && !isAutocompleteOpen) {
+	} else if (self._key_combo_pressed(historyUpModifiers, historyUpKey)) {
 		if (historyPos == array_length(history)) {
 			savedConsoleString = consoleString;
 		}
@@ -142,7 +142,7 @@ if (!isOpen) {
 			cursorPos = string_length(consoleString) + 1;
 		}
 		targetScrollPosition = maxScrollPosition;
-	} else if (self._key_combo_pressed(historyDownModifiers, historyDownKey) && !isAutocompleteOpen) {
+	} else if (self._key_combo_pressed(historyDownModifiers, historyDownKey)) {
 		if (historyPos < array_length(history)) {
 			historyPos = min(array_length(history), historyPos + 1);
 			if (historyPos == array_length(history)) {
@@ -192,7 +192,7 @@ if (!isOpen) {
 			cursorPos = 1;
 		}
 		commandSubmitted = true;
-	} else if (self._key_combo_pressed(cycleSuggestionsModifiers, cycleSuggestionsKey) || keyboard_check_pressed(vk_down)) {
+	} else if (self._key_combo_pressed(cycleSuggestionsModifiers, cycleSuggestionsKey)) {
 		if (array_length(filteredSuggestions) != 0) {
 			// Auto-complete up to the common prefix of our suggestions
 			var uncompleted = consoleString;
@@ -206,7 +206,7 @@ if (!isOpen) {
 				}
 			}
 		}
-	} else if (self._key_combo_pressed(cycleSuggestionsReverseModifiers, cycleSuggestionsReverseKey) || keyboard_check_pressed(vk_up)) {
+	} else if (self._key_combo_pressed(cycleSuggestionsReverseModifiers, cycleSuggestionsReverseKey)) {
 		if (array_length(filteredSuggestions) != 0) {
 			suggestionIndex = (suggestionIndex + array_length(filteredSuggestions) - 1) % array_length(filteredSuggestions);
 			if (isAutocompleteOpen) {

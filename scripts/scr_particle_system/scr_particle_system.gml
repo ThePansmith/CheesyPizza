@@ -51,8 +51,6 @@ function create_collect(_x, _y, _sprite, _value = 0, _palspr = noone, _palsel = 
 {
 	_x -= camera_get_view_x(view_camera[0]);
 	_y -= camera_get_view_y(view_camera[0]);
-	if check_modifier(MOD.Mirror)
-		_x = 960 - _x;
 	
 	var q = 
 	{
