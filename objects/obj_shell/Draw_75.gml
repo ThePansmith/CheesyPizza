@@ -115,7 +115,6 @@ if (isOpen) {
 				for (var i = spaceCount; i < array_length(data[$ "arguments"]); i++) {
 					args += " ";
 					args += data.arguments[i];
-					
 				}
 				suggestion += args;
 				if (spaceCount == 0) {
@@ -218,36 +217,36 @@ if (isOpen) {
 				
 				// Draw autocomplete suggestions
 				draw_set_color(fontColor);
-				for (var i = 0; i < array_length(filteredSuggestions); i++) {
-					if (i < suggestionsAmount) {
-						// Enable mouse detection
-						var y1Col = y1 + (i * emHeight);
-						var y2Col = y1 + (i * emHeight) + emHeight - 1 + autocompletePadding;
-						if (point_in_rectangle(device_mouse_x_to_gui(0) - 1, device_mouse_y_to_gui(0) - 1, x1, y1Col, x2, y2Col)) {
-							if (device_mouse_x_to_gui(0) != mousePreviousX or device_mouse_y_to_gui(0) != mousePreviousY) {
-								suggestionIndex = i + autocompleteScrollPosition;
-								mousePreviousX = device_mouse_x_to_gui(0);
-								mousePreviousY = device_mouse_y_to_gui(0);
-							}
-							if (mouse_check_button_pressed(mb_left)) {
-								if (suggestionIndex == i + autocompleteScrollPosition) {
-									self._confirm_current_suggestion();
-									self._update_filtered_suggestions();
-									break;
-								} else {
-									suggestionIndex = i + autocompleteScrollPosition;
-								}
+				for (var i = autocompleteScrollPosition; i < (autocompleteScrollPosition + suggestionsAmount); i++) {
+					// Enable mouse detection
+					var entry = (i - autocompleteScrollPosition);
+					
+					var y1Col = y1 + (entry * emHeight);
+					var y2Col = y1 + (entry * emHeight) + emHeight - 1 + autocompletePadding;
+					if (point_in_rectangle(device_mouse_x_to_gui(0) - 1, device_mouse_y_to_gui(0) - 1, x1, y1Col, x2, y2Col)) {
+						if (device_mouse_x_to_gui(0) != mousePreviousX or device_mouse_y_to_gui(0) != mousePreviousY) {
+							suggestionIndex = i;
+							mousePreviousX = device_mouse_x_to_gui(0);
+							mousePreviousY = device_mouse_y_to_gui(0);
+						}
+						if (mouse_check_button_pressed(mb_left)) {
+							if (suggestionIndex == i) {
+								self._confirm_current_suggestion();
+								self._update_filtered_suggestions();
+								break;
+							} else {
+								suggestionIndex = i;
 							}
 						}
-						
-						if ((i + autocompleteScrollPosition) == suggestionIndex) {
-							draw_set_color(promptColor);
-						} else {
-							draw_set_color(fontColorSecondary);
-						}
-						
-						draw_text(x1 + autocompletePadding, y1 + (i * emHeight) + autocompletePadding, filteredSuggestions[i + autocompleteScrollPosition]);
 					}
+						
+					if (i == suggestionIndex) {
+						draw_set_color(promptColor);
+					} else {
+						draw_set_color(fontColorSecondary);
+					}
+					
+					draw_text(x1 + autocompletePadding, y1 + (entry * emHeight) + autocompletePadding, filteredSuggestions[i]);
 				}
 			}
 		} else {

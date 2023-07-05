@@ -203,7 +203,27 @@ function meta_var()
 				array_insert(obj_array, 0, "global");
 				return obj_array;
 			},
-			[],
+			function()
+			{
+				// resolve target
+				with obj_shell
+				{
+					var pretarget = inputArray[1];
+					var target = noone;
+					
+					if pretarget == "global"
+						target = global;
+					else
+					{
+						var obj = WCscr_findobj(pretarget);
+						if is_array(obj)
+							target = obj[0];
+					}
+					
+					if target != noone && target != all
+						return variable_instance_get_names(target);
+				}
+			},
 			[]
 		],
 		argumentDescriptions: [

@@ -74,9 +74,9 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 				else
 				{
 					if b == global.mach_color1
-						b = mach_color1;
+						b = other.mach_color1;
 					if b == global.mach_color2
-						b = mach_color2;
+						b = other.mach_color2;
 				}
 			}
 			draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, b, a);

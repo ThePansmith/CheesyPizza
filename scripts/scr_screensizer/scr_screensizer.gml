@@ -26,7 +26,7 @@ function screen_apply_size()
 	        var h = get_resolution_height(global.option_resolution, aspect_ratio);
 	        trace("Setting Window Size: ", w, ", ", h);
 	        window_set_size(w, h);
-		
+			
 			alarm[0] = 2;
 		}
 	}
@@ -68,7 +68,14 @@ function screen_apply_fullscreen(fullscreen)
 			gameframe_set_fullscreen(2);
 	}
 	else
+	{
 		window_set_fullscreen(fullscreen);
+		if !fullscreen
+		{
+			with obj_screensizer
+				alarm[0] = 2;
+		}
+	}
 }
 function surface_safe_set_target(surface)
 {
