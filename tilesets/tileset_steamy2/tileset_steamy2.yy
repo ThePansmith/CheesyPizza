@@ -21,8 +21,8 @@
   },
   "spriteNoExport": true,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "sugarygroup",
+    "path": "texturegroups/sugarygroup",
   },
   "tile_count": 848,
   "tileAnimation": {

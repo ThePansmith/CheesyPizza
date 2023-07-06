@@ -134,8 +134,8 @@
   "size": 12.0,
   "styleName": "Regular",
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "hudgroup",
+    "path": "texturegroups/hudgroup",
   },
   "TTFName": "",
   "usesSDF": false,
