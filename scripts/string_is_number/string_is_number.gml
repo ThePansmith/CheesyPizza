@@ -1,13 +1,12 @@
 function string_is_number(str)
 {
-	if str == ""
+	if (!string_length(str))
 		return false;
-	if is_real(str)
+	if (is_real(str))
 		return true;
 	
-	//return string_length(string_digits(str)) + string_count("-", str) + string_count(".", str) == string_length(str);
-	
-	try {
+	try 
+	{
 		real(str);
 	}
 	catch(str) {
@@ -15,9 +14,7 @@ function string_is_number(str)
 	}
 	return true;
 }
-function number_in_range(num, a, b)
+function number_in_range(num, _min, _max)
 {
-	if num >= a && num <= b
-		return true;
-	return false;
+	return _min <= num && num <= _max;
 }
