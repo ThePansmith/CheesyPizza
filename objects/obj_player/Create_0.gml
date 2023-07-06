@@ -20,6 +20,7 @@ function player_destroy_sounds()
 	fmod_event_instance_release(snd_voicehurt);
 	fmod_event_instance_release(global.snd_fireass);
 	fmod_event_instance_release(global.snd_parry);
+	fmod_event_instance_release(global.snd_supertaunt);
 	fmod_event_instance_release(machsnd);
 	fmod_event_instance_release(jumpsnd);
 	fmod_event_instance_release(machrollsnd);
@@ -126,6 +127,14 @@ function player_init_sounds()
 		global.snd_parry = fmod_event_create_instance("event:/modded/sfx/parrySP");
 	else
 		global.snd_parry = fmod_event_create_instance("event:/sfx/pep/parry");
+	
+	if character == "BN"
+		global.snd_supertaunt = fmod_event_create_instance("event:/modded/sfx/supertauntBN");
+	else if character == "SP"
+		global.snd_supertaunt = fmod_event_create_instance("event:/modded/sfx/pizzysupertaunt");
+	else
+		global.snd_supertaunt = fmod_event_create_instance("event:/sfx/pep/supertaunt");
+		
 	
 	machsnd = fmod_event_create_instance(character == "PP" ? "event:/modded/sfx/machPP" : "event:/sfx/pep/mach");
 	jumpsnd = fmod_event_create_instance("event:/sfx/pep/jump");
