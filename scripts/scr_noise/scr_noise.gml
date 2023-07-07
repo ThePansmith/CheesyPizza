@@ -20,7 +20,7 @@ function scr_noise_update_sounds()
 	{
 		if (!fmod_event_instance_is_playing(snd_spin))
 			fmod_event_instance_play(snd_spin);
-		fmod_event_instance_set_3d_attributes(snd_spin, x, y);
+		sound_instance_move(snd_spin, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd_spin, true);
@@ -29,7 +29,7 @@ function scr_noise_update_sounds()
 		fmod_event_instance_stop(snd_skatestart, true);
 		if (!fmod_event_instance_is_playing(snd_skateloop))
 			fmod_event_instance_play(snd_skateloop);
-		fmod_event_instance_set_3d_attributes(snd_skateloop, x, y);
+		sound_instance_move(snd_skateloop, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd_skateloop, true);
@@ -37,7 +37,7 @@ function scr_noise_update_sounds()
 	{
 		if (!fmod_event_instance_is_playing(snd_jetpackloop))
 			fmod_event_instance_play(snd_jetpackloop);
-		fmod_event_instance_set_3d_attributes(snd_jetpackloop, x, y);
+		sound_instance_move(snd_jetpackloop, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd_jetpackloop, true);
@@ -45,7 +45,7 @@ function scr_noise_update_sounds()
 	{
 		if (!fmod_event_instance_is_playing(snd_jetpackspin))
 			fmod_event_instance_play(snd_jetpackspin);
-		fmod_event_instance_set_3d_attributes(snd_jetpackspin, x, y);
+		sound_instance_move(snd_jetpackspin, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd_jetpackspin, true);
@@ -53,7 +53,7 @@ function scr_noise_update_sounds()
 	{
 		if (!fmod_event_instance_is_playing(snd_balloon))
 			fmod_event_instance_play(snd_balloon);
-		fmod_event_instance_set_3d_attributes(snd_balloon, x, y);
+		sound_instance_move(snd_balloon, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd_balloon, true);
@@ -61,7 +61,7 @@ function scr_noise_update_sounds()
 	{
 		if (!fmod_event_instance_is_playing(snd_droptrap))
 			fmod_event_instance_play(snd_droptrap);
-		fmod_event_instance_set_3d_attributes(snd_droptrap, x, y);
+		sound_instance_move(snd_droptrap, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd_droptrap, true);
@@ -72,7 +72,7 @@ function scr_noise_update_sounds()
 		else
 		{
 			fightball_snd_buffer = 15;
-			fmod_event_one_shot_3d("event:/sfx/noise/fightball", x, y);
+			sound_play_oneshot_3d("event:/sfx/noise/fightball", x, y);
 		}
 	}
 	else
@@ -135,7 +135,7 @@ function scr_noise_arenaintro()
 				{
 					sprite_index = spr_gnomecutscene3;
 					image_index = 0;
-					fmod_event_one_shot("event:/sfx/pep/screamboss");
+					sound_play_oneshot("event:/sfx/pep/screamboss");
 				}
 				if (other.sprite_index == spr_noise_intro2 && sprite_index != spr_player_idlefrown && sprite_index != spr_idle)
 				{
@@ -231,7 +231,7 @@ function scr_noise_walk()
 			sprite_index = spr_noise_vulnerablesmile;
 			var idle = irandom(80);
 			if (irandom(100) <= 25)
-				fmod_event_one_shot_3d("event:/sfx/voice/noisepositive", x, y);
+				sound_play_oneshot_3d("event:/sfx/voice/noisepositive", x, y);
 			if (idle >= 10 && idle < 50)
 			{
 				sprite_index = spr_noise_vulnerable1;
@@ -298,7 +298,7 @@ function scr_noise_mach2()
 			machbuffer--;
 		else if (machbuffer == 0 && grounded && sprite_index == spr_playerN_mach)
 		{
-			fmod_event_one_shot_3d("event:/sfx/noise/machslide", x, y);
+			sound_play_oneshot_3d("event:/sfx/noise/machslide", x, y);
 			state = states.machslide;
 			sprite_index = spr_playerN_machslidestart;
 			image_index = 0;
@@ -316,7 +316,7 @@ function scr_noise_mach2()
 		skateboardjumpcooldown--;
 	if (skateboardjumpcooldown == 0 && state != states.machslide)
 	{
-		fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
 		vsp = -11;
 		attackspeed = 8;
 		image_index = 0;
@@ -325,7 +325,7 @@ function scr_noise_mach2()
 	}
 	if ((sprite_index == spr_playerN_secondjump1 || sprite_index == spr_playerN_secondjump2) && place_meeting(x + hsp, y, obj_solid))
 	{
-		fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
 		sprite_index = spr_playerN_walljumpstart;
 		image_xscale *= -1;
 		vsp = -11;
@@ -344,7 +344,7 @@ function scr_noise_mach2()
 	{
 		if (!golf)
 		{
-			fmod_event_one_shot_3d("event:/sfx/noise/skateturn", x, y);
+			sound_play_oneshot_3d("event:/sfx/noise/skateturn", x, y);
 			state = states.machslide;
 			sprite_index = spr_playerN_machslideboost;
 			image_index = 0;
@@ -437,7 +437,7 @@ function scr_noise_spin()
 		}
 		else if (el == "jetpack")
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
 			if (x != targetplayer.x)
 				image_xscale = sign(targetplayer.x - x);
 			state = states.jump;
@@ -457,7 +457,7 @@ function scr_noise_spin()
 		}
 		else if (el == "pogo")
 		{
-			fmod_event_one_shot_3d("event:/sfx/noise/pogo", x, y);
+			sound_play_oneshot_3d("event:/sfx/noise/pogo", x, y);
 			state = states.pogo;
 			sprite_index = spr_playerN_pogobounce;
 			image_index = 0;
@@ -471,7 +471,7 @@ function scr_noise_spin()
 		else if (el == "hotair")
 		{
 			buttslamcooldown = 200;
-			fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
 			state = states.dropstart;
 			sprite_index = spr_playerN_doublejump;
 			image_index = 0;
@@ -493,7 +493,7 @@ function scr_noise_jump()
 	hsp = 0;
 	if (vsp >= 0)
 	{
-		fmod_event_one_shot_3d("event:/sfx/noise/jetpackstart", x, y);
+		sound_play_oneshot_3d("event:/sfx/noise/jetpackstart", x, y);
 		state = states.jetpackstart;
 		sprite_index = spr_playerN_jetpackstart;
 		image_index = 0;
@@ -624,7 +624,7 @@ function scr_noise_pogo()
 	{
 		if (machbuffer > 0)
 		{
-			fmod_event_one_shot_3d("event:/sfx/noise/pogo", x, y);
+			sound_play_oneshot_3d("event:/sfx/noise/pogo", x, y);
 			bounced = false;
 			sprite_index = spr_playerN_pogobounce;
 			image_index = 0;
@@ -639,7 +639,7 @@ function scr_noise_pogo()
 			state = states.walk;
 			if (phase == 2)
 			{
-				fmod_event_one_shot_3d("event:/sfx/noise/noisecrusher", x, y);
+				sound_play_oneshot_3d("event:/sfx/noise/noisecrusher", x, y);
 				state = states.noisecrusher;
 				vsp = -17;
 				sprite_index = spr_noise_crusherjump;
@@ -723,7 +723,7 @@ function scr_noise_drop()
 			dropcooldown = 120;
 		with (instance_create(x, y, obj_noisebombboss))
 		{
-			fmod_event_one_shot_3d("event:/sfx/vigilante/throw", x, y);
+			sound_play_oneshot_3d("event:/sfx/vigilante/throw", x, y);
 			if (object_index == obj_noisey)
 			{
 				state = states.stun;
@@ -837,7 +837,7 @@ function scr_noise_noisecrusher()
 	{
 		sprite_index = spr_noise_crusherland;
 		image_index = 0;
-		fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 		with (instance_create(x + (image_xscale * 40), y, obj_noisecrushertrail))
 			image_xscale = other.image_xscale;
 		with (instance_create(x - (image_xscale * 40), y, obj_noisecrushertrail))
@@ -916,7 +916,7 @@ function scr_noise_fightball()
 			}
 			if (x == (room_width / 2))
 			{
-				fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+				sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
 				obj_player1.xscale = 1;
 				obj_player1.sprite_index = obj_player1.spr_bump;
 				obj_player1.hsp = -obj_player1.xscale * 5;
@@ -988,7 +988,7 @@ function scr_noise_finale()
 			}
 			if (x == (room_width / 2))
 			{
-				fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+				sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
 				var s = 8;
 				obj_player1.xscale = 1;
 				obj_player1.sprite_index = obj_player1.spr_bump;
@@ -1010,8 +1010,8 @@ function scr_noise_finale()
 				repeat (3)
 					create_debris(obj_noisebosscrate.x, obj_noisebosscrate.y, spr_wooddebris);
 				sprite_index = spr_playerN_minigunstart;
-				fmod_event_one_shot_3d("event:/sfx/pep/shotgunload", x, y);
-				fmod_event_one_shot_3d("event:/sfx/misc/breakblock", x, y);
+				sound_play_oneshot_3d("event:/sfx/pep/shotgunload", x, y);
+				sound_play_oneshot_3d("event:/sfx/misc/breakblock", x, y);
 				image_index = 0;
 				substate = states.shotgun;
 				with (obj_player1)
@@ -1031,7 +1031,7 @@ function scr_noise_finale()
 				{
 					sprite_index = spr_gnomecutscene3;
 					image_index = 0;
-					fmod_event_one_shot("event:/sfx/pep/screamboss");
+					sound_play_oneshot("event:/sfx/pep/screamboss");
 				}
 				layer_set_visible(layer_get_id("Assets_2"), true);
 				instance_create(room_width + 100, y, obj_noisettefinale);
@@ -1056,7 +1056,7 @@ function scr_noise_finale()
 			x = obj_noisettefinale.x + 20;
 			if (x < (room_width / 5) && sprite_index != spr_playerN_bossintro)
 			{
-				fmod_event_one_shot("event:/sfx/voice/noisescream");
+				sound_play_oneshot("event:/sfx/voice/noisescream");
 				sprite_index = spr_playerN_bossintro;
 				image_index = 0;
 				image_xscale = 1;

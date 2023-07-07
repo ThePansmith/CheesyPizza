@@ -15,7 +15,7 @@ function scr_player_morthook()
 	y = Approach(y, morthookID.y, movespeed);
 	if (floor(x) == morthookID.x && floor(y) == morthookID.y)
 	{
-		fmod_event_one_shot_3d("event:/sfx/mort/doublejump", x, y);
+		sound_play_oneshot_3d("event:/sfx/mort/doublejump", x, y);
 		state = states.mortjump;
 		sprite_index = spr_mortdoublejumpstart;
 		image_index = 0;

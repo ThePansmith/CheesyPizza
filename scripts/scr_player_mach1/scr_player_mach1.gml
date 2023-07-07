@@ -97,7 +97,7 @@ function scr_player_mach1()
 					is_solid = false;
 					image_xscale = other.xscale;
 				}
-				fmod_event_one_shot_3d("event:/sfx/pep/pistolshot", x + (xscale * 20), y);
+				sound_play_oneshot_3d("event:/sfx/pep/pistolshot", x + (xscale * 20), y);
 			}
 			if (key_chainsaw2 && !instance_exists(dynamite_inst))
 			{

@@ -12,6 +12,6 @@ function scr_sound_multiple(event, x, y)
 	ds_list_clear(_list);
 	b = fmod_event_create_instance(event);
 	fmod_event_instance_play(b);
-	fmod_event_instance_set_3d_attributes(b, x, y);
+	sound_instance_move(b, x, y);
 	ds_list_add(_list, b);
 }

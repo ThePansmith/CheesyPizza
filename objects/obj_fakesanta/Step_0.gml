@@ -61,7 +61,7 @@ if (activated == 1)
 							{
 								shot = true;
 								var n = irandom(array_length(content) - 1);
-								fmod_event_one_shot_3d("event:/sfx/enemies/presentfall", x, y);
+								sound_play_oneshot_3d("event:/sfx/enemies/presentfall", x, y);
 								with (instance_create(x, y + 50, obj_fakesantapresent))
 								{
 									baddieID = other.id;
@@ -107,6 +107,6 @@ if (activated == 1)
 	if (state != states.stun)
 		thrown = false;
 	if (fmod_event_instance_is_playing(global.snd_fakesanta))
-		fmod_event_instance_set_3d_attributes(global.snd_fakesanta, x, y);
+		sound_instance_move(global.snd_fakesanta, x, y);
 	depth = 150;
 }

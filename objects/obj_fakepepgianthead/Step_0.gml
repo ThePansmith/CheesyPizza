@@ -7,7 +7,7 @@ switch (state)
 		if (movespeed < 8.25)
 			movespeed += 0.05
 		x += movespeed;
-		fmod_event_instance_set_3d_attributes(snd, x, y);
+		sound_instance_move(snd, x, y);
 		if (place_meeting(x, y, obj_player1) || x > obj_player1.x)
 		{
 			var s = obj_player1.state;

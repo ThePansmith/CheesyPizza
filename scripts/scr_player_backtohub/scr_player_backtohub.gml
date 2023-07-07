@@ -13,7 +13,7 @@ function scr_player_backtohub()
 			y += 20;
 			if (y >= backtohubstarty)
 			{
-				fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 				create_particle(x, y, particle.landcloud);
 				y = backtohubstarty;
 				sprite_index = spr_rockethitwall;

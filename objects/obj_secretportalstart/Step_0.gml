@@ -24,7 +24,7 @@ switch (sprite_index)
 		if (floor(image_index) == (image_number - 1))
 		{
 			if !sugary
-				fmod_event_one_shot_3d("event:/sfx/misc/secretexit", x, y);
+				sound_play_oneshot_3d("event:/sfx/misc/secretexit", x, y);
 			sprite_index = spr_idle;
 			with (obj_player)
 			{

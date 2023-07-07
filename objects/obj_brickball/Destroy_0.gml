@@ -18,7 +18,7 @@ repeat (3)
 }
 with (obj_baddie)
 	rattime = 0;
-fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 instance_create(x, y, obj_bangeffect);
 if (instance_exists(obj_brickballspeedline))
 	instance_destroy(obj_brickballspeedline);

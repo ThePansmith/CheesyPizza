@@ -12,7 +12,7 @@ with (other)
 			obj_player1.ratmount_movespeed = 0;
 			obj_player1.vsp = 0;
 			obj_player1.state = states.taxi;
-			fmod_event_one_shot("event:/sfx/misc/taximove");
+			sound_play_oneshot("event:/sfx/misc/taximove");
 			playerid = obj_player1;
 			move = true;
 			sprite_index = spr_taximove;
@@ -23,7 +23,7 @@ with (other)
 			{
 				with (instance_create(x, y, obj_taxicardboard))
 					depth = -101;
-				fmod_event_one_shot("event:/sfx/misc/policesiren");
+				sound_play_oneshot("event:/sfx/misc/policesiren");
 				police_buffer = 50;
 				obj_player1.policetaxi = true;
 				sprite_index = spr_taxicop;
@@ -31,7 +31,7 @@ with (other)
 			if (global.coop == 1)
 			{
 				obj_player2.sprite_index = obj_player2.spr_idle;
-				fmod_event_one_shot("event:/sfx/misc/taximove");
+				sound_play_oneshot("event:/sfx/misc/taximove");
 				playerid = obj_player2;
 				sprite_index = spr_taximove;
 				hsp = 10;

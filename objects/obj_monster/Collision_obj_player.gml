@@ -56,11 +56,11 @@ if (!instance_exists(obj_fadeout) && state != states.robotidle && other.state !=
 		}
 		if (other.oktoberfest && random(100) <= 10)
 		{
-			fmod_event_one_shot("event:/sfx/voice/yodeling");
+			sound_play_oneshot("event:/sfx/voice/yodeling");
 			oktoberfest = true;
 		}
 		else
-			fmod_event_one_shot("event:/sfx/enemies/jumpscare");
+			sound_play_oneshot("event:/sfx/enemies/jumpscare");
 	}
 	if (!oktoberfest && ds_list_find_index(global.saveroom, room_get_name(room)) == -1)
 	{

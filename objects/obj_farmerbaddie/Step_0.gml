@@ -72,7 +72,7 @@ else if (state == states.jump)
 	if (grounded && vsp > 0)
 	{
 		fmod_event_instance_play(chargesnd);
-		fmod_event_instance_set_3d_attributes(chargesnd, x, y);
+		sound_instance_move(chargesnd, x, y);
 		state = states.charge;
 		sprite_index = ragespr;
 		attackspeed = 6;

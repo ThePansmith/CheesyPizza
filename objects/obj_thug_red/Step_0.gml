@@ -108,7 +108,7 @@ if (state == states.punch)
 {
 	if (!instance_exists(punchinst))
 	{
-		fmod_event_one_shot_3d("event:/sfx/enemies/minijohnpunch", x, y);
+		sound_play_oneshot_3d("event:/sfx/enemies/minijohnpunch", x, y);
 		punchinst = instance_create(x, y, obj_forkhitbox);
 		with (punchinst)
 			ID = other.id;
@@ -182,7 +182,7 @@ if ((elite or global.stylethreshold >= 3) && ragecooldown <= 0)
 		{
 			image_xscale = -sign(x - player.x);
 			sprite_index = spr_shrimp_knife;
-			fmod_event_one_shot_3d("event:/sfx/enemies/projectile", x, y);
+			sound_play_oneshot_3d("event:/sfx/enemies/projectile", x, y);
 			image_index = 0;
 			shot = false;
 			state = states.rage;

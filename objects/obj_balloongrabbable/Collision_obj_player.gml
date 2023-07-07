@@ -2,7 +2,7 @@ if (active)
 {
 	if (other.isgustavo && other.brick)
 	{
-		fmod_event_one_shot_3d("event:/sfx/rat/grabeat", x, y);
+		sound_play_oneshot_3d("event:/sfx/rat/grabeat", x, y);
 		other.state = states.ratmountballoon;
 		active = false;
 		cooldown = 100;
@@ -10,7 +10,7 @@ if (active)
 	}
 	else if (other.isgustavo == 0)
 	{
-		fmod_event_one_shot_3d("event:/sfx/rat/grab", x, y);
+		sound_play_oneshot_3d("event:/sfx/rat/grab", x, y);
 		other.state = states.balloon;
 		other.movespeed = other.hsp;
 		active = false;

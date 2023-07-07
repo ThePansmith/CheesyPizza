@@ -33,7 +33,7 @@ function scr_player_cheesepep()
 	if ((grounded && (floor(image_index) % 4) == 0) && hsp != 0)
 	{
 		create_debris(x, y + 43, spr_slimedebris);
-		fmod_event_one_shot_3d("event:/sfx/cheese/ground", x, y);
+		sound_play_oneshot_3d("event:/sfx/cheese/ground", x, y);
 	}
 	if (!grounded)
 	{
@@ -70,6 +70,6 @@ function scr_player_cheesepep()
 		image_index = 0;
 		sprite_index = spr_cheesepepjump;
 		state = states.cheesepepjump;
-		fmod_event_one_shot_3d("event:/sfx/cheese/jump", x, y);
+		sound_play_oneshot_3d("event:/sfx/cheese/jump", x, y);
 	}
 }

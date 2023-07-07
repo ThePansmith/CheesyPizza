@@ -63,14 +63,14 @@ if (sprite_index == bomblit_spr)
 {
 	if (!fmod_event_instance_is_playing(snd))
 		fmod_event_instance_play(snd);
-	fmod_event_instance_set_3d_attributes(snd, x, y);
+	sound_instance_move(snd, x, y);
 }
 if (sprite_index == spr_bomb)
 {
 	if (floor(image_index) == 5 && !bouncesound)
 	{
 		bouncesound = true;
-		fmod_event_one_shot_3d("event:/sfx/pep/bombbounce", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/bombbounce", x, y);
 	}
 	else if (floor(image_index) != 5)
 		bouncesound = false;

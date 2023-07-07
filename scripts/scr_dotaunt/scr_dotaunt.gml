@@ -33,7 +33,7 @@ function scr_dotaunt()
 				ini_open_from_string(obj_savesystem.ini_str);
 				ini_write_real("Game", "supertaunt", true);
 				obj_savesystem.ini_str = ini_close();
-				fmod_event_instance_set_3d_attributes(global.snd_supertaunt, x, y);
+				sound_instance_move(global.snd_supertaunt, x, y);
 				fmod_event_instance_play(global.snd_supertaunt);
 				image_index = 0;
 				if character == "P" && !isgustavo && REMIX
@@ -47,9 +47,9 @@ function scr_dotaunt()
 			{
 				scr_create_parryhitbox();
 				if character == "SP"
-					fmod_event_one_shot_3d("event:/modded/sfx/pizzytaunt", x, y);
+					sound_play_oneshot_3d("event:/modded/sfx/pizzytaunt", x, y);
 				else
-					fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y);
+					sound_play_oneshot_3d("event:/sfx/pep/taunt", x, y);
 				taunttimer = 20;
 				sprite_index = spr_taunt;
 				if character == "P" && !isgustavo && !REMIX

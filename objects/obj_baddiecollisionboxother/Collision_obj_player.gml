@@ -9,7 +9,7 @@ if (instance_exists(baddieID) && baddieID.stun == 1 && (other.state == states.ha
 		vsp = -3;
 		instance_destroy(other);
 	}
-	fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
 	create_slapstar(x, y);
 	create_slapstar(x, y);
 	create_slapstar(x, y);

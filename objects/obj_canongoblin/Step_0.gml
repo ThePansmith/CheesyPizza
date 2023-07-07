@@ -60,7 +60,7 @@ if (x != targetplayer.x && state != states.pizzagoblinthrow && bombreset == 0 &&
 		if (state == states.walk || (state == states.idle && sprite_index != scaredspr))
 		{
 			sprite_index = spr_canongoblin_throwbomb;
-			fmod_event_one_shot_3d("event:/sfx/enemies/cannongoblin", x, y);
+			sound_play_oneshot_3d("event:/sfx/enemies/cannongoblin", x, y);
 			image_index = 0;
 			image_xscale = -sign(x - targetplayer.x);
 			state = states.pizzagoblinthrow;

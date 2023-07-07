@@ -1,6 +1,6 @@
 seconds--;
 alarm[0] = 60;
-fmod_event_one_shot("event:/sfx/ui/wartimer");
+sound_play_oneshot("event:/sfx/ui/wartimer");
 if (seconds < 0)
 {
 	if (minutes > 0)

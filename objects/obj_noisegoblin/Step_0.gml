@@ -56,7 +56,7 @@ if (x != targetplayer.x && targetplayer.state != states.bombpep && state != stat
 	{
 		if (state == states.walk || (state == states.idle && sprite_index != scaredspr))
 		{
-			fmod_event_one_shot_3d("event:/sfx/enemies/noisegoblinbow");
+			sound_play_oneshot_3d("event:/sfx/enemies/noisegoblinbow");
 			sprite_index = spr_archergoblin_shoot;
 			image_index = 0;
 			if (x != targetplayer.x)

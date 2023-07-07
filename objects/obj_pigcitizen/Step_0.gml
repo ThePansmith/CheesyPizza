@@ -41,7 +41,7 @@ switch (state)
 		if (obj_player.state == states.backbreaker && bbox_in_camera(view_camera[0], 50))
 		{
 			if (state != states.backbreaker)
-				fmod_event_one_shot_3d("event:/sfx/voice/pigphoto", x, y);
+				sound_play_oneshot_3d("event:/sfx/voice/pigphoto", x, y);
 			tauntstoredhsp = hsp;
 			tauntstoredvsp = vsp;
 			state = states.backbreaker;

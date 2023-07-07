@@ -41,7 +41,7 @@ with (other)
 			{
 				repeat (5)
 					instance_create(other.x, other.y + 40, obj_bubbles);
-				fmod_event_one_shot_3d("event:/sfx/misc/bottlepop", x, y);
+				sound_play_oneshot_3d("event:/sfx/misc/bottlepop", x, y);
 			}
 		}
 		with (instance_create(x, y, obj_speedlinesup))
@@ -51,7 +51,7 @@ with (other)
 		}
 		other.image_index = 0;
 		if (other.sprite_index != other.activatespr)
-			fmod_event_one_shot_3d("event:/sfx/misc/superspring", x, y);
+			sound_play_oneshot_3d("event:/sfx/misc/superspring", x, y);
 		other.sprite_index = other.activatespr;
 	}
 }

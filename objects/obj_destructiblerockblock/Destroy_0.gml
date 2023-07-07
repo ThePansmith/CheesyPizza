@@ -1,7 +1,7 @@
 if (ds_list_find_index(global.saveroom, id) == -1)
 {
 	scr_rockblock_tag();
-	fmod_event_one_shot_3d("event:/sfx/misc/breakblock", x, y);
+	sound_play_oneshot_3d("event:/sfx/misc/breakblock", x, y);
 	if (place_meeting(x + 1, y, obj_rockblock))
 	{
 		with (instance_place(x + 1, y, obj_rockblock))

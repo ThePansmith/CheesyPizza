@@ -9,13 +9,13 @@ switch (state)
 		hsp = image_xscale * movespeed;
 		if (scr_solid(x, y + 1) && vsp > 0)
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 			vsp = -14;
 			create_particle(x, y + 3, particle.groundpoundeffect, 0);
 		}
 		if (scr_solid(x + image_xscale, y))
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 			instance_create(x, y, obj_bangeffect);
 			sprite_index = spr_lonebrick_hurt;
 			cbspeed = 0;

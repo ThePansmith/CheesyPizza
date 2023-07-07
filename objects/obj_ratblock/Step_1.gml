@@ -6,7 +6,7 @@ with (obj_player)
 		hsp = -xscale * 5;
 		vsp = -2;
 		sprite_index = spr_bump;
-		fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
 		with (other)
 		{
 			image_index = 0;

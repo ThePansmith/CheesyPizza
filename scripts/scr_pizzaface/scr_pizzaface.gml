@@ -15,7 +15,7 @@ function scr_pizzaface_update_sounds()
 	{
 		if (!fmod_event_instance_is_playing(snd_ram))
 			fmod_event_instance_play(snd_ram);
-		fmod_event_instance_set_3d_attributes(snd_ram, x, y);
+		sound_instance_move(snd_ram, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd_ram, true);
@@ -23,7 +23,7 @@ function scr_pizzaface_update_sounds()
 	{
 		if (!fmod_event_instance_is_playing(snd_haywire))
 			fmod_event_instance_play(snd_haywire);
-		fmod_event_instance_set_3d_attributes(snd_haywire, x, y);
+		sound_instance_move(snd_haywire, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd_haywire, true);
@@ -81,7 +81,7 @@ function scr_pizzaface_arenaintro()
 					}
 					else if (grounded && vsp > 0)
 					{
-						fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+						sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 						other.introstate++;
 						other.introbuffer = 80;
 						sprite_index = spr_slipbanan2;
@@ -162,7 +162,7 @@ function scr_pizzaface_arenaintro()
 					introstate++;
 					with (obj_player1)
 					{
-						fmod_event_one_shot_3d("event:/sfx/voice/peppinoangryscream", x, y);
+						sound_play_oneshot_3d("event:/sfx/voice/peppinoangryscream", x, y);
 						sprite_index = spr_pepbossintro3;
 						image_index = 0;
 					}
@@ -174,7 +174,7 @@ function scr_pizzaface_arenaintro()
 				var _finish = false;
 				if (floor(image_index) == (image_number - 1) && sprite_index == spr_pizzaface_intro1)
 				{
-					fmod_event_one_shot("event:/sfx/pizzaface/laugh");
+					sound_play_oneshot("event:/sfx/pizzaface/laugh");
 					sprite_index = spr_pizzaface_intro2;
 					image_index = 0;
 				}
@@ -355,7 +355,7 @@ function scr_pizzaface_ram()
 				vsp = 12;
 			if ((vsp > 0 && grounded) || place_meeting(x + sign(hsp), y, obj_solid))
 			{
-				fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 				substate = states.land;
 				landbuffer = 80;
 				hitX = x;
@@ -385,7 +385,7 @@ function scr_pizzaface_ram()
 			y = hitY + irandom_range(-1, 1);
 			if (floor(image_index) == (image_number - 1))
 			{
-				fmod_event_one_shot_3d("event:/sfx/pizzaface/jump", x, y);
+				sound_play_oneshot_3d("event:/sfx/pizzaface/jump", x, y);
 				substate = states.jump;
 				sprite_index = spr_pizzaface_attackjump;
 				image_index = 0;
@@ -455,13 +455,13 @@ function scr_pizzaface_transitioncutscene()
 				substate = states.hit;
 				sprite_index = spr_pizzahead_intro2;
 				image_index = 0;
-				fmod_event_one_shot_3d("event:/sfx/pizzaface/open", x, y);
+				sound_play_oneshot_3d("event:/sfx/pizzaface/open", x, y);
 			}
 			break;
 		case states.hit:
 			if (floor(image_index) == (image_number - 1))
 			{
-				fmod_event_one_shot_3d("event:/sfx/misc/explosion", x, y);
+				sound_play_oneshot_3d("event:/sfx/misc/explosion", x, y);
 				with (instance_create(x, y, obj_explosioneffect))
 					sprite_index = spr_bombexplosion;
 				with (instance_create(x, y, obj_pizzafaceboss_p2))

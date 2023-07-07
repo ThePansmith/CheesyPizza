@@ -7,7 +7,7 @@ if (!horseyfinish && start)
 		vsp = 0;
 		if (state != states.dead)
 		{
-			fmod_event_one_shot_3d("event:/sfx/misc/winrace", other.x, other.y);
+			sound_play_oneshot_3d("event:/sfx/misc/winrace", other.x, other.y);
 			ds_list_add(global.saveroom, id);
 		}
 		state = states.dead;

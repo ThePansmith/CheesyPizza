@@ -126,7 +126,7 @@ function tv_do_expression(sprite)
 					{
 						expressionsprite = spr_tv_happyG
 						if (irandom(100) <= 50)
-							fmod_event_one_shot_3d("event:/sfx/voice/brickok", obj_player1.x, obj_player1.y)
+							sound_play_oneshot_3d("event:/sfx/voice/brickok", obj_player1.x, obj_player1.y)
 					}
 					if (irandom(100) <= 50)
 						scr_fmod_soundeffect(obj_player1.snd_voiceok, obj_player1.x, obj_player1.y)

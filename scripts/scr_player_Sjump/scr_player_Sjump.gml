@@ -66,7 +66,7 @@ function scr_player_Sjump()
 					vsp = -7;
 			}
 		}
-		fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 		image_index = 0;
 		state = states.Sjumpland;
 		machhitAnim = false;
@@ -76,15 +76,15 @@ function scr_player_Sjump()
 		image_index = 0;
 		sprite_index = spr_Sjumpcancelstart;
 		
-		fmod_event_instance_set_3d_attributes(sjumpcancelsnd, x, y);
+		sound_instance_move(sjumpcancelsnd, x, y);
 		if character == "N"
 		{
-			fmod_event_one_shot_3d(sfx_woag, x, y);
+			sound_play_oneshot_3d(sfx_woag, x, y);
 			
 			if input_buffer_slap > 0
 			{
 				jetpackcancel = true;
-				fmod_event_one_shot_3d(sfx_jetpackstart, x, y);
+				sound_play_oneshot_3d(sfx_jetpackstart, x, y);
 			}
 			else
 				fmod_event_instance_play(sjumpcancelsnd);

@@ -18,7 +18,7 @@ function scr_player_ratmountskid()
 	{
 		particle_set_scale(particle.highjumpcloud2, xscale, 1);
 		create_particle(x, y, particle.highjumpcloud2, 0);
-		fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
 		if (brick)
 			sprite_index = spr_player_ratmountjump;
 		else if (ratmount_movespeed >= 12)

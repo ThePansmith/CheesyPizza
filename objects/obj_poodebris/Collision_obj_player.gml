@@ -18,7 +18,7 @@ with (other)
 					steppybuffer = 16;
 				else
 					steppybuffer = 10;
-				fmod_event_one_shot_3d("event:/sfx/pep/stepinshit", x, y);
+				sound_play_oneshot_3d("event:/sfx/pep/stepinshit", x, y);
 			}
 		}
 	}

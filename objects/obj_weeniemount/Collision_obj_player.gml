@@ -2,7 +2,7 @@ with (other)
 {
 	if (other.buffer <= 0 && state == states.handstandjump or check_kungfu_state())
 	{
-		fmod_event_one_shot_3d("event:/sfx/weenie/start", x, y);
+		sound_play_oneshot_3d("event:/sfx/weenie/start", x, y);
 		state = states.rideweenie;
 		movespeed = hsp;
 		sprite_index = spr_rideweenie;

@@ -7,4 +7,4 @@ if (fall == 0)
 }
 if (fall == 1)
 	x += (image_xscale * 2.5);
-fmod_event_instance_set_3d_attributes(snd, x, y);
+sound_instance_move(snd, x, y);

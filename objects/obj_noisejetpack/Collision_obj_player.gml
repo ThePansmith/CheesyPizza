@@ -11,7 +11,7 @@ if (state == states.normal && other.grounded)
 	movespeed = 2;
 	with (other)
 	{
-		fmod_event_one_shot_3d("event:/sfx/misc/secretfound", x, y);
+		sound_play_oneshot_3d("event:/sfx/misc/secretfound", x, y);
 		state = states.gottreasure;
 		hsp = 0;
 		vsp = 0;

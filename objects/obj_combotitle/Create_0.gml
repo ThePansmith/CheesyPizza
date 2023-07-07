@@ -11,7 +11,7 @@ y = 290;
 ystart = y;
 very = false;
 afterimages = array_create(0);
-fmod_event_one_shot("event:/sfx/ui/comboup");
+sound_play_oneshot("event:/sfx/ui/comboup");
 
 sugary = (obj_player1.character == "SP");
 if sugary

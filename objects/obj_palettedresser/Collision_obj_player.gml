@@ -8,7 +8,7 @@ if (other.key_up2)
 		{
 			with (instance_create(x, y, obj_sausageman_dead))
 			{
-				fmod_event_one_shot_3d("event:/sfx/misc/clotheswitch", x, y);
+				sound_play_oneshot_3d("event:/sfx/misc/clotheswitch", x, y);
 				hsp = irandom_range(-5, 5);
 				vsp = -irandom_range(6, 11);
 				usepalette = true;
@@ -44,7 +44,7 @@ if (other.key_up2)
 		{
 			with (instance_create(x, y, obj_sausageman_dead))
 			{
-				fmod_event_one_shot_3d("event:/sfx/misc/clotheswitch", x, y);
+				sound_play_oneshot_3d("event:/sfx/misc/clotheswitch", x, y);
 				hsp = irandom_range(-5, 5);
 				vsp = -irandom_range(6, 11);
 				usepalette = true;

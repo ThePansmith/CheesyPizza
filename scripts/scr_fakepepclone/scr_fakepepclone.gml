@@ -28,7 +28,7 @@ function scr_fakepepclone_transitioncutscene()
 			}
 			else if (attack.attack == fakepep_attacks.tauntclone)
 			{
-				fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
+				sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
 				create_particle(x, y, particle.highjumpcloud2);
 				attacked = true;
 				taunted = false;
@@ -122,7 +122,7 @@ function scr_fakepepclone_walk()
 	}
 	else
 	{
-		fmod_event_one_shot_3d("event:/sfx/fakepep/deform", x, y);
+		sound_play_oneshot_3d("event:/sfx/fakepep/deform", x, y);
 		state = states.transition;
 		sprite_index = spr_fakepeppino_deform;
 		image_index = 0;
@@ -141,7 +141,7 @@ function scr_fakepepclone_Sjumpprep()
 		sjumpbuffer = 0;
 		state = states.Sjump;
 		sprite_index = spr_fakepeppino_superjump;
-		fmod_event_one_shot_3d("event:/sfx/fakepep/superjumpclonerelease", x, y);
+		sound_play_oneshot_3d("event:/sfx/fakepep/superjumpclonerelease", x, y);
 	}
 }
 function scr_fakepepclone_Sjump()
@@ -200,7 +200,7 @@ function scr_fakepepclone_throwing()
 		}
 		if (floor(image_index) >= 32 && !instance_exists(headID))
 		{
-			fmod_event_one_shot_3d("event:/sfx/fakepep/headthrow", x, y);
+			sound_play_oneshot_3d("event:/sfx/fakepep/headthrow", x, y);
 			with (instance_create(x, y - 20, obj_fakepephead))
 			{
 				clone = true;

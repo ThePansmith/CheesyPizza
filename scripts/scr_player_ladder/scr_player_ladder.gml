@@ -22,7 +22,7 @@ function scr_player_ladder()
 		{
 			create_particle(x, y + 43, particle.cloudeffect, 0);
 			steppybuffer = 12;
-			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
 		}
 		image_speed = 0.35;
 	}

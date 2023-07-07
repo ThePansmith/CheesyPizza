@@ -1,7 +1,7 @@
 if (instance_exists(baddieID) && baddieID.invtime == 0 && baddieID.state != states.grabbed && !baddieID.invincible && baddieID.instantkillable)
 {
 	baddieID.invtime = 15;
-	fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);
+	sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
 	if (!baddieID.important)
 	{
 		global.style += 5 + floor(global.combo / heat_nerf);

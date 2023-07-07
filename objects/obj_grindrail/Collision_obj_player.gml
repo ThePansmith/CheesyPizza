@@ -18,7 +18,7 @@ if ((other.state != states.tumble || (other.sprite_index != other.spr_tumble && 
 			}
 			with (instance_create(x, y - 5, obj_parryeffect))
 			{
-				fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
+				sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
 				sprite_index = spr_grabhangeffect;
 				image_speed = 0.35;
 			}

@@ -10,4 +10,4 @@ mask_index = spr_cowbounce;
 bullethit = 3;
 flash = false;
 flashbuffer = 0;
-fmod_event_one_shot_3d("event:/sfx/vigilante/cowstomp", x, y);
+sound_play_oneshot_3d("event:/sfx/vigilante/cowstomp", x, y);

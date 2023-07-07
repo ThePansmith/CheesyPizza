@@ -5,7 +5,7 @@ if (other.instakillmove || other.state == states.handstandjump)
 		hsp = 0;
 		vsp = 0;
 		flash = true;
-		fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+		sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
 		state = states.gottreasure;
 		with (instance_create(x, y - 50, obj_noisebigkey))
 			alarm[0] = 150;
@@ -25,7 +25,7 @@ if (other.instakillmove || other.state == states.handstandjump)
 		with (create_debris(x, y, spr_baddiegibs))
 			vsp = -irandom_range(5, 11);
 	}
-	fmod_event_one_shot("event:/sfx/misc/secretfound");
+	sound_play_oneshot("event:/sfx/misc/secretfound");
 	instance_destroy();
 	with (instance_create(x, y, obj_sausageman_dead))
 		sprite_index = spr_playerN_hurtjump;

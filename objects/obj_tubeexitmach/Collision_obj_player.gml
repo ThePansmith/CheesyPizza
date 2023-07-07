@@ -45,9 +45,9 @@ if (floor(other.x) == (xstart + _offset_x) && floor(other.y) == (ystart + _offse
 	image_index = 0;
 	playerid = other.id;
 	if (object_index == obj_tubeenter)
-		fmod_event_one_shot_3d("event:/sfx/pipe/start", x, y);
+		sound_play_oneshot_3d("event:/sfx/pipe/start", x, y);
 	else
-		fmod_event_one_shot_3d("event:/sfx/pipe/end", x, y);
+		sound_play_oneshot_3d("event:/sfx/pipe/end", x, y);
 	image_speed = 0.5;
 	other.state = states.tube;
 	other.tube_vsp = 0;

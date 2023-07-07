@@ -1,5 +1,5 @@
 x -= 3;
-fmod_event_instance_set_3d_attributes(snd, x, y);
+sound_instance_move(snd, x, y);
 if (x < -140)
 {
 	instance_destroy();

@@ -2,7 +2,7 @@ var playerid = obj_player1;
 if (obj_player1.spotlight == 0)
 	playerid = obj_player2;
 
-fmod_event_instance_set_3d_attributes(snd, x, y);
+sound_instance_move(snd, x, y);
 if (!fmod_event_instance_is_playing(snd))
 	fmod_event_instance_play(snd);
 if (!instance_exists(playerid))
@@ -91,7 +91,7 @@ if (_move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.sta
 				visible = true;
 				image_blend = c_white;
 				stop_music();
-				fmod_event_one_shot("event:/music/timesup");
+				sound_play_oneshot("event:/music/timesup");
 			}
 			instance_destroy();
 		}

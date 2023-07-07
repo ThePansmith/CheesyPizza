@@ -62,7 +62,7 @@ switch (state)
 						sprite_index = spr_kingghost_anchor2
 						if (state != states.fall && state != states.jump && obj_player1.x > x - 100 && obj_player1.x < x + 100 && obj_player1.y > y && obj_player1.y < y + 500)
 						{
-							fmod_event_one_shot_3d("event:/sfx/enemies/presentfall", x, y)
+							sound_play_oneshot_3d("event:/sfx/enemies/presentfall", x, y)
 							state = states.fall
 							vsp = 10
 						}
@@ -73,7 +73,7 @@ switch (state)
 						{
 							state = states.punch
 							sprite_index = spr_kingghost_spike3
-							fmod_event_one_shot_3d("event:/sfx/enemies/pizzardelectricity", x, y)
+							sound_play_oneshot_3d("event:/sfx/enemies/pizzardelectricity", x, y)
 							image_index = 0
 							attackbuffer = 30
 							cooldown = 50
@@ -102,12 +102,12 @@ if (alpha)
 	image_alpha = Approach(image_alpha, target_alpha, 0.01);
 if (room == rank_room)
 	instance_destroy();
-fmod_event_instance_set_3d_attributes(snd_move, x, y);
+sound_instance_move(snd_move, x, y);
 if (state == states.normal)
 {
 	if (!fmod_event_instance_is_playing(snd_loop))
 		fmod_event_instance_play(snd_loop);
-	fmod_event_instance_set_3d_attributes(snd_loop, x, y);
+	sound_instance_move(snd_loop, x, y);
 }
 else
 	fmod_event_instance_stop(snd_loop, true);

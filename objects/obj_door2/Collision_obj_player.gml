@@ -28,7 +28,7 @@ if (!place_meeting(x, y, obj_doorblocked))
 			}
 			obj_player1.lastroom = room;
 			obj_player2.lastroom = room;
-			fmod_event_one_shot("event:/sfx/misc/door");
+			sound_play_oneshot("event:/sfx/misc/door");
 			obj_camera.chargecamera = 0;
 			ds_list_add(global.saveroom, id);
 			if (object_index == obj_player1)

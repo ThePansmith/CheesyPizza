@@ -8,7 +8,7 @@ if (global.panic || instance_exists(obj_wartimer))
 		{
 			if (other.playerid == -4 && place_meeting(x, y, other))
 			{
-				fmod_event_one_shot_3d("event:/sfx/misc/secretenter", x, y);
+				sound_play_oneshot_3d("event:/sfx/misc/secretenter", x, y);
 				with (obj_camera)
 					lock = true;
 				state = states.actor;
@@ -18,7 +18,7 @@ if (global.panic || instance_exists(obj_wartimer))
 				other.playerid = id;
 				if (!instance_exists(obj_wartimer) && global.lap)
 					global.fill += 180;
-				fmod_event_one_shot_3d(other.sugary ? "event:/modded/sfx/secretenterSP" : "event:/sfx/misc/lapenter", x, y);
+				sound_play_oneshot_3d(other.sugary ? "event:/modded/sfx/secretenterSP" : "event:/sfx/misc/lapenter", x, y);
 				//if (ds_list_find_index(global.saveroom, other.id) == -1)
 				{
 					//ds_list_add(global.saveroom, other.id);

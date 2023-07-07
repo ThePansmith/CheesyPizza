@@ -236,7 +236,7 @@ function scr_boss_do_hurt_phase2(object, inv_time = 100)
 	buildup_playerID = object;
 	camzoom = 1;
 	flashbuffer = inv_time - 40;
-	fmod_event_one_shot("event:/sfx/misc/blackoutpunch");
+	sound_play_oneshot("event:/sfx/misc/blackoutpunch");
 	instance_create_unique(0, 0, obj_blackoutline)
 	instance_create_unique(0, 0, obj_superattackeffect)
 	image_xscale = -object.xscale;
@@ -273,7 +273,7 @@ function scr_boss_phase1hurt(func = noone)
 			with (instance_create(x - (xscale * 61), y - 21, obj_explosioneffect))
 			{
 				depth = -12;
-				fmod_event_one_shot("event:/sfx/ending/star");
+				sound_play_oneshot("event:/sfx/ending/star");
 				sprite_index = choose(spr_bossfight_blackoutpunch1, spr_bossfight_blackoutpunch2);
 				image_speed = 0.3;
 			}
@@ -329,8 +329,8 @@ function scr_boss_phase1hurt(func = noone)
 			player.hitY = player.y;
 			instance_create(x, y, obj_parryeffect);
 			GamepadSetVibration((player.object_index == obj_player1) ? 0 : 1, 0.8, 0.8, 0.65);
-			fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
-			fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);
+			sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
 			state = states.stun;
 			image_xscale = -player.xscale;
 			repeat 3

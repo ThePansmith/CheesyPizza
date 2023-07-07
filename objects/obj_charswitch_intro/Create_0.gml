@@ -8,5 +8,5 @@ image_index = 0;
 image_speed = 0.35;
 spr = -4;
 obj_camera.lock = true;
-fmod_event_one_shot("event:/sfx/ui/tvswitch");
+sound_play_oneshot("event:/sfx/ui/tvswitch");
 shakey = 0;

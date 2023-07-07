@@ -36,7 +36,7 @@ function scr_player_machslide()
 	}
 	if (place_meeting(x + xscale, y, obj_solid) && (sprite_index == spr_machslide || sprite_index == spr_machslidestart))
 	{
-		fmod_event_one_shot_3d("event:/sfx/pep/splat", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/splat", x, y);
 		sprite_index = spr_wallsplat;
 		state = states.bump;
 		image_index = 0;

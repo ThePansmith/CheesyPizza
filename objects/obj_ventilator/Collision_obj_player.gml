@@ -18,5 +18,5 @@ with (other)
 	if (!fmod_event_instance_is_playing(global.snd_ventilator))
 		scr_fmod_soundeffect(global.snd_ventilator, x, y);
 	else
-		fmod_event_instance_set_3d_attributes(global.snd_ventilator, x, y);
+		sound_instance_move(global.snd_ventilator, x, y);
 }

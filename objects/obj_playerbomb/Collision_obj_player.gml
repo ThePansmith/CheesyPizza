@@ -9,6 +9,6 @@ if (!kick && countdown <= 0)
 		other.jumpAnim = true;
 	}
 	countdown = 10;
-	fmod_event_one_shot_3d("event:/sfx/enemies/stomp", x, y);
+	sound_play_oneshot_3d("event:/sfx/enemies/stomp", x, y);
 	create_particle(x, y, particle.jumpdust, 0);
 }

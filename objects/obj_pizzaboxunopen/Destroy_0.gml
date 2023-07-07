@@ -20,7 +20,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 			with (create_debris(x + 10, y, spr_cagedebris, false))
 				image_index = 4;
 		}
-		fmod_event_one_shot_3d("event:/misc/breakblock", x, y);
+		sound_play_oneshot_3d("event:/misc/breakblock", x, y);
 	}
 	ds_list_add(global.saveroom, id);
 }

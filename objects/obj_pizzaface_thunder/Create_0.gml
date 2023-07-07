@@ -6,4 +6,4 @@ with (obj_camera)
 	shake_mag = 8;
 	shake_mag_acc = 5 / room_speed;
 }
-fmod_event_one_shot("event:/sfx/pizzahead/thunder");
+sound_play_oneshot("event:/sfx/pizzahead/thunder");

@@ -8,7 +8,7 @@ if (myplayer.state != states.hurt)
 		parry_lethal = other.lethal;
 		if (state != states.parry)
 		{
-			fmod_event_instance_set_3d_attributes(global.snd_parry, x, y);
+			sound_instance_move(global.snd_parry, x, y);
 			fmod_event_instance_play(global.snd_parry);
 		}
 		state = states.parry;

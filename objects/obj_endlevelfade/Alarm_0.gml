@@ -46,5 +46,5 @@ if (global.collectN > global.collect)
 		sprite_index = spr_bombexplosion;
 	repeat (6)
 		instance_create(obj_player1.x, obj_player1.y, obj_baddiegibs);
-	fmod_event_one_shot("event:/sfx/misc/explosion");
+	sound_play_oneshot("event:/sfx/misc/explosion");
 }

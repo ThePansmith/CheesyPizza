@@ -33,7 +33,6 @@ instance_cache = ds_list_create();
 #macro sound_instance_destroy fmod_event_instance_release // sound instance
 #macro sound_instance_play fmod_event_instance_play // sound instance
 #macro sound_instance_stop fmod_event_instance_stop // sound instance, force (bool)
-#macro sound_instance_move fmod_event_instance_set_3d_attributes // sound instance, x, y
 #macro sound_instance_set_parameter fmod_event_instance_set_parameter // sound instance, parameter, value, instant
 #macro sound_instance_get_parameter fmod_event_instance_get_parameter // sound instance, parameter
 #macro sound_instance_is_playing fmod_event_instance_is_playing // sound instance

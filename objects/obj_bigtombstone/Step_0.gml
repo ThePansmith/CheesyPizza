@@ -52,7 +52,7 @@ switch (state)
 				if (grounded)
 				{
 					substate = states.normal;
-					fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+					sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 					with (obj_camera)
 					{
 						shake_mag = 3;

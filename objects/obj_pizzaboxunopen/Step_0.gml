@@ -2,7 +2,7 @@ var roomname = string_letters(room_get_name(room));
 if place_meeting(x, y, obj_player)
 {
 	global.combotime = 60;
-	fmod_event_one_shot(sugary ? "event:/modded/sfx/collecttoppinSP" : "event:/sfx/misc/collecttoppin");
+	sound_play_oneshot(sugary ? "event:/modded/sfx/collecttoppinSP" : "event:/sfx/misc/collecttoppin");
 	
 	if (content == obj_noisebomb)
 	{
@@ -76,7 +76,7 @@ if place_meeting(x, y, obj_player)
 	}
 	if (content == obj_noisey)
 	{
-		fmod_event_one_shot_3d("event:/sfx/enemies/projectile", x, y);
+		sound_play_oneshot_3d("event:/sfx/enemies/projectile", x, y);
 		with (instance_create(x, y - 25, content))
 		{
 			image_xscale = other.image_xscale;

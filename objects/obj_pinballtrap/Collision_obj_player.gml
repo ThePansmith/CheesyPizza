@@ -14,7 +14,7 @@ if (_used)
 			if ((state != states.bump || sprite_index != spr_player_catched) && (state != states.tumble || xscale != _obj.image_xscale) && state != states.knightpep && state != states.knightpepslopes && state != states.backbreaker && state != states.gotoplayer)
 			{
 				state = states.tumble;
-				fmod_event_one_shot_3d("event:/sfx/misc/pepbotkick", x, y);
+				sound_play_oneshot_3d("event:/sfx/misc/pepbotkick", x, y);
 				xscale = sign(other.image_xscale);
 				mask_index = spr_crouchmask;
 				movespeed = 8;

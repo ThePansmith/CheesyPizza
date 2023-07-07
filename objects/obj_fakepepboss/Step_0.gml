@@ -116,7 +116,7 @@ if (prevhp != elitehit)
 	{
 		instance_destroy(obj_grabmarker);
 		if (irandom(100) <= 25)
-			fmod_event_one_shot_3d("event:/sfx/voice/fakepepnegative", x, y);
+			sound_play_oneshot_3d("event:/sfx/voice/fakepepnegative", x, y);
 		pizzahead_subhp = pizzahead_maxsubhp;
 		currentprojectile = 0;
 		subhp = maxsubhp;
@@ -155,7 +155,7 @@ if (wastedhits >= 6 && !pizzahead)
 			wastedhits = 0;
 			phase = 2;
 			create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
-			fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+			sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
 			with (obj_camera)
 			{
 				shake_mag = 3;
@@ -172,7 +172,7 @@ if (wastedhits >= 6 && !pizzahead)
 	}
 	else if (phase == 2 && instance_exists(obj_fakepepsolid))
 	{
-		fmod_event_one_shot("event:/sfx/fakepep/chasebegin");
+		sound_play_oneshot("event:/sfx/fakepep/chasebegin");
 		visible = false;
 		phase = 3;
 		elitehit = 5;

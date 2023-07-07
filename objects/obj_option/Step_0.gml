@@ -56,7 +56,7 @@ var os = optionselected;
 optionselected += move;
 optionselected = clamp(optionselected, 0, array_length(m.options) - 1);
 if (os != optionselected)
-	fmod_event_one_shot("event:/sfx/ui/step");
+	sound_play_oneshot("event:/sfx/ui/step");
 
 var option = m.options[optionselected];
 var move2 = key_left2 + key_right2;
@@ -66,7 +66,7 @@ switch (option.type)
 	case menutype.press:
 		if (key_jump && option.func != -4)
 		{
-			fmod_event_one_shot("event:/sfx/ui/select");
+			sound_play_oneshot("event:/sfx/ui/select");
 			option.func();
 		}
 		break;
@@ -74,7 +74,7 @@ switch (option.type)
 	case menutype.toggle:
 		if (key_jump or -key_left2 or key_right2)
 		{
-			fmod_event_one_shot("event:/sfx/ui/select");
+			sound_play_oneshot("event:/sfx/ui/select");
 			option.value = !option.value;
 			if (option.on_changed != -4)
 				option.on_changed(option.value);
@@ -84,7 +84,7 @@ switch (option.type)
 	case menutype.multiple:
 		if (move2 != 0)
 		{
-			fmod_event_one_shot("event:/sfx/ui/step");
+			sound_play_oneshot("event:/sfx/ui/step");
 			option.value += move2;
 			if (option.value > array_length(option.values) - 1)
 				option.value = 0;
@@ -150,7 +150,7 @@ if (slidebuffer > 0)
 
 if ((key_back or key_slap2 or keyboard_check_pressed(vk_escape)) && !instance_exists(obj_keyconfig) && !instance_exists(obj_audioconfig))
 {
-	fmod_event_one_shot("event:/sfx/ui/back");
+	sound_play_oneshot("event:/sfx/ui/back");
 	if menu == menus.options
 	{
 		if instance_exists(obj_mainmenuselect)

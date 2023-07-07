@@ -70,7 +70,7 @@ if (state == states.pizzagoblinthrow)
 		hsp = 0;
 		if (floor(image_index) == (image_number - 1))
 		{
-			fmod_event_one_shot_3d("event:/sfx/enemies/badrat", x, y);
+			sound_play_oneshot_3d("event:/sfx/enemies/badrat", x, y);
 			sprite_index = spr_badrat_attack2;
 			cooldown = 30;
 		}

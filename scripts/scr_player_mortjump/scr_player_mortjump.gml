@@ -56,7 +56,7 @@ function scr_player_mortjump()
 	else if (!doublejump && key_jump && dj)
 	{
 		scr_fmod_soundeffect(jumpsnd, x, y);
-		fmod_event_one_shot_3d("event:/sfx/mort/doublejump", x, y);
+		sound_play_oneshot_3d("event:/sfx/mort/doublejump", x, y);
 		jumpstop = false;
 		input_buffer_jump = 0;
 		doublejump = true;

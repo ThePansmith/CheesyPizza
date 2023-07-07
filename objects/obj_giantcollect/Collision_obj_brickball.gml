@@ -6,7 +6,7 @@ with (obj_camera)
 	healthshaketime = 120;
 
 scr_sound_multiple(global.snd_collect, x, y);
-fmod_event_one_shot(global.snd_collectgiantpizza);
+sound_play_oneshot(global.snd_collectgiantpizza);
 
 var val = heat_calculate(1000);
 global.collect += val;

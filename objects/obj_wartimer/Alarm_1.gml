@@ -10,7 +10,7 @@ if (room != rank_room && minutes <= 0 && seconds <= 0 && addseconds <= 0)
 		image_index = 0;
 		stop_music();
 		audio_stop_all();
-		fmod_event_one_shot("event:/music/timesup");
+		sound_play_oneshot("event:/music/timesup");
 	}
 	instance_create(0, 0, obj_timesupwar);
 	instance_destroy();

@@ -13,11 +13,11 @@ if (image_alpha == 1)
 		global.combotime = 60;
 		if sprite_index != spr_escapecollectbig_ss
 		{
-			fmod_event_one_shot_3d(global.snd_collectpizza, x, y);
-			fmod_event_one_shot_3d("event:/sfx/misc/bellcollectbig", x, y);
+			sound_play_oneshot_3d(global.snd_collectpizza, x, y);
+			sound_play_oneshot_3d("event:/sfx/misc/bellcollectbig", x, y);
 		}
 		else
-			fmod_event_one_shot_3d("event:/sfx/misc/bellcollectbig_ss", x, y);
+			sound_play_oneshot_3d("event:/sfx/misc/bellcollectbig_ss", x, y);
 		instance_destroy();
 		var val = heat_calculate(value);
 		if (other.object_index == obj_player1)

@@ -14,4 +14,4 @@ steppy = false;
 depth = -4;
 snd = fmod_event_create_instance("event:/sfx/hub/gusrun");
 sniffsnd = fmod_event_create_instance("event:/sfx/rat/ratsniff");
-fmod_event_instance_set_3d_attributes(sniffsnd, x, y);
+sound_instance_move(sniffsnd, x, y);

@@ -52,7 +52,7 @@ switch (state)
 		vsp = 0;
 		if (floor(image_index) == (image_number - 1))
 		{
-			fmod_event_one_shot_3d("event:/sfx/enemies/minijohnpunch", x, y);
+			sound_play_oneshot_3d("event:/sfx/enemies/minijohnpunch", x, y);
 			state = states.punch;
 			attackvsp = 11;
 			attack_y = y;

@@ -44,7 +44,7 @@ switch state
 						if (state != states.bump && state != states.mach3 && state != states.mach2 && state != states.machslide && abs(x - other.x) > dis + abs(movespeed) + 1)
 						{
 							state = states.bump
-							fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
+							sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y)
 							sprite_index = spr_bump
 							if (x != other.x)
 							{
@@ -54,7 +54,7 @@ switch state
 									other.attract_player = 1
 									launched = 0
 									flash = 1
-									fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
+									sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y)
 								}
 							}
 						}
@@ -63,7 +63,7 @@ switch state
 							other.attract_player = true;
 							launched = false;
 							flash = true;
-							fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+							sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
 						}
 						if (state == states.mach3 || (state == states.machslide && sprite_index == spr_mach3boost))
 							launch = 1
@@ -74,7 +74,7 @@ switch state
 						freefallsmash = 0
 						if (state == states.grind || state == states.climbwall || state == states.Sjumpprep || state == states.Sjump || state == states.Sjumpland || y < other.y - 400)
 						{
-							fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
+							sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y)
 							vsp = -4
 							hsp = -3 * xscale
 							state = states.bump
@@ -86,7 +86,7 @@ switch state
 							other.attract_player = 1
 							launched = 0
 							flash = 1
-							fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
+							sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y)
 						}
 						if other.attract_player
 						{
@@ -117,7 +117,7 @@ switch state
 						}
 						if (other.grabsound == 0)
 						{
-							fmod_event_one_shot_3d("event:/sfx/enemies/hamkuffgrab", x, y)
+							sound_play_oneshot_3d("event:/sfx/enemies/hamkuffgrab", x, y)
 							other.grabsound = 1
 						}
 					}
@@ -215,9 +215,9 @@ if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && ob
 	}
 	with (obj_player1)
 	{
-		fmod_event_one_shot_3d("event:/sfx/enemies/hamkuffgrab", other.x, other.y)
-		fmod_event_one_shot_3d("event:/sfx/rat/ratdead", x, y)
-		fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
+		sound_play_oneshot_3d("event:/sfx/enemies/hamkuffgrab", other.x, other.y)
+		sound_play_oneshot_3d("event:/sfx/rat/ratdead", x, y)
+		sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y)
 		brick = 0
 		sprite_index = spr_lonegustavo_idle
 		state = states.ratmount

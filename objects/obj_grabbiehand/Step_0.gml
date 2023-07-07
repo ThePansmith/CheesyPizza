@@ -1,4 +1,4 @@
-fmod_event_instance_set_3d_attributes(snd, x, y);
+sound_instance_move(snd, x, y);
 switch (state)
 {
 	case states.normal:
@@ -86,7 +86,7 @@ switch (state)
 		}
 		if (scr_solid(x, y - 1) || ((reverse && scr_solid(x, y + 1)) || place_meeting(x, y, obj_verticalhallway) || place_meeting(x, y, obj_hallway)))
 		{
-			fmod_event_one_shot_3d("event:/sfx/enemies/projectile", x, y);
+			sound_play_oneshot_3d("event:/sfx/enemies/projectile", x, y);
 			if (playerid == obj_player1.id)
 			{
 				with (playerid)

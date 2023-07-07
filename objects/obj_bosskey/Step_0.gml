@@ -8,7 +8,7 @@ switch (state)
 		{
 			if (touchedground)
 			{
-				fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 				y = y_to;
 				state = states.normal
 				with (obj_camera)
@@ -24,7 +24,7 @@ switch (state)
 			}
 			else
 			{
-				fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 				vsp = -8;
 				touchedground = true;
 				y = y_to;

@@ -13,7 +13,7 @@ if (state != states.stun)
 		}
 		else
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
 			instance_destroy();
 		}
 	}
@@ -39,7 +39,7 @@ if (state != states.stun)
 	}
 	else if (other.state == states.ratmountpunch || other.ratmount_movespeed >= 12)
 	{
-		fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
 		instance_destroy();
 	}
 	else

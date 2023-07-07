@@ -25,7 +25,7 @@ switch (state)
 		if (floor(image_index) > 5)
 		{
 			instance_activate_object(baddieID);
-			fmod_event_one_shot_3d("event:/sfx/enemies/escapespawn", x, y);
+			sound_play_oneshot_3d("event:/sfx/enemies/escapespawn", x, y);
 			with (baddieID)
 			{
 				x = other.x;

@@ -136,11 +136,11 @@ function mort_attack()
 		}
 	}
 	if (sprite_index == spr_player_mortattackfront)
-		fmod_event_one_shot_3d("event:/sfx/mort/side", x + hsp, y);
+		sound_play_oneshot_3d("event:/sfx/mort/side", x + hsp, y);
 	else if (sprite_index == spr_player_mortattackup)
-		fmod_event_one_shot_3d("event:/sfx/mort/up", x, y + vsp);
+		sound_play_oneshot_3d("event:/sfx/mort/up", x, y + vsp);
 	else if (sprite_index == spr_player_mortattackdown)
-		fmod_event_one_shot_3d("event:/sfx/mort/down", x, y + vsp);
+		sound_play_oneshot_3d("event:/sfx/mort/down", x, y + vsp);
 }
 function Mort_DownMovement()
 {

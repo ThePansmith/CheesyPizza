@@ -2,7 +2,7 @@ if ((other.instakillmove == 1 || other.state == states.handstandjump || other.st
 {
 	death = true;
 	var t = other.id;
-	fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
 	notification_push(notifs.baddie_kill, [room, id, object_index]);
 	ds_list_add(global.baddieroom, id);
 	global.combotime = 60;

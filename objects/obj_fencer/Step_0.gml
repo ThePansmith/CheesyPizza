@@ -71,7 +71,7 @@ if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y
 		if (state == states.walk && charging == 0)
 		{
 			fmod_event_instance_play(chargesnd);
-			fmod_event_instance_set_3d_attributes(chargesnd, x, y);
+			sound_instance_move(chargesnd, x, y);
 			with (instance_create(x, y, obj_forkhitbox))
 				ID = other.id;
 			charging = true;

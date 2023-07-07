@@ -6,7 +6,7 @@ if (y == ystart && obj_player.boxxed == 0 && obj_player.state != states.boxxedpe
 if (sprite_index == spr_boxcrusher_fall && grounded)
 {
 	GamepadSetVibration(0, 1, 1, 0.65);
-	fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+	sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 	with (obj_camera)
 	{
 		shake_mag = 10;

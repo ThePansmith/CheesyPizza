@@ -6,7 +6,7 @@ if (global.fill <= 0 && global.panic == true && !global.tutorial_room && !instan
 	if (string_copy(s, 1, 5) != "tower")
 	{
 		instance_create(obj_player1.x, obj_player1.y, obj_pizzaface);
-		fmod_event_one_shot("event:/sfx/pizzaface/laugh");
+		sound_play_oneshot("event:/sfx/pizzaface/laugh");
 	}
 	else
 	{
@@ -27,7 +27,7 @@ if (global.fill <= 0 && global.panic == true && !global.tutorial_room && !instan
 			image_blend = c_white;
 			audio_stop_all();
 			stop_music();
-			fmod_event_one_shot("event:/music/timesup");
+			sound_play_oneshot("event:/music/timesup");
 		}
 	}
 }
