@@ -62,27 +62,27 @@ function scr_player_punch()
 		move = key_left + key_right;
 		landAnim = true;
 		image_speed = 0.4;
-		if (breakdance > 0)
+		if breakdance > 0
 			breakdance--;
-		if (move != 0)
+		if move != 0
 		{
-			if (move != xscale && movespeed > -6)
+			if move != xscale && movespeed > -6
 			{
 				if (sprite_index != spr_player_kungfujump)
 					movespeed -= 1;
 				else
 					movespeed -= 0.1;
 			}
-			else if (move == xscale && movespeed < 6 && sprite_index != spr_player_kungfujump)
+			else if move == xscale && movespeed < 6 && sprite_index != spr_player_kungfujump
 				movespeed += 0.2;
 		}
 		hsp = xscale * movespeed;
-				
+		
 		var _kungfuground = sprite_index == spr_kungfu1 or sprite_index == spr_kungfu2 or sprite_index == spr_kungfu3 or sprite_index == spr_shotgunsuplexdash;
 		var _kungfuair = sprite_index == spr_kungfuair1 or sprite_index == spr_kungfuair2 or sprite_index == spr_kungfuair3 or sprite_index == spr_kungfuair1transition or sprite_index == spr_kungfuair2transition or sprite_index == spr_kungfuair3transition;
 		var _Sjumpcancel = sprite_index == spr_player_Sjumpcancel or sprite_index == spr_player_Sjumpcancelland or sprite_index == spr_player_Sjumpcancelslide;
-				
-		if (_kungfuground && image_index > 7 && !key_attack && movespeed > 0)
+		
+		if _kungfuground && image_index > 7 && !key_attack && movespeed > 0
 			movespeed -= 0.5;
 		else if _kungfuground && movespeed <= 12
 		{
@@ -100,7 +100,7 @@ function scr_player_punch()
 			scr_perform_move(moves.doublegrab, states.punch);
 			exit;
 		}
-				
+		
 		if _kungfuground && (input_buffer_jump > 0 && can_jump && (character != "N" or noisetype == 0))
 		{
 			scr_fmod_soundeffect(jumpsnd, x, y);
@@ -120,7 +120,8 @@ function scr_player_punch()
 		}
 		else if _kungfuground && vsp < 0
 			sprite_index = choose(spr_kungfuair1, spr_kungfuair2, spr_kungfuair3);
-		if (key_down && (_kungfuair or _kungfuground))
+		
+		if key_down && (_kungfuair or _kungfuground)
 		{
 			particle_set_scale(particle.jumpdust, xscale, 1);
 			create_particle(x, y, particle.jumpdust, 0);
@@ -141,13 +142,13 @@ function scr_player_punch()
 				fmod_event_instance_play(snd_crouchslide);
 			}
 		}
-		if (!key_jump2 && jumpstop == 0 && vsp < 0 && _kungfuair)
+		if !key_jump2 && jumpstop == 0 && vsp < 0 && _kungfuair
 		{
 			vsp /= 20;
 			jumpstop = true;
 		}
 		
-		if (floor(image_index) == (image_number - 1))
+		if floor(image_index) == image_number - 1
 		{
 			switch (sprite_index)
 			{
@@ -160,7 +161,7 @@ function scr_player_punch()
 					if (move != xscale && move != 0)
 						movespeed = 2;
 					*/
-					if (key_attack)
+					if key_attack
 					{
 						if move != 0
 							xscale = move;
@@ -188,11 +189,11 @@ function scr_player_punch()
 					break;
 			}
 		}
-		if (!_kungfuground && !_Sjumpcancel)
+		if !_kungfuground && !_Sjumpcancel
 		{
-			if (grounded && vsp >= 0)
+			if grounded && vsp >= 0
 			{
-				if (key_attack && movespeed > 0)
+				if key_attack && movespeed > 0
 				{
 					if move != 0
 						xscale = move;
@@ -203,18 +204,18 @@ function scr_player_punch()
 					state = states.normal;
 			}
 		}
-		if (_Sjumpcancel)
+		if _Sjumpcancel
 		{
-			if (grounded && vsp > 0)
+			if grounded && vsp > 0
 			{
-				if (sprite_index == spr_player_Sjumpcancel)
+				if sprite_index == spr_player_Sjumpcancel
 				{
 					sprite_index = spr_player_Sjumpcancelland;
 					image_index = 0;
 				}
-				if (key_attack)
+				if key_attack
 				{
-					if (movespeed >= 12)
+					if movespeed >= 12
 						state = states.mach3;
 					else
 						state = states.mach2;
@@ -222,7 +223,7 @@ function scr_player_punch()
 					sprite_index = spr_rollgetup;
 					image_index = 0;
 				}
-				else if (movespeed > 6)
+				else if movespeed > 6
 				{
 					state = states.machslide;
 					sprite_index = spr_machslidestart;
@@ -231,14 +232,15 @@ function scr_player_punch()
 				else
 					state = states.normal;
 			}
-			if (sprite_index == spr_player_Sjumpcancelslide)
+			if sprite_index == spr_player_Sjumpcancelslide
 				image_speed = abs(movespeed) / 15;
 		}
-		if (sprite_index != spr_player_kungfujump && check_wall(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_slope_parent))
+		
+		if sprite_index != spr_player_kungfujump && check_wall(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_slope_parent)
 		{
 			if ledge_bump(32)
 			{
-				if !grounded
+				if !grounded or scr_slope()
 				{
 					if !place_meeting(x + hsp, y, obj_unclimbablewall)
 						wallspeed = movespeed;
@@ -259,20 +261,22 @@ function scr_player_punch()
 				}
 			}
 		}
-		if (punch_afterimage > 0)
+		
+		if punch_afterimage > 0
 			punch_afterimage--;
 		else
 		{
 			punch_afterimage = 5;
-			with (create_blue_afterimage(x, y, sprite_index, image_index, true))
+			with create_blue_afterimage(x, y, sprite_index, image_index, true)
 			{
 				image_xscale = other.xscale;
 				playerid = other.id;
 			}
 		}
-		if (!instance_exists(obj_dashcloud2) && grounded && movespeed > 5)
+		
+		if !instance_exists(obj_dashcloud2) && grounded && movespeed > 5
 		{
-			with (instance_create(x, y, obj_dashcloud2))
+			with instance_create(x, y, obj_dashcloud2)
 				image_xscale = other.xscale;
 		}
 	}

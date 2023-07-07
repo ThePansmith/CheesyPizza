@@ -7,3 +7,5 @@ if check_sugary()
 }
 if global.leveltosave == "grinch" or global.leveltosave == "etb" or global.leveltosave == "ancient"
 	visible = true;
+if REMIX
+	mask_index = spr_solid;

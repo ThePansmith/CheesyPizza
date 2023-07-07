@@ -128,7 +128,7 @@ function scr_player_freefall()
 			other.superslameffectid = id;
 		}
 	}
-	if (grounded && vsp > 0 && (freefallsmash < 10 || !place_meeting(x, y + vsp, obj_metalblock)) && !place_meeting(x, y + vsp, obj_destructibles) && !place_meeting(x, y + vsp + 6, obj_destructibles))
+	if (grounded && vsp > 0 && (freefallsmash < 10 || !place_meeting(x, y + vsp, obj_metalblock)) && !place_meeting(x, y + vsp, obj_destructibles) && !place_meeting(x, y + vsp + 6, obj_destructibles) && (!place_meeting(x, y + 1, obj_ladder) or !REMIX or !key_down))
 	{
 		if (scr_slope() && character != "S")
 		{
