@@ -10,8 +10,8 @@ if (other.state == states.handstandjump or check_kungfu_state(other) && other.gr
 		image_index = 0;
 		image_speed = 0.35;
 		tauntstoredstate = states.normal;
-		fmod_event_one_shot("event:/sfx/pep/pistolstart");
-		fmod_event_one_shot_3d("event:/sfx/misc/breakblock", x, y);
+		sound_play_oneshot("event:/sfx/pep/pistolstart");
+		sound_play_oneshot_3d("event:/sfx/misc/breakblock", x, y);
 	}
 	if (room == boss_pizzaface)
 	{

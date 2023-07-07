@@ -53,4 +53,4 @@ grabbedby = 0;
 stuntouchbuffer = 0;
 scaredbuffer = 0;
 snotty = false;
-fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
+sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);

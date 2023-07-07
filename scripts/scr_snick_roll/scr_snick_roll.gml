@@ -22,7 +22,7 @@ function scr_snick_roll()
 			movespeed = min(movespeed + 2, 8);
 			
 			fmod_event_instance_set_parameter(spindashsnd, "state", movespeed, true);
-			fmod_event_instance_set_3d_attributes(spindashsnd, x, y);
+			sound_instance_move(spindashsnd, x, y);
 			fmod_event_instance_play(spindashsnd);
 		}
 		

@@ -1,7 +1,7 @@
 var baddieID = id;
 if (instance_exists(baddieID) && instance_exists(other.baddieID) && baddieID.thrown != 1 && !other.baddieID.mach3destroy && baddieID.state != states.hit && other.baddieID.thrown == 1 && other.baddieID.state != states.hit)
 {
-	fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);
+	sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
 	if (!baddieID.important)
 	{
 		global.style += (5 + floor(global.combo / heat_nerf));

@@ -11,7 +11,7 @@ if (state != states.boxxedpepspin)
 			sprite_index = spr_haulingstart;
 			other.defused = true;
 			bombgrabID = other.id;
-			fmod_event_one_shot_3d("event:/sfx/noise/bombbounce", x, y);
+			sound_play_oneshot_3d("event:/sfx/noise/bombbounce", x, y);
 			with (instance_create(x + (xscale * 25), y, obj_parryeffect))
 			{
 				sprite_index = spr_grabeffect;

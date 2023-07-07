@@ -3,8 +3,8 @@ if (cooldown == 0)
 	notification_push(notifs.cow_kick, [room]);
 	other.x = x - (image_xscale * 35);
 	other.y = y;
-	fmod_event_one_shot_3d("event:/sfx/misc/cowkick", other.x, other.y);
-	fmod_event_one_shot_3d("event:/sfx/misc/cow", x, y);
+	sound_play_oneshot_3d("event:/sfx/misc/cowkick", other.x, other.y);
+	sound_play_oneshot_3d("event:/sfx/misc/cow", x, y);
 	sprite_index = spr_cowkick;
 	image_index = 0;
 	with (other)

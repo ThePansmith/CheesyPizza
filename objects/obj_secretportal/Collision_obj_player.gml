@@ -4,7 +4,7 @@ if (active && !instance_exists(obj_jumpscare) && ds_list_find_index(global.saver
 	{
 		sprite_index = spr_close;
 		image_index = 0;
-		fmod_event_one_shot_3d(sugary ? "event:/modded/sfx/secretenterSP" : "event:/sfx/misc/secretenter", x, y);
+		sound_play_oneshot_3d(sugary ? "event:/modded/sfx/secretenterSP" : "event:/sfx/misc/secretenter", x, y);
 	}
 	if (!touched)
 	{

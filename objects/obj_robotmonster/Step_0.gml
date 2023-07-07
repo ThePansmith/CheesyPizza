@@ -153,7 +153,7 @@ if (sprite_index == spr_monstershroom_chase)
 	if (_sound && !step_sound)
 	{
 		step_sound = true;
-		fmod_event_one_shot_3d("event:/sfx/monsters/robotstep", x, y);
+		sound_play_oneshot_3d("event:/sfx/monsters/robotstep", x, y);
 	}
 	else if (!_sound)
 		step_sound = false;
@@ -164,7 +164,7 @@ if (sprite_index == spr_hillbilly_chase)
 	if (_sound && !step_sound)
 	{
 		step_sound = true;
-		fmod_event_one_shot_3d("event:/sfx/monsters/sausagestep", x, y);
+		sound_play_oneshot_3d("event:/sfx/monsters/sausagestep", x, y);
 	}
 	else if (!_sound)
 		step_sound = false;
@@ -175,7 +175,7 @@ if (object_index == obj_blobmonster)
 	{
 		if (!fmod_event_instance_is_playing(snd))
 			fmod_event_instance_play(snd);
-		fmod_event_instance_set_3d_attributes(snd, x, y);
+		sound_instance_move(snd, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd, true);

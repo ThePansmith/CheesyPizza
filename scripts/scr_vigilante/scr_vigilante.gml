@@ -57,7 +57,7 @@ function scr_vigilante_update_sounds()
 	{
 		if (!fmod_event_instance_is_playing(snd_flame))
 			fmod_event_instance_play(snd_flame);
-		fmod_event_instance_set_3d_attributes(snd_flame, x, y);
+		sound_instance_move(snd_flame, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd_flame, false);
@@ -65,16 +65,16 @@ function scr_vigilante_update_sounds()
 	{
 		if (!fmod_event_instance_is_playing(snd_mach1))
 			fmod_event_instance_play(snd_mach1);
-		fmod_event_instance_set_3d_attributes(snd_mach1, x, y);
+		sound_instance_move(snd_mach1, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd_mach1, false);
-	fmod_event_instance_set_3d_attributes(snd_slide, x, y);
+	sound_instance_move(snd_slide, x, y);
 	if (sprite_index == spr_vigilante_uziprepare)
 	{
 		if (!fmod_event_instance_is_playing(snd_uziprep))
 			fmod_event_instance_play(snd_uziprep);
-		fmod_event_instance_set_3d_attributes(snd_uziprep, x, y);
+		sound_instance_move(snd_uziprep, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd_uziprep, false);
@@ -155,14 +155,14 @@ function scr_vigilante_arenaintro()
 				image_index = image_number - 1;
 			if (sprite_index == spr_vigilante_intro2 && floor(image_index) == 13)
 			{
-				fmod_event_one_shot_3d("event:/sfx/voice/vigiintro", x, y);
+				sound_play_oneshot_3d("event:/sfx/voice/vigiintro", x, y);
 				with (obj_player)
 				{
 					if (sprite_index == spr_gnomecutscene2)
 					{
 						sprite_index = spr_gnomecutscene3;
 						image_index = 0;
-						fmod_event_one_shot("event:/sfx/pep/screamboss");
+						sound_play_oneshot("event:/sfx/pep/screamboss");
 					}
 				}
 			}
@@ -403,7 +403,7 @@ function scr_vigilante_walk()
 				flamebuffer = attack[1];
 				hsp = 0;
 				shot = false;
-				fmod_event_one_shot_3d("event:/sfx/vigilante/flamestart", x, y);
+				sound_play_oneshot_3d("event:/sfx/vigilante/flamestart", x, y);
 				sprite_index = spr_vigilante_flamethrowerintro;
 				image_index = 0;
 				image_speed = 0.35;
@@ -431,7 +431,7 @@ function scr_vigilante_walk()
 			case vigi_attacks.crate:
 				state = states.crate;
 				hsp = 0;
-				fmod_event_one_shot_3d("event:/sfx/vigilante/order", x, y);
+				sound_play_oneshot_3d("event:/sfx/vigilante/order", x, y);
 				sprite_index = spr_vigilante_order;
 				image_index = 0;
 				image_speed = 0.35;
@@ -517,7 +517,7 @@ function scr_vigilante_throw_dynamite()
 {
 	if (shot > 0)
 	{
-		fmod_event_one_shot_3d("event:/sfx/vigilante/throw", x, y);
+		sound_play_oneshot_3d("event:/sfx/vigilante/throw", x, y);
 		shot--;
 		sprite_index = spr_playerV_dynamitethrow;
 		image_index = 0;
@@ -624,7 +624,7 @@ function scr_vigilante_revolver()
 			revolverbuffer--;
 		else
 		{
-			fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
+			sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
 			ammo--;
 			shot--;
 			sprite_index = spr_playerV_revolvershoot;
@@ -829,8 +829,8 @@ function scr_vigilante_duel()
 				if (signy <= -sprite_get_height(signspr))
 				{
 					duelbuffer = 80;
-					fmod_event_one_shot_3d("event:/sfx/enemies/minijohnpunch", room_width / 2, room_height / 2);
-					fmod_event_one_shot_3d("event:/sfx/voice/vigiduel", room_width / 2, room_height / 2);
+					sound_play_oneshot_3d("event:/sfx/enemies/minijohnpunch", room_width / 2, room_height / 2);
+					sound_play_oneshot_3d("event:/sfx/voice/vigiduel", room_width / 2, room_height / 2);
 					duelphase = 2;
 					signspr = spr_draw;
 					signy = -sprite_get_height(signspr);
@@ -861,7 +861,7 @@ function scr_vigilante_duel()
 			case 2:
 				if (!duelplayer)
 				{
-					fmod_event_one_shot("event:/sfx/vigilante/finalshot");
+					sound_play_oneshot("event:/sfx/vigilante/finalshot");
 					scr_hurtplayer(obj_player1);
 					duelphase++;
 					destroyable = false;
@@ -870,7 +870,7 @@ function scr_vigilante_duel()
 				}
 				else
 				{
-					fmod_event_one_shot("event:/sfx/vigilante/finalshot");
+					sound_play_oneshot("event:/sfx/vigilante/finalshot");
 					var lag = 0;
 					state = states.hit;
 					hitX = x;
@@ -1031,7 +1031,7 @@ function scr_vigilante_machinegun()
 			}
 			else
 			{
-				fmod_event_one_shot_3d("event:/sfx/vigilante/uzijump", x, y);
+				sound_play_oneshot_3d("event:/sfx/vigilante/uzijump", x, y);
 				vsp = -19;
 				attackspeed = 8;
 				shootbuffer = 0;
@@ -1083,7 +1083,7 @@ function scr_vigilante_machinegun()
 					dir = 0;
 				with (instance_create(x, y, obj_uziprojectile))
 				{
-					fmod_event_one_shot_3d("event:/sfx/vigilante/uzishoot", x, y);
+					sound_play_oneshot_3d("event:/sfx/vigilante/uzishoot", x, y);
 					hsp = lengthdir_x(spd, angle);
 					vsp = lengthdir_y(spd, angle);
 				}
@@ -1114,7 +1114,7 @@ function scr_vigilante_bazooka()
 			vsp = -6;
 			with (instance_create(x + (image_xscale * 10), y, obj_vigilantebazooka))
 				image_xscale = other.image_xscale;
-			fmod_event_one_shot_3d("event:/sfx/vigilante/bazookashoot", x, y);
+			sound_play_oneshot_3d("event:/sfx/vigilante/bazookashoot", x, y);
 		}
 		if (floor(image_index) == (image_number - 1))
 			sprite_index = spr_playerV_fall;

@@ -43,13 +43,13 @@ function scr_player_slipnslide()
 		{
 			image_xscale = other.xscale;
 			sprite_index = spr_watereffect;
-			fmod_event_one_shot_3d("event:/sfx/misc/waterslidesplash", x, y);
+			sound_play_oneshot_3d("event:/sfx/misc/waterslidesplash", x, y);
 		}
 	}
 	if (sprite_index == spr_currentplayer && !place_meeting(x, y + 1, obj_current))
 	{
-		fmod_event_one_shot_3d("event:/sfx/misc/waterslidesplash", x, y);
-		fmod_event_one_shot_3d("event:/sfx/pep/slip", x, y);
+		sound_play_oneshot_3d("event:/sfx/misc/waterslidesplash", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/slip", x, y);
 		vsp = -5;
 		sprite_index = spr_slipbanan1;
 		image_index = 0;

@@ -1,7 +1,7 @@
 if (!start && ds_list_find_index(global.saveroom, id) == -1)
 {
 	start = true;
-	fmod_event_one_shot_3d("event:/sfx/misc/racestart", x, y);
+	sound_play_oneshot_3d("event:/sfx/misc/racestart", x, y);
 	with (obj_horsey)
 	{
 		hsp = other.hsp * other.spd;

@@ -23,7 +23,7 @@ function scr_player_ratmounttrickjump()
 		else
 		{
 			ramp_points = 0;
-			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 			state = states.ratmount;
 			sprite_index = spr_player_ratmountland;
 			image_index = 0;

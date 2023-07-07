@@ -10,7 +10,7 @@ with (other)
 		global.key_inv = true;
 		key_particles = true;
 		alarm[7] = 30;
-		fmod_event_one_shot("event:/sfx/misc/collecttoppin");
+		sound_play_oneshot("event:/sfx/misc/collecttoppin");
 		state = states.keyget;
 		image_index = 0;
 		keysound = false;

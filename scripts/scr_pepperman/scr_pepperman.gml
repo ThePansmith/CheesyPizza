@@ -22,7 +22,7 @@ function scr_pepperman_sounds()
 	{
 		if (!fmod_event_instance_is_playing(snd_shoulderbash))
 			fmod_event_instance_play(snd_shoulderbash);
-		fmod_event_instance_set_3d_attributes(snd_shoulderbash, x, y);
+		sound_instance_move(snd_shoulderbash, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd_shoulderbash, true);
@@ -30,7 +30,7 @@ function scr_pepperman_sounds()
 	{
 		if (!fmod_event_instance_is_playing(snd_groundpound))
 			fmod_event_instance_play(snd_groundpound);
-		fmod_event_instance_set_3d_attributes(snd_groundpound, x, y);
+		sound_instance_move(snd_groundpound, x, y);
 	}
 	else if (state != states.freefall && state != states.freefallprep)
 		fmod_event_instance_stop(snd_groundpound, true);
@@ -122,10 +122,10 @@ function scr_pepperman_arenaintro()
 		{
 			sprite_index = spr_pepperman_intro3;
 			image_index = 0;
-			fmod_event_one_shot_3d("event:/sfx/voice/peppermanlaugh", x, y);
+			sound_play_oneshot_3d("event:/sfx/voice/peppermanlaugh", x, y);
 			with (obj_player)
 			{
-				fmod_event_one_shot("event:/sfx/pep/screamboss");
+				sound_play_oneshot("event:/sfx/pep/screamboss");
 				sprite_index = spr_gnomecutscene3;
 				image_index = 0;
 			}
@@ -205,7 +205,7 @@ function scr_pepperman_walk()
 	}
 	else if (stomp && cooldown == 0)
 	{
-		fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
 		create_particle(x, y, particle.jumpdust);
 		state = states.jump;
 		landbuffer2 = 10;
@@ -301,7 +301,7 @@ function scr_pepperman_freefall()
 			_land = elitehit == 2;
 		if (_land)
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 			state = states.freefallland;
 			sprite_index = spr_pepperman_groundpoundland;
 			image_index = 0;
@@ -348,8 +348,8 @@ function scr_pepperman_freefall()
 				if (phase == 2)
 					scr_pepperman_shuffle_adds();
 			}
-			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-			fmod_event_one_shot_3d("event:/sfx/pepperman/groundpoundjump", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+			sound_play_oneshot_3d("event:/sfx/pepperman/groundpoundjump", x, y);
 			if (x != targetplayer.x)
 				image_xscale = sign(targetplayer.x - x);
 			state = states.groundpoundland;
@@ -375,7 +375,7 @@ function scr_pepperman_rolling()
 			instance_create(x + (image_xscale * 20), y, obj_bangeffect);
 			image_xscale *= -1;
 			vsp = -10;
-			fmod_event_one_shot_3d("event:/sfx/pepperman/groundpoundbump", x, y);
+			sound_play_oneshot_3d("event:/sfx/pepperman/groundpoundbump", x, y);
 		}
 		if (grounded && vsp > 0)
 		{
@@ -431,7 +431,7 @@ function scr_pepperman_shoulderbash()
 		var ix = sign(targetplayer.x - x);
 		if (ix != image_xscale)
 		{
-			fmod_event_one_shot_3d("event:/sfx/pepperman/turn", x, y);
+			sound_play_oneshot_3d("event:/sfx/pepperman/turn", x, y);
 			state = states.shoulderturn;
 			sprite_index = spr_pepperman_shoulderturn;
 			image_index = 0;
@@ -454,8 +454,8 @@ function scr_pepperman_shoulderbash()
 		}
 		if (place_meeting(x + image_xscale, y, obj_solid) && !place_meeting(x + image_xscale, y, obj_slope_parent) && !place_meeting(x + image_xscale, y, obj_destructibles))
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-			fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
 			state = states.stun;
 			hsp = -image_xscale * 5;
 			vsp = -8;
@@ -522,7 +522,7 @@ function scr_pepperman_do_contemplate()
 		if (b)
 		{
 			if (state != states.contemplate)
-				fmod_event_one_shot_3d("event:/sfx/voice/peppermansnicker", x, y);
+				sound_play_oneshot_3d("event:/sfx/voice/peppermansnicker", x, y);
 			state = states.contemplate;
 			animbuffer = 80;
 			hsp = 0;
@@ -612,7 +612,7 @@ function scr_pepperman_mini()
 						image_xscale = sign(targetplayer.x - x);
 					sprite_index = spr_pepperman_minijump;
 					image_index = 0;
-					fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
+					sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
 					attackspeed = 10;
 					create_particle(x, y, particle.jumpdust);
 				}

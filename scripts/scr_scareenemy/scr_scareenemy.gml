@@ -15,7 +15,7 @@ function scr_scareenemy()
 						image_xscale = -sign(x - player.x);
 					scaredbuffer = 100;
 					if (irandom(100) <= 5)
-						fmod_event_one_shot_3d("event:/sfx/voice/enemyrarescream", x, y);
+						sound_play_oneshot_3d("event:/sfx/voice/enemyrarescream", x, y);
 					if (vsp < 0)
 						vsp = 0;
 					if (grounded)

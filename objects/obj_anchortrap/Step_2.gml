@@ -14,7 +14,7 @@ switch (state)
 		scr_collide();
 		if (grounded)
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 			create_particle(x, y, particle.landcloud);
 			state = states.jump;
 			with (obj_camera)

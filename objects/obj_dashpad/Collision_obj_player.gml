@@ -83,7 +83,7 @@ with (other)
 			}
 			if (isgustavo && other.buffer == 0 && gusdashpadbuffer == 0)
 			{
-				fmod_event_one_shot_3d("event:/sfx/misc/dashpad", x, y);
+				sound_play_oneshot_3d("event:/sfx/misc/dashpad", x, y);
 				changecoord = true;
 				if (place_meeting(x, y, obj_superspring))
 					changecoord = false;

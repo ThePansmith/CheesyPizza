@@ -15,7 +15,7 @@ repeat (round(explosionsnum))
 			create_debris(x, y, spr_debris);
 	}
 }
-fmod_event_one_shot_3d("event:/sfx/misc/explosion", irandom_range(50, room_width - 50), irandom_range(50, room_height - 50));
+sound_play_oneshot_3d("event:/sfx/misc/explosion", irandom_range(50, room_width - 50), irandom_range(50, room_height - 50));
 with (obj_camera)
 {
 	shake_mag = 30;

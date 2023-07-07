@@ -128,7 +128,7 @@ else if (state == states.throwing)
 	if (floor(image_index) >= 15 && !shot)
 	{
 		shot = true;
-		fmod_event_one_shot_3d("event:/sfx/enemies/minijohnpunch", x, y);
+		sound_play_oneshot_3d("event:/sfx/enemies/minijohnpunch", x, y);
 		if (!pizzaball)
 		{
 			with (playerid)

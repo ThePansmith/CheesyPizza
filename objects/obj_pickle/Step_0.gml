@@ -127,7 +127,7 @@ if (state == states.chase)
 			image_alpha = 1;
 			image_index = 0;
 			sprite_index = spr_pickle_attack;
-			fmod_event_one_shot_3d("event:/sfx/enemies/pickledance", x, y);
+			sound_play_oneshot_3d("event:/sfx/enemies/pickledance", x, y);
 			var old_xscale = image_xscale;
 			image_xscale = -sign(x - targetplayer.x);
 			if (image_xscale == 0)

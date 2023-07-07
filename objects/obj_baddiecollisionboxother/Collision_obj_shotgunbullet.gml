@@ -1,6 +1,6 @@
 if (instance_exists(baddieID))
 {
-	fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
 	create_slapstar(x, y);
 	create_slapstar(x, y);
 	create_slapstar(x, y);

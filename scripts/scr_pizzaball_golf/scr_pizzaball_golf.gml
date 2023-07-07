@@ -20,7 +20,7 @@ function scr_pizzaball_golf()
 		global.golfhit++;
 		notification_push(notifs.pizzaball, [player.object_index]);
 		GamepadSetVibration(0, 0.8, 0.8, 0.65);
-		fmod_event_one_shot_3d("event:/sfx/misc/golfpunch", x, y);
+		sound_play_oneshot_3d("event:/sfx/misc/golfpunch", x, y);
 		if (player.key_up || shootup)
 			scr_pizzaball_go_to_thrown(player.xscale * 15, -16, false);
 		else if (player.key_down)

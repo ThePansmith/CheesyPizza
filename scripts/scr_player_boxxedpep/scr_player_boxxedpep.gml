@@ -39,7 +39,7 @@ function scr_player_boxxedpep()
 	if ((can_jump && input_buffer_jump > 0 && vsp > 0) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
 	{
 		GamepadSetVibration(0, 0.4, 0.4, 0.65);
-		fmod_event_one_shot_3d("event:/sfx/boxxed/flap", x, y);
+		sound_play_oneshot_3d("event:/sfx/boxxed/flap", x, y);
 		instance_create(x, y, obj_highjumpcloud2);
 		vsp = -boxxedpepjump;
 		state = states.boxxedpepjump;
@@ -122,13 +122,13 @@ function scr_player_boxxedpep()
 		{
 			create_particle(x, y + 43, particle.cloudeffect, 0);
 			steppybuffer = 14;
-			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
 		}
 	}
 	if (sprite_index == spr_boxxedpepwalk && !steppy && floor(image_index) == (image_number - 1))
 	{
 		steppy = true;
-		fmod_event_one_shot_3d("event:/sfx/boxxed/step", x, y);
+		sound_play_oneshot_3d("event:/sfx/boxxed/step", x, y);
 	}
 	else if (floor(image_index) != (image_number - 1))
 		steppy = false;

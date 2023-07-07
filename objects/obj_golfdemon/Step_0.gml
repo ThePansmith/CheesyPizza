@@ -62,7 +62,7 @@ if (state == states.walk || state == states.idle)
 	var targetplayer = instance_nearest(x, y, obj_player);
 	if (sprite_index != spr_golfdemon_idle2 && targetplayer.x > (x - 200) && targetplayer.x < (x + 200) && targetplayer.y > (y - 200) && targetplayer.y < (y + 200))
 	{
-		fmod_event_one_shot_3d("event:/sfx/enemies/demonsuprise", x, y);
+		sound_play_oneshot_3d("event:/sfx/enemies/demonsuprise", x, y);
 		sprite_index = spr_golfdemon_idle2;
 		image_index = 0;
 	}
@@ -81,7 +81,7 @@ if (state == states.chase)
 {
 	if !fmod_event_instance_is_playing(snd)
 		fmod_event_instance_play(snd);
-	fmod_event_instance_set_3d_attributes(snd, x, y);
+	sound_instance_move(snd, x, y);
 	
 	snd_count = 0;
 	with (obj_golfdemon)

@@ -12,7 +12,7 @@ function scr_player_thrown()
 		hsp = 0;
 		if (sprite_index == spr_player_outofpizza2)
 		{
-			fmod_event_one_shot("event:/sfx/misc/bossdefeattonk");
+			sound_play_oneshot("event:/sfx/misc/bossdefeattonk");
 			sprite_index = spr_player_outofpizza3;
 			image_index = 0;
 		}

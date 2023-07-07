@@ -20,7 +20,7 @@ function scr_player_animatronic()
 		animatronic_buffer--;
 	else
 	{
-		fmod_event_one_shot_3d("event:/sfx/misc/detransfo", x, y);
+		sound_play_oneshot_3d("event:/sfx/misc/detransfo", x, y);
 		with (create_debris(x, y, spr_animatronicdebris))
 			image_index = 0;
 		with (create_debris(x, y, spr_animatronicdebris))
@@ -38,7 +38,7 @@ function scr_player_animatronic()
 		{
 			GamepadSetVibration(0, 0.4, 0.4, 0.65);
 			global.collect -= 10;
-			fmod_event_one_shot_3d("event:/sfx/pep/hurt", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/hurt", x, y);
 			with (instance_create(121, 60, obj_negativenumber))
 				number = "-10";
 			repeat (10)
@@ -61,7 +61,7 @@ function scr_player_animatronic()
 		{
 			create_particle(x, y + 43, particle.cloudeffect, 0);
 			steppybuffer = 12;
-			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
 		}
 	}
 }

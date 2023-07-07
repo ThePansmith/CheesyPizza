@@ -101,7 +101,7 @@ if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y
 		if (state == states.walk)
 		{
 			fmod_event_instance_play(chargesnd);
-			fmod_event_instance_set_3d_attributes(chargesnd, x, y);
+			sound_instance_move(chargesnd, x, y);
 			image_index = 0;
 			image_xscale = -sign(x - obj_player.x);
 			state = states.charge;

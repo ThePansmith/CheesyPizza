@@ -66,12 +66,7 @@ function sound_play_3d(event, x = undefined, y = undefined)
 	}
 	fmod_event_instance_set_paused(sound, false);
 	if x != undefined && y != undefined
-	{
-		if check_modifier(MOD.Mirror)
-			fmod_event_instance_set_3d_attributes(sound, room_width - x, y);
-		else
-			fmod_event_instance_set_3d_attributes(sound, x, y);
-	}
+		sound_instance_move(sound, x, y);
 	fmod_event_instance_play(sound);
 }
 function sound_play_centered(event) {
@@ -82,6 +77,23 @@ function sound_play_centered_oneshot(event) {
 }
 function sound_play_oneshot(event) {
 	fmod_event_one_shot(event);
+}
+function sound_play_oneshot_3d(event, x, y) {
+	fmod_event_one_shot_3d(event, x, y);
+}
+function sound_instance_move(event, x, y)
+{
+	if check_modifier(MOD.Mirror)
+		x = room_width - x;
+	
+	if is_string(event)
+	{
+		var sound = ds_map_find_value(obj_fmod.sound_cache, event);
+		if sound != undefined
+			fmod_event_instance_set_3d_attributes(sound, x, y);
+	}
+	else
+		fmod_event_instance_set_3d_attributes(event, x, y);
 }
 function sound_play_multiple(event, x = undefined, y = undefined)
 {

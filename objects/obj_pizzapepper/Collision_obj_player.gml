@@ -1,7 +1,7 @@
 if (visible == 1)
 {
 	GamepadSetVibration(0, 0.9, 0.9, 0.8);
-	fmod_event_one_shot_3d("event:/sfx/pep/jetpackjump", x, y);
+	sound_play_oneshot_3d("event:/sfx/pep/jetpackjump", x, y);
 	visible = false;
 	gotowardsplayer = false;
 	repeat (6)

@@ -68,7 +68,7 @@ function scr_player_superslam()
 	}
 	if (grounded && (freefallsmash < 10 || !place_meeting(x, y + vsp, obj_metalblock)) && !place_meeting(x, y + 1, obj_destructibles) && sprite_index == spr_piledriver && vsp > 0)
 	{
-		fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 		create_particle(x, y + 3, particle.groundpoundeffect, 0);
 		sprite_index = spr_piledriverland;
 		jumpAnim = true;

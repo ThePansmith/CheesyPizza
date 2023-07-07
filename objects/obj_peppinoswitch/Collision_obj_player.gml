@@ -7,7 +7,7 @@ if (global.switchbuffer == 0 && global.panic == escape)
 		visible = false;
 		state = states.actor;
 	}
-	fmod_event_one_shot("event:/sfx/misc/pepgusswitch");
+	sound_play_oneshot("event:/sfx/misc/pepgusswitch");
 	create_particle(x, y, particle.genericpoofeffect);
 	sprite_index = spr_peppinoswitch1;
 	playerid = other.id;

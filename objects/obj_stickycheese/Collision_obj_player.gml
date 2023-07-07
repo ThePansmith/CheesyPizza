@@ -14,7 +14,7 @@ with (other)
 		create_debris(x, y + 43, spr_cheesechunk);
 		if (!other.stepped)
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/cheesefloor", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/cheesefloor", x, y);
 			other.stepped = true;
 			other.alarm[0] = 8;
 		}

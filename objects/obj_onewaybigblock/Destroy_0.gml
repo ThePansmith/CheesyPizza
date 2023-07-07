@@ -17,7 +17,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 			with instance_create(x + 32, y + 32, obj_sausageman_dead)
 				sprite_index = spr_bigdoughblockdead;
 		}
-		fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
+		sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
 	}
 	else
 	{

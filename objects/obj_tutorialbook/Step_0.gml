@@ -20,7 +20,7 @@ if (showgranny)
 		sprite_index = spr_tutorialgranny_talk;
 		if (voicecooldown == 0)
 		{
-			fmod_event_one_shot_3d("event:/sfx/voice/pizzagranny", x, y);
+			sound_play_oneshot_3d("event:/sfx/voice/pizzagranny", x, y);
 			voicecooldown = 100;
 		}
 	}

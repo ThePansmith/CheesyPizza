@@ -8,7 +8,7 @@ with (obj_teleporter)
 }
 with (player)
 {
-	fmod_event_one_shot_3d("event:/sfx/misc/teleporterend", x, y);
+	sound_play_oneshot_3d("event:/sfx/misc/teleporterend", x, y);
 	visible = true;
 	state = other.storedstate;
 	movespeed = other.storedmovespeed;

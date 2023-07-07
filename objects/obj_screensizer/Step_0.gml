@@ -1,5 +1,7 @@
 if global.gameframe_enabled
 	gameframe_update();
+else
+	window_set_caption(global.gameframe_caption_text);
 
 if global.option_unfocus_mute
 {

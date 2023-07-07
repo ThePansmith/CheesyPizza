@@ -75,7 +75,7 @@ function scr_player_rocket()
 		if (move != 0 && move != xscale && sprite_index != spr_rocketstart && state != states.mach2)
 		{
 			state = states.rocketslide;
-			fmod_event_one_shot_3d("event:/sfx/pep/machslideboost", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/machslideboost", x, y);
 			sprite_index = spr_player_rocketslide;
 			image_index = 0;
 		}
@@ -85,8 +85,8 @@ function scr_player_rocket()
 	{
 		pizzapepper = 0;
 		sprite_index = spr_rockethitwall;
-		fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-		fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
 		with (obj_camera)
 		{
 			shake_mag = 20;

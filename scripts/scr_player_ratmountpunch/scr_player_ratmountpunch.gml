@@ -20,7 +20,7 @@ function scr_player_ratmountpunch()
 	}
 	if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_slope_parent) && !place_meeting(x + hsp, y, obj_destructibles))
 	{
-		fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
 		GamepadSetVibration(0, 0.4, 0.4, 0.2);
 		ratmountpunchtimer = 10;
 		gustavohitwall = true;

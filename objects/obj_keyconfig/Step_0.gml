@@ -38,14 +38,14 @@ if !selecting
 {
 	if key_up2
 	{
-		fmod_event_one_shot("event:/sfx/ui/step");
+		sound_play_oneshot("event:/sfx/ui/step");
 		key_select--;
 		if (controller && key_select >= 0 && key_select < 4)
 			key_select = -1;
 	}
 	if key_down2
 	{
-		fmod_event_one_shot("event:/sfx/ui/step");
+		sound_play_oneshot("event:/sfx/ui/step");
 		key_select++;
 		if (controller && key_select >= 0 && key_select < 4)
 			key_select = 4;
@@ -67,17 +67,18 @@ if !selecting
 			var _v = input[i][0]
 			if controller
 				_v = concat(_v, "C")
-			if (variable_global_get(_v) == -4)
+			if variable_global_get(_v) == -4
 			{
-				if (_v != "key_superjumpC" && _v != "key_groundpoundC")
+				if _v != "key_superjumpC" && _v != "key_groundpoundC"
 					_found = true
 			}
 		}
-		if (!_found)
+		if !_found
 		{
-			fmod_event_one_shot("event:/sfx/ui/select")
+			sound_play_oneshot("event:/sfx/ui/select")
 			ini_open_from_string(obj_savesystem.ini_str_options)
-			if (!controller)
+			
+			if !controller
 			{
 				ini_write_string("ControlsKeys", "up", global.key_up)
 				ini_write_string("ControlsKeys", "right", global.key_right)
@@ -89,6 +90,9 @@ if !selecting
 				ini_write_string("ControlsKeys", "shoot", global.key_shoot)
 				ini_write_string("ControlsKeys", "taunt", global.key_taunt)
 				ini_write_string("ControlsKeys", "start", global.key_start)
+				ini_write_string("ControlsKeys", "chainsaw", global.key_chainsaw)
+				
+				/*
 				ini_write_string("ControlsKeys2", "up", global.key_upN)
 				ini_write_string("ControlsKeys2", "right", global.key_rightN)
 				ini_write_string("ControlsKeys2", "left", global.key_leftN)
@@ -99,6 +103,7 @@ if !selecting
 				ini_write_string("ControlsKeys2", "shoot", global.key_shootN)
 				ini_write_string("ControlsKeys2", "taunt", global.key_tauntN)
 				ini_write_string("ControlsKeys2", "start", global.key_startN)
+				*/
 			}
 			else
 			{
@@ -107,13 +112,15 @@ if !selecting
 				ini_write_string("ControllerButton", "attack", global.key_attackC)
 				ini_write_string("ControllerButton", "shoot", global.key_shootC)
 				ini_write_string("ControllerButton", "taunt", global.key_tauntC)
+				ini_write_string("ControllerButton", "chainsaw", global.key_chainsawC)
 				ini_write_string("ControllerButton", "superjump", global.key_superjumpC)
 				ini_write_string("ControllerButton", "groundpound", global.key_groundpoundC)
 			}
+			
 			obj_savesystem.ini_str_options = ini_close()
 			if instance_exists(obj_option)
 				obj_option.backbuffer = 2
-			with (create_transformation_tip(lang_get_value("option_controls_saved")))
+			with create_transformation_tip(lang_get_value("option_controls_saved"))
 			{
 				depth = -700
 				alarm[1] = 100
@@ -121,7 +128,7 @@ if !selecting
 			instance_destroy()
 		}
 		else
-			fmod_event_one_shot("event:/sfx/ui/select")
+			sound_play_oneshot("event:/sfx/ui/select")
 	}
 	else if (key_select > -1 && key_jump)
 	{

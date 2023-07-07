@@ -55,7 +55,7 @@ switch (state)
 					playerid = obj_player1.id;
 				}
 			}
-			fmod_event_one_shot_3d("event:/sfx/pizzahead/beatdown", x, y);
+			sound_play_oneshot_3d("event:/sfx/pizzahead/beatdown", x, y);
 			if (image_xscale > 0)
 			{
 				switch (sprite_index)

@@ -90,7 +90,7 @@ switch (state)
 					hsp -= (image_xscale * recoil_spd);
 					with (instance_create(x, y, obj_enemybullet))
 					{
-						fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
+						sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
 						image_xscale = other.image_xscale;
 					}
 				}

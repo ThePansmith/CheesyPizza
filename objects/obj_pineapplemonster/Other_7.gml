@@ -14,7 +14,7 @@ if (!fadeout)
 			create_particle(x, y, particle.genericpoofeffect);
 			if (object_index == obj_bazooka)
 			{
-				fmod_event_one_shot_3d("event:/sfx/enemies/piranha", x, y);
+				sound_play_oneshot_3d("event:/sfx/enemies/piranha", x, y);
 				sprite_index = spr_piraneapple_projectile;
 				destroy = false;
 			}

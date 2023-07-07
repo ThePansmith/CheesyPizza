@@ -98,4 +98,4 @@ switch (state)
 		}
 		break;
 }
-fmod_event_instance_set_3d_attributes(snd, x, y);
+sound_instance_move(snd, x, y);

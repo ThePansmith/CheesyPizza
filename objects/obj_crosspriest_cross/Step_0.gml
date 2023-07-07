@@ -18,4 +18,4 @@ if (playerid.holycross < 100 && alarm[1] == -1)
 	alarm[1] = 10;
 else if (playerid.holycross >= 100)
 	image_alpha = 1;
-fmod_event_instance_set_3d_attributes(snd, x, y);
+sound_instance_move(snd, x, y);

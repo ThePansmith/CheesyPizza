@@ -11,7 +11,7 @@ if (playerid != -4)
 		sprite_index = spr_bump;
 		hsp = -xscale * 4;
 		vsp = -5;
-		fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
 	}
 }
 fmod_event_instance_stop(snd, true);

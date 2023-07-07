@@ -57,7 +57,7 @@ function scr_player_bombgrab()
 		}
 		if ((sprite_index == spr_haulingjump || sprite_index == spr_haulingfall) && grounded && vsp > 0)
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
 			create_particle(x, y, particle.landcloud);
 		}
 		if (sprite_index == spr_haulingjump && floor(image_index) == (image_number - 1))
@@ -70,7 +70,7 @@ function scr_player_bombgrab()
 			image_index = 0;
 			if (key_up)
 			{
-				fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
+				sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
 				sprite_index = spr_uppercutfinishingblow;
 				image_index = 3;
 				with (bombgrabID)
@@ -155,7 +155,7 @@ function scr_player_bombpepup()
 					vsp = -7;
 			}
 		}
-		fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 		image_index = 0;
 		state = states.Sjumpland;
 		machhitAnim = false;
@@ -203,8 +203,8 @@ function scr_player_bombpepside()
 	if (scr_solid(x + xscale, y) && (scr_solid_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 	{
 		sprite_index = spr_hitwall;
-		fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-		fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
 		with (obj_camera)
 		{
 			shake_mag = 20;
@@ -318,7 +318,7 @@ function scr_player_bombpep()
 	if (key_slap2 && state != states.normal && sprite_index != spr_bombpepintro && sprite_index != spr_bombpepend)
 	{
 		sprite_index = spr_throw;
-		fmod_event_one_shot_3d("event:/sfx/enemies/projectile", x, y);
+		sound_play_oneshot_3d("event:/sfx/enemies/projectile", x, y);
 		image_index = 0;
 		hsp = 0;
 		bombpeptimer = 0;

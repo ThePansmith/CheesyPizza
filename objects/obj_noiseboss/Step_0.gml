@@ -167,7 +167,7 @@ if (prevhp != elitehit)
 	{
 		pizzahead_subhp = pizzahead_maxsubhp;
 		if (irandom(100) <= 25)
-			fmod_event_one_shot_3d("event:/sfx/voice/noisenegative", x, y);
+			sound_play_oneshot_3d("event:/sfx/voice/noisenegative", x, y);
 		avaiblemoves = [];
 		if (lastattack == 0)
 			skateboardhit += 1;

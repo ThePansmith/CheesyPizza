@@ -15,6 +15,6 @@ else
 	if (fadealpha <= 0 && !music && title_music != -4)
 	{
 		music = true;
-		fmod_event_one_shot(title_music);
+		sound_play_oneshot(title_music);
 	}
 }

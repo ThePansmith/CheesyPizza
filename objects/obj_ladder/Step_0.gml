@@ -1,38 +1,32 @@
-with (obj_player)
+with obj_player
 {
 	if place_meeting(x, y + 1, other)
 	{
-		if (!check_wall(other.x + 16, y + 1) && key_down && (state == states.crouch or ((character == "S" or character == "M") && (state == states.normal or state == states.mach1))) && place_meeting(x, y + 1, obj_platform))
+		if (!check_wall(other.x + 16, y + 1) && key_down && ((state == states.freefall && REMIX) or state == states.crouch or state == states.ratmountcrouch or ((character == "S" or character == "M") && (state == states.normal or state == states.mach1))) && place_meeting(x, y + 1, obj_platform))
 		{
 			if REMIX
 				smoothx = x - (other.x + 16);
 			
 			y += 5;
-			state = states.ladder;
-			x = other.x + 16;
-			y = floor(y);
-			if ((y % 2) == 1)
-				y -= 1;
-		}
-		if (key_down && !check_wall(other.x + 16, y + 1) && state == states.ratmountcrouch && place_meeting(x, y + 1, obj_platform))
-		{
-			if REMIX
-				smoothx = x - (other.x + 16);
-			
-			state = states.ratmountladder;
-			if (brick == 1)
+			if isgustavo
 			{
-				with (instance_create(x, y, obj_brickcomeback))
+				state = states.ratmountladder;
+				if brick
 				{
-					wait = true;
-					create_particle(x, y, particle.genericpoofeffect);
+					with instance_create(x, y, obj_brickcomeback)
+					{
+						wait = true;
+						create_particle(x, y, particle.genericpoofeffect);
+					}
+					brick = false;
 				}
 			}
-			y += 5;
-			brick = false;
+			else
+				state = states.ladder;
+			
 			x = other.x + 16;
 			y = floor(y);
-			if ((y % 2) == 1)
+			if y % 2 == 1
 				y -= 1;
 		}
 	}

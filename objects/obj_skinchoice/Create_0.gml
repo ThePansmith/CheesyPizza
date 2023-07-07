@@ -217,7 +217,7 @@ draw = function(curve)
 			if charshift[0] < 0
 				xx += charshift[0] * 100;
 			
-			if palettes[sel.pal - 1].texture != noone && !mixing
+			if !mixing && palettes[sel.pal - 1].texture != noone
 			{
 				scr_palette_texture(spr_palettearrow, 0, xx, yy, 1, 1, 90, c_white, 1, true, palettes[sel.pal - 1].texture);
 				draw_sprite_ext(spr_palettearrow, 1, xx, yy, 1, 1, 90, c_white, 1);
@@ -231,7 +231,7 @@ draw = function(curve)
 			if charshift[0] > 0
 				xx += charshift[0] * 100;
 			
-			if palettes[sel.pal + 1].texture != noone && !mixing
+			if !mixing && palettes[sel.pal + 1].texture != noone
 			{
 				scr_palette_texture(spr_palettearrow, 0, xx, yy, 1, 1, 270, c_white, 1, true, palettes[sel.pal + 1].texture);
 				draw_sprite_ext(spr_palettearrow, 1, xx, yy, 1, 1, 270, c_white, 1);

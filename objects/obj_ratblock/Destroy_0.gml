@@ -5,10 +5,10 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 		image_xscale = other.image_xscale;
 		sprite_index = other.spr_dead;
 	}
-	fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
 	if (fmod_event_instance_is_playing(sniffsnd))
 		fmod_event_instance_stop(sniffsnd, true);
-	fmod_event_one_shot_3d(deadsnd, x, y);
+	sound_play_oneshot_3d(deadsnd, x, y);
 	var x1 = (x - sprite_xoffset) + (sprite_width / 2);
 	var y1 = (y - sprite_yoffset) + (sprite_height / 2);
 	global.combo += 1;

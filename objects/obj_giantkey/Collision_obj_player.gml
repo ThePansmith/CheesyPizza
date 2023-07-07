@@ -13,7 +13,7 @@ if (picked == 0 && pickable == 1)
 	with (playerid)
 	{
 		state = states.gottreasure;
-		fmod_event_one_shot("event:/sfx/misc/secretfound");
+		sound_play_oneshot("event:/sfx/misc/secretfound");
 		global.giantkey = true;
 	}
 	obj_tv.showtext = true;

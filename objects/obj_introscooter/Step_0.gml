@@ -27,7 +27,7 @@ switch (state)
 		break;
 	case 3:
 		fade = Approach(fade, 1, 0.1);
-		fmod_event_one_shot("event:/sfx/intro/pepgustavointro");
+		sound_play_oneshot("event:/sfx/intro/pepgustavointro");
 		if (fade >= 1)
 		{
 			state++;

@@ -21,7 +21,7 @@ function scr_player_revolver()
 			is_solid = false;
 			image_xscale = other.xscale;
 		}
-		fmod_event_one_shot_3d("event:/sfx/pep/pistolshot", x + (xscale * 20), y);
+		sound_play_oneshot_3d("event:/sfx/pep/pistolshot", x + (xscale * 20), y);
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_revolvershoot)
 	{

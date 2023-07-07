@@ -128,7 +128,7 @@ function scr_player_freefall()
 			other.superslameffectid = id;
 		}
 	}
-	if (grounded && vsp > 0 && (freefallsmash < 10 || !place_meeting(x, y + vsp, obj_metalblock)) && !place_meeting(x, y + vsp, obj_destructibles) && !place_meeting(x, y + vsp + 6, obj_destructibles))
+	if (grounded && vsp > 0 && (freefallsmash < 10 || !place_meeting(x, y + vsp, obj_metalblock)) && !place_meeting(x, y + vsp, obj_destructibles) && !place_meeting(x, y + vsp + 6, obj_destructibles) && (!place_meeting(x, y + 1, obj_ladder) or !REMIX or !key_down))
 	{
 		if (scr_slope() && character != "S")
 		{
@@ -148,7 +148,7 @@ function scr_player_freefall()
 		}
 		else
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 			if (sprite_index == spr_poundcancel1 or sprite_index == spr_playerSP_poundcancel1)
 				sprite_index = spr_poundcancel2;
 			else if (shotgunAnim == 0)

@@ -54,7 +54,7 @@ function scr_enemy_rage()
 					image_xscale = other.image_xscale;
 					image_speed = 0.4;
 				}
-				fmod_event_one_shot_3d("event:/sfx/enemies/rancherpistol", x, y);
+				sound_play_oneshot_3d("event:/sfx/enemies/rancherpistol", x, y);
 				shot = true;
 				with (instance_create(x + (image_xscale * 15), y + 5, obj_slugbullet))
 					image_xscale = other.image_xscale;
@@ -78,7 +78,7 @@ function scr_enemy_rage()
 			}
 			if (!shot && ragedash < 30)
 			{
-				fmod_event_one_shot_3d("event:/sfx/enemies/projectile", x, y);
+				sound_play_oneshot_3d("event:/sfx/enemies/projectile", x, y);
 				shot = true;
 				with (instance_create(x, y, obj_arcprojectile))
 				{

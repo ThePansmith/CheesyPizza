@@ -8,7 +8,7 @@ if (place_meeting(x, y - 1, obj_player))
 			{
 				if (state != states.trashroll)
 				{
-					fmod_event_one_shot("event:/sfx/misc/watersplash");
+					sound_play_oneshot("event:/sfx/misc/watersplash");
 					scr_losepoints();
 					sprite_index = spr_scaredjump1;
 					image_index = 0;

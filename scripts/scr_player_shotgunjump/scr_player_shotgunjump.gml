@@ -55,7 +55,7 @@ function scr_player_shotgunjump()
 	}
 	if (key_slap2)
 	{
-		fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+		sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
 		if (!key_down)
 		{
 			sprite_index = spr_shotgunshoot;

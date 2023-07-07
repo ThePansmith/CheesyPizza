@@ -7,4 +7,4 @@ dir = 1;
 alarm[0] = 80;
 stop = false;
 alarm[1] = 1;
-fmod_event_one_shot_3d("event:/sfx/enemies/minijohnpunch", x, y);
+sound_play_oneshot_3d("event:/sfx/enemies/minijohnpunch", x, y);

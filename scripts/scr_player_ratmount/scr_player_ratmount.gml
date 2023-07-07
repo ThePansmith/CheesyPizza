@@ -26,7 +26,7 @@ function scr_player_ratmount()
 			var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
 			if (_bump)
 			{
-				fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 				state = states.bump;
 				if (brick)
 					sprite_index = spr_player_ratmountbump;
@@ -67,7 +67,7 @@ function scr_player_ratmount()
 		xscale = move;
 		if (abs(movespeed) > 2 && abs(hsp) > 2 && grounded)
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/backslide", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/backslide", x, y);
 			state = states.ratmountskid;
 			movespeed = abs(movespeed);
 		}
@@ -168,7 +168,7 @@ function scr_player_ratmount()
 		{
 			create_particle(x, y + 43, particle.cloudeffect, 0);
 			steppybuffer = 18;
-			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
 		}
 	}
 	if (input_buffer_jump > 0 && can_jump && (gusdashpadbuffer == 0 or check_char("G")) && state != states.ratmountskid)
@@ -310,7 +310,7 @@ function ratmount_dotaunt()
 		if (!supercharged || !key_up)
 		{
 			scr_create_parryhitbox();
-			fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/taunt", x, y);
 			sprite_index = spr_player_ratmounttaunt;
 			image_index = irandom(sprite_get_number(sprite_index) - 1);
 			with (instance_create(x, y, obj_taunteffect))
@@ -321,7 +321,7 @@ function ratmount_dotaunt()
 			ini_open_from_string(obj_savesystem.ini_str);
 			ini_write_real("Game", "supertaunt", true);
 			obj_savesystem.ini_str = ini_close();
-			fmod_event_one_shot_3d("event:/sfx/pep/supertaunt", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/supertaunt", x, y);
 			sprite_index = spr_player_ratmountsupertaunt;
 			image_index = 0;
 		}
@@ -330,7 +330,7 @@ function ratmount_dotaunt()
 function ratmount_kickbrick()
 {
 	var _pad = 32;
-	fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x + (image_xscale * _pad), y);
+	sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x + (image_xscale * _pad), y);
 	
 	if check_char("G")
 	{

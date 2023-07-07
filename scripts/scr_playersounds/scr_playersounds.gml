@@ -7,7 +7,7 @@ function scr_playersounds()
 			if (!fmod_event_instance_is_playing(global.snd_pizzafacemoving))
 				fmod_event_instance_play(global.snd_pizzafacemoving);
 			with (obj_pizzaface)
-				fmod_event_instance_set_3d_attributes(global.snd_pizzafacemoving, x, y);
+				sound_instance_move(global.snd_pizzafacemoving, x, y);
 		}
 		else
 			fmod_event_instance_stop(global.snd_pizzafacemoving, true);
@@ -16,7 +16,7 @@ function scr_playersounds()
 			if (image_index > 8 && !fmod_event_instance_is_playing(burpsnd))
 			{
 				fmod_event_instance_play(burpsnd);
-				fmod_event_instance_set_3d_attributes(burpsnd, x, y);
+				sound_instance_move(burpsnd, x, y);
 			}
 		}
 		if (state != states.tube && sprite_index != spr_knightpepstart && state != states.bombgrab && state != states.chainsaw && state != states.teleport && state != states.secretenter && state != states.door && state != states.victory && state != states.stunned && state != states.dead && state != states.fireass)
@@ -28,7 +28,7 @@ function scr_playersounds()
 					transformationsnd = true;
 					if (irandom(100) <= 70)
 						fmod_event_instance_play(snd_voicetransfo);
-					fmod_event_one_shot_3d("event:/sfx/misc/transfo", x, y);
+					sound_play_oneshot_3d("event:/sfx/misc/transfo", x, y);
 				}
 			}
 			else if (transformationsnd)
@@ -36,28 +36,28 @@ function scr_playersounds()
 				transformationsnd = false;
 				if (irandom(100) <= 70)
 					fmod_event_instance_play(snd_voiceouttransfo);
-				fmod_event_one_shot_3d("event:/sfx/misc/detransfo", x, y);
+				sound_play_oneshot_3d("event:/sfx/misc/detransfo", x, y);
 			}
 		}
 		
-		fmod_event_instance_set_3d_attributes(snd_voiceouttransfo, x, y);
-		fmod_event_instance_set_3d_attributes(snd_voicetransfo, x, y);
-		fmod_event_instance_set_3d_attributes(snd_voiceok, x, y);
-		fmod_event_instance_set_3d_attributes(snd_voicehurt, x, y);
-		fmod_event_instance_set_3d_attributes(snd_uppercut, x, y);
-		fmod_event_instance_set_3d_attributes(snd_dive, x, y);
-		fmod_event_instance_set_3d_attributes(snd_crouchslide, x, y);
-		fmod_event_instance_set_3d_attributes(rollgetupsnd, x, y);
-		fmod_event_instance_set_3d_attributes(animatronicsnd, x, y);
-		fmod_event_instance_set_3d_attributes(snd_dashpad, x, y);
-		fmod_event_instance_set_3d_attributes(gallopingsnd, x, y);
+		sound_instance_move(snd_voiceouttransfo, x, y);
+		sound_instance_move(snd_voicetransfo, x, y);
+		sound_instance_move(snd_voiceok, x, y);
+		sound_instance_move(snd_voicehurt, x, y);
+		sound_instance_move(snd_uppercut, x, y);
+		sound_instance_move(snd_dive, x, y);
+		sound_instance_move(snd_crouchslide, x, y);
+		sound_instance_move(rollgetupsnd, x, y);
+		sound_instance_move(animatronicsnd, x, y);
+		sound_instance_move(snd_dashpad, x, y);
+		sound_instance_move(gallopingsnd, x, y);
 		
 		if (state == states.freefall || state == states.freefallprep || (state == states.superslam || (state == states.chainsaw && tauntstoredstate == states.superslam)))
 		{
 			if (!fmod_event_instance_is_playing(freefallsnd))
 				fmod_event_instance_play(freefallsnd);
 			fmod_event_instance_set_paused(freefallsnd, false);
-			fmod_event_instance_set_3d_attributes(freefallsnd, x, y);
+			sound_instance_move(freefallsnd, x, y);
 		}
 		else
 			fmod_event_instance_stop(freefallsnd, true);
@@ -70,7 +70,7 @@ function scr_playersounds()
 				
 				if (!fmod_event_instance_is_playing(snd_jetpackloop))
 					fmod_event_instance_play(snd_jetpackloop);
-				fmod_event_instance_set_3d_attributes(snd_jetpackloop, x, y);	
+				sound_instance_move(snd_jetpackloop, x, y);	
 			}
 			else 
 			{
@@ -94,7 +94,7 @@ function scr_playersounds()
 				
 				if (state == states.rocket)
 					s = 4;
-				fmod_event_instance_set_3d_attributes(machsnd, x, y);
+				sound_instance_move(machsnd, x, y);
 				fmod_event_instance_set_parameter(machsnd, "state", s, true);
 			}
 		}
@@ -108,7 +108,7 @@ function scr_playersounds()
 		{
 			if (!fmod_event_instance_is_playing(knightslidesnd))
 				fmod_event_instance_play(knightslidesnd);
-			fmod_event_instance_set_3d_attributes(knightslidesnd, x, y);
+			sound_instance_move(knightslidesnd, x, y);
 		}
 		else if (fmod_event_instance_is_playing(knightslidesnd))
 			fmod_event_instance_stop(knightslidesnd, true);
@@ -132,7 +132,7 @@ function scr_playersounds()
 		if (sprite_index == spr_Sjumpcancelstart)
 			fmod_event_instance_stop(superjumpsnd, true);
 		if (fmod_event_instance_is_playing(superjumpsnd))
-			fmod_event_instance_set_3d_attributes(superjumpsnd, x, y);
+			sound_instance_move(superjumpsnd, x, y);
 		if (sprite_index == spr_tumblestart || sprite_index == spr_tumble)
 		&& (state == states.tumble or character != "S")
 		{
@@ -145,14 +145,14 @@ function scr_playersounds()
 			}
 			if (sprite_index == spr_tumble && !tumbleintro)
 				fmod_event_instance_set_parameter(tumblesnd, "state", 1, true);
-			fmod_event_instance_set_3d_attributes(tumblesnd, x, y);
+			sound_instance_move(tumblesnd, x, y);
 		}
 		else
 		{
 			if (fmod_event_instance_is_playing(tumblesnd))
 			{
 				fmod_event_instance_set_parameter(tumblesnd, "state", 2, true);
-				fmod_event_instance_set_3d_attributes(tumblesnd, x, y);
+				sound_instance_move(tumblesnd, x, y);
 			}
 			tumbleintro = false;
 		}
@@ -160,7 +160,7 @@ function scr_playersounds()
 		{
 			if (!fmod_event_instance_is_playing(machrollsnd))
 				fmod_event_instance_play(machrollsnd);
-			fmod_event_instance_set_3d_attributes(machrollsnd, x, y);
+			sound_instance_move(machrollsnd, x, y);
 		}
 		else
 			fmod_event_instance_stop(machrollsnd, true);
@@ -168,13 +168,13 @@ function scr_playersounds()
 		{
 			if (state != states.handstandjump)
 				fmod_event_instance_stop(suplexdashsnd, true);
-			fmod_event_instance_set_3d_attributes(suplexdashsnd, x, y);
+			sound_instance_move(suplexdashsnd, x, y);
 		}
 		if (state == states.trashroll && sprite_index == spr_player_corpsesurf && grounded && vsp > 0)
 		{
 			if (!fmod_event_instance_is_playing(gravecorpsesnd))
 				fmod_event_instance_play(gravecorpsesnd);
-			fmod_event_instance_set_3d_attributes(gravecorpsesnd, x + hsp, y + vsp);
+			sound_instance_move(gravecorpsesnd, x + hsp, y + vsp);
 		}
 		else
 			fmod_event_instance_stop(gravecorpsesnd, true);
@@ -182,7 +182,7 @@ function scr_playersounds()
 		{
 			if (!fmod_event_instance_is_playing(barrelslidesnd))
 				fmod_event_instance_play(barrelslidesnd);
-			fmod_event_instance_set_3d_attributes(barrelslidesnd, x + hsp, y + vsp);
+			sound_instance_move(barrelslidesnd, x + hsp, y + vsp);
 		}
 		else
 			fmod_event_instance_stop(barrelslidesnd, true);
@@ -190,7 +190,7 @@ function scr_playersounds()
 		{
 			if (!fmod_event_instance_is_playing(waterslidesnd))
 				fmod_event_instance_play(waterslidesnd);
-			fmod_event_instance_set_3d_attributes(waterslidesnd, x + hsp, y + vsp);
+			sound_instance_move(waterslidesnd, x + hsp, y + vsp);
 		}
 		else
 			fmod_event_instance_stop(waterslidesnd, true);
@@ -199,12 +199,12 @@ function scr_playersounds()
 			if (!fmod_event_instance_is_playing(mrpinchsnd))
 				fmod_event_instance_play(mrpinchsnd);
 			fmod_event_instance_set_parameter(mrpinchsnd, "state", 0, true);
-			fmod_event_instance_set_3d_attributes(mrpinchsnd, x + hsp, y + vsp);
+			sound_instance_move(mrpinchsnd, x + hsp, y + vsp);
 		}
 		else if (fmod_event_instance_is_playing(mrpinchsnd))
 		{
 			fmod_event_instance_set_parameter(mrpinchsnd, "state", 1, true);
-			fmod_event_instance_set_3d_attributes(mrpinchsnd, x + hsp, y + vsp);
+			sound_instance_move(mrpinchsnd, x + hsp, y + vsp);
 		}
 		if (hamkuffID != -4 && instance_exists(hamkuffID) && !launched)
 		{
@@ -214,14 +214,14 @@ function scr_playersounds()
 				fmod_event_instance_set_parameter(hamkuffsnd, "state", 1, true);
 			else
 				fmod_event_instance_set_parameter(hamkuffsnd, "state", 0, true);
-			fmod_event_instance_set_3d_attributes(hamkuffsnd, x + hsp, y + vsp);
+			sound_instance_move(hamkuffsnd, x + hsp, y + vsp);
 		}
 		else
 		{
 			if (fmod_event_instance_is_playing(hamkuffsnd))
 			{
 				fmod_event_instance_set_parameter(hamkuffsnd, "state", 2, true);
-				fmod_event_instance_set_3d_attributes(hamkuffsnd, x + hsp, y + vsp);
+				sound_instance_move(hamkuffsnd, x + hsp, y + vsp);
 			}
 			hamkuffID = -4;
 		}
@@ -237,7 +237,7 @@ function scr_playersounds()
 				fmod_event_instance_set_parameter(ratmountmachsnd, "ground", 1, true);
 			else
 				fmod_event_instance_set_parameter(ratmountmachsnd, "ground", 0, true);
-			fmod_event_instance_set_3d_attributes(ratmountmachsnd, x + hsp, y + vsp);
+			sound_instance_move(ratmountmachsnd, x + hsp, y + vsp);
 		}
 		else
 			fmod_event_instance_stop(ratmountmachsnd, true);
@@ -245,7 +245,7 @@ function scr_playersounds()
 		{
 			if (!fmod_event_instance_is_playing(ratmountpunchsnd))
 				fmod_event_instance_play(ratmountpunchsnd);
-			fmod_event_instance_set_3d_attributes(ratmountpunchsnd, x + hsp, y + vsp);
+			sound_instance_move(ratmountpunchsnd, x + hsp, y + vsp);
 		}
 		else
 			fmod_event_instance_stop(ratmountpunchsnd, true);
@@ -257,7 +257,7 @@ function scr_playersounds()
 			if (instance_exists(superslameffectid))
 				s = 1;
 			fmod_event_instance_set_parameter(ratmountgroundpoundsnd, "state", s, true);
-			fmod_event_instance_set_3d_attributes(ratmountgroundpoundsnd, x + hsp, y + vsp);
+			sound_instance_move(ratmountgroundpoundsnd, x + hsp, y + vsp);
 		}
 		else
 			fmod_event_instance_stop(ratmountgroundpoundsnd, true);
@@ -265,7 +265,7 @@ function scr_playersounds()
 		{
 			if (!fmod_event_instance_is_playing(animatronicsnd))
 				fmod_event_instance_play(animatronicsnd);
-			fmod_event_instance_set_3d_attributes(animatronicsnd, x + hsp, y + vsp);
+			sound_instance_move(animatronicsnd, x + hsp, y + vsp);
 		}
 		else
 			fmod_event_instance_stop(animatronicsnd, true);
@@ -273,7 +273,7 @@ function scr_playersounds()
 		{
 			if (!fmod_event_instance_is_playing(ratmountballsnd))
 				fmod_event_instance_play(ratmountballsnd);
-			fmod_event_instance_set_3d_attributes(ratmountballsnd, obj_brickball.x + obj_brickball.hsp, obj_brickball.y + obj_brickball.vsp);
+			sound_instance_move(ratmountballsnd, obj_brickball.x + obj_brickball.hsp, obj_brickball.y + obj_brickball.vsp);
 		}
 		else
 			fmod_event_instance_stop(ratmountballsnd, true);
@@ -281,7 +281,7 @@ function scr_playersounds()
 		{
 			if (!fmod_event_instance_is_playing(ratdeflatesnd))
 				fmod_event_instance_play(ratdeflatesnd);
-			fmod_event_instance_set_3d_attributes(ratdeflatesnd, obj_balloongrabbableeffect.x, obj_balloongrabbableeffect.y);
+			sound_instance_move(ratdeflatesnd, obj_balloongrabbableeffect.x, obj_balloongrabbableeffect.y);
 		}
 		else
 			fmod_event_instance_stop(ratdeflatesnd, true);
@@ -289,7 +289,7 @@ function scr_playersounds()
 		{
 			if (!fmod_event_instance_is_playing(cheeseballsnd))
 				fmod_event_instance_play(cheeseballsnd);
-			fmod_event_instance_set_3d_attributes(cheeseballsnd, x + hsp, y + vsp);
+			sound_instance_move(cheeseballsnd, x + hsp, y + vsp);
 		}
 		else
 			fmod_event_instance_stop(cheeseballsnd, true);
@@ -304,7 +304,7 @@ function scr_playersounds()
 		{
 			if (!fmod_event_instance_is_playing(boxxedspinsnd))
 				fmod_event_instance_play(boxxedspinsnd);
-			fmod_event_instance_set_3d_attributes(boxxedspinsnd, x + hsp, y + vsp);
+			sound_instance_move(boxxedspinsnd, x + hsp, y + vsp);
 		}
 		else
 			fmod_event_instance_stop(boxxedspinsnd, true);
@@ -313,7 +313,7 @@ function scr_playersounds()
 			if (state == states.jetpackjump)
 			{
 				fmod_event_instance_set_parameter(pizzapeppersnd, "state", 0, true);
-				fmod_event_instance_set_3d_attributes(pizzapeppersnd, x + hsp, y + vsp);
+				sound_instance_move(pizzapeppersnd, x + hsp, y + vsp);
 			}
 			else
 				fmod_event_instance_set_parameter(pizzapeppersnd, "state", 1, true);
@@ -329,7 +329,7 @@ function scr_playersounds()
 				s = 2;
 			else if (ghostpepper >= 3)
 				s = 3;
-			fmod_event_instance_set_3d_attributes(ghostspeedsnd, x, y);
+			sound_instance_move(ghostspeedsnd, x, y);
 			fmod_event_instance_set_parameter(ghostspeedsnd, "state", s, true);
 		}
 		else if (fmod_event_instance_is_playing(ghostspeedsnd))
@@ -342,7 +342,7 @@ function scr_playersounds()
 				fmod_event_instance_play(flippingsnd);
 			
 			fmod_event_instance_set_paused(flippingsnd, false);
-			fmod_event_instance_set_3d_attributes(flippingsnd, x, y);
+			sound_instance_move(flippingsnd, x, y);
 		}
 		else
 			fmod_event_instance_stop(flippingsnd, true);

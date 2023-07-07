@@ -1,5 +1,5 @@
 instance_destroy();
-fmod_event_one_shot("event:/sfx/noise/giantballoon2");
+sound_play_oneshot("event:/sfx/noise/giantballoon2");
 fmod_event_instance_stop(snd, false);
 fmod_event_instance_release(snd);
 with (obj_camera)

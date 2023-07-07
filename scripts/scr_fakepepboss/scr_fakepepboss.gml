@@ -124,12 +124,12 @@ function scr_fakepep_destroy_sounds()
 }
 function scr_fakepep_update_sounds()
 {
-	fmod_event_instance_set_3d_attributes(snd_grab, x, y);
+	sound_instance_move(snd_grab, x, y);
 	if (state == states.freefall || state == states.jump)
 	{
 		if (!fmod_event_instance_is_playing(snd_bodyslam))
 			fmod_event_instance_play(snd_bodyslam);
-		fmod_event_instance_set_3d_attributes(snd_bodyslam, x, y);
+		sound_instance_move(snd_bodyslam, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd_bodyslam, false);
@@ -137,7 +137,7 @@ function scr_fakepep_update_sounds()
 	{
 		if (!fmod_event_instance_is_playing(snd_mach))
 			fmod_event_instance_play(snd_mach);
-		fmod_event_instance_set_3d_attributes(snd_mach, x, y);
+		sound_instance_move(snd_mach, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd_mach, false);
@@ -151,7 +151,7 @@ function scr_fakepep_update_sounds()
 		else
 			s = 1;
 		fmod_event_instance_set_parameter(snd_superjump, "state", s, true);
-		fmod_event_instance_set_3d_attributes(snd_superjump, x, y);
+		sound_instance_move(snd_superjump, x, y);
 	}
 	else if (fmod_event_instance_is_playing(snd_superjump) && fmod_event_instance_get_parameter(snd_superjump, "state") < 1)
 		fmod_event_instance_stop(snd_superjump, false);
@@ -163,7 +163,7 @@ function scr_fakepep_update_sounds()
 		if (floor(image_index) >= 13)
 			s = 1;
 		fmod_event_instance_set_parameter(snd_headoff, "state", s, true);
-		fmod_event_instance_set_3d_attributes(snd_headoff, x, y);
+		sound_instance_move(snd_headoff, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd_headoff, false);
@@ -171,7 +171,7 @@ function scr_fakepep_update_sounds()
 	{
 		if (!fmod_event_instance_is_playing(snd_flailing))
 			fmod_event_instance_play(snd_flailing);
-		fmod_event_instance_set_3d_attributes(snd_flailing, x, y);
+		sound_instance_move(snd_flailing, x, y);
 	}
 	else
 		fmod_event_instance_stop(snd_flailing, false);
@@ -327,12 +327,12 @@ function scr_fakepepboss_arenaintro()
 		else if (sprite_index == spr_fakepeppino_intro2)
 		{
 			sprite_index = spr_fakepeppino_intro3;
-			fmod_event_one_shot("event:/sfx/voice/fakepepscream");
+			sound_play_oneshot("event:/sfx/voice/fakepepscream");
 			image_index = 0;
 			introbuffer = 130;
 			with (obj_player)
 			{
-				fmod_event_one_shot("event:/sfx/pep/screamboss");
+				sound_play_oneshot("event:/sfx/pep/screamboss");
 				sprite_index = spr_gnomecutscene3;
 				image_index = 0;
 			}
@@ -459,7 +459,7 @@ function scr_fakepepboss_walk()
 					break;
 				
 				case fakepep_attacks.tauntclone:
-					fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
+					sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
 					create_particle(x, y, particle.highjumpcloud2);
 					state = states.backbreaker;
 					taunted = false;
@@ -482,7 +482,7 @@ function scr_fakepepboss_walk()
 	}
 	else if (!formed && grounded)
 	{
-		fmod_event_one_shot_3d("event:/sfx/fakepep/deform", x, y);
+		sound_play_oneshot_3d("event:/sfx/fakepep/deform", x, y);
 		state = states.deformed;
 		sprite_index = spr_fakepeppino_deform;
 		image_index = 0;
@@ -509,7 +509,7 @@ function scr_fakepepboss_deformed()
 		instance_destroy(obj_fakepephead);
 		if (sprite_index != spr_fakepeppino_reform)
 		{
-			fmod_event_one_shot_3d("event:/sfx/fakepep/reform", x, y);
+			sound_play_oneshot_3d("event:/sfx/fakepep/reform", x, y);
 			x = irandom_range(101, room_width - 101);
 			while (!place_meeting(x, y + 1, obj_solid))
 			{
@@ -656,7 +656,7 @@ function scr_fakepepboss_freefall()
 	}
 	if (grounded && vsp > 0 && sprite_index != spr_fakepeppino_bodyslamland)
 	{
-		fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 		create_particle(x, y, particle.landcloud);
 		sprite_index = spr_fakepeppino_bodyslamland;
 		image_index = 0;
@@ -895,7 +895,7 @@ function scr_fakepepboss_throwing()
 				image_xscale = sign(targetplayer.x - x);
 			if (floor(image_index) >= 32 && !instance_exists(headID))
 			{
-				fmod_event_one_shot_3d("event:/sfx/fakepep/headthrow", x, y);
+				sound_play_oneshot_3d("event:/sfx/fakepep/headthrow", x, y);
 				with (instance_create(x, y - 20, obj_fakepephead))
 				{
 					other.headID = id;
@@ -939,7 +939,7 @@ function scr_fakepepboss_backbreaker()
 			shake_mag = 3;
 			shake_mag_acc = 5 / room_speed;
 		}
-		fmod_event_one_shot_3d("event:/sfx/fakepep/taunt", x, y);
+		sound_play_oneshot_3d("event:/sfx/fakepep/taunt", x, y);
 		instance_create(x, y, obj_baddietaunteffect);
 		with (instance_create(x, y, obj_fakepeptauntspawner))
 		{

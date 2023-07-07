@@ -10,8 +10,8 @@ if (sprite_index != spr_giantslimethrow)
 }
 else if (!shot && floor(image_index) == 1)
 {
-	fmod_event_one_shot_3d("event:/sfx/enemies/burp", x, y);
-	fmod_event_one_shot_3d("event:/sfx/enemies/projectile", x, y);
+	sound_play_oneshot_3d("event:/sfx/enemies/burp", x, y);
+	sound_play_oneshot_3d("event:/sfx/enemies/projectile", x, y);
 	with (instance_create(x + (10 * image_xscale), y - 6, obj_cheeseball))
 	{
 		image_xscale = other.image_xscale;

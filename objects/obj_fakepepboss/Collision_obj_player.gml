@@ -40,7 +40,7 @@ if (staggerbuffer <= 0 && flickertime <= 0 && ((other.state == states.handstandj
 	}
 	with (other)
 	{
-		fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
+		sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
 		state = states.tackle;
 		movespeed = 4;
 		sprite_index = choose(spr_lungehit, spr_kungfu1, spr_kungfu2, spr_kungfu3);

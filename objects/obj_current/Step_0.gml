@@ -12,7 +12,7 @@ if (place_meeting(x, y - 1, obj_player))
 					if (state != states.barrel && state != states.barreljump && state != states.barrelslide && state != states.barrelclimbwall)
 					{
 						if (state != states.slipnslide || sprite_index != spr_currentplayer)
-							fmod_event_one_shot_3d("event:/sfx/misc/waterslidesplash", x, y);
+							sound_play_oneshot_3d("event:/sfx/misc/waterslidesplash", x, y);
 						state = states.slipnslide;
 						sprite_index = spr_currentplayer;
 					}
@@ -27,7 +27,7 @@ if (place_meeting(x, y - 1, obj_player))
 				}
 				else
 				{
-					fmod_event_one_shot_3d("event:/sfx/misc/waterslidesplash", x, y);
+					sound_play_oneshot_3d("event:/sfx/misc/waterslidesplash", x, y);
 					with (instance_create(x, y, obj_slidecloud))
 					{
 						image_xscale = other.xscale;

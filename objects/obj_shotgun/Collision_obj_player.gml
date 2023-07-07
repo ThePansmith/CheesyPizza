@@ -7,8 +7,8 @@ with (other)
 		
 		image_index = 0;
 		sprite_index = spr_shotgunpullout;
-		fmod_event_one_shot_3d("event:/sfx/pep/shotgunload", x, y);
-		fmod_event_one_shot_3d("event:/sfx/misc/breakblock", x, y);
+		sound_play_oneshot_3d("event:/sfx/pep/shotgunload", x, y);
+		sound_play_oneshot_3d("event:/sfx/misc/breakblock", x, y);
 		instance_destroy(other);
 		shotgunAnim = true;
 		state = states.shotgun;

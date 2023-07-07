@@ -10,7 +10,7 @@ if (scr_solid(x, y + 1))
 	angle = 0;
 	if (sprite_index != spr_bombexplosion)
 	{
-		fmod_event_one_shot_3d("event:/sfx/misc/explosion", x, y);
+		sound_play_oneshot_3d("event:/sfx/misc/explosion", x, y);
 		image_index = 0;
 		sprite_index = spr_bombexplosion;
 	}

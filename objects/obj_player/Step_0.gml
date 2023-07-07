@@ -1368,7 +1368,7 @@ if state != states.backbreaker && object_index == obj_player1 && character == "P
 		
 	if konami == konamiend
 	{
-		fmod_event_one_shot_3d("event:/modded/sfx/mariomove", x, y);
+		sound_play_oneshot_3d("event:/modded/sfx/mariomove", x, y);
 		alarm[8] = 12;
 		state = states.backbreaker;
 		scr_screenclear();

@@ -12,7 +12,7 @@ with (obj_player1)
 			hsp = deathspeed * -xscale;
 			if (place_meeting(x + sign(hsp), y, obj_solid))
 			{
-				fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 				xscale *= -1;
 				instance_create(x + (xscale * 20), y, obj_bangeffect);
 			}

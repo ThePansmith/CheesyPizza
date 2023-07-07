@@ -62,7 +62,7 @@ switch (state)
 			if (!fmod_event_instance_is_playing(snd))
 			{
 				fmod_event_instance_play(snd);
-				fmod_event_instance_set_3d_attributes(snd, x, y);
+				sound_instance_move(snd, x, y);
 			}
 			shot = true;
 			hitboxID = instance_create(x, y, obj_forkhitbox);

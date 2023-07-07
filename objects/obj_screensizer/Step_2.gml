@@ -1,6 +1,6 @@
 var ww = window_get_width();
 var wh = window_get_height();
-var cr = cr_default;
+var cr = cr_beam;
 
 if (device_mouse_x_to_gui(0) != mouse_xprevious || device_mouse_y_to_gui(0) != mouse_yprevious) && global.gameframe_enabled
 {
