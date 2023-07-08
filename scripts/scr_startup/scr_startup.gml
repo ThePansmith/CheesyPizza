@@ -114,6 +114,7 @@ ini_close();
 // etc
 global.sandbox = true;
 global.saveloaded = false;
+global.replayrecord = false;
 
 #macro heat_nerf 5 // divides the style gain by this
 #macro heat_lossdrop 0.1 // speed of global.style loss

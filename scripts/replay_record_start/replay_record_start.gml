@@ -13,9 +13,21 @@ function replay_record_start(debug = true)
 			show_debug_message($"\"{ds_list_find_value(roomListDsMapID, i)}\"");
 		}
 	}
+	ext_replay_openfile(roomNamePrefix);
+	ext_replay_writeheader();
+	// write string name table
+	ext_replay_writenumber(ds_list_size(roomListDsMapID))
+	for (var i = 0; i < ds_list_size(roomListDsMapID); i++)
+		ext_replay_writestring(ds_list_find_value(roomListDsMapID, i));
+	
+	
+	
+
 	
 	
 	// Todo: more of this
-	
 	ds_list_destroy(roomListDsMapID);
+	
+	show_debug_message("Starting Recording");
+	global.replayrecord = true;
 }

@@ -3530,6 +3530,7 @@
     {"id":{"name":"spr_introasset2","path":"sprites/spr_introasset2/spr_introasset2.yy",},},
     {"id":{"name":"spr_playerBN_rageidle","path":"sprites/spr_playerBN_rageidle/spr_playerBN_rageidle.yy",},},
     {"id":{"name":"spr_animeshot2","path":"sprites/spr_animeshot2/spr_animeshot2.yy",},},
+    {"id":{"name":"replay_record_push_framedata","path":"scripts/replay_record_push_framedata/replay_record_push_framedata.yy",},},
     {"id":{"name":"spr_icon_ghostjohn","path":"sprites/spr_icon_ghostjohn/spr_icon_ghostjohn.yy",},},
     {"id":{"name":"bg_mrstickarena","path":"sprites/bg_mrstickarena/bg_mrstickarena.yy",},},
     {"id":{"name":"spr_cheesemaker","path":"sprites/spr_cheesemaker/spr_cheesemaker.yy",},},
