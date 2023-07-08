@@ -29,9 +29,9 @@ savekeys = function()
 	
 	file_text_write_real(file, version); // version
 	file_text_writeln(file);
-	file_text_write_real(file, x);
+	file_text_write_real(file, pos[0]);
 	file_text_writeln(file);
-	file_text_write_real(file, y);
+	file_text_write_real(file, pos[1]);
 	file_text_writeln(file);
 	file_text_write_real(file, keysep);
 	file_text_writeln(file);
@@ -207,6 +207,7 @@ if !file_exists("inputdisplay")
 else
 {
 	loadkeys();
+	
 	if pos[0] < 0 or pos[1] < 0 or !is_array(inputkeys) or array_length(inputkeys) == 0
 	{
 		trace("Inputdisplay failed loading");

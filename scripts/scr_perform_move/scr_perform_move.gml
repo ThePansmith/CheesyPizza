@@ -2,8 +2,9 @@ enum moves
 {
 	grabattack,
 	doublegrab,
+	shootattack
 }
-function scr_perform_move(move, prestate)
+function scr_perform_move(move, prestate = state)
 {
 	if move == moves.grabattack
 	{
@@ -143,6 +144,27 @@ function scr_perform_move(move, prestate)
 					sprite_index = spr_player_chainsawdash;
 					image_index = 0;
 				}
+				break;
+		}
+	}
+	if move == moves.shootattack
+	{
+		switch global.shootstyle
+		{
+			case 2: // breakdance
+				sound_play_3d(sfx_breakdance, x, y);
+				if !grounded
+					vsp = -4;
+				else
+				{
+					with instance_create(x, y, obj_dashcloud2)
+						image_xscale = other.xscale;
+				}
+				movespeed = max(movespeed, 9);
+				state = states.punch;
+				sprite_index = spr_player_breakdancestart;
+				breakdance = 35;
+				image_index = 0;
 				break;
 		}
 	}

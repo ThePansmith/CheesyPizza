@@ -55,6 +55,154 @@ function scr_player_punch()
 	}
 	
 	#endregion
+	#region breakdance
+	
+	else if string_pos("breakdance", sprite_get_name(sprite_index))
+	or string_pos("buttattack", sprite_get_name(sprite_index))
+	{
+		hsp = xscale * movespeed;
+		
+		if sprite_index == spr_player_breakdancesuper && key_shoot2
+			movespeed = 14;
+		if movespeed > 0 && sprite_index == spr_player_breakdancestart && grounded
+			movespeed -= 0.25;
+		if movespeed > 0 && sprite_index == spr_player_breakdancesuper
+			movespeed -= 0.25;
+		
+		if sprite_index == spr_player_breakdancestart && floor(image_index) >= 14
+			image_index = 4 + frac(image_index);
+		
+		if key_shoot2 && move == xscale && sprite_index == spr_player_breakdancestart
+		{
+			image_index = 0;
+			sprite_index = spr_player_buttattackstart;
+			movespeed = max(movespeed, 16);
+			vsp = -5;
+				
+			if !instance_exists(crazyruneffectid)
+			{
+				with instance_create(x, y, obj_crazyrunothereffect)
+				{
+					playerid = other.object_index
+					other.crazyruneffectid = id
+				}
+			}
+		}
+		if floor(image_index) == image_number - 1 && sprite_index == spr_player_buttattackstart
+			sprite_index = spr_player_buttattack;
+		
+		if sprite_index == spr_player_buttattack
+		{
+			if grounded
+			{
+				if key_attack
+				{
+					state = states.mach2;
+					movespeed = max(movespeed, 6);
+				}
+				else
+					sprite_index = spr_player_buttattackend;
+			}
+			else if key_down
+			{
+				particle_set_scale(particle.jumpdust, xscale, 1);
+				create_particle(x, y, particle.jumpdust, 0);
+				state = states.tumble;
+				image_index = 0;
+				
+				if !grounded
+				{
+					sprite_index = spr_mach2jump;
+					flash = false;
+					vsp = 10;
+				}
+			}
+		}
+			
+		if sprite_index == spr_player_buttattackend
+		{
+			movespeed -= 0.25;
+			if key_attack
+			{
+				state = states.mach2;
+				sprite_index = spr_rollgetup;
+				image_index = 0;
+			}
+		}
+			
+		if key_shoot2 && sprite_index == spr_player_breakdancestart && move == 0
+		{
+			sprite_index = spr_player_breakdancesuper;
+			movespeed = max(movespeed, 12);
+		}
+		
+		if breakdance > 0
+			breakdance--;
+		
+		landAnim = false;
+		if movespeed <= 0 && (sprite_index == spr_player_breakdancesuper or sprite_index == spr_player_buttattackend)
+			state = states.normal;
+		if breakdance <= 0 && sprite_index == spr_player_breakdancestart
+		{
+			if key_attack
+			{
+				state = states.mach2;
+				movespeed = max(movespeed, 6);
+			}
+			else
+				state = states.normal;
+		}
+		if place_meeting(x + xscale, y, obj_solid) && sprite_index == spr_player_breakdancesuper
+			xscale *= -1;
+		
+		if sprite_index == spr_player_breakdancesuper
+			image_speed = movespeed / 24;
+		else
+			image_speed = 0.4;
+		
+		if scr_solid(x + xscale, y) && !place_meeting(x + sign(hsp), y, obj_slope) && !place_meeting(x + xscale, y, obj_destructibles)
+		{
+			if sprite_index == spr_player_buttattack or sprite_index == spr_player_buttattackstart or sprite_index == spr_player_buttattackend
+			{
+				sound_play_3d(sfx_bumpwall, x, y);
+				vsp = -4;
+				sprite_index = spr_player_kungfujump;
+				image_index = 0;
+				state = states.punch;
+				movespeed = -6;
+			}
+			else if sprite_index != spr_player_breakdancesuper
+			{
+				sound_play_oneshot_3d("event:/sfx/pep/splat", x, y);
+				state = states.bump;
+				image_index = 0;
+				sprite_index = spr_wallsplat;
+			}
+		}
+		
+		if movespeed > 5
+		{
+			if punch_afterimage > 0
+				punch_afterimage--;
+			else
+			{
+				punch_afterimage = 5;
+				with create_blue_afterimage(x, y, sprite_index, image_index, true)
+				{
+					image_xscale = other.xscale;
+					playerid = other.id;
+				}
+			}
+		
+			if !instance_exists(obj_dashcloud2) && grounded
+			{
+				with instance_create(x, y, obj_dashcloud2)
+					image_xscale = other.xscale
+			}
+		}
+	}
+	
+	#endregion
 	#region kungfu
 	
 	else
@@ -127,7 +275,7 @@ function scr_player_punch()
 			create_particle(x, y, particle.jumpdust, 0);
 			state = states.tumble;
 			image_index = 0;
-					
+			
 			if !grounded
 			{
 				sprite_index = spr_mach2jump;
@@ -253,6 +401,7 @@ function scr_player_punch()
 				}
 				else
 				{
+					sound_play_3d(sfx_bumpwall, x, y);
 					vsp = -4;
 					sprite_index = spr_player_kungfujump;
 					image_index = 0;
