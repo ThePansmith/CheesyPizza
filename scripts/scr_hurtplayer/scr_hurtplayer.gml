@@ -138,6 +138,10 @@ function scr_hurtplayer(player)
 		else if (state == states.slipnslide)
 		{
 		}
+		else if state == states.punch && (string_pos("breakdance", sprite_get_name(sprite_index)) or string_pos("buttattack", sprite_get_name(sprite_index)))
+		{
+			
+		}
 		else if (pizzashield == 1)
 		{
 			pizzashield = false;
