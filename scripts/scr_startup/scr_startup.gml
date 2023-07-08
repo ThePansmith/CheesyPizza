@@ -23,6 +23,9 @@ if test_dll_linkage() != 1
 #macro REMIX global.gameplay
 #macro DEBUG (GM_build_type == "run")
 
+#macro STRING_UNDEFINED "<undefined>"
+
+
 // initialize
 scr_get_languages();
 pal_swap_init_system_fix(shd_pal_swapper, true);

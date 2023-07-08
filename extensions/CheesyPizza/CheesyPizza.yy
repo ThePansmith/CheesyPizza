@@ -13,7 +13,7 @@
   "author": "",
   "classname": "",
   "copyToTargets": -1,
-  "date": "2023-07-04T15:56:06.5718393-03:00",
+  "date": "2023-07-04T14:56:06.5718393-04:00",
   "description": "",
   "exportToGame": true,
   "extensionVersion": "0.0.1",
@@ -23,6 +23,19 @@
             1,
           ],"documentation":"","externalName":"cheesypizza_launchexternal","help":"","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"test_dll_linkage","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_testlinkage","help":"","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"replay_openfile","argCount":0,"args":[
+            1,
+          ],"documentation":"","externalName":"cheesypizza_replay_openfile","help":"replay_openfile(filepath)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"replay_isfileopen","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_isfileopen","help":"","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"replay_closefile","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_closefile","help":"","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"replay_writenumber","argCount":0,"args":[
+            2,
+          ],"documentation":"","externalName":"cheesypizza_replay_writenumber","help":"replay_writenumber(value)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"replay_writestring","argCount":0,"args":[
+            1,
+          ],"documentation":"","externalName":"cheesypizza_replay_writestring","help":"replay_writestring(value)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"replay_readnumber","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_readnumber","help":"","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"replay_readstring","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_readstring","help":"","hidden":false,"kind":1,"returnType":1,},
       ],"init":"","kind":1,"order":[],"origname":"","ProxyFiles":[],"uncompress":false,"usesRunnerInterface":false,},
   ],
   "gradleinject": "",

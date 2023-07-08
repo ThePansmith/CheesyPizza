@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "string_is_number",
+  "name": "replay_get_associated_rooms",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "String",
-    "path": "folders/Scripts/CheesyPizza/Utility/String.yy",
+    "name": "Replay",
+    "path": "folders/Scripts/CheesyPizza/Utility/Replay.yy",
   },
 }
