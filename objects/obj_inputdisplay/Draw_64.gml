@@ -1,19 +1,26 @@
-live_auto_call;
 if instance_exists(obj_option) && obj_option.menus[obj_option.menu].menu_id != menus.inputdisplay
 	exit;
 
-scr_getinput(true);
-
-if global.inputdisplay
+if global.inputdisplay && keyalpha > 0
 {
+	scr_getinput(true);
+	
 	var _camx = camera_get_view_x(view_camera[0]);
 	var _camy = camera_get_view_y(view_camera[0]);
 	
 	x = pos[0];
 	y = pos[1];
 	
+	// surface
+	if !surface_exists(surf)
+		surf = surface_create(maxx, maxy);
+	
+	surface_set_target(surf);
+	draw_set_alpha(1);
+	draw_clear_alpha(c_black, 0);
+	
 	// draw it
-	var xx = 0, yy = 0, maxx = 0, maxy = 0;
+	var xx = 0, yy = 0;
 	for(var i = 0; i < array_length(inputkeys); i++)
 	{
 		var k = inputkeys[i];
@@ -21,16 +28,9 @@ if global.inputdisplay
 		xx = k.x * keysize + k.x * keysep;
 		yy = k.y * keysize + k.y * keysep;
 		
-		var ughx = xx + keysize * k.keyw + 2;
-		var ughy = yy + keysize * k.keyh;
-		
-		if maxx < ughx
-			maxx = ughx;
-		if maxy < ughy
-			maxy = ughy;
-		
-		draw_inputdisplay_key(x + xx, y + yy, k.key, k.keyw * keysize + (k.keyw - 1) * keysep, k.keyh * keysize + (k.keyh - 1) * keysep);
+		draw_inputdisplay_key(xx, yy, k.key, k.keyw * keysize + (k.keyw - 1) * keysep, k.keyh * keysize + (k.keyh - 1) * keysep);
 	}
+	surface_reset_target();
 	
 	// dont block the view
 	var left = x, right = x + maxx, top = y, bottom = y + maxy;
@@ -41,8 +41,11 @@ if global.inputdisplay
 		var px = obj_player1.x - _camx, py = obj_player1.y - _camy;
 		if px >= left - 25 && px <= right + 25
 		&& py >= top - 50 && py <= bottom + 25
-			image_alpha = min(keyalpha, 0.25);
+			image_alpha = min(keyalpha, 0.5);
 	}
+	
+	// draw result
+	draw_surface_ext(surf, x, y, 1, 1, 0, c_white, image_alpha);
 	
 	// customize
 	var mx = device_mouse_x_to_gui(0), my = device_mouse_y_to_gui(0);
@@ -55,7 +58,7 @@ if global.inputdisplay
 		}
 		
 		draw_set_colour(drag ? c_red : merge_colour(c_blue, c_aqua, 0.75));
-		draw_rectangle(left, top, right, bottom, true);
+		draw_rectangle(left, top, right - 1, bottom - 1, true);
 	}
 	if !mouse_check_button(mb_left)
 		drag = false;
@@ -72,3 +75,5 @@ if global.inputdisplay
 			WC_drag_inst = noone;
 	}
 }
+else if surface_exists(surf)
+	surface_free(surf);
