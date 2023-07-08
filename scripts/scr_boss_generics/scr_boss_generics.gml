@@ -367,6 +367,7 @@ function scr_boss_phase1hurt(func = noone)
 				state = states.tackle;
 			}
 			check_grabbed_solid(player);
+			//check_grabbed_solid(player);
 			hsp = hithsp;
 			vsp = hitvsp;
 			thrown = true;

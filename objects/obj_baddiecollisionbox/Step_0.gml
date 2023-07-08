@@ -77,7 +77,7 @@ if (instance_exists(baddieID) && _obj_player && !_obj_player.cutscene)
 				}
 			}
 			if (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && ((other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat) or state != states.tumble) && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
-			&& (instakillmove && !(state == states.handstandjump && global.attackstyle == 2 && (object_index == obj_pepperman or object_index == obj_noiseboss or object_index == obj_vigilanteboss or object_index == obj_pizzafaceboss or object_index == obj_fakepepboss or object_index == obj_pizzafaceboss_p3)))
+			&& (instakillmove && !(state == states.handstandjump && check_boss(other.baddieID.object_index)))
 				Instakill();
 			else if (instance_exists(other.baddieID) && state == states.handstandjump && global.attackstyle != 3 && other.baddieID.invtime <= 0 && !other.baddieID.invincible)
 			{
