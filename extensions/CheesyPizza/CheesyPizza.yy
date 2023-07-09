@@ -45,6 +45,11 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_readint32","argCount":0,"args":[],"documentation":"","externalName":"cheesedup_replay_readint32","help":"ext_replay_readint32()","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_readint16","argCount":0,"args":[],"documentation":"","externalName":"cheesedup_replay_readint16","help":"ext_replay_readint16()","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_readint8","argCount":0,"args":[],"documentation":"","externalName":"cheesedup_replay_readint8","help":"ext_replay_readint8()","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_seek","argCount":0,"args":[
+            2,
+          ],"documentation":"","externalName":"cheesypizza_replay_seek","help":"ext_replay_seek(offset)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_tell","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_tell","help":"ext_replay_tell()","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_tellsize","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_tellsize","help":"","hidden":false,"kind":1,"returnType":1,},
       ],"init":"","kind":1,"order":[
         {"name":"test_dll_linkage","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"launch_external","path":"extensions/CheesyPizza/CheesyPizza.yy",},
@@ -59,6 +64,10 @@
         {"name":"ext_replay_writeint8","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"ext_replay_writestring","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"ext_replay_readfloat","path":"extensions/CheesyPizza/CheesyPizza.yy",},
+        {"name":"ext_replay_readint64","path":"extensions/CheesyPizza/CheesyPizza.yy",},
+        {"name":"ext_replay_readint32","path":"extensions/CheesyPizza/CheesyPizza.yy",},
+        {"name":"ext_replay_readint16","path":"extensions/CheesyPizza/CheesyPizza.yy",},
+        {"name":"ext_replay_readint8","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"ext_replay_readstring","path":"extensions/CheesyPizza/CheesyPizza.yy",},
       ],"origname":"","ProxyFiles":[],"uncompress":false,"usesRunnerInterface":false,},
   ],

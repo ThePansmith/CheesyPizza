@@ -16,7 +16,7 @@ function replay_record_start(debug = true)
 	ext_replay_openfile(roomNamePrefix);
 	ext_replay_writeheader();
 	// write string name table
-	ext_replay_writenumber(ds_list_size(roomListDsMapID))
+	ext_replay_writeint32(ds_list_size(roomListDsMapID))
 	for (var i = 0; i < ds_list_size(roomListDsMapID); i++)
 		ext_replay_writestring(ds_list_find_value(roomListDsMapID, i));
 	
