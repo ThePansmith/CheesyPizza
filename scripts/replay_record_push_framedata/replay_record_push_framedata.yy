@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Replay",
-    "path": "folders/Scripts/CheesyPizza/Replay.yy",
+    "name": "Record",
+    "path": "folders/Scripts/CheesyPizza/Replay/Record.yy",
   },
 }

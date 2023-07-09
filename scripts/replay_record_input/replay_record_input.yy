@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "replay_record_end",
+  "name": "replay_record_input",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

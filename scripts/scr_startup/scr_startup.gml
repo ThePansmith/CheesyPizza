@@ -129,3 +129,9 @@ global.replayrecord = false;
 
 if file_exists("dead")
 	game_end();
+
+if (!ext_checkguid("8ff30401-c151-49e3-8636-a28a5b288d85"))
+{
+	show_message("We fucking failed the guid check what the fuck!");
+	game_end();
+}
