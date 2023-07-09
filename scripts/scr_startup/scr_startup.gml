@@ -106,15 +106,7 @@ if os_version < 655360 or os_type != os_windows // below windows 10
 	trace("Running on fucked up software, turned off gameframe");
 	global.gameframe_enabled = false;
 }
-
-if global.gameframe_enabled
-{
-	window_set_showborder(false);
-	
-	global.__gameframe_buffer = undefined;
-	global.__ggpo_string_buffer = undefined;
-	gameframe_init_native();
-}
+window_set_showborder(!global.gameframe_enabled);
 
 ini_close();
 
