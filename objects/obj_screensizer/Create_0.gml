@@ -11,7 +11,13 @@ global.resolutions[aspectratio.undertale] = [
 ];
 
 if global.gameframe_enabled
+{
+	global.__gameframe_buffer = undefined;
+	global.__ggpo_string_buffer = undefined;
+	gameframe_init_native();
 	gameframe_init();
+}
+
 global.gameframe_caption_font = fnt_caption;
 global.gameframe_caption_icon = spr_ico;
 global.gameframe_caption_icon_margin = 6;

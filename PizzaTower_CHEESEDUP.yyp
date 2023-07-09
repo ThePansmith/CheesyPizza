@@ -2125,7 +2125,7 @@
     {"id":{"name":"spr_playerPN_entergate","path":"sprites/spr_playerPN_entergate/spr_playerPN_entergate.yy",},},
     {"id":{"name":"farm_8","path":"rooms/farm_8/farm_8.yy",},},
     {"id":{"name":"farm_9","path":"rooms/farm_9/farm_9.yy",},},
-    {"id":{"name":"bg_treasire_ss","path":"sprites/bg_treasire_ss/bg_treasire_ss.yy",},},
+    {"id":{"name":"bg_treasure_ss","path":"sprites/bg_treasure_ss/bg_treasure_ss.yy",},},
     {"id":{"name":"farm_9b","path":"rooms/farm_9b/farm_9b.yy",},},
     {"id":{"name":"spr_playerPN_pistolintro","path":"sprites/spr_playerPN_pistolintro/spr_playerPN_pistolintro.yy",},},
     {"id":{"name":"farm_10","path":"rooms/farm_10/farm_10.yy",},},
