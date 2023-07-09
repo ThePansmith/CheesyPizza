@@ -142,6 +142,8 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Replay","folderPath":"folders/Scripts/CheesyPizza/Replay.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Shell","folderPath":"folders/Scripts/CheesyPizza/Shell.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Utility","folderPath":"folders/Scripts/CheesyPizza/Utility.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Replay","folderPath":"folders/Scripts/CheesyPizza/Utility/Replay.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"String","folderPath":"folders/Scripts/CheesyPizza/Utility/String.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Compatibility","folderPath":"folders/Scripts/Compatibility.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Background","folderPath":"folders/Scripts/Compatibility/Background.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Object","folderPath":"folders/Scripts/Compatibility/Object.yy",},
@@ -519,8 +521,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"String","folderPath":"folders/Scripts/CheesyPizza/Utility/String.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Replay","folderPath":"folders/Scripts/CheesyPizza/Utility/Replay.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"fmod.dll","CopyToMask":-1,"filePath":"datafiles",},
