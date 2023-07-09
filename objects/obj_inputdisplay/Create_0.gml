@@ -1,4 +1,3 @@
-live_auto_call;
 version = 2;
 
 defaultkeys = function()
@@ -22,6 +21,7 @@ defaultkeys = function()
 	pos[1] = (540 - keysize * 3) - keysep * 3;
 	
 	pressedcol = merge_colour(c_blue, c_aqua, 0.75);
+	resizekeys();
 }
 savekeys = function()
 {
@@ -29,9 +29,9 @@ savekeys = function()
 	
 	file_text_write_real(file, version); // version
 	file_text_writeln(file);
-	file_text_write_real(file, x);
+	file_text_write_real(file, pos[0]);
 	file_text_writeln(file);
-	file_text_write_real(file, y);
+	file_text_write_real(file, pos[1]);
 	file_text_writeln(file);
 	file_text_write_real(file, keysep);
 	file_text_writeln(file);
@@ -79,8 +79,33 @@ loadkeys = function()
 		defaultkeys();
 		savekeys();
 	}
+	resizekeys();
 	
 	file_text_close(file);
+}
+resizekeys = function()
+{
+	if surface_exists(surf)
+		surface_free(surf);
+	
+	maxx = 0;
+	maxy = 0;
+	
+	for(var i = 0; i < array_length(inputkeys); i++)
+	{
+		var k = inputkeys[i];
+		
+		var ughx = (k.x + k.keyw) * keysize + (k.x + k.keyw - 1) * keysep;
+		var ughy = (k.y + k.keyh) * keysize + (k.y + k.keyh - 1) * keysep;
+		
+		if maxx < ughx
+			maxx = ughx;
+		if maxy < ughy
+			maxy = ughy;
+	}
+	
+	maxx++;
+	maxy++;
 }
 draw_inputdisplay_key = function(xx, yy, keycode, width, height = width)
 {
@@ -151,7 +176,6 @@ draw_inputdisplay_key = function(xx, yy, keycode, width, height = width)
 	}
 	
 	// square
-	draw_set_alpha(image_alpha);
 	draw_set_colour(pressed ? pressedcol : c_ltgray);
 	draw_roundrect(xx, yy, xx + width - 1, yy + height - 1, false);
 	
@@ -185,9 +209,8 @@ draw_inputdisplay_key = function(xx, yy, keycode, width, height = width)
 		siz = (width - 16) / 32;
 		if siz > 1
 			siz = max(floor(siz / 2), 1);
-		draw_sprite_ext(spr_controlicons, drawer, xo + floor(xx + width / 2), yo + floor(yy + height / 2), siz, siz, 0, c_white, image_alpha);
+		draw_sprite_ext(spr_controlicons, drawer, xo + floor(xx + width / 2), yo + floor(yy + height / 2), siz, siz, 0, c_white, 1);
 	}
-	draw_set_alpha(1);
 }
 
 clicktimer = 0;
@@ -196,6 +219,7 @@ dragoffset = [0, 0];
 
 depth = -10000;
 
+surf = -1;
 inputkeys = [];
 pos = [0, 0];
 
@@ -207,6 +231,7 @@ if !file_exists("inputdisplay")
 else
 {
 	loadkeys();
+	
 	if pos[0] < 0 or pos[1] < 0 or !is_array(inputkeys) or array_length(inputkeys) == 0
 	{
 		trace("Inputdisplay failed loading");

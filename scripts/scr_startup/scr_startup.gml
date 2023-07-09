@@ -98,7 +98,14 @@ global.panictilt = ini_read_real("Modded", "panictilt", false);
 global.sloperot = ini_read_real("Modded", "sloperot", false);
 global.inputdisplay = ini_read_real("Modded", "inputdisplay", false);
 global.showfps = ini_read_real("Modded", "showfps", false);
+
+// gameframe
 global.gameframe_enabled = ini_read_real("Modded", "gameframe", true);
+if os_version < 655360 or os_type != os_windows // below windows 10
+{
+	trace("Running on fucked up software, turned off gameframe");
+	global.gameframe_enabled = false;
+}
 
 if global.gameframe_enabled
 {

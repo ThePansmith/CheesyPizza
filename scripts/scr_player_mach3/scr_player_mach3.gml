@@ -172,6 +172,19 @@ function scr_player_mach3()
 			
 		if character != "V" && character != "S"
 		{
+			// shoot
+			if sprite_index != spr_dashpadmach
+			{
+				if (input_buffer_shoot > 0 && shotgunAnim)
+					scr_shotgunshoot();
+				else if (input_buffer_pistol > 0 && global.pistol)
+				or (global.shootstyle == 1 && key_shoot2)
+					scr_pistolshoot(states.mach3);
+				else if key_shoot2
+					scr_perform_move(moves.shootattack, states.mach3);
+			}
+			
+			// grab
 			if (input_buffer_grab > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)) && sprite_index != spr_dashpadmach && (!suplexmove or character != "SP"))
 			{
 				input_buffer_grab = 0;
@@ -187,6 +200,8 @@ function scr_player_mach3()
 					movespeed = 5;
 				image_index = 0;
 			}
+			
+			// uppercut
 			else if ((input_buffer_slap > 0 or input_buffer_grab > 0) && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)) && sprite_index != spr_dashpadmach)
 			{
 				input_buffer_slap = 0;
@@ -208,15 +223,6 @@ function scr_player_mach3()
 				input_buffer_slap = 0;
 				scr_perform_move(moves.grabattack, states.mach3);
 			}
-		}
-			
-		if sprite_index != spr_dashpadmach
-		{
-			if (input_buffer_shoot > 0 && shotgunAnim)
-				scr_shotgunshoot();
-			else if (input_buffer_pistol > 0 && global.pistol)
-			or (global.shootstyle == 1 && key_shoot2 && character != "V")
-				scr_pistolshoot(states.mach3);
 		}
 			
 		if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && (!place_meeting(x + sign(hsp), y, obj_metalblock) or character == "V") && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)

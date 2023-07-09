@@ -284,11 +284,7 @@ var opt = add_option("Shoot Style", "shootstyle", "Extra attacks bound to the SH
 	if val == 2
 	{
 		p.state = -1;
-		p.sprite = spr_player_taunt;
-		p.image = 10;
 		
-		draw_set_font(global.creditsfont);
-		draw_text(960 / 2.5 / 2, 60, "Unimplemented!");
 	}
 });
 opt.opts = [

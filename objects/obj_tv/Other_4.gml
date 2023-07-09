@@ -90,6 +90,7 @@ switch (global.leveltosave)
 	case "pinball": tv_bg_index = 22; break;
 	case "mansion": tv_bg_index = 21; break;
 	case "strongcold": tv_bg_index = 23; break;
+	case "grinch": tv_bg_index = 26; break;
 	
 	// pto exclusive
 	case "midway": tv_bg_index = 24; break;

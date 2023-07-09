@@ -279,6 +279,14 @@ function state_player_jump()
 	
 	if character != "V" && character != "S"
 	{
+		if (input_buffer_shoot > 0 && shotgunAnim)
+			scr_shotgunshoot();
+		else if (input_buffer_pistol > 0 && global.pistol)
+		or (global.shootstyle == 1 && key_shoot2)
+			scr_pistolshoot(states.jump);
+		else if key_shoot2
+			scr_perform_move(moves.shootattack, states.jump);
+		
 		// suplex dash
 		if (input_buffer_grab > 0 && !key_up && sprite_index != spr_suplexbump && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)) && (!suplexmove or character != "SP"))
 		{
@@ -319,12 +327,6 @@ function state_player_jump()
 			scr_perform_move(moves.grabattack, states.jump);
 		}
 	}
-	
-	if (input_buffer_shoot > 0 && shotgunAnim)
-		scr_shotgunshoot();
-	else if (input_buffer_pistol > 0 && global.pistol)
-	or (global.shootstyle == 1 && key_shoot2 && character != "V")
-		scr_pistolshoot(states.jump);
 	
 	/*
 	if (key_slap2 && shoot)
