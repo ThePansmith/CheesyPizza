@@ -1,9 +1,3 @@
-if !DEBUG
-{
-	instance_destroy();
-	exit;
-}
-
 isOpen = false;
 isAutocompleteOpen = false;
 

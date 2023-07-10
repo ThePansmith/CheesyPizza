@@ -165,7 +165,11 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 			if (_txt == -4)
 			{
 				if (shotgunAnim)
+				{
 					_txt = lang_get_value("shotguntip");
+					if global.shootbutton != 0
+						_txt = string_replace(_txt, "[G]", "[S]");
+				}
 				else if (global.noisejetpack)
 					_txt = lang_get_value("jetpack2tip");
 			}

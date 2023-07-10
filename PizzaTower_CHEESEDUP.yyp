@@ -545,7 +545,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.4.0.84",
+    "IDEVersion": "2023.6.0.89",
   },
   "resources": [
     {"id":{"name":"obj_bossdoor","path":"objects/obj_bossdoor/obj_bossdoor.yy",},},
@@ -3724,7 +3724,7 @@
     {"id":{"name":"spr_towerending","path":"sprites/spr_towerending/spr_towerending.yy",},},
     {"id":{"name":"spr_canongoblin_stun","path":"sprites/spr_canongoblin_stun/spr_canongoblin_stun.yy",},},
     {"id":{"name":"spr_gate_badland","path":"sprites/spr_gate_badland/spr_gate_badland.yy",},},
-    {"id":{"name":"obj_antipiracy","path":"objects/obj_antipiracy/obj_antipiracy.yy",},},
+    {"id":{"name":"obj_disclaimer","path":"objects/obj_disclaimer/obj_disclaimer.yy",},},
     {"id":{"name":"spr_canongoblin_throwbomb","path":"sprites/spr_canongoblin_throwbomb/spr_canongoblin_throwbomb.yy",},},
     {"id":{"name":"spr_pizzaball","path":"sprites/spr_pizzaball/spr_pizzaball.yy",},},
     {"id":{"name":"spr_playerPP_handgesture3","path":"sprites/spr_playerPP_handgesture3/spr_playerPP_handgesture3.yy",},},
