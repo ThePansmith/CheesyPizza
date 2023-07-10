@@ -545,7 +545,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.6.0.89",
+    "IDEVersion": "2023.4.0.84",
   },
   "resources": [
     {"id":{"name":"obj_bossdoor","path":"objects/obj_bossdoor/obj_bossdoor.yy",},},
@@ -5507,6 +5507,7 @@
     {"id":{"name":"spr_dashicon","path":"sprites/spr_dashicon/spr_dashicon.yy",},},
     {"id":{"name":"spr_supercharge","path":"sprites/spr_supercharge/spr_supercharge.yy",},},
     {"id":{"name":"spr_ancho_rage1","path":"sprites/spr_ancho_rage1/spr_ancho_rage1.yy",},},
+    {"id":{"name":"shd_colorblind","path":"shaders/shd_colorblind/shd_colorblind.yy",},},
     {"id":{"name":"spr_watereffect","path":"sprites/spr_watereffect/spr_watereffect.yy",},},
     {"id":{"name":"spr_parryeffect","path":"sprites/spr_parryeffect/spr_parryeffect.yy",},},
     {"id":{"name":"spr_pepperman_shoulderhurt","path":"sprites/spr_pepperman_shoulderhurt/spr_pepperman_shoulderhurt.yy",},},
