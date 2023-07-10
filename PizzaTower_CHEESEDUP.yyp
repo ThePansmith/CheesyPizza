@@ -140,6 +140,8 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"CheesyPizza","folderPath":"folders/Scripts/CheesyPizza.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"HUD","folderPath":"folders/Scripts/CheesyPizza/HUD.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Replay","folderPath":"folders/Scripts/CheesyPizza/Replay.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Playback","folderPath":"folders/Scripts/CheesyPizza/Replay/Playback.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Record","folderPath":"folders/Scripts/CheesyPizza/Replay/Record.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Shell","folderPath":"folders/Scripts/CheesyPizza/Shell.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Utility","folderPath":"folders/Scripts/CheesyPizza/Utility.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Replay","folderPath":"folders/Scripts/CheesyPizza/Utility/Replay.yy",},
@@ -521,8 +523,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Record","folderPath":"folders/Scripts/CheesyPizza/Replay/Record.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Playback","folderPath":"folders/Scripts/CheesyPizza/Replay/Playback.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"fmod.dll","CopyToMask":-1,"filePath":"datafiles",},
@@ -550,7 +550,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.6.0.89",
+    "IDEVersion": "2023.4.0.84",
   },
   "resources": [
     {"id":{"name":"obj_bossdoor","path":"objects/obj_bossdoor/obj_bossdoor.yy",},},
