@@ -278,6 +278,7 @@ function scr_characterspr()
 	spr_kungfuair1transition = spr_player_kungfuair1transition;
 	spr_kungfuair2transition = spr_player_kungfuair2transition;
 	spr_kungfuair3transition = spr_player_kungfuair3transition;
+	spr_kungfujump = spr_player_kungfujump;
 	
 	spr_palette = spr_peppalette;
 	if character == "P" or isgustavo
@@ -1286,6 +1287,7 @@ function scr_characterspr()
 		spr_airattack = spr_playerPP_airattack;
 		spr_groundedattack = spr_playerPP_groundedattack;
 		spr_ungroundedattack = spr_playerPP_ungroundedattack;
+		spr_kungfujump = spr_playerPP_kungfujump;
 		spr_palette = spr_pisspalette;
 		paletteselect = 0;
 	}

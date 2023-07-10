@@ -243,8 +243,14 @@ add_music(tower_freerun, "event:/music/hub", "event:/music/pillarmusic", 0, hub_
 add_music(tower_hubroomE, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 
 add_music(characterselect, "event:/music/characterselect", -4, 0)
-add_music(entryway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
 add_music(midway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
+
+#endregion
+#region SUGARY
+
+add_music(entryway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
+
+add_music(steamy_1, "event:/music/modded/sugary/cotton", "event:/music/modded/sugary/cottonsecret", 0);
 
 #endregion
 #region OLD LEVELS

@@ -25,17 +25,10 @@ switch (state)
 		scr_enemy_rage();
 		break;
 }
-if (state == states.stun && stunned > 100 && birdcreated == 0)
-{
-	birdcreated = true;
-	with (instance_create(x, y, obj_enemybird))
-		ID = other.id;
-}
-if (state != states.stun)
-	birdcreated = false;
-if (flash == 1 && alarm[2] <= 0)
-	alarm[2] = 0.15 * room_speed;
+
+scr_enemybird();
 scr_scareenemy();
+scr_boundbox();
 
 var player = instance_nearest(x, y, obj_player);
 if (elite)
@@ -64,18 +57,4 @@ if (elite)
 	}
 	if (ragebuffer > 0)
 		ragebuffer--;
-}
-if (state != states.grabbed)
-	depth = 0;
-if (state != states.stun)
-	thrown = false;
-if (boundbox == 0)
-{
-	with (instance_create(x, y, obj_baddiecollisionbox))
-	{
-		sprite_index = other.sprite_index;
-		mask_index = other.sprite_index;
-		baddieID = other.id;
-		other.boundbox = true;
-	}
 }
