@@ -51,7 +51,7 @@ void main()
 	//correction = gameOutput + correction;
 	//correction.a = gameOutput.a * v_vIntensity;
 	
-	vec4 finalColor = error;
+	vec4 finalColor = mix(gameOutput, error, v_vIntensity);
 	if (v_vGreyscaleFade > 0.0)
 	{
 		
@@ -59,6 +59,6 @@ void main()
 		finalColor = vec4(mix(finalColor.rgb, vec3(gray), v_vGreyscaleFade), finalColor.a);	
 	}
 	
-	gl_FragColor = mix(gameOutput, error, v_vIntensity);
+	gl_FragColor = finalColor;
 	
 }
