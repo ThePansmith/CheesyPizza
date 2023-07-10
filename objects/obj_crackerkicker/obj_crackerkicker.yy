@@ -13,8 +13,8 @@
     "path": "folders/Objects/CheesyPizza/Sugary Spire/Baddie.yy",
   },
   "parentObjectId": {
-    "name": "obj_pepgoblin",
-    "path": "objects/obj_pepgoblin/obj_pepgoblin.yy",
+    "name": "obj_baddie",
+    "path": "objects/obj_baddie/obj_baddie.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -35,6 +35,9 @@
     "name": "spr_crackerkicker_walk",
     "path": "sprites/spr_crackerkicker_walk/spr_crackerkicker_walk.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_player_mask",
+    "path": "sprites/spr_player_mask/spr_player_mask.yy",
+  },
   "visible": true,
 }

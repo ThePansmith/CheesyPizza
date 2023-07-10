@@ -275,6 +275,13 @@ function scr_pizzagoblin_throw()
 			#endregion
 			#region sugary spire
 			
+			case obj_crackerkicker:
+				with instance_create(x, y, obj_pepgoblin_kickhitbox)
+				{
+					baddieID = other.id;
+					image_xscale = other.image_xscale;
+				}
+				break;
 			case obj_eskimo:
                 with instance_create(x, y, obj_eskimoprojectile)
                     image_xscale = other.image_xscale;
