@@ -1,6 +1,9 @@
 function scr_is_p_rank()
 {
-	if (global.leveltosave != "exit")
+	if global.leveltosave == "dragonlair" or global.leveltosave != "etb" or global.leveltosave != "grinch"
+		return !global.combodropped && global.prank_enemykilled;
+	
+	if global.leveltosave != "exit"
 		return global.lap && global.secretfound >= 3 && global.treasure && !global.combodropped && global.prank_enemykilled;
 	else
 		return !global.combodropped;
@@ -20,8 +23,6 @@ function scr_do_rank(showtoppins = true, boss = false)
 		notification_push(notifs.wartimer_endlevel, [minutes, seconds + addseconds]);
 	targetDoor = "none";
 	obj_camera.alarm[2] = -1;
-	var roomname = room_get_name(room);
-	var namestring = string_letters(roomname);
 	if (!global.tutorial_room)
 	{
 		if (!boss)

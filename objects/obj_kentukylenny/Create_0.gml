@@ -35,3 +35,4 @@ depth = 0;
 paletteselect = 1;
 spr_palette = spr_kentukykenny_palette;
 usepalette = true;
+elite = true;

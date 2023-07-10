@@ -206,6 +206,9 @@ switch (room)
 	case entryway_1:
 		global.srank = 19500;
 		break;
+	case grinch_1:
+		global.srank = 7986;
+		break;
 }
 global.arank = floor(global.srank / 2);
 global.brank = floor(global.arank / 2);

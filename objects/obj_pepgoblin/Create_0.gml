@@ -24,6 +24,7 @@ walkspr = spr_pepgoblin;
 stunspr = spr_pepgoblinstun;
 grabbedspr = spr_pepgoblinstun;
 scaredspr = spr_pepgoblin_scared;
+kickspr = spr_pepgoblin_kick;
 flash = false;
 slapped = false;
 birdcreated = false;

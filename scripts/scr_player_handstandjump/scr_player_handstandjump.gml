@@ -66,9 +66,11 @@ function scr_player_handstandjump()
 	*/
 	
 	// double tap move
-	if input_buffer_slap > 0
+	if input_buffer_slap > 0 or input_buffer_grab > 0
 	{
+		input_buffer_grab = 0;
 		input_buffer_slap = 0;
+		
 		scr_perform_move(moves.doublegrab, states.handstandjump);
 	}
 	

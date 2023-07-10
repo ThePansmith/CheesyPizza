@@ -114,6 +114,11 @@ ini_close();
 global.sandbox = true;
 global.saveloaded = false;
 global.replayrecord = false;
+// 0 - Protanopia
+// 1 - Deuteranopia
+// 2 - Tritanopia
+global.colorblind_type = -1;
+global.colorblind_intensity = 1.0;
 
 #macro heat_nerf 5 // divides the style gain by this
 #macro heat_lossdrop 0.1 // speed of global.style loss
