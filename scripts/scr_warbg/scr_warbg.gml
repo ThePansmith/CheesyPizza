@@ -1,7 +1,6 @@
 function warbg_start()
 {
-	if event_type == 8 && event_number == 0
-	or object_index == obj_parallax
+	if (event_type == 8 && event_number == 0)
 	{
 		var time = shader_get_uniform(shd_war, "time");
 		var size = shader_get_uniform(shd_war, "size");
@@ -14,12 +13,12 @@ function warbg_start()
 }
 function warbg_end()
 {
-	if event_type == 8 && event_number == 0
+	if (event_type == 8 && event_number == 0)
 		shader_reset();
 }
 function pizzahead_bg_start()
 {
-	if event_type == 8 && event_number == 0
+	if (event_type == 8 && event_number == 0)
 	{
 		var time = shader_get_uniform(shd_rainbow, "u_time");
 		var _speed = shader_get_uniform(shd_rainbow, "u_speed");
@@ -30,7 +29,7 @@ function pizzahead_bg_start()
 }
 function pizzahead_bg_end()
 {
-	if event_type == 8 && event_number == 0
+	if (event_type == 8 && event_number == 0)
 		shader_reset();
 }
 function pizzahead_bg_init()
@@ -67,7 +66,7 @@ function warbg_generic(argument0, argument1, argument2 = noone)
 }
 function warbg_init()
 {
-	if room != rank_room && safe_get(obj_parallax, "old_bg")
+	if (room != rank_room)
 		warbg_generic(warbg_start, warbg_end);
 }
 function warbg_stop()

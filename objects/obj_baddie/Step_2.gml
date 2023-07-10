@@ -7,14 +7,8 @@ else if (state == states.secret)
 if (room == boss_pizzaface && state != states.pizzaheadjump)
 	use_collision = true;
 scr_squash();
-if flash && alarm[2] <= 0
-	alarm[2] = 0.15 * room_speed;
 if (state != states.stun && state != states.hit)
-{
-	birdcreated = false;
-	thrown = false;
 	linethrown = false;
-}
 if (state == states.stun && !thrown)
 	linethrown = false;
 if (object_index != obj_vigilanteboss && object_index != obj_pizzafaceboss_p3 && object_index != obj_gustavograbbable && object_index != obj_noiseboss && object_index != obj_pizzafaceboss && object_index != obj_pepperman && object_index != obj_pf_fakepep && object_index != obj_fakepepboss && object_index != obj_pizzaball && (place_meeting(x + 1, y, obj_spike) || place_meeting(x - 1, y, obj_spike) || place_meeting(x, y + 1, obj_spike) || place_meeting(x, y - 1, obj_spike)))

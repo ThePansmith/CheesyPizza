@@ -1,1 +1,0 @@
-targetRoom = steamy_1;

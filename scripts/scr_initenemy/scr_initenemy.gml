@@ -140,5 +140,4 @@ function scr_initenemy()
 	shoulderbashed = false;
 	stored_id = id;
 	elitepal = 1;
-	aggrimg = 0;
 }

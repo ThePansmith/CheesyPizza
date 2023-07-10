@@ -30,12 +30,8 @@ function scr_pizzagoblin_throw()
 				sound_play_oneshot_3d("event:/sfx/enemies/projectile", x, y);
 				break;
 		}
-		
-		// shoot bitch
-		switch object_index
+		switch (object_index)
 		{
-			#region pizza tower
-			
 			case obj_pizzagoblin:
 				with (instance_create(x, y, obj_pizzagoblinbomb))
 				{
@@ -271,34 +267,10 @@ function scr_pizzagoblin_throw()
 					vsp = -16;
 				}
 				break;
-			
-			#endregion
-			#region sugary spire
-			
-			case obj_crackerkicker:
-				with instance_create(x, y, obj_pepgoblin_kickhitbox)
-				{
-					baddieID = other.id;
-					image_xscale = other.image_xscale;
-				}
-				break;
-			case obj_eskimo:
-                with instance_create(x, y, obj_eskimoprojectile)
-                    image_xscale = other.image_xscale;
-				break;
-			case obj_mintsplosion:
-                with instance_create(x, y + 10, obj_mintsplosion_bomb)
-                {
-                    image_xscale = other.image_xscale;
-                    movespeed = 8;
-                }
-				break;
-			
-			#endregion
 		}
 	}
-	if !grounded && hsp < 0
+	if (!grounded && hsp < 0)
 		hsp += 0.1;
-	else if !grounded && hsp > 0
+	else if (!grounded && hsp > 0)
 		hsp -= 0.1;
 }

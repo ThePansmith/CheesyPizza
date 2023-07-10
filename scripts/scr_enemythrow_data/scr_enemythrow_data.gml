@@ -9,7 +9,7 @@ global.throw_data[obj_bazookabaddie] = {frame: 7, sprite: spr_tank_shoot, time: 
 global.throw_data[obj_trashOLD] = {frame: 2, sprite: spr_trash_throw, time: 100};
 global.throw_data[obj_invtrash] = {frame: 2, sprite: spr_invtrash_throw, time: 100};
 global.throw_data[obj_robot] = {frame: 2, sprite: spr_robot_attack, time: 150};
-global.throw_data[obj_kentukykenny] = {frame: 8, sprite: spr_kentukykenny_throw, time: 200};
+global.throw_data[obj_kentukykenny] = {frame: 2, sprite: spr_kentukykenny_throw, time: 200};
 global.throw_data[obj_kentukylenny] = {frame: 8, sprite: spr_kentukykenny_throw, time: 200};
 global.throw_data[obj_pizzard] = {frame: 6, sprite: spr_pizzard_shoot, time: 100};
 global.throw_data[obj_pepgoblin] = {frame: 3, sprite: spr_pepgoblin_kick, time: 200};
@@ -27,8 +27,3 @@ global.throw_data[obj_kentukybomber] = {frame: 7, sprite: spr_kentukybomber_atta
 global.throw_data[obj_miniufo_grounded] = {frame: 11, sprite: spr_ufogrounded_shoot, time: 100};
 global.throw_data[obj_farmerbaddie2] = {frame: 13, sprite: spr_farmer2_throw, time: 100};
 global.throw_data[obj_farmerbaddie3] = {frame: 13, sprite: spr_peasanto_throw, time: 100};
-
-// sugary
-global.throw_data[obj_eskimo] = {frame: 9, sprite: spr_eskimo_throw, time: 400};
-global.throw_data[obj_mintsplosion] = {frame: 13, sprite: spr_mintsplosion_throw, time: 200};
-global.throw_data[obj_crackerkicker] = {frame: 3, sprite: spr_crackerkicker_kick, time: 200};

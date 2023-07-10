@@ -61,7 +61,7 @@ if (x != targetplayer.x && state != states.pizzagoblinthrow && obj_player.state 
 		if (state == states.walk)
 		{
 			image_index = 0;
-			sprite_index = kickspr;
+			sprite_index = spr_pepgoblin_kick;
 			image_xscale = -sign(x - targetplayer.x);
 			state = states.pizzagoblinthrow;
 		}

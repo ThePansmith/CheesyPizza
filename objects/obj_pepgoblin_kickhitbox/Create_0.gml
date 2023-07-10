@@ -1,1 +1,1 @@
-baddieID = noone;
+baddieID = 0;

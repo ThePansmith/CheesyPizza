@@ -40,7 +40,7 @@ switch state
 		scr_enemy_ghostpossess()
 		break
 	case states.chase:
-		if sprite_index == spr_twoliter_tipover && image_index >= 6
+		if (sprite_index == spr_twoliter_tipover && image_index >= 6)
 		{
 			image_index = image_number - 1;
 			if grounded
@@ -55,7 +55,7 @@ switch state
 				hsp = (image_xscale * clamp(_dist / 32, 3, 10));
 			}
 		}
-		if grounded && vsp >= 0 && sprite_index == spr_twoliter_fall
+		if (grounded && vsp >= 0 && sprite_index == spr_twoliter_fall)
 		{
 			explodeInstant = true;
 			instance_destroy();
@@ -66,11 +66,18 @@ switch state
 }
 if state != states.chase
 	scr_scareenemy();
-if thrown
+if (thrown == true)
 	explodeInstant = true;
-
-scr_enemybird();
-scr_boundbox();
+if (state == states.stun && stunned > 100 && birdcreated == 0)
+{
+	birdcreated = 1
+	with (instance_create(x, y, obj_enemybird))
+		ID = other.id
+}
+if (state != states.stun)
+	birdcreated = 0
+if (flash == 1 && alarm[2] <= 0)
+	alarm[2] = (0.15 * room_speed)
 
 if (targetplayer.x > (x - 950) && targetplayer.x < (x + 950) && y <= (targetplayer.y + 490) && y >= (targetplayer.y - 490))
 {
@@ -80,7 +87,7 @@ if (targetplayer.x > (x - 950) && targetplayer.x < (x + 950) && y <= (targetplay
 		image_index = 0;
 		sprite_index = spr_twoliter_wakingup;
 		if x != targetplayer.x
-			image_xscale = -sign(x - targetplayer.x);
+			image_xscale = (-(sign((x - targetplayer.x))));
 	}
 }
 if (targetplayer.x > (x - 400) && targetplayer.x < (x + 400) && y <= (targetplayer.y + 150) && y >= (targetplayer.y - 60))
@@ -88,7 +95,7 @@ if (targetplayer.x > (x - 400) && targetplayer.x < (x + 400) && y <= (targetplay
 	if (bombreset <= 0)
 	{
 		if x != targetplayer.x
-			image_xscale = -sign(x - targetplayer.x);
+			image_xscale = (-(sign((x - targetplayer.x))));
 		if (state == states.walk)
 		{
 			hsp = 0;
@@ -110,4 +117,18 @@ if floor(image_index) > image_number - 1 && sprite_index == spr_twoliter_wakingu
 	movespeed = 3;
 	image_index = 0
 	sprite_index = spr_twoliter_idle
+}
+if (state != states.grabbed)
+	depth = 0
+if (state != states.stun)
+	thrown = false
+if (boundbox == 0)
+{
+	with (instance_create(x, y, obj_baddiecollisionbox))
+	{
+		sprite_index = other.sprite_index
+		mask_index = other.sprite_index
+		baddieID = other.id
+		other.boundbox = 1
+	}
 }

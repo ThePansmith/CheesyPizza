@@ -78,7 +78,6 @@ function draw_enemy(healthbar, palette, color = c_white)
 		_stun = 25;
 	if (state == states.pizzaheadjump && object_index == obj_gustavograbbable)
 		_stun = 0;
-	
 	if (visible && object_index != obj_pizzaball && object_index != obj_fakesanta && bbox_in_camera(view_camera[0], 32))
 	{
 		var c = image_blend;
@@ -88,7 +87,6 @@ function draw_enemy(healthbar, palette, color = c_white)
 			c = c_green;
 		if (color != c_white)
 			c = color;
-		
 		var b = get_dark(c, obj_drawcontroller.use_dark);
 		if (object_index == obj_peppinoclone)
 		{
@@ -111,24 +109,13 @@ function draw_enemy(healthbar, palette, color = c_white)
 				_ys = -1;
 			}
 		}
-		
-		var xx = x, yy = y;
-		if safe_get(id, "sugary")
-		{
-			/*
-			_drawx += irandom_range(-1, 1);
-			_drawy += irandom_range(-1, 1);
-			*/
-		}
 		draw_sprite_ext(sprite_index, image_index, x, y + _stun, xscale * image_xscale, yscale * _ys, angle, b, image_alpha);
-		
 		if (healthbar)
 		{
 			if (hp > maxhp)
 				maxhp = hp;
 			draw_healthbar(x - 16, y - 50, x + 16, y - 45, (hp / maxhp) * 100, 0, 255, 255, 0, true, true);
 		}
-		
 		if (object_index == obj_fakepepboss)
 		{
 			if (miniflash)

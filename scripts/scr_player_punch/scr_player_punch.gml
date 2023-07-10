@@ -166,7 +166,7 @@ function scr_player_punch()
 			{
 				sound_play_3d(sfx_bumpwall, x, y);
 				vsp = -4;
-				sprite_index = spr_kungfujump;
+				sprite_index = spr_player_kungfujump;
 				image_index = 0;
 				state = states.punch;
 				movespeed = -6;
@@ -216,12 +216,12 @@ function scr_player_punch()
 		{
 			if move != xscale && movespeed > -6
 			{
-				if (sprite_index != spr_kungfujump)
+				if (sprite_index != spr_player_kungfujump)
 					movespeed -= 1;
 				else
 					movespeed -= 0.1;
 			}
-			else if move == xscale && movespeed < 6 && sprite_index != spr_kungfujump
+			else if move == xscale && movespeed < 6 && sprite_index != spr_player_kungfujump
 				movespeed += 0.2;
 		}
 		hsp = xscale * movespeed;
@@ -384,7 +384,7 @@ function scr_player_punch()
 				image_speed = abs(movespeed) / 15;
 		}
 		
-		if sprite_index != spr_kungfujump && check_wall(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_slope_parent)
+		if sprite_index != spr_player_kungfujump && check_wall(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_slope_parent)
 		{
 			if ledge_bump(32)
 			{
@@ -403,7 +403,7 @@ function scr_player_punch()
 				{
 					sound_play_3d(sfx_bumpwall, x, y);
 					vsp = -4;
-					sprite_index = spr_kungfujump;
+					sprite_index = spr_player_kungfujump;
 					image_index = 0;
 					state = states.punch;
 					movespeed = -6;

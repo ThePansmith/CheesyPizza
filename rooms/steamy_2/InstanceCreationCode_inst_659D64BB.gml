@@ -1,9 +1,0 @@
-sprite_index = spr_crackerkicker_walk;
-idlespr = spr_crackerkicker_walk;
-stunfallspr = spr_crackerkicker_stunned;
-walkspr = spr_crackerkicker_walk;
-kickspr = spr_crackerkicker_kick
-stunspr = spr_crackerkicker_stunned;
-grabbedspr = spr_crackerkicker_stunned;
-scaredspr = spr_crackerkicker_stunned;
-spr_dead = spr_crackerkicker_dead;
