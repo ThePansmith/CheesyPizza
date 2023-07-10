@@ -1,8 +1,9 @@
 if (ds_list_find_index(global.saveroom, id) == -1)
 {
-	repeat (8)
+	scr_sound_multiple("event:/sfx/misc/breakblock", x, y);
+	repeat (4)
 	{
-		with (create_debris(x + 16, y + 50, spr_wooddebris))
+		with (create_debris(x + sprite_width / 2, y + sprite_height / 2, spr_wooddebris))
 		{
 			vsp = random_range(-8, -6);
 			hsp = random_range(-4, 4);

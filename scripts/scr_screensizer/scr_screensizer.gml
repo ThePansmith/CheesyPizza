@@ -18,16 +18,18 @@ function screen_apply_size()
 		{
 			if global.option_resolution == 0 && global.option_scale_mode == 1
 				global.option_resolution = 1;
-			
 			if !gameframe_get_fullscreen() && global.gameframe_enabled
 				gameframe_restore();
 			
-			var w = get_resolution_width(global.option_resolution, aspect_ratio);
-	        var h = get_resolution_height(global.option_resolution, aspect_ratio);
-	        trace("Setting Window Size: ", w, ", ", h);
-	        window_set_size(w, h);
+			if !(!global.gameframe_enabled && window_get_fullscreen())
+			{
+				var w = get_resolution_width(global.option_resolution, aspect_ratio);
+		        var h = get_resolution_height(global.option_resolution, aspect_ratio);
+		        trace("Setting Window Size: ", w, ", ", h);
+		        window_set_size(w, h);
 			
-			alarm[0] = 2;
+				alarm[0] = 2;
+			}
 		}
 	}
 }
@@ -69,7 +71,7 @@ function screen_apply_fullscreen(fullscreen)
 	}
 	else
 	{
-		window_set_fullscreen(fullscreen);
+		window_set_fullscreen(fullscreen != 0);
 		if !fullscreen
 		{
 			with obj_screensizer
@@ -159,7 +161,7 @@ function screen_clear(color = c_black)
 function get_options()
 {
 	ini_open("saveData.ini");
-	global.option_fullscreen = ini_read_real("Option", "fullscreen", true);
+	global.option_fullscreen = ini_read_real("Option", "fullscreen", false);
 	global.option_resolution = ini_read_real("Option", "resolution", 1);
 	global.option_master_volume = ini_read_real("Option", "master_volume", 1);
 	global.option_music_volume = ini_read_real("Option", "music_volume", 0.85);

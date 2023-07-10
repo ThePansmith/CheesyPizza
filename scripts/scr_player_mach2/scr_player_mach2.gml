@@ -244,6 +244,19 @@ function scr_player_mach2()
 	}
 	if character != "V" && character != "S"
 	{
+		// shoot
+		if !skateboarding
+		{
+			if (input_buffer_shoot > 0 && shotgunAnim)
+				scr_shotgunshoot();
+			else if (input_buffer_pistol > 0 && global.pistol)
+			or (global.shootstyle == 1 && key_shoot2)
+				scr_pistolshoot(states.mach2);
+			else if key_shoot2
+				scr_perform_move(moves.shootattack, states.mach2);
+		}
+		
+		// grab
 		if (input_buffer_grab > 0 && !key_up && !skateboarding && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)) && (!suplexmove or character != "SP"))
 		{
 			input_buffer_slap = 0;
@@ -260,6 +273,7 @@ function scr_player_mach2()
 			image_index = 0;
 		}
 		
+		// uppercut
 		else if ((input_buffer_slap > 0 or input_buffer_grab > 0) && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
 		{
 			input_buffer_slap = 0;
@@ -280,15 +294,6 @@ function scr_player_mach2()
 			input_buffer_slap = 0;
 			scr_perform_move(moves.grabattack, states.mach2);
 		}
-	}
-	
-	if !skateboarding
-	{
-		if (input_buffer_shoot > 0 && shotgunAnim)
-			scr_shotgunshoot();
-		else if (input_buffer_pistol > 0 && global.pistol)
-		or (global.shootstyle == 1 && key_shoot2 && character != "V")
-			scr_pistolshoot(states.mach2);
 	}
 	
 	/*

@@ -93,12 +93,16 @@ function hub_state(_room, _sound, _secretsound)
 			break;
 		
 		case tower_extra:
-		case tower_hubroomE:
+		case tower_extra2:
 			s = 5;
 			break;
 		
 		case tower_freerun:
 			s = 6;
+			break;
+		
+		case tower_hubroomE:
+			s = 7;
 			break;
 	}
 	fmod_event_instance_set_parameter(_sound, "hub", s, false);

@@ -46,7 +46,7 @@ function Instakill()
 		global.style += (3 + floor(global.combo / heat_nerf));
 	if (!other.baddieID.elite or other.baddieID.elitehit <= 0)
 		other.baddieID.mach3destroy = true;
-	if (!other.baddieID.killprotection && !global.kungfu && (!other.baddieID.elite or other.baddieID.elitehit <= 0))
+	if (!other.baddieID.killprotection && !global.kungfu && (!other.baddieID.elite or other.baddieID.elitehit <= 0) && !check_boss(other.baddieID.object_index))
 		other.baddieID.instakilled = true;
 	if (!other.baddieID.important)
 	{

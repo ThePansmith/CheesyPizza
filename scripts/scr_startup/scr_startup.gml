@@ -95,22 +95,26 @@ global.panictilt = ini_read_real("Modded", "panictilt", false);
 global.sloperot = ini_read_real("Modded", "sloperot", false);
 global.inputdisplay = ini_read_real("Modded", "inputdisplay", false);
 global.showfps = ini_read_real("Modded", "showfps", false);
-global.gameframe_enabled = ini_read_real("Modded", "gameframe", true);
 
-if global.gameframe_enabled
+// gameframe
+global.gameframe_enabled = ini_read_real("Modded", "gameframe", true);
+if os_version < 655360 or os_type != os_windows // below windows 10
 {
-	window_set_showborder(false);
-	
-	global.__gameframe_buffer = undefined;
-	global.__ggpo_string_buffer = undefined;
-	gameframe_init_native();
+	trace("Running on fucked up software, turned off gameframe");
+	global.gameframe_enabled = false;
 }
+window_set_showborder(!global.gameframe_enabled);
 
 ini_close();
 
 // etc
 global.sandbox = true;
 global.saveloaded = false;
+// 0 - Protanopia
+// 1 - Deuteranopia
+// 2 - Tritanopia
+global.colorblind_type = -1;
+global.colorblind_intensity = 1.0;
 
 #macro heat_nerf 5 // divides the style gain by this
 #macro heat_lossdrop 0.1 // speed of global.style loss

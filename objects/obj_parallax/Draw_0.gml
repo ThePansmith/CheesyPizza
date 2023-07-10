@@ -100,8 +100,12 @@ if string_starts_with(room_get_name(room), "grinch_") && room != grinch_10
 	surface_reset_target();
 }
 
+// war bg
+if instance_exists(obj_wartimer)
+	warbg_start();
+
 // prepare to draw with panicbg
-if (global.panic or global.snickchallenge)
+else if (global.panic or global.snickchallenge)
 && global.panicbg && !instance_exists(obj_ghostcollectibles)
 {
 	shader_set(shd_panicbg);

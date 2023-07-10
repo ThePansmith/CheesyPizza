@@ -57,21 +57,21 @@ if (obj_player.state != states.dead)
 			pizzascore_index = 0;
 	}
 	
-	var heatfill = spr_heatmeter_fill
-	var heatmeter = spr_heatmeter
+	var heatfill = spr_heatmeter_fill;
+	var heatmeter = spr_heatmeter;
 	switch obj_player1.character
 	{
 		default:
-			heatfill = spr_heatmeter_fill
-			heatmeter = spr_heatmeter
+			heatfill = spr_heatmeter_fill;
+			heatmeter = spr_heatmeter;
 			break;
 		case "SP":
-			heatfill = spr_heatmeter_fillSP
-			heatmeter = spr_heatmeterSP
+			heatfill = spr_heatmeter_fillSP;
+			heatmeter = spr_heatmeterSP;
 			break;
 		case "PP":
-			heatfill = spr_heatmeter_fillPP
-			heatmeter = spr_heatmeterPP
+			heatfill = spr_heatmeter_fillPP;
+			heatmeter = spr_heatmeterPP;
 			break;
 	}
 	var sw = sprite_get_width(heatfill);
@@ -94,48 +94,49 @@ if (obj_player.state != states.dead)
 	}
 	
 	// score
-	var pizzascorespr = spr_pizzascore
+	var pizzascorespr = spr_pizzascore;
 	if sugary
-		pizzascorespr = spr_cakehud
+		pizzascorespr = spr_cakehud;
 	else if piss
-		pizzascorespr = spr_pizzascorePP
+		pizzascorespr = spr_pizzascorePP;
 	else if bo
 		pizzascorespr = spr_pizzascoreBN;
 	else
-		pizzascorespr = spr_pizzascore
+		pizzascorespr = spr_pizzascore;
 	draw_sprite_ext(pizzascorespr, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
 	
-	var peppersprite = spr_pizzascore_pepper
-	var pepperonisprite = spr_pizzascore_pepperoni
-	var olivesprite = spr_pizzascore_olive
-	var shroomsprite = spr_pizzascore_shroom
+	var peppersprite = spr_pizzascore_pepper;
+	var pepperonisprite = spr_pizzascore_pepperoni;
+	var olivesprite = spr_pizzascore_olive;
+	var shroomsprite = spr_pizzascore_shroom;
 	switch obj_player1.character
 	{
 		default:
-			peppersprite = spr_pizzascore_pepper
-			pepperonisprite = spr_pizzascore_pepperoni
-			olivesprite = spr_pizzascore_olive
-			shroomsprite = spr_pizzascore_shroom
+			peppersprite = spr_pizzascore_pepper;
+			pepperonisprite = spr_pizzascore_pepperoni;
+			olivesprite = spr_pizzascore_olive;
+			shroomsprite = spr_pizzascore_shroom;
 			break;
 		case "SP":
-			peppersprite = spr_cakehud_crank
-			pepperonisprite = spr_cakehud_brank
-			olivesprite = spr_cakehud_arank
-			shroomsprite = spr_cakehud_srank
+			peppersprite = spr_cakehud_crank;
+			pepperonisprite = spr_cakehud_brank;
+			olivesprite = spr_cakehud_arank;
+			shroomsprite = spr_cakehud_srank;
 			break;
 		case "PP":
-			peppersprite = spr_pizzascore_pepperPP
-			pepperonisprite = spr_pizzascore_pepperoniPP
-			olivesprite = spr_pizzascore_olivePP
-			shroomsprite = spr_pizzascore_shroomPP
+			peppersprite = spr_pizzascore_pepperPP;
+			pepperonisprite = spr_pizzascore_pepperoniPP;
+			olivesprite = spr_pizzascore_olivePP;
+			shroomsprite = spr_pizzascore_shroomPP;
 			break;
 		case "BN":
-			peppersprite = spr_null
-			pepperonisprite = spr_null
-			olivesprite = spr_null
-			shroomsprite = spr_null
+			peppersprite = spr_null;
+			pepperonisprite = spr_null;
+			olivesprite = spr_null;
+			shroomsprite = spr_null;
 			break;
-	}		
+	}
+	
 	var _score = global.collect;
 	if (global.coop)
 		_score += global.collectN;
@@ -153,7 +154,16 @@ if (obj_player.state != states.dead)
 	
 	var rank_ix = 0;
 	if (_score >= global.srank && scr_is_p_rank())
+	{
 		rank_ix = 5;
+		
+		// shake
+		if REMIX && global.combotime < 15
+		{
+			rx += irandom_range(-1, 1);
+			ry += irandom_range(-1, 1);
+		}
+	}
 	else if (_score >= global.srank)
 		rank_ix = 4;
 	else if (_score >= global.arank)
@@ -175,13 +185,13 @@ if (obj_player.state != states.dead)
 	}
 	rank_scale = Approach(rank_scale, 1, 0.2);
 	
-	var ranksprite = spr_ranks_hud
+	var ranksprite = spr_ranks_hud;
 	if sugary
-		ranksprite = spr_ranks_hudSP
+		ranksprite = spr_ranks_hudSP;
 	else if piss
-		ranksprite = spr_ranks_hudPP
+		ranksprite = spr_ranks_hudPP;
 	else if bo
-		ranksprite = spr_ranks_hudBN
+		ranksprite = spr_ranks_hudBN;
 	draw_sprite_ext(ranksprite, rank_ix, rx, ry, rank_scale, rank_scale, 0, c_white, 1);
 	
 	var spr_w = sprite_get_width(spr_ranks_hudfill);

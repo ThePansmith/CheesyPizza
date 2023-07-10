@@ -344,14 +344,16 @@ function state_player_normal()
 		state = states.jump;
 	}
 	
-	if (input_buffer_shoot > 0 && shotgunAnim)
-		scr_shotgunshoot();
-	else if (input_buffer_pistol > 0 && global.pistol)
-	or (global.shootstyle == 1 && key_shoot2 && character != "V")
-		scr_pistolshoot(states.normal);
-	
 	if character != "V" && character != "S"
 	{
+		if (input_buffer_shoot > 0 && shotgunAnim)
+			scr_shotgunshoot();
+		else if (input_buffer_pistol > 0 && global.pistol)
+		or (global.shootstyle == 1 && key_shoot2)
+			scr_pistolshoot(states.normal);
+		else if key_shoot2
+			scr_perform_move(moves.shootattack, states.normal);
+		
 		// suplex dash
 		if (input_buffer_grab > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)) && (!suplexmove or character != "SP"))
 		{

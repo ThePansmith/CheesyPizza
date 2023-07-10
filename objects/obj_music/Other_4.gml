@@ -84,7 +84,8 @@ else if (secretend)
 		fmod_event_instance_stop(pissinosecretID, true);
 		fmod_event_instance_stop(music.event_secret, true);
 		fmod_event_instance_set_paused(music.event, false);
-		fmod_event_instance_set_timeline_pos(music.event, savedmusicpos);
+		if !REMIX
+			fmod_event_instance_set_timeline_pos(music.event, savedmusicpos);
 	}
 	if (global.panic)
 	{

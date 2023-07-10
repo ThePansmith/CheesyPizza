@@ -508,10 +508,7 @@ if instance_exists(obj_inputdisplay)
 
 	add_option_slide(inputdisplay_menu, 2, "OPACITY", function(val)
 	{
-		if val >= 100
-			obj_inputdisplay.keyalpha = 1;
-		else
-			obj_inputdisplay.keyalpha = (val / 100) / 2;
+		obj_inputdisplay.keyalpha = val / 100;
 	}).value = obj_inputdisplay.keyalpha * 100;
 }
 

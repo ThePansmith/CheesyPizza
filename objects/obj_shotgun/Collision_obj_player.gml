@@ -12,7 +12,12 @@ with (other)
 		instance_destroy(other);
 		shotgunAnim = true;
 		state = states.shotgun;
-		create_transformation_tip(lang_get_value("shotguntip"), "shotgun");
+		
+		var tip = lang_get_value("shotguntip");
+		if global.shootbutton != 0
+			tip = string_replace(tip, "[G]", "[S]");
+		create_transformation_tip(tip, "shotgun");
+		
 		if (room == war_1)
 		{
 			with (instance_create_unique(0, 0, obj_wartimer))
