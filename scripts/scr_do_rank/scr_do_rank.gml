@@ -1,6 +1,9 @@
 function scr_is_p_rank()
 {
-	if global.leveltosave != "exit" && global.leveltosave != "dragonlair" && global.leveltosave != "etb" && global.leveltosave != "grinch"
+	if global.leveltosave == "dragonlair" or global.leveltosave != "etb" or global.leveltosave != "grinch"
+		return !global.combodropped && global.prank_enemykilled;
+	
+	if global.leveltosave != "exit"
 		return global.lap && global.secretfound >= 3 && global.treasure && !global.combodropped && global.prank_enemykilled;
 	else
 		return !global.combodropped;
