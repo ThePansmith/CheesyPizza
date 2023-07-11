@@ -15,6 +15,11 @@ function sh_level(args)
 		case "exit": targetRoom = tower_finalhallway; break;
 		case "oldexit": targetRoom = exit_1; break;
 		case "strongcold": targetRoom = strongcold_10; break;
+		
+		case "snickchallenge":
+			targetRoom = medieval_1;
+			activate_snickchallenge();
+			break;
 	}
 	
 	if room_exists(targetRoom)
@@ -40,8 +45,8 @@ function meta_level()
 		arguments: ["level"],
 		suggestions: [
 			["entrance", "medieval", "ruin", "dungeon", "badland", "graveyard", "farm", "saloon", "plage", "forest", "space", "minigolf", "street", "sewer", "industrial", "freezer", "kidsparty", "chateau", "war", "exit",
-			"oldexit", "beach", "mansion", "strongcold", "dragonlair", "etb",
-			"entryway", "midway"]
+			"oldexit", "beach", "mansion", "strongcold", "dragonlair", "etb", "ancient", "grinch", "snickchallenge",
+			"entryway", "steamy", "midway"]
 		]
 	}
 }

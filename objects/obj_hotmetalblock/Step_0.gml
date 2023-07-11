@@ -9,10 +9,7 @@ with (obj_player)
 			if (place_meeting(x, y + 1, other) || place_meeting(x, y - 1, other) || place_meeting(x - 1, y, other) || place_meeting(x + 1, y, other))
 			{
 				if (place_meeting(x, y - 1, other) && (other.state == states.knightpep || other.state == states.hookshot))
-				{
 					instance_destroy();
-					tile_layer_delete_at(1, x, y);
-				}
 			}
 		}
 	}

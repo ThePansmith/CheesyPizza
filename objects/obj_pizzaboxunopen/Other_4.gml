@@ -14,8 +14,8 @@ if (content == obj_pizzakinsausage && global.sausagefollow)
 if (content == obj_pizzakinpineapple && global.pineapplefollow)
 	instance_destroy();
 
-if (global.snickchallenge == 1)
-	instance_destroy();
+if global.snickchallenge
+	instance_destroy(id, false);
 
 if content == obj_bigcollect
 {

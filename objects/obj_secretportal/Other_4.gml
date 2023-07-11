@@ -1,3 +1,9 @@
+if global.snickchallenge
+{
+	instance_destroy();
+	exit;
+}
+
 var _start = false;
 with (obj_player)
 {

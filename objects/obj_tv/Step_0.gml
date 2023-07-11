@@ -52,7 +52,7 @@ switch (state)
 {
 	case states.normal:
 		idlespr = spr_tv_idle;
-		if (global.panic) && !instance_exists(obj_ghostcollectibles)
+		if (global.panic or global.snickchallenge) && !instance_exists(obj_ghostcollectibles)
 			idlespr = spr_tv_exprpanic;
 		else if (global.combo >= 3 && global.stylethreshold < 3 && !obj_player.isgustavo)
 			idlespr = spr_tv_exprcombo;
@@ -62,7 +62,7 @@ switch (state)
 		if (obj_player.isgustavo)
 		{
 			idlespr = spr_tv_idleG;
-			if (global.panic)
+			if (global.panic or global.snickchallenge)
 				idlespr = spr_tv_escapeG;
 		}
 		
@@ -341,7 +341,7 @@ switch (state)
 					if (isgustavo)
 						_transfo = true;
 				}
-				if (!global.panic or _transfo or obj_player1.mach4mode or obj_player1.state == states.hurt or obj_player1.state == states.mach3 or obj_player1.sprite_index == obj_player1.spr_mach3boost)
+				if ((!global.panic && !global.snickchallenge) or _transfo or obj_player1.mach4mode or obj_player1.state == states.hurt or obj_player1.state == states.mach3 or obj_player1.sprite_index == obj_player1.spr_mach3boost)
 				{
 					state = states.tv_whitenoise;
 					expressionsprite = noone;
@@ -397,7 +397,7 @@ pizzaface_index += 0.35;
 hand_index += 0.35;
 johnface_index += sugarylevel ? 0.015 : 0.35;
 
-if (global.panic && global.fill > 0 && !instance_exists(obj_pizzaface))
+if ((global.panic or global.snickchallenge) && global.fill > 0 && !instance_exists(obj_pizzaface))
 {
 	showtime_buffer = 100;
 	if (!instance_exists(obj_ghostcollectibles))
@@ -405,7 +405,7 @@ if (global.panic && global.fill > 0 && !instance_exists(obj_pizzaface))
 	else
 		timer_y = Approach(timer_y, timer_ystart + 212, 4);
 }
-else if (global.panic)
+else if (global.panic or global.snickchallenge)
 {
 	if (pizzaface_sprite == spr_timer_pizzaface1)
 	{

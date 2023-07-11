@@ -19,10 +19,14 @@ if (image_alpha == 1)
 	global.combotime = min(global.combotime + 10, 60);
 	with (obj_camera)
 		healthshaketime = 30;
-	var val = heat_calculate(10);
-	global.collect += val;
-	create_collect(x, y, sprite_index, val, spr_palette, paletteselect);
-	with (instance_create(x + 16, y, obj_smallnumber))
-		number = string(val);
+	
+	if !global.snickchallenge
+	{
+		var val = heat_calculate(10);
+		global.collect += val;
+		create_collect(x, y, sprite_index, val, spr_palette, paletteselect);
+		with (instance_create(x + 16, y, obj_smallnumber))
+			number = string(val);
+	}
 	instance_destroy();
 }

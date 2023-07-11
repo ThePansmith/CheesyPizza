@@ -19,10 +19,14 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	global.heattime = clamp(global.heattime, 0, 60);
 	global.combotime += 10;
 	global.combotime = clamp(global.combotime, 0, 60);
-	var val = heat_calculate(10);
-	global.collect += val;
-	with (instance_create(x + 16, y, obj_smallnumber))
-		number = string(val);
+	
+	if !global.snickchallenge
+	{
+		var val = heat_calculate(10);
+		global.collect += val;
+		with (instance_create(x + 16, y, obj_smallnumber))
+			number = string(val);
+	}
 	notification_push(notifs.block_break, [room]);
 	scr_sound_multiple("event:/sfx/misc/breakblock", x, y);
 	ds_list_add(global.saveroom, id);

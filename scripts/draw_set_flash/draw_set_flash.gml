@@ -1,7 +1,7 @@
 global.__FLASH_BLENDMODE = bm_normal;
 global.__FLASH_SHADER = -1;
 
-function draw_set_flash(col = merge_colour(c_red, c_white, 0.9))
+function draw_set_flash(col = REMIX ? c_white : merge_colour(c_red, c_white, 0.9))
 {
 	global.__FLASH_BLENDMODE = gpu_get_blendmode_ext();
 	global.__FLASH_SHADER = shader_current();

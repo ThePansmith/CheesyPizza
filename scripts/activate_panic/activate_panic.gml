@@ -135,3 +135,30 @@ function activate_panic()
 	
 	global.panic = true;
 }
+function activate_snickchallenge()
+{
+	if !global.snickchallenge
+	{
+		global.fill = 7188; // 9:59
+		// (((9 * 60) + 59) * 60) * 0.2
+	
+		if check_modifier(MOD.Pacifist) or check_modifier(MOD.NoToppings)
+			global.fill *= 3;
+			
+		with obj_tv
+		{
+			chunkmax = global.fill;
+			fill_lerp = global.fill;
+		}
+			
+		global.wave = 0;
+		global.maxwave = global.fill;
+			
+		global.snickchallenge = true;
+		global.collect = 10000;
+			
+		with obj_camera
+			alarm[1] = 60;
+	}
+	instance_create_unique(room_width / 2, -50, obj_snickexe);
+}

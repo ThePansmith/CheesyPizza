@@ -95,6 +95,17 @@ switch (global.leveltosave)
 	// pto exclusive
 	case "midway": tv_bg_index = 24; break;
 	case "entryway": tv_bg_index = 25; break;
+	
+	case "snickchallenge":
+		if string_starts_with(r, "medieval")
+			tv_bg_index = 2;
+		if string_starts_with(r, "ruin")
+			tv_bg_index = 3;
+		if string_starts_with(r, "dungeon")
+			tv_bg_index = 4;
+		if room == snick_challengeend
+			tv_bg_index = 1;
+		break;
 }
 if (special_prompts == -4 && room != Realtitlescreen && room != characterselect)
 {
@@ -210,6 +221,9 @@ switch (room)
 		global.srank = 7986;
 		break;
 }
+if global.snickchallenge
+	global.srank = 8000;
+
 global.arank = floor(global.srank / 2);
 global.brank = floor(global.arank / 2);
 global.crank = floor(global.brank / 2);

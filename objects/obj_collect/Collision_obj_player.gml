@@ -19,13 +19,17 @@ if (other.state != states.gotoplayer)
 	global.combotime = min(global.combotime + 10, 60);
 	with (obj_camera)
 		healthshaketime = 30;
-	var val = heat_calculate(10);
-	if (other.object_index == obj_player1)
-		global.collect += val;
-	else
-		global.collectN += val;
-	create_collect(x, y, sprite_index, val, spr_palette, paletteselect);
-	with (instance_create(x + 16, y, obj_smallnumber))
-		number = string(val);
+	
+	if !global.snickchallenge
+	{
+		var val = heat_calculate(10);
+		if (other.object_index == obj_player1)
+			global.collect += val;
+		else
+			global.collectN += val;
+		create_collect(x, y, sprite_index, val, spr_palette, paletteselect);
+		with (instance_create(x + 16, y, obj_smallnumber))
+			number = string(val);
+	}
 	instance_destroy();
 }

@@ -283,24 +283,21 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 					break;
 				else
 				{
-					if !global.snickchallenge
+					var rm = global.leveltorestart;
+					if rm != noone && rm != -1
 					{
-						var rm = global.leveltorestart;
-						if rm != noone && rm != -1
-						{
-							alarm[5] = 1;
-							roomtorestart = rm;
-							pause_unpause_music();
-							stop_music();
-							scr_pause_activate_objects();
-							scr_pause_stop_sounds();
-							instance_destroy(obj_option);
-							instance_destroy(obj_keyconfig);
-							pause = false;
-						}
-						else
-							sound_play_oneshot("event:/sfx/ui/select");
+						alarm[5] = 1;
+						roomtorestart = rm;
+						pause_unpause_music();
+						stop_music();
+						scr_pause_activate_objects();
+						scr_pause_stop_sounds();
+						instance_destroy(obj_option);
+						instance_destroy(obj_keyconfig);
+						pause = false;
 					}
+					else
+						sound_play_oneshot("event:/sfx/ui/select");
 					break;
 				}
 			

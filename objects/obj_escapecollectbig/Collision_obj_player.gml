@@ -19,14 +19,18 @@ if (image_alpha == 1)
 		else
 			sound_play_oneshot_3d("event:/sfx/misc/bellcollectbig_ss", x, y);
 		instance_destroy();
-		var val = heat_calculate(value);
-		if (other.object_index == obj_player1)
-			global.collect += val;
-		else
-			global.collectN += val;
-		create_collect(x, y, sprite_index, val);
-		with (instance_create(x + 16, y, obj_smallnumber))
-			number = string(val);
+		
+		if !global.snickchallenge
+		{
+			var val = heat_calculate(value);
+			if other.object_index == obj_player1
+				global.collect += val;
+			else
+				global.collectN += val;
+			create_collect(x, y, sprite_index, val);
+			with (instance_create(x + 16, y, obj_smallnumber))
+				number = string(val);
+		}
 	}
 }
 event_user(0);

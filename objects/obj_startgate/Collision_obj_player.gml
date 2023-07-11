@@ -25,18 +25,6 @@ with (other)
 		obj_player2.backtohubstartx = x;
 		obj_player2.backtohubstarty = y;
 		obj_player2.backtohubroom = room;
-		if (global.coop == 1)
-		{
-			with (obj_player2)
-			{
-				x = obj_player1.x;
-				y = obj_player1.y;
-				mach2 = 0;
-				obj_camera.chargecamera = 0;
-				image_index = 0;
-				state = states.victory;
-			}
-		}
 		exit;
 	}
 }
@@ -44,21 +32,6 @@ if floor(other.image_index) == other.image_number - 1 && other.state == states.v
 {
 	with other
 	{
-		if (other.level == "snickchallenge")
-		{
-			global.wave = 0;
-			global.maxwave = ((global.minutes * 60) + global.seconds) * 60;
-			if (global.panicbg)
-				scr_panicbg_init();
-			global.snickchallenge = true;
-			global.collect = 10000;
-			with (obj_camera)
-			{
-				alarm[1] = 60;
-				global.seconds = 59;
-				global.minutes = 9;
-			}
-		}
 		obj_music.fadeoff = 0;
 		targetDoor = other.targetDoor;
 		targetRoom = other.targetRoom;

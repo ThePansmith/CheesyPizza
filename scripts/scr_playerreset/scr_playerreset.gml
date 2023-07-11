@@ -13,12 +13,20 @@ function textures_offload(texturegroup_array)
 	}
 	return b;
 }
-function scr_playerreset(roomstart = false)
+function scr_playerreset(roomstart = false, restart = false)
 {
 	trace("playerreset");
 	
-	if !roomstart
+	if !roomstart && !restart
+	{
 		global.modifier = 0;
+		global.snickchallenge = false;
+	}
+	if global.snickchallenge
+	{
+		global.snickchallenge = false;
+		activate_snickchallenge();
+	}
 	global.modifier_failed = false;
 	
 	global.lap = false;
@@ -62,6 +70,7 @@ function scr_playerreset(roomstart = false)
 	{
 		with (obj_music)
 		{
+			panicstart = false;
 			secretend = true;
 			secret = false;
 			exitmusic = false;
@@ -142,7 +151,6 @@ function scr_playerreset(roomstart = false)
 		global.maxwave = 0;
 		global.secretfound = 0;
 		global.hurtcounter = 0;
-		global.snickchallenge = false;
 		global.timeattack = false;
 		global.giantkey = false;
 		global.pizzadelivery = false;

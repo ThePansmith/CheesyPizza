@@ -8,3 +8,5 @@ if array_contains(levels, global.leveltosave) && !global.sandbox
 }
 if check_modifier(MOD.Lap3) && global.laps >= 2
 	instance_destroy();
+if global.snickchallenge
+	instance_destroy();

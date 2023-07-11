@@ -121,7 +121,8 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && important == 0)
 		}
 		if (instance_exists(obj_hardmode))
 			global.heatmeter_count++;
-		if (!elite || elitehit <= 0)
+		
+		if (!elite || elitehit <= 0) && !global.snickchallenge
 		{
 			var combototal = 10 + floor(global.combo * 0.5);
 			global.collect += combototal;

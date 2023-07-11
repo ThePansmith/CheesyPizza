@@ -1,10 +1,14 @@
 function scr_is_p_rank()
 {
-	if global.leveltosave == "dragonlair" or global.leveltosave != "etb" or global.leveltosave != "grinch"
-		return !global.combodropped && global.prank_enemykilled;
+	var enemykilled = global.prank_enemykilled or check_modifier(MOD.Pacifist);
+	
+	if global.leveltosave == "dragonlair" or global.leveltosave == "etb" or global.leveltosave == "grinch"
+		return !global.combodropped && enemykilled;
+	if global.leveltosave == "snickchallenge"
+		return !global.combodropped && !string_starts_with(room_get_name(room), "medieval");
 	
 	if global.leveltosave != "exit"
-		return global.lap && global.secretfound >= 3 && global.treasure && !global.combodropped && global.prank_enemykilled;
+		return global.lap && global.secretfound >= 3 && global.treasure && !global.combodropped && enemykilled;
 	else
 		return !global.combodropped;
 }

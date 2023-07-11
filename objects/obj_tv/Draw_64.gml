@@ -239,7 +239,7 @@ draw_set_font(global.smallnumber_fnt);
 draw_set_halign(1);
 */
 
-if (global.panic)
+if (global.panic or global.snickchallenge)
 {
 	// smooth timer
 	if global.fill < fill_lerp
@@ -291,10 +291,13 @@ if (global.panic)
 			draw_sprite(johnface_sprite, johnface_index, max(timer_x + 13 + _barpos, timer_x + 13), timer_y + 20);
 		
 		// pizzaface
-		var timerspr = pizzaface_sprite;
-		if (timer_tower)
-			timerspr = spr_timer_tower;
-		draw_sprite(timerspr, pizzaface_index, timer_x + 320, timer_y + 10);
+		if !global.snickchallenge
+		{
+			var timerspr = pizzaface_sprite;
+			if (timer_tower)
+				timerspr = spr_timer_tower;
+			draw_sprite(timerspr, pizzaface_index, timer_x + 320, timer_y + 10);
+		}
 		
 		// timer
 		draw_set_align(1, 1);
@@ -319,6 +322,7 @@ if (global.panic)
 	}
 	else
 	{
+		// sugary spire
 		if pizzaface_sprite == spr_timer_pizzaface1
 		{
 			draw_sprite(spr_bartimer_normalBack, pizzaface_index, timer_x + 164, timer_y + 20);

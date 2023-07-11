@@ -1,4 +1,4 @@
-if (other.thrown == 1)
+if other.thrown
 {
 	repeat (6)
 	{
@@ -6,5 +6,5 @@ if (other.thrown == 1)
 			sprite_index = spr_shotgunimpact;
 	}
 	x = room_width / 2;
-	y = -10;
+	y = -50;
 }

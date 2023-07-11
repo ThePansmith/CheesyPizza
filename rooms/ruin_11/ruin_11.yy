@@ -47,8 +47,6 @@
     {"name":"inst_EDA793B1","path":"rooms/ruin_11/ruin_11.yy",},
     {"name":"inst_625B0129","path":"rooms/ruin_11/ruin_11.yy",},
     {"name":"inst_E60E7F91","path":"rooms/ruin_11/ruin_11.yy",},
-    {"name":"inst_7BB2ED19","path":"rooms/ruin_11/ruin_11.yy",},
-    {"name":"inst_F0656B81","path":"rooms/ruin_11/ruin_11.yy",},
     {"name":"inst_8428D9F9","path":"rooms/ruin_11/ruin_11.yy",},
     {"name":"inst_09DC4761","path":"rooms/ruin_11/ruin_11.yy",},
     {"name":"inst_8E8FB5D9","path":"rooms/ruin_11/ruin_11.yy",},
@@ -163,6 +161,9 @@
     {"name":"inst_7ABE6234","path":"rooms/ruin_11/ruin_11.yy",},
     {"name":"inst_FF62E0AC","path":"rooms/ruin_11/ruin_11.yy",},
     {"name":"inst_84155E14","path":"rooms/ruin_11/ruin_11.yy",},
+    {"name":"inst_13C930AA","path":"rooms/ruin_11/ruin_11.yy",},
+    {"name":"inst_7BB2ED19","path":"rooms/ruin_11/ruin_11.yy",},
+    {"name":"inst_F0656B81","path":"rooms/ruin_11/ruin_11.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -323,6 +324,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7ABE6234","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_secretblock","path":"objects/obj_secretblock/obj_secretblock.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":480.0,"y":800.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_FF62E0AC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_secretblock","path":"objects/obj_secretblock/obj_secretblock.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":448.0,"y":800.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_84155E14","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_secrettile","path":"objects/obj_secrettile/obj_secrettile.yy",},"properties":[],"rotation":0.0,"scaleX":6.0,"scaleY":6.0,"x":992.0,"y":960.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_13C930AA","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_snickchallengedoor","path":"objects/obj_snickchallengedoor/obj_snickchallengedoor.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2144.0,"y":1024.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_Secret1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":41,"SerialiseWidth":85,"TileCompressedData":[
 -2581,0,-6,144,-79,0,-3,144,3,146,144,144,-79,0,-6,144,-79,0,-5,144,1,86,-79,0,-5,144,1,268435505,-79,0,6,146,144,147,147,144,76,-473,0,],"TileDataFormat":1,},"tilesetId":{"name":"tile_ruinend_secret","path":"tilesets/tile_ruinend_secret/tile_ruinend_secret.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},

@@ -82,7 +82,7 @@ switch safe_get(global, "leveltosave")
 	case "oldexit": state = "Exit"; break;
 	case "strongcold": state = "Strongcold"; break;
 	case "dragonlair": state = "Dragon's Lair"; break;
-	case "snickchallenge": state = "Snick Challenge"; break;
+	case "snickchallenge": state = "Snick's Challenge"; break;
 	
 	case "midway": state = "Midway"; break;
 	case "sky": state = "Sky"; break;

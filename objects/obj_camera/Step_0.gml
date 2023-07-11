@@ -95,9 +95,11 @@ if !shoving
 	bang = false;
 
 // old timer
-if global.seconds <= 0 && global.minutes <= 0 && ded == 0
+if global.seconds <= 0 && global.minutes <= 0 && !ded
 {
-	alarm[1] = -1;
+	//if !REMIX && !global.snickchallenge
+	//	alarm[1] = -1;
+	
 	if global.miniboss or instance_exists(obj_toppinwarrior)
 		alarm[2] = 1;
 	else
@@ -109,6 +111,10 @@ if global.seconds > 59
 	global.minutes += 1;
 	global.seconds -= 59;
 }
+
+// fucking hell
+if (!global.panic && !global.snickchallenge) or global.leveltosave == "grinch"
+	alarm[1] = 60;
 
 // timed gate
 if global.timedgatetimer

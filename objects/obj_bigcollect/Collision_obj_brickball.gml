@@ -13,11 +13,15 @@ if (image_alpha == 1 && !place_meeting(x, y, obj_metalblock))
 	if object_index == obj_escapecollectbig
 		sound_play_oneshot_3d("event:/sfx/misc/bellcollectbig", x, y);
 	instance_destroy();
-	global.combotime = 60;
-	var val = heat_calculate(value);
-	global.collect += val;
-	create_collect(x, y, sprite_index, val);
-	with (instance_create(x + 16, y, obj_smallnumber))
-		number = string(val);
-	tv_do_expression(spr_tv_exprcollect);
+	
+	if !global.snickchallenge
+	{
+		global.combotime = 60;
+		var val = heat_calculate(value);
+		global.collect += val;
+		create_collect(x, y, sprite_index, val);
+		with (instance_create(x + 16, y, obj_smallnumber))
+			number = string(val);
+		tv_do_expression(spr_tv_exprcollect);
+	}
 }
