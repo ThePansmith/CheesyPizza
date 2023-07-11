@@ -8,6 +8,10 @@ switch async_load[? "event_type"]
 		if a == "339940381850468386" && DEBUG
 			show_message(choose("hiii melia! you're cute :3", "you're doing a great job melia, keep it up :3", "i love you melia!\n-from the game", "keep up the good work melia :3"));
 		
+		// beebawp
+		if a == "1092972191341096970" or a == "909894078852911145"
+			url_open("https://youtu.be/3yNZG0uUTjg");
+		
 		// taunts
 		if code_is_compiled()
 		{
