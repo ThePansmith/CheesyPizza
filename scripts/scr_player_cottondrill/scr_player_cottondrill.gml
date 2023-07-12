@@ -22,27 +22,27 @@ function state_player_cottondrill()
 	}
 	vsp = verticalMovespeed;
 	sprite_index = spr_cotton_drill;
-	if (grounded && !place_meeting(x, y + 1, obj_destructibles) && !place_meeting(x, y + 1, obj_chocofrog))
+	if (grounded && !place_meeting(x, y + 1, obj_destructibles) && !place_meeting(x, y + 1, obj_ratblock))
 	{
 		doublejumped = 0;
 		if (slopeCheck(x, y))
 		{
 			movespeed = (verticalMovespeed / 20) * 12;
 			vsp = 3;
-			state = 98;
+			state = states.cottonroll;
 			image_index = 0;
 			sprite_index = spr_cotton_roll;
-			if (scr_slope_ext(x, y + 1) && !scr_solid_slope(x, y + 1))
+			if (scr_slope(x, y + 1) && !scr_solid_slope(x, y + 1))
 			{
 				with (instance_place(x, y + 1, obj_slope))
 					other.xscale = -sign(image_xscale);
-				with (instance_place(x, y + 1, obj_slopePlatform))
+				with (instance_place(x, y + 1, obj_slope_platform))
 					other.xscale = -sign(image_xscale);
 			}
 		}
 		else
 		{
-			state = 88;
+			state = states.cotton;
 			sprite_index = spr_cotton_land;
 			vsp = 0;
 			movespeed = 0;
@@ -51,7 +51,7 @@ function state_player_cottondrill()
 	}
 	if (key_slap2 && sprite_index != spr_cotton_attack && groundedcot == 1)
 	{
-		state = 88;
+		state = states.cotton;
 		flash = 1;
 		image_index = 0;
 		sprite_index = spr_cotton_attack;
@@ -63,14 +63,14 @@ function state_player_cottondrill()
 			vsp = 0;
 		grav = 0.2;
 		grounded = false;
-		scr_sound(sfx_cottonattack);
+		//scr_sound(sfx_cottonattack);
 		groundedcot = 0;
 	}
 	if (key_jump && !grounded && doublejumped == 0)
 	{
 		doublejumped = 1;
 		movespeed = 0;
-		state = 88;
+		state = states.cotton;
 		vsp = -10;
 		grav = 0.1;
 		image_index = 0;
@@ -81,14 +81,14 @@ function state_player_cottondrill()
 			image_xscale = other.xscale;
 			sprite_index = spr_cottonpoof;
 		}
-		scr_sound(sfx_cottonjump);
+		//scr_sound(sfx_cottonjump);
 	}
 	if (cotton_afterimagetimer > 0)
 		cotton_afterimagetimer--;
-	if (cotton_afterimagetimer <= 0)
+	/*if (cotton_afterimagetimer <= 0)
 	{
 		with (instance_create(x, y, obj_cotton_aftereffect))
 			playerID = other.id;
 		cotton_afterimagetimer = 6;
-	}
+	}*/
 }

@@ -749,5 +749,6 @@ pistol = false;
 jetpackcancel = false;
 suplexmove2 = false;
 oldHallway = false;
+groundedcot = false;
 konami = "";
 konamiend = "UUDDLRLRBA";

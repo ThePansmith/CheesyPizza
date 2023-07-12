@@ -1,3 +1,2 @@
-visible = false;
-targetRoom = steamy_3
+secret_close_portalID();
 secret = 1;
