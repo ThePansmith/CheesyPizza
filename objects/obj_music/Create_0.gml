@@ -249,8 +249,7 @@ add_music(midway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret"
 #region SUGARY
 
 add_music(entryway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
-
-add_music(steamy_1, "event:/music/modded/sugary/cotton", "event:/music/modded/sugary/cottonsecret", 0);
+add_music(steamy_1, "event:/modded/sugary/cotton", "event:/modded/sugary/cottonsecret", 0);
 
 #endregion
 #region OLD LEVELS
@@ -261,6 +260,7 @@ add_music(beach_1, "event:/music/w3/beach", "event:/music/w3/beachsecret", 0);
 add_music(golf_room1, "event:/music/w3/golf", "event:/music/w3/golfsecret", 0);
 add_music(mansion_1, "event:/music/pto/mansion", "event:/music/pto/mansionsecret", 0);
 add_music(mansion_weird2, "event:/music/pto/mansion", "event:/music/pto/mansionsecret", 0);
+add_music(PP_room1, "event:/music/tutorial", "event:/music/pillarmusic", 0);
 
 add_music(strongcold_10, "event:/music/pto/strongcold", "event:/music/pto/strongcoldsecret", 0, function(room, event, event_secret)
 {

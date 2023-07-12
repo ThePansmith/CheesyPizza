@@ -93,6 +93,7 @@ function hub_state(_room, _sound, _secretsound)
 			break;
 		
 		case tower_extra:
+		case tower_sage:
 		case tower_extra2:
 			s = 5;
 			break;
