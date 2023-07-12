@@ -23,7 +23,30 @@
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a9f56785-a89e-4ab5-b0f0-d2c1fd517dc0","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
-  "nineSlice": null,
+  "nineSlice": {
+    "resourceType": "GMNineSliceData",
+    "resourceVersion": "1.0",
+    "bottom": 0,
+    "enabled": true,
+    "guideColour": [
+      4294902015,
+      4294902015,
+      4294902015,
+      4294902015,
+    ],
+    "highlightColour": 1728023040,
+    "highlightStyle": 1,
+    "left": 32,
+    "right": 32,
+    "tileMode": [
+      1,
+      0,
+      1,
+      0,
+      1,
+    ],
+    "top": 0,
+  },
   "origin": 0,
   "parent": {
     "name": "Cotton",

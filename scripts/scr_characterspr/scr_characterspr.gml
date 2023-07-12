@@ -1023,6 +1023,7 @@ function scr_characterspr()
 		spr_kungfuair1transition = spr_player_kungfuair1transition;
 		spr_kungfuair2transition = spr_player_kungfuair2transition;
 		spr_kungfuair3transition = spr_player_kungfuair3transition;
+		spr_cottonidle = spr_cotton_idle;
 		spr_palette = spr_pizzypalette;
 		paletteselect = 1;
 	}
