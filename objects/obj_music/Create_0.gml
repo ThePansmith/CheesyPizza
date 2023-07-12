@@ -250,7 +250,7 @@ add_music(midway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret"
 
 add_music(entryway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
 
-add_music(steamy_1, "event:/music/modded/sugary/cotton", "event:/music/modded/sugary/cottonsecret", 0);
+add_music(steamy_1, "event:/modded/sugary/cotton", "event:/modded/sugary/cottonsecret", 0);
 
 #endregion
 #region OLD LEVELS

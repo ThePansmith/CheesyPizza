@@ -1,1 +1,1 @@
-//targetRoom = steamy_sideroom
+targetRoom = steamy_sideroom

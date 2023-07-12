@@ -301,7 +301,10 @@ enum states
 	secretenter,
 	teleport,
 	KO,
-	camera_followtarget
+	camera_followtarget,
+	cotton,
+	cottondrill,
+	cottonroll
 }
 
 #endregion
@@ -601,7 +604,10 @@ states = {
 	secretenter : 296,
 	teleport : 297,
 	KO : 298,
-	camera_followtarget : 299
+	camera_followtarget : 299,
+	cotton : 300,
+	cottondrill : 301,
+	cottonroll : 302
 }
 
 #endregion
