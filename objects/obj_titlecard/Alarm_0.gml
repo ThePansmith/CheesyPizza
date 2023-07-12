@@ -1,3 +1,6 @@
+if global.leveltosave == "snickchallenge"
+	activate_snickchallenge();
+
 loading = true;
 with (instance_create(x, y, obj_fadeout))
 {

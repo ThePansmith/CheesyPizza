@@ -53,7 +53,8 @@ switch targetRoom
 }
 if (targetRoom == boss_pepperman || targetRoom == boss_vigilante || targetRoom == boss_noise || targetRoom == boss_fakepep)
 	boss = true;
-if (object_index != obj_bossdoor)
+
+if (object_index != obj_bossdoor && sprite_index != spr_snickchallengecomputer)
 {
 	var old_y = y;
 	if (scr_solid(x, y))
@@ -104,7 +105,7 @@ for (var i = 0; i < array_length(_toppinspr); i++)
 		}
 	}
 }
-if (object_index == obj_startgate && level != "exit" && level != "tutorial" && level != "dragonlair")
+if (object_index == obj_startgate && level != "exit" && level != "tutorial" && level != "dragonlair" && level != "snickchallenge")
 {
 	for (i = 1; i <= 3; i++)
 	{

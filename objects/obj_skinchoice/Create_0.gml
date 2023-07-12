@@ -44,7 +44,7 @@ characters = [
 	["G", spr_player_ratmountidle, spr_ratmountpalette, [1, 3]],
 	["S", spr_snick_idle, spr_snickpalette, [1, 4]],
 	["SP", spr_playerSP_idle, spr_pizzypalette, [1, 3]],
-	["PP", spr_playerPP_idle, spr_pisspalette, [1, 3]],
+	["PN", spr_playerPN_idle, spr_pinopalette, [1, 3]],
 	["BN", spr_playerBN_idle, spr_bopalette, [1, 3]],
 ];
 
@@ -56,7 +56,7 @@ unlockables = ["unfunny", "money", "sage", "blood", "tv", "dark", "shitty", "gol
 function add_palette(palette, entry, texture = noone, name = "PALETTE", description = "(No Description)", mix_prefix)
 {
 	// check if the palette was unlocked
-	if array_get_index(unlockables, entry) != -1
+	if array_get_index(unlockables, entry) != -1 && !global.sandbox
 	{
 		ini_open_from_string(obj_savesystem.ini_str_options);
 		if !ini_read_real("Palettes", entry, false)

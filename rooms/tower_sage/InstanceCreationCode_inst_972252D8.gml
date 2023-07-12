@@ -1,4 +1,5 @@
 sprite_index = spr_snickchallengecomputer;
+mask_index = sprite_index;
 
 targetRoom = medieval_1;
 msg = "Snick's Challenge";

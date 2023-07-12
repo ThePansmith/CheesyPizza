@@ -460,6 +460,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tumble","folderPath":"folders/Sprites/Player/Pissino/Tumble.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Pizzelle","folderPath":"folders/Sprites/Player/Pizzelle.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Collectibles","folderPath":"folders/Sprites/Player/Pizzelle/Collectibles.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Cotton","folderPath":"folders/Sprites/Player/Pizzelle/Cotton.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Snick","folderPath":"folders/Sprites/Player/Snick.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Bomb","folderPath":"folders/Sprites/Player/Snick/Bomb.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Knight","folderPath":"folders/Sprites/Player/Snick/Knight.yy",},
@@ -528,7 +529,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Cotton","folderPath":"folders/Sprites/Player/Pizzelle/Cotton.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"fmod.dll","CopyToMask":-1,"filePath":"datafiles",},

@@ -50,6 +50,6 @@ with (other)
 		stop_music();
 		if (global.collect <= 0)
             global.collect = 10;
-		scr_do_rank();
+		scr_do_rank(global.leveltosave != "snickchallenge");
 	}
 }
