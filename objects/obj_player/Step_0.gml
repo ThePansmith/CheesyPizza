@@ -590,13 +590,13 @@ switch (state)
 		scr_player_supergrab();
 		break;
 	case states.cotton:
-		scr_player_cotton();
+		state_player_cotton();
 		break;
 	case states.cottondrill:
-		scr_player_cottondrill();
+		state_player_cottondrill();
 		break;
 	case states.cottonroll:
-		scr_player_cottonroll();
+		state_player_cottonroll();
 		break;
 }
 if (state != states.chainsaw)

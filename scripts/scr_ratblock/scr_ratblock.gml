@@ -47,6 +47,8 @@ function scr_ratblock_destroy()
 				case states.morthook:
 				case states.mortjump:
 				case states.boxxedpepjump:
+				case states.cottondrill:
+				case states.cottonroll:
 				case states.knightpep:
 				case states.knightpepbump:
 					break;
