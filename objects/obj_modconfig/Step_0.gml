@@ -65,6 +65,9 @@ if move != 0
 		sel = array_length(options_array) - 1;
 	
 	yo = 10 * -move;
+	
+	if layer_exists(sequence_layer)
+		layer_destroy(sequence_layer);
 }
 
 xo = lerp(xo, 0, 0.25);
@@ -97,6 +100,9 @@ if move2 != 0
 		if valueold != opt.value
 			sound_play_oneshot(sfx_step);
 	}
+	
+	if layer_exists(sequence_layer)
+		layer_destroy(sequence_layer);
 }
 if key_jump
 {
@@ -113,6 +119,9 @@ if key_jump
 		if is_callable(opt.func)
 			opt.func();
 	}
+	
+	if layer_exists(sequence_layer)
+		layer_destroy(sequence_layer);
 }
 
 // figure out scroll

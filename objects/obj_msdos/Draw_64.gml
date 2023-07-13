@@ -7,24 +7,18 @@ if con != 0
 	x = (x + 0.25) % s;
 		
 	// yeah thats right bitch double surface what are you gonna do about that huh
-	if !variable_instance_exists(id, "pausesurf1") or !surface_exists(pausesurf1)
-		pausesurf1 = surface_create(960, 540);
-	if !variable_instance_exists(id, "pausesurf2") or !surface_exists(pausesurf2)
-		pausesurf2 = surface_create(s * 2, s * 2);
-		
-	surface_set_target(pausesurf2);
-	draw_clear(c_black);
-	draw_set_colour(make_colour_hsv((257 / 360) * 255, (39 / 100) * 255, (23 / 100) * 255));
-	draw_roundrect_ext(0, 0, s - 1, s - 1, 16, 16, false);
-	draw_roundrect_ext(s, s, s + s - 1, s + s - 1, 16, 16, false);
-	surface_reset_target();
-
-	surface_set_target(pausesurf1);
-	draw_surface_tiled(pausesurf2, x, x);
-	surface_reset_target();
-		
-	draw_surface(pausesurf1, 0, 0);
-
+	if !surface_exists(bordersurf)
+	{
+		bordersurf = surface_create(s * 2, s * 2);
+		surface_set_target(bordersurf);
+		draw_clear(c_black);
+		draw_set_colour(make_colour_hsv((257 / 360) * 255, (39 / 100) * 255, (23 / 100) * 255));
+		draw_roundrect_ext(0, 0, s - 1, s - 1, 16, 16, false);
+		draw_roundrect_ext(s, s, s + s - 1, s + s - 1, 16, 16, false);
+		surface_reset_target();
+	}
+	draw_surface_tiled(bordersurf, x, x);
+	
 	// surface
 	var w = 720, h = 400;
 	if !surface_exists(surf)

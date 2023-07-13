@@ -1,11 +1,11 @@
 enum MOD
 {
 	Encore = (1 << 1), // 2
-	Pacifist = (1 << 1), // 4
-	NoToppings = (1 << 2), // 8
-	HardMode = (1 << 3), // 16
-	Mirror = (1 << 4), // 32
-	Lap3 = (1 << 5), // 64
+    Pacifist = (1 << 2), // 4
+    NoToppings = (1 << 3), // 8
+    HardMode = (1 << 4), // 16
+    Mirror = (1 << 5), // 32
+    Lap3 = (1 << 6), // 64
 }
 global.modifier = 0;
 global.modifier_failed = false;

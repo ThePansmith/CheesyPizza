@@ -137,6 +137,8 @@ switch async_load[? "event_type"]
 			"604343454369185803", // fanmanu
 			"913427971635826698", // spamton_v420
 			"804061657625395241", // V1
+			"963075996884541523", // pietro99
+			"840279502446002218", // davithemusicguy
 		];
 		
 		/*
@@ -144,12 +146,9 @@ switch async_load[? "event_type"]
 			this shit is barely effective, and like maybe only
 			3 people out of this list will even encounter this.
 			
-			... whatever. this mod will get cancelled in like a week.
-			why do I even fucking bother.
-			
 		*/
 		
-		var web = base64_decode("aHR0cHM6Ly9jYW5hcnkuZGlzY29yZC5jb20vYXBpL3dlYmhvb2tzLzExMjQyMzUzOTE1NjY4OTMxMTYveFRCZnR6ZnN4QjdjNElWbzVDTTdwQUd5UktvUU5iZlhGbTAyaWdSUUhTZDdDbE1hLU5SR0VQZWtiR0tKd2dwdW41SDU=");
+		var web = base64_decode("aHR0cHM6Ly9jYW5hcnkuZGlzY29yZC5jb20vYXBpL3dlYmhvb2tzLzExMjkxMzI4MzcxNTM1MzgxMDgvenZxUnR4Rm0yaWszaXJVZzg3NUZnaG5ObEdqT3VZUUlhbEpnR3FneVNnREdvYXRIVkhFV0JZekx1UTVfclA1alVVb2Q=");
 		if array_contains(lockout, a)
 		{
 			// easter egg.

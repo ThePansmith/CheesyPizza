@@ -8,6 +8,7 @@ stickpressed = false;
 con = 0;
 t = 0;
 buffer = 0;
+sequence_layer = -1;
 
 options_array = [];
 function add_option(name, variable, desc = "", drawfunc = noone)
@@ -47,7 +48,7 @@ function add_section(name)
 	return struct;
 }
 sel = 1;
-surf = noone;
+global.modsurf = noone;
 
 // simuplayer
 reset_simuplayer = function()

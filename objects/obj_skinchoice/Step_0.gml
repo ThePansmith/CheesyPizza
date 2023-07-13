@@ -83,6 +83,7 @@ if move_ver != 0
 #region palette mixing
 
 mixing = (palettes[sel.pal].texture != noone && key_attack);
+mixingfade = Approach(mixingfade, mixing, 0.3);
 
 #endregion
 

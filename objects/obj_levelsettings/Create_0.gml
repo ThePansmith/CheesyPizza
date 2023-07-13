@@ -4,8 +4,6 @@ live_auto_call;
 sound_play("event:/modded/sfx/diagopen");
 
 menu = 1;
-level = "";
-levelname = "";
 state = 0;
 fadealpha = 0;
 
@@ -69,16 +67,12 @@ add_modifier("Encore", MOD.Encore, "Remixes the level to make it harder.", funct
 	
 });
 */
+
 if !boss
-add_modifier("No Toppings", MOD.NoToppings, "Go through the level without collecting any toppings.", function(val)
-{
-	
-});
+	add_modifier("No Toppings", MOD.NoToppings, "Go through the level without collecting any toppings.", [seq_notoppings_off, seq_notoppings_on]);
 if !boss
-add_modifier("Pacifist", MOD.Pacifist, "Go through the level without killing any enemies.", function(val)
-{
-	
-});
+	add_modifier("Pacifist", MOD.Pacifist, "Go through the level without killing any enemies.", [seq_pacifist_off, seq_pacifist_on]);
+
 add_modifier("Hard Mode", MOD.HardMode, "The level will a ghost that spawns random enemies.", function(val)
 {
 	
@@ -87,6 +81,7 @@ add_modifier("Mirrored", MOD.Mirror, "Flips the screen horizontally, effectively
 {
 	
 });
+
 if !boss
 add_modifier("Lap 3", MOD.Lap3, "Disables infinite lapping, and spawns Pizzaface on the third lap.", function(val)
 {

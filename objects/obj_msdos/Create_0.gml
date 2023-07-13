@@ -13,6 +13,8 @@ blink = 0;
 scroll = 0;
 echo = true;
 
+bordersurf = -1;
+
 instructions = [];
 instructionT = 0;
 instructionF = -1;

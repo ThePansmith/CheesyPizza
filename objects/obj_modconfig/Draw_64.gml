@@ -71,9 +71,15 @@ draw_text(700, 80, string_upper(opt.name));
 
 if opt.type != 2
 {
+	var drawer = 0;
+	if is_callable(opt.drawfunc)
+		drawer = 1;
+	if is_array(opt.drawfunc)
+		drawer = 2;
+	
 	draw_set_font(global.font_small);
-	draw_text_ext_color(2 + 700, 2 + (is_callable(opt.drawfunc) ? 420 : 260), opt.desc, 18, 440, 0, 0, 0, 0, 0.25);
-	draw_text_ext(700, (is_callable(opt.drawfunc) ? 420 : 260), opt.desc, 18, 440);
+	draw_text_ext_color(2 + 700, 2 + (drawer ? 420 : 260), opt.desc, 18, 440, 0, 0, 0, 0, 0.25);
+	draw_text_ext(700, (drawer ? 420 : 260), opt.desc, 18, 440);
 
 	draw_set_font(global.smallfont);
 	if opt.value < array_length(opt.opts)
@@ -81,31 +87,73 @@ if opt.type != 2
 		draw_text_color(2 + 700, 2 + 116, opt.opts[opt.value][0], 0, 0, 0, 0, 0.25);
 		draw_text(700, 116, opt.opts[opt.value][0]);
 	}
-
-	if is_callable(opt.drawfunc)
+	
+	gpu_set_blendmode(bm_normal);
+	if drawer
 	{
 		// roundrect background
-		var xx = 700, wd = 960 / 2.5;
-		var yy = 260, ht = 540 / 2.5;
+		var xx = 700, wd = 384;
+		var yy = 260, ht = 216;
 	
 		draw_set_alpha(1);
-		if !surface_exists(surf)
-			surf = surface_create(wd, ht);
-	
-		surface_set_target(surf);
-		draw_clear_alpha(c_black, 0);
-	
-		gpu_set_blendmode(bm_normal);
-		opt.drawfunc(opt.opts[opt.value][1]);
-	
-		draw_set_colour(c_white);
-		draw_roundrect(0, 0, wd - 2, ht - 2, true);
-	
-		surface_reset_target();
-	
+		
+		// DRAW IT
+		if is_callable(opt.drawfunc)
+		{
+			if !surface_exists(global.modsurf)
+				global.modsurf = surface_create(wd, ht);
+			
+			surface_set_target(global.modsurf);
+			draw_clear_alpha(c_black, 0);
+			
+			opt.drawfunc(opt.opts[opt.value][1]);
+			
+			// white border
+			draw_set_colour(c_white);
+			draw_roundrect(0, 0, wd - 2, ht - 2, true);
+			
+			surface_reset_target();
+		}
+		else
+		{
+			// innovation
+			if !layer_exists(sequence_layer)
+			{
+				sequence_layer = layer_create(-1, "sequence_layer");
+				layer_sequence_create(sequence_layer, 0, 0, opt.drawfunc[opt.value]);
+				
+				layer_script_begin(sequence_layer, function()
+				{
+					if event_type == ev_draw && event_number == ev_draw_normal
+					{
+						if !surface_exists(global.modsurf)
+							global.modsurf = surface_create(384, 216);
+					
+						surface_set_target(global.modsurf);
+						draw_clear_alpha(c_black, 0);
+						gpu_set_blendmode(bm_normal);
+					}
+				});
+				layer_script_end(sequence_layer, function()
+				{
+					if event_type == ev_draw && event_number == ev_draw_normal
+					{
+						// white border
+						draw_set_colour(c_white);
+						draw_roundrect(0, 0, 384 - 2, 216 - 2, true);
+						
+						surface_reset_target();
+					}
+				});
+			}
+		}
 		reset_blendmode();
-		draw_surface_ext(surf, 3 + xx - wd / 2, 3 + yy - ht / 2, 1, 1, 0, 0, 0.25);
-		draw_surface(surf, xx - wd / 2, yy - ht / 2);
+		
+		if surface_exists(global.modsurf)
+		{
+			/* shadow */ draw_surface_ext(global.modsurf, 3 + xx - wd / 2, 3 + yy - ht / 2, 1, 1, 0, 0, 0.25);
+			draw_surface(global.modsurf, xx - wd / 2, yy - ht / 2);
+		}
 	}
 	draw_set_alpha(1);
 }

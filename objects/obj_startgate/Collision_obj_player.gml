@@ -88,11 +88,7 @@ if floor(other.image_index) == other.image_number - 1 && other.state == states.v
 else if other.key_taunt2 && other.state == states.victory
 {
 	other.state = states.actor;
-	with instance_create(0, 0, obj_levelsettings)
-	{
-		level = other.level;
-		levelname = other.msg;
-	}
+	instance_create_depth(0, 0, 0, obj_levelsettings, {level: level, levelname: msg})
 }
 
 // level name at the bottom of the screen

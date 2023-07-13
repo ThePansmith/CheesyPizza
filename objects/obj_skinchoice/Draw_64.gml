@@ -4,10 +4,7 @@ if !init
 	exit;
 
 reset_blendmode();
-
-draw_set_halign(fa_left);
-draw_set_valign(fa_top);
-draw_set_font(-1);
+draw_set_align();
 draw_set_colour(c_white);
 
 // animation
@@ -23,33 +20,24 @@ if anim_con == 1 or anim_con == 2
 }
 
 // background
-if !surface_exists(bg_surf)
-	bg_surf = surface_create(64, 64);
-
-surface_set_target(bg_surf);
-
-mixingfade = Approach(mixingfade, mixing, 0.3);
-draw_clear(merge_colour(make_color_rgb(121, 103, 151), merge_colour(c_green, c_white, 0.25), mixingfade));
-
-// jesus christ
-draw_sprite_ext(spr_skinmenupizza, bg_image, bg_pos, bg_pos, curve, curve, 0, c_white, 0.35 * curve);
-draw_sprite_ext(spr_skinmenupizza, bg_image, bg_pos - 64, bg_pos, curve, curve, 0, c_white, 0.35 * curve);
-draw_sprite_ext(spr_skinmenupizza, bg_image, bg_pos - 64, bg_pos - 64, curve, curve, 0, c_white, 0.35 * curve);
-draw_sprite_ext(spr_skinmenupizza, bg_image, bg_pos, bg_pos - 64, curve, curve, 0, c_white, 0.35 * curve);
-draw_sprite_ext(spr_skinmenupizza, bg_image, bg_pos + 64, bg_pos, curve, curve, 0, c_white, 0.35 * curve);
-draw_sprite_ext(spr_skinmenupizza, bg_image, bg_pos, bg_pos + 64, curve, curve, 0, c_white, 0.35 * curve);
-draw_sprite_ext(spr_skinmenupizza, bg_image, bg_pos + 64, bg_pos + 64, curve, curve, 0, c_white, 0.35 * curve);
-
+if !surface_exists(bg_surf) or curve != 1
+{
+	if !surface_exists(bg_surf)
+		bg_surf = surface_create(64, 64);
+	
+	surface_set_target(bg_surf);
+	draw_clear_alpha(0, 0);
+	draw_sprite_ext(spr_skinmenupizza, bg_image, 32, 32, curve, curve, 0, c_white, curve);
+	surface_reset_target();
+}
 bg_pos = (bg_pos + 0.5) % 64;
-surface_reset_target();
 
-// overall surface
 if !surface_exists(surface)
 	surface = surface_create(960, 540);
 
 surface_set_target(surface);
-draw_clear_alpha(c_black, 0);
-draw_surface_tiled_ext(bg_surf, 0, 0, 1, 1, c_white, 0.75);
+draw_clear_alpha(merge_colour(make_color_rgb(121, 103, 151), merge_colour(c_green, c_white, 0.25), mixingfade), 0.75);
+draw_surface_tiled_ext(bg_surf, bg_pos, bg_pos, 1, 1, c_white, 0.25);
 
 // draw content
 if is_method(draw)

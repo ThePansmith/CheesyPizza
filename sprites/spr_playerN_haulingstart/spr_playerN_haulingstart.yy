@@ -75,8 +75,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "noisegroup",
-    "path": "texturegroups/noisegroup",
+    "name": "playergroup",
+    "path": "texturegroups/playergroup",
   },
   "type": 0,
   "VTile": false,

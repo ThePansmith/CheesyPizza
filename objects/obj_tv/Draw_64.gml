@@ -85,39 +85,6 @@ if !sugary
 else
 {
 	// sugary combo
-	/*
-	draw_set_font(global.combofontSP);
-	draw_set_halign(1);
-	draw_set_color(c_white);
-	var _cx = 652;
-	var _hy = 88 + combo_y + hand_y;
-	var _gy = _hy + 6;
-	_hy = clamp(_hy, 88, 142);
-	
-	if (!surface_exists(goo_surface))
-	{
-		goo_surface = surface_create(100, 180);
-		surface_set_target(goo_surface);
-		draw_clear_alpha(0, 0);
-		surface_reset_target();
-	}
-	else
-	{
-		surface_set_target(goo_surface);
-		draw_clear_alpha(0, 0);
-		draw_sprite(spr_tv_combometergooSP, goo_index, -3, _hy + 6);
-		gpu_set_blendmode(3);
-		draw_sprite(spr_tv_combometercutSP, 0, 0, 0);
-		gpu_set_blendmode(0);
-		surface_reset_target();
-		draw_surface(goo_surface, (_cx + combo_x) - 50, (88 + combo_y) - 91);
-	}
-	draw_sprite_ext(spr_tv_combobubbleSP, -1, _cx + combo_x, 88 + combo_y, 1, 1, 0, c_white, alpha);
-	draw_sprite_ext(spr_tv_combometerhandSP, -1, _cx + hand_x, _hy, 1, 1, 0, c_white, alpha);
-	var _ct = string(global.combo) + "x";
-	draw_text(_cx + combo_x, combo_y, _ct);
-	*/
-	
 	var _cx = tv_x + combo_posX - 170;
 	var _cy = tv_y + 16 + hud_posY + combo_posY;
 	var _hy = hand_y;
@@ -135,24 +102,17 @@ else
 		hand_y = lerp(hand_y, lerp(35, -30, _perc), 0.25);
 	}
 	
-	if (!surface_exists(goo_surface))
-	{
+	if !surface_exists(goo_surface)
 		goo_surface = surface_create(100, 180);
-		surface_set_target(goo_surface);
-		draw_clear_alpha(0, 0);
-		surface_reset_target();
-	}
-	else
-	{
-		surface_set_target(goo_surface);
-		draw_clear_alpha(0, 0);
-		draw_sprite(spr_tv_combometergooSP, propeller_index, -3 + 50, _hy + 100);
-		gpu_set_blendmode(3);
-		draw_sprite(spr_tv_combometercutSP, 0, 50, 91);
-		gpu_set_blendmode(0);
-		surface_reset_target();
-		draw_surface(goo_surface, _cx - 50, _cy - 91);
-	}
+	
+	surface_set_target(goo_surface);
+	draw_clear_alpha(0, 0);
+	draw_sprite(spr_tv_combometergooSP, propeller_index, -3 + 50, _hy + 100);
+	gpu_set_blendmode(3);
+	draw_sprite(spr_tv_combometercutSP, 0, 50, 91);
+	gpu_set_blendmode(0);
+	surface_reset_target();
+	draw_surface(goo_surface, _cx - 50, _cy - 91);
 	
 	draw_sprite(spr_tv_combobubbleSP, -1, _cx, _cy);
 	draw_sprite(spr_tv_combometerhandSP, -1, _cx + hand_x + 80, max(_cy, 60 + hud_posY) + min(hand_y, 20) + 24);
