@@ -169,6 +169,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Input","folderPath":"folders/Scripts/Systems/Input.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Palette Swapper","folderPath":"folders/Scripts/Systems/Palette Swapper.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Saving","folderPath":"folders/Scripts/Systems/Saving.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sequences","folderPath":"folders/Sequences.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Shaders","folderPath":"folders/Shaders.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Afterimage","folderPath":"folders/Shaders/Afterimage.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Shaders/Unused.yy",},
@@ -530,7 +531,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sequences","folderPath":"folders/Sequences.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"fmod.dll","CopyToMask":-1,"filePath":"datafiles",},

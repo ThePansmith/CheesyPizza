@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "plage_beach2",
-  "creationCodeFile": "${project_dir}/rooms/plage_beach2/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/plage_beach2/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

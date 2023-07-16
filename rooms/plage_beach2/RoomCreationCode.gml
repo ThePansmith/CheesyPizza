@@ -1,6 +1,4 @@
 global.roommessage = "PIZZA TOWER ISLAND";
-with (obj_cutoff)
-	depth = 0;
 if (!obj_secretmanager.init)
 {
 	obj_secretmanager.init = true;
