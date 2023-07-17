@@ -384,8 +384,8 @@ function state_player_normal()
 			
 			if character == "SP"
 			{
-				with instance_create(x, y, obj_jumpdust)
-					sprite_index = spr_tornadocloud;
+				with instance_create(x, y, obj_highjumpcloud2)
+					sprite_index = spr_player_firemouthjumpdust;
 			}
 			else
 			{

@@ -1,3 +1,6 @@
+if !global.experimental
+	exit;
+
 scr_create_uparrowhitbox();
 flags.do_save = false;
 condition = function()

@@ -10,5 +10,6 @@ if (sprite_index != spr_idle)
 else
 {
 	draw_self();
-	draw_sprite(spr_lap2warning, 0, x, y + Wave(-5, 5, 0.5, 5));
+	if !sugary
+		draw_sprite(spr_lap2warning, 1, x, y + Wave(-5, 5, 0.5, 5));
 }

@@ -42,11 +42,15 @@ characters = [
 	["N", spr_playerN_idle, spr_noisepalette, [1, 4]],
 	["V", spr_playerV_idle, spr_vigipalette, [1, 6]],
 	["G", spr_player_ratmountidle, spr_ratmountpalette, [1, 3]],
-	["S", spr_snick_idle, spr_snickpalette, [1, 4]],
 	["SP", spr_playerSP_idle, spr_pizzypalette, [1, 3]],
-	["PN", spr_playerPN_idle, spr_pinopalette, [1, 3]],
 	["BN", spr_playerBN_idle, spr_bopalette, [1, 3]],
 ];
+
+if global.experimental
+{
+	array_push(["S", spr_snick_idle, spr_snickpalette, [1, 4]]);
+	array_push(["PN", spr_playerPN_idle, spr_pinopalette, [1, 3]]);
+}
 
 // set in user event 0
 palettes = [];

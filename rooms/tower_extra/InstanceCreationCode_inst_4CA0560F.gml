@@ -11,3 +11,6 @@ group_arr = ["desertgroup"];
 
 title_index = 4;
 titlecard_index = 4;
+
+if !global.experimental
+	instance_destroy();

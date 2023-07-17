@@ -56,7 +56,7 @@ function sound_is_playing(event)
 function sound_play(event) {
 	sound_play_3d(event);
 }
-function sound_play_3d(event, x = undefined, y = undefined)
+function sound_play_3d(event, xx = undefined, yy = undefined)
 {
 	var sound = ds_map_find_value(obj_fmod.sound_cache, event);
 	if sound == undefined
@@ -65,8 +65,8 @@ function sound_play_3d(event, x = undefined, y = undefined)
 		ds_map_add(obj_fmod.sound_cache, event, sound);
 	}
 	fmod_event_instance_set_paused(sound, false);
-	if x != undefined && y != undefined
-		sound_instance_move(sound, x, y);
+	if xx != undefined && yy != undefined
+		sound_instance_move(sound, xx, yy);
 	fmod_event_instance_play(sound);
 }
 function sound_play_centered(event) {
@@ -78,27 +78,24 @@ function sound_play_centered_oneshot(event) {
 function sound_play_oneshot(event) {
 	fmod_event_one_shot(event);
 }
-function sound_play_oneshot_3d(event, x, y) {
-	fmod_event_one_shot_3d(event, x, y);
-}
-function sound_instance_move(event, x, y)
+function sound_play_oneshot_3d(event, xx, yy)
 {
 	if check_modifier(MOD.Mirror)
-		x = room_width - x;
+		xx = room_width - xx;
+	
+	fmod_event_one_shot_3d(event, xx, yy);
+}
+function sound_instance_move(event, xx, yy)
+{
+	if check_modifier(MOD.Mirror)
+		xx = room_width - xx;
 	
 	if is_string(event)
 	{
 		var sound = ds_map_find_value(obj_fmod.sound_cache, event);
 		if sound != undefined
-			fmod_event_instance_set_3d_attributes(sound, x, y);
+			fmod_event_instance_set_3d_attributes(sound, xx, yy);
 	}
 	else
-		fmod_event_instance_set_3d_attributes(event, x, y);
-}
-function sound_play_multiple(event, x = undefined, y = undefined)
-{
-	if x != undefined && y != undefined
-		fmod_event_one_shot_3d(event, x, y);
-	else
-		fmod_event_one_shot(event);
+		fmod_event_instance_set_3d_attributes(event, xx, yy);
 }

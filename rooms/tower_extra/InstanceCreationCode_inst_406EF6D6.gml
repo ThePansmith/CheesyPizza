@@ -12,3 +12,6 @@ titlecard_sprite = spr_titlecards_new;
 titlecard_index = 2;
 title_sprite = spr_titlecards_newtitles;
 title_index = 2;
+
+if !global.experimental
+	instance_destroy();

@@ -81,6 +81,7 @@ reset_simuplayer();
 
 // options
 add_section("Gameplay");
+add_option("Experimental", "experimental", "Allows access to fun console commands and other WIP stuff. Please do not report bugs from these!");
 
 #region REMIX
 
@@ -126,7 +127,6 @@ var opt = add_option("Remix", "gameplay", "Adds extra quality of life improvemen
 		draw_sprite_ext(spr_player_mach, 1, 290, 150, 1, 1, 0, mach_color2, 1);
 	}
 });
-opt.value = global.gameplay;
 
 #endregion
 #region ATTACK STYLE
@@ -219,7 +219,6 @@ var opt = add_option("Attack Style", "attackstyle", "Alternatives to the basic g
 	
 	draw_simuplayer();
 });
-opt.value = global.attackstyle;
 opt.opts = [
 	["GRAB", 0],
 	["KUNG FU", 1],
@@ -293,7 +292,6 @@ opt.opts = [
 	["PISTOL", 1],
 	["BREAKDANCE", 2]
 ];
-opt.value = global.shootstyle;
 
 #endregion
 #region DOUBLE GRAB
@@ -396,14 +394,6 @@ opt.opts = [
 	["SHOULDER BASH", 1],
 	["FACEPLANT", 2]
 ];
-for(var i = 0; i < array_length(opt.opts); i++)
-{
-	if opt.opts[i][1] == global.doublegrab
-	{
-		opt.value = i;
-		break;
-	}
-}
 
 #endregion
 #region HEAT METER
@@ -420,15 +410,13 @@ var opt = add_option("Heat Meter", "heatmeter", "Rewards good gameplay with more
 	else
 		draw_sprite(spr_pizzascore, 0, xx, yy);
 });
-opt.value = global.heatmeter;
 
 #endregion
 
 add_section("Input");
 #region SWAP GRAB
 
-var opt = add_option("Swap Grab", "swapgrab", "Binds the grab back to the normal bind, and moves whatever attack style you have to the CHAINSAW button.\n\nChange it in the key config.")
-opt.value = global.swapgrab;
+add_option("Swap Grab", "swapgrab", "Binds the grab back to the normal bind, and moves whatever attack style you have to the CHAINSAW button.\n\nChange it in the key config.");
 
 #endregion
 #region SHOOT BUTTON
@@ -497,7 +485,6 @@ opt.opts = [
 	["ON", true],
 	["SHOTGUN ONLY", 2]
 ]
-opt.value = global.shootbutton;
 
 #endregion
 #region INPUT DISPLAY
@@ -506,10 +493,7 @@ add_button("Input Display", "An in-game input display. You can drag it around wi
 {
 	visible = false;
 	with obj_option
-	{
-		//menu_goto(menus.inputdisplay);
-		menu_goto(12);
-	}
+		menu_goto(menus.inputdisplay);
 });
 
 #endregion
@@ -538,9 +522,9 @@ opt.opts = [
 	["ON", true],
 	["WITH BLUR", 2]
 ]
-opt.value = global.panicbg;
 
 #endregion
+/*
 #region SLOPE ROTATION
 
 var opt = add_option("Slope Rotation", "sloperot", "Rotates the player when standing on a slope.", function(val)
@@ -591,9 +575,9 @@ var opt = add_option("Slope Rotation", "sloperot", "Rotates the player when stan
 	
 	draw_simuplayer();
 });
-opt.value = global.sloperot;
 
 #endregion
+*/
 #region SHOW FPS
 
 showfps = 60;
@@ -628,8 +612,37 @@ var opt = add_option("FPS Counter", "showfps", "Shows an FPS counter at the bott
 });
 
 #endregion
+#region Colorblind filter
+
+var opt = add_option("Colorblind Mode", "colorblind_type", "Applies a fullscreen shader that hopefully helps colorblindness.", function(val)
+{
+	global.colorblind_type = val;
+	draw_sprite_ext(spr_mirrored_level, 0, -258, -292, 0.9, 0.9, 0, c_white, 1);
+});
+opt.opts = [
+	["NONE", -1],
+	["PROTANOPIA", 0],
+	["DEUTERANOPIA", 1],
+	["TRITANOPIA", 2]
+]
+
+#endregion
 
 xo = 0;
 yo = 0;
 alpha = 1;
 scroll = 0;
+
+for(var i = 0; i < array_length(options_array); i++)
+{
+	var opt = options_array[i];
+	if opt.type == 0
+	{
+		var value = variable_global_get(opt.vari);
+		for(var j = 0; j < array_length(opt.opts); j++)
+		{
+			if opt.opts[j][1] == value
+				opt.value = j;
+		}
+	}
+}

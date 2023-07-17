@@ -12,3 +12,6 @@ group_arr = ["freezergroup"];
 title_index = 7;
 title_sprite = spr_titlecards_title2;
 titlecard_index = 17;
+
+if !global.experimental
+	instance_destroy();

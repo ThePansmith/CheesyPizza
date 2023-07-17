@@ -30,6 +30,7 @@ if (unlocked)
 			bgsprite = other.bgsprite;
 			targetRoom = other.targetRoom;
 			group_arr = other.group_arr;
+			msg = other.msg;
 		}
 	}
 	else

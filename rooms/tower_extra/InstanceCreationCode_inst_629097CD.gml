@@ -12,3 +12,6 @@ group_arr = ["citygroup"];
 title_index = 2;
 title_sprite = spr_titlecards_title2;
 titlecard_index = 12;
+
+if !global.experimental
+	instance_destroy();

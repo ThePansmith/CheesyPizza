@@ -11,3 +11,6 @@ titlecard_index = 13;
 
 title_music = mu_sewertitle;
 group_arr = ["sewergroup"];
+
+if !global.experimental
+	instance_destroy();

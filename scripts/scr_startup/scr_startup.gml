@@ -25,7 +25,6 @@ if test_dll_linkage() != 1
 
 #macro STRING_UNDEFINED "<undefined>"
 
-
 // initialize
 scr_get_languages();
 pal_swap_init_system_fix(shd_pal_swapper, true);
@@ -81,6 +80,7 @@ for (var i = 0; i < ds_map_size(global.lang_map); i++)
 // settings
 ini_open("saveData.ini");
 global.gameplay = ini_read_real("Modded", "gameplay", true); // misc. improvements on or off?
+global.experimental = ini_read_real("Modded", "experimental", DEBUG);
 
 // gameplay settings
 global.poundjump = ini_read_real("Modded", "poundjump", false);
@@ -95,7 +95,8 @@ global.swapgrab = ini_read_real("Modded", "swapgrab", false);
 // visual settings
 global.panicbg = ini_read_real("Modded", "panicbg", true);
 global.panictilt = ini_read_real("Modded", "panictilt", false);
-global.sloperot = ini_read_real("Modded", "sloperot", false);
+//global.sloperot = ini_read_real("Modded", "sloperot", false);
+global.sloperot = false;
 global.inputdisplay = ini_read_real("Modded", "inputdisplay", false);
 global.showfps = ini_read_real("Modded", "showfps", false);
 
@@ -126,9 +127,5 @@ global.colorblind_intensity = 1.0;
 
 if file_exists("dead")
 	game_end();
-
-if (!ext_checkguid("8ff30401-c151-49e3-8636-a28a5b288d85"))
-{
-	show_message("We fucking failed the guid check what the fuck!");
+if !ext_checkguid("8ff30401-c151-49e3-8636-a28a5b288d85")
 	game_end();
-}

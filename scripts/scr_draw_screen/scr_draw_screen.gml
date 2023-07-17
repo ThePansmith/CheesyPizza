@@ -1,6 +1,6 @@
-function scr_draw_screen(x, y, xscale, yscale, alpha = 1)
+function scr_draw_screen(x, y, xscale, yscale, alpha = 1, gui = false)
 {
-	if (global.colorblind_type <= -1)
+	if global.colorblind_type <= -1
 	{
 		// sugary spire greyscale
 		with obj_camera
@@ -13,7 +13,7 @@ function scr_draw_screen(x, y, xscale, yscale, alpha = 1)
 			}
 		}
 	}
-	else
+	else if !gui
 	{
 		shader_set(shd_colorblind);
 		var colorblindmode = shader_get_uniform(shd_colorblind, "v_vMode");
@@ -22,15 +22,13 @@ function scr_draw_screen(x, y, xscale, yscale, alpha = 1)
 		
 		shader_set_uniform_f(colorblindmode, global.colorblind_type);
 		shader_set_uniform_f(colorblindintensity, global.colorblind_intensity);
-	
-				
-		with (obj_camera)
-		{
+		
+		with obj_camera
 			shader_set_uniform_f(greyscalefade, greyscale);
-		}
 	}
 	
 	// draw the game
-	draw_surface_ext(application_surface, x + (check_modifier(MOD.Mirror) ? surface_get_width(application_surface) : 0), y, xscale * (check_modifier(MOD.Mirror) ? -1 : 1), yscale, 0, c_white, alpha);
+	var mirror = check_modifier(MOD.Mirror) && !instance_exists(obj_rank);
+	draw_surface_ext(application_surface, x + (mirror ? surface_get_width(application_surface) : 0), y, xscale * (mirror ? -1 : 1), yscale, 0, c_white, alpha);
 	shader_reset();
 }

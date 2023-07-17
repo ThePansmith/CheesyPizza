@@ -73,19 +73,10 @@ if !boss
 if !boss
 	add_modifier("Pacifist", MOD.Pacifist, "Go through the level without killing any enemies.", [seq_pacifist_off, seq_pacifist_on]);
 
-add_modifier("Hard Mode", MOD.HardMode, "The level will a ghost that spawns random enemies.", function(val)
-{
-	
-});
-add_modifier("Mirrored", MOD.Mirror, "Flips the screen horizontally, effectively mirroring the level.", function(val)
-{
-	
-});
+add_modifier("Hard Mode", MOD.HardMode, "The level will a ghost that spawns random enemies.", [seq_hardmode_off, seq_hardmode_on]);
+add_modifier("Mirrored", MOD.Mirror, "Flips the screen horizontally, effectively mirroring the level.", [seq_mirrored_off, seq_mirrored_on]);
 
 if !boss
-add_modifier("Lap 3", MOD.Lap3, "Disables infinite lapping, and spawns Pizzaface on the third lap.", function(val)
-{
-	
-});
+	add_modifier("Lap 3", MOD.Lap3, "Spawns Pizzaface on the third lap.", [seq_lap3_off, seq_lap3_on]);
 
 #endregion

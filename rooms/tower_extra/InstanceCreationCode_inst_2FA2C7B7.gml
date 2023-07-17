@@ -11,3 +11,6 @@ titlecard_index = 16;
 
 title_music = mu_industrialtitle;
 group_arr = ["factorygroup"];
+
+if !global.experimental
+	instance_destroy();

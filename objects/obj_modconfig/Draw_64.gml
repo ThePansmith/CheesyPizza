@@ -78,8 +78,8 @@ if opt.type != 2
 		drawer = 2;
 	
 	draw_set_font(global.font_small);
-	draw_text_ext_color(2 + 700, 2 + (drawer ? 420 : 260), opt.desc, 18, 440, 0, 0, 0, 0, 0.25);
-	draw_text_ext(700, (drawer ? 420 : 260), opt.desc, 18, 440);
+	draw_text_ext_color(2 + 700, 2 + 420, opt.desc, 18, 440, 0, 0, 0, 0, 0.25);
+	draw_text_ext(700, 420, opt.desc, 18, 440);
 
 	draw_set_font(global.smallfont);
 	if opt.value < array_length(opt.opts)
@@ -132,6 +132,9 @@ if opt.type != 2
 						surface_set_target(global.modsurf);
 						draw_clear_alpha(c_black, 0);
 						gpu_set_blendmode(bm_normal);
+						
+						shader_set(global.Pal_Shader);
+						pal_swap_set(spr_peppalette, 1, false);
 					}
 				});
 				layer_script_end(sequence_layer, function()
@@ -143,6 +146,7 @@ if opt.type != 2
 						draw_roundrect(0, 0, 384 - 2, 216 - 2, true);
 						
 						surface_reset_target();
+						pal_swap_reset();
 					}
 				});
 			}

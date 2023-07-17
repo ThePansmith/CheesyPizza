@@ -11,3 +11,6 @@ group_arr = ["minigolfgroup"];
 title_index = 1;
 title_sprite = spr_titlecards_title2;
 titlecard_index = 11;
+
+if !global.experimental
+	instance_destroy();
