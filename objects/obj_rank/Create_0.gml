@@ -47,7 +47,7 @@ text = [
 	[false, concat(lang_get_value("rank_combo"), global.highest_combo)]
 ];
 if global.laps > 1
-	array_push(text, [false, "LAPS: " + string(global.laps)]);
+	array_push(text, [false, "LAPS: " + string(global.laps + 1)]);
 text_pos = 0;
 
 toppin_index = 0;
