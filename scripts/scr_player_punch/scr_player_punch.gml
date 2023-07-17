@@ -270,7 +270,7 @@ function scr_player_punch()
 				sprite_index = spr_mach2jump;
 		}
 		else if _kungfuground && vsp < 0
-			sprite_index = choose(spr_kungfuair1, spr_kungfuair2, spr_kukungfungfuair3);
+			sprite_index = choose(spr_kungfuair1, spr_kungfuair2, spr_kungfuair3);
 		
 		if key_down && (_kungfuair or _kungfuground)
 		{

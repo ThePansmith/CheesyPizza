@@ -47,10 +47,16 @@ function scr_ratblock_destroy()
 				case states.morthook:
 				case states.mortjump:
 				case states.boxxedpepjump:
-				case states.cottondrill:
-				case states.cottonroll:
 				case states.knightpep:
 				case states.knightpepbump:
+					break;
+				case states.cotton:
+					if sprite_index == spr_cotton_attack
+						instance_destroy(other);
+					break;
+				case states.cottonroll:
+					if movespeed >= 8
+						instance_destroy(other);
 					break;
 				case states.tumble:
 					if (other.sprite_index == spr_rattumbleblock || other.sprite_index == spr_rattumbleblock_big)

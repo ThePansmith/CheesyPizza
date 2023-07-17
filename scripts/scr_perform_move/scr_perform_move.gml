@@ -105,6 +105,10 @@ function scr_perform_move(move, prestate = state)
 				break;
 			
 			case 2: // tumble
+				var swapdir = key_left + key_right;
+				if swapdir != 0
+					xscale = swapdir;
+				
 				movespeed = max(movespeed, grounded ? 7 : 9);
 				if movespeed < 24
 					movespeed += 1;

@@ -8645,7 +8645,6 @@
     {"id":{"name":"spr_mrstick_mask","path":"sprites/spr_mrstick_mask/spr_mrstick_mask.yy",},},
     {"id":{"name":"spr_tv_scaredjump","path":"sprites/spr_tv_scaredjump/spr_tv_scaredjump.yy",},},
     {"id":{"name":"spr_playerBN_kungfuair1","path":"sprites/spr_playerBN_kungfuair1/spr_playerBN_kungfuair1.yy",},},
-    {"id":{"name":"sugary_approach","path":"scripts/sugary_approach/sugary_approach.yy",},},
     {"id":{"name":"spr_monstershroom_ouch","path":"sprites/spr_monstershroom_ouch/spr_monstershroom_ouch.yy",},},
     {"id":{"name":"spr_palcandle","path":"sprites/spr_palcandle/spr_palcandle.yy",},},
     {"id":{"name":"spr_bossfight_fakepeppalette","path":"sprites/spr_bossfight_fakepeppalette/spr_bossfight_fakepeppalette.yy",},},

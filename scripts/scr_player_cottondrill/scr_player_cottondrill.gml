@@ -12,33 +12,28 @@ function state_player_cottondrill()
 		xscale = move;
 	if (verticalMovespeed < 9)
 	{
-		verticalMovespeed = approach(verticalMovespeed, 20, 2);
+		verticalMovespeed = Approach(verticalMovespeed, 20, 2);
 		hsp = move * 5;
 	}
 	else
 	{
-		verticalMovespeed = approach(verticalMovespeed, 20, 0.5);
+		verticalMovespeed = Approach(verticalMovespeed, 20, 0.5);
 		hsp = move;
 	}
 	vsp = verticalMovespeed;
 	sprite_index = spr_cotton_drill;
 	if (grounded && !place_meeting(x, y + 1, obj_destructibles) && !place_meeting(x, y + 1, obj_ratblock))
 	{
-		doublejumped = 0;
-		if (slopeCheck(x, y))
+		doublejump = 0;
+		if scr_slope()
 		{
 			movespeed = (verticalMovespeed / 20) * 12;
 			vsp = 3;
 			state = states.cottonroll;
 			image_index = 0;
 			sprite_index = spr_cotton_roll;
-			if (scr_slope(x, y + 1) && !scr_solid_slope(x, y + 1))
-			{
-				with (instance_place(x, y + 1, obj_slope))
-					other.xscale = -sign(image_xscale);
-				with (instance_place(x, y + 1, obj_slope_platform))
-					other.xscale = -sign(image_xscale);
-			}
+			with (instance_place(x, y + 1, obj_slope_parent))
+				other.xscale = -sign(image_xscale);
 		}
 		else
 		{
@@ -49,7 +44,7 @@ function state_player_cottondrill()
 			image_index = 0;
 		}
 	}
-	if (key_slap2 && sprite_index != spr_cotton_attack && groundedcot == 1)
+	if (key_slap2 && sprite_index != spr_cotton_attack && grounded)
 	{
 		state = states.cotton;
 		flash = 1;
@@ -64,11 +59,10 @@ function state_player_cottondrill()
 		grav = 0.2;
 		grounded = false;
 		//scr_sound(sfx_cottonattack);
-		groundedcot = 0;
 	}
-	if (key_jump && !grounded && doublejumped == 0)
+	if (key_jump && !grounded && doublejump == 0)
 	{
-		doublejumped = 1;
+		doublejump = 1;
 		movespeed = 0;
 		state = states.cotton;
 		vsp = -10;
@@ -83,12 +77,14 @@ function state_player_cottondrill()
 		}
 		//scr_sound(sfx_cottonjump);
 	}
-	if (cotton_afterimagetimer > 0)
-		cotton_afterimagetimer--;
-	/*if (cotton_afterimagetimer <= 0)
+	if movespeed >= 8 or sprite_index == spr_cotton_attack or sprite_index == spr_cotton_drill
 	{
-		with (instance_create(x, y, obj_cotton_aftereffect))
-			playerID = other.id;
-		cotton_afterimagetimer = 6;
-	}*/
+		if (cotton_afterimagetimer > 0)
+			cotton_afterimagetimer--;
+		if (cotton_afterimagetimer <= 0)
+		{
+			create_blur_afterimage(x, y, sprite_index, image_index, xscale);
+			cotton_afterimagetimer = 6;
+		}
+	}
 }

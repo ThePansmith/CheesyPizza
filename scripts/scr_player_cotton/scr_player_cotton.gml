@@ -28,7 +28,7 @@ function state_player_cotton()
 		if (key_attack && move == xscale && grounded)
 		{
 			if (movespeed < 8)
-				movespeed += 0.25;
+				movespeed = min(movespeed + 0.25, 8);
 		}
 		else
 		{
@@ -40,7 +40,7 @@ function state_player_cotton()
 	}
 	else if (movespeed > 0 && sprite_index != spr_cotton_attack && momemtum == 0)
 		movespeed -= 0.5;
-	if (scr_solid(x + xscale, y, true) && !scr_slope(x + xscale, y))
+	if (scr_solid(x + xscale, y) && !place_meeting(x + xscale, y, obj_slope))
 	{
 		if (movespeed < 8 && (place_meeting(x + xscale, y, obj_destructibles) || place_meeting(x + xscale, y, obj_ratblock)))
 			movespeed = 0;
@@ -65,7 +65,7 @@ function state_player_cotton()
 		instance_create(x, y, obj_highjumpcloud2);
 		//scr_sound(sfx_cottonjump);
 	}
-	if (key_slap2 && sprite_index != spr_cotton_attack && groundedcot == 1)
+	if (key_slap2 && sprite_index != spr_cotton_attack)
 	{
 		flash = 1;
 		image_index = 0;
@@ -78,13 +78,11 @@ function state_player_cotton()
 			vsp = 0;
 		grav = 0.2;
 		grounded = false;
-		scr_sound(sfx_cottonattack);
-		groundedcot = 0;
+		//scr_sound(sfx_cottonattack);
 	}
 	if (sprite_index == spr_cotton_attack)
 	{
 		hsp = movespeed * xscale;
-		instance_create(x, y, obj_swordhitbox);
 		if (movespeed < 8)
 			movespeed = 8;
 		move = xscale;
@@ -96,7 +94,7 @@ function state_player_cotton()
 			sprite_index = spr_cotton_fall;
 		}
 	}
-	if (sprite_index == spr_cotton_attack)
+	if (sprite_index == spr_cotton_attack && image_index >= image_number - 1)
 	{
 		image_index = 0;
 		sprite_index = spr_cottonidle;
@@ -111,17 +109,17 @@ function state_player_cotton()
 		image_index = 0;
 		sprite_index = spr_cottonidle;
 	}
-	if (sprite_index == spr_cotton_jump)
+	if (sprite_index == spr_cotton_jump && image_index >= image_number - 1)
 	{
 		image_index = 0;
 		sprite_index = spr_cotton_fall;
 	}
-	if (sprite_index == spr_cotton_doublejump)
+	if (sprite_index == spr_cotton_doublejump && image_index >= image_number - 1)
 	{
 		image_index = 0;
 		sprite_index = spr_cotton_doublefall;
 	}
-	if (sprite_index == spr_cotton_slam)
+	if (sprite_index == spr_cotton_slam && image_index >= image_number - 1)
 		sprite_index = spr_cottonidle;
 	if ((sprite_index == spr_cotton_fall || sprite_index == spr_cotton_doublefall || sprite_index == spr_cotton_jump || sprite_index == spr_cotton_doublejump) && grounded && vsp >= 0)
 	{
@@ -133,9 +131,9 @@ function state_player_cotton()
 		instance_create(x, y, obj_landcloud);
 		//scr_sound(sound_land);
 	}
-	if (key_jump && !grounded && doublejumped == 0)
+	if (key_jump && !grounded && doublejump == 0)
 	{
-		doublejumped = 1;
+		doublejump = 1;
 		vsp = -10;
 		image_index = 0;
 		sprite_index = spr_cotton_doublejump;
@@ -146,9 +144,9 @@ function state_player_cotton()
 		}
 		//scr_sound(sfx_cottondoublejump);
 	}
-	if (sprite_index == spr_cotton_land)
+	if (sprite_index == spr_cotton_land && image_index >= image_number - 1)
 		sprite_index = spr_cottonidle;
-	if (sprite_index == spr_cotton_land2)
+	if (sprite_index == spr_cotton_land2 && image_index >= image_number - 1)
 		sprite_index = spr_cotton_walk;
 	if (key_down2 && !grounded)
 	{
@@ -186,18 +184,20 @@ function state_player_cotton()
 	if (grounded && vsp > 0)
 	{
 		jumpstop = 0;
-		doublejumped = 0;
+		doublejump = 0;
 	}
 	if (sprite_index == spr_cotton_walk)
 		image_speed = clamp((movespeed / 6) * 0.65, 0.35, 1);
 	else
 		image_speed = 0.35;
-	if (cotton_afterimagetimer > 0)
-		cotton_afterimagetimer--;
-	/*if (cotton_afterimagetimer <= 0)
+	if movespeed >= 8 or sprite_index == spr_cotton_attack or sprite_index == spr_cotton_drill
 	{
-		with (instance_create(x, y, obj_cotton_aftereffect))
-			playerID = other.id;
-		cotton_afterimagetimer = 6;
-	}*/
+		if (cotton_afterimagetimer > 0)
+			cotton_afterimagetimer--;
+		if (cotton_afterimagetimer <= 0)
+		{
+			create_blur_afterimage(x, y, sprite_index, image_index, xscale);
+			cotton_afterimagetimer = 6;
+		}
+	}
 }

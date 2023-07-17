@@ -30,7 +30,7 @@ switch (sprite_index)
 			{
 				if (object_index != obj_player2 || global.coop)
 				{
-					if (!isgustavo && tauntstoredstate != states.knightpep && tauntstoredstate != states.knightpepslopes && tauntstoredstate != states.knightpepbump && tauntstoredstate != states.firemouth)
+					if (!isgustavo && tauntstoredstate != states.knightpep && tauntstoredstate != states.knightpepslopes && tauntstoredstate != states.knightpepbump && tauntstoredstate != states.firemouth && tauntstoredstate != states.cotton && tauntstoredstate != states.cottondrill && tauntstoredstate != states.cottonroll)
 					{
 						visible = true;
 						cutscene = false;
