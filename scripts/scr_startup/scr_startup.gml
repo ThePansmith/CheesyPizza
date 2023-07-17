@@ -99,6 +99,7 @@ global.panictilt = ini_read_real("Modded", "panictilt", false);
 global.sloperot = false;
 global.inputdisplay = ini_read_real("Modded", "inputdisplay", false);
 global.showfps = ini_read_real("Modded", "showfps", false);
+global.afterimage = ini_read_real("Modded", "afterimage", 0); // final, eggplant
 
 // gameframe
 global.gameframe_enabled = ini_read_real("Modded", "gameframe", true);

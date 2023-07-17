@@ -499,6 +499,15 @@ add_button("Input Display", "An in-game input display. You can drag it around wi
 #endregion
 
 add_section("Visual");
+#region AFTERIMAGES
+
+var opt = add_option("Afterimages", "afterimage", "Choose between normal afterimages and blue afterimages for certain moves.", [seq_afterimages_final, seq_afterimages_eggplant]);
+opt.opts = [
+	["FINAL", 0],
+	["EGGPLANT", 1]
+]
+
+#endregion
 #region PANIC BG
 
 var opt = add_option("Panic Background", "panicbg", "Brings back the wavy background effect from old builds when escaping.", function(val)

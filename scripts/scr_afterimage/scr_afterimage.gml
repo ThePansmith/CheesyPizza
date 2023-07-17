@@ -112,24 +112,34 @@ function create_firemouth_afterimage(_x, _y, _sprite, _image_index, _xscale)
 }
 function create_blue_afterimage(_x, _y, _sprite, _image_index, _xscale)
 {
-	var b = create_afterimage(_x, _y, _sprite, _image_index);
-	with (b)
+	if global.afterimage == 1
 	{
-		fadeout = false;
-		fadeoutstate = -4;
-		identifier = afterimage.blue;
-		alarm[0] = -1;
-		alarm[1] = -1;
-		alarm[2] = -1;
-		image_xscale = _xscale;
-		image_blend = make_color_rgb(44, 126, 228);
-		alpha = 0.8;
-		basealpha = 1;
-		playerid = -4;
-		vertical = false;
-		maxmovespeed = 10;
+		var b = create_afterimage(_x, _y, _sprite, _image_index);
+		with (b)
+		{
+			fadeout = false;
+			fadeoutstate = -4;
+			identifier = afterimage.blue;
+			alarm[0] = -1;
+			alarm[1] = -1;
+			alarm[2] = -1;
+			image_xscale = _xscale;
+			image_blend = make_color_rgb(44, 126, 228);
+			alpha = 0.8;
+			basealpha = 1;
+			playerid = -4;
+			vertical = false;
+			maxmovespeed = 10;
+		}
+		return b;
 	}
-	return b;
+	else
+	{
+		var b = create_mach3effect(_x, _y, _sprite, _image_index);
+		with b
+			image_xscale = _xscale;
+		return b;
+	}
 }
 function create_red_afterimage(_x, _y, _sprite, _image_index, _xscale)
 {

@@ -2,43 +2,63 @@ function scr_player_faceplant()
 {
 	hsp = xscale * movespeed;
 	move = key_right + key_left;
-	if (movespeed < 12 && grounded)
+	
+	if movespeed < 12 && grounded
 		movespeed += 0.5;
-	else if (!grounded)
-		movespeed = 10;
-	if (check_wall(x + hsp, y) && !place_meeting(x + hsp, y, obj_slope_parent) && !place_meeting(x + hsp, y, obj_destructibles))
+	//else if !grounded
+	//	movespeed = 10;
+	
+	// jump out
+	if input_buffer_jump > 0 && can_jump
 	{
-		var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
-		if (_bump)
+		scr_fmod_soundeffect(jumpsnd, x, y);
+		input_buffer_jump = 0;
+		particle_set_scale(particle.jumpdust, xscale, 1);
+		create_particle(x, y, particle.jumpdust, 0);
+		jumpstop = false;
+		image_index = 0;
+		vsp = -11;
+		state = states.mach2;
+		movespeed = max(movespeed, 6);
+		sprite_index = spr_mach2jump;
+	}
+	
+	// dive
+	if key_down
+	{
+		particle_set_scale(particle.jumpdust, xscale, 1);
+		create_particle(x, y, particle.jumpdust, 0);
+		state = states.tumble;
+		image_index = 0;
+				
+		if !grounded
 		{
-			sprite_index = spr_hitwall;
-			sound_play_3d("event:/sfx/pep/groundpound", x, y);
-			sound_play_3d("event:/sfx/pep/bumpwall", x, y);
-			with (obj_camera)
-			{
-				shake_mag = 20;
-				shake_mag_acc = 40 / room_speed;
-			}
-			hsp = 0;
-			image_speed = 0.35;
-			with (obj_baddie)
-			{
-				if (shakestun && point_in_camera(x, y, view_camera[0]) && grounded && vsp > 0)
-				{
-					stun = true;
-					alarm[0] = 200;
-					ministun = false;
-					vsp = -5;
-					hsp = 0;
-				}
-			}
+			sprite_index = spr_mach2jump;
 			flash = false;
-			state = states.bump;
-			hsp = -6 * xscale;
-			vsp = -6;
-			mach2 = 0;
-			image_index = 0;
-			instance_create(x + 15 * xscale, y + 10, obj_bumpeffect);
+			vsp = 10;
+		}
+	}
+	
+	if check_wall(x + hsp, y) && !place_meeting(x + hsp, y, obj_slope_parent) && !place_meeting(x + hsp, y, obj_destructibles)
+	{
+		if ledge_bump((vsp >= 0) ? 32 : 22)
+		{
+			if grounded
+			{
+				sound_play_3d(sfx_bumpwall, x, y);
+				vsp = -4;
+				sprite_index = spr_kungfujump;
+				image_index = 0;
+				state = states.punch;
+				movespeed = -6;
+			}
+			else
+			{
+				sound_play_oneshot_3d("event:/sfx/pep/splat", x, y);
+				state = states.bump;
+				image_index = 0;
+				sprite_index = spr_wallsplat;
+			}
 		}
 	}
 	if (floor(image_index) == (image_number - 1) && !key_attack)

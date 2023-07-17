@@ -105,7 +105,9 @@ function scr_perform_move(move, prestate = state)
 				break;
 			
 			case 2: // tumble
-				movespeed = max(movespeed, 8);
+				movespeed = max(movespeed, grounded ? 7 : 9);
+				if movespeed < 24
+					movespeed += 1;
 				if !grounded
 					vsp = -5;
 				
