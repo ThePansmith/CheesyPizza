@@ -24,8 +24,8 @@
     "Keyframes": [],
   },
   "parent": {
-    "name": "Sequences",
-    "path": "folders/Sequences.yy",
+    "name": "Mod menu",
+    "path": "folders/Sequences/Mod menu.yy",
   },
   "playback": 0,
   "playbackSpeed": 60.0,

@@ -59,6 +59,6 @@ void main()
 		finalColor = vec4(mix(finalColor.rgb, vec3(gray), v_vGreyscaleFade), finalColor.a);	
 	}
 	
-	gl_FragColor = finalColor;
+	gl_FragColor = vec4(finalColor.rgb, gameOutput.a);
 	
 }
