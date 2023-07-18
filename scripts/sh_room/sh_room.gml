@@ -1,5 +1,7 @@
 function sh_room(args)
 {
+	if instance_exists(obj_disclaimer) or room == Initroom
+		return "No";
 	if !WC_debug
 		return "You do not have permission to use this command";
 	if array_length(args) < 2
@@ -14,6 +16,9 @@ function sh_room(args)
 	}
 	else if asset_get_type(roomgoto) != asset_room
 		return "The asset " + roomgoto + " is not a room";
+	
+	if roomgoto == "Initroom"
+		return "Not a good idea";
 	
 	var door = "NONE";
 	if array_length(args) >= 3

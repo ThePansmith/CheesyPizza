@@ -262,8 +262,8 @@ switch (scene)
 			pizzaface.image_speed = 0.35;
 			scene++;
 			scenebuffer = 170;
-			layer_hspeed("Backgrounds_1", -3);
-			layer_vspeed("Backgrounds_1", -3);
+			//layer_hspeed("Backgrounds_1", -3);
+			//layer_vspeed("Backgrounds_1", -3);
 			layer_hspeed("Backgrounds_2", -0.1);
 			layer_hspeed("Backgrounds_3", -0.15);
 			layer_hspeed("Backgrounds_4", -0.25);

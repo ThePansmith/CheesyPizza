@@ -73,7 +73,7 @@ if !boss
 if !boss
 	add_modifier("Pacifist", MOD.Pacifist, "Go through the level without killing any enemies.", [seq_pacifist_off, seq_pacifist_on]);
 
-add_modifier("Hard Mode", MOD.HardMode, "The level will a ghost that spawns random enemies.", [seq_hardmode_off, seq_hardmode_on]);
+add_modifier("Hard Mode", MOD.HardMode, "The level will spawn a ghost that drops random enemies.", [seq_hardmode_off, seq_hardmode_on]);
 add_modifier("Mirrored", MOD.Mirror, "Flips the screen horizontally, effectively mirroring the level.", [seq_mirrored_off, seq_mirrored_on]);
 
 if !boss

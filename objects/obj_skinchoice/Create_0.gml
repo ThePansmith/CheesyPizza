@@ -49,7 +49,7 @@ characters = [
 if global.experimental
 {
 	array_push(characters, ["S", spr_snick_idle, spr_snickpalette, [1, 4]]);
-	array_push(characters, ["PN", spr_playerPN_idle, spr_pinopalette, [1, 3]]);
+	array_push(characters, ["PN", spr_playerPN_idle, spr_peppalette, [1, 3]]);
 }
 
 // set in user event 0

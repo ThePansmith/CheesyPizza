@@ -1,11 +1,11 @@
 function sh_var(args)
 {
+	if instance_exists(obj_disclaimer) or room == Initroom
+		return "No";
 	if !WC_debug
 		return "You do not have permission to use this command";
 	if array_length(args) < 3
 		return "Not enough arguments. Usage: var <instance(:index) or global> <variable> <value>";
-	if instance_exists(obj_disclaimer)
-		return "No";
 	
 	// get arguments
 	var pretarget = args[1];
@@ -210,6 +210,9 @@ function meta_var()
 				// resolve target
 				with obj_shell
 				{
+					if !WC_debug
+						return [];
+					
 					var pretarget = inputArray[1];
 					var target = noone;
 					

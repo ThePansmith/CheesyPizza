@@ -37,13 +37,11 @@ function stop_music()
 			{
 				fmod_event_instance_stop(music.event, true);
 				fmod_event_instance_stop(music.event_secret, true);
-				fmod_event_instance_stop(pissinosecretID, true);
 			}
 			else
 			{
 				fmod_event_instance_stop(music.event, false);
 				fmod_event_instance_stop(music.event_secret, false);
-				fmod_event_instance_stop(pissinosecretID, false);
 			}
 		}
 		fmod_event_instance_stop(pillarmusicID, true);

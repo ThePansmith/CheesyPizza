@@ -20,6 +20,9 @@ function sh_create(args)
 			return "Object with name " + string(object) + " doesn't exist";
 	}
 	
+	if object == obj_disclaimer
+		return "Not a good idea";
+	
 	var xx = undefined, yy = undefined;
 	if array_length(args) >= 3
 	{

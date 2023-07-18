@@ -67,10 +67,6 @@ if !sugary
 	
 	var _tx = _cx - 64;
 	var _ty = _cy - 12;
-	if chara != "PP"
-		_ty = _cy - 12;
-	else // pissino
-		_ty = _cy - 1;
 	
 	var _str = string(visualcombo);
 	var num = string_length(_str);

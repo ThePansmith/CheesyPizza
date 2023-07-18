@@ -69,12 +69,6 @@ function player_init_sounds()
 		global.snd_collectpizza = "event:/modded/sfx/collectSP";
 		global.snd_collectgiantpizza = "event:/modded/sfx/collectgiantpizzaSP";
 	}
-	else if character == "PP"
-	{
-		global.snd_collect = "event:/modded/sfx/collectPP";
-		global.snd_collectpizza = "event:/modded/sfx/collectpizzaPP";
-		global.snd_collectgiantpizza = "event:/modded/sfx/collectgiantpizzaPP";
-	}
 	else
 	{
 		global.snd_collect = "event:/sfx/misc/collect";
@@ -115,8 +109,6 @@ function player_init_sounds()
 	// fireass
 	if character == "P"
 		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireass");
-	else if character == "PP"
-		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireassPP");
 	else if character == "SP"
 		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireassSP");
 	else
@@ -134,9 +126,8 @@ function player_init_sounds()
 		global.snd_supertaunt = fmod_event_create_instance("event:/modded/sfx/pizzysupertaunt");
 	else
 		global.snd_supertaunt = fmod_event_create_instance("event:/sfx/pep/supertaunt");
-		
 	
-	machsnd = fmod_event_create_instance(character == "PP" ? "event:/modded/sfx/machPP" : "event:/sfx/pep/mach");
+	machsnd = fmod_event_create_instance("event:/sfx/pep/mach");
 	jumpsnd = fmod_event_create_instance("event:/sfx/pep/jump");
 	machrollsnd = fmod_event_create_instance("event:/sfx/pep/machroll");
 	weeniebumpsnd = fmod_event_create_instance("event:/sfx/weenie/bump");
@@ -165,12 +156,12 @@ function player_init_sounds()
 	snd_dashpad = fmod_event_create_instance("event:/sfx/misc/dashpad");
 	animatronicsnd = fmod_event_create_instance("event:/sfx/pep/animatronic");
 	burpsnd = fmod_event_create_instance("event:/sfx/enemies/burp");
-	superjumpsnd = fmod_event_create_instance(character == "PP" ? "event:/modded/sfx/superjumpPP" : "event:/sfx/pep/superjump");
+	superjumpsnd = fmod_event_create_instance("event:/sfx/pep/superjump");
 	suplexdashsnd = fmod_event_create_instance("event:/sfx/pep/suplexdash");
 	gallopingsnd = fmod_event_create_instance("event:/sfx/misc/galloping");
 	flippingsnd = fmod_event_create_instance("event:/modded/sfx/pizzyflip");
 	snd_jetpackloop = fmod_event_create_instance("event:/sfx/noise/jetpackloop");
-	sjumpcancelsnd = fmod_event_create_instance(character == "PP" ? "event:/modded/sfx/superjumpcancelPP" : "event:/sfx/pep/superjumpcancel");
+	sjumpcancelsnd = fmod_event_create_instance("event:/sfx/pep/superjumpcancel");
 	spindashsnd = fmod_event_create_instance("event:/modded/sfx/snick/spindashrev");
 }
 

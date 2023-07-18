@@ -296,7 +296,6 @@ function scr_hurtplayer(player)
 					case "SP": char = "Pizzelle"; break;
 					case "SN": char = "Pizzano"; break;
 					case "PN": char = "Pinolino"; break;
-					case "PP": char = "Pissino"; break;
 					case "BN": char = "Bo Noise"; break;
 					case "S": char = "Snick"; break;
 					case "CT": char = "Chemstoon"; break;

@@ -14,7 +14,6 @@ exitmusic = false;
 pillarmusicID = fmod_event_create_instance("event:/music/pillarmusic");
 panicmusicID = fmod_event_create_instance("event:/music/pizzatime");
 kidspartychaseID = fmod_event_create_instance("event:/music/w5/kidspartychase");
-pissinosecretID = fmod_event_create_instance("event:/modded/pissinosecret");
 panicstart = false;
 
 #region PIZZA TOWER

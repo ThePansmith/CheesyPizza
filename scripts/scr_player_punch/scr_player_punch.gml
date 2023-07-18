@@ -161,6 +161,7 @@ function scr_player_punch()
 			image_speed = 0.4;
 		
 		if scr_solid(x + xscale, y) && !place_meeting(x + sign(hsp), y, obj_slope) && !place_meeting(x + xscale, y, obj_destructibles)
+		&& (!place_meeting(x + xscale, y, obj_destructibles) or (sprite_index != spr_player_buttattack && sprite_index != spr_player_buttattackstart))
 		{
 			if ledge_bump(32)
 			{

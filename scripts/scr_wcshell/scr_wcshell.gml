@@ -262,7 +262,7 @@ function scr_wc_create()
 function scr_wc_step()
 {
 	depth = -16000;
-	WC_debug = global.experimental;
+	WC_debug = global.experimental && !instance_exists(obj_disclaimer);
 	
 	#region bound keys
 	

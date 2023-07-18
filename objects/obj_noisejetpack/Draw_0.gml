@@ -5,9 +5,9 @@ else if (state == states.transition)
 	draw_set_alpha(orangealpha);
 	with (playerid)
 	{
-		shader_set(shd_firemouth_afterimage);
+		draw_set_flash(make_colour_rgb(255 * 0.97, 255 * 0.43, 255 * 0.09));
 		draw_sprite_ext(sprite_index, image_index, x, y, xscale, image_yscale, image_angle, image_blend, image_alpha);
-		shader_reset();
+		draw_reset_flash();
 	}
 	draw_set_alpha(1);
 	with (obj_firemouthflame)

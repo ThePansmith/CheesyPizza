@@ -8,7 +8,6 @@ if (fmod_event_instance_is_playing(kidspartychaseID) && instance_exists(obj_paus
 	{
 		fmod_event_instance_set_paused(music.event, savedmusicpause);
 		fmod_event_instance_set_paused(music.event_secret, savedsecretpause);
-		fmod_event_instance_set_paused(pissinosecretID, savedsecretpause);
 	}
 	fmod_event_instance_set_paused(pillarmusicID, savedpillarpause);
 	fmod_event_instance_set_paused(panicmusicID, savedpanicpause);
@@ -34,7 +33,7 @@ if (prevpillar_on_camera != pillar_on_camera)
 	else
 		fmod_set_parameter("pillarfade", 0, false);
 }
-if ((global.panic or global.snickchallenge) && global.leveltosave != "dragonlair" && global.leveltosave != "grinch")
+if ((global.panic or (global.snickchallenge && room != tower_sage)) && global.leveltosave != "dragonlair" && global.leveltosave != "grinch")
 {
 	if (!panicstart)
 	{
@@ -69,7 +68,6 @@ if ((global.panic or global.snickchallenge) && global.leveltosave != "dragonlair
 		{
 			fmod_event_instance_stop(music.event, true);
 			fmod_event_instance_stop(music.event_secret, true);
-			fmod_event_instance_stop(pissinosecretID, true);
 		}
 		if (room == tower_finalhallway)
 		{

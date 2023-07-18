@@ -13,37 +13,25 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			{
 				a = alpha;
 				shd = true;
-				shader_set(shd_color_afterimage);
-				shader_set_uniform_f(other.shd_color_red, 0.97);
-				shader_set_uniform_f(other.shd_color_green, 0.43);
-				shader_set_uniform_f(other.shd_color_blue, 0.09);
+				draw_set_flash(make_color_rgb(255 * 0.97, 255 * 0.43, 255 * 0.09));
 			}
 			else if (identifier == afterimage.blue)
 			{
 				a = alpha;
 				shd = true;
-				shader_set(shd_color_afterimage);
-				shader_set_uniform_f(other.shd_color_red, 0.17);
-				shader_set_uniform_f(other.shd_color_green, 0.49);
-				shader_set_uniform_f(other.shd_color_blue, 0.9);
+				draw_set_flash(global.blueimg_color);
 			}
 			else if (identifier == afterimage.enemy)
 			{
 				a = alpha;
 				shd = true;
-				shader_set(shd_color_afterimage);
-				shader_set_uniform_f(other.shd_color_red, (223 / 255));
-				shader_set_uniform_f(other.shd_color_green, (47 / 255));
-				shader_set_uniform_f(other.shd_color_blue, 0);
+				draw_set_flash(make_color_rgb(233, 47, 0));
 			}
 			else if (identifier == afterimage.fakepep)
 			{
 				a = alpha;
 				shd = true;
-				shader_set(shd_color_afterimage);
-				shader_set_uniform_f(other.shd_color_red, 1);
-				shader_set_uniform_f(other.shd_color_green, 0);
-				shader_set_uniform_f(other.shd_color_blue, 0);
+				draw_set_flash(c_red);
 			}
 			else if (identifier == afterimage.blur)
 			{
@@ -84,6 +72,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			{
 				pattern_reset();
 				shader_reset();
+				draw_reset_flash();
 			}
 		}
 	}

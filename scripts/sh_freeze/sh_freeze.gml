@@ -64,6 +64,9 @@ function meta_freeze()
 				// resolve target
 				with obj_shell
 				{
+					if !WC_debug
+						return [];
+					
 					var pretarget = inputArray[1];
 					var target = noone;
 					

@@ -1,4 +1,4 @@
-fmod_set_parameter("PISSINO", (safe_get(obj_player1, "character") == "PP"), true);
+fmod_set_parameter("PINOLINO", (safe_get(obj_player1, "character") == "PN"), true);
 fmod_set_parameter("REMIX", REMIX, true);
 
 if check_modifier(MOD.Mirror)

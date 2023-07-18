@@ -19,7 +19,7 @@ function meta_char()
 		description: "change characters",
 		arguments: ["char"],
 		suggestions: [
-			["P", "N", "V", "S", "SP", "PP", "BN"],
+			["P", "N", "V", "S", "SP", "BN", "PN"],
 		],
 	}
 }

@@ -7,7 +7,7 @@ if ds_map_find_value(async_load, "id") == req
 		
 		if string_digits(firstline) == firstline
 		{
-			if real(firstline) != 1 // 1 is version
+			if real(firstline) != 2 // 1 is version
 				str = string_copy(str, string_pos("\n", str) + 1, string_length(str));
 			else
 			{

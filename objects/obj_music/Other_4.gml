@@ -50,13 +50,6 @@ if (secret)
 			fmod_event_instance_set_parameter(ev, "state", 1, true);
 		else if obj_player1.character == "BN"
 			fmod_event_instance_set_parameter(ev, "state", 2, true);
-		else if obj_player1.character == "PP" && room != tower_soundtest
-		{
-			ev = pissinosecretID;
-			evname = "event:/modded/pissinosecret";
-			
-			fmod_event_instance_set_parameter(ev, "state", global.panic ? 20 : 0, true);
-		}
 		else
 			fmod_event_instance_set_parameter(ev, "state", 0, true);
 		
@@ -81,7 +74,6 @@ else if (secretend)
 	secretend = false;
 	if (music != -4)
 	{
-		fmod_event_instance_stop(pissinosecretID, true);
 		fmod_event_instance_stop(music.event_secret, true);
 		fmod_event_instance_set_paused(music.event, false);
 		if !REMIX
@@ -100,6 +92,5 @@ if (room == rank_room || room == boss_pizzaface || room == boss_noise || room ==
 	{
 		fmod_event_instance_stop(music.event, true);
 		fmod_event_instance_stop(music.event_secret, true);
-		fmod_event_instance_stop(pissinosecretID, true);
 	}
 }
