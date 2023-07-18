@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "hubgroup",
-    "path": "texturegroups/hubgroup",
+    "name": "etbgroup",
+    "path": "texturegroups/etbgroup",
   },
   "type": 0,
   "VTile": false,

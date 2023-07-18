@@ -1,6 +1,6 @@
 function scr_draw_screen(x, y, xscale, yscale, alpha = 1, gui = false)
 {
-	if global.colorblind_type <= -1
+	if global.colorblind_type <= -1 or gui
 	{
 		// sugary spire greyscale
 		with obj_camera
@@ -13,7 +13,7 @@ function scr_draw_screen(x, y, xscale, yscale, alpha = 1, gui = false)
 			}
 		}
 	}
-	else if !gui
+	else
 	{
 		shader_set(shd_colorblind);
 		var colorblindmode = shader_get_uniform(shd_colorblind, "v_vMode");
@@ -23,8 +23,10 @@ function scr_draw_screen(x, y, xscale, yscale, alpha = 1, gui = false)
 		shader_set_uniform_f(colorblindmode, global.colorblind_type);
 		shader_set_uniform_f(colorblindintensity, global.colorblind_intensity);
 		
+		var gray = 0;
 		with obj_camera
-			shader_set_uniform_f(greyscalefade, greyscale);
+			gray = greyscale;
+		shader_set_uniform_f(greyscalefade, gray);
 	}
 	
 	// draw the game

@@ -21,8 +21,8 @@
   },
   "spriteNoExport": true,
   "textureGroupId": {
-    "name": "entrancegroup",
-    "path": "texturegroups/entrancegroup",
+    "name": "etbgroup",
+    "path": "texturegroups/etbgroup",
   },
   "tile_count": 3844,
   "tileAnimation": {

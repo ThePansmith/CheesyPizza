@@ -76,7 +76,8 @@ for (var i = 0; i < array_length(layers); i++)
 	}
 	
 	// Backgrounds
-	if layer_background_get_id(lay) != -1 && !old_bg
+	var bgid = layer_background_get_id(lay);
+	if bgid != -1 && !old_bg && layer_background_get_sprite(bgid) != bg_etbbrick
 	{
 		/*
 		if 1000 + layer_get_depth(lay) < 16000
@@ -125,7 +126,7 @@ for (var i = 0; i < array_length(layers); i++)
 	
 	if layname == "Foreground_A"
 	{
-		var spr = layer_background_get_sprite(layer_background_get_id(lay));
+		var spr = layer_background_get_sprite(bgid);
 		if sprite_exists(spr)
 		{
 			var ht = sprite_get_height(spr);

@@ -23,6 +23,7 @@ if global.colorblind_type >= 0
 		
 	shader_set_uniform_f(colorblindmode, global.colorblind_type);
 	shader_set_uniform_f(colorblindintensity, global.colorblind_intensity);
+	shader_set_uniform_f(greyscalefade, 0);
 }
 
 // draw it
