@@ -2,12 +2,12 @@ with (obj_player)
 	state = states.titlescreen;
 if (scene >= 0)
 {
-	if (!showtext && (keyboard_check_pressed(vk_anykey) || scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != -4))
+	if (!showtext && (keyboard_check_pressed(vk_anykey) or scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != -4))
 	{
 		showtext = true;
 		alarm[0] = 120;
 	}
-	else if (showtext && (keyboard_check_pressed(global.key_slap) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], global.key_slapC)))
+	else if (showtext && (keyboard_check_pressed(global.key_slap) or gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], global.key_slapC)))
 	{
 		room_goto(Mainmenu);
 		exit;
@@ -28,26 +28,13 @@ switch (scene)
 			{
 				sprite_index = spr_intro_fmod;
 				image_xscale = 0.5;
-				image_yscale = 0.5;
+				image_yscale = image_xscale;
 			}
 		}
 		break;
 	case -1:
 		if (_switch && !instance_exists(obj_logoprop))
 		{
-			/*
-			with obj_player
-				targetDoor = "A";
-			
-			with instance_create(0, 0, obj_genericfade)
-			{
-				persistent = true;
-				fade = 2;
-				deccel = 0.1;
-			}
-			room_goto(Mainmenu);
-			*/
-			
 			scenebuffer = 340;
 			scenebuffer += 20;
 			scene++;
@@ -262,8 +249,10 @@ switch (scene)
 			pizzaface.image_speed = 0.35;
 			scene++;
 			scenebuffer = 170;
-			//layer_hspeed("Backgrounds_1", -3);
-			//layer_vspeed("Backgrounds_1", -3);
+			/*
+			layer_hspeed("Backgrounds_1", -3);
+			layer_vspeed("Backgrounds_1", -3);
+			*/
 			layer_hspeed("Backgrounds_2", -0.1);
 			layer_hspeed("Backgrounds_3", -0.15);
 			layer_hspeed("Backgrounds_4", -0.25);

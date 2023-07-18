@@ -6,7 +6,7 @@ room_started = true;
 
 // boss backgrounds ignore new system
 old_bg = false;
-if string_starts_with(room_get_name(room), "boss")
+if string_starts_with(room_get_name(room), "boss") or room == Longintro
 	old_bg = true;
 
 // fuck

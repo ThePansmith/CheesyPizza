@@ -9,6 +9,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			var a = other.alpha[identifier];
 			var shd = false;
 			
+			gpu_set_blendmode(bm_normal);
 			if (identifier == afterimage.firemouth)
 			{
 				a = alpha;

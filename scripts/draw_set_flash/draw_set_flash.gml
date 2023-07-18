@@ -1,4 +1,4 @@
-global.__FLASH_BLENDMODE = bm_normal;
+global.__FLASH_BLENDMODE = [bm_src_alpha, bm_inv_src_alpha];
 global.__FLASH_SHADER = -1;
 
 function draw_set_flash(col = REMIX ? c_white : merge_colour(c_red, c_white, 0.9))
@@ -13,8 +13,11 @@ function draw_set_flash(col = REMIX ? c_white : merge_colour(c_red, c_white, 0.9
 }
 function draw_reset_flash()
 {
-	gpu_set_blendmode_ext(global.__FLASH_BLENDMODE[0], global.__FLASH_BLENDMODE[1]);
-	shader_set(global.__FLASH_SHADER);
+	if gpu_get_fog()[0]
+	{
+		gpu_set_blendmode_ext(global.__FLASH_BLENDMODE[0], global.__FLASH_BLENDMODE[1]);
+		shader_set(global.__FLASH_SHADER);
 	
-	gpu_set_fog(0, 0, 0, 0);
+		gpu_set_fog(0, 0, 0, 0);
+	}
 }
