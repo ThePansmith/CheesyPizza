@@ -6,6 +6,7 @@ function scr_characterspr()
 	// default green red
 	global.mach_color1 = make_colour_rgb(96, 208, 72);
 	global.mach_color2 = make_colour_rgb(248, 0, 0);
+	global.blueimg_color = make_color_rgb(44, 126, 228);
 	
 	#region PEPPINO
 	
@@ -758,6 +759,7 @@ function scr_characterspr()
 	{
 		global.mach_color1 = make_colour_rgb(232, 80, 152);
 		global.mach_color2 = make_colour_rgb(48, 168, 248);
+		global.blueimg_color = make_color_rgb(255, 126, 228);
 		
 		spr_idle = spr_playerSP_idle;
 		spr_move = spr_playerSP_walk;

@@ -124,7 +124,7 @@ function create_blue_afterimage(_x, _y, _sprite, _image_index, _xscale)
 			alarm[1] = -1;
 			alarm[2] = -1;
 			image_xscale = _xscale;
-			image_blend = make_color_rgb(44, 126, 228);
+			image_blend = global.blueimg_color;
 			alpha = 0.8;
 			basealpha = 1;
 			playerid = -4;

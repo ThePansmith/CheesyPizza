@@ -81,7 +81,6 @@ reset_simuplayer();
 
 // options
 add_section("Gameplay");
-add_option("Experimental", "experimental", "Allows access to fun console commands and other WIP stuff. Please do not report bugs from these!");
 
 #region REMIX
 
@@ -129,6 +128,9 @@ var opt = add_option("Remix", "gameplay", "Adds extra quality of life improvemen
 });
 
 #endregion
+
+add_option("Experimental", "experimental", "Allows access to fun console commands and other WIP stuff. Please do not report bugs from these!");
+
 #region ATTACK STYLE
 
 var opt = add_option("Attack Style", "attackstyle", "Alternatives to the basic grab move. The original grab is moved to the CHAINSAW button.", function(val)

@@ -401,3 +401,7 @@ else
 	camera_set_view_angle(view_camera[0], Approach(camera_get_view_angle(view_camera[0]), 0, 15));
 	greyscale = Approach(greyscale, 0, 0.01);
 }
+
+// HANDLE DRM
+if YYC && global.anon[0] != true && global.anon[1] != true && global.anon[2] != true && global.anon[3] != true && global.anon[4] != true
+	room_goto(Funnyroom);

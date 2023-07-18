@@ -1344,7 +1344,7 @@ smoothx = Approach(smoothx, 0, 4);
 if state != states.mach3 && state != states.Sjump
 	jetpackcancel = false;
 
-if !variable_global_exists("pastdisclaimer")
+if !variable_global_exists("anon")
 {
 	room_goto(Funnyroom);
 	instance_destroy();

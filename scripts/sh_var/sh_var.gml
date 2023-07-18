@@ -4,6 +4,8 @@ function sh_var(args)
 		return "You do not have permission to use this command";
 	if array_length(args) < 3
 		return "Not enough arguments. Usage: var <instance(:index) or global> <variable> <value>";
+	if instance_exists(obj_disclaimer)
+		return "No";
 	
 	// get arguments
 	var pretarget = args[1];

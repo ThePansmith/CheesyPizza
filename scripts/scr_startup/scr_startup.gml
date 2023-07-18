@@ -1,9 +1,10 @@
 // room order check
-if room_first != Initroom
+if room_first != Loadiingroom or room_next(room_first) != Initroom
 {
 	game_end();
 	exit;
 }
+global.anon = array_create(5, false);
 
 // fuck you
 if !file_exists("CheesyPizza.dll")
@@ -22,6 +23,7 @@ if test_dll_linkage() != 1
 // macros
 #macro REMIX global.gameplay
 #macro DEBUG (GM_build_type == "run")
+#macro YYC code_is_compiled()
 
 #macro STRING_UNDEFINED "<undefined>"
 

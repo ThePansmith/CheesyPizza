@@ -12,7 +12,8 @@ else
 	image_alpha -= 0.1;
 	if image_alpha <= -0.1
 	{
-		room_goto(Realtitlescreen);
+		//room_goto(Realtitlescreen);
+		room_goto(Initroom);
 		screen_apply_vsync();
 	}
 	

@@ -22,6 +22,10 @@ panicstart = false;
 add_music(Endingroom, "event:/music/ending", -4, false);
 add_music(Creditsroom, "event:/music/credits", -4, false);
 add_music(Johnresurrectionroom, "event:/music/ending", -4, false);
+add_music(Longintro, "event:/music/intro", -4, false, function(room, parameter)
+{
+	fmod_event_instance_set_parameter(parameter, "state", 0, true);
+});
 add_music(Mainmenu, "event:/music/title", -4, false, function(room, parameter)
 {
 	fmod_event_instance_set_parameter(parameter, "state", 0, true);
