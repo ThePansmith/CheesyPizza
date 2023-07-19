@@ -3,9 +3,9 @@
   "resourceVersion": "1.0",
   "name": "spr_playerPN_mortidle",
   "bbox_bottom": 143,
-  "bbox_left": 54,
-  "bbox_right": 107,
-  "bbox_top": 38,
+  "bbox_left": 47,
+  "bbox_right": 109,
+  "bbox_top": 28,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,20 +13,20 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c1d7e9cf-4e38-4bbc-96f7-7e4cbc9417fd",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"fd4f0025-8d5a-40c7-8c0a-1244f638f3de",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 177,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"498a5d38-3d2f-4e7e-9ae8-6bb18a1c8d0b","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e9809c52-355c-4322-b85d-bc865bd23274","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Mort",
-    "path": "folders/Sprites/Player/Pinolino/Mort.yy",
+    "name": "Pinolino",
+    "path": "folders/Sprites/Player/Pinolino.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c1d7e9cf-4e38-4bbc-96f7-7e4cbc9417fd","path":"sprites/spr_playerPN_mortidle/spr_playerPN_mortidle.yy",},},},"Disabled":false,"id":"2f0a5721-1209-4d6d-9c43-efa358d7444a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"fd4f0025-8d5a-40c7-8c0a-1244f638f3de","path":"sprites/spr_playerPN_mortidle/spr_playerPN_mortidle.yy",},},},"Disabled":false,"id":"37da9afe-84f8-4d53-a123-61f94ba8d06a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

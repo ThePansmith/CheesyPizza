@@ -13,20 +13,20 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5a939feb-164e-4533-947d-f03bac2dbb11",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2f03ef18-b983-4a0b-88c8-a37b06801147",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 207,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e1ade5c2-515e-41eb-b8e5-aca3e1273b46","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5bc2c04f-c636-405d-8516-7f67498831f4","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "TV HUD",
-    "path": "folders/Sprites/Player/Pinolino/TV HUD.yy",
+    "name": "TV",
+    "path": "folders/Sprites/HUD/TV.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"5a939feb-164e-4533-947d-f03bac2dbb11","path":"sprites/spr_tv_combobubblePN/spr_tv_combobubblePN.yy",},},},"Disabled":false,"id":"2d6c5335-4ece-45a4-ad6f-586ed0ed59a0","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2f03ef18-b983-4a0b-88c8-a37b06801147","path":"sprites/spr_tv_combobubblePN/spr_tv_combobubblePN.yy",},},},"Disabled":false,"id":"6d4c7fb6-feb5-4f1b-b129-ceef492c6e24","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "hudgroup",
-    "path": "texturegroups/hudgroup",
+    "name": "Default",
+    "path": "texturegroups/Default",
   },
   "type": 0,
   "VTile": false,

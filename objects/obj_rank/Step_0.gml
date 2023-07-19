@@ -51,73 +51,9 @@ if sugary
 if floor(image_index) == image_number - 1
 	image_speed = 0;
 
-if (global.collect >= global.collectN)
-{
-	if (obj_player1.character == "P")
-	{
-		if (global.rank == "s")
-			sprite_index = spr_rankS;
-		if (global.rank == "a")
-			sprite_index = spr_rankA;
-		if (global.rank == "b")
-			sprite_index = spr_rankB;
-		if (global.rank == "c")
-			sprite_index = spr_rankC;
-		if (global.rank == "d")
-			sprite_index = spr_rankD;
-		if (global.rank == "p")
-			sprite_index = spr_rankP;
-	}
-	else if obj_player1.character == "SP"
-	{
-		if (global.rank == "s")
-			sprite_index = spr_rankSPS;
-		if (global.rank == "a")
-			sprite_index = spr_rankSPA;
-		if (global.rank == "b")
-			sprite_index = spr_rankSPB;
-		if (global.rank == "c")
-			sprite_index = spr_rankSPC;
-		if (global.rank == "d")
-			sprite_index = spr_rankSPD;
-		if (global.rank == "p")
-			sprite_index = spr_rankSPP;
-	}
-	else if check_char("BN")
-	{
-		if (global.rank == "s")
-			sprite_index = spr_rankBNS;
-		if (global.rank == "a")
-			sprite_index = spr_rankBNA;
-		if (global.rank == "b")
-			sprite_index = spr_rankBNB;
-		if (global.rank == "c")
-			sprite_index = spr_rankBNC;
-		if (global.rank == "d")
-			sprite_index = spr_rankBND;
-		if (global.rank == "p")
-			sprite_index = spr_rankBNP;
-	}
-	else
-	{
-		if (global.rank == "s")
-			sprite_index = spr_rankNS;
-		if (global.rank == "a")
-			sprite_index = spr_rankNA;
-		if (global.rank == "b")
-			sprite_index = spr_rankNB;
-		if (global.rank == "c")
-			sprite_index = spr_rankNC;
-		if (global.rank == "d")
-			sprite_index = spr_rankND;
-		if (global.rank == "p")
-			sprite_index = spr_rankP;
-	}
-}
-if (brown)
+if brown
 {
 	brownfade = Approach(brownfade, 1, 0.07);
-	
 	if sugary
 	{
 		if event == 0

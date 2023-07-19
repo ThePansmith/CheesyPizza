@@ -35,8 +35,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_rankS",
-    "path": "sprites/spr_rankS/spr_rankS.yy",
+    "name": "spr_rankEGGPLANT",
+    "path": "sprites/spr_rankEGGPLANT/spr_rankEGGPLANT.yy",
   },
   "spriteMaskId": null,
   "visible": true,

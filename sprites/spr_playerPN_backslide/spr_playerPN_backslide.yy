@@ -3,9 +3,9 @@
   "resourceVersion": "1.0",
   "name": "spr_playerPN_backslide",
   "bbox_bottom": 95,
-  "bbox_left": 31,
-  "bbox_right": 117,
-  "bbox_top": 54,
+  "bbox_left": 26,
+  "bbox_right": 119,
+  "bbox_top": 53,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9fc4db1f-52e7-4903-ac00-b21b2462e3ad",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7a1f08b8-bcba-4027-81e7-9af6b8d512e9",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 100,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"6eac0a5f-fd3a-46bf-8219-84df43c2790d","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"564e453a-400d-4393-88f7-1f9623563468","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9fc4db1f-52e7-4903-ac00-b21b2462e3ad","path":"sprites/spr_playerPN_backslide/spr_playerPN_backslide.yy",},},},"Disabled":false,"id":"d7f8e3b0-c533-4ecd-bdbf-f61a1a44d2d6","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7a1f08b8-bcba-4027-81e7-9af6b8d512e9","path":"sprites/spr_playerPN_backslide/spr_playerPN_backslide.yy",},},},"Disabled":false,"id":"8aadf05a-1bbe-4ad7-ba70-5d2caefb710d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

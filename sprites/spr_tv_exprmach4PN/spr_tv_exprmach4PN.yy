@@ -13,22 +13,22 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"71cf254a-3aeb-424c-9b04-9c591fa1f226",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"628013ff-d822-47c7-b254-80f9eecd5efd",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"fc25b059-aaaf-40f2-96c0-68be7f0d80c0",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"469ec2e7-7a44-425c-972d-b6404f084b87",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c5f41759-690f-42da-9e6a-ed1ebc08365b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e81681de-299a-4458-a15e-ce794c75db84",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 268,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"6f887b2a-db3a-4e21-8992-7fc91a992c85","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f54150e4-f68f-4b46-ad1f-f69ac2edc456","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "TV HUD",
-    "path": "folders/Sprites/Player/Pinolino/TV HUD.yy",
+    "name": "Pinolino",
+    "path": "folders/Sprites/HUD/TV/Pinolino.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -56,9 +56,9 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"71cf254a-3aeb-424c-9b04-9c591fa1f226","path":"sprites/spr_tv_exprmach4PN/spr_tv_exprmach4PN.yy",},},},"Disabled":false,"id":"b894ab1e-c375-43ce-93d4-a4d0f911e042","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"628013ff-d822-47c7-b254-80f9eecd5efd","path":"sprites/spr_tv_exprmach4PN/spr_tv_exprmach4PN.yy",},},},"Disabled":false,"id":"d68adb27-5563-4be3-8544-41f89f2950ae","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"fc25b059-aaaf-40f2-96c0-68be7f0d80c0","path":"sprites/spr_tv_exprmach4PN/spr_tv_exprmach4PN.yy",},},},"Disabled":false,"id":"5616399c-a181-4cc0-b2f9-a394d9213556","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"469ec2e7-7a44-425c-972d-b6404f084b87","path":"sprites/spr_tv_exprmach4PN/spr_tv_exprmach4PN.yy",},},},"Disabled":false,"id":"9e3666b5-588f-49a3-bdba-4d71d82b595a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c5f41759-690f-42da-9e6a-ed1ebc08365b","path":"sprites/spr_tv_exprmach4PN/spr_tv_exprmach4PN.yy",},},},"Disabled":false,"id":"b5f18ac1-dfc5-453d-ad20-1e6417a090f1","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e81681de-299a-4458-a15e-ce794c75db84","path":"sprites/spr_tv_exprmach4PN/spr_tv_exprmach4PN.yy",},},},"Disabled":false,"id":"9c9efeec-7db7-402c-a5c6-ffb18d2640a9","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

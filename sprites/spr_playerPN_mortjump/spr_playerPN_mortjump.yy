@@ -2,10 +2,10 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_playerPN_mortjump",
-  "bbox_bottom": 139,
-  "bbox_left": 44,
-  "bbox_right": 102,
-  "bbox_top": 29,
+  "bbox_bottom": 145,
+  "bbox_left": 36,
+  "bbox_right": 105,
+  "bbox_top": 1,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,20 +13,20 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4a32d981-d985-464d-8156-e7ebd9952d9a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"746bdbde-7d2e-4c6a-b371-8c1673fcdebe",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 177,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"92da8710-ea1d-4cbe-8b63-cba377d43380","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2533da4b-8792-48eb-88bc-94d1b8a01bc4","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Mort",
-    "path": "folders/Sprites/Player/Pinolino/Mort.yy",
+    "name": "Pinolino",
+    "path": "folders/Sprites/Player/Pinolino.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4a32d981-d985-464d-8156-e7ebd9952d9a","path":"sprites/spr_playerPN_mortjump/spr_playerPN_mortjump.yy",},},},"Disabled":false,"id":"f6082352-ce2d-4c9a-80eb-fed193d550e6","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"746bdbde-7d2e-4c6a-b371-8c1673fcdebe","path":"sprites/spr_playerPN_mortjump/spr_playerPN_mortjump.yy",},},},"Disabled":false,"id":"b434bd42-feb5-465c-bde4-8aa9830f5717","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

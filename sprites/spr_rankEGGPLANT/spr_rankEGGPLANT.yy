@@ -4,7 +4,7 @@
   "name": "spr_rankEGGPLANT",
   "bbox_bottom": 539,
   "bbox_left": 0,
-  "bbox_right": 910,
+  "bbox_right": 883,
   "bbox_top": 75,
   "bboxMode": 0,
   "collisionKind": 1,

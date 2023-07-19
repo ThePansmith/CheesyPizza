@@ -13,21 +13,21 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3671b489-4bb0-4af8-96af-04fa5477a6f9",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ef7f3720-29de-46a3-85b7-058e91649c1c",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"02be835a-124e-41c3-9b5e-08bee1d9fe40",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d39b17f5-1b96-48bc-86d2-c1d4c11c6bfd",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 268,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"7746f3ad-59f2-4957-84dc-c0e113c7d7c3","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2c69fd80-dc41-4872-996b-d1b2076d58a0","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "TV HUD",
-    "path": "folders/Sprites/Player/Pinolino/TV HUD.yy",
+    "name": "Pinolino",
+    "path": "folders/Sprites/HUD/TV/Pinolino.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3671b489-4bb0-4af8-96af-04fa5477a6f9","path":"sprites/spr_tv_firemouthPN/spr_tv_firemouthPN.yy",},},},"Disabled":false,"id":"728fb7a1-3f04-4980-bd67-000973ed0888","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ef7f3720-29de-46a3-85b7-058e91649c1c","path":"sprites/spr_tv_firemouthPN/spr_tv_firemouthPN.yy",},},},"Disabled":false,"id":"59acf7bd-d90a-4b3f-8ddf-db91ddc1f3a0","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"02be835a-124e-41c3-9b5e-08bee1d9fe40","path":"sprites/spr_tv_firemouthPN/spr_tv_firemouthPN.yy",},},},"Disabled":false,"id":"5f32b377-2e74-4d91-8270-0f3d5e85d772","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d39b17f5-1b96-48bc-86d2-c1d4c11c6bfd","path":"sprites/spr_tv_firemouthPN/spr_tv_firemouthPN.yy",},},},"Disabled":false,"id":"99ef7aa4-1cb8-4ebb-8977-c59de4fe06ac","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

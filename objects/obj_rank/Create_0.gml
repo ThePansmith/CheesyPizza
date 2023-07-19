@@ -66,6 +66,18 @@ if obj_player.character == "BN" && (global.rank == "d" or global.rank == "c" or 
 	alarm[2] = room_speed * 2;
 depth = -8;
 
+// figure out rank sprite
+var fuck = asset_get_index(sprite_get_name(sprite_index) + obj_player1.character + string_upper(global.rank));
+if sprite_exists(fuck)
+	sprite_index = fuck;
+else
+{
+	// default to peppino
+	fuck = asset_get_index(sprite_get_name(sprite_index) + string_upper(global.rank));
+	if sprite_exists(fuck)
+		sprite_index = fuck;
+}
+
 // sugary spire
 sugary = obj_endlevelfade.sugary;
 if sugary && obj_player1.character != "SP"

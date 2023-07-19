@@ -3,9 +3,9 @@
   "resourceVersion": "1.0",
   "name": "spr_playerPN_suplexgrabjump",
   "bbox_bottom": 81,
-  "bbox_left": 28,
-  "bbox_right": 117,
-  "bbox_top": 32,
+  "bbox_left": 13,
+  "bbox_right": 120,
+  "bbox_top": 28,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"23a61e0f-bc37-4f24-8bec-87cfc69a6ecb",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"08b63454-e9c7-4c94-a5f6-3ab3d9651b93",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 100,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"2cacf1f4-1587-4279-83aa-19e5062d3afc","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f5099c78-ca5d-4926-91f5-0b3e9ce4e855","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 9,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"23a61e0f-bc37-4f24-8bec-87cfc69a6ecb","path":"sprites/spr_playerPN_suplexgrabjump/spr_playerPN_suplexgrabjump.yy",},},},"Disabled":false,"id":"ba5b9b12-f765-4350-a280-e6c9223ac16c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"08b63454-e9c7-4c94-a5f6-3ab3d9651b93","path":"sprites/spr_playerPN_suplexgrabjump/spr_playerPN_suplexgrabjump.yy",},},},"Disabled":false,"id":"716a3f80-4df0-42d2-b652-a865d9f87f97","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

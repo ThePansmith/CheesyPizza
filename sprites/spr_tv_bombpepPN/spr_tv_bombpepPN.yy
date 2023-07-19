@@ -13,21 +13,21 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"015606f1-3b40-47cc-ad28-6e192e7aa3cf",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"473a8439-b9eb-4ad2-ab22-5912e8c626e4",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d8907cd8-83c3-4615-bca5-07ec304a2bb4",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ff8e28f8-1487-47c7-a3eb-30d4d6de93c0",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 268,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ecae7023-711e-4fde-8c8e-5fdd3ea82807","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"8eb0707a-c761-4713-b84f-2e373c4dcf81","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "TV HUD",
-    "path": "folders/Sprites/Player/Pinolino/TV HUD.yy",
+    "name": "Pinolino",
+    "path": "folders/Sprites/HUD/TV/Pinolino.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"015606f1-3b40-47cc-ad28-6e192e7aa3cf","path":"sprites/spr_tv_bombpepPN/spr_tv_bombpepPN.yy",},},},"Disabled":false,"id":"401eb202-e710-4577-a40b-4795db286fef","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"473a8439-b9eb-4ad2-ab22-5912e8c626e4","path":"sprites/spr_tv_bombpepPN/spr_tv_bombpepPN.yy",},},},"Disabled":false,"id":"994cf8ba-6430-4946-953c-a990436ab3a1","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d8907cd8-83c3-4615-bca5-07ec304a2bb4","path":"sprites/spr_tv_bombpepPN/spr_tv_bombpepPN.yy",},},},"Disabled":false,"id":"395a9e50-106c-425e-9f80-7e8e6fba217c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ff8e28f8-1487-47c7-a3eb-30d4d6de93c0","path":"sprites/spr_tv_bombpepPN/spr_tv_bombpepPN.yy",},},},"Disabled":false,"id":"cd9aed2b-475d-4e57-b209-d296b3cfb01e","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

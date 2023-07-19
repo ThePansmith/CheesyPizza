@@ -77,7 +77,7 @@ function player_init_sounds()
 	}
 	
 	// the voices
-	if character == "P"
+	if character == "P" or character == "PN"
 	{
 		snd_voiceok = fmod_event_create_instance("event:/sfx/voice/ok");
 		snd_voicetransfo = fmod_event_create_instance("event:/sfx/voice/transfo");
