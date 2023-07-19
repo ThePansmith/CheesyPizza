@@ -97,8 +97,6 @@ function scr_play_rank_music()
 		var ranksnd = global.snd_rank;
 		if obj_player1.character == "SP"
 			ranksnd = global.snd_rankSP;
-		else if obj_player1.character == "PP"
-			ranksnd = global.snd_rankPP
 		else if check_char("BN")
 			ranksnd = global.snd_rankBN;
 		fmod_event_instance_play(ranksnd);

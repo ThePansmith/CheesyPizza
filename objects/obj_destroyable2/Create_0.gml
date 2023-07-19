@@ -6,12 +6,6 @@ if obj_player1.character == "SP"
 	particlespr = -1;
 	spr_dead = spr_candyblockdead;
 }
-else if obj_player1.character == "PP"
-{
-	sprite_index = spr_destroyable2PP;
-	particlespr = -1;
-	spr_dead = spr_pizzablockdeadPP;
-}
 else if obj_player1.character == "BN"
 {
 	sprite_index = spr_destroyable2_bo;

@@ -42,7 +42,7 @@ add_music(tower_finalhallway, "event:/music/finalescape", -4, 0)
 add_music(tower_finalhallwaytitlecard, "event:/music/pillarmusic", -4, 0)
 add_music(tower_pizzafacehall, "event:/music/w5/finalhallway", -4, 0)
 add_music(tower_outside, "event:/sfx/misc/windloop", -4, 0)
-add_music(tower_baby, "event:/music/pto/baby", -4, 0)
+add_music(tower_baby, "event:/modded/baby", -4, 0)
 add_music(tower_1up, "event:/music/pillarmusic", -4, 0)
 add_music(tower_2up, "event:/music/pillarmusic", -4, 0)
 add_music(tower_3up, "event:/music/pillarmusic", -4, 0)
@@ -71,7 +71,7 @@ var entrance_func = function(room, event, event_secret)
 		case "N": s = 1; break;
 		case "V": s = 2; break;
 		case "SP": s = 3; break;
-		case "PP": s = 4; break;
+		case "PN": s = 4; break;
 		case "BN": s = 5; break;
 	}
 	
@@ -259,15 +259,20 @@ add_music(steamy_1, "event:/modded/sugary/cotton", "event:/modded/sugary/cottons
 #endregion
 #region OLD LEVELS
 
-add_music(grinch_1, "event:/music/pto/grinch", "event:/music/w1/medievalsecret", 0);
-add_music(dragonlair_1, "event:/music/pto/dragonlair", "event:/music/w1/medievalsecret", 0);
+add_music(grinch_1, "event:/modded/level/grinch", "event:/music/w1/medievalsecret", 0);
+add_music(dragonlair_1, "event:/modded/level/dragonlair", "event:/music/w1/medievalsecret", 0);
 add_music(beach_1, "event:/music/w3/beach", "event:/music/w3/beachsecret", 0);
 add_music(golf_room1, "event:/music/w3/golf", "event:/music/w3/golfsecret", 0);
-add_music(mansion_1, "event:/music/pto/mansion", "event:/music/pto/mansionsecret", 0);
-add_music(mansion_weird2, "event:/music/pto/mansion", "event:/music/pto/mansionsecret", 0);
-add_music(PP_room1, "event:/music/tutorial", "event:/music/pillarmusic", 0);
+add_music(mansion_1, "event:/modded/level/mansion", "event:/modded/level/mansionsecret", 0);
+add_music(mansion_weird2, "event:/modded/level/mansion", "event:/modded/level/mansionsecret", 0);
+add_music(PP_room1, "event:/music/oldtutorial", "event:/music/pillarmusic", 0);
+add_music(etb_1, "event:/modded/level/oldtutorial", "event:/music/w1/ruinsecret", function(room, event, event_secret)
+{
+	var s = room == etb_1;
+	fmod_event_instance_set_parameter(event, "state", s, false);
+});
 
-add_music(strongcold_10, "event:/music/pto/strongcold", "event:/music/pto/strongcoldsecret", 0, function(room, event, event_secret)
+add_music(strongcold_10, "event:/modded/level/strongcold", "event:/modded/level/strongcoldsecret", 0, function(room, event, event_secret)
 {
 	var s = 1;
 	switch room

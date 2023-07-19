@@ -3,7 +3,6 @@ if (room == editor_room)
 
 var chara = obj_player1.character;
 var sugary = chara == "SP";
-var piss = chara == "PP";
 var bo = chara == "BN";
 
 draw_set_font(lang_get_font("bigfont"));
@@ -41,13 +40,7 @@ if !sugary
 	}
 	
 	var combobubblefill, combobubble, combofont;
-	if piss
-	{
-		combobubblefill = spr_tv_combobubblefillPP;
-		combobubble = spr_tv_combobubblePP;
-		combofont = global.combofont2PP;
-	}
-	else if bo
+	if bo
 	{
 		combobubblefill = spr_tv_combobubblefillBN;
 		combobubble = spr_tv_combobubbleBN;

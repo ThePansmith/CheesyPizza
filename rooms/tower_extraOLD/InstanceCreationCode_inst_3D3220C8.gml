@@ -8,5 +8,5 @@ title_index = 1;
 title_sprite = spr_titlecards_newtitles;
 titlecard_index = 1;
 titlecard_sprite = spr_titlecards_new;
-title_music = "event:/music/pto/strongcoldtitle";
+title_music = "event:/modded/level/strongcoldtitle";
 msg = "Strongcold";

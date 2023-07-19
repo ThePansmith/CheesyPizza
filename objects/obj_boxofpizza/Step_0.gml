@@ -25,7 +25,7 @@ with (obj_player)
 			
 			if !other.bo
 				other.depth = -10;
-			sound_play_3d("event:/sfx/pep/box", x, y);
+			sound_play_3d(other.sound, x, y);
 			mach2 = 0;
 			obj_camera.chargecamera = 0;
 		}
@@ -52,7 +52,7 @@ with (obj_player)
 			if state != states.gotoplayer
 				state = states.door;
 			
-			sound_play_3d("event:/sfx/pep/box", x, y);
+			sound_play_3d(other.sound, x, y);
 			if !other.bo
 				other.depth = -8;
 			mach2 = 0;

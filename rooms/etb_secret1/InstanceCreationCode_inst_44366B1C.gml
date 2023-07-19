@@ -1,1 +1,1 @@
-content = obj_sausageman
+content = obj_sausageman;

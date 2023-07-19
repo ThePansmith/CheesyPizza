@@ -2,8 +2,10 @@ function scr_is_p_rank()
 {
 	var enemykilled = global.prank_enemykilled or check_modifier(MOD.Pacifist);
 	
-	if global.leveltosave == "dragonlair" or global.leveltosave == "etb" or global.leveltosave == "grinch"
+	if global.leveltosave == "dragonlair" or global.leveltosave == "grinch"
 		return !global.combodropped && enemykilled;
+	if global.leveltosave == "etb"
+		return !global.combodropped && global.secretfound >= 2 && global.lap;
 	if global.leveltosave == "snickchallenge"
 		return !global.combodropped && !string_starts_with(room_get_name(room), "medieval");
 	

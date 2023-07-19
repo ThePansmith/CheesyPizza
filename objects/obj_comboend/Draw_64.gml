@@ -22,8 +22,6 @@ if sugary
 	draw_sprite(spr_comboend_titleSP, min(floor(combo / 5), 24), xx, yy + 30);
 else if bo
 	draw_sprite(spr_comboend_titleBN, (title * 2) + title_index, xx, yy + 30);
-else if piss 
-	draw_sprite(spr_comboend_titlePP, (title * 2) + title_index, xx, yy + 30);
 else
 	draw_sprite(spr_comboend_title1, (title * 2) + title_index, xx, yy + 30);
 draw_set_font(lang_get_font("smallfont"));
@@ -31,4 +29,4 @@ draw_set_halign(1);
 draw_set_valign(0);
 draw_text(xx, yy + 70, comboscoremax);
 if (very && !sugary)
-	draw_sprite(obj_player1.character == "PP" ? spr_comboveryPP : spr_combovery, 0, xx - 65, (yy - 6) + 30);
+	draw_sprite(spr_combovery, 0, xx - 65, (yy - 6) + 30);

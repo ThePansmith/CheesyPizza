@@ -9,9 +9,6 @@ else
 	var cy = obj_screensizer.normal_size_fix_y;
 	
 	var bg = spr_technicaldifficulty_bg;
-	if obj_player1.character == "PP"
-		bg = spr_technicaldifficulty_bgPP;
-	
 	draw_sprite(bg, 0, cx, cy);
 	pattern_set(global.Base_Pattern_Color, sprite, 0, 1, 1, global.palettetexture);
 	

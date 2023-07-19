@@ -6,7 +6,7 @@ msg = "Snick's Challenge";
 level = "snickchallenge";
 door_index = 0;
 
-title_music = "event:/music/pto/snickchallengetitle";
+title_music = "event:/modded/level/snickchallengetitle";
 group_arr = ["entrancegroup", "medievalgroup", "ruingroup", "dungeongroup"];
 
 titlecard_sprite = spr_titlecards_new;

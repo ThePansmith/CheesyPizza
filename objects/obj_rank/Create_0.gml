@@ -73,7 +73,7 @@ if sugary && obj_player1.character != "SP"
 
 sugaryrank = -1;
 if sugary
-	sugaryrank = fmod_event_create_instance("event:/modded/sugaryrank");
+	sugaryrank = fmod_event_create_instance("event:/modded/sugary/rankloop");
 
 cardimg = 0;
 event = 0;

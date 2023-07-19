@@ -9,5 +9,5 @@ title_sprite = spr_titlecards_newtitles;
 titlecard_index = 4;
 titlecard_sprite = spr_titlecards_new;
 
-title_music = "event:/music/pto/midwaytitle";
+title_music = "event:/modded/level/midwaytitle";
 group_arr = ["midwaygroup"];

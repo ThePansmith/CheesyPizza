@@ -69,7 +69,7 @@ function scr_player_tumble()
 		sprite_index = spr_player_Sjumpcancelslide;
 	if (sprite_index == spr_player_jumpdive2 && grounded)
 		sprite_index = spr_crouchslip;
-	if (floor(image_index) == (image_number - 1) && sprite_index == machrollspr && movespeed > 12 && (character == "P" or character == "PP"))
+	if (floor(image_index) == (image_number - 1) && sprite_index == machrollspr && movespeed > 12 && (character == "P" or character == "PN"))
 	{
 		sprite_index = spr_backslideland;
 		image_index = 0;

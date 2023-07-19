@@ -1,4 +1,4 @@
-if state == states.hurt or (state == states.backbreaker && character == "PP")
+if state == states.hurt
 {
 	state = states.normal;
 	movespeed = 0;

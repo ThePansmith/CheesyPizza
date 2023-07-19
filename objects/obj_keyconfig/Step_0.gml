@@ -61,18 +61,23 @@ if !selecting
 	key_select = clamp(key_select, -1, (array_length(input) - 1))
 	if (((key_jump || key_back) && key_select <= -1) || (key_select > -1 && key_back))
 	{
-		var _found = false
+		var _found = false;
+		
+		/*
 		for (var i = 0; i < array_length(input); i++)
 		{
-			var _v = input[i][0]
+			var _v = input[i][0];
 			if controller
-				_v = concat(_v, "C")
+				_v = concat(_v, "C");
 			if variable_global_get(_v) == -4
 			{
 				if _v != "key_superjumpC" && _v != "key_groundpoundC"
-					_found = true
+					_found = true;
 			}
 		}
+		*/
+		// allows missing inputs.
+		
 		if !_found
 		{
 			sound_play_oneshot("event:/sfx/ui/select")
@@ -148,17 +153,18 @@ else if (!controller)
 		{
 			for (i = 0; i < array_length(input); i++)
 			{
-				if (variable_global_get(input[i][0]) == keyboard_key)
-					variable_global_set(input[i][0], -4)
+				if variable_global_get(input[i][0]) == keyboard_key
+					variable_global_set(input[i][0], -4);
 			}
-			startbuffer = 5
-			variable_global_set(input[key_select][0], keyboard_key)
-			selecting = 0
+			startbuffer = 5;
+			variable_global_set(input[key_select][0], keyboard_key);
+			selecting = 0;
 		}
 		else if (keyboard_key == vk_escape)
 		{
-			startbuffer = 5
-			selecting = 0
+			startbuffer = 5;
+			variable_global_set(input[key_select][0], -4);
+			selecting = 0;
 		}
 	}
 }
@@ -170,16 +176,16 @@ else
 		for (i = 0; i < array_length(input); i++)
 		{
 			var b = concat(input[i][0], "C")
-			if (variable_global_get(b) == val)
-				variable_global_set(b, -4)
+			if variable_global_get(b) == val
+				variable_global_set(b, -4);
 		}
-		startbuffer = 5
-		variable_global_set(concat(input[key_select][0], "C"), val)
-		selecting = 0
+		startbuffer = 5;
+		variable_global_set(concat(input[key_select][0], "C"), val);
+		selecting = 0;
 	}
 	else if (val == gp_start || val == gp_select)
 	{
-		startbuffer = 5
-		selecting = 0
+		startbuffer = 5;
+		selecting = 0;
 	}
 }

@@ -40,7 +40,7 @@ if ((global.panic or (global.snickchallenge && room != tower_sage)) && global.le
 		fmod_event_instance_release(panicmusicID);
 		
 		if global.snickchallenge
-			panicmusicID = fmod_event_create_instance("event:/music/pto/snickchallenge");
+			panicmusicID = fmod_event_create_instance("event:/modded/level/snickchallenge");
 		else
 		{
 			var char = obj_player1.character;
@@ -51,8 +51,8 @@ if ((global.panic or (global.snickchallenge && room != tower_sage)) && global.le
 				case "V": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeV"); break;
 				case "S": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeS"); break;
 				case "SP": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeSP"); break;
-				case "PP": panicmusicID = fmod_event_create_instance("event:/music/pizzatimePP"); break;
 				case "BN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeBN"); break;
+				case "PN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimePN"); break;
 			}
 		}
 		

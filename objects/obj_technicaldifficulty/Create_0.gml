@@ -19,9 +19,6 @@ switch chara
 	default:
 		sprite = choose(spr_technicaldifficulty1, spr_technicaldifficulty2, spr_technicaldifficulty3);
 		break;
-	case "PP":
-		sprite = choose(spr_technicaldifficulty1PP, spr_technicaldifficulty2PP, spr_technicaldifficulty3PP);
-		break;
 	case "BN":
 		sprite = choose(spr_technicaldifficulty1BN, spr_technicaldifficulty2BN, spr_technicaldifficulty3BN, spr_technicaldifficulty4BN);
 		break;

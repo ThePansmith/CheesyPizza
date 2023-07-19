@@ -34,7 +34,7 @@ function scr_enemy_grabpos(_obj_player)
 	
 	else if (p.state == states.superslam || (p.state == states.chainsaw && sprite_index == spr_piledriver))
 	{
-		if (p.character == "P") or (p.character == "PP") or (p.character == "BN")
+		if p.character != "N" && p.character != "SP"
 		{
 			if (p.sprite_index != p.spr_piledriverland)
 			{

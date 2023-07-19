@@ -5,7 +5,6 @@ if (is_bossroom() || room == editor_room || instance_exists(obj_tutorialbook))
 	exit;
 
 var sugary = (obj_player1.character == "SP");
-var piss = (obj_player1.character == "PP");
 var bo = (obj_player1.character == "BN");
 
 if (global.kungfu)
@@ -69,10 +68,6 @@ if (obj_player.state != states.dead)
 			heatfill = spr_heatmeter_fillSP;
 			heatmeter = spr_heatmeterSP;
 			break;
-		case "PP":
-			heatfill = spr_heatmeter_fillPP;
-			heatmeter = spr_heatmeterPP;
-			break;
 	}
 	var sw = sprite_get_width(heatfill);
 	var sh = sprite_get_height(heatfill);
@@ -83,22 +78,17 @@ if (obj_player.state != states.dead)
 	// heat meter
 	if global.heatmeter
 	{
-		if !piss
-		{
-			shader_set(global.Pal_Shader);
-			pal_swap_set(sugary ? spr_heatmeterSPpal : spr_heatmeter_palette, min(global.stylethreshold, 3) + (global.stylethreshold >= 3 && global.style >= 55), false);
-			draw_sprite_part(heatfill, pizzascore_index, 0, 0, sw * b, sh, hud_xx - 95, hud_yy + 24);
-			draw_sprite_ext(heatmeter, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
-			reset_shader_fix();
-		}
+		shader_set(global.Pal_Shader);
+		pal_swap_set(sugary ? spr_heatmeterSPpal : spr_heatmeter_palette, min(global.stylethreshold, 3) + (global.stylethreshold >= 3 && global.style >= 55), false);
+		draw_sprite_part(heatfill, pizzascore_index, 0, 0, sw * b, sh, hud_xx - 95, hud_yy + 24);
+		draw_sprite_ext(heatmeter, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
+		reset_shader_fix();
 	}
 	
 	// score
 	var pizzascorespr = spr_pizzascore;
 	if sugary
 		pizzascorespr = spr_cakehud;
-	else if piss
-		pizzascorespr = spr_pizzascorePP;
 	else if bo
 		pizzascorespr = spr_pizzascoreBN;
 	else
@@ -122,12 +112,6 @@ if (obj_player.state != states.dead)
 			pepperonisprite = spr_cakehud_brank;
 			olivesprite = spr_cakehud_arank;
 			shroomsprite = spr_cakehud_srank;
-			break;
-		case "PP":
-			peppersprite = spr_pizzascore_pepperPP;
-			pepperonisprite = spr_pizzascore_pepperoniPP;
-			olivesprite = spr_pizzascore_olivePP;
-			shroomsprite = spr_pizzascore_shroomPP;
 			break;
 		case "BN":
 			peppersprite = spr_null;
@@ -188,8 +172,6 @@ if (obj_player.state != states.dead)
 	var ranksprite = spr_ranks_hud;
 	if sugary
 		ranksprite = spr_ranks_hudSP;
-	else if piss
-		ranksprite = spr_ranks_hudPP;
 	else if bo
 		ranksprite = spr_ranks_hudBN;
 	draw_sprite_ext(ranksprite, rank_ix, rx, ry, rank_scale, rank_scale, 0, c_white, 1);
@@ -222,8 +204,6 @@ if (obj_player.state != states.dead)
 	var rankfillsprite = spr_ranks_hudfill
 	if sugary
 		rankfillsprite = spr_ranks_hudfillSP
-	else if piss
-		rankfillsprite = spr_ranks_hudfillPP
 	else if bo
 		rankfillsprite = spr_ranks_hudfillBN
 	else
@@ -236,8 +216,6 @@ if (obj_player.state != states.dead)
 	var collectfont = global.collectfont
 	if sugary
 		collectfont = global.collectfontSP 
-	else if piss
-		collectfont = global.collectfontPP
 	else if bo 
 		collectfont = global.collectfontBN
 	else
@@ -305,12 +283,6 @@ if (obj_player.state != states.dead)
 	}
 	draw_set_alpha(1);
 	reset_shader_fix();
-	
-	if piss && global.heatmeter
-	{
-		draw_sprite_part(spr_heatmeter_fillPP, pizzascore_index, 0, 0, sw * b, sh, hud_xx - 89, hud_yy - 87);
-		draw_sprite_ext(spr_heatmeterPP, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
-	}
 	
 	// bullets
 	if global.shootstyle == 1 && obj_player1.character != "V" && obj_player1.character != "S"
