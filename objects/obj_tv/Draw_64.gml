@@ -222,10 +222,22 @@ if (global.panic or global.snickchallenge)
 	// draw them
 	if !sugarylevel
 	{
-		if (!surface_exists(bar_surface))
+		var bar = spr_timer_bar;
+		var barfill = spr_timer_barfill;
+		johnface_sprite = spr_timer_johnface;
+		
+		if pino
+		{
+			bar = spr_timer_barPN;
+			barfill = spr_timer_barfillPN;
+			johnface_sprite = spr_timer_johnfacePN;
+		}
+		
+		if !surface_exists(bar_surface)
 			bar_surface = surface_create(298, 30);
+		
 		var _barfillpos = floor(_barpos) + 13;
-		if (_barfillpos > 0)
+		if _barfillpos > 0
 		{
 			surface_resize(bar_surface, _barfillpos, 30);
 			surface_set_target(bar_surface);
@@ -233,18 +245,14 @@ if (global.panic or global.snickchallenge)
 			var clip_x = timer_x + 3;
 			var clip_y = timer_y + 5;
 			for (i = 0; i < 3; i++)
-				draw_sprite(spr_timer_barfill, 0, barfill_x + (i * 173), 0);
+				draw_sprite(barfill, 0, barfill_x + (i * 173), 0);
 			surface_reset_target();
 			draw_surface(bar_surface, clip_x, clip_y);
 		}
-		draw_sprite(spr_timer_bar, -1, timer_x, timer_y);
+		draw_sprite(bar, -1, timer_x, timer_y);
 		
 		// john
-		/*
-		if (timer_x + 13 + _barpos < timer_x + 13)
-			draw_sprite(spr_timer_johnface_sleep, sleepingjohnface_index, timer_x + 13, timer_y + 20);
-		else*/
-			draw_sprite(johnface_sprite, johnface_index, max(timer_x + 13 + _barpos, timer_x + 13), timer_y + 20);
+		draw_sprite(johnface_sprite, johnface_index, max(timer_x + 13 + _barpos, timer_x + 13), timer_y + 20);
 		
 		// pizzaface
 		if !global.snickchallenge

@@ -6,13 +6,13 @@ bgsprite = spr_steamy_startgateBG;
 info =
 {
 	bginfo : [spr_steamycard_bg, cardtype.left, cardtype.linear, cardtype.none, 0, 0],
-	titleinfo : [spr_steamycard_title, cardtype.up, cardtype.down, cardtype.waving, 0, 0],
+	titleinfo : [spr_steamycard_title, cardtype.up, cardtype.interp, cardtype.waving, 0, 0],
 	song : "event:/modded/sugary/cottontitle"
 }
-bgparallax = [0, 0.15, 0.35, 0.5];
+bgparallax = [0, 0.35, 0.05, 0.55, 0.75, 0.9];
 
 msg = "Cottontown";
-group_arr = ["sugarygroup"];
+group_arr = ["sugarygroup", "steamygroup"];
 
 if !global.experimental
 	instance_destroy();

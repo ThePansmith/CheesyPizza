@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "sugarygroup",
-    "path": "texturegroups/sugarygroup",
+    "name": "entrywaygroup",
+    "path": "texturegroups/entrywaygroup",
   },
   "type": 0,
   "VTile": false,
