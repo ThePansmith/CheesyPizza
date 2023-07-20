@@ -35,8 +35,11 @@ open_menu();
 sel = {
 	pal: 1,
 	char: 0,
-	mix: 0
+	mix: 0,
+	side: 0
 };
+flashpal = [-1, 0];
+
 characters = [
 	["P", spr_player_idle, spr_peppalette, [1, 3]], // character, idle, palette sprite, [main color, mixing color]
 	["N", spr_playerN_idle, spr_noisepalette, [1, 4]],
@@ -171,10 +174,12 @@ postdraw = function(curve)
 {
 	if anim_con == 2 && !obj_player1.visible
 	{
+		handx = lerp(handx, 960 / 2, 0.15);
+		handy = lerp(handy, -50, 0.15);
 		var curve2 = animcurve_channel_evaluate(jumpcurve, 1 - anim_t);
 		
 		var pal = palettes[sel.pal];
-		var charx = 960 / 2 + charshift[0] * 100, chary = 540 / 2 - 16 + charshift[1] * 100, scale = clamp(lerp(1, 2, curve), 1, 2);
+		var charx = 960 / 5 + charshift[0] * 100, chary = 540 / 2 - 16 + charshift[1] * 100, scale = clamp(lerp(1, 2, curve), 1, 2);
 		
 		charx = lerp(charx, obj_player1.x - camera_get_view_x(view_camera[0]), 1 - anim_t);
 		chary = lerp(chary, obj_player1.y - camera_get_view_y(view_camera[0]), curve2);
@@ -203,7 +208,7 @@ draw = function(curve)
 	if anim_con != 2 or obj_player1.visible
 	{
 		// character
-		var charx = 960 / 2 + charshift[0] * 100, chary = 540 / 2 - 16 + charshift[1] * 100;
+		var charx = 960 / 5 + charshift[0] * 75, chary = 540 / 2 - 16 + charshift[1] * 75;
 		
 		shader_set(global.Pal_Shader);
 		if pal.texture != noone
@@ -214,34 +219,27 @@ draw = function(curve)
 		pattern_reset();
 		
 		// arrows
-		if (sel.pal > 0 && !mixing) or (mixing && sel.mix > 0)
+		/*
+		if sel.side == 0
 		{
-			var xx = 960 / 2 - 120 - sin(current_time / 200) * 4, yy = 540 / 2 + 16;
-			if charshift[0] < 0
-				xx += charshift[0] * 100;
-			
-			if !mixing && palettes[sel.pal - 1].texture != noone
+			if sel.char > 0
 			{
-				scr_palette_texture(spr_palettearrow, 0, xx, yy, 1, 1, 90, c_white, 1, true, palettes[sel.pal - 1].texture);
-				draw_sprite_ext(spr_palettearrow, 1, xx, yy, 1, 1, 90, c_white, 1);
+				var xx = 960 / 5, yy = 540 / 2 - 110 - sin(current_time / 200) * 4;
+				if charshift[1] < 0
+					yy += charshift[1] * 75;
+				
+				draw_sprite_ext(spr_palettearrow, 0, xx, yy, 1, 1, 0, c_white, 1);
 			}
-			else
-				draw_sprite_ext(spr_palettearrow, 0, xx, yy, 1, 1, 90, pal_swap_get_pal_color(characters[sel.char][2], mixing ? mixables[sel.mix - 1].palette : palettes[sel.pal - 1].palette, characters[sel.char][3][mixing]), 1);
-		}
-		if (sel.pal < array_length(palettes) - 1 && !mixing) or (mixing && sel.mix < array_length(mixables) - 1)
-		{
-			var xx = 960 / 2 + 120 + sin(current_time / 200) * 4, yy = 540 / 2 + 16;
-			if charshift[0] > 0
-				xx += charshift[0] * 100;
-			
-			if !mixing && palettes[sel.pal + 1].texture != noone
+			if sel.char < array_length(characters) - 1
 			{
-				scr_palette_texture(spr_palettearrow, 0, xx, yy, 1, 1, 270, c_white, 1, true, palettes[sel.pal + 1].texture);
-				draw_sprite_ext(spr_palettearrow, 1, xx, yy, 1, 1, 270, c_white, 1);
+				var xx = 960 / 5, yy = 540 / 2 + 120 + sin(current_time / 200) * 4;
+				if charshift[1] > 0
+					yy += charshift[1] * 75;
+				
+				draw_sprite_ext(spr_palettearrow, 0, xx, yy, 1, 1, 180, c_white, 1);
 			}
-			else
-				draw_sprite_ext(spr_palettearrow, 0, xx, yy, 1, 1, 270, pal_swap_get_pal_color(characters[sel.char][2], mixing ? mixables[sel.mix + 1].palette : palettes[sel.pal + 1].palette, characters[sel.char][3][mixing]), 1);
 		}
+		*/
 	}
 	
 	// text
@@ -256,8 +254,7 @@ draw = function(curve)
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	
-	var xx = 960 / 2 - string_width(name) / 2;
-	
+	var xx = 960 / 1.5 - string_width(name) / 2;
 	for(var i = 1; i <= string_length(name); i++)
 	{
 		var char = string_char_at(name, i);
@@ -273,6 +270,51 @@ draw = function(curve)
 	draw_set_halign(fa_center);
 	draw_set_alpha(curve);
 	draw_set_font(global.font_small);
-	draw_text_ext(960 / 2, 450, desc, 16, 960 - 32);
+	draw_text_ext(960 / 1.5, 450, desc, 16, 960 - 32);
 	draw_set_alpha(1);
+	
+	// palettes
+	var palspr = characters[sel.char][2];
+	var xx = 0, yy = 0;
+	var array = !mixing ? palettes : mixables;
+	
+	for(var i = 0; i < array_length(array); i++)
+	{
+		var xdraw = xx;
+		var ydraw = yy;
+		if sel.side == 1 && ((!mixing && sel.pal == i) or (mixing && sel.mix == i)) && anim_con != 2
+		{
+			handx = lerp(handx, 8 + 408 + xx, 0.25);
+			handy = lerp(handy, 70 + yy, 0.25);
+			
+			xdraw += random_range(-0.7, 0.7);
+			ydraw += random_range(-0.7, 0.7);
+		}
+		
+		draw_sprite_ext(spr_skinchoicepalette, 0, 3 + 408 + xdraw, 3 + 70 + ydraw, 1, 1, 0, c_black, 0.35);
+		if flashpal[0] == i
+			draw_set_flash();
+		
+		if mixing or array[i].texture == noone or flashpal[0] == i
+			draw_sprite_ext(spr_skinchoicepalette, 0, 408 + xdraw, 70 + ydraw, 1, 1, 0, pal_swap_get_pal_color(palspr, array[i].palette, characters[sel.char][3][mixing]), 1);
+		else
+		{
+			scr_palette_texture(spr_skinchoicepalette, 0, 408 + xdraw, 70 + ydraw, 1, 1, 0, c_white, 1, true, array[i].texture);
+			draw_sprite_ext(spr_skinchoicepalette, 1, 408 + xdraw, 70 + ydraw, 1, 1, 0, c_white, 1);
+		}
+		draw_reset_flash();
+		
+		xx += 36;
+		if i % 13 == 12
+		{
+			yy += 36;
+			xx = 0;
+		}
+	}
+	
+	// hand
+	draw_sprite_ext(spr_skinchoicehand, 0, handx, handy, 2, 2, 0, c_white, 1);
+	draw_set_align();
 }
+handx = 960 / 2;
+handy = -50;

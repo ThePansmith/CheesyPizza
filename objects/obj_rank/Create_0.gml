@@ -92,7 +92,7 @@ event = 0;
 accel = 0;
 clipy = 809;
 
-colors = array_create_ext(9, function()
+colors = array_create_ext(string_length(string(global.collect)), function()
 {
 	return choose(0, 1, 2, 3, 4, 5, 6);
 });

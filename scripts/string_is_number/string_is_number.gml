@@ -1,18 +1,17 @@
 function string_is_number(str)
 {
-	if (!string_length(str))
+	if !string_length(str)
 		return false;
-	if (is_real(str))
+	if is_real(str)
 		return true;
 	
-	try 
-	{
+	try {
 		real(str);
 	}
 	catch(str) {
 		return false;
 	}
-	return true;
+	return string(real(str)) == str;
 }
 function number_in_range(num, _min, _max)
 {

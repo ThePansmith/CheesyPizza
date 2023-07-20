@@ -994,7 +994,7 @@ function scr_characterspr()
 		spr_parry2 = spr_playerSP_parry2;
 		spr_parry3 = spr_playerSP_parry3;
 		spr_dead = spr_player_deathend;
-		spr_suplexbump = spr_player_suplexbump;
+		spr_suplexbump = spr_playerSP_suplexbump;
 		spr_grind = spr_playerSP_grinding;
 		spr_suplexland = spr_playerSP_machfreefall;
 		spr_superspringplayer = spr_playerSP_stun;
