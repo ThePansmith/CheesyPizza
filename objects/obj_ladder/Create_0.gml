@@ -5,7 +5,8 @@ if check_sugary()
 	sprite_index = spr_ladder_sugary;
 	depth = -1;
 }
-if global.leveltosave == "grinch" or global.leveltosave == "etb" or global.leveltosave == "ancient"
+if (global.leveltosave == "grinch" or global.leveltosave == "etb" or global.leveltosave == "ancient")
+&& !instance_exists(obj_ghostcollectibles)
 	visible = true;
 if REMIX
 	mask_index = spr_solid;

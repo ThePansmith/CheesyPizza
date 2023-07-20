@@ -1,1 +1,1 @@
-time_max = 130;
+time_max = 180;

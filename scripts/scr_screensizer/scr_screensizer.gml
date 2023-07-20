@@ -112,9 +112,9 @@ function reset_blendmode()
 }
 function reset_shader_fix()
 {
-	if (shader_current() == global.Pal_Shader)
+	if shader_current() == global.Pal_Shader
 		pal_swap_reset();
-	else if (shader_current() != -1)
+	else if shader_current() != -1
 		shader_reset();
 	shader_set(shd_alphafix);
 }

@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Heat meter",
-    "path": "folders/Sprites/HUD/Heat meter.yy",
+    "name": "OLD",
+    "path": "folders/Sprites/HUD/Heat meter/OLD.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

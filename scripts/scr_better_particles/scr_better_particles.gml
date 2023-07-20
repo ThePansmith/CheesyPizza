@@ -1,5 +1,8 @@
 function create_baddiegibs(_x, _y)
 {
+	if object_index == obj_junk
+		exit;
+	
 	var q = 
 	{
 		x: _x,

@@ -8,17 +8,15 @@ if (picked == 0 && pickable == 1)
 	else
 		playerid = obj_player2;
 	alarm[0] = 150;
-	y = playerid.y - 50;
+	y = playerid.y - 75;
 	x = playerid.x;
 	with (playerid)
 	{
 		state = states.gottreasure;
-		sound_play_oneshot("event:/sfx/misc/secretfound");
+		sound_play("event:/sfx/misc/foundtreasure");
 		global.giantkey = true;
 	}
-	obj_tv.showtext = true;
-	obj_tv.message = "GOT THE GIANT KEY!!!";
-	obj_tv.alarm[0] = 200;
 	global.heattime = 60;
+	global.combotime = 60;
 	picked = true;
 }

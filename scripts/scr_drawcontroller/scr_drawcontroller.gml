@@ -76,7 +76,7 @@ function draw_enemy(healthbar, palette, color = c_white)
 	var _stun = 0;
 	if ((state == states.stun && thrown == 0 && object_index != obj_peppinoclone) || state == states.pizzaheadjump || (state == states.supergrab && sprite_index == stunfallspr))
 		_stun = 25;
-	if (state == states.pizzaheadjump && object_index == obj_gustavograbbable)
+	if (state == states.pizzaheadjump && object_index == obj_gustavograbbable) or object_index == obj_junk
 		_stun = 0;
 	
 	if (visible && object_index != obj_pizzaball && object_index != obj_fakesanta && bbox_in_camera(view_camera[0], 32))

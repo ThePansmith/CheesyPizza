@@ -37,7 +37,7 @@ if ((image_index == 1 && !sugary) or (sugary && sprite_index != spr_sugarygatecl
 	}
 }
 if (drop && dropstate != states.idle)
-or global.modifier_failed
+or global.modifier_failed or (global.leveltosave == "dragonlair" && !global.giantkey)
 	exit;
 
 // exit

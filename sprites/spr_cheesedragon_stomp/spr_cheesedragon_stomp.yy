@@ -109,8 +109,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "unusedgroup",
-    "path": "texturegroups/unusedgroup",
+    "name": "dragongroup",
+    "path": "texturegroups/dragongroup",
   },
   "type": 0,
   "VTile": false,

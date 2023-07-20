@@ -191,6 +191,7 @@ function scr_characterspr()
 	spr_rideweenie = spr_player_weeniemount;
 	spr_weenieturn = spr_player_weenieturn;
 	spr_breakdance = spr_player_breakdance;
+	spr_breakdancemove = spr_player_breakdancestart;
 	spr_breakdancesuper = spr_player_breakdancesuper;
 	spr_dashpadmach = spr_player_dashpad;
 	spr_firemouthintro = spr_player_firemouthintro;
@@ -280,6 +281,10 @@ function scr_characterspr()
 	spr_kungfuair2transition = spr_player_kungfuair2transition;
 	spr_kungfuair3transition = spr_player_kungfuair3transition;
 	spr_kungfujump = spr_player_kungfujump;
+	spr_faceplant = spr_player_faceplant;
+	spr_buttattackstart = spr_player_buttattackstart;
+	spr_buttattack = spr_player_buttattack;
+	spr_buttattackend = spr_player_buttattackend;
 	spr_cottonidle = spr_cotton_idle;
 	
 	spr_palette = spr_peppalette;
@@ -829,12 +834,12 @@ function scr_characterspr()
 		//spr_airdash1 = spr_player_airdash1;
 		//spr_airdash2 = spr_player_airdash2;
 		spr_keyget = spr_playerSP_keyget;
-		spr_idle1 = spr_player_idlefrown; // PLACEHOLDER
-		spr_idle2 = spr_player_idledance; // PLACEHOLDER
-		spr_idle3 = spr_player_handgesture1; // PLACEHOLDER
-		spr_idle4 = spr_player_handgesture2; // PLACEHOLDER
-		spr_idle5 = spr_player_handgesture3; // PLACEHOLDER
-		spr_idle6 = spr_player_handgesture4; // PLACEHOLDER
+		spr_idle1 = spr_playerSP_idleanim1;
+		spr_idle2 = spr_playerSP_idleanim2;
+		spr_idle3 = spr_playerSP_idleanim1;
+		spr_idle4 = spr_playerSP_idleanim2;
+		spr_idle5 = spr_playerSP_idleanim1;
+		spr_idle6 = spr_playerSP_idleanim2;
 		spr_piledriver = spr_playerSP_piledriver;
 		spr_piledriverland = spr_playerSP_piledriverland;
 		//spr_charge = spr_player_charge;
@@ -1026,6 +1031,7 @@ function scr_characterspr()
 		spr_kungfuair1transition = spr_player_kungfuair1transition;
 		spr_kungfuair2transition = spr_player_kungfuair2transition;
 		spr_kungfuair3transition = spr_player_kungfuair3transition;
+		spr_faceplant = spr_playerSP_faceplant;
 		spr_cottonidle = spr_cotton_idle;
 		spr_palette = spr_pizzypalette;
 		paletteselect = 1;
@@ -1590,7 +1596,7 @@ function scr_characterspr()
 		spr_machroll = spr_playerPN_machroll;
 		//spr_hitwall = spr_playerPN_mach3hitwall;
 		spr_superjumpland = spr_playerPN_superjumpland;
-		spr_walljumpstart = spr_player_walljumpstart;
+		spr_walljumpstart = spr_playerPN_walljumpstart;
 		spr_superjumpprep = spr_playerPN_superjumpprep;
 		spr_superjump = spr_playerPN_superjump;
 		spr_superjumppreplight = spr_playerPN_superjumppreplight;
@@ -1635,7 +1641,7 @@ function scr_characterspr()
 		spr_mach3boost = spr_playerPN_machslideboost3;
 		//spr_facehurtup = spr_playerPN_facehurtup;
 		//spr_facehurt = spr_playerPN_facehurt;
-		spr_walljumpend = spr_player_walljumpend;
+		spr_walljumpend = spr_playerPN_walljumpend;
 		spr_suplexdash = spr_playerPN_suplexdash;
 		spr_suplexdashjumpstart = spr_player_suplexgrabjumpstart;
 		spr_suplexdashjump = spr_player_suplexgrabjump;
@@ -1684,6 +1690,7 @@ function scr_characterspr()
 		spr_rideweenie = spr_playerPN_weeniemount;
 		spr_weenieturn = spr_playerPN_weenieturn;
 		spr_breakdance = spr_playerPN_breakdance;
+		spr_breakdancemove = spr_playerPN_breakdancestart;
 		spr_breakdancesuper = spr_playerPN_breakdancesuper;
 		spr_dashpadmach = spr_playerPN_dashpad;
 		spr_firemouthintro = spr_playerPN_firemouthintro;
@@ -1765,7 +1772,15 @@ function scr_characterspr()
 		spr_kungfuair1transition = spr_playerPN_kungfuair1transition;
 		spr_kungfuair2transition = spr_playerPN_kungfuair2transition;
 		spr_kungfuair3transition = spr_playerPN_kungfuair3transition;
-		
+		spr_faceplant = spr_playerPN_faceplant;
+		spr_buttattackstart = spr_playerPN_buttattackstart;
+		spr_buttattack = spr_playerPN_buttattack;
+		spr_buttattackend = spr_playerPN_buttattackend;
+		spr_attackdash = spr_playerPN_attackdash;
+		spr_airattackstart = spr_playerPN_airattackstart;
+		spr_airattack = spr_playerPN_airattack;
+		spr_groundedattack = spr_playerPN_groundedattack;
+		spr_ungroundedattack = spr_playerPN_ungroundedattack;
 		spr_palette = spr_peppalette;
 		paletteselect = 1;
 	}

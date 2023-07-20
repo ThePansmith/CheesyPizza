@@ -37,8 +37,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Pizza Score",
-    "path": "folders/Sprites/HUD/Pizza Score.yy",
+    "name": "Pizzelle",
+    "path": "folders/Sprites/HUD/Pizza Score/Pizzelle.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

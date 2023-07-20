@@ -94,13 +94,8 @@ function scr_play_rank_music()
 		s = 4.5;
 	if ((room != tower_entrancehall || global.exitrank) && room != tower_tutorial1)
 	{
-		var ranksnd = global.snd_rank;
-		if obj_player1.character == "SP"
-			ranksnd = global.snd_rankSP;
-		else if check_char("BN")
-			ranksnd = global.snd_rankBN;
-		fmod_event_instance_play(ranksnd);
-		fmod_event_instance_set_parameter(ranksnd, "rank", s, true);
+		fmod_event_instance_play(global.snd_rank);
+		fmod_event_instance_set_parameter(global.snd_rank, "rank", s, true);
 	}
 }
 function scr_write_rank(level)

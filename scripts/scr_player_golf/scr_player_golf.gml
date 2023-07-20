@@ -11,9 +11,11 @@ function scr_player_golf()
 		move = key_left + key_right;
 		if (move != 0)
 			xscale = move;
-		if (input_buffer_slap > 0)
+		if (input_buffer_slap > 0 or input_buffer_grab > 0)
 		{
 			input_buffer_slap = 0;
+			input_buffer_grab = 0;
+			
 			sprite_index = spr_golfswing;
 			image_index = 0;
 			if (key_up)

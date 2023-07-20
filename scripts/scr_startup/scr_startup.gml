@@ -48,6 +48,7 @@ global.collectfont = font_add_sprite_ext(spr_font_collect, "0123456789", true, 0
 global.combofont = font_add_sprite_ext(spr_font_combo, "0123456789/:", true, 0);
 global.combofont2 = font_add_sprite_ext(spr_tv_combobubbletext, "0123456789", true, 0);
 global.combofont2BN = font_add_sprite_ext(spr_tv_combobubbletextBN, "0123456789", true, 0);
+global.combofont2PN = font_add_sprite_ext(spr_tv_combobubbletextPN, "0123456789", true, 0);
 global.wartimerfont1 = font_add_sprite_ext(spr_wartimer_font1, "1234567890", true, 0);
 global.wartimerfont2 = font_add_sprite_ext(spr_wartimer_font2, "1234567890", true, 0);
 global.collectfontSP = font_add_sprite_ext(spr_font_collectSP, "0123456789", true, 0);

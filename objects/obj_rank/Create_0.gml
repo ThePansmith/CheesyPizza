@@ -67,13 +67,13 @@ if obj_player.character == "BN" && (global.rank == "d" or global.rank == "c" or 
 depth = -8;
 
 // figure out rank sprite
-var fuck = asset_get_index(sprite_get_name(sprite_index) + obj_player1.character + string_upper(global.rank));
+var fuck = asset_get_index("spr_rank" + obj_player1.character + string_upper(global.rank));
 if sprite_exists(fuck)
 	sprite_index = fuck;
 else
 {
 	// default to peppino
-	fuck = asset_get_index(sprite_get_name(sprite_index) + string_upper(global.rank));
+	fuck = asset_get_index("spr_rank" + string_upper(global.rank));
 	if sprite_exists(fuck)
 		sprite_index = fuck;
 }

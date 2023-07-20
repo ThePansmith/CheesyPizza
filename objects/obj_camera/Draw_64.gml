@@ -6,6 +6,7 @@ if (is_bossroom() || room == editor_room || instance_exists(obj_tutorialbook))
 
 var sugary = (obj_player1.character == "SP");
 var bo = (obj_player1.character == "BN");
+var pino = (obj_player1.character == "PN");
 
 if (global.kungfu)
 {
@@ -58,17 +59,22 @@ if (obj_player.state != states.dead)
 	
 	var heatfill = spr_heatmeter_fill;
 	var heatmeter = spr_heatmeter;
+	var heatpal = spr_heatmeter_palette;
+	
 	switch obj_player1.character
 	{
-		default:
-			heatfill = spr_heatmeter_fill;
-			heatmeter = spr_heatmeter;
-			break;
 		case "SP":
 			heatfill = spr_heatmeter_fillSP;
 			heatmeter = spr_heatmeterSP;
+			heatpal = spr_heatmeter_paletteSP;
+			break;
+		case "PN":
+			heatfill = spr_heatmeter_fillPN;
+			heatmeter = spr_heatmeterPN;
+			heatpal = spr_heatmeter_palettePN;
 			break;
 	}
+	
 	var sw = sprite_get_width(heatfill);
 	var sh = sprite_get_height(heatfill);
 	var b = global.stylemultiplier;
@@ -79,7 +85,7 @@ if (obj_player.state != states.dead)
 	if global.heatmeter
 	{
 		shader_set(global.Pal_Shader);
-		pal_swap_set(sugary ? spr_heatmeterSPpal : spr_heatmeter_palette, min(global.stylethreshold, 3) + (global.stylethreshold >= 3 && global.style >= 55), false);
+		pal_swap_set(heatpal, min(global.stylethreshold, 3) + (global.stylethreshold >= 3 && global.style >= 55), false);
 		draw_sprite_part(heatfill, pizzascore_index, 0, 0, sw * b, sh, hud_xx - 95, hud_yy + 24);
 		draw_sprite_ext(heatmeter, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
 		reset_shader_fix();
@@ -87,57 +93,55 @@ if (obj_player.state != states.dead)
 	
 	// score
 	var pizzascorespr = spr_pizzascore;
-	if sugary
-		pizzascorespr = spr_cakehud;
-	else if bo
-		pizzascorespr = spr_pizzascoreBN;
-	else
-		pizzascorespr = spr_pizzascore;
-	draw_sprite_ext(pizzascorespr, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
-	
 	var peppersprite = spr_pizzascore_pepper;
 	var pepperonisprite = spr_pizzascore_pepperoni;
 	var olivesprite = spr_pizzascore_olive;
 	var shroomsprite = spr_pizzascore_shroom;
-	switch obj_player1.character
+	
+	if sugary
 	{
-		default:
-			peppersprite = spr_pizzascore_pepper;
-			pepperonisprite = spr_pizzascore_pepperoni;
-			olivesprite = spr_pizzascore_olive;
-			shroomsprite = spr_pizzascore_shroom;
-			break;
-		case "SP":
-			peppersprite = spr_cakehud_crank;
-			pepperonisprite = spr_cakehud_brank;
-			olivesprite = spr_cakehud_arank;
-			shroomsprite = spr_cakehud_srank;
-			break;
-		case "BN":
-			peppersprite = spr_null;
-			pepperonisprite = spr_null;
-			olivesprite = spr_null;
-			shroomsprite = spr_null;
-			break;
+		pizzascorespr = spr_cakehud;
+		peppersprite = spr_cakehud_crank;
+		pepperonisprite = spr_cakehud_brank;
+		olivesprite = spr_cakehud_arank;
+		shroomsprite = spr_cakehud_srank;
 	}
+	else if bo
+	{
+		pizzascorespr = spr_pizzascoreBN;
+		peppersprite = spr_null;
+		pepperonisprite = spr_null;
+		olivesprite = spr_null;
+		shroomsprite = spr_null;
+	}
+	else if pino
+	{
+		pizzascorespr = spr_pizzascorePN;
+		peppersprite = spr_pizzascore_pepperPN;
+		pepperonisprite = spr_pizzascore_pepperoniPN;
+		olivesprite = spr_pizzascore_olivePN;
+		shroomsprite = spr_pizzascore_shroomPN;
+	}
+	draw_sprite_ext(pizzascorespr, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
 	
 	var _score = global.collect;
-	if (global.coop)
+	if global.coop
 		_score += global.collectN;
-	if (_score >= global.crank)
+	
+	if _score >= global.crank
 		draw_sprite_ext(peppersprite, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
-	if (_score >= global.brank)
+	if _score >= global.brank
 		draw_sprite_ext(pepperonisprite, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
-	if (_score >= global.arank)
+	if _score >= global.arank
 		draw_sprite_ext(olivesprite, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
-	if (_score >= global.srank)
+	if _score >= global.srank
 		draw_sprite_ext(shroomsprite, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
 	
 	var rx = hud_xx + 142;
 	var ry = hud_yy - 22;
 	
 	var rank_ix = 0;
-	if (_score >= global.srank && scr_is_p_rank())
+	if _score >= global.srank && scr_is_p_rank()
 	{
 		rank_ix = 5;
 		
@@ -148,20 +152,20 @@ if (obj_player.state != states.dead)
 			ry += irandom_range(-1, 1);
 		}
 	}
-	else if (_score >= global.srank)
+	else if _score >= global.srank
 		rank_ix = 4;
-	else if (_score >= global.arank)
+	else if _score >= global.arank
 		rank_ix = 3;
-	else if (_score >= global.brank)
+	else if _score >= global.brank
 		rank_ix = 2;
-	else if (_score >= global.crank)
+	else if _score >= global.crank
 		rank_ix = 1;
 	
-	if (previousrank != rank_ix)
+	if previousrank != rank_ix
 	{
 		var _snd = global.snd_rankup;
 		previousrank = rank_ix;
-		if (rank_ix < previousrank)
+		if rank_ix < previousrank
 			_snd = global.snd_rankdown;
 		fmod_event_instance_play(_snd);
 		fmod_event_instance_set_parameter(_snd, "state", rank_ix - 1, true);
@@ -174,14 +178,17 @@ if (obj_player.state != states.dead)
 		ranksprite = spr_ranks_hudSP;
 	else if bo
 		ranksprite = spr_ranks_hudBN;
+	else if pino
+		ranksprite = spr_ranks_hudPN;
 	draw_sprite_ext(ranksprite, rank_ix, rx, ry, rank_scale, rank_scale, 0, c_white, 1);
 	
 	var spr_w = sprite_get_width(spr_ranks_hudfill);
 	var spr_h = sprite_get_height(spr_ranks_hudfill);
 	var spr_xo = sprite_get_xoffset(spr_ranks_hudfill);
 	var spr_yo = sprite_get_yoffset(spr_ranks_hudfill);
+	
 	var perc = 0;
-	switch (rank_ix)
+	switch rank_ix
 	{
 		case 4:
 			perc = 1;
@@ -201,25 +208,22 @@ if (obj_player.state != states.dead)
 	
 	var t = spr_h * perc;
 	var top = spr_h - t;
-	var rankfillsprite = spr_ranks_hudfill
+	var rankfillsprite = spr_ranks_hudfill;
 	if sugary
-		rankfillsprite = spr_ranks_hudfillSP
+		rankfillsprite = spr_ranks_hudfillSP;
 	else if bo
-		rankfillsprite = spr_ranks_hudfillBN
-	else
-		rankfillsprite = spr_ranks_hudfill
+		rankfillsprite = spr_ranks_hudfillBN;
+	else if pino
+		rankfillsprite = spr_ranks_hudfillPN;
 	
 	draw_sprite_part(rankfillsprite, rank_ix, 0, top, spr_w, spr_h - top, rx - spr_xo, (ry - spr_yo) + top);
-	draw_set_valign(0);
-	draw_set_halign(0);
+	draw_set_align();
 	
-	var collectfont = global.collectfont
+	var collectfont = global.collectfont;
 	if sugary
-		collectfont = global.collectfontSP 
+		collectfont = global.collectfontSP; 
 	else if bo 
-		collectfont = global.collectfontBN
-	else
-		collectfont = global.collectfont
+		collectfont = global.collectfontBN;
 		
 	draw_set_font(collectfont);
 	var text_y = 0;
@@ -250,36 +254,41 @@ if (obj_player.state != states.dead)
 	}
 	
 	var cs = 0;
-	with (obj_comboend)
+	with obj_comboend
 		cs += comboscore;
-	with (obj_particlesystem)
+	with obj_particlesystem
 	{
 		for (var i = 0; i < ds_list_size(global.collect_list); i++)
 			cs += ds_list_find_value(global.collect_list, i).value;
 	}
 	var sc = _score - global.comboscore - cs;
-	if (sc < 0)
+	if sc < 0
 		sc = 0;
 	var str = string(sc);
 	var num = string_length(str);
 	var w = string_width(str);
 	var xx = hud_xx - (w / 2);
-	if (lastcollect != sc)
+	
+	if REMIX
 	{
-		color_array = array_create(num, 0);
-		for (i = 0; i < array_length(color_array); i++)
-			color_array[i] = choose(irandom(3));
-		lastcollect = sc;
+		if lastcollect != sc
+		{
+			color_array = array_create(num, 0);
+			for (i = 0; i < array_length(color_array); i++)
+				color_array[i] = choose(irandom(3));
+			lastcollect = sc;
+		}
+		shader_set(global.Pal_Shader);
 	}
-	shader_set(global.Pal_Shader);
+	
 	draw_set_alpha(alpha);
 	for (i = 0; i < num; i++)
 	{
-		var yy = (((i + 1) % 2) == 0) ? -5 : 0;
-		var c = color_array[i];
-		pal_swap_set(spr_font_palette, c, false);
-		draw_text(floor(xx), floor((hud_yy - 56) + text_y + yy), string_char_at(str, i + 1));
-		xx += (w / num);
+		var yy = (i + 1) % 2 == 0 ? -5 : 0;
+		if REMIX
+			pal_swap_set(spr_font_palette, color_array[i], false);
+		draw_text(floor(xx), floor(hud_yy - 56 + text_y + yy), string_char_at(str, i + 1));
+		xx += w / num;
 	}
 	draw_set_alpha(1);
 	reset_shader_fix();

@@ -117,7 +117,6 @@ function scr_do_rank(showtoppins = true, boss = false)
 					audio_stop_all();
 					stop_music();
 					fmod_event_instance_stop(global.snd_rank);
-					fmod_event_instance_stop(global.snd_rankSP);
 					sound_play_oneshot("event:/sfx/ending/towercollapsetrack");
 				}
 				else

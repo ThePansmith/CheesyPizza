@@ -27,8 +27,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Pizza Score",
-    "path": "folders/Sprites/HUD/Pizza Score.yy",
+    "name": "Bo Noise",
+    "path": "folders/Sprites/HUD/Pizza Score/Bo Noise.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

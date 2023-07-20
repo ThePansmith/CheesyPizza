@@ -8,6 +8,8 @@ function scr_dotaunt()
 		notification_push(notifs.taunt, [room]);
 		if ((!key_up || !supercharged) && global.tauntcount < 10 && place_meeting(x, y, obj_exitgate) && (global.panic == true || instance_exists(obj_wartimer)) && global.combotime > 0)
 		{
+			if REMIX
+				global.combotime = min(global.combotime + 10, 60);
 			global.heattime = 60;
 			global.tauntcount++;
 			global.collect += 25;

@@ -62,20 +62,20 @@ function scr_player_punch()
 	{
 		hsp = xscale * movespeed;
 		
-		if sprite_index == spr_player_breakdancesuper && key_shoot2
+		if sprite_index == spr_breakdancesuper && key_shoot2
 			movespeed = 14;
-		if movespeed > 0 && sprite_index == spr_player_breakdancestart && grounded
+		if movespeed > 0 && sprite_index == spr_breakdancemove && grounded
 			movespeed -= 0.25;
-		if movespeed > 0 && sprite_index == spr_player_breakdancesuper
+		if movespeed > 0 && sprite_index == spr_breakdancesuper
 			movespeed -= 0.25;
 		
-		if sprite_index == spr_player_breakdancestart && floor(image_index) >= 14
+		if sprite_index == spr_breakdancemove && floor(image_index) >= 14
 			image_index = 4 + frac(image_index);
 		
-		if key_shoot2 && move == xscale && sprite_index == spr_player_breakdancestart
+		if key_shoot2 && move == xscale && sprite_index == spr_breakdancemove
 		{
 			image_index = 0;
-			sprite_index = spr_player_buttattackstart;
+			sprite_index = spr_buttattackstart;
 			movespeed = max(movespeed, 16);
 			vsp = -5;
 				
@@ -88,10 +88,10 @@ function scr_player_punch()
 				}
 			}
 		}
-		if floor(image_index) == image_number - 1 && sprite_index == spr_player_buttattackstart
-			sprite_index = spr_player_buttattack;
+		if floor(image_index) == image_number - 1 && sprite_index == spr_buttattackstart
+			sprite_index = spr_buttattack;
 		
-		if sprite_index == spr_player_buttattack
+		if sprite_index == spr_buttattack
 		{
 			if grounded
 			{
@@ -101,7 +101,7 @@ function scr_player_punch()
 					movespeed = max(movespeed, 6);
 				}
 				else
-					sprite_index = spr_player_buttattackend;
+					sprite_index = spr_buttattackend;
 			}
 			else if key_down
 			{
@@ -119,7 +119,7 @@ function scr_player_punch()
 			}
 		}
 			
-		if sprite_index == spr_player_buttattackend
+		if sprite_index == spr_buttattackend
 		{
 			movespeed -= 0.25;
 			if key_attack
@@ -130,9 +130,9 @@ function scr_player_punch()
 			}
 		}
 			
-		if key_shoot2 && sprite_index == spr_player_breakdancestart && move == 0
+		if key_shoot2 && sprite_index == spr_breakdancemove && move == 0
 		{
-			sprite_index = spr_player_breakdancesuper;
+			sprite_index = spr_breakdancesuper;
 			movespeed = max(movespeed, 12);
 		}
 		
@@ -140,9 +140,9 @@ function scr_player_punch()
 			breakdance--;
 		
 		landAnim = false;
-		if movespeed <= 0 && (sprite_index == spr_player_breakdancesuper or sprite_index == spr_player_buttattackend)
+		if movespeed <= 0 && (sprite_index == spr_breakdancesuper or sprite_index == spr_buttattackend)
 			state = states.normal;
-		if breakdance <= 0 && sprite_index == spr_player_breakdancestart
+		if breakdance <= 0 && sprite_index == spr_breakdancemove
 		{
 			if key_attack
 			{
@@ -152,20 +152,20 @@ function scr_player_punch()
 			else
 				state = states.normal;
 		}
-		if place_meeting(x + xscale, y, obj_solid) && sprite_index == spr_player_breakdancesuper
+		if place_meeting(x + xscale, y, obj_solid) && sprite_index == spr_breakdancesuper
 			xscale *= -1;
 		
-		if sprite_index == spr_player_breakdancesuper
+		if sprite_index == spr_breakdancesuper
 			image_speed = movespeed / 24;
 		else
 			image_speed = 0.4;
 		
 		if scr_solid(x + xscale, y) && !place_meeting(x + sign(hsp), y, obj_slope) && !place_meeting(x + xscale, y, obj_destructibles)
-		&& (!place_meeting(x + xscale, y, obj_destructibles) or (sprite_index != spr_player_buttattack && sprite_index != spr_player_buttattackstart))
+		&& (!place_meeting(x + xscale, y, obj_destructibles) or (sprite_index != spr_buttattack && sprite_index != spr_buttattackstart))
 		{
 			if ledge_bump(32)
 			{
-				if sprite_index == spr_player_buttattack or sprite_index == spr_player_buttattackstart or sprite_index == spr_player_buttattackend
+				if sprite_index == spr_buttattack or sprite_index == spr_buttattackstart or sprite_index == spr_buttattackend
 				{
 					sound_play_3d(sfx_bumpwall, x, y);
 					vsp = -4;
@@ -174,7 +174,7 @@ function scr_player_punch()
 					state = states.punch;
 					movespeed = -6;
 				}
-				else if sprite_index != spr_player_breakdancesuper
+				else if sprite_index != spr_breakdancesuper
 				{
 					sound_play_oneshot_3d("event:/sfx/pep/splat", x, y);
 					state = states.bump;

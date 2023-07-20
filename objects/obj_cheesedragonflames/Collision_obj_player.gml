@@ -1,16 +1,21 @@
 with (other)
 {
-	var b = 1;
-	for (i = 0; i < array_length(transformation); i += 1)
+	if scr_transformationcheck()
 	{
-		if (state == transformation[i])
-			b = 0;
-	}
-	if (b == 1)
-	{
+		var _pindex = (object_index == obj_player1) ? 0 : 1;
+		GamepadSetVibration(_pindex, 1, 1, 0.85);
+		if (state != states.fireass)
+			notification_push(notifs.boilingsauce, [room]);
 		state = states.fireass;
-		image_index = 0;
-		vsp = -25;
+		vsp = -20;
+		fireasslock = false;
 		sprite_index = spr_fireass;
+		image_index = 0;
+		movespeed = hsp;
+		sound_play_oneshot_3d("event:/sfx/pep/burn", x, y);
+		if !fmod_event_instance_is_playing(global.snd_fireass)
+			fmod_event_instance_play(global.snd_fireass);
 	}
+	else
+		instance_destroy();
 }

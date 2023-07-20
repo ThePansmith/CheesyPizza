@@ -138,7 +138,7 @@ function state_player_normal()
 		movespeed = 0;
 		if (!machslideAnim && !landAnim && !shotgunAnim)
 		{
-			if (idle < 400 && breakdance_pressed < breakdance_max && character != "SP")
+			if (idle < 400 && breakdance_pressed < breakdance_max)
 				idle++;
 			if (idle >= 150 && breakdance_pressed < breakdance_max)
 			{

@@ -4,6 +4,7 @@ if (room == editor_room)
 var chara = obj_player1.character;
 var sugary = chara == "SP";
 var bo = chara == "BN";
+var pino = chara == "PN";
 
 draw_set_font(lang_get_font("bigfont"));
 draw_set_halign(1);
@@ -45,6 +46,12 @@ if !sugary
 		combobubblefill = spr_tv_combobubblefillBN;
 		combobubble = spr_tv_combobubbleBN;
 		combofont = global.combofont2BN;
+	}
+	else if pino
+	{
+		combobubblefill = spr_tv_combobubblefillPN;
+		combobubble = spr_tv_combobubblePN;
+		combofont = global.combofont2PN;
 	}
 	else
 	{

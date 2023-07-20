@@ -57,6 +57,7 @@ function player_destroy_sounds()
 	fmod_event_instance_release(snd_jetpackloop);
 	fmod_event_instance_release(sjumpcancelsnd);
 	fmod_event_instance_release(spindashsnd);
+	fmod_event_instance_release(global.snd_rank);
 }
 function player_init_sounds()
 {
@@ -107,7 +108,7 @@ function player_init_sounds()
 	}
 	
 	// fireass
-	if character == "P"
+	if character == "P" or character == "PN"
 		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireass");
 	else if character == "SP"
 		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireassSP");
@@ -126,6 +127,16 @@ function player_init_sounds()
 		global.snd_supertaunt = fmod_event_create_instance("event:/modded/sfx/pizzysupertaunt");
 	else
 		global.snd_supertaunt = fmod_event_create_instance("event:/sfx/pep/supertaunt");
+	
+	// rank
+	if character == "SP"
+		global.snd_rank = fmod_event_create_instance("event:/music/rankSP");
+	else if character == "BN"
+		global.snd_rank = fmod_event_create_instance("event:/music/rankBN");
+	else if character == "PN"
+		global.snd_rank = fmod_event_create_instance("event:/music/rankPN");
+	else
+		global.snd_rank = fmod_event_create_instance("event:/music/rank");
 	
 	machsnd = fmod_event_create_instance("event:/sfx/pep/mach");
 	jumpsnd = fmod_event_create_instance("event:/sfx/pep/jump");
@@ -198,10 +209,6 @@ global.snd_fakesanta = fmod_event_create_instance("event:/sfx/enemies/fakesanta"
 global.snd_rankup = fmod_event_create_instance("event:/sfx/ui/rankup");
 global.snd_pizzafacemoving = fmod_event_create_instance("event:/sfx/pizzaface/moving");
 global.snd_rankdown = fmod_event_create_instance("event:/sfx/ui/rankdown");
-global.snd_rank = fmod_event_create_instance("event:/music/rank");
-global.snd_rankSP = fmod_event_create_instance("event:/music/rankSP");
-global.snd_rankBN = fmod_event_create_instance("event:/music/rankBN");
-global.snd_rankPN = fmod_event_create_instance("event:/music/rankPN");
 global.snd_breakblock = fmod_event_create_instance("event:/sfx/misc/breakblock");
 global.snd_bellcollect = fmod_event_create_instance("event:/sfx/misc/bellcollect");
 global.snd_cardflip = fmod_event_create_instance("event:/sfx/misc/cardflip");

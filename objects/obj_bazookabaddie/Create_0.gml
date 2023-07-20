@@ -1,5 +1,5 @@
 scr_initenemy();
-bumpable = false;
+//bumpable = false;
 stunnable = false;
 parryable = false;
 stompable = false;

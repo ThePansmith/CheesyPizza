@@ -116,7 +116,7 @@ function scr_perform_move(move, prestate = state)
 					vsp = -5;
 				
 				image_index = 0;
-				sprite_index = spr_player_faceplant;
+				sprite_index = spr_faceplant;
 				
 				state = states.faceplant;
 				image_speed = 0.5;
@@ -168,7 +168,7 @@ function scr_perform_move(move, prestate = state)
 				}
 				movespeed = max(movespeed, 9);
 				state = states.punch;
-				sprite_index = spr_player_breakdancestart;
+				sprite_index = spr_breakdancemove;
 				breakdance = 35;
 				image_index = 0;
 				break;

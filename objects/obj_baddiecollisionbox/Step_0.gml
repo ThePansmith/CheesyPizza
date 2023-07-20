@@ -79,13 +79,13 @@ if (instance_exists(baddieID) && _obj_player && !_obj_player.cutscene)
 			if (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && ((other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat) or state != states.tumble) && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
 			&& (instakillmove && !(state == states.handstandjump && check_boss(other.baddieID.object_index)))
 				Instakill();
-			else if (instance_exists(other.baddieID) && state == states.handstandjump && global.attackstyle != 3 && other.baddieID.invtime <= 0 && !other.baddieID.invincible)
+			else if (instance_exists(other.baddieID) && (state == states.handstandjump or check_kungfu_state()) && global.attackstyle != 3 && other.baddieID.invtime <= 0 && !other.baddieID.invincible)
 			{
 				swingdingthrow = false;
 				image_index = 0;
 				if (!key_up)
 				{
-					if (movespeed <= 10)
+					if (movespeed <= 10 or (state == states.punch && movespeed <= 14))
 						sprite_index = spr_haulingstart;
 					else
 						sprite_index = spr_swingding;
@@ -221,7 +221,7 @@ if (instance_exists(baddieID) && _obj_player && !_obj_player.cutscene)
 				other.baddieID.grabbedby = _playerindex;
 				pepp_grab = true;
 			}
-			if (instance_exists(other.baddieID) && other.baddieID.object_index != obj_bigcheese && state != states.chainsaw && (state == states.tumble or state == states.mach2 or state == states.machslide or sprite_index == spr_player_ratmountattack or sprite_index == spr_lonegustavo_dash) && other.baddieID.state != states.punch && other.baddieID.state != states.hit && !pepp_grab && other.baddieID.thrown == 0 && other.baddieID.stuntouchbuffer <= 0 && other.baddieID.state != states.grabbed && other.baddieID.state != states.chainsawbump && other.baddieID.state != states.chainsaw && !other.baddieID.invincible)
+			if (instance_exists(other.baddieID) && other.baddieID.bumpable && other.baddieID.object_index != obj_bigcheese && state != states.chainsaw && (state == states.tumble or state == states.mach2 or state == states.machslide or sprite_index == spr_player_ratmountattack or sprite_index == spr_lonegustavo_dash) && other.baddieID.state != states.punch && other.baddieID.state != states.hit && !pepp_grab && other.baddieID.thrown == 0 && other.baddieID.stuntouchbuffer <= 0 && other.baddieID.state != states.grabbed && other.baddieID.state != states.chainsawbump && other.baddieID.state != states.chainsaw && !other.baddieID.invincible)
 			{
 				var lag = 0;
 				other.baddieID.stuntouchbuffer = 15;

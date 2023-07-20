@@ -83,7 +83,7 @@ function scr_enemy_stun()
 				scr_destroy_destructibles(0, hitvsp);
 		}
 	}
-	if (hitvsp < 0 && scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles))
+	if (hitvsp < 0 && scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles) && !place_meeting(x, y - 1, obj_enemyblock))
 	{
 		if (thrown == 1)
 		{
@@ -92,7 +92,7 @@ function scr_enemy_stun()
 			thrown = false;
 		}
 	}
-	if (hithsp != 0 && scr_solid(x + hithsp, y) && !place_meeting(x + hithsp, y, obj_destructibles))
+	if (hithsp != 0 && scr_solid(x + hithsp, y) && !place_meeting(x + hithsp, y, obj_destructibles) && !place_meeting(x + hithsp, y, obj_enemyblock))
 	{
 		if (thrown == 1)
 		{
@@ -106,7 +106,7 @@ function scr_enemy_stun()
 	else if (thrown)
 	{
 		blur_effect = 2;
-		with (create_blur_afterimage(x, y, sprite_index, image_index - 1, image_xscale))
+		with (create_blur_afterimage(x, y, sprite_index, image_index, image_xscale))
 			playerid = other.id;
 	}
 	if (grounded && vsp > 0 && thrown)

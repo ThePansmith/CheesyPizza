@@ -1,5 +1,5 @@
 scr_initenemy();
-bumpable = false;
+//bumpable = false;
 stompable = false;
 killbyenemy = false;
 groundpound = false;

@@ -265,10 +265,10 @@ add_music(beach_1, "event:/music/w3/beach", "event:/music/w3/beachsecret", 0);
 add_music(golf_room1, "event:/music/w3/golf", "event:/music/w3/golfsecret", 0);
 add_music(mansion_1, "event:/modded/level/mansion", "event:/modded/level/mansionsecret", 0);
 add_music(mansion_weird2, "event:/modded/level/mansion", "event:/modded/level/mansionsecret", 0);
-add_music(PP_room1, "event:/music/oldtutorial", "event:/music/pillarmusic", 0);
-add_music(etb_1, "event:/modded/level/oldtutorial", "event:/music/w1/ruinsecret", function(room, event, event_secret)
+add_music(PP_room1, "event:/modded/level/oldtutorial", "event:/music/pillarmusic", 0);
+add_music(etb_1, "event:/modded/level/oldtutorial", "event:/music/w1/ruinsecret", 0, function(room, event, event_secret)
 {
-	var s = room == etb_1;
+	var s = room == etb_1 ? 0 : 1;
 	fmod_event_instance_set_parameter(event, "state", s, false);
 });
 
