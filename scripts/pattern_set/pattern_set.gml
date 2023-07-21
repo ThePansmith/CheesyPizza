@@ -4,7 +4,7 @@ function pattern_set(color_array, sprite, subimg, xscale, yscale, pattern)
         exit;
 	
     pattern_enable(true);
-    pattern_set_pattern(pattern, 0);
+    pattern_set_pattern(pattern, global.Pattern_Index);
     pattern_set_sprite(sprite, subimg, xscale, yscale);
     pattern_set_color_array(color_array);
 }
@@ -16,8 +16,8 @@ function pattern_set_temp(color_array, sprite, subimg, xscale, yscale, pattern)
 	pattern_enable(true);
 	
 	// Pattern Texture
-	var _texT = sprite_get_texture(pattern, 0); // Change 0 for animated patterns?
-	var _uvsT = sprite_get_uvs(pattern, 0);
+	var _texT = sprite_get_texture(pattern, global.Pattern_Index);
+	var _uvsT = sprite_get_uvs(pattern, global.Pattern_Index);
 	
     texture_set_stage(global.Pattern_Texture, _texT);
     texture_set_interpolation_ext(global.Pattern_Texture, false);

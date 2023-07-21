@@ -76,8 +76,6 @@ switch character
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Finally, you can wear merch of dead people.");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Peppino says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Oh, fiddlesticks! What now?");
-		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "You bring a bucket?");
-		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "Don't fuck it up.");
 		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -90,6 +88,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "Gotta' speed, Keed.");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		break;
 	
 	#endregion
@@ -162,8 +161,6 @@ switch character
 		add_palette(12, "john", spr_peppattern9, "John Suit", "I mean, he only killed 2 of them.");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Gustavo and Brick say Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", " ");
-		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "You bring a bucket?");
-		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "Don't fuck it up.");
 		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -176,6 +173,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "Gotta' speed, Keed.");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		break;
 	
 	#endregion
@@ -218,8 +216,6 @@ switch character
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Genuinely, the concept of this is morbid.");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "The Noise says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
-		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "DO NOT drop it.");
-		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "How do you do this, anyway...?");
 		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -232,6 +228,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "Gotta' speed, Keed.");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		break;
 	
 	#endregion
@@ -285,8 +282,6 @@ switch character
 		add_palette(12, "john", spr_peppattern9, "John Cap", "Now you can wear a HAT of dead people.");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "The Vigilante says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "You can find them online, don't worry.");
-		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "Did you ever put cheese in water?");
-		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "Honestly. Relatable.");
 		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -299,6 +294,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "Gotta' speed, Keed.");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		break;
 	
 	#endregion
@@ -336,8 +332,6 @@ switch character
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Finally, you can wear merch of dead people.");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Snick says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Oh, fiddlesticks! What now?");
-		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "You bring a bucket?");
-		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "Don't fuck it up.");
 		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -350,6 +344,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "Gotta' speed, Keed.");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		break;
 	
 	#endregion
@@ -400,8 +395,6 @@ switch character
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Use the next palette instead.");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Correct.");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Use the previous palette instead.");
-		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "You bring a bucket?");
-		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "Don't fuck it up.");
 		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -414,6 +407,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "Gotta' speed, Keed.");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		break;
 	
 	#endregion
@@ -456,8 +450,6 @@ switch character
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Genuinely, the concept of this is morbid.");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "The Noise says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
-		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "DO NOT drop it.");
-		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "How do you do this, anyway...?");
 		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -470,6 +462,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "Gotta' speed, Keed.");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		break;
 	
 	#endregion
@@ -544,8 +537,6 @@ switch character
 		add_palette(12, "john", spr_peppattern9, "John Suit", "What the fuck is a gog?");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Trans Rizz");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "I know you like d");
-		add_palette(12, "", spr_pattern_minecraft_water, "Minecraft Water", "press right");
-		add_palette(12, "", spr_pattern_minecraft_lava, "Minecraft Lava", "you're burning now");
 		add_palette(12, "", spr_pattern_dogma, "Dogma", "w");
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "sccary ramen!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "IM FEELING SUGGARY!");
@@ -558,6 +549,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "wire is not alive");
 		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "i will conker mobiusa with this strip.");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "so... re...so retr... so...");
+		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		break;
 	
 	#endregion

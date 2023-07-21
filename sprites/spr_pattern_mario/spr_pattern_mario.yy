@@ -14,6 +14,8 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9ec9ea88-249a-4ca3-b540-6539a9fffda5",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7b4790da-a2f3-4a94-b294-c263f01b8db6",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"af8393ad-1213-4a45-b09e-acd2ef204dfe",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -66,11 +68,11 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 1.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
-    "playbackSpeed": 1.0,
+    "playbackSpeed": 0.1,
     "playbackSpeedType": 1,
     "showBackdrop": true,
     "showBackdropImage": false,
@@ -78,6 +80,8 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9ec9ea88-249a-4ca3-b540-6539a9fffda5","path":"sprites/spr_pattern_mario/spr_pattern_mario.yy",},},},"Disabled":false,"id":"8b855988-7865-49cd-a617-e64fa1b0fac3","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7b4790da-a2f3-4a94-b294-c263f01b8db6","path":"sprites/spr_pattern_mario/spr_pattern_mario.yy",},},},"Disabled":false,"id":"6a3bf159-aafa-43d6-8c86-99da35936a57","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"af8393ad-1213-4a45-b09e-acd2ef204dfe","path":"sprites/spr_pattern_mario/spr_pattern_mario.yy",},},},"Disabled":false,"id":"fe820687-5485-42af-bb1c-df420ca5b4e9","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

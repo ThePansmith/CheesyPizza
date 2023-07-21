@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_pattern_snick",
-  "bbox_bottom": 25,
+  "bbox_bottom": 31,
   "bbox_left": 0,
-  "bbox_right": 26,
+  "bbox_right": 31,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d46166a5-107c-446d-a5db-4a196b83c1f5",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a5995e20-1216-44fb-ae80-5e7aa7c1af1b",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 26,
+  "height": 32,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"714c2942-592e-419e-8c17-3ef424f57b13","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"639be694-e7d9-43b9-a069-104e17dfc44e","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": {
     "resourceType": "GMNineSliceData",
@@ -77,7 +77,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d46166a5-107c-446d-a5db-4a196b83c1f5","path":"sprites/spr_pattern_snick/spr_pattern_snick.yy",},},},"Disabled":false,"id":"53d9ce40-b7fa-4d0c-94d2-bb222fc52fa4","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a5995e20-1216-44fb-ae80-5e7aa7c1af1b","path":"sprites/spr_pattern_snick/spr_pattern_snick.yy",},},},"Disabled":false,"id":"9fb52573-6305-4d8a-859d-f34ad80142fa","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -93,5 +93,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 27,
+  "width": 32,
 }

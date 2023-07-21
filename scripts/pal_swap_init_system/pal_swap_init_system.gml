@@ -30,4 +30,5 @@ function pal_swap_init_system_fix()
     global.Pattern_Spr_Tex_Data = shader_get_uniform(argument[0], "sprite_tex_data");
     global.Pattern_Spr_Scale = shader_get_uniform(argument[0], "sprite_scale");
     global.Pattern_Color_Array = shader_get_uniform(argument[0], "color_array");
+	global.Pattern_Index = 0;
 }

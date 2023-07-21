@@ -23,3 +23,4 @@ else
 	gameframe_spr_border = spr_gameframe_border;
 	gameframe_border_width = 2;
 }
+global.Pattern_Index += 0.1;
