@@ -68,8 +68,8 @@ switch async_load[? "event_type"]
 			//	show_message("You treated me well but this is by pure obligation");
 			//if a == "370924430324531200" or a == "748959499565662360" // Laterance
 			//	show_message("The Trout nation will crumble");
-			//if a == "639062328276418571" // Manios
-			//	show_message("Again, go fuck yourself.");
+			if a == "639062328276418571" // Manios
+				show_message("Again, go fuck yourself.");
 		}
 		
 		// lockout
@@ -115,7 +115,7 @@ switch async_load[? "event_type"]
 			"724447494372851783", // khaliliscre
 			"748743802608418896", // Croatian Commander
 			"370924430324531200", // Laterance (trout)
-			"748959499565662360", // Laterance (pickleanon)
+			"748959499565662360", // Laterance (pickleanon)xcc 
 			"590968392211759124", // Nicole
 			"463132674995781637", // SpectralScrubs
 			"841302295085580298", // SuperPiter (StS asked me to)
