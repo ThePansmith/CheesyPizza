@@ -20,6 +20,9 @@ function create_afterimage(_x, _y, _sprite, _image_index)
 }
 function create_mach3effect(_x, _y, _sprite, _image_index, _afterimage = false)
 {
+	if object_index == obj_player1 && _sprite == sprite_index
+		_sprite = player_sprite();
+	
 	var q = 
 	{
 		x: _x,
@@ -91,6 +94,9 @@ function create_heatattack_afterimage(_x, _y, _sprite, _image_index, _xscale)
 }
 function create_firemouth_afterimage(_x, _y, _sprite, _image_index, _xscale)
 {
+	if object_index == obj_player1 && _sprite == sprite_index
+		_sprite = player_sprite();
+	
 	var b = create_afterimage(_x, _y, _sprite, _image_index);
 	with (b)
 	{
@@ -112,6 +118,9 @@ function create_firemouth_afterimage(_x, _y, _sprite, _image_index, _xscale)
 }
 function create_blue_afterimage(_x, _y, _sprite, _image_index, _xscale)
 {
+	if object_index == obj_player1 && _sprite == sprite_index
+		_sprite = player_sprite();
+	
 	if global.afterimage == 1
 	{
 		var b = create_afterimage(_x, _y, _sprite, _image_index);
@@ -150,6 +159,9 @@ function create_red_afterimage(_x, _y, _sprite, _image_index, _xscale)
 }
 function create_blur_afterimage(_x, _y, _sprite, _image_index, _xscale)
 {
+	if object_index == obj_player1 && _sprite == sprite_index
+		_sprite = player_sprite();
+	
 	var b = create_afterimage(_x, _y, _sprite, _image_index);
 	with (b)
 	{

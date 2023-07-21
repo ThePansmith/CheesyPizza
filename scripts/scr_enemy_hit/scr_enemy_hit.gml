@@ -25,7 +25,7 @@ function scr_enemy_hit()
 		var _state = obj_player.state;
 		if (_state == states.chainsaw)
 			_state = obj_player.tauntstoredstate;
-		if (_state == states.mach2 or _state == states.tumble or (_state == states.machslide && obj_player.sprite_index != obj_player.spr_mach3boost && obj_player.sprite_index != spr_player_machslideboost3fall) or sprite_index == spr_player_ratmountattack or sprite_index == spr_lonegustavo_dash)
+		if (_state == states.mach2 or _state == states.tumble or (_state == states.machslide && obj_player.sprite_index != obj_player.spr_mach3boost && obj_player.sprite_index != spr_machslideboost3fall) or sprite_index == spr_player_ratmountattack or sprite_index == spr_lonegustavo_dash)
 			thrown = false;
 		else
 			thrown = true;

@@ -39,7 +39,7 @@ else
 	hsp = 0;
 	vsp = 0;
 	
-	if spr_supertaunt == -1
+	if spr_supertaunt == -4
 		spr_supertaunt = spr_intro;
 	
 	if (sprite_index != spr_supertaunt)

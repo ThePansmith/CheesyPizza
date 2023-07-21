@@ -14,7 +14,7 @@ function scr_player_antigrav()
 		sprite_index = spr_machfreefall;
 		sound_play_oneshot_3d("event:/sfx/antigrav/end", x, y);
 	}
-	if (scr_solid(x, y - 1))
+	if (scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_ratblock) && !place_meeting(x, y - 1, obj_destructibles))
 	{
 		GamepadSetVibration(0, 0.6, 0.6, 0.2);
 		sound_play_oneshot_3d("event:/sfx/antigrav/bump", x, y);

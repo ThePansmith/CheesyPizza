@@ -76,7 +76,7 @@ function draw_enemy(healthbar, palette, color = c_white)
 	var _stun = 0;
 	if ((state == states.stun && thrown == 0 && object_index != obj_peppinoclone) || state == states.pizzaheadjump || (state == states.supergrab && sprite_index == stunfallspr))
 		_stun = 25;
-	if (state == states.pizzaheadjump && object_index == obj_gustavograbbable) or object_index == obj_junk
+	if (state == states.pizzaheadjump && object_index == obj_gustavograbbable) or object_index == obj_junkNEW
 		_stun = 0;
 	
 	if (visible && object_index != obj_pizzaball && object_index != obj_fakesanta && bbox_in_camera(view_camera[0], 32))
@@ -186,7 +186,7 @@ function draw_player()
 		ps = gustavo_palette(ps);
 	}
 	pal_swap_set(spr, ps % sprite_get_width(spr), false);
-	draw_sprite_ext(sprite_index, image_index, x + smoothx, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+	draw_sprite_ext(player_sprite(), image_index, x + smoothx, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
 	if (global.noisejetpack)
 	{
 		pal_swap_set(spr_peppalette, 2, false);

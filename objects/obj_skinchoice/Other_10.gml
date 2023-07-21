@@ -63,6 +63,7 @@ switch character
 		add_palette(53, "", noone, "Orange Juice", "Hey Apple", "ORANGE");
 		add_palette(54, "", noone, "Pasta Power", "The princess is in another castle.", "JUMPMAN");
 		add_palette(55, "", noone, "Sucrose Snowstorm", "A little sweetness never hurts.", "SWEET");
+		add_palette(56, "", noone, "Peter", "Griffin");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "When you spam Big Chungus in general.");
@@ -203,6 +204,7 @@ switch character
 		add_palette(22, "", noone, "The Noid", "Better avoid him.", "NOID");
 		add_palette(23, "", noone, "Galaxy", "Wow it is Just like the Samsung Galaxy S23", "GALAXY");
 		add_palette(24, "", noone, "Concept", "The original.");
+		add_palette(25, "", noone, "Chungus", "Big");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "10 years behind bars for spamming Big Chungus.");
@@ -524,6 +526,7 @@ switch character
 		add_palette(53, "", noone, "Orange Juice", desc, "FUCKED UP");
 		add_palette(54, "", noone, "Pasta Power", desc, "FUCKED UP");
 		add_palette(55, "", noone, "Sucrose Snowstorm", desc, "FUCKED UP");
+		add_palette(56, "", noone, "Homero", "Simpson");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "LOL LMFA");

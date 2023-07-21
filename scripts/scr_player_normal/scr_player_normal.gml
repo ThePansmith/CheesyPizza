@@ -150,8 +150,8 @@ function state_player_normal()
 				if (!global.pistol && !shotgunAnim && sprite_index != spr_idle1 && sprite_index != spr_idle2 && sprite_index != spr_idle3 && sprite_index != spr_idle4 && sprite_index != spr_idle5 && sprite_index != spr_idle6)
 				{
 					idleanim = random_range(0, 100);
-					if (irandom(100) <= 25 && character == "P")
-						sound_play_oneshot_3d("event:/sfx/voice/myea", x, y);
+					if (irandom(100) <= 25)
+						sound_play_oneshot_3d(snd_voicemyea, x, y);
 					image_index = 0;
 					if (idleanim <= 16)
 						sprite_index = spr_idle1;

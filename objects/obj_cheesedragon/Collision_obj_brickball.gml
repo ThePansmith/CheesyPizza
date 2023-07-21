@@ -1,1 +1,1 @@
-event_perform(ev_collision, obj_junk);
+event_perform(ev_collision, obj_junkNEW);

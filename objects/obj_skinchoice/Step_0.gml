@@ -146,7 +146,7 @@ if move_hor != 0
 }
 */
 
-if move_hor != 0
+if key_left != 0 or key_right != 0
 {
 	if arrowbufferH == -1
 		arrowbufferH = 20;
@@ -156,7 +156,7 @@ if move_hor != 0
 else
 	arrowbufferH = -1;
 
-if move_ver != 0
+if key_up != 0 or key_down != 0
 {
 	if arrowbufferV == -1
 		arrowbufferV = 20;

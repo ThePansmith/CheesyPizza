@@ -269,6 +269,8 @@ add_music(PP_room1, "event:/modded/level/oldtutorial", "event:/music/pillarmusic
 add_music(etb_1, "event:/modded/level/oldtutorial", "event:/music/w1/ruinsecret", 0, function(room, event, event_secret)
 {
 	var s = room == etb_1 ? 0 : 1;
+	if s == 1 && check_skin(SKIN.p_peter)
+		s = 2;
 	fmod_event_instance_set_parameter(event, "state", s, false);
 });
 

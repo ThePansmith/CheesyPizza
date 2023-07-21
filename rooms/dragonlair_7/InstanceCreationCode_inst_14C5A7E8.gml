@@ -1,1 +1,1 @@
-content = obj_junk;
+content = obj_junkNEW;

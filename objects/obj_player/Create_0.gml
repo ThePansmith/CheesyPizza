@@ -84,6 +84,15 @@ function player_init_sounds()
 		snd_voicetransfo = fmod_event_create_instance("event:/sfx/voice/transfo");
 		snd_voiceouttransfo = fmod_event_create_instance("event:/sfx/voice/outtransfo");
 		snd_voicehurt = fmod_event_create_instance("event:/sfx/voice/hurt");
+		snd_voicemyea = "event:/sfx/voice/myea";
+	}
+	else if character == "SP"
+	{
+		snd_voiceok = fmod_event_create_instance("event:/modded/sfx/voice/okSP");
+		snd_voicetransfo = fmod_event_create_instance("event:/modded/sfx/voice/transfoSP");
+		snd_voiceouttransfo = fmod_event_create_instance("event:/modded/sfx/voice/outtransfoSP");
+		snd_voicehurt = fmod_event_create_instance("event:/modded/sfx/voice/hurtSP");
+		snd_voicemyea = "event:/modded/sfx/voice/myeaSP";
 	}
 	else if character == "N"
 	{
@@ -91,6 +100,7 @@ function player_init_sounds()
 		snd_voicetransfo = fmod_event_create_instance("event:/sfx/voice/noisenegative");
 		snd_voiceouttransfo = fmod_event_create_instance("event:/sfx/voice/noisepositive");
 		snd_voicehurt = fmod_event_create_instance("event:/sfx/voice/noisenegative");
+		snd_voicemyea = "event:/nosound";
 	}
 	else if character == "V"
 	{
@@ -98,6 +108,7 @@ function player_init_sounds()
 		snd_voicetransfo = fmod_event_create_instance("event:/sfx/voice/vigiangry");
 		snd_voiceouttransfo = fmod_event_create_instance("event:/sfx/voice/vigiduel");
 		snd_voicehurt = fmod_event_create_instance("event:/sfx/voice/vigiduel");
+		snd_voicemyea = "event:/nosound";
 	}
 	else
 	{
@@ -105,6 +116,7 @@ function player_init_sounds()
 		snd_voicetransfo = fmod_event_create_instance("event:/nosound");
 		snd_voiceouttransfo = fmod_event_create_instance("event:/nosound");
 		snd_voicehurt = fmod_event_create_instance("event:/nosound");
+		snd_voicemyea = "event:/nosound";
 	}
 	
 	// fireass

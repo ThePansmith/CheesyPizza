@@ -422,7 +422,6 @@ function scr_characterspr()
 		spr_clownwallclimb = spr_playerN_clownwallclimb;
 		spr_downpizzabox = spr_playerN_downpizzabox;
 		spr_uppizzabox = spr_playerN_uppizzabox;
-		spr_taunt = spr_playerN_dab;
 		spr_slipnslide = spr_playerN_slipnslide;
 		spr_mach3boost = spr_playerN_mach3boost;
 		spr_facehurtup = spr_playerN_facehurtup;
@@ -553,6 +552,8 @@ function scr_characterspr()
 		spr_kungfuair1transition = spr_playerN_kungfuair1transition;
 		spr_kungfuair2transition = spr_playerN_kungfuair2transition;
 		spr_kungfuair3transition = spr_playerN_kungfuair3transition;
+		spr_machslideboostfall = spr_playerN_machslideboostfall;
+		spr_machslideboost3fall = spr_playerN_machslideboost3fall;
 		spr_palette = spr_noisepalette;
 		paletteselect = 0;
 	}

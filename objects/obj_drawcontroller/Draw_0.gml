@@ -152,7 +152,7 @@ shader_set(shd_hit);
 with (obj_player1)
 {
 	if (visible && flash && bbox_in_camera(view_camera[0], 32))
-		draw_sprite_ext(sprite_index, image_index, x + smoothx, y, xscale, yscale, image_angle, image_blend, image_alpha);
+		draw_sprite_ext(player_sprite(), image_index, x + smoothx, y, xscale, yscale, image_angle, image_blend, image_alpha);
 }
 shader_reset();
 

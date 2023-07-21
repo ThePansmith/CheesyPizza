@@ -200,23 +200,50 @@ postdraw = function(curve)
 }
 draw = function(curve)
 {
+	// animation
 	var curve2 = anim_t;
-	
-	var pal = palettes[sel.pal];
 	if anim_con != 0
 	{
 		curve = 1; // actual animated curve
 		curve2 = 1; // the timer
 	}
 	
+	// drawer
+	var pal = palettes[sel.pal];
 	if anim_con != 2 or obj_player1.visible
 	{
-		// character
 		var charx = 960 / 5 + charshift[0] * 75, chary = 540 / 2 - 16 + charshift[1] * 75;
 		
+		// special skins
 		if characters[sel.char][0] == "N"
+		{
 			characters[sel.char][1] = noisetype ? spr_playerN_pogofall : spr_playerN_idle;
+			if check_skin(SKIN.n_chungus, "N", pal.palette)
+			{
+				characters[sel.char][1] = spr_playerN_chungus;
+				if noisetype == 1
+				{
+					draw_set_font(global.font_small);
+					draw_set_align(fa_center);
+					draw_set_colour(c_white);
+					draw_text(charx, chary - 68, "Pogo");
+				}
+			}
+		}
+		if characters[sel.char][0] == "P"
+		{
+			characters[sel.char][1] = spr_player_idle;
+			if check_skin(SKIN.p_peter, "P", pal.palette)
+				characters[sel.char][1] = spr_player_petah;
+		}
+		if characters[sel.char][0] == "PN"
+		{
+			characters[sel.char][1] = spr_playerPN_idle;
+			if check_skin(SKIN.pn_homer, "PN", pal.palette)
+				characters[sel.char][1] = spr_playerPN_homer;
+		}
 		
+		// character
 		shader_set(global.Pal_Shader);
 		if pal.texture != noone
 			pattern_set(global.Base_Pattern_Color, characters[sel.char][1], -1, 2, 2, pal.texture);	
@@ -302,8 +329,21 @@ draw = function(curve)
 		if flashpal[0] == i
 			draw_set_flash();
 		
-		if mixing or array[i].texture == noone or flashpal[0] == i
+		// special skins
+		var fuck = -1;
+		for(var j = 0; j < SKIN.enum_size; j++)
+		{
+			if check_skin(j, characters[sel.char][0], array[i].palette)
+			{
+				fuck = j;
+				break;
+			}
+		}
+		
+		if ((mixing or array[i].texture == noone) && fuck < 0) or flashpal[0] == i
 			draw_sprite_ext(spr_skinchoicepalette, 0, 408 + xdraw, 70 + ydraw, 1, 1, 0, pal_swap_get_pal_color(palspr, array[i].palette, characters[sel.char][3][mixing]), 1);
+		else if fuck >= 0
+			draw_sprite_ext(spr_skinchoicecustom, fuck, 408 + xdraw, 70 + ydraw, 1, 1, 0, c_white, 1);
 		else
 		{
 			scr_palette_texture(spr_skinchoicepalette, 0, 408 + xdraw, 70 + ydraw, 1, 1, 0, c_white, 1, true, array[i].texture);
@@ -320,7 +360,7 @@ draw = function(curve)
 	}
 	
 	// hand
-	draw_sprite_ext(spr_skinchoicehand, 0, handx, handy, 2, 2, 0, c_white, 1);
+	draw_sprite_ext(spr_skinchoicehand, 0, handx, handy + sin(current_time / 1000) * 4, 2, 2, 0, c_white, 1);
 	draw_set_align();
 }
 handx = 960 / 2;
