@@ -18,15 +18,17 @@ bg_image = random(3);
 mixingfade = 0;
 
 image_speed = 0.35;
-depth = -500;
+depth = -450;
 
 // control
 init = false;
 postdraw = -1;
 draw = -1;
 select = -1;
-arrowbuffer = -1;
+arrowbufferH = -1;
+arrowbufferV = -1;
 mixing = false;
+noisetype = 0;
 
 scr_init_input();
 stickpressed_vertical = true;
@@ -111,6 +113,7 @@ if instance_exists(obj_player1)
 		if pchar == characters[i][0]
 			sel.char = i;
 	}
+	noisetype = obj_player1.noisetype;
 }
 
 // DO THE FUNNY
@@ -122,7 +125,7 @@ select = function()
 	var same = false;
 	with obj_player1
 	{
-		var prevchar = character, prevpal = paletteselect, prevtex = global.palettetexture;
+		var prevchar = character, prevpal = paletteselect, prevtex = global.palettetexture, prevnoise = noisetype;
 		
 		// apply it
 		character = other.characters[other.sel.char][0];
@@ -146,9 +149,10 @@ select = function()
 		else
 			paletteselect = other.palettes[other.sel.pal].palette;
 		global.palettetexture = other.palettes[other.sel.pal].texture;
+		noisetype = other.noisetype;
 		
 		// if nothing changed, don't save
-		if character == prevchar && paletteselect == prevpal && global.palettetexture == prevtex
+		if character == prevchar && paletteselect == prevpal && global.palettetexture == prevtex && noisetype == prevnoise
 			same = true;
 		
 		if !same
@@ -210,6 +214,9 @@ draw = function(curve)
 		// character
 		var charx = 960 / 5 + charshift[0] * 75, chary = 540 / 2 - 16 + charshift[1] * 75;
 		
+		if characters[sel.char][0] == "N"
+			characters[sel.char][1] = noisetype ? spr_playerN_pogofall : spr_playerN_idle;
+		
 		shader_set(global.Pal_Shader);
 		if pal.texture != noone
 			pattern_set(global.Base_Pattern_Color, characters[sel.char][1], -1, 2, 2, pal.texture);	
@@ -259,9 +266,9 @@ draw = function(curve)
 	{
 		var char = string_char_at(name, i);
 		
-		var yy = 400;
+		var yy = 360;
 		if curve2 != 1 // letters jump up
-			yy = lerp(540, 400, min(animcurve_channel_evaluate(outback, curve2 + ((i % 3) * 0.075))));
+			yy = lerp(540, 370, min(animcurve_channel_evaluate(outback, curve2 + ((i % 3) * 0.075))));
 		
 		draw_text(xx + random_range(-1, 1), yy + random_range(-1, 1), char);
 		xx += string_width(char);
@@ -270,7 +277,7 @@ draw = function(curve)
 	draw_set_halign(fa_center);
 	draw_set_alpha(curve);
 	draw_set_font(global.font_small);
-	draw_text_ext(960 / 1.5, 450, desc, 16, 960 - 32);
+	draw_text_ext(960 / 1.5, 400, desc, 16, 960 - 32);
 	draw_set_alpha(1);
 	
 	// palettes

@@ -421,6 +421,7 @@ function state_player_jump()
 				{
 					sprite_index = !key_up ? spr_playerN_jetpackstart : spr_superjumpprep;
 					sound_play_3d(sfx_woag, x, y)
+					jetpackcancel = true;
 					if sprite_index == spr_playerN_jetpackstart && REMIX
 						sound_play_3d(sfx_jetpackstart, x, y)
 					image_index = 0;

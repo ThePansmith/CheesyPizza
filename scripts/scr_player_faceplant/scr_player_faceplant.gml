@@ -9,7 +9,7 @@ function scr_player_faceplant()
 	//	movespeed = 10;
 	
 	// jump out
-	if input_buffer_jump > 0 && can_jump
+	if input_buffer_jump > 0 && can_jump && (character != "N" or noisetype == 0)
 	{
 		scr_fmod_soundeffect(jumpsnd, x, y);
 		input_buffer_jump = 0;
@@ -24,7 +24,7 @@ function scr_player_faceplant()
 	}
 	
 	// dive
-	if key_down
+	if key_down && (character != "N" or noisetype == 0)
 	{
 		particle_set_scale(particle.jumpdust, xscale, 1);
 		create_particle(x, y, particle.jumpdust, 0);
@@ -61,17 +61,14 @@ function scr_player_faceplant()
 			}
 		}
 	}
-	if (floor(image_index) == (image_number - 1) && !key_attack)
+	if floor(image_index) == image_number - 1
 	{
 		image_speed = 0.35;
-		state = states.normal;
-		grav = 0.5;
-	}
-	if (floor(image_index) == (image_number - 1) && key_attack)
-	{
-		image_speed = 0.35;
-		state = states.mach2;
-		grav = 0.5;
+		grav = 0.35;
+		if !key_attack or (character == "N" && noisetype == 1)
+			state = states.normal;
+		else
+			state = states.mach2;
 	}
 	if (key_down && grounded && vsp > 0)
 	{

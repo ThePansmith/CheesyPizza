@@ -262,7 +262,10 @@ function scr_player_punch()
 			jumpstop = false;
 			image_index = 0;
 			vsp = -11;
-			state = states.mach2;
+			if character == "N" && noisetype == 1
+				state = states.jump;
+			else
+				state = states.mach2;
 			movespeed = max(movespeed, 6);
 			
 			if character == "P" or character == "PN" or character == "BN"
@@ -313,7 +316,7 @@ function scr_player_punch()
 					if (move != xscale && move != 0)
 						movespeed = 2;
 					*/
-					if key_attack
+					if key_attack && !(character == "N" && noisetype == 1)
 					{
 						if move != 0
 							xscale = move;
@@ -345,7 +348,7 @@ function scr_player_punch()
 		{
 			if grounded && vsp >= 0
 			{
-				if key_attack && movespeed > 0
+				if key_attack && movespeed > 0 && !(character == "N" && noisetype == 1)
 				{
 					if move != 0
 						xscale = move;
@@ -392,7 +395,7 @@ function scr_player_punch()
 		{
 			if ledge_bump(32)
 			{
-				if !grounded or scr_slope()
+				if (!grounded or scr_slope()) && !(character == "N" && noisetype == 1)
 				{
 					if !place_meeting(x + hsp, y, obj_unclimbablewall)
 						wallspeed = movespeed;

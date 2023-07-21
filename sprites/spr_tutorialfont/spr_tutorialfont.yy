@@ -201,8 +201,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "hubgroup",
-    "path": "texturegroups/hubgroup",
+    "name": "hudgroup",
+    "path": "texturegroups/hudgroup",
   },
   "type": 0,
   "VTile": false,

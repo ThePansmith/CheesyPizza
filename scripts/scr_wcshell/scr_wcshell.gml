@@ -19,6 +19,7 @@ function scr_wc_create()
 	ds_map_add(WC_builtins, "infinity", infinity);
 	ds_map_add(WC_builtins, "true", true);
 	ds_map_add(WC_builtins, "false", false);
+	ds_map_add(WC_builtins, "noone", noone);
 	
 	// all command aliases
 	WCscr_altname("clear", "cls");

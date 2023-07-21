@@ -1,51 +1,93 @@
 function scr_player_Sjumpprep()
 {
-	if (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpright || sprite_index == spr_superjumpleft)
-		move = key_left + key_right;
-	else
-		move = xscale;
-	if (!place_meeting(x, y + 1, obj_railparent))
-		hsp = move * movespeed;
-	else
+	if character != "N" or noisetype == 0
 	{
-		var _railinst = instance_place(x, y + 1, obj_railparent);
-		hsp = (move * movespeed) + (_railinst.movespeed * _railinst.dir);
-	}
-	if (sprite_index == spr_superjumpprep)
-		movespeed = Approach(movespeed, 0, 1);
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_superjumpprep)
-		sprite_index = spr_superjumppreplight;
-	if (sprite_index == spr_superjumppreplight)
-		movespeed = 2;
-	if (sprite_index != spr_superjumpprep)
-	{
-		if (move != 0 && (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpright || sprite_index == spr_superjumpleft))
+		if (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpright || sprite_index == spr_superjumpleft)
+			move = key_left + key_right;
+		else
+			move = xscale;
+		if (!place_meeting(x, y + 1, obj_railparent))
+			hsp = move * movespeed;
+		else
 		{
-			if (xscale == 1)
+			var _railinst = instance_place(x, y + 1, obj_railparent);
+			hsp = (move * movespeed) + (_railinst.movespeed * _railinst.dir);
+		}
+		if (sprite_index == spr_superjumpprep)
+			movespeed = Approach(movespeed, 0, 1);
+		if (floor(image_index) == (image_number - 1) && sprite_index == spr_superjumpprep)
+			sprite_index = spr_superjumppreplight;
+		if (sprite_index == spr_superjumppreplight)
+			movespeed = 2;
+		if (sprite_index != spr_superjumpprep)
+		{
+			if (move != 0 && (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpright || sprite_index == spr_superjumpleft))
 			{
-				if (key_right)
-					sprite_index = spr_superjumpright;
-				if (-key_left)
-					sprite_index = spr_superjumpleft;
+				if (xscale == 1)
+				{
+					if (key_right)
+						sprite_index = spr_superjumpright;
+					if (-key_left)
+						sprite_index = spr_superjumpleft;
+				}
+				if (xscale == -1)
+				{
+					if (key_right)
+						sprite_index = spr_superjumpleft;
+					if (-key_left)
+						sprite_index = spr_superjumpright;
+				}
 			}
-			if (xscale == -1)
+			else
+				sprite_index = spr_superjumppreplight;
+		}
+		if (!scr_check_superjump() && grounded && (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpleft || sprite_index == spr_superjumpright) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
+		{
+			instance_create(x, y, obj_explosioneffect);
+			sprite_index = spr_superjump;
+			state = states.Sjump;
+			vsp = -17;
+			image_index = 0;
+		}
+		image_speed = 0.35;
+	}
+	else
+	{
+		hsp = 0;
+		vsp = 0;
+		pogochargeactive = false;
+		pogocharge = 50;
+		if (floor(image_index) == (image_number - 1))
+		{
+			if (sprite_index == spr_playerN_jetpackstart)
 			{
-				if (key_right)
-					sprite_index = spr_superjumpleft;
-				if (-key_left)
-					sprite_index = spr_superjumpright;
+				if (pizzapepper == 0)
+				{
+					state = states.mach3;
+					sprite_index = spr_playerN_jetpackboost;
+					instance_create(x, y, obj_jumpdust);
+					movespeed = 15;
+				}
+				else
+				{
+					state = states.mach3;
+					sprite_index = spr_crazyrun;
+					instance_create(x, y, obj_jumpdust);
+					movespeed = 21;
+				}
+			}
+			else if (sprite_index == spr_superjumpprep)
+			{
+				fmod_event_instance_set_parameter(superjumpsnd, "state", 2, true);
+				instance_create(x, y, obj_explosioneffect);
+				sprite_index = spr_superjump;
+				state = states.Sjump;
+				vsp = -15;
 			}
 		}
+		if (sprite_index == spr_playerN_jetpackstart)
+			image_speed = 0.5;
 		else
-			sprite_index = spr_superjumppreplight;
+			image_speed = 0.3;
 	}
-	if (!scr_check_superjump() && grounded && (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpleft || sprite_index == spr_superjumpright) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
-	{
-		instance_create(x, y, obj_explosioneffect);
-		sprite_index = spr_superjump;
-		state = states.Sjump;
-		vsp = -17;
-		image_index = 0;
-	}
-	image_speed = 0.35;
 }

@@ -19,7 +19,7 @@ function scr_player_tumble()
 	mask_index = spr_crouchmask;
 	if (sprite_index == spr_tumblestart)
 		movespeed = 6;
-	if (!grounded && (sprite_index == spr_crouchslip || sprite_index == machrollspr || sprite_index == spr_mach2jump || sprite_index == spr_backslide || sprite_index == spr_backslideland))
+	if (!grounded && (sprite_index == spr_crouchslip || sprite_index == machrollspr || sprite_index == spr_mach2jump || sprite_index == spr_backslide || sprite_index == spr_backslideland) && !(character == "N" && noisetype == 1))
 	{
 		vsp = 10;
 		sprite_index = divespr;
@@ -63,7 +63,7 @@ function scr_player_tumble()
 		image_index = 0;
 		sprite_index = machrollspr;
 	}
-	if (sprite_index == spr_crouchslip && !grounded)
+	if (sprite_index == spr_crouchslip && !grounded && character == "P")
 		sprite_index = spr_player_jumpdive2;
 	if (sprite_index == spr_player_Sjumpcancelland && floor(image_index) == (image_number - 1))
 		sprite_index = spr_player_Sjumpcancelslide;
@@ -136,9 +136,9 @@ function scr_player_tumble()
 	}
 	if (crouchslipbuffer > 0)
 		crouchslipbuffer--;
-	if (!key_down && key_attack && grounded && state != states.bump && (sprite_index != spr_tumble && sprite_index != spr_tumbleend) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32) && sprite_index != spr_player_breakdance)
+	if (!key_down && crouchslipbuffer <= 0 && grounded && state != states.bump && (sprite_index != spr_tumble && sprite_index != spr_tumbleend) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32) && sprite_index != spr_breakdance)
 	{
-		if (crouchslipbuffer == 0)
+		if key_attack && !(character == "N" && noisetype == 1)
 		{
 			particle_set_scale(particle.jumpdust, xscale, 1);
 			create_particle(x, y, particle.jumpdust);
@@ -157,17 +157,14 @@ function scr_player_tumble()
 			sprite_index = spr_rollgetup;
 			fmod_event_instance_play(rollgetupsnd);
 		}
-	}
-	if (!key_down && !key_attack && grounded && vsp > 0 && state != states.bump && (sprite_index != spr_tumble && sprite_index != spr_tumbleend) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32) && sprite_index != spr_player_breakdance)
-	{
-		if (crouchslipbuffer == 0)
+		else if vsp > 0
 		{
 			if isgustavo
 			{
 				movespeed = 0;
 				state = states.ratmount;
 			}
-			else if (movespeed > 6)
+			else if movespeed > 6 && !(character == "N" && noisetype == 1)
 			{
 				state = states.machslide;
 				sprite_index = spr_machslidestart;

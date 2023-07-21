@@ -12,7 +12,12 @@ else
 #region change palette
 
 var move_hor = key_left2 + key_right2;
+if arrowbufferH == 0
+	move_hor = key_left + key_right;
+
 var move_ver = key_down2 - key_up2;
+if arrowbufferV == 0
+	move_ver = key_down - key_up;
 
 if sel.side == 0 && anim_con != 2
 {
@@ -134,22 +139,37 @@ if move_hor != 0
 		}
 	}
 	
-	if arrowbuffer == -1
-		arrowbuffer = 20;
-	else
-		arrowbuffer = 4;
+	
 	
 	flashpal[0] = sel.pal;
 	flashpal[1] = 4;
 }
 */
 
-/*
-if key_left == 0 && key_right == 0
-	arrowbuffer = -1;
-if arrowbuffer > 0
-	arrowbuffer--;
-*/
+if move_hor != 0
+{
+	if arrowbufferH == -1
+		arrowbufferH = 20;
+	else
+		arrowbufferH = 4;
+}
+else
+	arrowbufferH = -1;
+
+if move_ver != 0
+{
+	if arrowbufferV == -1
+		arrowbufferV = 20;
+	else
+		arrowbufferV = 4;
+}
+else
+	arrowbufferV = -1;
+
+if arrowbufferH > 0
+	arrowbufferH--;
+if arrowbufferV > 0
+	arrowbufferV--;
 
 if flashpal[1] > 0
 	flashpal[1]--;
@@ -159,7 +179,12 @@ else
 #endregion
 #region palette mixing
 
-mixing = (sel.side == 1 && palettes[sel.pal].texture != noone && key_attack);
+mixing = false;
+if array_length(mixables) > 1 && sel.side == 1 && palettes[sel.pal].texture != noone
+{
+	create_transformation_tip("{u}[M] Mix Palettes/", "palettemixing");
+	mixing = key_attack;
+}
 mixingfade = Approach(mixingfade, mixing, 0.3);
 
 #endregion
@@ -182,3 +207,13 @@ if anim_con != 0 && anim_t <= 0
 // select
 if key_jump && is_method(select) && anim_t >= 1
 	select();
+
+if characters[sel.char][0] == "N"
+{
+	create_transformation_tip("{u}[T] Toggle Pogo/", "noisetype");
+	if key_taunt2
+	{
+		sound_play(sfx_step);
+		noisetype = !noisetype;
+	}
+}

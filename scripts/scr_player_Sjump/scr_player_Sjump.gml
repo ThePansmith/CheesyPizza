@@ -81,10 +81,11 @@ function scr_player_Sjump()
 		{
 			sound_play_oneshot_3d(sfx_woag, x, y);
 			
-			if input_buffer_slap > 0
+			if input_buffer_slap > 0 or noisetype == 1
 			{
 				jetpackcancel = true;
-				sound_play_oneshot_3d(sfx_jetpackstart, x, y);
+				if REMIX
+					sound_play_oneshot_3d(sfx_jetpackstart, x, y);
 			}
 			else
 				fmod_event_instance_play(sjumpcancelsnd);

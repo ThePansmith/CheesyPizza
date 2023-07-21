@@ -1,7 +1,7 @@
 fade_alpha -= 0.1;
 
 // restart the disclaimer if you turn on your internet
-if net != os_is_network_connected(false)
+if !net && net != os_is_network_connected(false)
 	room_restart();
 
 // animation

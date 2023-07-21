@@ -33,7 +33,6 @@ if (vsp < 0)
 	coyote_time = 0;
 can_jump = (grounded && vsp > 0) or (coyote_time && vsp > 0);
 
-var prevmask = mask_index;
 if (state != states.grab)
 	swingdingthrow = false;
 
@@ -1204,7 +1203,7 @@ if (state != states.jump)
 
 // mach effect
 var do_macheffect = (state == states.mach3 || (state == states.ghost && ghostdash && ghostpepper >= 3) || state == states.mach2 || state == states.Sjump || ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
-or ((abs(movespeed) >= 10 or sprite_index == spr_crazyrun) && character == "S")
+or ((abs(movespeed) >= 10 or sprite_index == spr_crazyrun) && character == "S") or (character == "N" && noisetype == 1 && pogochargeactive)
 
 if do_macheffect
 {
@@ -1343,6 +1342,8 @@ smoothx = Approach(smoothx, 0, 4);
 // pto extra
 if state != states.mach3 && state != states.Sjump
 	jetpackcancel = false;
+if character == "N" && noisetype == 1
+	jetpackcancel = true;
 
 if !variable_global_exists("anon")
 {

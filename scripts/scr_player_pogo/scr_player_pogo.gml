@@ -23,6 +23,7 @@ function scr_player_pogo()
 		pogospeed = 6;
 	if (grounded && !key_slap2 && (sprite_index != spr_playerN_pogobounce && sprite_index != spr_playerN_pogobouncemach))
 	{
+		sound_play_3d(sfx_pogo, x, y);
 		pogospeedprev = false;
 		image_index = 0;
 		movespeed = 0;
@@ -66,24 +67,27 @@ function scr_player_pogo()
 	if (!key_attack)
 		state = states.normal;
 	image_speed = 0.35;
-	if (key_taunt2 && sprite_index != spr_playerN_pogobounce && sprite_index != spr_playerN_pogobouncemach)
+	
+	if sprite_index != spr_playerN_pogobounce && sprite_index != spr_playerN_pogobouncemach
+		scr_dotaunt();
+	
+	if REMIX
 	{
-		taunttimer = 20;
-		tauntstoredmovespeed = movespeed;
-		tauntstoredsprite = sprite_index;
-		tauntstoredstate = state;
-		state = states.backbreaker;
-		if (supercharged == 1)
+		// shut the fuck up denchick
+		if ((input_buffer_slap > 0 or input_buffer_grab > 0) && !key_up && !skateboarding && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
 		{
+			input_buffer_grab = 0;
+			input_buffer_slap = 0;
+			
+			sprite_index = shotgunAnim ? spr_shotgunsuplexdash : spr_suplexdash;
+			suplexmove = true;
+			fmod_event_instance_play(suplexdashsnd);
+			particle_set_scale(particle.jumpdust, xscale, 1);
+			create_particle(x, y, particle.jumpdust, 0);
+			state = states.handstandjump;
+			if (movespeed < 5)
+				movespeed = 5;
 			image_index = 0;
-			sprite_index = choose(spr_supertaunt1, spr_supertaunt2, spr_supertaunt3, spr_supertaunt4);
 		}
-		else
-		{
-			taunttimer = 20;
-			image_index = random_range(0, 11);
-			sprite_index = spr_taunt;
-		}
-		instance_create(x, y, obj_taunteffect);
 	}
 }

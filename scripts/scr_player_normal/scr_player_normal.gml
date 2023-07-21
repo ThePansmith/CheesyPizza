@@ -438,8 +438,9 @@ function state_player_normal()
 						state = states.Sjumpprep;
 						image_index = 0;
 						sprite_index = !key_up ? spr_playerN_jetpackstart : spr_superjumpprep;
+						jetpackcancel = true;
 						if sprite_index == spr_playerN_jetpackstart && REMIX
-							sound_play_3d(sfx_jetpackstart, x, y)
+							sound_play_3d(sfx_jetpackstart, x, y);
 						hsp = 0;
 						vsp = 0;
 					}
