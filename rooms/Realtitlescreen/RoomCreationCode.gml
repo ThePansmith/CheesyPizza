@@ -23,6 +23,7 @@ for (var i = 0; i < array_length(data_arr); i++)
 	global.game_john[i] = ini_read_real("Game", "john", false);
 	global.game_snotty[i] = ini_read_real("Game", "finalsnotty", false);
 	global.game_palette[i] = ini_read_real("Game", "palette", 1);
+	global.game_character[i] = ini_read_string("Game", "character", "P");
 	var _texture = ini_read_string("Game", "palettetexture", "none");
 	global.game_palettetexture[i] = scr_get_texture_palette(_texture);
 	for (var j = 0; j < array_length(achievement_arr); j++)

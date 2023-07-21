@@ -25,14 +25,15 @@ function add_option(name, variable, desc = "", drawfunc = noone)
 	array_push(options_array, struct);
 	return struct;
 }
-function add_button(name, desc = "", func = noone)
+function add_button(name, desc = "", func = noone, drawfunc = noone)
 {
 	var struct = {
 		type: 2,
 		value: 0,
 		name: name,
 		desc: desc,
-		func: func
+		func: func,
+		drawfunc: drawfunc
 	}
 	array_push(options_array, struct);
 	return struct;

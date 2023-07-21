@@ -291,7 +291,7 @@ draw = function(curve)
 			ydraw += random_range(-0.7, 0.7);
 		}
 		
-		draw_sprite_ext(spr_skinchoicepalette, 0, 3 + 408 + xdraw, 3 + 70 + ydraw, 1, 1, 0, c_black, 0.35);
+		draw_sprite_ext(spr_skinchoicepalette, 0, 2 + 408 + xdraw, 2 + 70 + ydraw, 1, 1, 0, c_black, 0.25);
 		if flashpal[0] == i
 			draw_set_flash();
 		

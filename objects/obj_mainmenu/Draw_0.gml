@@ -7,20 +7,31 @@ with (obj_menutv2)
 shader_set(global.Pal_Shader);
 var _x = SCREEN_WIDTH * 0.50625;
 var _y = y;
-var pal = obj_player1.paletteselect;
+
+var spr = sprite_index;
+var pal = 1;
 var tex = -4;
-if (currentselect != -1)
+if currentselect != -1
 {
-	pal = global.game_palette[currentselect];
-	tex = global.game_palettetexture[currentselect];
+	var char = global.game_character[currentselect];
+	if (char == "P" or char == "PN" or char == "G")
+	{
+		pal = global.game_palette[currentselect];
+		tex = global.game_palettetexture[currentselect];
+	
+		spr = asset_get_index(sprite_get_name(spr) + char);
+		if !sprite_exists(spr)
+			spr = sprite_index;
+	}
 }
 if (tex != -4)
-	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, tex);
+	pattern_set(global.Base_Pattern_Color, spr, image_index, image_xscale, image_yscale, tex);
 pal_swap_set(spr_peppalette, pal, false);
-draw_sprite_ext(sprite_index, image_index, _x, _y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+draw_sprite_ext(spr, image_index, _x, _y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 if (tex != -4)
     pattern_reset();
-shader_reset();
+pal_swap_reset();
+
 draw_set_font(lang_get_font("bigfont"));
 draw_set_halign(1);
 draw_set_valign(1);

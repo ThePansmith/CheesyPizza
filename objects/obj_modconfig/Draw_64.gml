@@ -69,95 +69,101 @@ draw_set_alpha(alpha);
 draw_text_color(2 + 700, 2 + 80, string_upper(opt.name), 0, 0, 0, 0, 0.25);
 draw_text(700, 80, string_upper(opt.name));
 
-if opt.type != 2
-{
-	var drawer = 0;
-	if is_callable(opt.drawfunc)
-		drawer = 1;
-	if is_array(opt.drawfunc)
-		drawer = 2;
+var drawer = 0;
+if is_callable(opt.drawfunc)
+	drawer = 1;
+else if is_array(opt.drawfunc) or sequence_exists(opt.drawfunc)
+	drawer = 2;
 	
-	draw_set_font(global.font_small);
-	draw_text_ext_color(2 + 700, 2 + 420, opt.desc, 18, 440, 0, 0, 0, 0, 0.25);
-	draw_text_ext(700, 420, opt.desc, 18, 440);
+draw_set_font(global.font_small);
+draw_text_ext_color(2 + 700, 2 + 420, opt.desc, 18, 440, 0, 0, 0, 0, 0.25);
+draw_text_ext(700, 420, opt.desc, 18, 440);
 
+if opt.type == 0
+{
 	draw_set_font(global.smallfont);
 	if opt.value < array_length(opt.opts)
 	{
 		draw_text_color(2 + 700, 2 + 116, opt.opts[opt.value][0], 0, 0, 0, 0, 0.25);
 		draw_text(700, 116, opt.opts[opt.value][0]);
 	}
+}
+
+gpu_set_blendmode(bm_normal);
+if drawer
+{
+	// roundrect background
+	var xx = 700, wd = 384;
+	var yy = 260, ht = 216;
 	
-	gpu_set_blendmode(bm_normal);
-	if drawer
+	draw_set_alpha(1);
+		
+	// DRAW IT
+	if is_callable(opt.drawfunc)
 	{
-		// roundrect background
-		var xx = 700, wd = 384;
-		var yy = 260, ht = 216;
-	
-		draw_set_alpha(1);
+		if !surface_exists(global.modsurf)
+			global.modsurf = surface_create(wd, ht);
 		
-		// DRAW IT
-		if is_callable(opt.drawfunc)
-		{
-			if !surface_exists(global.modsurf)
-				global.modsurf = surface_create(wd, ht);
-			
-			surface_set_target(global.modsurf);
-			draw_clear_alpha(c_black, 0);
-			
+		surface_set_target(global.modsurf);
+		draw_clear_alpha(c_black, 0);
+		
+		if opt.type == 0
 			opt.drawfunc(opt.opts[opt.value][1]);
-			
-			// white border
-			draw_set_colour(c_white);
-			draw_roundrect(0, 0, wd - 2, ht - 2, true);
-			
-			surface_reset_target();
-		}
 		else
-		{
-			// innovation
-			if !layer_exists(sequence_layer)
-			{
-				sequence_layer = layer_create(-1, "sequence_layer");
-				layer_sequence_create(sequence_layer, 0, 0, opt.drawfunc[opt.value]);
-				
-				layer_script_begin(sequence_layer, function()
-				{
-					if event_type == ev_draw && event_number == ev_draw_normal
-					{
-						if !surface_exists(global.modsurf)
-							global.modsurf = surface_create(384, 216);
-					
-						surface_set_target(global.modsurf);
-						draw_clear_alpha(c_black, 0);
-						gpu_set_blendmode(bm_normal);
-						
-						shader_set(global.Pal_Shader);
-						pal_swap_set(spr_peppalette, 1, false);
-					}
-				});
-				layer_script_end(sequence_layer, function()
-				{
-					if event_type == ev_draw && event_number == ev_draw_normal
-					{
-						// white border
-						draw_set_colour(c_white);
-						draw_roundrect(0, 0, 384 - 2, 216 - 2, true);
-						
-						surface_reset_target();
-						pal_swap_reset();
-					}
-				});
-			}
-		}
-		reset_blendmode();
+			opt.drawfunc();
 		
-		if surface_exists(global.modsurf)
+		// white border
+		draw_set_colour(c_white);
+		draw_roundrect(0, 0, wd - 2, ht - 2, true);
+			
+		surface_reset_target();
+	}
+	else
+	{
+		// innovation
+		if !layer_exists(sequence_layer)
 		{
-			/* shadow */ draw_surface_ext(global.modsurf, 3 + xx - wd / 2, 3 + yy - ht / 2, 1, 1, 0, 0, 0.25);
-			draw_surface(global.modsurf, xx - wd / 2, yy - ht / 2);
+			sequence_layer = layer_create(-1, "sequence_layer");
+			if is_array(opt.drawfunc)
+				layer_sequence_create(sequence_layer, 0, 0, opt.drawfunc[opt.value]);
+			else if sequence_exists(opt.drawfunc)
+				layer_sequence_create(sequence_layer, 0, 0, opt.drawfunc);
+			
+			layer_script_begin(sequence_layer, function()
+			{
+				if event_type == ev_draw && event_number == ev_draw_normal
+				{
+					if !surface_exists(global.modsurf)
+						global.modsurf = surface_create(384, 216);
+					
+					surface_set_target(global.modsurf);
+					draw_clear_alpha(c_black, 0);
+					gpu_set_blendmode(bm_normal);
+						
+					shader_set(global.Pal_Shader);
+					pal_swap_set(spr_peppalette, 1, false);
+				}
+			});
+			layer_script_end(sequence_layer, function()
+			{
+				if event_type == ev_draw && event_number == ev_draw_normal
+				{
+					// white border
+					draw_set_colour(c_white);
+					draw_roundrect(0, 0, 384 - 2, 216 - 2, true);
+						
+					surface_reset_target();
+					pal_swap_reset();
+				}
+			});
 		}
 	}
-	draw_set_alpha(1);
+	reset_blendmode();
+		
+	if surface_exists(global.modsurf)
+	{
+		/* shadow */ draw_surface_ext(global.modsurf, 3 + xx - wd / 2, 3 + yy - ht / 2, 1, 1, 0, 0, 0.25);
+		draw_surface(global.modsurf, xx - wd / 2, yy - ht / 2);
+	}
 }
+draw_set_alpha(1);
