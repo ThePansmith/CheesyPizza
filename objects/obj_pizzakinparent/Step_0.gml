@@ -38,16 +38,20 @@ else
 {
 	hsp = 0;
 	vsp = 0;
-	if (sprite_index != spr_intro)
+	
+	if spr_supertaunt == -1
+		spr_supertaunt = spr_intro;
+	
+	if (sprite_index != spr_supertaunt)
 	{
 		var s = obj_player1.sprite_index;
 		if (s == obj_player1.spr_supertaunt1 || s == obj_player1.spr_supertaunt2 || s == obj_player1.spr_supertaunt3 || s == obj_player1.spr_supertaunt4 || s == spr_player_ratmountsupertaunt)
 		{
-			sprite_index = spr_intro;
+			sprite_index = spr_supertaunt;
 			image_index = 0;
 		}
 	}
-	if (obj_player1.state != states.backbreaker || (sprite_index == spr_intro && floor(image_index) == (image_number - 1)))
+	if (obj_player1.state != states.backbreaker || (sprite_index == spr_supertaunt && floor(image_index) == image_number - 1))
 	{
 		instance_destroy(obj_tinytaunt);
 		interp = 0;

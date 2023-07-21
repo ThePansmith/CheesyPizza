@@ -15,4 +15,5 @@ if check_sugary()
 	spr_run = spr_gummyworm_run;
 	spr_panic = spr_gummyworm_panic;
 	spr_taunt = spr_gummyworm_taunt;
+	spr_supertaunt = spr_gummyworm_supertaunt;
 }

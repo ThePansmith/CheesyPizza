@@ -15,4 +15,5 @@ if check_sugary()
 	spr_run = spr_crack_run;
 	spr_panic = spr_crack_panic;
 	spr_taunt = spr_crack_taunt;
+	spr_supertaunt = spr_crack_supertaunt;
 }

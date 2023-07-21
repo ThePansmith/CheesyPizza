@@ -15,4 +15,5 @@ if check_sugary()
 	spr_run = spr_candy_run;
 	spr_panic = spr_candy_panic;
 	spr_taunt = spr_candy_taunt;
+	spr_supertaunt = spr_candy_supertaunt;
 }

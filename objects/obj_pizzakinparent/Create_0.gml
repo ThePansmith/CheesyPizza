@@ -18,5 +18,6 @@ spr_taunt = sprite_index;
 spr_intro_strongcold = sprite_index;
 spr_run_strongcold = sprite_index;
 spr_idle_strongcold = sprite_index;
+spr_supertaunt = -4;
 xprev = x;
 yprev = y;

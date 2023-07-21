@@ -1,6 +1,6 @@
 with (other)
 {
-	if scr_transformationcheck()
+	if scr_transformationcheck() or state == states.fireass
 	{
 		var _pindex = (object_index == obj_player1) ? 0 : 1;
 		GamepadSetVibration(_pindex, 1, 1, 0.85);
@@ -17,5 +17,5 @@ with (other)
 			fmod_event_instance_play(global.snd_fireass);
 	}
 	else
-		instance_destroy();
+		instance_destroy(other);
 }
