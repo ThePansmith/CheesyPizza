@@ -17,7 +17,7 @@ if (showgranny)
 		voicecooldown = 0;
 	if (place_meeting(x, y, obj_player))
 	{
-		sprite_index = spr_tutorialgranny_talk;
+		sprite_index = spr_talk;
 		if (voicecooldown == 0)
 		{
 			sound_play_oneshot_3d("event:/sfx/voice/pizzagranny", x, y);
@@ -25,7 +25,7 @@ if (showgranny)
 		}
 	}
 	else
-		sprite_index = spr_tutorialgranny_sleep;
+		sprite_index = spr_sleep;
 }
 
 var _hide = false;

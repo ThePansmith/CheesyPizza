@@ -15,13 +15,9 @@ if (_sound)
 	if REMIX
 	{
 		sound_stop(sfx_collectpizza);
-		
-		with obj_player1
-		{
-			if character == "SP"
-				fmod_event_instance_set_parameter(other.sound, "state", 1, false);
-		}
-		fmod_event_instance_play(sound);
+		if check_char("SP")
+			fmod_event_instance_set_parameter(global.snd_secretwall, "state", 1, false);
+		fmod_event_instance_play(global.snd_secretwall);
 	}
 	else if !check_sugary()
 		sound_play_oneshot("event:/sfx/misc/collectpizza");

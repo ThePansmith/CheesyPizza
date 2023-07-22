@@ -52,7 +52,7 @@ void main()
 			float fade_begin = u_secret_tile_fade_size * u_secret_tile_clip_distance;
 			
 			// Are WE in the bounds of the secret tiles?
-			if (rx_Vec4ContainsVec2(u_secret_tile_bounds, u_secret_tile_clip_position))
+			//if (rx_Vec4ContainsVec2(u_secret_tile_bounds, u_secret_tile_clip_position))
 			{
 				float fade = 0.0;
 				if (dist > fade_begin)

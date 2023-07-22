@@ -237,6 +237,7 @@ global.snd_slidersfx = fmod_event_create_instance("event:/sfx/ui/slidersfx");
 global.snd_slidermusic = fmod_event_create_instance("event:/sfx/ui/slidermusic");
 global.snd_slidermaster = fmod_event_create_instance("event:/sfx/ui/slidersfxmaster");
 global.snd_bossbeaten = fmod_event_create_instance("event:/sfx/misc/bossbeaten");
+global.snd_secretwall = fmod_event_create_instance("event:/modded/sfx/secretwall");
 
 uncrouch = 0;
 parryID = -4;
