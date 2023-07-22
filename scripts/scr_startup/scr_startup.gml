@@ -101,6 +101,7 @@ global.sloperot = false;
 global.inputdisplay = ini_read_real("Modded", "inputdisplay", false);
 global.showfps = ini_read_real("Modded", "showfps", false);
 global.afterimage = ini_read_real("Modded", "afterimage", 0); // final, eggplant
+global.smoothcam = ini_read_real("Modded", "smoothcam", 0);
 
 // gameframe
 global.gameframe_enabled = ini_read_real("Modded", "gameframe", true);

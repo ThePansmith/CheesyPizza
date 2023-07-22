@@ -71,3 +71,6 @@ bulletimage = 0;
 lag = 0;
 lagpos = undefined;
 greyscale = 0;
+smooth_buffer = 0;
+camx = 0;
+camy = 0;

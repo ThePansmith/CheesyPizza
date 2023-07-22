@@ -11,7 +11,7 @@ function string_is_number(str)
 	catch(str) {
 		return false;
 	}
-	return string(real(str)) == str;
+	return real(string(real(str))) == real(str);
 }
 function number_in_range(num, _min, _max)
 {

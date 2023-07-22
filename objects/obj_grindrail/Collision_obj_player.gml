@@ -23,11 +23,14 @@ if ((other.state != states.tumble || (other.sprite_index != other.spr_tumble && 
 				image_speed = 0.35;
 			}
 			brick = false;
+			
+			/*
 			with (obj_camera)
 			{
 				followtarget = other.id;
 				state = states.camera_followtarget;
 			}
+			*/
 		}
 		other.y = y + 8;
 		other.state = states.ratmountgrind;
