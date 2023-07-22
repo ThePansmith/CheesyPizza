@@ -25,11 +25,6 @@ bool rx_Vec4ContainsVec2(vec4 rect, vec2 pos)
 	return (rect.x <= pos.x && rect.y <= pos.y && rect.z >= pos.x && rect.w >= pos.y);
 }
 
-float rx_normalize_f(float min, float max, float value)
-{
-	return (max - value) / (max - min);
-}
-
 void main()
 {
 	// World Coord Reference
@@ -57,10 +52,8 @@ void main()
 				float fade = 0.0;
 				if (dist > fade_begin)
 					fade = (dist - fade_begin) / (u_secret_tile_clip_distance - fade_begin);
-				
 					
 				gameOutColor = vec4(gameOutColor.rgb, fade * u_secret_tile_fade_intensity);
-					
 			}
 				
 		}

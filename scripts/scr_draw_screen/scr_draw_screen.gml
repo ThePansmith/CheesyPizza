@@ -29,6 +29,17 @@ function scr_draw_screen(x, y, xscale, yscale, alpha = 1, gui = false)
 		shader_set_uniform_f(greyscalefade, gray);
 	}
 	
+	if (global.temp)
+	{
+		shader_set(shd_emboss);
+		var emboss_offset = shader_get_uniform(shd_emboss, "u_emboss_offset");
+		var emboss_contrast = shader_get_uniform(shd_emboss, "u_emboss_contrast");
+		var emboss_mix = shader_get_uniform(shd_emboss, "u_emboss_mix");
+		shader_set_uniform_f(emboss_offset, global.emboss_offset_x, global.emboss_offset_y);
+		shader_set_uniform_f(emboss_contrast, global.emboss_contrast);
+		shader_set_uniform_f(emboss_mix, global.emboss_mix);
+	}
+	
 	// draw the game
 	var mirror = check_modifier(MOD.Mirror) && !instance_exists(obj_rank);
 	draw_surface_ext(application_surface, x + (mirror ? surface_get_width(application_surface) * xscale : 0), y, xscale * (mirror ? -1 : 1), yscale, 0, c_white, alpha);
