@@ -1,6 +1,6 @@
 //
-// Simple passthrough fragment shader
-//
+// Colorblind Adjustment Filter
+// RadixComet
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
