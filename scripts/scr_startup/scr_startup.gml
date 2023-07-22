@@ -118,11 +118,16 @@ ini_close();
 global.sandbox = true;
 global.saveloaded = false;
 global.replayrecord = false;
+global.secrettile_clip_distance = 150; // RadixComet: What is the distance before we cut off tiles?
+global.secrettile_fade_size = 0.85; // RadixComet: How big is the distance before we start to fade?
+global.secrettile_fade_intensity = 1.0; // RadixComet: How Intense is the dropoff?
+
 // 0 - Protanopia
 // 1 - Deuteranopia
 // 2 - Tritanopia
 global.colorblind_type = -1;
 global.colorblind_intensity = 1.0;
+
 
 #macro heat_nerf 5 // divides the style gain by this
 #macro heat_lossdrop 0.1 // speed of global.style loss
