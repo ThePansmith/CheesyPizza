@@ -17,14 +17,10 @@ function scr_enemy_hit()
 	{
 		x = hitX;
 		y = hitY;
-		var _player = -4;
-		if (grabbedby == 1)
-			_player = obj_player1.id;
-		else if (grabbedby == 2)
-			_player = obj_player2.id;
-		var _state = obj_player.state;
+		var _player = obj_player1.id;
+		var _state = _player.state;
 		if (_state == states.chainsaw)
-			_state = obj_player.tauntstoredstate;
+			_state = _player.tauntstoredstate;
 		if (_state == states.mach2 or _state == states.tumble or (_state == states.machslide && _player.sprite_index != _player.spr_mach3boost && _player.sprite_index != _player.spr_machslideboost3fall) or sprite_index == spr_player_ratmountattack or sprite_index == spr_lonegustavo_dash)
 			thrown = false;
 		else
@@ -59,11 +55,11 @@ function scr_enemy_hit()
 		state = states.stun;
 		if (object_index == obj_pepperman or object_index == obj_vigilanteboss or object_index == obj_noiseboss or object_index == obj_pf_fakepep or object_index == obj_fakepepboss or object_index == obj_pizzafaceboss or object_index == obj_pizzafaceboss_p3)
 		{
-			if (obj_player.tauntstoredstate != states.punch && obj_player.tauntstoredstate != states.freefall && obj_player.tauntstoredstate != states.superslam)
+			if (_player.tauntstoredstate != states.punch && _player.tauntstoredstate != states.freefall && _player.tauntstoredstate != states.superslam)
 			{
 				linethrown = true;
 				var f = 15;
-				if (obj_player.tauntstoredstate == states.mach3)
+				if (_player.tauntstoredstate == states.mach3)
 					f = 25;
 				if (abs(hithsp) > abs(hitvsp))
 				{

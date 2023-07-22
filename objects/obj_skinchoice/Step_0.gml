@@ -150,7 +150,7 @@ if key_left != 0 or key_right != 0
 {
 	if arrowbufferH == -1
 		arrowbufferH = 20;
-	else
+	else if arrowbufferH == 0
 		arrowbufferH = 4;
 }
 else
@@ -160,7 +160,7 @@ if key_up != 0 or key_down != 0
 {
 	if arrowbufferV == -1
 		arrowbufferV = 20;
-	else
+	else if arrowbufferV == 0
 		arrowbufferV = 4;
 }
 else

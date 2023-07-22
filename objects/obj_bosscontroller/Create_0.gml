@@ -60,17 +60,41 @@ flash = false;
 flashed = false;
 bossintrostate = states.normal;
 vstitle = spr_vstitle_noise;
-playerspr = spr_vspeppino;
 bossspr = spr_vsnoise;
 
 // pto
-pal_playerhp = spr_peppalette;
+playerspr = spr_player_versus;
+vstitleplayer = spr_player_versustitle;
+spr_palette = spr_peppalette;
 spr_playerhp = spr_bossfight_playerhp;
 
 switch obj_player1.character
 {
-	case "N": spr_playerhp = spr_bossfight_noiseHP; pal_playerhp = spr_noisepalette; break;
-	case "V": spr_playerhp = spr_bossfight_vigiHP; pal_playerhp = spr_vigipalette; break;
-	case "M": spr_playerhp = spr_bossfight_pepperhp; break;
-	case "SP": spr_playerhp = spr_bossfight_pizzyhp; pal_playerhp = spr_pizzypalette; break;
+	case "N":
+		vstitleplayer = spr_playerN_versustitle;
+		playerspr = spr_playerN_versus;
+		spr_playerhp = spr_bossfight_noiseHP;
+		spr_palette = spr_noisepalette;
+		break;
+	
+	case "V":
+		vstitleplayer = spr_playerV_versustitle;
+		playerspr = spr_playerV_versus;
+		spr_playerhp = spr_bossfight_vigiHP;
+		spr_palette = spr_vigipalette;
+		break;
+	
+	case "SP":
+		vstitleplayer = spr_playerSP_versustitle;
+		playerspr = spr_playerSP_versus;
+		spr_playerhp = spr_bossfight_pizzyhp;
+		spr_palette = spr_pizzypalette;
+		break;
+	
+	case "PN":
+		vstitleplayer = spr_playerPN_versustitle;
+		playerspr = spr_playerPN_versus;
+		//spr_playerhp = spr_bossfight_pinohp;
+		spr_palette = spr_peppalette;
+		break;
 }

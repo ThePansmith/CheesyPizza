@@ -295,7 +295,7 @@ draw = function(curve)
 		
 		var yy = 360;
 		if curve2 != 1 // letters jump up
-			yy = lerp(540, 370, min(animcurve_channel_evaluate(outback, curve2 + ((i % 3) * 0.075))));
+			yy = lerp(540, 360, min(animcurve_channel_evaluate(outback, curve2 + ((i % 3) * 0.075))));
 		
 		draw_text(xx + random_range(-1, 1), yy + random_range(-1, 1), char);
 		xx += string_width(char);
@@ -304,7 +304,7 @@ draw = function(curve)
 	draw_set_halign(fa_center);
 	draw_set_alpha(curve);
 	draw_set_font(global.font_small);
-	draw_text_ext(960 / 1.5, 400, desc, 16, 960 - 32);
+	draw_text_ext(960 / 1.5, 400, desc, 16, 600);
 	draw_set_alpha(1);
 	
 	// palettes

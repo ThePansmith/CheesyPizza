@@ -16,7 +16,27 @@ function scr_player_freefallland()
 	vsp = 0;
 	hsp = 0;
 	
+	var jump = false;
 	if key_jump && REMIX
+		jump = true;
+	else if (floor(image_index) == (image_number - 1))
+	{
+		if key_jump2
+			jump = true;
+		else
+		{
+			if character != "S"
+			{
+				facehurt = true;
+				sprite_index = spr_facehurtup;
+				image_index = 0;
+			}
+			state = states.normal;
+			jumpstop = true;
+		}
+	}
+	
+	if jump
 	{
 		state = states.jump;
         vsp = -13;
@@ -30,17 +50,6 @@ function scr_player_freefallland()
 		
 		particle_set_scale(particle.highjumpcloud2, xscale, 1);
 		create_particle(x, y, particle.highjumpcloud2, 0);
-	}
-	else if (floor(image_index) == (image_number - 1))
-	{
-		if character != "S"
-		{
-			facehurt = true;
-			sprite_index = spr_facehurtup;
-			image_index = 0;
-		}
-		state = states.normal;
-		jumpstop = true;
 	}
 	image_speed = 0.35;
 }

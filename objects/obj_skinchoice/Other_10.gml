@@ -361,7 +361,7 @@ switch character
 		add_palette(5, "", noone, "Rivals", "Did we find a coder yet?");
 		add_palette(6, "", noone, "Gum", "Don't actually chew him, please.");
 		add_palette(7, "", noone, "Old School", "Also known as... grayscale.", "GRAYSCALE");
-		add_palette(8, "", noone, "Zombified", "Ricochet, eh? I sense some inspiration-ception.", "ZOMBIFIED");
+		add_palette(8, "", noone, "Zombified", "Ricochet, eh? I sense some inspiration-ception.");
 		add_palette(9, "", noone, "Forestation", "Made of sugarcane plants.");
 		add_palette(10, "", noone, "Lamda", "I have nothing to say about this.", "LAMDA");
 		add_palette(11, "", noone, "Gnome Wizard", "Really diving deep into the gremlin persona.", "GNOME");
@@ -552,7 +552,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "wire is not alive");
 		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "i will conker mobiusa with this strip.");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "so... re...so retr... so...");
-		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "", spr_pattern_mario, "Mario", "brother");
 		break;
 	
 	#endregion

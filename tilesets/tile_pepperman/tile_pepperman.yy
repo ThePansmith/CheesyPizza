@@ -19,10 +19,10 @@
     "name": "spr_peppermantile",
     "path": "sprites/spr_peppermantile/spr_peppermantile.yy",
   },
-  "spriteNoExport": false,
+  "spriteNoExport": true,
   "textureGroupId": {
-    "name": "entrancegroup",
-    "path": "texturegroups/entrancegroup",
+    "name": "unusedgroup",
+    "path": "texturegroups/unusedgroup",
   },
   "tile_count": 140,
   "tileAnimation": {

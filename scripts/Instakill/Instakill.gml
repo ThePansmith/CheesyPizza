@@ -80,7 +80,7 @@ function Instakill()
 		tauntstoredhsp = hsp;
 		tauntstoredvsp = vsp;
 	}
-	if (state == states.handstandjump && !key_slap)
+	if (state == states.handstandjump/* && !key_slap*/)
 	{
 		image_index = random_range(0, image_number - 1);
 		if (grounded)
@@ -98,7 +98,7 @@ function Instakill()
 	if (other.baddieID.heavy == 1 or (state == states.punch && global.attackstyle == 1))
 		lag = 10;
 	if state == states.handstandjump
-		lag = 10;
+		lag = 12;
 	
 	other.baddieID.hitLag = lag;
 	other.baddieID.hitX = hx;

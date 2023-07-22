@@ -1,3 +1,4 @@
+image_index = img;
 switch state
 {
 	case states.idle:
@@ -21,7 +22,6 @@ switch state
 }
 
 scr_boundbox();
-image_index = img;
 if linethrown
 {
 	linethrown = false;

@@ -19,10 +19,10 @@
     "name": "spr_tilegolf",
     "path": "sprites/spr_tilegolf/spr_tilegolf.yy",
   },
-  "spriteNoExport": false,
+  "spriteNoExport": true,
   "textureGroupId": {
-    "name": "entrancegroup",
-    "path": "texturegroups/entrancegroup",
+    "name": "unusedgroup",
+    "path": "texturegroups/unusedgroup",
   },
   "tile_count": 100,
   "tileAnimation": {

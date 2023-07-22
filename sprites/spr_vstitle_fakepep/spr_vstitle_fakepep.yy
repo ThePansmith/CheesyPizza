@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "spr_vstitle_fakepep",
   "bbox_bottom": 339,
-  "bbox_left": 51,
+  "bbox_left": 320,
   "bbox_right": 777,
   "bbox_top": 107,
   "bboxMode": 0,

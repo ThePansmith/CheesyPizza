@@ -1,5 +1,6 @@
 function scr_enemy_stun()
 {
+	/*
 	if shoulderbashed
 	{
 		switch hp
@@ -12,6 +13,7 @@ function scr_enemy_stun()
 	            break;
 	    }
 	}
+	*/
 	
 	if (object_index == obj_ninja)
 		attack = true;
