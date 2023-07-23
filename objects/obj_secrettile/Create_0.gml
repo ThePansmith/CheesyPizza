@@ -21,8 +21,12 @@ array_foreach(room_get_tile_layers(), function(i)
 			for (var xx = bbox_left; xx < bbox_right; xx += ht)
 			{
 				var data = tilemap_get_at_pixel(i.tilemap, xx, yy);
-				array_push(tiles, { x: xx, y: yy, tile_data: data, tileset: i.tileset });
-				tilemap_set_at_pixel(i.tilemap, tile_set_empty(data), xx, yy);
+				
+				if (data != -1)
+				{
+					array_push(tiles, { x: xx, y: yy, tile_data: data, tileset: i.tileset });
+					tilemap_set_at_pixel(i.tilemap, tile_set_empty(data), xx, yy);
+				}
 			}
 		}
 	}

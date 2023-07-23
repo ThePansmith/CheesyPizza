@@ -25,11 +25,6 @@ bool rx_Vec4ContainsVec2(vec4 rect, vec2 pos)
 	return (rect.x <= pos.x && rect.y <= pos.y && rect.z >= pos.x && rect.w >= pos.y);
 }
 
-float rx_normalize_f(float min, float max, float value)
-{
-	return (max - value) / (max - min);
-}
-
 void main()
 {
 	// World Coord Reference
@@ -42,7 +37,7 @@ void main()
 	// lessThenEqual and greaterThanEqual were giving me compile errors??
 	// Is it because of the HLSL conversion?
 	
-	vec4 gameOutColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
+	vec4 game_out_color = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
 	
 	if (rx_Vec4ContainsVec2(u_secret_tile_bounds, v_vTile_Position)) // Is the secret tile in our draw bounds
 	{
@@ -57,16 +52,14 @@ void main()
 				float fade = 0.0;
 				if (dist > fade_begin)
 					fade = (dist - fade_begin) / (u_secret_tile_clip_distance - fade_begin);
-				
 					
-				gameOutColor = vec4(gameOutColor.rgb, fade * u_secret_tile_fade_intensity);
-					
+				game_out_color = vec4(game_out_color.rgb, game_out_color.a * fade * u_secret_tile_fade_intensity);
 			}
 				
 		}
 		else
-			gameOutColor = vec4(gameOutColor.rgb, u_secret_tile_alpha);
+			game_out_color = vec4(game_out_color.rgb, game_out_color.a * u_secret_tile_alpha);
 	}
 	
-	gl_FragColor = gameOutColor; // We are outside of the range, so draw it normally
+	gl_FragColor = game_out_color; // We are outside of the range, so draw it normally
 }

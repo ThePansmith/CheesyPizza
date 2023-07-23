@@ -5641,6 +5641,7 @@
     {"id":{"name":"spr_heatmeter3under","path":"sprites/spr_heatmeter3under/spr_heatmeter3under.yy",},},
     {"id":{"name":"spr_heatmeter4","path":"sprites/spr_heatmeter4/spr_heatmeter4.yy",},},
     {"id":{"name":"spr_heatmeter4under","path":"sprites/spr_heatmeter4under/spr_heatmeter4under.yy",},},
+    {"id":{"name":"shd_emboss","path":"shaders/shd_emboss/shd_emboss.yy",},},
     {"id":{"name":"sprite_tile_spaceback1","path":"sprites/sprite_tile_spaceback1/sprite_tile_spaceback1.yy",},},
     {"id":{"name":"spr_roomnamebg","path":"sprites/spr_roomnamebg/spr_roomnamebg.yy",},},
     {"id":{"name":"spr_snowblockdebris","path":"sprites/spr_snowblockdebris/spr_snowblockdebris.yy",},},
