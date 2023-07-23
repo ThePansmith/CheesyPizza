@@ -29,8 +29,6 @@ function scr_draw_screen(x, y, xscale, yscale, alpha = 1, gui = false)
 		shader_set_uniform_f(greyscalefade, gray);
 	}
 	
-	shader_set(shd_emboss);
-	
 	// draw the game
 	var mirror = check_modifier(MOD.Mirror) && !instance_exists(obj_rank);
 	draw_surface_ext(application_surface, x + (mirror ? surface_get_width(application_surface) * xscale : 0), y, xscale * (mirror ? -1 : 1), yscale, 0, c_white, alpha);

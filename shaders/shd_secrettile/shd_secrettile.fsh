@@ -37,10 +37,12 @@ void main()
 	// lessThenEqual and greaterThanEqual were giving me compile errors??
 	// Is it because of the HLSL conversion?
 	
-	vec4 gameOutColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
+	vec4 game_out_color = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
 	
 	if (rx_Vec4ContainsVec2(u_secret_tile_bounds, v_vTile_Position)) // Is the secret tile in our draw bounds
 	{
+		if (game_out_color.a != 0.0)
+		{	
 		if (u_remix_flag > 0.0)
 		{
 			float dist = abs(distance(v_vTile_Position, u_secret_tile_clip_position));
@@ -53,13 +55,14 @@ void main()
 				if (dist > fade_begin)
 					fade = (dist - fade_begin) / (u_secret_tile_clip_distance - fade_begin);
 					
-				gameOutColor = vec4(gameOutColor.rgb, fade * u_secret_tile_fade_intensity);
+				game_out_color = vec4(game_out_color.rgb, fade * u_secret_tile_fade_intensity);
 			}
 				
 		}
 		else
-			gameOutColor = vec4(gameOutColor.rgb, u_secret_tile_alpha);
+			game_out_color = vec4(game_out_color.rgb, u_secret_tile_alpha);
+		}
 	}
 	
-	gl_FragColor = gameOutColor; // We are outside of the range, so draw it normally
+	gl_FragColor = game_out_color; // We are outside of the range, so draw it normally
 }
