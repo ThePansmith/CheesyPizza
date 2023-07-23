@@ -91,9 +91,9 @@ function scr_player_punch()
 		if floor(image_index) == image_number - 1 && sprite_index == spr_buttattackstart
 			sprite_index = spr_buttattack;
 		
-		if sprite_index == spr_buttattack
+		if sprite_index == spr_buttattack or sprite_index == spr_buttattackstart
 		{
-			if grounded
+			if grounded && vsp > 0
 			{
 				if key_attack
 				{

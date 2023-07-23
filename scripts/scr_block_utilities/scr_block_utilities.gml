@@ -46,6 +46,9 @@ function scr_destroy_nearby_tiles()
 
 function scr_cutoff()
 {
+	if place_meeting(x, y, obj_nocutoff)
+		exit;
+	
 	var big = (sprite_width % 64 == 0);
 	var smallblock = [0, 0, 0, 0];
 	

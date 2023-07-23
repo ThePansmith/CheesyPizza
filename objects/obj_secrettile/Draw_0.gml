@@ -1,4 +1,4 @@
-var mario = global.secrettiles;
+var mario = global.secrettiles && !instance_exists(obj_fakeplayer);
 if !bbox_in_camera(view_camera[0], 32) or (image_alpha <= 0 && !mario)
 	exit;
 

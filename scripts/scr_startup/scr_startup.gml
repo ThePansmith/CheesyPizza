@@ -122,7 +122,7 @@ global.replayrecord = false;
 
 global.secrettile_clip_distance = 150; // distance before we cut off tiles
 global.secrettile_fade_size = 0.85; // distance before we start to fade
-global.secrettile_fade_intensity = 1.0; // dropoff intensity
+global.secrettile_fade_intensity = 32; // dropoff intensity
 
 global.colorblind_type = -1; // 0 - Protanopia, 1 - Deuteranopia, 2 - Tritanopia
 global.colorblind_intensity = 1.0;

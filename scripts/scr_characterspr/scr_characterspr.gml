@@ -1346,7 +1346,7 @@ function scr_characterspr()
 		spr_mach4 = spr_playerBN_mach3;
 		spr_machclimbwall = spr_playerBN_climbwall;
 		spr_dive = spr_playerBN_dive;
-		spr_machroll = spr_playerN_machroll;
+		spr_machroll = spr_playerBN_machroll;
 		spr_hitwall = spr_playerBN_mach3hitwall;
 		spr_superjumpland = spr_playerBN_Sjumpland;
 		spr_walljumpstart = spr_playerBN_walljumpstart;

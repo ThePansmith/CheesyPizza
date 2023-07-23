@@ -2,18 +2,6 @@ if buffer > 0
 	buffer--;
 
 player = instance_place(x, y, obj_player);
-if active && !player
-{
-	var found = false;
-	with obj_secrettile
-	{
-		if player
-			found = true;
-	}
-	if !found
-		active = false;
-}
-
 if (player && place_meeting(x, y, player) && player.state != states.chainsaw) or active
 {
 	if buffer > 0
@@ -40,15 +28,24 @@ if (player && place_meeting(x, y, player) && player.state != states.chainsaw) or
 	{
 		if distance_to_object(other) <= 1
 		{
-			if !revealed
+			var found = false;
+			with obj_secrettile
 			{
-				if other.buffer > 0
-					image_alpha = 0;
-				
-				revealed = true;
-				ds_list_add(global.saveroom, id);
+				if player
+					found = true;
 			}
-			active = true;
+			if found
+			{
+				if !revealed
+				{
+					if other.buffer > 0
+						image_alpha = 0;
+				
+					revealed = true;
+					ds_list_add(global.saveroom, id);
+				}
+				active = true;
+			}
 		}
 	}
 	

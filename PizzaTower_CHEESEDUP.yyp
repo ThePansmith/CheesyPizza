@@ -523,6 +523,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Toppin","folderPath":"folders/Sprites/CheesyPizza/Level Assets/Midway/Toppin.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Bo Noise","folderPath":"folders/Sprites/HUD/Timer/Bo Noise.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Secret Tiles","folderPath":"folders/Sprites/CheesyPizza/Level Assets/Secret Tiles.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"fmod.dll","CopyToMask":-1,"filePath":"datafiles",},
@@ -574,6 +575,7 @@
     {"id":{"name":"obj_hillbillymonster","path":"objects/obj_hillbillymonster/obj_hillbillymonster.yy",},},
     {"id":{"name":"obj_rattumble","path":"objects/obj_rattumble/obj_rattumble.yy",},},
     {"id":{"name":"obj_editor","path":"objects/obj_editor/obj_editor.yy",},},
+    {"id":{"name":"tile_secret_to_ss","path":"sprites/tile_secret_to_ss/tile_secret_to_ss.yy",},},
     {"id":{"name":"obj_tubeexitmach","path":"objects/obj_tubeexitmach/obj_tubeexitmach.yy",},},
     {"id":{"name":"obj_bosshitbox","path":"objects/obj_bosshitbox/obj_bosshitbox.yy",},},
     {"id":{"name":"par_boss","path":"objects/par_boss/par_boss.yy",},},
@@ -5228,6 +5230,7 @@
     {"id":{"name":"spr_slimedebris","path":"sprites/spr_slimedebris/spr_slimedebris.yy",},},
     {"id":{"name":"spr_knightdebris","path":"sprites/spr_knightdebris/spr_knightdebris.yy",},},
     {"id":{"name":"spr_baddiegibs","path":"sprites/spr_baddiegibs/spr_baddiegibs.yy",},},
+    {"id":{"name":"obj_nocutoff","path":"objects/obj_nocutoff/obj_nocutoff.yy",},},
     {"id":{"name":"spr_tv_firemouth","path":"sprites/spr_tv_firemouth/spr_tv_firemouth.yy",},},
     {"id":{"name":"spr_stampedealert","path":"sprites/spr_stampedealert/spr_stampedealert.yy",},},
     {"id":{"name":"spr_lock","path":"sprites/spr_lock/spr_lock.yy",},},
