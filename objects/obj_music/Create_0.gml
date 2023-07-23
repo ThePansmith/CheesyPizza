@@ -164,7 +164,7 @@ add_music(saloon_1, "event:/music/w2/saloon", "event:/music/w2/saloonsecret", 0)
 add_music(plage_entrance, "event:/music/w3/beach", "event:/music/w3/beachsecret", 0)
 add_music(forest_1, "event:/music/w3/forest", "event:/music/w3/forestsecret", 0, function(room, event, event_secret)
 {
-	var s = -1, t = 0;
+	var s = -1//, t = 0;
 	switch room
 	{
 		case forest_1:
@@ -180,6 +180,7 @@ add_music(forest_1, "event:/music/w3/forest", "event:/music/w3/forestsecret", 0,
 			break
 	}
 	
+	/*
 	switch obj_player1.character
 	{
 		case "SP": t = 1; break;
@@ -190,10 +191,11 @@ add_music(forest_1, "event:/music/w3/forest", "event:/music/w3/forestsecret", 0,
 				t = 3;
 			break;
 	}
+	*/
 	
 	if s != -1
 		fmod_event_instance_set_parameter(event, "state", s, true);
-	fmod_event_instance_set_parameter(event_secret, "state", t, true);
+	//fmod_event_instance_set_parameter(event_secret, "state", t, true);
 });
 
 add_music(minigolf_1, "event:/music/w3/golf", "event:/music/w3/golfsecret", 0)
