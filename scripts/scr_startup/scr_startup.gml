@@ -128,12 +128,6 @@ global.secrettile_fade_intensity = 1.0; // RadixComet: How Intense is the dropof
 global.colorblind_type = -1;
 global.colorblind_intensity = 1.0;
 
-global.temp = 0;
-global.emboss_offset_x = 0;
-global.emboss_offset_y = 0;
-global.emboss_contrast = 1;
-global.emboss_mix = 100;
-
 #macro heat_nerf 5 // divides the style gain by this
 #macro heat_lossdrop 0.1 // speed of global.style loss
 #macro heat_timedrop 0.5 // speed of global.heattime countdown

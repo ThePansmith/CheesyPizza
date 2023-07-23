@@ -10,7 +10,7 @@ varying vec4 v_vColour;
 
 vec4 sample_pixel(float dx, float dy)
 {
-	return u_emboss_contrast * texture2D(gm_BaseTexture, v_vTexcoord + vec2(dx, dy));
+	return texture2D(gm_BaseTexture, v_vTexcoord + vec2(dx, dy));
 }
 
 void build_matrix_mean(inout vec4[9] color_matrix)
@@ -38,12 +38,12 @@ void build_color_matrix(out vec4[9] color_matrix)
 	color_matrix[8] = sample_pixel(dxtex, dytex);
 }
 
-float convolve(in float[9] emboss_matrix, in vec4[9] color_matrix)
+float convolve(in float[9] emboss_matrix, in float[9] color_matrix)
 {
 	float res = 0.0;
 	
 	for (int i = 0; i < 9; i++)
-		res += emboss_matrix[i] * color_matrix[i].a;
+		res += emboss_matrix[i] * color_matrix[i];
 		
 	return clamp(res, 0.0, 1.0);
 		
@@ -67,25 +67,25 @@ void main()
 	
 	build_color_matrix(color_matrix);
 
-	vec4 color_matrix_r[9];
-	vec4 color_matrix_g[9];
-	vec4 color_matrix_b[9];
+	float color_matrix_r[9];
+	float color_matrix_g[9];
+	float color_matrix_b[9];
 	
 	for (int i = 0; i < 9; i++)
 	{
-		color_matrix_r[i].rgb = vec4(color_matrix[i], 0.0);
-		color_matrix_g[i].rgb = vec4(color_matrix[i], 0.0);
-		color_matrix_b[i].rgb = vec4(color_matrix[i], 0.0);
+		color_matrix_r[i] = color_matrix[i].r;
+		color_matrix_g[i] = color_matrix[i].g;
+		color_matrix_b[i] = color_matrix[i].b;
 	}
 	
-	build_matrix_mean(color_matrix_r);
-	build_matrix_mean(color_matrix_g);
-	build_matrix_mean(color_matrix_b);
+	//build_matrix_mean(color_matrix_r);
+	//build_matrix_mean(color_matrix_g);
+	//build_matrix_mean(color_matrix_b);
 	
 	
 	float convolved_r = convolve(emboss_matrix, color_matrix_r);
 	float convolved_g = convolve(emboss_matrix, color_matrix_g);
 	float convolved_b = convolve(emboss_matrix, color_matrix_b);
 	
-	gl_FragColor = vec4(convolved_r, convolved_g, convolved_b, game_out_color.a);
+	gl_FragColor = vec4(convolved_r, convolved_g, convolved_b, sample_pixel(0.0, 0.0).a);
 }
