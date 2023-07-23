@@ -639,6 +639,15 @@ opt.opts = [
 ]
 
 #endregion
+#region Colorblind filter
+
+var opt = add_option("Secret Style", "secrettiles", "Choose how you want secrets to be shown.", [seq_secretwall_off, seq_secretwall_on]);
+opt.opts = [
+	["NORMAL", 0],
+	["SPOTLIGHT", 1]
+]
+
+#endregion
 
 xo = 0;
 yo = 0;

@@ -1,7 +1,19 @@
 if buffer > 0
 	buffer--;
 
-var player = instance_place(x, y, obj_player);
+player = instance_place(x, y, obj_player);
+if active && !player
+{
+	var found = false;
+	with obj_secrettile
+	{
+		if player
+			found = true;
+	}
+	if !found
+		active = false;
+}
+
 if (player && place_meeting(x, y, player) && player.state != states.chainsaw) or active
 {
 	if buffer > 0
@@ -42,14 +54,10 @@ if (player && place_meeting(x, y, player) && player.state != states.chainsaw) or
 	
 	depth = max(-8, desireddepth);
 	image_alpha = Approach(image_alpha, 0, 0.05);
-	
-	global.secrettile_clip_distance = lerp(global.secrettile_clip_distance, 150, 0.15);
 }
 else
 {
 	depth = desireddepth;
 	image_alpha = Approach(image_alpha, 1, 0.05);
-	
-	global.secrettile_clip_distance = lerp(global.secrettile_clip_distance, 0, 0.15);
 }
 active = false;

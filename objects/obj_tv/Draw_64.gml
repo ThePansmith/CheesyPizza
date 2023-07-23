@@ -232,6 +232,12 @@ if (global.panic or global.snickchallenge)
 			barfill = spr_timer_barfillPN;
 			johnface_sprite = spr_timer_johnfacePN;
 		}
+		if bo
+		{
+			bar = spr_timer_barBN;
+			barfill = spr_timer_barfillBN;
+			johnface_sprite = spr_timer_johnfaceBN;
+		}
 		
 		if !surface_exists(bar_surface)
 			bar_surface = surface_create(298, 30);

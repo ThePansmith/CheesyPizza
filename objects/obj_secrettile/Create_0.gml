@@ -2,6 +2,7 @@ active = false;
 depth = -7;
 desireddepth = -7;
 buffer = 2;
+player = -4;
 
 revealed = false;
 if ds_list_find_index(global.saveroom, id) != -1

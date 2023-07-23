@@ -1,13 +1,5 @@
 if live_call() return live_result;
 
-// temp bg
-/*
-draw_set_colour(merge_colour(c_aqua, c_black, 0.9));
-draw_set_alpha(0.75);
-draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false);
-draw_set_alpha(1);
-*/
-
 // options left side
 draw_set_colour(c_white);
 draw_set_align();
@@ -89,7 +81,6 @@ if opt.type == 0
 	}
 }
 
-gpu_set_blendmode(bm_normal);
 if drawer
 {
 	// roundrect background
@@ -125,9 +116,9 @@ if drawer
 		{
 			sequence_layer = layer_create(-1, "sequence_layer");
 			if is_array(opt.drawfunc)
-				layer_sequence_create(sequence_layer, 0, 0, opt.drawfunc[opt.value]);
+				sequence = layer_sequence_create(sequence_layer, 0, 0, opt.drawfunc[opt.value]);
 			else if sequence_exists(opt.drawfunc)
-				layer_sequence_create(sequence_layer, 0, 0, opt.drawfunc);
+				sequence = layer_sequence_create(sequence_layer, 0, 0, opt.drawfunc);
 			
 			layer_script_begin(sequence_layer, function()
 			{
@@ -138,10 +129,14 @@ if drawer
 					
 					surface_set_target(global.modsurf);
 					draw_clear_alpha(c_black, 0);
-					gpu_set_blendmode(bm_normal);
-						
-					shader_set(global.Pal_Shader);
-					pal_swap_set(spr_peppalette, 1, false);
+					
+					if layer_sequence_get_sequence(obj_modconfig.sequence).name == "seq_secretwall_on"
+						gpu_set_blendmode(bm_normal);
+					else
+					{
+						reset_shader_fix();
+						reset_blendmode();
+					}
 				}
 			});
 			layer_script_end(sequence_layer, function()
@@ -151,18 +146,23 @@ if drawer
 					// white border
 					draw_set_colour(c_white);
 					draw_roundrect(0, 0, 384 - 2, 216 - 2, true);
-						
+					
 					surface_reset_target();
 					pal_swap_reset();
 				}
 			});
 		}
 	}
+	
 	reset_blendmode();
-		
+	reset_shader_fix();
+	
 	if surface_exists(global.modsurf)
 	{
 		/* shadow */ draw_surface_ext(global.modsurf, 3 + xx - wd / 2, 3 + yy - ht / 2, 1, 1, 0, 0, 0.25);
+		
+		shader_set(global.Pal_Shader);
+		pal_swap_set(spr_peppalette, 1, false);
 		draw_surface(global.modsurf, xx - wd / 2, yy - ht / 2);
 	}
 }

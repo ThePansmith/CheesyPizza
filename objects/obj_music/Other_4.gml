@@ -1,7 +1,7 @@
 if ((!global.panic && !global.snickchallenge) or global.leveltosave == "dragonlair" or global.leveltosave == "grinch")
 {
 	var mu = ds_map_find_value(music_map, room);
-	if (!is_undefined(mu))
+	if !is_undefined(mu)
 	{
 		var prevmusic = music;
 		if (prevmusic == -4 || mu.event_name != prevmusic.event_name)
@@ -37,23 +37,25 @@ if ((!global.panic && !global.snickchallenge) or global.leveltosave == "dragonla
 	else
 		fmod_event_instance_stop(pillarmusicID, true);
 	if (music != -4 && music.on_room_start != -4)
+	{
+		if secret
+		{
+			var s = 0;
+			switch obj_player1.character
+			{
+				case "SP": s = 1; break;
+				case "BN": s = 2; break;
+			}
+			fmod_event_instance_set_parameter(music.event_secret, "state", s, true);
+		}
 		music.on_room_start(room, music.event, music.event_secret);
+	}
 }
 if (secret)
 {
 	if (music != -4 && music.event_secret != -4)
 	{
 		var ev = music.event_secret, evname = music.event_secret_name;
-		
-		// secrets
-		if obj_player1.character == "SP"
-			fmod_event_instance_set_parameter(ev, "state", 1, true);
-		else if obj_player1.character == "BN"
-			fmod_event_instance_set_parameter(ev, "state", 2, true);
-		else
-			fmod_event_instance_set_parameter(ev, "state", 0, true);
-		
-		// start playing or resume secret song
 		fmod_event_instance_play(ev);
 		fmod_event_instance_set_paused(ev, false);
 		pos = fmod_event_instance_get_timeline_pos(music.event);

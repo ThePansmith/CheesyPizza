@@ -1,7 +1,8 @@
-if !bbox_in_camera(view_camera[0], 32) or (image_alpha <= 0 && !REMIX)
+var mario = global.secrettiles;
+if !bbox_in_camera(view_camera[0], 32) or (image_alpha <= 0 && !mario)
 	exit;
 
-if (!REMIX && image_alpha < 1) or global.secrettile_clip_distance > 0
+if (!mario && image_alpha < 1) or global.secrettile_clip_distance > 0
 {
 	shader_set(shd_secrettile);
 	var bounds = shader_get_uniform(shd_secrettile, "u_secret_tile_bounds");
@@ -10,9 +11,9 @@ if (!REMIX && image_alpha < 1) or global.secrettile_clip_distance > 0
 	
 	shader_set_uniform_f(bounds, bbox_left, bbox_top, bbox_right, bbox_bottom);
 	shader_set_uniform_f(alpha, image_alpha);
-	shader_set_uniform_f(remix, REMIX);
+	shader_set_uniform_f(remix, mario);
 	
-	if REMIX
+	if mario
 	{
 		var clip_distance = shader_get_uniform(shd_secrettile, "u_secret_tile_clip_distance");
 		var clip_position = shader_get_uniform(shd_secrettile, "u_secret_tile_clip_position");

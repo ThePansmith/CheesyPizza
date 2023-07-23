@@ -58,12 +58,18 @@ function sound_play(event) {
 }
 function sound_play_3d(event, xx = undefined, yy = undefined)
 {
-	var sound = ds_map_find_value(obj_fmod.sound_cache, event);
-	if sound == undefined
+	if is_string(event)
 	{
-		sound = fmod_event_create_instance(event);
-		ds_map_add(obj_fmod.sound_cache, event, sound);
+		var sound = ds_map_find_value(obj_fmod.sound_cache, event);
+		if sound == undefined
+		{
+			sound = fmod_event_create_instance(event);
+			ds_map_add(obj_fmod.sound_cache, event, sound);
+		}
 	}
+	else
+		var sound = event;
+	
 	fmod_event_instance_set_paused(sound, false);
 	if xx != undefined && yy != undefined
 		sound_instance_move(sound, xx, yy);
