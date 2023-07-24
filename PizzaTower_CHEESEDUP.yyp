@@ -548,7 +548,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.6.0.92",
+    "IDEVersion": "2023.6.0.89",
   },
   "resources": [
     {"id":{"name":"obj_bossdoor","path":"objects/obj_bossdoor/obj_bossdoor.yy",},},
@@ -5113,6 +5113,7 @@
     {"id":{"name":"spr_playerN_pogofallmach","path":"sprites/spr_playerN_pogofallmach/spr_playerN_pogofallmach.yy",},},
     {"id":{"name":"spr_playerN_pogostart","path":"sprites/spr_playerN_pogostart/spr_playerN_pogostart.yy",},},
     {"id":{"name":"spr_playerN_pogobounce","path":"sprites/spr_playerN_pogobounce/spr_playerN_pogobounce.yy",},},
+    {"id":{"name":"shd_rectclip","path":"shaders/shd_rectclip/shd_rectclip.yy",},},
     {"id":{"name":"bg_forestfront","path":"sprites/bg_forestfront/bg_forestfront.yy",},},
     {"id":{"name":"spr_playerN_pogobouncemach","path":"sprites/spr_playerN_pogobouncemach/spr_playerN_pogobouncemach.yy",},},
     {"id":{"name":"spr_playerN_jetpackstart","path":"sprites/spr_playerN_jetpackstart/spr_playerN_jetpackstart.yy",},},
