@@ -223,6 +223,7 @@
     {"name":"inst_107DF3DA","path":"rooms/beach_10/beach_10.yy",},
     {"name":"inst_74012EF6","path":"rooms/beach_10/beach_10.yy",},
     {"name":"inst_2D2EF1BF","path":"rooms/beach_10/beach_10.yy",},
+    {"name":"inst_29B87414","path":"rooms/beach_10/beach_10.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -435,6 +436,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_107DF3DA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_minipillar","path":"objects/obj_minipillar/obj_minipillar.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":5536.0,"y":1152.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_74012EF6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_minipillar","path":"objects/obj_minipillar/obj_minipillar.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":5536.0,"y":1120.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2D2EF1BF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_minipillar","path":"objects/obj_minipillar/obj_minipillar.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":5536.0,"y":1088.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_29B87414","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_nocutoff","path":"objects/obj_nocutoff/obj_nocutoff.yy",},"properties":[],"rotation":0.0,"scaleX":12.0,"scaleY":2.0,"x":896.0,"y":768.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances_2","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_78B5DC99","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_beachsandparticle","path":"objects/obj_beachsandparticle/obj_beachsandparticle.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":-64.0,},

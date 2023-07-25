@@ -101,7 +101,8 @@ global.sloperot = false;
 global.inputdisplay = ini_read_real("Modded", "inputdisplay", false);
 global.showfps = ini_read_real("Modded", "showfps", false);
 global.afterimage = ini_read_real("Modded", "afterimage", 0); // final, eggplant
-global.smoothcam = ini_read_real("Modded", "smoothcam", 0);
+global.smoothcam = ini_read_real("Modded", "smoothcam", 0); // 0 through 1 lerp amount
+global.secrettiles = ini_read_real("Modded", "secrettiles", 0); // fade, spotlight
 
 // gameframe
 global.gameframe_enabled = ini_read_real("Modded", "gameframe", true);
@@ -124,7 +125,7 @@ global.replayrecord = false;
 
 global.secrettile_clip_distance = 150; // distance before we cut off tiles
 global.secrettile_fade_size = 0.85; // distance before we start to fade
-global.secrettile_fade_intensity = 1.0; // dropoff intensity
+global.secrettile_fade_intensity = 32; // dropoff intensity
 
 global.colorblind_type = -1; // 0 - Protanopia, 1 - Deuteranopia, 2 - Tritanopia
 global.colorblind_intensity = 1.0;

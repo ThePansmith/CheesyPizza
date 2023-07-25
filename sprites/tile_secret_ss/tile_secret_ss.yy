@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "BGs and Tiles",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles.yy",
+    "name": "Secret Tiles",
+    "path": "folders/Sprites/CheesyPizza/Level Assets/Secret Tiles.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

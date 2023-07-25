@@ -5,9 +5,9 @@ if ds_map_find_value(async_load, "id") == req
 		str = ds_map_find_value(async_load, "result");
 		var firstline = string_copy(str, 1, string_pos("\n", str) - 1);
 		
-		if string_digits(firstline) == firstline
+		try
 		{
-			if real(firstline) != 2 // 1 is version
+			if real(firstline) != 2
 				str = string_copy(str, string_pos("\n", str) + 1, string_length(str));
 			else
 			{
@@ -15,11 +15,17 @@ if ds_map_find_value(async_load, "id") == req
 				are_you_sure = true;
 			}
 		}
-		else
+		catch (error)
+		{
+			trace("DISCLAIMER\nstr: ", str, "\nerror: ", error);
 			str = "Server error!\nSomething went horribly wrong???";
+		}
 	}
 	else
+	{
+		trace("DISCLAIMER\nstatus: ", async_load[? "status"]);
 		str = "Server error!\nPlease check your internet connection.";
+	}
 	
 	// open disclaimer
 	if state == 0

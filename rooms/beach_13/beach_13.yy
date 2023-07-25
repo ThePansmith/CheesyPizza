@@ -78,6 +78,8 @@
     {"name":"inst_286A3692","path":"rooms/beach_13/beach_13.yy",},
     {"name":"inst_BBD1912","path":"rooms/beach_13/beach_13.yy",},
     {"name":"inst_422105D4","path":"rooms/beach_13/beach_13.yy",},
+    {"name":"inst_5CF80649","path":"rooms/beach_13/beach_13.yy",},
+    {"name":"inst_1C59430B","path":"rooms/beach_13/beach_13.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -148,6 +150,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_286A3692","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_spitcheese","path":"objects/obj_spitcheese/obj_spitcheese.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":672.0,"y":1298.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_BBD1912","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_coolpineapple","path":"objects/obj_coolpineapple/obj_coolpineapple.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":1024.0,"y":466.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_422105D4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_lapportalentrance","path":"objects/obj_lapportalentrance/obj_lapportalentrance.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1568.0,"y":192.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5CF80649","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_nocutoff","path":"objects/obj_nocutoff/obj_nocutoff.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":4.0,"x":832.0,"y":992.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1C59430B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_nocutoff","path":"objects/obj_nocutoff/obj_nocutoff.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":1.0,"x":960.0,"y":1312.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances_2","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_57206081","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_beachsandparticle","path":"objects/obj_beachsandparticle/obj_beachsandparticle.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":-64.0,},

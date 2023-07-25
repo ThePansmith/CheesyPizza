@@ -41,8 +41,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Mod menu",
-    "path": "folders/Sequences/Mod menu.yy",
+    "name": "Mod config",
+    "path": "folders/Sequences/Mod config.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

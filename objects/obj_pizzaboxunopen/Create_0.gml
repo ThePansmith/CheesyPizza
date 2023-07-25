@@ -11,3 +11,7 @@ scr_fmod_soundeffect(snd, x, y);
 sugary = check_sugary();
 if sugary
 	sprite_index = spr_confecticage;
+
+bo = check_midway();
+if bo
+	sprite_index = spr_pizzaboxunopen_bo;

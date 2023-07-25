@@ -530,8 +530,6 @@ function scr_characterspr()
 		spr_mortthrow = spr_playerN_mortthrow;
 		spr_Sjumpcancelstart = spr_playerN_jetpackstart;
 		spr_Sjumpcancel = spr_playerN_jetpackboost;
-		spr_poundcancel1 = spr_noise_crusherfall;
-		spr_poundcancel2 = spr_noise_crusherland_short;
 		spr_longjump = spr_player_longjump;
 		spr_longjumpend = spr_player_longjumpend;
 		spr_backslide = spr_player_backslide;
@@ -1348,7 +1346,7 @@ function scr_characterspr()
 		spr_mach4 = spr_playerBN_mach3;
 		spr_machclimbwall = spr_playerBN_climbwall;
 		spr_dive = spr_playerBN_dive;
-		spr_machroll = spr_playerN_machroll;
+		spr_machroll = spr_playerBN_machroll;
 		spr_hitwall = spr_playerBN_mach3hitwall;
 		spr_superjumpland = spr_playerBN_Sjumpland;
 		spr_walljumpstart = spr_playerBN_walljumpstart;
@@ -1498,12 +1496,12 @@ function scr_characterspr()
 		spr_mortthrow = spr_playerN_mortthrow;
 		spr_Sjumpcancelstart = spr_playerN_jetpackstart;
 		spr_Sjumpcancel = spr_playerN_jetpackboost;
-		spr_poundcancel1 = spr_noise_crusherfall;
-		spr_poundcancel2 = spr_noise_crusherland_short;
+		spr_poundcancel1 = spr_playerBN_poundcancel1;
+		spr_poundcancel2 = spr_playerBN_poundcancel2;
 		spr_longjump = spr_playerBN_longjump;
 		spr_longjumpend = spr_playerBN_longjumpend;
-		spr_backslide = spr_player_backslide;
-		spr_backslideland = spr_player_backslideland;
+		spr_backslide = spr_playerBN_backslide;
+		spr_backslideland = spr_playerBN_backslideland;
 		spr_gnomecutscene1 = spr_player_gnomecutscene1;
 		spr_gnomecutscene2 = spr_player_gnomecutscene2;
 		spr_gnomecutscene3 = spr_player_gnomecutscene3;

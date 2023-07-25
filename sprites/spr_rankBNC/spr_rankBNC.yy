@@ -40,8 +40,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Ranks",
-    "path": "folders/Sprites/HUD/Ranks.yy",
+    "name": "Rank",
+    "path": "folders/Sprites/Player/Bo Noise/Rank.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

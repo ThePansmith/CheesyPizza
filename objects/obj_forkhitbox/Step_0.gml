@@ -9,7 +9,7 @@ image_xscale = ID.image_xscale;
 image_yscale = ID.image_yscale;
 with (ID)
 {
-	if (object_index == obj_coolpineapple || object_index == obj_ghostknight || object_index == obj_forknight || object_index == obj_smoreknight || object_index == obj_noisey || object_index == obj_smokingpizzaslice)
+	if object_index == obj_coolpineapple || object_index == obj_ghostknight || object_index == obj_forknight || object_index == obj_smoreknight || object_index == obj_noisey || object_index == obj_smokingpizzaslice
 	{
 		if (state != states.walk && state != states.rage)
 		{
@@ -17,6 +17,7 @@ with (ID)
 			instance_destroy(other);
 		}
 	}
+	
 	switch (object_index)
 	{
 		case obj_golfdemon:
@@ -131,6 +132,7 @@ with (ID)
 		case obj_peasanto:
 		case obj_fencer:
 		case obj_ancho:
+		case obj_babybear:
 			if (state != states.charge && state != states.rage)
 			{
 				hitboxcreate = false;

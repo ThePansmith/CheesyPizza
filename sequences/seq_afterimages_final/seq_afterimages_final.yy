@@ -14,10 +14,7 @@
     "resourceVersion": "1.0",
     "Keyframes": [],
   },
-  "eventStubScript": {
-    "name": "seq_afterimages_events",
-    "path": "scripts/seq_afterimages_events/seq_afterimages_events.yy",
-  },
+  "eventStubScript": null,
   "eventToFunction": {
     "0": "",
     "1": "",
@@ -42,8 +39,8 @@
     ],
   },
   "parent": {
-    "name": "Mod menu",
-    "path": "folders/Sequences/Mod menu.yy",
+    "name": "Mod config",
+    "path": "folders/Sequences/Mod config.yy",
   },
   "playback": 1,
   "playbackSpeed": 60.0,

@@ -21,3 +21,5 @@ if (image_xscale == -1)
 }
 if check_sugary()
 	sprite_index = spr_onewaybigblock_ss;
+if check_midway()
+	sprite_index = spr_onewaybigblock_bo;

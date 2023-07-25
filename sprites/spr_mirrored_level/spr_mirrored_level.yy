@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Mod menu",
-    "path": "folders/Sequences/Mod menu.yy",
+    "name": "Mod config",
+    "path": "folders/Sequences/Mod config.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

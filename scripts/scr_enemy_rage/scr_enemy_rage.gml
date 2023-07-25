@@ -252,6 +252,23 @@ function scr_enemy_rage()
 				sprite_index = walkspr;
 			}
 			break;
+		
+		case obj_babybear:
+			if !hitboxcreate && image_index >= 10
+			{
+				hitboxcreate = true;
+			    with instance_create(x, y, obj_forkhitbox)
+				{
+			        ID = other.id;
+					image_xscale = other.image_xscale;
+				}
+			}
+			if floor(image_index) >= image_number - 1
+			{
+				state = states.walk;
+				sprite_index = walkspr;
+			}
+			break;
 	}
 	if (place_meeting(x, y + 1, obj_railparent))
 	{

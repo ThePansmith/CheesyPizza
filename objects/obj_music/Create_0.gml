@@ -64,18 +64,19 @@ add_music(boss_pizzaface, "event:/music/boss/pizzaface", -4, false, function(roo
 
 var entrance_func = function(room, event, event_secret)
 {
-	var s = 0;
+	var s = 0, t = 0;
 	switch obj_player1.character
 	{
 		case "P": break;
-		case "N": s = 1; break;
+		case "N": s = 1; t = 3; break;
 		case "V": s = 2; break;
-		case "SP": s = 3; break;
+		case "SP": s = 3; t = 1; break;
 		case "PN": s = 4; break;
-		case "BN": s = 5; break;
+		case "BN": s = 5; t = 2; break;
 	}
 	
 	fmod_event_instance_set_parameter(event, "state", s, true);
+	fmod_event_instance_set_parameter(event_secret, "state", t, true);
 }
 add_music(entrance_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
 
@@ -161,26 +162,40 @@ add_music(farm_2, "event:/music/w2/farm", "event:/music/w2/farmsecret", 0, funct
 add_music(graveyard_1, "event:/music/w2/graveyard", "event:/music/w2/graveyardsecret", 0)
 add_music(saloon_1, "event:/music/w2/saloon", "event:/music/w2/saloonsecret", 0)
 add_music(plage_entrance, "event:/music/w3/beach", "event:/music/w3/beachsecret", 0)
-add_music(forest_1, "event:/music/w3/forest", "event:/music/w3/forestsecret", 0, function(room, event) //anon_gml_Object_obj_music_Create_0_5441_gml_Object_obj_music_Create_0
+add_music(forest_1, "event:/music/w3/forest", "event:/music/w3/forestsecret", 0, function(room, event, event_secret)
 {
-	var s = -1;
+	var s = -1//, t = 0;
 	switch room
 	{
 		case forest_1:
 		case forest_3:
-			s = 0
-			break
+			s = 0;
+			break;
 		case forest_G1b:
-			s = 1
-			break
+			s = 1;
+			break;
 		case forest_G1:
 			if obj_player1.isgustavo
-				s = 2
+				s = 2;
 			break
 	}
-
-	if (s != -1)
-		fmod_event_instance_set_parameter(event, "state", s, 1)
+	
+	/*
+	switch obj_player1.character
+	{
+		case "SP": t = 1; break;
+		case "BN": t = 2; break;
+		
+		default:
+			if obj_player1.isgustavo
+				t = 3;
+			break;
+	}
+	*/
+	
+	if s != -1
+		fmod_event_instance_set_parameter(event, "state", s, true);
+	//fmod_event_instance_set_parameter(event_secret, "state", t, true);
 });
 
 add_music(minigolf_1, "event:/music/w3/golf", "event:/music/w3/golfsecret", 0)
