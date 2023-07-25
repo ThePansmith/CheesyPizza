@@ -1,4 +1,4 @@
-if (room == rm_editor)
+if room == rm_editor
 	exit;
 
 movespeed = 5;
@@ -32,28 +32,21 @@ scr_scareenemy();
 scr_boundbox();
 
 var player = instance_nearest(x, y, obj_player);
-if (elite)
+if ragecooldown > 0
+    ragecooldown--;
+if point_in_rectangle(player.x, player.y, x - 200, y - 50, x + 200, y + 50) && !player.cutscene
 {
-	var check = (image_xscale > 0) ? (player.x > x && player.x < (x + 200)) : (player.x < x && player.x > (x - 200));
-	if (state == states.walk)
-	{
-		if (check && (y <= (player.y + 60) && y >= (player.y - 60)))
-		{
-			if (state != states.rage && ragebuffer == 0)
-			{
-				state = states.rage;
-				sprite_index = ragespr;
-				if (x != player.x)
-					image_xscale = -sign(x - player.x);
-				ragebuffer = 100;
-				image_index = 0;
-				image_speed = 0.5;
-				flash = true;
-				alarm[4] = 5;
-				create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
-			}
-		}
-	}
-	if (ragebuffer > 0)
-		ragebuffer--;
+    if state == states.walk && ragecooldown <= 0
+    {
+        state = states.rage;
+        sprite_index = ragespr;
+        if x != player.x
+            image_xscale = -sign(x - player.x);
+        ragecooldown = 100;
+        image_index = 0;
+        image_speed = 0.35;
+        flash = true;
+        alarm[4] = 5;
+		create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
+    }
 }

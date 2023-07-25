@@ -187,38 +187,74 @@ if (obj_player.state != states.dead)
 	var spr_xo = sprite_get_xoffset(spr_ranks_hudfill);
 	var spr_yo = sprite_get_yoffset(spr_ranks_hudfill);
 	
-	var perc = 0;
-	switch rank_ix
+	if !global.snickchallenge
 	{
-		case 4:
-			perc = 1;
-			break;
-		case 3:
-			perc = (_score - global.arank) / (global.srank - global.arank);
-			break;
-		case 2:
-			perc = (_score - global.brank) / (global.arank - global.brank);
-			break;
-		case 1:
-			perc = (_score - global.crank) / (global.brank - global.crank);
-			break;
-		default:
-			perc = _score / global.crank;
+		var perc = 0;
+		switch rank_ix
+		{
+			case 4:
+				perc = 1;
+				break;
+			case 3:
+				perc = (_score - global.arank) / (global.srank - global.arank);
+				break;
+			case 2:
+				perc = (_score - global.brank) / (global.arank - global.brank);
+				break;
+			case 1:
+				perc = (_score - global.crank) / (global.brank - global.crank);
+				break;
+			default:
+				perc = _score / global.crank;
+		}
+	
+		var t = spr_h * perc;
+		var top = spr_h - t;
+		var rankfillsprite = spr_ranks_hudfill;
+		if sugary
+			rankfillsprite = spr_ranks_hudfillSP;
+		else if bo
+			rankfillsprite = spr_ranks_hudfillBN;
+		else if pino
+			rankfillsprite = spr_ranks_hudfillPN;
+		
+		if rank_scale == 1 or !REMIX
+			draw_sprite_part(rankfillsprite, rank_ix, 0, top, spr_w, spr_h - top, rx - spr_xo, (ry - spr_yo) + top);
+	}
+	else
+	{
+		var perc = 0;
+		switch rank_ix
+		{
+			case 5:
+			case 4:
+				perc = (10000 - _score) / (10000 - global.srank);
+				break;
+			case 3:
+				perc = (global.srank - _score) / (global.srank - global.arank);
+				break;
+			case 2:
+				perc = (global.arank - _score) / (global.arank - global.brank);
+				break;
+			case 1:
+				perc = (global.brank - _score) / (global.brank - global.crank);
+				break;
+		}
+	
+		var t = spr_h * perc;
+		var rankfillsprite = spr_ranks_hudrev;
+		if sugary
+			rankfillsprite = spr_ranks_hudrevSP;
+		else if bo
+			rankfillsprite = spr_ranks_hudrevBN;
+		else if pino
+			rankfillsprite = spr_ranks_hudrevPN;
+		
+		if rank_scale == 1
+			draw_sprite_part(rankfillsprite, rank_ix, 0, 0, spr_w, t, rx - spr_xo, ry - spr_yo);
 	}
 	
-	var t = spr_h * perc;
-	var top = spr_h - t;
-	var rankfillsprite = spr_ranks_hudfill;
-	if sugary
-		rankfillsprite = spr_ranks_hudfillSP;
-	else if bo
-		rankfillsprite = spr_ranks_hudfillBN;
-	else if pino
-		rankfillsprite = spr_ranks_hudfillPN;
-	
-	draw_sprite_part(rankfillsprite, rank_ix, 0, top, spr_w, spr_h - top, rx - spr_xo, (ry - spr_yo) + top);
 	draw_set_align();
-	
 	var collectfont = global.collectfont;
 	if sugary
 		collectfont = global.collectfontSP; 

@@ -14,10 +14,7 @@
     "resourceVersion": "1.0",
     "Keyframes": [],
   },
-  "eventStubScript": {
-    "name": "seq_afterimages_events",
-    "path": "scripts/seq_afterimages_events/seq_afterimages_events.yy",
-  },
+  "eventStubScript": null,
   "eventToFunction": {
     "0": "",
     "1": "",
