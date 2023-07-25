@@ -1265,6 +1265,10 @@ function scr_characterspr()
 	
 	if (character == "BN")
 	{
+		global.mach_color1 = make_colour_rgb(255, 132, 231);
+		global.mach_color2 = make_colour_rgb(237, 255, 132);
+		global.blueimg_color = make_color_rgb(255 * 1, 255 * 0.518, 255 * 0.906);
+		
 		spr_idle = spr_playerBN_idle;
 		spr_move = spr_playerBN_move;
 		spr_crawl = spr_playerBN_crawl;
@@ -1494,8 +1498,8 @@ function scr_characterspr()
 		spr_superspringplayer = spr_playerBN_superspring;
 		spr_suplexcancel = spr_playerBN_suplexcancel;
 		spr_mortthrow = spr_playerN_mortthrow;
-		spr_Sjumpcancelstart = spr_playerN_jetpackstart;
-		spr_Sjumpcancel = spr_playerN_jetpackboost;
+		spr_Sjumpcancelstart = spr_playerBN_Sjumpcancelstart;
+		spr_Sjumpcancel = spr_playerBN_Sjumpcancel;
 		spr_poundcancel1 = spr_playerBN_poundcancel1;
 		spr_poundcancel2 = spr_playerBN_poundcancel2;
 		spr_longjump = spr_playerBN_longjump;

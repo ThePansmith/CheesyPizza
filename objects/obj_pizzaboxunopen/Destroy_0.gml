@@ -7,7 +7,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 			repeat 6
 				create_debris(x, y, spr_confecticage_debris, false);
 		}
-		else
+		else if !bo
 		{
 			with (create_debris(x, y - 32, spr_cagedebris, false))
 				image_index = 0;

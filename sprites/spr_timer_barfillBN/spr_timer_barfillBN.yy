@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Bo Noise",
-    "path": "folders/Sprites/HUD/Timer/Bo Noise.yy",
+    "name": "Timer",
+    "path": "folders/Sprites/CheesyPizza/Level Assets/Midway/Timer.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "hudgroup",
-    "path": "texturegroups/hudgroup",
+    "name": "midwaygroup",
+    "path": "texturegroups/midwaygroup",
   },
   "type": 0,
   "VTile": false,

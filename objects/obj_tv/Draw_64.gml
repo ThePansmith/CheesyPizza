@@ -224,19 +224,25 @@ if (global.panic or global.snickchallenge)
 	{
 		var bar = spr_timer_bar;
 		var barfill = spr_timer_barfill;
+		var timerspr = timer_tower ? spr_timer_tower : pizzaface_sprite;
 		johnface_sprite = spr_timer_johnface;
 		
+		if bolevel
+		{
+			bar = spr_timer_barBN;
+			barfill = spr_timer_barfillBN;
+			johnface_sprite = spr_timer_johnfaceBN;
+			
+			if timerspr == spr_timer_pizzaface1
+				timerspr = spr_timer_pizzaface1BN;
+			else
+				timerspr = spr_timer_pizzaface2BN;
+		}
 		if pino
 		{
 			bar = spr_timer_barPN;
 			barfill = spr_timer_barfillPN;
 			johnface_sprite = spr_timer_johnfacePN;
-		}
-		if bo
-		{
-			bar = spr_timer_barBN;
-			barfill = spr_timer_barfillBN;
-			johnface_sprite = spr_timer_johnfaceBN;
 		}
 		
 		if !surface_exists(bar_surface)
@@ -262,12 +268,7 @@ if (global.panic or global.snickchallenge)
 		
 		// pizzaface
 		if !global.snickchallenge
-		{
-			var timerspr = pizzaface_sprite;
-			if (timer_tower)
-				timerspr = spr_timer_tower;
 			draw_sprite(timerspr, pizzaface_index, timer_x + 320, timer_y + 10);
-		}
 		
 		// timer
 		draw_set_align(1, 1);

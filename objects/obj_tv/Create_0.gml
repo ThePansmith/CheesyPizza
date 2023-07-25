@@ -93,3 +93,4 @@ fill_lerp = 0;
 lap_x = timer_x;
 lap_y = SCREEN_HEIGHT + 212;
 sugarylevel = false;
+bolevel = false;

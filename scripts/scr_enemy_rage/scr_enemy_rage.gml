@@ -254,15 +254,22 @@ function scr_enemy_rage()
 			break;
 		
 		case obj_babybear:
-			if !hitboxcreate && image_index >= 10
+			if image_index >= 10
 			{
-				hitboxcreate = true;
-			    with instance_create(x, y, obj_forkhitbox)
+				hsp = image_xscale * 8;
+				if !hitboxcreate
 				{
-			        ID = other.id;
-					image_xscale = other.image_xscale;
+					hitboxcreate = true;
+				    with instance_create(x, y, obj_forkhitbox)
+					{
+				        ID = other.id;
+						image_xscale = other.image_xscale;
+					}
 				}
 			}
+			else
+				hsp = 0;
+			
 			if floor(image_index) >= image_number - 1
 			{
 				state = states.walk;

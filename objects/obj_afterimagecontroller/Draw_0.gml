@@ -22,7 +22,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 				shd = true;
 				draw_set_flash(global.blueimg_color);
 			}
-			else if (identifier == afterimage.enemy)
+			else if (identifier == afterimage.enemy or (identifier == afterimage.heatattack && REMIX))
 			{
 				a = alpha;
 				shd = true;

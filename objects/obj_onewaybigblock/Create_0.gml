@@ -3,6 +3,7 @@ if (room == rm_editor)
 image_speed = 0.35;
 depth = 1;
 solid_inst = -4;
+
 if (image_xscale == 1)
 {
 	with (instance_create(x, y, obj_solid))
@@ -19,7 +20,11 @@ if (image_xscale == -1)
 		other.solid_inst = id;
 	}
 }
-if check_sugary()
+
+sugary = check_sugary();
+if sugary
 	sprite_index = spr_onewaybigblock_ss;
-if check_midway()
+
+bo = check_midway();
+if bo
 	sprite_index = spr_onewaybigblock_bo;

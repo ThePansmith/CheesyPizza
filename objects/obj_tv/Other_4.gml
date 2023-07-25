@@ -220,6 +220,9 @@ switch (room)
 	case grinch_1:
 		global.srank = 7986;
 		break;
+	case midway_1:
+		global.srank = 10300;
+		break;
 }
 if global.snickchallenge
 	global.srank = 8000;
@@ -231,3 +234,4 @@ if (room == custom_lvl_room)
 	alarm[1] = 4;
 
 sugarylevel = check_sugary();
+bolevel = check_midway();

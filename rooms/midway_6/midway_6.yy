@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "midway_6",
-  "creationCodeFile": "${project_dir}/rooms/midway_6/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/midway_6/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

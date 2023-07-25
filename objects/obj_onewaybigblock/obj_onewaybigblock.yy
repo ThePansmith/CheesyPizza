@@ -42,6 +42,9 @@
     "name": "spr_onewaybigblock",
     "path": "sprites/spr_onewaybigblock/spr_onewaybigblock.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_onewaybigblock",
+    "path": "sprites/spr_onewaybigblock/spr_onewaybigblock.yy",
+  },
   "visible": true,
 }

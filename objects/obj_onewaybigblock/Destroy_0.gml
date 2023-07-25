@@ -2,7 +2,7 @@ if (room == rm_editor)
 	exit;
 if (ds_list_find_index(global.saveroom, id) == -1)
 {
-	if sprite_index == spr_onewaybigblock
+	if !sugary && !bo
 	{
 		if REMIX
 		{
@@ -19,7 +19,16 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 		}
 		sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
 	}
-	else
+	else if bo
+	{
+		with instance_create(x + 32 * image_xscale, y + 32, obj_sausageman_dead)
+		{
+			sprite_index = spr_bigdoughblockdead_bo;
+			image_xscale = other.image_xscale;
+		}
+		sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
+	}
+	else if sugary
 	{
 		repeat (7)
 			create_debris(x + image_xscale * 32, y + 32, spr_bigdebris_ss)
