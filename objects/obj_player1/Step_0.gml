@@ -28,5 +28,5 @@ event_inherited();
 if (global.replayrecord)
 	replay_record_push_framedata();
 	
-if (global.online)
-	scr_online_send();
+if (obj_onlineclient.connected)
+	online_server_step_update();

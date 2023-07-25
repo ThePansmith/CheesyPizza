@@ -22,7 +22,7 @@ uniform float u_secret_tile_fade_intensity;
 
 bool rx_Vec4ContainsVec2(vec4 rect, vec2 pos)
 {
-	return (rect.x <= pos.x && rect.y <= pos.y && rect.z >= pos.x && rect.w >= pos.y);
+	return ((rect.x - 1.0) <= pos.x && (rect.y - 1.0) <= pos.y && (rect.z + 1.0) >= pos.x && (rect.w + 1.0) >= pos.y);
 }
 
 void main()

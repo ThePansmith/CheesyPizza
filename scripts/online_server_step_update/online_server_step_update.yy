@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "server_request_id",
+  "name": "online_server_step_update",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

@@ -1,1 +1,3 @@
-replay_record_start();
+//replay_record_start();
+
+scr_online_connect();

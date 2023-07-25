@@ -115,9 +115,6 @@ window_set_showborder(!global.gameframe_enabled);
 
 ini_close();
 
-global.online = false;
-global.network_socket = -1;
-
 // etc
 global.sandbox = true;
 global.saveloaded = false;
