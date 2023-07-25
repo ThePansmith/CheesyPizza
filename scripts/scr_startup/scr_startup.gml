@@ -114,6 +114,9 @@ window_set_showborder(!global.gameframe_enabled);
 
 ini_close();
 
+global.online = false;
+global.network_socket = -1;
+
 // etc
 global.sandbox = true;
 global.saveloaded = false;
@@ -125,6 +128,7 @@ global.secrettile_fade_intensity = 1.0; // dropoff intensity
 
 global.colorblind_type = -1; // 0 - Protanopia, 1 - Deuteranopia, 2 - Tritanopia
 global.colorblind_intensity = 1.0;
+
 
 #macro heat_nerf 5 // divides the style gain by this
 #macro heat_lossdrop 0.1 // speed of global.style loss

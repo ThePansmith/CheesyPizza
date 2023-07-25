@@ -27,3 +27,6 @@ scr_getinput();
 event_inherited();
 if (global.replayrecord)
 	replay_record_push_framedata();
+	
+if (global.online)
+	scr_online_send();
