@@ -20,5 +20,5 @@ if check_midway()
 }
 
 // If we aren't coming or going from a secret, we don't need to exist.
-if !room_is_secret(obj_player.lastroom) && !room_is_secret(obj_player.targetRoom) && !instance_exists(obj_ghostcollectibles)
+if !room_is_secret(obj_player1.lastroom) && !room_is_secret(obj_player1.targetRoom) && !instance_exists(obj_ghostcollectibles)
 	instance_destroy();
