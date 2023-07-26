@@ -2,9 +2,6 @@ spr_open = spr_secretportal_spawnopen;
 spr_idle = spr_secretportal_spawnidle;
 spr_close = spr_secretportal_spawnclose;
 
-lastRoom_secret = room_is_secret(obj_player.lastroom);
-targetRoom_secret = room_is_secret(obj_player.targetRoom);
-
 sugary = check_sugary();
 if sugary
 {
@@ -22,5 +19,6 @@ if check_midway()
 	sprite_index = spr_open;
 }
 
-if (!(lastRoom_secret || targetRoom_secret))
+// If we aren't coming or going from a secret, we don't need to exist.
+if (!(room_is_secret(obj_player.lastroom) || room_is_secret(obj_player.targetRoom)))
 	instance_destroy();
