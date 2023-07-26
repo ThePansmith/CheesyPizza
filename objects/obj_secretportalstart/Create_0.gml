@@ -18,3 +18,7 @@ if check_midway()
 	spr_close = spr_secretportal_spawnclose_bo;
 	sprite_index = spr_open;
 }
+
+// If we aren't coming or going from a secret, we don't need to exist.
+if (!(room_is_secret(obj_player.lastroom) || room_is_secret(obj_player.targetRoom)))
+	instance_destroy();

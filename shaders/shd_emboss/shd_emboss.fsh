@@ -7,7 +7,6 @@
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
-
 vec4 sample_pixel(float dx, float dy)
 {
 	return texture2D(gm_BaseTexture, v_vTexcoord + vec2(dx, dy));
@@ -20,6 +19,8 @@ void build_matrix_mean(inout vec4[9] color_matrix)
 		color_matrix[i].a = (color_matrix[i].r + color_matrix[i].g + color_matrix[i].b) / 3.0;
 	}
 }
+
+// builds the color matrix of a given pixel based on the surrounding texels from the texture page
 void build_color_matrix(out vec4[9] color_matrix)
 {
 	float dxtex = 0.0015;

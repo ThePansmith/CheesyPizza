@@ -1,2 +1,2 @@
-if (global.replayrecord)
-	replay_record_end();
+//if (global.replayrecord)
+//	replay_record_end();

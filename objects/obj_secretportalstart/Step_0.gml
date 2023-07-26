@@ -43,7 +43,7 @@ switch (sprite_index)
 						state = states.ratmount;
 					else
 					{
-						if (state == states.knightpep)
+						if (state == states.knightpep || state == states.cotton || state == states.cottonroll || state == states.cottondrill)
 							hsp = 0;
 						sprite_index = tauntstoredsprite;
 					}
@@ -74,33 +74,44 @@ switch (sprite_index)
 						other.drop = true;
 					if (other.drop)
 					{
-						if (!isgustavo && (tauntstoredstate == states.knightpep || tauntstoredstate == states.knightpepslopes || tauntstoredstate == states.knightpepbump || tauntstoredstate == states.firemouth))
+						if (!isgustavo && (tauntstoredstate == states.knightpep || tauntstoredstate == states.knightpepslopes || tauntstoredstate == states.knightpepbump || tauntstoredstate == states.firemouth || tauntstoredstate == states.cottondrill || tauntstoredstate == states.cotton || tauntstoredstate == states.cottonroll))
 						{
 							state = tauntstoredstate;
 							movespeed = tauntstoredmovespeed;
 							hsp = tauntstoredhsp;
 							sprite_index = tauntstoredsprite;
-							if (state == states.knightpep)
+							
+							switch (state)
 							{
-								hsp = 0;
-								movespeed = 0;
-							}
-							else if (state == states.knightpepslopes)
-							{
-								movespeed = 0;
-								hsp = 0;
-								state = states.knightpep;
-								sprite_index = spr_knightpepfall;
-							}
-							else if (state == states.firemouth)
-							{
-								if (sprite_index == spr_player_firemouthdash)
-								{
+								case states.knightpep:
 									hsp = 0;
 									movespeed = 0;
-									sprite_index = spr_player_firemouthidle;
-								}
+									break;
+								case states.knightpepslopes:
+									movespeed = 0;
+									hsp = 0;
+									state = states.knightpep;
+									sprite_index = spr_knightpepfall;
+									break;
+								case states.firemouth:
+									if (sprite_index == spr_player_firemouthdash)
+									{
+										hsp = 0;
+										movespeed = 0;
+										sprite_index = spr_player_firemouthidle;
+									}
+									break;
+								case states.cotton:
+								case states.cottonroll:
+								case states.cottondrill:
+									hsp = 0;
+									movespeed = 0;
+									verticalMovespeed = 0;
+									state = states.cottondrill;
+									sprite_index = spr_cotton_drill;
+									break;
 							}
+	
 						}
 					}
 				}
