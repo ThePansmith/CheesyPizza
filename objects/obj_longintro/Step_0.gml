@@ -1,5 +1,6 @@
 with (obj_player)
 	state = states.titlescreen;
+
 if (scene >= 0)
 {
 	if (!showtext && (keyboard_check_pressed(vk_anykey) or scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != -4))
@@ -18,6 +19,7 @@ if (scenebuffer > 0)
 	scenebuffer--;
 else
 	_switch = true;
+
 switch (scene)
 {
 	case -2:
@@ -32,6 +34,7 @@ switch (scene)
 			}
 		}
 		break;
+	
 	case -1:
 		if (_switch && !instance_exists(obj_logoprop))
 		{
@@ -43,6 +46,9 @@ switch (scene)
 				fade = 1.2;
 				deccel = 0.03;
 			}
+			video_open("data/intro.mp4");
+			
+			/*
 			peppinopizza = instance_create(-100, 0, obj_introprop);
 			peppinopizza.sprite_index = spr_introasset1;
 			peppinopizza.depth = 0;
@@ -63,8 +69,15 @@ switch (scene)
 				if (music != -4)
 					fmod_event_instance_set_parameter(music.event, "state", 1, true);
 			}
+			*/
 		}
 		break;
+	
+	case 0:
+		video_set_volume((global.option_unfocus_mute && !window_has_focus()) ? 0 : global.option_master_volume);
+		break;
+	
+	/*
 	case 0:
 		peppinopizza.x += 0.25;
 		tower.x -= 0.15;
@@ -249,10 +262,8 @@ switch (scene)
 			pizzaface.image_speed = 0.35;
 			scene++;
 			scenebuffer = 170;
-			/*
-			layer_hspeed("Backgrounds_1", -3);
-			layer_vspeed("Backgrounds_1", -3);
-			*/
+			//layer_hspeed("Backgrounds_1", -3);
+			//layer_vspeed("Backgrounds_1", -3);
 			layer_hspeed("Backgrounds_2", -0.1);
 			layer_hspeed("Backgrounds_3", -0.15);
 			layer_hspeed("Backgrounds_4", -0.25);
@@ -601,4 +612,5 @@ switch (scene)
 			room_goto(Mainmenu);
 		}
 		break;
+	*/
 }

@@ -36,7 +36,8 @@ if ((!global.panic && !global.snickchallenge) or global.leveltosave == "dragonla
 	}
 	else
 		fmod_event_instance_stop(pillarmusicID, true);
-	if (music != -4 && music.on_room_start != -4)
+	
+	if music != -4
 	{
 		if secret
 		{
@@ -48,7 +49,8 @@ if ((!global.panic && !global.snickchallenge) or global.leveltosave == "dragonla
 			}
 			fmod_event_instance_set_parameter(music.event_secret, "state", s, true);
 		}
-		music.on_room_start(room, music.event, music.event_secret);
+		if music.on_room_start != -4
+			music.on_room_start(room, music.event, music.event_secret);
 	}
 }
 if (secret)

@@ -1522,6 +1522,7 @@ function scr_characterspr()
 		spr_kungfuair1transition = spr_playerBN_kungfuair1transition;
 		spr_kungfuair2transition = spr_playerBN_kungfuair2transition;
 		spr_kungfuair3transition = spr_playerBN_kungfuair2transition;
+		spr_kungfujump = spr_playerBN_kungfujump;
 		spr_palette = spr_bopalette;
 		paletteselect = 0;
 	}

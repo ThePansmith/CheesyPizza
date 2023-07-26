@@ -1,4 +1,4 @@
 function scr_transformationcheck()
 {
-	return (state != states.actor && state != states.tube) || array_contains(transformation, state);
+	return !array_contains(transformation, state) or (state == states.actor or state == states.tube);
 }

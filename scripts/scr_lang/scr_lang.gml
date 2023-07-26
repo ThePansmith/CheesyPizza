@@ -3,12 +3,12 @@ function scr_get_languages()
 	global.lang_map = ds_map_create();
 	global.lang = "en";
 	var arr = [];
-	for (var file = file_find_first("lang/*.txt", 0); file != ""; file = file_find_next())
+	for (var file = file_find_first("data/lang/*.txt", 0); file != ""; file = file_find_next())
 		array_push(arr, file);
 	file_find_close();
 	for (var i = 0; i < array_length(arr); i++)
 	{
-		var fo = file_text_open_read("lang/" + arr[i]);
+		var fo = file_text_open_read("data/lang/" + arr[i]);
 		var str = "";
 		while !file_text_eof(fo)
 		{
@@ -23,9 +23,9 @@ function scr_get_languages()
 
 function scr_lang_get_credits()
 {
-	var fo = file_text_open_read("lang/credits.txt");
+	var fo = file_text_open_read("data/credits.txt");
 	var arr = array_create(0);
-	while !file_text_eof(fo)
+	while fo != -1 && !file_text_eof(fo)
 		array_push(arr, file_text_readln(fo));
 	file_text_close(fo);
 	return arr;
@@ -191,7 +191,7 @@ function lang_get_custom_font(fontname, language)
 		font_sep = real(font_sep);
 		var font_xorig = 0;
 		var font_yorig = 0;
-		var spr = sprite_add(concat("lang/", ds_map_find_value(language, _dir)), font_size, true, false, font_xorig, font_yorig);
+		var spr = sprite_add(concat("data/lang/", ds_map_find_value(language, _dir)), font_size, true, false, font_xorig, font_yorig);
 		
 		return font_add_sprite_ext(spr, font_map, 0, font_sep);
 	}
