@@ -51,10 +51,18 @@ if (floor(image_index) >= (image_number - 1))
 							secretportalID = other.id;
 						}
 						else
-							targetRoom = lastroom;
+						{
+							
+							if (other.targetRoom != room) // it wasn't set, we are probably in a secret
+								targetRoom = other.targetRoom;
+							else
+								targetRoom = lastroom;
+							lastroom = room;
+						}
 					}
 					if (!secret && !soundtest)
 						ds_list_add(global.saveroom, id);
+						
 					instance_create(x, y, obj_fadeout);
 				}
 			}
