@@ -42,8 +42,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Collectible",
-    "path": "folders/Sprites/Level Structure/Collectible.yy",
+    "name": "Doors",
+    "path": "folders/Sprites/Level Structure/Warps/Doors.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

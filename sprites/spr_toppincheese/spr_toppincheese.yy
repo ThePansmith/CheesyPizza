@@ -38,7 +38,7 @@
   "origin": 4,
   "parent": {
     "name": "Toppin",
-    "path": "folders/Sprites/Level Structure/Collectible/Toppin.yy",
+    "path": "folders/Sprites/Effects and Particles/Collectible/Toppin.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

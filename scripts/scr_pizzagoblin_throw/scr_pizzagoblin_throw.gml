@@ -144,6 +144,13 @@ function scr_pizzagoblin_throw()
 					image_xscale = other.image_xscale;
 				}
 				break;
+			case obj_cottonwitch:
+				with (instance_create(x, y, obj_cottonwitchprojectile))
+				{
+					sound_play_oneshot_3d("event:/sfx/enemies/pizzardelectricity", x, y);
+					image_xscale = other.image_xscale;
+				}
+				break;
 			case obj_swedishmonkey:
 				if (elite or global.stylethreshold >= 3)
 				{

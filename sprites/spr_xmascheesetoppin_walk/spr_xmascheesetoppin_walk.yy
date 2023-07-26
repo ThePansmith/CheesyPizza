@@ -31,7 +31,7 @@
   "origin": 9,
   "parent": {
     "name": "Christmas",
-    "path": "folders/Sprites/Level Structure/Collectible/Toppin/Christmas.yy",
+    "path": "folders/Sprites/Effects and Particles/Collectible/Toppin/Christmas.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
