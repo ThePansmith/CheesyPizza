@@ -29,7 +29,7 @@
   "origin": 4,
   "parent": {
     "name": "Warriors",
-    "path": "folders/Sprites/Level Structure/Collectible/Toppin/Warriors.yy",
+    "path": "folders/Sprites/Effects and Particles/Collectible/Toppin/Warriors.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

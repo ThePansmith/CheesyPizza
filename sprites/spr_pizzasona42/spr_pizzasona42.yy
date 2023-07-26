@@ -53,7 +53,7 @@
   "origin": 4,
   "parent": {
     "name": "Pizzasona",
-    "path": "folders/Sprites/Level Structure/Collectible/Pizzasona.yy",
+    "path": "folders/Sprites/Effects and Particles/Collectible/Pizzasona.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

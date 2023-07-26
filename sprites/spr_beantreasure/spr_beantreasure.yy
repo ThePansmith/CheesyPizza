@@ -37,7 +37,7 @@
   "origin": 9,
   "parent": {
     "name": "Treasure",
-    "path": "folders/Sprites/Level Structure/Collectible/Treasure.yy",
+    "path": "folders/Sprites/Effects and Particles/Collectible/Treasure.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

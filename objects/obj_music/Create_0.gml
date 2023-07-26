@@ -269,8 +269,28 @@ add_music(midway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret"
 #region SUGARY
 
 add_music(entryway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
-add_music(steamy_1, "event:/modded/sugary/cotton", "event:/modded/sugary/cottonsecret", 0);
-
+add_music(steamy_1, "event:/modded/sugary/cotton", "event:/modded/sugary/cottonsecret", 0, function(room, event, event_secret)
+{
+	var s = 0
+	switch (room)
+	{
+		case steamy_1:
+		case steamy_7:
+			s = 0
+			break;
+		case steamy_8:
+		case steamy_9:
+		case steamy_10:
+		case steamy_11:
+		case steamy_11_1:
+		case steamy_12:
+		case steamy_13:
+		case steamy_14:
+			s = 1
+			break;
+	}
+	fmod_event_instance_set_parameter(event, "state", s, false);
+});
 #endregion
 #region OLD LEVELS
 
