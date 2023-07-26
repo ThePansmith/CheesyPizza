@@ -33,7 +33,7 @@ function state_player_normal()
 		idlespr = spr_player_pistolidle;
 		movespr = spr_player_pistolwalk;
 	}
-	if (room == tower_soundtest && obj_soundtest.play)
+	if (instance_exists(obj_soundtest) && obj_soundtest.play)
 	{
 		idlespr = spr_pepdance;
 		movespr = spr_pepdance;

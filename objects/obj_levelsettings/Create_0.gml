@@ -73,15 +73,15 @@ add_modifier("Encore", MOD.Encore, "Remixes the level to make it harder.", funct
 });
 */
 
-if !boss
+if !boss && level != "tutorial"
 	add_modifier("No Toppings", MOD.NoToppings, "Go through the level without collecting any toppings.\n\nMay tweak level design to make this possible.", [seq_notoppings_off, seq_notoppings_on]);
-if !boss
+if !boss && level != "tutorial"
 	add_modifier("Pacifist", MOD.Pacifist, "Go through the level without killing any enemies.", [seq_pacifist_off, seq_pacifist_on]);
 
 add_modifier("Hard Mode", MOD.HardMode, "The level will spawn a ghost that drops random enemies.", [seq_hardmode_off, seq_hardmode_on]);
 add_modifier("Mirrored", MOD.Mirror, "Flips the screen horizontally, effectively mirroring the level.", [seq_mirrored_off, seq_mirrored_on]);
 
-if !boss && level != "grinch" && level != "dragonlair" && level != "exit"
+if !boss && level != "grinch" && level != "dragonlair" && level != "exit" && level != "snickchallenge" && level != "tutorial"
 	add_modifier("Lap 3", MOD.Lap3, "Spawns Pizzaface on the third lap.", [seq_lap3_off, seq_lap3_on]);
 
 #endregion

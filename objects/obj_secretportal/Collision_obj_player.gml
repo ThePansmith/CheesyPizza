@@ -11,7 +11,7 @@ if (active && !instance_exists(obj_jumpscare) && ds_list_find_index(global.saver
 		with (obj_camera)
 			lock = true;
 		if (secret)
-			notification_push(notifs.secret_exit, [room_get_name(room)]);
+			notification_push(notifs.secret_exit, [room]);
 		else
 			notification_push(notifs.secret_enter, [room, targetRoom]);
 		if (!secret)

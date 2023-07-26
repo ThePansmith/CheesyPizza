@@ -16,7 +16,6 @@
     {"name":"inst_972252D8","path":"rooms/tower_sage/tower_sage.yy",},
     {"name":"inst_32195548","path":"rooms/tower_sage/tower_sage.yy",},
     {"name":"inst_5EB561FB","path":"rooms/tower_sage/tower_sage.yy",},
-    {"name":"inst_78C25F59","path":"rooms/tower_sage/tower_sage.yy",},
     {"name":"inst_DCE344D0","path":"rooms/tower_sage/tower_sage.yy",},
   ],
   "isDnd": false,
@@ -31,7 +30,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_972252D8","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_startgate","path":"objects/obj_startgate/obj_startgate.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1024.0,"y":402.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_32195548","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_verticalhallway","path":"objects/obj_verticalhallway/obj_verticalhallway.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":96.0,"y":576.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5EB561FB","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_tutorialbook","path":"objects/obj_tutorialbook/obj_tutorialbook.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":601.0,"y":394.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_78C25F59","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_water","path":"objects/obj_water/obj_water.yy",},"properties":[],"rotation":0.0,"scaleX":4.0,"scaleY":2.0,"x":96.0,"y":480.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_DCE344D0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_doorD","path":"objects/obj_doorD/obj_doorD.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":352.0,"y":416.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":17,"SerialiseWidth":79,"TileCompressedData":[
