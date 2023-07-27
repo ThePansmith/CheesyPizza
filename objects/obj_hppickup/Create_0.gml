@@ -18,3 +18,6 @@ if (place_meeting(x, y, obj_solid))
 }
 if (place_meeting(x, y, obj_solid))
 	x = clamp(x, 96, room_width - 96);
+
+with obj_bosscontroller
+	other.sprite_index = spr_playerhp;

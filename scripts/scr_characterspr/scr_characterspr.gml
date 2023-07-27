@@ -286,6 +286,7 @@ function scr_characterspr()
 	spr_buttattack = spr_player_buttattack;
 	spr_buttattackend = spr_player_buttattackend;
 	spr_cottonidle = spr_cotton_idle;
+	spr_groundpoundjump = spr_player_groundpoundjump;
 	
 	spr_palette = spr_peppalette;
 	if character == "P" or isgustavo
@@ -1032,6 +1033,7 @@ function scr_characterspr()
 		spr_kungfuair3transition = spr_player_kungfuair3transition;
 		spr_faceplant = spr_playerSP_faceplant;
 		spr_cottonidle = spr_cotton_idle;
+		spr_attackdash = spr_playerSP_attackdash;
 		spr_palette = spr_pizzypalette;
 		paletteselect = 1;
 	}
@@ -1785,6 +1787,7 @@ function scr_characterspr()
 		spr_airattack = spr_playerPN_airattack;
 		spr_groundedattack = spr_playerPN_groundedattack;
 		spr_ungroundedattack = spr_playerPN_ungroundedattack;
+		spr_groundpoundjump = spr_playerPN_groundpoundjump;
 		spr_palette = spr_peppalette;
 		paletteselect = 1;
 	}

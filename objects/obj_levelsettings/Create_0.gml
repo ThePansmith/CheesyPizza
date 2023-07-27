@@ -73,7 +73,7 @@ add_modifier("Encore", MOD.Encore, "Remixes the level to make it harder.", funct
 });
 */
 
-if !boss && level != "tutorial"
+if !boss && level != "tutorial" && global.experimental
 	add_modifier("No Toppings", MOD.NoToppings, "Go through the level without collecting any toppings.\n\nMay tweak level design to make this possible.", [seq_notoppings_off, seq_notoppings_on]);
 if !boss && level != "tutorial"
 	add_modifier("Pacifist", MOD.Pacifist, "Go through the level without killing any enemies.", [seq_pacifist_off, seq_pacifist_on]);

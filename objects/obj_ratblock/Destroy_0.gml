@@ -1,10 +1,23 @@
 if (ds_list_find_index(global.saveroom, id) == -1)
 {
-	with (instance_create(x, y, obj_sausageman_dead))
+	if sugary
 	{
-		image_xscale = other.image_xscale;
-		sprite_index = other.spr_dead;
+		with instance_create(x - sprite_xoffset + sprite_width / 2, y - sprite_yoffset + sprite_height / 2, obj_sausageman_dead)
+		{
+			image_xscale = other.image_xscale;
+			sprite_index = other.spr_dead;
+			sugary = true;
+		}
 	}
+	else
+	{
+		with instance_create(x, y, obj_sausageman_dead)
+		{
+			image_xscale = other.image_xscale;
+			sprite_index = other.spr_dead;
+		}
+	}
+	
 	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
 	if (fmod_event_instance_is_playing(sniffsnd))
 		fmod_event_instance_stop(sniffsnd, true);

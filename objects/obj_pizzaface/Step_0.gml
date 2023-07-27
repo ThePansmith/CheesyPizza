@@ -68,13 +68,13 @@ if (_move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.sta
 	        {
 	            instance_destroy(obj_fadeout)
 	            targetDoor = "A"
-	            room = rm_baby
 	            state = states.timesup
-	            sprite_index = spr_Timesup
-	            image_index = 0
-	            audio_stop_all()
+				stop_music()
+	            sound_stop_all(true)
+				scr_room_goto(rm_baby)
 	        }
 	        instance_destroy()
+			instance_destroy(obj_wartimer);
 	    }
 		else
 		{
@@ -94,6 +94,7 @@ if (_move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.sta
 				sound_play_oneshot("event:/music/timesup");
 			}
 			instance_destroy();
+			instance_destroy(obj_wartimer);
 		}
 	}
 }

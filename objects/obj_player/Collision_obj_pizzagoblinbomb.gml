@@ -2,7 +2,7 @@ if (!other.grabbable)
 	exit;
 if (state != states.boxxedpepspin)
 {
-	if (state == states.handstandjump || state == states.lungeattack || state == states.punch)
+	if (state == states.handstandjump || state == states.lungeattack || (state == states.punch && !REMIX) or check_kungfu_state())
 	{
 		if (other.state == states.normal && scr_transformationcheck() && !cutscene && state != states.bombgrab && (state == states.handstandjump || state == states.punch || state == states.lungeattack))
 		{

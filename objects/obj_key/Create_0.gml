@@ -13,3 +13,6 @@ image_speed = 0.35;
 platformid = -4;
 hsp_carry = 0;
 vsp_carry = 0;
+
+if check_sugary()
+	sprite_index = spr_key_ss;

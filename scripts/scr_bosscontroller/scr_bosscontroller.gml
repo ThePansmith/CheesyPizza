@@ -294,6 +294,7 @@ function scr_collect_hat(_persistent = false)
 				image_index = other.image_index
 				x_to = pos[0]
 				y_to = pos[1]
+				sprite_index = other.spr_playerhp;
 			}
 		}
 		else
@@ -303,7 +304,6 @@ function scr_collect_hat(_persistent = false)
 				scr_sound_multiple(global.snd_collect, x, y)
 				with (obj_camera)
 					healthshaketime = 30
-				var val = 50
 				sound_play_oneshot("event:/sfx/misc/cardcollect")
 				global.extrahats++
 				with (instance_create(x, y, obj_smallnumber))

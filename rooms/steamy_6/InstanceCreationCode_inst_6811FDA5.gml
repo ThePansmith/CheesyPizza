@@ -1,1 +1,1 @@
-content = obj_null;
+content = obj_cottonwitch;

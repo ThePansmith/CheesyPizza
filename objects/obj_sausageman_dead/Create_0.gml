@@ -17,6 +17,7 @@ usepalette = false;
 paletteselect = 0;
 spr_palette = 0;
 d = 255;
-sugary = false
-rotatedirection = choose(-1, 0, 1)
-rotatevalue = irandom_range(-20, 20)
+
+sugary = false;
+rotatedirection = choose(-1, 0, 1);
+rotatevalue = irandom_range(-20, 20);
