@@ -39,7 +39,7 @@ switch (state)
 					if (place_meeting(x - other.hsp, y - other.vsp, other))
 						instance_destroy();
 				}
-				if (place_meeting(x + hsp, y + vsp, obj_solid))
+				if (check_solid(x + hsp, y + vsp))
 				{
 					instance_destroy();
 					with (playerid)

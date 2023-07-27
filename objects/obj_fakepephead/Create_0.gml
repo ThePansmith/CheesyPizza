@@ -11,7 +11,7 @@ destroy = false;
 clone = false;
 image_speed = 0.35;
 alarm[0] = 10;
-while (place_meeting(x, y, obj_solid))
+while (check_solid(x, y))
 {
 	if (x > (room_width / 2))
 		x--;

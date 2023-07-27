@@ -13,7 +13,7 @@ function scr_player_trickjump()
 		if (floor(image_index) == (image_number - 1))
 			sprite_index = spr_rampjump;
 	}
-	if (scr_solid(x + xscale, y) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_destructibles))
+	if (scr_solid(x + xscale, y) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || check_solid(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 	{
 		state = states.bump;
 		image_index = 0;

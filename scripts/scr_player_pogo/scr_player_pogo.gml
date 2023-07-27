@@ -10,7 +10,7 @@ function scr_player_pogo()
 		if (movespeed < 6)
 			movespeed += 0.5;
 	}
-	if (move != xscale || move == 0 || place_meeting(x + xscale, y, obj_solid))
+	if (move != xscale || move == 0 || check_solid(x + xscale, y))
 	{
 		movespeed = 0;
 		pogospeed = 6;

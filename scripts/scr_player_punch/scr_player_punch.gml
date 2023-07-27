@@ -152,7 +152,7 @@ function scr_player_punch()
 			else
 				state = states.normal;
 		}
-		if place_meeting(x + xscale, y, obj_solid) && sprite_index == spr_breakdancesuper
+		if check_solid(x + xscale, y) && sprite_index == spr_breakdancesuper
 			xscale *= -1;
 		
 		if sprite_index == spr_breakdancesuper
@@ -160,7 +160,7 @@ function scr_player_punch()
 		else
 			image_speed = 0.4;
 		
-		if scr_solid(x + xscale, y) && !place_meeting(x + sign(hsp), y, obj_slope) && !place_meeting(x + xscale, y, obj_destructibles)
+		if scr_solid(x + xscale, y) && !check_slope(x + sign(hsp), y) && !place_meeting(x + xscale, y, obj_destructibles)
 		&& (!place_meeting(x + xscale, y, obj_destructibles) or (sprite_index != spr_buttattack && sprite_index != spr_buttattackstart))
 		{
 			if ledge_bump(32)
@@ -391,7 +391,7 @@ function scr_player_punch()
 				image_speed = abs(movespeed) / 15;
 		}
 		
-		if sprite_index != spr_kungfujump && check_wall(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_slope_parent)
+		if sprite_index != spr_kungfujump && check_solid(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles) && !check_slope(x + xscale, y)
 		{
 			if ledge_bump(32)
 			{

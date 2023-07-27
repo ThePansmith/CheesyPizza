@@ -78,7 +78,7 @@ else if (sprite_index == spr_haystackburning)
 if (state == states.transition)
 {
 	hsp = movespeed * dir;
-	if (place_meeting(x + sign(hsp), y, obj_solid) && (!place_meeting(x + sign(hsp), y, obj_slope_parent) || place_meeting(x + sign(hsp), y - 4, obj_solid)))
+	if (check_solid(x + sign(hsp), y) && (!check_slope(x + sign(hsp), y) || check_solid(x + sign(hsp), y - 4)))
 		x_to = x;
 	if ((dir > 0 && x >= x_to) || (dir < 0 && x <= x_to))
 	{

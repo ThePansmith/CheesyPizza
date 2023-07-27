@@ -149,8 +149,8 @@ function scr_player_handstandjump()
 	}
 	mask_index = spr_player_mask;
 	
-	if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y))
-	&& !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16))
+	if ((!grounded && (check_solid(x + hsp, y) || scr_solid_slope(x + hsp, y))
+	&& !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (check_solid(x + sign(hsp), y - 16) || scr_solid_slope(x + sign(hsp), y - 16))
 	&& !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && scr_slope()))
 	&& (character != "N" or noisetype == 0)
 	{
@@ -166,7 +166,7 @@ function scr_player_handstandjump()
 			vsp = -wallspeed;
 	}
 	
-	if (grounded && scr_solid(x + xscale, y) && !scr_slope() && !place_meeting(x + sign(hsp), y, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope_parent) || scr_solid_slope(x + sign(hsp), y)))
+	if (grounded && scr_solid(x + xscale, y) && !scr_slope() && !place_meeting(x + sign(hsp), y, obj_destructibles) && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)))
 	{
 		var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
 		if (_bump)

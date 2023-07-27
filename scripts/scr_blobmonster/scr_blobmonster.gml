@@ -10,7 +10,7 @@ function scr_blob_normal()
 		_calc = abs(y - _side) * sign(image_yscale);
 	}
 	var _col = collision_line(x, y - _calc, x + (16 * image_xscale), y - _calc, obj_solid, false, true);
-	if (place_meeting(x + hsp, y, obj_solid))
+	if (check_solid(x + hsp, y))
 	{
 		if (_col != -4 || changeside_buffer > 0)
 			image_xscale *= -1;
@@ -47,7 +47,7 @@ function scr_blob_chase()
 		sprite_index = chasespr;
 	else
 		sprite_index = idlespr;
-	if (place_meeting(x + hsp, y, obj_solid) && !scr_slope() && grounded)
+	if (check_solid(x + hsp, y) && !scr_slope() && grounded)
 	{
 		image_xscale *= -1;
 		state = states.normal;

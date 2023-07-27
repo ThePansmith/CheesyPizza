@@ -7,7 +7,7 @@ function scr_player_barrelclimbwall()
 	if ((!key_attack && !place_meeting(x, y + 1, obj_current)) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
 	{
 		mask_index = spr_player_mask;
-		if (!place_meeting(x, y, obj_solid))
+		if (!check_solid(x, y))
 		{
 			movespeed = 0;
 			state = states.barreljump;

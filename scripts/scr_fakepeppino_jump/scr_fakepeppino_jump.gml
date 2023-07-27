@@ -13,7 +13,7 @@ function scr_fakepeppino_jump()
 		image_index = 0;
 		sprite_index = spr_fakepeppino_fall;
 	}
-	if ((place_meeting(x, y + 1, obj_solid) || place_meeting(x, y + 1, obj_slope_parent) || place_meeting(x, y + 1, obj_platform)) && sprite_index == spr_fakepeppino_fall)
+	if ((check_solid(x, y + 1) || check_slope(x, y + 1) || place_meeting(x, y + 1, obj_platform)) && sprite_index == spr_fakepeppino_fall)
 	{
 		image_index = 0;
 		sprite_index = spr_fakepeppino_land;

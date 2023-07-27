@@ -18,7 +18,7 @@ with (player)
 	freefallsmash = other.storedfreefallsmash;
 	with (instance_create(x, y, obj_parryeffect))
 		sprite_index = spr_peppinoteleporteffect;
-	if (place_meeting(x, y, obj_solid))
+	if (check_solid(x, y))
 		y--;
 	if (freefallsmash >= 12)
 	{

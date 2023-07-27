@@ -5,7 +5,7 @@ function scr_player_ratmounthurt()
 	jumpAnim = false;
 	hurted = true;
 	gusdashpadbuffer = 0;
-	if (place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x, y + sign(hsp), obj_slope_parent))
+	if (check_solid(x + sign(hsp), y) && !check_slope(x, y + sign(hsp)))
 		movespeed = 0;
 	alarm[5] = 2;
 	alarm[7] = 80;

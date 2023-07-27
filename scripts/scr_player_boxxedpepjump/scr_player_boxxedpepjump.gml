@@ -14,7 +14,7 @@ function scr_player_boxxedpepjump()
 		raildir = _railinst.dir;
 	}
 	hsp = movespeed + (railmovespeed * raildir);
-	if (scr_solid(x + sign(hsp), y) && xscale == move && (!place_meeting(x + xscale, y, obj_slope_parent) || scr_solid_slope(x + xscale, y)))
+	if (scr_solid(x + sign(hsp), y) && xscale == move && (!check_slope(x + xscale, y) || scr_solid_slope(x + xscale, y)))
 		movespeed = 0;
 	if (!key_jump2 && !jumpstop && vsp < 0)
 	{

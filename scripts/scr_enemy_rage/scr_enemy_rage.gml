@@ -18,7 +18,7 @@ function scr_enemy_rage()
 				hsp = image_xscale * (4 + (global.baddiespeed - 1));
 				with (instance_place(x + hsp, y, obj_destructibles))
 					instance_destroy();
-				if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_slope_parent))
+				if (check_solid(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles) && !check_slope(x + hsp, y))
 				{
 					state = states.stun;
 					stunned = 100;
@@ -203,7 +203,7 @@ function scr_enemy_rage()
 				sprite_index = spr_tank_charge;
 			with (instance_place(x + hsp, y, obj_destructibles))
 				instance_destroy();
-			if ((place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_destructibles) && !scr_slope()) || slope_buffer <= 0)
+			if ((check_solid(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles) && !scr_slope()) || slope_buffer <= 0)
 			{
 				slope_buffer = 8;
 				state = states.stun;

@@ -8,7 +8,7 @@ function state_player_cottonroll()
 	hsp = xscale * movespeed;
 	dir = xscale;
 	momemtum = true;
-	if (scr_solid(x + xscale, y) && !place_meeting(x + xscale, y, obj_slope) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_ratblock))
+	if (scr_solid(x + xscale, y) && !check_slope(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_ratblock))
 	{
 		xscale *= -1;
 		movespeed /= 2;
@@ -52,7 +52,7 @@ function state_player_cottonroll()
 	var _xscale = xscale;
 	if scr_slope()
 	{
-		with instance_place(x, y + 1, obj_slope_parent)
+		with check_slope(x, y + 1)
 		{
 			var slope_acceleration = abs(image_yscale) / abs(image_xscale);
 			if (_xscale == sign(image_xscale))

@@ -12,6 +12,6 @@ with (obj_teleporter)
 with (obj_pizzaball)
 {
 	visible = true;
-	if (place_meeting(x, y, obj_solid))
+	if (check_solid(x, y))
 		y--;
 }

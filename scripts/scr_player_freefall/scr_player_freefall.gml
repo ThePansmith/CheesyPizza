@@ -128,11 +128,11 @@ function scr_player_freefall()
 			other.superslameffectid = id;
 		}
 	}
-	if (grounded && vsp > 0 && (freefallsmash < 10 || !place_meeting(x, y + vsp, obj_metalblock)) && !place_meeting(x, y + vsp, obj_destructibles) && !place_meeting(x, y + vsp + 6, obj_destructibles) && (!place_meeting(x, y + 1, obj_ladder) or !REMIX or !key_down or check_wall(x, y + 1)))
+	if (grounded && vsp > 0 && (freefallsmash < 10 || !place_meeting(x, y + vsp, obj_metalblock)) && !place_meeting(x, y + vsp, obj_destructibles) && !place_meeting(x, y + vsp + 6, obj_destructibles) && (!place_meeting(x, y + 1, obj_ladder) or !REMIX or !key_down or check_solid(x, y + 1)))
 	{
 		if (scr_slope() && character != "S")
 		{
-			with (instance_place(x, y + 1, obj_slope_parent))
+			with (check_slope(x, y + 1))
 			{
 				other.xscale = -sign(image_xscale);
 				other.state = states.tumble

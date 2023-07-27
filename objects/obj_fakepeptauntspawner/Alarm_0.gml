@@ -41,7 +41,7 @@ with (instance_create(x + lengthdir_x(dis, angle), y + lengthdir_y(dis, angle), 
 	hithsp = hsp;
 	hitvsp = vsp;
 	spawnerID = other.id;
-	if (place_meeting(x, y, obj_solid))
+	if (check_solid(x, y))
 	{
 		x = other.x;
 		y = other.y;

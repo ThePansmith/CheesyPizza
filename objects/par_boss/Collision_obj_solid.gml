@@ -6,7 +6,7 @@ if (ty != -1)
 var tx = try_solid(image_xscale, 0, obj_solid, 64);
 if (tx != -1)
 	x += (tx * image_xscale);
-if (place_meeting(x, y, obj_solid))
+if (check_solid(x, y))
 {
 	ty = try_solid(0, 1, obj_solid, 64);
 	if (ty != -1)

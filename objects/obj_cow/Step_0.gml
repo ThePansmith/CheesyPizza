@@ -22,7 +22,7 @@ switch (state)
 			if (sprite_index != spr_rattumbleblock && sprite_index != spr_rattumbleblock_big)
 				instance_destroy();
 		}
-		if (scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope_parent) || scr_solid(x + sign(hsp), y - 2)) && (!place_meeting(x + sign(hsp), y, obj_ratblock) || place_meeting(x + sign(hsp), y, obj_rattumble)))
+		if (scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_destructibles) && (!check_slope(x + sign(hsp), y) || scr_solid(x + sign(hsp), y - 2)) && (!place_meeting(x + sign(hsp), y, obj_ratblock) || place_meeting(x + sign(hsp), y, obj_rattumble)))
 			image_xscale *= -1;
 		with (instance_place(x + hsp, y, obj_destructibles))
 			instance_destroy();

@@ -37,7 +37,7 @@ switch (state)
 						image_index = 0;
 						sprite_index = spr_pizzaslug_walk;
 					}
-					if place_meeting(x, y, obj_solid)
+					if check_solid(x, y)
 						y--;
 					scr_enemy_walk();
 					break;

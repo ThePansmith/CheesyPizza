@@ -2,7 +2,7 @@ function scr_player_thrown()
 {
 	image_speed = 0.35;
 	hsp = movespeed * -xscale;
-	if (place_meeting(x + sign(hsp), y, obj_solid) && !grounded)
+	if (check_solid(x + sign(hsp), y) && !grounded)
 	{
 		xscale *= -1;
 		movespeed /= 2;

@@ -51,7 +51,7 @@ function scr_player_ratmountgroundpound()
 		{
 			if (scr_slope())
 			{
-				with (instance_place(x, y + 1, obj_slope_parent))
+				with (check_slope(x, y + 1))
 				{
 					other.xscale = -sign(image_xscale);
 					other.state = states.ratmount;

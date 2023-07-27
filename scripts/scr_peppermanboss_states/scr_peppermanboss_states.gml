@@ -333,7 +333,7 @@ function boss_pepperman_shoulderbash()
 	if (sprite_index == spr_pepperman_shoulderstart && image_index > (image_number - 1))
 		sprite_index = spr_pepperman_shoulderloop;
 	hsp = image_xscale * shoulder_spd;
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 	{
 		with (obj_camera)
 		{
@@ -350,7 +350,7 @@ function boss_pepperman_shoulderbash()
 	}
 	if (shoulderpound_fakeout)
 	{
-		if (place_meeting(x + (sign(hsp) * 32), y, obj_solid))
+		if (check_solid(x + (sign(hsp) * 32), y))
 			shoulderpound_buffer = 0;
 		if (shoulderpound_buffer > 0)
 			shoulderpound_buffer--;
@@ -396,7 +396,7 @@ function boss_pepperman_supershoulderbash()
 {
 	image_speed = 0.35;
 	hsp = image_xscale * (shoulder_spd * 2);
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 	{
 		with (obj_camera)
 		{
@@ -423,7 +423,7 @@ function boss_pepperman_shoulder()
 	}
 	if (shoulderturns > 0)
 	{
-		if (place_meeting(x + (sign(hsp) * 96), y, obj_solid))
+		if (check_solid(x + (sign(hsp) * 96), y))
 		{
 			shoulderturns--;
 			state = states.shoulderturn;
@@ -431,7 +431,7 @@ function boss_pepperman_shoulder()
 			image_index = 0;
 		}
 	}
-	else if (place_meeting(x + sign(hsp), y, obj_solid))
+	else if (check_solid(x + sign(hsp), y))
 	{
 		with (obj_camera)
 		{

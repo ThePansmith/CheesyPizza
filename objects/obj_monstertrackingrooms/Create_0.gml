@@ -106,7 +106,7 @@ function robot_create(argument0, argument1)
 				var _doorInst = -4;
 				with (obj_doorMonster)
 				{
-					if (!place_meeting(x, y - 32, obj_solid))
+					if (!check_solid(x, y - 32))
 						_doorInst = id;
 				}
 				if (!instance_exists(_doorInst))
@@ -216,7 +216,7 @@ function hillbilly_create(argument0, argument1)
 				var _doorInst = -4;
 				with (obj_doorMonster)
 				{
-					if (!place_meeting(x, y - 32, obj_solid))
+					if (!check_solid(x, y - 32))
 						_doorInst = id;
 				}
 				if (!instance_exists(_doorInst))

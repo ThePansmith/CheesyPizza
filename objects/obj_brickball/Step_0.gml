@@ -38,7 +38,7 @@ if (scr_solid(x, y + 1) && bounce == 0)
 	vsp = -5;
 	bounce = true;
 }
-if (scr_solid(x + image_xscale, y) && kicked && !place_meeting(x + image_xscale, y, obj_destructibles) && !place_meeting(x + image_xscale, y, obj_slope_parent)
+if (scr_solid(x + image_xscale, y) && kicked && !place_meeting(x + image_xscale, y, obj_destructibles) && !check_slope(x + image_xscale, y)
 && ((!place_meeting(x + image_xscale, y, obj_ratblock) && !place_meeting(x + image_xscale, y, obj_metalblock) && !place_meeting(x + image_xscale, y, obj_tntblock)) or !ptt))
 	instance_destroy();
 if (dashcloudtimer == 0 && grounded)

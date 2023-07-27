@@ -10,7 +10,7 @@ if random_buffer > 0
 else if !disable
 {
 	var _col = collision_line(x, y, obj_player1.x, obj_player1.y, obj_solid, false, true);
-	if !place_meeting(x, y, obj_solid) && !place_meeting(x, y, obj_slope_parent) && _col == -4
+	if !check_solid(x, y) && !check_slope(x, y) && _col == -4
 	{
 		var n = irandom(array_length(content) - 1);
 		with instance_create(x, y, content[n])

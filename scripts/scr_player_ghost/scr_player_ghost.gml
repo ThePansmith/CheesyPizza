@@ -78,7 +78,7 @@ function scr_player_ghost()
 				else
 					sprite_index = spr_ghostidle;
 				ghostbump = Approach(ghostbump, 1, 0.1);
-				if (scr_solid_player(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y + sign(vsp), obj_slope_parent))
+				if (scr_solid_player(x + sign(hsp), y) && !check_slope(x + sign(hsp), y + sign(vsp)))
 					movespeed = 0;
 				if (ghostbump < 0)
 				{

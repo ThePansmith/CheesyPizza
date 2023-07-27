@@ -117,7 +117,7 @@ switch (state)
 						}
 					}
 					var _solid = false;
-					if place_meeting(x, y - 1, obj_solid)
+					if check_solid(x, y - 1)
                         _solid = true;
                     if (_solid || (vsp > 0 && y < other.y) || (x == other.previousx && y == other.previousy))
 						other.idlebuffer++;

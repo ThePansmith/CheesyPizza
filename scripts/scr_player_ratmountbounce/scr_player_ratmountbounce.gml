@@ -61,7 +61,7 @@ function scr_player_ratmountbounce()
 			sprite_index = spr_lonegustavo_punch;
 		}
 		ratmount_fallingspeed += 0.5;
-		if (brick && scr_solid(x + sign(hsp), y) && (!place_meeting(x + sign(hsp), y, obj_slope_parent) || scr_solid_slope(x + sign(hsp), y)))
+		if (brick && scr_solid(x + sign(hsp), y) && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)))
 		{
 			if (move != 0 && move == sign(hsp) && key_jump2)
 			{

@@ -1,4 +1,4 @@
-if (!place_meeting(x, y, obj_solid))
+if (!check_solid(x, y))
 	scr_collide();
 else
 {

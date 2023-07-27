@@ -8,9 +8,9 @@ else if (appear == 0)
 }
 else if (hooked)
 {
-	if (place_meeting(x, y - 50, obj_solid))
+	if (check_solid(x, y - 50))
 		instance_destroy();
-	if (!blinking && place_meeting(x, y - 200, obj_solid))
+	if (!blinking && check_solid(x, y - 200))
 	{
 		blinking = true;
 		alarm[0] = 1;

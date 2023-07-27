@@ -123,7 +123,7 @@ if (state == states.chase)
 	hsp = image_xscale * runmovespeed;
 	if (grounded)
 	{
-		if (scr_solid(x + sign(hsp), y) && (!place_meeting(x + sign(hsp), y, obj_slope_parent) || place_meeting(x + sign(hsp), y - 4, obj_slope_parent)))
+		if (scr_solid(x + sign(hsp), y) && (!check_slope(x + sign(hsp), y) || check_slope(x + sign(hsp), y - 4)))
 		{
 			if (!jumped)
 			{

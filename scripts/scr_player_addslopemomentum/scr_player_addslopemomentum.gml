@@ -1,6 +1,6 @@
 function scr_player_addslopemomentum(argument0, argument1)
 {
-	with (instance_place(x, y + 1, obj_slope_parent))
+	with (check_slope(x, y + 1))
 	{
 		if (sign(image_xscale) == -sign(other.xscale))
 		{
@@ -13,7 +13,7 @@ function scr_player_addslopemomentum(argument0, argument1)
 }
 function scr_pizzaball_addslopemomentum(argument0, argument1)
 {
-	with (instance_place(x, y + 1, obj_slope_parent))
+	with (check_slope(x, y + 1))
 	{
 		if (sign(image_xscale) == -sign(other.image_xscale))
 		{

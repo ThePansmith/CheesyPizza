@@ -32,7 +32,7 @@ function scr_player_mort()
 		image_speed = 0.45;
 	else
 		image_speed = 0.6;
-	if (place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_slope_parent))
+	if (check_solid(x + sign(hsp), y) && !check_slope(x + sign(hsp), y))
 	{
 		movespeed = 0;
 		if (sprite_index == spr_player_barrelmove)

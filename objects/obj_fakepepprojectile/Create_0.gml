@@ -6,5 +6,5 @@ hitvsp = 0;
 image_speed = 0.35;
 depth = -5;
 alarm[0] = 1;
-if (place_meeting(x, y, obj_solid))
+if (check_solid(x, y))
 	instance_destroy();

@@ -10,7 +10,7 @@ function scr_player_ratmounttumble()
 		scr_player_addslopemomentum(0.25, 0.25);
 	if (abs(hsp) <= 2)
 		state = states.ratmount;
-	if ((place_meeting(x + hsp, y, obj_solid) && !scr_solid_slope(x + hsp, y) && !place_meeting(x + hsp, y, obj_rollblock) && !place_meeting(x + hsp, y, obj_rattumble) && !place_meeting(x + hsp, y, obj_destructibles)) || place_meeting(x, y, obj_timedgate))
+	if ((check_solid(x + hsp, y) && !scr_solid_slope(x + hsp, y) && !place_meeting(x + hsp, y, obj_rollblock) && !place_meeting(x + hsp, y, obj_rattumble) && !place_meeting(x + hsp, y, obj_destructibles)) || place_meeting(x, y, obj_timedgate))
 	{
 		state = states.ratmounthurt;
 		vsp = -5;

@@ -119,7 +119,7 @@ if (state == states.pizzaface_ram && alarm[4] < 0)
 mask_index = spr_pizzahead_idle;
 if (state == states.stun && thrown)
 {
-	while (place_meeting(x, y, obj_solid))
+	while (check_solid(x, y))
 		y--;
 }
 if (state != states.stun)

@@ -39,6 +39,6 @@ function scr_player_shoulderbash()
 			other.dashcloudid = id;
 		}
 	}
-	if (place_meeting(x + xscale, y, obj_solid))
+	if (check_solid(x + xscale, y))
 		state = states.normal;
 }

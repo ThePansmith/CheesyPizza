@@ -22,7 +22,7 @@ switch (state)
 		switch (substate)
 		{
 			case states.normal:
-				if (place_meeting(x + sign(hsp), y, obj_solid))
+				if (check_solid(x + sign(hsp), y))
 					movespeed = 0;
 				if (move != 0)
 				{
@@ -56,7 +56,7 @@ switch (state)
 				break;
 			case states.jump:
 				hsp = xscale * movespeed;
-				if (place_meeting(x + sign(hsp), y, obj_solid))
+				if (check_solid(x + sign(hsp), y))
 					movespeed = 0;
 				if (grounded && vsp > 0)
 					substate = states.normal;

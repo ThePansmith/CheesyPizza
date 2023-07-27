@@ -323,7 +323,7 @@ function scr_noise_mach2()
 		sprite_index = spr_playerN_secondjump1;
 		skateboardjumpcooldown = -1;
 	}
-	if ((sprite_index == spr_playerN_secondjump1 || sprite_index == spr_playerN_secondjump2) && place_meeting(x + hsp, y, obj_solid))
+	if ((sprite_index == spr_playerN_secondjump1 || sprite_index == spr_playerN_secondjump2) && check_solid(x + hsp, y))
 	{
 		sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
 		sprite_index = spr_playerN_walljumpstart;
@@ -530,7 +530,7 @@ function scr_noise_jetpack()
 		image_xscale = sign(hsp);
 	if (attackspeed < 15)
 		attackspeed += 0.5;
-	if (place_meeting(x, y + 1, obj_solid))
+	if (check_solid(x, y + 1))
 	{
 		sprite_index = spr_playerN_jetpackslide;
 		if (abs(hsp) <= 5)
@@ -538,7 +538,7 @@ function scr_noise_jetpack()
 	}
 	else
 		sprite_index = spr_playerN_jetpackboost;
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 	{
 		state = states.bounce;
 		vsp = -17;
@@ -551,7 +551,7 @@ function scr_noise_bounce()
 {
 	image_speed = 0.35;
 	hsp = image_xscale * 10;
-	if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_slope_parent) && !place_meeting(x + hsp, y, obj_destructibles))
+	if (check_solid(x + hsp, y) && !check_slope(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles))
 	{
 		instance_create(x + (image_xscale * 20), y, obj_bangeffect);
 		image_xscale *= -1;
@@ -649,7 +649,7 @@ function scr_noise_pogo()
 			}
 		}
 	}
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 	{
 		instance_create(x + (image_xscale * 20), y, obj_bangeffect);
 		image_xscale *= -1;
@@ -669,7 +669,7 @@ function scr_noise_dropstart()
 		cloudbuffer--;
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerN_jump)
 		sprite_index = spr_playerN_fall;
-	if (place_meeting(x, y, obj_solid) || vsp >= 0 || place_meeting(x, y - 1, obj_solid))
+	if (check_solid(x, y) || vsp >= 0 || check_solid(x, y - 1))
 		y -= 30;
 	if (y < -50)
 	{
@@ -892,7 +892,7 @@ function scr_noise_fightball()
 				with (instance_create(x, y, obj_jumpdust))
 					image_xscale = other.image_xscale;
 			}
-			if (place_meeting(x + sign(hsp), y, obj_solid))
+			if (check_solid(x + sign(hsp), y))
 			{
 				instance_create(x + (image_xscale * 20), y, obj_bangeffect);
 				image_xscale *= -1;
@@ -964,7 +964,7 @@ function scr_noise_finale()
 				with (instance_create(x, y, obj_jumpdust))
 					image_xscale = other.image_xscale;
 			}
-			if (place_meeting(x + sign(hsp), y, obj_solid))
+			if (check_solid(x + sign(hsp), y))
 			{
 				instance_create(x + (image_xscale * 20), y, obj_bangeffect);
 				image_xscale *= -1;

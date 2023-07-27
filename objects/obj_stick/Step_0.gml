@@ -115,7 +115,7 @@ switch (state)
 		else if (sprite_index == spr_stick_takemoney2)
 		{
 			hsp = image_xscale * 4;
-			if (abs(x - xstart) >= 200 || (place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_slope_parent)))
+			if (abs(x - xstart) >= 200 || (check_solid(x + sign(hsp), y) && !check_slope(x + sign(hsp), y)))
 			{
 				hsp = 0;
 				sprite_index = spr_stick_leave;

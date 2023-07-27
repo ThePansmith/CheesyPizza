@@ -1,7 +1,7 @@
 if (room == rank_room)
 	visible = false;
 mask_index = obj_player1.mask_index;
-if (place_meeting(x, y + 1, obj_slope_parent) && scr_solid(x, y + 1))
+if (check_slope(x, y + 1) && scr_solid(x, y + 1))
 	y = obj_player1.y;
 x += (Vspeed + obj_player1.hsp);
 y += ((Hspeed + obj_player1.vsp) - 1);

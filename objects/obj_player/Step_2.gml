@@ -4,7 +4,7 @@ if global.sloperot && state != states.knightpepslopes && state != states.Sjumppr
 	var angle_target = 0, angle_spd = 0.6;
 	if state != states.backbreaker && grounded && vsp >= 0
 	{
-		var slope = instance_place(x, y + 1, obj_slope_parent);
+		var slope = check_slope(x, y + 1);
 		if slope
 			angle_target = scr_slope_angle(slope);
 	}
@@ -14,7 +14,7 @@ if global.sloperot && state != states.knightpepslopes && state != states.Sjumppr
 		angle_target /= 2;
 		angle_spd = 0.3;
 	}
-	if place_meeting(x, y + 1, obj_solid)
+	if check_solid(x, y + 1)
 	{
 		angle_target = 0;
 		angle_spd = 0.5;

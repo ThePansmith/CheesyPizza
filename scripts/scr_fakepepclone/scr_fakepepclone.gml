@@ -174,7 +174,7 @@ function scr_fakepepclone_Sjump()
 		}
 		piledrivereffect = 15;
 	}
-	if (place_meeting(x, y - 1, obj_solid))
+	if (check_solid(x, y - 1))
 	{
 		state = states.walk;
 		attacked = true;
@@ -217,7 +217,7 @@ function scr_fakepepclone_throwing()
 		if (attackspeed < 14)
 			attackspeed += 0.1;
 		hsp = image_xscale * attackspeed;
-		if (place_meeting(x + sign(hsp), y, obj_solid))
+		if (check_solid(x + sign(hsp), y))
 		{
 			state = states.walk;
 			attacked = true;

@@ -14,7 +14,7 @@ x += (image_xscale * spd);
 y += -spdh;
 with (instance_place(x + (image_xscale * spd), y, obj_destructibles))
 	instance_destroy();
-if (place_meeting(x + (image_xscale * spd), y, obj_solid) && !place_meeting(x + (image_xscale * spd), y, obj_electricwall) && !place_meeting(x + (image_xscale * spd), y, obj_shotgunblock) && !place_meeting(x + (image_xscale * spd), y, obj_destructibles))
+if (check_solid(x + (image_xscale * spd), y) && !place_meeting(x + (image_xscale * spd), y, obj_electricwall) && !place_meeting(x + (image_xscale * spd), y, obj_shotgunblock) && !place_meeting(x + (image_xscale * spd), y, obj_destructibles))
 	instance_destroy();
 if (sprite_index == spr_mortprojectile)
 {

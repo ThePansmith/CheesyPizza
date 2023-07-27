@@ -1,7 +1,7 @@
 function scr_slope()
 {
 	y++;
-	var slope = instance_place(x, y, obj_slope_parent);
+	var slope = check_slope(x, y);
 	if (slope)
 	{
 		with (slope)

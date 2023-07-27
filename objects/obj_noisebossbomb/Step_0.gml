@@ -2,7 +2,7 @@ hsp = image_xscale * movespeed;
 if (!kick)
 {
 	mask_index = spr_player_mask;
-	if (place_meeting(x + image_xscale, y, obj_solid))
+	if (check_solid(x + image_xscale, y))
 		image_xscale *= -1;
 	if (grounded && vsp > 0)
 		movespeed = 0;
@@ -37,7 +37,7 @@ if (!kick)
 else
 {
 	mask_index = spr_crouchmask;
-	if (place_meeting(x + hsp, y, obj_solid))
+	if (check_solid(x + hsp, y))
 	{
 		sprite_index = spr_playerN_noisebombhitwall;
 		image_index = 0;

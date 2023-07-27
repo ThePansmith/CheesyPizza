@@ -51,7 +51,7 @@ function scr_collide_player()
 	
 	for (i = 0; i < t; i++)
 	{
-		if (!scr_solid_player(x + (bbox_size_x * sh), y) && down == scr_solid_player(x + (bbox_size_x * sh), y + 1) && !place_meeting(x + (bbox_size_x * sh), y, obj_slope_parent) && !place_meeting(x, y, obj_slope_parent) && !place_meeting(x + (bbox_size_x * sh), y + 1, obj_slope_parent))
+		if (!scr_solid_player(x + (bbox_size_x * sh), y) && down == scr_solid_player(x + (bbox_size_x * sh), y + 1) && !check_slope(x + (bbox_size_x * sh), y) && !check_slope(x, y) && !check_slope(x + (bbox_size_x * sh), y + 1))
 		{
 			x += (bbox_size_x * sh);
 			if ((hsp_final > 0 && x >= target_x) || (hsp_final < 0 && x <= target_x))
@@ -144,7 +144,7 @@ function scr_collide_player()
 	// snap on top of sloped platforms
 	if grounded && vsp >= 0
 	{
-		while check_slope(obj_slope_platform)
+		while inside_slope(obj_slope_platform)
 			y--;
 	}
 }

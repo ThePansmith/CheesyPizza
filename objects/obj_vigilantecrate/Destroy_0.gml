@@ -7,9 +7,9 @@ if (cow)
 	{
 		vsp = -16;
 		bounce = 4;
-		if (place_meeting(x, y, obj_solid))
+		if (check_solid(x, y))
 		{
-			while (place_meeting(x, y, obj_solid))
+			while (check_solid(x, y))
 			{
 				if (x < (room_width / 2))
 					x++;

@@ -139,7 +139,7 @@ function scr_collide()
 	
 	if grounded && vsp >= 0
 	{
-		while check_slope(obj_slope_platform)
+		while inside_slope(obj_slope_platform)
 			y--;
 	}
 }

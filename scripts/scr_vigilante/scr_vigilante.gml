@@ -292,7 +292,7 @@ function scr_vigilante_walk()
 		else
 			hsp = Approach(hsp, 0, 1);
 	}
-	if (flickertime > 0 && place_meeting(x + hsp, y, obj_solid))
+	if (flickertime > 0 && check_solid(x + hsp, y))
 	{
 		hsp = floor(hsp / 2.2);
 		hsp *= -1;
@@ -772,7 +772,7 @@ function scr_vigilante_crouchslide()
 		attackspeed -= 0.15;
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_divekickstart)
 		sprite_index = spr_playerV_divekick;
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 		image_xscale *= -1;
 	if (attackspeed <= 0)
 	{
@@ -983,7 +983,7 @@ function scr_vigilante_flamethrower()
 				y = other.y;
 				image_xscale = other.image_xscale;
 			}
-			if (place_meeting(x + image_xscale, y, obj_solid))
+			if (check_solid(x + image_xscale, y))
 			{
 				sprite_index = spr_vigilante_flamethrowerturn;
 				image_index = 0;
@@ -1049,7 +1049,7 @@ function scr_vigilante_machinegun()
 		hsp = image_xscale * 4;
 		if (sprite_index == spr_playerV_jump && (floor(image_index) == (image_number - 1) || vsp > -10))
 			sprite_index = spr_vigilante_uzi;
-		if (place_meeting(x + hsp, y, obj_solid))
+		if (check_solid(x + hsp, y))
 		{
 			image_xscale *= -1;
 			if (sprite_index != spr_vigilante_uzi)

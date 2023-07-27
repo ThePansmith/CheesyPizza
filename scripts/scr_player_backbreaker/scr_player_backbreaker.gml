@@ -14,7 +14,7 @@ function scr_player_backbreaker()
 	else
 		instance_destroy(parry_inst);
 	landAnim = false;
-	if (sprite_index == spr_player_machfreefall && place_meeting(x, y + 1, obj_solid))
+	if (sprite_index == spr_player_machfreefall && check_solid(x, y + 1))
 	{
 		state = states.machslide;
 		sprite_index = spr_player_crouchslide;

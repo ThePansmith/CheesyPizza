@@ -16,7 +16,7 @@ function state_boss_stun()
 		hsp = -5;
 	else if (place_meeting(x, y + 1, obj_railh2))
 		hsp = 5;
-	if (place_meeting(x - image_xscale, y, obj_solid) && !place_meeting(x - image_xscale, y, obj_destructibles))
+	if (check_solid(x - image_xscale, y) && !place_meeting(x - image_xscale, y, obj_destructibles))
 	{
 		particle_set_scale(particle.impact, -image_xscale, 1);
 		create_particle(x, y, particle.impact, 0);

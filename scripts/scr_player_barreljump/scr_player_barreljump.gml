@@ -44,6 +44,6 @@ function scr_player_barreljump()
 		image_index = 0;
 		create_particle(x, y, particle.landcloud, 0);
 	}
-	if (place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_slope_parent))
+	if (check_solid(x + sign(hsp), y) && !check_slope(x + sign(hsp), y))
 		movespeed = 0;
 }

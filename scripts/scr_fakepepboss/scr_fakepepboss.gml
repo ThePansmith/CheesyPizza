@@ -196,16 +196,16 @@ function scr_fakepepboss_do_projectiles(argument0, argument1)
 			{
 				attack = _attack;
 				x = t.x + (attack.direction * irandom_range(50, 120));
-				if (place_meeting(x, y, obj_solid))
+				if (check_solid(x, y))
 					x = t.x;
 				y = t.y;
 				if (t.x != x)
 					image_xscale = sign(t.x - x);
 				x = clamp(x, 100, room_width - 100);
-				while (!place_meeting(x, y + 1, obj_solid))
+				while (!check_solid(x, y + 1))
 				{
 					y++;
-					if (place_meeting(x, y, obj_solid))
+					if (check_solid(x, y))
 					{
 						y--;
 						break;
@@ -511,10 +511,10 @@ function scr_fakepepboss_deformed()
 		{
 			sound_play_oneshot_3d("event:/sfx/fakepep/reform", x, y);
 			x = irandom_range(101, room_width - 101);
-			while (!place_meeting(x, y + 1, obj_solid))
+			while (!check_solid(x, y + 1))
 			{
 				y++;
-				if (place_meeting(x, y, obj_solid))
+				if (check_solid(x, y))
 				{
 					y--;
 					break;
@@ -597,7 +597,7 @@ function scr_fakepepboss_grabthrow()
 		{
 			sprite_index = spr_hurt;
 			xscale = -other.image_xscale;
-			if (place_meeting(x, y, obj_solid))
+			if (check_solid(x, y))
 			{
 				x = other.x;
 				y = other.y;
@@ -695,7 +695,7 @@ function scr_fakepepboss_mach2()
 		case 0:
 			sprite_index = spr_fakepeppino_mach;
 			hsp = image_xscale * attackspeed;
-			if (attackspeed > 3 && place_meeting(x + sign(hsp), y, obj_solid))
+			if (attackspeed > 3 && check_solid(x + sign(hsp), y))
 			{
 				machdir = 1;
 				sprite_index = spr_fakepeppino_machwall;
@@ -708,7 +708,7 @@ function scr_fakepepboss_mach2()
 				attackspeed = 6;
 			hsp = 0;
 			vsp = -attackspeed;
-			if (place_meeting(x, y - 1, obj_solid))
+			if (check_solid(x, y - 1))
 			{
 				machdir = 2;
 				image_xscale *= -1;
@@ -722,7 +722,7 @@ function scr_fakepepboss_mach2()
 			vsp = 0;
 			if (!bodyslam)
 			{
-				if (place_meeting(x + sign(hsp), y, obj_solid))
+				if (check_solid(x + sign(hsp), y))
 				{
 					sprite_index = spr_fakepeppino_machwalldown;
 					machdir = 3;
@@ -743,7 +743,7 @@ function scr_fakepepboss_mach2()
 				attackspeed = 6;
 			hsp = 0;
 			vsp = attackspeed;
-			if (place_meeting(x, y + 1, obj_solid))
+			if (check_solid(x, y + 1))
 			{
 				sprite_index = spr_fakepeppino_mach;
 				machdir = 0;
@@ -818,16 +818,16 @@ function scr_fakepepboss_Sjump()
 		}
 		piledrivereffect = 15;
 	}
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 	{
 		hithsp *= -1;
 		image_xscale *= -1;
 	}
-	else if (place_meeting(x, y + (sign(vsp) * yy), obj_solid))
+	else if (check_solid(x, y + (sign(vsp) * yy)))
 	{
-		while (!place_meeting(x, y + sign(vsp), obj_solid))
+		while (!check_solid(x, y + sign(vsp)))
 			y += sign(vsp);
-		while (place_meeting(x, y, obj_solid))
+		while (check_solid(x, y))
 			y -= sign(vsp);
 		if (superjumpbounce > 0 || superjumpdir == 0)
 		{

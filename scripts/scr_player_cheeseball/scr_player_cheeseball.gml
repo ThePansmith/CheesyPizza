@@ -11,7 +11,7 @@ function scr_player_cheeseball()
 	hsp = xscale * movespeed;
 	if (scr_slope())
 	{
-		var slope = instance_place(x, y + 1, obj_slope_parent);
+		var slope = check_slope(x, y + 1);
 		if (sign(slope.image_xscale) == xscale)
 		{
 			slopejump = true;
@@ -41,7 +41,7 @@ function scr_player_cheeseball()
 	if (grounded)
 		movespeed = Approach(movespeed, 12, 0.25);
 	sprite_index = spr_cheeseballplayer;
-	if (place_meeting(x + sign(hsp), y, obj_solid) && (!place_meeting(x + sign(hsp), y, obj_ratblock) || place_meeting(x + sign(hsp), y, obj_rattumble)))
+	if (check_solid(x + sign(hsp), y) && (!place_meeting(x + sign(hsp), y, obj_ratblock) || place_meeting(x + sign(hsp), y, obj_rattumble)))
 	{
 		cheeseballbounce = 0;
 		slopejump = false;

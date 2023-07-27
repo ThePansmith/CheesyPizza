@@ -17,7 +17,7 @@ switch (state)
 {
 	case states.normal:
 		hsp = movespeed * image_xscale;
-		if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_ratblock))
+		if (check_solid(x + hsp, y) && !place_meeting(x + hsp, y, obj_ratblock))
 			image_xscale *= -1;
 		if (place_meeting(x + hsp, y, obj_ratblock) || place_meeting(x, y + vsp, obj_ratblock))
 			instance_destroy();

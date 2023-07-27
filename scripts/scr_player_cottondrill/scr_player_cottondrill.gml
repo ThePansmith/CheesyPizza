@@ -32,7 +32,7 @@ function state_player_cottondrill()
 			state = states.cottonroll;
 			image_index = 0;
 			sprite_index = spr_cotton_roll;
-			with (instance_place(x, y + 1, obj_slope_parent))
+			with (check_slope(x, y + 1))
 				other.xscale = -sign(image_xscale);
 		}
 		else

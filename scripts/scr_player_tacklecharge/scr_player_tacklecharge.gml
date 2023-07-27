@@ -30,7 +30,7 @@ function scr_player_tacklecharge()
 		scr_fmod_soundeffect(jumpsnd, x, y);
 		vsp = -11;
 	}
-	if (scr_solid(x + hsp, y) && !place_meeting(x + hsp, y, obj_slope_parent) && !place_meeting(x + hsp, y, obj_destructibles))
+	if (scr_solid(x + hsp, y) && !check_slope(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles))
 	{
 		if (baddiegrabbedID != obj_null)
 		{

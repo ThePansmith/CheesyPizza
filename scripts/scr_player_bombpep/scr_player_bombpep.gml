@@ -200,7 +200,7 @@ function scr_player_bombpepside()
 	machhitAnim = false;
 	with (instance_place(x + hsp, y, obj_metalblock))
 		instance_destroy();
-	if (scr_solid(x + xscale, y) && (scr_solid_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles))
+	if (scr_solid(x + xscale, y) && (scr_solid_slope(x + sign(hsp), y) || check_solid(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 	{
 		sprite_index = spr_hitwall;
 		sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
@@ -288,13 +288,13 @@ function scr_player_bombpep()
 	}
 	if (bombpeptimer > 0)
 		bombpeptimer -= 0.5;
-	if (scr_solid(x + 1, y) && xscale == 1 && hsp != 0 && (!place_meeting(x + sign(hsp), y, obj_slope_parent) || scr_solid_slope(x + sign(hsp), y)))
+	if (scr_solid(x + 1, y) && xscale == 1 && hsp != 0 && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)))
 	{
 		instance_create(x + 10, y + 10, obj_bumpeffect);
 		xscale *= -1;
 		GamepadSetVibration((object_index == obj_player1) ? 0 : 1, 0.2, 0.2, 0.4);
 	}
-	if (scr_solid(x - 1, y) && xscale == -1 && hsp != 0 && (!place_meeting(x + sign(hsp), y, obj_slope_parent) || scr_solid_slope(x + sign(hsp), y)))
+	if (scr_solid(x - 1, y) && xscale == -1 && hsp != 0 && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)))
 	{
 		instance_create(x - 10, y + 10, obj_bumpeffect);
 		xscale *= -1;

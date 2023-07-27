@@ -244,13 +244,13 @@ function scr_boss_do_hurt_phase2(object, inv_time = 100)
 	
 	// attempt clip out of ground
 	var i = y;
-	while place_meeting(x, y, obj_solid)
+	while check_solid(x, y)
 	{
 		y--;
 		if y < i - 32
 		{
 			y = i;
-			while place_meeting(x, y, obj_solid)
+			while check_solid(x, y)
 				y++;
 		}
 	}

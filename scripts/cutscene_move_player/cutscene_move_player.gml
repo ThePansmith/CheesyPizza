@@ -31,7 +31,7 @@ function cutscene_move_player(_player, _xto, _hsp, _threshold)
 			hsp = 0;
 			finish = true;
 		}
-		if (place_meeting(x + hsp, y, obj_solid))
+		if (check_solid(x + hsp, y))
 			finish = true;
 	}
 	if (finish)

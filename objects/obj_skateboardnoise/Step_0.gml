@@ -1,5 +1,5 @@
 hsp = spd * image_xscale;
-if (place_meeting(x + sign(hsp), y, obj_solid))
+if (check_solid(x + sign(hsp), y))
 	instance_destroy();
 scr_collide();
 if (playerid != -4)

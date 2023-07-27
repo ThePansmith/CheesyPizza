@@ -26,7 +26,7 @@ switch (state)
 			image_index = 0;
 			state = states.land;
 		}
-		else if (place_meeting(x + sign(hsp), y, obj_solid))
+		else if (check_solid(x + sign(hsp), y))
 		{
 			sprite_index = spr_playerN_noisebombhitwall;
 			image_index = 0;

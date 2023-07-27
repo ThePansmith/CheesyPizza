@@ -40,7 +40,7 @@ function state_player_cotton()
 	}
 	else if (movespeed > 0 && sprite_index != spr_cotton_attack && momemtum == 0)
 		movespeed -= 0.5;
-	if (scr_solid(x + xscale, y) && !place_meeting(x + xscale, y, obj_slope))
+	if (scr_solid(x + xscale, y) && !check_slope(x + xscale, y))
 	{
 		if (movespeed < 8 && (place_meeting(x + xscale, y, obj_destructibles) || place_meeting(x + xscale, y, obj_ratblock)))
 			movespeed = 0;

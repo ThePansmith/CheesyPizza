@@ -31,7 +31,7 @@ switch (state)
 		image_speed = 0.35;
 		sprite_index = walkspr;
 		hsp = image_xscale * 4;
-		if (place_meeting(x + sign(hsp), y, obj_monstersolid) && (!place_meeting(x + sign(hsp), y, obj_monsterslope) || place_meeting(x + sign(hsp), y - 4, obj_solid)))
+		if (place_meeting(x + sign(hsp), y, obj_monstersolid) && (!place_meeting(x + sign(hsp), y, obj_monsterslope) || check_solid(x + sign(hsp), y - 4)))
 			image_xscale *= -1;
 		scr_monster_detect_audio();
 		if (scr_monster_detect(300, room_height, targetplayer))
@@ -129,7 +129,7 @@ switch (state)
 	case states.robotseeking:
 		targetplayer = instance_nearest(x, y, obj_player);
 		hsp = image_xscale * 6;
-		if (place_meeting(x + sign(hsp), y, obj_monstersolid) && (!place_meeting(x + sign(hsp), y, obj_monsterslope) || place_meeting(x + sign(hsp), y - 4, obj_solid)))
+		if (place_meeting(x + sign(hsp), y, obj_monstersolid) && (!place_meeting(x + sign(hsp), y, obj_monsterslope) || check_solid(x + sign(hsp), y - 4)))
 			state = states.robotroaming;
 		if (scr_monster_detect(300, room_height, targetplayer))
 			state = states.robotchase;

@@ -56,7 +56,7 @@ switch (state)
 		sprite_index = spr_sausagemannocigar_rolling;
 		hsp = image_xscale * 7;
 		angle = 0;
-		if (scr_solid(x + sign(hsp), y) && (!place_meeting(x, y + 1, obj_slope_parent) || place_meeting(x + sign(hsp), y - 5, obj_solid)))
+		if (scr_solid(x + sign(hsp), y) && (!check_slope(x, y + 1) || check_solid(x + sign(hsp), y - 5)))
 			image_xscale *= -1;
 		if (stuntimer > 0)
 			stuntimer--;

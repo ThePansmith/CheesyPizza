@@ -5,7 +5,7 @@ function scr_player_fireass()
 	alarm[7] = 60;
 	with (instance_place(x, y + vsp, obj_ratblock))
 		instance_destroy();
-	if (place_meeting(x + hsp, y, obj_solid))
+	if (check_solid(x + hsp, y))
 		image_xscale *= -1;
 	if (sprite_index == spr_fireass || sprite_index == spr_scaredjump1 || sprite_index == spr_scaredjump2)
 	{

@@ -145,7 +145,7 @@ function scr_player_grab()
 			spinsndbuffer--;
 		if (floor(image_index) == 0)
 			spinsndbuffer = 5;
-		if (scr_solid(x + xscale, y) && (!place_meeting(x + sign(hsp), y, obj_slope_parent) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles))
+		if (scr_solid(x + xscale, y) && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 			swingdingthrow = true;
 		with (instance_place(x + xscale, y, obj_destructibles))
 			instance_destroy();
