@@ -1,3 +1,6 @@
+if (instance_place(x, y, obj_glassblock))
+	exit;
+
 var _p = player == 2 ? obj_player2 : obj_player1;
 switch state
 {
