@@ -23,7 +23,7 @@ with (other)
 				changecoord = false;
 			if changecoord
 			{
-				if sugary
+				if other.sugary
 				{
 					// snap to ground
 					for(var i = 1; i < 32; i++)
