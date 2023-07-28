@@ -103,6 +103,20 @@ function scr_solid_player(_x, _y)
 		return true;
 	}
 	
+	if (check_concave_slope_player(obj_concaveslope))
+	{
+		x = old_x;
+		y = old_y;
+		return true;
+	}
+	
+	if (check_rotating_solid(obj_rotatingsolid))
+	{
+		x = old_x;
+		y = old_y;
+		return true;
+	}
+	
 	// grindrail slopes
 	if (state == states.grind && check_slope_player(obj_grindrailslope))
 	{
@@ -144,4 +158,70 @@ function check_slope_player(slope_obj)
 		}
 	}
 	return false;
+}
+function check_concave_slope_player(concave_slope_object)
+{
+	var slope = instance_place(x, y, concave_slope_object);
+	if (slope)
+	{
+		with (slope)
+		{
+			
+			var slope_start = 0;
+			var slope_end = 0;
+			
+			
+			var object_side = 0; // Object side to compare to
+			var slope_max_side = 0; // Side where the max is
+			var slope_min_side = 0; // Side where the min is
+			
+			if (image_xscale > 0)
+			{
+				object_side = other.bbox_right + 1;
+				slope_max_side = bbox_right;
+				slope_min_side = bbox_left;
+				//slope_start = bbox_bottom;
+				//slope_end = bbox_top;
+			}
+			else
+			{
+				object_side = other.bbox_left;
+				slope_max_side = bbox_left;
+				slope_min_side = bbox_right;
+			}
+			//var m = (sign(image_xscale) * (bbox_bottom - bbox_top)) / (bbox_right - bbox_left);
+			//slope = slope_start - round(m * (object_side - bbox_left));
+			
+		
+			//RX: Gonna have to use some trig here to build a height map
+			var radius_x = 32 * image_xscale;
+			var radius_y = 32 * image_yscale;
+			
+			if (point_in_ellipse(object_side, other.bbox_bottom, slope.x, slope.y, radius_x, radius_y) > 1)
+				return true;
+		}
+	}
+	return false;
+}
+
+function check_rotating_solid(solid_obj)
+{
+	var obj = instance_place(x, y, solid_obj);
+	if (obj)
+	{
+		with (obj)
+		{
+			
+		}
+	}
+	return false;
+}
+
+function rect_get_closest_point()
+{
+	
+}
+function point_in_ellipse(_px, _py, _x, _y, _x_axis, _y_axis)
+{
+	return (power(_px - _x, 2) / power(_x_axis, 2)) + (power(_py - _y, 2) / power(_y_axis, 2));
 }

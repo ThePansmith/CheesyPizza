@@ -70,6 +70,7 @@ function scr_solid(_x, _y)
 		return true;
 	}
 	
+	
 	x = old_x;
 	y = old_y;
 	return false;
@@ -150,6 +151,65 @@ function check_slope_platform(slope_object, old_y)
 	
 	other.y = _y;
 	return false;
+}
+function check_convex_slope(convex_slope_object)
+{
+	
+}
+function check_concave_slope(concave_slope_object)
+{
+	/*var slope = instance_place(x, y, concave_slope_object);
+	if (slope)
+	{
+		with (slope)
+		{
+			
+			var slope_start = 0;
+			var slope_end = 0;
+			
+			
+			var object_side = 0; // Object side to compare to
+			var slope_max_side = 0; // Side where the max is
+			var slope_min_side = 0; // Side where the min is
+			
+			if (image_xscale > 0)
+			{
+				object_side = other.bbox_right;
+				slope_max_side = bbox_right;
+				slope_min_side = bbox_left;
+				//slope_start = bbox_bottom;
+				//slope_end = bbox_top;
+			}
+			else
+			{
+				object_side = other.bbox_left;
+				slope_max_side = bbox_left;
+				slope_min_side = bbox_right;
+			}
+			//var m = (sign(image_xscale) * (bbox_bottom - bbox_top)) / (bbox_right - bbox_left);
+			//slope = slope_start - round(m * (object_side - bbox_left));
+			
+			//RX: Gonna have to use some trig here to build a height map
+			var radius_x = 32 * image_xscale;
+			var radius_y = 32 * image_yscale;
+			
+			var stride = object_side - bbox_left; // where are we in the slope
+			
+			if (stride > slope_max_side)
+				slope = bbox_top;
+			else if (stride < slope_min_side)
+				slope = bbox_bottom;
+			else
+			{
+				
+				
+				slope = 
+			}
+			if (other.bbox_bottom >= slope)
+				return true;
+		}
+	}
+	*/
 }
 function scr_solid_slope(_x, _y)
 {

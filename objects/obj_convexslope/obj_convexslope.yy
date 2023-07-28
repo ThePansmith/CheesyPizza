@@ -1,13 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "scr_worldportal",
+  "name": "obj_convexslope",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "CheesyPizza",
-    "path": "folders/Objects/CheesyPizza.yy",
+    "name": "Collision",
+    "path": "folders/Objects/CheesyPizza/Collision.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -26,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_worldportal",
-    "path": "sprites/spr_worldportal/spr_worldportal.yy",
+    "name": "spr_convexslope",
+    "path": "sprites/spr_convexslope/spr_convexslope.yy",
   },
   "spriteMaskId": null,
   "visible": true,

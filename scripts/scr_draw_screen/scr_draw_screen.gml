@@ -33,4 +33,20 @@ function scr_draw_screen(x, y, xscale, yscale, alpha = 1, gui = false)
 	var mirror = check_modifier(MOD.Mirror) && !instance_exists(obj_rank);
 	draw_surface_ext(application_surface, x + (mirror ? surface_get_width(application_surface) * xscale : 0), y, xscale * (mirror ? -1 : 1), yscale, 0, c_white, alpha);
 	shader_reset();
+	
+	exit;
+	// don't use this yet
+	var screenWidth = 960 * xscale;
+	var screenHeight = 540 * yscale;
+	
+	shader_set(shd_replay);
+	var viewport_size = shader_get_uniform(shd_replay, "u_viewport_size");
+	var base_texture = shader_get_sampler_index(shd_replay, "u_base_texture");
+	shader_set_uniform_f(viewport_size, 960, 540);
+	texture_set_stage(base_texture, surface_get_texture(application_surface));
+
+	
+	draw_triangle(0, 0, screenWidth, 0, screenWidth, screenHeight, false);
+	draw_triangle(screenWidth, screenHeight, 0, screenHeight, 0, 0, false);
+	shader_reset();
 }
