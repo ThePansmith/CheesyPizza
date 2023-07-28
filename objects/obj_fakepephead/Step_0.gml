@@ -3,7 +3,7 @@ if (thrown)
 	sprite_index = spr_headprojectile;
 	hsp = hithsp;
 	vsp = hitvsp;
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 	{
 		thrown = false;
 		image_xscale *= -1;
@@ -18,7 +18,7 @@ else
 		hsp = Approach(hsp, 0, 0.5);
 		sprite_index = spr_headprojectile_idle;
 	}
-	if (((grounded && vsp > 0) || place_meeting(x, y + 1, obj_solid)) && destroy)
+	if (((grounded && vsp > 0) || check_solid(x, y + 1)) && destroy)
 		instance_destroy();
 }
 scr_collide();

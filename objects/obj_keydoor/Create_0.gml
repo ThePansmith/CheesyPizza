@@ -4,3 +4,14 @@ target_x = 0;
 target_y = 0;
 targetDoor = "A";
 scr_create_uparrowhitbox();
+
+spr_locked = spr_doorkey;
+spr_open = spr_doorkeyopen;
+
+sugary = check_sugary();
+if sugary
+{
+	spr_locked = spr_keydoor_ss;
+	spr_open = spr_doorvisited_ss;
+}
+sprite_index = spr_locked;

@@ -19,7 +19,7 @@ function scr_player_cheesepepjump()
 		movespeed = Approach(movespeed, move * 3, 0.5);
 	else
 		movespeed = Approach(movespeed, 0, 0.25);
-	if (place_meeting(x + sign(movespeed), y, obj_solid) && !place_meeting(x, y + 1, obj_slope_parent) && !place_meeting(x + sign(movespeed), y, obj_ratblock))
+	if (check_solid(x + sign(movespeed), y) && !check_slope(x, y + 1) && !place_meeting(x + sign(movespeed), y, obj_ratblock))
 	{
 		state = states.cheesepepstick;
 		sound_play_oneshot_3d("event:/sfx/cheese/step", x, y);

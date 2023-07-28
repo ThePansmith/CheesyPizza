@@ -7,7 +7,7 @@ function scr_enemy_charge()
 		image_speed = 0.35;
 		if ((scr_solid(x + 1, y) && image_xscale == 1) || (scr_solid(x - 1, y) && image_xscale == -1) || place_meeting(x + hsp, y, obj_hallway))
 		{
-			if (!place_meeting(x + sign(hsp), y, obj_slope_parent))
+			if (!check_slope(x + sign(hsp), y))
 				image_xscale *= -1;
 		}
 		if (!(scr_solid(x + (image_xscale * 15), y + 31) || place_meeting(x + (image_xscale * 15), y + 31, obj_platform)))
@@ -25,7 +25,7 @@ function scr_enemy_charge()
 		hsp = image_xscale * movespeed;
 		if (grounded && vsp > 0)
 		{
-			if (place_meeting(x + image_xscale, y, obj_solid))
+			if (check_solid(x + image_xscale, y))
 				image_xscale *= -1;
 			state = states.walk;
 			image_index = 0;
@@ -38,7 +38,7 @@ function scr_enemy_charge()
 		hsp = image_xscale * movespeed;
 		image_speed = 0.35;
 		sprite_index = spr_newpizzice_walk;
-		if (((scr_solid(x + 1, y) && image_xscale == 1) || (scr_solid(x - 1, y) && image_xscale == -1)) && !place_meeting(x + sign(hsp), y, obj_slope_parent))
+		if (((scr_solid(x + 1, y) && image_xscale == 1) || (scr_solid(x - 1, y) && image_xscale == -1)) && !check_slope(x + sign(hsp), y))
 		{
 			image_index = 0;
 			sprite_index = spr_newpizzice_turn;
@@ -57,13 +57,13 @@ function scr_enemy_charge()
 		}
 		else
 			hsp = image_xscale * movespeed;
-		if (((scr_solid(x + 1, y) && image_xscale == 1) || (scr_solid(x - 1, y) && image_xscale == -1)) && !place_meeting(x + sign(hsp), y, obj_slope_parent))
+		if (((scr_solid(x + 1, y) && image_xscale == 1) || (scr_solid(x - 1, y) && image_xscale == -1)) && !check_slope(x + sign(hsp), y))
 			image_xscale *= -1;
 	}
 	if (object_index == obj_ancho)
 	{
 		hsp = image_xscale * movespeed;
-		if (place_meeting(x + hsp, y, obj_solid))
+		if (check_solid(x + hsp, y))
 		{
 			state = states.stun;
 			stunned = 100;

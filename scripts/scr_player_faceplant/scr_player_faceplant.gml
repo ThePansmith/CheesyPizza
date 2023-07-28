@@ -39,7 +39,7 @@ function scr_player_faceplant()
 		}
 	}
 	
-	if check_wall(x + hsp, y) && !place_meeting(x + hsp, y, obj_slope_parent) && !place_meeting(x + hsp, y, obj_destructibles)
+	if check_solid(x + hsp, y) && !check_slope(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles)
 	{
 		if ledge_bump((vsp >= 0) ? 32 : 22)
 		{

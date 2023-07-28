@@ -14,7 +14,7 @@ function scr_player_boxxedpepspin()
 	if (abs(movespeed) > 0)
 		movespeed = Approach(movespeed, 0, 0.1);
 	instance_destroy(instance_place(x + hsp, y, obj_destructibles));
-	if (scr_solid(x + hsp, y) && !place_meeting(x + hsp, y, obj_ratblock) && !place_meeting(x + hsp, y, obj_destructibles) && (!place_meeting(x + hsp, y, obj_slope_parent) || scr_solid_slope(x + hsp, y)))
+	if (scr_solid(x + hsp, y) && !place_meeting(x + hsp, y, obj_ratblock) && !place_meeting(x + hsp, y, obj_destructibles) && (!check_slope(x + hsp, y) || scr_solid_slope(x + hsp, y)))
 	{
 		sound_play_oneshot_3d("event:/sfx/boxxed/step", x, y);
 		instance_create(x + hsp, y, obj_bangeffect);

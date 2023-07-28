@@ -1,6 +1,5 @@
-obj_player1.state = states.cotton;
+other.state = states.cotton;
+create_particle(other.x, other.y, particle.genericpoofeffect);
+other.sprite_index = other.spr_cottonidle;
+global.combotime = 60;
 instance_destroy();
-with instance_create(obj_player.x, obj_player.y, obj_cloudeffect)
-	color = 2;
-obj_player.sprite_index = spr_cotton_idle;
-global.combofreeze = 30;

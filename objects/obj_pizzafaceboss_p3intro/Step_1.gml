@@ -61,7 +61,7 @@ switch (introstate)
 				image_index = image_number - 1;
 		}
 		hsp = 7;
-		if (place_meeting(x + 64, y, obj_solid))
+		if (check_solid(x + 64, y))
 		{
 			hsp = 0;
 			sprite_index = spr_pizzahead_grabitem;

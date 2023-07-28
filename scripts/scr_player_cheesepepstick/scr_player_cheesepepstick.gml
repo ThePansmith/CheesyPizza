@@ -2,7 +2,7 @@ function scr_player_cheesepepstick()
 {
 	hsp = 0;
 	vsp = 0;
-	if (!grounded && !place_meeting(x + 1, y, obj_solid) && !place_meeting(x - 1, y, obj_solid))
+	if (!grounded && !check_solid(x + 1, y) && !check_solid(x - 1, y))
 	{
 		state = states.cheesepepjump;
 		jumpAnim = false;
@@ -54,9 +54,9 @@ function scr_player_cheesepepstickside()
 	}
 	else
 		movespeed = 0;
-	if (place_meeting(x - 1, y, obj_solid))
+	if (check_solid(x - 1, y))
 		xscale = 1;
-	else if (place_meeting(x + 1, y, obj_solid))
+	else if (check_solid(x + 1, y))
 		xscale = -1;
 	if (input_buffer_jump > 0 && !scr_solid(x, y - 16))
 	{
@@ -70,7 +70,7 @@ function scr_player_cheesepepstickside()
 		hsp = move * movespeed;
 		cheesepep_buffer = 0;
 	}
-	if (!place_meeting(x + 1, y, obj_solid) && !place_meeting(x - 1, y, obj_solid))
+	if (!check_solid(x + 1, y) && !check_solid(x - 1, y))
 	{
 		grav = 0.5;
 		state = states.cheesepep;
@@ -164,19 +164,19 @@ function scr_player_cheesepepstickup()
 	}
 	else
 		movespeed = 0;
-	if (move == sign(hsp) && place_meeting(x + sign(hsp), y, obj_solid))
+	if (move == sign(hsp) && check_solid(x + sign(hsp), y))
 	{
 		sprite_index = spr_cheesepepstickside;
 		cheesepep_buffer = cheesepep_max;
 		state = states.cheesepepstickside;
 		vsp = move * movespeed;
 	}
-	if (input_buffer_jump > 0 && !(place_meeting(x, y + 1, obj_solid) && place_meeting(x, y - 1, obj_solid)))
+	if (input_buffer_jump > 0 && !(check_solid(x, y + 1) && check_solid(x, y - 1)))
 	{
 		mask_index = spr_player_mask;
-		if (place_meeting(x, y, obj_solid))
+		if (check_solid(x, y))
 		{
-			while (place_meeting(x, y, obj_solid))
+			while (check_solid(x, y))
 				y++;
 		}
 		input_buffer_jump = 0;
@@ -185,15 +185,15 @@ function scr_player_cheesepepstickup()
 		vsp = 2;
 		hsp = move * movespeed;
 	}
-	if (!place_meeting(x, y - 1, obj_solid) && !place_meeting(x, y + 1, obj_solid))
+	if (!check_solid(x, y - 1) && !check_solid(x, y + 1))
 	{
 		state = states.cheesepep;
 		cheesepep_buffer = 0;
 		hsp = move * movespeed;
 	}
-	if (!place_meeting(x, y + (4 * stickdir), obj_solid))
+	if (!check_solid(x, y + (4 * stickdir)))
 	{
-		if (!place_meeting(x, y - (4 * stickdir), obj_solid))
+		if (!check_solid(x, y - (4 * stickdir)))
 		{
 			state = states.cheesepep;
 			cheesepep_buffer = 2;

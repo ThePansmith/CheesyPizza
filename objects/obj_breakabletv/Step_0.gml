@@ -209,7 +209,7 @@ if (grabbed == 1)
 }
 if (vsp > 0 && grounded)
 	hsp = 0;
-if (place_meeting(x + hsp, y, obj_solid) && thrown == 1)
+if (check_solid(x + hsp, y) && thrown == 1)
 	instance_destroy();
 if (grounded == 1 && thrown == 1 && vsp > 0)
 	instance_destroy();

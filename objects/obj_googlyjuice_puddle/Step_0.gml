@@ -5,7 +5,7 @@ if grounded
 {
 	hsp = Approach(hsp, 0, 0.1);
 	
-	var slope = instance_place(x, y + 1, obj_slope_parent);
+	var slope = check_slope(x, y + 1);
 	if slope && global.sloperot
 		draw_angle = scr_slope_angle(slope);
 	else
@@ -20,5 +20,5 @@ else
 if sprite_index == spr_juicepuddlesplash && image_index >= image_number - 1
 	sprite_index = spr_juicepuddledone;
 
-if place_meeting(x, y, obj_solid)
+if check_solid(x, y)
 	instance_destroy(id, false);

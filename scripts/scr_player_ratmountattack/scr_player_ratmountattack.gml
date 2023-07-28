@@ -19,6 +19,6 @@ function scr_player_ratmountattack()
 	}
 	if (floor(image_index) == (image_number - 1))
 		state = states.ratmount;
-	if (scr_solid(x + xscale, y) && (!place_meeting(x + sign(hsp), y, obj_slope_parent) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + xscale, y, obj_destructibles))
+	if (scr_solid(x + xscale, y) && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + xscale, y, obj_destructibles))
 		ledge_bump((vsp >= 0) ? 32 : 22);
 }

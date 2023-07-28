@@ -2,7 +2,7 @@ with obj_player
 {
 	if place_meeting(x, y + 1, other)
 	{
-		if (!check_wall(other.x + 16, y + 1) && key_down && ((state == states.freefall && grounded && REMIX) or state == states.crouch or state == states.ratmountcrouch or ((character == "S" or character == "M") && (state == states.normal or state == states.mach1))) && place_meeting(x, y + 1, obj_platform))
+		if (!check_solid(other.x + 16, y + 1) && key_down && ((state == states.freefall && grounded && REMIX) or state == states.crouch or state == states.ratmountcrouch or ((character == "S" or character == "M") && (state == states.normal or state == states.mach1))) && place_meeting(x, y + 1, obj_platform))
 		{
 			if REMIX
 				smoothx = x - (other.x + 16);

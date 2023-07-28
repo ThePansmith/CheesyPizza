@@ -19,9 +19,9 @@ function scr_player_trashjump()
 	if (grounded && vsp > 0)
 	{
 		create_transformation_tip(lang_get_value("trashrolltip"), "trashroll");
-		if (instance_place(x, y + 1, obj_slope_parent))
+		if (check_slope(x, y + 1))
 		{
-			var slope = instance_place(x, y + 1, obj_slope_parent);
+			var slope = check_slope(x, y + 1);
 			xscale = -sign(slope.image_xscale);
 			scale_xs = 1;
 		}

@@ -37,7 +37,7 @@ function scr_player_barrelslide()
 	if ((!key_attack && !place_meeting(x, y + 1, obj_current)) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
 	{
 		mask_index = spr_player_mask;
-		if (!place_meeting(x, y, obj_solid))
+		if (!check_solid(x, y))
 		{
 			if (grounded)
 				state = states.barrel;
@@ -50,7 +50,7 @@ function scr_player_barrelslide()
 	}
 	with (instance_place(x + hsp, y, obj_destructibles))
 		instance_destroy();
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 	{
 		if (scr_slope())
 		{

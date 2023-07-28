@@ -51,7 +51,7 @@ function scr_ratblock_destroy()
 				case states.knightpepbump:
 					break;
 				case states.cotton:
-					if sprite_index == spr_cotton_attack
+					if sprite_index == spr_cotton_attack or movespeed > 8
 						instance_destroy(other);
 					break;
 				case states.cottonroll:

@@ -425,13 +425,13 @@ function boss_vigilante_float()
 	sprite_index = spr_playerV_crouchmove;
 	hsp = image_xscale * changeside_spd;
 	movespeed = 0;
-	if (changeside_skid && place_meeting(x + (sign(hsp) * 128), y, obj_solid))
+	if (changeside_skid && check_solid(x + (sign(hsp) * 128), y))
 	{
 		state = states.machslide;
 		movespeed = 12;
 		sprite_index = spr_playerV_mach2boost;
 	}
-	if (place_meeting(x + (sign(hsp) * 64), y, obj_solid))
+	if (check_solid(x + (sign(hsp) * 64), y))
 	{
 		image_xscale = (x < (room_width / 2)) ? 1 : -1;
 		state = states.normal;
@@ -513,14 +513,14 @@ function boss_vigilante_mach1()
 		image_index = 0;
 		instance_create(x, y, obj_highjumpcloud2);
 	}
-	if (superkickattackpursuit && place_meeting(x + (sign(hsp) * 116), y, obj_solid))
+	if (superkickattackpursuit && check_solid(x + (sign(hsp) * 116), y))
 	{
 		state = states.machslide;
 		movespeed = 12;
 		sprite_index = spr_playerV_mach2boost;
 		superkickattackpursuit = false;
 	}
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 	{
 		state = states.bump;
 		hsp = -image_xscale * 6;
@@ -555,7 +555,7 @@ function boss_vigilante_crouchslide()
 			state = states.normal;
 		}
 	}
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 	{
 		state = states.bump;
 		hsp = -image_xscale * 6;
@@ -653,7 +653,7 @@ function boss_vigilante_punch()
 {
 	image_speed = (phase != 6) ? 0.35 : 0.5;
 	hsp = image_xscale * movespeed;
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 	{
 		state = states.bump;
 		hsp = -image_xscale * 6;

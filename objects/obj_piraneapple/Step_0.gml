@@ -47,7 +47,7 @@ switch (state)
 	case states.transition:
 		flash = false;
 		sprite_index = spr_piraneapplewater;
-		if (place_meeting(x, y, obj_solid))
+		if (check_solid(x, y))
 		{
 			vsp = -11;
 			y += vsp;

@@ -215,7 +215,7 @@ if april && collision_line(x, y, _x, y, obj_solid, false, false)
 {
 	for(var i = _x; i < x; i++)
 	{
-		if place_meeting(i, y, obj_solid)
+		if check_solid(i, y)
 		{
 			x = i;
 			instance_destroy();

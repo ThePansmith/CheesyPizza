@@ -370,7 +370,7 @@ function scr_pepperman_rolling()
 		image_speed = 0.35;
 		sprite_index = spr_pepperman_rolling;
 		hsp = image_xscale * 10;
-		if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_slope_parent) && !place_meeting(x + hsp, y, obj_destructibles))
+		if (check_solid(x + hsp, y) && !check_slope(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles))
 		{
 			instance_create(x + (image_xscale * 20), y, obj_bangeffect);
 			image_xscale *= -1;
@@ -452,7 +452,7 @@ function scr_pepperman_shoulderbash()
 				image_xscale = other.image_xscale;
 			woosh = true;
 		}
-		if (place_meeting(x + image_xscale, y, obj_solid) && !place_meeting(x + image_xscale, y, obj_slope_parent) && !place_meeting(x + image_xscale, y, obj_destructibles))
+		if (check_solid(x + image_xscale, y) && !check_slope(x + image_xscale, y) && !place_meeting(x + image_xscale, y, obj_destructibles))
 		{
 			sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 			sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
@@ -604,7 +604,7 @@ function scr_pepperman_mini()
 			}
 			else if (minibuffer > 0)
 			{
-				if (place_meeting(x + (image_xscale * 18), y, obj_solid) && distance_to_object(targetplayer) < 100)
+				if (check_solid(x + (image_xscale * 18), y) && distance_to_object(targetplayer) < 100)
 				{
 					ministate = states.jump;
 					vsp = -15;

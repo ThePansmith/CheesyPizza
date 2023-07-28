@@ -3,7 +3,7 @@ if (place_meeting(x + 1, y, obj_ratblock) || place_meeting(x - 1, y, obj_ratbloc
 	instance_destroy();
 if (scr_solid(x + 1, y) || scr_solid(x - 1, y))
 	drop = true;
-if (place_meeting(x, y + 1, obj_solid))
+if (check_solid(x, y + 1))
 	hsp = 0;
 if (place_meeting(x, y + 1, obj_railparent))
 {

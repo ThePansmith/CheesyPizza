@@ -10,7 +10,7 @@ function scr_player_ratmountclimbwall()
 	}
 	else if (floor(image_index) == (image_number - 1))
 		image_index = image_number - 1;
-	if (!grounded && !place_meeting(x + 1, y, obj_solid) && !place_meeting(x - 1, y, obj_solid))
+	if (!grounded && !check_solid(x + 1, y) && !check_solid(x - 1, y))
 	{
 		state = states.ratmountjump;
 		jumpAnim = false;

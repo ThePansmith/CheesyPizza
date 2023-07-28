@@ -111,7 +111,7 @@ function state_player_normal()
 			else
 				sprite_index = movespr;
 		}
-		if (scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_slope_parent) && xscale == move && !place_meeting(x, y + 1, obj_slope_parent))
+		if (scr_solid(x + sign(hsp), y) && !check_slope(x + sign(hsp), y) && xscale == move && !check_slope(x, y + 1))
 			movespeed = 0;
 		if (move != 0 && grounded && vsp > 0)
 		{
@@ -316,7 +316,7 @@ function state_player_normal()
 				railmomentum = true;
 			freefallstart = 0;
 		}
-		if (key_down || (grounded && vsp > 0 && scr_solid(x, y - 3) && scr_solid(x, y)) || place_meeting(x, y, obj_solid))
+		if (key_down || (grounded && vsp > 0 && scr_solid(x, y - 3) && scr_solid(x, y)) || check_solid(x, y))
 		&& character != "S"
 		{
 			state = states.crouch;
@@ -407,7 +407,7 @@ function state_player_normal()
 		default:
 			if character != "N" or noisetype == 0
 			{
-				if (key_attack && state != states.handstandjump && !check_wall(x + xscale, y) && (!place_meeting(x, y + 1, obj_iceblockslope) or !check_wall(x + (xscale * 5), y)) && !global.kungfu)
+				if (key_attack && state != states.handstandjump && !check_solid(x + xscale, y) && (!place_meeting(x, y + 1, obj_iceblockslope) or !check_solid(x + (xscale * 5), y)) && !global.kungfu)
 				{
 					sprite_index = spr_mach1;
 					image_index = 0;
@@ -454,7 +454,7 @@ function state_player_normal()
 			}
 			break;
 		case "V":
-			if (key_attack && state != states.handstandjump && !place_meeting(x + xscale, y, obj_solid) && (!place_meeting(x, y + 1, obj_iceblockslope) || !place_meeting(x + (xscale * 5), y, obj_solid)) && !global.kungfu)
+			if (key_attack && state != states.handstandjump && !check_solid(x + xscale, y) && (!place_meeting(x, y + 1, obj_iceblockslope) || !check_solid(x + (xscale * 5), y)) && !global.kungfu)
 			{
 				sprite_index = spr_mach1;
 				image_index = 0;
@@ -540,7 +540,7 @@ function state_pepperman_normal()
 		state = states.jump;
 		sprite_index = spr_fall;
 	}
-	if (key_attack && (!place_meeting(x + xscale, y, obj_solid) || place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw)
+	if (key_attack && (!check_solid(x + xscale, y) || place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw)
 	{
 		if (move != 0)
 			xscale = move;
@@ -583,7 +583,7 @@ function state_snick_normal()
 	// slope momentum
 	if grounded
 	{
-		with instance_place(x, y + 1, obj_slope_parent)
+		with check_slope(x, y + 1)
 			other.movespeed += (other.state == states.machroll ? 0.25 : 0.1) * -sign(image_xscale);
 	}
 	
@@ -627,7 +627,7 @@ function state_snick_normal()
 			    movespeed -= min(abs(movespeed), frc) * sign(movespeed);
 		}
 		else
-			movespeed -= min(abs(movespeed), (move == -sign(movespeed) && !place_meeting(x, y + 1, obj_slope_parent)) ? roll_dec : roll_frc) * sign(movespeed);
+			movespeed -= min(abs(movespeed), (move == -sign(movespeed) && !check_slope(x, y + 1)) ? roll_dec : roll_frc) * sign(movespeed);
 	}
 	
 	// animation
@@ -743,7 +743,7 @@ function state_snick_normal()
 		if move != 0
 			xscale = sign(move);
 		
-		if !place_meeting(x + xscale, y, obj_solid) or place_meeting(x + xscale, y, obj_destructibles) or place_meeting(x + xscale, y, obj_metalblock) or place_meeting(x + xscale, y, obj_ratblock)
+		if !check_solid(x + xscale, y) or place_meeting(x + xscale, y, obj_destructibles) or place_meeting(x + xscale, y, obj_metalblock) or place_meeting(x + xscale, y, obj_ratblock)
 		{
 			sound_play_3d("event:/modded/sfx/snick/peelrev", x, y);
 			state = states.machroll;
@@ -784,7 +784,7 @@ function state_snick_normal()
 			vsp = -11;
 			jumpstop = false;
 			
-			with instance_place(x, y + 1, obj_slope_parent)
+			with check_slope(x, y + 1)
 			{
 				if other.xscale == image_xscale
 					other.vsp -= abs(other.movespeed) / 2;
@@ -806,8 +806,8 @@ function state_snick_normal()
 	
 	// climbwall
 	if ((abs(movespeed) > (12 / (scr_slope() + 1)) && move != 0 && sign(movespeed) == xscale) or sprite_index == spr_walljumpstart)
-	&& ((!grounded && (place_meeting(x + movespeed, y, obj_solid) || scr_solid_slope(x + movespeed, y)) && !place_meeting(x + movespeed, y, obj_destructibles) && (!place_meeting(x + movespeed, y, obj_metalblock) or abs(movespeed) < 16))
-	|| (grounded && (place_meeting(x + movespeed, y - 16, obj_solid) || scr_solid_slope(x + movespeed, y - 16)) && !place_meeting(x + movespeed, y, obj_destructibles) && !place_meeting(x + movespeed, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope_parent)))
+	&& ((!grounded && (check_solid(x + movespeed, y) || scr_solid_slope(x + movespeed, y)) && !place_meeting(x + movespeed, y, obj_destructibles) && (!place_meeting(x + movespeed, y, obj_metalblock) or abs(movespeed) < 16))
+	|| (grounded && (check_solid(x + movespeed, y - 16) || scr_solid_slope(x + movespeed, y - 16)) && !place_meeting(x + movespeed, y, obj_destructibles) && !place_meeting(x + movespeed, y, obj_metalblock) && check_slope(x, y + 1)))
 	{
 		{
 			input_buffer_jump = 0;
@@ -820,7 +820,7 @@ function state_snick_normal()
 	}
 	
 	// bump on wall
-	else if (place_meeting(x + movespeed, y, obj_solid) or scr_solid_slope(x + movespeed, y))
+	else if (check_solid(x + movespeed, y) or scr_solid_slope(x + movespeed, y))
 	&& (!place_meeting(x + movespeed, y, obj_destructibles) or abs(movespeed) < 10)
 	&& (!place_meeting(x + movespeed, y, obj_ratblock) or abs(movespeed) < 12)
 	&& (!place_meeting(x + movespeed, y, obj_metalblock) or abs(movespeed) < 16)

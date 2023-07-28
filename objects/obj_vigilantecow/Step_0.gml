@@ -25,7 +25,7 @@ if (bounce <= 0)
 	instance_destroy();
 if (vsp < 20)
 	vsp += 0.5;
-if (place_meeting(x + (xscale * 4), y, obj_solid))
+if (check_solid(x + (xscale * 4), y))
 	xscale *= -1;
 if (sprite_index == spr_cowidle)
 	image_index = 0;

@@ -34,9 +34,9 @@ function scr_player_boots()
 	move = key_left + key_right;
 	if (move != 0)
 		xscale = move;
-	if (scr_solid(x + sign(hsp), y) && xscale == 1 && move == 1 && !place_meeting(x + 1, y, obj_slope_parent))
+	if (scr_solid(x + sign(hsp), y) && xscale == 1 && move == 1 && !check_slope(x + 1, y))
 		movespeed = 0;
-	if (scr_solid(x + sign(hsp), y) && xscale == -1 && move == -1 && !place_meeting(x - 1, y, obj_slope_parent))
+	if (scr_solid(x + sign(hsp), y) && xscale == -1 && move == -1 && !check_slope(x - 1, y))
 		movespeed = 0;
 	if (grounded && move != 0 && sprite_index == spr_playerV_bootsidle)
 		sprite_index = spr_playerV_bootsmove;

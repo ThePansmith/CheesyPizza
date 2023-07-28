@@ -14,7 +14,7 @@ switch (state)
 					playerid = other.id;
 					playerxoffset = other.x - x;
 					state = states.walk;
-					if (place_meeting(x + (dir * 32), y, obj_solid))
+					if (check_solid(x + (dir * 32), y))
 						dir *= -1;
 				}
 			}
@@ -25,7 +25,7 @@ switch (state)
 		playerid.x = x + playerxoffset;
 		playerid.hsp = 0;
 		playerid.vsp = 0;
-		if (place_meeting(x + dir, y, obj_solid))
+		if (check_solid(x + dir, y))
 		{
 			with (playerid)
 				state = states.normal;

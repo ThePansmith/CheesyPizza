@@ -13,12 +13,12 @@ function scr_player_ratmount()
 	}
 	hsp = movespeed + (railmovespeed * raildir);
 	var r = ratmount_movespeed;
-	if ((place_meeting(x + xscale, y, obj_solid) && !place_meeting(x + hsp, y, obj_destructibles)) || (abs(movespeed) < 8 && move != xscale) || !key_attack || abs(movespeed) <= 6)
+	if ((check_solid(x + xscale, y) && !place_meeting(x + hsp, y, obj_destructibles)) || (abs(movespeed) < 8 && move != xscale) || !key_attack || abs(movespeed) <= 6)
 	{
 		gustavodash = 0;
 		ratmount_movespeed = 8;
 	}
-	if ((place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_slope_parent) && !place_meeting(x + hsp, y, obj_destructibles)) && gustavodash != 51)
+	if ((check_solid(x + hsp, y) && !check_slope(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles)) && gustavodash != 51)
 	{
 		movespeed = 0;
 		if (r >= 12)
@@ -98,7 +98,7 @@ function scr_player_ratmount()
 		image_speed = 0.35;
 	if (sprite_index == spr_player_ratmountmach3 || sprite_index == spr_lonegustavo_mach3)
 		image_speed = 0.4;
-	var front = scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_slope_parent);
+	var front = scr_solid(x + sign(hsp), y) && !check_slope(x + sign(hsp), y);
 	if (brick)
 	{
 		if (!landAnim)
@@ -210,7 +210,7 @@ function scr_player_ratmount()
 		else
 			sprite_index = spr_player_ratmountgroundpoundfall;
 	}
-	if (key_attack && grounded && !place_meeting(x + xscale, y, obj_solid))
+	if (key_attack && grounded && !check_solid(x + xscale, y))
 	{
 		move = xscale;
 		if (ratmount_movespeed < 12)

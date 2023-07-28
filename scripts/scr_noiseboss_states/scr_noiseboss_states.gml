@@ -399,7 +399,7 @@ function boss_noise_handstandjump()
 			image_index = 0;
 		}
 	}
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 	{
 		state = states.bump;
 		hsp = -image_xscale * 6;
@@ -427,7 +427,7 @@ function boss_noise_crouchslide()
 			image_index = 0;
 		}
 	}
-	if (slideskateboard && place_meeting(x + (sign(hsp) * 116), y, obj_solid))
+	if (slideskateboard && check_solid(x + (sign(hsp) * 116), y))
 	{
 		state = states.skateboardturn;
 		skateboard_turns = 1;
@@ -435,7 +435,7 @@ function boss_noise_crouchslide()
 		sprite_index = spr_playerN_machslideboost;
 		image_index = 0;
 	}
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 	{
 		state = states.bump;
 		hsp = -image_xscale * 6;
@@ -480,14 +480,14 @@ function boss_noise_skateboard()
 	hsp = image_xscale * movespeed;
 	if (movespeed < 18)
 		movespeed += 0.5;
-	if (skateboard_turns > 0 && place_meeting(x + (sign(hsp) * 116), y, obj_solid))
+	if (skateboard_turns > 0 && check_solid(x + (sign(hsp) * 116), y))
 	{
 		state = states.skateboardturn;
 		movespeed = 12;
 		sprite_index = spr_playerN_machslideboost;
 		image_index = 0;
 	}
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 	{
 		state = states.bump;
 		hsp = -image_xscale * 6;
@@ -573,7 +573,7 @@ function boss_noise_pogo()
 	var maxpogo = !bombpogo ? 24 : 15;
 	if (movespeed < 6 && !grounded)
 		movespeed += 0.5;
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 		image_xscale *= -1;
 	if (grounded && sprite_index != spr_playerN_pogobounce && sprite_index != spr_playerN_pogobouncemach)
 	{
@@ -646,7 +646,7 @@ function boss_noise_jetpack()
 	var tx = (y != targetplayer.y) ? sign(targetplayer.y - y) : 0;
 	if (tx != 0)
 		vsp = 3 * tx;
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 	{
 		state = states.bump;
 		hsp = -image_xscale * 6;

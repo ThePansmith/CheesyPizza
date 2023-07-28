@@ -13,7 +13,7 @@ function scr_player_hit()
 		image_speed = 0.35;
 		x = hitX;
 		y = hitY;
-		if (!place_meeting(x, y - 1, obj_solid))
+		if (!check_solid(x, y - 1))
 		{
 			y--;
 			grounded = false;

@@ -8,9 +8,9 @@ if (state == states.tube)
 			state = states.freefall;
 			vsp = 10;
 			sprite_index = spr_player_rockethitwall;
-			if (place_meeting(x, y, obj_solid))
+			if (check_solid(x, y))
 			{
-				while (place_meeting(x, y, obj_solid))
+				while (check_solid(x, y))
 					y--;
 			}
 			var p = (object_index == obj_player1) ? 0 : 1;

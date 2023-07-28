@@ -44,7 +44,7 @@ if (state == states.totem && totemID != -4)
 	{
 		var tx = totemID.x + (64 * totemdir);
 		var on_place = (totemdir > 0) ? (x > tx) : (x < tx);
-		if (place_meeting(x + image_xscale, y, obj_solid))
+		if (check_solid(x + image_xscale, y))
 			on_place = true;
 		hsp = !on_place ? (image_xscale * 3) : 0;
 		if (sprite_index == spr_indiancheese_jump && floor(image_index) == (image_number - 1))

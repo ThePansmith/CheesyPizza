@@ -2,7 +2,7 @@ hsp = image_xscale * movespeed;
 if (!kick)
 {
 	mask_index = spr_player_mask;
-	if (place_meeting(x + image_xscale, y, obj_solid))
+	if (check_solid(x + image_xscale, y))
 		image_xscale *= -1;
 	if (grounded)
 		instance_destroy();
@@ -16,7 +16,7 @@ if (!kick)
 else
 {
 	mask_index = spr_player_mask;
-	if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_destructibles))
+	if (check_solid(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles))
 		instance_destroy();
 	with (instance_place(x + hsp, y, obj_destructibles))
 		instance_destroy();

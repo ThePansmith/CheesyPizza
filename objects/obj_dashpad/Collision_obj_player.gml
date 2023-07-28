@@ -3,7 +3,7 @@ with (other)
 {
 	if (state != states.gotoplayer && state != states.ghost && state != states.actor)
 	{
-		if (boxxed == 0 && isgustavo == 0 && other.buffer == 0 && other.sprite_index == spr_dashpad)
+		if (boxxed == 0 && isgustavo == 0 && other.buffer == 0/* && other.sprite_index == spr_dashpad*/)
 		{
 			if (state == states.trashjump || state == states.trashjumpprep)
 				create_debris(x, y, spr_player_trashlid);
@@ -17,11 +17,28 @@ with (other)
 					i++;
 				}
 			}
+			
 			var changecoord = true;
-			if (place_meeting(x, y, obj_superspring))
+			if place_meeting(x, y, obj_superspring)
 				changecoord = false;
-			if (changecoord)
-				y = other.y - 14;
+			if changecoord
+			{
+				if other.sugary
+				{
+					// snap to ground
+					for(var i = 1; i < 32; i++)
+					{
+						if scr_solid(x, y + i)
+						{
+							y += i - 1;
+							break;
+						}
+					}
+				}
+				else
+					y = other.y - 14;
+			}
+			
 			vsp = 0;
 			create_particle(x, y, particle.jumpdust, 0);
 			if (character != "V")
@@ -59,7 +76,7 @@ with (other)
 		}
 		else
 		{
-			if (boxxed && other.buffer == 0 && other.sprite_index != spr_dashpad)
+			if (boxxed && other.buffer == 0/* && other.sprite_index != spr_dashpad*/)
 			{
 				changecoord = true;
 				if (place_meeting(x, y, obj_superspring))

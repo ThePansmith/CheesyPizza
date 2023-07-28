@@ -1,3 +1,3 @@
 y += 5;
-if (place_meeting(x, y, obj_solid))
+if (check_solid(x, y))
 	instance_destroy();

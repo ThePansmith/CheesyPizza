@@ -3,7 +3,7 @@ function scr_robot_normal()
 	image_speed = 0.35;
 	sprite_index = walkspr;
 	hsp = image_xscale * movespeed;
-	if (place_meeting(x + hsp, y, obj_solid) || (place_meeting(x + hsp, y, obj_hallway) && !place_meeting(x, y, obj_hallway)))
+	if (check_solid(x + hsp, y) || (place_meeting(x + hsp, y, obj_hallway) && !place_meeting(x, y, obj_hallway)))
 		image_xscale *= -1;
 	if (random_buffer <= 0)
 	{

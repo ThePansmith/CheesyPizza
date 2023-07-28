@@ -20,7 +20,7 @@ function scr_player_grind()
 			sprite_index = spr_mach4;
 		}
 	}
-	if (place_meeting(x + xscale, y, obj_solid) && !place_meeting(x, y + 18, obj_grindrailslope) && !place_meeting(x, y + 1, obj_slope_parent))
+	if (check_solid(x + xscale, y) && !place_meeting(x, y + 18, obj_grindrailslope) && !check_slope(x, y + 1))
 	{
 		state = states.bump;
 		hsp = -xscale * 5;

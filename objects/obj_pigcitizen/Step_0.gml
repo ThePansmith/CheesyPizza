@@ -18,7 +18,7 @@ switch (state)
 					movespeed = 0;
 			}
 			hsp = movespeed * image_xscale;
-			if (place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_slope_parent))
+			if (check_solid(x + sign(hsp), y) && !check_slope(x + sign(hsp), y))
 				image_xscale *= -1;
 			if (movespeed == 0)
 				image_index = 0;
@@ -35,7 +35,7 @@ switch (state)
 				randombuffer = 80 + irandom_range(-40, 80);
 				image_xscale = choose(-1, 1);
 			}
-			if (place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_slope_parent))
+			if (check_solid(x + sign(hsp), y) && !check_slope(x + sign(hsp), y))
 				image_xscale *= -1;
 		}
 		if (obj_player.state == states.backbreaker && bbox_in_camera(view_camera[0], 50))

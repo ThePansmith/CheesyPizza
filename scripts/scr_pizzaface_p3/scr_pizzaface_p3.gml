@@ -290,7 +290,7 @@ function scr_pizzaface_p3_jump()
 		}
 	}
 	hsp = walkspeed * image_xscale;
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 		image_xscale *= -1;
 	if (sprite_index == spr_pizzahead_phase3jumpstart && floor(image_index) == (image_number - 1))
 	{
@@ -392,7 +392,7 @@ function scr_pizzaface_p3_swinging()
 		hsp = image_xscale * attackspeed;
 		if (attackspeed < 10)
 			attackspeed += 0.5;
-		if (place_meeting(x + hsp, y, obj_solid))
+		if (check_solid(x + hsp, y))
 			state = states.walk;
 	}
 }

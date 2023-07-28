@@ -24,7 +24,7 @@ function scr_pizzaball_normal()
 			instance_destroy(b);
 		}
 		ds_list_clear(global.instancelist);
-		if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_destroyablegolf) && (!place_meeting(x + hsp, y, obj_slope_parent) || place_meeting(x + hsp, y - 4, obj_solid)))
+		if (check_solid(x + hsp, y) && !place_meeting(x + hsp, y, obj_destroyablegolf) && (!check_slope(x + hsp, y) || check_solid(x + hsp, y - 4)))
 		{
 			angle = 0;
 			image_xscale *= -1;

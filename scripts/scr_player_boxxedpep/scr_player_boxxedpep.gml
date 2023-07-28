@@ -28,11 +28,11 @@ function scr_player_boxxedpep()
 		}
 		hsp = movespeed + (railmovespeed * raildir);
 	}
-	if (scr_solid(x + sign(hsp), y) && xscale == 1 && move == 1 && (!place_meeting(x + 1, y, obj_slope_parent) || scr_solid_slope(x + 1, y)))
+	if (scr_solid(x + sign(hsp), y) && xscale == 1 && move == 1 && (!check_slope(x + 1, y) || scr_solid_slope(x + 1, y)))
 		movespeed = 0;
-	if (scr_solid(x + sign(hsp), y) && xscale == -1 && move == -1 && (!place_meeting(x - 1, y, obj_slope_parent) || scr_solid_slope(x - 1, y)))
+	if (scr_solid(x + sign(hsp), y) && xscale == -1 && move == -1 && (!check_slope(x - 1, y) || scr_solid_slope(x - 1, y)))
 		movespeed = 0;
-	if (xscale == sign(hsp) && scr_solid(x + sign(hsp), y) && (!place_meeting(x - 1, y, obj_slope_parent) || scr_solid_slope(x - 1, y)))
+	if (xscale == sign(hsp) && scr_solid(x + sign(hsp), y) && (!check_slope(x - 1, y) || scr_solid_slope(x - 1, y)))
 		boxxeddashbuffer = 0;
 	if (!grounded && boxxeddashbuffer > 0)
 		boxxeddashbuffer--;

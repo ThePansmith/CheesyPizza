@@ -7,7 +7,7 @@ if (move)
 	if (!grabbed && !ratgrabbed && !thrown)
 	{
 		hsp = dir * spd;
-		if (place_meeting(x, y + 1, obj_solid) && vsp > 0)
+		if (check_solid(x, y + 1) && vsp > 0)
 		{
 			if (bounce > 0)
 			{
@@ -36,7 +36,7 @@ if (move)
 				alarm[0] = 150;
 			}
 		}
-		if (place_meeting(x + sign(hsp), y, obj_solid))
+		if (check_solid(x + sign(hsp), y))
 		{
 			sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
 			dir *= -1;

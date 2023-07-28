@@ -16,7 +16,7 @@ if (!place_meeting(x, y, obj_doorblocked))
 	{
 		if (key_up && !instance_exists(obj_jumpscare) && grounded && (state == states.normal or state == states.ratmount or state == states.mach1 or state == states.mach2 or state == states.pogo or state == states.mach3 or state == states.Sjumpprep) && ((character != "M" && y == (other.y + 50)) or (character == "M" && y == (other.y + 55))) && !instance_exists(obj_noisesatellite) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor)
 		{
-			if other.sprite_index == spr_doorkeyopen
+			if other.sprite_index == other.spr_open
 			{
 				with obj_player
 				{
@@ -67,7 +67,12 @@ if (!place_meeting(x, y, obj_doorblocked))
 			{
 				sound_play_3d("event:/sfx/misc/keyunlock", x, y);
 				instance_destroy(obj_keydoor_shake);
-				instance_create(door.x + 50, door.y + 50, obj_keydoor_shake);
+				
+				with instance_create(door.x + 50, door.y + 50, obj_keydoor_shake)
+				{
+					if door.sugary
+						sprite_index = spr_keydoorshake_ss;
+				}
 			}
 		}
 	}

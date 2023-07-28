@@ -23,7 +23,7 @@ function scr_player_knightpepslopes()
 		if (scr_slope())
 		{
 			sprite_index = spr_knightpepdownslope;
-			with (instance_place(x, y + 1, obj_slope_parent))
+			with (check_slope(x, y + 1))
 			{
 				if (sign(image_xscale) == other.xscale)
 					other.sprite_index = other.spr_knightpepupslope;
@@ -64,7 +64,7 @@ function scr_player_knightpepslopes()
 		sprite_index = spr_knightpepfly;
 	if ((sprite_index == spr_knightpepdoublejump || sprite_index == spr_knightpepfly) && floor(image_index) == (image_number - 1))
 		image_index = image_number - 1;
-	if (scr_solid(x + sign(hsp), y) && (!scr_slope() || place_meeting(x + sign(hsp), y - 2, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_slope_parent) && !place_meeting(x + sign(hsp), y, obj_destructibles))
+	if (scr_solid(x + sign(hsp), y) && (!scr_slope() || check_solid(x + sign(hsp), y - 2)) && !check_slope(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 	{
 		instance_create(x + (xscale * 40), y, obj_bumpeffect);
 		movespeed = 0;
@@ -77,7 +77,7 @@ function scr_player_knightpepslopes()
 	}
 	if (scr_slope())
 	{
-		with (instance_place(x, y + 1, obj_slope_parent))
+		with (check_slope(x, y + 1))
 		{
 			if (other.xscale == -sign(image_xscale))
 			{

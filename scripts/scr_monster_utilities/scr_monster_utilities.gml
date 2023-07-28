@@ -163,7 +163,7 @@ function scr_puppet_appear(player)
 	state = states.robotchase;
 	substate = states.fall;
 	playerid = player;
-	while (place_meeting(x, y, obj_solid))
+	while (check_solid(x, y))
 	{
 		x += (player.x > x) ? 1 : -1;
 		i++;
@@ -176,7 +176,7 @@ function scr_puppet_appear(player)
 	var _col = collision_line(x, y, x, y - room_height, obj_solid, true, false);
 	if (_col != -4)
 	{
-		while (!place_meeting(x, y - 1, obj_solid))
+		while (!check_solid(x, y - 1))
 			y--;
 	}
 }
@@ -190,7 +190,7 @@ function scr_monsterinvestigate(speed, walkspr, idlespr)
 		case 1:
 			sprite_index = walkspr;
 			hsp = image_xscale * speed;
-			if (place_meeting(x + sign(hsp), y, obj_monstersolid) && (!place_meeting(x + sign(hsp), y, obj_monsterslope) || place_meeting(x + sign(hsp), y - 4, obj_solid)))
+			if (place_meeting(x + sign(hsp), y, obj_monstersolid) && (!place_meeting(x + sign(hsp), y, obj_monsterslope) || check_solid(x + sign(hsp), y - 4)))
 			{
 				investigatestate++;
 				image_xscale *= -1;

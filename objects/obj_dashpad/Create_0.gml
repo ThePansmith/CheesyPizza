@@ -8,3 +8,10 @@ hsp_carry = 0;
 vsp_carry = 0;
 buffer = 0;
 depth = 0;
+
+sugary = check_sugary();
+if sugary
+{
+	sprite_index = spr_dashpad_ss;
+	grav = 0;
+}

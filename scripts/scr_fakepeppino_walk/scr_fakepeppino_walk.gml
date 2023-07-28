@@ -11,7 +11,7 @@ function scr_fakepeppino_walk()
 		sprite_index = spr_fakepeppino_walk;
 		movespeed = 6;
 	}
-	if (place_meeting(x + (hsp * 2), y - 1, obj_solid) && place_meeting(x + hsp, y, obj_solid) && !place_meeting(x, y + 1, obj_slope_parent) && !place_meeting(x + hsp, y, obj_destructibles) && sprite_index == spr_fakepeppino_walk)
+	if (check_solid(x + (hsp * 2), y - 1) && check_solid(x + hsp, y) && !check_slope(x, y + 1) && !place_meeting(x + hsp, y, obj_destructibles) && sprite_index == spr_fakepeppino_walk)
 	{
 		image_index = 0;
 		state = states.jump;

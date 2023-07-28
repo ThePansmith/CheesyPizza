@@ -1,9 +1,9 @@
 y += vsp;
 if (vsp < 20)
 	vsp += grav;
-if (vsp > 0 && place_meeting(x, y + vsp, obj_solid))
+if (vsp > 0 && check_solid(x, y + vsp))
 {
-	while (!place_meeting(x, y + sign(vsp), obj_solid))
+	while (!check_solid(x, y + sign(vsp)))
 		y += sign(vsp);
 	instance_destroy();
 }

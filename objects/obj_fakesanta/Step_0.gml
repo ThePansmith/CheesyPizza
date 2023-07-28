@@ -57,7 +57,7 @@ if (activated == 1)
 						if (!shot)
 						{
 							image_index = 8;
-							if (!place_meeting(x, y, obj_solid) && !place_meeting(x, y, obj_slope_parent) && _col == -4)
+							if (!check_solid(x, y) && !check_slope(x, y) && _col == -4)
 							{
 								shot = true;
 								var n = irandom(array_length(content) - 1);

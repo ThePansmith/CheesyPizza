@@ -24,7 +24,7 @@ switch (state)
 			b_movespeed += 0.5;
 		if (scr_slope())
 		{
-			var _inst = instance_place(x, y + 1, obj_slope_parent);
+			var _inst = check_slope(x, y + 1);
 			if (sign(_inst.image_xscale) == -sign(image_xscale))
 			{
 				b_movespeed += 0.15;
@@ -83,13 +83,13 @@ switch (state)
 			hsp = 0;
 			thrown = false;
 		}
-		if (hitvsp < 0 && place_meeting(x, y - 1, obj_solid) && !place_meeting(x, y - 1, obj_destructibles))
+		if (hitvsp < 0 && check_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles))
 		{
 			if (thrown == 1 && destroyable)
 				instance_destroy();
 			thrown = false;
 		}
-		if (hithsp != 0 && place_meeting(x - image_xscale, y, obj_solid) && !place_meeting(x - image_xscale, y, obj_destructibles))
+		if (hithsp != 0 && check_solid(x - image_xscale, y) && !place_meeting(x - image_xscale, y, obj_destructibles))
 		{
 			particle_set_scale(particle.impact, -image_xscale, 1);
 			create_particle(x, y, particle.impact, 0);

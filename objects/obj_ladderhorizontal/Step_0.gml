@@ -1,7 +1,7 @@
 hsp = dir * spd;
-if (place_meeting(x + hsp, y, obj_solid))
+if (check_solid(x + hsp, y))
 {
-	while (!place_meeting(x + sign(hsp), y, obj_solid))
+	while (!check_solid(x + sign(hsp), y))
 		x += sign(hsp);
 	hsp *= -1;
 	dir *= -1;

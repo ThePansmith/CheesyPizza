@@ -6,7 +6,7 @@ else
 vsp = 0;
 var ty = room_height * 0.25;
 y = Approach(y, ty, 2);
-if (place_meeting(x + floatdir, y, obj_solid))
+if (check_solid(x + floatdir, y))
 	floatdir *= -1;
 if (sprite_index == spr_pizzahead_haywireattack)
 {

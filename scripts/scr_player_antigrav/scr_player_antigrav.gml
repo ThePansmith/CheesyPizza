@@ -30,7 +30,7 @@ function scr_player_antigrav()
 			vsp = random_range(-10, 10);
 		}
 	}
-	if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_slope_parent) && !place_meeting(x + hsp, y, obj_ratblock) && !place_meeting(x + hsp, y, obj_destructibles))
+	if (check_solid(x + hsp, y) && !check_slope(x + hsp, y) && !place_meeting(x + hsp, y, obj_ratblock) && !place_meeting(x + hsp, y, obj_destructibles))
 	{
 		GamepadSetVibration(0, 0.6, 0.6, 0.2);
 		sound_play_oneshot_3d("event:/sfx/antigrav/bump", x, y);

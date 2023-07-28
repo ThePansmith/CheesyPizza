@@ -3,7 +3,7 @@ switch (state)
 	case states.normal:
 		sprite_index = spr_stupidratprop1;
 		hsp = image_xscale * 3;
-		if (place_meeting(x + sign(hsp), y, obj_solid))
+		if (check_solid(x + sign(hsp), y))
 			image_xscale *= -1;
 		break;
 	case states.idle:

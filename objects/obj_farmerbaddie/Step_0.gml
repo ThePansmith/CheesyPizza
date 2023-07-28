@@ -115,7 +115,7 @@ else if (state == states.charge)
 		state = states.walk;
 		sprite_index = walkspr;
 	}
-	if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_slope_parent))
+	if (check_solid(x + hsp, y) && !check_slope(x + hsp, y))
 		image_xscale *= -1;
 }
 if (state != states.charge && hitboxID != -4 && instance_exists(hitboxID))

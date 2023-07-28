@@ -114,7 +114,7 @@ function scr_player_supergrab()
 						{
 							x = other.x + other.supergrabx;
 							y = other.y + other.supergraby;
-							if (place_meeting(x, y, obj_solid))
+							if (check_solid(x, y))
 							{
 								x = other.x;
 								y = other.y;

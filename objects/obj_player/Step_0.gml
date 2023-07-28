@@ -50,7 +50,7 @@ if (place_meeting(x, y, obj_secretportal) || place_meeting(x, y, obj_secretporta
 	collision_flags |= colflag.secret;
 if (scr_solid(x, y + 1))
 	collision_flags |= colflag.grounded;
-if (place_meeting(x, y + 1, obj_slope_parent))
+if (check_slope(x, y + 1))
 	collision_flags |= colflag.sloped;
 
 // state machine

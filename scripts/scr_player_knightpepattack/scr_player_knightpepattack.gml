@@ -22,13 +22,13 @@ function scr_player_knightpepattack()
 	{
 		movespeed = 2;
 		knightmomentum = 0;
-		with (instance_place(x, y + 1, obj_slope_parent))
+		with (check_slope(x, y + 1))
 			other.xscale = -sign(image_xscale);
 		state = states.knightpepslopes;
 		sprite_index = spr_knightpepdownslope;
 		slope_buffer = 20;
 	}
-	if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_slope_parent))
+	if (check_solid(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles) && !check_slope(x + hsp, y))
 		movespeed = 0;
 	if (grounded)
 		doublejump = false;

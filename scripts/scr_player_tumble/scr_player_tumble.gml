@@ -94,7 +94,7 @@ function scr_player_tumble()
 		sprite_index = spr_tumble;
 		movespeed = 14;
 	}
-	if ((state != states.freefall && ((place_meeting(x + xscale, y, obj_solid) || scr_solid_slope(x + xscale, y)) && !place_meeting(x + hsp, y, obj_rollblock) && !place_meeting(x + hsp, y, obj_unbumpablewall) && (!place_meeting(x + hsp, y, obj_rattumble) || sprite_index != spr_tumble) && (!place_meeting(x + hsp, y, obj_destructibles)/* or character == "V"*/) && (!place_meeting(x + hsp, y, obj_metalblock) or character != "SP" or sprite_index != spr_machroll or abs(hsp) < 12))) || place_meeting(x, y, obj_timedgate))
+	if ((state != states.freefall && ((check_solid(x + xscale, y) || scr_solid_slope(x + xscale, y)) && !place_meeting(x + hsp, y, obj_rollblock) && !place_meeting(x + hsp, y, obj_unbumpablewall) && (!place_meeting(x + hsp, y, obj_rattumble) || sprite_index != spr_tumble) && (!place_meeting(x + hsp, y, obj_destructibles)/* or character == "V"*/) && (!place_meeting(x + hsp, y, obj_metalblock) or character != "SP" or sprite_index != spr_machroll or abs(hsp) < 12))) || place_meeting(x, y, obj_timedgate))
 	{
 		hsp = 0;
 		movespeed = 0;

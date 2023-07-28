@@ -1,6 +1,6 @@
 image_speed = 0.35;
 hsp = image_xscale * 10;
-if ((x + hsp) > room_width || (x + hsp) < 0 || (place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_slope_parent)))
+if ((x + hsp) > room_width || (x + hsp) < 0 || (check_solid(x + sign(hsp), y) && !check_slope(x + sign(hsp), y)))
 	image_xscale *= -1;
 mask_index = spr_player_mask;
 var _index = floor(image_index) == (image_number - 1);

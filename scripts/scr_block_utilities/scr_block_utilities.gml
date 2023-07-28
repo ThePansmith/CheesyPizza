@@ -108,7 +108,7 @@ function scr_cutoff_old()
 				{
 					with (b)
 					{
-						if (!place_meeting(x, y, obj_solid))
+						if (!check_solid(x, y))
 							instance_destroy();
 						else if (other.object_index == obj_tiledestroy || ((object_index != obj_cutoffsmall || other.object_index == obj_secretblock) && (object_index != obj_cutoff || (other.object_index == obj_secretbigblock || other.object_index == obj_secretmetalblock))))
 						{

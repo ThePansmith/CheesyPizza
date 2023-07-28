@@ -71,12 +71,12 @@ function scr_pizzaface_arenaintro()
 			case 1:
 				with (obj_player1)
 				{
-					if (place_meeting(x, y, obj_solid))
+					if (check_solid(x, y))
 					{
 						vsp = 0;
 						hsp = 0;
 						y += other.playervsp;
-						if (!place_meeting(x, y, obj_solid))
+						if (!check_solid(x, y))
 							vsp = other.playervsp;
 					}
 					else if (grounded && vsp > 0)
@@ -215,7 +215,7 @@ function scr_pizzaface_arenaintro()
 }
 function scr_pizzaface_normal()
 {
-	while (place_meeting(x, y, obj_solid))
+	while (check_solid(x, y))
 		x += (x > (room_width / 2)) ? -1 : 1;
 	image_speed = 0.35;
 	if (flickertime <= 0)
@@ -232,7 +232,7 @@ function scr_pizzaface_normal()
 			if (alarm[8] == -1)
 				alarm[8] = 5;
 		}
-		if (place_meeting(x + floatdir, y, obj_solid))
+		if (check_solid(x + floatdir, y))
 			floatdir *= -1;
 		if (sprite_index != spr_pizzaface_nosespit1 && sprite_index != spr_pizzaface_nosespit2 && sprite_index != spr_pizzaface_nosespit3)
 		{
@@ -316,7 +316,7 @@ function scr_pizzaface_normal()
 		sprite_index = spr_pizzaface_hurt;
 		if (grounded)
 			hsp = Approach(hsp, 0, 0.25);
-		if (place_meeting(x + hsp, y, obj_solid))
+		if (check_solid(x + hsp, y))
 		{
 			hsp *= -1;
 			image_xscale *= -1;
@@ -353,7 +353,7 @@ function scr_pizzaface_ram()
 			vsp = ramvsp;
 			if (vsp < -5)
 				vsp = 12;
-			if ((vsp > 0 && grounded) || place_meeting(x + sign(hsp), y, obj_solid))
+			if ((vsp > 0 && grounded) || check_solid(x + sign(hsp), y))
 			{
 				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 				substate = states.land;

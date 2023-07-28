@@ -49,7 +49,7 @@ switch state
 							if (x != other.x)
 							{
 								hsp = -sign(x - other.x) * 3
-								if ((!other.attract_player) && place_meeting((x + sign(hsp)), y, obj_solid) && (!(place_meeting((x + sign(hsp)), y, obj_slope_parent))))
+								if ((!other.attract_player) && check_solid((x + sign(hsp)), y) && (!(check_slope((x + sign(hsp)), y))))
 								{
 									other.attract_player = 1
 									launched = 0

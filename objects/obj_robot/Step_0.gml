@@ -53,7 +53,7 @@ switch (state)
 			railmovespeed = 0;
 		with (instance_place(x + hsp, y, obj_destructibles))
 			instance_destroy();
-		if (place_meeting(x + sign(hsp), y, obj_solid) && (!place_meeting(x + sign(hsp), y, obj_slope_parent) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x, y, obj_destructibles))
+		if (check_solid(x + sign(hsp), y) && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x, y, obj_destructibles))
 		{
 			sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
 			state = states.stun;
@@ -82,7 +82,7 @@ switch (state)
 			railspeed = 0;
 			sprite_index = walkspr;
 		}
-		if (place_meeting(x + sign(hsp), y, obj_solid) && (!place_meeting(x + sign(hsp), y, obj_slope_parent) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x, y, obj_destructibles))
+		if (check_solid(x + sign(hsp), y) && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x, y, obj_destructibles))
 		{
 			sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
 			state = states.stun;

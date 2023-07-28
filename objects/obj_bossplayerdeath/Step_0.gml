@@ -10,7 +10,7 @@ with (obj_player1)
 			if (sprite_index == spr_player_outofpizza1 && floor(image_index) == (image_number - 1))
 				sprite_index = spr_player_outofpizza2;
 			hsp = deathspeed * -xscale;
-			if (place_meeting(x + sign(hsp), y, obj_solid))
+			if (check_solid(x + sign(hsp), y))
 			{
 				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 				xscale *= -1;

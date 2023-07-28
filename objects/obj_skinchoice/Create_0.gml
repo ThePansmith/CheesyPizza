@@ -49,13 +49,11 @@ characters = [
 	["G", spr_player_ratmountidle, spr_ratmountpalette, [1, 3]],
 	["SP", spr_playerSP_idle, spr_pizzypalette, [1, 3]],
 	["BN", spr_playerBN_idle, spr_bopalette, [1, 3]],
+	["PN", spr_playerPN_idle, spr_peppalette, [1, 3]]
 ];
 
 if global.experimental
-{
 	array_push(characters, ["S", spr_snick_idle, spr_snickpalette, [1, 4]]);
-	array_push(characters, ["PN", spr_playerPN_idle, spr_peppalette, [1, 3]]);
-}
 
 // set in user event 0
 palettes = [];

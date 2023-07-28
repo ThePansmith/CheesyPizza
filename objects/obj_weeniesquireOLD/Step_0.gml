@@ -32,7 +32,7 @@ if (charge == 1)
 	movespeed += 0.1;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.05 * room_speed;
-if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x, y, obj_slope_parent) && charge == 1)
+if (check_solid(x + hsp, y) && !check_slope(x, y) && charge == 1)
 {
 	instance_create(x + (image_xscale * 30), y, obj_bumpeffect);
 	stunned = 80;

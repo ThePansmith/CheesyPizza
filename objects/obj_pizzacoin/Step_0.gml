@@ -1,3 +1,3 @@
-if (place_meeting(x + hsp, y, obj_solid))
+if (check_solid(x + hsp, y))
 	hsp *= -1;
 scr_collide();

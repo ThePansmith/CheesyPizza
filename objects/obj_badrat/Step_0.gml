@@ -87,7 +87,7 @@ if (state == states.pizzagoblinthrow)
 		}
 		if (cooldown > 0)
 			cooldown--;
-		else if (grounded || (place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_slope_parent)))
+		else if (grounded || (check_solid(x + sign(hsp), y) && !check_slope(x + sign(hsp), y)))
 			sprite_index = spr_badrat_attack2end;
 	}
 	else if (sprite_index == spr_badrat_attack2end)

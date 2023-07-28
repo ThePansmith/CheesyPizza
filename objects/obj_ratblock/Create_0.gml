@@ -19,3 +19,10 @@ if check_midway()
 	sprite_index = spr_ratblock_bo;
 	spr_dead = spr_ratblock_dead_bo;
 }
+
+sugary = check_sugary();
+if sugary
+{
+	sprite_index = spr_chocofrogbig;
+	spr_dead = spr_chocofrogbigdead;
+}

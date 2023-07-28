@@ -211,7 +211,7 @@ function scr_pizzaface_p2_normal()
 		{
 			sprite_index = spr_pizzahead_giddy;
 			hsp = image_xscale * (10 + (wastedhits * 2));
-			if (grounded && vsp > 0 && place_meeting(x + (sign(hsp) * 64), y, obj_solid))
+			if (grounded && vsp > 0 && check_solid(x + (sign(hsp) * 64), y))
 			{
 				state = states.pizzahead_fishing;
 				hsp = 0;
@@ -386,7 +386,7 @@ function boss_pizzahead_portraitthrow()
 			dir = -other.image_xscale;
 			vsp = -18;
 			spd += (other.wastedhits * 0.25);
-			while (place_meeting(x, y, obj_solid))
+			while (check_solid(x, y))
 				x += (x > (room_width / 2)) ? -1 : 1;
 		}
 	}

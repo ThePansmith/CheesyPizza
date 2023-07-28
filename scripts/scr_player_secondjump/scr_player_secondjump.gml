@@ -9,7 +9,7 @@ function scr_player_secondjump()
 		movespeed = 0;
 	if (move != 0 && movespeed < 6)
 		movespeed += 0.5;
-	if (((scr_solid(x + 1, y) && move == 1) || (scr_solid(x - 1, y) && move == -1)) && !place_meeting(x + sign(hsp), y, obj_slope_parent))
+	if (((scr_solid(x + 1, y) && move == 1) || (scr_solid(x - 1, y) && move == -1)) && !check_slope(x + sign(hsp), y))
 		movespeed = 0;
 	if (dir != xscale)
 	{

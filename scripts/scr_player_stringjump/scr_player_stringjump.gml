@@ -17,7 +17,7 @@ function scr_player_stringjump()
 		else if (movespeed < 8)
 			movespeed = Approach(movespeed, 8, 0.25);
 	}
-	if (place_meeting(x + sign(hsp), y, obj_solid))
+	if (check_solid(x + sign(hsp), y))
 		movespeed = 0;
 	if (grounded && vsp > 0)
 	{

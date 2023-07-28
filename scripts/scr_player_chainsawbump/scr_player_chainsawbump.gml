@@ -26,7 +26,7 @@ function scr_player_chainsawbump()
 	}
 	if (sprite_index == spr_player_chainsawdash && movespeed < 20)
 		movespeed += 0.1;
-	if (check_wall(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles))
+	if (check_solid(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles))
 	{
 		var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
 		if (_bump)

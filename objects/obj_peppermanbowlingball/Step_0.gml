@@ -6,7 +6,7 @@ if (fall == 0)
 	y = Approach(y, 32, 2);
 if (fall == 1)
 	y += 9;
-if (place_meeting(x, y + 1, obj_solid) && fall == 1)
+if (check_solid(x, y + 1) && fall == 1)
 {
 	sound_play_oneshot_3d("event:/sfx/pepperman/statuedestroy", x, y);
 	destroy = true;

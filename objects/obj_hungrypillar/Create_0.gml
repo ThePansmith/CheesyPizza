@@ -3,9 +3,9 @@ image_speed = 0.35;
 depth = 2;
 if (room == rm_editor)
 {
-	if (place_meeting(x, y + 32, obj_solid))
+	if (check_solid(x, y + 32))
 	{
-		while (!place_meeting(x, y + 1, obj_solid))
+		while (!check_solid(x, y + 1))
 			y += 1;
 	}
 }

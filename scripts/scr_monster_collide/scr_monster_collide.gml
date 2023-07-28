@@ -48,7 +48,7 @@ function scr_monster_solid(_x, _y)
 		y = old_y;
 		return true;
 	}
-	if (check_slope(obj_monsterslope))
+	if (inside_slope(obj_monsterslope))
 	{
 		x = old_x;
 		y = old_y;

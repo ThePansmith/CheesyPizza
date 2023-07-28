@@ -164,7 +164,7 @@ function scr_player_knightpep()
 				movespeed = 0;
 		}
 	}
-	if (!grounded && place_meeting(x + sign(hsp), y, obj_solid) && !slope)
+	if (!grounded && check_solid(x + sign(hsp), y) && !slope)
 		movespeed = 0;
 	if (move != 0 && hsp != 0 && sprite_index != spr_knightpepdoublejump)
 	{
@@ -205,7 +205,7 @@ function scr_player_knightpep()
 			movespeed = 11;
 		else
 			movespeed = 8;
-		with (instance_place(x, y + 1, obj_slope_parent))
+		with (check_slope(x, y + 1))
 			other.xscale = -sign(image_xscale);
 		state = states.knightpepslopes;
 		sprite_index = spr_knightpepdownslope;

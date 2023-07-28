@@ -36,6 +36,8 @@ if (_transfo)
 	{
 		priestID = other.id;
 		playerid = p;
+		if other.sugary
+			sprite_index = spr_devilboy;
 	}
 	with (other)
 	{
@@ -43,7 +45,7 @@ if (_transfo)
 			create_debris(x, y - 40, spr_mortdead);
 	}
 	if (sprite_index != spr_angelpriest)
-		sprite_index = spr_priest_pray;
+		sprite_index = spr_pray;
 	if (collect && ds_list_find_index(global.saveroom, id) == -1)
 	{
 		notification_push(notifs.priest_collect, [room, id, _state]);

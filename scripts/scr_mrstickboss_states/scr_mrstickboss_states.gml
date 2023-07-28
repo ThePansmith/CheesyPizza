@@ -71,7 +71,7 @@ function boss_mrstick_normal()
 	move = 0;
 	if (dx < 400)
 		move = -sign(targetplayer.x - x);
-	if (place_meeting(x + -(image_xscale * 48), y, obj_solid))
+	if (check_solid(x + -(image_xscale * 48), y))
 		move = 0;
 	hsp = move * movespeed;
 	if (x != targetplayer.x)

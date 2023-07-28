@@ -20,7 +20,7 @@ function state_player_machroll()
 	switch (character)
 	{
 		default:
-			if (scr_solid(x + xscale, y) && (!place_meeting(x + sign(hsp), y, obj_slope_parent) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles))
+			if (scr_solid(x + xscale, y) && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 			{
 				hsp = 0;
 				image_speed = 0.35;
@@ -83,7 +83,7 @@ function state_player_machroll()
 		case "V":
 			if (sprite_index == spr_playerV_divekickstart && floor(image_index) == (image_number - 1))
 				sprite_index = spr_playerV_divekick;
-			if ((scr_solid(x + 1, y) && xscale == 1) && !place_meeting(x + sign(hsp), y, obj_slope_parent))
+			if ((scr_solid(x + 1, y) && xscale == 1) && !check_slope(x + sign(hsp), y))
 			{
 				hsp = 0;
 				image_speed = 0.35;
@@ -96,7 +96,7 @@ function state_player_machroll()
 				image_index = 0;
 				instance_create(x + 10, y + 10, obj_bumpeffect);
 			}
-			if ((scr_solid(x - 1, y) && xscale == -1) && !place_meeting(x + sign(hsp), y, obj_slope_parent))
+			if ((scr_solid(x - 1, y) && xscale == -1) && !check_slope(x + sign(hsp), y))
 			{
 				hsp = 0;
 				image_speed = 0.35;
@@ -143,7 +143,7 @@ function state_player_machroll()
 			break;
 		
 		case "N":
-			if ((scr_solid(x + 1, y) && xscale == 1) && !place_meeting(x + sign(hsp), y, obj_slope_parent) && !place_meeting(x + sign(hsp), y, obj_destructibles))
+			if ((scr_solid(x + 1, y) && xscale == 1) && !check_slope(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 			{
 				hsp = 0;
 				image_speed = 0.35;
@@ -156,7 +156,7 @@ function state_player_machroll()
 				image_index = 0;
 				instance_create(x + 10, y + 10, obj_bumpeffect);
 			}
-			if ((scr_solid(x - 1, y) && xscale == -1) && !place_meeting(x + sign(hsp), y, obj_slope_parent) && !place_meeting(x + sign(hsp), y, obj_destructibles))
+			if ((scr_solid(x - 1, y) && xscale == -1) && !check_slope(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 			{
 				hsp = 0;
 				image_speed = 0.35;

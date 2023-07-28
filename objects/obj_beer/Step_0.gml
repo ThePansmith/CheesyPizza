@@ -1,6 +1,6 @@
 if (cooldown > 0)
 	cooldown--;
-if (place_meeting(x + hsp, y, obj_solid))
+if (check_solid(x + hsp, y))
 	hsp *= -1;
 if (hit)
 	angle += spinspeed;

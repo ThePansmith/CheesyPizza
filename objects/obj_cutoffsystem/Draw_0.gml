@@ -10,7 +10,7 @@ for(var i = 0; i < array_length(cutoffs); i++)
 	if c.buffer > 0
 	c.buffer--;
 	
-	var sold = instance_place(x, y, obj_solid);
+	var sold = check_solid(x, y);
 	if sold && (sold.object_index == obj_solid or sold.object_index == obj_secretblock or sold.object_index == obj_secretbigblock)
 	{
 		if image_angle == 0

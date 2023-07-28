@@ -26,7 +26,7 @@ function scr_pizzaball_thrown()
 				else
 					substate = states.crouch;
 			}
-			if (scr_solid(x + hsp, y) && !place_meeting(x + hsp, y, obj_slope_parent) && !place_meeting(x + hsp, y, obj_destructibles))
+			if (scr_solid(x + hsp, y) && !check_slope(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles))
 			{
 				sound_play_oneshot_3d("event:/sfx/misc/golfbump", x, y);
 				sprite_index = spr_pizzaball_hitwall;
@@ -39,7 +39,7 @@ function scr_pizzaball_thrown()
 			sprite_index = spr_pizzaball_roll;
 			hitspeed = Approach(hitspeed, 0, 0.2);
 			hsp = image_xscale * hitspeed;
-			if (scr_solid(x + hsp, y) && !place_meeting(x + hsp, y, obj_slope_parent) && !place_meeting(x + hsp, y, obj_destructibles))
+			if (scr_solid(x + hsp, y) && !check_slope(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles))
 				image_xscale *= -1;
 			if (hitspeed == 0)
 			{

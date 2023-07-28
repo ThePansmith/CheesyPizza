@@ -1,6 +1,6 @@
 if (!collisioned)
 {
-	if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x, y, obj_solid))
+	if (check_solid(x + hsp, y) && !check_solid(x, y))
 		hsp *= -1;
 	if (grounded)
 	{

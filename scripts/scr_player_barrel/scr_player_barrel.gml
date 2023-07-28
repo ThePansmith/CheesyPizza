@@ -31,7 +31,7 @@ function scr_player_barrel()
 		}
 		if (scr_slope() && hsp != 0)
 		{
-			with (instance_place(x, y + 1, obj_slope_parent))
+			with (check_slope(x, y + 1))
 			{
 				if (sign(image_xscale) == -sign(other.xscale))
 					other.movespeed = Approach(other.movespeed, other.xscale * 12, 0.5);
@@ -72,7 +72,7 @@ function scr_player_barrel()
 		if (vsp < 0)
 			sprite_index = spr_player_barreljump;
 	}
-	if (place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_slope_parent))
+	if (check_solid(x + sign(hsp), y) && !check_slope(x + sign(hsp), y))
 	{
 		movespeed = 0;
 		if (sprite_index == spr_player_barrelmove)

@@ -1,7 +1,7 @@
 instance_create(x, y, obj_canonexplosion);
 if (room != plage_shiptop)
 {
-	if (place_meeting(x, y + 50, obj_solid))
+	if (check_solid(x, y + 50))
 	{
 		if (room != tower_escape9)
 		{

@@ -11,7 +11,7 @@ function scr_player_chainsawpogo()
 		vsp = grav;
 		jumpstop = true;
 	}
-	if ((scr_solid(x + 1, y) && xscale == 1) && !place_meeting(x + sign(hsp), y, obj_slope_parent))
+	if ((scr_solid(x + 1, y) && xscale == 1) && !check_slope(x + sign(hsp), y))
 	{
 		machhitAnim = false;
 		state = states.chainsawbump;
@@ -21,7 +21,7 @@ function scr_player_chainsawpogo()
 		image_index = 0;
 		instance_create(x + 10, y + 10, obj_bumpeffect);
 	}
-	else if ((scr_solid(x - 1, y) && xscale == -1) && !place_meeting(x + sign(hsp), y, obj_slope_parent))
+	else if ((scr_solid(x - 1, y) && xscale == -1) && !check_slope(x + sign(hsp), y))
 	{
 		machhitAnim = false;
 		state = states.chainsawbump;
