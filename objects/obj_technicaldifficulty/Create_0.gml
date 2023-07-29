@@ -22,8 +22,14 @@ switch chara
 	case "BN":
 		sprite = choose(spr_technicaldifficulty1BN, spr_technicaldifficulty2BN, spr_technicaldifficulty3BN, spr_technicaldifficulty4BN);
 		break;
+	case "PN":
+		sprite = choose(spr_technicaldifficulty1PN, spr_technicaldifficulty2PN, spr_technicaldifficulty3PN);
+		break;
 	case "N":
 		sprite = choose(spr_technicaldifficulty1N, spr_technicaldifficulty2N, spr_technicaldifficulty3N);
+		break;
+	case "SP":
+		sprite = spr_technicaldifficultySP;
 		break;
 	case "G":
 		sprite = spr_technicaldifficulty4;

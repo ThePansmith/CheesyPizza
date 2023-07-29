@@ -107,7 +107,11 @@ for (var i = 0; i < array_length(_toppinspr); i++)
 }
 if (object_index == obj_startgate && level != "exit" && level != "tutorial" && level != "dragonlair" && level != "snickchallenge")
 {
-	for (i = 1; i <= 3; i++)
+	var count = 3;
+	if level == "etb"
+		count = 2;
+	
+	for (i = 1; i <= count; i++)
 	{
 		b = true;
 		if (i > secret_count)

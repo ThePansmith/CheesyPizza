@@ -92,8 +92,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Pizzelle",
-    "path": "folders/Sprites/Player/Pizzelle.yy",
+    "name": "Rank",
+    "path": "folders/Sprites/Player/Pizzelle/Rank.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

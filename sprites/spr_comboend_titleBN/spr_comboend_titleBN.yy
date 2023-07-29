@@ -70,8 +70,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Bo Noise",
-    "path": "folders/Sprites/HUD/TV/Bo Noise.yy",
+    "name": "TV",
+    "path": "folders/Sprites/HUD/TV.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

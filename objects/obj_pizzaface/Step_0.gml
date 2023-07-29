@@ -12,6 +12,7 @@ var _move = !frozen;
 with (obj_player)
 {
 	if (state == states.taxi || state == states.victory || state == states.keyget || state == states.gottreasure || state == states.door || state == states.spaceshuttle)
+	or (state == states.comingoutdoor && place_meeting(x, y, obj_exitgate))
 		_move = false;
 }
 if (!treasure)

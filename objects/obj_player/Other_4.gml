@@ -11,14 +11,15 @@ with (obj_secretportal)
 			if room != tower_soundtest
 			{
 				global.secretfound++;
-				var val = global.secretfound;
-				if (val >= 3)
-					val = 3;
-				if (val == 1)
-					var txt = lang_get_value("secret_text1");
-				else
-					txt = lang_get_value("secret_text2");
-				txt = embed_value_string(txt, [val]);
+				
+				var val = min(global.secretfound, 3);
+				var count = 3;
+				var txt = lang_get_value(val == 1 ? "secret_text1" : "secret_text2");
+				
+				if global.leveltosave == "etb"
+					count = 2;
+				
+				txt = embed_value_string(txt, [val, count]);
 				create_transformation_tip(txt);
 			}
 			instance_create(0, 0, obj_ghostcollectibles);

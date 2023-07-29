@@ -19,3 +19,4 @@ with (obj_player)
 }
 sugary = (obj_player1.character == "SP");
 bo = (obj_player1.character == "BN");
+pino = (obj_player1.character == "PN");

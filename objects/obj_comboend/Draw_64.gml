@@ -1,12 +1,13 @@
 if !global.option_hud
 	exit;
+
 var xx = x;
 var yy = y;
 draw_set_color(c_white);
-if (obj_player1.character == "BN")
+if bo
 	draw_sprite(spr_comboendBN, 0, xx, yy);
-else if (obj_player1.character == "PP")
-	draw_sprite(spr_comboendPP, 0, xx, yy);
+else if pino
+	draw_sprite(spr_comboendPN, 0, xx, yy);
 else
 	draw_sprite(spr_comboend, 0, xx, yy);
 
@@ -18,15 +19,19 @@ if (title > (sprite_get_number(spr_comboend_title1) / 2))
 }
 if (combo >= 80)
 	very = true;
+
 if sugary
 	draw_sprite(spr_comboend_titleSP, min(floor(combo / 5), 24), xx, yy + 30);
 else if bo
 	draw_sprite(spr_comboend_titleBN, (title * 2) + title_index, xx, yy + 30);
+else if pino
+	draw_sprite(spr_comboend_titlePN, (title * 2) + title_index, xx, yy + 30);
 else
 	draw_sprite(spr_comboend_title1, (title * 2) + title_index, xx, yy + 30);
+
 draw_set_font(lang_get_font("smallfont"));
 draw_set_halign(1);
 draw_set_valign(0);
 draw_text(xx, yy + 70, comboscoremax);
 if (very && !sugary)
-	draw_sprite(spr_combovery, 0, xx - 65, (yy - 6) + 30);
+	draw_sprite(pino ? spr_comboveryPN : spr_combovery, 0, xx - 65, (yy - 6) + 30);
