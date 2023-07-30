@@ -29,7 +29,7 @@ for(var i = 0; i < array_length(options_array); i++)
 			var str = "";
 			if opt.type == modconfig.slider
 				str = string(floor(opt.value * 100)) + "%";
-			if opt.type == modconfig.option
+			if opt.type == modconfig.option or opt.type == modconfig.modifier
 				str = opt.opts[opt.value][0];
 			
 			if str != ""
@@ -76,7 +76,7 @@ draw_set_font(global.font_small);
 draw_text_ext_color(2 + 700, 2 + 420, opt.desc, 18, 440, 0, 0, 0, 0, 0.25);
 draw_text_ext(700, 420, opt.desc, 18, 440);
 
-if opt.type == modconfig.option
+if opt.type == modconfig.option or opt.type == modconfig.modifier
 {
 	draw_set_font(global.smallfont);
 	if opt.value < array_length(opt.opts)

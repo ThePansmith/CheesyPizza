@@ -55,7 +55,7 @@ function scr_cameradraw_old()
 				hudface = spr_pepinoHUDhappy
 			else if player.sprite_index = spr_player_machroll or player.sprite_index = spr_player_tumble
 				hudface = spr_pepinoHUDrolling
-			else if player.supercharged && !global.heatmeter
+			else if (player.supercharged && !global.heatmeter) or global.stylethreshold == 2
 				hudface = spr_pepinoHUDmenacing
 			else if _state = states.mach1 or _state = states.chainsaw or _state = states.freefallprep or _state = states.freefall or  _state = states.tackle or _state = states.Sjump or _state = states.slam or  _state = states.Sjumpprep or _state = states.grab or _state = states.punch or _state = states.backbreaker or _state = states.backkick or _state = states.uppunch or _state = states.shoulder
 			or player.sprite_index == spr_player_mach1
@@ -68,7 +68,7 @@ function scr_cameradraw_old()
 				hudface = spr_pepinoHUDmach3
 			else if _state = states.hurt or player.sprite_index = spr_bombpep_end or player.sprite_index = spr_player_fireassend or _state = states.timesup or _state = states.bombpep or (_state = states.bossintro &&  player.sprite_index = spr_player_bossintro) or (_state = states.bossintro &&  player.sprite_index = spr_player_idle)
 				hudface = spr_pepinoHUDhurt
-			else if player.angry or global.stylethreshold == 2
+			else if player.angry or global.stylethreshold == 1
 				hudface = spr_pepinoHUD3hp
 			else if player.sprite_index = spr_player_hurtidle or player.sprite_index = spr_player_hurtwalk
 				hudface = spr_pepinoHUD1hp

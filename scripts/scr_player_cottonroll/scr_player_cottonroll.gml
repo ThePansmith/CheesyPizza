@@ -8,7 +8,7 @@ function state_player_cottonroll()
 	hsp = xscale * movespeed;
 	dir = xscale;
 	momemtum = true;
-	if (scr_solid(x + xscale, y) && !check_slope(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_ratblock))
+	if (scr_solid(x + xscale, y) && !check_slope(x + xscale, y) && ((!place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_ratblock)) or movespeed < 8))
 	{
 		xscale *= -1;
 		movespeed /= 2;

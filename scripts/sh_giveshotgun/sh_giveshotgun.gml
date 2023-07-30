@@ -31,7 +31,7 @@ function meta_giveshotgun()
 function sh_impulse(args)
 {
 	if args[1] == "101"
-		sh_giveshotgun();
+		return sh_giveshotgun();
 }
 function meta_impulse()
 {

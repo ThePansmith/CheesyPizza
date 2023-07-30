@@ -34,3 +34,6 @@ depth = 0;
 charging = false;
 grabbedby = 0;
 stuntouchbuffer = 0;
+spr_palette = palette_forknight;
+usepalette = true;
+paletteselect = 0;

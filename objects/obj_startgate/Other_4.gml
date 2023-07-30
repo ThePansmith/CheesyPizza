@@ -105,7 +105,7 @@ for (var i = 0; i < array_length(_toppinspr); i++)
 		}
 	}
 }
-if (object_index == obj_startgate && level != "exit" && level != "tutorial" && level != "dragonlair" && level != "snickchallenge")
+if (object_index == obj_startgate && level != "exit" && level != "tutorial" && level != "dragonlair" && level != "snickchallenge" && level != "grinch" && level != "oldexit")
 {
 	var count = 3;
 	if level == "etb"
