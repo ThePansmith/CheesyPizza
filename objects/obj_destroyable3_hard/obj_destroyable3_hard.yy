@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sprite387",
-    "path": "sprites/sprite387/sprite387.yy",
+    "name": "spr_bigdestroy",
+    "path": "sprites/spr_bigdestroy/spr_bigdestroy.yy",
   },
   "spriteMaskId": null,
   "visible": true,

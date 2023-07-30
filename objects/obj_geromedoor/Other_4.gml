@@ -5,4 +5,4 @@ if (ds_list_find_index(global.saveroom, id) != -1)
 if (visited)
 	image_index = image_number - 1;
 if global.snickchallenge
-	instance_destroy();
+	instance_destroy(id, false);

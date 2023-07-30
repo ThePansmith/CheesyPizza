@@ -103,6 +103,8 @@ global.showfps = ini_read_real("Modded", "showfps", false);
 global.afterimage = ini_read_real("Modded", "afterimage", 0); // final, eggplant
 global.smoothcam = ini_read_real("Modded", "smoothcam", 0); // 0 through 1 lerp amount
 global.secrettiles = ini_read_real("Modded", "secrettiles", 0); // fade, spotlight
+global.hud = ini_read_real("Modded", "hud", 0); // final, old
+global.blockstyle = ini_read_real("Modded", "blockstyle", 0); // final, september, old
 
 // gameframe
 global.gameframe_enabled = ini_read_real("Modded", "gameframe", true);

@@ -58,6 +58,17 @@ function scr_pistolshoot(required_state)
 			global.bullet = floor(global.bullet - 1);
 			bullet.april = true;
 			sound_play_3d(sfx_killingblow, x, y);
+			
+			if global.hud == 1
+			{
+				with obj_tv
+				{
+					alarm[0] = 100;
+					tvsprite = spr_tvrevolver;
+					image_index = 0;
+					image_speed = 0.35;
+				}
+			}
 		}
 	}
 }

@@ -119,9 +119,13 @@ function scr_playerreset(roomstart = false, restart = false)
 			alarm[4] = -1;
 		with (obj_tv)
 		{
+			event_perform(ev_alarm, 0);
+			shownrankp = false;
+			shownranks = false;
 			shownranka = false;
 			shownrankb = false;
 			shownrankc = false;
+			
 			ds_list_clear(tvprompts_list);
 			prompt = "";
 			bubblespr = -4;

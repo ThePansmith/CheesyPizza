@@ -79,8 +79,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "unusedgroup",
-    "path": "texturegroups/unusedgroup",
+    "name": "hudgroup",
+    "path": "texturegroups/hudgroup",
   },
   "type": 0,
   "VTile": false,

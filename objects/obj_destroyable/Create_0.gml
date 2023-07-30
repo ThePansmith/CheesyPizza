@@ -2,9 +2,22 @@ event_inherited();
 
 global.breaksound = 0;
 depth = 1;
-image_index = random_range(0, image_number - 1);
 particlespr = spr_towerblockdebris;
 particlespd = 0.35;
+
+if global.blockstyle == 1
+{
+	// september
+	sprite_index = spr_destroyable;
+	particlespr = spr_doughblockdead;
+}
+if global.blockstyle == 2
+{
+	// old
+	sprite_index = spr_destroyable_old;
+	particlespr = spr_debris;
+	particlespd = 0;
+}
 
 if check_sugary()
 {
@@ -19,3 +32,4 @@ if check_midway()
 	image_index = irandom(image_number);
 	particlespr = spr_towerblockdebris_bo;
 }
+image_index = random_range(0, image_number - 1);

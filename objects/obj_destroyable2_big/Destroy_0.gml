@@ -6,7 +6,14 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	
 	scr_sleep(5);
 	with (instance_create(x + 32, y + 32, obj_parryeffect))
-		sprite_index = other.particlespr;
+		sprite_index = other.spr_dead;
+	
+	if (sprite_exists(particlespr))
+	{
+		repeat (6)
+			create_debris(x + sprite_width / 2, y + sprite_height / 2, particlespr);
+	}
+	
 	if (content == obj_null)
 	{
 		global.heattime += 10;

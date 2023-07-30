@@ -1099,7 +1099,7 @@ if (object_index == obj_player1)
 	global.bullet = Approach(global.bullet, 3, 0.003);
 	global.fuel = Approach(global.fuel, 3, 0.004);
 	
-	if obj_tv.targetspr == spr_tv_off
+	if string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic
 	{
 		global.bullet = 3;
 		global.fuel = 3;

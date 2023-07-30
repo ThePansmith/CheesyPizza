@@ -10,11 +10,20 @@ t = 0;
 buffer = 0;
 sequence_layer = -1;
 
+enum modconfig
+{
+	option,
+	section,
+	button,
+	modifier,
+	slider
+}
+
 options_array = [];
 function add_option(name, variable, desc = "", drawfunc = noone)
 {
 	var struct = {
-		type: 0,
+		type: modconfig.option,
 		value: 0,
 		vari: variable,
 		name: name,
@@ -28,8 +37,7 @@ function add_option(name, variable, desc = "", drawfunc = noone)
 function add_button(name, desc = "", func = noone, drawfunc = noone)
 {
 	var struct = {
-		type: 2,
-		value: 0,
+		type: modconfig.button,
 		name: name,
 		desc: desc,
 		func: func,
@@ -38,11 +46,24 @@ function add_button(name, desc = "", func = noone, drawfunc = noone)
 	array_push(options_array, struct);
 	return struct;
 }
+function add_slider(name, variable, range = [0, 1], desc = "", drawfunc = noone)
+{
+	var struct = {
+		type: modconfig.slider,
+		value: 0,
+		vari: variable,
+		name: name,
+		desc: desc,
+		range: range,
+		drawfunc: drawfunc
+	}
+	array_push(options_array, struct);
+	return struct;
+}
 function add_section(name)
 {
 	var struct = {
-		type: 1,
-		value: 0,
+		type: modconfig.section,
 		name: name
 	};
 	array_push(options_array, struct);
@@ -504,11 +525,13 @@ add_button("Input Display", "An in-game input display. You can drag it around wi
 add_section("Visual");
 #region AFTERIMAGES
 
+/*
 var opt = add_option("Afterimages", "afterimage", "Choose between normal afterimages and blue afterimages for certain moves.", [seq_afterimages_final, seq_afterimages_eggplant]);
 opt.opts = [
 	["FINAL", 0],
 	["EGGPLANT", 1]
 ]
+*/
 
 #endregion
 #region PANIC BG
@@ -536,9 +559,9 @@ opt.opts = [
 ]
 
 #endregion
-/*
 #region SLOPE ROTATION
 
+/*
 var opt = add_option("Slope Rotation", "sloperot", "Rotates the player when standing on a slope.", function(val)
 {
 	var slopex = 132;
@@ -587,9 +610,9 @@ var opt = add_option("Slope Rotation", "sloperot", "Rotates the player when stan
 	
 	draw_simuplayer();
 });
+*/
 
 #endregion
-*/
 #region SHOW FPS
 
 showfps = 60;
@@ -624,7 +647,7 @@ var opt = add_option("FPS Counter", "showfps", "Shows an FPS counter at the bott
 });
 
 #endregion
-#region Colorblind filter
+#region COLORBLIND
 
 var opt = add_option("Colorblind Mode", "colorblind_type", "Applies a fullscreen shader that hopefully helps colorblindness.", function(val)
 {
@@ -639,12 +662,44 @@ opt.opts = [
 ]
 
 #endregion
-#region Colorblind filter
+#region SECRET STYLE
 
+/*
 var opt = add_option("Secret Style", "secrettiles", "Choose how you want secrets to be shown.", [seq_secretwall_off, seq_secretwall_on]);
 opt.opts = [
 	["NORMAL", 0],
 	["SPOTLIGHT", 1]
+]
+*/
+
+#endregion
+#region SMOOTH CAM
+
+add_slider("Smooth Camera", "smoothcam", [0, 0.75], "Smooths out the camera.");
+
+#endregion
+#region HUD
+
+var opt = add_option("Hud Style", "hud", "", function(val)
+{
+	
+});
+opt.opts = [
+	["FINAL", 0],
+	["OLD", 1]
+]
+
+#endregion
+#region BLOCKS
+
+var opt = add_option("Block Style", "blockstyle", "", function(val)
+{
+	
+});
+opt.opts = [
+	["FINAL", 0],
+	["SEPTEMBER", 1],
+	["OLD", 2]
 ]
 
 #endregion
@@ -657,7 +712,7 @@ scroll = 0;
 for(var i = 0; i < array_length(options_array); i++)
 {
 	var opt = options_array[i];
-	if opt.type == 0
+	if opt.type == modconfig.option
 	{
 		var value = variable_global_get(opt.vari);
 		for(var j = 0; j < array_length(opt.opts); j++)
@@ -665,5 +720,10 @@ for(var i = 0; i < array_length(options_array); i++)
 			if opt.opts[j][1] == value
 				opt.value = j;
 		}
+	}
+	if opt.type == modconfig.slider
+	{
+		var value = variable_global_get(opt.vari);
+		opt.value = (value - opt.range[0]) / (opt.range[1] - opt.range[0]);
 	}
 }

@@ -17,7 +17,8 @@ if !global.option_hud
 if instance_exists(obj_endlevelfade) && REMIX
 	visible = false;
 
-image_speed = 0.35;
+if global.hud == 0
+	image_speed = 0.35;
 if (targetgolf != -4 && !instance_exists(targetgolf))
 	targetgolf = -4;
 if (targetgolf != -4 && !view_visible[1])
@@ -48,7 +49,9 @@ if (bubblespr != -4 && bubblespr != spr_tv_bubbleclosed)
 	}
 }
 
-switch (state)
+if global.hud == 1
+	sprite_index = -1;
+else switch state
 {
 	case states.normal:
 		idlespr = spr_tv_idle;
@@ -229,8 +232,6 @@ switch (state)
 		break;
 	
 	case states.tv_expression:
-		var s = state;
-		var es = expressionsprite;
 		var _transfospr = scr_tv_get_transfo_sprite();
 		
 		switch (expressionsprite)
@@ -358,7 +359,7 @@ switch (state)
 }
 
 // PTO - set tv sprite
-if targetspr != -1
+if targetspr != -1 && global.hud == 0
 {
 	var char = obj_player1.character;
 	

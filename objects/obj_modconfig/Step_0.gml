@@ -23,7 +23,7 @@ if (key_back or keyboard_check_pressed(vk_escape)) && object_index != obj_levels
 	for(var i = 0; i < array_length(options_array); i++)
 	{
 		var opt = options_array[i];
-		if opt.type == 0
+		if opt.type == modconfig.option
 		{
 			var value = opt.opts[opt.value][1];
 			variable_global_set(opt.vari, value);
@@ -32,6 +32,12 @@ if (key_back or keyboard_check_pressed(vk_escape)) && object_index != obj_levels
 				ini_write_real("Modded", opt.vari, value);
 			else
 				ini_write_string("Modded", opt.vari, value);
+		}
+		if opt.type == modconfig.slider
+		{
+			var value = (opt.range[0] + (opt.range[1] - opt.range[0]) * opt.value);
+			variable_global_set(opt.vari, value);
+			ini_write_real("Modded", opt.vari, value);
 		}
 	}
 	ini_write_string("Modded", "inputdisplay", global.inputdisplay);
@@ -75,7 +81,7 @@ yo = lerp(yo, 0, 0.25);
 alpha = lerp(alpha, 1, 0.25);
 
 // figure section
-while options_array[sel].type == 1
+while options_array[sel].type == modconfig.section
 {
 	sel += move;
 	if sel < 0
@@ -83,45 +89,58 @@ while options_array[sel].type == 1
 }
 
 // change values
-var move2 = key_left2 + key_right2;
-if move2 != 0
+var opt = options_array[sel];
+if opt.type == modconfig.slider
 {
-	image_index = 8;
-	xo = 10;
-	
-	var opt = options_array[sel];
-	if opt.type != 2
+	var move2 = key_left + key_right;
+	if move2 != 0
 	{
-		simuplayer.changed = true;
-	
-		var valueold = opt.value;
-		opt.value = clamp(opt.value + move2, 0, array_length(opt.opts) - 1);
-	
-		if valueold != opt.value
-			sound_play_oneshot(sfx_step);
+		image_index = 8;
+		xo = 10;
+		
+		opt.value = clamp(opt.value + move2 * (((key_attack * 2) + 1) / 100), 0, 1);
 	}
-	
-	if layer_exists(sequence_layer)
-		layer_destroy(sequence_layer);
 }
-if key_jump
+else
 {
-	image_index = 8;
-	xo = 10;
-	
-	sound_play_oneshot(sfx_select);
-	
-	var opt = options_array[sel];
-	if opt.type != 2
-		opt.value = wrap(opt.value + 1, 0, array_length(opt.opts) - 1);
-	else
+	var move2 = key_left2 + key_right2;
+	if move2 != 0
 	{
-		if is_callable(opt.func)
-			opt.func();
-	}
+		image_index = 8;
+		xo = 10;
+		
+		if opt.type != modconfig.button
+		{
+			simuplayer.changed = true;
 	
-	if layer_exists(sequence_layer)
-		layer_destroy(sequence_layer);
+			var valueold = opt.value;
+			opt.value = clamp(opt.value + move2, 0, array_length(opt.opts) - 1);
+	
+			if valueold != opt.value
+				sound_play_oneshot(sfx_step);
+		}
+	
+		if layer_exists(sequence_layer)
+			layer_destroy(sequence_layer);
+	}
+	if key_jump
+	{
+		image_index = 8;
+		xo = 10;
+	
+		sound_play_oneshot(sfx_select);
+	
+		if opt.type != modconfig.button
+			opt.value = wrap(opt.value + 1, 0, array_length(opt.opts) - 1);
+		else
+		{
+			if is_callable(opt.func)
+				opt.func();
+		}
+	
+		if layer_exists(sequence_layer)
+			layer_destroy(sequence_layer);
+	}
 }
 
 // figure out scroll
@@ -135,7 +154,7 @@ for(var i = 0; i < array_length(options_array); i++)
 			yy += 20;
 			break;
 		
-		case 1: // SECTION
+		case modconfig.section: // SECTION
 			yy += 30;
 			yy += 40;
 			break;

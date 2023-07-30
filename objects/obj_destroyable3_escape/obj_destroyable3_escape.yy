@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sprite3871",
-    "path": "sprites/sprite3871/sprite3871.yy",
+    "name": "spr_bigdestroyescape",
+    "path": "sprites/spr_bigdestroyescape/spr_bigdestroyescape.yy",
   },
   "spriteMaskId": null,
   "visible": true,

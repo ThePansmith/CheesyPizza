@@ -27,6 +27,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	global.combo += 1;
 	global.enemykilled += 1;
 	global.combotime = 60;
+	global.heattime = 60;
 	repeat (3)
 	{
 		with (create_debris(x1, y1, spr_slapstar))

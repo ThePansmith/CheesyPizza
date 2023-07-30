@@ -7,7 +7,7 @@ alarm[0] = 3;
 image_speed = 0;
 depth = -100;
 x = 832;
-y = 290;
+y = global.hud == 0 ? 290 : 197;
 ystart = y;
 very = false;
 afterimages = array_create(0);

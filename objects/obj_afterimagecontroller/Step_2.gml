@@ -33,6 +33,13 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			case afterimage.heatattack:
 				x += hsp;
 				y += vsp;
+				
+				if REMIX
+				{
+					alpha -= 0.05;
+					if alpha <= 0 && alarm[0] != 0
+						alarm[0] = 0;
+				}
 				break;
 			
 			case afterimage.firemouth:

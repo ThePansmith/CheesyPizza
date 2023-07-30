@@ -20,7 +20,7 @@ else
 	else if (alarm[1] == -1)
 		alarm[1] = 50;
 }
-if (global.combotime > 0 && global.combo > 0 && obj_player1.character != "SP")
+if (global.combotime > 0 && global.combo > 0 && obj_player1.character != "SP" && global.hud == 0)
 	y = Approach(y, ystart + 100, 10);
 title_index += 0.35;
 if (title_index >= 2)

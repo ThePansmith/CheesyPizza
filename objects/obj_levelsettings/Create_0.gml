@@ -27,7 +27,7 @@ with obj_bossdoor
 function add_modifier(name, variable, desc = "", drawfunc = noone)
 {
 	var struct = {
-		type: 3,
+		type: modconfig.modifier,
 		value: 0,
 		vari: variable,
 		name: name,
@@ -47,7 +47,7 @@ add_button("OK", "Start the level.", function()
 	for(var i = 0; i < array_length(options_array); i++)
 	{
 		var opt = options_array[i];
-		if opt.type == 3
+		if opt.type == modconfig.modifier
 		{
 			if opt.opts[opt.value][1]
 				global.modifier |= opt.vari;

@@ -149,6 +149,17 @@ function scr_perform_move(move, prestate = state)
 					movespeed = max(movespeed, 10);
 					sprite_index = spr_player_chainsawdash;
 					image_index = 0;
+					
+					if global.hud == 1
+					{
+						with obj_tv
+						{
+							alarm[0] = 100;
+							tvsprite = spr_tvchainsaw;
+							image_index = 0;
+							image_speed = 0.35;
+						}
+					}
 				}
 				break;
 		}

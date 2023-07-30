@@ -185,7 +185,7 @@ function scr_wc_create()
 				}
 				
 				// verify that index is number
-				if string_digits(parse_ind) != parse_ind
+				if string_digits(parse_ind) != parse_ind or string_digits(parse_ind) == ""
 					return "Instance index must be a number";
 				parse_ind = real(parse_ind);
 				

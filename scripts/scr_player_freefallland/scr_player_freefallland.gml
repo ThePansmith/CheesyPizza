@@ -21,7 +21,7 @@ function scr_player_freefallland()
 		jump = true;
 	else if (floor(image_index) == (image_number - 1))
 	{
-		if key_jump2
+		if key_jump2 && REMIX
 			jump = true;
 		else
 		{

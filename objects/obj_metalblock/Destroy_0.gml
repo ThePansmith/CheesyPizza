@@ -1,13 +1,21 @@
 if (ds_list_find_index(global.saveroom, id) == -1)
 {
-	repeat (8)
+	if particlespr == spr_harddoughblockdead
 	{
-		with (create_debris(x + random_range(0, 64), y + random_range(0, 64), particlespr, false))
+		with instance_create(x + sprite_width / 2, y + sprite_height / 2, obj_sausageman_dead)
+			sprite_index = other.particlespr;
+	}
+	else
+	{
+		repeat (8)
 		{
-			hsp = random_range(-5, 5);
-			vsp = random_range(-10, 10);
-			image_speed = 0;
-			image_index = random_range(0, image_number - 1);
+			with (create_debris(x + random_range(0, 64), y + random_range(0, 64), particlespr, false))
+			{
+				hsp = random_range(-5, 5);
+				vsp = random_range(-10, 10);
+				image_speed = 0;
+				image_index = random_range(0, image_number - 1);
+			}
 		}
 	}
 	scr_sleep(5);

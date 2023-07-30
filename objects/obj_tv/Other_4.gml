@@ -223,6 +223,9 @@ switch (room)
 	case midway_1:
 		global.srank = 10300;
 		break;
+	case etb_1:
+		global.srank = 14000;
+		break;
 }
 if global.snickchallenge
 	global.srank = 8000;

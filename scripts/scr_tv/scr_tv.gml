@@ -4,6 +4,12 @@ function tv_set_idle()
 	{
 		state = states.normal
 		sprite_index = spr_tv_idle;
+		
+		if global.hud == 1
+		{
+			sprite_index = -1;
+			tvsprite = spr_tvdefault;
+		}
 	}
 }
 function tv_reset()
@@ -13,6 +19,12 @@ function tv_reset()
 		state = states.normal;
 		sprite_index = spr_tv_idle;
 		ds_list_clear(tvprompts_list);
+		
+		if global.hud == 1
+		{
+			sprite_index = -1;
+			tvsprite = spr_tvdefault;
+		}
 	}
 }
 function tv_create_prompt(text, type, sprite, textspeed)

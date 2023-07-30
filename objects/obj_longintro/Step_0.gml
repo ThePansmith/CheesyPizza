@@ -10,6 +10,9 @@ if (scene >= 0)
 	}
 	else if (showtext && (keyboard_check_pressed(global.key_slap) or gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], global.key_slapC)))
 	{
+		video_pause();
+		video_close();
+		
 		room_goto(Mainmenu);
 		exit;
 	}

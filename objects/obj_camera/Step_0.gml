@@ -279,7 +279,7 @@ if instance_exists(target) && !lock && player.state != states.timesup && player.
 	}
 			
 	// better panic shake
-	if REMIX && global.panic && !instance_exists(obj_ghostcollectibles)
+	if (REMIX && global.panic && !instance_exists(obj_ghostcollectibles)) or global.snickchallenge
 	{
 		cam_x += random_range(-1, 1);
 		repeat 2 cam_y += random_range(-1, 1);

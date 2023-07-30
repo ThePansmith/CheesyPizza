@@ -1,3 +1,6 @@
+if global.hud == 1
+	exit;
+
 draw_set_font(global.moneyfont);
 draw_set_halign(0);
 draw_set_valign(1);

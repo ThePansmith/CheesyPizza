@@ -26,19 +26,24 @@ for(var i = 0; i < array_length(options_array); i++)
 			draw_text(80, yy, opt.name);
 			
 			// value
-			if opt.type != 2
-			{
-				var valuewd = string_width(opt.opts[opt.value][0]);
-				var newwd = min(valuewd, 100);
+			var str = "";
+			if opt.type == modconfig.slider
+				str = string(floor(opt.value * 100)) + "%";
+			if opt.type == modconfig.option
+				str = opt.opts[opt.value][0];
 			
-				draw_text_transformed_color(2 + 350, 2 + yy, opt.opts[opt.value][0], newwd / valuewd, 1, 0, 0, 0, 0, 0, 0.25);
-				draw_text_transformed(350, yy, opt.opts[opt.value][0], newwd / valuewd, 1, 0);
+			if str != ""
+			{
+				var scale = min(string_width(str), 100) / string_width(str);
+				
+				draw_text_transformed_color(2 + 350, 2 + yy, str, scale, 1, 0, 0, 0, 0, 0, 0.25);
+				draw_text_transformed(350, yy, str, scale, 1, 0);
 			}
 			
 			yy += 20;
 			break;
 		
-		case 1: // SECTION
+		case modconfig.section: // SECTION
 			draw_set_colour(c_white);
 			draw_set_font(global.creditsfont);
 			
@@ -71,7 +76,7 @@ draw_set_font(global.font_small);
 draw_text_ext_color(2 + 700, 2 + 420, opt.desc, 18, 440, 0, 0, 0, 0, 0.25);
 draw_text_ext(700, 420, opt.desc, 18, 440);
 
-if opt.type == 0
+if opt.type == modconfig.option
 {
 	draw_set_font(global.smallfont);
 	if opt.value < array_length(opt.opts)
@@ -79,6 +84,11 @@ if opt.type == 0
 		draw_text_color(2 + 700, 2 + 116, opt.opts[opt.value][0], 0, 0, 0, 0, 0.25);
 		draw_text(700, 116, opt.opts[opt.value][0]);
 	}
+}
+if opt.type == modconfig.slider
+{
+	draw_sprite_ext(spr_slider, 0, 600, 116, 1, 1, 0, c_white, 1);
+	draw_sprite(spr_slidericon2, 0, 600 + 200 * opt.value, 116);
 }
 
 if drawer
@@ -98,7 +108,7 @@ if drawer
 		surface_set_target(global.modsurf);
 		draw_clear_alpha(c_black, 0);
 		
-		if opt.type == 0
+		if opt.type == modconfig.option
 			opt.drawfunc(opt.opts[opt.value][1]);
 		else
 			opt.drawfunc();
