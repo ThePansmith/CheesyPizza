@@ -110,6 +110,11 @@ if drawer
 		
 		if opt.type == modconfig.option
 			opt.drawfunc(opt.opts[opt.value][1]);
+		else if opt.type == modconfig.slider
+		{
+			var value = (opt.range[0] + (opt.range[1] - opt.range[0]) * opt.value);
+			opt.drawfunc(value);
+		}
 		else
 			opt.drawfunc();
 		

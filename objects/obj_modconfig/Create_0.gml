@@ -266,7 +266,7 @@ var opt = add_option("Shoot Style", "shootstyle", "Extra attacks bound to the SH
 		bullets = 3;
 		p.timer = 0;
 	}
-	else if p.x != 100
+	else if p.x != 100 && p.state != states.punch
 		p.x = Approach(p.x, 100, 10);
 	else
 	{
@@ -288,9 +288,18 @@ var opt = add_option("Shoot Style", "shootstyle", "Extra attacks bound to the SH
 				p.image = 0;
 				bullets--;
 			}
+			if val == 2
+			{
+				p.hsp = p.xscale * 6;
+				p.timer = -50;
+				sound_play_centered_oneshot(sfx_breakdance);
+				p.state = states.punch;
+				p.sprite = spr_player_breakdancestart;
+				p.image = 0;
+			}
 		}
 		
-		if p.state != states.pistol
+		if val == 1 && p.state != states.pistol
 		{
 			if bullets == 0
 				p.timer = -80;
@@ -304,11 +313,6 @@ var opt = add_option("Shoot Style", "shootstyle", "Extra attacks bound to the SH
 	{
 		for(var i = 0; i < floor(bullets); i++)
 			draw_sprite(spr_peppinobullet_collectible, -1, 136 - 46 * i, -32);
-	}
-	if val == 2
-	{
-		p.state = -1;
-		
 	}
 });
 opt.opts = [
@@ -545,12 +549,12 @@ var opt = add_option("Panic Background", "panicbg", "Brings back the wavy backgr
 		shader_set_uniform_f(shader_get_uniform(shd_panicbg, "panic"), 1);
 		shader_set_uniform_f(shader_get_uniform(shd_panicbg, "time"), current_time / 1000);
 		
-		draw_sprite_tiled_ext(bg_desert, -1, 0, 0, 0.4, 0.4, c_white, 1);
+		draw_sprite_ext(bg_desertescape, -1, 0, 0, 0.4, 0.4, 0, c_white, 1);
 		
 		shader_reset();
 	}
 	else
-		draw_sprite_ext(bg_desert, -1, 0, 0, 0.4, 0.4, 0, c_white, 1);
+		draw_sprite_ext(bg_desertescape, -1, 0, 0, 0.4, 0.4, 0, c_white, 1);
 });
 opt.opts = [
 	["OFF", false],
@@ -675,31 +679,97 @@ opt.opts = [
 #endregion
 #region SMOOTH CAM
 
-add_slider("Smooth Camera", "smoothcam", [0, 0.75], "Smooths out the camera.");
+smoothcamx = 960 / 5;
+add_slider("Smooth Camera", "smoothcam", [0, 0.75], "Smooths out the camera.", function(val)
+{
+	var p = simuplayer;
+	if p.state == states.titlescreen
+	{
+		p.state = states.normal;
+		p.sprite = spr_player_idle;
+		p.x = 960 / 5;
+		p.xscale = 1;
+	}
+	
+	if ((p.xscale == 1 && p.x < 960 / 5 + 120)
+	or (p.xscale == -1 && p.x > 960 / 5 - 120))
+	&& p.timer == 0
+	{
+		p.move = p.xscale;
+		p.timer = 0;
+	}
+	else
+	{
+		if p.timer == 0
+		{
+			p.move = 0;
+			p.xscale *= -1;
+		}
+		p.timer++;
+		
+		if p.timer >= 50
+			p.timer = 0;
+	}
+	
+	smoothcamx = lerp(p.x, smoothcamx, val * 1.2);
+	draw_set_colour(c_white);
+	draw_set_alpha(1);
+	//draw_rectangle(smoothcamx - 960 / 10, p.y - 540 / 10, smoothcamx + 960 / 10, p.y + 540 / 10, true);
+	
+	draw_sprite_ext(spr_micnoise2, -1, smoothcamx, p.y + Wave(-90, -80, 1, 0), p.xscale, 1, 0, c_white, 1);
+	
+	draw_simuplayer();
+});
 
 #endregion
 #region HUD
 
-var opt = add_option("Hud Style", "hud", "", function(val)
+var opt = add_option("Hud Style", "hud", "Choose between the pre-April 2021 HUD and the final game one.", function(val)
 {
-	
+	if val == 0
+	{
+		draw_sprite_ext(REMIX ? spr_tv_bgfinal_NEW : spr_tv_bgfinal, 1, 960 / 5, 540 / 5, 1, 1, 0, c_white, 1);
+		draw_sprite(spr_tv_idle, -1, 960 / 5, 540 / 5);
+	}
+	if val == 1
+	{
+		draw_sprite(spr_pepinoHUD, -1, 960 / 5, 540 / 5 - 8);
+		draw_sprite(spr_speedbar, 0, 960 / 5, 540 / 5 + 32);
+	}
 });
 opt.opts = [
+	["OLD", 1],
 	["FINAL", 0],
-	["OLD", 1]
 ]
 
 #endregion
 #region BLOCKS
 
-var opt = add_option("Block Style", "blockstyle", "", function(val)
+var opt = add_option("Block Style", "blockstyle", "Just for you, face block fans.", function(val)
 {
-	
+	if val == 0
+	{
+		draw_sprite(spr_towerblock, 0, 960 / 5 - 32 - 80, 540 / 5 - 32);
+		draw_sprite(spr_towerblocksmall, 0, 960 / 5 - 16, 540 / 5 - 16);
+		draw_sprite(spr_metaltowerblock, 0, 960 / 5 - 32 + 80, 540 / 5 - 32);
+	}
+	if val == 1
+	{
+		draw_sprite(spr_bigdestroy, -1, 960 / 5 - 32 - 80, 540 / 5 - 32);
+		draw_sprite(spr_destroyable, -1, 960 / 5 - 16, 540 / 5 - 16);
+		draw_sprite(spr_metalb, -1, 960 / 5 - 32 + 80, 540 / 5 - 32);
+	}
+	if val == 2
+	{
+		draw_sprite(spr_bigdestroy_old, 0, 960 / 5 - 32 - 80, 540 / 5 - 32);
+		draw_sprite(spr_destroyable_old, 0, 960 / 5 - 16, 540 / 5 - 16);
+		draw_sprite(spr_metaltowerblock, 0, 960 / 5 - 32 + 80, 540 / 5 - 32);
+	}
 });
 opt.opts = [
+	["OLD", 2],
 	["FINAL", 0],
-	["SEPTEMBER", 1],
-	["OLD", 2]
+	["SEPTEMBER", 1]
 ]
 
 #endregion

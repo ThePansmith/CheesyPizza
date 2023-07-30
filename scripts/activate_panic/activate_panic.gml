@@ -105,6 +105,7 @@ function activate_panic()
 			global.fill = 2500;
 			break;
 		case grinch_1:
+		case etb_1:
 			global.fill = 2148;
 			break;
 	}

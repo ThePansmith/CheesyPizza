@@ -65,7 +65,12 @@ if (fade > 0 && lvlsave != -4 && lvlsave != "tutorial" && lvlsave != "exit" && r
 	draw_set_halign(2);
 	draw_set_valign(1);
 	draw_set_color(c_white);
-	draw_text(SCREEN_WIDTH - 132 - 60, SCREEN_HEIGHT - 124 - 8, concat(secretcount, "/3"));
+	
+	var count = 3;
+	if lvlsave == "etb"
+		count = 2;
+	
+	draw_text(SCREEN_WIDTH - 132 - 60, SCREEN_HEIGHT - 124 - 8, concat(secretcount, "/", count));
 	draw_set_alpha(1);
 }
 

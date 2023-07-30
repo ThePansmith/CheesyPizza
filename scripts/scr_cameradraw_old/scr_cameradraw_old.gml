@@ -55,9 +55,10 @@ function scr_cameradraw_old()
 				hudface = spr_pepinoHUDhappy
 			else if player.sprite_index = spr_player_machroll or player.sprite_index = spr_player_tumble
 				hudface = spr_pepinoHUDrolling
-			else if player.supercharged
+			else if player.supercharged && !global.heatmeter
 				hudface = spr_pepinoHUDmenacing
-			else if _state = states.mach1  or _state = states.chainsaw or _state = states.freefallprep or _state = states.freefall or  _state = states.tackle or _state = states.Sjump or _state = states.slam or  _state = states.Sjumpprep or _state = states.grab or _state = states.punch or _state = states.backbreaker or _state = states.backkick or _state = states.uppunch or _state = states.shoulder
+			else if _state = states.mach1 or _state = states.chainsaw or _state = states.freefallprep or _state = states.freefall or  _state = states.tackle or _state = states.Sjump or _state = states.slam or  _state = states.Sjumpprep or _state = states.grab or _state = states.punch or _state = states.backbreaker or _state = states.backkick or _state = states.uppunch or _state = states.shoulder
+			or player.sprite_index == spr_player_mach1
 				hudface = spr_pepinoHUDmach1
 			else if _state = states.mach2 or player.sprite_index = spr_player_dive or player.sprite_index = spr_player_machslideboost or _state = states.climbwall or _state = states.handstandjump or _state = states.superslam 
 				hudface = spr_pepinoHUDmach2
@@ -67,11 +68,11 @@ function scr_cameradraw_old()
 				hudface = spr_pepinoHUDmach3
 			else if _state = states.hurt or player.sprite_index = spr_bombpep_end or player.sprite_index = spr_player_fireassend or _state = states.timesup or _state = states.bombpep or (_state = states.bossintro &&  player.sprite_index = spr_player_bossintro) or (_state = states.bossintro &&  player.sprite_index = spr_player_idle)
 				hudface = spr_pepinoHUDhurt
-			else if player.angry
+			else if player.angry or global.stylethreshold == 2
 				hudface = spr_pepinoHUD3hp
 			else if player.sprite_index = spr_player_hurtidle or player.sprite_index = spr_player_hurtwalk
 				hudface = spr_pepinoHUD1hp
-			else if global.panic or global.snickchallenge or global.miniboss
+			else if global.panic or global.snickchallenge or global.miniboss or global.stylethreshold >= 3
 				hudface = spr_pepinoHUDpanic
 			else if player.sprite_index = spr_shotgun_pullout
 				hudface = spr_pepinoHUDmenacing
@@ -94,8 +95,8 @@ function scr_cameradraw_old()
 				hudface = spr_noiseHUD_panic
 			else if _state = states.Sjumpland or (_state = states.freefallland && shake_mag > 0)  
 				hudface = spr_noiseHUD_groundpound
-			//else if player.sprite_index = player.spr_victory or _state = states.keyget or _state = states.smirk or _state = states.gottreasure or (_state = states.bossintro &&  player.sprite_index = player.spr_player_levelcomplete)
-			//	hudface = spr_noiseHUD_happy
+			else if player.sprite_index = player.spr_victory or _state = states.keyget or _state = states.smirk or _state = states.gottreasure or (_state = states.bossintro &&  player.sprite_index = player.spr_player_levelcomplete)
+				hudface = spr_noiseHUD_happy
 			else if player.supercharged
 				hudface = spr_noiseHUD_menacing
 			else if _state = states.mach1  or _state = states.chainsaw or _state = states.freefallprep or _state = states.freefall or  _state = states.tackle or _state = states.Sjump or _state = states.slam or  _state = states.Sjumpprep or _state = states.grab or _state = states.punch or _state = states.backbreaker or _state = states.backkick or _state = states.uppunch or _state = states.shoulder
@@ -106,8 +107,8 @@ function scr_cameradraw_old()
 				hudface = spr_noiseHUD_crazyrun
 			else if _state = states.mach3 or player.sprite_index == player.spr_mach3boost
 				hudface = spr_noiseHUD_mach3
-			//else if _state = states.hurt or player.sprite_index = player.spr_bombpepend or player.sprite_index = player.spr_fireassend or _state = states.timesup or _state = states.bombpep or (_state = states.bossintro &&  player.sprite_index = player.spr_player_bossintro) or (_state = states.bossintro &&  player.sprite_index = player.spr_idle)
-			//	hudface = spr_noiseHUD_hurt
+			else if _state = states.hurt or player.sprite_index = player.spr_bombpepend or player.sprite_index = player.spr_fireassend or _state = states.timesup or _state = states.bombpep or (_state = states.bossintro &&  player.sprite_index = player.spr_player_bossintro) or (_state = states.bossintro &&  player.sprite_index = player.spr_idle)
+				hudface = spr_noiseHUD_hurt
 			else if player.angry
 				hudface = spr_noiseHUD_angry
 			else if player.sprite_index == player.spr_hurtidle or player.sprite_index == player.spr_hurtwalk

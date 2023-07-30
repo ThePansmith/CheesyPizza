@@ -58,7 +58,11 @@ with p
 		case states.punch:
 			image += 0.35;
 			
-			hsp = Approach(hsp, xscale * 12, 0.2);
+			if sprite == spr_player_breakdancestart
+				hsp = Approach(hsp, 0, 0.15);
+			else
+				hsp = Approach(hsp, xscale * 12, 0.2);
+			
 			if image > sprite_get_number(sprite) - 1
 			{
 				state = states.normal;
