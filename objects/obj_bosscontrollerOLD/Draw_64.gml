@@ -19,11 +19,11 @@ switch (state)
 		draw_sprite(vstitle, -1, xx, vsy + yy);
 		if (flash)
 		{
-			shader_set(shd_hit);
+			draw_set_flash();
 			draw_sprite(sprplayer, -1, playerx, room_height - sprite_get_height(sprplayer));
 			draw_sprite(sprboss, -1, bossx, room_height - sprite_get_height(sprboss));
 			draw_sprite(vstitle, -1, xx, vsy + yy);
-			shader_reset();
+			draw_reset_flash();
 		}
 		exit;
 		break;
@@ -62,7 +62,7 @@ var sp = (super / supermax) * 100;
 if (super > supermax)
 	sp = 100;
 draw_healthbar(64, 240, 200, 252, sp, c_dkgray, 16776960, 16776960, 0, true, true);
-shader_set(global.Pal_Shader);
+shader_set(shd_pal_swapper);
 pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false);
 draw_sprite(portrait1_sprite, portrait1_index, 113, 104);
 shader_reset();

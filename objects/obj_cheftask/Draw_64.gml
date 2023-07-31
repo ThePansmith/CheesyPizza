@@ -5,7 +5,7 @@ if (sprite_index != spr_newclothes)
 }
 else
 {
-	shader_set(global.Pal_Shader);
+	shader_set(shd_pal_swapper);
 	if (texture != -4)
 		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, texture);
 	pal_swap_set(spr_peppalette, paletteselect, false);

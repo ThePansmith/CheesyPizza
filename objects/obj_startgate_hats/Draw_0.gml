@@ -1,6 +1,6 @@
 var xx = -1;
 var yy = -1;
-shader_set(global.Pal_Shader);
+shader_set(shd_pal_swapper);
 for (var i = 0; i < array_length(hats_arr); i++)
 {
 	var x1 = x + (xx * 32);

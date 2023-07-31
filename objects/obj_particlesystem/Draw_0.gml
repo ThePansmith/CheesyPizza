@@ -20,7 +20,7 @@ if (!ds_list_empty(global.collect_list))
 			var cy = camera_get_view_y(view_camera[0]);
 			if b.spr_palette != noone
 			{
-				shader_set(global.Pal_Shader);
+				shader_set(shd_pal_swapper);
 				pal_swap_set(b.spr_palette, b.paletteselect, false);
 			}
 			draw_sprite_ext(b.sprite_index, b.image_index, b.x + cx, b.y + cy, 1, 1, 0, c_white, 1);

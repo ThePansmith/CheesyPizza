@@ -4,7 +4,7 @@ draw_rectangle(0, 0, camera_get_view_width(view_camera[0]), camera_get_view_heig
 draw_set_alpha(1);
 var cx = camera_get_view_x(view_camera[0]);
 var cy = camera_get_view_y(view_camera[0]);
-shader_set(global.Pal_Shader);
+shader_set(shd_pal_swapper);
 with (obj_player1)
 {
 	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, xscale * scale_xs, yscale * scale_ys, global.palettetexture);

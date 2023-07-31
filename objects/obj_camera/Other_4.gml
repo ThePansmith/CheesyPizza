@@ -6,3 +6,7 @@ with obj_camera
 if global.coop
 	camera_zoom(1, 100);
 smooth_buffer = 0;
+
+limitcam = [0, 0, room_width, room_height];
+camzoom = 1;
+angle = 0;

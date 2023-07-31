@@ -704,6 +704,7 @@ if (pistolanim != -4)
 	pistolindex += 0.35;
 	if (!machslideAnim && state != states.machslide && state != states.fireass)
 	{
+		idle = 0;
 		sprite_index = pistolanim;
 		image_index = pistolindex;
 	}

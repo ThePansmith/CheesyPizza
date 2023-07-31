@@ -62,7 +62,7 @@ function scr_cameradraw()
 		// heat meter
 		if global.heatmeter
 		{
-			shader_set(global.Pal_Shader);
+			shader_set(shd_pal_swapper);
 			pal_swap_set(heatpal, min(global.stylethreshold, 3) + (global.stylethreshold >= 3 && global.style >= 55), false);
 			draw_sprite_part(heatfill, pizzascore_index, 0, 0, sw * b, sh, hud_xx - 95, hud_yy + 24);
 			draw_sprite_ext(heatmeter, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
@@ -180,7 +180,7 @@ function scr_cameradraw()
 					color_array[i] = choose(irandom(3));
 				lastcollect = sc;
 			}
-			shader_set(global.Pal_Shader);
+			shader_set(shd_pal_swapper);
 		}
 	
 		draw_set_alpha(alpha);

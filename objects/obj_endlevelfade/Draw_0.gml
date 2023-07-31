@@ -5,7 +5,7 @@ if sugary && room == rank_room
 {
 	scroll++;
 	
-	shader_set(global.Pal_Shader);
+	shader_set(shd_pal_swapper);
 	pal_swap_set(spr_rankpal, rank, false);
 	draw_sprite_tiled(bg_rank, rank, -scroll, scroll);
 	pal_swap_reset();
@@ -20,7 +20,7 @@ draw_set_alpha(1);
 
 if !instance_exists(obj_rank)
 {
-	shader_set(global.Pal_Shader);
+	shader_set(shd_pal_swapper);
 	with obj_player1
 	{
 		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, xscale, yscale, global.palettetexture);

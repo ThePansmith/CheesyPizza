@@ -3,7 +3,7 @@ if (start)
 	var bgx = bg_x;
 	var bgy = bg_y - 200;
 	draw_sprite_tiled(bg_space1, 0, bgx, bgy);
-	shader_set(global.Pal_Shader);
+	shader_set(shd_pal_swapper);
 	var cx = irandom_range(-shake_mag, shake_mag);
 	var cy = irandom_range(-shake_mag, shake_mag);
 	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, 1, 1, global.palettetexture);

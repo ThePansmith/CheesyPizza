@@ -1,6 +1,6 @@
-if type = "Fragile"
+if type == "Fragile"
 	stunfallspr = spr_sucroseice_fragile;
-if type = "Heavy"
+if type == "Heavy"
 {
 	stunfallspr = spr_sucroseice_heavy;
 	grav2 = 0.7;

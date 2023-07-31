@@ -243,18 +243,21 @@ if instance_exists(target) && !lock && player.state != states.timesup && player.
 	}
 			
 	// actually move the camera
+	with obj_screensizer
+		camera_set_view_size(view_camera[0], SCREEN_WIDTH * camzoom * other.camzoom, SCREEN_HEIGHT * camzoom * other.camzoom);
+	
 	var cam_width = camera_get_view_width(view_camera[0]);
 	var cam_height = camera_get_view_height(view_camera[0]);
 	
 	if !global.coop or room == characterselect or room == rm_levelselect or room == Realtitlescreen
 	{
 		camx = lerp(tx - cam_width / 2 + chargecamera + p2pdistancex, camx, smooth_buffer * global.smoothcam);
-		camy = lerp(ty - cam_height / 2 - 50 + floor(crouchcamera), camy, smooth_buffer * global.smoothcam);
+		camy = lerp(ty - cam_height / 2 - 50 * camzoom + floor(crouchcamera), camy, smooth_buffer * global.smoothcam);
 		
 		if !safe_get(obj_shell, "WC_oobcam")
 		{
-			camx = clamp(camx, 0, room_width - cam_width);
-			camy = clamp(camy, 0, room_height - cam_height);
+			camx = clamp(camx, limitcam[0], limitcam[2] - cam_width);
+			camy = clamp(camy, limitcam[1], limitcam[3] - cam_height);
 		}
 		camera_zoom(1, 0.035);
 	}
@@ -277,7 +280,7 @@ if instance_exists(target) && !lock && player.state != states.timesup && player.
 		cam_x += irandom_range(-shake_mag, shake_mag);
 		repeat 2 cam_y += irandom_range(-shake_mag, shake_mag);
 	}
-			
+	
 	// better panic shake
 	if (REMIX && global.panic && !instance_exists(obj_ghostcollectibles)) or global.snickchallenge
 	{
@@ -287,12 +290,12 @@ if instance_exists(target) && !lock && player.state != states.timesup && player.
 	
 	if !safe_get(obj_shell, "WC_oobcam")
 	{
-		if cam_width > room_width
-			cam_x += (cam_width - room_width) / 2;
-		if cam_height > room_height
-			cam_y += (cam_height - room_height) / 2;
+		if cam_width > limitcam[2]
+			cam_x += (cam_width - limitcam[2]) / 2;
+		if cam_height > limitcam[3]
+			cam_y += (cam_height - limitcam[3]) / 2;
 	}
-			
+	
 	if lag > 0
 		lagpos = undefined;
 	if lag-- <= 0
@@ -304,10 +307,10 @@ if instance_exists(target) && !lock && player.state != states.timesup && player.
 	else
 		camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]), cam_y);
 	lag = max(lag, 0);
-			
+	
 	if lagpos != undefined
 		lagpos = Approach(lagpos, 0, 25);
-			
+	
 	lockx = cam_x;
 	locky = cam_y;
 }
@@ -335,31 +338,31 @@ smooth_buffer = 1;
 if global.panic or global.snickchallenge
 {
 	global.wave = global.maxwave - global.fill;
-	
 	if check_sugary()
 	{
-		camera_set_view_angle(view_camera[0], scr_sin(3.5 * clamp(global.wave / global.maxwave, 0, 1), 65 - (5 * clamp(global.wave / global.maxwave, 0, 1))));
+		panicangle = scr_sin(3.5 * clamp(global.wave / global.maxwave, 0, 1), 65 - (5 * clamp(global.wave / global.maxwave, 0, 1)));
 		if instance_exists(obj_pizzaface)
-			greyscale = Approach(greyscale, 0.45, 0.005)
+			greyscale = Approach(greyscale, 0.45, 0.005);
 		else
-			greyscale = Approach(greyscale, 0, 0.01)
+			greyscale = Approach(greyscale, 0, 0.01);
 	}
 	else
 	{
-		camera_set_view_angle(view_camera[0], 0);
+		panicangle = 0;
 		greyscale = 0;
 	}
 }
 else if !instance_exists(obj_endlevelfade)
 {
-	camera_set_view_angle(view_camera[0], 0);
+	panicangle = 0;
 	greyscale = 0;
 }
 else
 {
-	camera_set_view_angle(view_camera[0], Approach(camera_get_view_angle(view_camera[0]), 0, 15));
+	panicangle = Approach(panicangle, 0, 15);
 	greyscale = Approach(greyscale, 0, 0.01);
 }
+camera_set_view_angle(view_camera[0], angle + panicangle);
 
 // HANDLE DRM
 if YYC && global.anon[0] != true && global.anon[1] != true && global.anon[2] != true && global.anon[3] != true && global.anon[4] != true

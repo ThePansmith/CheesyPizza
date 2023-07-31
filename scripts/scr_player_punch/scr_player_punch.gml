@@ -78,7 +78,7 @@ function scr_player_punch()
 			sprite_index = spr_buttattackstart;
 			movespeed = max(movespeed, 16);
 			vsp = -5;
-				
+			
 			if !instance_exists(crazyruneffectid)
 			{
 				with instance_create(x, y, obj_crazyrunothereffect)
@@ -109,16 +109,12 @@ function scr_player_punch()
 				create_particle(x, y, particle.jumpdust, 0);
 				state = states.tumble;
 				image_index = 0;
-				
-				if !grounded
-				{
-					sprite_index = spr_mach2jump;
-					flash = false;
-					vsp = 10;
-				}
+				sprite_index = spr_mach2jump;
+				flash = false;
+				vsp = 10;
 			}
 		}
-			
+		
 		if sprite_index == spr_buttattackend
 		{
 			movespeed -= 0.25;

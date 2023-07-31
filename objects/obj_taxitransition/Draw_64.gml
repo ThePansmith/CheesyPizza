@@ -8,7 +8,7 @@ if (start)
 		draw_sprite(sprite_index, 0, 0, cy);
 		img = 1;
 	}
-	shader_set(global.Pal_Shader);
+	shader_set(shd_pal_swapper);
 	pattern_set(global.Base_Pattern_Color, sprite_index, img, 1, 1, global.palettetexture);
 	if (sprite_index != spr_taxitransition_gus)
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false);

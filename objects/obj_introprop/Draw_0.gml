@@ -4,7 +4,7 @@ if (sprite_index != spr_towerending_gustavo && sprite_index != spr_towerending_p
 	draw_self();
 else
 {
-	shader_set(global.Pal_Shader);
+	shader_set(shd_pal_swapper);
 	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
 	if (sprite_index == spr_towerending_gustavo)
 		pal_swap_set(spr_ratmountpalette, gustavo_palette(obj_player1.paletteselect), false);

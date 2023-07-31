@@ -115,7 +115,7 @@ function reset_shader_fix()
 {
 	if live_call() return live_result;
 	
-	if shader_current() == global.Pal_Shader
+	if shader_current() == shd_pal_swapper
 		pal_swap_reset();
 	else if shader_current() != -1
 		shader_reset();

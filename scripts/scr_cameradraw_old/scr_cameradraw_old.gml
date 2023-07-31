@@ -125,10 +125,11 @@ function scr_cameradraw_old()
 		{
 			gpu_set_blendmode(bm_normal);
 			
-			shader_set(global.Pal_Shader);
+			shader_set(shd_pal_swapper);
+			pattern_set(global.Base_Pattern_Color, hudface, -1, 1, 1, global.palettetexture);
 			if _state != states.cotton
-				pal_swap_set(player.spr_palette, player.paletteselect, false)
-			draw_sprite_ext(hudface, -1, 125, global.heatmeter ? 125 : 100, 1, 1, 0, c_white, alpha)
+				pal_swap_set(player.spr_palette, player.paletteselect, false);
+			draw_sprite_ext(hudface, -1, 125, global.heatmeter ? 125 : 100, 1, 1, 0, c_white, alpha);
 			pal_swap_reset();
 			
 			reset_blendmode();

@@ -3,7 +3,7 @@ draw_set_halign(1);
 var c = 65280;
 draw_set_color(c);
 if (flash)
-	shader_set(shd_hit);
+	draw_set_flash();
 draw_text(x, y, number);
 if (flash)
-	shader_reset();
+	draw_reset_flash();

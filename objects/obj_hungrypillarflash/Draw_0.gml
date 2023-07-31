@@ -6,9 +6,9 @@ draw_set_alpha(1);
 with (obj_sausageman_dead)
 {
 	if (sprite_index == spr_hungrypillar_dead)
-		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, image_blend, image_alpha);
 }
-shader_set(global.Pal_Shader);
+shader_set(shd_pal_swapper);
 with (obj_player)
 {
 	if (visible)

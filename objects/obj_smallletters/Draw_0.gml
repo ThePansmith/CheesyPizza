@@ -12,9 +12,9 @@ draw_set_halign(1);
 shader_reset();
 if (flash)
 {
-	shader_set(shd_hit);
+	draw_set_flash();
 	draw_text(x, y, letters);
-	shader_reset();
+	draw_reset_flash();
 }
 else
 	draw_text(x, y, letters);

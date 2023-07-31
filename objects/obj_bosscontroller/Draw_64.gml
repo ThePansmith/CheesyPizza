@@ -51,7 +51,7 @@ switch (state)
 				bx = SCREEN_WIDTH;
 			if (by < SCREEN_HEIGHT)
 				by = SCREEN_HEIGHT;
-			shader_set(global.Pal_Shader);
+			shader_set(shd_pal_swapper);
 			pattern_set(global.Base_Pattern_Color, playerspr, 0, 1, 1, global.palettetexture);
 			pal_swap_set(spr_palette, obj_player1.paletteselect, false);
 			draw_sprite_ext(playerspr, -1, px, py, 1, 1, 0, c_player, 1);
@@ -77,7 +77,7 @@ switch (state)
 	
 	case states.normal:
 	case states.victory:
-		shader_set(global.Pal_Shader);
+		shader_set(shd_pal_swapper);
 		scr_bosscontroller_draw_health(spr_playerhp, player_rowmax, player_columnmax, player_hp, player_maxhp, player_hp_x, player_hp_y, player_xpad, player_ypad, player_index, image_alpha, spr_palette, obj_player1.paletteselect, global.palettetexture);
 		var bpal = boss_palette;
 		var bpalsel = -4;

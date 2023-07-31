@@ -175,7 +175,8 @@ function scr_tvdraw_old()
 	
 		draw_set_align(1, 1);
 		draw_set_font(global.bigfont);
-		draw_text(timer_xstart + 153 + random_range(-1, 1), timer_ystart + 18 + random_range(-1, 1), concat(minutes, ":", seconds));
+		draw_set_colour(minutes == 0 ? c_red : c_white);
+		draw_text(timer_x + 153 + random_range(-1, 1), timer_y + 18 + random_range(-1, 1), concat(minutes, ":", seconds));
 	}
 	
 	// bullets

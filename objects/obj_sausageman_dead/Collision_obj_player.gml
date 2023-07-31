@@ -1,7 +1,7 @@
 if (buffer == 0 && other.instakillmove == 1)
 {
 	vsp = random_range(-10, -18);
-	hsp = sign(x - obj_player.x) * random_range(10, 18);
+	hsp = sign(x - other.x) * random_range(10, 18);
 	grav = 0.4;
 	angle = 0;
 	randomize();
@@ -11,8 +11,8 @@ if (buffer == 0 && other.instakillmove == 1)
 	stomped = false;
 	instance_create(x, y, obj_bangeffect);
 	buffer = 10;
-	if (x != obj_player.x)
-		image_xscale = -sign(x - obj_player.x);
+	if (x != other.x)
+		image_xscale = -sign(x - other.x);
 	
 	if REMIX
 		sound_play_3d("event:/sfx/enemies/stomp", x, y);

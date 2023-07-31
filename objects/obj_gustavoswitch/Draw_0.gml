@@ -1,4 +1,4 @@
-shader_set(global.Pal_Shader);
+shader_set(shd_pal_swapper);
 if (sprite_index == spr_gustavoswitch2 && instance_exists(obj_charswitch_intro) && obj_charswitch_intro.state != states.fall)
 {
 	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);

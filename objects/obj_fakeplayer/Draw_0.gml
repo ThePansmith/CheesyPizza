@@ -1,4 +1,4 @@
-shader_set(global.Pal_Shader);
+shader_set(shd_pal_swapper);
 pal_swap_set(spr_peppalette, 1, false);
 draw_sprite_ext(sprite_index, -1, x, y, xscale, 1, 0, c_white, 1);
 shader_reset();

@@ -4,7 +4,7 @@ draw_sprite_ext(spr_blackbars, 0, cx, cy, SCREEN_WIDTH / 64, SCREEN_HEIGHT / 64,
 draw_sprite(spr_mainmenu_bg, 0, obj_screensizer.normal_size_fix_x, 0);
 with (obj_menutv2)
 	draw_self();
-shader_set(global.Pal_Shader);
+shader_set(shd_pal_swapper);
 var _x = SCREEN_WIDTH * 0.50625;
 var _y = y;
 

@@ -18,7 +18,7 @@ else if (state == states.actor)
 	draw_rectangle_color(camera_get_view_x(view_camera[0]), camera_get_view_y(view_camera[0]), camera_get_view_x(view_camera[0]) + SCREEN_WIDTH, camera_get_view_y(view_camera[0]) + SCREEN_HEIGHT, c_white, c_white, c_white, c_white, false);
 	with (playerid)
 	{
-		shader_set(global.Pal_Shader);
+		shader_set(shd_pal_swapper);
 		var ps = paletteselect;
 		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, xscale, image_yscale, global.palettetexture);
 		pal_swap_set(spr_palette, ps, false);

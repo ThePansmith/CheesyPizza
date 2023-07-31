@@ -176,7 +176,7 @@ if drawer
 	{
 		/* shadow */ draw_surface_ext(global.modsurf, 3 + xx - wd / 2, 3 + yy - ht / 2, 1, 1, 0, 0, 0.25);
 		
-		shader_set(global.Pal_Shader);
+		shader_set(shd_pal_swapper);
 		pal_swap_set(spr_peppalette, 1, false);
 		draw_surface(global.modsurf, xx - wd / 2, yy - ht / 2);
 	}

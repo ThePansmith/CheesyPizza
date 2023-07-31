@@ -83,7 +83,7 @@ function draw_simuplayer()
 {
 	var p = simuplayer;
 	
-	shader_set(global.Pal_Shader);
+	shader_set(shd_pal_swapper);
 	pal_swap_set(spr_peppalette, 1, 0);
 	
 	var width = 960 / 2.5;
@@ -112,7 +112,7 @@ var opt = add_option("Remix", "gameplay", "Adds extra quality of life improvemen
 {
 	draw_sprite_ext(val == 1 ? spr_tv_bgfinal_NEW : spr_tv_bgfinal, 1, 110, 70, 1, 1, 0, c_white, 1);
 	
-	shader_set(global.Pal_Shader);
+	shader_set(shd_pal_swapper);
 	pal_swap_set(spr_peppalette, 1, 0);
 	draw_sprite_ext(spr_tv_idle, 0, 110, 70, 1, 1, 0, c_white, 1);
 	shader_reset();
@@ -451,7 +451,7 @@ add_option("Swap Grab", "swapgrab", "Binds the grab back to the normal bind, and
 
 var opt = add_option("Separate Shoot", "shootbutton", "Move the shoot button for both the pistol and the shotgun to a standalone SHOOT button, A by default.", function(val)
 {
-	shader_set(global.Pal_Shader);
+	shader_set(shd_pal_swapper);
 	pal_swap_set(spr_peppalette, 1, false);
 	
 	if val == 0
@@ -529,13 +529,11 @@ add_button("Input Display", "An in-game input display. You can drag it around wi
 add_section("Visual");
 #region AFTERIMAGES
 
-/*
 var opt = add_option("Afterimages", "afterimage", "Choose between normal afterimages and blue afterimages for certain moves.", [seq_afterimages_final, seq_afterimages_eggplant]);
 opt.opts = [
 	["FINAL", 0],
 	["EGGPLANT", 1]
 ]
-*/
 
 #endregion
 #region PANIC BG
@@ -549,7 +547,7 @@ var opt = add_option("Panic Background", "panicbg", "Brings back the wavy backgr
 		shader_set_uniform_f(shader_get_uniform(shd_panicbg, "panic"), 1);
 		shader_set_uniform_f(shader_get_uniform(shd_panicbg, "time"), current_time / 1000);
 		
-		draw_sprite_ext(bg_desertescape, -1, 0, 0, 0.4, 0.4, 0, c_white, 1);
+		draw_sprite_tiled_ext(bg_desertescape, -1, 0, 0, 0.4, 0.4, c_white, 1);
 		
 		shader_reset();
 	}
@@ -559,7 +557,7 @@ var opt = add_option("Panic Background", "panicbg", "Brings back the wavy backgr
 opt.opts = [
 	["OFF", false],
 	["ON", true],
-	["WITH BLUR", 2]
+	["ON + BLUR", 2]
 ]
 
 #endregion
@@ -644,7 +642,7 @@ var opt = add_option("FPS Counter", "showfps", "Shows an FPS counter at the bott
 		draw_set_align();
 	}
 	
-	shader_set(global.Pal_Shader);
+	shader_set(shd_pal_swapper);
 	pal_swap_set(spr_peppalette, 1, false);
 	draw_sprite_ext(spr_player_move, simuplayer.image, 960 / 2.5 / 4, 100, 2, 2, 0, c_white, 1);
 	pal_swap_reset();
@@ -668,13 +666,11 @@ opt.opts = [
 #endregion
 #region SECRET STYLE
 
-/*
 var opt = add_option("Secret Style", "secrettiles", "Choose how you want secrets to be shown.", [seq_secretwall_off, seq_secretwall_on]);
 opt.opts = [
 	["NORMAL", 0],
 	["SPOTLIGHT", 1]
 ]
-*/
 
 #endregion
 #region SMOOTH CAM

@@ -1,5 +1,5 @@
 vsp = random_range(-10, -18);
-hsp = sign(x - obj_player.x) * random_range(10, 18);
+hsp = sign(x - obj_player1.x) * random_range(10, 18);
 grav = 0.4;
 angle = 0;
 randomize();

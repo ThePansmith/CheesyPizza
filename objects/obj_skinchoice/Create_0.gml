@@ -186,7 +186,7 @@ postdraw = function(curve)
 		charx = lerp(charx, obj_player1.x - camera_get_view_x(view_camera[0]), 1 - anim_t);
 		chary = lerp(chary, obj_player1.y - camera_get_view_y(view_camera[0]), curve2);
 		
-		shader_set(global.Pal_Shader);
+		shader_set(shd_pal_swapper);
 		if pal.texture != noone
 			pattern_set(global.Base_Pattern_Color, characters[sel.char][1], -1, scale, scale, pal.texture);
 		
@@ -242,7 +242,7 @@ draw = function(curve)
 		}
 		
 		// character
-		shader_set(global.Pal_Shader);
+		shader_set(shd_pal_swapper);
 		if pal.texture != noone
 			pattern_set(global.Base_Pattern_Color, characters[sel.char][1], -1, 2, 2, pal.texture);	
 		pal_swap_set(characters[sel.char][2], sel.mix > 0 ? mixables[sel.mix].palette : pal.palette, false);

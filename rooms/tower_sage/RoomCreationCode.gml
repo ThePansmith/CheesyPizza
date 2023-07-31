@@ -10,3 +10,5 @@ global.combo = 0;
 global.combotime = 0;
 global.comboscore = 0;
 global.previouscombo = 0;
+with obj_player
+	supercharged = false;

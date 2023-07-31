@@ -3,7 +3,7 @@ if (use_static)
 else
 {
 	screen_clear(make_color_rgb(216, 104, 160));
-	shader_set(global.Pal_Shader);
+	shader_set(shd_pal_swapper);
 	
 	var cx = obj_screensizer.normal_size_fix_x;
 	var cy = obj_screensizer.normal_size_fix_y;

@@ -41,7 +41,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 				if (instance_exists(playerid) && playerid.usepalette)
 				{
 					shd = true;
-					shader_set(global.Pal_Shader);
+					shader_set(shd_pal_swapper);
 					if (playerid.object_index == obj_player1)
 						pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
 					pal_swap_set(playerid.spr_palette, playerid.paletteselect, false);

@@ -1,5 +1,5 @@
-if sugary // sugary enemy spin
-{
-    angle += (rotatevalue * rotatedirection)
-	depth = -10.5
-}
+if sugary
+    angle += (rotatevalue * rotatedirection);
+if sprite_index == spr_doughblockdead or sprite_index == spr_bigdoughblockdead or sprite_index == spr_harddoughblockdead
+or (REMIX && !sugary)
+	angle += spinspeed;

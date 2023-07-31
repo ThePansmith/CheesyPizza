@@ -5,9 +5,11 @@ function scr_enemy_grabbed()
 		var _obj_player = asset_get_index(concat("obj_player", grabbedby));
 		image_xscale = -_obj_player.xscale;
 		stunned = 200;
+		
 		_obj_player.baddiegrabbedID = id;
 		if (_obj_player.state == states.grabbing || _obj_player.state == states.grab || _obj_player.state == states.throwing || _obj_player.state == states.slam || _obj_player.state == states.tacklecharge)
 			scr_enemy_grabpos(_obj_player);
+		
 		with (_obj_player)
 		{
 			suplexhavetomash = other.hp - 1;
@@ -16,10 +18,13 @@ function scr_enemy_grabbed()
 			{
 				other.x = x;
 				other.y = y;
+				with other
+					check_grabbed_solid(_obj_player);
 				other.state = states.stun;
 				other.image_index = 0;
 			}
 		}
+		
 		hsp = 0;
 		if (_obj_player.state == states.punch || _obj_player.state == states.parry)
 		{
@@ -183,7 +188,6 @@ function scr_enemy_grabbed()
 				vsp = -6
 			}
 			check_grabbed_solid(_obj_player)
-			check_grabbed_solid(_obj_player)
 			hsp = hithsp
 			vsp = hitvsp
 			linethrown = 1
@@ -337,7 +341,6 @@ function scr_enemy_grabbed()
 }
 function check_grabbed_solid(player)
 {
-	if live_call(player) return live_result;
 	if (instakilled)
 		exit;
 	

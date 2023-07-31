@@ -763,5 +763,3 @@ pistol = false;
 jetpackcancel = false;
 suplexmove2 = false;
 oldHallway = false;
-konami = "";
-konamiend = "UUDDLRLRBA";

@@ -22,7 +22,7 @@ if (pause)
 	}
 	xx = (SCREEN_WIDTH / 2) - 224;
 	yy = 192;
-	shader_set(global.Pal_Shader);
+	shader_set(shd_pal_swapper);
 	pal_swap_set(spr_palette, paletteselect, false);
 	draw_sprite(peppino_sprite, peppino_index, xx, yy);
 	reset_shader_fix();

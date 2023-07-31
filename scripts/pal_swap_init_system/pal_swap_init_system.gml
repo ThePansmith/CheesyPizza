@@ -1,7 +1,6 @@
 function pal_swap_init_system()
 {
 	/*
-	global.Pal_Shader = argument[0];
 	global.Pal_Texel_Size = shader_get_uniform(argument[0], "texel_size");
 	global.Pal_UVs = shader_get_uniform(argument[0], "palette_UVs");
 	global.Pal_Index = shader_get_uniform(argument[0], "palette_index");
@@ -12,7 +11,6 @@ function pal_swap_init_system()
 }
 function pal_swap_init_system_fix()
 {
-	global.Pal_Shader = argument[0];
 	global.Pal_Texel_Size = shader_get_uniform(argument[0], "texel_size");
 	global.Pal_UVs = shader_get_uniform(argument[0], "palette_UVs");
 	global.Pal_Index = shader_get_uniform(argument[0], "palette_index");

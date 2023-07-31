@@ -4,13 +4,13 @@ if safe_get(obj_shell, "WC_oobcam") != true
 	var camx = camera_get_view_x(view_camera[0]), camy = camera_get_view_y(view_camera[0]);
 	
 	draw_set_color(c_black);
-	if camx < 0
+	//if camx < 0
 		draw_rectangle(0, min(camy, -50), min(camx, -50), max(camy + 540, room_height + 50), false);
-	if camx > room_width - 960
+	//if camx > room_width - 960
 		draw_rectangle(room_width, min(camy, -50), max(camx + 960, room_width + 50), max(camy + 540, room_height + 50), false);
-	if camy < 0
+	//if camy < 0
 		draw_rectangle(0, 0, room_width, min(camy, -50), false);
-	if camy > room_height - 540
+	//if camy > room_height - 540
 		draw_rectangle(0, room_height, room_width, max(camy + 540, room_height + 50), false);
 }
 
@@ -29,7 +29,7 @@ if (use_dark)
 					ix = xscale;
 				if variable_instance_exists(id, "spr_palette") && sprite_exists(spr_palette)
 				{
-					shader_set(global.Pal_Shader);
+					shader_set(shd_pal_swapper);
 					pal_swap_set(spr_palette, paletteselect, false);
 				}
 				draw_sprite_ext(sprite_index, image_index, x, y, ix, image_yscale, image_angle, b, image_alpha);
@@ -54,7 +54,8 @@ with (obj_baddie)
 	if (object_index != obj_pizzafaceboss)
 		draw_enemy(_kungfu, true);
 }
-shader_set(global.Pal_Shader);
+
+shader_set(shd_pal_swapper);
 with (obj_heatafterimage)
 {
 	if (visible)
@@ -62,7 +63,6 @@ with (obj_heatafterimage)
 		pattern_set(global.Base_Pattern_Color, obj_player1.sprite_index, obj_player1.image_index, obj_player1.xscale, obj_player1.yscale, global.palettetexture);
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false);
 		draw_sprite_ext(obj_player1.sprite_index, obj_player1.image_index, x, y, obj_player1.xscale, obj_player1.yscale, obj_player1.angle, c_white, alpha);
-		pattern_reset();
 	}
 }
 if (room == boss_fakepep)
@@ -72,16 +72,16 @@ if (room == boss_fakepep)
         if (visible && !flash)
         {
             pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
-            pal_swap_set(spr_peppalette,  gustavo_palette(obj_player1.paletteselect), 0);
+            pal_swap_set(spr_peppalette, gustavo_palette(obj_player1.paletteselect), 0);
             draw_self();
             pal_swap_set(spr_peppalette, 13, 0);
-            draw_self();
-            pattern_reset();
             draw_self();
         }
     }
 }
-shader_set(shd_hit);
+pal_swap_reset();
+
+draw_set_flash();
 with (obj_baddie)
 {
 	var _stun = 0;
@@ -120,7 +120,9 @@ for (i = 0; i < array_length(flash_arr); i++)
 			event_perform(8, 0);
 	}
 }
-shader_set(global.Pal_Shader);
+draw_reset_flash();
+
+shader_set(shd_pal_swapper);
 pal_swap_set(spr_peppalette, 0, false);
 with (obj_pizzagoblinbomb)
 {
@@ -148,13 +150,14 @@ with (obj_sausageman_dead)
 	}
 }
 pal_swap_reset();
-shader_set(shd_hit);
+
+draw_set_flash();
 with (obj_player1)
 {
 	if (visible && flash && bbox_in_camera(view_camera[0], 32))
 		draw_sprite_ext(player_sprite(), image_index, x + smoothx, y, xscale, yscale, image_angle, image_blend, image_alpha);
 }
-shader_reset();
+draw_reset_flash();
 
 // pto entrance lamp overlays
 with obj_lampost

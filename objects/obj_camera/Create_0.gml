@@ -30,7 +30,6 @@ alarm[1] = -1;
 global.seconds = 59;
 global.minutes = 0;
 global.miniboss = false;
-angle = 0;
 frame = 0;
 global.pizza = 0;
 global.pizzameter = 0;
@@ -74,3 +73,8 @@ greyscale = 0;
 smooth_buffer = 0;
 camx = 0;
 camy = 0;
+
+limitcam = [0, 0, 960, 540];
+angle = 0;
+panicangle = 0;
+camzoom = 1;

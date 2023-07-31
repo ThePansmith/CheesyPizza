@@ -135,7 +135,7 @@ function scr_tvdraw()
 			draw_sprite_ext(spr_tv_bgfinal, tv_bg_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);
 	
 		// player
-		shader_set(global.Pal_Shader);
+		shader_set(shd_pal_swapper);
 		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
 		if (obj_player1.isgustavo)
 			pal_swap_set(spr_ratmountpalette, gustavo_palette(obj_player1.paletteselect), false);

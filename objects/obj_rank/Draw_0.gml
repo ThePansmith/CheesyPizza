@@ -2,7 +2,7 @@ live_auto_call;
 
 if (brownfade < 1)
 {
-	shader_set(global.Pal_Shader);
+	shader_set(shd_pal_swapper);
 	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
 	if (global.collect >= global.collectN)
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false);
@@ -72,7 +72,7 @@ if sugary
 	{
 		var _xx = 750 + -string_width(_string) / 2 + ((string_width(_string) / _string_length) * i);
 		
-		shader_set(global.Pal_Shader);
+		shader_set(shd_pal_swapper);
 		pal_swap_set(spr_palcandle, colors[i], false);
 		draw_text(_xx, 385 + (i % 2 == 0 ? -4 : 0) + clipy, string_char_at(_string, i + 1));
 		shader_reset();
