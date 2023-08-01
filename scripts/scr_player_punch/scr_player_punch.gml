@@ -38,12 +38,11 @@ function scr_player_punch()
 		}
 		if (punch_afterimage > 0)
 			punch_afterimage--;
-		else if (vsp < 0)
+		else if (vsp < 0 or global.afterimage == 1)
 		{
 			punch_afterimage = 5;
-			with create_blue_afterimage(x, y, sprite_index, image_index, true)
+			with create_blue_afterimage(x, y, sprite_index, image_index, xscale)
 			{
-				image_xscale = other.xscale;
 				playerid = other.id;
 				vertical = true;
 			}

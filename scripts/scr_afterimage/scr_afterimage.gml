@@ -144,7 +144,7 @@ function create_blue_afterimage(_x, _y, _sprite, _image_index, _xscale)
 	}
 	else
 	{
-		var b = create_mach3effect(_x, _y, _sprite, _image_index);
+		var b = create_mach3effect(_x, _y, _sprite, _image_index, true);
 		with b
 			image_xscale = _xscale;
 		return b;

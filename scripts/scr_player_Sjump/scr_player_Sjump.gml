@@ -20,6 +20,14 @@ function scr_player_Sjump()
 			create_particle(x + irandom_range(-25, 25), y + irandom_range(-10, 35), particle.cloudeffect, 0);
 			steppybuffer = 8;
 		}
+		if global.afterimage == 1
+		{
+			with (create_blue_afterimage(x, y, sprite_index, image_index, xscale))
+	        {
+	            playerid = other.id;
+	            maxmovespeed = 6;
+	        }
+		}
 		if (piledrivereffect > 0)
 			piledrivereffect--;
 		else

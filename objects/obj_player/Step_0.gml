@@ -1203,7 +1203,7 @@ if (state != states.jump)
 	stompAnim = false;
 
 // mach effect
-var do_macheffect = (state == states.mach3 || (state == states.ghost && ghostdash && ghostpepper >= 3) || state == states.mach2 || state == states.Sjump || ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
+var do_macheffect = (state == states.mach3 || (state == states.ghost && ghostdash && ghostpepper >= 3) || state == states.mach2 || (state == states.Sjump && global.afterimage == 0) || ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
 or ((abs(movespeed) >= 10 or sprite_index == spr_crazyrun) && character == "S") or (character == "N" && noisetype == 1 && pogochargeactive)
 
 if do_macheffect
