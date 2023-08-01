@@ -67,8 +67,8 @@ if (sprite_index == spr_banditochicken_wake && floor(image_index) == (image_numb
 	state = states.charge;
 	movespeed = 8;
 	
-	particle_set_scale(particle.jumpdust, image_xscale, 1);
-	create_particle(x, y, particle.jumpdust);
+	particle_set_scale(part.jumpdust, image_xscale, 1);
+	create_particle(x, y, part.jumpdust);
 }
 if (state == states.charge && bonebuffer > 0)
 	bonebuffer--;
@@ -88,7 +88,7 @@ if (bonebuffer == 0)
 		vsp = -10;
 		image_xscale = other.image_xscale;
 		hsp = 0;
-		create_particle(x, y, particle.genericpoofeffect);
+		create_particle(x, y, part.genericpoofeffect);
 		var old_y = y;
 		var t = false;
 		while (y < room_height)

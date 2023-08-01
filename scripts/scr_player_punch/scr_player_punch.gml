@@ -104,8 +104,8 @@ function scr_player_punch()
 			}
 			else if key_down
 			{
-				particle_set_scale(particle.jumpdust, xscale, 1);
-				create_particle(x, y, particle.jumpdust, 0);
+				particle_set_scale(part.jumpdust, xscale, 1);
+				create_particle(x, y, part.jumpdust, 0);
 				state = states.tumble;
 				image_index = 0;
 				sprite_index = spr_mach2jump;
@@ -252,8 +252,8 @@ function scr_player_punch()
 		{
 			scr_fmod_soundeffect(jumpsnd, x, y);
 			input_buffer_jump = 0;
-			particle_set_scale(particle.jumpdust, xscale, 1);
-			create_particle(x, y, particle.jumpdust, 0);
+			particle_set_scale(part.jumpdust, xscale, 1);
+			create_particle(x, y, part.jumpdust, 0);
 			jumpstop = false;
 			image_index = 0;
 			vsp = -11;
@@ -273,8 +273,8 @@ function scr_player_punch()
 		
 		if key_down && (_kungfuair or _kungfuground)
 		{
-			particle_set_scale(particle.jumpdust, xscale, 1);
-			create_particle(x, y, particle.jumpdust, 0);
+			particle_set_scale(part.jumpdust, xscale, 1);
+			create_particle(x, y, part.jumpdust, 0);
 			state = states.tumble;
 			image_index = 0;
 			

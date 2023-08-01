@@ -78,8 +78,8 @@ function scr_snick_roll()
 		else if key_jump && grounded
 		{
 			scr_fmod_soundeffect(jumpsnd, x, y);
-			particle_set_scale(particle.highjumpcloud2, xscale, 1);
-			create_particle(x, y, particle.highjumpcloud2, 0);
+			particle_set_scale(part.highjumpcloud2, xscale, 1);
+			create_particle(x, y, part.highjumpcloud2, 0);
 			
 			sprite_index = spr_jump;
 			state = states.jump;

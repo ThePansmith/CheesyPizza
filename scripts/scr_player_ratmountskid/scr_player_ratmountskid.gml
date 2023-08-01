@@ -16,8 +16,8 @@ function scr_player_ratmountskid()
 	}
 	if (input_buffer_jump > 0 && can_jump && sprite_index != spr_player_ratmountswallow)
 	{
-		particle_set_scale(particle.highjumpcloud2, xscale, 1);
-		create_particle(x, y, particle.highjumpcloud2, 0);
+		particle_set_scale(part.highjumpcloud2, xscale, 1);
+		create_particle(x, y, part.highjumpcloud2, 0);
 		sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
 		if (brick)
 			sprite_index = spr_player_ratmountjump;
@@ -45,8 +45,8 @@ function scr_player_ratmountskid()
 	}
 	if (input_buffer_slap > 0 && !key_up)
 	{
-		particle_set_scale(particle.jumpdust, xscale, 1);
-		create_particle(x, y, particle.jumpdust, 0);
+		particle_set_scale(part.jumpdust, xscale, 1);
+		create_particle(x, y, part.jumpdust, 0);
 		input_buffer_slap = 0;
 		if (brick == 1)
 		{

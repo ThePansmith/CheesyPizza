@@ -57,8 +57,8 @@ function scr_player_ratmountgroundpound()
 					other.state = states.ratmount;
 					other.movespeed = other.xscale * 8;
 					
-					particle_set_scale(particle.jumpdust, -sign(image_xscale), 1);
-					create_particle(other.x, other.y, particle.jumpdust);
+					particle_set_scale(part.jumpdust, -sign(image_xscale), 1);
+					create_particle(other.x, other.y, part.jumpdust);
 				}
 			}
 			else
@@ -98,7 +98,7 @@ function scr_player_ratmountgroundpound()
 					combo = 0;
 					bounce = false;
 				}
-				create_particle(x, y + 3, particle.groundpoundeffect, 0);
+				create_particle(x, y + 3, part.groundpoundeffect, 0);
 			}
 		}
 	}

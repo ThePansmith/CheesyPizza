@@ -1,7 +1,7 @@
 if (other.state == states.gotoplayer)
 	exit;
 sound_play_oneshot_3d("event:/sfx/misc/balloonpop", x, y);
-create_particle(x, y, particle.balloonpop, 0);
+create_particle(x, y, part.balloonpop, 0);
 other.vsp = -14;
 other.jumpstop = true;
 visible = false;

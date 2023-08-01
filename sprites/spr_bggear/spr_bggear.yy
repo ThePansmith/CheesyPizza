@@ -26,7 +26,7 @@
   "origin": 4,
   "parent": {
     "name": "Cotton",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Decorations/Cotton.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles/Cotton.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

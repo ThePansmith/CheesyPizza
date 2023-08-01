@@ -292,7 +292,7 @@ if (!instance_exists(obj_baddiespawner) && global.boxhp == 10)
 	{
 		content = obj_noisey;
 		repeat (6)
-			create_particle(x + random_range(-25, 25), y + random_range(-25, 25), particle.cloudeffect);
+			create_particle(x + random_range(-25, 25), y + random_range(-25, 25), part.cloudeffect);
 	}
 }
 if (box == 1)

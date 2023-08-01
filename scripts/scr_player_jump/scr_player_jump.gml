@@ -81,8 +81,8 @@ function state_player_jump()
 				jumpstop = false;
 				vsp = -9;
 				doublejump = true;
-				particle_set_scale(particle.highjumpcloud2, xscale, 1);
-				create_particle(x, y, particle.highjumpcloud2, 0);
+				particle_set_scale(part.highjumpcloud2, xscale, 1);
+				create_particle(x, y, part.highjumpcloud2, 0);
 			}
 		}
 	}
@@ -131,8 +131,8 @@ function state_player_jump()
 				sprite_index = spr_player_pistoljump1;
 			image_index = 0;
 		}
-		particle_set_scale(particle.highjumpcloud2, xscale, 1);
-		create_particle(x, y, particle.highjumpcloud2, 0);
+		particle_set_scale(part.highjumpcloud2, xscale, 1);
+		create_particle(x, y, part.highjumpcloud2, 0);
 	}
 	if (grounded && vsp > 0)
 	{
@@ -152,7 +152,7 @@ function state_player_jump()
 			jumpAnim = true;
 			jumpstop = false;
 			freefallstart = 0;
-			create_particle(x, y, particle.landcloud, 0);
+			create_particle(x, y, part.landcloud, 0);
 		}
 	}
 	if (vsp > 5 && sprite_index != spr_mortdoublejump)
@@ -293,8 +293,8 @@ function state_player_jump()
 			input_buffer_slap = 0;
 			input_buffer_grab = 0;
 		
-			particle_set_scale(particle.jumpdust, xscale, 1);
-			create_particle(x, y, particle.jumpdust, 0);
+			particle_set_scale(part.jumpdust, xscale, 1);
+			create_particle(x, y, part.jumpdust, 0);
 			image_index = 0;
 			sprite_index = spr_suplexdashjumpstart;
 			if character == "SP"
@@ -316,8 +316,8 @@ function state_player_jump()
 			fmod_event_instance_play(snd_uppercut);
 			vsp = -10;
 			movespeed = hsp;
-			particle_set_scale(particle.highjumpcloud2, xscale, 1);
-			create_particle(x, y, particle.highjumpcloud2, 0);
+			particle_set_scale(part.highjumpcloud2, xscale, 1);
+			create_particle(x, y, part.highjumpcloud2, 0);
 		}
 	
 		// kungfu
@@ -463,7 +463,7 @@ function state_player_jump()
 				}
 			}
 			if (sprite_index == spr_playerV_superjump && floor(image_index) == (image_number - 1))
-				create_particle(x, y + 25, particle.shotgunimpact, 0);
+				create_particle(x, y + 25, part.shotgunimpact, 0);
 			if (key_slap2)
 			{
 				sprite_index = spr_playerV_airrevolver;

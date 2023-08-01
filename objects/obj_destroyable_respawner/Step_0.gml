@@ -18,7 +18,7 @@ else if (content != -4)
 			image_xscale = other.image_xscale;
 			image_yscale = other.image_yscale;
 			sprite_index = other.sprite_index;
-			create_particle(x, y, particle.genericpoofeffect, 0);
+			create_particle(x, y, part.genericpoofeffect, 0);
 		}
 		instance_destroy();
 	}

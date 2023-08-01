@@ -25,8 +25,8 @@ function scr_player_mach2()
 		image_index = 0;
 		sprite_index = spr_secondjump1;
 		scr_fmod_soundeffect(jumpsnd, x, y);
-		particle_set_scale(particle.jumpdust, xscale, 1);
-		create_particle(x, y, particle.jumpdust, 0);
+		particle_set_scale(part.jumpdust, xscale, 1);
+		create_particle(x, y, part.jumpdust, 0);
 		if (skateboarding)
 			sprite_index = spr_clownjump;
 		vsp = -11;
@@ -97,8 +97,8 @@ function scr_player_mach2()
 			flash = true;
 			if (sprite_index != spr_rollgetup)
 				sprite_index = spr_mach4;
-			particle_set_scale(particle.jumpdust, xscale, 1);
-			create_particle(x, y, particle.jumpdust, 0);
+			particle_set_scale(part.jumpdust, xscale, 1);
+			create_particle(x, y, part.jumpdust, 0);
 		}
 	}
 	if ((!grounded && (check_solid(x + hsp, y) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (check_solid(x + sign(hsp), y - 16) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && check_slope(x, y + 1)))
@@ -145,8 +145,8 @@ function scr_player_mach2()
 		sprite_index = spr_clownfall;
 	if (key_down && !skateboarding && !place_meeting(x, y, obj_dashpad))
 	{
-		particle_set_scale(particle.jumpdust, xscale, 1);
-		create_particle(x, y, particle.jumpdust, 0);
+		particle_set_scale(part.jumpdust, xscale, 1);
+		create_particle(x, y, part.jumpdust, 0);
 		flash = false;
 		state = states.tumble;
 		vsp = 10;
@@ -186,7 +186,7 @@ function scr_player_mach2()
 	if (clowntimer <= 0 && skateboarding == 1)
 	{
 		state = states.normal;
-		create_particle(x, y, particle.genericpoofeffect);
+		create_particle(x, y, part.genericpoofeffect);
 	}
 	if (key_slap2 && character == "V")
 	{
@@ -265,8 +265,8 @@ function scr_player_mach2()
 			sprite_index = shotgunAnim ? spr_shotgunsuplexdash : spr_suplexdash;
 			suplexmove = true;
 			fmod_event_instance_play(suplexdashsnd);
-			particle_set_scale(particle.jumpdust, xscale, 1);
-			create_particle(x, y, particle.jumpdust, 0);
+			particle_set_scale(part.jumpdust, xscale, 1);
+			create_particle(x, y, part.jumpdust, 0);
 			state = states.handstandjump;
 			if (movespeed < 5)
 				movespeed = 5;
@@ -284,8 +284,8 @@ function scr_player_mach2()
 			fmod_event_instance_play(snd_uppercut);
 			vsp = -10;
 			movespeed = hsp;
-			particle_set_scale(particle.highjumpcloud2, xscale, 1);
-			create_particle(x, y, particle.highjumpcloud2, 0);
+			particle_set_scale(part.highjumpcloud2, xscale, 1);
+			create_particle(x, y, part.highjumpcloud2, 0);
 		}
 	
 		// kungfu

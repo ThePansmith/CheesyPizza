@@ -176,7 +176,7 @@ if (wastedhits >= 6 && !pizzahead)
 		visible = false;
 		phase = 3;
 		elitehit = 5;
-		create_particle(x, y, particle.genericpoofeffect);
+		create_particle(x, y, part.genericpoofeffect);
 		instance_destroy(obj_fakepepsolid);
 		with (obj_hppickup)
 		{

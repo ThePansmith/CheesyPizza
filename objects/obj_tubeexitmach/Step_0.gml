@@ -11,8 +11,8 @@ if (state == states.tube)
 				vsp = 0;
 				image_index = 0;
 				
-				particle_set_scale(particle.jumpdust, REMIX ? xscale : 1, 1);
-				create_particle(x, y, particle.jumpdust);
+				particle_set_scale(part.jumpdust, REMIX ? xscale : 1, 1);
+				create_particle(x, y, part.jumpdust);
 			}
 			if (other.image_xscale != 0)
 				xscale = other.image_xscale;

@@ -2,7 +2,7 @@ with (other)
 {
 	if (other.state == states.normal && state != states.spaceshuttle && key_up && grounded && ((state == states.ratmount && brick) || state == states.normal || state == states.mach1 || state == states.mach3 || state == states.pogo || state == states.mach3 || state == states.Sjumpprep))
 	{
-		create_particle(x, y, particle.genericpoofeffect);
+		create_particle(x, y, part.genericpoofeffect);
 		other.state = states.hit;
 		other.hitLag = 80;
 		other.hitX = other.x;

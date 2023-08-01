@@ -11,10 +11,10 @@ function scr_player_gotoplayer()
 		vsp = lengthdir_y(16, _dir);
 		var t = 16;
 		repeat (8)
-			create_particle(x + irandom_range(-t, t), y + irandom_range(-t, t), particle.cloudeffect, 0);
+			create_particle(x + irandom_range(-t, t), y + irandom_range(-t, t), part.cloudeffect, 0);
 		if (distance_to_object(playerid) < 16)
 		{
-			create_particle(x, y, particle.genericpoofeffect, 0);
+			create_particle(x, y, part.genericpoofeffect, 0);
 			instance_create_unique(playerid.x, playerid.y, obj_coopplayerfollow);
 		}
 	}
@@ -30,7 +30,7 @@ function scr_player_gotoplayer()
 			hurted = true;
 			alarm[5] = 2;
 			alarm[7] = 60;
-			create_particle(x, y, particle.genericpoofeffect, 0);
+			create_particle(x, y, part.genericpoofeffect, 0);
 			visible = true;
 			instance_destroy(obj_coopplayerfollow);
 		}

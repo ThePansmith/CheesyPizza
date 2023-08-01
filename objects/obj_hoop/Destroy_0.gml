@@ -9,5 +9,5 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	global.collect += 50;
 	with (instance_create(x, y, obj_smallnumber))
 		number = string(50);
-	create_particle(x, y, particle.genericpoofeffect, 0);
+	create_particle(x, y, part.genericpoofeffect, 0);
 }

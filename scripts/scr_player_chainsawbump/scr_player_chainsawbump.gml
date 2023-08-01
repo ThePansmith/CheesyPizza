@@ -17,8 +17,8 @@ function scr_player_chainsawbump()
 	{
 		with (instance_create(x, y, obj_superdashcloud))
 			image_xscale = other.xscale;
-		particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-		create_particle(x, y, particle.crazyrunothereffect, 0);
+		particle_set_scale(part.crazyrunothereffect, xscale, 1);
+		create_particle(x, y, part.crazyrunothereffect, 0);
 		image_index = 0;
 		sprite_index = spr_player_chainsawdash;
 		if (movespeed < 12)

@@ -82,8 +82,8 @@ function scr_player_handstandjump()
 	if (input_buffer_jump > 0 && can_jump && !key_down/* && global.attackstyle != 2*/)
 	{
 		input_buffer_jump = 0;
-		particle_set_scale(particle.jumpdust, xscale, 1);
-		create_particle(x, y, particle.jumpdust, 0);
+		particle_set_scale(part.jumpdust, xscale, 1);
+		create_particle(x, y, part.jumpdust, 0);
 		jumpstop = false;
 		image_index = 0;
 		vsp = -11;
@@ -135,8 +135,8 @@ function scr_player_handstandjump()
 		sprite_index = airattackdash;
 	if (key_down && grounded/* && global.attackstyle != 2*/)
 	{
-		particle_set_scale(particle.jumpdust, xscale, 1);
-		create_particle(x, y, particle.jumpdust);
+		particle_set_scale(part.jumpdust, xscale, 1);
+		create_particle(x, y, part.jumpdust);
 		
 		movespeed = 12;
 		crouchslipbuffer = 25;

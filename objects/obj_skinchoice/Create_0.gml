@@ -157,7 +157,7 @@ select = function()
 		{
 			// setup animation
 			xscale = 1;
-			create_particle(x, y, particle.genericpoofeffect);
+			create_particle(x, y, part.genericpoofeffect);
 			visible = false;
 			
 			// save

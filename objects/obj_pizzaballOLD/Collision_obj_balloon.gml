@@ -1,6 +1,6 @@
 if (state == states.golf)
 	exit;
-create_particle(x, y, particle.balloonpop, 0);
+create_particle(x, y, part.balloonpop, 0);
 vsp = -14;
 kicked = false;
 with (other)

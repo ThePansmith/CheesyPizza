@@ -1,6 +1,9 @@
-function activate_panic()
+function calculate_filltime(seconds)
 {
-	var instapanic = global.leveltosave == "grinch";
+	return (seconds * 60) * 0.2;
+}
+function activate_panic(instapanic = false)
+{
 	if room == tower_finalhallway
 		global.leveltosave = "exit";
 	
@@ -10,7 +13,7 @@ function activate_panic()
 		if escape
 		{
 			visible = true;
-			create_particle(x, y, particle.genericpoofeffect);
+			create_particle(x, y, part.genericpoofeffect);
 		}
 	}
 	*/
@@ -107,6 +110,9 @@ function activate_panic()
 		case grinch_1:
 		case etb_1:
 			global.fill = 2148;
+			break;
+		case sucrose_1:
+			global.fill = calculate_filltime(30);
 			break;
 	}
 	

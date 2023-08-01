@@ -14,8 +14,8 @@ if (buffer <= 0 && other.state != states.ghost)
 		movespeed = abs(movespeed);
 		dir = xscale;
 		movespeed = 13;
-		particle_set_scale(particle.jumpdust, xscale, 1);
-		create_particle(x, y, particle.jumpdust);
+		particle_set_scale(part.jumpdust, xscale, 1);
+		create_particle(x, y, part.jumpdust);
 		sprite_index = spr_player_corpsestart;
 		image_index = 0;
 		gravesurfingjumpbuffer = 50;

@@ -372,7 +372,7 @@ function scr_fakepepboss_walk()
 		if (grounded && vsp > 0 && flickertime > 2)
 		{
 			hsp = Approach(hsp, 0, 0.5);
-			create_particle(x, y, particle.landcloud);
+			create_particle(x, y, part.landcloud);
 			vsp = -5;
 			touchedground = true;
 		}
@@ -460,7 +460,7 @@ function scr_fakepepboss_walk()
 				
 				case fakepep_attacks.tauntclone:
 					sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
-					create_particle(x, y, particle.highjumpcloud2);
+					create_particle(x, y, part.highjumpcloud2);
 					state = states.backbreaker;
 					taunted = false;
 					sprite_index = spr_fakepeppino_jump;
@@ -624,7 +624,7 @@ function scr_fakepepboss_jump()
 			sprite_index = spr_fakepeppino_bodyslamjump;
 			attackspeed = 8;
 			vsp = -18;
-			create_particle(x, y, particle.highjumpcloud2);
+			create_particle(x, y, part.highjumpcloud2);
 		}
 	}
 	else
@@ -657,7 +657,7 @@ function scr_fakepepboss_freefall()
 	if (grounded && vsp > 0 && sprite_index != spr_fakepeppino_bodyslamland)
 	{
 		sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
-		create_particle(x, y, particle.landcloud);
+		create_particle(x, y, part.landcloud);
 		sprite_index = spr_fakepeppino_bodyslamland;
 		image_index = 0;
 		bodyslamlandbuffer = 20;
@@ -795,7 +795,7 @@ function scr_fakepepboss_Sjump()
 		steppybuffer--;
 	else
 	{
-		create_particle(x + irandom_range(-25, 25), y + irandom_range(-10, 35), particle.cloudeffect, 0);
+		create_particle(x + irandom_range(-25, 25), y + irandom_range(-10, 35), part.cloudeffect, 0);
 		steppybuffer = 8;
 	}
 	if (sjumpbuffer > 0)

@@ -11,7 +11,7 @@ if (!fadeout)
 			content = obj_pineappleprojectilespawn;
 		with (instance_create(x, y, content))
 		{
-			create_particle(x, y, particle.genericpoofeffect);
+			create_particle(x, y, part.genericpoofeffect);
 			if (object_index == obj_bazooka)
 			{
 				sound_play_oneshot_3d("event:/sfx/enemies/piranha", x, y);

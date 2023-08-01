@@ -24,7 +24,7 @@ with (other)
 			with (instance_create(x, y, obj_brickcomeback))
 			{
 				wait = true;
-				create_particle(x, y, particle.genericpoofeffect);
+				create_particle(x, y, part.genericpoofeffect);
 			}
 		}
 		brick = false;

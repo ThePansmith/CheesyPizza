@@ -42,3 +42,16 @@ if (safe_get(id, "elite") or global.stylethreshold >= 3) && usepalette
 && object_index != obj_sausageman && (object_index != obj_kentukykenny or !important)
 && object_index != obj_ninja
 	paletteselect = elitepal;
+
+// snap to ground if sugary
+if check_sugary()
+{
+	for(var i = 1; i < 32; i++)
+	{
+		if scr_solid(x, y + i)
+		{
+			y += i - 1;
+			break;
+		}
+	}
+}

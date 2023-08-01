@@ -8,7 +8,7 @@ if (use_collision)
 			with (obj_player1)
 				sprite_index = spr_gnomecutscene1;
 			alarm[1] = -1;
-			create_particle(x, y, particle.landcloud);
+			create_particle(x, y, part.landcloud);
 			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
 			hsp = 0;
 			start = true;

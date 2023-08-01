@@ -167,7 +167,7 @@ function scr_pepperman_walk()
 	if (grounded && vsp > 0 && sprite_index == spr_pepperman_scared && flickertime > 2)
 	{
 		hsp = Approach(hsp, 0, 0.5);
-		create_particle(x, y, particle.landcloud);
+		create_particle(x, y, part.landcloud);
 		vsp = -5;
 		touchedground = true;
 	}
@@ -206,7 +206,7 @@ function scr_pepperman_walk()
 	else if (stomp && cooldown == 0)
 	{
 		sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
-		create_particle(x, y, particle.jumpdust);
+		create_particle(x, y, part.jumpdust);
 		state = states.jump;
 		landbuffer2 = 10;
 		if (x != targetplayer.x)
@@ -294,7 +294,7 @@ function scr_pepperman_freefall()
 	}
 	if (grounded)
 	{
-		create_particle(x, y, particle.groundpoundeffect);
+		create_particle(x, y, part.groundpoundeffect);
 		if (!pizzahead)
 			var _land = wastedhits < 6;
 		else
@@ -445,8 +445,8 @@ function scr_pepperman_shoulderbash()
 		hsp = image_xscale * attackspeed;
 		if (woosh == 0 && phase == 2)
 		{
-			particle_set_scale(particle.crazyrunothereffect, image_xscale, 1);
-			create_particle(x, y, particle.crazyrunothereffect);
+			particle_set_scale(part.crazyrunothereffect, image_xscale, 1);
+			create_particle(x, y, part.crazyrunothereffect);
 			
 			with (instance_create(x, y, obj_superdashcloud))
 				image_xscale = other.image_xscale;
@@ -550,8 +550,8 @@ function scr_pepperman_shoulderturn()
 		if (phase == 2)
 		{
 			attackspeed = 24;
-			particle_set_scale(particle.crazyrunothereffect, image_xscale, 1);
-			create_particle(x, y, particle.crazyrunothereffect);
+			particle_set_scale(part.crazyrunothereffect, image_xscale, 1);
+			create_particle(x, y, part.crazyrunothereffect);
 		}
 		else
 			attackspeed = 12;
@@ -614,7 +614,7 @@ function scr_pepperman_mini()
 					image_index = 0;
 					sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
 					attackspeed = 10;
-					create_particle(x, y, particle.jumpdust);
+					create_particle(x, y, part.jumpdust);
 				}
 			}
 			if (minibuffer <= 0)

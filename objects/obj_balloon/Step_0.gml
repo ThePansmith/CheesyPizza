@@ -3,7 +3,7 @@ if (respawn > 0)
 if (respawn == 0 && visible == 0)
 {
 	if REMIX
-		create_particle(x, y, particle.genericpoofeffect);
+		create_particle(x, y, part.genericpoofeffect);
 	visible = true;
 	x = xstart;
 	y = ystart;

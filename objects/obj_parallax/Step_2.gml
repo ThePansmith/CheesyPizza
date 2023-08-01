@@ -49,6 +49,11 @@ function layer_get_parallax(lay)
 			var bg_y = calculate_parallax_still_y(lay, per);
 			return [_cam_x - bg_x, _cam_y - bg_y];
 			break;
+		
+		// sugary
+		case "Backgrounds_far1": return [_cam_x - calculate_parallax_still_x(lay, 0.25), _cam_y - calculate_parallax_still_y(lay, 0.25)]; break;
+		case "Backgrounds_far2": return [_cam_x - calculate_parallax_still_x(lay, 0.15), _cam_y - calculate_parallax_still_y(lay, 0.15)]; break;
+		case "Backgrounds_far3": return [_cam_x - calculate_parallax_still_x(lay, 0.05), _cam_y - calculate_parallax_still_y(lay, 0.05)]; break;
 	}
 }
 

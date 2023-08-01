@@ -111,8 +111,8 @@ function scr_player_boxxedpep()
 		image_index = 0;
 		movespeed = xscale * 12;
 		
-		particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-		create_particle(x, y, particle.crazyrunothereffect);
+		particle_set_scale(part.crazyrunothereffect, xscale, 1);
+		create_particle(x, y, part.crazyrunothereffect);
 	}
 	if (move != 0 && grounded && vsp > 0)
 	{
@@ -120,7 +120,7 @@ function scr_player_boxxedpep()
 			steppybuffer--;
 		else
 		{
-			create_particle(x, y + 43, particle.cloudeffect, 0);
+			create_particle(x, y + 43, part.cloudeffect, 0);
 			steppybuffer = 14;
 			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
 		}

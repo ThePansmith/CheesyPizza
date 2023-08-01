@@ -30,7 +30,7 @@ function scr_player_shotgunfreefall()
 			sprite_index = spr_shotgunjump2;
 			image_index = 0;
 			sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
-			create_particle(x, y, particle.landcloud, 0);
+			create_particle(x, y, part.landcloud, 0);
 			with (obj_camera)
 			{
 				shake_mag = 5;

@@ -14,7 +14,7 @@ if ((other.state == states.handstandjump || other.state == states.punch) && othe
 }
 if (other.state == states.mach2 || other.state == states.mach3 || (other.state == states.machroll && grounded))
 {
-	create_particle(x, y, particle.genericpoofeffect, 0);
+	create_particle(x, y, part.genericpoofeffect, 0);
 	with (other)
 	{
 		vsp = 0;

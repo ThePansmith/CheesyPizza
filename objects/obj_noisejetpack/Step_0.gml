@@ -16,7 +16,7 @@ switch (state)
 			movespeed = Approach(movespeed, 0, 0.1);
 		if (y == ty || movespeed <= 0)
 		{
-			create_particle(x, y, particle.genericpoofeffect);
+			create_particle(x, y, part.genericpoofeffect);
 			scr_sound_multiple(global.snd_collect, x, y);
 			state = states.transition;
 			cutscenebuffer = 70;

@@ -3,17 +3,18 @@ function create_baddiegibs(_x, _y)
 	if object_index == obj_junkNEW
 		exit;
 	
+	var sprite = check_sugary() ? spr_baddiegibs_ss : spr_baddiegibs;
 	var q = 
 	{
 		x: _x,
 		y: _y,
-		sprite_index: spr_baddiegibs,
-		image_number: sprite_get_number(spr_baddiegibs),
+		sprite_index: sprite,
+		image_number: sprite_get_number(sprite),
 		image_index: irandom(image_number),
 		image_angle: random_range(1, 270),
 		image_speed: 0,
-		sprw: sprite_get_width(spr_baddiegibs),
-		sprh: sprite_get_height(spr_baddiegibs),
+		sprw: sprite_get_width(sprite),
+		sprh: sprite_get_height(sprite),
 		hsp: random_range(-10, 10),
 		vsp: random_range(-10, 10),
 		alpha: 1,

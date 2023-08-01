@@ -84,8 +84,8 @@ function scr_player_tumble()
 		sprite_index = spr_player_Sjumpcancelslide;
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_breakdance)
 	{
-		particle_set_scale(particle.jumpdust, xscale, 1);
-		create_particle(x, y, particle.jumpdust, 0);
+		particle_set_scale(part.jumpdust, xscale, 1);
+		create_particle(x, y, part.jumpdust, 0);
 		movespeed = 12;
 		sprite_index = spr_breakdancesuper;
 	}
@@ -140,8 +140,8 @@ function scr_player_tumble()
 	{
 		if key_attack && !(character == "N" && noisetype == 1)
 		{
-			particle_set_scale(particle.jumpdust, xscale, 1);
-			create_particle(x, y, particle.jumpdust);
+			particle_set_scale(part.jumpdust, xscale, 1);
+			create_particle(x, y, part.jumpdust);
 			
 			if isgustavo
 			{

@@ -32,7 +32,7 @@ function scr_player_barrelslide()
 		input_buffer_jump = 0;
 		vsp = -8.5;
 		jumpstop = false;
-		create_particle(x, y, particle.highjumpcloud1, 0);
+		create_particle(x, y, part.highjumpcloud1, 0);
 	}
 	if ((!key_attack && !place_meeting(x, y + 1, obj_current)) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
 	{
@@ -80,7 +80,7 @@ function scr_player_barrelslide()
 				input_buffer_jump = 0;
 				vsp = -8.5;
 				jumpstop = true;
-				create_particle(x, y, particle.highjumpcloud1, 0);
+				create_particle(x, y, part.highjumpcloud1, 0);
 			}
 		}
 	}

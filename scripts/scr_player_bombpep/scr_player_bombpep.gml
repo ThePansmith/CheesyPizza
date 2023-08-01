@@ -58,7 +58,7 @@ function scr_player_bombgrab()
 		if ((sprite_index == spr_haulingjump || sprite_index == spr_haulingfall) && grounded && vsp > 0)
 		{
 			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
-			create_particle(x, y, particle.landcloud);
+			create_particle(x, y, part.landcloud);
 		}
 		if (sprite_index == spr_haulingjump && floor(image_index) == (image_number - 1))
 			sprite_index = spr_haulingfall;

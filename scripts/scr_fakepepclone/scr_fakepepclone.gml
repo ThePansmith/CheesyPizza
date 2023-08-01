@@ -29,7 +29,7 @@ function scr_fakepepclone_transitioncutscene()
 			else if (attack.attack == fakepep_attacks.tauntclone)
 			{
 				sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
-				create_particle(x, y, particle.highjumpcloud2);
+				create_particle(x, y, part.highjumpcloud2);
 				attacked = true;
 				taunted = false;
 				state = states.backbreaker;
@@ -152,7 +152,7 @@ function scr_fakepepclone_Sjump()
 		steppybuffer--;
 	else
 	{
-		create_particle(x + irandom_range(-25, 25), y + irandom_range(-10, 35), particle.cloudeffect, 0);
+		create_particle(x + irandom_range(-25, 25), y + irandom_range(-10, 35), part.cloudeffect, 0);
 		steppybuffer = 8;
 	}
 	if (sjumpbuffer > 0)

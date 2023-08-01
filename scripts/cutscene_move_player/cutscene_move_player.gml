@@ -40,7 +40,7 @@ function cutscene_move_player(_player, _xto, _hsp, _threshold)
 	{
 		if (move != 0 && (floor(image_index) == 3 || floor(image_index) == 8) && steppy == 0 && character != "V")
 		{
-			create_particle(x, y + 43, particle.cloudeffect);
+			create_particle(x, y + 43, part.cloudeffect);
 			steppy = true;
 		}
 		if (move != 0 && floor(image_index) != 3 && floor(image_index) != 8)

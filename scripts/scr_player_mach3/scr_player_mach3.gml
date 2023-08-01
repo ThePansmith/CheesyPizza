@@ -74,8 +74,8 @@ function scr_player_mach3()
 		{
 			input_buffer_jump = 0;
 			scr_fmod_soundeffect(jumpsnd, x, y);
-			particle_set_scale(particle.jumpdust, xscale, 1);
-			create_particle(x, y, particle.jumpdust, 0);
+			particle_set_scale(part.jumpdust, xscale, 1);
+			create_particle(x, y, part.jumpdust, 0);
 			if (sprite_index != spr_fightball)
 			{
 				image_index = 0;
@@ -136,8 +136,8 @@ function scr_player_mach3()
 		}
 		if (key_down && fightball == 0 && sprite_index != spr_dashpadmach)
 		{
-			particle_set_scale(particle.jumpdust, xscale, 1);
-			create_particle(x, y, particle.jumpdust, 0);
+			particle_set_scale(part.jumpdust, xscale, 1);
+			create_particle(x, y, part.jumpdust, 0);
 			flash = false;
 			state = states.tumble;
 			image_index = 0;
@@ -193,8 +193,8 @@ function scr_player_mach3()
 				sprite_index = shotgunAnim ? spr_shotgunsuplexdash : spr_suplexdash;
 				suplexmove = true;
 				fmod_event_instance_play(suplexdashsnd);
-				particle_set_scale(particle.jumpdust, xscale, 1);
-				create_particle(x, y, particle.jumpdust, 0);
+				particle_set_scale(part.jumpdust, xscale, 1);
+				create_particle(x, y, part.jumpdust, 0);
 				state = states.handstandjump;
 				if (movespeed < 5)
 					movespeed = 5;
@@ -213,8 +213,8 @@ function scr_player_mach3()
 				vsp = -10;
 				movespeed = hsp;
 				
-				particle_set_scale(particle.highjumpcloud2, xscale, 1);
-				create_particle(x, y, particle.highjumpcloud2, 0);
+				particle_set_scale(part.highjumpcloud2, xscale, 1);
+				create_particle(x, y, part.highjumpcloud2, 0);
 			}
 			
 			// kungfu
@@ -381,8 +381,8 @@ function scr_player_mach3()
 			state = states.jump;
 			sprite_index = spr_playerN_noisebombspinjump;
 			image_index = 0;
-			particle_set_scale(particle.jumpdust, xscale, 1);
-			create_particle(x, y, particle.jumpdust, 0);
+			particle_set_scale(part.jumpdust, xscale, 1);
+			create_particle(x, y, part.jumpdust, 0);
 		}
 		if (key_down && fightball == 0 && !place_meeting(x, y, obj_dashpad) && grounded)
 		{

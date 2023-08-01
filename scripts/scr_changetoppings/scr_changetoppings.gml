@@ -6,7 +6,7 @@ function scr_changetoppings()
 		if spr != sprite_index
 		{
 			sprite_index = spr;
-			create_particle(x + sprite_width / 2, y + sprite_height / 2, particle.cloudeffect);
+			create_particle(x + sprite_width / 2, y + sprite_height / 2, part.cloudeffect);
 		}
 	}
 }

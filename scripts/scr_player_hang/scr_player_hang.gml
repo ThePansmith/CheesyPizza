@@ -15,8 +15,8 @@ function scr_player_hang()
 		sprite_index = spr_playerN_noisebombspinjump;
 		image_index = 0;
 		
-		particle_set_scale(particle.jumpdust, xscale, 1);
-		create_particle(x, y, particle.jumpdust);
+		particle_set_scale(part.jumpdust, xscale, 1);
+		create_particle(x, y, part.jumpdust);
 	}
 	image_speed = 0.35;
 }

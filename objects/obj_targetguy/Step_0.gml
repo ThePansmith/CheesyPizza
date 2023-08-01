@@ -12,7 +12,7 @@ if (grounded && vsp > 0)
 		vsp = -5;
 	bounce += 1;
 	if (bounce < 2)
-		create_particle(x, y + 30, particle.landcloud);
+		create_particle(x, y + 30, part.landcloud);
 }
 if (flashbuffer > 0)
 	flashbuffer--;

@@ -218,7 +218,7 @@ function scr_player_grab()
 		image_speed = 0.35;
 	}
 	if (grounded && move != 0 && (floor(image_index) == 4 || floor(image_index) == 10))
-		create_particle(x, y + 43, particle.cloudeffect);
+		create_particle(x, y + 43, part.cloudeffect);
 	if ((key_down && grounded) && sprite_index != spr_swingding && sprite_index != spr_swingdingend)
 	{
 		state = states.crouch;

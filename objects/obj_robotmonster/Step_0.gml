@@ -104,13 +104,13 @@ switch (state)
 		{
 			steppy = true;
 			if (object_index != obj_blobmonster)
-				create_particle(x, y + 43, particle.cloudeffect);
+				create_particle(x, y + 43, part.cloudeffect);
 			else
 			{
 				var _y = 43;
 				if (grav < 0)
 					_y = -24;
-				create_particle(x, y + _y, particle.cloudeffect);
+				create_particle(x, y + _y, part.cloudeffect);
 			}
 		}
 		if (floor(image_index) != (image_number - 1))

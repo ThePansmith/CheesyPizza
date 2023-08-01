@@ -42,7 +42,7 @@ function state_player_machroll()
 			}
 			if (!instance_exists(dashcloudid) && grounded)
 			{
-				with (create_particle(x, y + 43, particle.cloudeffect))
+				with (create_particle(x, y + 43, part.cloudeffect))
 				{
 					image_xscale = other.xscale;
 					other.dashcloudid = id;
@@ -111,7 +111,7 @@ function state_player_machroll()
 			}
 			if (!instance_exists(dashcloudid) && grounded)
 			{
-				with (create_particle(x, y + 43, particle.cloudeffect))
+				with (create_particle(x, y + 43, part.cloudeffect))
 				{
 					image_xscale = other.xscale;
 					other.dashcloudid = id;
@@ -177,7 +177,7 @@ function state_player_machroll()
 			}
 			if (!instance_exists(dashcloudid) && grounded)
 			{
-				with (create_particle(x, y + 43, particle.cloudeffect))
+				with (create_particle(x, y + 43, part.cloudeffect))
 				{
 					image_xscale = other.xscale;
 					other.dashcloudid = id;

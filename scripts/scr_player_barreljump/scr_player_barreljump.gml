@@ -35,14 +35,14 @@ function scr_player_barreljump()
 		sprite_index = spr_player_barreljump;
 		image_index = 0;
 		jumpstop = false;
-		create_particle(x, y, particle.highjumpcloud1, 0);
+		create_particle(x, y, part.highjumpcloud1, 0);
 	}
 	if (grounded && vsp > 0)
 	{
 		state = states.barrel;
 		sprite_index = spr_player_barrelland;
 		image_index = 0;
-		create_particle(x, y, particle.landcloud, 0);
+		create_particle(x, y, part.landcloud, 0);
 	}
 	if (check_solid(x + sign(hsp), y) && !check_slope(x + sign(hsp), y))
 		movespeed = 0;

@@ -37,7 +37,7 @@ function scr_player_secondjump()
 		jumpAnim = true;
 		jumpstop = false;
 		image_index = 0;
-		create_particle(x, y, particle.landcloud, 0);
+		create_particle(x, y, part.landcloud, 0);
 		freefallstart = 0;
 	}
 	if (grounded && vsp > 0)

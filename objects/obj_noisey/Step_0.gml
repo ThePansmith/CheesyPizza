@@ -55,7 +55,7 @@ if (bounce && grounded && vsp > 0)
 	bounce = false;
 	stunned = 20;
 	_b = true;
-	create_particle(x, y, particle.highjumpcloud1);
+	create_particle(x, y, part.highjumpcloud1);
 }
 if (state == states.stun && stunned > 100 && birdcreated == 0)
 {

@@ -10,5 +10,5 @@ if (!kick && countdown <= 0)
 	}
 	countdown = 10;
 	sound_play_oneshot_3d("event:/sfx/enemies/stomp", x, y);
-	create_particle(x, y, particle.jumpdust, 0);
+	create_particle(x, y, part.jumpdust, 0);
 }

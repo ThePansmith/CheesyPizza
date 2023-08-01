@@ -51,14 +51,14 @@ function scr_player_barrel()
 			sprite_index = spr_player_barreljump;
 			image_index = 0;
 			jumpstop = false;
-			create_particle(x, y, particle.highjumpcloud1, 0);
+			create_particle(x, y, part.highjumpcloud1, 0);
 		}
 		if (key_attack)
 		{
 			movespeed = xscale * 7;
 			sound_play_oneshot_3d("event:/sfx/barrel/start", x, y);
-			particle_set_scale(particle.jumpdust, xscale, 1);
-			create_particle(x, y, particle.jumpdust);
+			particle_set_scale(part.jumpdust, xscale, 1);
+			create_particle(x, y, part.jumpdust);
 			state = states.barrelslide;
 			sprite_index = spr_player_barrelslipnslide;
 			image_index = 0;
@@ -84,7 +84,7 @@ function scr_player_barrel()
 			steppybuffer--;
 		else
 		{
-			create_particle(x, y + 43, particle.cloudeffect, 0);
+			create_particle(x, y + 43, part.cloudeffect, 0);
 			steppybuffer = 14;
 			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
 		}

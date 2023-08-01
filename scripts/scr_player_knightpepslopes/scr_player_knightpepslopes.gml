@@ -55,8 +55,8 @@ function scr_player_knightpepslopes()
 			}
 			if (!doublejump)
 			{
-				particle_set_scale(particle.jumpdust, xscale, 1);
-				create_particle(x, y, particle.jumpdust, 0);
+				particle_set_scale(part.jumpdust, xscale, 1);
+				create_particle(x, y, part.jumpdust, 0);
 			}
 		}
 	}

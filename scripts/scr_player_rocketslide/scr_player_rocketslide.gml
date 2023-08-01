@@ -7,7 +7,7 @@ function scr_player_rocketslide()
 		steppybuffer--;
 	else
 	{
-		create_particle(x, y + random_range(10, 20), particle.cloudeffect, 0);
+		create_particle(x, y + random_range(10, 20), part.cloudeffect, 0);
 		steppybuffer = 8;
 	}
 	if (movespeed <= 0)

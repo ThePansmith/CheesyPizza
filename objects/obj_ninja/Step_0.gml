@@ -118,7 +118,7 @@ if (sprite_index == spr_pizzaboy)
 		if (state == states.walk || state == states.idle)
 		{
 			if (sprite_index == spr_pizzaboy)
-				create_particle(x, y, particle.balloonpop, 0);
+				create_particle(x, y, part.balloonpop, 0);
 			sound_play_oneshot_3d("event:/sfx/pep/uppercut", x, y);
 			image_xscale = -sign(x - targetplayer.x);
 			sprite_index = spr_ninja_uppercut;

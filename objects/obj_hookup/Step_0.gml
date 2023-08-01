@@ -4,7 +4,7 @@ if (appear > 0)
 else if (appear == 0)
 {
 	appear = -1;
-	create_particle(x, y, particle.genericpoofeffect);
+	create_particle(x, y, part.genericpoofeffect);
 }
 else if (hooked)
 {

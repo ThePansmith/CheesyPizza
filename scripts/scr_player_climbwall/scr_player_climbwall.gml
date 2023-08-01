@@ -72,8 +72,8 @@ function scr_player_climbwall()
 			if (verticalbuffer <= 0 && !scr_solid(x + xscale, y) && !place_meeting(x, y, obj_verticalhallway) && !place_meeting(x, y - 12, obj_verticalhallway))
 			{
 				trace("climbwall out");
-				particle_set_scale(particle.jumpdust, xscale, 1);
-				create_particle(x, y, particle.jumpdust);
+				particle_set_scale(part.jumpdust, xscale, 1);
+				create_particle(x, y, part.jumpdust);
 				
 				ledge_bump(32);
 				
@@ -127,8 +127,8 @@ function scr_player_climbwall()
 					{
 						movespeed = max(abs(wallspeed), 6);
 						
-						particle_set_scale(particle.jumpdust, xscale, 1);
-						create_particle(x, y, particle.jumpdust);
+						particle_set_scale(part.jumpdust, xscale, 1);
+						create_particle(x, y, part.jumpdust);
 						
 						vsp = -9;
 						image_index = 0;
@@ -219,7 +219,7 @@ function scr_player_climbwall()
 				steppybuffer--;
 			else
 			{
-				create_particle(x + (xscale * 10), y + 43, particle.cloudeffect, 0);
+				create_particle(x + (xscale * 10), y + 43, part.cloudeffect, 0);
 				steppybuffer = 10;
 			}
 			break;
@@ -276,8 +276,8 @@ function scr_player_climbwall()
 			{
 				trace("climbwall out");
 				
-				particle_set_scale(particle.jumpdust, xscale, 1);
-				create_particle(x, y, particle.jumpdust);
+				particle_set_scale(part.jumpdust, xscale, 1);
+				create_particle(x, y, part.jumpdust);
 				
 				ledge_bump(32);
 				movespeed = xscale * max(wallspeed, 6);
@@ -344,7 +344,7 @@ function scr_player_climbwall()
 				steppybuffer--;
 			else
 			{
-				create_particle(x + (xscale * 10), y + 43, particle.cloudeffect, 0);
+				create_particle(x + (xscale * 10), y + 43, part.cloudeffect, 0);
 				steppybuffer = 10;
 			}
 			break;

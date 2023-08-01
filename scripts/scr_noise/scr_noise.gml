@@ -198,7 +198,7 @@ function scr_noise_walk()
 	if (grounded && vsp > 0 && sprite_index == spr_playerN_hurt && flickertime > 2)
 	{
 		hsp = Approach(hsp, 0, 0.5);
-		create_particle(x, y, particle.landcloud);
+		create_particle(x, y, part.landcloud);
 		vsp = -5;
 		touchedground = true;
 	}
@@ -263,7 +263,7 @@ function scr_noise_walk()
 			with (obj_noisey)
 			{
 				instance_destroy(id, false);
-				create_particle(x, y, particle.genericpoofeffect);
+				create_particle(x, y, part.genericpoofeffect);
 			}
 			instance_create(0, 0, obj_noiseballooncrash);
 			state = states.noiseballooncrash;
@@ -330,7 +330,7 @@ function scr_noise_mach2()
 		image_xscale *= -1;
 		vsp = -11;
 		attackspeed = 6;
-		create_particle(x, y, particle.jumpdust);
+		create_particle(x, y, part.jumpdust);
 	}
 	if (sprite_index == spr_playerN_walljumpstart && floor(image_index) == (image_number - 1))
 		sprite_index = spr_playerN_walljumpend;
@@ -643,9 +643,9 @@ function scr_noise_pogo()
 				state = states.noisecrusher;
 				vsp = -17;
 				sprite_index = spr_noise_crusherjump;
-				create_particle(x, y, particle.genericpoofeffect);
+				create_particle(x, y, part.genericpoofeffect);
 				image_index = 0;
-				create_particle(x, y, particle.highjumpcloud2);
+				create_particle(x, y, part.highjumpcloud2);
 			}
 		}
 	}
@@ -662,7 +662,7 @@ function scr_noise_dropstart()
 	hsp = 0;
 	if ((floor(image_index) div 10) == 0 && cloudbuffer == 0)
 	{
-		create_particle(x + irandom_range(-12, 12), y + 43, particle.cloudeffect);
+		create_particle(x + irandom_range(-12, 12), y + 43, part.cloudeffect);
 		cloudbuffer = 5;
 	}
 	if (cloudbuffer > 0)
@@ -751,7 +751,7 @@ function scr_noise_droptrap()
 		image_index = 0;
 		x = obj_player1.x;
 		y = 0;
-		create_particle(x, y, particle.genericpoofeffect);
+		create_particle(x, y, part.genericpoofeffect);
 	}
 }
 function scr_noise_freefall()
@@ -771,7 +771,7 @@ function scr_noise_freefall()
 			shake_mag = 3;
 			shake_mag_acc = 5 / room_speed;
 		}
-		create_particle(x, y, particle.groundpoundeffect);
+		create_particle(x, y, part.groundpoundeffect);
 		sprite_index = spr_playerN_bodyslamland;
 		image_index = 0;
 		buttslamlandcooldown = 20;
@@ -830,7 +830,7 @@ function scr_noise_noisecrusher()
 		sprite_index = spr_noise_crusherfall;
 	if (sprite_index == spr_noise_crusherland && floor(image_index) == (image_number - 1))
 	{
-		create_particle(x, y, particle.genericpoofeffect);
+		create_particle(x, y, part.genericpoofeffect);
 		state = states.walk;
 	}
 	if (grounded && vsp > 0 && sprite_index != spr_noise_crusherland)

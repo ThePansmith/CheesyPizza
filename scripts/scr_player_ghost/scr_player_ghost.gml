@@ -28,7 +28,7 @@ function scr_player_ghost()
 		}
 		if ((ghostdash == 1 && ghostpepper >= 3) && ghosteffect == 0)
 		{
-			create_particle(x + random_range(-25, 25), y + random_range(-25, 25), particle.cloudeffect);
+			create_particle(x + random_range(-25, 25), y + random_range(-25, 25), part.cloudeffect);
 			ghosteffect = 5;
 		}
 		if (ghosteffect > 0)

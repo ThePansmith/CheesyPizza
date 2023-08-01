@@ -23,7 +23,7 @@ if (staggerbuffer <= 0 && flickertime <= 0 && ((other.state == states.handstandj
 	{
 		with (obj_fakepephead)
 		{
-			create_particle(x, y, particle.genericpoofeffect);
+			create_particle(x, y, part.genericpoofeffect);
 			instance_destroy(id, false);
 		}
 		state = states.stun;

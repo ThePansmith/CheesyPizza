@@ -45,7 +45,7 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite || elitehit <= 0)
 	{
 		with (instance_create(x, y, obj_whoop))
 		{
-			create_particle(x, y, particle.genericpoofeffect);
+			create_particle(x, y, part.genericpoofeffect);
 			vsp = -11;
 		}
 	}
@@ -98,6 +98,9 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite || elitehit <= 0)
 		gamesave_async_save();
 	}
 	notification_push(notifs.baddie_kill, [room, id, object_index]);
+	
+	if global.leveltosave == "sucrose"
+		global.fill += calculate_filltime(2.5);
 }
 if (ds_list_find_index(global.baddieroom, id) == -1 && important == 0)
 {

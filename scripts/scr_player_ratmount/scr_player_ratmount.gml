@@ -47,8 +47,8 @@ function scr_player_ratmount()
 	}
 	if (ratmount_movespeed >= 12 && gustavodash != 51)
 	{
-		particle_set_scale(particle.jumpdust, REMIX ? xscale : 1, 1);
-		create_particle(x, y, particle.jumpdust);
+		particle_set_scale(part.jumpdust, REMIX ? xscale : 1, 1);
+		create_particle(x, y, part.jumpdust);
 		gustavodash = 51;
 	}
 	if (ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
@@ -166,7 +166,7 @@ function scr_player_ratmount()
 			steppybuffer--;
 		else
 		{
-			create_particle(x, y + 43, particle.cloudeffect, 0);
+			create_particle(x, y + 43, part.cloudeffect, 0);
 			steppybuffer = 18;
 			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
 		}
@@ -174,8 +174,8 @@ function scr_player_ratmount()
 	if (input_buffer_jump > 0 && can_jump && (gusdashpadbuffer == 0 or check_char("G")) && state != states.ratmountskid)
 	{
 		input_buffer_jump = 0;
-		particle_set_scale(particle.highjumpcloud2, xscale, 1);
-		create_particle(x, y, particle.highjumpcloud2, 0);
+		particle_set_scale(part.highjumpcloud2, xscale, 1);
+		create_particle(x, y, part.highjumpcloud2, 0);
 		scr_fmod_soundeffect(jumpsnd, x, y);
 		if (brick)
 		{
@@ -228,8 +228,8 @@ function scr_player_ratmount()
 	}
 	if (input_buffer_slap > 0 && !key_up && gusdashpadbuffer == 0)
 	{
-		particle_set_scale(particle.jumpdust, xscale, 1);
-		create_particle(x, y, particle.jumpdust, 0);
+		particle_set_scale(part.jumpdust, xscale, 1);
+		create_particle(x, y, part.jumpdust, 0);
 		input_buffer_slap = 0;
 		if (brick == 1)
 		{
@@ -261,8 +261,8 @@ function scr_player_ratmount()
 	{
 		if check_char("G") && ratmount_movespeed >= 12
 		{
-			particle_set_scale(particle.jumpdust, xscale, 1);
-			create_particle(x, y, particle.jumpdust);
+			particle_set_scale(part.jumpdust, xscale, 1);
+			create_particle(x, y, part.jumpdust);
 			movespeed = max(abs(movespeed), 2);
 			crouchslipbuffer = 25;
 			sprite_index = spr_lonegustavo_crouchwalk;

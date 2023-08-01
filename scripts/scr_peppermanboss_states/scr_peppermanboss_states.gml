@@ -120,8 +120,8 @@ function pepperman_decide_attack_phase1()
 			image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : image_xscale;
 			if (shoulderbash_fakeout)
 			{
-				particle_set_scale(particle.crazyrunothereffect, image_xscale, 1);
-				create_particle(x, y, particle.crazyrunothereffect);
+				particle_set_scale(part.crazyrunothereffect, image_xscale, 1);
+				create_particle(x, y, part.crazyrunothereffect);
 			}
 		}
 		else if (state == states.jump)
@@ -321,8 +321,8 @@ function boss_pepperman_freefallland()
 			image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : image_xscale;
 			if (shoulderbash_fakeout)
 			{
-				particle_set_scale(particle.crazyrunothereffect, image_xscale, 1);
-				create_particle(x, y, particle.crazyrunothereffect);
+				particle_set_scale(part.crazyrunothereffect, image_xscale, 1);
+				create_particle(x, y, part.crazyrunothereffect);
 			}
 		}
 	}
@@ -369,8 +369,8 @@ function boss_pepperman_shoulderbash()
 			if (hsp != 0)
 				image_xscale = sign(hsp);
 			
-			particle_set_scale(particle.crazyrunothereffect, image_xscale, 1);
-			create_particle(x, y - 5, particle.crazyrunothereffect);
+			particle_set_scale(part.crazyrunothereffect, image_xscale, 1);
+			create_particle(x, y - 5, part.crazyrunothereffect);
 		}
 	}
 	if (shoulderbash_fakeout && !shoulderpound_fakeout && grounded && distance_to_pos(x, y, targetplayer.x, targetplayer.y, 180, 540))

@@ -29,8 +29,8 @@ function scr_player_grind()
 	if (input_buffer_jump > 0)
 	{
 		input_buffer_jump = 0;
-		particle_set_scale(particle.jumpdust, xscale, 1);
-		create_particle(x, y, particle.jumpdust);
+		particle_set_scale(part.jumpdust, xscale, 1);
+		create_particle(x, y, part.jumpdust);
 		vsp = -11;
 		jumpstop = false;
 		if (skateboarding)

@@ -40,7 +40,7 @@ with (other)
 			}
 			
 			vsp = 0;
-			create_particle(x, y, particle.jumpdust, 0);
+			create_particle(x, y, part.jumpdust, 0);
 			if (character != "V")
 			{
 				if (sprite_index != spr_dashpadmach)
@@ -84,7 +84,7 @@ with (other)
 				if (changecoord)
 					y = other.y - 14;
 				vsp = 0;
-				create_particle(x, y, particle.jumpdust, 0);
+				create_particle(x, y, part.jumpdust, 0);
 				scr_fmod_soundeffect(global.snd_ventilator, x, y);
 				xscale = sign(other.image_xscale);
 				dir = xscale;
@@ -107,12 +107,12 @@ with (other)
 				if (changecoord)
 					y = other.y - 14;
 				vsp = 0;
-				create_particle(x, y, particle.jumpdust, 0);
+				create_particle(x, y, part.jumpdust, 0);
 				xscale = sign(other.image_xscale);
 				dir = xscale;
 				
-				particle_set_scale(particle.crazyrunothereffect, t.image_xscale, 1);
-				create_particle(x, y, particle.crazyrunothereffect);
+				particle_set_scale(part.crazyrunothereffect, t.image_xscale, 1);
+				create_particle(x, y, part.crazyrunothereffect);
 				
 				with (instance_create(x, y, obj_superdashcloud))
 					image_xscale = t.image_xscale;

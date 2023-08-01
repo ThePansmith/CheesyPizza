@@ -44,7 +44,7 @@ function scr_player_mortjump()
 		doublejump = false;
 		jumpstop = false;
 		scr_fmod_soundeffect(jumpsnd, x, y);
-		create_particle(x, y, particle.jumpdust, 0);
+		create_particle(x, y, part.jumpdust, 0);
 	}
 	if (grounded && vsp > 0)
 	{

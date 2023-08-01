@@ -5,7 +5,7 @@ if (sprite_index == spr_gustavoswitch2 && floor(image_index) == (image_number - 
 	with (obj_player1)
 	{
 		visible = true;
-		create_particle(x, y, particle.genericpoofeffect);
+		create_particle(x, y, part.genericpoofeffect);
 		ratmount_movespeed = 8;
 		gustavodash = 0;
 		isgustavo = true;

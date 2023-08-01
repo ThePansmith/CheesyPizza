@@ -152,8 +152,8 @@ function scr_player_jetpackjump()
 					sprite_index = spr_jetpackdebris;
 			}
 		
-			particle_set_scale(particle.jumpdust, xscale, 1);
-			create_particle(x, y, particle.jumpdust, 0);
+			particle_set_scale(part.jumpdust, xscale, 1);
+			create_particle(x, y, part.jumpdust, 0);
 			image_index = 0;
 			sprite_index = spr_suplexdashjumpstart;
 			if character == "SP"

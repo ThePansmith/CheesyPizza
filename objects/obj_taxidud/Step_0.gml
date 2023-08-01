@@ -5,7 +5,7 @@ if (hsp != 0)
 	if (dust == 40)
 	{
 		dust = 0;
-		create_particle(x, y + 43, particle.cloudeffect);
+		create_particle(x, y + 43, part.cloudeffect);
 	}
 }
 if (start)

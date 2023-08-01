@@ -36,7 +36,7 @@ if (active && !instance_exists(obj_jumpscare) && ds_list_find_index(global.saver
 	other.brick = true;
 	with (obj_brickcomeback)
 	{
-		create_particle(x, y, particle.genericpoofeffect);
+		create_particle(x, y, part.genericpoofeffect);
 		instance_destroy();
 	}
 	if (!touched)

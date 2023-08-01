@@ -50,8 +50,8 @@ function scr_player_rocket()
 		jumpstop = false;
 		vsp = -11;
 		
-		particle_set_scale(particle.jumpdust, REMIX ? xscale : 1, 1);
-		create_particle(x, y, particle.jumpdust);
+		particle_set_scale(part.jumpdust, REMIX ? xscale : 1, 1);
+		create_particle(x, y, part.jumpdust);
 		
 		with (instance_create(x, y + 12, obj_rocketdead))
 		{
@@ -155,7 +155,7 @@ function scr_player_rocket()
 		steppybuffer--;
 	else if ((collision_flags & colflag.secret) <= 0)
 	{
-		create_particle(x, y + random_range(10, 20), particle.cloudeffect, 0);
+		create_particle(x, y + random_range(10, 20), part.cloudeffect, 0);
 		steppybuffer = 8;
 	}
 }

@@ -8,7 +8,7 @@ if ((other.instakillmove == 1 || other.state == states.handstandjump || other.st
 	global.combotime = 60;
 	global.combo++;
 	instance_create(x, y, obj_bangeffect);
-	create_particle(x, y, particle.genericpoofeffect);
+	create_particle(x, y, part.genericpoofeffect);
 	with (instance_create(x, y, obj_sausageman_dead))
 	{
 		image_xscale = -t.xscale;

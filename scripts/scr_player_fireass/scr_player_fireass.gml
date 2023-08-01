@@ -10,7 +10,7 @@ function scr_player_fireass()
 	if (sprite_index == spr_fireass || sprite_index == spr_scaredjump1 || sprite_index == spr_scaredjump2)
 	{
 		if (floor(image_index) == (image_number - 1) && sprite_index == spr_fireass)
-			create_particle(x, y + 25, particle.shotgunimpact, 0);
+			create_particle(x, y + 25, part.shotgunimpact, 0);
 		if (sprite_index == spr_fireass)
 		{
 			if (fireasseffect > 0)
@@ -18,7 +18,7 @@ function scr_player_fireass()
 			else
 			{
 				fireasseffect = 7;
-				create_particle(x, y + 40, particle.cloudeffect, 0);
+				create_particle(x, y + 40, part.cloudeffect, 0);
 			}
 		}
 		move = key_left + key_right;

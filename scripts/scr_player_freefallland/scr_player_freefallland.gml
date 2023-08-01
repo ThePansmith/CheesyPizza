@@ -48,8 +48,8 @@ function scr_player_freefallland()
 		else
 			sprite_index = spr_machfreefall;
 		
-		particle_set_scale(particle.highjumpcloud2, xscale, 1);
-		create_particle(x, y, particle.highjumpcloud2, 0);
+		particle_set_scale(part.highjumpcloud2, xscale, 1);
+		create_particle(x, y, part.highjumpcloud2, 0);
 	}
 	image_speed = 0.35;
 }

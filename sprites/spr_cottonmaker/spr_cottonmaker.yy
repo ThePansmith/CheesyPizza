@@ -27,8 +27,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Cotton",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Decorations/Cotton.yy",
+    "name": "Sugary Spire",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

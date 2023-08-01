@@ -11,5 +11,5 @@ stunspr = -4;
 angryspr = -4;
 use_collision = true;
 
-particle_set_scale(particle.jumpdust, -1, 1);
-create_particle(x, y + 10, particle.jumpdust);
+particle_set_scale(part.jumpdust, -1, 1);
+create_particle(x, y + 10, part.jumpdust);

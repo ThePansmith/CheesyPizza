@@ -55,7 +55,7 @@ function state_player_normal()
 	{
 		if (!instance_exists(obj_beatbox))
 		{
-			create_particle(x, y, particle.genericpoofeffect);
+			create_particle(x, y, part.genericpoofeffect);
 			with (instance_create(x, y, obj_beatbox))
 				vsp = -11;
 		}
@@ -119,7 +119,7 @@ function state_player_normal()
 				steppybuffer--;
 			else if (sprite_index != spr_breakdance && sprite_index != spr_pepdance)
 			{
-				create_particle(x, y + 43, particle.cloudeffect, 0);
+				create_particle(x, y + 43, part.cloudeffect, 0);
 				steppybuffer = 12;
 				if (place_meeting(x, y, obj_poodebris))
 					sound_play_oneshot_3d("event:/sfx/pep/stepinshit", x, y);
@@ -295,8 +295,8 @@ function state_player_normal()
 					sprite_index = spr_player_pistoljump1;
 				image_index = 0;
 			}
-			particle_set_scale(particle.highjumpcloud2, xscale, 1);
-			create_particle(x, y, particle.highjumpcloud2, 0);
+			particle_set_scale(part.highjumpcloud2, xscale, 1);
+			create_particle(x, y, part.highjumpcloud2, 0);
 			vsp = -11;
 			state = states.jump;
 			jumpAnim = true;
@@ -351,8 +351,8 @@ function state_player_normal()
 			
 			sprite_index = shotgunAnim ? spr_shotgunsuplexdash : spr_suplexdash;
 			suplexmove = true;
-			particle_set_scale(particle.jumpdust, xscale, 1);
-			create_particle(x, y, particle.jumpdust, 0);
+			particle_set_scale(part.jumpdust, xscale, 1);
+			create_particle(x, y, part.jumpdust, 0);
 			fmod_event_instance_play(suplexdashsnd);
 			state = states.handstandjump;
 			movespeed = 8;
@@ -378,8 +378,8 @@ function state_player_normal()
 			}
 			else
 			{
-				particle_set_scale(particle.highjumpcloud2, xscale, 1);
-				create_particle(x, y, particle.highjumpcloud2, 0);
+				particle_set_scale(part.highjumpcloud2, xscale, 1);
+				create_particle(x, y, part.highjumpcloud2, 0);
 			}
 		}
 		
@@ -541,7 +541,7 @@ function state_pepperman_normal()
 		sprite_index = spr_pepperman_idle;
 	if (move != 0 && (floor(image_index) == 4 || floor(image_index) == 11) && steppy == 0 && character != "V")
 	{
-		create_particle(x, y + 38, particle.cloudeffect);
+		create_particle(x, y + 38, part.cloudeffect);
 		steppy = true;
 	}
 	if (move != 0 && floor(image_index) != 4 && floor(image_index) != 11)
@@ -645,7 +645,7 @@ function state_snick_normal()
 		{
 			state = states.normal;
 			sound_play_3d("event:/sfx/pep/step", x, y);
-			create_particle(x, y, particle.landcloud, 0);
+			create_particle(x, y, part.landcloud, 0);
 		}
 	}
 	else if state == states.machroll
@@ -765,8 +765,8 @@ function state_snick_normal()
 		else
 		{
 			scr_fmod_soundeffect(jumpsnd, x, y);
-			particle_set_scale(particle.highjumpcloud2, xscale, 1);
-			create_particle(x, y, particle.highjumpcloud2, 0);
+			particle_set_scale(part.highjumpcloud2, xscale, 1);
+			create_particle(x, y, part.highjumpcloud2, 0);
 			
 			sprite_index = spr_jump;
 			state = states.jump;

@@ -74,14 +74,14 @@ add_modifier("Encore", MOD.Encore, "Remixes the level to make it harder.", funct
 */
 
 if !boss && level != "tutorial" && global.experimental
-	add_modifier("No Toppings", MOD.NoToppings, "Go through the level without collecting any toppings.\n\nMay tweak level design to make this possible.", [seq_notoppings_off, seq_notoppings_on]);
+	add_modifier("No Toppings", MOD.NoToppings, "Spawns Pizzaface when collecting a topping. Currently impossible, so it's part of EXPERIMENTAL.", [seq_notoppings_off, seq_notoppings_on]);
 if !boss && level != "tutorial"
-	add_modifier("Pacifist", MOD.Pacifist, "Go through the level without killing any enemies.", [seq_pacifist_off, seq_pacifist_on]);
+	add_modifier("Pacifist", MOD.Pacifist, "Avoid murdering anyone while going through the stage. The escape time will be extended.", [seq_pacifist_off, seq_pacifist_on]);
 
-add_modifier("Hard Mode", MOD.HardMode, "The level will spawn a ghost that drops random enemies.", [seq_hardmode_off, seq_hardmode_on]);
-add_modifier("Mirrored", MOD.Mirror, "Flips the screen horizontally, effectively mirroring the level.", [seq_mirrored_off, seq_mirrored_on]);
+add_modifier("Hard Mode", MOD.HardMode, "A placeholder entity will rain enemies upon you!", [seq_hardmode_off, seq_hardmode_on]);
+add_modifier("Mirrored", MOD.Mirror, "Flips the screen horizontally without messing up your controls, effectively mirroring the level.", [seq_mirrored_off, seq_mirrored_on]);
 
 if !boss && level != "grinch" && level != "dragonlair" && level != "exit" && level != "snickchallenge" && level != "tutorial"
-	add_modifier("Lap 3", MOD.Lap3, "Spawns Pizzaface on the third lap.", [seq_lap3_off, seq_lap3_on]);
+	add_modifier("Lap Hell", MOD.Lap3, "Spawns Pizzaface on the third lap, and on the fourth lap... more.", [seq_lap3_off, seq_lap3_on]);
 
 #endregion

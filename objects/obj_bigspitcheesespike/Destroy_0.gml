@@ -1,1 +1,1 @@
-create_particle(x, y, particle.cloudeffect);
+create_particle(x, y, part.cloudeffect);

@@ -50,8 +50,8 @@ function scr_player_trashroll()
 		jumpstop = false;
 		vsp = -11;
 		
-		particle_set_scale(particle.jumpdust, REMIX ? xscale : 1, 1);
-		create_particle(x, y, particle.jumpdust);
+		particle_set_scale(part.jumpdust, REMIX ? xscale : 1, 1);
+		create_particle(x, y, part.jumpdust);
 	}
 	if (((check_solid(x + xscale, y) || place_meeting(x + xscale, y, obj_ghostwall)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_rattumble)) || place_meeting(x, y, obj_timedgate))
 	{

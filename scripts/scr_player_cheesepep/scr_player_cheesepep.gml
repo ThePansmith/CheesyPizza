@@ -65,7 +65,7 @@ function scr_player_cheesepep()
 	}
 	if (sprite_index == spr_cheesepepjumpstart && floor(image_index) == (image_number - 1))
 	{
-		create_particle(x, y, particle.highjumpcloud1);
+		create_particle(x, y, part.highjumpcloud1);
 		vsp = -11;
 		image_index = 0;
 		sprite_index = spr_cheesepepjump;

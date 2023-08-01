@@ -1141,7 +1141,7 @@ if (input_buffer_grab > 0)
 
 //
 if (key_particles == 1)
-	create_particle(x + random_range(-25, 25), y + random_range(-35, 25), particle.keyparticles, 0);
+	create_particle(x + random_range(-25, 25), y + random_range(-35, 25), part.keyparticles, 0);
 if (state != states.ratmount && state != states.ratmountjump && state != states.chainsaw)
 {
 	gustavodash = 0;

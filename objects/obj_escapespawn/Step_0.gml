@@ -39,7 +39,7 @@ switch (state)
 						stunned *= 6;
 				}
 				boundbox = false;
-				create_particle(x, y, particle.genericpoofeffect);
+				create_particle(x, y, part.genericpoofeffect);
 			}
 			state = 3;
 		}

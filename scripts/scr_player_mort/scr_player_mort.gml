@@ -22,7 +22,7 @@ function scr_player_mort()
 			steppybuffer--;
 		else
 		{
-			create_particle(x, y + 43, particle.cloudeffect, 0);
+			create_particle(x, y + 43, part.cloudeffect, 0);
 			steppybuffer = 16;
 		}
 	}
@@ -70,7 +70,7 @@ function scr_player_mort()
 		sprite_index = spr_player_mortjumpstart;
 		image_index = 0;
 		scr_fmod_soundeffect(jumpsnd, x, y);
-		create_particle(x, y, particle.highjumpcloud2, 0);
+		create_particle(x, y, part.highjumpcloud2, 0);
 	}
 	mort_attack();
 }

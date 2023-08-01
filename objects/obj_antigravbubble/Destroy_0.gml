@@ -1,1 +1,1 @@
-create_particle(x, y, particle.bubblepop);
+create_particle(x, y, part.bubblepop);

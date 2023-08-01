@@ -69,7 +69,7 @@ function scr_player_boxxedpepjump()
 		movespeed = xscale * 12;
 		boxxedspinbuffer = 25;
 		
-		particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-		create_particle(x, y, particle.crazyrunothereffect);
+		particle_set_scale(part.crazyrunothereffect, xscale, 1);
+		create_particle(x, y, part.crazyrunothereffect);
 	}
 }

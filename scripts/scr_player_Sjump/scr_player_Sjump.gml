@@ -17,7 +17,7 @@ function scr_player_Sjump()
 			steppybuffer--;
 		else
 		{
-			create_particle(x + irandom_range(-25, 25), y + irandom_range(-10, 35), particle.cloudeffect, 0);
+			create_particle(x + irandom_range(-25, 25), y + irandom_range(-10, 35), part.cloudeffect, 0);
 			steppybuffer = 8;
 		}
 		if global.afterimage == 1

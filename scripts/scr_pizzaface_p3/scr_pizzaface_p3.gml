@@ -273,7 +273,7 @@ function scr_pizzaface_p3_walk()
 		if (grounded && vsp > 0 && flickertime > 0)
 		{
 			hsp = Approach(hsp, 0, 0.5);
-			create_particle(x, y + 33, particle.landcloud);
+			create_particle(x, y + 33, part.landcloud);
 			vsp = -5;
 			touchedground = true;
 		}
@@ -324,7 +324,7 @@ function scr_pizzaface_p3_stomp()
 	{
 		shot = true;
 		sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
-		create_particle(x + (119 * image_xscale), y + 35, particle.groundpoundeffect);
+		create_particle(x + (119 * image_xscale), y + 35, part.groundpoundeffect);
 		with (obj_camera)
 		{
 			shake_mag = 6;

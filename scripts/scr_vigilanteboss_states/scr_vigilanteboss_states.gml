@@ -35,8 +35,8 @@ function vigilante_cancel_attack()
 				image_index = 0;
 				with (instance_create(x, y, obj_superdashcloud))
 					image_xscale = other.image_xscale;
-				particle_set_scale(particle.crazyrunothereffect, image_xscale, 1);
-				create_particle(x, y, particle.crazyrunothereffect);
+				particle_set_scale(part.crazyrunothereffect, image_xscale, 1);
+				create_particle(x, y, part.crazyrunothereffect);
 				break;
 			case states.charge:
 				sprite_index = spr_playerV_divekickstart;
@@ -321,8 +321,8 @@ function vigilante_decide_normalattack()
 			image_index = 0;
 			with (instance_create(x, y, obj_superdashcloud))
 				image_xscale = other.image_xscale;
-			particle_set_scale(particle.crazyrunothereffect, image_xscale, 1);
-			create_particle(x, y, particle.crazyrunothereffect);
+			particle_set_scale(part.crazyrunothereffect, image_xscale, 1);
+			create_particle(x, y, part.crazyrunothereffect);
 		}
 	}
 }

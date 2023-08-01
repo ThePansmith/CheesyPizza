@@ -59,7 +59,7 @@ function scr_player_animatronic()
 			steppybuffer--;
 		else
 		{
-			create_particle(x, y + 43, particle.cloudeffect, 0);
+			create_particle(x, y + 43, part.cloudeffect, 0);
 			steppybuffer = 12;
 			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
 		}

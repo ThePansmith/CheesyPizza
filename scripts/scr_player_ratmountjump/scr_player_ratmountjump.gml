@@ -111,7 +111,7 @@ function scr_player_ratmountjump()
 			with (instance_create(x, y, obj_brickcomeback))
 			{
 				wait = true;
-				create_particle(x, y, particle.genericpoofeffect);
+				create_particle(x, y, part.genericpoofeffect);
 			}
 		}
 		brick = false;
@@ -127,8 +127,8 @@ function scr_player_ratmountjump()
 	}
 	if (input_buffer_slap > 0 && !key_up)
 	{
-		particle_set_scale(particle.jumpdust, xscale, 1);
-		create_particle(x, y, particle.jumpdust, 0);
+		particle_set_scale(part.jumpdust, xscale, 1);
+		create_particle(x, y, part.jumpdust, 0);
 		input_buffer_slap = 0;
 		if (brick == 1)
 		{
@@ -150,8 +150,8 @@ function scr_player_ratmountjump()
 	{
 		bounce = false;
 		input_buffer_jump = 0;
-		particle_set_scale(particle.highjumpcloud2, xscale, 1);
-		create_particle(x, y, particle.highjumpcloud2, 0);
+		particle_set_scale(part.highjumpcloud2, xscale, 1);
+		create_particle(x, y, part.highjumpcloud2, 0);
 		scr_fmod_soundeffect(jumpsnd, x, y);
 		if (brick)
 		{
@@ -182,7 +182,7 @@ function scr_player_ratmountjump()
 	if (grounded && vsp > 0 && sprite_index != spr_lonegustavo_kick)
 	{
 		doublejump = false;
-		create_particle(x, y, particle.landcloud, 0);
+		create_particle(x, y, part.landcloud, 0);
 		state = states.ratmount;
 		landAnim = true;
 		jumpstop = false;

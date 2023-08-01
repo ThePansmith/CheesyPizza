@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "spr_rankA",
   "bbox_bottom": 539,
-  "bbox_left": 1,
+  "bbox_left": 0,
   "bbox_right": 868,
   "bbox_top": 22,
   "bboxMode": 0,

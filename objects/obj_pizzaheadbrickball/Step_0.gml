@@ -11,7 +11,7 @@ switch (state)
 		{
 			sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 			vsp = -14;
-			create_particle(x, y + 3, particle.groundpoundeffect, 0);
+			create_particle(x, y + 3, part.groundpoundeffect, 0);
 		}
 		if (scr_solid(x + image_xscale, y))
 		{

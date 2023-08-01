@@ -21,8 +21,8 @@ function scr_perform_move(move, prestate = state)
 					sprite_index = choose(spr_kungfuair1transition, spr_kungfuair2transition, spr_kungfuair3transition);
 				suplexmove = true;
 							
-				particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-				create_particle(x, y, particle.crazyrunothereffect);
+				particle_set_scale(part.crazyrunothereffect, xscale, 1);
+				create_particle(x, y, part.crazyrunothereffect);
 					
 				sound_play_3d("event:/modded/sfx/kungfu", x, y);
 				state = states.punch;
@@ -43,8 +43,8 @@ function scr_perform_move(move, prestate = state)
 					sprite_index = spr_airattackstart;
 				suplexmove = true;
 							
-				particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-				create_particle(x, y, particle.crazyrunothereffect);
+				particle_set_scale(part.crazyrunothereffect, xscale, 1);
+				create_particle(x, y, part.crazyrunothereffect);
 							
 				fmod_event_instance_play(snd_dive);
 				state = states.handstandjump;
@@ -70,8 +70,8 @@ function scr_perform_move(move, prestate = state)
 						image_index = 0;
 						movespeed = max(movespeed, 10);
 						
-						particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-						create_particle(x, y, particle.crazyrunothereffect);
+						particle_set_scale(part.crazyrunothereffect, xscale, 1);
+						create_particle(x, y, part.crazyrunothereffect);
 						
 						if grounded
 						{
@@ -95,8 +95,8 @@ function scr_perform_move(move, prestate = state)
 					{
 						sprite_index = shotgunAnim ? spr_shotgunsuplexdash : spr_suplexdash;
 						suplexmove = true;
-						particle_set_scale(particle.jumpdust, xscale, 1);
-						create_particle(x, y, particle.jumpdust, 0);
+						particle_set_scale(part.jumpdust, xscale, 1);
+						create_particle(x, y, part.jumpdust, 0);
 						fmod_event_instance_play(suplexdashsnd);
 						state = states.handstandjump;
 						image_index = 0;
@@ -121,11 +121,11 @@ function scr_perform_move(move, prestate = state)
 				state = states.faceplant;
 				image_speed = 0.5;
 				
-				particle_set_scale(particle.jumpdust, xscale, 1);
-				create_particle(x, y, particle.jumpdust);
+				particle_set_scale(part.jumpdust, xscale, 1);
+				create_particle(x, y, part.jumpdust);
 				
-				particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-				create_particle(x, y, particle.crazyrunothereffect);
+				particle_set_scale(part.crazyrunothereffect, xscale, 1);
+				create_particle(x, y, part.crazyrunothereffect);
 				break;
 			
 			case 3: // chainsaw
@@ -135,11 +135,11 @@ function scr_perform_move(move, prestate = state)
 					if swapdir != 0
 						xscale = swapdir;
 					
-					particle_set_scale(particle.jumpdust, xscale, 1);
-					create_particle(x, y, particle.jumpdust, 0);
+					particle_set_scale(part.jumpdust, xscale, 1);
+					create_particle(x, y, part.jumpdust, 0);
 					
-					particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-					create_particle(x, y, particle.crazyrunothereffect);
+					particle_set_scale(part.crazyrunothereffect, xscale, 1);
+					create_particle(x, y, part.crazyrunothereffect);
 					
 					with instance_create(x, y, obj_superdashcloud)
 						image_xscale = other.xscale;

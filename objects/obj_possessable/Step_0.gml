@@ -9,7 +9,7 @@ if (state == states.ghostpossess)
 		{
 			state = states.ghost;
 			vsp = -10;
-			create_particle(x, y, particle.genericpoofeffect, 0);
+			create_particle(x, y, part.genericpoofeffect, 0);
 			visible = true;
 			other.state = states.normal;
 		}

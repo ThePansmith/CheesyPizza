@@ -30,8 +30,8 @@ function scr_player_grabbing()
 		movespeed = 8;
 		with (instance_create(x, y, obj_superdashcloud))
 			image_xscale = other.xscale;
-		particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-		create_particle(x, y, particle.crazyrunothereffect, 0);
+		particle_set_scale(part.crazyrunothereffect, xscale, 1);
+		create_particle(x, y, part.crazyrunothereffect, 0);
 	}
 	if (sprite_index == airattackdash && floor(image_index) == (image_number - 1))
 	{

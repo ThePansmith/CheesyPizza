@@ -15,7 +15,7 @@ if (player < 0)
 			storedspriteindex = player.sprite_index;
 			storedfreefallsmash = player.freefallsmash;
 			repeat (8)
-				create_particle(x + random_range(50, -50), y + random_range(50, -50), particle.teleporteffect, 0);
+				create_particle(x + random_range(50, -50), y + random_range(50, -50), part.teleporteffect, 0);
 			alarm[0] = 25;
 			player.hsp = 0;
 			player.vsp = 0;

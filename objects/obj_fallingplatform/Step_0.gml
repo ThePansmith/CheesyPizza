@@ -33,7 +33,7 @@ switch (fall)
 			fall = 0;
 			x = xstart;
 			y = ystart;
-			create_particle(x, y, particle.cloudeffect, 0);
+			create_particle(x, y, part.cloudeffect, 0);
 		}
 		break;
 }

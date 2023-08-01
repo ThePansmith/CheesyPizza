@@ -6,7 +6,7 @@ if (playerid.visible == 0)
 	{
 		sound_play_oneshot("event:/sfx/misc/taxibeep");
 		state = states.normal;
-		create_particle(x, y, particle.genericpoofeffect);
+		create_particle(x, y, part.genericpoofeffect);
 		cutscene = false;
 		if (isgustavo)
 		{

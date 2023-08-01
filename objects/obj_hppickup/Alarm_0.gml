@@ -1,1 +1,1 @@
-create_particle(partx, party, particle.genericpoofeffect);
+create_particle(partx, party, part.genericpoofeffect);

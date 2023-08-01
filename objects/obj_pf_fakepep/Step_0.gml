@@ -63,7 +63,7 @@ switch (state)
 			var b = choose(20, room_width - 20);
 			with (instance_create(b, 402, obj_peppinoclone))
 			{
-				create_particle(x, y, particle.genericpoofeffect);
+				create_particle(x, y, part.genericpoofeffect);
 				if (x > (room_width / 2))
 					image_xscale = -1;
 				else

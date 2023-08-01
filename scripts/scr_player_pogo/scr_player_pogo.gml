@@ -32,7 +32,7 @@ function scr_player_pogo()
 			sprite_index = spr_playerN_pogobouncemach;
 		else
 			sprite_index = spr_playerN_pogobounce;
-		create_particle(x, y, particle.landcloud, 0);
+		create_particle(x, y, part.landcloud, 0);
 	}
 	if (floor(image_index) == 3 && pogospeedprev == 0 && (sprite_index == spr_playerN_pogobounce || sprite_index == spr_playerN_pogobouncemach))
 	{
@@ -82,8 +82,8 @@ function scr_player_pogo()
 			sprite_index = shotgunAnim ? spr_shotgunsuplexdash : spr_suplexdash;
 			suplexmove = true;
 			fmod_event_instance_play(suplexdashsnd);
-			particle_set_scale(particle.jumpdust, xscale, 1);
-			create_particle(x, y, particle.jumpdust, 0);
+			particle_set_scale(part.jumpdust, xscale, 1);
+			create_particle(x, y, part.jumpdust, 0);
 			state = states.handstandjump;
 			if (movespeed < 5)
 				movespeed = 5;

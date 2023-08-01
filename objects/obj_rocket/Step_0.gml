@@ -4,7 +4,7 @@ if (playerid != -4)
 	if (playerid.state != states.rocket && playerid.state != states.rocketslide && playerid.state != states.chainsaw)
 	{
 		visible = true;
-		create_particle(x, y, particle.genericpoofeffect);
+		create_particle(x, y, part.genericpoofeffect);
 		playerid = -4;
 	}
 }

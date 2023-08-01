@@ -324,7 +324,7 @@ function scr_pizzaface_normal()
 		if (grounded && vsp > 0 && flickertime > 0)
 		{
 			hsp = Approach(hsp, 0, 0.5);
-			create_particle(x, 401, particle.landcloud);
+			create_particle(x, 401, part.landcloud);
 			vsp = -5;
 			touchedground = true;
 		}

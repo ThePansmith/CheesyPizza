@@ -31,7 +31,7 @@ function scr_player_facestomp()
 		jumpAnim = true;
 		jumpstop = false;
 		image_index = 0;
-		create_particle(x, y, particle.landcloud, 0);
+		create_particle(x, y, part.landcloud, 0);
 		freefallstart = 0;
 	}
 	if (facestompAnim == 0)
@@ -55,7 +55,7 @@ function scr_player_facestomp()
 		jumpAnim = true;
 		jumpstop = false;
 		image_index = 0;
-		create_particle(x, y, particle.landcloud, 0);
+		create_particle(x, y, part.landcloud, 0);
 		freefallstart = 0;
 	}
 }

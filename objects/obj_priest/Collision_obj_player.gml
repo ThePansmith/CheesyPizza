@@ -25,7 +25,7 @@ with (other)
 		ghostdash = false;
 		ghostpepper = 0;
 		_transfo = true;
-		create_particle(x, y, particle.genericpoofeffect);
+		create_particle(x, y, part.genericpoofeffect);
 	}
 }
 if (_transfo)

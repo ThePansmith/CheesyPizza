@@ -119,6 +119,6 @@ function scr_player_slap()
 		}
 	}
 	if (!instance_exists(obj_cloudeffect) && grounded && move != 0 && (floor(image_index) == 4 || floor(image_index) == 10))
-		create_particle(x, y + 43, particle.cloudeffect);
+		create_particle(x, y + 43, part.cloudeffect);
 	image_speed = 0.35;
 }

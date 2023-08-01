@@ -281,7 +281,7 @@ function scr_vigilante_walk()
 	if (grounded && vsp > 0 && sprite_index == spr_playerV_hurt && flickertime > 2)
 	{
 		hsp = Approach(hsp, 0, 1);
-		create_particle(x, y, particle.landcloud);
+		create_particle(x, y, part.landcloud);
 		vsp = -5;
 		touchedground = true;
 	}
@@ -409,7 +409,7 @@ function scr_vigilante_walk()
 				image_speed = 0.35;
 				break;
 			case vigi_attacks.machinegun:
-				create_particle(x, y, particle.highjumpcloud2);
+				create_particle(x, y, part.highjumpcloud2);
 				state = states.machinegun;
 				sprite_index = spr_vigilante_uziprepare;
 				image_index = 0;
@@ -420,7 +420,7 @@ function scr_vigilante_walk()
 					image_xscale = sign(targetplayer.x - x);
 				break;
 			case vigi_attacks.bazooka:
-				create_particle(x, y, particle.highjumpcloud2);
+				create_particle(x, y, part.highjumpcloud2);
 				state = states.bazooka;
 				hsp = 0;
 				vsp = -16;

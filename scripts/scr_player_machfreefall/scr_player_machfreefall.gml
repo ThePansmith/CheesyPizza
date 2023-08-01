@@ -48,7 +48,7 @@ function scr_player_machfreefall()
 		image_index = 0;
 		with (instance_create(x, y + 35, obj_bangeffect))
 			image_xscale = obj_player.image_xscale;
-		create_particle(x, y, particle.landcloud, 0);
+		create_particle(x, y, part.landcloud, 0);
 		freefallstart = 0;
 		with (obj_baddie)
 		{
@@ -72,7 +72,7 @@ function scr_player_machfreefall()
 		jumpAnim = true;
 		jumpstop = false;
 		image_index = 0;
-		create_particle(x, y, particle.landcloud, 0);
+		create_particle(x, y, part.landcloud, 0);
 		freefallstart = 0;
 	}
 	image_speed = 0.5;

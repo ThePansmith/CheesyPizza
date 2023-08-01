@@ -8,7 +8,7 @@ if (spawn)
 		state = states.stun;
 		vsp = -8;
 		stunned = 20;
-		create_particle(x, y, particle.genericpoofeffect);
+		create_particle(x, y, part.genericpoofeffect);
 		switch (object_index)
 		{
 			case obj_spike:

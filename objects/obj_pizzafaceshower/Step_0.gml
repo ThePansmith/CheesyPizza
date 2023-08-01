@@ -15,7 +15,7 @@ switch (state)
 				hsp = 0;
 				vsp = 0;
 				if (!grounded)
-					create_particle(x, y, particle.genericpoofeffect);
+					create_particle(x, y, part.genericpoofeffect);
 			}
 		}
 		break;

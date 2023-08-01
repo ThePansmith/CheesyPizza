@@ -32,8 +32,8 @@ function scr_player_ratmountpunch()
 	{
 		if check_char("G")
 		{
-			particle_set_scale(particle.jumpdust, xscale, 1);
-			create_particle(x, y, particle.jumpdust);
+			particle_set_scale(part.jumpdust, xscale, 1);
+			create_particle(x, y, part.jumpdust);
 			movespeed = 12;
 			crouchslipbuffer = 25;
 			sprite_index = spr_lonegustavo_crouchwalk;

@@ -19,7 +19,7 @@ function scr_enemy_chase()
 			steppy--;
 		if (steppy <= 0)
 		{
-			create_particle(x, y + 43, particle.cloudeffect);
+			create_particle(x, y + 43, part.cloudeffect);
 			steppy = 20;
 		}
 	}
