@@ -136,16 +136,19 @@ with (obj_player1)
 	if (visible && state != states.titlescreen && bbox_in_camera(view_camera[0], 32))
 		draw_player();
 }
-with (obj_sausageman_dead)
+with obj_sausageman_dead
 {
-	if (!gui && visible && bbox_in_camera(view_camera[0], 32))
+	if !gui && visible && bbox_in_camera(view_camera[0], 32)
 	{
 		b = get_dark(image_blend, other.use_dark);
-		if (oldpalettetexture != -4)
-			pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, oldpalettetexture);
-		pal_swap_set(spr_palette, paletteselect, false);
+		if sprite_exists(spr_palette)
+		{
+			if oldpalettetexture != -4
+				pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, oldpalettetexture);
+			pal_swap_set(spr_palette, paletteselect, false);
+		}
 		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, b, image_alpha);
-		if (oldpalettetexture != -4)
+		if oldpalettetexture != -4
             pattern_reset();
 	}
 }

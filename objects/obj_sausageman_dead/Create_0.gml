@@ -15,7 +15,7 @@ depth = -999;
 gui = false;
 usepalette = false;
 paletteselect = 0;
-spr_palette = 0;
+spr_palette = noone;
 d = 255;
 
 sugary = false;
