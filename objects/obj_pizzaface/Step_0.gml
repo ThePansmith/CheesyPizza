@@ -1,11 +1,11 @@
 var playerid = obj_player1;
-if (obj_player1.spotlight == 0)
+if obj_player1.spotlight == 0
 	playerid = obj_player2;
 
 sound_instance_move(snd, x, y);
-if (!fmod_event_instance_is_playing(snd))
+if !fmod_event_instance_is_playing(snd)
 	fmod_event_instance_play(snd);
-if (!instance_exists(playerid))
+if !instance_exists(playerid)
 	exit;
 
 var _move = !frozen;

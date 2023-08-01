@@ -51,7 +51,6 @@ spr_speedbarHUD = -4;
 spr_speedbar_index = 0;
 shoving = false;
 bang = false;
-image_speed = 0.35;
 p2pdistance = 0;
 p2pdistancex = 0;
 bound_camera = false;

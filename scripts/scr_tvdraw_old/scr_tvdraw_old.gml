@@ -32,6 +32,7 @@ function scr_tvdraw_old()
 		image_speed = 0.25;
 	}
 	
+	/*
 	else if ((global.collect >= global.srank && !shownranks)
 	or (global.collect >= global.arank && !shownranka)
 	or (global.collect >= global.brank && !shownrankb)
@@ -70,6 +71,7 @@ function scr_tvdraw_old()
 			shownranks = true;
 		}
 	}
+	*/
 	
 	// good job you don't in fact suck
 	else if instance_exists(obj_player1) && obj_player1.sprite_index == spr_player_levelcomplete
@@ -126,22 +128,38 @@ function scr_tvdraw_old()
 	#endregion
 	#region DRAW
 	
+	var sugary = check_char("SP") or check_char("SN");
+	var sprite = tvsprite;
+	
+	if sugary
+	{
+		sprite = global.combotime > 0 ? spr_tvcombo_ss : spr_tvdefault_ss;
+		
+		var asset = asset_get_index(sprite_get_name(tvsprite) + "_ss");
+		if sprite_exists(asset)
+			sprite = asset;
+	}
+	
 	if global.combotime > 0 && tvsprite == spr_tvcombo
 	{
 		// combo tv
 		if REMIX
 		{
-			draw_sprite_ext(spr_tvcomboclear, 0, tvx, tvy, 1, 1, 0, c_white, alpha);
-			draw_sprite_part_ext(tvsprite, imageindexstore % 5, 0, 0, 16 + (global.combotime / 60) * 148, 177, tvx - sprite_get_xoffset(tvsprite), tvy - sprite_get_yoffset(tvsprite), 1, 1, c_white, alpha);
+			draw_sprite_ext(sugary ? spr_tvcomboclear_ss : spr_tvcomboclear, 0, tvx, tvy, 1, 1, 0, c_white, alpha);
+			draw_sprite_part_ext(sprite, imageindexstore % 5, 0, 0, 16 + (global.combotime / 60) * 148, 177, tvx - sprite_get_xoffset(sprite), tvy - sprite_get_yoffset(sprite), 1, 1, c_white, alpha);
 		}
 		else
-			draw_sprite_ext(tvsprite, imageindexstore % 5, tvx, tvy, 1, 1, 0, c_white, alpha);
+			draw_sprite_ext(sprite, imageindexstore % 5, tvx, tvy, 1, 1, 0, c_white, alpha);
+		
+		if sugary // propeller
+			draw_sprite_ext(spr_tvempty_ss, -1, tvx, tvy, 1, 1, 0, c_white, alpha);
+		
 		draw_text(tvx + 20, tvy + 1, string(global.combo));
 	}
 	else if room != Realtitlescreen
 	{
 		// tv
-		draw_sprite_ext(tvsprite, -1, tvx, tvy, 1, 1, 0, c_white, alpha);
+		draw_sprite_ext(sprite, -1, tvx, tvy, 1, 1, 0, c_white, alpha);
 		if tvsprite == spr_tvdefault
 			draw_text(tvx - 4, tvy - 14, string(global.collect));
 	}
@@ -168,15 +186,11 @@ function scr_tvdraw_old()
 		var minutes = 0;
 		for (var seconds = ceil(global.fill / 12); seconds > 59; seconds -= 60)
 			minutes++;
-		if (seconds < 10)
-			seconds = concat("0", seconds);
-		else
-			seconds = string(seconds);
 	
 		draw_set_align(1, 1);
 		draw_set_font(global.bigfont);
-		draw_set_colour(minutes == 0 ? c_red : c_white);
-		draw_text(timer_x + 153 + random_range(-1, 1), timer_y + 18 + random_range(-1, 1), concat(minutes, ":", seconds));
+		draw_set_colour(minutes == 0 && seconds < 30 ? c_red : c_white);
+		draw_text(timer_x + 153 + random_range(-1, 1), timer_y + 18 + random_range(-1, 1), concat(minutes, ":", (seconds < 10 ? "0" : "") + string(seconds)));
 	}
 	
 	// bullets

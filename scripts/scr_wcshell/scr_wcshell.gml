@@ -294,7 +294,7 @@ function scr_wc_step()
 									var value = get_string("Creating new variable global." + variable + " with value...", "");
 							
 								consoleString = "var global " + variable + " " + value;
-								_execute_script(_input_string_split(consoleString));
+								_execute_script(_input_string_split(consoleString), true);
 								consoleString = "";
 							}
 						}
@@ -322,14 +322,14 @@ function scr_wc_step()
 						
 						consoleString = val;
 						if array_length(args) > 0
-							_execute_script(args);
+							_execute_script(args, true);
 					}
 				}
 				else
 				{
 					consoleString = val;
 					if array_length(args) > 0
-						_execute_script(args);
+						_execute_script(args, true);
 				}
 				consoleString = "";
 			}

@@ -16,19 +16,27 @@ if (global.panic || instance_exists(obj_wartimer))
 				other.sprite_index = other.spr_enter;
 				other.image_index = 0;
 				other.playerid = id;
-				if (!instance_exists(obj_wartimer) && global.lap)
+				
+				var collect = 3000;
+				if check_modifier(MOD.Lap3)
+				{
+					if global.laps == 1
+						collect = 6000;
+					if global.laps >= 2
+						collect = 10000;
+				}
+				else if !instance_exists(obj_wartimer) && global.lap
 					global.fill += 180;
+				
 				sound_play_oneshot_3d(other.sugary ? "event:/modded/sfx/secretenterSP" : "event:/sfx/misc/lapenter", x, y);
-				//if (ds_list_find_index(global.saveroom, other.id) == -1)
+				if ds_list_find_index(global.saveroom, other.id) == -1
 				{
 					//ds_list_add(global.saveroom, other.id);
-					global.collect += 3000;
+					global.collect += collect;
 					global.combotime = 60;
-					with (instance_create(x, y, obj_smallnumber))
-						number = string(3000);
+					with instance_create(x, y, obj_smallnumber)
+						number = string(collect);
 				}
-				if check_modifier(MOD.Lap3) && global.lap
-					global.fill = 0;
 			}
 		}
 	}
@@ -72,6 +80,101 @@ if (global.panic || instance_exists(obj_wartimer))
 				global.laps++;
 				global.lap = true;
 				instance_create(0, 0, obj_fadeout);
+				
+				if check_modifier(MOD.Lap3)
+				{
+					switch global.laps
+					{
+						case 2:
+							global.fill = 0;
+							break;
+						
+						case 3:
+							with obj_wartimer
+							{
+								addseconds = 60 * 2 + 30; // 2:30
+								alarm[0] = -1;
+								alarm[2] = 1;
+							}
+							with instance_create_unique(0, 0, obj_wartimer)
+							{
+								switch global.leveltosave
+							    {
+							        case "entrance":
+							            minutes = 1
+							            break
+							        case "medieval":
+							            minutes = 1
+							            seconds = 30
+							            break
+							        case "ruin":
+							            minutes = 1
+							            seconds = 30
+							            break
+							        case "dungeon":
+							            minutes = 2
+							            break
+							        case "badland":
+							            minutes = 2
+							            break
+							        case "graveyard":
+							            minutes = 2
+							            break
+							        case "farm":
+							            minutes = 1
+							            break
+							        case "saloon":
+							            minutes = 1
+							            seconds = 30
+							            break
+							        case "plage":
+							            minutes = 1
+							            seconds = 30
+							            break
+							        case "forest":
+							            minutes = 2
+							            break
+							        case "space":
+							            minutes = 1
+							            seconds = 30
+							            break
+							        case "minigolf":
+							            minutes = 2
+							            seconds = 30
+							            break
+							        case "street":
+							            minutes = 1
+							            seconds = 30
+							            break
+							        case "sewer":
+							            minutes = 2
+							            seconds = 30
+							            break
+							        case "industrial":
+							            minutes = 2
+							            break
+							        case "freezer":
+							            minutes = 2
+							            break
+							        case "chateau":
+							            minutes = 2
+							            break
+							        case "kidsparty":
+							            minutes = 2
+							            break
+							        case "exit":
+							            minutes = 3
+							            seconds = 30
+							            break
+							        default:
+							            minutes = 2
+							            break
+							    }
+							}
+		                    instance_create_unique(0, 0, obj_snickexe);
+							break;
+					}
+				}
 			}
 		}
 	}

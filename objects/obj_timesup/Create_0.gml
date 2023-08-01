@@ -17,6 +17,7 @@ global.levelattempts = 0;
 global.combo = 0;
 global.comboscore = 0;
 instance_destroy(obj_comboend);
+instance_destroy(obj_snickexe);
 
 if global.modifier_failed
 	sprite_index = spr_modfailed;

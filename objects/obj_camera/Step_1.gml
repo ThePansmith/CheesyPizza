@@ -12,7 +12,7 @@ var _region = noone;
 with obj_cameraRegion
 {
 	_region = id;
-	if Region_active == true && activationCode()
+	if Region_active && activationCode()
 	{
 		if ClampRight
 			targetcam[2] = x + sprite_width;

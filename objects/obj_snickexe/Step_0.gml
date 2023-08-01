@@ -3,7 +3,8 @@ y = Approach(y, obj_player1.y, maxspeed);
 if (x != obj_player1.x)
 	image_xscale = -sign(x - obj_player1.x);
 
-if (!global.snickchallenge)
+if (!global.snickchallenge && (global.laps < 2 or !check_modifier(MOD.Lap3)))
+or room == timesuproom or room == rank_room
 	instance_destroy();
 if (!hitboxcreate && (!obj_player1.instakillmove && obj_player1.state != states.handstandjump))
 {
