@@ -112,6 +112,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Cottontown","folderPath":"folders/Rooms/Sugary Spire/Cottontown.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"not FUCKING done","folderPath":"folders/Rooms/Sugary Spire/Cottontown/not FUCKING done.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Crunchy Construction","folderPath":"folders/Rooms/Sugary Spire/Crunchy Construction.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sucrose","folderPath":"folders/Rooms/Sugary Spire/Sucrose.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower","folderPath":"folders/Rooms/Tower.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Chef Task","folderPath":"folders/Rooms/Tower/Chef Task.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Escape","folderPath":"folders/Rooms/Tower/Escape.yy",},
@@ -540,7 +541,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sucrose","folderPath":"folders/Rooms/Sugary Spire/Sucrose.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles/data",},
