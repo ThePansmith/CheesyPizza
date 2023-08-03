@@ -607,7 +607,7 @@ states = {
 	camera_followtarget : 299,
 	cotton : 300,
 	cottondrill : 301,
-	cottonroll : 302
+	cottonroll : 302,
 }
 
 #endregion

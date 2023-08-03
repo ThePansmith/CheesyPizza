@@ -291,7 +291,8 @@ add_music(steamy_1, "event:/modded/sugary/cotton", "event:/modded/sugary/cottons
 	}
 	fmod_event_instance_set_parameter(event, "state", s, false);
 });
-add_music(sucrose_1, "event:/modded/sugary/sucrose", "event:/modded/sugary/sucrosesecret", 0);
+add_music(rm_geyser_test, "event:/modded/sugary/molasses", "event:/modded/w1/molassessecret", 0);
+add_music(sucrose_1, "event:/modded/sugary/sucrose", "event:/modded/modded/sucrosesecret", 0);
 
 #endregion
 #region OLD LEVELS
