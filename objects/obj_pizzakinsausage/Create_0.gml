@@ -16,4 +16,6 @@ if check_sugary()
 	spr_panic = spr_gummyworm_panic;
 	spr_taunt = spr_gummyworm_taunt;
 	spr_supertaunt = spr_gummyworm_supertaunt;
+	
+	tv_do_expression(spr_tv_exprconfecti4);
 }

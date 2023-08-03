@@ -22,7 +22,7 @@ if test_dll_linkage() != 1
 
 // macros
 #macro REMIX global.gameplay
-#macro DEBUG (GM_build_type == "run")
+#macro DEBUG true//(GM_build_type == "run")
 #macro YYC code_is_compiled()
 
 #macro STRING_UNDEFINED "<undefined>"

@@ -24,10 +24,13 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	sound_play_oneshot_3d(deadsnd, x, y);
 	var x1 = (x - sprite_xoffset) + (sprite_width / 2);
 	var y1 = (y - sprite_yoffset) + (sprite_height / 2);
+	
 	global.combo += 1;
+	global.style += 5 + floor(global.combo / heat_nerf);
 	global.enemykilled += 1;
 	global.combotime = 60;
 	global.heattime = 60;
+	
 	repeat (3)
 	{
 		with (create_debris(x1, y1, spr_slapstar))

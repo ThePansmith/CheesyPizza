@@ -1,6 +1,6 @@
 function scr_draw_lap_display(x, y, lapflag_index, sugary = false)
 {
-	var posx = x - 65, posy = y - 18;
+	var posx = x - 72, posy = y - 18;
 	draw_sprite(sugary ? spr_lapflag_ss : spr_lapflag, lapflag_index, posx, posy);
 	draw_set_colour(c_white);
 	draw_set_align(fa_center, fa_middle);

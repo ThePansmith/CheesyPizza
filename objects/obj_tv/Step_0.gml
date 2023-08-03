@@ -284,6 +284,12 @@ else switch state
 			
 			case spr_tv_exprcollect:
             case spr_tv_happyG:
+			case spr_tv_exprconfecti1:
+			case spr_tv_exprconfecti2:
+			case spr_tv_exprconfecti3:
+			case spr_tv_exprconfecti4:
+			case spr_tv_exprconfecti5:
+			case spr_tv_exprrudejanitor:
 				if (expressionbuffer > 0)
 					expressionbuffer--;
 				else

@@ -3,7 +3,8 @@ function scr_tvdraw_old()
 	if live_call() return live_result;
 	
 	var panicy = 600 + (string_height(message) - 16);
-	var tvx = 832, tvy = 74;
+	var tvx = 832 + irandom_range(-obj_camera.collect_shake, obj_camera.collect_shake);
+	var tvy = 74 + irandom_range(-obj_camera.collect_shake, obj_camera.collect_shake);
 	
 	if tvreset != global.hud
 	{
@@ -191,6 +192,27 @@ function scr_tvdraw_old()
 		draw_set_font(global.bigfont);
 		draw_set_colour(minutes == 0 && seconds < 30 ? c_red : c_white);
 		draw_text(timer_x + 153 + random_range(-1, 1), timer_y + 18 + random_range(-1, 1), concat(minutes, ":", (seconds < 10 ? "0" : "") + string(seconds)));
+		
+		// lap display
+		if global.lap > 0
+		{
+			if !instance_exists(obj_ghostcollectibles)
+				lap_y = Approach(lap_y, timer_ystart, 1);
+			else
+				lap_y = Approach(lap_y, timer_ystart + 212, 4);
+			
+			if !instance_exists(obj_pizzaface) or showtime_buffer > 0
+			{
+				if instance_exists(obj_wartimer)
+					lap_x = Approach(lap_x, SCREEN_WIDTH / 2 - 170, 1);
+				else
+					lap_x = timer_x + 85;
+			}
+			else
+				lap_x = Approach(lap_x, SCREEN_WIDTH / 2 + 32, 1);
+			
+			scr_draw_lap_display(lap_x, lap_y, lapflag_index, sugarylevel);
+		}
 	}
 	
 	// bullets

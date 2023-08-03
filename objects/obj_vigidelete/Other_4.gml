@@ -1,8 +1,23 @@
-if (obj_player1.character == "V")
+var checker = (obj_player1.character == character);
+if checker == invert
+	exit;
+
+if is_array(obj)
 {
-	with (all)
+	array_foreach(obj, function(i)
 	{
-		if (place_meeting(x, y, other))
-			instance_destroy();
+		with i
+		{
+			if !persistent && place_meeting(x, y, other)
+				instance_destroy(id, false);
+		}
+	});
+}
+else
+{
+	with obj
+	{
+		if !persistent && place_meeting(x, y, other)
+			instance_destroy(id, false);
 	}
 }

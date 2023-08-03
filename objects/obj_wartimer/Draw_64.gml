@@ -34,10 +34,12 @@ for (i = 0; i < string_length(q); i++)
 draw_set_alpha(1);
 
 // lap display
-if global.lap > 0
+if global.lap > 0 && !global.panic
 {
+	var sugary = check_sugary();
+	
 	lap_y = Approach(lap_y, SCREEN_HEIGHT - 56, 2);
 	lapflag_index += 0.35;
-	scr_draw_lap_display(xx - 170, lap_y, lapflag_index);
+	scr_draw_lap_display(xx - 170 - 32 * sugary, lap_y, lapflag_index, sugary);
 }
  
