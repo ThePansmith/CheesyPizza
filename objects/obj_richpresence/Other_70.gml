@@ -34,8 +34,6 @@ switch async_load[? "event_type"]
 				show_message("Unblock me first, LOSTMAN.");
 			if a == "748743802608418896" // Croatian Commander
 				show_message("Haaiii Cappy ;3!!!");
-			if a == "590968392211759124" // nico-breon
-				show_message("You were assigned");
 			if a == "463132674995781637" // SpectralScrubs
 				show_message("Peic");
 			if a == "188430471040991235" or a == "317071206815891466" // scout or indigo
@@ -54,7 +52,7 @@ switch async_load[? "event_type"]
 			if a == "773966892520046662" // matty
 				show_message("You betrayed me. Please leave.");
 			if a == "357090210435039232" // luigio
-				show_message("No fucking way that YOU of all people tried playing my mod.");
+				show_message("No fucking way that YOU of all people tried playing my mod.\n");
 			if a == "313647052087099394" // RodMod
 				show_message("sorry quote unquote \"Rod\" \"Mod\"; no flp, no cheesed up!");
 			if a == "736034094093303888" // MrUnown
@@ -116,7 +114,7 @@ switch async_load[? "event_type"]
 			"748743802608418896", // Croatian Commander
 			"370924430324531200", // Laterance (trout)
 			"748959499565662360", // Laterance (pickleanon)xcc 
-			"590968392211759124", // Nicole
+			//"590968392211759124", // Nicole - Radix: no
 			"463132674995781637", // SpectralScrubs
 			"841302295085580298", // SuperPiter (StS asked me to)
 			"639062328276418571", // Manios

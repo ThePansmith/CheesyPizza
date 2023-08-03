@@ -92,9 +92,16 @@ switch safe_get(global, "leveltosave")
 	// sugary
 	case "entryway": state = "Crunchy Construction"; break;
 	case "steamy": state = "Cottontown"; break;
-	case "molasses": state = "Molasses Swamp"; break;
 	case "mines": state = "Sugarshack Mines"; break;
+	case "molasses": state = "Molasses Swamp"; break;
+	case "dance":	state = "Dance Off" break;
+	case "estate": state = "Choco Cafe"; break;
+	case "mountain": state = "Mt. Fudgetop"; break;
 	case "sucrose": state = "Sucrose Snowstorm"; break;
+	
+	
+	// cheesed up
+	case "metro": state = "Metropolis" break;
 }
 
 // add rank and score

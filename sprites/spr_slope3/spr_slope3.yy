@@ -26,8 +26,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Debug",
-    "path": "folders/Sprites/Debug.yy",
+    "name": "Collision",
+    "path": "folders/Sprites/Debug/Collision.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

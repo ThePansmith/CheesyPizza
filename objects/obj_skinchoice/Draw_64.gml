@@ -48,10 +48,17 @@ surface_reset_target();
 
 if anim_t != 1
 {
-	if !surface_exists(clip_surface)
-		clip_surface = surface_create(960, 540);
-
-	surface_set_target(clip_surface);
+	
+	shader_set(shd_circleclip);
+	var origin_pos = shader_get_uniform(shd_circleclip, "u_origin");
+	var radius_pos = shader_get_uniform(shd_circleclip, "u_radius");
+	var inverse_pos = shader_get_uniform(shd_circleclip, "u_inverse");
+	shader_set_uniform_f(origin_pos, 960 / 2, 540 / 2);
+	shader_set_uniform_f(radius_pos, 560 * curve);
+	draw_surface(surface, 0, 0);
+	shader_reset();
+	
+	/*surface_set_target(clip_surface);
 	draw_clear(c_white);
 	gpu_set_blendmode(bm_subtract);
 	shader_reset();
@@ -61,10 +68,10 @@ if anim_t != 1
 	surface_set_target(surface);
 	draw_surface(clip_surface, 0, 0);
 	reset_blendmode();
-	surface_reset_target();
+	surface_reset_target();*/
 }
-
-draw_surface(surface, 0, 0);
+else
+	draw_surface(surface, 0, 0);
 
 // post draw content
 if is_method(postdraw)
