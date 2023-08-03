@@ -1,3 +1,4 @@
+// Init
 vertical_stop = bbox_top;
 vertical_stop_scale = image_yscale;
 sprite_index = spr_geyseridle;
@@ -5,5 +6,8 @@ image_speed = 0.5;
 geyser_timer = 0;
 geyser_size = 0;
 geyser_image_index = 0;
+geyser_opacity = 1;
+cloud_image_index = 0;
+
 
 
