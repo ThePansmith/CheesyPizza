@@ -40,5 +40,5 @@
     "name": "spr_wall",
     "path": "sprites/spr_wall/spr_wall.yy",
   },
-  "visible": true,
+  "visible": false,
 }

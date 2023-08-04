@@ -7060,6 +7060,7 @@
     {"id":{"name":"spr_twarrior2_run","path":"sprites/spr_twarrior2_run/spr_twarrior2_run.yy",},},
     {"id":{"name":"spr_pattern_supreme","path":"sprites/spr_pattern_supreme/spr_pattern_supreme.yy",},},
     {"id":{"name":"bg_wafersky","path":"sprites/bg_wafersky/bg_wafersky.yy",},},
+    {"id":{"name":"bg_towerextra","path":"sprites/bg_towerextra/bg_towerextra.yy",},},
     {"id":{"name":"spr_button_previous","path":"sprites/spr_button_previous/spr_button_previous.yy",},},
     {"id":{"name":"spr_angelpriest3","path":"sprites/spr_angelpriest3/spr_angelpriest3.yy",},},
     {"id":{"name":"spr_twarrior2_attack","path":"sprites/spr_twarrior2_attack/spr_twarrior2_attack.yy",},},
