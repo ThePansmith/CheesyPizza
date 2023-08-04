@@ -10,68 +10,45 @@ draw_set_colour(c_white);
 // animation
 if anim_con == 0
 {
-	var curve = animcurve_channel_evaluate(outback, anim_t);
+	curve = animcurve_channel_evaluate(outback, anim_t);
 	anim_t = Approach(anim_t, 1, 0.035);
 }
 if anim_con == 1 or anim_con == 2
 {
-	var curve = animcurve_channel_evaluate(incubic, anim_t);
+	curve = animcurve_channel_evaluate(incubic, anim_t);
 	anim_t = Approach(anim_t, 0, 0.06);
 }
 
+gpu_set_blendmode(bm_normal);
+shader_set(shd_circleclip);
+var origin_pos = shader_get_uniform(shd_circleclip, "u_origin");
+var radius_pos = shader_get_uniform(shd_circleclip, "u_radius");
+shader_set_uniform_f(origin_pos, 960 / 2, 540 / 2);
+shader_set_uniform_f(radius_pos, 560 * curve);
+
 // background
-if !surface_exists(bg_surf) or curve != 1
-{
-	if !surface_exists(bg_surf)
-		bg_surf = surface_create(64, 64);
-	
-	surface_set_target(bg_surf);
-	draw_clear_alpha(0, 0);
-	draw_sprite_ext(spr_skinmenupizza, bg_image, 32, 32, curve, curve, 0, c_white, curve);
-	surface_reset_target();
-}
 bg_pos = (bg_pos + 0.5) % 64;
 
-if !surface_exists(surface)
-	surface = surface_create(960, 540);
+// Draw the background color
+var color = merge_colour(make_color_rgb(121, 103, 151), merge_colour(c_green, c_white, 0.25), mixingfade);
+var prev_alpha = draw_get_alpha();
+draw_set_alpha(0.75)
+draw_set_color(color);
+draw_rectangle(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT, false);
+draw_set_alpha(prev_alpha);
+draw_set_color(c_white);
 
-surface_set_target(surface);
-draw_clear_alpha(merge_colour(make_color_rgb(121, 103, 151), merge_colour(c_green, c_white, 0.25), mixingfade), 0.75);
-draw_surface_tiled_ext(bg_surf, bg_pos, bg_pos, 1, 1, c_white, 0.25);
+
+event_user(1);
+vertex_submit(vertex_buffer, pr_trianglelist, sprite_get_texture(spr_skinmenupizza, bg_image));
+
+shader_reset();
+reset_blendmode();
 
 // draw content
 if is_method(draw)
 	draw(curve);
 
-// clip surface (circle)
-surface_reset_target();
-
-if anim_t != 1
-{
-	
-	shader_set(shd_circleclip);
-	var origin_pos = shader_get_uniform(shd_circleclip, "u_origin");
-	var radius_pos = shader_get_uniform(shd_circleclip, "u_radius");
-	var inverse_pos = shader_get_uniform(shd_circleclip, "u_inverse");
-	shader_set_uniform_f(origin_pos, 960 / 2, 540 / 2);
-	shader_set_uniform_f(radius_pos, 560 * curve);
-	draw_surface(surface, 0, 0);
-	shader_reset();
-	
-	/*surface_set_target(clip_surface);
-	draw_clear(c_white);
-	gpu_set_blendmode(bm_subtract);
-	shader_reset();
-	draw_circle(960 / 2, 540 / 2, 560 * curve, false);
-	reset_shader_fix();
-	surface_reset_target();
-	surface_set_target(surface);
-	draw_surface(clip_surface, 0, 0);
-	reset_blendmode();
-	surface_reset_target();*/
-}
-else
-	draw_surface(surface, 0, 0);
 
 // post draw content
 if is_method(postdraw)

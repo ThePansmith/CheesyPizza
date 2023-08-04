@@ -52,7 +52,7 @@ switch async_load[? "event_type"]
 			if a == "773966892520046662" // matty
 				show_message("You betrayed me. Please leave.");
 			if a == "357090210435039232" // luigio
-				show_message("No fucking way that YOU of all people tried playing my mod.\n");
+				show_message("No fucking way that YOU of all people tried playing my mod.\nRadix: Go fuck yourself Luigio.");
 			if a == "313647052087099394" // RodMod
 				show_message("sorry quote unquote \"Rod\" \"Mod\"; no flp, no cheesed up!");
 			if a == "736034094093303888" // MrUnown

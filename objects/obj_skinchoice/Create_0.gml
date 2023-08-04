@@ -9,9 +9,16 @@ anim_t = 0;
 outback = animcurve_get_channel(curve_menu, "outback");
 incubic = animcurve_get_channel(curve_menu, "incubic");
 jumpcurve = animcurve_get_channel(curve_jump, "curve1");
+vertex_buffer = vertex_create_buffer();
+
+vertex_format_begin();
+vertex_format_add_position();
+vertex_format_add_color();
+vertex_format_add_texcoord();
+vertex_format = vertex_format_end();
 
 surface = -1;
-clip_surface = -1;
+//clip_surface = -1;
 bg_surf = -1;
 bg_pos = 0;
 bg_image = random(3);

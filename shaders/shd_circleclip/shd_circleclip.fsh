@@ -15,16 +15,14 @@ uniform float u_inverse;
 
 void main()
 {
-	vec4 transparent = vec4(0.0, 0.0, 0.0, 0.0);
-	
 	vec4 game_out_color = v_vColour * texture2D(gm_BaseTexture, v_vTexcoord);
 	
 	float origin_distance = distance(v_vPosition, u_origin);
 	
 	if (u_inverse < 0.5)
-		game_out_color = origin_distance < u_radius ? game_out_color : transparent;
+		game_out_color.a = origin_distance < u_radius ? game_out_color.a : 0.0;
 	else
-		game_out_color = origin_distance > u_radius ? game_out_color : transparent;
+		game_out_color.a = origin_distance > u_radius ? game_out_color.a : 0.0;
 		
     gl_FragColor = game_out_color;
 }
