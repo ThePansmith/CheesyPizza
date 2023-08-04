@@ -2328,6 +2328,7 @@
     {"id":{"name":"floor4_room1","path":"rooms/floor4_room1/floor4_room1.yy",},},
     {"id":{"name":"floor4_room2","path":"rooms/floor4_room2/floor4_room2.yy",},},
     {"id":{"name":"floor4_room3","path":"rooms/floor4_room3/floor4_room3.yy",},},
+    {"id":{"name":"obj_replay","path":"objects/obj_replay/obj_replay.yy",},},
     {"id":{"name":"scr_sound_new","path":"scripts/scr_sound_new/scr_sound_new.yy",},},
     {"id":{"name":"floor4_room4","path":"rooms/floor4_room4/floor4_room4.yy",},},
     {"id":{"name":"floor4_room5","path":"rooms/floor4_room5/floor4_room5.yy",},},

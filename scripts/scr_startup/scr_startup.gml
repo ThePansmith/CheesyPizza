@@ -10,14 +10,14 @@ global.anon = array_create(5, false);
 if !file_exists("CheesyPizza.dll")
 {
 	game_end();
-	exit;
+	exit; // RX: Why the fuck is there an exit here you literally just quit the game
 }
 if test_dll_linkage() != 1
 {
 	show_message("Dude what the fuck is wrong with you");
 	
 	game_end();
-	exit;
+	exit; // RX: oh my fucking god
 }
 
 // macros
@@ -115,11 +115,14 @@ if os_version < 655360 or os_type != os_windows // below windows 10
 }
 window_set_showborder(!global.gameframe_enabled);
 
+
 ini_close();
 
 // etc
 global.sandbox = true;
 global.saveloaded = false;
+global.panicwavetime = 0; // RX: don't remove im gonna do something with this later
+
 global.replayrecord = false;
 
 global.secrettile_clip_distance = 150; // distance before we cut off tiles
@@ -127,7 +130,7 @@ global.secrettile_fade_size = 0.85; // distance before we start to fade
 global.secrettile_fade_intensity = 32; // dropoff intensity
 
 global.colorblind_type = -1; // 0 - Protanopia, 1 - Deuteranopia, 2 - Tritanopia
-global.colorblind_intensity = 1.0;
+global.colorblind_intensity = 0.5;
 
 #macro heat_nerf 5 // divides the style gain by this
 #macro heat_lossdrop 0.1 // speed of global.style loss
@@ -136,4 +139,10 @@ global.colorblind_intensity = 1.0;
 if file_exists("dead")
 	game_end();
 if !ext_checkguid("8ff30401-c151-49e3-8636-a28a5b288d85")
+{
+	trace("guid fail");
 	game_end();
+}
+
+
+//ext_cheesypizza_setHWND(window_handle());

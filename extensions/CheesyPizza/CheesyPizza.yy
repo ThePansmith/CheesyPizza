@@ -37,10 +37,18 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_readfloat","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_readfloat","help":"ext_replay_readfloat()","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_readstring","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_readstring","help":"ext_replay_readstring()","hidden":false,"kind":1,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_writeheader","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_writeheader","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_writeint64","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_writeint64","help":"ext_replay_writeint64(value)","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_writeint32","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_writeint32","help":"ext_replay_writeint32(value)","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_writeint16","argCount":0,"args":[],"documentation":"","externalName":"cheesedup_replay_writeint16","help":"ext_replay_writeint16(value)","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_writeint8","argCount":0,"args":[],"documentation":"","externalName":"cheesedup_replay_writeint8","help":"ext_replay_writeint8","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_writeint64","argCount":0,"args":[
+            2,
+          ],"documentation":"","externalName":"cheesypizza_replay_writeint64","help":"ext_replay_writeint64(value)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_writeint32","argCount":0,"args":[
+            2,
+          ],"documentation":"","externalName":"cheesypizza_replay_writeint32","help":"ext_replay_writeint32(value)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_writeint16","argCount":0,"args":[
+            2,
+          ],"documentation":"","externalName":"cheesedup_replay_writeint16","help":"ext_replay_writeint16(value)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_writeint8","argCount":0,"args":[
+            2,
+          ],"documentation":"","externalName":"cheesedup_replay_writeint8","help":"ext_replay_writeint8","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_readint64","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_readint64","help":"ext_replay_readint64()","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_readint32","argCount":0,"args":[],"documentation":"","externalName":"cheesedup_replay_readint32","help":"ext_replay_readint32()","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_readint16","argCount":0,"args":[],"documentation":"","externalName":"cheesedup_replay_readint16","help":"ext_replay_readint16()","hidden":false,"kind":1,"returnType":2,},
@@ -58,6 +66,12 @@
           ],"documentation":"","externalName":"cheesypizza_replay_writestringraw","help":"ext_replay_writestringraw()","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_readstringraw","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_readstringraw","help":"ext_replay_readstring()","hidden":false,"kind":1,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_writestringdictionary","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_writestringdictionary","help":"ext_replay_writestringdictionary()","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_cheesypizza_setHWND","argCount":0,"args":[
+            1,
+          ],"documentation":"","externalName":"cheesypizza_setHWND","help":"ext_cheesypizza_setHWND(pointer)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_discord_check_id","argCount":0,"args":[
+            2,
+          ],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":2,},
       ],"init":"","kind":1,"order":[
         {"name":"test_dll_linkage","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"launch_external","path":"extensions/CheesyPizza/CheesyPizza.yy",},
