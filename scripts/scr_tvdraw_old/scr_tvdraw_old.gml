@@ -201,13 +201,10 @@ function scr_tvdraw_old()
 			else
 				lap_y = Approach(lap_y, timer_ystart + 212, 4);
 			
-			if !instance_exists(obj_pizzaface) or showtime_buffer > 0
-			{
-				if instance_exists(obj_wartimer)
-					lap_x = Approach(lap_x, SCREEN_WIDTH / 2 - 170, 1);
-				else
-					lap_x = timer_x + 85;
-			}
+			if instance_exists(obj_wartimer)
+				lap_x = Approach(lap_x, SCREEN_WIDTH / 2 - 170, 1);
+			else if !instance_exists(obj_pizzaface) or showtime_buffer > 0
+				lap_x = timer_x + 85;
 			else
 				lap_x = Approach(lap_x, SCREEN_WIDTH / 2 + 32, 1);
 			
