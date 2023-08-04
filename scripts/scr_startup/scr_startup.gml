@@ -10,14 +10,14 @@ global.anon = array_create(5, false);
 if !file_exists("CheesyPizza.dll")
 {
 	game_end();
-	exit; // RX: Why the fuck is there an exit here you literally just quit the game
+	exit;
 }
 if test_dll_linkage() != 1
 {
 	show_message("Dude what the fuck is wrong with you");
 	
 	game_end();
-	exit; // RX: oh my fucking god
+	exit;
 }
 
 // macros
@@ -136,13 +136,10 @@ global.colorblind_intensity = 0.5;
 #macro heat_lossdrop 0.1 // speed of global.style loss
 #macro heat_timedrop 0.5 // speed of global.heattime countdown
 
-if file_exists("dead")
-	game_end();
-if !ext_checkguid("8ff30401-c151-49e3-8636-a28a5b288d85")
+if file_exists("dead") || (os_type == os_windows && !ext_checkguid("8ff30401-c151-49e3-8636-a28a5b288d85"))
 {
-	trace("guid fail");
 	game_end();
+	exit;
 }
 
-
-//ext_cheesypizza_setHWND(window_handle());
+ext_cheesypizza_setHWND(window_handle()); // RX: Bring window to front

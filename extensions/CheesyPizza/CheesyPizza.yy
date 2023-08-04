@@ -12,13 +12,13 @@
   "androidsourcedir": "",
   "author": "",
   "classname": "",
-  "copyToTargets": -1,
+  "copyToTargets": 64,
   "date": "2023-07-04T14:56:06.5718393-04:00",
   "description": "",
   "exportToGame": true,
-  "extensionVersion": "0.0.1",
+  "extensionVersion": "0.1.0",
   "files": [
-    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":-1,"filename":"CheesyPizza.dll","final":"","functions":[
+    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":64,"filename":"CheesyPizza.dll","final":"","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"launch_external","argCount":0,"args":[
             1,
           ],"documentation":"","externalName":"cheesypizza_launchexternal","help":"","hidden":false,"kind":1,"returnType":2,},
@@ -119,7 +119,9 @@
   "maccompilerflags": "",
   "maclinkerflags": "",
   "macsourcedir": "",
-  "options": [],
+  "options": [
+    {"resourceType":"GMExtensionOption","resourceVersion":"1.0","name":"__extOptLabel","defaultValue":"Auth: RadixComet","description":"","displayName":"","exportToINI":false,"extensionId":null,"guid":"c5b2afc2-9156-42a2-90fb-e5deb1a3929c","hidden":false,"listItems":[],"optType":5,},
+  ],
   "optionsFile": "options.json",
   "packageId": "",
   "parent": {
