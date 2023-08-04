@@ -39,26 +39,18 @@ else
 	// LEFT
 	if limitcam[0] < targetcam[0] && camx > limitcam[0]
 		limitcam[0] = camx;
-	if limitcam[0] > targetcam[0] && camx > targetcam[0]
-		limitcam[0] = targetcam[0];
 	
 	// TOP
 	if limitcam[1] < targetcam[1] && camy > limitcam[1]
 		limitcam[1] = camy;
-	if limitcam[1] > targetcam[1] && camy > targetcam[1]
-		limitcam[1] = targetcam[1];
 	
 	// RIGHT
 	if limitcam[2] > targetcam[2] && camx + camw < limitcam[2]
 		limitcam[2] = camx + camw;
-	if limitcam[2] < targetcam[2] && camx + camw < targetcam[2]
-		limitcam[2] = targetcam[2];
 	
 	// BOTTOM
 	if limitcam[3] > targetcam[3] && camy + camh < limitcam[3]
 		limitcam[3] = camy + camh;
-	if limitcam[3] < targetcam[3] && camy + camh < targetcam[3]
-		limitcam[3] = targetcam[3];
 	
 	limitcam[0] = Approach(limitcam[0], targetcam[0], 32);
 	limitcam[1] = Approach(limitcam[1], targetcam[1], 32);
