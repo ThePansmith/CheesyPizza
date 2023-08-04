@@ -10,7 +10,8 @@ function online_server_step_update()
 	buffer_write(buffer_id, buffer_f32, obj_player1.y);
 	buffer_write(buffer_id, buffer_f32, obj_player1.image_index);
 	buffer_write(buffer_id, buffer_string, sprite_get_name(obj_player1.sprite_index));
-	
+	buffer_write(buffer_id, buffer_f32, obj_player1.image_xscale);
+	buffer_write(buffer_id, buffer_f32, obj_player1.image_yscale);
 	network_send_udp(obj_onlineclient.network_socket, obj_onlineclient.network_ip, obj_onlineclient.network_port, buffer_id, buffer_get_size(buffer_id));
 	buffer_delete(buffer_id);
 }
