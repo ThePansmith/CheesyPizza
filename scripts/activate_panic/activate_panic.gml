@@ -18,6 +18,12 @@ function activate_panic(instapanic = false)
 	}
 	*/
 	
+	instance_activate_object(obj_metalblock_escape);
+	instance_activate_object(obj_destroyable_escape);
+	instance_activate_object(obj_destroyable2_escape);
+	instance_activate_object(obj_destroyable2_bigescape);
+	instance_activate_object(obj_destroyable3_escape);
+	
 	if !instapanic
 	{
 		fmod_event_instance_play(global.snd_escaperumble);

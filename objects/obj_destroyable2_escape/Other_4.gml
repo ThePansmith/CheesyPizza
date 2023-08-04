@@ -1,3 +1,3 @@
 event_inherited();
 if !global.panic
-	instance_destroy(id, false);
+	instance_deactivate_object(id);
