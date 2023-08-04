@@ -556,6 +556,13 @@ switch character
 		break;
 	
 	#endregion
+	#region Pizzano
+	
+	case "SN":
+		add_palette(1, "", noone, "Pizzano", "The voice of the people.", "");
+		break;
+	
+	#endregion
 }
 pal_swap_index_palette(characters[sel.char][2]);
 init = true;

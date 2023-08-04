@@ -331,9 +331,9 @@ function scr_player_mach3()
 			vsp = -3;
 		if (key_down && fightball == 0)
 			vsp = 3;
-		if (abs(hsp) < 16 && move == xscale)
+		if (abs(hsp) < 20 && move == xscale)
 		{
-			movespeed += 0.05;
+			movespeed += 0.075;
 			if (!instance_exists(crazyruneffectid) && grounded)
 			{
 				with (instance_create(x, y, obj_crazyruneffect))

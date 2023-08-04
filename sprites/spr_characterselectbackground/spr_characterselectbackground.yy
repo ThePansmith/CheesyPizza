@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "unusedgroup",
-    "path": "texturegroups/unusedgroup",
+    "name": "menugroup",
+    "path": "texturegroups/menugroup",
   },
   "type": 0,
   "VTile": false,
