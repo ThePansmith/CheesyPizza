@@ -25,7 +25,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a5077574-8e9a-4e3d-bd27-6c6ceff103c4","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 9,
   "parent": {
     "name": "Cotton Witch",
     "path": "folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Cotton Witch.yy",
@@ -64,7 +64,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 50,
-    "yorigin": 50,
+    "yorigin": 75,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

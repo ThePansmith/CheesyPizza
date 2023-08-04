@@ -156,6 +156,7 @@ function scr_enemy_rage()
 				sprite_index = spr_ancho_rage2;
 			if (grounded && sprite_index == spr_ancho_rage2)
 			{
+				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 				with (obj_camera)
 				{
 					shake_mag = 10;

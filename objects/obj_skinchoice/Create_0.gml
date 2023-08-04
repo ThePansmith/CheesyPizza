@@ -60,7 +60,10 @@ characters = [
 ];
 
 if global.experimental
+{
 	array_push(characters, ["S", spr_snick_idle, spr_snickpalette, [1, 4]]);
+	array_push(characters, ["SN", spr_pizzano_idle, spr_pizzanopalette, [1, 5]]);
+}
 
 // set in user event 0
 palettes = [];

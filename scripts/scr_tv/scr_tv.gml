@@ -120,6 +120,7 @@ function tv_do_expression(sprite)
 				case spr_tv_hurtG:
 					expressionbuffer = 60
 					break
+				
 				case spr_tv_exprhurt1:
 				case spr_tv_exprhurt2:
 				case spr_tv_exprhurt3:
@@ -132,6 +133,7 @@ function tv_do_expression(sprite)
 				case spr_tv_exprhurt10:
 					expressionbuffer = 100
 					break
+				
 				case spr_tv_exprcollect:
 					expressionbuffer = 150
 					if obj_player.isgustavo
@@ -142,6 +144,15 @@ function tv_do_expression(sprite)
 					}
 					if (irandom(100) <= 50)
 						scr_fmod_soundeffect(obj_player1.snd_voiceok, obj_player1.x, obj_player1.y)
+					break;
+				
+				case spr_tv_exprconfecti1:
+				case spr_tv_exprconfecti2:
+				case spr_tv_exprconfecti3:
+				case spr_tv_exprconfecti4:
+				case spr_tv_exprconfecti5:
+				case spr_tv_exprrudejanitor:
+					expressionbuffer = 150;
 					break;
 			}
 		}

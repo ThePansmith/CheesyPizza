@@ -16,4 +16,6 @@ if check_sugary()
 	spr_panic = spr_chocolate_panic;
 	spr_taunt = spr_chocolate_taunt;
 	spr_supertaunt = spr_chocolate_supertaunt;
+	
+	tv_do_expression(spr_tv_exprconfecti2);
 }

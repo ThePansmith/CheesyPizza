@@ -98,6 +98,7 @@ function scr_playerreset(roomstart = false, restart = false)
 	instance_destroy(obj_keyfollow);
 	instance_destroy(obj_hpeffect);
 	instance_destroy(obj_crosspriest_cross);
+	instance_destroy(obj_hardmode_ghost);
 	instance_destroy(obj_gravecorpse, false);
 	
 	with (obj_camera)

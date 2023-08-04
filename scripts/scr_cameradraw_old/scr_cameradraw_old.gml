@@ -307,8 +307,14 @@ function scr_cameradraw_old()
 		
 		// fade
 		if (player.y < camera_get_view_y(view_camera[0]) + 200 && player.x < camera_get_view_x(view_camera[0]) + 200)
-			alpha = 0.5
+			alpha = 0.5;
 		else
-			alpha = 1
+			alpha = 1;
+		
+		draw_set_font(lang_get_font("bigfont"));
+		draw_set_halign(1);
+		draw_set_color(c_white);
+		if obj_player1.character == "V"
+			draw_text(200 + healthshake, 125 + healthshake, global.playerhealth);
 	}
 }

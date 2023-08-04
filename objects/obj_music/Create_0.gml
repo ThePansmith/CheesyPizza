@@ -271,25 +271,20 @@ add_music(midway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret"
 add_music(entryway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
 add_music(steamy_1, "event:/modded/sugary/cotton", "event:/modded/sugary/cottonsecret", 0, function(room, event, event_secret)
 {
-	var s = 0
-	switch (room)
+	var s = -1;
+	switch room
 	{
 		case steamy_1:
 		case steamy_7:
-			s = 0
+			s = 0;
 			break;
+		
 		case steamy_8:
-		case steamy_9:
-		case steamy_10:
-		case steamy_11:
-		case steamy_11_1:
-		case steamy_12:
-		case steamy_13:
-		case steamy_14:
-			s = 1
+			s = 1;
 			break;
 	}
-	fmod_event_instance_set_parameter(event, "state", s, false);
+	if s != -1
+		fmod_event_instance_set_parameter(event, "state", s, false);
 });
 add_music(rm_geyser_test, "event:/modded/sugary/molasses", "event:/modded/w1/molassessecret", 0);
 add_music(sucrose_1, "event:/modded/sugary/sucrose", "event:/modded/modded/sucrosesecret", 0);

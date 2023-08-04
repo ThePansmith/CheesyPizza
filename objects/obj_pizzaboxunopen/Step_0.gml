@@ -45,11 +45,19 @@ if place_meeting(x, y, obj_player)
 	{
 		with instance_create(x, y, obj_smallnumber)
 			number = "1000";
-		if (place_meeting(x, y, obj_player1))
+		if place_meeting(x, y, obj_player1)
 			global.collect += 1000;
 		else
 			global.collectN += 1000;
-		instance_create(x, y, obj_taunteffect);
+		
+		if REMIX or sugary
+		{
+			with instance_create(x, y, obj_taunteffect)
+				player = noone;
+		}
+		else
+			instance_create(x, y, obj_taunteffect);
+		
 		with instance_create(x, y - 25, content)
 		{
 			if roomname == "strongcold"

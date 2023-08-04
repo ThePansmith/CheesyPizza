@@ -1,3 +1,5 @@
+sugary = check_sugary();
+
 spr_dead = spr_rattumbleblock_big_dead;
 depth = 2;
 anim = false;

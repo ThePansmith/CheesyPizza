@@ -1,6 +1,7 @@
-if (room == rm_editor)
+if room == rm_editor
 	exit;
-if (global.key_inv == 1)
+
+if global.key_inv == 1
 {
 	vsp = -15;
 	hsp = random_range(-4, 4);
@@ -14,5 +15,6 @@ platformid = -4;
 hsp_carry = 0;
 vsp_carry = 0;
 
-if check_sugary()
-	sprite_index = spr_key_ss;
+sugary = check_sugary();
+if sugary
+	sprite_index = spr_spookey_idle;

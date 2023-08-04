@@ -151,7 +151,7 @@ function scr_player_mach3()
 			//if (character == "V")
 			//	sprite_index = spr_playerV_divekickstart;
 		}
-		if ((!grounded && (check_solid(x + hsp, y) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && !place_meeting(x + hsp, y, obj_metalblock)) || (grounded && (check_solid(x + sign(hsp), y - 16) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && !place_meeting(x + hsp, y, obj_metalblock) && check_slope(x, y + 1)))
+		if ((!grounded && (check_solid(x + hsp, y) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && (!place_meeting(x + hsp, y, obj_metalblock) or character == "V")) || (grounded && (check_solid(x + sign(hsp), y - 16) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && !place_meeting(x + hsp, y, obj_metalblock) && check_slope(x, y + 1)))
 		{
 			wallspeed = movespeed;
 			grabclimbbuffer = 0;
@@ -163,7 +163,7 @@ function scr_player_mach3()
 			if REMIX
 				vsp = -wallspeed;
 		}
-		if (!grounded && place_meeting(x + sign(hsp), y, obj_climbablewall) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_metalblock))
+		if (!grounded && place_meeting(x + sign(hsp), y, obj_climbablewall) && !place_meeting(x + sign(hsp), y, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_metalblock) or character == "V"))
 		{
 			wallspeed = movespeed;
 			grabclimbbuffer = 0;
@@ -331,9 +331,9 @@ function scr_player_mach3()
 			vsp = -3;
 		if (key_down && fightball == 0)
 			vsp = 3;
-		if (abs(hsp) < 16 && move == xscale)
+		if (abs(hsp) < 20 && move == xscale)
 		{
-			movespeed += 0.05;
+			movespeed += 0.075;
 			if (!instance_exists(crazyruneffectid) && grounded)
 			{
 				with (instance_create(x, y, obj_crazyruneffect))

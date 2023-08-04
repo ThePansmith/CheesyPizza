@@ -35,7 +35,7 @@ if (prevpillar_on_camera != pillar_on_camera)
 }
 if ((global.panic or (global.snickchallenge && room != tower_sage)) && global.leveltosave != "dragonlair" && global.leveltosave != "grinch" && global.leveltosave != "sucrose")
 {
-	if (!panicstart)
+	if (!panicstart && instance_exists(obj_player1))
 	{
 		fmod_event_instance_release(panicmusicID);
 		

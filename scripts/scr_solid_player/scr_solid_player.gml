@@ -53,11 +53,12 @@ function scr_solid_player(_x, _y)
 			{
 				if (!place_meeting(x, old_y, b) && place_meeting(x, y, b))
 				{
-					if (b.object_index == obj_cottonplatform_tiled)
-					{
-						_collided = (state == states.cotton || state == states.cottonroll);
-					}
-					_collided = true;
+	                if (b.object_index == obj_cottonplatform_tiled)
+                    {
+                        _collided = (state == states.cotton || state == states.cottonroll);
+                    }
+					else
+						_collided = true;
 				}
 			}
 		}

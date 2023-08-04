@@ -28,30 +28,35 @@ with obj_cameraRegion
 	}
 }
 
-if limitcam[0] < camx && targetcam[0] > limitcam[0]
-	limitcam[0] = camx;
-else if limitcam[0] > camx
-	limitcam[0] = targetcam[0];
+if smooth_buffer == 0
+{
+	limitcam = targetcam;
+	camzoom = targetzoom;
+	angle = targetangle;
+}
+else
+{
+	// LEFT
+	if limitcam[0] < targetcam[0] && camx > limitcam[0]
+		limitcam[0] = camx;
+	
+	// TOP
+	if limitcam[1] < targetcam[1] && camy > limitcam[1]
+		limitcam[1] = camy;
+	
+	// RIGHT
+	if limitcam[2] > targetcam[2] && camx + camw < limitcam[2]
+		limitcam[2] = camx + camw;
+	
+	// BOTTOM
+	if limitcam[3] > targetcam[3] && camy + camh < limitcam[3]
+		limitcam[3] = camy + camh;
+	
+	limitcam[0] = Approach(limitcam[0], targetcam[0], 32);
+	limitcam[1] = Approach(limitcam[1], targetcam[1], 32);
+	limitcam[2] = Approach(limitcam[2], targetcam[2], 32);
+	limitcam[3] = Approach(limitcam[3], targetcam[3], 32);
 
-if limitcam[1] < camy && targetcam[1] > limitcam[1]
-	limitcam[1] = camy;
-else if limitcam[1] > camy
-	limitcam[1] = targetcam[1];
-
-if limitcam[2] > camx + camw && targetcam[2] < limitcam[2]
-	limitcam[2] = camx + camw;
-else if limitcam[2] < camx + camw
-	limitcam[2] = targetcam[2];
-
-if limitcam[3] > camy + camh && targetcam[3] < limitcam[3]
-	limitcam[3] = camy + camh;
-else if limitcam[3] < camy + camh
-	limitcam[3] = targetcam[3];
-
-limitcam[0] = Approach(limitcam[0], targetcam[0], 32);
-limitcam[1] = Approach(limitcam[1], targetcam[1], 32);
-limitcam[2] = Approach(limitcam[2], targetcam[2], 32);
-limitcam[3] = Approach(limitcam[3], targetcam[3], 32);
-
-camzoom = lerp(camzoom, targetzoom, 0.25);
-angle = lerp(angle, targetangle, 0.25);
+	camzoom = lerp(camzoom, targetzoom, 0.25);
+	angle = lerp(angle, targetangle, 0.25);
+}
