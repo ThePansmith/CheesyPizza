@@ -309,6 +309,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Baddie","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/Baddie.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Baby Bear","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Baby Bear.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Char Cherry","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Char Cherry.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Cotton Witch","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Cotton Witch.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Cracker Kicker","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Cracker Kicker.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Eskimo","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Eskimo.yy",},
@@ -318,6 +319,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Smoreknight","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Smoreknight.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"BGs and Tiles","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Cotton","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles/Cotton.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Escape","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles/Cotton/Escape.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Entryway","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles/Entryway.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sucrose","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles/Sucrose.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Blocks","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/Blocks.yy",},
@@ -541,8 +543,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Escape","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles/Cotton/Escape.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Char Cherry","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Char Cherry.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles/data",},
@@ -567,7 +567,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.6.0.89",
+    "IDEVersion": "2023.6.0.92",
   },
   "resources": [
     {"id":{"name":"obj_bossdoor","path":"objects/obj_bossdoor/obj_bossdoor.yy",},},

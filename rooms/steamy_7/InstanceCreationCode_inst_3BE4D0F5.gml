@@ -1,7 +1,8 @@
 flags.do_save = false;
-condition = function() {
+condition = function()
+{
 	var _check = false;
-	with (obj_player) {
+	with (obj_player1) {
 		if place_meeting(roomstartx, roomstarty, other) {
 			_check = true;
 		}
@@ -10,5 +11,5 @@ condition = function() {
 }
 
 output = function() {
-	obj_player.state = states.slipbanan;
+	obj_player1.state = states.slipbanan;
 }
