@@ -1,11 +1,11 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "bg_clockparalax2escape",
+  "name": "bg_cottontown2escape",
   "bbox_bottom": 539,
-  "bbox_left": 44,
-  "bbox_right": 1052,
-  "bbox_top": 0,
+  "bbox_left": 512,
+  "bbox_right": 1263,
+  "bbox_top": 308,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d2af9f6d-cbfa-42c8-b6d8-b61ed842aad9",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f4e57663-b156-4e20-a3d0-3ab151532456",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 540,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"da0d0d09-a43f-4901-9e94-df2544da762b","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"20ea6c4d-86f0-48cc-a911-c26caa5cadb6","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "bg_clockparalax2escape",
+    "name": "bg_cottontown2escape",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d2af9f6d-cbfa-42c8-b6d8-b61ed842aad9","path":"sprites/bg_clockparalax2escape/bg_clockparalax2escape.yy",},},},"Disabled":false,"id":"b1f291ab-964c-40a3-bad1-80ce66a901fa","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f4e57663-b156-4e20-a3d0-3ab151532456","path":"sprites/bg_cottontown2escape/bg_cottontown2escape.yy",},},},"Disabled":false,"id":"18fea4e1-9353-4e8d-881b-98825da2d046","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1406,
+  "width": 1280,
 }

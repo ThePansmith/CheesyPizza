@@ -1,11 +1,11 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "bg_skyshipsescape",
-  "bbox_bottom": 385,
-  "bbox_left": 110,
-  "bbox_right": 1151,
-  "bbox_top": 66,
+  "name": "bg_steamycolorescape",
+  "bbox_bottom": 539,
+  "bbox_left": 0,
+  "bbox_right": 1279,
+  "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a364a467-7ec2-49fd-91a7-eca1287d85d6",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0ae56ef1-deeb-4d89-8b4a-fa02a6a5b17d",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 540,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"95ec4726-89a4-4397-9f22-686d86a44c06","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"254a4838-76c0-451b-bedd-efc3276beb85","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "bg_skyshipsescape",
+    "name": "bg_steamycolorescape",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a364a467-7ec2-49fd-91a7-eca1287d85d6","path":"sprites/bg_skyshipsescape/bg_skyshipsescape.yy",},},},"Disabled":false,"id":"97ef8ea8-b98f-4b0c-bdd7-11d43c767e45","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0ae56ef1-deeb-4d89-8b4a-fa02a6a5b17d","path":"sprites/bg_steamycolorescape/bg_steamycolorescape.yy",},},},"Disabled":false,"id":"e2f250f6-5da9-4df7-b6e6-f3e40cf48f90","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

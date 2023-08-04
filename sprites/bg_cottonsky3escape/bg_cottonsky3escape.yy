@@ -1,11 +1,11 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "bg_skycakeescaspe",
-  "bbox_bottom": 539,
-  "bbox_left": 0,
+  "name": "bg_cottonsky3escape",
+  "bbox_bottom": 272,
+  "bbox_left": 45,
   "bbox_right": 1279,
-  "bbox_top": 138,
+  "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"08f970dd-364d-4a2a-a570-65d351f65bfd",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c527338c-5faf-44fc-87c2-1f39f20acdec",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 540,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ca8f68ef-df5c-48f4-9630-090af30d96fd","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"56cd9487-0a7c-4f34-8eb3-4ded04bab8cb","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "bg_skycakeescaspe",
+    "name": "bg_cottonsky3escape",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"08f970dd-364d-4a2a-a570-65d351f65bfd","path":"sprites/bg_skycakeescaspe/bg_skycakeescaspe.yy",},},},"Disabled":false,"id":"876a01a5-8565-4273-8b72-d6b7a96e99c3","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c527338c-5faf-44fc-87c2-1f39f20acdec","path":"sprites/bg_cottonsky3escape/bg_cottonsky3escape.yy",},},},"Disabled":false,"id":"771fe151-70cf-45dd-95b0-fe8e474b5041","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

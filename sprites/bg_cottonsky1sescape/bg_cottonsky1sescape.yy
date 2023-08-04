@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "bg_skycloudsescape",
+  "name": "bg_cottonsky1sescape",
   "bbox_bottom": 448,
   "bbox_left": 57,
   "bbox_right": 1175,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "bg_skycloudsescape",
+    "name": "bg_cottonsky1sescape",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0d8e5983-0d80-4642-9fe2-7305fd2f946f","path":"sprites/bg_skycloudsescape/bg_skycloudsescape.yy",},},},"Disabled":false,"id":"0476af85-6c73-4057-9f9d-a35c3a56cb04","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0d8e5983-0d80-4642-9fe2-7305fd2f946f","path":"sprites/bg_cottonsky1sescape/bg_cottonsky1sescape.yy",},},},"Disabled":false,"id":"0476af85-6c73-4057-9f9d-a35c3a56cb04","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -1,10 +1,10 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "bg_sky2escape",
-  "bbox_bottom": 272,
-  "bbox_left": 45,
-  "bbox_right": 1279,
+  "name": "bg_cottonclockend3escap",
+  "bbox_bottom": 203,
+  "bbox_left": 1,
+  "bbox_right": 957,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c527338c-5faf-44fc-87c2-1f39f20acdec",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"814d9325-b900-4c02-aaff-9c6c049724cc",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 540,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"56cd9487-0a7c-4f34-8eb3-4ded04bab8cb","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"eefadc2d-e779-4282-9cc1-4bb2e509d3b7","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "bg_sky2escape",
+    "name": "bg_cottonclockend3escap",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c527338c-5faf-44fc-87c2-1f39f20acdec","path":"sprites/bg_sky2escape/bg_sky2escape.yy",},},},"Disabled":false,"id":"771fe151-70cf-45dd-95b0-fe8e474b5041","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"814d9325-b900-4c02-aaff-9c6c049724cc","path":"sprites/bg_cottonclockend3escap/bg_cottonclockend3escap.yy",},},},"Disabled":false,"id":"bc4cdca5-1826-406a-926c-18c89ce7dcd6","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1280,
+  "width": 960,
 }

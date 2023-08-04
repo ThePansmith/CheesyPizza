@@ -1,11 +1,11 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "bg_clockparalaxescape",
-  "bbox_bottom": 502,
-  "bbox_left": 36,
-  "bbox_right": 917,
-  "bbox_top": 22,
+  "name": "bg_cottonshipescape",
+  "bbox_bottom": 385,
+  "bbox_left": 110,
+  "bbox_right": 1151,
+  "bbox_top": 66,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7e3dd8ab-35f6-468e-918b-df997dcb6c70",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a364a467-7ec2-49fd-91a7-eca1287d85d6",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 540,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ea40c8e9-4f81-4423-aab3-dfeff1ddf50e","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"95ec4726-89a4-4397-9f22-686d86a44c06","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "bg_clockparalaxescape",
+    "name": "bg_cottonshipescape",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7e3dd8ab-35f6-468e-918b-df997dcb6c70","path":"sprites/bg_clockparalaxescape/bg_clockparalaxescape.yy",},},},"Disabled":false,"id":"18833360-25f2-4d5a-bf5a-59dd0c8372bd","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a364a467-7ec2-49fd-91a7-eca1287d85d6","path":"sprites/bg_cottonshipescape/bg_cottonshipescape.yy",},},},"Disabled":false,"id":"97ef8ea8-b98f-4b0c-bdd7-11d43c767e45","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 960,
+  "width": 1280,
 }

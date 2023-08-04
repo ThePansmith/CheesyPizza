@@ -1,11 +1,11 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "bg_skycakeescapefront",
+  "name": "bg_cottonclock3escape",
   "bbox_bottom": 539,
-  "bbox_left": 55,
-  "bbox_right": 1103,
-  "bbox_top": 1,
+  "bbox_left": 44,
+  "bbox_right": 1052,
+  "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"315e0a16-af16-42eb-9175-582c65e6bafb",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d2af9f6d-cbfa-42c8-b6d8-b61ed842aad9",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 540,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"9daee6f5-19c7-40bd-a41d-5e027e79ad4b","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"da0d0d09-a43f-4901-9e94-df2544da762b","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "bg_skycakeescapefront",
+    "name": "bg_cottonclock3escape",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"315e0a16-af16-42eb-9175-582c65e6bafb","path":"sprites/bg_skycakeescapefront/bg_skycakeescapefront.yy",},},},"Disabled":false,"id":"83dc7d88-5da8-4558-96df-dbbb93e57408","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d2af9f6d-cbfa-42c8-b6d8-b61ed842aad9","path":"sprites/bg_cottonclock3escape/bg_cottonclock3escape.yy",},},},"Disabled":false,"id":"b1f291ab-964c-40a3-bad1-80ce66a901fa","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1280,
+  "width": 1406,
 }
