@@ -15,10 +15,33 @@ sound_play_oneshot("event:/sfx/ui/comboup");
 
 sugary = (obj_player1.character == "SP");
 pino = (obj_player1.character == "PN");
+bo = (obj_player1.character == "BN");
 
 if sugary
 	sprite_index = spr_comboend_titleSP;
-else if obj_player1.character == "BN"
+else if bo
+{
+	alarm[1] = 100;
+	image_alpha = 3;
+	type = 0;
 	sprite_index = spr_comboend_titleBN;
+	
+	if global.combo <= 40
+	{
+	    type = 0;
+		sound_play("event:/modded/sfx/MLgood");
+	}
+	else if global.combo <= 60
+	{
+	    type = 1;
+	    image_xscale = 0;
+	    sound_play("event:/modded/sfx/MLgreat");
+	}
+	else
+	{
+	    type = 2;
+	    sound_play("event:/modded/sfx/MLexcellent");
+	}
+}
 else if pino
 	sprite_index = spr_comboend_titlePN;

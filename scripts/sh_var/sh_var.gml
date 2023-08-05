@@ -92,7 +92,7 @@ function sh_var(args)
 		var_exists = true;
 	
 	// get variable if no value was provided
-	if array_length(args) < 4
+	if array_length(args) < 4 or args[3] == ""
 	{
 		if var_exists && target_one
 			return string("{0}.{1}: {2}", pretarget, variable, variable_instance_get(target, variable));

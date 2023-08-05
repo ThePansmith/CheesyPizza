@@ -55,6 +55,8 @@ function activate_panic(instapanic = false)
 			break;
 		case dungeon_10:
 			global.fill = 2460;
+			if check_char("G")
+				global.fill *= 1.2;
 			break;
 		case badland_9:
 			global.fill = 2556;

@@ -147,7 +147,7 @@ function scr_perform_move(move, prestate = state)
 					global.fuel = floor(global.fuel - 1);
 					state = states.chainsawbump;
 					movespeed = max(movespeed, 10);
-					sprite_index = spr_player_chainsawdash;
+					sprite_index = spr_chainsawdash;
 					image_index = 0;
 					
 					if global.hud == 1

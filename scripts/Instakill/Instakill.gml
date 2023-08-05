@@ -27,10 +27,10 @@ function Instakill()
 			sprite_index = spr_mach3hit;
 		image_index = 0;
 	}
-	if (state == states.chainsawbump && sprite_index != spr_player_chainsawhit)
+	if (state == states.chainsawbump && sprite_index != spr_chainsawhit)
 	{
 		image_index = 0;
-		sprite_index = spr_player_chainsawhit;
+		sprite_index = spr_chainsawhit;
 	}
 	other.baddieID.invtime = 25;
 	suplexmove = true;
@@ -90,7 +90,7 @@ function Instakill()
 	}
 	if (state == states.chainsawbump && !global.kungfu)
 	{
-		sprite_index = spr_player_chainsawhit;
+		sprite_index = spr_chainsawhit;
 		image_index = 0;
 	}
 	
