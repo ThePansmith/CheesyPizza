@@ -3302,6 +3302,7 @@
     {"id":{"name":"scr_player_parry","path":"scripts/scr_player_parry/scr_player_parry.yy",},},
     {"id":{"name":"scr_player_punch","path":"scripts/scr_player_punch/scr_player_punch.yy",},},
     {"id":{"name":"tileset_steamyclock1","path":"tilesets/tileset_steamyclock1/tileset_steamyclock1.yy",},},
+	{"id":{"name":"tileset_steamyclock2","path":"tilesets/tileset_steamyclock2/tileset_steamyclock2.yy",},},
     {"id":{"name":"scr_player_golf","path":"scripts/scr_player_golf/scr_player_golf.yy",},},
     {"id":{"name":"scr_enemy_grabbed","path":"scripts/scr_enemy_grabbed/scr_enemy_grabbed.yy",},},
     {"id":{"name":"scr_enemy_chase","path":"scripts/scr_enemy_chase/scr_enemy_chase.yy",},},
