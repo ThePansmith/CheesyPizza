@@ -17,7 +17,11 @@ enum network_event_types
 	Client_Receieve_Player_Data,
 }
 
-network_ip = "71.90.237.236";
+toppinbot_ip = "";
+toppinbot_port = "";
+
+
+network_ip = "localhost";
 network_port = "25565";
 network_socket = network_create_socket(network_socket_udp);
 connected = false;
