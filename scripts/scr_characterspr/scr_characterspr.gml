@@ -287,6 +287,12 @@ function scr_characterspr()
 	spr_buttattackend = spr_player_buttattackend;
 	spr_cottonidle = spr_cotton_idle;
 	spr_groundpoundjump = spr_player_groundpoundjump;
+	spr_chainsawidle = spr_player_chainsawidle;
+	spr_chainsawhit = spr_player_chainsawhit;
+	spr_chainsawhitwall = spr_player_chainsawhitwall;
+	spr_chainsawrev = spr_player_chainsawrev;
+	spr_chainsawdash = spr_player_chainsawdash;
+	spr_chainsawdashstart = spr_player_chainsawdashstart;
 	
 	spr_palette = spr_peppalette;
 	if character == "P" or isgustavo
@@ -2063,6 +2069,13 @@ function scr_characterspr()
 		spr_groundedattack = spr_playerPN_groundedattack;
 		spr_ungroundedattack = spr_playerPN_ungroundedattack;
 		spr_groundpoundjump = spr_playerPN_groundpoundjump;
+		spr_chainsawidle = spr_playerPN_chainsawidle;
+		spr_chainsawhit = spr_playerPN_chainsawhit;
+		spr_chainsawhitwall = spr_playerPN_chainsawhitwall;
+		spr_chainsawrev = spr_playerPN_chainsawrev;
+		spr_chainsawdash = spr_playerPN_chainsawdash;
+		spr_chainsawdashstart = spr_playerPN_chainsawdashstart;
+		
 		spr_palette = spr_peppalette;
 		paletteselect = 1;
 	}

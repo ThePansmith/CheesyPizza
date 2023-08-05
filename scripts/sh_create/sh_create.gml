@@ -24,9 +24,9 @@ function sh_create(args)
 		return "Not a good idea";
 	
 	var xx = undefined, yy = undefined;
-	if array_length(args) >= 3
+	if array_length(args) >= 3 && args[2] != ""
 	{
-		if array_length(args) < 4
+		if array_length(args) < 4 or args[3] == ""
 			return "Missing argument: y";
 		
 		xx = args[2];
