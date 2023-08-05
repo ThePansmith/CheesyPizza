@@ -1,4 +1,5 @@
 // Init
+depth = -8;
 vertical_stop = bbox_top;
 vertical_stop_scale = image_yscale;
 sprite_index = spr_geyseridle;
