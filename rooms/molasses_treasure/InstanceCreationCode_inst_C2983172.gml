@@ -1,2 +1,2 @@
 sprite_index = spr_treasure_ss
-image_index = 3;
+image_index = 2;

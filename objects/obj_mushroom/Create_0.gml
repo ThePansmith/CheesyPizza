@@ -8,4 +8,5 @@ if sugary
 {
 	spr_idle = spr_marshmallowspring;
 	spr_bounce = spr_marshmallowspring_active;
+	sprite_index = spr_idle;
 }

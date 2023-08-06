@@ -118,6 +118,7 @@
     {"name":"inst_8BBA7805","path":"rooms/molasses_9/molasses_9.yy",},
     {"name":"inst_006DE68D","path":"rooms/molasses_9/molasses_9.yy",},
     {"name":"inst_951154F5","path":"rooms/molasses_9/molasses_9.yy",},
+    {"name":"inst_D854B76","path":"rooms/molasses_9/molasses_9.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -237,6 +238,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_8BBA7805","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_doorB","path":"objects/obj_doorB/obj_doorB.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3168.0,"y":960.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_006DE68D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollect","path":"objects/obj_escapecollect/obj_escapecollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1280.0,"y":1216.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_951154F5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_secrettile","path":"objects/obj_secrettile/obj_secrettile.yy",},"properties":[],"rotation":0.0,"scaleX":16.0,"scaleY":7.0,"x":2784.0,"y":800.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_D854B76","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_lapportalentrance","path":"objects/obj_lapportalentrance/obj_lapportalentrance.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1280.0,"y":480.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_2","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":63,"SerialiseWidth":110,"TileCompressedData":[
 -1497,0,3,608,609,610,-108,0,1,705,-109,0,1,641,-108,0,2,736,737,-329,0,2,609,610,-108,0,1,705,-108,0,3,736,737,738,-538,0,3,612,613,614,-108,0,1,645,-109,0,1,677,-109,0,1,709,-109,0,1,645,-109,0,1,677,-108,0,3,740,741,742,-3349,0,],"TileDataFormat":1,},"tilesetId":{"name":"tileset_molasses3","path":"tilesets/tileset_molasses3/tileset_molasses3.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
