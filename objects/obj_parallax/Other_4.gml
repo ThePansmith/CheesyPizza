@@ -10,6 +10,8 @@ if string_starts_with(room_get_name(room), "boss") or room == Longintro
 	old_bg = true;
 
 // fuck
+var sugary = check_sugary();
+
 var layers = layer_get_all();
 for (var i = 0; i < array_length(layers); i++)
 {
@@ -126,30 +128,39 @@ for (var i = 0; i < array_length(layers); i++)
 	
 	if layname == "Foreground_A"
 	{
-		var spr = layer_background_get_sprite(bgid);
-		if sprite_exists(spr)
+		var roombgs = room_get_bg_layers();
+		for(var j = 0; j < array_length(roombgs); j++)
 		{
-			var ht = sprite_get_height(spr);
+			var spr = roombgs[j].bg_sprite;
+			if roombgs[j].layer_id == lay && sprite_exists(spr)
+			{
+				var ht = sprite_get_height(spr);
 			
-			var yy = ceil((room_height - ht) + (room_height - ht) * 0.15);
-			if spr == fg_entrance1
-				yy += 24;
-			yy = floor(yy / 10) * 10;
-			
-			layer_y(lay, yy);
+				var yy = ceil((room_height - ht) + (room_height - ht) * 0.15);
+				if spr == fg_entrance1
+					yy += 24;
+				yy = floor(yy / 10) * 10;
+				
+				roombgs[j].y = yy;
+			}
 		}
 	}
 	
 	#endregion
 	#region SUGARY
 	
-	if string_starts_with(layname, "Backgrounds_Ground")
+	if string_starts_with(layname, "Backgrounds_Ground") && sugary
 	{
-		var spr = layer_background_get_sprite(bgid);
-		if sprite_exists(spr)
+		var roombgs = room_get_bg_layers();
+		for(var j = 0; j < array_length(roombgs); j++)
 		{
-			var ht = sprite_get_height(spr);
-			layer_y(lay, ceil((room_height - ht) + (room_height - ht) * 0.15));
+			var spr = roombgs[j].bg_sprite;
+			if roombgs[j].layer_id == lay && sprite_exists(spr)
+			{
+				var ht = sprite_get_height(spr);
+				var yy = ceil(room_height - ht);
+				roombgs[j].y = yy;
+			}
 		}
 	}
 	
