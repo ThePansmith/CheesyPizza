@@ -122,7 +122,7 @@ for (var i = 0; i < array_length(layers); i++)
 		layer_set_visible(lay, false);
 	
 	#endregion
-	#region FOREGROUND
+	#region AUTO-FOREGROUND
 	
 	if layname == "Foreground_A"
 	{
@@ -137,6 +137,19 @@ for (var i = 0; i < array_length(layers); i++)
 			yy = floor(yy / 10) * 10;
 			
 			layer_y(lay, yy);
+		}
+	}
+	
+	#endregion
+	#region SUGARY
+	
+	if string_starts_with(layname, "Backgrounds_Ground")
+	{
+		var spr = layer_background_get_sprite(bgid);
+		if sprite_exists(spr)
+		{
+			var ht = sprite_get_height(spr);
+			layer_y(lay, ceil((room_height - ht) + (room_height - ht) * 0.15));
 		}
 	}
 	

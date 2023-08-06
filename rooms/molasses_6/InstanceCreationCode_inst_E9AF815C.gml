@@ -1,34 +1,27 @@
-/*
-WARNING: Recursive script decompilation (for member variable name resolution) failed for portal_activate
-
-System.InvalidOperationException: Stack empty.
-   at System.Collections.Generic.Stack`1.ThrowForEmptyStack()
-   at System.Collections.Generic.Stack`1.Pop()
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Dictionary`2 blocks, Block block, List`1 tempvars, Stack`1 workQueue) in D:\a\UndertaleModTool\UndertaleModTool\UndertaleModLib\Decompiler\Decompiler.cs:line 2273
-   at UndertaleModLib.Decompiler.Decompiler.DecompileFromBlock(DecompileContext context, Dictionary`2 blocks, Block block) in D:\a\UndertaleModTool\UndertaleModTool\UndertaleModLib\Decompiler\Decompiler.cs:line 2776
-   at UndertaleModLib.Decompiler.Decompiler.<DecompileFromBlock>g__FindActualNameForAnonymousCodeObject|31_2(DecompileContext context, UndertaleCode anonymousCodeObject) in D:\a\UndertaleModTool\UndertaleModTool\UndertaleModLib\Decompiler\Decompiler.cs:line 2549
-*/
-function anon_gml_RoomCC_molasses_6_5_Create_12_gml_RoomCC_molasses_6_5_Create() //anon_gml_RoomCC_molasses_6_5_Create_12_gml_RoomCC_molasses_6_5_Create
+condition = function()
 {
-    return (place_meeting(x, y, obj_player) && obj_player.state == (75 << 0));
+    return place_meeting(x, y, obj_player1) && obj_player1.state == states.freefallland;
 }
 
-function anon_gml_RoomCC_molasses_6_5_Create_124_gml_RoomCC_molasses_6_5_Create() //anon_gml_RoomCC_molasses_6_5_Create_124_gml_RoomCC_molasses_6_5_Create
+output = function()
 {
-    portal_activate(104280, 1)
-    with (104078)
+    secret_open_portalID();
+    with instance_place(x, y + 1, obj_solid)
+        y += 32;
+	
+	if ds_list_find_index(other.flags.saveroom, other.id) == -1
     {
-        y = (ystart + 32)
-        if (!(ds_list_find_index(other.flags.saveroom, other.id) != -1))
-        {
-            camera_shake(20, 40)
-            scr_sound(82, 83)
-            scr_sound(58)
-            with (instance_place(x, (ystart - 1), obj_player))
-                y = (other.y - 46)
-        }
+		with obj_camera
+		{
+		    shake_mag = 20;
+		    shake_mag_acc = 40 / room_speed;
+		}
+        sound_play_centered(sfx_breakblock);
+        sound_play_centered(sfx_breakmetal);
+		with instance_place(x, y, obj_player1)
+			y += 32;
     }
-    var lay_id = layer_get_id("Tiles_6")
-    layer_y(lay_id, 32)
+	
+    var lay_id = layer_get_id("Tiles_6");
+    layer_y(lay_id, 32);
 }
-

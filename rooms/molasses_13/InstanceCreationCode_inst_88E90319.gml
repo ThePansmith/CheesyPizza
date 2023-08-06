@@ -1,8 +1,7 @@
 flags.do_save = 0
-function anon_gml_RoomCC_molasses_13_11_Create_33_gml_RoomCC_molasses_13_11_Create() //anon_gml_RoomCC_molasses_13_11_Create_33_gml_RoomCC_molasses_13_11_Create
+output = function()
 {
-    with (105765)
+    with inst_03359591
         activateRegion = 1
-    instance_create(3392, 1280, obj_checkpoint_invis)
+    instance_create(3392 - 6, 1280 + 46, obj_checkpoint_invis)
 }
-

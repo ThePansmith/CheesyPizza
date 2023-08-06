@@ -25,7 +25,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"6f9551a3-fa14-4bd7-9fb7-cd78658de0d5","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 9,
   "parent": {
     "name": "Char Cherry",
     "path": "folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Char Cherry.yy",
@@ -64,7 +64,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 50,
-    "yorigin": 50,
+    "yorigin": 75,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

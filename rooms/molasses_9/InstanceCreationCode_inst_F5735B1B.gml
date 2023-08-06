@@ -1,1 +1,1 @@
-content = obj_confectiworm
+content = obj_pizzakinsausage

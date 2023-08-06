@@ -133,6 +133,7 @@ with (ID)
 		case obj_fencer:
 		case obj_ancho:
 		case obj_babybear:
+		case obj_charger:
 			if (state != states.charge && state != states.rage)
 			{
 				hitboxcreate = false;

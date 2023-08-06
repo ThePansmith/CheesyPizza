@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Sugary Spire",
-    "path": "folders/Objects/CheesyPizza/Sugary Spire.yy",
+    "name": "Miscellaneous",
+    "path": "folders/Objects/CheesyPizza/Sugary Spire/Miscellaneous.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -33,6 +33,9 @@
     "name": "spr_geyser_debug",
     "path": "sprites/spr_geyser_debug/spr_geyser_debug.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_geyser_debug",
+    "path": "sprites/spr_geyser_debug/spr_geyser_debug.yy",
+  },
   "visible": true,
 }

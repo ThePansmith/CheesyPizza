@@ -304,7 +304,8 @@ enum states
 	camera_followtarget,
 	cotton,
 	cottondrill,
-	cottonroll
+	cottonroll,
+	fling
 }
 
 #endregion
@@ -608,6 +609,7 @@ states = {
 	cotton : 300,
 	cottondrill : 301,
 	cottonroll : 302,
+	fling : 303
 }
 
 #endregion

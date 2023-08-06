@@ -1,4 +1,3 @@
-// Init
 depth = -8;
 vertical_stop = bbox_top;
 vertical_stop_scale = image_yscale;
@@ -9,6 +8,3 @@ geyser_size = 0;
 geyser_image_index = 0;
 geyser_opacity = 1;
 cloud_image_index = 0;
-
-
-

@@ -1,3 +1,5 @@
+live_auto_call;
+
 for(var i = 0; i < array_length(cutoffs); i++)
 {
 	var c = cutoffs[i];
@@ -11,7 +13,7 @@ for(var i = 0; i < array_length(cutoffs); i++)
 	c.buffer--;
 	
 	var sold = check_solid(x, y);
-	if sold && (sold.object_index == obj_solid or sold.object_index == obj_secretblock or sold.object_index == obj_secretbigblock)
+	if sold && (sold.object_index == obj_solid or sold.object_index == obj_secretblock or sold.object_index == obj_secretbigblock or sold.object_index == obj_secretblock2 or sold.object_index == obj_secretbigblock2)
 	{
 		if image_angle == 0
 			y++;

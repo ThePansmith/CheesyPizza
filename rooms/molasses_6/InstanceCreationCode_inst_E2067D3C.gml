@@ -1,5 +1,4 @@
-function anon_gml_RoomCC_molasses_6_6_Create_9_gml_RoomCC_molasses_6_6_Create() //anon_gml_RoomCC_molasses_6_6_Create_9_gml_RoomCC_molasses_6_6_Create
+output = function()
 {
-    instance_destroy(104090, false)
+    instance_destroy(inst_FC6D592C, false)
 }
-

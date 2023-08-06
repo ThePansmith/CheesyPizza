@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Sugary Spire",
-    "path": "folders/Objects/CheesyPizza/Sugary Spire.yy",
+    "name": "Miscellaneous",
+    "path": "folders/Objects/CheesyPizza/Sugary Spire/Miscellaneous.yy",
   },
   "parentObjectId": null,
   "persistent": true,
