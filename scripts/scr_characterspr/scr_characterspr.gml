@@ -1806,6 +1806,9 @@ function scr_characterspr()
 		spr_kungfuair2transition = spr_playerBN_kungfuair2transition;
 		spr_kungfuair3transition = spr_playerBN_kungfuair2transition;
 		spr_kungfujump = spr_playerBN_kungfujump;
+		spr_wallsplat = spr_playerBN_wallsplat;
+		spr_breakdanceuppercut = spr_playerBN_breakdanceuppercut;
+		spr_breakdanceuppercutend = spr_playerBN_breakdanceuppercutend;
 		spr_palette = spr_bopalette;
 		paletteselect = 0;
 	}
