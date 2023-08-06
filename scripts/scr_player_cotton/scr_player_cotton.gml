@@ -63,7 +63,7 @@ function state_player_cotton()
 		image_index = 0;
 		sprite_index = spr_cotton_jump;
 		instance_create(x, y, obj_highjumpcloud2);
-		//scr_sound(sfx_cottonjump);
+		sound_play_3d("event:/modded/sfx/cottonjump", x, y);
 	}
 	if (key_slap2 && sprite_index != spr_cotton_attack)
 	{
@@ -78,7 +78,7 @@ function state_player_cotton()
 			vsp = 0;
 		grav = 0.2;
 		grounded = false;
-		//scr_sound(sfx_cottonattack);
+		sound_play_3d("event:/modded/sfx/cottonattack", x, y);
 	}
 	if (sprite_index == spr_cotton_attack)
 	{
@@ -129,7 +129,7 @@ function state_player_cotton()
 		else
 			sprite_index = spr_cotton_land;
 		instance_create(x, y, obj_landcloud);
-		//scr_sound(sound_land);
+		sound_play_3d(sfx_playerstep, x, y);
 	}
 	if (key_jump && !grounded && doublejump == 0)
 	{
@@ -142,7 +142,7 @@ function state_player_cotton()
 			image_xscale = other.xscale;
 			sprite_index = spr_cottonpoof;
 		}
-		//scr_sound(sfx_cottondoublejump);
+		sound_play_3d("event:/modded/sfx/cottondoublejump", x, y);
 	}
 	if (sprite_index == spr_cotton_land && image_index >= image_number - 1)
 		sprite_index = spr_cottonidle;

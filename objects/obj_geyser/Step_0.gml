@@ -43,7 +43,7 @@ if player
 	}
 	else if player.bbox_bottom == y - 1 && (player.state == states.freefallland || player.sprite_index == player.spr_bodyslamland)
 	{
-		sound_play_centered("event:/modded/sfx/geyser");
+		sound_play("event:/modded/sfx/geyser");
 		geyser_timer = 300;
 	}
 }

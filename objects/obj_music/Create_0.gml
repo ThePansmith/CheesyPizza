@@ -286,8 +286,24 @@ add_music(steamy_1, "event:/modded/sugary/cotton", "event:/modded/sugary/cottons
 	if s != -1
 		fmod_event_instance_set_parameter(event, "state", s, false);
 });
-add_music(rm_geyser_test, "event:/modded/sugary/molasses", "event:/modded/w1/molassessecret", 0);
-add_music(molasses_1, "event:/modded/sugary/molasses", "event:/modded/w1/molassessecret", 0);
+add_music(rm_geyser_test, "event:/modded/sugary/molasses", "event:/modded/sugary/molassessecret", 0);
+add_music(molasses_1, "event:/modded/sugary/molasses", "event:/modded/sugary/molassessecret", 0, function(room, event, event_secret)
+{
+	var s = -1;
+	switch room
+	{
+		case molasses_1:
+		case molasses_6:
+			s = 0;
+			break;
+		
+		case molasses_6b:
+			s = 1;
+			break;
+	}
+	if s != -1
+		fmod_event_instance_set_parameter(event, "state", s, false);
+});
 add_music(sucrose_1, "event:/modded/sugary/sucrose", "event:/modded/modded/sucrosesecret", 0);
 
 #endregion

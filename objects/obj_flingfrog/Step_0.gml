@@ -45,7 +45,7 @@ if place_meeting(x, y, _player) && !scr_solid(x, y) && _player.vsp >= -3 && _pla
 		{
 			with instance_create(x, y, obj_genericpoofeffect)
 				sprite_index = spr_candyifiedeffect1;
-			//scr_sound(sfx_bloop)
+			sound_play_3d("event:/modded/sfx/bloop", x, y);
 		}
 		
 		movespeed = abs(movespeed);
@@ -126,7 +126,7 @@ if grabbedPlayer != noone
 	{
 		with (grabbedPlayer)
 		{
-			//scr_sound(sfx_bloop2)
+			sound_play_3d("event:/modded/sfx/bloop2", x, y);
 			state = states.jump
 			jumpstop = true;
 			hsp = other.hsp;
@@ -146,7 +146,7 @@ if grabbedPlayer != noone
 	{ 
 		with (grabbedPlayer)
 		{
-			//scr_sound(sfx_bloop2)
+			sound_play_3d("event:/modded/sfx/bloop2", x, y);
 			state = states.jump
 			jumpstop = true;
 			hsp = other.hsp;
