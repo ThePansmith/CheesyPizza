@@ -9,7 +9,7 @@ movespeed = 3;
 state = states.normal;
 tauntID = -4;
 playerid = obj_player1;
-if check_sugary()
+if SUGARY
 {
 	collectedspr = spr_gerome_collected_ss
 	idlespr = spr_gerome_idle_ss

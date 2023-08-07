@@ -91,7 +91,7 @@ switch async_load[? "event_type"]
 			"681556802525331460", // gee9 (admin)
 			"977762104255864862", // trinitetray (admin)
 			"713016378822754334", // omegano7 (admin)
-			"412059144531607552", // volta
+			//"412059144531607552", // volta
 			"773966892520046662", // matty
 			
 			// Modding Monopoly

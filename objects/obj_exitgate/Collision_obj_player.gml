@@ -13,7 +13,7 @@ if ((image_index == 1 && !sugary) or (sugary && sprite_index != spr_sugarygatecl
 		}
 		if (state == states.comingoutdoor && floor(image_index) == image_number - 2)
 		{
-			sound_play_oneshot_3d(check_midway() ? "event:/modded/sfx/gatecloseBN" : "event:/sfx/pep/groundpound", x, y);
+			sound_play_oneshot_3d(MIDWAY ? "event:/modded/sfx/gatecloseBN" : "event:/sfx/pep/groundpound", x, y);
 			GamepadSetVibration(0, 1, 1, 0.9);
 			GamepadSetVibration(1, 1, 1, 0.9);
 			lastroom = room;

@@ -7,7 +7,7 @@ scr_create_uparrowhitbox();
 spr_locked = spr_doorkey;
 spr_open = spr_doorkeyopen;
 
-sugary = check_sugary();
+sugary = SUGARY;
 if sugary
 {
 	spr_locked = spr_keydoor_ss;

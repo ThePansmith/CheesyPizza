@@ -8,6 +8,6 @@ visited = false;
 uparrow = false;
 uparrowID = -4;
 
-sugary = check_sugary();
+sugary = SUGARY;
 if sugary
 	sprite_index = spr_geromedoor_ss;

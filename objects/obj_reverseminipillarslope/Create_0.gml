@@ -5,7 +5,7 @@ player = 0;
 wokespr = spr_minipillarwokeslope;
 sleepspr = spr_minipillarsleepslope;
 
-if check_sugary()
+if SUGARY
 {
 	wokespr = spr_minipillarwokeslope_ss;
 	sleepspr = spr_minipillarsleepslope_ss;

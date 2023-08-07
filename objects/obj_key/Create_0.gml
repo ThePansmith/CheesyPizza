@@ -15,6 +15,6 @@ platformid = -4;
 hsp_carry = 0;
 vsp_carry = 0;
 
-sugary = check_sugary();
+sugary = SUGARY;
 if sugary
 	sprite_index = spr_spookey_idle;

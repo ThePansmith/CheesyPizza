@@ -14,13 +14,13 @@ idlespr = spr_hungrypillar;
 angryspr = spr_hungrypillar_angry;
 deadspr = spr_hungrypillar_dead;
 
-if check_sugary()
+if SUGARY
 {
 	idlespr = spr_hungrypillar_ss;
 	angryspr = idlespr;
 	deadspr = spr_hungrypillar_dead_ss;
 }
-if check_midway()
+if MIDWAY
 {
 	idlespr = spr_hungrypillar_bo;
 	angryspr = idlespr;

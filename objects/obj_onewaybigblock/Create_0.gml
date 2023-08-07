@@ -21,10 +21,10 @@ if (image_xscale == -1)
 	}
 }
 
-sugary = check_sugary();
+sugary = SUGARY;
 if sugary
 	sprite_index = spr_onewaybigblock_ss;
 
-bo = check_midway();
+bo = MIDWAY;
 if bo
 	sprite_index = spr_onewaybigblock_bo;

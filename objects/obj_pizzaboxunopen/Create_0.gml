@@ -8,10 +8,10 @@ image_xscale = 1;
 snd = fmod_event_create_instance("event:/sfx/misc/toppinhelp");
 scr_fmod_soundeffect(snd, x, y);
 
-sugary = check_sugary();
+sugary = SUGARY;
 if sugary
 	sprite_index = spr_confecticage;
 
-bo = check_midway();
+bo = MIDWAY;
 if bo
 	sprite_index = spr_pizzaboxunopen_bo;

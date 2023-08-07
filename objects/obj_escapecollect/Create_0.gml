@@ -7,5 +7,5 @@ depth = 11;
 image_alpha = 0.35;
 gotowardsplayer = false;
 movespeed = 5;
-if check_sugary()
+if SUGARY
 	sprite_index = spr_escapecollect_ss

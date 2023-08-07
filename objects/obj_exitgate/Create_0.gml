@@ -20,12 +20,12 @@ uparrow = false;
 uparrowID = -4;
 snd = false;
 
-sugary = check_sugary()
+sugary = SUGARY
 if sugary
 {
 	sprite_index = spr_sugarygateopen;
 	image_index = 0;
 }
 
-if check_midway()
+if MIDWAY
 	sprite_index = spr_exitgate_bo;

@@ -9,7 +9,7 @@ if global.blockstyle == 1
 	particlespr = spr_harddoughblockdead;
 }
 
-sugary = check_sugary();
+sugary = SUGARY;
 if sugary
 {
 	sprite_index = spr_metalblock_ss;

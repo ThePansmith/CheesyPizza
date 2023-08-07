@@ -32,7 +32,7 @@ voicecooldown = 0;
 
 spr_sleep = spr_tutorialgranny_sleep;
 spr_talk = spr_tutorialgranny_talk;
-if check_sugary()
+if SUGARY
 {
 	spr_sleep = spr_grandpop;
 	spr_talk = spr_grandpop_speak;

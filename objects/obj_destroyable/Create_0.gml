@@ -19,13 +19,13 @@ if global.blockstyle == 2
 	particlespd = 0;
 }
 
-if check_sugary()
+if SUGARY
 {
 	sprite_index = spr_destroyable_ss;
 	particlespr = spr_debris_ss;
 	particlespd = 0;
 }
-if check_midway()
+if MIDWAY
 {
 	sprite_index = spr_towerblocksmall_bo;
 	image_speed = 0;

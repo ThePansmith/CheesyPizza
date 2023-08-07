@@ -8,7 +8,7 @@ spr_intro_strongcold = spr_xmascheesetoppin_intro;
 spr_idle_strongcold = spr_xmascheesetoppin_idle;
 spr_run_strongcold = spr_xmascheesetoppin_walk;
 
-if check_sugary()
+if SUGARY
 {
 	spr_intro = spr_chocolate_intro;
 	spr_idle = spr_chocolate_idle;

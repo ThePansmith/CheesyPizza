@@ -1,4 +1,4 @@
-sugary = check_sugary();
+sugary = SUGARY;
 
 spr_dead = spr_rattumbleblock_big_dead;
 depth = 2;

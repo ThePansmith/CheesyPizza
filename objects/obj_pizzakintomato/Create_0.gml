@@ -8,7 +8,7 @@ spr_intro_strongcold = spr_xmastomatotoppin_intro;
 spr_idle_strongcold = spr_xmastomatotoppin_idle;
 spr_run_strongcold = spr_xmastomatotoppin_walk;
 
-if check_sugary()
+if SUGARY
 {
 	spr_intro = spr_crack_intro;
 	spr_idle = spr_crack_idle;

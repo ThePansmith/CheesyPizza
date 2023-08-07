@@ -7,7 +7,7 @@ animy = 0;
 if check_char("V") or check_char("G") or check_char("S")
 	instance_destroy(other, false);
 
-if check_midway()
+if MIDWAY
 {
 	sprite_index = spr_ratblock6_bo;
 	spr_dead = spr_ratblock6_dead_bo;

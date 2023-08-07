@@ -10,7 +10,7 @@ if string_starts_with(room_get_name(room), "boss") or room == Longintro
 	old_bg = true;
 
 // fuck
-var sugary = check_sugary();
+var sugary = SUGARY;
 
 var layers = layer_get_all();
 for (var i = 0; i < array_length(layers); i++)

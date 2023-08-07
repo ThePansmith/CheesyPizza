@@ -47,7 +47,7 @@ stuntouchbuffer = 0;
 scaredbuffer = 0;
 snotty = false;
 
-bo = check_midway();
+bo = MIDWAY;
 if bo
 {
 	walkspr = spr_grapemove;

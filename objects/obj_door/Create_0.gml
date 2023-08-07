@@ -1,7 +1,7 @@
 image_speed = 0.35;
 visited = false;
 depth = 103;
-sugary = check_sugary();
+sugary = SUGARY;
 if sugary
 	depth = 50;
 targetDoor = "A";

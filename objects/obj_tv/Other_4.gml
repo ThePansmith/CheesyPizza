@@ -90,12 +90,21 @@ switch (global.leveltosave)
 	case "pinball": tv_bg_index = 22; break;
 	case "mansion": tv_bg_index = 21; break;
 	case "strongcold": tv_bg_index = 23; break;
-	case "grinch": tv_bg_index = 26; break;
+	case "grinch": tv_bg_index = 25; break;
+	
+	// sugary
+	case "entryway": tv_bg_index = 0; break;
+	case "steamy": tv_bg_index = 1; break;
+	case "molasses": tv_bg_index = 2; break;
+	case "mines": tv_bg_index = 3; break;
+	case "fudge": tv_bg_index = 4; break;
+	case "dance": tv_bg_index = 5; break;
+	case "estate": tv_bg_index = 6; break;
+	case "bee": tv_bg_index = 7; break;
+	case "sucrose": tv_bg_index = 8; break;
 	
 	// pto exclusive
 	case "midway": tv_bg_index = 24; break;
-	case "entryway": tv_bg_index = 25; break;
-	
 	case "snickchallenge":
 		if string_starts_with(r, "medieval")
 			tv_bg_index = 2;
@@ -236,5 +245,5 @@ global.crank = floor(global.brank / 2);
 if (room == custom_lvl_room)
 	alarm[1] = 4;
 
-sugarylevel = check_sugary();
-bolevel = check_midway();
+sugarylevel = SUGARY;
+bolevel = MIDWAY;

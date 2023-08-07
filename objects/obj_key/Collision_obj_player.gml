@@ -13,7 +13,8 @@ with (other)
 		global.combotime = 60;
 		global.heattime = 60;
 		instance_create(x, y, obj_spookeyfollow);
-		instance_create(x, y, obj_taunteffect);
+		with instance_create(x, y, obj_taunteffect)
+			player = noone;
 	}
 	else
 	{

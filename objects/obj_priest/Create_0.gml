@@ -7,7 +7,7 @@ depth = 1;
 spr_idle = spr_priest_idle;
 spr_pray = spr_priest_pray;
 
-sugary = check_sugary();
+sugary = SUGARY;
 if sugary
 {
 	spr_idle = spr_cultist;

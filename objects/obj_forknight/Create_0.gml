@@ -41,7 +41,7 @@ stuntouchbuffer = 0;
 ragedash = 0;
 ragecooldown = 0;
 
-bo = check_midway();
+bo = MIDWAY;
 if bo
 {
 	walkspr = spr_pinhead_walk;

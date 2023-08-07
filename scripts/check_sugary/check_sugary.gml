@@ -1,4 +1,0 @@
-function check_sugary()
-{
-	return global.leveltosave == "entryway" or global.leveltosave == "steamy" or global.leveltosave == "molasses" or global.leveltosave == "sucrose" or room == tower_sugary;
-}

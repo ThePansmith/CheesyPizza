@@ -1,7 +1,5 @@
 function scr_player_climbwall()
 {
-	if live_call() return live_result;
-	
 	switch (character)
 	{
 		default:
@@ -17,7 +15,7 @@ function scr_player_climbwall()
 			if place_meeting(x + xscale, y, obj_unclimbablewall) or place_meeting(x + xscale, y, obj_molassesWall)
 			{
 				wallspeed -= grav / 2;
-				if wallspeed > 6
+				if wallspeed > 6 && !place_meeting(x + xscale, y, obj_molassesWall)
 					wallspeed = 6;
 				
 				if grounded

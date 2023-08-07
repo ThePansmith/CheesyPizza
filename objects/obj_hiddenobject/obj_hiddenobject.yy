@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_secretbigdestroyable",
-    "path": "sprites/spr_secretbigdestroyable/spr_secretbigdestroyable.yy",
+    "name": "spr_hiddenobject",
+    "path": "sprites/spr_hiddenobject/spr_hiddenobject.yy",
   },
   "spriteMaskId": null,
   "visible": false,

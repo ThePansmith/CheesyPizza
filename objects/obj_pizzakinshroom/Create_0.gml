@@ -8,7 +8,7 @@ spr_intro_strongcold = spr_xmasshroomtoppin_intro;
 spr_idle_strongcold = spr_xmasshroomtoppin_idle;
 spr_run_strongcold = spr_xmasshroomtoppin_walk;
 
-if check_sugary()
+if SUGARY
 {
 	spr_intro = spr_marshmellow_intro;
 	spr_idle = spr_marshmellow_idle;

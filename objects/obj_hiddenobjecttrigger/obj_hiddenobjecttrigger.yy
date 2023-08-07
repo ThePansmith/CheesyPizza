@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_placeholder2",
-    "path": "sprites/spr_placeholder2/spr_placeholder2.yy",
+    "name": "spr_hiddenobjecttrigger",
+    "path": "sprites/spr_hiddenobjecttrigger/spr_hiddenobjecttrigger.yy",
   },
   "spriteMaskId": null,
   "visible": false,

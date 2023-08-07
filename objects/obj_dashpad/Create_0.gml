@@ -9,7 +9,7 @@ vsp_carry = 0;
 buffer = 0;
 depth = 0;
 
-sugary = check_sugary();
+sugary = SUGARY;
 if sugary
 {
 	sprite_index = spr_dashpad_ss;

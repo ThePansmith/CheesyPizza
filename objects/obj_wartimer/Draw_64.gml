@@ -36,7 +36,7 @@ draw_set_alpha(1);
 // lap display
 if global.lap > 0 && !global.panic
 {
-	var sugary = check_sugary();
+	var sugary = SUGARY;
 	
 	lap_y = Approach(lap_y, SCREEN_HEIGHT - 56, 2);
 	lapflag_index += 0.35;

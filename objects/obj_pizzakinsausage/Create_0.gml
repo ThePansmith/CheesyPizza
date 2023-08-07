@@ -8,7 +8,7 @@ spr_intro_strongcold = spr_xmassausagetoppin_intro;
 spr_idle_strongcold = spr_xmassausagetoppin_idle;
 spr_run_strongcold = spr_xmassausagetoppin_walk;
 
-if check_sugary()
+if SUGARY
 {
 	spr_intro = spr_gummyworm_intro;
 	spr_idle = spr_gummyworm_idle;

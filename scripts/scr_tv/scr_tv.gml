@@ -212,6 +212,8 @@ function scr_tv_get_transfo_sprite()
 					_spr = spr_tv_shotgun;
 				else if (global.mort)
 					_spr = spr_tv_mort;
+				else if sprite_index == spr_player_candyup or sprite_index == spr_player_candytransitionup
+					_spr = spr_tv_croaked;
 			}
 			break;
 		case states.freefallprep:
@@ -278,6 +280,14 @@ function scr_tv_get_transfo_sprite()
 				_spr = spr_tv_clown;
 			else if (obj_player1.shotgunAnim)
 				_spr = spr_tv_shotgun;
+			break;
+		
+		// new!
+		case states.cotton:
+			_spr = spr_tv_cotton;
+			break;
+		case states.fling:
+			_spr = spr_tv_croaked;
 			break;
 	}
 	with (obj_player1)

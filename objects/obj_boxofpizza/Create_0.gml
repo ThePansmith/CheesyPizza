@@ -2,10 +2,10 @@ image_speed = 0.35;
 targetDoor = "A";
 sound = "event:/sfx/pep/box";
 
-if check_sugary()
+if SUGARY
 	sprite_index = spr_pizzabox_ss;
 
-bo = check_midway();
+bo = MIDWAY;
 if bo
 {
 	sound = "event:/modded/sfx/boxBN";

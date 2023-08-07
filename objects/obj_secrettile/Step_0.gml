@@ -16,10 +16,7 @@ if (player && place_meeting(x, y, player) && player.state != states.chainsaw) or
 		{
 			sound_stop(sfx_collectpizza);
 			with player
-			{
-				if character == "SP"
-					fmod_event_instance_set_parameter(global.snd_secretwall, "state", 1, false);
-			}
+				fmod_event_instance_set_parameter(global.snd_secretwall, "state", character == "SP", false);
 			fmod_event_instance_play(global.snd_secretwall);
 		}
 	}

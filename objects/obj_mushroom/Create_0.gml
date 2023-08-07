@@ -3,7 +3,7 @@ depth = 5;
 spr_idle = spr_bigmushroom;
 spr_bounce = spr_bigmushroom_bounce;
 
-sugary = check_sugary();
+sugary = SUGARY;
 if sugary
 {
 	spr_idle = spr_marshmallowspring;

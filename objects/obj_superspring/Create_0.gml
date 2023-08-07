@@ -11,7 +11,7 @@ grav = 0.5;
 activatespr = spr_presentbox_activate;
 depth = 0;
 
-if check_sugary()
+if SUGARY
 {
 	sprite_index = spr_presentbox_ss;
 	activatespr = spr_presentbox_activate_ss;

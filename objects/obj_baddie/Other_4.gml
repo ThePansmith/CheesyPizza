@@ -44,7 +44,7 @@ if (safe_get(id, "elite") or global.stylethreshold >= 3) && usepalette
 	paletteselect = elitepal;
 
 // snap to ground if sugary
-if check_sugary()
+if SUGARY
 {
 	for(var i = 1; i < 32; i++)
 	{

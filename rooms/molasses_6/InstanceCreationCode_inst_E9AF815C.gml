@@ -20,6 +20,12 @@ output = function()
         sound_play_centered(sfx_breakmetal);
 		with instance_place(x, y, obj_player1)
 			y += 32;
+		
+		if REMIX
+		{
+			fmod_event_instance_set_parameter(global.snd_secretwall, "state", check_char("SP"), false);
+			fmod_event_instance_play(global.snd_secretwall);
+		}
     }
 	
     var lay_id = layer_get_id("Tiles_6");

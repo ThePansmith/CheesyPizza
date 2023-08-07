@@ -1,6 +1,6 @@
 if (ds_list_find_index(global.saveroom, id) == -1)
 {
-	if check_sugary()
+	if SUGARY
 	{
 		var rep = (4 + ((sprite_width / 32) - 1))
 		repeat rep

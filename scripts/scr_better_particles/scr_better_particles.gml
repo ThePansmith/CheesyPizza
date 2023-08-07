@@ -3,7 +3,7 @@ function create_baddiegibs(_x, _y)
 	if object_index == obj_junkNEW
 		exit;
 	
-	var sprite = check_sugary() ? spr_baddiegibs_ss : spr_baddiegibs;
+	var sprite = SUGARY ? spr_baddiegibs_ss : spr_baddiegibs;
 	var q = 
 	{
 		x: _x,

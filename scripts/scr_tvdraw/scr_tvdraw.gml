@@ -121,19 +121,41 @@ function scr_tvdraw()
 	if (room != strongcold_endscreen)
 	{
 		// background
-		if REMIX or sugary
+		if REMIX or sugary or sugarylevel
 		{
+			// secrets
 			var bgindex = tv_bg_index, bgcol = c_white;
 			if instance_exists(obj_ghostcollectibles)
-				bgindex = 20;
+				bgindex = sugarylevel ? 9 : 20;
 			if obj_player1.state == states.secretenter && instance_exists(obj_fadeout)
 				bgcol = merge_color(c_white, c_black, clamp(obj_fadeout.fadealpha, 0, 1));
-	
-			draw_sprite_ext(!sugary ? spr_tv_bgfinal_NEW : spr_tv_bgfinalSP, bgindex, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, bgcol, alpha);
+			
+			// decide sprite
+			var sprite = spr_tv_bgfinal_NEW;
+			if sugary
+			{
+				if sugarylevel
+					sprite = global.panic ? spr_tv_bgescape_ssSP : spr_tv_bgfinal_ssSP;
+				else
+					sprite = spr_tv_bgfinalSP;
+			}
+			else if sugarylevel
+				sprite = global.panic ? spr_tv_bgescape_ss : spr_tv_bgfinal_ss;
+			
+			// draw
+			draw_sprite_ext(sprite, bgindex, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, bgcol, alpha);
+			
+			// flash white
+			if instance_exists(obj_hungrypillarflash)
+			{
+				draw_set_flash(c_white);
+				draw_sprite_ext(sprite, bgindex, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, obj_hungrypillarflash.alpha * alpha);
+				draw_reset_flash();
+			}
 		}
 		else
 			draw_sprite_ext(spr_tv_bgfinal, tv_bg_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);
-	
+		
 		// player
 		shader_set(shd_pal_swapper);
 		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);

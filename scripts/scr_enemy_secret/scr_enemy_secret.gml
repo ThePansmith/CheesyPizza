@@ -5,7 +5,7 @@ function scr_enemy_secret()
 	hsp = 0;
 	if (!secretjumped && !place_meeting(x, y, obj_secretbigblock))
 	{
-		if check_midway()
+		if MIDWAY
 			sound_play_3d("event:/modded/sfx/bottledestroy", x, y);
 		secretjumped = true;
 		vsp = -8;

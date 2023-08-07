@@ -2,7 +2,7 @@ spr_open = spr_secretportal_spawnopen;
 spr_idle = spr_secretportal_spawnidle;
 spr_close = spr_secretportal_spawnclose;
 
-sugary = check_sugary();
+sugary = SUGARY;
 if sugary
 {
 	spr_open = spr_secretportal_spawnopen_ss;
@@ -11,7 +11,7 @@ if sugary
 	sprite_index = spr_open;
 }
 
-if check_midway()
+if MIDWAY
 {
 	spr_open = spr_secretportal_spawnopen_bo;
 	spr_idle = spr_secretportal_spawnidle_bo;

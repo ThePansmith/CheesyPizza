@@ -1,5 +1,5 @@
 depth = 7;
-if check_sugary()
+if SUGARY
 {
 	visible = true;
 	sprite_index = spr_ladder_sugary;

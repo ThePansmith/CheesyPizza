@@ -6,7 +6,7 @@ y += floor(vsp);
 
 if scr_solid(x, y)
 {
-	if !check_sugary()
+	if !SUGARY
 	{
 		with (instance_create(x, y - 15, obj_spitcheesespike))
 		{

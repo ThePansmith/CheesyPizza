@@ -32,7 +32,8 @@ if player
 			with player
 			{
 				state = states.jump;
-				sprite_index = spr_currentplayer;
+				sprite_index = spr_rockethitwall;
+				jumpAnim = false;
 				movespeed = 8;
 				
 				if vsp > -8

@@ -7,7 +7,7 @@ if ds_list_find_index(global.saveroom, id) == -1
 		
 		if !global.snickchallenge
 		{
-			var val = heat_calculate(check_sugary() ? 50 : 100);
+			var val = heat_calculate(SUGARY ? 50 : 100);
 			global.collect += val;
 			scr_sound_multiple(global.snd_collect, x, y);
 			with instance_create(x + 16, y, obj_smallnumber)
