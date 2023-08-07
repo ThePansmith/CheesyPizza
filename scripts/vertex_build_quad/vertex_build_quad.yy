@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "quad_split",
+  "name": "vertex_build_quad",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Utility",
-    "path": "folders/Scripts/CheesyPizza/Utility.yy",
+    "name": "Vertex",
+    "path": "folders/Scripts/CheesyPizza/Utility/Vertex.yy",
   },
 }

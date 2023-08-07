@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "vertex_build_tri",
+  "name": "vertex_build_point",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

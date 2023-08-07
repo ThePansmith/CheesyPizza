@@ -11,13 +11,27 @@ incubic = animcurve_get_channel(curve_menu, "incubic");
 jumpcurve = animcurve_get_channel(curve_jump, "curve1");
 vertex_buffer = vertex_create_buffer();
 
+
+pizza_vbuffer = vertex_create_buffer();
+
 vertex_format_begin();
 vertex_format_add_position();
 vertex_format_add_color();
 vertex_format_add_texcoord();
 vertex_format = vertex_format_end();
 
-surface = -1;
+uvs = sprite_get_uvs(spr_skinchoicepalette, 0);
+tex = sprite_get_texture(spr_skinchoicepalette, 0);
+uv_info = {
+	left : uvs[0],
+	top : uvs[1],
+	right : uvs[2],
+	bottom : uvs[3],
+	left_trim : uvs[4],
+	top_trim : uvs[5]
+}
+
+surface = surface_create(256, 256);
 //clip_surface = -1;
 bg_surf = -1;
 bg_pos = 0;
@@ -65,10 +79,13 @@ if global.experimental
 	array_push(characters, ["SN", spr_pizzano_idle, spr_pizzanopalette, [1, 5]]);
 }
 
+event_user(1); // RX: Build pizza vertex array
+
 // set in user event 0
 palettes = [];
 mixables = [];
 unlockables = ["unfunny", "money", "sage", "blood", "tv", "dark", "shitty", "golden", "garish", "mooney", "funny", "itchy", "pizza", "stripes", "goldemanne", "bones", "pp", "war", "john"];
+
 
 function add_palette(palette, entry, texture = noone, name = "PALETTE", description = "(No Description)", mix_prefix)
 {
@@ -206,16 +223,50 @@ postdraw = function(curve)
 		pal_swap_reset();
 	}
 }
-draw = function(curve)
+
+draw_skinchoice_palette = function(_x, _y, _color, _alpha)
+{
+	vertex_build_quad(vertex_buffer, 
+		// RX: Where to draw the sprite on screen
+		_x, _y, sprite_get_width(spr_skinchoicepalette), sprite_get_height(spr_skinchoicepalette),
+		_color, _alpha,
+		//RX: where to get the texture on the sheet
+		uv_info.left, uv_info.top, (uv_info.right - uv_info.left), (uv_info.bottom - uv_info.top)
+	);
+}
+draw_skinchoice_pattern = function(_x, _y, _color, _alpha, _sprite, _subimage)
+{
+	var uvs = sprite_get_uvs(_sprite, _subimage);
+	var tex = sprite_get_texture(_sprite, _subimage);
+	var uv_info = {
+		left : uvs[0],
+		top : uvs[1],
+		right : uvs[2],
+		bottom : uvs[3],
+		left_trim : uvs[4],
+		top_trim : uvs[5]
+	}
+	vertex_build_quad(vertex_buffer, 
+		// RX: Where to draw the sprite on screen
+		_x, _y, sprite_get_width(_sprite), sprite_get_height(_sprite),
+		_color, _alpha,
+		//RX: where to get the texture on the sheet
+		uv_info.left, uv_info.top, (uv_info.right - uv_info.left), (uv_info.bottom - uv_info.top)
+	);
+}
+
+draw = function(curve, draw_skin_palette, draw_skin_pattern)
 {
 	// animation
 	var curve2 = anim_t;
+	// RX: ??????
+	var curv_prev = curve;
 	if anim_con != 0
 	{
 		curve = 1; // actual animated curve
 		curve2 = 1; // the timer
 	}
-	
+
 	// drawer
 	var pal = palettes[sel.pal];
 	if anim_con != 2 or obj_player1.visible
@@ -251,37 +302,38 @@ draw = function(curve)
 				characters[sel.char][1] = spr_playerPN_homer;
 		}
 		
+		// RX: We can't actually avoid a surface here
+		// RX: WELL we can, but you won't like it, so i won't do it
 		// character
+		// RX: Draw player to surface
+		if (!surface_exists(surface))
+			surface = surface_create(256, 256);
+			
+		shader_reset();
+		
+		surface_set_target(surface);
+		draw_clear_alpha(c_white, 0);
+		
 		shader_set(shd_pal_swapper);
 		if pal.texture != noone
 			pattern_set(global.Base_Pattern_Color, characters[sel.char][1], -1, 2, 2, pal.texture);	
 		pal_swap_set(characters[sel.char][2], sel.mix > 0 ? mixables[sel.mix].palette : pal.palette, false);
-		draw_sprite_ext(characters[sel.char][1], -1, charx, chary, 2, 2, 0, c_white, curve * charshift[2]);
+		//draw_sprite_ext(characters[sel.char][1], -1, charx, chary, 2, 2, 0, c_white, curve * charshift[2]);
+		draw_sprite(characters[sel.char][1], -1, 128, 128);
+		
 		reset_shader_fix();
 		pattern_reset();
 		
-		// arrows
-		/*
-		if sel.side == 0
-		{
-			if sel.char > 0
-			{
-				var xx = 960 / 5, yy = 540 / 2 - 110 - sin(current_time / 200) * 4;
-				if charshift[1] < 0
-					yy += charshift[1] * 75;
-				
-				draw_sprite_ext(spr_palettearrow, 0, xx, yy, 1, 1, 0, c_white, 1);
-			}
-			if sel.char < array_length(characters) - 1
-			{
-				var xx = 960 / 5, yy = 540 / 2 + 120 + sin(current_time / 200) * 4;
-				if charshift[1] > 0
-					yy += charshift[1] * 75;
-				
-				draw_sprite_ext(spr_palettearrow, 0, xx, yy, 1, 1, 180, c_white, 1);
-			}
-		}
-		*/
+		surface_reset_target();
+		gpu_set_blendmode(bm_normal);
+		shader_set(shd_circleclip);
+		var origin_pos = shader_get_uniform(shd_circleclip, "u_origin");
+		var radius_pos = shader_get_uniform(shd_circleclip, "u_radius");
+		shader_set_uniform_f(origin_pos, 960 / 2, 540 / 2);
+		shader_set_uniform_f(radius_pos, 560 * curv_prev);
+		
+		draw_surface_ext(surface, charx - 256, chary - 256, 2, 2, 0, c_white, curve * charshift[2]);
+		
 	}
 	
 	// text
@@ -319,7 +371,10 @@ draw = function(curve)
 	var palspr = characters[sel.char][2];
 	var xx = 0, yy = 0;
 	var array = !mixing ? palettes : mixables;
+	vertex_begin(vertex_buffer, vertex_format);
 	
+	var cache = array_create(0);
+	var cache_size = 0;
 	for(var i = 0; i < array_length(array); i++)
 	{
 		var xdraw = xx;
@@ -332,8 +387,8 @@ draw = function(curve)
 			xdraw += random_range(-0.7, 0.7);
 			ydraw += random_range(-0.7, 0.7);
 		}
-		
-		draw_sprite_ext(spr_skinchoicepalette, 0, 2 + 408 + xdraw, 2 + 70 + ydraw, 1, 1, 0, c_black, 0.25);
+		draw_skin_palette(2 + 408 + xdraw,  2 + 70 + ydraw, c_black, 0.25);
+		//draw_sprite_ext(spr_skinchoicepalette, 0, 2 + 408 + xdraw, 2 + 70 + ydraw, 1, 1, 0, c_black, 0.25);
 		if flashpal[0] == i
 			draw_set_flash();
 		
@@ -349,13 +404,24 @@ draw = function(curve)
 		}
 		
 		if ((mixing or array[i].texture == noone) && fuck < 0) or flashpal[0] == i
-			draw_sprite_ext(spr_skinchoicepalette, 0, 408 + xdraw, 70 + ydraw, 1, 1, 0, pal_swap_get_pal_color(palspr, array[i].palette, characters[sel.char][3][mixing]), 1);
+		{
+			//draw_skin_pattern(408 + xdraw, 70 + ydraw, pal_swap_get_pal_color(palspr, array[i].palette, characters[sel.char][3][mixing]), 1, 0);
+			draw_skin_palette(408 + xdraw, 70 + ydraw, pal_swap_get_pal_color(palspr, array[i].palette, characters[sel.char][3][mixing]), 1);
+			//draw_sprite_ext(spr_skinchoicepalette, 0, 408 + xdraw, 70 + ydraw, 1, 1, 0, pal_swap_get_pal_color(palspr, array[i].palette, characters[sel.char][3][mixing]), 1);	
+		}
 		else if fuck >= 0
-			draw_sprite_ext(spr_skinchoicecustom, fuck, 408 + xdraw, 70 + ydraw, 1, 1, 0, c_white, 1);
+		{
+			draw_skin_pattern(408 + xdraw, 70 + ydraw, c_white, 1, spr_skinchoicecustom, fuck);
+			//draw_sprite_ext(spr_skinchoicecustom, fuck, 408 + xdraw, 70 + ydraw, 1, 1, 0, c_white, 1);
+		}
 		else
 		{
-			scr_palette_texture(spr_skinchoicepalette, 0, 408 + xdraw, 70 + ydraw, 1, 1, 0, c_white, 1, true, array[i].texture);
-			draw_sprite_ext(spr_skinchoicepalette, 1, 408 + xdraw, 70 + ydraw, 1, 1, 0, c_white, 1);
+			//draw_skin_pattern(408 + xdraw, 70 + ydraw, c_white, 1, array[i].texture, 0);
+			cache[cache_size++] = { x: 408 + xdraw, y: 70 + ydraw, pattern: array[i].texture }
+			//draw_skin_pattern(408 + xdraw, 70 + ydraw, c_white, 1, spr_skinchoicepalette, 1);
+			//scr_palette_texture(spr_skinchoicepalette, 0, 408 + xdraw, 70 + ydraw, 1, 1, 0, c_white, 1, true, array[i].texture);
+			//draw_sprite_ext(spr_skinchoicepalette, 1, 408 + xdraw, 70 + ydraw, 1, 1, 0, c_white, 1);
+			//draw_skin_palette(408 + xdraw, 70 + ydraw, pal_swap_get_pal_color(palspr, array[i].palette, characters[sel.char][3][mixing]), 1);
 		}
 		draw_reset_flash();
 		
@@ -367,6 +433,17 @@ draw = function(curve)
 		}
 	}
 	
+	vertex_end(vertex_buffer);
+	vertex_submit(vertex_buffer, pr_trianglelist, tex);
+	
+
+	// RX: not really a better way to do this without rewriting the entire thing
+	for (var i = 0; i < cache_size; i++)
+	{
+		scr_palette_texture(spr_skinchoicepalette, 0, cache[i].x, cache[i].y, 1, 1, 0, c_white, 1, true, cache[i].pattern);
+		draw_sprite_ext(spr_skinchoicepalette, 1, cache[i].x, cache[i].y, 1, 1, 0, c_white, 1);
+	}
+
 	// hand
 	draw_sprite_ext(spr_skinchoicehand, 0, handx, handy + sin(current_time / 1000) * 4, 2, 2, 0, c_white, 1);
 	draw_set_align();
