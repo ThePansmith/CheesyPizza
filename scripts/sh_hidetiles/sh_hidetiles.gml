@@ -18,8 +18,8 @@ function sh_hidetiles(args)
 	for (var i = 0; i < array_length(layers); i++)
 	{
 		var lay = layers[i];
-		if global.hidetiles && layer_tilemap_get_id(lay) != -1
-			layer_set_visible(lay, global.hidetiles);
+		if layer_tilemap_get_id(lay) != -1
+			layer_set_visible(lay, !global.hidetiles);
 	}
 	
 	return $"Tile visibility {global.hidetiles ? "OFF" : "ON"}";
