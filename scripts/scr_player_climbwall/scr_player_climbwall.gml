@@ -14,7 +14,7 @@ function scr_player_climbwall()
 			if instance_exists(obj_fadeout) && y < -50
 				vsp = 0;
 			
-			if place_meeting(x + xscale, y, obj_unclimbablewall)
+			if place_meeting(x + xscale, y, obj_unclimbablewall) or place_meeting(x + xscale, y, obj_molassesWall)
 			{
 				wallspeed -= grav / 2;
 				if wallspeed > 6
@@ -22,8 +22,8 @@ function scr_player_climbwall()
 				
 				if grounded
 				{
-					state = states.normal
-					movespeed = 0
+					state = states.normal;
+					movespeed = 0;
 				}
 				
 				var mv = wallspeed / 16;
@@ -31,22 +31,24 @@ function scr_player_climbwall()
 			}
 			else
 			{
-				if (wallspeed < 20)
+				if wallspeed < 20
 					wallspeed += 0.15;
-				if (wallspeed < 0)
+				if wallspeed < 0
 				{
-					if (mach4mode == 0)
+					if mach4mode == 0
 						movespeed += 0.2;
 					else
 						movespeed += 0.4;
 				}
 				image_speed = 0.6;
 				
-				if (wallspeed < 0)
+				if wallspeed < 0
 				{
-					if (!scr_solid(x + xscale, y + 50))
+					if !scr_solid(x + xscale, y + 50)
 						vsp = 0;
 				}
+				if wallspeed < 0 && check_solid(x, y + 12)
+					wallspeed = 0;
 			}
 			
 			crouchslideAnim = true;
@@ -107,8 +109,6 @@ function scr_player_climbwall()
 				}
 				vsp = 0;
 			}
-			if (wallspeed < 0 && check_solid(x, y + 12))
-				wallspeed = 0;
 			if (input_buffer_jump > 8)
 			{
 				sound_play_3d("event:/sfx/pep/jump", x, y);

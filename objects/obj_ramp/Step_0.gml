@@ -1,9 +1,12 @@
+live_auto_call;
+
 if (used)
 	image_index = 1;
 else
 	image_index = 0;
+
 var s = 16;
-if (place_meeting(x, y - s, obj_player))
+if place_meeting(x, y - s, obj_player) && !collision_point(x + sprite_width + image_xscale * 32, y - 32, obj_solid, true, false)
 {
 	with (obj_player)
 	{

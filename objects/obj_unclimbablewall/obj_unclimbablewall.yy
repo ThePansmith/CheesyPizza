@@ -26,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_hurtbox",
-    "path": "sprites/spr_hurtbox/spr_hurtbox.yy",
+    "name": "spr_solid",
+    "path": "sprites/spr_solid/spr_solid.yy",
   },
   "spriteMaskId": null,
   "visible": false,

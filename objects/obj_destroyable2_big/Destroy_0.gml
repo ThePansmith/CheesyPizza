@@ -16,10 +16,8 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	
 	if (content == obj_null)
 	{
-		global.heattime += 10;
-		global.heattime = clamp(global.heattime, 0, 60);
-		global.combotime += 50;
-		global.combotime = clamp(global.combotime, 0, 60);
+		global.heattime = clamp(global.heattime + 50, 0, 60);
+		global.combotime = clamp(global.combotime + 50, 0, 60);
 		
 		if !global.snickchallenge
 		{

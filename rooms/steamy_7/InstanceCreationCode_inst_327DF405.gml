@@ -1,5 +1,5 @@
 flags.do_once_per_save = 1
-function anon_gml_RoomCC_steamy_7_6_Create_44_gml_RoomCC_steamy_7_6_Create() //anon_gml_RoomCC_steamy_7_6_Create_44_gml_RoomCC_steamy_7_6_Create
+condition = function()
 {
     var _check = 0
     with (obj_player)
@@ -10,7 +10,7 @@ function anon_gml_RoomCC_steamy_7_6_Create_44_gml_RoomCC_steamy_7_6_Create() //a
     return _check;
 }
 
-function anon_gml_RoomCC_steamy_7_6_Create_214_gml_RoomCC_steamy_7_6_Create() //anon_gml_RoomCC_steamy_7_6_Create_214_gml_RoomCC_steamy_7_6_Create
+output = function()
 {
     for (var i = 0; i < (sprite_get_number(spr_clocktowerexteriorDebris) - 1); i++)
     {
@@ -30,7 +30,11 @@ function anon_gml_RoomCC_steamy_7_6_Create_214_gml_RoomCC_steamy_7_6_Create() //
             image_index = irandom_range(0, (sprite_get_number(spr_clocktowerexteriorDebris) - 1))
         }
     }
-    camera_shake(20, 40)
-    scr_sound(58)
+    with obj_camera
+	{
+		shake_mag = 20;
+		shake_mag_acc = 40 / room_speed;
+	}
+    sound_play_centered(sfx_breakmetal);
 }
 

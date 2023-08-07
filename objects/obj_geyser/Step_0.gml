@@ -1,56 +1,56 @@
-if (geyser_timer > 0)
+if geyser_timer > 0
 	geyser_timer--;
 
-// Do Geyser Animation
-geyser_image_index += 0.35;
-if (geyser_image_index > sprite_get_number(spr_geyservertical))
-	geyser_image_index = 0;
-	
-// Do Cloud animation
-cloud_image_index += 0.25;
-if (cloud_image_index > sprite_get_number(spr_geysercloud))
-	cloud_image_index = 0;
-	
-	
-if (!geyser_timer && geyser_size < 0) // Drain and Fade
+// animation
+geyser_image_index = (geyser_image_index + 0.35) % sprite_get_number(spr_geyservertical);
+cloud_image_index = (cloud_image_index + 0.25) % sprite_get_number(spr_geysercloud);
+
+// drain or fill
+if !geyser_timer
 {
-	geyser_opacity = Approach(geyser_opacity, 0, 0.05);
-	geyser_size = Approach(geyser_size, 0, 0.5);
+	if geyser_size < 0
+	{
+		geyser_opacity = Approach(geyser_opacity, 0, 0.05);
+		geyser_size = Approach(geyser_size, 0, 0.5);
+	}
 }
-if (geyser_timer && geyser_size > -vertical_stop_scale) // Fill
+else if geyser_size > -vertical_stop_scale
 {
 	geyser_size = Approach(geyser_size, -vertical_stop_scale, 1);
 	geyser_opacity = 1;
 }
 
-// Ignore any player interactions if the player isn't in range
-if (!(bbox_right < obj_player1.bbox_left || bbox_left > obj_player1.bbox_right))
+// player collision
+var player = instance_place(x, y, obj_player);
+if player
 {	
-	if (geyser_timer > 0) // Active Geyser
+	if geyser_timer > 0
 	{
-		if (obj_player1.bbox_bottom > vertical_stop)
+		// active
+		if player.bbox_bottom > vertical_stop
 		{
-			with (obj_player1)
+			with player
 			{
 				state = states.jump;
 				sprite_index = spr_currentplayer;
 				movespeed = 8;
-				if (vsp > -8)
+				
+				if vsp > -8
 					vsp = -8;
-					
 				vsp = Approach(vsp, -18, 1);
 			}
 		}
 	}
-	else // Inactive Geyser
+	else if player.bbox_bottom == y - 1 && (player.state == states.freefallland || player.sprite_index == player.spr_bodyslamland)
 	{
-		if (obj_player1.bbox_bottom != y - 1)
-			exit;
-		if (obj_player1.state == states.freefallland || obj_player.sprite_index == obj_player.spr_bodyslamland)
-		{
-			fmod_event_one_shot("event:/modded/sfx/geyser");
-			geyser_timer = 300;
-		}
-	
+		sound_play("event:/modded/sfx/geyser");
+		geyser_timer = 300;
 	}
+}
+
+// wafer blocks
+with obj_waferdestroyable
+{
+	if place_meeting(x, y, other) && other.geyser_timer > 0 && bbox_bottom > other.y + other.geyser_size * 32
+		event_user(0);
 }

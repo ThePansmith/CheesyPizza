@@ -58,7 +58,7 @@ function state_player_cottondrill()
 			vsp = 0;
 		grav = 0.2;
 		grounded = false;
-		//scr_sound(sfx_cottonattack);
+		sound_play_3d("event:/modded/sfx/cottonattack", x, y);
 	}
 	if (key_jump && !grounded && doublejump == 0)
 	{
@@ -75,7 +75,7 @@ function state_player_cottondrill()
 			image_xscale = other.xscale;
 			sprite_index = spr_cottonpoof;
 		}
-		//scr_sound(sfx_cottonjump);
+		sound_play_3d("event:/modded/sfx/cottonjump", x, y);
 	}
 	if movespeed >= 8 or sprite_index == spr_cotton_attack or sprite_index == spr_cotton_drill
 	{

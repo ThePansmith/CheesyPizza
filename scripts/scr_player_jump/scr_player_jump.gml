@@ -216,6 +216,9 @@ function state_player_jump()
 				case spr_groundpoundjump:
 					sprite_index = spr_fall;
 					break;
+				case spr_player_candytransitionup:
+					sprite_index = spr_player_candyup;
+					break;
 			}
 		}
 	}

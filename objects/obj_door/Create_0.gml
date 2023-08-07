@@ -22,6 +22,5 @@ if (room == tower_5)
 	}
 }
 compatibility = false;
-targetRoom = room;
 if sugary
 	sprite_index = spr_doorunvisited_ss;

@@ -3,7 +3,7 @@ with (other)
 	if (vsp < 0)
 	{
 		repeat (2)
-			create_debris(x, y + 43, spr_cheesechunk);
+			create_debris(x, y + 43, other.sugary ? spr_molassesgoop : spr_cheesechunk);
 		vsp *= 0.5;
 		scr_fmod_soundeffect(global.snd_cheesejump, x, y);
 	}
@@ -11,7 +11,7 @@ with (other)
 		state = grounded ? states.normal : states.jump;
 	if (hsp != 0 && (floor(image_index) % 4) == 0)
 	{
-		create_debris(x, y + 43, spr_cheesechunk);
+		create_debris(x, y + 43, other.sugary ? spr_molassesgoop : spr_cheesechunk);
 		if (!other.stepped)
 		{
 			sound_play_oneshot_3d("event:/sfx/pep/cheesefloor", x, y);

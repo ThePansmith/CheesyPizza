@@ -1,5 +1,5 @@
 flags.do_once_per_save = 1
-function anon_gml_RoomCC_molasses_5_5_Create_44_gml_RoomCC_molasses_5_5_Create() //anon_gml_RoomCC_molasses_5_5_Create_44_gml_RoomCC_molasses_5_5_Create
+condition = function()
 {
     var _check = 0
     with (obj_player)
@@ -10,11 +10,11 @@ function anon_gml_RoomCC_molasses_5_5_Create_44_gml_RoomCC_molasses_5_5_Create()
     return _check;
 }
 
-function anon_gml_RoomCC_molasses_5_5_Create_216_gml_RoomCC_molasses_5_5_Create() //anon_gml_RoomCC_molasses_5_5_Create_216_gml_RoomCC_molasses_5_5_Create
+output = function()
 {
-    with (103984)
+    with (obj_geyserCutscene)
     {
-        sprite_index = spr_geyserCutscene_Active
+        sprite_index = spr_geysercutscene_active
         image_index = 0
     }
 }

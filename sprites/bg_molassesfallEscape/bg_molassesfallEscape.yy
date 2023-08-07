@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "bg_molassesfallEscape",
+  "name": "bg_molassesfallescape",
   "bbox_bottom": 539,
   "bbox_left": 190,
   "bbox_right": 431,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "bg_molassesfallEscape",
+    "name": "bg_molassesfallescape",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b9039868-fb83-4249-9d3d-70ed7d8d5cab","path":"sprites/bg_molassesfallEscape/bg_molassesfallEscape.yy",},},},"Disabled":false,"id":"3ffd27be-6aea-4a0c-bb07-86bddfeb3a72","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b9039868-fb83-4249-9d3d-70ed7d8d5cab","path":"sprites/bg_molassesfallescape/bg_molassesfallescape.yy",},},},"Disabled":false,"id":"3ffd27be-6aea-4a0c-bb07-86bddfeb3a72","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

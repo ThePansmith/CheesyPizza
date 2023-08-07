@@ -1,4 +1,4 @@
-if (other.cutscene == 0 && sprite_index != spr_bigmushroom_bounce && other.state != states.gotoplayer)
+if (!other.cutscene && sprite_index != spr_bounce && other.state != states.gotoplayer)
 {
 	other.jumpstop = true;
 	with (other)
@@ -12,16 +12,16 @@ if (other.cutscene == 0 && sprite_index != spr_bigmushroom_bounce && other.state
 		if (state == states.climbwall)
 			state = states.mach2;
 	}
-	if (sprite_index != spr_bigmushroom_bounce || image_index > 5)
+	if (sprite_index != spr_bounce || image_index > 5)
 		sound_play_oneshot_3d("event:/sfx/misc/mushroombounce", x, y);
-	sprite_index = spr_bigmushroom_bounce;
+	sprite_index = spr_bounce;
 	if (other.state == states.jump || other.state == states.normal)
 	{
 		other.sprite_index = other.spr_machfreefall;
 		other.image_index = 0;
 	}
 	image_index = 0;
-	other.vsp = -14;
+	other.vsp = sugary ? -21 : -14;
 	other.jumpstop = true;
 	if (other.isgustavo && other.state != states.ratmountskid)
 	{

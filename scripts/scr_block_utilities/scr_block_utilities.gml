@@ -61,6 +61,15 @@ function scr_cutoff()
 	with instance_place(x - 1, y, obj_destructibles)
 		if (sprite_height % 64 != 0) smallblock[3] = true;
 	
+	if !collision_point(bbox_left, bbox_bottom, obj_solid, true, true) or !collision_point(bbox_right - 1, bbox_bottom, obj_solid, true, true)
+		smallblock[0] = true;
+	if !collision_point(bbox_right, bbox_top, obj_solid, true, true) or !collision_point(bbox_right, bbox_bottom - 1, obj_solid, true, true)
+		smallblock[1] = true;
+	if !collision_point(bbox_left, bbox_top - 1, obj_solid, true, true) or !collision_point(bbox_right - 1, bbox_top - 1, obj_solid, true, true)
+		smallblock[2] = true;
+	if !collision_point(bbox_left - 1, bbox_top, obj_solid, true, true) or !collision_point(bbox_left - 1, bbox_bottom - 1, obj_solid, true, true)
+		smallblock[3] = true;
+	
 	with obj_cutoffsystem
 	{
 		// bottom
