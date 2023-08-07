@@ -61,7 +61,8 @@ switch async_load[? "event_type"]
 				show_message("Get another alt.");
 			if a == "618151581111812106" // Mannu
 				show_message("You know what you did.");
-			
+			if a == "387106161754898432" // Cubito, added by Radix
+				show_message("\"Well Maybe I should leak your face?\" Radix: Well maybe I shouldn't let you play Cheesed up.");
 			//if a == "357967410340429825" // TheSpookyDong
 			//	show_message("You treated me well but this is by pure obligation");
 			//if a == "370924430324531200" or a == "748959499565662360" // Laterance
@@ -84,7 +85,7 @@ switch async_load[? "event_type"]
 			"970894665593262171", // bmv277
 			"775518791818805268", // Jam (composer)
 			"725796266629398691", // auro
-			//"387106161754898432", // Cubito
+			"387106161754898432", // Cubito
 			//"516337795372154910", // TheFungang
 			"489119025608261655", // melvin (admin)
 			"681556802525331460", // gee9 (admin)
