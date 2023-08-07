@@ -149,7 +149,7 @@ function scr_tvdraw()
 			if instance_exists(obj_hungrypillarflash)
 			{
 				draw_set_flash(c_white);
-				draw_sprite_ext(sprite, bgindex, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, obj_hungrypillarflash.alpha * alpha);
+				draw_sprite_ext(sprite, bgindex, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, obj_hungrypillarflash.fade * alpha);
 				draw_reset_flash();
 			}
 		}

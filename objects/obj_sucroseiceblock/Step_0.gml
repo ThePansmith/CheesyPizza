@@ -47,8 +47,8 @@ if (type == "Normal" || type == "Heavy") && ((state == states.idle && type == "H
 	instance_destroy(instance_place(x + sign(hsp), y + sign(vsp), obj_baddie))
 	instance_destroy(instance_place(x + hsp, y + vsp, obj_destructibles))
 	instance_destroy(instance_place(x + sign(hsp), y + sign(vsp), obj_destructibles))
-	//instance_destroy(instance_place(x + hsp, y + vsp, obj_icewall))
-	//instance_destroy(instance_place(x + sign(hsp), y + sign(vsp), obj_icewall))	
+	instance_destroy(instance_place(x + hsp, y + vsp, obj_icewall))
+	instance_destroy(instance_place(x + sign(hsp), y + sign(vsp), obj_icewall))	
 }
 
 if !place_meeting(x, y, obj_dashpad)

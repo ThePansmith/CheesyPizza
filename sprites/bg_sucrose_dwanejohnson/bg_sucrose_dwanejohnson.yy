@@ -1,11 +1,11 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "bg_angryjohn",
+  "name": "bg_sucrose_dwanejohnson",
   "bbox_bottom": 599,
-  "bbox_left": 0,
+  "bbox_left": 44,
   "bbox_right": 599,
-  "bbox_top": 168,
+  "bbox_top": 86,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b408a031-2176-4d90-8a39-9507a1a7317e",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e227d99d-098c-4206-8397-9b8e1bd13207",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 600,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"6b4eb53f-fa30-4788-8f7e-8707d7e6aea4","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4be08804-c194-49e6-b4b7-9de70d3501d6","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "bg_angryjohn",
+    "name": "bg_sucrose_dwanejohnson",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b408a031-2176-4d90-8a39-9507a1a7317e","path":"sprites/bg_angryjohn/bg_angryjohn.yy",},},},"Disabled":false,"id":"8a3bda29-f3d6-4dfe-83c0-10d58ea7a9cf","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e227d99d-098c-4206-8397-9b8e1bd13207","path":"sprites/bg_sucrose_dwanejohnson/bg_sucrose_dwanejohnson.yy",},},},"Disabled":false,"id":"73906996-6a7c-47d4-afac-ae8487bfe379","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "sucrosegroup",
-    "path": "texturegroups/sucrosegroup",
+    "name": "Default",
+    "path": "texturegroups/Default",
   },
   "type": 0,
   "VTile": false,

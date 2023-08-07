@@ -30,7 +30,7 @@ if sugary
 		depth = 10;
 }
 
-if check_midway()
+if MIDWAY
 {
 	spr_open = spr_secretportal_open_bo;
 	spr_idle = spr_secretportal_idle_bo;

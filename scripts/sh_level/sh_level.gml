@@ -35,7 +35,7 @@ function sh_level(args)
 			backtohubroom = room;
 			targetDoor = "A";
 		}
-		room_goto(targetRoom);
+		scr_room_goto(targetRoom);
 	}
 }
 function meta_level()
