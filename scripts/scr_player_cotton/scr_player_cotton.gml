@@ -65,7 +65,7 @@ function state_player_cotton()
 		instance_create(x, y, obj_highjumpcloud2);
 		sound_play_3d("event:/modded/sfx/cottonjump", x, y);
 	}
-	if (key_slap2 && sprite_index != spr_cotton_attack)
+	if (key_slap2 && sprite_index != spr_cotton_attack && !suplexmove)
 	{
 		flash = 1;
 		image_index = 0;
