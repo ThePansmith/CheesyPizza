@@ -1,4 +1,0 @@
-function quad_split()
-{
-
-}
