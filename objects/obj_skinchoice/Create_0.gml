@@ -9,9 +9,17 @@ anim_t = 0;
 outback = animcurve_get_channel(curve_menu, "outback");
 incubic = animcurve_get_channel(curve_menu, "incubic");
 jumpcurve = animcurve_get_channel(curve_jump, "curve1");
+
+surface = surface_create(256, 256);
+bg_pos = 0;
+bg_image = random(3);
+mixingfade = 0;
+
+image_speed = 0.35;
+depth = -450;
+
+// god help us all
 vertex_buffer = vertex_create_buffer();
-
-
 pizza_vbuffer = vertex_create_buffer();
 
 vertex_format_begin();
@@ -30,16 +38,6 @@ uv_info = {
 	left_trim : uvs[4],
 	top_trim : uvs[5]
 }
-
-surface = surface_create(256, 256);
-//clip_surface = -1;
-bg_surf = -1;
-bg_pos = 0;
-bg_image = random(3);
-mixingfade = 0;
-
-image_speed = 0.35;
-depth = -450;
 
 // control
 init = false;
@@ -85,7 +83,6 @@ event_user(1); // RX: Build pizza vertex array
 palettes = [];
 mixables = [];
 unlockables = ["unfunny", "money", "sage", "blood", "tv", "dark", "shitty", "golden", "garish", "mooney", "funny", "itchy", "pizza", "stripes", "goldemanne", "bones", "pp", "war", "john"];
-
 
 function add_palette(palette, entry, texture = noone, name = "PALETTE", description = "(No Description)", mix_prefix)
 {

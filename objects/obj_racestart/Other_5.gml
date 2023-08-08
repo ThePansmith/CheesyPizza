@@ -1,3 +1,3 @@
-if (ds_list_find_index(global.saveroom, id) == -1 && start)
+if (!in_saveroom() && start)
 	ds_list_add(global.saveroom, id);
 global.horse = false;

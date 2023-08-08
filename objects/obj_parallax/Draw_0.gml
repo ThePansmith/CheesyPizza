@@ -20,7 +20,7 @@ if do_foreground
 {
 	if !surface_exists(fg_surface)
 		fg_surface = surface_create(960, 540);
-
+	
 	surface_set_target(fg_surface);
 	draw_clear_alpha(0, 0);
 	surface_reset_target();

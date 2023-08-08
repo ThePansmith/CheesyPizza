@@ -1,4 +1,4 @@
-if ds_list_find_index(global.saveroom, id) != -1 && (!global.panic or global.modifier_failed or (global.leveltosave == "dragonlair" && !global.giantkey))
+if in_saveroom() && (!global.panic or global.modifier_failed or (global.leveltosave == "dragonlair" && !global.giantkey))
 {
 	if sprite_index == spr_sugarygateopen
 		sprite_index = spr_sugarygateclosed;

@@ -1,4 +1,4 @@
 event_inherited();
 
-if (ds_list_find_index(global.saveroom, id) != -1)
+if (in_saveroom())
 	instance_destroy();

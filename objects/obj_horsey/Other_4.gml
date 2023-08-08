@@ -4,7 +4,7 @@ if (ds_list_find_index(global.baddieroom, id) != -1)
 	state = states.finishingblow;
 	flag = true;
 }
-else if (ds_list_find_index(global.saveroom, id) != -1)
+else if (in_saveroom())
 {
 	state = states.dead;
 	flag = true;

@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	sound_play_oneshot_3d("event:/sfx/misc/breakice", x, y);
 	if (bird)

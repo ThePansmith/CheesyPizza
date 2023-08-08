@@ -17,8 +17,11 @@ function sh_resetsaveroom()
 	with all
 		if !persistent && id != other.id then instance_destroy(id, false);
 	
-	room_restart();
-				
+	if instance_exists(obj_levelLoader)
+		scr_room_goto(obj_levelLoader.room_name);
+	else
+		room_restart();
+	
 	if !isOpen
 		create_transformation_tip("{s}Reset level data/");
 	else

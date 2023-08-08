@@ -1,4 +1,4 @@
-if ds_list_find_index(global.saveroom, id) == -1
+if !in_saveroom()
 {
     repeat 7
         create_debris(random_range(bbox_left, bbox_right), random_range(bbox_top, bbox_bottom), spr_metaldebrishard_ss)

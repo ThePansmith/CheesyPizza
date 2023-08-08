@@ -1,4 +1,4 @@
-if (global.panic && !global.exitrank && distance_to_object(obj_player1) <= 300 && ds_list_find_index(global.saveroom, id) == -1)
+if (global.panic && !global.exitrank && distance_to_object(obj_player1) <= 300 && !in_saveroom())
 {
 	ds_list_add(global.saveroom, id);
 	sound_play_oneshot("event:/sfx/misc/collecttoppin");

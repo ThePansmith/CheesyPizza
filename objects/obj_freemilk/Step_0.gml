@@ -17,7 +17,7 @@ if (playerid != -4)
 			with (other)
 			{
 				playerid = -4;
-				if (ds_list_find_index(global.saveroom, id) == -1)
+				if (!in_saveroom())
 				{
 					ds_list_add(global.saveroom, id);
 					global.collect += 1000;

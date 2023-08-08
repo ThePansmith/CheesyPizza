@@ -6,7 +6,7 @@ with (obj_collect)
 		image_alpha = 1;
 	}
 }
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	var a = image_xscale + image_yscale;
 	repeat (6 * a)

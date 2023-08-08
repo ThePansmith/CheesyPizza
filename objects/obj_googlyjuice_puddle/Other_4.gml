@@ -6,5 +6,5 @@ if collision_line(x, y, x, y + 32, obj_solid, false, false)
 	sprite_index = spr_juicepuddledone;
 	grounded = true;
 }
-if ds_list_find_index(global.saveroom, id) != -1
+if in_saveroom()
 	instance_destroy(id, false);

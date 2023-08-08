@@ -1,7 +1,7 @@
 if room == rm_editor
 	exit;
 
-if ds_list_find_index(global.saveroom, id) == -1
+if !in_saveroom()
 {
 	/*
 	if (global.coop == 1)

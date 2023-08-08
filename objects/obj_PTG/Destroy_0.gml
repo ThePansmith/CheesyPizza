@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	with (instance_create(x, y - 50, obj_parryeffect))
 		sprite_index = spr_peppinoteleporteffect;

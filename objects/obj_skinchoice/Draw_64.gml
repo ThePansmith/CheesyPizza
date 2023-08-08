@@ -19,43 +19,33 @@ if anim_con == 1 or anim_con == 2
 	anim_t = Approach(anim_t, 0, 0.06);
 }
 
-
+// circular clipping shader
 gpu_set_blendmode(bm_normal);
 shader_set(shd_circleclip);
 var origin_pos = shader_get_uniform(shd_circleclip, "u_origin");
 var radius_pos = shader_get_uniform(shd_circleclip, "u_radius");
 shader_set_uniform_f(origin_pos, 960 / 2, 540 / 2);
+shader_set_uniform_f(radius_pos, 560 * ((curve == 1) + 1) * curve);
 
-
-if (curve == 1) // RX: Bandaid patch I'm not rewriting this entire thing
-	shader_set_uniform_f(radius_pos, 560 * 2 * curve);
-else
-	shader_set_uniform_f(radius_pos, 560 * curve);
-	
 // background
 bg_pos = (bg_pos + 0.5) % 64;
 
-// Draw the background color
 var color = merge_colour(make_color_rgb(121, 103, 151), merge_colour(c_green, c_white, 0.25), mixingfade);
-var prev_alpha = draw_get_alpha();
 draw_set_alpha(0.75)
 draw_set_color(color);
 draw_rectangle(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT, false);
-draw_set_alpha(prev_alpha);
+draw_set_alpha(1);
 draw_set_color(c_white);
 
-
-var prev_wmatrix = matrix_get(matrix_world);
+// The Pizza Matrix™
+var prev_matrix = matrix_get(matrix_world);
 matrix_set(matrix_world, matrix_build(bg_pos, bg_pos, 0, 0, 0, 0, 1, 1, 1));
-
 vertex_submit(pizza_vbuffer, pr_trianglelist, sprite_get_texture(spr_skinmenupizza, bg_image));
-
-matrix_set(matrix_world, prev_wmatrix);
+matrix_set(matrix_world, prev_matrix);
 
 // draw content
 if is_method(draw)
 	draw(curve, draw_skinchoice_palette, draw_skinchoice_pattern);
-
 
 // post draw content
 if is_method(postdraw)

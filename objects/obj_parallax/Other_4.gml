@@ -6,6 +6,9 @@ room_started = true;
 
 // boss backgrounds ignore new system
 old_bg = false;
+if instance_exists(obj_levelLoader)
+	exit;
+
 if string_starts_with(room_get_name(room), "boss") or room == Longintro
 	old_bg = true;
 
@@ -88,7 +91,7 @@ for (var i = 0; i < array_length(layers); i++)
 		
 		if layer_get_depth(lay) > 0
 		{
-			layer_depth(lay, 16000);
+			layer_depth(lay, 20000);
 			array_push(background_layers, lay);
 		}
 	}
