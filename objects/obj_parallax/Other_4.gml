@@ -84,11 +84,6 @@ for (var i = 0; i < array_length(layers); i++)
 	var bgid = layer_background_get_id(lay);
 	if bgid != -1 && !old_bg && layer_background_get_sprite(bgid) != bg_etbbrick
 	{
-		/*
-		if 1000 + layer_get_depth(lay) < 16000
-			layer_depth(lay, 1000 + layer_get_depth(lay));
-		*/
-		
 		if layer_get_depth(lay) > 0
 		{
 			layer_depth(lay, 20000);

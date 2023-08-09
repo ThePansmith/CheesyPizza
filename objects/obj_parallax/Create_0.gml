@@ -10,9 +10,7 @@ asset_parallax = [[0.1, 0.1], [0.05, 0.05], [0.1, 0.1], [0.05, 0], [-0.1, -0.1],
 room_started = false;
 
 bg_surface = -1;
-fg_surface = -1;
 background_layers = [];
-do_foreground = false;
 old_bg = false;
 
 function layer_get_parallax(lay)

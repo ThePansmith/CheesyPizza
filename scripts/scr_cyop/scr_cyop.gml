@@ -1163,15 +1163,16 @@ function cyop_objectlist()
 #endregion
 
 global.custom_rooms = []; // [[runtime_room_index, json]]
+global.custom_tiles = [];
 global.custom_sprites = ds_map_create();
-global.custom_tiles = ds_map_create();
+global.custom_tilesets = ds_map_create();
 global.room_map = ds_map_create();
 global.custom_fill = 4000;
 
 function cyop_cleanup()
 {
 	ds_map_clear(global.custom_sprites);
-	ds_map_clear(global.custom_tiles);
+	ds_map_clear(global.custom_tilesets);
 	ds_map_clear(global.room_map);
 }
 function cyop_load(ini)
@@ -1360,8 +1361,6 @@ function cyop_load_level(ini)
 }
 function cyop_resolvevalue(value, varname)
 {
-	if live_call(value, varname) return live_result;
-	
 	if varname == "content"
 	{
 		var return_value = asset_get_index(value);

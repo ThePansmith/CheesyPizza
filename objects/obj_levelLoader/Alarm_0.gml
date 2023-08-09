@@ -2,6 +2,10 @@
 
 live_auto_call;
 
+array_foreach(global.custom_tiles, function(i)
+{
+	i.Dispose();
+});
 with obj_persistent
 {
 	room_tiles = [];
@@ -72,9 +76,13 @@ for(var i = 0; i < array_length(backgrounds); i++)
 	if is_undefined(bg_data)
 		continue;
 	
-	var lay = layer_create(20000);
-	var bg = layer_background_create(lay, cyop_resolvevalue(bg_data.panic_sprite != -1 && global.panic ? bg_data.panic_sprite : bg_data.sprite, "sprite_index"));
+	var layer_num = real(backgrounds[i]);
+	if layer_num < 0
+		var lay = layer_create(-2000 + layer_num);
+	else
+		var lay = layer_create(2000 + layer_num);
 	
+	var bg = layer_background_create(lay, cyop_resolvevalue(bg_data.panic_sprite != -1 && global.panic ? bg_data.panic_sprite : bg_data.sprite, "sprite_index"));
 	layer_background_speed(bg, bg_data.image_speed);
 	layer_background_htiled(bg, bg_data.tile_x);
 	layer_background_vtiled(bg, bg_data.tile_y);
@@ -93,18 +101,35 @@ for(var i = 0; i < array_length(backgrounds); i++)
 			bg_id: bg,
 			bg_sprite: layer_background_get_sprite(bg),
 			par_x: 1 - bg_data.scroll_x,
-			par_y: 1 - bg_data.scroll_y,
+			par_y: 1 - bg_data.scroll_y
 		});
 	}
-	with obj_parallax
+	if layer_num >= 0
 	{
-		array_push(background_layers, lay);
-		room_started = true;
+		with obj_parallax
+			array_push(background_layers, lay);
 	}
+}
+with obj_parallax
+{
+	array_sort(background_layers, function(e1, e2)
+	{
+		return layer_get_depth(e1) > layer_get_depth(e2);
+	});
+	room_started = true;
 }
 
 // tiles
-
+var tiles = variable_struct_get_names(_room.tile_data);
+for(var i = 0; i < array_length(tiles); i++)
+{
+	var tile_data = struct_get(_room.tile_data, tiles[i]);
+	if is_undefined(tile_data)
+		continue;
+	
+	var layer_num = real(tiles[i]);
+	
+}
 
 // do it asshole
 with obj_player

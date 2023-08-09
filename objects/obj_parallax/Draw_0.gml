@@ -15,26 +15,15 @@ surface_set_target(bg_surface);
 draw_clear_alpha(0, 0);
 surface_reset_target();
 
-// setup fags
-if do_foreground
-{
-	if !surface_exists(fg_surface)
-		fg_surface = surface_create(960, 540);
-	
-	surface_set_target(fg_surface);
-	draw_clear_alpha(0, 0);
-	surface_reset_target();
-}
-
 // draw the backgrounds
 gpu_set_blendmode(bm_normal);
 for(var i = array_length(background_layers) - 1; i >= 0; i--)
 {
 	var lay = background_layers[i], bg = layer_background_get_id_fixed(lay);
-	if !layer_get_visible(lay) or !layer_background_get_visible(bg)
+	if !layer_get_visible(lay) or !layer_background_get_visible(bg) or layer_get_depth(lay) < 0
 		continue;
 	
-	surface_set_target(do_foreground && layer_get_depth(lay) <= 0 ? fg_surface : bg_surface);
+	surface_set_target(bg_surface);
 	
 	var spr = layer_background_get_sprite(bg);
 	var col = layer_background_get_blend(bg);
