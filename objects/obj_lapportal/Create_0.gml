@@ -12,3 +12,4 @@ if sugary
 	spr_enter = spr_lappingportal_enter;
 }
 sprite_index = spr_idle;
+ID = id;

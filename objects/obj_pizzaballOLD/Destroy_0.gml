@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.baddieroom, id) == -1 && important == 0)
+if (!in_baddieroom() && important == 0)
 {
 	obj_camera.targetgolf = -4;
 	var _repeat = 10;

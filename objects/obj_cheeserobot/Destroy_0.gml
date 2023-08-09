@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.baddieroom, id) == -1)
+if (!in_baddieroom())
 {
 	ds_list_add(global.baddieroom, id);
 	create_slapstar(x, y);

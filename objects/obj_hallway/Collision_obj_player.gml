@@ -18,7 +18,7 @@ with (other)
 	y = other.savedy;
 	if (!instance_exists(obj_fadeout))
 	{
-		lastroom = room;
+		set_lastroom();
 		targetDoor = hall.targetDoor;
 		targetRoom = hall.targetRoom;
 		hallway = true;

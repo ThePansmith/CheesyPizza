@@ -16,7 +16,7 @@ if ((image_index == 1 && !sugary) or (sugary && sprite_index != spr_sugarygatecl
 			sound_play_oneshot_3d(MIDWAY ? "event:/modded/sfx/gatecloseBN" : "event:/sfx/pep/groundpound", x, y);
 			GamepadSetVibration(0, 1, 1, 0.9);
 			GamepadSetVibration(1, 1, 1, 0.9);
-			lastroom = room;
+			set_lastroom();
 			sprite_index = isgustavo ? spr_ratmount_doorclosed : spr_Timesup;
 			image_index = 0;
 			with (obj_camera)

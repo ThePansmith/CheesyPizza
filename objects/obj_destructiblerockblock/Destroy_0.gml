@@ -69,5 +69,5 @@ if (!in_saveroom())
 	instance_create(x + 32, y + 32, obj_bangeffect);
 	repeat (7)
 		create_debris(x + 32, y + 32, spr_rockdebris);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

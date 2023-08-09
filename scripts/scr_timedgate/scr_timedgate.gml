@@ -2,8 +2,9 @@ function scr_timedgate_object(list)
 {
 	if (timedgate)
 	{
-		if (ds_list_find_index(list, id) == -1)
-			ds_list_add(list, id);
+		if !in_saveroom(, list)
+			add_saveroom(, list);
+		
 		with (instance_create(x, y, obj_timedgatespawn))
 		{
 			content = other.object_index;

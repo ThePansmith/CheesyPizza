@@ -1,3 +1,3 @@
 event_inherited();
-if (ds_list_find_index(global.baddieroom, id) != -1)
+if (in_baddieroom())
 	destroy_sounds([snd]);

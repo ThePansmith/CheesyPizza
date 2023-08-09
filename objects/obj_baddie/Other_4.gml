@@ -1,5 +1,5 @@
 var _destroyed = false;
-if (ds_list_find_index(global.baddieroom, id) != -1)
+if (in_baddieroom())
 {
 	_destroyed = true;
 	instance_destroy();

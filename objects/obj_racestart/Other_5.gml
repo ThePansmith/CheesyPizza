@@ -1,3 +1,3 @@
 if (!in_saveroom() && start)
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 global.horse = false;

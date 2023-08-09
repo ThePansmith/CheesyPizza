@@ -13,5 +13,5 @@ if (!in_saveroom())
 			sprite_index = spr_tvdebris;
 		}
 	}
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

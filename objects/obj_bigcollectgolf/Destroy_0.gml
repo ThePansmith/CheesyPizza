@@ -1,3 +1,3 @@
 if (!in_saveroom())
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 scr_ghostcollectible();

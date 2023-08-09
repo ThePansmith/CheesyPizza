@@ -1,2 +1,2 @@
-ds_list_add(global.saveroom, id);
+add_saveroom();
 event_inherited();

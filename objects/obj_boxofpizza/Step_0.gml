@@ -11,7 +11,7 @@ with (obj_player)
 			if character == "S"
 				movespeed = 0;
 			
-			lastroom = room;
+			set_lastroom();
 			box = true;
 			targetDoor = hall.targetDoor;
 			targetRoom = hall.targetRoom;
@@ -38,7 +38,7 @@ with (obj_player)
 			if character == "S"
 				movespeed = 0;
 			
-			lastroom = room;
+			set_lastroom();
 			box = true;
 			targetDoor = hall.targetDoor;
 			targetRoom = hall.targetRoom;

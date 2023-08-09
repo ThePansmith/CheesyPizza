@@ -1,4 +1,4 @@
-ds_list_add(global.saveroom, id);
+add_saveroom();
 global.gerome = true;
 sound_play_oneshot_3d("event:/sfx/voice/geromegot", x, y);
 global.combotime = 60;

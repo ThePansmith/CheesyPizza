@@ -19,5 +19,5 @@ if (!in_saveroom())
 	}
 	GamepadSetVibration(playerindex, 1, 1, 0.8);
 	sound_play_oneshot("event:/sfx/misc/breakmetal");
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

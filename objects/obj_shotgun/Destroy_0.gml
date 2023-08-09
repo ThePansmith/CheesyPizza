@@ -4,5 +4,5 @@ if (!in_saveroom())
 		create_debris(x, y, spr_ammoboxdebris);
 	with instance_create(x, y, obj_parryeffect)
 		sprite_index = spr_morthookgrabeffect;
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

@@ -38,3 +38,4 @@ if MIDWAY
 	sprite_index = spr_idle;
 	mask_index = spr_idle;
 }
+ID = id;

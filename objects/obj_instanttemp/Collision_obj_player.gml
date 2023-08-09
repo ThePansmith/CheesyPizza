@@ -6,5 +6,5 @@ if (sprite_index != spr_heater2)
 	scr_fmod_soundeffect(snd, x, y);
 	sprite_index = spr_heater2;
 	if (!in_saveroom())
-        ds_list_add(global.saveroom, id);
+        add_saveroom();
 }

@@ -9,5 +9,5 @@ if (!in_saveroom())
 	with (create_debris(x + 32, y + 32, spr_shotgunblockdebris))
 		image_index = 2;
 	scr_sound_multiple("event:/sfx/misc/breakblock", x, y);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

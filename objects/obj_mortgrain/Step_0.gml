@@ -24,5 +24,5 @@ if (eaten)
 	y = -100;
 	sprite_index = spr_corneaten;
 	if (!in_saveroom())
-		ds_list_add(global.saveroom, id);
+		add_saveroom();
 }

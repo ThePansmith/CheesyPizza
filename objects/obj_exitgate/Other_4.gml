@@ -5,7 +5,7 @@ if in_saveroom() && (!global.panic or global.modifier_failed or (global.leveltos
 	else
 		image_index = 0;
 }
-if ds_list_find_index(global.baddieroom, id) != -1 && drop
+if in_baddieroom() && drop
 {
 	y = drop_y;
 	dropstate = states.idle;

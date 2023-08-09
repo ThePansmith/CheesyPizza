@@ -67,5 +67,5 @@ if (!in_saveroom())
 	sound_play_oneshot_3d("event:/sfx/misc/rockbreak", x + 32, y + 32);
 	repeat (7)
 		create_debris(x + 32, y + 32, spr_rockdebris);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

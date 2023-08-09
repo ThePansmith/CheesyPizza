@@ -8,7 +8,7 @@ if (!horseyfinish && start)
 		if (state != states.dead)
 		{
 			sound_play_oneshot_3d("event:/sfx/misc/winrace", other.x, other.y);
-			ds_list_add(global.saveroom, id);
+			add_saveroom();
 		}
 		state = states.dead;
 		with (obj_objecticontracker)
@@ -20,7 +20,7 @@ if (!horseyfinish && start)
 	with (obj_horseyright)
 		used = true;
 	with (obj_racestart)
-		ds_list_add(global.saveroom, id);
+		add_saveroom();
 	global.horse = false;
 	instance_destroy(obj_horseyblock);
 }

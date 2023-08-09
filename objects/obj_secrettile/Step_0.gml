@@ -10,7 +10,7 @@ if (player && place_meeting(x, y, player) && player.state != states.chainsaw) or
 	if !revealed
 	{
 		revealed = true;
-		ds_list_add(global.saveroom, id);
+		add_saveroom();
 		
 		if REMIX && buffer <= 0
 		{
@@ -39,7 +39,7 @@ if (player && place_meeting(x, y, player) && player.state != states.chainsaw) or
 						image_alpha = 0;
 				
 					revealed = true;
-					ds_list_add(global.saveroom, id);
+					add_saveroom();
 				}
 				active = true;
 			}

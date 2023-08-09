@@ -1,5 +1,5 @@
-if place_meeting(x, y, obj_player) && !ds_list_find_index(global.saveroom, id)
-	ds_list_add(global.saveroom, id);
+if place_meeting(x, y, obj_player) && !in_saveroom()
+	add_saveroom();
 if in_saveroom()
 	visited = true;
 if visited == true && sprite_index != spr_cheftaskdoor && sprite_index != spr_pepperdoor && sprite_index != spr_elevatordown1 && sprite_index != spr_elevatordown2 && sprite_index != spr_elevatordown3 && sprite_index != spr_elevatordown4

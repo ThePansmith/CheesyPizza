@@ -9,5 +9,5 @@ if !in_saveroom()
 	if content != -4
 		instance_create(x, y, content);
 	scr_sound_multiple("event:/sfx/misc/breakblock", x, y);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

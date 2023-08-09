@@ -1,5 +1,5 @@
 var flag = false;
-if (ds_list_find_index(global.baddieroom, id) != -1)
+if (in_baddieroom())
 {
 	state = states.finishingblow;
 	flag = true;

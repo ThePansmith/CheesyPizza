@@ -1,3 +1,5 @@
+var _cam_x = camera_get_view_x(view_camera[0]), _cam_y = camera_get_view_y(view_camera[0]);
+
 // update the layers
 var roombgs = room_get_bg_layers();
 for(var i = 0; i < array_length(roombgs); i++)
@@ -7,7 +9,7 @@ for(var i = 0; i < array_length(roombgs); i++)
 	l.y += layer_get_vspeed(l.layer_id);
 	
 	if instance_exists(obj_levelLoader)
-		var parallax = [l.par_x, l.par_y];
+		var parallax = [_cam_x * l.par_x, _cam_y * l.par_y];
 	else
 	{
 		var parallax = layer_get_parallax(l.layer_id);
@@ -20,7 +22,6 @@ for(var i = 0; i < array_length(roombgs); i++)
 }
 
 // asset layers
-var _cam_x = camera_get_view_x(view_camera[0]), _cam_y = camera_get_view_y(view_camera[0]);
 for(var i = 0; i < array_length(asset_layers); i++)
 {
 	if !layer_exists(asset_layers[i])

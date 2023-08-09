@@ -7,6 +7,8 @@ with obj_persistent
 	room_tiles = [];
 	room_bgs = [];
 }
+with obj_parallax
+	background_layers = [];
 
 // add instances
 var prop = _room.properties;
@@ -54,12 +56,7 @@ for(var i = 0; i < array_length(_room.instances); i++)
 		// saveroom
 		var memorized = global.custom_rooms[room_ind][1].instances[i];
 		if struct_exists(memorized, "id")
-		{
-			if ds_list_find_value(global.saveroom, memorized.id)
-				inst.IN_SAVEROOM = true;
-			if ds_list_find_value(global.baddieroom, memorized.id)
-				instance_destroy(inst, false);
-		}
+			inst.ID = memorized.id;
 		else
 			memorized.id = inst.id;
 	}
@@ -68,15 +65,16 @@ for(var i = 0; i < array_length(_room.instances); i++)
 }
 
 // backgrounds
-for(var i = 0; i < array_length(_room.backgrounds); i++)
+for(var i = 0; i < 10; i++)
 {
-	var bg_data = _room.backgrounds[i];
+	var bg_data = struct_get(_room.backgrounds, i);
+	if is_undefined(bg_data)
+		continue;
 	
-	var lay = layer_create(1000 - i);
+	var lay = layer_create(20000);
 	var bg = layer_background_create(lay, asset_get_index(bg_data.panic_sprite != -1 && global.panic ? bg_data.panic_sprite : bg_data.sprite));
-	trace(bg_data);
 	
-	layer_background_speed(bg, bg_data.image_speed / 60);
+	layer_background_speed(bg, bg_data.image_speed);
 	layer_background_htiled(bg, bg_data.tile_x);
 	layer_background_vtiled(bg, bg_data.tile_y);
 	layer_hspeed(lay, bg_data.hspeed);
@@ -93,12 +91,15 @@ for(var i = 0; i < array_length(_room.backgrounds); i++)
 			y: bg_data.y,
 			bg_id: bg,
 			bg_sprite: layer_background_get_sprite(bg),
-			par_x: bg_data.scroll_x,
-			par_y: bg_data.scroll_y,
+			par_x: 1 - bg_data.scroll_x,
+			par_y: 1 - bg_data.scroll_y,
 		});
 	}
 	with obj_parallax
+	{
 		array_push(background_layers, lay);
+		room_started = true;
+	}
 }
 
 // do it asshole

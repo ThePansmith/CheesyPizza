@@ -8,7 +8,7 @@ if (destroy)
 			vsp = random_range(-10, 10);
 		}
 	}
-	if (global.panic && ds_list_find_index(global.baddieroom, id) == -1)
+	if (global.panic && !in_baddieroom())
 	{
 		ds_list_add(global.baddieroom, id);
 		notification_push(notifs.monster_dead, [object_index]);

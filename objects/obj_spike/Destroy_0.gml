@@ -10,5 +10,5 @@ if (!in_saveroom())
 		i++;
 	}
 	scr_sound_multiple(global.snd_collect, x, y);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

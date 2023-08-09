@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.baddieroom, id) == -1)
+if (!in_baddieroom())
 {
 	obj_tv.image_index = random_range(0, 4);
 	ds_list_add(global.baddieroom, id);

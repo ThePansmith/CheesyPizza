@@ -49,7 +49,7 @@ if (_transfo)
 	if (collect && !in_saveroom())
 	{
 		notification_push(notifs.priest_collect, [room, id, _state]);
-		ds_list_add(global.saveroom, id);
+		add_saveroom();
 		
 		if !global.snickchallenge
 		{

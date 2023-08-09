@@ -37,6 +37,6 @@ if (!in_saveroom())
 		scr_sound_multiple("event:/sfx/misc/breakblock", x, y);
 	}
 	scr_sleep(5);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }
 instance_destroy(solid_inst);

@@ -21,5 +21,5 @@ if (!in_saveroom())
 	scr_sleep(5);
 	scr_sound_multiple("event:/sfx/misc/breakblock", x, y);
 	instance_create(x + 32, y + (sprite_height / 2), obj_bangeffect);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.baddieroom, id) == -1 && important == 0)
+if (!in_baddieroom() && important == 0)
 {
 	notification_push(notifs.pizzaboy_dead, [room]);
 	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
@@ -16,7 +16,7 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && important == 0)
 	with (instance_create(x, y, obj_sausageman_dead))
 		sprite_index = other.spr_dead;
 }
-else if (ds_list_find_index(global.baddieroom, id) == -1 && important == 1)
+else if (!in_baddieroom() && important == 1)
 {
 	create_slapstar(x, y);
 	create_slapstar(x, y);

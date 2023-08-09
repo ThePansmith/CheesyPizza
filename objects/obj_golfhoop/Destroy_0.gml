@@ -1,6 +1,6 @@
 if (!in_saveroom())
 {
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 	scr_sound_multiple(global.snd_collect, x, y);
 	global.heattime += 10;
 	global.heattime = clamp(global.heattime, 0, 60);

@@ -1,7 +1,7 @@
 var player = instance_place(x, y, obj_player);
 if (player && !global.horse && !instance_exists(obj_jumpscare) && (player.state == states.normal or player.state == states.ratmount or player.state == states.mach1 or player.state == states.pogo or player.state == states.mach2 or player.state == states.mach3 or player.state == states.Sjumpprep) && sprite_index == spr_locked && player.key_up && player.grounded && global.key_inv)
 {
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 	sound_play_3d("event:/sfx/misc/keyunlock", x, y);
 	sound_play("event:/sfx/misc/cheers");
 	sound_play_3d("event:/sfx/voice/ok");

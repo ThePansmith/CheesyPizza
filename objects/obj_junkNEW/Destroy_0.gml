@@ -5,5 +5,5 @@ if !in_saveroom()
 		sprite_index = other.sprite_index;
 		image_index = other.img;
 	}
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

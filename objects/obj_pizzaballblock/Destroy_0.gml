@@ -7,5 +7,5 @@ if (!in_saveroom())
 		with (create_debris(REMIX ? random_range(bbox_left, bbox_right) : x, REMIX ? random_range(bbox_top, bbox_bottom) : y, spr_pizzaballblock_debris))
 			image_index = i;
 	}
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

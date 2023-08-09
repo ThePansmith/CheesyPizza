@@ -22,7 +22,7 @@ if (!in_saveroom())
 		}
 		sound_play_oneshot_3d("event:/misc/breakblock", x, y);
 	}
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }
 if (snd != -4)
 {

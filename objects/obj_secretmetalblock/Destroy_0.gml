@@ -17,7 +17,7 @@ if (!in_saveroom())
 		shake_mag_acc = 40 / room_speed;
 	}
 	sound_play_oneshot("event:/sfx/misc/breakmetal");
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }
 scr_cutoff();
 if (is_string(targettiles))

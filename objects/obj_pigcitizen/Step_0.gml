@@ -51,7 +51,7 @@ switch (state)
 				image_xscale = sign(obj_player.x - x);
 			if (!in_saveroom())
 			{
-				ds_list_add(global.saveroom, id);
+				add_saveroom();
 				notification_push(notifs.pigcitizen_photo, [room, id]);
 			}
 		}

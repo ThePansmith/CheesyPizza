@@ -9,5 +9,5 @@ if (!in_saveroom())
 			hsp = random_range(-4, 4);
 		}
 	}
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

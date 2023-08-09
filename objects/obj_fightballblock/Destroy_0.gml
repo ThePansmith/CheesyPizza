@@ -14,5 +14,5 @@ if (!in_saveroom())
 	data = tilemap_get_at_pixel(map_id, x, y);
 	data = tile_set_empty(data);
 	tilemap_set_at_pixel(map_id, data, x, y);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

@@ -44,25 +44,28 @@ if (floor(image_index) >= (image_number - 1))
 					{
 						lastTargetDoor = targetDoor;
 						targetDoor = "S";
-						if (!other.secret)
+						if !other.secret
 						{
-							lastroom = room;
+							set_lastroom();
 							targetRoom = other.targetRoom;
-							secretportalID = other.id;
+							secretportalID = other.ID;
 						}
 						else
 						{
+							var condition = other.targetRoom != room;
+							if instance_exists(obj_levelLoader)
+								condition = false;
 							
-							if (other.targetRoom != room) // it wasn't set, we are probably in a secret
+							if condition // it wasn't set, we are probably in a secret
 								targetRoom = other.targetRoom;
 							else
 								targetRoom = lastroom;
-							lastroom = room;
+							set_lastroom();
 						}
 					}
-					if (!secret && !soundtest)
-						ds_list_add(global.saveroom, id);
-						
+					if !secret && !soundtest
+						add_saveroom();
+					
 					instance_create(x, y, obj_fadeout);
 				}
 			}

@@ -37,7 +37,7 @@ if !in_saveroom()
 			sprite_index = spr_protojohn;
 	}
 	sound_play_3d("event:/sfx/enemies/kill", x, y);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 	
 	activate_panic();
 }

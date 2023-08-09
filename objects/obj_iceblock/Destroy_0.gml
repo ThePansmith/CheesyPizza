@@ -34,7 +34,7 @@ if (!in_saveroom())
 	global.heattime = clamp(global.heattime, 0, 60);
 	global.combotime += 10;
 	global.combotime = clamp(global.combotime, 0, 60);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }
 scr_destroy_tiles(32, "Tiles_1");
 scr_destroy_tiles(32, "Tiles_2");

@@ -1241,6 +1241,9 @@ function cyop_load_level(ini)
 			room_set_width(_room, prop.levelWidth - prop.roomX);
 			room_set_height(_room, prop.levelHeight - prop.roomY);
 			
+			view_camera[0] = camera_create_view(0, 0, room_width, room_height);
+			room_set_camera(_room, 0, view_camera[0]);
+			
 			layer_set_target_room(_room);
 			
 			// instance LAYERS

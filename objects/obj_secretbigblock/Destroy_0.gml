@@ -12,7 +12,7 @@ if (!in_saveroom())
 	}
 	scr_sound_multiple("event:/sfx/misc/breakblock", x, y);
 	notification_push(notifs.block_break, [room]);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }
 scr_cutoff();
 if (is_string(targettiles))

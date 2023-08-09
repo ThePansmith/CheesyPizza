@@ -19,7 +19,7 @@ if (playerid != -4)
 				playerid = -4;
 				if (!in_saveroom())
 				{
-					ds_list_add(global.saveroom, id);
+					add_saveroom();
 					global.collect += 1000;
 					global.combotime = 60;
 					with (instance_create(x, y, obj_smallnumber))

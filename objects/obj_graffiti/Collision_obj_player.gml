@@ -6,5 +6,5 @@ if (!in_saveroom() && other.state == states.backbreaker)
 	sprite_index = spr_graffiti_drawn;
 	global.graffiticount++;
 	instance_create(x, y - 80, obj_graffiticount);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

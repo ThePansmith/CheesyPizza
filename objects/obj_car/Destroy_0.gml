@@ -7,5 +7,5 @@ if (!in_saveroom())
 	}
 	if (instance_exists(inst))
 		instance_destroy(inst);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

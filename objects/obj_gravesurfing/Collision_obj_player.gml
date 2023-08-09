@@ -4,10 +4,10 @@ if (buffer <= 0 && other.state != states.ghost)
 	image_alpha = 0;
 	with (other)
 	{
-		if (ds_list_find_index(global.saveroom, other.id) == -1)
+		if (!in_saveroom(other.id))
 		{
 			notification_push(notifs.corpsesurf, [room]);
-			ds_list_add(global.saveroom, other.id);
+			add_saveroom(other.id);
 		}
 		sound_play_oneshot_3d("event:/sfx/pep/gravecorpsestart", x, y);
 		vsp = -11;

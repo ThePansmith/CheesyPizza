@@ -1,6 +1,6 @@
 if (global.panic && !global.exitrank && distance_to_object(obj_player1) <= 300 && !in_saveroom())
 {
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 	sound_play_oneshot("event:/sfx/misc/collecttoppin");
 	with (instance_create(x, y, obj_exitfollower))
 	{

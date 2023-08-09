@@ -5,5 +5,5 @@ if (global.panic == false)
 else
 {
 	layer_background_visible(bgid, false);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

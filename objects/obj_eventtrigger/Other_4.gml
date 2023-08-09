@@ -1,4 +1,4 @@
-if ds_list_find_index(flags.saveroom, id) != -1
+if in_saveroom(id, flags.saveroom)
 {
     if flags.do_save
     {

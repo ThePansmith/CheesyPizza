@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.baddieroom, id) == -1)
+if (!in_baddieroom())
 {
 	with (instance_create(x, y, obj_sausageman_dead))
 		sprite_index = other.deadspr;

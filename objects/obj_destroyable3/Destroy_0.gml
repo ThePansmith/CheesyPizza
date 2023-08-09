@@ -31,5 +31,5 @@ if (!in_saveroom())
 	scr_sleep(5);
 	notification_push(notifs.block_break, [room]);
 	scr_sound_multiple("event:/sfx/misc/breakblock", x, y);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

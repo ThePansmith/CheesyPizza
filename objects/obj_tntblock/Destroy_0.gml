@@ -24,5 +24,5 @@ if (!in_saveroom())
 	}
 	repeat (6)
 		create_debris(x + 32, y + 32, spr_tntblockdebris);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

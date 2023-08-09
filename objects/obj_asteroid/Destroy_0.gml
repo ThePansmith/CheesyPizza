@@ -1,6 +1,6 @@
 if (!in_saveroom())
 {
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 	scr_sound_multiple(global.snd_collect, x, y);
 	repeat 2
 		sound_play_oneshot_3d("event:/sfx/misc/breakblock", x, y);

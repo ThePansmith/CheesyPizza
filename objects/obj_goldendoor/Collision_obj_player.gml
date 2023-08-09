@@ -29,7 +29,7 @@ if (!place_meeting(x, y, obj_doorblocked))
 			obj_player2.lastroom = room;
 			sound_play_oneshot("event:/sfx/misc/door");
 			obj_camera.chargecamera = 0;
-			ds_list_add(global.saveroom, id);
+			add_saveroom();
 			if (object_index == obj_player1)
 			{
 				if (obj_player1.isgustavo)
