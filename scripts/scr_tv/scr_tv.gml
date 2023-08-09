@@ -146,14 +146,14 @@ function tv_do_expression(sprite)
 						scr_fmod_soundeffect(obj_player1.snd_voiceok, obj_player1.x, obj_player1.y)
 					break;
 				
-				/*case spr_tv_exprconfecti1:
+				case spr_tv_exprconfecti1:
 				case spr_tv_exprconfecti2:
 				case spr_tv_exprconfecti3:
 				case spr_tv_exprconfecti4:
 				case spr_tv_exprconfecti5:
-				//case spr_tv_exprrudejanitor: RX: Not exist still !!!
+				case spr_tv_exprrudejanitor: RX: Not exist still !!!
 					expressionbuffer = 150;
-					break;*/
+					break;
 			}
 		}
 	}
@@ -284,6 +284,8 @@ function scr_tv_get_transfo_sprite()
 		
 		// new!
 		case states.cotton:
+		case states.cottondrill:
+		case states.cottonroll:
 			_spr = spr_tv_cotton;
 			break;
 		case states.fling:

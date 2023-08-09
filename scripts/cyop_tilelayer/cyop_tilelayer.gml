@@ -75,9 +75,8 @@ function cyop_tilelayer() constructor
 	static Draw = function()
 	{
 		for (var i = 0; i < array_length(textures); i++)
-		{
 			vertex_submit(vertex_buffers[i], pr_trianglelist, textures[i]);	
-		}
+		
 	}
 	
 	/// @desc	Disposes of all unmanaged resources
