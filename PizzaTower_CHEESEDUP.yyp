@@ -4280,6 +4280,7 @@
     {"id":{"name":"tile_pizzamartOLD","path":"tilesets/tile_pizzamartOLD/tile_pizzamartOLD.yy",},},
     {"id":{"name":"spr_treasureguy_escapestart","path":"sprites/spr_treasureguy_escapestart/spr_treasureguy_escapestart.yy",},},
     {"id":{"name":"spr_treasureguy_escape","path":"sprites/spr_treasureguy_escape/spr_treasureguy_escape.yy",},},
+    {"id":{"name":"spr_smallfont_ss","path":"sprites/spr_smallfont_ss/spr_smallfont_ss.yy",},},
     {"id":{"name":"spr_lonegustavo_ladderdown","path":"sprites/spr_lonegustavo_ladderdown/spr_lonegustavo_ladderdown.yy",},},
     {"id":{"name":"spr_pizzasona15","path":"sprites/spr_pizzasona15/spr_pizzasona15.yy",},},
     {"id":{"name":"spr_cheesepep_walljump","path":"sprites/spr_cheesepep_walljump/spr_cheesepep_walljump.yy",},},
