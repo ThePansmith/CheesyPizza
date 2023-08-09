@@ -151,7 +151,7 @@ function tv_do_expression(sprite)
 				case spr_tv_exprconfecti3:
 				case spr_tv_exprconfecti4:
 				case spr_tv_exprconfecti5:
-				case spr_tv_exprrudejanitor: RX: Not exist still !!!
+				case spr_tv_exprrudejanitor:
 					expressionbuffer = 150;
 					break;
 			}
