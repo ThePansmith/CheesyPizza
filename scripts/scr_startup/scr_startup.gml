@@ -6,29 +6,6 @@ if room_first != Loadiingroom or room_next(room_first) != Initroom
 }
 global.anon = array_create(5, false);
 
-// crash handler
-exception_unhandled_handler
-(
-	function(e)
-	{
-		// force stop all sound
-		fmod_destroy();
-		instance_destroy(obj_fmod, false);
-		
-		// fallback to default audio engine for this
-		audio_play_sound(sfx_pephurt, 0, false, global.option_master_volume * global.option_sfx_volume);
-		
-		// show and log the crash
-	    show_debug_message(string(e));
-		show_message("The game crashed! longMessage:\n\n" + e.longMessage);
-		
-		// save it to a file
-		var _f = file_text_open_write("crash_log.txt");
-		file_text_write_string(_f, string(e));
-		file_text_close(_f);
-	}
-);
-
 // fuck you
 if !file_exists("CheesyPizza.dll")
 {
@@ -79,7 +56,8 @@ global.combofontSP = font_add_sprite_ext(spr_tv_combobubbletextSP, "1234567890x"
 global.collectfontBN = font_add_sprite_ext(spr_font_collectBN, "0123456789", true, 0);
 global.sugarypromptfont = font_add_sprite_ext(spr_promptfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.:!0123456789?'\"ÁÉÍÓÚáéíóú_-[]▼()&#风雨廊桥전태양*яиБжидГзвбнль", true, 0)
 global.candlefont = font_add_sprite_ext(spr_fontcandle, "0123456789", true, 0);
-global.smallfont_ss = font_add_sprite_ext(spr_smallfont_ss, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890-:", true, 0);
+global.smallfont_ss = font_add_sprite_ext(spr_smallfont_ss, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.:?1234567890-", true, 0);
+//global.smallnumber_fnt = font_add_sprite_ext(spr_smallnumber, "1234567890-+", true, 0);
 // language font map
 global.font_map = ds_map_create();
 
