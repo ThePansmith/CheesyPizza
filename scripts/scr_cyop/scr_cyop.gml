@@ -1163,16 +1163,15 @@ function cyop_objectlist()
 #endregion
 
 global.custom_rooms = []; // [[runtime_room_index, json]]
-global.custom_tiles = [];
 global.custom_sprites = ds_map_create();
-global.custom_tilesets = ds_map_create();
+global.custom_tiles = ds_map_create();
 global.room_map = ds_map_create();
 global.custom_fill = 4000;
 
 function cyop_cleanup()
 {
 	ds_map_clear(global.custom_sprites);
-	ds_map_clear(global.custom_tilesets);
+	ds_map_clear(global.custom_tiles);
 	ds_map_clear(global.room_map);
 }
 function cyop_load(ini)
@@ -1215,37 +1214,40 @@ function cyop_load(ini)
 				else
 				{
 					var ext = filename_ext(file);
-					var filename = string_replace(file, ext, "");
-					var filepath = concat(folder, "/", file);
-					
-					// properties
-					ini_open(concat(folder, "/", filename, ".ini"));
-					var images = ini_read_real("properties", "images", 1);
-					var image_width = ini_read_real("properties", "image_width", 0);
-					
-					var centered = ini_read_real("offset", "centered", false);
-					var x_offset = ini_read_real("offset", "x", 0);
-					var y_offset = ini_read_real("offset", "y", 0);
-					
-					var tileset_size = ini_read_real("tileset", "size", 0);
-					ini_close();
-					
-					// add sprite
-					var spr = sprite_add(filepath, 1, 0, 0, 0, 0); // temporary
-					if images <= 1 && image_width > 0
-						images = floor(sprite_get_width(spr) / image_width);
-					if centered
+					if ext == ".png"
 					{
-						x_offset += sprite_get_width(spr) / 2;
-						y_offset += sprite_get_height(spr) / 2;
-					}
-					sprite_replace(spr, filepath, images, 0, 0, x_offset, y_offset);
+						var filename = string_replace(file, ext, "");
+						var filepath = concat(folder, "/", file);
 					
-					// add to map
-					if tileset_size > 0
-						ds_map_add(global.custom_tiles, prefix + filename, [spr, tileset_size]);
-					else
-						ds_map_add(global.custom_sprites, prefix + filename, spr);
+						// properties
+						ini_open(concat(folder, "/", filename, ".ini"));
+						var images = ini_read_real("properties", "images", 1);
+						var image_width = ini_read_real("properties", "image_width", 0);
+					
+						var centered = ini_read_real("offset", "centered", false);
+						var x_offset = ini_read_real("offset", "x", 0);
+						var y_offset = ini_read_real("offset", "y", 0);
+					
+						var tileset_size = ini_read_real("tileset", "size", 0);
+						ini_close();
+					
+						// add sprite
+						var spr = sprite_add(filepath, 1, 0, 0, 0, 0); // temporary
+						if images <= 1 && image_width > 0
+							images = floor(sprite_get_width(spr) / image_width);
+						if centered
+						{
+							x_offset += sprite_get_width(spr) / 2;
+							y_offset += sprite_get_height(spr) / 2;
+						}
+						sprite_replace(spr, filepath, images, 0, 0, x_offset, y_offset);
+					
+						// add to map
+						if tileset_size > 0
+							ds_map_add(global.custom_tiles, prefix + filename, [spr, tileset_size]);
+						else
+							ds_map_add(global.custom_sprites, prefix + filename, spr);
+					}
 				}
 				file = file_find_next();
 			}
