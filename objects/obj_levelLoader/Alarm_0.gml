@@ -5,7 +5,7 @@ live_auto_call;
 array_foreach(global.custom_tiles, function(i)
 {
 	i.Dispose();
-});
+}, 0, infinity);
 with obj_persistent
 {
 	room_tiles = [];
