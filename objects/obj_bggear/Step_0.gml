@@ -1,3 +1,5 @@
+//exit;
+
 if (!global.panic)
 	image_angle += (abs(sin(current_time / 625) * rotspd) * sign(image_xscale));
 else

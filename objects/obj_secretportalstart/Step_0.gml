@@ -28,8 +28,16 @@ switch (sprite_index)
 			sprite_index = spr_idle;
 			with (obj_player)
 			{
-				if (object_index != obj_player2 || global.coop)
+				if ((object_index != obj_player2 || global.coop))
 				{
+					if (other.override_state != noone && other.override_sprite != noone)
+					{
+						state = other.override_state;
+						sprite_index = other.override_sprite;
+						image_index = 0;
+					}
+					else
+					{
 					if (!isgustavo && tauntstoredstate != states.knightpep && tauntstoredstate != states.knightpepslopes && tauntstoredstate != states.knightpepbump && tauntstoredstate != states.firemouth && tauntstoredstate != states.cotton && tauntstoredstate != states.cottondrill && tauntstoredstate != states.cottonroll)
 					{
 						visible = true;
@@ -43,9 +51,21 @@ switch (sprite_index)
 						state = states.ratmount;
 					else
 					{
-						if (state == states.knightpep || state == states.cotton || state == states.cottonroll || state == states.cottondrill)
+						var cotton = state == states.cotton || state == states.cottonroll || state == states.cottondrill;
+						
+						if (cotton)
+						{
 							hsp = 0;
-						sprite_index = tauntstoredsprite;
+							sprite_index = spr_cotton_drill; // RX: do we not have a character sprite for this?
+						}
+						else
+						{
+							if (state == states.knightpep)
+								hsp = 0;
+						
+							sprite_index = tauntstoredsprite;
+						}
+					}
 					}
 				}
 			}
@@ -74,6 +94,12 @@ switch (sprite_index)
 						other.drop = true;
 					if (other.drop)
 					{
+						if (other.override_state != noone && other.override_sprite != noone)
+						{
+							state = other.override_state;
+						}
+						else
+						{
 						if (!isgustavo && (tauntstoredstate == states.knightpep || tauntstoredstate == states.knightpepslopes || tauntstoredstate == states.knightpepbump || tauntstoredstate == states.firemouth || tauntstoredstate == states.cottondrill || tauntstoredstate == states.cotton || tauntstoredstate == states.cottonroll))
 						{
 							state = tauntstoredstate;
@@ -111,7 +137,7 @@ switch (sprite_index)
 									sprite_index = spr_cotton_drill;
 									break;
 							}
-	
+						}
 						}
 					}
 				}
