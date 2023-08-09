@@ -43,7 +43,10 @@ else
 	hours = string(hours);
 draw_set_halign(0);
 draw_set_valign(2);
-draw_set_font(global.smallfont);
+if SUGARY
+	draw_set_font(global.smallfont_ss);
+else
+	draw_set_font(global.smallfont);
 draw_set_alpha(1);
 draw_set_color(c_white);
 var finalstr = concat(hours, ":", m_str, ":", s_str, ".", mm);

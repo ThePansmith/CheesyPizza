@@ -6,6 +6,6 @@ function cyop_tile(_world_x, _world_y, _tm_x, _tm_y) constructor
 {
 	x = _world_x;
 	y = _world_y;
-	tilemap_x = _tm_x;
-	tilemap_y = _tm_y;
+	tm_x = _tm_x;
+	tm_y = _tm_y;
 }

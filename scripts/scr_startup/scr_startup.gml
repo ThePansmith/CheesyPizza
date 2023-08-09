@@ -56,7 +56,7 @@ global.combofontSP = font_add_sprite_ext(spr_tv_combobubbletextSP, "1234567890x"
 global.collectfontBN = font_add_sprite_ext(spr_font_collectBN, "0123456789", true, 0);
 global.sugarypromptfont = font_add_sprite_ext(spr_promptfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.:!0123456789?'\"ÁÉÍÓÚáéíóú_-[]▼()&#风雨廊桥전태양*яиБжидГзвбнль", true, 0)
 global.candlefont = font_add_sprite_ext(spr_fontcandle, "0123456789", true, 0);
-
+global.sugarysmallfont = font_add_sprite_ext(spr_smallfont_ss, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890-:", true, 0);
 // language font map
 global.font_map = ds_map_create();
 

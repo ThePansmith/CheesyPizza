@@ -11,7 +11,7 @@ function cyop_tilelayer(_sprite) constructor
 	/// @return	{bool}
 	static Build = function(_tile_array, _depth)
 	{
-		var uvs = sprite_get_uvs(sprite);
+		var uvs = sprite_get_uvs(sprite, 0);
 		var spr_left = uvs[0];
 		var spr_top = uvs[1];
 		var spr_right = uvs[2];
@@ -28,8 +28,8 @@ function cyop_tilelayer(_sprite) constructor
 			var tile = _tile_array[i];
 			// RX: we need a half texel offset depending on how this looks in game
 			
-			var tile_tex_x = (tile.tilemap_x * 32) + spr_left;
-			var tile_tex_y = (tile.tilemap_y * 32) + spr_right;
+			var tile_tex_x = (tile.tm_x * 32) + spr_left;
+			var tile_tex_y = (tile.tm_y * 32) + spr_right;
 			vertex_build_quad(vertex_buffer, tile.x, tile.y, 32, 32, c_white, 1, tile_tex_x, tile_tex_y, tile_tex_w, tile_tex_h);
 		}
 		vertex_end(vertex_buffer);

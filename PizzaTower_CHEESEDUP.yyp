@@ -146,6 +146,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"CheesyPizza","folderPath":"folders/Scripts/CheesyPizza.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"HUD","folderPath":"folders/Scripts/CheesyPizza/HUD.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Level Editor","folderPath":"folders/Scripts/CheesyPizza/Level Editor.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilemap","folderPath":"folders/Scripts/CheesyPizza/Level Editor/Tilemap.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Online","folderPath":"folders/Scripts/CheesyPizza/Online.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Events","folderPath":"folders/Scripts/CheesyPizza/Online/Events.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Client","folderPath":"folders/Scripts/CheesyPizza/Online/Events/Client.yy",},
@@ -559,7 +560,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilemap","folderPath":"folders/Scripts/CheesyPizza/Level Editor/Tilemap.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles/data",},
@@ -4280,6 +4280,7 @@
     {"id":{"name":"tile_pizzamartOLD","path":"tilesets/tile_pizzamartOLD/tile_pizzamartOLD.yy",},},
     {"id":{"name":"spr_treasureguy_escapestart","path":"sprites/spr_treasureguy_escapestart/spr_treasureguy_escapestart.yy",},},
     {"id":{"name":"spr_treasureguy_escape","path":"sprites/spr_treasureguy_escape/spr_treasureguy_escape.yy",},},
+    {"id":{"name":"spr_smallfont_ss","path":"sprites/spr_smallfont_ss/spr_smallfont_ss.yy",},},
     {"id":{"name":"spr_lonegustavo_ladderdown","path":"sprites/spr_lonegustavo_ladderdown/spr_lonegustavo_ladderdown.yy",},},
     {"id":{"name":"spr_pizzasona15","path":"sprites/spr_pizzasona15/spr_pizzasona15.yy",},},
     {"id":{"name":"spr_cheesepep_walljump","path":"sprites/spr_cheesepep_walljump/spr_cheesepep_walljump.yy",},},
