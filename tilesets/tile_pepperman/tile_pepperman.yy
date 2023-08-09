@@ -19,7 +19,7 @@
     "name": "spr_peppermantile",
     "path": "sprites/spr_peppermantile/spr_peppermantile.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "unusedgroup",
     "path": "texturegroups/unusedgroup",

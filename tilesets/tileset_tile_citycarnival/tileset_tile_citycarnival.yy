@@ -69,7 +69,7 @@
     "name": "sprite_tile_citycarnival",
     "path": "sprites/sprite_tile_citycarnival/sprite_tile_citycarnival.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "unusedgroup",
     "path": "texturegroups/unusedgroup",

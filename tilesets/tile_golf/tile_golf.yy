@@ -19,7 +19,7 @@
     "name": "spr_tilegolf",
     "path": "sprites/spr_tilegolf/spr_tilegolf.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "unusedgroup",
     "path": "texturegroups/unusedgroup",

@@ -69,7 +69,7 @@
     "name": "sprite_tile_beachtest",
     "path": "sprites/sprite_tile_beachtest/sprite_tile_beachtest.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "beachgroup",
     "path": "texturegroups/beachgroup",

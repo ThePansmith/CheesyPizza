@@ -19,7 +19,7 @@
     "name": "spr_ruinend_secret",
     "path": "sprites/spr_ruinend_secret/spr_ruinend_secret.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "unusedgroup",
     "path": "texturegroups/unusedgroup",

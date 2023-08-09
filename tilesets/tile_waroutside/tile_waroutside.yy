@@ -19,7 +19,7 @@
     "name": "spr_waroutsidetiles",
     "path": "sprites/spr_waroutsidetiles/spr_waroutsidetiles.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "wargroup",
     "path": "texturegroups/wargroup",

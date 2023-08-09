@@ -19,7 +19,7 @@
     "name": "tile_beachprops2",
     "path": "sprites/tile_beachprops2/tile_beachprops2.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "beachgroup",
     "path": "texturegroups/beachgroup",

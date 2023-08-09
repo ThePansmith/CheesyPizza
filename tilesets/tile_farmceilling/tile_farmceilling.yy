@@ -19,7 +19,7 @@
     "name": "spr_farmceillingtiles",
     "path": "sprites/spr_farmceillingtiles/spr_farmceillingtiles.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "farmgroup",
     "path": "texturegroups/farmgroup",

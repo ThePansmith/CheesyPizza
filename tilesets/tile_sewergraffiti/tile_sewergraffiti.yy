@@ -19,7 +19,7 @@
     "name": "spr_sewergraffiti",
     "path": "sprites/spr_sewergraffiti/spr_sewergraffiti.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "sewergroup",
     "path": "texturegroups/sewergroup",

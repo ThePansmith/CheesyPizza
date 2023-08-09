@@ -69,7 +69,7 @@
     "name": "sprite_tile_forest2",
     "path": "sprites/sprite_tile_forest2/sprite_tile_forest2.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "forestgroup",
     "path": "texturegroups/forestgroup",

@@ -4,6 +4,8 @@ if (in_baddieroom())
 	_destroyed = true;
 	instance_destroy();
 }
+while place_meeting(x, y, obj_solid)
+    y--;
 if (safe_get(id, "escape") && !_destroyed)
 {
 	if (escapespawnID == -4)

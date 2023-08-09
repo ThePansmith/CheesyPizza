@@ -19,7 +19,7 @@
     "name": "spr_minigolfprops",
     "path": "sprites/spr_minigolfprops/spr_minigolfprops.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "minigolfgroup",
     "path": "texturegroups/minigolfgroup",

@@ -19,7 +19,7 @@
     "name": "spr_ruindeco",
     "path": "sprites/spr_ruindeco/spr_ruindeco.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "ruingroup",
     "path": "texturegroups/ruingroup",

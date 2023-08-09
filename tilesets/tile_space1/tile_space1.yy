@@ -19,7 +19,7 @@
     "name": "spr_space1tiles",
     "path": "sprites/spr_space1tiles/spr_space1tiles.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "spacegroup",
     "path": "texturegroups/spacegroup",

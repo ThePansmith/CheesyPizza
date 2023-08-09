@@ -19,7 +19,7 @@
     "name": "spr_towerentrancehall",
     "path": "sprites/spr_towerentrancehall/spr_towerentrancehall.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "hubgroup",
     "path": "texturegroups/hubgroup",

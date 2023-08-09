@@ -19,7 +19,7 @@
     "name": "spr_planettiles",
     "path": "sprites/spr_planettiles/spr_planettiles.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "spacegroup",
     "path": "texturegroups/spacegroup",

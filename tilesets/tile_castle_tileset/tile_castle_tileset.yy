@@ -19,7 +19,7 @@
     "name": "tile_castle",
     "path": "sprites/tile_castle/tile_castle.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "hubgroup",
     "path": "texturegroups/hubgroup",

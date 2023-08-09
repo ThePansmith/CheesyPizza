@@ -19,7 +19,7 @@
     "name": "spr_peppermanbosstiles",
     "path": "sprites/spr_peppermanbosstiles/spr_peppermanbosstiles.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "hubgroup",
     "path": "texturegroups/hubgroup",

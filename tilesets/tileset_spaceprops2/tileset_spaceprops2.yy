@@ -19,7 +19,7 @@
     "name": "tile_spaceprops2",
     "path": "sprites/tile_spaceprops2/tile_spaceprops2.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "spacegroup",
     "path": "texturegroups/spacegroup",

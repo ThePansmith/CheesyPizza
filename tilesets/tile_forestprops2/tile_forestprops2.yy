@@ -19,7 +19,7 @@
     "name": "spr_forestprops2",
     "path": "sprites/spr_forestprops2/spr_forestprops2.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "forestgroup",
     "path": "texturegroups/forestgroup",

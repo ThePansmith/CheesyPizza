@@ -19,7 +19,7 @@
     "name": "spr_saloonalttiles",
     "path": "sprites/spr_saloonalttiles/spr_saloonalttiles.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "saloongroup",
     "path": "texturegroups/saloongroup",

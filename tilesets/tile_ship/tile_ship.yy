@@ -19,7 +19,7 @@
     "name": "spr_shiptiles",
     "path": "sprites/spr_shiptiles/spr_shiptiles.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "beachgroup",
     "path": "texturegroups/beachgroup",

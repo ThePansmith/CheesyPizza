@@ -19,7 +19,7 @@
     "name": "tile_pinball1",
     "path": "sprites/tile_pinball1/tile_pinball1.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "saloongroup",
     "path": "texturegroups/saloongroup",

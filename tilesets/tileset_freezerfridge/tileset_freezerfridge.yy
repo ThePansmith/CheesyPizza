@@ -19,7 +19,7 @@
     "name": "tile_freezerfridge",
     "path": "sprites/tile_freezerfridge/tile_freezerfridge.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "freezergroup",
     "path": "texturegroups/freezergroup",

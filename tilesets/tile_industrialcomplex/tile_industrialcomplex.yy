@@ -19,7 +19,7 @@
     "name": "spr_industrialcomplextiles",
     "path": "sprites/spr_industrialcomplextiles/spr_industrialcomplextiles.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "kidspartygroup",
     "path": "texturegroups/kidspartygroup",

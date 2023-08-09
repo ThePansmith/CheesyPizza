@@ -1,6 +1,7 @@
 /// @description create layers
 
 live_auto_call;
+trace(ds_map_find_value(global.room_map, "main"));
 
 with obj_persistent
 {
@@ -33,13 +34,13 @@ for(var i = 0; i < array_length(_room.instances); i++)
 		
 		var struct = struct_get(inst_data, "variables");
 		var varNames = variable_struct_get_names(struct);
-	
+		
 		for (var j = 0; j < array_length(varNames); j++)
 		{
 		    if varNames[j] != "x" && varNames[j] != "y"
 		        variable_instance_set(inst, varNames[j], cyop_resolvevalue(struct_get(struct, varNames[j]), varNames[j]));
 		}
-	
+		
 		if safe_get(inst, "flipX")
 		{
 			var horDifference = sprite_get_width(inst.sprite_index) - (sprite_get_xoffset(inst.sprite_index) * 2);
@@ -48,11 +49,11 @@ for(var i = 0; i < array_length(_room.instances); i++)
 		}
 		if safe_get(inst, "flipY")
 		{
-			var verDifference = (sprite_get_height(inst.sprite_index) - (sprite_get_yoffset(inst.sprite_index) * 2))
-	        inst.y += (verDifference * inst.image_yscale)
-	        inst.image_yscale *= -1
+			var verDifference = sprite_get_height(inst.sprite_index) - (sprite_get_yoffset(inst.sprite_index) * 2);
+	        inst.y += verDifference * inst.image_yscale;
+	        inst.image_yscale *= -1;
 		}
-	
+		
 		// saveroom
 		var memorized = global.custom_rooms[room_ind][1].instances[i];
 		if struct_exists(memorized, "id")
@@ -61,7 +62,7 @@ for(var i = 0; i < array_length(_room.instances); i++)
 			memorized.id = inst.id;
 	}
 	else
-		trace("Failed to spawn object ", objects[inst_data.object]);
+		trace("Instance of object ", objects[inst_data.object], " deleted itself upon create");
 }
 
 // backgrounds
@@ -72,7 +73,7 @@ for(var i = 0; i < 10; i++)
 		continue;
 	
 	var lay = layer_create(20000);
-	var bg = layer_background_create(lay, asset_get_index(bg_data.panic_sprite != -1 && global.panic ? bg_data.panic_sprite : bg_data.sprite));
+	var bg = layer_background_create(lay, cyop_resolvevalue(bg_data.panic_sprite != -1 && global.panic ? bg_data.panic_sprite : bg_data.sprite, "sprite_index"));
 	
 	layer_background_speed(bg, bg_data.image_speed);
 	layer_background_htiled(bg, bg_data.tile_x);
@@ -103,5 +104,7 @@ for(var i = 0; i < 10; i++)
 }
 
 // do it asshole
+with obj_player
+	event_perform(ev_other, ev_room_start);
 with all
 	event_perform(ev_other, ev_room_start);

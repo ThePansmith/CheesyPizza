@@ -69,7 +69,7 @@
     "name": "sprite_tile_kungfu",
     "path": "sprites/sprite_tile_kungfu/sprite_tile_kungfu.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "kungfugroup",
     "path": "texturegroups/kungfugroup",

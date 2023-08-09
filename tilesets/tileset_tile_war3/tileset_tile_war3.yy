@@ -69,7 +69,7 @@
     "name": "sprite_tile_war3",
     "path": "sprites/sprite_tile_war3/sprite_tile_war3.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "wargroup",
     "path": "texturegroups/wargroup",

@@ -42,7 +42,13 @@ function activate_panic(instapanic = false)
 	}
 	
 	global.fill = 4000;
-	switch room
+	if instance_exists(obj_levelLoader)
+	{
+		global.minutes = floor(global.custom_fill / 60);
+        global.seconds = global.custom_fill % 60;
+        global.fill = (global.custom_fill * 60) * 0.2;
+	}
+	else switch room
 	{
 		case entrance_10:
 			global.fill = 1860;

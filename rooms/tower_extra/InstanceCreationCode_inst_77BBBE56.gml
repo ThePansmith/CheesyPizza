@@ -4,7 +4,7 @@ group_arr = ["dragongroup"];
 
 sprite_index = spr_gate_dragonlair;
 bgsprite = spr_gate_dragonlairBG;
-bg_useparallax = true;
+//bg_useparallax = true;
 title_index = 0;
 title_sprite = spr_titlecards_newtitles;
 titlecard_index = 0;

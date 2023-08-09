@@ -19,7 +19,7 @@
     "name": "tile_forestprops",
     "path": "sprites/tile_forestprops/tile_forestprops.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "forestgroup",
     "path": "texturegroups/forestgroup",

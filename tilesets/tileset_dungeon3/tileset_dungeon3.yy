@@ -19,7 +19,7 @@
     "name": "tile_dungeon3",
     "path": "sprites/tile_dungeon3/tile_dungeon3.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "dungeongroup",
     "path": "texturegroups/dungeongroup",
