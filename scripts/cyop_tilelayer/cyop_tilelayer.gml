@@ -45,5 +45,6 @@ function cyop_tilelayer(_sprite) constructor
 	static Dispose = function()
 	{
 		vertex_delete_buffer(vertex_buffer);
+		vertex_format_delete(vertex_format);
 	}
 }
