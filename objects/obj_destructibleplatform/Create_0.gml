@@ -8,8 +8,7 @@ spr_dissolve = spr_cheeseblock_die;
 spr_dead = spr_cheeseblock_falling;
 spr_reform = spr_cheeseblock_reform;
 
-sugary = check_sugary();
-if sugary
+if SUGARY
 {
 	spr_idle = spr_caramel_idle;
 	spr_dissolve = spr_caramel_dissolve;
