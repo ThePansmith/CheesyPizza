@@ -8,3 +8,5 @@ loaded = false;
 event_user(0);
 if !loaded
 	instance_destroy();
+
+depth = 500;

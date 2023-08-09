@@ -1,7 +1,6 @@
 /// @description create layers
 
 live_auto_call;
-trace(ds_map_find_value(global.room_map, "main"));
 
 with obj_persistent
 {
@@ -66,9 +65,10 @@ for(var i = 0; i < array_length(_room.instances); i++)
 }
 
 // backgrounds
-for(var i = 0; i < 10; i++)
+var backgrounds = variable_struct_get_names(_room.backgrounds);
+for(var i = 0; i < array_length(backgrounds); i++)
 {
-	var bg_data = struct_get(_room.backgrounds, i);
+	var bg_data = struct_get(_room.backgrounds, backgrounds[i]);
 	if is_undefined(bg_data)
 		continue;
 	
@@ -102,6 +102,9 @@ for(var i = 0; i < 10; i++)
 		room_started = true;
 	}
 }
+
+// tiles
+
 
 // do it asshole
 with obj_player

@@ -146,6 +146,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"CheesyPizza","folderPath":"folders/Scripts/CheesyPizza.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"HUD","folderPath":"folders/Scripts/CheesyPizza/HUD.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Level Editor","folderPath":"folders/Scripts/CheesyPizza/Level Editor.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilemap","folderPath":"folders/Scripts/CheesyPizza/Level Editor/Tilemap.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Online","folderPath":"folders/Scripts/CheesyPizza/Online.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Events","folderPath":"folders/Scripts/CheesyPizza/Online/Events.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Client","folderPath":"folders/Scripts/CheesyPizza/Online/Events/Client.yy",},
@@ -559,7 +560,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilemap","folderPath":"folders/Scripts/CheesyPizza/Level Editor/Tilemap.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles/data",},
