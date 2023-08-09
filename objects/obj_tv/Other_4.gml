@@ -223,9 +223,6 @@ switch (room)
 	case beach_1:
 		global.srank = 22000;
 		break;
-	case entryway_1:
-		global.srank = 19500;
-		break;
 	case grinch_1:
 		global.srank = 7986;
 		break;
@@ -234,6 +231,20 @@ switch (room)
 		break;
 	case etb_1:
 		global.srank = 14000;
+		break;
+		
+	// sugary
+	case entryway_1:
+		global.srank = 19500;
+		break;
+	case steamy_1:
+		global.srank = 23000;
+		break;
+	case molasses_1:
+		global.srank = 23500;
+		break;
+	case sucrose_1:
+		global.srank = 18000;
 		break;
 }
 if global.snickchallenge

@@ -1,12 +1,12 @@
-if (state == states.debugstate)
-	exit;
-if (state == states.backtohub)
-	exit;
-if (instance_exists(obj_jumpscare))
-	exit;
-var hall = id;
 with (other)
 {
+	if (state == states.debugstate)
+		exit;	
+	if (state == states.backtohub)
+		exit;
+	if (instance_exists(obj_jumpscare))
+		exit;
+	var hall = other;
 	if (!other.savedposition)
 	{
 		other.savedposition = true;

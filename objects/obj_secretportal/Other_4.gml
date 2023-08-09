@@ -11,25 +11,28 @@ with (obj_player)
 	{
 		if (targetDoor == "S" && secretportalID == other.ID)
 		{
-			x = other.x;
-			y = other.y;
-			roomstartx = x;
-			roomstarty = y;
-			with (obj_followcharacter)
-			{
+			if (!instance_exists(obj_secretportalstart)) // RX: Create a secret exit if one doesn't exist
+			{	
 				x = other.x;
 				y = other.y;
+				roomstartx = x;
+				roomstarty = y;
+				with (obj_followcharacter)
+				{
+					x = other.x;
+					y = other.y;
+				}
+				with (obj_pizzaface)
+				{
+					x = other.x;
+					y = other.y;
+				}
+				_start = true;
+				other.sprite_index = other.spr_close;
+				other.image_index = 0;
+				instance_destroy(other);
+				instance_create(x, y, obj_secretportalstart);
 			}
-			with (obj_pizzaface)
-			{
-				x = other.x;
-				y = other.y;
-			}
-			_start = true;
-			other.sprite_index = other.spr_close;
-			other.image_index = 0;
-			instance_destroy(other);
-			instance_create(x, y, obj_secretportalstart);
 		}
 	}
 }

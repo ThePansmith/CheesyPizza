@@ -26,6 +26,9 @@ if (player && !global.horse && !instance_exists(obj_jumpscare) && (player.state 
 	image_speed = 0.35;
 	instance_create(x + 50, y + 50, obj_lock);
 	global.key_inv = false;
+	
+	if SUGARY // RX: Sugary resets the comob time, for some gay ass reason??
+		global.combotime = 60;
 }
 if (floor(image_index) == 2)
 	image_speed = 0;
