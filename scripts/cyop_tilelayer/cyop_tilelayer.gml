@@ -14,8 +14,8 @@ function cyop_tilelayer(_sprite) constructor
 		var uvs = sprite_get_uvs(sprite, 0);
 		var spr_left = uvs[0];
 		var spr_top = uvs[1];
-		var spr_right = uvs[2];
-		var spr_bottom = uvs[3];
+		//var spr_right = uvs[2];
+		//var spr_bottom = uvs[3];
 		
 		var tex_w = texture_get_texel_width(texture);
 		var tex_h = texture_get_texel_height(texture);
@@ -29,8 +29,8 @@ function cyop_tilelayer(_sprite) constructor
 			// RX: we need a half texel offset depending on how this looks in game
 			
 			var tile_tex_x = (tile.tm_x * 32) + spr_left;
-			var tile_tex_y = (tile.tm_y * 32) + spr_right;
-			vertex_build_quad(vertex_buffer, tile.x, tile.y, 32, 32, c_white, 1, tile_tex_x, tile_tex_y, tile_tex_w, tile_tex_h);
+			var tile_tex_y = (tile.tm_y * 32) + spr_top;
+			vertex_build_quad3D(vertex_buffer, tile.x, tile.y, _depth, ,32, 32, c_white, 1, tile_tex_x, tile_tex_y, tile_tex_w, tile_tex_h);
 		}
 		vertex_end(vertex_buffer);
 		vertex_freeze(vertex_buffer); // RX: Make the buffer readonly

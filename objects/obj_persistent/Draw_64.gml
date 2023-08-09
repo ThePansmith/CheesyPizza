@@ -1,7 +1,7 @@
 // fps count
 if global.showfps && global.option_hud
 {
-	draw_set_font(global.font_small);
+	draw_set_font(SUGARY ? global.smallfont_ss : global.font_small);
 	draw_set_colour(c_white);
 	draw_set_align(fa_right, fa_bottom);
 	
