@@ -78,7 +78,7 @@ if place_meeting(x, y, obj_player)
 		
 		if REMIX or sugary
 		{
-			var text = $"\{u}You have found {global.toppintotal - 1} {sugary ? "Confecti" : (global.toppintotal == 2 ? "Toppin" : "Toppins")} out of 5!/";
+			var text = $"\{u}You have found "global.toppintotal - 1} {sugary ? "Confecti" : (global.toppintotal == 2 ? "Toppin" : "Toppins")} out of 5!/";
 			create_transformation_tip(text);
 		}
 	}
@@ -100,4 +100,20 @@ if (subimg > (sprite_get_number(spr_toppinhelp) - 1))
 {
 	subimg = frac(subimg);
 	scr_fmod_soundeffect(snd, x, y);
+}"", x, y);
+		with (instance_create(x, y - 25, content))
+		{
+			image_xscale = other.image_xscale;
+			state = states.stun;
+			stunned = 20;
+			vsp = -5;
+		}
+	}
+	instance_destroy();
 }
+subimg += 0.35;
+if (subimg > (sprite_get_number(spr_toppinhelp) - 1))
+{
+	subimg = frac(subimg);
+	scr_fmod_soundeffect(snd, x, y);
+}"
