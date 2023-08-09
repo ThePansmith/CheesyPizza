@@ -49,9 +49,9 @@ switch (state)
 			vsp = 0;
 			if (x != obj_player.x)
 				image_xscale = sign(obj_player.x - x);
-			if (ds_list_find_index(global.saveroom, id) == -1)
+			if (!in_saveroom())
 			{
-				ds_list_add(global.saveroom, id);
+				add_saveroom();
 				notification_push(notifs.pigcitizen_photo, [room, id]);
 			}
 		}

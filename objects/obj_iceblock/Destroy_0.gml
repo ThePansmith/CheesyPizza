@@ -6,7 +6,7 @@ with (obj_collect)
 		image_alpha = 1;
 	}
 }
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	var a = image_xscale + image_yscale;
 	repeat (6 * a)
@@ -34,7 +34,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	global.heattime = clamp(global.heattime, 0, 60);
 	global.combotime += 10;
 	global.combotime = clamp(global.combotime, 0, 60);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }
 scr_destroy_tiles(32, "Tiles_1");
 scr_destroy_tiles(32, "Tiles_2");

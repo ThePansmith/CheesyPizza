@@ -1,7 +1,7 @@
 if (state == states.normal && other.grounded)
 {
 	depth = -500;
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 	playerid = other.id;
 	x = other.x;
 	y = other.y - 60;

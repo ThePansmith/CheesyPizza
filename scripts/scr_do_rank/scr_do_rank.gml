@@ -89,7 +89,10 @@ function scr_do_rank(showtoppins = true, boss = false)
 		global.combo = 0;
 		obj_camera.alarm[4] = -1;
 		for (var i = 0; i < global.comboscore; i += 10)
-			create_collect(obj_player1.x + irandom_range(-60, 60), (obj_player1.y - 100) + irandom_range(-60, 60), choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect), 10);
+		{
+			var spr = scr_collectspr(obj_collect, , false);
+			create_collect(obj_player1.x + irandom_range(-60, 60), obj_player1.y - 100 + irandom_range(-60, 60), spr, 10, spr_palette, paletteselect);
+		}
 		global.comboscore = 0;
 	}
 	if (!instance_exists(obj_endlevelfade))

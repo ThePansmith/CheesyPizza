@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	if (!place_meeting(x, y, obj_gnomecustomer))
 	{
@@ -22,7 +22,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 		}
 		sound_play_oneshot_3d("event:/misc/breakblock", x, y);
 	}
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }
 if (snd != -4)
 {

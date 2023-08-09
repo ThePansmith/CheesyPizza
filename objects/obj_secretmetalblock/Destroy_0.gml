@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	repeat (8 * max(abs(image_xscale), abs(image_yscale)))
 	{
@@ -17,7 +17,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 		shake_mag_acc = 40 / room_speed;
 	}
 	sound_play_oneshot("event:/sfx/misc/breakmetal");
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }
 scr_cutoff();
 if (is_string(targettiles))

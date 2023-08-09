@@ -1,3 +1,3 @@
-if (drop && global.panic && dropstate != states.normal && ds_list_find_index(global.baddieroom, id) == -1)
+if (drop && global.panic && dropstate != states.normal && !in_baddieroom())
 	ds_list_add(global.baddieroom, id);
 global.prank_cankillenemy = false;

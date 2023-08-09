@@ -9,7 +9,7 @@ output = function()
     with instance_place(x, y + 1, obj_solid)
         y += 32;
 	
-	if ds_list_find_index(other.flags.saveroom, other.id) == -1
+	if !in_saveroom(other.id, other.flags.saveroom)
     {
 		with obj_camera
 		{

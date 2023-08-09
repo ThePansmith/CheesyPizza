@@ -2,12 +2,12 @@ if (move && !instance_exists(obj_taxitransition))
 {
 	with (obj_player)
 	{
-		lastroom = room;
+		set_lastroom();
 		targetRoom = other.targetRoom;
 		targetDoor = other.targetDoor;
 	}
 	obj_camera.chargecamera = 0;
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 	with (instance_create(x, y, obj_taxitransition))
 	{
 		bgsprite = spr_taxitransition_bg1;

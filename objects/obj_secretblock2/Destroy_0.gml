@@ -1,4 +1,4 @@
-if ds_list_find_index(global.saveroom, id) == -1
+if !in_saveroom()
 {
 	create_baddiegibsticks(x + 16, y + 16);
 	scr_sound_multiple(global.snd_collect, x, y);

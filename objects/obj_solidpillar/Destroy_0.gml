@@ -1,6 +1,6 @@
 if (destroy)
 {
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 	with (instance_create(x, y, obj_explosioneffect))
 		sprite_index = spr_bombexplosion;
 	instance_create(x, y, obj_bangeffect);

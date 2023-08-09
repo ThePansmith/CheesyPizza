@@ -1,8 +1,8 @@
 if (room == rm_editor)
 	exit;
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 	if (object_index == obj_escapecollect)
 		ds_list_add(global.escaperoom, id);
 }

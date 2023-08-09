@@ -18,11 +18,10 @@ if (!place_meeting(x, y, obj_doorblocked))
 		{
 			if other.image_index == 1
 			{
-				obj_player1.lastroom = room;
-				obj_player2.lastroom = room;
+				set_lastroom();
 				sound_play("event:/sfx/misc/door");
 				obj_camera.chargecamera = 0;
-				ds_list_add(global.saveroom, id);
+				add_saveroom();
 				if (object_index == obj_player1)
 					obj_player1.sprite_index = obj_player1.spr_lookdoor;
 				if (object_index == obj_player2)

@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	with (instance_create(x, y, obj_car_dead))
 	{
@@ -7,5 +7,5 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	}
 	if (instance_exists(inst))
 		instance_destroy(inst);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

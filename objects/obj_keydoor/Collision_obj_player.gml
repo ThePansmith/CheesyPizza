@@ -20,7 +20,7 @@ if (!place_meeting(x, y, obj_doorblocked))
 			{
 				with obj_player
 				{
-					lastroom = room;
+					set_lastroom();
 					targetDoor = door.targetDoor;
 					targetRoom = door.targetRoom;
 					
@@ -35,7 +35,7 @@ if (!place_meeting(x, y, obj_doorblocked))
 				}
 				sound_play("event:/sfx/misc/door");
 				obj_camera.chargecamera = 0;
-				ds_list_add(global.saveroom, id);
+				add_saveroom();
 				sprite_index = spr_lookdoor;
 				image_index = 0;
 				state = states.door;

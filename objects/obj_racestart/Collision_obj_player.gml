@@ -1,4 +1,4 @@
-if (!start && ds_list_find_index(global.saveroom, id) == -1)
+if (!start && !in_saveroom())
 {
 	start = true;
 	sound_play_oneshot_3d("event:/sfx/misc/racestart", x, y);

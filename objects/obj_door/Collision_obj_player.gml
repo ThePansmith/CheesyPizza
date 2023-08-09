@@ -29,7 +29,7 @@ if !place_meeting(x, y, obj_doorblocked)
 			}
 			sound_play("event:/sfx/misc/door");
 			obj_camera.chargecamera = 0;
-			ds_list_add(global.saveroom, id);
+			add_saveroom();
 			
 			if isgustavo
 				sprite_index = spr_ratmount_enterdoor;
@@ -42,10 +42,10 @@ if !place_meeting(x, y, obj_doorblocked)
 				x = door.x + door.sprite_width / 2;
 			}
 			
-			lastroom = room;
+			set_lastroom();
 			targetDoor = door.targetDoor;
 			targetRoom = door.targetRoom;
-		
+			
 			image_index = 0;
 			if state != states.gotoplayer
 				state = states.door;
@@ -61,8 +61,8 @@ if !place_meeting(x, y, obj_doorblocked)
 			other.visited = true;
 			if other.sprite_index == spr_doorunvisited_ss
 				other.sprite_index = spr_doorvisited_ss
-			if ds_list_find_index(global.saveroom, other.id) == -1
-				ds_list_add(global.saveroom, other.id);
+			if !in_saveroom(other.id)
+				add_saveroom(other.id);
 			with instance_create(x, y, obj_fadeout)
 			{
 				offload_arr = door.offload_arr;

@@ -4,7 +4,7 @@ var player = instance_place(x, y, obj_player);
 if (player && key && (player.state == states.normal or player.state == states.ratmount or player.state == states.mach1 or player.state == states.pogo or player.state == states.mach2 or player.state == states.mach3 or player.state == states.Sjumpprep) && sprite_index == spr_elevatorlocked && player.key_up && player.grounded)
 {
 	_save = true;
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 	image_index = 0;
 	sprite_index = spr_elevatoropening;
 	sound_play_3d("event:/sfx/misc/elevatorstart", x, y);

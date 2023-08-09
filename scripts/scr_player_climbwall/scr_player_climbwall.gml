@@ -12,11 +12,26 @@ function scr_player_climbwall()
 			if instance_exists(obj_fadeout) && y < -50
 				vsp = 0;
 			
-			if place_meeting(x + xscale, y, obj_unclimbablewall) or place_meeting(x + xscale, y, obj_molassesWall)
+			var unclimbable = 0;
+			if place_meeting(x + xscale, y, obj_unclimbablewall)
+				unclimbable = 1;
+			if place_meeting(x + xscale, y, obj_molassesWall)
+				unclimbable = 2;
+			
+			if unclimbable
 			{
-				wallspeed -= grav / 2;
-				if wallspeed > 6 && !place_meeting(x + xscale, y, obj_molassesWall)
-					wallspeed = 6;
+				if unclimbable == 2
+				{
+					wallspeed -= grav;
+					if wallspeed > 8
+						wallspeed = 8;
+				}
+				else
+				{
+					wallspeed -= grav / 2;
+					if wallspeed > 8
+						wallspeed = 8;
+				}
 				
 				if grounded
 				{

@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	with (instance_create(x + 32, y + 32, obj_sausageman_dead))
 		sprite_index = spr_harddoughblockdead;
@@ -11,6 +11,6 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	}
 	GamepadSetVibration(playerindex, 1, 1, 0.8);
 	sound_play_oneshot_3d("event:/sfx/misc/breakmetal", x, y);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }
 depth = 1;

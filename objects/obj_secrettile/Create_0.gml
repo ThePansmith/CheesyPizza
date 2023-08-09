@@ -5,7 +5,7 @@ buffer = 2;
 player = -4;
 
 revealed = false;
-if ds_list_find_index(global.saveroom, id) != -1
+if in_saveroom()
 	revealed = true;
 
 // loop through every tile layer and add it to an array to draw it later

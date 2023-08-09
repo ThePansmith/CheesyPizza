@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	if (sprite_index == spr_bigbeer)
 	{
@@ -25,5 +25,5 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	create_collect(x, y, spr_beerliquid, val);
 	with (instance_create(x + 16, y, obj_smallnumber))
 		number = string(val);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

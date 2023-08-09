@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	repeat (8)
 	{
@@ -13,5 +13,5 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	notification_push(notifs.levelblock_break, [object_index]);
 	scr_sleep(5);
 	scr_sound_multiple("event:/sfx/misc/breakblock", x, y);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

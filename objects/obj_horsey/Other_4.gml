@@ -1,10 +1,10 @@
 var flag = false;
-if (ds_list_find_index(global.baddieroom, id) != -1)
+if (in_baddieroom())
 {
 	state = states.finishingblow;
 	flag = true;
 }
-else if (ds_list_find_index(global.saveroom, id) != -1)
+else if (in_saveroom())
 {
 	state = states.dead;
 	flag = true;

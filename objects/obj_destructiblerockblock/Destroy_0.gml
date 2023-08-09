@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	scr_rockblock_tag();
 	sound_play_oneshot_3d("event:/sfx/misc/breakblock", x, y);
@@ -69,5 +69,5 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	instance_create(x + 32, y + 32, obj_bangeffect);
 	repeat (7)
 		create_debris(x + 32, y + 32, spr_rockdebris);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

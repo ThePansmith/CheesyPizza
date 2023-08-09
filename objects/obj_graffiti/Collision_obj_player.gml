@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1 && other.state == states.backbreaker)
+if (!in_saveroom() && other.state == states.backbreaker)
 {
 	other.state = states.graffiti;
 	other.sprite_index = other.spr_victory;
@@ -6,5 +6,5 @@ if (ds_list_find_index(global.saveroom, id) == -1 && other.state == states.backb
 	sprite_index = spr_graffiti_drawn;
 	global.graffiticount++;
 	instance_create(x, y - 80, obj_graffiticount);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

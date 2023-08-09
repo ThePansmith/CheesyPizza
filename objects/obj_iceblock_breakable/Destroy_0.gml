@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	sound_play_oneshot_3d("event:/sfx/misc/breakice", x, y);
 	if (bird)
@@ -17,7 +17,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	global.heattime = clamp(global.heattime, 0, 60);
 	global.combotime += 10;
 	global.combotime = clamp(global.combotime, 0, 60);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }
 scr_destroy_tiles(32, "Tiles_1");
 scr_destroy_tiles(32, "Tiles_2");

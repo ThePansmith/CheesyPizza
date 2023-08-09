@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	if particlespr == spr_harddoughblockdead
 	{
@@ -27,5 +27,5 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	}
 	GamepadSetVibration(playerindex, 1, 1, 0.8);
 	sound_play_oneshot("event:/sfx/misc/breakmetal");
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

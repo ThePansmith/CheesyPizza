@@ -13,10 +13,9 @@ with (other)
 		if (state == states.normal || state == states.mach1 || state == states.mach2 || state == states.pogo || state == states.mach3 || state == states.Sjumpprep)
 		{
 			global.currentsavefile = other.file;
-			obj_player1.lastroom = room;
-			obj_player2.lastroom = room;
+			set_lastroom();
 			obj_camera.chargecamera = 0;
-			ds_list_add(global.saveroom, id);
+			add_saveroom();
 			if (object_index == obj_player1)
 				obj_player1.sprite_index = obj_player1.spr_lookdoor;
 			if (object_index == obj_player2)

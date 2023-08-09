@@ -1162,7 +1162,9 @@ function cyop_objectlist()
 
 #endregion
 
-global.custom_rooms = [];
+global.custom_rooms = []; // [[0, {}]]
+global.room_map = ds_map_create();
+
 function cyop_load(ini)
 {
 	// load ini
@@ -1180,10 +1182,8 @@ function cyop_load(ini)
 		
 		case 1: // level
 			var path = $"{filename_path(ini)}/levels/{mainlevel}/level.ini";
-			show_message($"Loading {path}");
-			
 			if file_exists(path)
-				cyop_load_level(path);
+				return cyop_load_level(path);
 			else
 				return "Main level doesn't exist";
 			break;
@@ -1194,7 +1194,7 @@ function cyop_load_level(ini)
 	// load ini
 	ini_open(ini);
 	var isWorld = ini_read_real("data", "isWorld", false);
-	var pscore = ini_read_real("data", "pscore", 0);
+	global.srank = ini_read_real("data", "pscore", 8000);
 	var name = ini_read_string("data", "name", "");
 	var escape = ini_read_real("data", "escape", 0);
 	var titlecardSprite = ini_read_string("data", "titlecardSprite", "no titlecard");
@@ -1202,5 +1202,107 @@ function cyop_load_level(ini)
 	var titleSong = ini_read_string("data", "titlecardSprite", "");
 	ini_close();
 	
-	show_message($"{name} loaded");
+	// rooms folder
+	var rooms_path = concat(filename_path(ini), "/rooms");
+	if !directory_exists(rooms_path)
+		return "Rooms folder doesn't exist";
+	
+	try
+	{
+		ds_map_clear(global.room_map);
+		var r = 0;
+		
+		// loop through jsons
+		var room_file = file_find_first(concat(rooms_path, "/*.json"), fa_none);
+		while room_file != ""
+		{
+			// read file
+			var reader = file_text_open_read(concat(rooms_path, "/", room_file));
+			var json = json_parse(file_text_readln(reader));
+			file_text_close(reader);
+			
+			// load room
+			if array_length(global.custom_rooms) > r
+			{
+				var _room = global.custom_rooms[r][0];
+				room_assign(_room, custom_room_parent);
+				global.custom_rooms[r] = [_room, json];
+			}
+			else
+			{
+				var _room = room_add();
+				room_assign(_room, custom_room_parent);
+				array_push(global.custom_rooms, [_room, json]);
+			}
+			ds_map_add(global.room_map, string_replace(room_file, ".json", ""), r);
+			
+			// properties
+			var prop = json.properties;
+			room_set_width(_room, prop.levelWidth - prop.roomX);
+			room_set_height(_room, prop.levelHeight - prop.roomY);
+			
+			view_camera[0] = camera_create_view(0, 0, room_width, room_height);
+			room_set_camera(_room, 0, view_camera[0]);
+			
+			layer_set_target_room(_room);
+			
+			// instance LAYERS
+			/*
+			var objects = cyop_objectlist();
+			for(var i = 0; i < array_length(json.instances); i++)
+			{
+				var inst = json.instances[i];
+				if inst.deleted
+					continue;
+				
+				// create layer
+				var lay_name = $"Instances_{inst.layer}";
+				if !layer_exists(lay_name)
+					var lay = layer_create(100 - inst.layer, lay_name);
+			}
+			*/
+			
+			layer_reset_target_room();
+			
+			room_file = file_find_next();
+			r++;
+		}
+	}
+	catch(e)
+	{
+		trace(e);
+		
+		// clean
+		ds_map_clear(global.room_map);
+		layer_reset_target_room();
+		
+		return "Error loading rooms";
+	}
+}
+function cyop_resolvevalue(value, varname)
+{
+	if varname == "content"
+	{
+		value = asset_get_index(value);
+		if object_exists(value)
+			return value;
+		else
+			return obj_null;
+	}
+	return value;
+}
+function cyop_room_goto(str)
+{
+	var r = ds_map_find_value(global.room_map, str);
+	if is_undefined(r)
+		return "Custom room does not exist";
+	
+	room_goto(global.custom_rooms[r][0]);
+	with obj_levelLoader
+	{
+		alarm[0] = 1;
+		_room = global.custom_rooms[r][1];
+		room_name = str;
+		room_ind = r;
+	}
 }

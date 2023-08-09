@@ -9,8 +9,7 @@ with (obj_player)
 {
 	if (object_index != obj_player2 || global.coop)
 	{
-		
-		if (targetDoor == "S" && secretportalID == other.id)
+		if (targetDoor == "S" && secretportalID == other.ID)
 		{
 			if (!instance_exists(obj_secretportalstart)) // RX: Create a secret exit if one doesn't exist
 			{	
@@ -37,7 +36,7 @@ with (obj_player)
 		}
 	}
 }
-if (ds_list_find_index(global.saveroom, id) != -1)
+if (in_saveroom())
 {
 	active = false;
 	sprite_index = spr_close;

@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	repeat (8 * max(abs(image_xscale), abs(image_yscale)))
 	{
@@ -12,7 +12,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	}
 	scr_sound_multiple("event:/sfx/misc/breakblock", x, y);
 	notification_push(notifs.block_break, [room]);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }
 scr_cutoff();
 if (is_string(targettiles))

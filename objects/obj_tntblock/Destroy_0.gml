@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	scr_rockblock_tag();
 	instance_create(x + 32, y + 32, obj_playerexplosion);
@@ -24,5 +24,5 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	}
 	repeat (6)
 		create_debris(x + 32, y + 32, spr_tntblockdebris);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

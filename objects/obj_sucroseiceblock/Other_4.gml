@@ -23,5 +23,5 @@ if content != noone
 	if contentspr == spr_pizzacollect1
 		contentspr = scr_collectspr(obj_bigcollect, , false);
 }
-if ds_list_find_index(global.saveroom, id) != -1
+if in_saveroom()
 	instance_destroy();

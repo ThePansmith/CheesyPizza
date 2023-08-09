@@ -14,7 +14,7 @@ with (obj_camera)
 	shake_mag = 3;
 	shake_mag_acc = 3 / room_speed;
 }
-if (ds_list_find_index(global.baddieroom, id) == -1)
+if (!in_baddieroom())
 {
 	ds_list_add(global.baddieroom, id);
 	ds_list_add(global.escaperoom, id);

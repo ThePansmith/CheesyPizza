@@ -29,7 +29,7 @@ if (global.panic || instance_exists(obj_wartimer))
 					global.fill += 180;
 				
 				sound_play_oneshot_3d(other.sugary ? "event:/modded/sfx/secretenterSP" : "event:/sfx/misc/lapenter", x, y);
-				if ds_list_find_index(global.saveroom, other.id) == -1
+				if !in_saveroom(other.id)
 				{
 					//ds_list_add(global.saveroom, other.id);
 					global.collect += collect;

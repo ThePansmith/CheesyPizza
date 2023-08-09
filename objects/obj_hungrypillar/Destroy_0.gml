@@ -1,7 +1,7 @@
 if room == rm_editor
 	exit;
 
-if ds_list_find_index(global.saveroom, id) == -1
+if !in_saveroom()
 {
 	/*
 	if (global.coop == 1)
@@ -37,7 +37,7 @@ if ds_list_find_index(global.saveroom, id) == -1
 			sprite_index = spr_protojohn;
 	}
 	sound_play_3d("event:/sfx/enemies/kill", x, y);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 	
 	activate_panic();
 }

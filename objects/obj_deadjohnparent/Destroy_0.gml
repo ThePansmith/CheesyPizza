@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	instance_create(x + (sprite_width / 2), y + (sprite_height / 2), obj_bangeffect);
 	repeat (8)
@@ -21,5 +21,5 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	scr_sleep(5);
 	scr_sound_multiple("event:/sfx/misc/breakblock", x, y);
 	instance_create(x + 32, y + (sprite_height / 2), obj_bangeffect);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

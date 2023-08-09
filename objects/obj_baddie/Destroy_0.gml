@@ -1,7 +1,7 @@
 if (room == rm_editor)
 	exit;
 
-if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite || elitehit <= 0) && destroyable)
+if (!in_baddieroom() && (!elite || elitehit <= 0) && destroyable)
 {
 	if (object_index != obj_peppinoclone && object_index != obj_ghoul && object_index != obj_bazookabaddie && object_index != obj_snowman && object_index != obj_twoliterdog)
 	{
@@ -102,7 +102,7 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite || elitehit <= 0)
 	if global.leveltosave == "sucrose"
 		global.fill += calculate_filltime(2.5);
 }
-if (ds_list_find_index(global.baddieroom, id) == -1 && important == 0)
+if (!in_baddieroom() && important == 0)
 {
 	if (global.prank_cankillenemy && !global.prank_enemykilled)
 	{
@@ -151,7 +151,7 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && important == 0)
 	if (escape)
 		ds_list_add(global.escaperoom, id);
 }
-else if (ds_list_find_index(global.baddieroom, id) == -1 && important == 1)
+else if (!in_baddieroom() && important == 1)
 {
 	trace("destroy unimportant");
 	repeat 3

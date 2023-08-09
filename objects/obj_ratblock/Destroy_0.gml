@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	if sugary
 	{
@@ -60,6 +60,6 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	with (obj_player1)
 		supercharge += 1;
 	GamepadSetVibration(0, 0.8, 0.8, 0.65);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }
 destroy_sounds([sniffsnd]);

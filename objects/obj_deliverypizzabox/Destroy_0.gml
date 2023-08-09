@@ -1,6 +1,6 @@
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 	instance_create_unique(0, 0, obj_deliverytimer);
 	with (obj_deliverytimer)
 	{

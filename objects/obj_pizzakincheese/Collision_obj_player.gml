@@ -4,7 +4,7 @@ if (obj_player.state != states.hurt && global.cheesefollow == 0)
 {
 	global.heattime = 60;
 	global.style += 10;
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 	if (global.toppintotal < 5)
 		obj_tv.message = "YOU NEED " + string(5 - global.toppintotal) + " MORE TOPPINS!";
 	if (global.toppintotal == 5)

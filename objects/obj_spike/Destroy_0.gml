@@ -1,6 +1,6 @@
 if (room == custom_lvl_room)
 	tile_layer_delete_at(1, x, y);
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	var i = 0;
 	repeat (2)
@@ -10,5 +10,5 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 		i++;
 	}
 	scr_sound_multiple(global.snd_collect, x, y);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }

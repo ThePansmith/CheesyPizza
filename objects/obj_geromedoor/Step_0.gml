@@ -15,7 +15,7 @@ else if (uparrow)
 var player = instance_place(x, y, obj_player);
 if (player && !global.horse && (player.state == states.normal or player.state == states.ratmount or player.state == states.mach1 or player.state == states.pogo or player.state == states.mach2 or player.state == states.mach3 or player.state == states.Sjumpprep) && player.key_up && player.grounded && (global.gerome == 1 or image_index == 1))
 {
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 	sound_play_3d("event:/sfx/misc/keyunlock", x, y);
 	sound_play("event:/sfx/misc/cheers");
 	if (global.gerome)

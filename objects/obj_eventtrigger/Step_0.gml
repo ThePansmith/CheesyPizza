@@ -4,7 +4,7 @@ if condition != noone && condition()
     if !activated || !flags.do_once
     {
 		output();
-		if flags.do_save && ds_list_find_index(flags.saveroom, id) == -1
+		if flags.do_save && !in_saveroom(id, flags.saveroom)
 			ds_list_add(flags.saveroom, id);
 		
 		activated = true;

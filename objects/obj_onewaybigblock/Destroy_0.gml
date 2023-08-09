@@ -1,6 +1,6 @@
 if (room == rm_editor)
 	exit;
-if (ds_list_find_index(global.saveroom, id) == -1)
+if (!in_saveroom())
 {
 	if !sugary && !bo
 	{
@@ -37,6 +37,6 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 		scr_sound_multiple("event:/sfx/misc/breakblock", x, y);
 	}
 	scr_sleep(5);
-	ds_list_add(global.saveroom, id);
+	add_saveroom();
 }
 instance_destroy(solid_inst);

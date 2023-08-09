@@ -62,9 +62,9 @@ if (!instance_exists(obj_fadeout) && state != states.robotidle && other.state !=
 		else
 			sound_play_oneshot("event:/sfx/enemies/jumpscare");
 	}
-	if (!oktoberfest && ds_list_find_index(global.saveroom, room_get_name(room)) == -1)
+	if (!oktoberfest && !in_saveroom(room_get_name(room)))
 	{
 		oktoberfest = true;
-		ds_list_add(global.saveroom, room_get_name(room));
+		add_saveroom(room_get_name(room));
 	}
 }

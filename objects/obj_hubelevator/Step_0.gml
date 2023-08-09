@@ -53,7 +53,7 @@ if state == 2
 		obj_camera.chargecamera = 0;
 		with obj_player1
 		{
-			lastroom = room;
+			set_lastroom();
 			sprite_index = spr_lookdoor;
 			if isgustavo
 				sprite_index = spr_ratmount_enterdoor;

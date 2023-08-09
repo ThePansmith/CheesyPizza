@@ -5,7 +5,7 @@ if (ds_queue_size(followqueue) < LAG_STEPS)
 with (obj_player)
 {
 	targetRoom = other.targetRoom;
-	lastroom = room;
+	set_lastroom();
 	targetDoor = other.targetDoor;
 	visible = false;
 	if (state != states.gotoplayer)

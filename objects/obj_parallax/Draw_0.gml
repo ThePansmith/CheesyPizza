@@ -20,7 +20,7 @@ if do_foreground
 {
 	if !surface_exists(fg_surface)
 		fg_surface = surface_create(960, 540);
-
+	
 	surface_set_target(fg_surface);
 	draw_clear_alpha(0, 0);
 	surface_reset_target();
@@ -30,7 +30,7 @@ if do_foreground
 gpu_set_blendmode(bm_normal);
 for(var i = array_length(background_layers) - 1; i >= 0; i--)
 {
-	var lay = background_layers[i], bg = layer_background_get_id(lay);
+	var lay = background_layers[i], bg = layer_background_get_id_fixed(lay);
 	if !layer_get_visible(lay) or !layer_background_get_visible(bg)
 		continue;
 	
