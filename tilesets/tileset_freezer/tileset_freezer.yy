@@ -19,7 +19,7 @@
     "name": "bg_tilefreezer",
     "path": "sprites/bg_tilefreezer/bg_tilefreezer.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "freezergroup",
     "path": "texturegroups/freezergroup",

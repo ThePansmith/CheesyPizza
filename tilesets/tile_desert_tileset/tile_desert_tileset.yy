@@ -19,7 +19,7 @@
     "name": "tile_desert",
     "path": "sprites/tile_desert/tile_desert.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "desertgroup",
     "path": "texturegroups/desertgroup",

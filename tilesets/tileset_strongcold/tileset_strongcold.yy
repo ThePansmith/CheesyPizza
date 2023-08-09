@@ -19,7 +19,7 @@
     "name": "tile_strongcold",
     "path": "sprites/tile_strongcold/tile_strongcold.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "strongcoldgroup",
     "path": "texturegroups/strongcoldgroup",

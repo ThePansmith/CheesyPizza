@@ -19,7 +19,7 @@
     "name": "spr_streettiles",
     "path": "sprites/spr_streettiles/spr_streettiles.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "citygroup",
     "path": "texturegroups/citygroup",

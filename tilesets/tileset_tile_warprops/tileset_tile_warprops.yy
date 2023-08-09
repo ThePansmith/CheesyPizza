@@ -19,7 +19,7 @@
     "name": "spr_warprops",
     "path": "sprites/spr_warprops/spr_warprops.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "wargroup",
     "path": "texturegroups/wargroup",

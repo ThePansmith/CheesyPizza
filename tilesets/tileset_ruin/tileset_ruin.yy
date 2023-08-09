@@ -19,7 +19,7 @@
     "name": "tile_ruin",
     "path": "sprites/tile_ruin/tile_ruin.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "ruingroup",
     "path": "texturegroups/ruingroup",

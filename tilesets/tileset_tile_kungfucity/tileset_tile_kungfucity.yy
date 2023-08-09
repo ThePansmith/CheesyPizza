@@ -19,7 +19,7 @@
     "name": "tile_kunfucity",
     "path": "sprites/tile_kunfucity/tile_kunfucity.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "kungfugroup",
     "path": "texturegroups/kungfugroup",

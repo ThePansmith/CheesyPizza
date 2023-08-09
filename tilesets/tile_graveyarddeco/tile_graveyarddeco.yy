@@ -19,7 +19,7 @@
     "name": "spr_graveyarddeco",
     "path": "sprites/spr_graveyarddeco/spr_graveyarddeco.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "graveyardgroup",
     "path": "texturegroups/graveyardgroup",

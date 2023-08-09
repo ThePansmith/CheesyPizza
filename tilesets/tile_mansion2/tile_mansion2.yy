@@ -19,7 +19,7 @@
     "name": "spr_mansion2tiles",
     "path": "sprites/spr_mansion2tiles/spr_mansion2tiles.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "hubgroup",
     "path": "texturegroups/hubgroup",

@@ -19,7 +19,7 @@
     "name": "tile_entrance1",
     "path": "sprites/tile_entrance1/tile_entrance1.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "entrancegroup",
     "path": "texturegroups/entrancegroup",

@@ -19,7 +19,7 @@
     "name": "spr_farmdecotiles",
     "path": "sprites/spr_farmdecotiles/spr_farmdecotiles.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "farmgroup",
     "path": "texturegroups/farmgroup",

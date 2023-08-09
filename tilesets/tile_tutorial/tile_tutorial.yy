@@ -19,7 +19,7 @@
     "name": "spr_tutorialtiles",
     "path": "sprites/spr_tutorialtiles/spr_tutorialtiles.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "hubgroup",
     "path": "texturegroups/hubgroup",

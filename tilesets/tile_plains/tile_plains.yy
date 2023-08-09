@@ -19,7 +19,7 @@
     "name": "tile_plains_sprite",
     "path": "sprites/tile_plains_sprite/tile_plains_sprite.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "unusedgroup",
     "path": "texturegroups/unusedgroup",

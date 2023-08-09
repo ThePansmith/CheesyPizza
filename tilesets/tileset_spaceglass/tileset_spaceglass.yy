@@ -19,7 +19,7 @@
     "name": "spr_spaceglass",
     "path": "sprites/spr_spaceglass/spr_spaceglass.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "spacegroup",
     "path": "texturegroups/spacegroup",

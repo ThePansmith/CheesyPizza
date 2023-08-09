@@ -19,7 +19,7 @@
     "name": "spr_desertdeco",
     "path": "sprites/spr_desertdeco/spr_desertdeco.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "desertgroup",
     "path": "texturegroups/desertgroup",

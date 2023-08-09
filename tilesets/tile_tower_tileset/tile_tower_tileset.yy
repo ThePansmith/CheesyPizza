@@ -19,7 +19,7 @@
     "name": "tile_tower",
     "path": "sprites/tile_tower/tile_tower.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "entrancegroup",
     "path": "texturegroups/entrancegroup",

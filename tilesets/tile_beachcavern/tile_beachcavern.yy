@@ -19,7 +19,7 @@
     "name": "spr_beachcaverntiles",
     "path": "sprites/spr_beachcaverntiles/spr_beachcaverntiles.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "beachgroup",
     "path": "texturegroups/beachgroup",

@@ -69,7 +69,7 @@
     "name": "sprite_tile_space3",
     "path": "sprites/sprite_tile_space3/sprite_tile_space3.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "spacegroup",
     "path": "texturegroups/spacegroup",

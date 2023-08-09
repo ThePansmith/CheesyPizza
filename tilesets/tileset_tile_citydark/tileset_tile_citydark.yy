@@ -69,7 +69,7 @@
     "name": "sprite_tile_citydark",
     "path": "sprites/sprite_tile_citydark/sprite_tile_citydark.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "unusedgroup",
     "path": "texturegroups/unusedgroup",

@@ -1162,11 +1162,22 @@ function cyop_objectlist()
 
 #endregion
 
-global.custom_rooms = []; // [[0, {}]]
+global.custom_rooms = []; // [[runtime_room_index, json]]
+global.custom_sprites = ds_map_create();
+global.custom_tiles = ds_map_create();
 global.room_map = ds_map_create();
+global.custom_fill = 4000;
 
+function cyop_cleanup()
+{
+	ds_map_clear(global.custom_sprites);
+	ds_map_clear(global.custom_tiles);
+	ds_map_clear(global.room_map);
+}
 function cyop_load(ini)
 {
+	if live_call(ini) return live_result;
+	
 	// load ini
 	ini_open(ini);
 	var type = ini_read_real("properties", "type", -1); // 0 - tower, 1 - level
@@ -1174,20 +1185,84 @@ function cyop_load(ini)
 	var mainlevel = ini_read_string("properties", "mainlevel", "");
 	ini_close();
 	
-	// load level
+	// target level
+	var targetLevel = "";
 	switch type
 	{
 		default:
 			return "Level type currently unsupported";
 		
 		case 1: // level
-			var path = $"{filename_path(ini)}/levels/{mainlevel}/level.ini";
-			if file_exists(path)
-				return cyop_load_level(path);
-			else
+			var targetLevel = concat(filename_path(ini), "/levels/", mainlevel, "/level.ini");
+			if !file_exists(targetLevel)
 				return "Main level doesn't exist";
 			break;
 	}
+	
+	recursive_func = function(folder, prefix)
+	{
+		if directory_exists(folder)
+		{
+			// files
+			var recursion = [];
+			
+			var file = file_find_first(concat(folder, "/*"), fa_directory);
+			while file != ""
+			{
+				if directory_exists(concat(folder, "/", file))
+					array_push(recursion, file);
+				else
+				{
+					var ext = filename_ext(file);
+					var filename = string_replace(file, ext, "");
+					var filepath = concat(folder, "/", file);
+					
+					// properties
+					ini_open(concat(folder, "/", filename, ".ini"));
+					var images = ini_read_real("properties", "images", 1);
+					var image_width = ini_read_real("properties", "image_width", 0);
+					
+					var centered = ini_read_real("offset", "centered", false);
+					var x_offset = ini_read_real("offset", "x", 0);
+					var y_offset = ini_read_real("offset", "y", 0);
+					
+					var tileset_size = ini_read_real("tileset", "size", 0);
+					ini_close();
+					
+					// add sprite
+					var spr = sprite_add(filepath, 1, 0, 0, 0, 0); // temporary
+					if images <= 1 && image_width > 0
+						images = floor(sprite_get_width(spr) / image_width);
+					if centered
+					{
+						x_offset += sprite_get_width(spr) / 2;
+						y_offset += sprite_get_height(spr) / 2;
+					}
+					sprite_replace(spr, filepath, images, 0, 0, x_offset, y_offset);
+					
+					// add to map
+					if tileset_size > 0
+						ds_map_add(global.custom_tiles, prefix + filename, [spr, tileset_size]);
+					else
+						ds_map_add(global.custom_sprites, prefix + filename, spr);
+				}
+				file = file_find_next();
+			}
+			
+			// look through subfolders
+			while array_length(recursion) > 0
+			{
+				var bwah = array_pop(recursion);
+				recursive_func(concat(folder, "/", bwah), concat(bwah, "/"));
+			}
+		}
+	}
+	
+	// load sprites
+	recursive_func(concat(filename_path(ini), "/sprites"), "");
+	
+	// load into the main level
+	return cyop_load_level(targetLevel);
 }
 function cyop_load_level(ini)
 {
@@ -1196,7 +1271,7 @@ function cyop_load_level(ini)
 	var isWorld = ini_read_real("data", "isWorld", false);
 	global.srank = ini_read_real("data", "pscore", 8000);
 	var name = ini_read_string("data", "name", "");
-	var escape = ini_read_real("data", "escape", 0);
+	global.custom_fill = ini_read_real("data", "escape", 4000);
 	var titlecardSprite = ini_read_string("data", "titlecardSprite", "no titlecard");
 	var titleSprite = ini_read_string("data", "titlecardSprite", "");
 	var titleSong = ini_read_string("data", "titlecardSprite", "");
@@ -1210,7 +1285,7 @@ function cyop_load_level(ini)
 	try
 	{
 		ds_map_clear(global.room_map);
-		var r = 0;
+		var r = 0, version_warned = false;
 		
 		// loop through jsons
 		var room_file = file_find_first(concat(rooms_path, "/*.json"), fa_none);
@@ -1220,6 +1295,10 @@ function cyop_load_level(ini)
 			var reader = file_text_open_read(concat(rooms_path, "/", room_file));
 			var json = json_parse(file_text_readln(reader));
 			file_text_close(reader);
+			
+			// version mismatch
+			if !version_warned && json.editorVersion > 5
+				show_message(concat("Expected editorVersion 5, got ", json.editorVersion));
 			
 			// load room
 			if array_length(global.custom_rooms) > r
@@ -1281,13 +1360,29 @@ function cyop_load_level(ini)
 }
 function cyop_resolvevalue(value, varname)
 {
+	if live_call(value, varname) return live_result;
+	
 	if varname == "content"
 	{
-		value = asset_get_index(value);
-		if object_exists(value)
-			return value;
+		var return_value = asset_get_index(value);
+		if object_exists(return_value)
+			return return_value;
 		else
 			return obj_null;
+	}
+	if varname == "sprite_index"
+	{
+		var return_value = asset_get_index(value);
+		if sprite_exists(return_value)
+			return return_value;
+		else
+		{
+			return_value = ds_map_find_value(global.custom_sprites, value);
+			if !is_undefined(return_value)
+				return return_value;
+			else
+				return spr_null;
+		}
 	}
 	return value;
 }
@@ -1295,7 +1390,10 @@ function cyop_room_goto(str)
 {
 	var r = ds_map_find_value(global.room_map, str);
 	if is_undefined(r)
-		return "Custom room does not exist";
+	{
+		show_message("Custom room " + str + " doesn't exist");
+		exit;
+	}
 	
 	room_goto(global.custom_rooms[r][0]);
 	with obj_levelLoader

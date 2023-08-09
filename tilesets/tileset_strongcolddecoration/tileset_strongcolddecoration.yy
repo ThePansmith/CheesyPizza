@@ -19,7 +19,7 @@
     "name": "spr_decorations",
     "path": "sprites/spr_decorations/spr_decorations.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "strongcoldgroup",
     "path": "texturegroups/strongcoldgroup",

@@ -19,7 +19,7 @@
     "name": "tile_chateaudecorations",
     "path": "sprites/tile_chateaudecorations/tile_chateaudecorations.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "chateaugroup",
     "path": "texturegroups/chateaugroup",

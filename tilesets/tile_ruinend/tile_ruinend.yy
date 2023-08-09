@@ -19,7 +19,7 @@
     "name": "spr_ruinend",
     "path": "sprites/spr_ruinend/spr_ruinend.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "ruingroup",
     "path": "texturegroups/ruingroup",

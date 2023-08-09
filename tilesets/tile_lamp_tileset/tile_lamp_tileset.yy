@@ -19,7 +19,7 @@
     "name": "tile_lamp",
     "path": "sprites/tile_lamp/tile_lamp.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "unusedgroup",
     "path": "texturegroups/unusedgroup",

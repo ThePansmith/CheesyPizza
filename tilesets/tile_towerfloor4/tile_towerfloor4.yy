@@ -19,7 +19,7 @@
     "name": "tile_towerfloor4tiles",
     "path": "sprites/tile_towerfloor4tiles/tile_towerfloor4tiles.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "hubgroup",
     "path": "texturegroups/hubgroup",

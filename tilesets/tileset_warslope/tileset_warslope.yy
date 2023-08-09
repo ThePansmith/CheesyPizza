@@ -19,7 +19,7 @@
     "name": "sprite_warslope",
     "path": "sprites/sprite_warslope/sprite_warslope.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "wargroup",
     "path": "texturegroups/wargroup",

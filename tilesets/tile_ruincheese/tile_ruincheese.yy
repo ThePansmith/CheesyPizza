@@ -19,7 +19,7 @@
     "name": "spr_ruincheese",
     "path": "sprites/spr_ruincheese/spr_ruincheese.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "ruingroup",
     "path": "texturegroups/ruingroup",

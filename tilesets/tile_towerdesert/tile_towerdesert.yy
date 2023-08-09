@@ -19,7 +19,7 @@
     "name": "spr_towerdeserttiles",
     "path": "sprites/spr_towerdeserttiles/spr_towerdeserttiles.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "hubgroup",
     "path": "texturegroups/hubgroup",

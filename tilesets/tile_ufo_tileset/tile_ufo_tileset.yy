@@ -19,7 +19,7 @@
     "name": "tile_ufo",
     "path": "sprites/tile_ufo/tile_ufo.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "desertgroup",
     "path": "texturegroups/desertgroup",

@@ -19,7 +19,7 @@
     "name": "spr_medievaldeco2",
     "path": "sprites/spr_medievaldeco2/spr_medievaldeco2.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "medievalgroup",
     "path": "texturegroups/medievalgroup",

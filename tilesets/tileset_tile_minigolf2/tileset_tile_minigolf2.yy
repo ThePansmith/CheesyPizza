@@ -69,7 +69,7 @@
     "name": "sprite_tile_minigolf2",
     "path": "sprites/sprite_tile_minigolf2/sprite_tile_minigolf2.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "minigolfgroup",
     "path": "texturegroups/minigolfgroup",

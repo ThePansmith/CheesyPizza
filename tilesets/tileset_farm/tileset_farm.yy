@@ -19,7 +19,7 @@
     "name": "tile_farm",
     "path": "sprites/tile_farm/tile_farm.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "farmgroup",
     "path": "texturegroups/farmgroup",

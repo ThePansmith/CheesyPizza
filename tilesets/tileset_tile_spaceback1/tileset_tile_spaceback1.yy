@@ -69,7 +69,7 @@
     "name": "sprite_tile_spaceback1",
     "path": "sprites/sprite_tile_spaceback1/sprite_tile_spaceback1.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "spacegroup",
     "path": "texturegroups/spacegroup",

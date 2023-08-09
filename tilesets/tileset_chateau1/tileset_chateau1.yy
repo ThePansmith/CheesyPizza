@@ -19,7 +19,7 @@
     "name": "tile_chateau1",
     "path": "sprites/tile_chateau1/tile_chateau1.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "chateaugroup",
     "path": "texturegroups/chateaugroup",

@@ -19,7 +19,7 @@
     "name": "tile_graveyard3",
     "path": "sprites/tile_graveyard3/tile_graveyard3.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "graveyardgroup",
     "path": "texturegroups/graveyardgroup",

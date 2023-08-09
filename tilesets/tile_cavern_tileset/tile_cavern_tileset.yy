@@ -19,7 +19,7 @@
     "name": "tile_cavern",
     "path": "sprites/tile_cavern/tile_cavern.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "desertgroup",
     "path": "texturegroups/desertgroup",
