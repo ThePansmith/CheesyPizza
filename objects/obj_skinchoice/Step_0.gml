@@ -2,22 +2,9 @@ if live_call() return live_result;
 
 if !init
 	exit;
-
-// get input
-if anim_con == 0
-	scr_getinput(true);
-else
-	scr_init_input();
+event_inherited();
 
 #region change palette
-
-var move_hor = key_left2 + key_right2;
-if arrowbufferH == 0
-	move_hor = key_left + key_right;
-
-var move_ver = key_down2 - key_up2;
-if arrowbufferV == 0
-	move_ver = key_down - key_up;
 
 if sel.side == 0 && anim_con != 2
 {
@@ -105,72 +92,6 @@ else
 	}
 }
 
-/*
-if move_hor != 0
-{
-	if mixing
-	{
-		var prevpal = sel.mix;
-		sel.mix = clamp(sel.mix + move_hor, 0, array_length(mixables) - 1);
-		
-		if sel.mix != prevpal
-		{
-			charshift[0] = move_hor;
-			charshift[2] = 0; // alpha
-			sound_play(sfx_angelmove);	
-		}
-	}
-	else
-	{
-		var prevpal = sel.pal;
-		sel.pal = clamp(sel.pal + move_hor, 0, array_length(palettes) - 1);
-	
-		if sel.pal != prevpal
-		{
-			charshift[0] = move_hor;
-			charshift[2] = 0; // alpha
-			sound_play(sfx_angelmove);
-		}
-		
-		if palettes[sel.pal].texture == noone
-		{
-			sel.mix = 0;
-			mixing = false;
-		}
-	}
-	
-	
-	
-	flashpal[0] = sel.pal;
-	flashpal[1] = 4;
-}
-*/
-
-if key_left != 0 or key_right != 0
-{
-	if arrowbufferH == -1
-		arrowbufferH = 20;
-	else if arrowbufferH == 0
-		arrowbufferH = 4;
-}
-else
-	arrowbufferH = -1;
-
-if key_up != 0 or key_down != 0
-{
-	if arrowbufferV == -1
-		arrowbufferV = 20;
-	else if arrowbufferV == 0
-		arrowbufferV = 4;
-}
-else
-	arrowbufferV = -1;
-
-if arrowbufferH > 0
-	arrowbufferH--;
-if arrowbufferV > 0
-	arrowbufferV--;
-
 if flashpal[1] > 0
 	flashpal[1]--;
 else
@@ -194,20 +115,7 @@ charshift[0] = lerp(charshift[0], 0, 0.25); // horizontal
 charshift[1] = lerp(charshift[1], 0, 0.25); // vertical
 charshift[2] = lerp(charshift[2], 1, 0.25); // alpha
 
-// cancel
-if (key_slap or keyboard_check_pressed(vk_escape)) && anim_con == 0
-{
-	close_menu();
-	sound_play(sfx_back);
-	anim_con = 1;
-}
-if anim_con != 0 && anim_t <= 0
-	instance_destroy();
-
-// select
-if key_jump && is_method(select) && anim_t >= 1
-	select();
-
+// toggle noise pogo
 if characters[sel.char][0] == "N"
 {
 	create_transformation_tip("{u}[T] Toggle Pogo/", "noisetype");

@@ -13,6 +13,3 @@ bgparallax = [0, 0.35, 0.05, 0.55, 0.75, 0.9];
 
 msg = "Cottontown";
 group_arr = ["sugarygroup", "steamygroup"];
-
-if !global.experimental
-	instance_destroy();

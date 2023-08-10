@@ -340,7 +340,9 @@ if global.panic or global.snickchallenge
 	global.wave = global.maxwave - global.fill;
 	if SUGARY
 	{
-		panicangle = scr_sin(3.5 * clamp(global.wave / global.maxwave, 0, 1), 65 - (5 * clamp(global.wave / global.maxwave, 0, 1)));
+		if global.leveltosave != "sucrose"
+			panicangle = scr_sin(3.5 * clamp(global.wave / global.maxwave, 0, 1), 65 - (5 * clamp(global.wave / global.maxwave, 0, 1)));
+		
 		if instance_exists(obj_pizzaface)
 			greyscale = Approach(greyscale, 0.45, 0.005);
 		else

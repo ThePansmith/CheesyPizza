@@ -13,6 +13,3 @@ bgparallax = [1, 0.66, 0.44, 0.0, 0.0, 0.0];
 
 msg = "Molasses Swamp";
 group_arr = ["sugarygroup", "molassesgroup"];
-
-if !global.experimental
-	instance_destroy();

@@ -1,59 +1,14 @@
+event_inherited();
 if live_call() return live_result;
 
-// animation / background
-sound_play("event:/modded/sfx/diagopen");
-
+// animation
+init = false;
 charshift = [0, 0, 0];
-anim_con = 0;
-anim_t = 0;
-outback = animcurve_get_channel(curve_menu, "outback");
-incubic = animcurve_get_channel(curve_menu, "incubic");
-jumpcurve = animcurve_get_channel(curve_jump, "curve1");
-
 player_surface = surface_create(256, 256);
 pattern_surface = surface_create(32, 32);
-bg_pos = 0;
-bg_image = random(3);
-mixingfade = 0;
 
-image_speed = 0.35;
-depth = -450;
-
-// god help us all
-vertex_buffer = vertex_create_buffer();
-pizza_vbuffer = vertex_create_buffer();
-
-vertex_format_begin();
-vertex_format_add_position();
-vertex_format_add_color();
-vertex_format_add_texcoord();
-vertex_format = vertex_format_end();
-
-uvs = sprite_get_uvs(spr_skinchoicepalette, 0);
-tex = sprite_get_texture(spr_skinchoicepalette, 0);
-uv_info = {
-	left : uvs[0],
-	top : uvs[1],
-	right : uvs[2],
-	bottom : uvs[3],
-	left_trim : uvs[4],
-	top_trim : uvs[5]
-}
-
-// control
-init = false;
-postdraw = -1;
-draw = -1;
-select = -1;
-arrowbufferH = -1;
-arrowbufferV = -1;
-mixing = false;
+// selection
 noisetype = 0;
-
-scr_init_input();
-stickpressed_vertical = true;
-open_menu();
-
 sel = {
 	pal: 1,
 	char: 0,
@@ -78,13 +33,10 @@ if global.experimental
 	array_push(characters, ["SN", spr_pizzano_idle, spr_pizzanopalette, [1, 5]]);
 }
 
-event_user(1); // RX: Build pizza vertex array
-
 // set in user event 0
 palettes = [];
 mixables = [];
 unlockables = ["unfunny", "money", "sage", "blood", "tv", "dark", "shitty", "golden", "garish", "mooney", "funny", "itchy", "pizza", "stripes", "goldemanne", "bones", "pp", "war", "john"];
-
 
 function add_palette(palette, entry, texture = noone, name = "PALETTE", description = "(No Description)", mix_prefix)
 {
@@ -223,7 +175,7 @@ postdraw = function(curve)
 	}
 }
 
-draw_skinchoice_palette = function(_x, _y, _color, _alpha)
+draw_skin_palette = function(_x, _y, _color, _alpha)
 {
 	vertex_build_quad(vertex_buffer, 
 		// RX: Where to draw the sprite on screen
@@ -233,10 +185,10 @@ draw_skinchoice_palette = function(_x, _y, _color, _alpha)
 		uv_info.left, uv_info.top, (uv_info.right - uv_info.left), (uv_info.bottom - uv_info.top)
 	);
 }
-draw_skinchoice_pattern = function(_x, _y, _color, _alpha, _sprite, _subimage)
+draw_skin_pattern = function(_x, _y, _color, _alpha, _sprite, _subimage)
 {
 	var uvs = sprite_get_uvs(_sprite, _subimage);
-	var tex = sprite_get_texture(_sprite, _subimage);
+	//var tex = sprite_get_texture(_sprite, _subimage);
 	var uv_info = {
 		left : uvs[0],
 		top : uvs[1],
@@ -254,11 +206,10 @@ draw_skinchoice_pattern = function(_x, _y, _color, _alpha, _sprite, _subimage)
 	);
 }
 
-draw = function(curve, draw_skin_palette, draw_skin_pattern)
+draw = function(curve)
 {
 	// animation
 	var curve2 = anim_t;
-	// RX: ??????
 	var curv_prev = curve;
 	if anim_con != 0
 	{
@@ -301,10 +252,7 @@ draw = function(curve, draw_skin_palette, draw_skin_pattern)
 				characters[sel.char][1] = spr_playerPN_homer;
 		}
 		
-		// RX: We can't actually avoid a surface here
-		// RX: WELL we can, but you won't like it, so i won't do it
 		// character
-		// RX: Draw player to surface
 		if (!surface_exists(player_surface))
 			player_surface = surface_create(256, 256);
 			
@@ -335,7 +283,6 @@ draw = function(curve, draw_skin_palette, draw_skin_pattern)
 			shader_set_uniform_f(alphafix_pos, 1);
 		}
 		draw_surface_ext(player_surface, charx - 256, chary - 256, 2, 2, 0, c_white, curve * charshift[2]);
-		
 	}
 	
 	// text
@@ -375,12 +322,13 @@ draw = function(curve, draw_skin_palette, draw_skin_pattern)
 	var array = !mixing ? palettes : mixables;
 	vertex_begin(vertex_buffer, vertex_format);
 	
-	var cache = array_create(0);
-	var cache_size = 0;
+	var cache = [];
 	for(var i = 0; i < array_length(array); i++)
 	{
 		var xdraw = xx;
 		var ydraw = yy;
+		
+		// move hand, and shake current selection
 		if sel.side == 1 && ((!mixing && sel.pal == i) or (mixing && sel.mix == i)) && anim_con != 2
 		{
 			handx = lerp(handx, 8 + 408 + xx, 0.25);
@@ -389,10 +337,6 @@ draw = function(curve, draw_skin_palette, draw_skin_pattern)
 			xdraw += random_range(-0.7, 0.7);
 			ydraw += random_range(-0.7, 0.7);
 		}
-		draw_skin_palette(2 + 408 + xdraw,  2 + 70 + ydraw, c_black, 0.25);
-		//draw_sprite_ext(spr_skinchoicepalette, 0, 2 + 408 + xdraw, 2 + 70 + ydraw, 1, 1, 0, c_black, 0.25);
-		if flashpal[0] == i
-			draw_set_flash();
 		
 		// special skins
 		var fuck = -1;
@@ -405,15 +349,24 @@ draw = function(curve, draw_skin_palette, draw_skin_pattern)
 			}
 		}
 		
-		if ((mixing or array[i].texture == noone) && fuck < 0) or flashpal[0] == i
-			draw_skin_palette(408 + xdraw, 70 + ydraw, pal_swap_get_pal_color(palspr, array[i].palette, characters[sel.char][3][mixing]), 1);
-		else if fuck >= 0 // RX: Draw the funny
+		// draw it
+		if flashpal[0] != i
+			draw_skin_palette(2 + 408 + xdraw, 2 + 70 + ydraw, c_black, 0.25);
+		
+		if flashpal[0] == i // flashing palette. it only draws this once at a time do NOT FRET
+		{
+			draw_set_flash();
+			draw_sprite_ext(spr_skinchoicepalette, 0, 408 + xdraw, 70 + ydraw, 1, 1, 0, c_white, 1);
+			draw_reset_flash();
+		}
+		else if fuck >= 0 // special palettes
 			draw_skin_pattern(408 + xdraw, 70 + ydraw, c_white, 1, spr_skinchoicecustom, fuck);
-		else // RX: cache this for later, we can't optimize this yet :(
-			cache[cache_size++] = { x: 408 + xdraw, y: 70 + ydraw, pattern: array[i].texture }
+		else if mixing or array[i].texture == noone // palettes
+			draw_skin_palette(408 + xdraw, 70 + ydraw, pal_swap_get_pal_color(palspr, array[i].palette, characters[sel.char][3][mixing]), 1);
+		else // patterns, cached and drawn later
+			array_push(cache, { x: 408 + xdraw, y: 70 + ydraw, pattern: array[i].texture });
 		
-		draw_reset_flash();
-		
+		// position next palette
 		xx += 36;
 		if i % 13 == 12
 		{
@@ -421,10 +374,9 @@ draw = function(curve, draw_skin_palette, draw_skin_pattern)
 			xx = 0;
 		}
 	}
-	
 	vertex_end(vertex_buffer);
 	
-	if (curv_prev < 1)
+	if curv_prev < 1
 	{
 		shader_set(shd_circleclip);
 		var origin_pos = shader_get_uniform(shd_circleclip, "u_origin");
@@ -436,12 +388,11 @@ draw = function(curve, draw_skin_palette, draw_skin_pattern)
 	}
 	vertex_submit(vertex_buffer, pr_trianglelist, tex);
 	
-
 	// RX: not really a better way to do this without rewriting the entire thing
-	for (var i = 0; i < cache_size; i++)
+	for (var i = 0; i < array_length(cache); i++)
 	{
 		// RX: I fucking hate pizza tower
-		if (!surface_exists(pattern_surface))
+		if !surface_exists(pattern_surface)
 			pattern_surface = surface_create(32, 32);
 		surface_set_target(pattern_surface);
 		
@@ -458,7 +409,7 @@ draw = function(curve, draw_skin_palette, draw_skin_pattern)
 		surface_reset_target();
 		
 		// RX: it's super cool because the above uses a shader so we get to set the fucking clip shader AGAIN
-		if (curv_prev < 1)
+		if curv_prev < 1
 		{
 			shader_set(shd_circleclip);
 			var origin_pos = shader_get_uniform(shd_circleclip, "u_origin");
@@ -475,6 +426,7 @@ draw = function(curve, draw_skin_palette, draw_skin_pattern)
 	// hand
 	draw_sprite_ext(spr_skinchoicehand, 0, handx, handy + sin(current_time / 1000) * 4, 2, 2, 0, c_white, 1);
 	draw_set_align();
+	shader_reset();
 }
 handx = 960 / 2;
 handy = -50;

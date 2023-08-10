@@ -3,9 +3,10 @@ if in_baddieroom()
 	instance_destroy();
 	exit;
 }
-while place_meeting(x, y, obj_solid)
+while instance_exists(obj_levelLoader) && place_meeting(x, y, obj_solid)
     y--;
-if (safe_get(id, "escape") && !_destroyed)
+
+if (safe_get(id, "escape"))
 {
 	if (escapespawnID == -4)
 	{

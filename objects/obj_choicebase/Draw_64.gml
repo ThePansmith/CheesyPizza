@@ -19,7 +19,7 @@ if anim_con == 1 or anim_con == 2
 	anim_t = Approach(anim_t, 0, 0.06);
 }
 
-if (curve < 1)
+if curve < 1
 {
 	// circular clipping shader
 	shader_set(shd_circleclip);
@@ -30,6 +30,7 @@ if (curve < 1)
 	shader_set_uniform_f(radius_pos, 560  * curve);
 	shader_set_uniform_f(alpha_pos, 1);
 }
+
 // background
 bg_pos = (bg_pos + 0.5) % 64;
 
@@ -46,14 +47,13 @@ matrix_set(matrix_world, matrix_build(bg_pos, bg_pos, 0, 0, 0, 0, 1, 1, 1));
 vertex_submit(pizza_vbuffer, pr_trianglelist, sprite_get_texture(spr_skinmenupizza, bg_image));
 matrix_set(matrix_world, prev_matrix);
 
-
 // draw content
 if is_method(draw)
-	draw(curve, draw_skinchoice_palette, draw_skinchoice_pattern);
+	draw(curve);
 
 // post draw content
 if is_method(postdraw)
 	postdraw(curve);
-	
+
 shader_reset();
 reset_blendmode();

