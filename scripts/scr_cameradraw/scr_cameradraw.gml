@@ -1,6 +1,6 @@
 function scr_cameradraw()
 {
-	var sugary = (obj_player1.character == "SP");
+	var sugary = (obj_player1.character == "SP" or obj_player1.character == "SN");
 	var bo = (obj_player1.character == "BN");
 	var pino = (obj_player1.character == "PN");
 	

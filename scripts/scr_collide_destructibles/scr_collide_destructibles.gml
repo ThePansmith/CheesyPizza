@@ -28,7 +28,7 @@ function scr_collide_destructibles()
 			}
 		}
 		if (state == states.trashroll || state == states.boxxedpepspin || ratmount_movespeed >= 12 || state == states.ratmountpunch || state == states.ratmounttumble || state == states.punch || state == states.handstandjump || state == states.ratmountattack || state == states.lungeattack || state == states.cheeseball || state == states.bombpepside || state == states.rocket || state == states.shotgundash || state == states.faceplant || state == states.slipnslide || state == states.tacklecharge || sprite_index == spr_barrelroll || sprite_index == spr_player_barrelslipnslide || state == states.chainsawbump || state == states.mach3 || state == states.knightpep || (state == states.boxxedpepjump && boxxeddash) || (state == states.boxxedpep && boxxeddash) || state == states.machroll || state == states.knightpepslopes || state == states.knightpepattack || state == states.tumble || state == states.hookshot || state == states.shoulderbash or (abs(movespeed) >= 10 && character == "S" && (state == states.normal or state == states.jump)) 
-		or sprite_index == spr_cotton_attack or ((state == states.cotton or state == states.cottonroll) && movespeed >= 8))
+		or sprite_index == spr_cotton_attack or ((state == states.cotton or state == states.cottonroll) && movespeed >= 8) or state == states.twirl)
 		{
 			if (place_meeting(x + hsp, y, obj_destructibles))
 			{

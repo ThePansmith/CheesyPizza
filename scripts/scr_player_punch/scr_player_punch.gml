@@ -208,7 +208,7 @@ function scr_player_punch()
 	{
 		move = key_left + key_right;
 		landAnim = true;
-		image_speed = 0.4;
+		image_speed = character == "SN" ? 0.45 : 0.4;
 		if breakdance > 0
 			breakdance--;
 		if move != 0

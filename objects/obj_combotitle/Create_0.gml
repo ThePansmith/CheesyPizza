@@ -13,7 +13,7 @@ very = false;
 afterimages = array_create(0);
 sound_play_oneshot("event:/sfx/ui/comboup");
 
-sugary = (obj_player1.character == "SP");
+sugary = (obj_player1.character == "SP" or obj_player1.character == "SN");
 pino = (obj_player1.character == "PN");
 bo = (obj_player1.character == "BN");
 

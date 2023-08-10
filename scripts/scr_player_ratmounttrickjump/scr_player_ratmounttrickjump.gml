@@ -18,7 +18,7 @@ function scr_player_ratmounttrickjump()
 			if (movespeed > 2)
 				state = states.ratmounttumble;
 			else
-				state = states.normal;
+				state = states.ratmount;
 		}
 		else
 		{

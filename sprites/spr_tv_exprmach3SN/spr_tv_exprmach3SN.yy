@@ -14,6 +14,8 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d1f18d25-6ae4-464b-b082-647a1d411aab",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4e988e8c-e9ca-4c1b-b619-060c054b959a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"fe44f032-785e-4b85-843c-6fff2b958ad7",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -43,7 +45,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 1.0,
+    "length": 3.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -55,6 +57,8 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"d1f18d25-6ae4-464b-b082-647a1d411aab","path":"sprites/spr_tv_exprmach3SN/spr_tv_exprmach3SN.yy",},},},"Disabled":false,"id":"7fb0bad4-585a-494a-bfef-cef1c9e85f93","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4e988e8c-e9ca-4c1b-b619-060c054b959a","path":"sprites/spr_tv_exprmach3SN/spr_tv_exprmach3SN.yy",},},},"Disabled":false,"id":"e9af5dde-502a-45f3-a85b-2d4105bb3204","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"fe44f032-785e-4b85-843c-6fff2b958ad7","path":"sprites/spr_tv_exprmach3SN/spr_tv_exprmach3SN.yy",},},},"Disabled":false,"id":"ff102850-1d67-4a15-ac62-002403c35f08","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

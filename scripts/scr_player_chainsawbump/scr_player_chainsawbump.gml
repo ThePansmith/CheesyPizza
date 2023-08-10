@@ -70,7 +70,9 @@ function scr_player_chainsawbump()
 		state = states.normal;
 	}
 	
-	if (sprite_index == spr_chainsawdash)
+	if sprite_index == spr_pizzano_chainsaw
+		image_speed = 0.35;
+	else if sprite_index == spr_chainsawdash
 		image_speed = 0.4 + (movespeed * 0.01);
 	else if sprite_index == spr_chainsawhitwall
 	{

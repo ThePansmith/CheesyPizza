@@ -71,6 +71,7 @@ var entrance_func = function(room, event, event_secret)
 		case "N": s = 1; t = 3; break;
 		case "V": s = 2; break;
 		case "SP": s = 3; t = 1; break;
+		case "SN": s = 6; t = 4; break;
 		case "PN": s = 4; break;
 		case "BN": s = 5; t = 2; break;
 	}

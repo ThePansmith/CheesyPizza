@@ -9,7 +9,7 @@ function scr_tvdraw()
 	}
 	
 	var chara = obj_player1.character;
-	var sugary = chara == "SP";
+	var sugary = chara == "SP" or chara == "SN";
 	var bo = chara == "BN";
 	var pino = chara == "PN";
 	
@@ -178,6 +178,9 @@ function scr_tvdraw()
 		if (state == states.tv_whitenoise)
 		{
 			var charspr = asset_get_index("spr_tv_whitenoise" + chara);
+			if sugary
+				charspr = spr_tv_whitenoiseSP;
+			
 			draw_sprite(charspr > -1 ? charspr : spr_tv_whitenoise, tv_trans, tv_x + collect_x, tv_y + collect_y + hud_posY);
 		}
 	

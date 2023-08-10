@@ -19,18 +19,45 @@ for(var i = 0; i < array_length(_room.instances); i++)
 	if inst_data.deleted
 		continue;
 	
-	var asset = asset_get_index(objects[inst_data.object]);
-	if !object_exists(asset)
+	var asset_name = objects[inst_data.object], asset = noone;
+	switch asset_name
 	{
-		trace("levelLoader - ", objects[inst_data.object], " does not exist");
-		continue;
+		case "obj_teleporter": asset = obj_teleporter; break;
+		case "obj_teleporter_receptor": asset = obj_teleporter; break;
+		case "obj_pizzasona_spawn": asset = obj_bigcollect; break;
+		
+		default:
+			var asset = cyop_asset(asset_name);
+			if !object_exists(asset)
+			{
+				trace("levelLoader - ", asset_name, " does not exist");
+				continue;
+			}
 	}
+	
 	
 	// add instance
 	var inst = instance_create_depth(inst_data.variables.x - prop.roomX, inst_data.variables.y - prop.roomY, 100 - inst_data.layer, asset);
 	if instance_exists(inst) // sometimes it fucking doesn't
 	{
 		variable_instance_set(inst, "targetRoom", "main");
+		switch asset_name
+		{
+			case "obj_teleporter":
+				inst.start = true;
+				break;
+			
+			case "obj_pizzasona_spawn":
+				if in_saveroom(inst)
+					break;
+				
+				inst.visible = false;
+				inst.value = 150;
+				
+				with instance_create(inst.x, inst.y - 42, obj_pizzasonacollect)
+					collectID = inst.id;
+				break;
+		}
 		
 		var struct = struct_get(inst_data, "variables");
 		var varNames = variable_struct_get_names(struct);
@@ -136,7 +163,7 @@ for(var i = 0; i < array_length(tile_layers); i++)
 		
 		var tilesize = 32;
 		
-		var sprite = asset_get_index(tile_data.tileset);
+		var sprite = cyop_asset(tile_data.tileset);
 		if !sprite_exists(sprite)
 		{
 			var custom = ds_map_find_value(global.custom_tiles, tile_data.tileset);

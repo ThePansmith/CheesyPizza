@@ -50,6 +50,8 @@ function scr_dotaunt()
 				scr_create_parryhitbox();
 				if character == "SP"
 					sound_play_oneshot_3d("event:/modded/sfx/pizzytaunt", x, y);
+				else if character == "SP"
+					sound_play_oneshot_3d("event:/modded/sfx/pizzanotaunt", x, y);
 				else
 					sound_play_oneshot_3d("event:/sfx/pep/taunt", x, y);
 				taunttimer = 20;

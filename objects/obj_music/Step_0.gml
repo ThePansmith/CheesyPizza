@@ -53,6 +53,7 @@ if ((global.panic or (global.snickchallenge && room != tower_sage)) && global.le
 				case "SP": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeSP"); break;
 				case "BN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeBN"); break;
 				case "PN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimePN"); break;
+				case "SN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeSN"); break;
 			}
 		}
 		

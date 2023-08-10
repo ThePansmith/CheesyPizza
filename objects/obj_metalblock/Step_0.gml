@@ -7,7 +7,8 @@ with (obj_player1)
 		|| state == states.rocket || state == states.knightpepslopes || state == states.shoulderbash
 		or (character == "SP" && sprite_index == spr_machroll && abs(hsp) >= 12)
 		or state == states.slipbanan or (abs(movespeed) >= 16 && character == "S" && (state == states.normal or state == states.jump or state == states.machroll))
-		or sprite_index == spr_buttattack or sprite_index == spr_buttattackstart))
+		or sprite_index == spr_buttattack or sprite_index == spr_buttattackstart
+		or (state == states.twirl && movespeed >= 12)))
 		{
 			playerindex = 0;
 			instance_destroy(other);

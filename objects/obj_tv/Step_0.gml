@@ -374,9 +374,10 @@ if targetspr != -1 && global.hud == 0
 		sprite_index = charspr;
 	else
 	{
-		sprite_index = targetspr;
-		if obj_player1.character == "SP"
+		if obj_player1.character == "SP" or obj_player1.character == "SN"
 			sprite_index = spr_tv_failsafeSP;
+		else
+			sprite_index = targetspr;
 	}
 }
 

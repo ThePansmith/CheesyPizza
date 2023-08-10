@@ -10,7 +10,12 @@ if (global.shootbutton ? key_shoot2 : key_slap2)
 	input_buffer_shoot = 10;
 if (global.shootbutton == 1 ? key_shoot2 : key_slap2)
 	input_buffer_pistol = 10;
-if global.swapgrab && global.attackstyle != 0
+if character == "SN"
+{
+	if (key_chainsaw2 or key_slap2)
+		input_buffer_slap = 12;
+}
+else if global.swapgrab && global.attackstyle != 0
 {
 	if (key_chainsaw2)
 		input_buffer_slap = 12;
@@ -600,6 +605,9 @@ switch (state)
 	case states.fling:
 		scr_player_fling();
 		break;
+	case states.twirl:
+		scr_pizzano_twirl();
+		break;
 }
 if (state != states.chainsaw)
 {
@@ -1164,6 +1172,7 @@ if ((state == states.ratmountbounce && vsp >= 0) || sprite_index == spr_Sjumpcan
 or (state == states.handstandjump && (sprite_index == spr_attackdash or sprite_index == spr_airattack or sprite_index == spr_airattackstart))
 or ((sprite_index == spr_jump or sprite_index == spr_tumble or sprite_index == spr_snick_spindash or abs(hsp) >= 16) && character == "S")
 or ((state == states.cotton or state == states.cottonroll) && movespeed >= 8) or state == states.cottondrill or sprite_index == spr_cotton_attack
+or (state == states.twirl && sprite_index == spr_pizzano_machtwirl)
 	instakillmove = true;
 else
 	instakillmove = false;
@@ -1256,7 +1265,8 @@ if (character != "M")
 {
 	if !scr_solid_player(x, y)
 	{
-		if (state != states.ratmountcrouch && state != states.boxxedpepjump && state != states.boxxedpepspin && !(state == states.bump && sprite_index == spr_tumbleend) && (state != states.barrelslide && state != states.barrelclimbwall) && sprite_index != spr_player_breakdancesuper && sprite_index != spr_player_barrelslipnslide && sprite_index != spr_player_barrelroll && sprite_index != spr_bombpepintro && sprite_index != spr_knightpepthunder && state != states.stunned && state != states.crouch && state != states.shotguncrouch && state != states.shotguncrouchjump && state != states.boxxedpep && (state != states.pistol && sprite_index != spr_player_crouchshoot) && state != states.Sjumpprep && state != states.crouchslide && state != states.chainsaw && (state != states.machroll or character == "S") && state != states.hurt && state != states.crouchjump && state != states.cheesepepstickup && state != states.cheesepepstickside && state != states.tumble && sprite_index != spr_playerN_jetpackslide && state != states.cottonroll)
+		if (state != states.ratmountcrouch && state != states.boxxedpepjump && state != states.boxxedpepspin && !(state == states.bump && sprite_index == spr_tumbleend) && (state != states.barrelslide && state != states.barrelclimbwall) && sprite_index != spr_player_breakdancesuper && sprite_index != spr_player_barrelslipnslide && sprite_index != spr_player_barrelroll && sprite_index != spr_bombpepintro && sprite_index != spr_knightpepthunder && state != states.stunned && state != states.crouch && state != states.shotguncrouch && state != states.shotguncrouchjump && state != states.boxxedpep && (state != states.pistol && sprite_index != spr_player_crouchshoot) && state != states.Sjumpprep && state != states.crouchslide && state != states.chainsaw && (state != states.machroll or character == "S") && state != states.hurt && state != states.crouchjump && state != states.cheesepepstickup && state != states.cheesepepstickside && state != states.tumble
+		&& sprite_index != spr_playerN_jetpackslide && state != states.cottonroll && sprite_index != spr_pizzano_crouchslide)
 			mask_index = spr_player_mask;
 		else
 			mask_index = spr_crouchmask;
@@ -1313,7 +1323,7 @@ if smoothx != 0
 smoothx = Approach(smoothx, 0, 4);
 
 // pto extra
-if state != states.mach3 && state != states.Sjump
+if state != states.mach3 && state != states.Sjump && state != states.Sjumpprep && state != states.chainsaw
 	jetpackcancel = false;
 if character == "N" && noisetype == 1
 	jetpackcancel = true;

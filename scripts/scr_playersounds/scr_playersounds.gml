@@ -166,7 +166,7 @@ function scr_playersounds()
 			fmod_event_instance_stop(machrollsnd, true);
 		if (fmod_event_instance_is_playing(suplexdashsnd))
 		{
-			if (state != states.handstandjump)
+			if (state != states.handstandjump && state != states.chainsawbump)
 				fmod_event_instance_stop(suplexdashsnd, true);
 			sound_instance_move(suplexdashsnd, x, y);
 		}

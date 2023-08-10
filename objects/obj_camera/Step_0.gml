@@ -30,9 +30,9 @@ if healthold != hp
 if global.coop
 {
 	var p1 = player;
-	var p2 = (obj_player1.spotlight == 1) ? obj_player2: obj_player1;
+	var p2 = obj_player1.spotlight == 1 ? obj_player2 : obj_player1;
 	p2pdistance = point_distance(p1.x, 0, p2.x, 0);
-	p2pdistancex = ((p1.x >= p2.x) ? -p2pdistance : p2pdistance) / 5;
+	p2pdistancex = (p1.x >= p2.x ? -p2pdistance : p2pdistance) / 5;
 }
 else
 	p2pdistancex = 0;
@@ -155,6 +155,7 @@ detachedby = -1;
 detach = false;
 follow_golf = false;
 
+// follow
 var target = followtarget;
 if !instance_exists(target)
 	target = player;
