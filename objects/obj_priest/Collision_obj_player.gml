@@ -63,14 +63,13 @@ if (_transfo)
 			if (escape)
 				add_saveroom(id, global.escaperoom);
 			var d = round(val / 16);
-			with (obj_player)
+			for (var i = 0; i < val; i += d)
 			{
-				for (var i = 0; i < val; i += d)
-				{
+				spr_palette = noone;
+				paletteselect = 0;
 				
-					var spr = scr_collectspr(obj_collect, , false);
-					create_collect(other.x + irandom_range(-60, 60), other.y + irandom_range(-60, 60), spr, d, spr_palette, paletteselect);
-				}
+				var spr = scr_collectspr(obj_collect, , false);
+				create_collect(other.x + irandom_range(-60, 60), other.y + irandom_range(-60, 60), spr, d, spr_palette, paletteselect);
 			}
 		}
 	}
