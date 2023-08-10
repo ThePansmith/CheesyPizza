@@ -445,7 +445,16 @@ draw = function(curve, draw_skin_palette, draw_skin_pattern)
 			pattern_surface = surface_create(32, 32);
 		surface_set_target(pattern_surface);
 		
-		scr_palette_texture(spr_skinchoicepalette, 0, 0, 0, 1, 1, 0, c_white, 1, true, cache[i].pattern);
+		//scr_palette_texture(spr_skinchoicepalette, 0, 0, 0, 1, 1, 0, c_white, 1, true, cache[i].pattern);
+		shader_set(shd_pal_swapper);
+		if cache[i].pattern != noone
+			pattern_set_temp(global.Base_Pattern_Color, spr_skinchoicepalette, 0, 1, 1, cache[i].pattern);
+		//pal_swap_set_tiles()
+		pal_swap_set(spr_skinchoicepal, 1);
+		//draw_sprite_ext(characters[sel.char][1], -1, charx, chary, scale, scale, 0, c_white, 1);
+		draw_sprite(spr_skinchoicepalette, 0, 0, 0);
+		pattern_reset();
+		shader_reset();
 		surface_reset_target();
 		
 		// RX: it's super cool because the above uses a shader so we get to set the fucking clip shader AGAIN

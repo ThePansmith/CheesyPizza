@@ -61,6 +61,7 @@ function cyop_tilelayer() constructor
                 var tile_tex_pos_x = ((tile.tm_x - (tile_trim_x / tile.size_x)) * tile_tex_size_x) + uv_left;
                 var tile_tex_pos_y = ((tile.tm_y - (tile_trim_y / tile.size_y)) * tile_tex_size_y) + uv_top;
 				
+				//tile_tex_pos_x
 				var ep = math_get_epsilon();
 			
                 vertex_build_quad3D(vertex_buffers[tex_it], 

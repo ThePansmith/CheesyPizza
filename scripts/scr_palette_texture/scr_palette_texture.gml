@@ -58,10 +58,18 @@ function scr_palette_texture(sprite, subimg, x, y, xscale, yscale, rot = 0, col 
 	var palshader = shader_current();
 	reset_shader_fix();
 	
-	surface_free(global.palettesurface);
-	surface_free(global.palettesurfaceclip);
-	global.palettesurface = surface_create(surfw, surfh);
-	global.palettesurfaceclip = surface_create(surfw, surfh);
+	// RX: Why the actual fuck were we destroying and making a new surface every fucking call
+	if (surface_get_width(global.palettesurface) != surfw || surface_get_height(global.palettesurface) != surfh)
+		surface_free(global.palettesurface);
+	if (surface_get_width(global.palettesurfaceclip) != surfw || surface_get_height(global.palettesurfaceclip) != surfh)
+		surface_free(global.palettesurfaceclip);
+	
+	
+	// RX: Oh my fucking god sertif only make surfaces when you fucking need it
+	if (!surface_exists(global.palettesurface))
+		global.palettesurface = surface_create(surfw, surfh);
+	if (!surface_exists(global.palettesurfaceclip))
+		global.palettesurfaceclip = surface_create(surfw, surfh);
 	
 	surface_set_target(global.palettesurfaceclip);
 	draw_clear(c_white);

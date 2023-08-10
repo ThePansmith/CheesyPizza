@@ -4230,6 +4230,7 @@
     {"id":{"name":"spr_dramalines","path":"sprites/spr_dramalines/spr_dramalines.yy",},},
     {"id":{"name":"spr_playerBN_slipbanan2","path":"sprites/spr_playerBN_slipbanan2/spr_playerBN_slipbanan2.yy",},},
     {"id":{"name":"spr_canonbot_shoot","path":"sprites/spr_canonbot_shoot/spr_canonbot_shoot.yy",},},
+    {"id":{"name":"spr_skinchoicepal","path":"sprites/spr_skinchoicepal/spr_skinchoicepal.yy",},},
     {"id":{"name":"spr_smallforestblock","path":"sprites/spr_smallforestblock/spr_smallforestblock.yy",},},
     {"id":{"name":"obj_babybounce","path":"objects/obj_babybounce/obj_babybounce.yy",},},
     {"id":{"name":"spr_spitcheese_spit","path":"sprites/spr_spitcheese_spit/spr_spitcheese_spit.yy",},},

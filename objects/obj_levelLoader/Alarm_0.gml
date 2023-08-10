@@ -167,6 +167,7 @@ for(var i = 0; i < array_length(tile_layers); i++)
 	}
 	
 	var depp = 100 + layer_num;
+	trace($"Building Tile Layer on Depth: {depp}");
 	tilelayer.Build(tiles_array, depp);
 }
 /*
