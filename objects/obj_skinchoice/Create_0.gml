@@ -364,7 +364,7 @@ draw = function(curve)
 		else if mixing or array[i].texture == noone // palettes
 			draw_skin_palette(408 + xdraw, 70 + ydraw, pal_swap_get_pal_color(palspr, array[i].palette, characters[sel.char][3][mixing]), 1);
 		else // patterns, cached and drawn later
-			array_push(cache, { x: 408 + xdraw, y: 70 + ydraw, pattern: array[i].texture });
+			array_push(cache, { x: 408 + xdraw, y: 70 + ydraw, pattern: array[i].texture, index : i});
 		
 		// position next palette
 		xx += 36;
@@ -419,7 +419,16 @@ draw = function(curve)
 			shader_set_uniform_f(radius_pos, 560 * curv_prev);
 			shader_set_uniform_f(alphafix_pos, 1);
 		}
+		else // RX: I don't think we can "flash" as as selection during the intro/outro
+		{
+			if flashpal[0] == cache[i].index
+				draw_set_flash();
+		}
+				
 		draw_surface(pattern_surface, cache[i].x, cache[i].y);
+		
+		if flashpal[0] != cache[i].index
+			draw_reset_flash();
 		draw_sprite_ext(spr_skinchoicepalette, 1, cache[i].x, cache[i].y, 1, 1, 0, c_white, 1);
 	}
 
