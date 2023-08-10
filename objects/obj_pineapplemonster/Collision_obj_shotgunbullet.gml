@@ -14,10 +14,10 @@ with (obj_camera)
 	shake_mag = 3;
 	shake_mag_acc = 3 / room_speed;
 }
-if (!in_baddieroom())
+if !in_baddieroom()
 {
-	ds_list_add(global.baddieroom, id);
-	ds_list_add(global.escaperoom, id);
+	add_baddieroom();
+	add_saveroom(id, global.escaperoom);
 	global.combo++;
 	global.enemykilled++;
 }

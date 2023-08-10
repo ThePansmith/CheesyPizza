@@ -29,7 +29,7 @@ if (!in_baddieroom() && important == 0)
 	}
 	else
 		global.golfhit = 0;
-	ds_list_add(global.baddieroom, id);
+	add_baddieroom();
 	obj_tv.image_index = random_range(0, 4);
 	create_slapstar(x, y);
 	create_slapstar(x, y);

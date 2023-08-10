@@ -1,7 +1,7 @@
-if (!in_baddieroom())
+if !in_baddieroom()
 {
 	obj_tv.image_index = random_range(0, 4);
-	ds_list_add(global.baddieroom, id);
+	add_baddieroom();
 	repeat (3)
 	{
 		with (create_debris(x, y, spr_slapstar))

@@ -10,7 +10,7 @@ if (destroy)
 	}
 	if (global.panic && !in_baddieroom())
 	{
-		ds_list_add(global.baddieroom, id);
+		add_baddieroom();
 		notification_push(notifs.monster_dead, [object_index]);
 	}
 	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);

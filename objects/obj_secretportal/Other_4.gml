@@ -36,7 +36,7 @@ with (obj_player)
 		}
 	}
 }
-if (in_saveroom())
+if in_saveroom()
 {
 	active = false;
 	sprite_index = spr_close;

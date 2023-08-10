@@ -1,4 +1,4 @@
-if (in_saveroom())
+if in_saveroom()
 	instance_destroy();
 
 // vigi protection, cant shoot down

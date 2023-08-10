@@ -3366,6 +3366,7 @@
     {"id":{"name":"scr_player_faceplant","path":"scripts/scr_player_faceplant/scr_player_faceplant.yy",},},
     {"id":{"name":"scr_player_hook","path":"scripts/scr_player_hook/scr_player_hook.yy",},},
     {"id":{"name":"scr_player_boots","path":"scripts/scr_player_boots/scr_player_boots.yy",},},
+    {"id":{"name":"obj_cyop_tilelayer","path":"objects/obj_cyop_tilelayer/obj_cyop_tilelayer.yy",},},
     {"id":{"name":"spr_snick_robotjump","path":"sprites/spr_snick_robotjump/spr_snick_robotjump.yy",},},
     {"id":{"name":"scr_player_revolver","path":"scripts/scr_player_revolver/scr_player_revolver.yy",},},
     {"id":{"name":"scr_player_dynamite","path":"scripts/scr_player_dynamite/scr_player_dynamite.yy",},},

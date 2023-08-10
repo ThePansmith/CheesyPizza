@@ -1,6 +1,6 @@
 if (!in_baddieroom())
 {
-	ds_list_add(global.baddieroom, id);
+	add_baddieroom();
 	create_slapstar(x, y);
 	create_slapstar(x, y);
 	create_slapstar(x, y);

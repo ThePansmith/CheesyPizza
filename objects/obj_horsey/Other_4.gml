@@ -1,10 +1,10 @@
 var flag = false;
-if (in_baddieroom())
+if in_baddieroom()
 {
 	state = states.finishingblow;
 	flag = true;
 }
-else if (in_saveroom())
+else if in_saveroom()
 {
 	state = states.dead;
 	flag = true;

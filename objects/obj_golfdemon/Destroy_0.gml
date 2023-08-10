@@ -1,3 +1,3 @@
 event_inherited();
-if (in_baddieroom())
+if in_baddieroom()
 	destroy_sounds([snd]);

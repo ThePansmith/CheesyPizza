@@ -21,7 +21,7 @@ if (!in_baddieroom() && important == 0)
 		alarm[0] = timer;
 	}
 	global.golfhit = 0;
-	ds_list_add(global.baddieroom, id);
+	add_baddieroom();
 	create_slapstar(x, y);
 	create_slapstar(x, y);
 	create_slapstar(x, y);

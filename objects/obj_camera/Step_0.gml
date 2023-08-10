@@ -302,10 +302,10 @@ if instance_exists(target) && !lock && player.state != states.timesup && player.
 	{
 		if lagpos == undefined
 			lagpos = camera_get_view_x(view_camera[0]) - cam_x;
-		camera_set_view_pos(view_camera[0], cam_x + lagpos, cam_y);
+		camera_set_view_pos(view_camera[0], round(cam_x + lagpos), round(cam_y));
 	}
 	else
-		camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]), cam_y);
+		camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]), round(cam_y));
 	lag = max(lag, 0);
 	
 	if lagpos != undefined
@@ -330,7 +330,7 @@ else if REMIX && room != rank_room && room != timesuproom && room != rm_baby && 
 		cam_x += random_range(-1, 1);
 		repeat 2 cam_y += random_range(-1, 1);
 	}
-	camera_set_view_pos(view_camera[0], cam_x, cam_y);
+	camera_set_view_pos(view_camera[0], round(cam_x), round(cam_y));
 }
 smooth_buffer = 1;
 

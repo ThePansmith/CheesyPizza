@@ -6,5 +6,5 @@ with (obj_collect)
 		image_alpha = 0.5;
 	}
 }
-if (in_saveroom())
+if in_saveroom()
 	instance_destroy();

@@ -3,7 +3,7 @@ function cyop_tilelayer() constructor
 	vertex_format = cyop_tilemap_create_vertex_format();
 	vertex_buffers = [];
 	textures = [];
-	depth = 0;
+	tiles = [];
 	
 	/// @desc	Build the vertex array from an array of "cyop_tile"
 	/// @param	{array.cyop_tile} _tile_array
@@ -11,6 +11,8 @@ function cyop_tilelayer() constructor
 	/// @return	{bool}
 	static Build = function(_tile_array, _depth)
 	{
+		tiles = _tile_array;
+		
 		#region Sort by Texture
 		
 		// RX: First sort everything by texture
@@ -77,7 +79,6 @@ function cyop_tilelayer() constructor
 		
 		// RX: Cleanup
 		ds_map_destroy(sorted_map);
-		depth = _depth;
 	}
 	
 	/// @desc	Draws the tilemap
@@ -90,6 +91,9 @@ function cyop_tilelayer() constructor
 	/// @desc	Disposes of all unmanaged resources
 	static Dispose = function()
 	{
+		for (var i = 0; i < array_length(tiles); i++)
+			delete tiles[i];
+		
 		for (var i = 0; i < array_length(vertex_buffers); i++)
 			vertex_delete_buffer(vertex_buffers[i]);
 		

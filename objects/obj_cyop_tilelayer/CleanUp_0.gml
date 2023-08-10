@@ -1,0 +1,2 @@
+tilelayer.Dispose();
+delete tilelayer;

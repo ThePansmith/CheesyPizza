@@ -1,1 +1,1 @@
-ds_list_add(global.baddieroom, id);
+add_baddieroom();

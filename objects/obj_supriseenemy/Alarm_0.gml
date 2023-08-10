@@ -1,4 +1,4 @@
-ds_list_add(global.baddieroom, id);
+add_baddieroom();
 with (instance_create(x, y, content))
 {
 	if (object_index == obj_pizzagoblinbomb)

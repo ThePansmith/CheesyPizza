@@ -1,3 +1,3 @@
-ds_list_add(global.baddieroom, id);
+add_baddieroom();
 if (global.giantkey == 0 && lastform == 1)
 	instance_create(x, y, obj_giantkey);

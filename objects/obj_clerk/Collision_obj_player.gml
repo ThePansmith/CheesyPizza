@@ -4,7 +4,7 @@ if ((other.instakillmove == 1 || other.state == states.handstandjump || other.st
 	var t = other.id;
 	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
 	notification_push(notifs.baddie_kill, [room, id, object_index]);
-	ds_list_add(global.baddieroom, id);
+	add_baddieroom();
 	global.combotime = 60;
 	global.combo++;
 	instance_create(x, y, obj_bangeffect);

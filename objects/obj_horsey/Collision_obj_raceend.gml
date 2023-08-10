@@ -11,7 +11,7 @@ if (x == x1 && y == y1 && state != states.dead)
 	spd = 0;
 	other.horseyfinish = true;
 	if (state != states.finishingblow)
-		ds_list_add(global.baddieroom, id);
+		add_baddieroom();
 	state = states.finishingblow;
 	global.horse = false;
 }

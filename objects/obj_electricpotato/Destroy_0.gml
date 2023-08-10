@@ -3,7 +3,7 @@ if (!in_baddieroom())
 	with (instance_create(x, y, obj_sausageman_dead))
 		sprite_index = other.spr_dead;
 	instance_create(x, y, obj_bangeffect);
-	ds_list_add(global.baddieroom, id);
+	add_baddieroom();
 	with (obj_player1)
 		supercharge += 1;
 	global.combo += 1;
@@ -31,7 +31,7 @@ if (!in_baddieroom())
 	}
 	if (object_index == obj_miniufo)
 		instance_create(x, y, obj_playerexplosion);
-	ds_list_add(global.baddieroom, id);
+	add_baddieroom();
 	if (escape)
-		ds_list_add(global.escaperoom, id);
+		add_saveroom(id, global.escaperoom);
 }

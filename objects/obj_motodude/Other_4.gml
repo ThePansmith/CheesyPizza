@@ -1,5 +1,5 @@
 var _destroyed = false;
-if (in_baddieroom())
+if in_baddieroom()
 {
 	_destroyed = true;
 	instance_destroy();

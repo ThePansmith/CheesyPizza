@@ -3,18 +3,6 @@
 live_auto_call;
 
 // clean up
-while array_length(self.tile_layers)
-{
-	var struct = array_pop(self.tile_layers);
-	struct.Dispose();
-	delete struct;
-}
-while array_length(self.tiles)
-{
-	var struct = array_pop(self.tiles);
-	delete struct;
-}
-
 with obj_persistent
 {
 	room_tiles = [];
@@ -131,14 +119,14 @@ var tile_layers = variable_struct_get_names(_room.tile_data);
 for(var i = 0; i < array_length(tile_layers); i++)
 {
 	var tilelayer_data = struct_get(_room.tile_data, tile_layers[i]);
+	var tiles = variable_struct_get_names(tilelayer_data);
+	if !array_length(tiles)
+		continue;
 	
 	var layer_num = real(tile_layers[i]);
 	var tilelayer = new cyop_tilelayer();
-	array_push(self.tile_layers, tilelayer);
 	
 	var tiles_array = [];
-	
-	var tiles = variable_struct_get_names(tilelayer_data);
 	for(var j = 0; j < array_length(tiles); j++)
 	{
 		var tile_data = struct_get(tilelayer_data, tiles[j]);
@@ -162,21 +150,16 @@ for(var i = 0; i < array_length(tile_layers); i++)
 		}
 		
 		var tile = new cyop_tile(real(xx) - _room.properties.roomX, real(yy) - _room.properties.roomY, tile_data.coord[0], tile_data.coord[1], sprite, 0, tilesize, tilesize);
-		array_push(self.tiles, tile);
 		array_push(tiles_array, tile);
 	}
 	
 	var depp = 100 + layer_num;
-	trace($"Building Tile Layer on Depth: {depp}");
+	if layer_num < 0
+		depp = -100 + layer_num;
 	tilelayer.Build(tiles_array, depp);
+	
+	instance_create_depth(0, 0, depp, obj_cyop_tilelayer, {tilelayer: tilelayer, secrettile: layer_num <= -5});
 }
-/*
-array_sort(self.tile_layers, function(e1, e2)
-{
-	return e1.depth > e2.depth;
-});
-*/
-
 delete _room;
 
 // do it asshole

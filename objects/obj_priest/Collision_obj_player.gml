@@ -61,7 +61,7 @@ if (_transfo)
 				number = string(val);
 			scr_sound_multiple(global.snd_collect, x, y);
 			if (escape)
-				ds_list_add(global.escaperoom, id);
+				add_saveroom(id, global.escaperoom);
 			var d = round(val / 16);
 			with (obj_player)
 			{

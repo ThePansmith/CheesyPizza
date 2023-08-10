@@ -147,7 +147,7 @@ if (!in_baddieroom() && important == 0)
 		shake_mag = 3;
 		shake_mag_acc = 3 / room_speed;
 	}
-	ds_list_add(global.baddieroom, id);
+	add_baddieroom();
 	if (escape)
 		ds_list_add(global.escaperoom, id);
 }
@@ -165,7 +165,7 @@ else if (!in_baddieroom() && important == 1)
 		shake_mag = 3;
 		shake_mag_acc = 3 / room_speed;
 	}
-	ds_list_add(global.baddieroom, id);
+	add_baddieroom();
 }
 if object_index != obj_pizzaball
 	fail_modifier(MOD.Pacifist);

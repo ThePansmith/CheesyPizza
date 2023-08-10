@@ -2,7 +2,7 @@ if (!in_saveroom())
 {
 	add_saveroom();
 	if (object_index == obj_escapecollectbig)
-		ds_list_add(global.escaperoom, id);
+		add_saveroom(id, global.escaperoom);
 }
 if (visible)
 	scr_ghostcollectible();

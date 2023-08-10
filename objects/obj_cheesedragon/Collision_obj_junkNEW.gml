@@ -6,7 +6,7 @@ if !lastform
 {
 	sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
 	
-	ds_list_add(global.baddieroom, id);
+	add_baddieroom();
 	sprite_index = spr_cheesedragon_hurt;
 	image_index = 0;
 	alarm[0] = -1;

@@ -1,8 +1,7 @@
-var _destroyed = false;
-if (in_baddieroom())
+if in_baddieroom()
 {
-	_destroyed = true;
 	instance_destroy();
+	exit;
 }
 while place_meeting(x, y, obj_solid)
     y--;
@@ -27,14 +26,14 @@ if (object_index == obj_cheeseslime && snotty)
 {
 	if (global.panic == true)
 	{
-		ds_list_add(global.baddieroom, id);
+		add_baddieroom();
 		instance_destroy();
 	}
 	important = true;
 	ini_open_from_string(obj_savesystem.ini_str);
 	if (ini_read_real("Game", "snotty", false))
 	{
-		ds_list_add(global.baddieroom, id);
+		add_baddieroom();
 		instance_destroy();
 		instance_create(x, y, obj_snotty);
 	}

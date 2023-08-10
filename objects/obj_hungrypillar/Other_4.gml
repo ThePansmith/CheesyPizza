@@ -1,4 +1,4 @@
-if (in_saveroom())
+if in_saveroom()
 	instance_destroy();
 if (global.snickchallenge == 1)
 	instance_destroy(id, false);

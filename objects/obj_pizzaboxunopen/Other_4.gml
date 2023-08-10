@@ -1,6 +1,6 @@
 if (global.timeattack == 1)
 	instance_destroy();
-if (in_saveroom())
+if in_saveroom()
 	instance_destroy();
 
 if (content == obj_pizzakinshroom && global.shroomfollow)
