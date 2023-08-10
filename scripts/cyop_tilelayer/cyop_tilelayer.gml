@@ -7,10 +7,12 @@ function cyop_tilelayer() constructor
 	
 	tilesize_x = 0;
 	tilesize_y = 0;
+
 	
 	/// @desc	Build the vertex array from an array of "cyop_tile"
 	/// @param	{array.cyop_tile} _tile_array
 	/// @param	{real}	_depth
+	/// @param	{array.GMInstance}	_secret_array
 	/// @return	{bool}
 	static Build = function(_tile_array, _depth)
 	{
@@ -21,6 +23,7 @@ function cyop_tilelayer() constructor
 		
 		// RX: First sort everything by texture
 		var sorted_map = ds_map_create();
+		
 		for (var i = 0; i < array_length(_tile_array); i++)
 		{
 			var tile = _tile_array[i];
@@ -67,12 +70,13 @@ function cyop_tilelayer() constructor
                 var tile_tex_pos_x = ((tile.tm_x - (tile_trim_x / tile.size_x)) * tile_tex_size_x) + uv_left;
                 var tile_tex_pos_y = ((tile.tm_y - (tile_trim_y / tile.size_y)) * tile_tex_size_y) + uv_top;
 				
+			
 				// RX: Half texel offset because we sample from center and not edge
 				//tile_tex_pos_x += (tex_w / 2);
 				//tile_tex_pos_y += (tex_h / 2);
-				var ep = math_get_epsilon();
+				
 			
-                vertex_build_quad3D(vertex_buffers[tex_it], 
+                vertex_build_quad3D(target_vertex_buffer, 
                                 tile.x, tile.y, _depth, tile.size_x,  tile.size_y,// Pos and Size
                                 c_white, 1, // Color and Opacity
                                 tile_tex_pos_x, tile_tex_pos_y, tile_tex_size_x, tile_tex_size_y);
@@ -95,6 +99,9 @@ function cyop_tilelayer() constructor
 	/// @desc	Disposes of all unmanaged resources
 	static Dispose = function()
 	{
+		for (var i = 0; i < array_length(secretblocks); i++)
+			vertex_format_delete(secretblocks[1]);
+				
 		for (var i = 0; i < array_length(tiles); i++)
 			delete tiles[i];
 		
