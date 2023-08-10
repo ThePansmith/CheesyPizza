@@ -41,7 +41,7 @@ if (_transfo)
 	}
 	with (other)
 	{
-		if (state == states.mort || state == states.morthook || state == states.mortjump || state == states.mortattack)
+		if (_state == states.mort || _state == states.morthook || _state == states.mortjump || _state == states.mortattack)
 			create_debris(x, y - 40, spr_mortdead);
 	}
 	if (sprite_index != spr_angelpriest)
@@ -63,10 +63,14 @@ if (_transfo)
 			if (escape)
 				ds_list_add(global.escaperoom, id);
 			var d = round(val / 16);
-			for (var i = 0; i < val; i += d)
+			with (obj_player)
 			{
-				var spr = scr_collectspr(obj_collect, , false);
-				create_collect(other.x + irandom_range(-60, 60), other.y + irandom_range(-60, 60), spr, d, spr_palette, paletteselect);
+				for (var i = 0; i < val; i += d)
+				{
+				
+					var spr = scr_collectspr(obj_collect, , false);
+					create_collect(other.x + irandom_range(-60, 60), other.y + irandom_range(-60, 60), spr, d, spr_palette, paletteselect);
+				}
 			}
 		}
 	}
