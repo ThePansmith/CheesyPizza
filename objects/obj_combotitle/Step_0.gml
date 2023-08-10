@@ -14,10 +14,7 @@ y = ystart;
 if sugary
 {
 	if title <= 24
-	{
 		image_index = title;
-		y -= 50;
-	}
 	else
 		visible = false;
 }

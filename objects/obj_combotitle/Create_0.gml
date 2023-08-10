@@ -8,7 +8,6 @@ image_speed = 0;
 depth = -100;
 x = 832;
 y = global.hud == 0 ? 290 : 197;
-ystart = y;
 very = false;
 afterimages = array_create(0);
 sound_play_oneshot("event:/sfx/ui/comboup");
@@ -18,7 +17,11 @@ pino = (obj_player1.character == "PN");
 bo = (obj_player1.character == "BN");
 
 if sugary
+{
 	sprite_index = spr_comboend_titleSP;
+	if global.hud == 0
+		y -= 50;
+}
 else if bo
 {
 	alarm[1] = 100;
@@ -45,3 +48,4 @@ else if bo
 }
 else if pino
 	sprite_index = spr_comboend_titlePN;
+ystart = y;
