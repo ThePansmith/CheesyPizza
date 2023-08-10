@@ -12,6 +12,7 @@ varying vec4 v_vColour;
 uniform vec2 u_origin;
 uniform float u_radius;
 uniform float u_inverse;
+uniform float u_alphafix;
 
 void main()
 {
@@ -23,6 +24,7 @@ void main()
 		game_out_color.a = origin_distance < u_radius ? game_out_color.a : 0.0;
 	else
 		game_out_color.a = origin_distance > u_radius ? game_out_color.a : 0.0;
-		
+	if (u_alphafix > 0.5)
+		game_out_color = vec4(game_out_color.rgb * game_out_color.a, game_out_color.a);
     gl_FragColor = game_out_color;
 }

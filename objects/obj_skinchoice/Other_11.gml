@@ -53,3 +53,4 @@ for (var xx = -pizza_width; xx < 960 + pizza_width; xx += pizza_width)
 	}
 }
 vertex_end(pizza_vbuffer);
+vertex_freeze(pizza_vbuffer); // RX: Making it readonly makes it faster
