@@ -4,6 +4,7 @@
 // ONLY AUTHORIZED FOR USE IN "Pizza Tower: Cheesed Up!"
 // This Code is protected under United States Copyright law
 // All Rights Reserved.
+// RX: just don't fucking steal my fucking shaders oh my fucking god
 
 #define EPSILON 0.05
 varying vec2 v_vTexcoord;
@@ -41,21 +42,18 @@ void main()
 	
 	if (rx_Vec4ContainsVec2(u_secret_tile_bounds, v_vTile_Position)) // Is the secret tile in our draw bounds
 	{
-		if (u_remix_flag > 0.0)
+		if (u_remix_flag > EPSILON)
 		{
 			float dist = abs(distance(v_vTile_Position, u_secret_tile_clip_position));
 			float fade_begin = u_secret_tile_fade_size * u_secret_tile_clip_distance;
 			
 			// Are WE in the bounds of the secret tiles?
 			//if (rx_Vec4ContainsVec2(u_secret_tile_bounds, u_secret_tile_clip_position))
-			{
-				float fade = 0.0;
-				if (dist > fade_begin)
-					fade = (dist - fade_begin) / (u_secret_tile_clip_distance - fade_begin);
+			float fade = 0.0;
+			if (dist > fade_begin)
+				fade = (dist - fade_begin) / (u_secret_tile_clip_distance - fade_begin);
 					
-				game_out_color = vec4(game_out_color.rgb, game_out_color.a * fade * u_secret_tile_fade_intensity);
-			}
-				
+			game_out_color = vec4(game_out_color.rgb, game_out_color.a * fade * u_secret_tile_fade_intensity);
 		}
 		else
 			game_out_color = vec4(game_out_color.rgb, game_out_color.a * u_secret_tile_alpha);

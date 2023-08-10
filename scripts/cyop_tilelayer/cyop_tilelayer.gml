@@ -5,6 +5,9 @@ function cyop_tilelayer() constructor
 	textures = [];
 	tiles = [];
 	
+	tilesize_x = 0;
+	tilesize_y = 0;
+	
 	/// @desc	Build the vertex array from an array of "cyop_tile"
 	/// @param	{array.cyop_tile} _tile_array
 	/// @param	{real}	_depth
@@ -12,7 +15,8 @@ function cyop_tilelayer() constructor
 	static Build = function(_tile_array, _depth)
 	{
 		tiles = _tile_array;
-		
+		tilesize_x = tiles[0].size_x;
+		tilesize_y = tiles[0].size_y;
 		#region Sort by Texture
 		
 		// RX: First sort everything by texture

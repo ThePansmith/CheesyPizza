@@ -5867,7 +5867,6 @@
     {"id":{"name":"spr_pepinoHUDhurt","path":"sprites/spr_pepinoHUDhurt/spr_pepinoHUDhurt.yy",},},
     {"id":{"name":"spr_chocolate_intro","path":"sprites/spr_chocolate_intro/spr_chocolate_intro.yy",},},
     {"id":{"name":"spr_computer","path":"sprites/spr_computer/spr_computer.yy",},},
-    {"id":{"name":"shd_skinchoicebg","path":"shaders/shd_skinchoicebg/shd_skinchoicebg.yy",},},
     {"id":{"name":"spr_achievement_ruin","path":"sprites/spr_achievement_ruin/spr_achievement_ruin.yy",},},
     {"id":{"name":"spr_pepinoHUDmach2","path":"sprites/spr_pepinoHUDmach2/spr_pepinoHUDmach2.yy",},},
     {"id":{"name":"spr_playerN_scaredjump2","path":"sprites/spr_playerN_scaredjump2/spr_playerN_scaredjump2.yy",},},

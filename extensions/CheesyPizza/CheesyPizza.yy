@@ -13,7 +13,7 @@
   "author": "",
   "classname": "",
   "copyToTargets": 64,
-  "date": "2023-07-04T20:56:06.5718393+02:00",
+  "date": "2023-07-04T14:56:06.5718393-04:00",
   "description": "",
   "exportToGame": true,
   "extensionVersion": "0.1.0",
@@ -72,6 +72,10 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_discord_check_id","argCount":0,"args":[
             2,
           ],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"cmd_create","argCount":0,"args":[
+            2,
+          ],"documentation":"","externalName":"cheesypizza_cmd_allocate","help":"cmd_cllocate(real: lines)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"cmd_destroy","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_cmd_destroy","help":"cmd_destroy()","hidden":false,"kind":1,"returnType":2,},
       ],"init":"","kind":1,"order":[
         {"name":"test_dll_linkage","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"launch_external","path":"extensions/CheesyPizza/CheesyPizza.yy",},
