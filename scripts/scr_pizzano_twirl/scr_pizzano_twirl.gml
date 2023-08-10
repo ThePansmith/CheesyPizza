@@ -2,6 +2,23 @@ function scr_pizzano_twirl()
 {
 	if live_call() return live_result;
 	
+	if sprite_index == spr_superjumpprep
+	{
+		hsp = 0;
+		vsp = 0;
+		
+		image_speed = 0.35;
+		if floor(image_index) >= image_number - 1
+		{
+			instance_create(x, y, obj_explosioneffect);
+			sprite_index = spr_superjump;
+			state = states.Sjump;
+			vsp = -17;
+			image_index = 0;
+		}
+		exit;
+	}
+	
 	if sprite_index == spr_crazyrun
 		sprite_index = spr_pizzano_machtwirl;
 	image_speed = 0.5;
@@ -73,8 +90,39 @@ function scr_pizzano_twirl()
 	
 	if input_buffer_slap > 0 && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
 	{
+		if movespeed >= 12
+		{
+			if !key_up
+			{
+				input_buffer_slap = 0;
+				state = states.Sjump;
+				
+				flash = true;
+				image_index = 0;
+				sprite_index = spr_Sjumpcancelstart;
+				
+				sound_instance_move(sjumpcancelsnd, x, y);
+				fmod_event_instance_play(sjumpcancelsnd);
+				
+				jetpackcancel = true;
+				movespeed /= 1.5;
+			}
+			else
+			{
+				input_buffer_slap = 0;
+				
+				flash = true;
+				image_index = 0;
+				sprite_index = spr_superjumpprep;
+				
+				movespeed = 0;
+				hsp = 0;
+				vsp = 0;
+			}
+		}
+		
 		// uppercut
-		if key_up
+		else if key_up
 		{
 			input_buffer_slap = 0;
 			input_buffer_grab = 0;

@@ -124,7 +124,7 @@ function scr_player_Sjump()
 		sprite_index = spr_walljumpstart;
 		sound_play_3d("event:/modded/sfx/kungfu", x, y);
 	}
-	if (sprite_index == spr_Sjumpcancelstart)
+	if sprite_index == spr_Sjumpcancelstart
 	{
 		vsp = 0;
 		if (move != 0)

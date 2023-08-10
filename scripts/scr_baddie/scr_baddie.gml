@@ -1,11 +1,14 @@
 function scr_scareenemy()
 {
 	var player = instance_nearest(x, y, obj_player);
-	if (state != states.grabbed && state != states.stun && state != states.hit && state != states.secret)
+	if state != states.grabbed && state != states.stun && state != states.hit && state != states.secret
+	&& sprite_index != scaredspr && state != states.idle && state != states.staggered
 	{
-		if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 90) && y >= (player.y - 130)) && ((player.xscale > 0 && x >= player.x) || (player.xscale < 0 && x <= player.x)))
+		if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 90) && y >= (player.y - 130))
+		&& ((player.xscale > 0 && x >= player.x) || (player.xscale < 0 && x <= player.x)))
 		{
-			if (sprite_index != scaredspr && state != states.idle && state != states.stun && state != states.staggered && (player.state == states.chainsawbump || player.ratmount_movespeed == 12 || player.state == states.mach3 || (player.character == "S" && abs(player.hsp) >= 16) || player.state == states.rideweenie || player.state == states.rocket || player.state == states.tacklecharge || player.state == states.knightpepslopes || (player.state == states.grab && player.swingdingdash <= 0 && player.sprite_index == player.spr_swingding)))
+			if ((player.state == states.chainsawbump || player.ratmount_movespeed == 12 || player.state == states.mach3 || (player.character == "S" && abs(player.hsp) >= 16) || player.state == states.rideweenie || player.state == states.rocket || player.state == states.tacklecharge || player.state == states.knightpepslopes || (player.state == states.grab && player.swingdingdash <= 0 && player.sprite_index == player.spr_swingding)
+			or (player.state == states.twirl && player.movespeed >= 12)))
 			{
 				if (collision_line(x, y, player.x, player.y, obj_solid, false, true) == -4)
 				{
