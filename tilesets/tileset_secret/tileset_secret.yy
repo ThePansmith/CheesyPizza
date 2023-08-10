@@ -218,14 +218,14 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Pizza Tower",
+    "path": "folders/Tile Sets/Pizza Tower.yy",
   },
   "spriteId": {
     "name": "tile_secret",
     "path": "sprites/tile_secret/tile_secret.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
     "name": "levelstructuregroup",
     "path": "texturegroups/levelstructuregroup",

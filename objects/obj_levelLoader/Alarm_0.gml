@@ -2,10 +2,19 @@
 
 live_auto_call;
 
-array_foreach(global.custom_tiles, function(i)
+// clean up
+while array_length(self.tile_layers)
 {
-	i.Dispose();
-}, 0, infinity);
+	var struct = array_pop(self.tile_layers);
+	struct.Dispose();
+	delete struct;
+}
+while array_length(self.tiles)
+{
+	var struct = array_pop(self.tiles);
+	delete struct;
+}
+
 with obj_persistent
 {
 	room_tiles = [];
@@ -73,8 +82,6 @@ var backgrounds = variable_struct_get_names(_room.backgrounds);
 for(var i = 0; i < array_length(backgrounds); i++)
 {
 	var bg_data = struct_get(_room.backgrounds, backgrounds[i]);
-	if is_undefined(bg_data)
-		continue;
 	
 	var layer_num = real(backgrounds[i]);
 	if layer_num < 0
@@ -120,16 +127,56 @@ with obj_parallax
 }
 
 // tiles
-var tiles = variable_struct_get_names(_room.tile_data);
-for(var i = 0; i < array_length(tiles); i++)
+var tile_layers = variable_struct_get_names(_room.tile_data);
+for(var i = 0; i < array_length(tile_layers); i++)
 {
-	var tile_data = struct_get(_room.tile_data, tiles[i]);
-	if is_undefined(tile_data)
-		continue;
+	var tilelayer_data = struct_get(_room.tile_data, tile_layers[i]);
 	
-	var layer_num = real(tiles[i]);
+	var layer_num = real(tile_layers[i]);
+	var tilelayer = new cyop_tilelayer();
+	array_push(self.tile_layers, tilelayer);
 	
+	var tiles_array = [];
+	
+	var tiles = variable_struct_get_names(tilelayer_data);
+	for(var j = 0; j < array_length(tiles); j++)
+	{
+		var tile_data = struct_get(tilelayer_data, tiles[j]);
+		
+		var xx = string_copy(tiles[j], 1, string_pos("_", tiles[j]) - 1);
+		var yy = string_copy(tiles[j], string_pos("_", tiles[j]) + 1, string_length(tiles[j]));
+		
+		var tilesize = 32;
+		
+		var sprite = asset_get_index(tile_data.tileset);
+		if !sprite_exists(sprite)
+		{
+			var custom = ds_map_find_value(global.custom_tiles, tile_data.tileset);
+			if !is_undefined(custom)
+			{
+				sprite = custom[0];
+				tilesize = custom[1];
+			}
+			else
+				sprite = spr_null;
+		}
+		
+		var tile = new cyop_tile(real(xx) - _room.properties.roomX, real(yy) - _room.properties.roomY, tile_data.coord[0], tile_data.coord[1], sprite, 0, tilesize, tilesize);
+		array_push(self.tiles, tile);
+		array_push(tiles_array, tile);
+	}
+	
+	var depp = 100 + layer_num;
+	tilelayer.Build(tiles_array, depp);
 }
+/*
+array_sort(self.tile_layers, function(e1, e2)
+{
+	return e1.depth > e2.depth;
+});
+*/
+
+delete _room;
 
 // do it asshole
 with obj_player
