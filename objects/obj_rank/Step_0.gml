@@ -4,7 +4,7 @@ if sugary
 {
 	alarm[3] = 0;
 	
-	if floor(image_index) >= max(image_number - 3, 0)
+	if floor(image_index) == max(image_number - 3, 0) && obj_endlevelfade.rank == 0
 	{
 		if global.rank == "d"
 		{
