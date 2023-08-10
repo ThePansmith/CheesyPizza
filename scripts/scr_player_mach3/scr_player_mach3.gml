@@ -389,9 +389,16 @@ function scr_player_mach3()
 			
 			if character == "SN"
 			{
+				// boring ass sugary way
+				/*
 				state = states.mach2;
 				sprite_index = spr_secondjump1;
 				image_index = 0;
+				*/
+				
+				// good cheesed up way
+				state = states.twirl;
+				sprite_index = movespeed >= 12 ? spr_pizzano_machtwirl : spr_pizzano_twirl;
 			}
 			else
 			{

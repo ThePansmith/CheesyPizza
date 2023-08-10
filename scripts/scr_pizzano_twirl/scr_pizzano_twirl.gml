@@ -1,7 +1,5 @@
 function scr_pizzano_twirl()
 {
-	if live_call() return live_result;
-	
 	if sprite_index == spr_superjumpprep
 	{
 		hsp = 0;
@@ -153,6 +151,8 @@ function scr_pizzano_twirl()
 		dir = xscale;
 		vsp = -6;
 	}
+	
+	scr_dotaunt();
 	
 	// blue afterimage
 	if punch_afterimage > 0

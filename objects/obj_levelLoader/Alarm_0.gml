@@ -191,9 +191,17 @@ for(var i = 0; i < array_length(tile_layers); i++)
 		depp = -100 + layer_num;
 	tilelayer.Build(tiles_array, depp, secret_blocks);
 	
-	instance_create_depth(0, 0, depp, obj_cyop_tilelayer, {tilelayer: tilelayer, secrettile: layer_num <= -5});
+	var inst = instance_create_depth(0, 0, depp, obj_cyop_tilelayer, {tilelayer: tilelayer, secrettile: layer_num <= -5});
 	
-	// RX: build the fucking 
+	// saveroom
+	var memorized = global.custom_rooms[room_ind][1].instances[i];
+	if struct_exists(memorized, "id")
+		inst.ID = memorized.id;
+	else
+		memorized.id = inst.id;
+	
+	if in_saveroom(inst.id)
+		inst.revealed = true;
 }
 delete _room;
 

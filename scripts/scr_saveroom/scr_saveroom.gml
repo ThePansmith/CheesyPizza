@@ -1,12 +1,12 @@
 function in_saveroom(_id = id, _map = global.saveroom)
 {
-	if variable_instance_exists(_id, "ID")
+	if !is_string(_id) && variable_instance_exists(_id, "ID")
 		_id = _id.ID;
 	return ds_list_find_index(_map, _id) != -1;
 }
 function add_saveroom(_id = id, _map = global.saveroom)
 {
-	if variable_instance_exists(_id, "ID")
+	if !is_string(_id) && variable_instance_exists(_id, "ID")
 		_id = _id.ID;
 	ds_list_add(_map, _id);
 }
