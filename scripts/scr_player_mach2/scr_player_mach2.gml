@@ -30,6 +30,12 @@ function scr_player_mach2()
 		if (skateboarding)
 			sprite_index = spr_clownjump;
 		vsp = -11;
+		if character == "SN"
+		{
+			state = states.twirl;
+			sprite_index = spr_pizzano_twirl;
+			vsp = -12;
+		}
 	}
 	var mortjump = false;
 	if (key_jump && global.mort == 1 && sprite_index != spr_mortdoublejump && !grounded && !skateboarding)

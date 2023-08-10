@@ -6,9 +6,18 @@ enum moves
 }
 function scr_perform_move(move, prestate = state)
 {
+	var attackstyle = global.attackstyle;
+	var doublegrab = global.doublegrab;
+	var shootstyle = global.shootstyle;
+	
+	if character == "SN"
+	{
+		attackstyle = 1; // kungfu
+		doublegrab = 3; // chainsaw
+	}
 	if move == moves.grabattack
 	{
-		switch global.attackstyle
+		switch attackstyle
 		{
 			case 1: // kung fu
 				if grounded
@@ -55,10 +64,10 @@ function scr_perform_move(move, prestate = state)
 	}
 	if move == moves.doublegrab
 	{
-		switch global.doublegrab
+		switch doublegrab
 		{
 			case 1: // shoulder bash
-				if global.attackstyle != 2
+				if attackstyle != 2
 				{
 					if sprite_index != spr_attackdash && sprite_index != spr_airattackstart && sprite_index != spr_airattack
 					&& !suplexmove2
@@ -131,6 +140,8 @@ function scr_perform_move(move, prestate = state)
 			case 3: // chainsaw
 				if floor(global.fuel) > 0
 				{
+					fmod_event_instance_play(suplexdashsnd);
+					
 					var swapdir = key_left + key_right;
 					if swapdir != 0
 						xscale = swapdir;
@@ -166,7 +177,7 @@ function scr_perform_move(move, prestate = state)
 	}
 	if move == moves.shootattack
 	{
-		switch global.shootstyle
+		switch shootstyle
 		{
 			case 2: // breakdance
 				sound_play_3d(sfx_breakdance, x, y);

@@ -208,7 +208,7 @@ function scr_player_punch()
 	{
 		move = key_left + key_right;
 		landAnim = true;
-		image_speed = 0.4;
+		image_speed = character == "SN" ? 0.45 : 0.4;
 		if breakdance > 0
 			breakdance--;
 		if move != 0
@@ -257,16 +257,36 @@ function scr_player_punch()
 			jumpstop = false;
 			image_index = 0;
 			vsp = -11;
-			if character == "N" && noisetype == 1
-				state = states.jump;
-			else
-				state = states.mach2;
-			movespeed = max(movespeed, 6);
 			
-			if character == "P" or character == "PN" or character == "BN"
-				sprite_index = spr_longjump;
+			if character == "SN"
+			{
+				// unfun sugary way
+				/*
+				state = states.punch;
+				sprite_index = choose(spr_kungfuair1transition, spr_kungfuair2transition, spr_kungfuair3transition);
+				*/
+				
+				// fun cheesed up way
+				state = states.twirl;
+				if movespeed > 12
+					sprite_index = spr_pizzano_machtwirl;
+				else
+					sprite_index = spr_pizzano_twirl;
+			}
+			else if character == "N" && noisetype == 1
+			{
+				state = states.jump;
+				jumpAnim = true;
+			}
 			else
-				sprite_index = spr_mach2jump;
+			{
+				state = states.mach2;
+				if character == "P" or character == "PN" or character == "BN"
+					sprite_index = spr_longjump;
+				else
+					sprite_index = spr_mach2jump;
+			}
+			movespeed = max(movespeed, 6);
 		}
 		else if _kungfuground && vsp < 0
 			sprite_index = choose(spr_kungfuair1, spr_kungfuair2, spr_kungfuair3);

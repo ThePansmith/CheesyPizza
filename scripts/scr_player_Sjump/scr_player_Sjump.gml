@@ -106,6 +106,10 @@ function scr_player_Sjump()
 		}
 		else
 			fmod_event_instance_play(sjumpcancelsnd);
+		
+		if character == "SN"
+			jetpackcancel = true;
+		
 		input_buffer_slap = 0;
 	}
 	if character == "S" && sprite_index == spr_superjump && key_attack2
@@ -120,7 +124,7 @@ function scr_player_Sjump()
 		sprite_index = spr_walljumpstart;
 		sound_play_3d("event:/modded/sfx/kungfu", x, y);
 	}
-	if (sprite_index == spr_Sjumpcancelstart)
+	if sprite_index == spr_Sjumpcancelstart
 	{
 		vsp = 0;
 		if (move != 0)
@@ -158,6 +162,14 @@ function scr_player_Sjump()
 			hsp = -3;
 	}
 	*/
+	
+	if character == "SN"
+	{
+		if move != 0
+			xscale = move;
+		jetpackcancel = true;
+	}
+	
 	if (character == "V" && floor(image_index) == (image_number - 1) && sprite_index != spr_superspringplayer)
 	{
 		state = states.jump;

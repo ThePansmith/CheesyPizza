@@ -128,20 +128,20 @@ function player_init_sounds()
 		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireassN");
 	
 	// parry
-	if character == "SP"
+	if character == "SP" or character == "SN"
 		global.snd_parry = fmod_event_create_instance("event:/modded/sfx/parrySP");
 	else
 		global.snd_parry = fmod_event_create_instance("event:/sfx/pep/parry");
 	
 	if character == "BN"
 		global.snd_supertaunt = fmod_event_create_instance("event:/modded/sfx/supertauntBN");
-	else if character == "SP"
+	else if character == "SP" or character == "SN"
 		global.snd_supertaunt = fmod_event_create_instance("event:/modded/sfx/pizzysupertaunt");
 	else
 		global.snd_supertaunt = fmod_event_create_instance("event:/sfx/pep/supertaunt");
 	
 	// rank
-	if character == "SP"
+	if character == "SP" or character == "SN"
 		global.snd_rank = fmod_event_create_instance("event:/music/rankSP");
 	else if character == "BN"
 		global.snd_rank = fmod_event_create_instance("event:/music/rankBN");

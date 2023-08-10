@@ -15,7 +15,7 @@ if (_sound)
 	if REMIX
 	{
 		sound_stop(sfx_collectpizza);
-		fmod_event_instance_set_parameter(global.snd_secretwall, "state", check_char("SP"), false);
+		fmod_event_instance_set_parameter(global.snd_secretwall, "state", check_char("SP") or check_char("SN"), false);
 		fmod_event_instance_play(global.snd_secretwall);
 	}
 	else if !SUGARY

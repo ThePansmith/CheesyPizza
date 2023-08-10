@@ -1153,7 +1153,7 @@ function cyop_objectlist()
 		"obj_camera_region",
 		"obj_warp_number",
 		"obj_teleporter_receptor",
-		"obj_destroyable2_big_escape",
+		"obj_destroyable2_bigescape", //"obj_destroyable2_big_escape",
 		"obj_destroyable2_escape",
 		"obj_destroyable_escape",
 		"obj_destroyable3_escape",
@@ -1163,9 +1163,10 @@ function cyop_objectlist()
 #endregion
 
 global.custom_rooms = []; // [[runtime_room_index, json]]
-global.custom_sprites = ds_map_create();
-global.custom_tiles = ds_map_create();
-global.room_map = ds_map_create();
+global.custom_sprites = -1; // ds_map
+global.custom_tiles = -1; // ds_map
+global.room_map = -1; // ds_map
+global.asset_cache = -1; // ds_map
 global.custom_fill = 4000;
 
 function cyop_cleanup()
@@ -1173,6 +1174,19 @@ function cyop_cleanup()
 	ds_map_clear(global.custom_sprites);
 	ds_map_clear(global.custom_tiles);
 	ds_map_clear(global.room_map);
+	ds_map_clear(global.asset_cache);
+}
+function cyop_asset(str)
+{
+	var find = global.asset_cache[?str];
+	if !is_undefined(find)
+		return find;
+	else
+	{
+		var store = asset_get_index(str);
+		ds_map_add(global.asset_cache, str, store);
+		return store;
+	}
 }
 function cyop_load(ini)
 {
@@ -1365,7 +1379,7 @@ function cyop_resolvevalue(value, varname)
 {
 	if varname == "content"
 	{
-		var return_value = asset_get_index(value);
+		var return_value = cyop_asset(value);
 		if object_exists(return_value)
 			return return_value;
 		else
@@ -1373,7 +1387,7 @@ function cyop_resolvevalue(value, varname)
 	}
 	if varname == "sprite_index"
 	{
-		var return_value = asset_get_index(value);
+		var return_value = cyop_asset(value);
 		if sprite_exists(return_value)
 			return return_value;
 		else

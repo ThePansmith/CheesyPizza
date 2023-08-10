@@ -305,7 +305,8 @@ enum states
 	cotton,
 	cottondrill,
 	cottonroll,
-	fling
+	fling,
+	twirl
 }
 
 #endregion
@@ -609,7 +610,8 @@ states = {
 	cotton : 300,
 	cottondrill : 301,
 	cottonroll : 302,
-	fling : 303
+	fling : 303,
+	twirl : 304
 }
 
 #endregion

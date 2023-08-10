@@ -133,7 +133,7 @@ function scr_do_rank(showtoppins = true, boss = false)
 		sprite_index = spr_lookdoor;
 	}
 	obj_endlevelfade.alarm[0] = 235;
-	if obj_player1.character == "SP"
+	if obj_player1.character == "SP" or obj_player1.character == "SN"
 		obj_endlevelfade.alarm[0] = 190;
 	image_index = 0;
 	global.panic = false;

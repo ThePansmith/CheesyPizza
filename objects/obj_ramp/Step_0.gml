@@ -11,11 +11,13 @@ if place_meeting(x, y - s, obj_player) && !collision_point(x + sprite_width + im
 	with (obj_player)
 	{
 		var by = 4;
-		if (state == states.mach3)
+		if (state == states.mach3 or (state == states.ratmount && ratmount_movespeed >= 12))
 			by = 10;
+		
 		var bx = 8;
 		if (state == states.mach3 || state == states.ratmounttumble || (state == states.ratmount && ratmount_movespeed >= 12))
 			bx = 18;
+		
 		if ((state == states.mach2 || (state == states.ratmount && ratmount_movespeed > 8) || state == states.ratmounttumble || state == states.trashroll || state == states.tumble || state == states.mach3 || state == states.trickjump) && y <= (other.y + by) && xscale == sign(other.image_xscale) && place_meeting(x, y + s, other))
 		{
 			vsp = -12;

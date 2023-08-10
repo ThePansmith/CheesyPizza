@@ -81,10 +81,14 @@ function scr_player_mach3()
 				image_index = 0;
 				sprite_index = spr_mach3jump;
 			}
-			if (character != "N")
-				vsp = -11;
-			else
-				vsp = -13;
+			vsp = character != "N" ? -11 : -13;
+			
+			if character == "SN"
+			{
+				state = states.twirl;
+				sprite_index = spr_pizzano_machtwirl;
+				vsp = -12;
+			}
 		}
 		if (fightball == 0)
 		{
@@ -360,7 +364,9 @@ function scr_player_mach3()
 		else if movespeed > 12 && move != xscale
 			movespeed -= 0.1;
 		
-		if movespeed > 16 && sprite_index != spr_crazyrun && sprite_index != spr_Sjumpcancelstart && sprite_index != spr_taunt
+		if character == "SN"
+			sprite_index = grounded ? spr_pizzano_mach3 : spr_pizzano_sjumpside;
+		else if movespeed > 16 && sprite_index != spr_crazyrun && sprite_index != spr_Sjumpcancelstart && sprite_index != spr_taunt
 		{
 			mach4mode = true;
 			flash = true;
@@ -371,6 +377,8 @@ function scr_player_mach3()
 		
 		if (key_jump2 && fightball == 0)
 		{
+			input_buffer_jump = 0;
+			
 			sound_play_3d(sfx_jump, x, y);
 			sound_play_3d("event:/modded/sfx/kungfu", x, y);
 			
@@ -378,9 +386,19 @@ function scr_player_mach3()
 			momemtum = false;
 			jumpstop = false;
 			vsp = -15;
-			state = states.jump;
-			sprite_index = spr_playerN_noisebombspinjump;
-			image_index = 0;
+			
+			if character == "SN"
+			{
+				state = states.mach2;
+				sprite_index = spr_secondjump1;
+				image_index = 0;
+			}
+			else
+			{
+				state = states.jump;
+				sprite_index = spr_playerN_noisebombspinjump;
+				image_index = 0;
+			}
 			particle_set_scale(part.jumpdust, xscale, 1);
 			create_particle(x, y, part.jumpdust, 0);
 		}
@@ -388,11 +406,13 @@ function scr_player_mach3()
 		{
 			flash = false;
 			sprite_index = spr_playerN_jetpackslide;
+			if character == "SN"
+				sprite_index = spr_pizzano_crouchslide;
 		}
-		if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && (!check_slope(x + sign(hsp), y) || check_solid(x + sign(hsp), y)) && (!place_meeting(x + sign(hsp), y, obj_metalblock) && character != "V") && (!place_meeting(x + sign(hsp), y, obj_destructibles) && character != "V") && !place_meeting(x + sign(hsp), y, obj_hungrypillar))
+		if (scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && (!check_slope(x + sign(hsp), y) || check_solid(x + sign(hsp), y)) && (!place_meeting(x + sign(hsp), y, obj_metalblock) && character != "V") && (!place_meeting(x + sign(hsp), y, obj_destructibles) && character != "V") && !place_meeting(x + sign(hsp), y, obj_hungrypillar)
 		{
 			var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
-			if (_bump)
+			if _bump
 			{
 				with (obj_camera)
 				{
@@ -422,6 +442,14 @@ function scr_player_mach3()
 				image_index = 0;
 				instance_create(x + (xscale * 15), y + 10, obj_bumpeffect);
 			}
+		}
+		if character == "SN" && key_slap
+		{
+			sprite_index = spr_bodyslamstart;
+			image_index = 0;
+			state = states.freefall;
+			pistolanim = -4;
+			vsp = -6;
 		}
 	}
 	
