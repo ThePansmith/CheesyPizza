@@ -61,11 +61,13 @@ function cyop_tilelayer() constructor
                 var tile_tex_pos_x = ((tile.tm_x - (tile_trim_x / tile.size_x)) * tile_tex_size_x) + uv_left;
                 var tile_tex_pos_y = ((tile.tm_y - (tile_trim_y / tile.size_y)) * tile_tex_size_y) + uv_top;
 				
-				//tile_tex_pos_x
+				// RX: Half texel offset because we sample from center and not edge
+				//tile_tex_pos_x += (tex_w / 2);
+				//tile_tex_pos_y += (tex_h / 2);
 				var ep = math_get_epsilon();
 			
                 vertex_build_quad3D(vertex_buffers[tex_it], 
-                                tile.x - ep, tile.y - ep, _depth, tile.size_x + ep,  tile.size_y + ep,// Pos and Size
+                                tile.x, tile.y, _depth, tile.size_x,  tile.size_y,// Pos and Size
                                 c_white, 1, // Color and Opacity
                                 tile_tex_pos_x, tile_tex_pos_y, tile_tex_size_x, tile_tex_size_y);
 			}
