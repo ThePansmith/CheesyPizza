@@ -56,11 +56,13 @@ toppin_buffer = 0;
 brown = false;
 brownfade = 0;
 alarm[2] = 400;
-if obj_player1.character == "SP"
+if obj_player1.character == "SP" or obj_player1.character == "SN"
 {
 	alarm[2] = room_speed * 2;
 	if global.rank == "p" or obj_endlevelfade.sugary
 		alarm[2] = room_speed * 3;
+	if global.rank == "d" && obj_endlevelfade.sugary
+		alarm[2] = room_speed * 5;
 }
 if obj_player.character == "BN" && (global.rank == "d" or global.rank == "c" or global.rank == "b")
 	alarm[2] = room_speed * 2;
