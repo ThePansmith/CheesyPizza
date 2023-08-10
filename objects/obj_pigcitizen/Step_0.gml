@@ -49,7 +49,7 @@ switch (state)
 			vsp = 0;
 			if (x != obj_player.x)
 				image_xscale = sign(obj_player.x - x);
-			if (!in_saveroom())
+			if !in_saveroom()
 			{
 				add_saveroom();
 				notification_push(notifs.pigcitizen_photo, [room, id]);

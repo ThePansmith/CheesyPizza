@@ -23,6 +23,6 @@ if (eaten)
 	x = -100;
 	y = -100;
 	sprite_index = spr_corneaten;
-	if (!in_saveroom())
+	if !in_saveroom()
 		add_saveroom();
 }

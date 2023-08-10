@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	sound_play_oneshot_3d("event:/sfx/misc/breakice", x, y);
 	if (bird)

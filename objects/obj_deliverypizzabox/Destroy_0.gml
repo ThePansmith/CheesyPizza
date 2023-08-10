@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	add_saveroom();
 	instance_create_unique(0, 0, obj_deliverytimer);

@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	add_saveroom();
 	scr_sound_multiple(global.snd_collect, x, y);

@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	scr_rockblock_tag();
 	instance_create(x + 32, y + 32, obj_playerexplosion);

@@ -1,4 +1,4 @@
-if (!in_baddieroom())
+if !in_baddieroom()
 {
 	add_baddieroom();
 	create_slapstar(x, y);

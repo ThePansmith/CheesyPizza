@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	with (instance_create(x + 16, y + 16, obj_sausageman_dead))
 		sprite_index = spr_doughblockdead;

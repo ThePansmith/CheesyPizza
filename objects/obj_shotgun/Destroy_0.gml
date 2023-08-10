@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	repeat (4)
 		create_debris(x, y, spr_ammoboxdebris);

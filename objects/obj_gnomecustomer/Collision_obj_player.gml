@@ -2,7 +2,7 @@ if (other.state == states.gotoplayer)
 	exit;
 if (!instance_exists(obj_deliverytimer))
 	exit;
-if (!in_saveroom())
+if !in_saveroom()
 {
 	other.vsp = 10;
 	var xx = x + (customer_x * image_xscale);

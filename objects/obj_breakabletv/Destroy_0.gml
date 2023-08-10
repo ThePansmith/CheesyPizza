@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	instance_create(x, y, obj_bangeffect);
 	with (instance_create(x, y, obj_pizzaslice))

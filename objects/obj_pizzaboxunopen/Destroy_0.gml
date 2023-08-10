@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	if (!place_meeting(x, y, obj_gnomecustomer))
 	{

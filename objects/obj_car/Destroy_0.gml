@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	with (instance_create(x, y, obj_car_dead))
 	{

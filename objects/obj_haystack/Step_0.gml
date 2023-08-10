@@ -44,7 +44,7 @@ else if (sprite_index == spr_haystackburning)
 		if (state != states.grabbed)
 			instance_destroy();
 	}
-	if (!in_saveroom())
+	if !in_saveroom()
 		add_saveroom();
 	if (firetimer > 0 && sprite_index == spr_haystackburning && firetimeinf == 0)
 		firetimer--;

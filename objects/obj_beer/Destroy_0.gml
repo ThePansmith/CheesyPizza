@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	if (sprite_index == spr_bigbeer)
 	{

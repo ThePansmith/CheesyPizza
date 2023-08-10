@@ -1,6 +1,6 @@
 if (room == custom_lvl_room)
 	tile_layer_delete_at(1, x, y);
-if (!in_saveroom())
+if !in_saveroom()
 {
 	if particlespr == spr_doughblockdead
 	{

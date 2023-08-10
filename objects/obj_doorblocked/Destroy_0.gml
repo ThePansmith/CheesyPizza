@@ -1,4 +1,4 @@
-if (!in_baddieroom())
+if !in_baddieroom()
 {
 	instance_create(x, y, obj_bombexplosion);
 	repeat (6)

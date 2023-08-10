@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	repeat (8 * max(abs(image_xscale), abs(image_yscale)))
 	{

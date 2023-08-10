@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	scr_rockblock_tag();
 	sound_play_oneshot_3d("event:/sfx/misc/breakblock", x, y);

@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	if !instance_exists(obj_wartimer)
 	{

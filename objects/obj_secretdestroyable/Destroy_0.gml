@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	repeat 7
 	with (instance_create(x + 32, y + 32, obj_debris))

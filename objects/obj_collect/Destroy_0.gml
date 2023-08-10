@@ -1,6 +1,6 @@
 if (room == rm_editor)
 	exit;
-if (!in_saveroom())
+if !in_saveroom()
 {
 	add_saveroom();
 	if (object_index == obj_escapecollect)

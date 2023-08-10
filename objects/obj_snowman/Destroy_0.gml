@@ -1,4 +1,4 @@
-if (!in_baddieroom())
+if !in_baddieroom()
 {
 	repeat (6)
 	{

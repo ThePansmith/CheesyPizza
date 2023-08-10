@@ -17,7 +17,7 @@ if (playerid != -4)
 			with (other)
 			{
 				playerid = -4;
-				if (!in_saveroom())
+				if !in_saveroom()
 				{
 					add_saveroom();
 					global.collect += 1000;

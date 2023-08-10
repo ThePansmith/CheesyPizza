@@ -5,6 +5,6 @@ if (sprite_index != spr_heater2)
 	sound_play_oneshot("event:/sfx/misc/breakicebig");
 	scr_fmod_soundeffect(snd, x, y);
 	sprite_index = spr_heater2;
-	if (!in_saveroom())
+	if !in_saveroom()
         add_saveroom();
 }

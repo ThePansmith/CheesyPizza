@@ -1,5 +1,5 @@
 scr_destroy_tiles(32, "Tiles_1");
-if (!in_saveroom())
+if !in_saveroom()
 {
 	notification_push(notifs.block_break, [room]);
 	with (create_debris(x + 32, y + 32, spr_shotgunblockdebris))

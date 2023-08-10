@@ -1,4 +1,4 @@
-if (!in_baddieroom())
+if !in_baddieroom()
 {
 	with (instance_create(x, y, obj_sausageman_dead))
 		sprite_index = spr_tank_wheel;

@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	if REMIX
 		scr_sound_multiple("event:/sfx/misc/breakblock", x, y);

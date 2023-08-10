@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	for (var i = 0; i < ds_list_size(deactivatedlist); i++)
 	{

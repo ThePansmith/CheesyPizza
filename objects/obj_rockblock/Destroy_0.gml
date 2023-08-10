@@ -1,4 +1,4 @@
-if (!in_saveroom())
+if !in_saveroom()
 {
 	if (place_meeting(x + 1, y, obj_rockblock))
 	{
