@@ -44,7 +44,7 @@ if ((!global.panic && !global.snickchallenge) or global.leveltosave == "dragonla
 			var s = 0;
 			switch obj_player1.character
 			{
-				case "SP": s = 1; break;
+				case "SP": case "SN": s = 1; break;
 				case "BN": s = 2; break;
 			}
 			fmod_event_instance_set_parameter(music.event_secret, "state", s, true);
