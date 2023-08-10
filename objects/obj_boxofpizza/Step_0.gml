@@ -32,9 +32,10 @@ with (obj_player)
 	}
 	if (other.image_yscale == -1)
 	{
-		if key_up && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 10, other) && !instance_exists(obj_fadeout)
-		&& (state == states.normal || state == states.pogo || state == states.jump || state == states.mach1 || state == states.mach2 || state == states.mach3 || state == states.Sjumpprep || state == states.ratmount || state == states.ratmountjump || state == states.ratmountbounce || (state == states.punch && sprite_index == spr_breakdanceuppercut) || state == states.Sjump || state == states.Sjumpland
-		or state == states.twirl)
+		if (key_up && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 10, other) && !instance_exists(obj_fadeout)
+		&& (state == states.normal || state == states.pogo || state == states.jump || state == states.mach1 || state == states.mach2 || state == states.mach3 || state == states.Sjumpprep || state == states.ratmount || state == states.ratmountjump || state == states.ratmountbounce || (state == states.punch && sprite_index == spr_breakdanceuppercut)
+		or state == states.twirl))
+		or state == states.Sjump || state == states.Sjumpland
 		{
 			if character == "S"
 				movespeed = 0;
