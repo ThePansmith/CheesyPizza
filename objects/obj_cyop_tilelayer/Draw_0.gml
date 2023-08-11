@@ -1,3 +1,5 @@
+gpu_set_blendmode(bm_normal);
+
 if (secrettile)
 {
 	var spotlight = global.secrettiles && !instance_exists(obj_fakeplayer);
@@ -27,18 +29,37 @@ if (secrettile)
 	}
 }
 else
-{
-	shader_set(shd_cyop_secretblock);
-	var secret_block_info = shader_get_uniform(shd_cyop_secretblock, "u_secret_block_info");
-	var array_size = shader_get_uniform(shd_cyop_secretblock, "u_array_size");
-	var tile_size = shader_get_uniform(shd_cyop_secretblock, "u_tile_size");
-	
+{	
 	if array_length(global.cyop_broken_tiles) > 0
 	{
-		shader_set_uniform_f_array(secret_block_info, global.cyop_broken_tiles);
-		shader_set_uniform_f(array_size, array_length(global.cyop_broken_tiles) / 2);
-		shader_set_uniform_f(tile_size, tilelayer.tilesize_x, tilelayer.tilesize_y);
+		shader_set(shd_cyop_secretblock);
+		var secret_block_info = shader_get_uniform(shd_cyop_secretblock, "u_secret_block_info");
+		var tile_size = shader_get_uniform(shd_cyop_secretblock, "u_tile_size");
+		var temp_array = 0;
+		var index = 0;
+		for (var i = 0; i < array_length(global.cyop_broken_tiles); i += 2)
+		{
+			var xx = global.cyop_broken_tiles[i];
+			var yy = global.cyop_broken_tiles[i + 1];
+			
+			var camx = camera_get_view_x(view_camera[0]);
+			var camy = camera_get_view_y(view_camera[0]);
+			
+			var camw = camera_get_view_width(view_camera[0]);
+			var camh = camera_get_view_height(view_camera[0]);
+			
+			if (rectangle_in_rectangle(xx, yy, xx + tilelayer.tilesize_x, yy + tilelayer.tilesize_y, camx, camy, camx + camw, camy + camh))
+			{
+				temp_array[index++] = xx;
+				temp_array[index++] = yy;
+			}
+			if array_length(temp_array) > 0
+				shader_set_uniform_f_array(secret_block_info, temp_array);
+				
+			shader_set_uniform_f(tile_size, tilelayer.tilesize_x, tilelayer.tilesize_y);	
+		}
 	}
 }
 tilelayer.Draw();
-shader_reset();
+reset_shader_fix();
+reset_blendmode();

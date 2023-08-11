@@ -12,17 +12,16 @@ varying vec2 v_vPosition;
 // X Y
 #define SECRETBLOCK_STRUCT_MEMBER_COUNT 2
 
-uniform float u_secret_block_info[4096];
-uniform float u_array_size;
+uniform float u_secret_block_info[256];
 uniform vec2 u_tile_size;
 
 void main()
 {
 	vec4 game_out_color = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
 	
-	bool broke = false;
+	float broke = 0.0;
 
-	for (int i = 0; i < int(u_array_size); i++)
+	for (int i = 0; i < 256; i++)
 	{
 		int index = i * 2;
 		float xx = u_secret_block_info[index + 0];
@@ -33,10 +32,10 @@ void main()
 		
 		if (xx <= v_vPosition.x && v_vPosition.x <= right && yy <= v_vPosition.y && v_vPosition.y <= bottom)
 		{
-			broke = true;
+			broke = 1.0;
 			break;
 		}
 	}
 	
-    gl_FragColor = vec4(game_out_color.rgb, broke ? 0.0 : game_out_color.a);
+    gl_FragColor = vec4(game_out_color.rgb, broke == 1.0 ? 0.0 : game_out_color.a);
 }

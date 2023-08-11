@@ -113,8 +113,6 @@ function reset_blendmode()
 }
 function reset_shader_fix()
 {
-	if live_call() return live_result;
-	
 	if shader_current() == shd_pal_swapper
 		pal_swap_reset();
 	else if shader_current() != -1
