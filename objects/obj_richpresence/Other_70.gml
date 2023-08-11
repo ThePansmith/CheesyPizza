@@ -36,6 +36,7 @@ switch async_load[? "event_type"]
 				show_message("Haaiii Cappy ;3!!!");
 			if a == "463132674995781637" // SpectralScrubs
 			{
+				show_message("It smells like obama");
 				var str = "Peic";
 				repeat 50
 					str = str + " " + str;
