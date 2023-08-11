@@ -16,6 +16,9 @@ panicmusicID = fmod_event_create_instance("event:/music/pizzatime");
 kidspartychaseID = fmod_event_create_instance("event:/music/w5/kidspartychase");
 panicstart = false;
 
+custom_music = [];
+current_custom = noone;
+
 #region PIZZA TOWER
 
 add_music(Endingroom, "event:/music/ending", -4, false);

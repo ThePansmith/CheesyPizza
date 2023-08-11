@@ -135,8 +135,9 @@ function scr_pause_activate_objects(unpause_sounds = true)
 }
 function scr_pause_deactivate_objects(pause_sounds = true)
 {
-	if (pause_sounds)
-		fmod_event_instance_set_paused_all(true);
+	if pause_sounds
+		sound_pause_all(true);
+	
 	ds_list_clear(instance_list);
 	for (var i = 0; i < instance_count; i++)
 	{
@@ -188,6 +189,12 @@ function pause_unpause_music()
 		fmod_event_instance_set_paused(pillarmusicID, other.savedpillarpause);
 		fmod_event_instance_set_paused(panicmusicID, other.savedpanicpause);
 		fmod_event_instance_set_paused(kidspartychaseID, other.savedkidspartypause);
+		
+		for(var i = 0; i < array_length(custom_music); i++)
+		{
+			if custom_music[i].fmod
+				fmod_event_instance_set_paused(custom_music[i].instance, custom_music[i].paused);
+		}
 	}
 	fmod_event_instance_stop(pausemusicID, true);
 }
