@@ -141,7 +141,7 @@ function scr_tvdraw_old()
 			sprite = asset;
 	}
 	
-	if global.combotime > 0 && tvsprite == spr_tvcombo
+	if global.combotime > 0 && (tvsprite == spr_tvcombo or sprite == spr_tvcombo_ss)
 	{
 		// combo tv
 		if REMIX

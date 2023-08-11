@@ -72,6 +72,11 @@ function scr_destroy_nearby_tiles()
 
 function scr_cutoff()
 {
+	if instance_exists(obj_levelLoader)
+	{
+		scr_cutoff_old();
+		exit;
+	}
 	if place_meeting(x, y, obj_nocutoff)
 		exit;
 	
