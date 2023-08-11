@@ -1,5 +1,7 @@
 live_auto_call;
 
+shader_reset();
+
 anim_t = Approach(anim_t, 1, 0.035);
 var curve = animcurve_channel_evaluate(outback, anim_t);
 
@@ -16,6 +18,8 @@ if menu == 1
 }
 
 #endregion
+
+shader_reset();
 
 // clip surface (circle)
 surface_reset_target();

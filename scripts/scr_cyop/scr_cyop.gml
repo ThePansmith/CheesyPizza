@@ -1437,13 +1437,18 @@ function cyop_load_level(ini)
 	with obj_player1
 	{
 		if !reset
+		{
 			visible = false;
-		state = -1;
-		targetDoor = reset ? "HUB" : "A";
+			state = -1;
+			targetDoor = "A";
+			
+			with obj_camera
+				lock = true;
+		}
+		else
+			targetDoor = "HUB";
 		targetRoom = "main";
 	}
-	with obj_camera
-		lock = true;
 	
 	titlecardSprite = cyop_resolvevalue(titlecardSprite, "sprite_index");
 	titleSprite = cyop_resolvevalue(titleSprite, "sprite_index");
@@ -1473,7 +1478,7 @@ function cyop_resolvevalue(value, varname)
 		else
 			return obj_null;
 	}
-	if varname == "sprite_index" or varname == "bgsprite" or varname == "titlecard_sprite" or varname == "title_sprite"
+	if string_pos("spr", varname) > 0
 	{
 		var return_value = cyop_asset(value);
 		if sprite_exists(return_value)
