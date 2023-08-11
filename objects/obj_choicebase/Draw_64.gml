@@ -3,9 +3,9 @@ if live_call() return live_result;
 if !init
 	exit;
 
-reset_blendmode();
 draw_set_align();
 draw_set_colour(c_white);
+gpu_set_blendmode(bm_normal);
 
 // animation
 if anim_con == 0
@@ -23,7 +23,6 @@ if anim_con == 1 or anim_con == 2
 bg_pos = (bg_pos + 0.5) % 64;
 	
 var origin_pos = shader_get_uniform(shd_circleclip, "u_origin");
-
 if curve < 1
 {
 	// circular clipping shader
@@ -33,7 +32,7 @@ if curve < 1
 	var alpha_pos = shader_get_uniform(shd_circleclip, "u_alphafix");
 	shader_set_uniform_f(origin_pos, (960 / 2), (540 / 2));
 	shader_set_uniform_f(radius_pos, 560  * curve);
-	shader_set_uniform_f(alpha_pos, 1);
+	shader_set_uniform_f(alpha_pos, 0);
 }
 
 //var color = merge_colour(make_color_rgb(121, 103, 151), merge_colour(c_green, c_white, 0.25), mixingfade);
@@ -57,6 +56,3 @@ if is_method(draw)
 // post draw content
 if is_method(postdraw)
 	postdraw(curve);
-
-shader_reset();
-reset_blendmode();

@@ -59,13 +59,13 @@ for(var i = 0; i < array_length(_room.instances); i++)
 				break;
 		}
 		
-		var struct = struct_get(inst_data, "variables");
+		var struct = inst_data.variables;
 		var varNames = variable_struct_get_names(struct);
 		
 		for (var j = 0; j < array_length(varNames); j++)
 		{
 		    if varNames[j] != "x" && varNames[j] != "y"
-		        variable_instance_set(inst, varNames[j], cyop_resolvevalue(struct_get(struct, varNames[j]), varNames[j]));
+		        variable_instance_set(inst, varNames[j], cyop_resolvevalue(struct[$ varNames[j]], varNames[j]));
 		}
 		
 		if safe_get(inst, "flipX")
@@ -83,10 +83,10 @@ for(var i = 0; i < array_length(_room.instances); i++)
 		
 		// saveroom
 		var memorized = global.custom_rooms[room_ind][1].instances[i];
-		if struct_exists(memorized, "id")
-			inst.ID = memorized.id;
+		if struct_exists(memorized, "ID")
+			inst.ID = memorized.ID;
 		else
-			memorized.id = inst.id;
+			struct_set(memorized, "ID", inst.id);
 	}
 	else
 		trace("Instance of object ", objects[inst_data.object], " deleted itself upon create");
@@ -96,7 +96,7 @@ for(var i = 0; i < array_length(_room.instances); i++)
 var backgrounds = variable_struct_get_names(_room.backgrounds);
 for(var i = 0; i < array_length(backgrounds); i++)
 {
-	var bg_data = struct_get(_room.backgrounds, backgrounds[i]);
+	var bg_data = _room.backgrounds[$ backgrounds[i]];
 	
 	var layer_num = real(backgrounds[i]);
 	if layer_num < 0
@@ -145,7 +145,7 @@ with obj_parallax
 var tile_layers = variable_struct_get_names(_room.tile_data);
 for(var i = 0; i < array_length(tile_layers); i++)
 {
-	var tilelayer_data = struct_get(_room.tile_data, tile_layers[i]);
+	var tilelayer_data = _room.tile_data[$ tile_layers[i]];
 	var tiles = variable_struct_get_names(tilelayer_data);
 	if !array_length(tiles)
 		continue;
@@ -156,7 +156,9 @@ for(var i = 0; i < array_length(tile_layers); i++)
 	var tiles_array = [];
 	for(var j = 0; j < array_length(tiles); j++)
 	{
-		var tile_data = struct_get(tilelayer_data, tiles[j]);
+		var tile_data = tilelayer_data[$ tiles[j]];
+		if !is_struct(tile_data)
+			continue;
 		
 		var xx = string_copy(tiles[j], 1, string_pos("_", tiles[j]) - 1);
 		var yy = string_copy(tiles[j], string_pos("_", tiles[j]) + 1, string_length(tiles[j]));
@@ -180,27 +182,27 @@ for(var i = 0; i < array_length(tile_layers); i++)
 		array_push(tiles_array, tile);
 	}
 	
-	var depp = 50 + layer_num;
+	var depp = 100 + layer_num;
 	if layer_num < 0
-		depp = -50 + layer_num;
+		depp = -100 + layer_num;
 	tilelayer.Build(tiles_array, depp);
 	
 	var inst = instance_create_depth(0, 0, depp, obj_cyop_tilelayer, {tilelayer: tilelayer, secrettile: layer_num <= -5});
 	
 	// saveroom
-	var memorized = global.custom_rooms[room_ind][1].instances[i];
-	if struct_exists(memorized, "id")
-		inst.ID = memorized.id;
+	var memorized = global.custom_rooms[room_ind][1].tile_data[$ tile_layers[i]];
+	if struct_exists(memorized, "ID")
+		inst.ID = memorized.ID;
 	else
-		memorized.id = inst.id;
+		struct_set(memorized, "ID", inst.id);
 	
 	if in_saveroom(inst.id)
 		inst.revealed = true;
 }
 
-
 // song
 var song = _room.properties.song;
+var fade = _room.properties.songTransitionTime;
 var state = 0, fmod = string_starts_with(song, "event:");
 
 if fmod && string_pos(".", song) != 0
@@ -209,7 +211,7 @@ if fmod && string_pos(".", song) != 0
 		event:/music/w1/ruin.1
 		the end part (.1) is the state
 	*/
-	var split = string_split(song, ".");
+	var split = string_split(song, ".", true, 1);
 	song = split[0];
 	state = real(split[1]);
 }
@@ -225,38 +227,35 @@ if !is_string(event) or fmod
 	{
 		if current_custom != noone
 		{
-			var song = custom_music[current_custom];
-			if song.fmod
+			if custom_music[current_custom].fmod
 			{
-				fmod_event_instance_set_paused(song.instance);
-				song.paused = true;
+				fmod_event_instance_set_paused(custom_music[current_custom].instance, true);
+				custom_music[current_custom].paused = true;
 			}
 			else
-				audio_sound_gain(song.instance, 0, _room.properties.songTransitionTime);
+				audio_sound_gain(custom_music[current_custom].instance, 0, fade);
 		}
 		
 		var found = -1;
 		for(var i = 0; i < array_length(custom_music); i++)
 		{
-			if i.event == event
+			if custom_music[i].event == event
 			{
 				found = i;
 				break;
 			}
 		}
 		
-		if found
+		if found > -1
 		{
 			current_custom = found;
-			
-			var song = custom_music[found];
-			if song.fmod
+			if custom_music[found].fmod
 			{
-				song.paused = false;
-				fmod_event_instance_set_paused(song.instance, false);
+				custom_music[found].paused = false;
+				fmod_event_instance_set_paused(custom_music[found].instance, false);
 			}
 			else
-				audio_sound_gain(song, global.option_master_volume * global.option_music_volume, _room.properties.songTransitionTime);
+				audio_sound_gain(custom_music[found].instance, global.option_music_volume * 0.5, fade);
 		}
 		else
 		{

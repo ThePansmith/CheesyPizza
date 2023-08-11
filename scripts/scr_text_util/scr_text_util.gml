@@ -227,7 +227,7 @@ function scr_draw_granny_texture(x, y, xscale, yscale, tex_x, tex_y, sprite = sp
 	draw_rectangle_color(0, 0, w, h, c_white, c_white, c_white, c_white, false);
 	gpu_set_blendmode(bm_subtract);
 	draw_sprite_ext(bubble_sprite, 0, 0, 0, xscale, yscale, 0, c_white, 1);
-	reset_blendmode();
+	gpu_set_blendmode(bm_normal);
 	surface_reset_target();
 	
 	// draw the looping texture
@@ -235,7 +235,7 @@ function scr_draw_granny_texture(x, y, xscale, yscale, tex_x, tex_y, sprite = sp
 	draw_sprite_tiled(sprite, 0, tex_x + txo, tex_y + tyo);
 	gpu_set_blendmode(3);
 	draw_surface(surfclip, 0, 0);
-	reset_blendmode();
+	gpu_set_blendmode(bm_normal);
 	surface_reset_target();
 	
 	// draw everything

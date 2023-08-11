@@ -25,16 +25,19 @@ if !surface_exists(clip_surface)
 surface_set_target(clip_surface);
 draw_clear(c_white);
 gpu_set_blendmode(bm_subtract);
-shader_reset();
 draw_circle(960 / 2, 540 / 2, 560 * curve, false);
-reset_shader_fix();
 surface_reset_target();
 surface_set_target(surface);
 draw_surface(clip_surface, 0, 0);
-reset_blendmode();
 surface_reset_target();
 
+reset_blendmode();
+reset_shader_fix();
+
 draw_surface(surface, 0, 0);
+
+gpu_set_blendmode(bm_normal);
+shader_reset();
 
 // fader
 draw_set_alpha(fadealpha);

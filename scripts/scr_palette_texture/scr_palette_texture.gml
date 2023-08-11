@@ -1,3 +1,4 @@
+/*
 function scr_palette_textureOLD()
 {
 	var cx = camera_get_view_x(view_camera[0]);
@@ -18,11 +19,10 @@ function scr_palette_textureOLD()
 	var yy = _y;
 	draw_sprite_ext(global.palettetexture, 0, xx, yy, xs, ys, 0, blend, alpha);
 	gpu_set_alphatestenable(false);
-	if (!_gui)
-		gpu_set_blendmode(0);
-	else
-		reset_blendmode();
+	gpu_set_blendmode(bm_normal);
 }
+*/
+
 function scr_get_texture_palette(texture)
 {
 	var _arr = [["funny", spr_peppattern1], ["itchy", spr_peppattern2], ["pizza", spr_peppattern3], ["stripes", spr_peppattern4], ["goldemanne", spr_peppattern5], ["bones", spr_peppattern6], ["pp", spr_peppattern7], ["war", spr_peppattern8], ["john", spr_peppattern9]]
@@ -55,8 +55,8 @@ function scr_palette_texture(sprite, subimg, x, y, xscale, yscale, rot = 0, col 
 	if surfw == 0 or surfh == 0
 		exit;
 	
-	var palshader = shader_current();
-	reset_shader_fix();
+	//var palshader = shader_current();
+	//reset_shader_fix();
 	
 	// RX: Why the actual fuck were we destroying and making a new surface every fucking call
 	if (surface_get_width(global.palettesurface) != surfw || surface_get_height(global.palettesurface) != surfh)
@@ -110,7 +110,7 @@ function scr_palette_texture(sprite, subimg, x, y, xscale, yscale, rot = 0, col 
 	surface_reset_target();
 	draw_surface_ext(global.palettesurface, x - xo * abs(xscale), y - yo * abs(yscale), 1, 1, 0, c_white, alpha);
 	
-	shader_set(palshader);
-	if gui
-		reset_blendmode();
+	//shader_set(palshader);
+	//if gui
+	//	reset_blendmode();
 }

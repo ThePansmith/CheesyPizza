@@ -108,7 +108,6 @@ function reset_gui_target()
 }
 function reset_blendmode()
 {
-	if live_call() return live_result;
 	gpu_set_blendmode_ext(bm_one, bm_inv_src_alpha);
 }
 function reset_shader_fix()

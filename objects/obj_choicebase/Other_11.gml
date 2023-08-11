@@ -45,7 +45,7 @@ for (var xx = -pizza_width; xx < 960 + pizza_width; xx += pizza_width)
 			pos_left, pos_top, pos_right - pos_left, pos_bottom - pos_top,
 			
 			// color and alpha
-			c_white, 0.35,
+			c_white, 0.25,
 			
 			// texture coords
 			uv_info.left, uv_info.top, uv_info.right - uv_info.left, uv_info.bottom - uv_info.top

@@ -268,7 +268,6 @@ draw = function(curve)
 		//draw_sprite_ext(characters[sel.char][1], -1, charx, chary, 2, 2, 0, c_white, curve * charshift[2]);
 		draw_sprite(characters[sel.char][1], -1, 128, 128);
 		
-		reset_shader_fix();
 		pattern_reset();
 		
 		surface_reset_target();
@@ -280,7 +279,7 @@ draw = function(curve)
 			var alphafix_pos = shader_get_uniform(shd_circleclip, "u_alphafix");
 			shader_set_uniform_f(origin_pos, 960 / 2, 540 / 2);
 			shader_set_uniform_f(radius_pos, 560 * curv_prev);
-			shader_set_uniform_f(alphafix_pos, 1);
+			shader_set_uniform_f(alphafix_pos, 0);
 		}
 		draw_surface_ext(player_surface, charx - 256, chary - 256, 2, 2, 0, c_white, curve * charshift[2]);
 	}
@@ -384,7 +383,7 @@ draw = function(curve)
 		var alphafix_pos = shader_get_uniform(shd_circleclip, "u_alphafix");
 		shader_set_uniform_f(origin_pos, 960 / 2, 540 / 2);
 		shader_set_uniform_f(radius_pos, 560 * curv_prev);
-		shader_set_uniform_f(alphafix_pos, 1);
+		shader_set_uniform_f(alphafix_pos, 0);
 	}
 	vertex_submit(vertex_buffer, pr_trianglelist, tex);
 	
@@ -417,7 +416,7 @@ draw = function(curve)
 			var alphafix_pos = shader_get_uniform(shd_circleclip, "u_alphafix");
 			shader_set_uniform_f(origin_pos, 960 / 2, 540 / 2);
 			shader_set_uniform_f(radius_pos, 560 * curv_prev);
-			shader_set_uniform_f(alphafix_pos, 1);
+			shader_set_uniform_f(alphafix_pos, 0);
 		}
 		//else // RX: I don't think we can "flash" as as selection during the intro/outro
 		//{

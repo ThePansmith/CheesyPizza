@@ -4,6 +4,9 @@ if live_call() return live_result;
 draw_set_colour(c_white);
 draw_set_align();
 
+reset_blendmode();
+reset_shader_fix();
+
 var yy = 70 - ceil(scroll);
 for(var i = 0; i < array_length(options_array); i++)
 {

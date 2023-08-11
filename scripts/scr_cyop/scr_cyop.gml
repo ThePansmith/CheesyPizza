@@ -1172,6 +1172,8 @@ global.custom_fill = 4000;
 
 function cyop_cleanup()
 {
+	cyop_freemusic();
+	
 	// sprites
 	var i = ds_map_find_first(global.custom_sprites);
 	while !is_undefined(i)
@@ -1303,15 +1305,15 @@ function cyop_load(ini)
 					
 						// properties
 						ini_open(concat(folder, "/", filename, ".ini"));
-						var loop_start = ini_read_real("loopPoints", "start", undefined);
-						var loop_end = ini_read_real("loopPoints", "end", undefined);
+						var loop_start = ini_read_real("loopPoints", "start", 0);
+						var loop_end = ini_read_real("loopPoints", "end", 0);
 						ini_close();
 					
 						// add sound
 						var snd = audio_create_stream(filepath);
-						if !is_undefined(loop_start)
+						if loop_start > 0
 							audio_sound_loop_start(snd, loop_start);
-						if !is_undefined(loop_end)
+						if loop_end > 0
 							audio_sound_loop_end(snd, loop_end);
 						
 						ds_map_add(global.custom_audio, prefix + filename, snd);
@@ -1347,8 +1349,8 @@ function cyop_load_level(ini)
 	var name = ini_read_string("data", "name", "");
 	global.custom_fill = ini_read_real("data", "escape", 4000);
 	var titlecardSprite = ini_read_string("data", "titlecardSprite", "no titlecard");
-	var titleSprite = ini_read_string("data", "titlecardSprite", "");
-	var titleSong = ini_read_string("data", "titlecardSprite", "");
+	var titleSprite = ini_read_string("data", "titleSprite", "");
+	var titleSong = ini_read_string("data", "titleSong", "");
 	ini_close();
 	
 	// rooms folder
@@ -1431,6 +1433,33 @@ function cyop_load_level(ini)
 		
 		return "Error loading rooms";
 	}
+	
+	// load in
+	with obj_player
+	{
+		scr_playerreset();
+		state = states.victory;
+		targetDoor = "A";
+		targetRoom = "main";
+	}
+	
+	titlecardSprite = cyop_resolvevalue(titlecardSprite, "sprite_index");
+	titleSprite = cyop_resolvevalue(titleSprite, "sprite_index");
+	titleSong = cyop_resolvevalue(titleSong, "sound");
+	
+	if !is_string(titlecardSprite)
+	{
+		with instance_create(0, 0, obj_titlecard)
+		{
+			titlecard_sprite = titlecardSprite;
+			titlecard_index = 0;
+			title_index = 0;
+			title_sprite = !is_string(titleSprite) ? titleSprite : spr_null;
+			title_music = !is_string(titleSong) ? titleSong : noone;
+		}
+	}
+	else
+		scr_room_goto("main");
 }
 function cyop_resolvevalue(value, varname)
 {
@@ -1463,6 +1492,13 @@ function cyop_resolvevalue(value, varname)
 			return return_value;
 		else
 			return value;
+	}
+	if varname == "visible"
+	{
+		if value == "true"
+			value = 1;
+		if value == "false"
+			value = 0;
 	}
 	return value;
 }

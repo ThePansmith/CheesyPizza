@@ -7,5 +7,5 @@ if surface_get_width(gui_surf) != display_get_gui_width() || surface_get_height(
 
 surface_set_target(gui_surf);
 draw_clear_alpha(c_black, 0);
-reset_blendmode();
-reset_shader_fix();
+//reset_blendmode();
+//reset_shader_fix();

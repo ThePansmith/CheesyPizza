@@ -149,7 +149,7 @@ if (!in_baddieroom() && important == 0)
 	}
 	add_baddieroom();
 	if (escape)
-		ds_list_add(global.escaperoom, id);
+		ds_list_add(global.escaperoom, ID);
 }
 else if (!in_baddieroom() && important == 1)
 {

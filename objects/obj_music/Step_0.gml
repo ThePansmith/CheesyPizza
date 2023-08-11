@@ -56,7 +56,7 @@ if ((global.panic or (global.snickchallenge && room != tower_sage)) && global.le
 				case "SN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeSN"); break;
 			}
 		}
-		cyop_stopall();
+		cyop_freemusic();
 		
 		trace("Starting panic music: step");
 		panicstart = true;
@@ -104,16 +104,12 @@ else
 	panicstart = false;
 	fmod_event_instance_stop(panicmusicID, true);
 	
-	if instance_exists(obj_levelLoader)
-		cyop_music();
-	else
+	if instance_exists(obj_player)
 	{
-		current_custom = noone;
-		while array_length(custom_music) > 0
-		{
-			var i = array_pop(custom_music);
-			delete i;
-		}
+		if instance_exists(obj_levelLoader)
+			cyop_music();
+		else
+			cyop_freemusic();
 	}
 }
 var _found = false;

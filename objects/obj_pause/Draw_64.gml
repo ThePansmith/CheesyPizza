@@ -3,6 +3,7 @@ if (instance_exists(obj_keyconfig))
 
 reset_blendmode();
 reset_shader_fix();
+
 if (fade > 0)
 {
 	draw_set_color(c_white);

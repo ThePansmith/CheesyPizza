@@ -10,11 +10,4 @@ if is_string(result)
 	show_message(result);
 	exit;
 }
-
-with obj_player
-{
-	scr_playerreset();
-	targetDoor = "A";
-}
-scr_room_goto("main");
 loaded = true;

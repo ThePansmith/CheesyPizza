@@ -1,6 +1,4 @@
-gpu_set_blendmode(bm_normal);
-
-if (secrettile)
+if secrettile
 {
 	var spotlight = global.secrettiles && !instance_exists(obj_fakeplayer);
 	shader_set(shd_secrettile);
@@ -60,6 +58,5 @@ else
 		}
 	}
 }
+
 tilelayer.Draw();
-reset_shader_fix();
-reset_blendmode();

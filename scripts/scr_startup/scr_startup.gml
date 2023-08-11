@@ -16,6 +16,7 @@ exception_unhandled_handler
 		instance_destroy(obj_fmod, false);
 
 		// fallback to default audio engine for this
+		audio_master_gain(1);
 		audio_play_sound(sfx_pephurt, 0, false, global.option_master_volume * global.option_sfx_volume);
 		
 		// show and log the crash

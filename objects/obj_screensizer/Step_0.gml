@@ -6,12 +6,21 @@ else
 if global.option_unfocus_mute
 {
 	if window_has_focus()
+	{
+		audio_master_gain(global.option_master_volume);
 		fmod_set_parameter("focus", 1, false);
+	}
 	else
+	{
+		audio_master_gain(0);
 		fmod_set_parameter("focus", 0, false);
+	}
 }
 else
+{
+	audio_master_gain(global.option_master_volume);
 	fmod_set_parameter("focus", 1, false);
+}
 
 if REMIX
 {

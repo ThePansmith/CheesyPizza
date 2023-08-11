@@ -105,4 +105,4 @@ else if (global.panic or global.snickchallenge)
 }
 
 draw_surface(bg_surface, cam_x, cam_y);
-shader_reset();
+shader_reset(); // remove this for cool effect

@@ -1,3 +1,6 @@
+reset_blendmode();
+reset_shader_fix();
+
 draw_set_font(lang_get_font("bigfont"));
 draw_set_alpha(1);
 draw_set_halign(fa_left);
@@ -46,3 +49,6 @@ for (var i = i1; i < array_length(input); i++)
 	else
 		draw_text_color((SCREEN_WIDTH / 2) + 100, yy, lang_get_value("option_none"), c, c, c, c, 1);
 }
+
+gpu_set_blendmode(bm_normal);
+shader_reset();

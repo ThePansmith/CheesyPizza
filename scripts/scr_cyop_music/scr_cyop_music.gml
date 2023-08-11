@@ -21,18 +21,28 @@ function cyop_music()
 		else
 		{
 			if song.instance == noone
-				song.instance = audio_play_sound(song.event, 0, true, global.option_master_volume * global.option_music_volume);
+				song.instance = audio_play_sound(song.event, 0, true, global.option_music_volume * 0.5);
 			else if audio_is_paused(song.instance)
 				audio_resume_sound(song.instance);
 		}
 	}
 }
-function cyop_stopall()
+function cyop_freemusic()
 {
-	current_custom = noone;
-	for(var i = 0; i < array_length(custom_music); i++)
+	with obj_music
 	{
-		var song = custom_music[i];
-		sound_stop(song.instance);
+		current_custom = noone;
+		while array_length(custom_music) > 0
+		{
+			var i = array_pop(custom_music);
+			if i.fmod
+			{
+				fmod_event_instance_stop(i.fmod);
+				fmod_event_instance_release(i.instance);
+			}
+			else
+				audio_stop_sound(i.instance);
+			delete i;
+		}
 	}
 }

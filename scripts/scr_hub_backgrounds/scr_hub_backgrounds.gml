@@ -61,10 +61,10 @@ function scr_hub_bg_draw(x, y, sprite, frame, reset_blend = false)
 			draw_clear(0);
 			gpu_set_blendmode(3);
 			draw_sprite(sprite, frame, x1, y1);
-			if (!reset_blend)
+			//if (!reset_blend)
 				gpu_set_blendmode(0);
-			else
-				reset_blendmode();
+			//else
+			//	reset_blendmode();
 			surface_reset_target();
 		}
 		if (!surface_exists(bgclip_surface))
@@ -87,10 +87,10 @@ function scr_hub_bg_draw(x, y, sprite, frame, reset_blend = false)
 		}
 		gpu_set_blendmode(3);
 		draw_surface(bgmask_surface, 0, 0);
-		if (!reset_blend)
+		//if (!reset_blend)
 			gpu_set_blendmode(0);
-		else
-			reset_blendmode();
+		//else
+		//	reset_blendmode();
 		surface_reset_target();
 		draw_surface(bgclip_surface, x - x1, y - y1);
 	}

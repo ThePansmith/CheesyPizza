@@ -222,17 +222,12 @@ function scr_cameradraw_old()
 		
 		if sprite_exists(hudface)
 		{
-			gpu_set_blendmode(bm_normal);
-			
 			shader_set(shd_pal_swapper);
 			pattern_set(global.Base_Pattern_Color, hudface, -1, 1, 1, global.palettetexture);
 			if _state != states.cotton
 				pal_swap_set(player.spr_palette, player.paletteselect, false);
 			draw_sprite_ext(hudface, -1, xx, global.heatmeter ? 125 : 100, 1, 1, 0, c_white, alpha);
 			pal_swap_reset();
-			
-			reset_blendmode();
-			reset_shader_fix();
 			
 			// image speed
 			var sprspd = sprite_get_speed(hudface);

@@ -14,6 +14,7 @@ function scr_perform_move(move, prestate = state)
 	{
 		attackstyle = 1; // kungfu
 		doublegrab = 3; // chainsaw
+		global.fuel = 3;
 	}
 	if move == moves.grabattack
 	{
