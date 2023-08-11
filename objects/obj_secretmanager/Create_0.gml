@@ -8,3 +8,4 @@ touchall = ds_list_create();
 touchrequirement = -4;
 init = false;
 waittime = 0;
+touchedtriggers = 0;

@@ -60,9 +60,9 @@ if obj_player1.character == "SP" or obj_player1.character == "SN"
 {
 	alarm[2] = room_speed * 2;
 	if global.rank == "p" or obj_endlevelfade.sugary
-		alarm[2] = room_speed * 3;
-	if global.rank == "d" && obj_endlevelfade.sugary
-		alarm[2] = room_speed * 4;
+		alarm[2] = room_speed * 2.5;
+	if global.rank == "d"
+		alarm[2] = room_speed * 4.2;
 }
 if obj_player.character == "BN" && (global.rank == "d" or global.rank == "c" or global.rank == "b")
 	alarm[2] = room_speed * 2;

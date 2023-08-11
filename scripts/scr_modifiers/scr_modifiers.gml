@@ -6,6 +6,7 @@ enum MOD
     HardMode = (1 << 4), // 16
     Mirror = (1 << 5), // 32
     Lap3 = (1 << 6), // 64
+    DeathMode = (1 << 7), // 128
 }
 global.modifier = 0;
 global.modifier_failed = false;

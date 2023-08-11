@@ -47,7 +47,7 @@ function meta_level()
 		suggestions: [
 			["entrance", "medieval", "ruin", "dungeon", "badland", "graveyard", "farm", "saloon", "plage", "forest", "space", "minigolf", "street", "sewer", "industrial", "freezer", "kidsparty", "chateau", "war", "exit",
 			"oldexit", "beach", "mansion", "strongcold", "dragonlair", "etb", "ancient", "grinch", "snickchallenge", "midway",
-			"entryway", "steamy", "sucrose"]
+			"entryway", "steamy", "molasses", "sucrose"]
 		]
 	}
 }

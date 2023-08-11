@@ -14,6 +14,7 @@ function sh_modifier(args)
 		case "HardMode": modifier = MOD.HardMode; break;
 		case "Mirror": modifier = MOD.Mirror; break;
 		case "Lap3": modifier = MOD.Lap3; break;
+		case "DeathMode": modifier = MOD.DeathMode; break;
 		
 		default: return "Modifier not found";
 	}
@@ -28,7 +29,7 @@ function meta_modifier()
 		description: "toggle a modifier",
 		arguments: ["modifier"],
 		suggestions: [
-			["Encore", "Pacifist", "NoToppings", "HardMode", "Mirror", "Lap3"]
+			["Encore", "Pacifist", "NoToppings", "HardMode", "Mirror", "Lap3", "DeathMode"]
 		],
 	}
 }

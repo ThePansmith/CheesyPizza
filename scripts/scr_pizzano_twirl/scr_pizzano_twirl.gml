@@ -32,7 +32,7 @@ function scr_pizzano_twirl()
 			movespeed -= 0.75;
 	}
 	
-	if (key_down2 && !grounded && vsp < 10)
+	if (key_down && !grounded && vsp < 10)
         vsp = 10
 	if !key_jump2 && vsp < -2
 		vsp = -2;
