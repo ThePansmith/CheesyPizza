@@ -67,12 +67,18 @@ if (instance_exists(obj_player))
 {
 	with (obj_player1)
 	{
-		if (other.fadein == 1 && (obj_player1.state == states.door || obj_player1.state == states.victory) && (sprite_index == spr_victory || place_meeting(x, y, obj_door) || place_meeting(x, y, obj_startgate) || place_meeting(x, y, obj_hubelevator)))
+		if (other.fadein == 1 && (state == states.door || state == states.victory) && (sprite_index == spr_victory || place_meeting(x, y, obj_door) || place_meeting(x, y, obj_startgate) || (place_meeting(x, y, obj_exitgate) && instance_exists(obj_levelLoader)) || place_meeting(x, y, obj_hubelevator)))
 		{
 			state = states.comingoutdoor;
 			image_index = 0;
 		}
-		if (other.fadein == 1 && obj_player1.state == states.door && (obj_player1.sprite_index == spr_downpizzabox || obj_player1.sprite_index == spr_uppizzabox))
+		if (other.fadein == 1 && state == -1)
+		{
+			state = states.comingoutdoor;
+			image_index = 0;
+			visible = true;
+		}
+		if (other.fadein == 1 && state == states.door && (sprite_index == spr_downpizzabox || sprite_index == spr_uppizzabox))
 		{
 			if isgustavo
 				state = states.ratmountcrouch;

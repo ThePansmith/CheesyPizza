@@ -46,6 +46,8 @@ function stop_music()
 		}
 		fmod_event_instance_stop(pillarmusicID, true);
 		fmod_event_instance_stop(panicmusicID, true);
+		
+		cyop_freemusic();
 	}
 }
 function hub_state(_room, _sound, _secretsound)

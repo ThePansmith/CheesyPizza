@@ -132,13 +132,11 @@ function scr_playerreset(roomstart = false, restart = false)
 			bubblespr = -4;
 			promptx = promptxstart;
 			tv_bg_index = 0;
-			if (!global.levelreset)
-			{
-				sprite_index = spr_tv_off;
-				tvsprite = spr_tv_idle;
-				state = states.normal;
-				tv_set_idle();
-			}
+			
+			sprite_index = spr_tv_off;
+			tvsprite = spr_tv_idle;
+			state = states.normal;
+			tv_set_idle();
 		}
 		with (obj_secretmanager)
 		{

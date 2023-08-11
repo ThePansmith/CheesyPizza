@@ -1,7 +1,7 @@
 /// @description create layers
 
 live_auto_call;
-global.cyop_broken_tiles = [ ];
+global.cyop_broken_tiles = [];
 
 // clean up
 with obj_persistent
@@ -35,9 +35,8 @@ for(var i = 0; i < array_length(_room.instances); i++)
 			}
 	}
 	
-	
 	// add instance
-	var inst = instance_create_depth(inst_data.variables.x - prop.roomX, inst_data.variables.y - prop.roomY, 100 - inst_data.layer, asset);
+	var inst = instance_create_depth(inst_data.variables.x - prop.roomX, inst_data.variables.y - prop.roomY, -inst_data.layer, asset);
 	if instance_exists(inst) // sometimes it fucking doesn't
 	{
 		variable_instance_set(inst, "targetRoom", "main");
@@ -225,17 +224,6 @@ if !is_string(event) or fmod
 {
 	with obj_music
 	{
-		if current_custom != noone
-		{
-			if custom_music[current_custom].fmod
-			{
-				fmod_event_instance_set_paused(custom_music[current_custom].instance, true);
-				custom_music[current_custom].paused = true;
-			}
-			else
-				audio_sound_gain(custom_music[current_custom].instance, 0, fade);
-		}
-		
 		var found = -1;
 		for(var i = 0; i < array_length(custom_music); i++)
 		{
@@ -244,6 +232,17 @@ if !is_string(event) or fmod
 				found = i;
 				break;
 			}
+		}
+		
+		if current_custom != noone && found != current_custom
+		{
+			if custom_music[current_custom].fmod
+			{
+				fmod_event_instance_set_paused(custom_music[current_custom].instance, true);
+				custom_music[current_custom].paused = true;
+			}
+			else
+				audio_sound_gain(custom_music[current_custom].instance, 0, fade);
 		}
 		
 		if found > -1

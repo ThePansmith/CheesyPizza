@@ -7,7 +7,7 @@ with (obj_player1)
 	global.leveltorestart = -4;
 	pistolanim = -4;
 	targetDoor = "HUB";
-	room = backtohubroom;
+	scr_room_goto(backtohubroom);
 	x = backtohubstartx;
 	y = backtohubstarty;
 }

@@ -1169,6 +1169,8 @@ global.custom_tiles = -1; // ds_map
 global.room_map = -1; // ds_map
 global.asset_cache = -1; // ds_map
 global.custom_fill = 4000;
+global.custom_path = "";
+global.hub_level = "";
 
 function cyop_cleanup()
 {
@@ -1219,28 +1221,37 @@ function cyop_asset(str)
 }
 function cyop_load(ini)
 {
-	if live_call(ini) return live_result;
-	
 	// load ini
 	ini_open(ini);
-	var type = ini_read_real("properties", "type", -1); // 0 - tower, 1 - level
+	var type = ini_read_real("properties", "type", 0); // 0 - tower, 1 - level
 	var name = ini_read_string("properties", "name", "");
 	var mainlevel = ini_read_string("properties", "mainlevel", "");
 	ini_close();
 	
 	// target level
+	/*
 	var targetLevel = "";
 	switch type
 	{
 		default:
 			return "Level type currently unsupported";
 		
+		case 0: // tower
+			
+			break;
+		
 		case 1: // level
-			var targetLevel = concat(filename_path(ini), "/levels/", mainlevel, "/level.ini");
-			if !file_exists(targetLevel)
-				return "Main level doesn't exist";
+	*/
+	
+	global.custom_path = filename_path(ini);
+	var targetLevel = concat(global.custom_path, "/levels/", mainlevel, "/level.ini");
+	if !file_exists(targetLevel)
+		return "Main level doesn't exist";
+	
+	/*
 			break;
 	}
+	*/
 	
 	recursive_func = function(folder, prefix)
 	{
@@ -1338,6 +1349,7 @@ function cyop_load(ini)
 	recursive_func(concat(filename_path(ini), "/audio"), "");
 	
 	// load into the main level
+	global.hub_level = targetLevel;
 	return cyop_load_level(targetLevel);
 }
 function cyop_load_level(ini)
@@ -1399,26 +1411,6 @@ function cyop_load_level(ini)
 			view_camera[0] = camera_create_view(0, 0, room_width, room_height);
 			room_set_camera(_room, 0, view_camera[0]);
 			
-			layer_set_target_room(_room);
-			
-			// instance LAYERS
-			/*
-			var objects = cyop_objectlist();
-			for(var i = 0; i < array_length(json.instances); i++)
-			{
-				var inst = json.instances[i];
-				if inst.deleted
-					continue;
-				
-				// create layer
-				var lay_name = $"Instances_{inst.layer}";
-				if !layer_exists(lay_name)
-					var lay = layer_create(100 - inst.layer, lay_name);
-			}
-			*/
-			
-			layer_reset_target_room();
-			
 			room_file = file_find_next();
 			r++;
 		}
@@ -1435,31 +1427,41 @@ function cyop_load_level(ini)
 	}
 	
 	// load in
-	with obj_player
+	global.leveltorestart = "main";
+	global.leveltosave = "custom";
+	
+	var reset = global.levelreset;
+	global.levelreset = false;
+	
+	scr_playerreset();
+	with obj_player1
 	{
-		scr_playerreset();
-		state = states.victory;
-		targetDoor = "A";
+		if !reset
+			visible = false;
+		state = -1;
+		targetDoor = reset ? "HUB" : "A";
 		targetRoom = "main";
 	}
+	with obj_camera
+		lock = true;
 	
 	titlecardSprite = cyop_resolvevalue(titlecardSprite, "sprite_index");
 	titleSprite = cyop_resolvevalue(titleSprite, "sprite_index");
 	titleSong = cyop_resolvevalue(titleSong, "sound");
 	
-	if !is_string(titlecardSprite)
+	if !is_string(titlecardSprite) && titlecardSprite != spr_null
 	{
 		with instance_create(0, 0, obj_titlecard)
 		{
 			titlecard_sprite = titlecardSprite;
 			titlecard_index = 0;
 			title_index = 0;
-			title_sprite = !is_string(titleSprite) ? titleSprite : spr_null;
-			title_music = !is_string(titleSong) ? titleSong : noone;
+			title_sprite = titleSprite;
+			title_music = titleSong;
 		}
 	}
 	else
-		scr_room_goto("main");
+		instance_create(0, 0, obj_fadeout);
 }
 function cyop_resolvevalue(value, varname)
 {
@@ -1471,7 +1473,7 @@ function cyop_resolvevalue(value, varname)
 		else
 			return obj_null;
 	}
-	if varname == "sprite_index"
+	if varname == "sprite_index" or varname == "bgsprite" or varname == "titlecard_sprite" or varname == "title_sprite"
 	{
 		var return_value = cyop_asset(value);
 		if sprite_exists(return_value)
@@ -1485,7 +1487,7 @@ function cyop_resolvevalue(value, varname)
 				return spr_null;
 		}
 	}
-	if varname == "sound"
+	if varname == "sound" or varname == "title_music"
 	{
 		return_value = ds_map_find_value(global.custom_audio, value);
 		if !is_undefined(return_value)

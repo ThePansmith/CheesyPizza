@@ -1,7 +1,16 @@
 pause = false;
 scr_pause_stop_sounds();
+
 var rm = room;
-if (!hub)
+if instance_exists(obj_levelLoader)
+{
+	scr_pause_activate_objects();
+	with instance_create(0, 0, obj_backtohub_fadeout)
+		fadealpha = 0.9;
+	global.levelreset = true;
+	cyop_load_level(global.hub_level);
+}
+else if !hub
 {
 	pause = false;
 	scr_pause_activate_objects();

@@ -37,7 +37,7 @@ function cyop_freemusic()
 			var i = array_pop(custom_music);
 			if i.fmod
 			{
-				fmod_event_instance_stop(i.fmod);
+				fmod_event_instance_stop(i.instance, true);
 				fmod_event_instance_release(i.instance);
 			}
 			else

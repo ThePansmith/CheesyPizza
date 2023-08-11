@@ -26,3 +26,6 @@ title_music = "event:/music/w1/entrancetitle";
 transfotip = noone;
 msg = "";
 door_index = -1;
+
+// FOR USE IN CYOP.
+levelName = "";

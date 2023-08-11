@@ -17,14 +17,11 @@ with (other)
 		global.hub_bgsprite = other.bgsprite;
 		backtohubstartx = x;
 		backtohubstarty = y;
-		backtohubroom = room;
+		backtohubroom = instance_exists(obj_levelLoader) ? obj_levelLoader.room_name : room;
 		mach2 = 0;
 		obj_camera.chargecamera = 0;
 		image_index = 0;
 		state = states.victory;
-		obj_player2.backtohubstartx = x;
-		obj_player2.backtohubstarty = y;
-		obj_player2.backtohubroom = room;
 		exit;
 	}
 }
@@ -39,7 +36,16 @@ if floor(other.image_index) == other.image_number - 1 && other.state == states.v
 			global.exitrank = true;
 		if (targetRoom == tower_finalhallway)
 			global.exitrank = true;
-		if (gate.level != "tutorial")
+		
+		if gate.levelName != ""
+		{
+			var targetLevel = concat(global.custom_path, "/levels/", gate.levelName, "/level.ini");
+			if !file_exists(targetLevel)
+				show_message($"{gate.levelName} level doesn't exist");
+			else
+				cyop_load_level(targetLevel);
+		}
+		else if gate.level != "tutorial"
 		{
 			if (gate.object_index != obj_bossdoor)
 			{
