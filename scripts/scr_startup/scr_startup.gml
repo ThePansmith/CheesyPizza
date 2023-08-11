@@ -16,10 +16,8 @@ exception_unhandled_handler
 		instance_destroy(obj_fmod, false);
 
 		// fallback to default audio engine for this
-		if obj_richpresence.a == "1090299404549890148"
-			audio_play_sound(sfx_fiddlesticks, 0, false, global.option_master_volume * global.option_sfx_volume);
-		else
-			audio_play_sound(sfx_pephurt, 0, false, global.option_master_volume * global.option_sfx_volume);
+		audio_play_sound(sfx_pephurt, 0, false, global.option_master_volume * global.option_sfx_volume);
+		
 		// show and log the crash
 	    show_debug_message(string(e));
 		show_message("The game crashed! longMessage:\n\n" + e.longMessage);
@@ -47,7 +45,7 @@ if test_dll_linkage() != 1
 
 // macros
 #macro REMIX global.gameplay
-#macro DEBUG true//(GM_build_type == "run")
+#macro DEBUG (GM_build_type == "run")
 #macro YYC code_is_compiled()
 
 #macro STRING_UNDEFINED "<undefined>"
@@ -83,6 +81,7 @@ global.sugarypromptfont = font_add_sprite_ext(spr_promptfont, "ABCDEFGHIJKLMNOPQ
 global.candlefont = font_add_sprite_ext(spr_fontcandle, "0123456789", true, 0);
 global.smallfont_ss = font_add_sprite_ext(spr_smallfont_ss, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.:?1234567890-", true, 0);
 //global.smallnumber_fnt = font_add_sprite_ext(spr_smallnumber, "1234567890-+", true, 0);
+
 // language font map
 global.font_map = ds_map_create();
 
@@ -90,6 +89,7 @@ ds_map_set(global.font_map, "bigfont_en", global.bigfont);
 ds_map_set(global.font_map, "smallfont_en", global.smallfont);
 ds_map_set(global.font_map, "tutorialfont_en", global.tutorialfont);
 ds_map_set(global.font_map, "creditsfont_en", global.creditsfont);
+
 var key = ds_map_find_first(global.lang_map);
 for (var i = 0; i < ds_map_size(global.lang_map); i++)
 {
@@ -140,7 +140,6 @@ if os_version < 655360 or os_type != os_windows // below windows 10
 	global.gameframe_enabled = false;
 }
 window_set_showborder(!global.gameframe_enabled);
-
 
 ini_close();
 

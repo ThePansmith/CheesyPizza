@@ -14,8 +14,6 @@ with obj_parallax
 
 // add instances
 var prop = _room.properties;
-
-
 for(var i = 0; i < array_length(_room.instances); i++)
 {
 	var inst_data = _room.instances[i];
@@ -182,9 +180,9 @@ for(var i = 0; i < array_length(tile_layers); i++)
 		array_push(tiles_array, tile);
 	}
 	
-	var depp = 100 + layer_num;
+	var depp = 50 + layer_num;
 	if layer_num < 0
-		depp = -100 + layer_num;
+		depp = -50 + layer_num;
 	tilelayer.Build(tiles_array, depp);
 	
 	var inst = instance_create_depth(0, 0, depp, obj_cyop_tilelayer, {tilelayer: tilelayer, secrettile: layer_num <= -5});
@@ -199,9 +197,77 @@ for(var i = 0; i < array_length(tile_layers); i++)
 	if in_saveroom(inst.id)
 		inst.revealed = true;
 }
-delete _room;
+
+
+// song
+var song = _room.properties.song;
+var state = 0, fmod = string_starts_with(song, "event:");
+
+if fmod && string_pos(".", song) != 0
+{
+	/*
+		event:/music/w1/ruin.1
+		the end part (.1) is the state
+	*/
+	var split = string_split(song, ".");
+	song = split[0];
+	state = real(split[1]);
+}
+
+if !fmod
+	var event = cyop_resolvevalue(song, "sound");
+else
+	var event = song;
+
+if !is_string(event) or fmod
+{
+	with obj_music
+	{
+		if current_custom != noone
+		{
+			var song = custom_music[current_custom];
+			if song.fmod
+			{
+				fmod_event_instance_set_paused(song.instance);
+				song.paused = true;
+			}
+			else
+				audio_sound_gain(song.instance, 0, _room.properties.songTransitionTime);
+		}
+		
+		var found = -1;
+		for(var i = 0; i < array_length(custom_music); i++)
+		{
+			if i.event == event
+			{
+				found = i;
+				break;
+			}
+		}
+		
+		if found
+		{
+			current_custom = found;
+			
+			var song = custom_music[found];
+			if song.fmod
+			{
+				song.paused = false;
+				fmod_event_instance_set_paused(song.instance, false);
+			}
+			else
+				audio_sound_gain(song, global.option_master_volume * global.option_music_volume, _room.properties.songTransitionTime);
+		}
+		else
+		{
+			current_custom = array_length(custom_music);
+			array_push(custom_music, {event: event, instance: noone, fmod: fmod, state: state, paused: false});
+		}
+	}
+}
 
 // do it asshole
+delete _room;
 with obj_player
 	event_perform(ev_other, ev_room_start);
 with all

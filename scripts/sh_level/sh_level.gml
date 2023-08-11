@@ -2,6 +2,7 @@ function sh_level(args)
 {
 	if !WC_debug
 		return "You do not have permission to use this command";
+	instance_destroy(obj_levelLoader);
 	isOpen = false;
 	
 	var level = args[1], targetRoom = -1;

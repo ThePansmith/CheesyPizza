@@ -1,3 +1,6 @@
+if instance_exists(obj_levelLoader)
+	exit;
+
 if ((!global.panic && !global.snickchallenge) or global.leveltosave == "dragonlair" or global.leveltosave == "grinch")
 {
 	var mu = ds_map_find_value(music_map, room);

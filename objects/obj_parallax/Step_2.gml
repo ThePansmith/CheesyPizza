@@ -8,7 +8,7 @@ for(var i = 0; i < array_length(roombgs); i++)
 	l.x += layer_get_hspeed(l.layer_id);
 	l.y += layer_get_vspeed(l.layer_id);
 	
-	if instance_exists(obj_levelLoader)
+	if variable_struct_exists(l, "par_x")
 		var parallax = [_cam_x * l.par_x, _cam_y * l.par_y];
 	else
 	{

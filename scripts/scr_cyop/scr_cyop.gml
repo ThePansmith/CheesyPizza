@@ -1163,6 +1163,7 @@ function cyop_objectlist()
 #endregion
 
 global.custom_rooms = []; // [[runtime_room_index, json]]
+global.custom_audio = -1; // ds_map
 global.custom_sprites = -1; // ds_map
 global.custom_tiles = -1; // ds_map
 global.room_map = -1; // ds_map
@@ -1171,8 +1172,34 @@ global.custom_fill = 4000;
 
 function cyop_cleanup()
 {
+	// sprites
+	var i = ds_map_find_first(global.custom_sprites);
+	while !is_undefined(i)
+	{
+		sprite_delete(global.custom_sprites[?i]);
+		i = ds_map_find_next(global.custom_sprites, i);
+	}
 	ds_map_clear(global.custom_sprites);
+	
+	// tiles
+	var i = ds_map_find_first(global.custom_tiles);
+	while !is_undefined(i)
+	{
+		sprite_delete(global.custom_tiles[?i][0]);
+		i = ds_map_find_next(global.custom_tiles, i);
+	}
 	ds_map_clear(global.custom_tiles);
+	
+	// audio
+	var i = ds_map_find_first(global.custom_audio);
+	while !is_undefined(i)
+	{
+		audio_destroy_stream(global.custom_audio[?i]);
+		i = ds_map_find_next(global.custom_audio, i);
+	}
+	ds_map_clear(global.custom_audio);
+	
+	// etc
 	ds_map_clear(global.room_map);
 	ds_map_clear(global.asset_cache);
 }
@@ -1228,6 +1255,9 @@ function cyop_load(ini)
 				else
 				{
 					var ext = filename_ext(file);
+					
+					#region SPRITE
+					
 					if ext == ".png"
 					{
 						var filename = string_replace(file, ext, "");
@@ -1262,6 +1292,32 @@ function cyop_load(ini)
 						else
 							ds_map_add(global.custom_sprites, prefix + filename, spr);
 					}
+					
+					#endregion
+					#region AUDIO
+					
+					if ext == ".ogg"
+					{
+						var filename = string_replace(file, ext, "");
+						var filepath = concat(folder, "/", file);
+					
+						// properties
+						ini_open(concat(folder, "/", filename, ".ini"));
+						var loop_start = ini_read_real("loopPoints", "start", undefined);
+						var loop_end = ini_read_real("loopPoints", "end", undefined);
+						ini_close();
+					
+						// add sound
+						var snd = audio_create_stream(filepath);
+						if !is_undefined(loop_start)
+							audio_sound_loop_start(snd, loop_start);
+						if !is_undefined(loop_end)
+							audio_sound_loop_end(snd, loop_end);
+						
+						ds_map_add(global.custom_audio, prefix + filename, snd);
+					}
+					
+					#endregion
 				}
 				file = file_find_next();
 			}
@@ -1275,8 +1331,9 @@ function cyop_load(ini)
 		}
 	}
 	
-	// load sprites
+	// load sprites and audio
 	recursive_func(concat(filename_path(ini), "/sprites"), "");
+	recursive_func(concat(filename_path(ini), "/audio"), "");
 	
 	// load into the main level
 	return cyop_load_level(targetLevel);
@@ -1398,6 +1455,14 @@ function cyop_resolvevalue(value, varname)
 			else
 				return spr_null;
 		}
+	}
+	if varname == "sound"
+	{
+		return_value = ds_map_find_value(global.custom_audio, value);
+		if !is_undefined(return_value)
+			return return_value;
+		else
+			return value;
 	}
 	return value;
 }
