@@ -1,5 +1,6 @@
 if !in_saveroom()
 {
+	trace("adding to save room!");
 	repeat (8 * max(abs(image_xscale), abs(image_yscale)))
 	{
 		with (create_debris(x + random_range(0, sprite_width), y + random_range(0, sprite_height), particlespr))
@@ -26,6 +27,3 @@ else
 	scr_destroy_tile_arr(32, targettiles);
 scr_destroy_nearby_tiles();
 depth = 1;
-
-for (var i = 0; i < array_length(vertex_buffers); i++)
-	vertex_delete_buffer(vertex_buffers[i]);

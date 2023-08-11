@@ -16,8 +16,10 @@ exception_unhandled_handler
 		instance_destroy(obj_fmod, false);
 
 		// fallback to default audio engine for this
-		audio_play_sound(sfx_pephurt, 0, false, global.option_master_volume * global.option_sfx_volume);
-
+		if obj_richpresence.a == "1090299404549890148"
+			audio_play_sound(sfx_fiddlesticks, 0, false, global.option_master_volume * global.option_sfx_volume);
+		else
+			audio_play_sound(sfx_pephurt, 0, false, global.option_master_volume * global.option_sfx_volume);
 		// show and log the crash
 	    show_debug_message(string(e));
 		show_message("The game crashed! longMessage:\n\n" + e.longMessage);

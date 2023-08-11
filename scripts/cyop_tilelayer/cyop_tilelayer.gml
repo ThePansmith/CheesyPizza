@@ -76,7 +76,7 @@ function cyop_tilelayer() constructor
 				//tile_tex_pos_y += (tex_h / 2);
 				
 			
-                vertex_build_quad3D(target_vertex_buffer, 
+                vertex_build_quad3D(vertex_buffers[tex_it], 
                                 tile.x, tile.y, _depth, tile.size_x,  tile.size_y,// Pos and Size
                                 c_white, 1, // Color and Opacity
                                 tile_tex_pos_x, tile_tex_pos_y, tile_tex_size_x, tile_tex_size_y);
@@ -99,9 +99,6 @@ function cyop_tilelayer() constructor
 	/// @desc	Disposes of all unmanaged resources
 	static Dispose = function()
 	{
-		for (var i = 0; i < array_length(secretblocks); i++)
-			vertex_format_delete(secretblocks[1]);
-				
 		for (var i = 0; i < array_length(tiles); i++)
 			delete tiles[i];
 		

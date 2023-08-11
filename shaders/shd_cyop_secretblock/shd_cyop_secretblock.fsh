@@ -8,24 +8,35 @@ varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 varying vec2 v_vPosition;
 
-#define SECRETBLOCK_COUNT_MAX 512
-#define FLOAT_SIZE 4
+#define SECRETBLOCK_COUNT_MAX 2048.0
 // X Y
 #define SECRETBLOCK_STRUCT_MEMBER_COUNT 2
-#define SECRET_BLOCK_INFO_ARRAY_SIZE SECRETBLOCK_COUNT_MAX * FLOAT_SIZE * SECRETBLOCK_STRUCT_MEMBER_COUNT;
 
-uniform float u_secret_block_info[SECRETBLOCK_COUNT_MAX * FLOAT_SIZE * SECRETBLOCK_STRUCT_MEMBER_COUNT];
+uniform float u_secret_block_info[4096];
+uniform float u_array_size;
+uniform vec2 u_tile_size;
 
 void main()
 {
 	vec4 game_out_color = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
-	bool broken = false;
 	
-	
-	for (float i = 0; i < SECRET_BLOCK_INFO_ARRAY_SIZE; i++)
+	bool broke = false;
+
+	for (int i = 0; i < int(u_array_size); i++)
 	{
+		int index = i * 2;
+		float xx = u_secret_block_info[index + 0];
+		float yy = u_secret_block_info[index + 1];
 		
+		float right = (xx + u_tile_size.x);
+		float bottom = (yy + u_tile_size.y);
+		
+		if (xx <= v_vPosition.x && v_vPosition.x <= right && yy <= v_vPosition.y && v_vPosition.y <= bottom)
+		{
+			broke = true;
+			break;
+		}
 	}
 	
-    gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
+    gl_FragColor = vec4(game_out_color.rgb, broke ? 0.0 : game_out_color.a);
 }

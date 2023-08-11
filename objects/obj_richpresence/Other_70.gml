@@ -42,7 +42,7 @@ switch async_load[? "event_type"]
 				show_message(str);
 			}
 			if a == "188430471040991235" or a == "317071206815891466" // scout or indigo
-				show_message("Are you gonna credit me for the decomp?");
+				show_message("Are you gonna credit me for the decomp?"); // RX: No they won't haha
 			//if a == "817309415781957700" // el jeof rey
 			//	show_message("Introducing: Poopin' Dario!");
 			if a == "867446393471893515" // Denchick

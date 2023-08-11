@@ -1,6 +1,7 @@
 /// @description create layers
 
 live_auto_call;
+global.cyop_broken_tiles = [ ];
 
 // clean up
 with obj_persistent
@@ -14,7 +15,7 @@ with obj_parallax
 // add instances
 var prop = _room.properties;
 
-var secret_blocks = [];
+
 for(var i = 0; i < array_length(_room.instances); i++)
 {
 	var inst_data = _room.instances[i];
@@ -57,11 +58,6 @@ for(var i = 0; i < array_length(_room.instances); i++)
 				
 				with instance_create(inst.x, inst.y - 42, obj_pizzasonacollect)
 					collectID = inst.id;
-				break;
-			case "obj_secretblock":
-			case "obj_secretbigblock":
-			case "obj_secretmetalblock":
-				array_push(secret_blocks, inst);
 				break;
 		}
 		
@@ -189,7 +185,7 @@ for(var i = 0; i < array_length(tile_layers); i++)
 	var depp = 100 + layer_num;
 	if layer_num < 0
 		depp = -100 + layer_num;
-	tilelayer.Build(tiles_array, depp, secret_blocks);
+	tilelayer.Build(tiles_array, depp);
 	
 	var inst = instance_create_depth(0, 0, depp, obj_cyop_tilelayer, {tilelayer: tilelayer, secrettile: layer_num <= -5});
 	

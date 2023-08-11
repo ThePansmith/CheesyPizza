@@ -16,6 +16,20 @@ function scr_destroy_tiles(_size, _layer, _spread = 0)
 				scr_destroy_tile(x + (xx * _size * ix), y + (yy * _size * iy), map_id);
 		}
 	}
+	else if instance_exists(obj_levelLoader)
+	{
+		var w = abs(sprite_width) / _size;
+		var h = abs(sprite_height) / _size;
+		var ix = sign(image_xscale);
+		var iy = sign(image_yscale);
+		if (ix < 0)
+			w++;
+		for (var yy = 0 - _spread; yy < (h + _spread); yy++)
+		{
+			for (var xx = 0 - _spread; xx < (w + _spread); xx++)
+				scr_destroy_tile(x + (xx * _size * ix), y + (yy * _size * iy), -1);
+		}
+	}
 }
 function scr_destroy_tile_arr(_size, _array, _spread = 0)
 {
@@ -24,9 +38,21 @@ function scr_destroy_tile_arr(_size, _array, _spread = 0)
 }
 function scr_destroy_tile(x, y, tilemap)
 {
-	var data = tilemap_get_at_pixel(tilemap, x, y);
-	data = tile_set_empty(data);
-	tilemap_set_at_pixel(tilemap, data, x, y);
+	if (tilemap != -1)
+	{
+		var data = tilemap_get_at_pixel(tilemap, x, y);
+		data = tile_set_empty(data);
+		tilemap_set_at_pixel(tilemap, data, x, y);
+	}
+	else if instance_exists(obj_levelLoader) 
+	{
+		for (var i = 0; i < array_length(global.cyop_broken_tiles); i += 2)
+		{
+			if (global.cyop_broken_tiles[i] == x && global.cyop_broken_tiles[i + 1] == y)
+				return;
+		}
+		array_push(global.cyop_broken_tiles, x, y);
+	}
 }
 function scr_solid_line(instance)
 {

@@ -26,7 +26,19 @@ if (secrettile)
 		shader_set_uniform_f(fade_intensity, global.secrettile_fade_intensity);
 	}
 }
+else
+{
+	shader_set(shd_cyop_secretblock);
+	var secret_block_info = shader_get_uniform(shd_cyop_secretblock, "u_secret_block_info");
+	var array_size = shader_get_uniform(shd_cyop_secretblock, "u_array_size");
+	var tile_size = shader_get_uniform(shd_cyop_secretblock, "u_tile_size");
+	
+	if array_length(global.cyop_broken_tiles) > 0
+	{
+		shader_set_uniform_f_array(secret_block_info, global.cyop_broken_tiles);
+		shader_set_uniform_f(array_size, array_length(global.cyop_broken_tiles) / 2);
+		shader_set_uniform_f(tile_size, tilelayer.tilesize_x, tilelayer.tilesize_y);
+	}
+}
 tilelayer.Draw();
-
-if secrettile
-	shader_reset();
+shader_reset();
