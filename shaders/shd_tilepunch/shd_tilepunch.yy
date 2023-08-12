@@ -1,10 +1,10 @@
 {
   "resourceType": "GMShader",
   "resourceVersion": "1.0",
-  "name": "shd_cyop_secretblock",
+  "name": "shd_tilepunch",
   "parent": {
-    "name": "Shaders",
-    "path": "folders/Shaders.yy",
+    "name": "CYOP",
+    "path": "folders/Shaders/CYOP.yy",
   },
   "type": 1,
 }

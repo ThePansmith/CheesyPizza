@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "shd_colorblind",
   "parent": {
-    "name": "Shaders",
-    "path": "folders/Shaders.yy",
+    "name": "Fullscreen",
+    "path": "folders/Shaders/Fullscreen.yy",
   },
   "type": 1,
 }
