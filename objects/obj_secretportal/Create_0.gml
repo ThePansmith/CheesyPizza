@@ -39,3 +39,6 @@ if MIDWAY
 	mask_index = spr_idle;
 }
 ID = id;
+
+if check_modifier(MOD.DeathMode)
+	instance_destroy();

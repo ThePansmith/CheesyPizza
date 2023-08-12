@@ -2,14 +2,19 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_deathcollectescape",
-  "eventList": [],
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,},
+  ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "Modifiers",
     "path": "folders/Objects/CheesyPizza/Modifiers.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_deathcollect",
+    "path": "objects/obj_deathcollect/obj_deathcollect.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

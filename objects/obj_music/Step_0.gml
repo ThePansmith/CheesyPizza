@@ -33,7 +33,7 @@ if (prevpillar_on_camera != pillar_on_camera)
 	else
 		fmod_set_parameter("pillarfade", 0, false);
 }
-if ((global.panic or (global.snickchallenge && room != tower_sage)) && global.leveltosave != "dragonlair" && global.leveltosave != "grinch" && global.leveltosave != "sucrose")
+if ((global.panic or ((global.snickchallenge or check_modifier(MOD.DeathMode)) && instance_exists(obj_exitgate))) && global.leveltosave != "dragonlair" && global.leveltosave != "grinch" && global.leveltosave != "sucrose")
 {
 	if (!panicstart && instance_exists(obj_player1))
 	{
