@@ -26,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_placeholder",
-    "path": "sprites/spr_placeholder/spr_placeholder.yy",
+    "name": "spr_deathcollect2",
+    "path": "sprites/spr_deathcollect2/spr_deathcollect2.yy",
   },
   "spriteMaskId": null,
   "visible": true,

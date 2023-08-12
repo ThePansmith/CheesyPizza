@@ -563,6 +563,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Collects","folderPath":"folders/Sprites/Player/Pizzano/Collects.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Modifiers","folderPath":"folders/Objects/CheesyPizza/Modifiers.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Modifiers","folderPath":"folders/Sprites/CheesyPizza/Modifiers.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles/data",},
@@ -2088,6 +2089,7 @@
     {"id":{"name":"ruin_5","path":"rooms/ruin_5/ruin_5.yy",},},
     {"id":{"name":"ruin_6","path":"rooms/ruin_6/ruin_6.yy",},},
     {"id":{"name":"ruin_pizzamart","path":"rooms/ruin_pizzamart/ruin_pizzamart.yy",},},
+    {"id":{"name":"spr_deathcollect2","path":"sprites/spr_deathcollect2/spr_deathcollect2.yy",},},
     {"id":{"name":"ruin_7","path":"rooms/ruin_7/ruin_7.yy",},},
     {"id":{"name":"ruin_secret1","path":"rooms/ruin_secret1/ruin_secret1.yy",},},
     {"id":{"name":"ruin_8","path":"rooms/ruin_8/ruin_8.yy",},},
@@ -9111,6 +9113,7 @@
     {"id":{"name":"tileset_entryway2","path":"tilesets/tileset_entryway2/tileset_entryway2.yy",},},
     {"id":{"name":"tileset_graveyardinterior","path":"tilesets/tileset_graveyardinterior/tileset_graveyardinterior.yy",},},
     {"id":{"name":"tileset_farm","path":"tilesets/tileset_farm/tileset_farm.yy",},},
+    {"id":{"name":"spr_deathcollect1","path":"sprites/spr_deathcollect1/spr_deathcollect1.yy",},},
     {"id":{"name":"spr_tv_tumbleSP","path":"sprites/spr_tv_tumbleSP/spr_tv_tumbleSP.yy",},},
     {"id":{"name":"tileset_pinball1","path":"tilesets/tileset_pinball1/tileset_pinball1.yy",},},
     {"id":{"name":"tileset_pinball2","path":"tilesets/tileset_pinball2/tileset_pinball2.yy",},},
