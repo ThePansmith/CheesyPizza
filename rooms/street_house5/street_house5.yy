@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "street_house5",
-  "creationCodeFile": "${project_dir}/rooms/street_house5/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/street_house5/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

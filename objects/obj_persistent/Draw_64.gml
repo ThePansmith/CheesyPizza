@@ -8,7 +8,7 @@ if global.showfps && global.option_hud
 	var xx = SCREEN_WIDTH - 20;
 	var yy = SCREEN_HEIGHT - 12;
 	
-	if global.option_timer && !(room == Realtitlescreen || room == Longintro || room == Finalintro || room == Mainmenu || room == hub_loadingscreen || room == Creditsroom || room == Johnresurrectionroom || room == rank_room || instance_exists(obj_titlecard) || instance_exists(obj_titlecard_ss) || !global.option_hud || room == characterselect)
+	if global.option_timer && !(room == Realtitlescreen || room == Longintro || room == Finalintro || room == Mainmenu || room == hub_loadingscreen || room == Creditsroom || room == Johnresurrectionroom || room == rank_room || instance_exists(obj_titlecard) || !global.option_hud || room == characterselect)
 	{
 		xx -= 4;
 		yy -= 18;

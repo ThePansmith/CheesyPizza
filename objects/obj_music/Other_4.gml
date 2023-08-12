@@ -19,10 +19,7 @@ if ((!global.panic && !global.snickchallenge && !check_modifier(MOD.DeathMode)) 
 			}
 			if (prevmusic != -4)
 			{
-				if (room == Mainmenu)
-					fmod_event_instance_stop(prevmusic.event, false);
-				else
-					fmod_event_instance_stop(prevmusic.event, true);
+				fmod_event_instance_stop(prevmusic.event, room != Mainmenu);
 				if (prevmusic.event_secret != -4)
 					fmod_event_instance_stop(prevmusic.event_secret, true);
 			}

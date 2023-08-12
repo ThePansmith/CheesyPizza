@@ -1,4 +1,4 @@
-if shown
+if start
 {
 	draw_clear(0);
 	draw_sprite(info.bginfo[0], 0, bgX, bgY);

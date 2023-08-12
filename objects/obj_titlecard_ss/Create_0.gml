@@ -14,7 +14,7 @@ enum cardtype
 
 fadealpha = 0;
 fadein = 0;
-shown = false;
+start = false;
 step = 0;
 
 // sprite, side it comes from, linear or interp, shake or wave, target x, target y

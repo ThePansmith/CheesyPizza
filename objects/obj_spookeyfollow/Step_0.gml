@@ -8,9 +8,6 @@ vsp = lengthdir_y((18 * tgtMVSP) + 0.5, _d);
 x = Approach(x, tgtX, abs(hsp));
 y = Approach(y, tgtY, abs(vsp));
 
-trace(hsp);
-trace(vsp);
-
 if x != obj_player1.x
     image_xscale = -sign(x - obj_player1.x);
 

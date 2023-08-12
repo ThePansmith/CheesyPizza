@@ -1,17 +1,27 @@
-if (room != rank_room && room != timesuproom && room != Mainmenu)
+if room != rank_room && room != timesuproom && room != Mainmenu && room != Realtitlescreen && room != Longintro && room != Creditsroom && room != Johnresurrectionroom && room != Endingroom && room != Finalintro && room != Scootertransition
 {
-	msg = global.roommessage;
 	showtext = true;
 	alarm[0] = 200;
 }
+level = false;
+
 var r = string_letters(room_get_name(room));
-if (r != "towertutorial" && r != "towerup" && (string_copy(r, 1, 5) == "tower" || string_copy(r, 1, 5) == "streethouse") && !global.panic)
+if room != tower_soundtest && room != Mainmenu && r != "towertutorial" && r != "towerup" && (string_copy(r, 1, 5) == "tower" || (string_starts_with(r, "streethouse") && REMIX)) && !global.panic && !is_bossroom()
 	visible = true;
+else if global.roomnames && ds_list_find_index(seen_rooms, room) < 0
+{
+	level = true;
+	ds_list_add(seen_rooms, room);
+	
+	if global.roommessage == msg
+		visible = false;
+	else
+	{
+		msg = global.roommessage;
+		visible = true;
+	}
+}
 else
-	visible = false;
-if (is_bossroom())
-	visible = false;
-if (room == tower_soundtest || room == Mainmenu)
 {
 	visible = false;
 	yi = -50;

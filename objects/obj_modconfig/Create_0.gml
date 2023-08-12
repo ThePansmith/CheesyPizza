@@ -563,7 +563,6 @@ opt.opts = [
 #endregion
 #region SLOPE ROTATION
 
-/*
 var opt = add_option("Slope Rotation", "sloperot", "Rotates the player when standing on a slope.", function(val)
 {
 	var slopex = 132;
@@ -612,7 +611,6 @@ var opt = add_option("Slope Rotation", "sloperot", "Rotates the player when stan
 	
 	draw_simuplayer();
 });
-*/
 
 #endregion
 #region SHOW FPS
@@ -767,6 +765,14 @@ opt.opts = [
 	["FINAL", 0],
 	["SEPTEMBER", 1]
 ]
+
+#endregion
+#region ROOM NAMES
+
+var opt = add_option("Room Names", "roomnames", "Each room in a level will show a unique name, like in the hub.", function(val)
+{
+	
+});
 
 #endregion
 

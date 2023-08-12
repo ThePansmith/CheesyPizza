@@ -12,7 +12,7 @@ function scr_player_freefall()
 		}
 		if (vsp > 17)
 		{
-			if (punch_afterimage > 0 && global.afterimage == 0)
+			if (punch_afterimage > 0 && (global.afterimage == 0 or REMIX))
 				punch_afterimage--;
 			else
 			{

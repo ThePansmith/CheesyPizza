@@ -1,8 +1,26 @@
-if (room == Mainmenu || room == tower_soundtest)
+live_auto_call;
+
+var r = string_letters(room_get_name(room));
+if string_pos("midway", r) or string_pos("treasure", r)
 	exit;
+
+if yi <= -36
+	exit;
+
+var msg = global.roommessage;
+var yy = yi, xi = REMIX ? SCREEN_WIDTH / 2 : 500;
+
+if msg == ""
+	exit;
+
+if level && global.hud == 0
+{
+	xi = 192;
+	yy = SCREEN_HEIGHT - yy - 6;
+}
+
 draw_set_font(lang_get_font("smallfont"));
-draw_set_halign(1);
-draw_set_valign(0);
+draw_set_align(fa_center, fa_center);
 draw_set_color(c_white);
-draw_sprite(spr_roomnamebg, 0, xi, yi);
-draw_text(xi, yi, msg);
+draw_sprite(spr_roomnamebg, 0, xi, yy);
+draw_text_ext(xi, yy + 8, msg, 12, 280);

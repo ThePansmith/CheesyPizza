@@ -15,7 +15,10 @@
     "name": "Sugary Spire",
     "path": "folders/Objects/CheesyPizza/Sugary Spire.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_titlecard",
+    "path": "objects/obj_titlecard/obj_titlecard.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

@@ -54,6 +54,7 @@ if test_dll_linkage() != 1
 // initialize
 scr_get_languages();
 pal_swap_init_system_fix(shd_pal_swapper, true);
+texture_debug_messages(DEBUG);
 
 // fonts
 global.bigfont = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.1234567890:", true, 0);
@@ -123,7 +124,7 @@ global.swapgrab = ini_read_real("Modded", "swapgrab", false);
 // visual settings
 global.panicbg = ini_read_real("Modded", "panicbg", true);
 global.panictilt = ini_read_real("Modded", "panictilt", false);
-//global.sloperot = ini_read_real("Modded", "sloperot", false);
+global.sloperot = ini_read_real("Modded", "sloperot", false);
 global.sloperot = false;
 global.inputdisplay = ini_read_real("Modded", "inputdisplay", false);
 global.showfps = ini_read_real("Modded", "showfps", false);
@@ -132,6 +133,7 @@ global.smoothcam = ini_read_real("Modded", "smoothcam", 0); // 0 through 1 lerp 
 global.secrettiles = ini_read_real("Modded", "secrettiles", 0); // fade, spotlight
 global.hud = ini_read_real("Modded", "hud", 0); // final, old
 global.blockstyle = ini_read_real("Modded", "blockstyle", 0); // final, september, old
+global.roomnames = ini_read_real("Modded", "roomnames", false);
 
 // gameframe
 global.gameframe_enabled = ini_read_real("Modded", "gameframe", true);

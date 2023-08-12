@@ -15,7 +15,7 @@ function scr_ghostcollectible(argument0 = false)
 			image_index: 0,
 			pizzasona: argument0
 		};
-		trace(q);
+		//trace(q);
 		ds_list_add(collectiblelist, q);
 	}
 	return q;

@@ -179,6 +179,7 @@ function achievement_unlock(_name, _display_name, _sprite, _index = 0)
 }
 function scr_steam_unlock_achievement(_achievement)
 {
+	/*
 	if global.steam_api
 	{
 		var steamach = ds_map_find_value(global.steam_achievements, _achievement);
@@ -193,6 +194,7 @@ function scr_steam_unlock_achievement(_achievement)
 	}
 	else
 		trace("Steam API not initialized!");
+	*/
 }
 function palette_unlock(_achievement, _palettename, _paletteselect, _texture = noone)
 {
