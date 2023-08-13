@@ -109,11 +109,8 @@ if (REMIX or global.laps >= 2) && !instance_exists(tracker)
 	switch sprite_index
 	{
 		default: tracker.sprite_index = spr_icon_pizzaface; break;
-		
-		/*
 		case spr_babyface: tracker.sprite_index = spr_icon_baba; break;
 		case spr_coneball: tracker.sprite_index = spr_icon_coneball; break;
-		*/
 	}
 }
 if keyboard_check_pressed(ord("F")) && DEBUG
