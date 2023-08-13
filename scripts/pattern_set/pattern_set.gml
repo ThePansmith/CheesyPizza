@@ -8,7 +8,7 @@ function pattern_set(color_array, sprite, subimg, xscale, yscale, pattern, patte
     pattern_set_sprite(sprite, subimg, xscale, yscale);
     pattern_set_color_array(color_array);
 }
-function pattern_set_temp(color_array, sprite, subimg, xscale, yscale, pattern)
+function pattern_set_temp(color_array, sprite, subimg, xscale, yscale, pattern, pattern_subimage = global.Pattern_Index)
 {
 	if pattern == noone
         exit;
@@ -16,8 +16,8 @@ function pattern_set_temp(color_array, sprite, subimg, xscale, yscale, pattern)
 	pattern_enable(true);
 	
 	// Pattern Texture
-	var _texT = sprite_get_texture(pattern, global.Pattern_Index);
-	var _uvsT = sprite_get_uvs(pattern, global.Pattern_Index);
+	var _texT = sprite_get_texture(pattern, pattern_subimage);
+	var _uvsT = sprite_get_uvs(pattern, pattern_subimage);
 	
     texture_set_stage(global.Pattern_Texture, _texT);
     texture_set_interpolation_ext(global.Pattern_Texture, false);
