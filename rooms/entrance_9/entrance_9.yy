@@ -91,6 +91,8 @@
     {"name":"inst_7CE5BB30","path":"rooms/entrance_9/entrance_9.yy",},
     {"name":"inst_79DC4C0D","path":"rooms/entrance_9/entrance_9.yy",},
     {"name":"inst_78090DB6","path":"rooms/entrance_9/entrance_9.yy",},
+    {"name":"inst_6602A492","path":"rooms/entrance_9/entrance_9.yy",},
+    {"name":"inst_3A88B031","path":"rooms/entrance_9/entrance_9.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -180,6 +182,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7CE5BB30","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_exitgustavo","path":"objects/obj_exitgustavo/obj_exitgustavo.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":1008.0,"y":914.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_79DC4C0D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_secrettile","path":"objects/obj_secrettile/obj_secrettile.yy",},"properties":[],"rotation":0.0,"scaleX":2.000001,"scaleY":1.0,"x":2144.0,"y":928.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_78090DB6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_unbumpablewall","path":"objects/obj_unbumpablewall/obj_unbumpablewall.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1376.0,"y":736.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6602A492","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":800.0,"y":864.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3A88B031","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollectescape","path":"objects/obj_deathcollectescape/obj_deathcollectescape.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":896.0,"y":416.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_Secret1","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":38,"SerialiseWidth":78,"TileCompressedData":[
 -2329,0,-2,87,-71,0,-3,85,9,66,107,87,87,107,64,65,65,66,-66,0,-5,107,-2,87,-5,107,-65,0,-14,87,-64,0,-14,87,-64,0,-14,87,-64,0,-14,87,-64,0,-14,87,-81,0,],"TileDataFormat":1,},"tilesetId":{"name":"tileset_entrance","path":"tilesets/tileset_entrance/tileset_entrance.yy",},"userdefinedDepth":true,"visible":true,"x":0,"y":0,},
