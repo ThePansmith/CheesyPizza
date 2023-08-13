@@ -7,7 +7,7 @@ with (instance_create(0, 0, obj_loadingscreen))
 }
 with (obj_player)
 	state = states.titlescreen;
-global.leveltorestart = -4;
-global.leveltosave = -4;
+global.leveltorestart = noone;
+global.leveltosave = noone;
 global.startgate = false;
 global.exitrank = false;

@@ -18,11 +18,3 @@ trace($"Replay: Found Dictionary Table offset: \"{dictionary_table_offset}\"");
 
 trace("Starting Playback");
 playback = true;
-
-
-
-
-
-
-
-
