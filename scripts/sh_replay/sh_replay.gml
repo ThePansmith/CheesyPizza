@@ -5,7 +5,7 @@ function sh_replay(args)
 		
 	var action = string_lower(args[1]);
 	
-	if action == "begin"
+	if action == "record"
 	{
 		if !instance_exists(obj_replay)
 			instance_create(0, 0, obj_replay);
