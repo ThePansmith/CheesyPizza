@@ -4,6 +4,8 @@ if room_first != Loadiingroom or room_next(room_first) != Initroom
 	game_end();
 	exit;
 }
+
+
 global.anon = array_create(5, false);
 
 // crash handler
@@ -33,6 +35,7 @@ exception_unhandled_handler
 // fuck you
 if !file_exists("CheesyPizza.dll")
 {
+	trace("Cheesypizza.dll not found!");
 	game_end();
 	exit;
 }
@@ -43,7 +46,6 @@ if test_dll_linkage() != 1
 	game_end();
 	exit;
 }
-
 // macros
 #macro REMIX global.gameplay
 #macro DEBUG (GM_build_type == "run")
@@ -158,7 +160,7 @@ global.secrettile_fade_intensity = 32; // dropoff intensity
 global.colorblind_type = -1; // 0 - Protanopia, 1 - Deuteranopia, 2 - Tritanopia
 global.colorblind_intensity = 0.5;
 
-global.rxdebugflag = 0;
+global.rxdebugflag = 0; // RX: My own debug flag just don't remove it please ty <3
 
 #macro heat_nerf 5 // divides the style gain by this
 #macro heat_lossdrop 0.1 // speed of global.style loss
@@ -166,8 +168,14 @@ global.rxdebugflag = 0;
 
 if file_exists("dead") || (os_type == os_windows && !ext_checkguid("8ff30401-c151-49e3-8636-a28a5b288d85"))
 {
+	trace("guid fail ");
 	game_end();
 	exit;
 }
-
+	
 ext_cheesypizza_setHWND(window_handle()); // RX: Bring window to front
+
+if !ptcu_console_create(512)
+	trace("unable to create console window!");
+else
+	trace("opened new console window");
