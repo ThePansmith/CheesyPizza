@@ -14,10 +14,7 @@
     "name": "Player",
     "path": "folders/Objects/Game Settings/Parents and Gameplay/Player.yy",
   },
-  "parentObjectId": {
-    "name": "obj_player",
-    "path": "objects/obj_player/obj_player.yy",
-  },
+  "parentObjectId": null,
   "persistent": true,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

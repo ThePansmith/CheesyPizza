@@ -31,10 +31,13 @@ function toggle_collisions(enable)
 	var i_love_cock = [obj_solid, obj_slope, obj_platform, obj_secretblock, obj_secretbigblock, obj_secretmetalblock, obj_grindrail, obj_grindrailslope, obj_slope_platform, obj_hallway, obj_verticalhallway];
 	with all
 	{
-		if array_contains(i_love_cock, object_index) && !(object_index == obj_ladder && SUGARY)
+		if array_contains(i_love_cock, object_index)
 		{
-			visible = enable;
-			depth = 1;
+			if !variable_instance_exists(id, "visible_previous")
+				visible_previous = visible;
+			
+			visible = enable || visible_previous;
+			depth = 5;
 		}
 	}
 }

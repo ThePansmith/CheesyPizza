@@ -7,7 +7,11 @@ level = false;
 
 var r = string_letters(room_get_name(room));
 if room != tower_soundtest && room != Mainmenu && r != "towertutorial" && r != "towerup" && (string_copy(r, 1, 5) == "tower" || (string_starts_with(r, "streethouse") && REMIX)) && !global.panic && !is_bossroom()
+{
+	if string_starts_with(r, "streethouse")
+		level = true;
 	visible = true;
+}
 else if global.roomnames && ds_list_find_index(seen_rooms, room) < 0
 {
 	level = true;
@@ -16,10 +20,7 @@ else if global.roomnames && ds_list_find_index(seen_rooms, room) < 0
 	if global.roommessage == msg
 		visible = false;
 	else
-	{
-		msg = global.roommessage;
 		visible = true;
-	}
 }
 else
 {
@@ -27,3 +28,4 @@ else
 	yi = -50;
 	showtext = false;
 }
+msg = global.roommessage;

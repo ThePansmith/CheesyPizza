@@ -87,11 +87,17 @@ function scr_do_rank(showtoppins = true, boss = false)
 	{
 		global.combotime = 0;
 		global.combo = 0;
-		obj_camera.alarm[4] = -1;
-		for (var i = 0; i < global.comboscore; i += 10)
+		with obj_camera
 		{
-			var spr = scr_collectspr(obj_collect, , false);
-			create_collect(obj_player1.x + irandom_range(-60, 60), obj_player1.y - 100 + irandom_range(-60, 60), spr, 10, spr_palette, paletteselect);
+			spr_palette = noone;
+			paletteselect = 0;
+			
+			alarm[4] = -1;
+			for (var i = 0; i < global.comboscore; i += 10)
+			{
+				var spr = scr_collectspr(obj_collect, , false);
+				create_collect(obj_player1.x + irandom_range(-60, 60), obj_player1.y - 100 + irandom_range(-60, 60), spr, 10, spr_palette, paletteselect);
+			}
 		}
 		global.comboscore = 0;
 	}

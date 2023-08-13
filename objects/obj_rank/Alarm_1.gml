@@ -1,6 +1,6 @@
 global.levelcomplete = true;
 scr_playerreset();
-with (obj_player)
+with (obj_player1)
 {
 	targetDoor = "HUB";
 	targetRoom = backtohubroom;

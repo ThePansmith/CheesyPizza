@@ -53,6 +53,8 @@ matrix_set(matrix_world, prev_matrix);
 if is_method(draw)
 	draw(curve);
 
+shader_reset();
+
 // post draw content
 if is_method(postdraw)
 	postdraw(curve);

@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "tower_extra",
-  "creationCodeFile": "${project_dir}/rooms/tower_extra/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/tower_extra/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
