@@ -18,7 +18,7 @@
   "exportToGame": true,
   "extensionVersion": "0.1.0",
   "files": [
-    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":64,"filename":"CheesyPizza.dll","final":"","functions":[
+    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":64,"filename":"CheesyPizza.dll","final":"ptcu_cleanup","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"launch_external","argCount":0,"args":[
             1,
           ],"documentation":"","externalName":"cheesypizza_launchexternal","help":"","hidden":false,"kind":1,"returnType":2,},
@@ -72,10 +72,10 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_discord_check_id","argCount":0,"args":[
             2,
           ],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"cmd_create","argCount":0,"args":[
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_console_create","argCount":0,"args":[
             2,
-          ],"documentation":"","externalName":"cheesypizza_cmd_allocate","help":"cmd_cllocate(real: lines)","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"cmd_destroy","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_cmd_destroy","help":"cmd_destroy()","hidden":false,"kind":1,"returnType":2,},
+          ],"documentation":"","externalName":"cheesypizza_create_console","help":"cmd_cllocate(real: lines)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_cleanup","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_cleanup","help":"Don't call this","hidden":false,"kind":1,"returnType":2,},
       ],"init":"","kind":1,"order":[
         {"name":"test_dll_linkage","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"launch_external","path":"extensions/CheesyPizza/CheesyPizza.yy",},

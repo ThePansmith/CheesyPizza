@@ -53,6 +53,10 @@ function scr_check_groundpound2()
 
 function scr_getinput(is_menu = false)
 {
+	// RX: Might need to be moved loy?
+	if instance_exists(obj_replay) && obj_replay.playback
+		exit;
+		
 	if (safe_get(obj_shell, "isOpen"))
 	or (global.in_menu && !is_menu)
 	{

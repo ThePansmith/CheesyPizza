@@ -25,8 +25,6 @@ if (room == custom_lvl_room)
 }
 scr_getinput();
 event_inherited();
-if (global.replayrecord)
-	replay_record_push_framedata();
 	
 if (obj_onlineclient.connected)
 	online_server_step_update();
