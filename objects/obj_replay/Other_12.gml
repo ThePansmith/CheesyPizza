@@ -16,5 +16,8 @@ var dictionary_table_offset = ext_replay_readint32();
 trace($"Replay: Found pointer table with a size of: \"{pointer_table_size}\"");
 trace($"Replay: Found Dictionary Table offset: \"{dictionary_table_offset}\"");
 
+
+// RX: finish dis, just copy the code in and adjust it
+
 trace("Starting Playback");
 playback = true;
