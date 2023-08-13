@@ -43,7 +43,7 @@ function scr_rankbubbledraw(rx, ry)
 	
 	var ranksprite = spr_ranks_hud;
 	if check_modifier(MOD.DeathMode)
-		rankfillsprite = !sugary ? spr_ranks_death : spr_ranks_deathss;
+		ranksprite = !SUGARY ? spr_ranks_death : spr_ranks_deathss;
 	else if sugary
 		ranksprite = spr_ranks_hudSP;
 	else if bo
@@ -52,10 +52,10 @@ function scr_rankbubbledraw(rx, ry)
 		ranksprite = spr_ranks_hudPN;
 	draw_sprite_ext(ranksprite, rank_ix, rx, ry, rank_scale, rank_scale, 0, c_white, 1);
 	
-	var spr_w = sprite_get_width(spr_ranks_hudfill);
-	var spr_h = sprite_get_height(spr_ranks_hudfill);
-	var spr_xo = sprite_get_xoffset(spr_ranks_hudfill);
-	var spr_yo = sprite_get_yoffset(spr_ranks_hudfill);
+	var spr_w = sprite_get_width(ranksprite);
+	var spr_h = sprite_get_height(ranksprite);
+	var spr_xo = sprite_get_xoffset(ranksprite);
+	var spr_yo = sprite_get_yoffset(ranksprite);
 	
 	if !global.snickchallenge
 	{
@@ -83,7 +83,7 @@ function scr_rankbubbledraw(rx, ry)
 		var rankfillsprite = spr_ranks_hudfill;
 		
 		if check_modifier(MOD.DeathMode)
-			rankfillsprite = !sugary ? spr_ranks_deathfill : spr_ranks_deathfillss;
+			rankfillsprite = !SUGARY ? spr_ranks_deathfill : spr_ranks_deathfillss;
 		else if sugary
 			rankfillsprite = spr_ranks_hudfillSP;
 		else if bo

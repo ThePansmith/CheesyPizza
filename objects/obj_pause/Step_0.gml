@@ -17,8 +17,6 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
         _cutscenehandler = true;
 	with (obj_titlecard)
 		_cutscenehandler = true;
-	with (obj_titlecard_ss)
-		_cutscenehandler = true;
 	with (obj_taxi)
 	{
 		if move

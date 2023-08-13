@@ -33,8 +33,8 @@ for (var i = 0; i < array_length(layers); i++)
 
 // sort in depth order
 array_sort(room_tiles, function(a, b) {
-	return layer_get_depth(b) - layer_get_depth(a);
+	return layer_get_depth(b.layer_id) - layer_get_depth(a.layer_id);
 });
 array_sort(room_bgs, function(a, b) {
-	return layer_get_depth(b) - layer_get_depth(a);
+	return layer_get_depth(b.layer_id) - layer_get_depth(a.layer_id);
 });

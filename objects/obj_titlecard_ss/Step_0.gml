@@ -1,4 +1,4 @@
-if !shown
+if !start
 {
 	if fadein == 0
 	    fadealpha += 0.1;
@@ -6,7 +6,7 @@ if !shown
 	if fadealpha > 1
 	{
 		fadealpha = 0;
-	    shown = true;
+	    start = true;
 		
 		title_music = fmod_event_create_instance(info.song);
 		fmod_event_instance_play(title_music);

@@ -21,4 +21,4 @@ else if room != Loadiingroom
 	    steam_send_screenshot(name, window_get_width(), window_get_height());
 	}
 }
-// nah
+*/

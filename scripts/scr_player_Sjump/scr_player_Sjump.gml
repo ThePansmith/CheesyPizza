@@ -22,11 +22,17 @@ function scr_player_Sjump()
 		}
 		if global.afterimage == 1
 		{
-			with (create_blue_afterimage(x, y, sprite_index, image_index, xscale))
-	        {
-	            playerid = other.id;
-	            maxmovespeed = 6;
-	        }
+			if (punch_afterimage > 0 && REMIX)
+				punch_afterimage--;
+			else
+			{
+				punch_afterimage = 5;
+				with (create_blue_afterimage(x, y, sprite_index, image_index, xscale))
+		        {
+		            playerid = other.id;
+		            maxmovespeed = 6;
+		        }
+			}
 		}
 		if (piledrivereffect > 0)
 			piledrivereffect--;

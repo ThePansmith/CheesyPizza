@@ -20,7 +20,7 @@ for (var i = 0; i < array_length(layers); i++)
 {
 	var lay = layers[i];
 	if !layer_exists(lay)
-		exit;
+		continue;
 	
 	var layname = layer_get_name(lay);
 	
@@ -166,8 +166,10 @@ for (var i = 0; i < array_length(layers); i++)
 }
 
 // some more depths
-layer_depth("Foreground_1", -400);
-layer_depth("Foreground_Ground1", -401);
+if layer_exists("Foreground_1")
+	layer_depth("Foreground_1", -400);
+if layer_exists("Foreground_Ground1")
+	layer_depth("Foreground_Ground1", -401);
 
 // waving backgrounds
 bg_zigzag1_offset = layer_get_vspeed("Backgrounds_zigzag1");

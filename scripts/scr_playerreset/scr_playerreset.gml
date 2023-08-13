@@ -59,6 +59,8 @@ function scr_playerreset(roomstart = false, restart = false)
 		lag = 0;
 		lagpos = 0;
 	}
+	with obj_roomname
+		ds_list_clear(seen_rooms);
 	
 	with (obj_achievementtracker)
 	{

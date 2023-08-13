@@ -1,7 +1,8 @@
 collectiblelist = ds_list_create();
 depth = 20;
+
 if instance_exists(obj_levelLoader)
-	exit; // RX: don't auto spawn in CYOP levels
+	exit;
 with (instance_nearest(obj_secretportal.x, obj_secretportal.y, obj_bigcollect))
 {
 	visible = false;

@@ -1,4 +1,4 @@
-if (!instance_exists(obj_titlecard) && !instance_exists(obj_titlecard_ss))
+if !instance_exists(obj_titlecard)
 {
 	alarm[1] = 8 + irandom(5);
 	sound_play_oneshot_3d("event:/sfx/hub/gusbrickfightball", x, y);
