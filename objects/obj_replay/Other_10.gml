@@ -1,7 +1,7 @@
 /// @description Begin Recording
 
-if (!directory_exists("Replay"))
-	directory_create("Replay");
+if (!directory_exists("replays"))
+	directory_create("replays");
 		
 var roomName = room_get_name(room);
 
