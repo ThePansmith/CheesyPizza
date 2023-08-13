@@ -4519,6 +4519,7 @@
     {"id":{"name":"spr_cheeseball","path":"sprites/spr_cheeseball/spr_cheeseball.yy",},},
     {"id":{"name":"spr_kingghost_pinball2","path":"sprites/spr_kingghost_pinball2/spr_kingghost_pinball2.yy",},},
     {"id":{"name":"spr_pizzasona56","path":"sprites/spr_pizzasona56/spr_pizzasona56.yy",},},
+    {"id":{"name":"shader_set_circleclip","path":"scripts/shader_set_circleclip/shader_set_circleclip.yy",},},
     {"id":{"name":"bg_cottonsky1sescape","path":"sprites/bg_cottonsky1sescape/bg_cottonsky1sescape.yy",},},
     {"id":{"name":"spr_player_cheeseball","path":"sprites/spr_player_cheeseball/spr_player_cheeseball.yy",},},
     {"id":{"name":"spr_peppalette","path":"sprites/spr_peppalette/spr_peppalette.yy",},},

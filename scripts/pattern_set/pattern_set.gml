@@ -1,10 +1,10 @@
-function pattern_set(color_array, sprite, subimg, xscale, yscale, pattern)
+function pattern_set(color_array, sprite, subimg, xscale, yscale, pattern, pattern_subimage = global.Pattern_Index)
 {
     if pattern == noone
         exit;
 	
     pattern_enable(true);
-    pattern_set_pattern(pattern, global.Pattern_Index);
+    pattern_set_pattern(pattern, pattern_subimage);
     pattern_set_sprite(sprite, subimg, xscale, yscale);
     pattern_set_color_array(color_array);
 }

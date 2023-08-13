@@ -1,6 +1,9 @@
 record = false;
 playback = false;
+playback_start_room = noone;
 replay_file = STRING_UNDEFINED;
+active = false;
+
 
 serialize_input = function()
 {

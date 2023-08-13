@@ -5,7 +5,7 @@ show_debug_message("Ending Recording");
 record = false;
 replay_file = STRING_UNDEFINED;
 ext_replay_closefile();
-
+active = false;
 
 
 

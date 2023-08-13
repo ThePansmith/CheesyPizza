@@ -23,9 +23,9 @@
             1,
           ],"documentation":"","externalName":"cheesypizza_launchexternal","help":"","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"test_dll_linkage","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_testlinkage","help":"","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_openfile","argCount":0,"args":[
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_replay_openfile","argCount":0,"args":[
             1,
-          ],"documentation":"","externalName":"cheesypizza_replay_openfile","help":"replay_openfile(filepath)","hidden":false,"kind":1,"returnType":2,},
+          ],"documentation":"","externalName":"cheesypizza_replay_openfile","help":"ptcu_replay_openfile(filepath)","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_isfileopen","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_isfileopen","help":"","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_closefile","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_closefile","help":"","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_writefloat","argCount":0,"args":[
@@ -76,11 +76,13 @@
             2,
           ],"documentation":"","externalName":"cheesypizza_create_console","help":"cmd_cllocate(real: lines)","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_cleanup","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_cleanup","help":"Don't call this","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_readheader","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_readheader","help":"ext_replay_readheader()","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ext_replay_readstringdictionary","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_readstringdictionary","help":"ext_replay_readstringdictionary()","hidden":false,"kind":1,"returnType":2,},
       ],"init":"","kind":1,"order":[
         {"name":"test_dll_linkage","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"launch_external","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"ext_checkguid","path":"extensions/CheesyPizza/CheesyPizza.yy",},
-        {"name":"ext_replay_openfile","path":"extensions/CheesyPizza/CheesyPizza.yy",},
+        {"name":"ptcu_replay_openfile","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"ext_replay_isfileopen","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"ext_replay_closefile","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"ext_replay_writeheader","path":"extensions/CheesyPizza/CheesyPizza.yy",},
