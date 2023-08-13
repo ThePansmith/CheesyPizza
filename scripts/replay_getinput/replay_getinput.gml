@@ -1,3 +1,0 @@
-function replay_getinput(){
-
-}

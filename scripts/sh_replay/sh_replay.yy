@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "replay_record_endlevel",
+  "name": "sh_replay",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Record",
-    "path": "folders/Scripts/CheesyPizza/Replay/Record.yy",
+    "name": "Shell",
+    "path": "folders/Scripts/CheesyPizza/Shell.yy",
   },
 }

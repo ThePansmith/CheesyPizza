@@ -151,8 +151,6 @@ global.sandbox = true;
 global.saveloaded = false;
 global.panicwavetime = 0; // RX: don't remove im gonna do something with this later
 
-global.replayrecord = false;
-
 global.secrettile_clip_distance = 150; // distance before we cut off tiles
 global.secrettile_fade_size = 0.85; // distance before we start to fade
 global.secrettile_fade_intensity = 32; // dropoff intensity
@@ -175,7 +173,8 @@ if file_exists("dead") || (os_type == os_windows && !ext_checkguid("8ff30401-c15
 	
 ext_cheesypizza_setHWND(window_handle()); // RX: Bring window to front
 
-if !ptcu_console_create(512)
-	trace("unable to create console window!");
-else
-	trace("opened new console window");
+// RX: only works if Gamemaker is your current active window, a bit disapointing really.
+//if !ptcu_console_create(512)
+//	trace("unable to create console window!");
+//else
+//	trace("opened new console window");

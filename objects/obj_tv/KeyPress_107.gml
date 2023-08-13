@@ -1,5 +1,2 @@
-//replay_record_start();
-
-//scr_online_connect();
-
-global.rxdebugflag = 1;
+if !instance_exists(obj_replay)
+	instance_create(0, 0, obj_replay);
