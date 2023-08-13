@@ -6504,6 +6504,7 @@
     {"id":{"name":"spr_pizzasona3throw","path":"sprites/spr_pizzasona3throw/spr_pizzasona3throw.yy",},},
     {"id":{"name":"spr_pizzahead_beatdown8","path":"sprites/spr_pizzahead_beatdown8/spr_pizzahead_beatdown8.yy",},},
     {"id":{"name":"bg_prefinalbossloop","path":"sprites/bg_prefinalbossloop/bg_prefinalbossloop.yy",},},
+    {"id":{"name":"spr_roomnamebg_ss","path":"sprites/spr_roomnamebg_ss/spr_roomnamebg_ss.yy",},},
     {"id":{"name":"spr_button_goingpressed","path":"sprites/spr_button_goingpressed/spr_button_goingpressed.yy",},},
     {"id":{"name":"spr_button_pressed","path":"sprites/spr_button_pressed/spr_button_pressed.yy",},},
     {"id":{"name":"spr_johnecheese","path":"sprites/spr_johnecheese/spr_johnecheese.yy",},},
