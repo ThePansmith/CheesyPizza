@@ -1,3 +1,19 @@
+if global.jukebox != noone
+{
+	if music != noone
+	{
+		fmod_event_instance_stop(music.event, true);
+		fmod_event_instance_release(music.event, true);
+	}
+	music = noone;
+	exit;
+}
+if waiting && !safe_get(obj_pause, "pause")
+{
+	waiting = false;
+	event_perform(ev_other, ev_room_start);
+}
+
 prevpillar_on_camera = pillar_on_camera;
 if (fmod_event_instance_is_playing(kidspartychaseID) && instance_exists(obj_pause) && !obj_pause.pause && !instance_exists(obj_monster))
 {
@@ -12,7 +28,9 @@ if (fmod_event_instance_is_playing(kidspartychaseID) && instance_exists(obj_paus
 	fmod_event_instance_set_paused(pillarmusicID, savedpillarpause);
 	fmod_event_instance_set_paused(panicmusicID, savedpanicpause);
 }
-if (instance_exists(obj_hungrypillar))
+
+// pillarfade
+if instance_exists(obj_hungrypillar)
 {
 	fmod_event_instance_set_paused(pillarmusicID, false);
 	var p = false;
@@ -26,13 +44,9 @@ if (instance_exists(obj_hungrypillar))
 }
 else
 	pillar_on_camera = false;
-if (prevpillar_on_camera != pillar_on_camera)
-{
-	if (pillar_on_camera)
-		fmod_set_parameter("pillarfade", 1, false);
-	else
-		fmod_set_parameter("pillarfade", 0, false);
-}
+if prevpillar_on_camera != pillar_on_camera
+	fmod_set_parameter("pillarfade", pillar_on_camera, false);
+
 if ((global.panic or ((global.snickchallenge or check_modifier(MOD.DeathMode)) && !instance_exists(obj_titlecard))) && global.leveltosave != "dragonlair" && global.leveltosave != "grinch" && global.leveltosave != "sucrose")
 {
 	if (!panicstart && instance_exists(obj_player1))

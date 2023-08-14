@@ -1,5 +1,7 @@
 if instance_exists(obj_levelLoader)
 	exit;
+if global.jukebox != noone
+	exit;
 
 if ((!global.panic && !global.snickchallenge && !check_modifier(MOD.DeathMode)) or global.leveltosave == "dragonlair" or global.leveltosave == "grinch")
 {

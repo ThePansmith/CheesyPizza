@@ -79,6 +79,9 @@ function scr_savescore(level)
 }
 function scr_play_rank_music()
 {
+	if global.jukebox != noone
+		exit;
+	
 	var s = 4.5;
 	if (global.rank == "p")
 		s = 5.5;

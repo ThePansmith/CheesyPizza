@@ -29,6 +29,9 @@ function add_music(_room, _event, _eventsecret, _continuous, _on_room_start = no
 }
 function stop_music()
 {
+	if global.jukebox != noone
+		exit;
+	
 	with (obj_music)
 	{
 		if (music != -4)

@@ -27,7 +27,11 @@ if (fade > 0)
 	{
 		var b = pause_menu[i];
 		var c = c_gray;
+		
 		var t = lang_get_value(b);
+		if is_undefined(t)
+			t = b;
+		
 		if (selected == i)
 		{
 			var cx = (SCREEN_WIDTH / 2) - (string_width(t) / 2) - 60;
