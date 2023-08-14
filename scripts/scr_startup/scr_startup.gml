@@ -4,8 +4,6 @@ if room_first != Loadiingroom or room_next(room_first) != Initroom
 	game_end();
 	exit;
 }
-
-
 global.anon = array_create(5, false);
 
 // crash handler
@@ -46,6 +44,9 @@ if test_dll_linkage() != 1
 	game_end();
 	exit;
 }
+if !file_exists("data/cheese.jpg")
+	throw "Could not find Cheese";
+
 // macros
 #macro REMIX global.gameplay
 #macro DEBUG (GM_build_type == "run")

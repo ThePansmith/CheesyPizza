@@ -565,6 +565,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
   ],
   "IncludedFiles": [
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"cheese.jpg","CopyToMask":-1,"filePath":"datafiles/data",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles/data",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"intro.mp4","CopyToMask":-1,"filePath":"datafiles/data",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"english.txt","CopyToMask":-1,"filePath":"datafiles/data/lang",},

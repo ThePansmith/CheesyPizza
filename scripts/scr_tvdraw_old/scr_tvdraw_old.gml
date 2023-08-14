@@ -155,6 +155,7 @@ function scr_tvdraw_old()
 		if sugary // propeller
 			draw_sprite_ext(spr_tvempty_ss, -1, tvx, tvy, 1, 1, 0, c_white, alpha);
 		
+		draw_set_align();
 		draw_text(tvx + 20, tvy + 1, string(global.combo));
 	}
 	else if room != Realtitlescreen
