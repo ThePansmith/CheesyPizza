@@ -6,14 +6,14 @@ if !ptcu_replay_openfile(replay_file)
 	exit;
 }
 
-if !ext_replay_readheader() // Header Check
+if !ptcu_replay_readheader() // Header Check
 {
 	trace($"Replay had invalid header!");
 	event_user(3);
 	exit;
 }
 
-if !ext_replay_readstringdictionary()
+if !ptcu_replay_readstringdictionary()
 {
 	trace("Unable to read Replay's string dictionary!");
 	event_user(3);
@@ -30,7 +30,7 @@ if buffer == ""
 
 trace($"Playback started, waiting for room: \"{buffer}\"");
 
-ext_replay_seek(ext_replay_tell() - string_length(buffer));
+ptcu_replay_seek(ext_replay_tell() - string_length(buffer));
 trace("Starting Playback");
 playback = true;
 playback_start_room = entrance_1;

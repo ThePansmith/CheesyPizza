@@ -31,7 +31,7 @@ if !ptcu_replay_openfile(replay_file)
 	event_user(1);
 	exit;
 }
-ext_replay_writeheader();
+ptcu_replay_writeheader();
 	
 trace("Starting Recording");
 record = true;
