@@ -52,6 +52,8 @@
     {"name":"inst_1FF0A2F9","path":"rooms/medieval_7/medieval_7.yy",},
     {"name":"inst_A3A41061","path":"rooms/medieval_7/medieval_7.yy",},
     {"name":"inst_28578ED9","path":"rooms/medieval_7/medieval_7.yy",},
+    {"name":"inst_31A43BC","path":"rooms/medieval_7/medieval_7.yy",},
+    {"name":"inst_24CF712E","path":"rooms/medieval_7/medieval_7.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -101,6 +103,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1FF0A2F9","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_forknight","path":"objects/obj_forknight/obj_forknight.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":1920.0,"y":562.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_A3A41061","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":512.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_28578ED9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_doorA","path":"objects/obj_doorA/obj_doorA.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":576.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_31A43BC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":512.0,"y":576.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_24CF712E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollectescape","path":"objects/obj_deathcollectescape/obj_deathcollectescape.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1504.0,"y":576.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_2","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":33,"SerialiseWidth":79,"TileCompressedData":[
 -36,0,2,241,242,-77,0,2,251,252,-77,0,2,261,262,-77,0,2,271,272,-77,0,2,281,282,-3,0,4,4,5,6,7,-70,0,2,221,222,-21,0,4,33,34,35,36,-23,0,3,17,18,19,-26,0,2,231,232,-21,0,4,43,44,45,46,-43,0,5,75,76,77,78,79,-4,0,2,241,242,-21,0,4,53,

@@ -14,9 +14,20 @@ function sh_replay(args)
 		
 		return $"Replay will start recording on the next room you visit.";
 	}
+	else if action == "playback"
+	{
+		if array_length(args) < 3
+			return "Playback requires 3 arguments";
+			
+		if !instance_exists(obj_replay)
+			instance_create(0, 0, obj_replay);
+		obj_replay.playback_start_room = noone;
+		obj_replay.replay_file = $"{game_save_id}replays\\{args[2]}";
+		obj_replay.playback = true;
+	}
 	else if action == "end"
 	{
-		return $"not implemented yet faggot";
+		return $"not implemented yet";
 	}
 	else
 		return $"Invalid action type: \"{action}\"!";
@@ -25,14 +36,14 @@ function meta_replay()
 {
 	return {
 		description: "control the replay system (can be dangerous)",
-		arguments: [ "action", "<filepath>"],
+		arguments: [ "action", "filepath"],
 		suggestions: [ 
 		[ "record", "playback", "end" ],
 		function()
 		{
 			var files = [ ];
 			var i = 0;
-			var prefix = $"{game_save_id}Replay\\"
+			var prefix = $"{game_save_id}replays\\"
 			var len = string_length(prefix);
 			var fileName = file_find_first($"{prefix}\*.rf", fa_directory);
 			while (string_length(fileName) != 0)
