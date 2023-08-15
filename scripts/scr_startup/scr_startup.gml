@@ -1,3 +1,5 @@
+gml_pragma("UnityBuild", "true");
+
 // room order check
 if room_first != Loadiingroom or room_next(room_first) != Initroom
 {

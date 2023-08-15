@@ -1,5 +1,5 @@
 event_inherited();
-if live_call() return live_result;
+//if live_call() return live_result;
 
 // animation
 init = false;

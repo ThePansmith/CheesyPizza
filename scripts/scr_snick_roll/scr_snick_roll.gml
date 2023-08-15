@@ -1,6 +1,6 @@
 function scr_snick_roll()
 {
-	if live_call() return live_result;
+	//if live_call() return live_result;
 	
 	if sprite_index == spr_snick_spindash
 	{

@@ -1,4 +1,4 @@
-live_auto_call;
+//if live_call() return live_result;
 
 if con != 0
 {

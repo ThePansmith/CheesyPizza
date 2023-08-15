@@ -1,4 +1,4 @@
-if live_call() return live_result;
+//if live_call() return live_result;
 
 if !init
 	exit;
@@ -21,10 +21,8 @@ if anim_con == 1 or anim_con == 2
 
 // background
 bg_pos = (bg_pos + 0.5) % 64;
-
 if curve < 1 // circular clipping shader
 	shader_set_circleclip(960 / 2, 540 / 2, 560 * curve);
-
 
 draw_set_alpha(0.75)
 draw_set_color(make_color_rgb(121, 103, 151));

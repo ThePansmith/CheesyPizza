@@ -1,4 +1,3 @@
-live_auto_call;
 for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 {
 	var b = ds_list_find_value(global.afterimage_list, i);

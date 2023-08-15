@@ -1,4 +1,4 @@
-live_auto_call;
+//if live_call() return live_result;
 
 fadealpha = 0;
 fadein = false;

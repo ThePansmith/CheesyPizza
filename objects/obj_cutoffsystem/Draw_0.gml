@@ -1,4 +1,4 @@
-live_auto_call;
+//if live_call() return live_result;
 
 for(var i = 0; i < array_length(cutoffs); i++)
 {

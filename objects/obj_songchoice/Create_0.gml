@@ -1,4 +1,4 @@
-if live_call() return live_result;
+//if live_call() return live_result;
 
 event_inherited();
 
@@ -196,6 +196,7 @@ add_section("Modded", [
 	["event:/soundtest/sugary/foundchocolate", "Found Chocolate - Jessie Productions"],
 	["event:/soundtest/sugary/sucrose", "Sugarcube Hailstorm - PaperKitty"],
 	
+	["event:/soundtest/sugary/secretentranceSN", "Lol Funny - loypoll"],
 	["event:/soundtest/sugary/secretcotton", "A Steamy Surprise - loypoll"],
 	["event:/soundtest/sugary/secretcottonSP", "A Steamy Surprise\n(Sugary) - RodMod"],
 	["event:/soundtest/sugary/secretcottonBN", "A Steamy Surprise\n(Bo) - loypoll"],
