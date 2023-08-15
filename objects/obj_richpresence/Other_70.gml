@@ -112,7 +112,7 @@ switch async_load[? "event_type"]
 			"129992247637835776", // paperkitty
 			"736034094093303888", // MrUnown
 			"357090210435039232", // luigio
-			"313647052087099394", // RodMod
+			//"313647052087099394", // RodMod
 			"222518501821251584", // marioket
 			"447396200405270528", // jessieproductions
 			
