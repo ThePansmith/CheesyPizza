@@ -57,8 +57,8 @@
   },
   "origin": 0,
   "parent": {
-    "name": "Sugary Spire",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire.yy",
+    "name": "Level Objects",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Level Objects.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

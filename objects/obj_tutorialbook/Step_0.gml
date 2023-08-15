@@ -4,7 +4,7 @@ if (global.panic && !donepanic)
 	text = lang_get_value("getout");
 	event_perform(ev_other, ev_room_start);
 }
-text_xscale = (SCREEN_WIDTH - 64) / sprite_get_width(spr_tutorialbubble);
+text_xscale = (SCREEN_WIDTH - 64) / sprite_get_width(bubble_spr);
 wave_timer += 20;
 if (text_xscale != text_oldxscale)
 	event_perform(ev_other, ev_room_start);
@@ -18,7 +18,7 @@ if (showgranny)
 	if (place_meeting(x, y, obj_player))
 	{
 		sprite_index = spr_talk;
-		if (voicecooldown == 0)
+		if (voicecooldown == 0 && !SUGARY)
 		{
 			sound_play_oneshot_3d("event:/sfx/voice/pizzagranny", x, y);
 			voicecooldown = 100;
@@ -65,3 +65,5 @@ switch (text_state)
 }
 text_wave_x = Wave(-5, 5, 2, 10, wave_timer);
 text_wave_y = Wave(-1, 1, 4, 0, wave_timer);
+if SUGARY
+	rope_img = (rope_img + 1) % 4;

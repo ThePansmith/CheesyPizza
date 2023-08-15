@@ -3,7 +3,7 @@ secretend = false;
 pillar_on_camera = false;
 prevpillar_on_camera = false;
 music_map = ds_map_create();
-music = -4;
+music = noone;
 savedpillarpause = false;
 savedpanicpause = false;
 savedmusicpause = false;
@@ -23,14 +23,14 @@ waiting = false;
 
 #region PIZZA TOWER
 
-add_music(Endingroom, "event:/music/ending", -4, false);
-add_music(Creditsroom, "event:/music/credits", -4, false);
+add_music(Endingroom, "event:/music/ending", noone, false);
+add_music(Creditsroom, "event:/music/credits", noone, false);
 add_music(Johnresurrectionroom, "event:/music/ending", -4, false);
-add_music(Longintro, "event:/music/intro", -4, false, function(room, parameter)
+add_music(Longintro, "event:/music/intro", noone, false, function(room, parameter)
 {
 	fmod_event_instance_set_parameter(parameter, "state", 0, true);
 });
-add_music(Mainmenu, "event:/music/title", -4, false, function(room, parameter)
+add_music(Mainmenu, "event:/music/title", noone, false, function(room, parameter)
 {
 	fmod_event_instance_set_parameter(parameter, "state", 0, true);
 });
@@ -43,23 +43,23 @@ add_music(tower_2, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_3, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_4, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_5, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
-add_music(tower_finalhallway, "event:/music/finalescape", -4, 0)
-add_music(tower_finalhallwaytitlecard, "event:/music/pillarmusic", -4, 0)
+add_music(tower_finalhallway, "event:/music/finalescape", noone, 0)
+add_music(tower_finalhallwaytitlecard, "event:/music/pillarmusic", noone, 0)
 add_music(tower_pizzafacehall, "event:/music/w5/finalhallway", -4, 0)
-add_music(tower_outside, "event:/sfx/misc/windloop", -4, 0)
-add_music(tower_baby, "event:/modded/baby", -4, 0)
-add_music(tower_1up, "event:/music/pillarmusic", -4, 0)
-add_music(tower_2up, "event:/music/pillarmusic", -4, 0)
-add_music(tower_3up, "event:/music/pillarmusic", -4, 0)
-add_music(tower_4up, "event:/music/pillarmusic", -4, 0)
-add_music(boss_vigilante, "event:/music/boss/vigilante", -4, 0)
-add_music(boss_fakepep, "event:/music/boss/fakepep", -4, 0)
-add_music(boss_fakepephallway, "event:/music/boss/fakepepambient", -4, 0)
-add_music(boss_fakepepkey, "event:/music/pillarmusic", -4, 0)
-add_music(boss_noise, "event:/music/boss/noise", -4, 0)
-add_music(boss_pepperman, "event:/music/boss/pepperman", -4, 0)
+add_music(tower_outside, "event:/sfx/misc/windloop", noone, 0)
+add_music(tower_baby, "event:/modded/baby", noone, 0)
+add_music(tower_1up, "event:/music/pillarmusic", noone, 0)
+add_music(tower_2up, "event:/music/pillarmusic", noone, 0)
+add_music(tower_3up, "event:/music/pillarmusic", noone, 0)
+add_music(tower_4up, "event:/music/pillarmusic", noone, 0)
+add_music(boss_vigilante, "event:/music/boss/vigilante", noone, 0)
+add_music(boss_fakepep, "event:/music/boss/fakepep", noone, 0)
+add_music(boss_fakepephallway, "event:/music/boss/fakepepambient", noone, 0)
+add_music(boss_fakepepkey, "event:/music/pillarmusic", noone, 0)
+add_music(boss_noise, "event:/music/boss/noise", noone, 0)
+add_music(boss_pepperman, "event:/music/boss/pepperman", noone, 0)
 
-add_music(boss_pizzaface, "event:/music/boss/pizzaface", -4, false, function(room, parameter)
+add_music(boss_pizzaface, "event:/music/boss/pizzaface", noone, false, function(room, parameter)
 {
 	if room == boss_pizzaface
 		fmod_event_instance_set_parameter(parameter, "state", 0, true);
@@ -269,11 +269,12 @@ add_music(tower_hubroomE, "event:/music/hub", "event:/music/pillarmusic", 0, hub
 add_music(tower_sage, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_sugary, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 
-add_music(characterselect, "event:/music/characterselect", -4, 0)
+add_music(characterselect, "event:/music/characterselect", noone, 0)
 add_music(midway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
 
 #endregion
 #region SUGARY
+add_music(sugarytut_1, "event:/modded/sugary/tutorial", noone, 0);
 
 add_music(entryway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
 add_music(steamy_1, "event:/modded/sugary/cotton", "event:/modded/sugary/cottonsecret", 0, function(room, event, event_secret)
@@ -293,7 +294,7 @@ add_music(steamy_1, "event:/modded/sugary/cotton", "event:/modded/sugary/cottons
 	if s != -1
 		fmod_event_instance_set_parameter(event, "state", s, false);
 });
-add_music(rm_geyser_test, "event:/modded/sugary/molasses", "event:/modded/sugary/molassessecret", 0);
+//add_music(rm_geyser_test, "event:/modded/sugary/molasses", "event:/modded/sugary/molassessecret", 0);
 add_music(molasses_1, "event:/modded/sugary/molasses", "event:/modded/sugary/molassessecret", 0, function(room, event, event_secret)
 {
 	var s = -1;

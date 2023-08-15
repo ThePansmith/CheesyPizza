@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "molasses_1",
-  "creationCodeFile": null,
+  "creationCodeFile": "rooms/molasses_1/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

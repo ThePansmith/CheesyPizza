@@ -42,7 +42,7 @@ if player
 			}
 		}
 	}
-	else if player.bbox_bottom == y - 1 && (player.state == states.freefallland || player.sprite_index == player.spr_bodyslamland)
+	else if player.bbox_bottom == y - 1 && (player.state == states.freefallland || player.state == states.ratmountbounce || player.state == states.ratmountgroundpound || player.sprite_index == player.spr_bodyslamland)
 	{
 		sound_play("event:/modded/sfx/geyser");
 		geyser_timer = 300;

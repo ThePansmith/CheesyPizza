@@ -26,8 +26,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sugary Spire",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire.yy",
+    "name": "Sucrose Ice",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Level Objects/Sucrose Ice.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
