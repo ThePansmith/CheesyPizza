@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "Baby Bear",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Baby Bear.yy",
+    "path": "folders/Sprites/Sugary Spire/Baddie/Baby Bear.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

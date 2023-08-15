@@ -33,7 +33,7 @@
   "origin": 4,
   "parent": {
     "name": "Eskimo",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Eskimo.yy",
+    "path": "folders/Sprites/Sugary Spire/Baddie/Eskimo.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

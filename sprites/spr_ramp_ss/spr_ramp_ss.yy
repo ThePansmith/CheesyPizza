@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "Sugary Spire",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire.yy",
+    "path": "folders/Sprites/Sugary Spire.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

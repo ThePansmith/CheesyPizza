@@ -28,7 +28,7 @@
   "origin": 9,
   "parent": {
     "name": "Char Cherry",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Char Cherry.yy",
+    "path": "folders/Sprites/Sugary Spire/Baddie/Char Cherry.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

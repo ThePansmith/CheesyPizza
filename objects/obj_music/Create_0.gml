@@ -308,6 +308,7 @@ add_music(molasses_1, "event:/modded/sugary/molasses", "event:/modded/sugary/mol
 	if s != -1
 		fmod_event_instance_set_parameter(event, "state", s, false);
 });
+add_music(estate_1, "event:/modded/sugary/cafe", "event:/modded/modded/cottonsecret", 0);
 add_music(sucrose_1, "event:/modded/sugary/sucrose", "event:/modded/modded/sucrosesecret", 0);
 
 #endregion
