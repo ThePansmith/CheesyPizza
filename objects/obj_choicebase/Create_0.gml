@@ -1,4 +1,4 @@
-//if live_call() return live_result;
+live_auto_call;
 
 // animation / background
 sound_play("event:/modded/sfx/diagopen");

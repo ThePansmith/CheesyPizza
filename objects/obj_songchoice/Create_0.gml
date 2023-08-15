@@ -1,4 +1,4 @@
-//if live_call() return live_result;
+live_auto_call;
 
 event_inherited();
 
@@ -109,6 +109,7 @@ add_section("Modded", [
 	["event:/soundtest/pto/moveitboy", "Move It, Boy - MrSauceman"],
 	["event:/soundtest/pto/saturdays", "Saturdays - loypoll"],
 	["event:/soundtest/pto/quintessence", "Quintessence - ClascyJitto"],
+	["event:/soundtest/pto/strongcold", "Teeth Dust In The Strongcold - ClascyJitto"],
 	["event:/soundtest/pto/mansion", "Ground Bound - MrSauceman"],
 	["event:/soundtest/pto/snickchallenge", "Spooky Apartment Escape - ClascyJitto"],
 	["event:/soundtest/pto/dragonlair", "Tarragon Pizza - ClascyJitto"],

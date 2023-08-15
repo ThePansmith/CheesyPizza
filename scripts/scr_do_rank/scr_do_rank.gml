@@ -1,6 +1,6 @@
 function scr_is_p_rank()
 {
-	var enemykilled = global.prank_enemykilled or check_modifier(MOD.Pacifist);
+	var enemykilled = global.prank_enemykilled or (MOD.Pacifist);
 	
 	if global.leveltosave == "dragonlair" or global.leveltosave == "grinch"
 		return !global.combodropped && enemykilled;

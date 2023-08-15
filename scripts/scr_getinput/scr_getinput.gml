@@ -99,7 +99,7 @@ function scr_getinput(is_menu = false)
 	key_groundpound2 = (global.key_groundpoundC != -4 ? gamepad_button_check(_dvc, global.key_groundpoundC) : false);
 	
 	// mirror modifiers swaps left and right
-	if check_modifier(MOD.Mirror) && object_index == obj_player1
+	if (MOD.Mirror) && object_index == obj_player1
 	{
 		var uwu1 = key_left;
 		var uwu2 = key_left2;

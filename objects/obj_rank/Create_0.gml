@@ -1,4 +1,4 @@
-//if live_call() return live_result;
+live_auto_call;
 
 image_speed = 0.5;
 toppinvisible = true;

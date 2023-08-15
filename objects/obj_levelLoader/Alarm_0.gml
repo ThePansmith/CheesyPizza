@@ -1,6 +1,6 @@
 /// @description create layers
 
-//if live_call() return live_result;
+live_auto_call;
 
 global.cyop_broken_tiles = [];
 

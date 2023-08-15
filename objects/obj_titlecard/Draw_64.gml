@@ -1,7 +1,7 @@
 draw_set_alpha(1);
 if start
 {
-	var mirror = check_modifier(MOD.Mirror);
+	var mirror = (MOD.Mirror);
 	
 	shader_set(shd_pal_swapper);
 	pal_swap_set(spr_peppalette, REMIX && instance_exists(obj_player1) && obj_player1.character == "P" && obj_player1.character == "P" ? obj_player1.paletteselect : 1, false);

@@ -139,6 +139,7 @@ global.secrettiles = ini_read_real("Modded", "secrettiles", 0); // fade, spotlig
 global.hud = ini_read_real("Modded", "hud", 0); // final, old
 global.blockstyle = ini_read_real("Modded", "blockstyle", 0); // final, september, old
 global.roomnames = ini_read_real("Modded", "roomnames", false);
+global.machsnd = ini_read_real("Modded", "machsnd", 0); // final, old
 
 // gameframe
 global.gameframe_enabled = ini_read_real("Modded", "gameframe", true);
