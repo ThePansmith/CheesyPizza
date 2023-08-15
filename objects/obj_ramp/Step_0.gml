@@ -1,4 +1,4 @@
-//if live_call() return live_result;
+if live_call() return live_result;
 
 if (used)
 	image_index = 1;

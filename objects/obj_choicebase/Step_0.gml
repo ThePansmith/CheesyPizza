@@ -1,4 +1,4 @@
-//if live_call() return live_result;
+if live_call() return live_result;
 
 // get input
 if anim_con == 0

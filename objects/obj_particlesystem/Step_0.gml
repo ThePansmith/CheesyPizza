@@ -51,7 +51,7 @@ if (!ds_list_empty(global.collect_list))
 			with (b)
 			{
 				var _dir = point_direction(x, y, 110, 80);
-				if check_modifier(MOD.Mirror) xor global.hud == 1
+				if (MOD.Mirror) xor global.hud == 1
 					_dir = point_direction(x, y, 960 - 110, 80);
 				
 				hsp = lengthdir_x(25, _dir);
@@ -63,7 +63,7 @@ if (!ds_list_empty(global.collect_list))
 				outofx = x < 140;
 				outofy = y < 120;
 				
-				if check_modifier(MOD.Mirror) xor global.hud == 1
+				if (MOD.Mirror) xor global.hud == 1
 					outofx = x > 960 - 140;
 				
 				if outofx && outofy

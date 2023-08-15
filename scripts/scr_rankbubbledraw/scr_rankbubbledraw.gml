@@ -42,7 +42,7 @@ function scr_rankbubbledraw(rx, ry)
 	rank_scale = Approach(rank_scale, 1, 0.2);
 	
 	var ranksprite = spr_ranks_hud;
-	if check_modifier(MOD.DeathMode)
+	if (MOD.DeathMode)
 		ranksprite = !SUGARY ? spr_ranks_death : spr_ranks_deathss;
 	else if sugary
 		ranksprite = spr_ranks_hudSP;
@@ -82,7 +82,7 @@ function scr_rankbubbledraw(rx, ry)
 		var top = spr_h - t;
 		var rankfillsprite = spr_ranks_hudfill;
 		
-		if check_modifier(MOD.DeathMode)
+		if (MOD.DeathMode)
 			rankfillsprite = !SUGARY ? spr_ranks_deathfill : spr_ranks_deathfillss;
 		else if sugary
 			rankfillsprite = spr_ranks_hudfillSP;

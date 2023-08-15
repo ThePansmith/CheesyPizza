@@ -3,7 +3,7 @@ if instance_exists(obj_levelLoader)
 if global.jukebox != noone
 	exit;
 
-if ((!global.panic && !global.snickchallenge && !check_modifier(MOD.DeathMode)) or global.leveltosave == "dragonlair" or global.leveltosave == "grinch")
+if ((!global.panic && !global.snickchallenge && !(MOD.DeathMode)) or global.leveltosave == "dragonlair" or global.leveltosave == "grinch")
 {
 	var mu = ds_map_find_value(music_map, room);
 	if !is_undefined(mu)

@@ -47,7 +47,7 @@ else
 if prevpillar_on_camera != pillar_on_camera
 	fmod_set_parameter("pillarfade", pillar_on_camera, false);
 
-if ((global.panic or ((global.snickchallenge or check_modifier(MOD.DeathMode)) && !instance_exists(obj_titlecard))) && global.leveltosave != "dragonlair" && global.leveltosave != "grinch" && global.leveltosave != "sucrose")
+if ((global.panic or ((global.snickchallenge or (MOD.DeathMode)) && !instance_exists(obj_titlecard))) && global.leveltosave != "dragonlair" && global.leveltosave != "grinch" && global.leveltosave != "sucrose")
 {
 	if (!panicstart && instance_exists(obj_player1))
 	{
@@ -55,7 +55,7 @@ if ((global.panic or ((global.snickchallenge or check_modifier(MOD.DeathMode)) &
 		
 		if global.snickchallenge
 			panicmusicID = fmod_event_create_instance("event:/modded/level/snickchallenge");
-		else if check_modifier(MOD.DeathMode)
+		else if (MOD.DeathMode)
 			panicmusicID = fmod_event_create_instance("event:/modded/deathmode");
 		else
 		{

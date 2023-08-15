@@ -1,4 +1,4 @@
-//if live_call() return live_result;
+if live_call() return live_result;
 
 var accel = 2;
 with (obj_player)
