@@ -78,7 +78,6 @@
     {"name":"inst_89124604","path":"rooms/dungeon_secret1_OLD/dungeon_secret1_OLD.yy",},
     {"name":"inst_0DC5C47C","path":"rooms/dungeon_secret1_OLD/dungeon_secret1_OLD.yy",},
     {"name":"inst_827932E4","path":"rooms/dungeon_secret1_OLD/dungeon_secret1_OLD.yy",},
-    {"name":"inst_173CA06C","path":"rooms/dungeon_secret1_OLD/dungeon_secret1_OLD.yy",},
   ],
   "isDnd": false,
   "layers": [

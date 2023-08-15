@@ -38,7 +38,6 @@
     {"name":"inst_067748E5","path":"rooms/ruin_secret5_OLD/ruin_secret5_OLD.yy",},
     {"name":"inst_8B2AB65D","path":"rooms/ruin_secret5_OLD/ruin_secret5_OLD.yy",},
     {"name":"inst_10DE24D5","path":"rooms/ruin_secret5_OLD/ruin_secret5_OLD.yy",},
-    {"name":"inst_9581A24D","path":"rooms/ruin_secret5_OLD/ruin_secret5_OLD.yy",},
   ],
   "isDnd": false,
   "layers": [

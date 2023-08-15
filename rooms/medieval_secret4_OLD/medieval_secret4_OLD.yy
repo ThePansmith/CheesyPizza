@@ -19,7 +19,6 @@
     {"name":"inst_370873C0","path":"rooms/medieval_secret4_OLD/medieval_secret4_OLD.yy",},
     {"name":"inst_CCBBE138","path":"rooms/medieval_secret4_OLD/medieval_secret4_OLD.yy",},
     {"name":"inst_417F5FB0","path":"rooms/medieval_secret4_OLD/medieval_secret4_OLD.yy",},
-    {"name":"inst_C522CD28","path":"rooms/medieval_secret4_OLD/medieval_secret4_OLD.yy",},
   ],
   "isDnd": false,
   "layers": [

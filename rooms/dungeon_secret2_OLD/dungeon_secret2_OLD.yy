@@ -39,7 +39,6 @@
     {"name":"inst_DF889173","path":"rooms/dungeon_secret2_OLD/dungeon_secret2_OLD.yy",},
     {"name":"inst_543B1FEB","path":"rooms/dungeon_secret2_OLD/dungeon_secret2_OLD.yy",},
     {"name":"inst_E8FF8D53","path":"rooms/dungeon_secret2_OLD/dungeon_secret2_OLD.yy",},
-    {"name":"inst_6DA2FBDB","path":"rooms/dungeon_secret2_OLD/dungeon_secret2_OLD.yy",},
   ],
   "isDnd": false,
   "layers": [
