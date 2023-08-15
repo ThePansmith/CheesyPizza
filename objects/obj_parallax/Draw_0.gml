@@ -1,5 +1,5 @@
 /// @description background
-if live_call() return live_result;
+live_auto_call;
 
 if old_bg
 	exit;

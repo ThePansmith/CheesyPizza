@@ -1,3 +1,6 @@
+instance_destroy();
+exit;
+
 // init
 objects = cyop_objectlist();
 _room = noone;

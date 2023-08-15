@@ -1,4 +1,4 @@
-if live_call() return live_result;
+live_auto_call;
 
 // options left side
 draw_set_colour(c_white);

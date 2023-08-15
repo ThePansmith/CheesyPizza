@@ -1,7 +1,5 @@
 function scr_rankbubbledraw(rx, ry)
 {
-	if live_call(rx, ry) return live_result;
-	
 	var sugary = (obj_player1.character == "SP" or obj_player1.character == "SN");
 	var bo = (obj_player1.character == "BN");
 	var pino = (obj_player1.character == "PN");

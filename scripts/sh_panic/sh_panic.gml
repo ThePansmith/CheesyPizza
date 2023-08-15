@@ -1,7 +1,5 @@
 function sh_panic(args)
 {
-	if live_call(args) return live_result;
-	
 	if !WC_debug
 		return "You do not have permission to use this command";
 	

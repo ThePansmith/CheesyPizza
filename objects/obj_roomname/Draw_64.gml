@@ -1,4 +1,4 @@
-if live_call() return live_result;
+live_auto_call;
 
 var r = string_letters(room_get_name(room));
 if string_pos("midway", r) or string_pos("treasure", r)

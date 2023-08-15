@@ -557,8 +557,6 @@ function pepperman_grab_reset()
 }
 function state_snick_normal()
 {
-	if live_call() return live_result;
-	
 	var acc = 4 * 0.046875;
 	var dec = 3 * 0.5;
 	var frc = 4 * 0.046875;

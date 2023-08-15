@@ -1,5 +1,5 @@
 /// @description simuplayer
-if live_call() return live_result;
+live_auto_call;
 
 var p = simuplayer;
 p.x += p.hsp;

@@ -1,7 +1,5 @@
 function scr_tvdraw_old()
 {
-	if live_call() return live_result;
-	
 	var panicy = 600 + (string_height(message) - 16);
 	var tvx = 832 + irandom_range(-obj_camera.collect_shake, obj_camera.collect_shake);
 	var tvy = 74 + irandom_range(-obj_camera.collect_shake, obj_camera.collect_shake);
