@@ -34,7 +34,7 @@
   "origin": 9,
   "parent": {
     "name": "Checkpoint",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Checkpoint.yy",
+    "path": "folders/Sprites/Sugary Spire/Checkpoint.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

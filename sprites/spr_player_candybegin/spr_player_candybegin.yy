@@ -32,7 +32,7 @@
   "origin": 4,
   "parent": {
     "name": "Fling Frog",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Fling Frog.yy",
+    "path": "folders/Sprites/Sugary Spire/Fling Frog.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

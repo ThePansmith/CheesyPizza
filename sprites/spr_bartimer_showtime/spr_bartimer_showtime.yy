@@ -97,7 +97,7 @@
   "origin": 9,
   "parent": {
     "name": "Timer",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Timer.yy",
+    "path": "folders/Sprites/Sugary Spire/Timer.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

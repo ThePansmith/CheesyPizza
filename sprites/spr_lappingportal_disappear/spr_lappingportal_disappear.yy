@@ -35,7 +35,7 @@
   "origin": 4,
   "parent": {
     "name": "Lap Portal",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Lap Portal.yy",
+    "path": "folders/Sprites/Sugary Spire/Lap Portal.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

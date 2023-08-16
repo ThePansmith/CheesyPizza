@@ -33,7 +33,7 @@
   "origin": 4,
   "parent": {
     "name": "Cotton Witch",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Cotton Witch.yy",
+    "path": "folders/Sprites/Sugary Spire/Baddie/Cotton Witch.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

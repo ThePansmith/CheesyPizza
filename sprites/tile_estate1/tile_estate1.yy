@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "Tiles",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles/Estate/Tiles.yy",
+    "path": "folders/Sprites/Sugary Spire/BGs and Tiles/Estate/Tiles.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
