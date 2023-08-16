@@ -59,6 +59,8 @@ function layer_get_parallax(lay)
 		case "Backgrounds_still2": case "Backgrounds_far1": per = 0.25; break;
 		
 		// sugary
+		case "Backgrounds_cloud1" : per = 0.5; break;
+		case "Backgrounds_cloud2" : per = 0.25; break;
 		case "Backgrounds_far2": per = 0.15; break;
 		case "Backgrounds_far3": per = 0.05; break;
 		case "Backgrounds_sky3": per = 0.95; break;

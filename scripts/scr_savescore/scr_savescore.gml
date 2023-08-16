@@ -95,7 +95,7 @@ function scr_play_rank_music()
 		s = 3.5;
 	if (global.rank == "d")
 		s = 4.5;
-	if ((room != tower_entrancehall || global.exitrank) && room != tower_tutorial1)
+	if ((room != tower_entrancehall || global.exitrank) && room != tower_tutorial1 && room != sugarytut_1)
 	{
 		fmod_event_instance_play(global.snd_rank);
 		fmod_event_instance_set_parameter(global.snd_rank, "rank", s, true);

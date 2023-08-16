@@ -1,10 +1,10 @@
 function scr_room_goto(_room)
 {
-	if variable_global_exists("leveltosave")
-	{
-		SUGARY = global.leveltosave == "entryway" or global.leveltosave == "steamy" or global.leveltosave == "molasses" or global.leveltosave == "sucrose" or _room == tower_sugary;
-		MIDWAY = global.leveltosave == "midway";
-	}
+	//if variable_global_exists("leveltosave")
+	//{ RX: "leveltosave" will never not exist, so we are wasting time by checking it
+	SUGARY = global.leveltosave == "entryway" or global.leveltosave == "steamy" or global.leveltosave == "molasses" or global.leveltosave == "sucrose" or _room == tower_sugary or _room == sugarytut_1;
+	MIDWAY = global.leveltosave == "midway";
+	//}
 	
 	if is_string(_room)
 		cyop_room_goto(_room);

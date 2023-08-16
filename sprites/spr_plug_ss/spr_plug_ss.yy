@@ -57,8 +57,8 @@
   },
   "origin": 0,
   "parent": {
-    "name": "Sugary Spire",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire.yy",
+    "name": "Blocks",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Blocks.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
