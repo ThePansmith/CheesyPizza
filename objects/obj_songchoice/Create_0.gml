@@ -114,7 +114,7 @@ add_section("Modded", [
 	["event:/soundtest/pto/snickchallenge", "Spooky Apartment Escape - ClascyJitto"],
 	["event:/soundtest/pto/dragonlair", "Tarragon Pizza - ClascyJitto"],
 	["event:/soundtest/pto/funiculario", "Funiculario - Dim Widdy"],
-	["event:/soundtest/pto/oldruin", "One Pizza At A Time - MrSauceman"],
+	["event:/soundtest/pto/oldruin", "Theatrical Shenanigans (old) - MrSauceman"],
 	["event:/soundtest/pto/grinch", "Grinch's Ultimatum - pilotredsun"],
 	["event:/soundtest/pto/noiseanthem", "The Noise's Jam-Packed Radical Anthem - MrSauceman"],
 	["event:/soundtest/pto/distasteful", "Distasteful Anchovi - ClascyJitto"],
