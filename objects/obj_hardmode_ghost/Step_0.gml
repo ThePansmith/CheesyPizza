@@ -1,6 +1,3 @@
-if room == rank_room or room == timesuproom
-	instance_destroy();
-
 disable = safe_get(obj_player1, "cutscene");
 
 highest_y = -270;
