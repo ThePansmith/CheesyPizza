@@ -2,19 +2,21 @@ function get_dark(blend, use_dark, use_position = false, posX = 0, posY = 0)
 {
 	if (use_dark)
 	{
-		if (room == boss_vigilante)
+		if room == boss_vigilante
 			blend = make_color_rgb(247, 109, 22);
-		var d = room_width * room_height;
-		var b = d;
-		var bb = b;
+		if SUGARY
+			return #264d72;
+		
+		var dis, d = room_width * room_height, b = d, bb = b;
 		with (obj_lightsource)
 		{
 			if (object_index != obj_lightsource_attach || instance_exists(objectID))
 			{
-				if (!use_position)
-					var dis = distance_to_object(other);
+				if !use_position
+					dis = distance_to_object(other);
 				else
 					dis = distance_between_points(x, y, posX, posY);
+				
 				if (dis < d)
 				{
 					bb = dis / distance;
@@ -26,20 +28,14 @@ function get_dark(blend, use_dark, use_position = false, posX = 0, posY = 0)
 				}
 			}
 		}
-		var t = (b + 0.4) * 255;
-		var a = (1 - obj_drawcontroller.dark_alpha) * 255;
-		a -= 102;
-		t = clamp(t, 0, 255);
-		a = clamp(a, 0, 255);
-		var r = (color_get_red(blend) - t) + a;
-		var g = (color_get_green(blend) - t) + a;
-		b = (color_get_blue(blend) - t) + a;
-		if (r < 0)
-			r = 0;
-		if (g < 0)
-			g = 0;
-		if (b < 0)
-			b = 0;
+		
+		var t = clamp((b + 0.4) * 255, 0, 255);
+		var a = clamp(((1 - obj_drawcontroller.dark_alpha) * 255) - 102, 0, 255);
+		
+		var r = max((color_get_red(blend) - t) + a, 0);
+		var g = max((color_get_green(blend) - t) + a, 0);
+		var b = max((color_get_blue(blend) - t) + a, 0);
+		
 		return make_color_rgb(r, g, b);
 	}
 	else
@@ -82,26 +78,13 @@ function draw_enemy(healthbar, palette, color = c_white)
 	if (visible && object_index != obj_pizzaball && object_index != obj_fakesanta && bbox_in_camera(view_camera[0], 32))
 	{
 		var c = image_blend;
-		if (elite)
+		if elite
 			c = c_yellow;
-		if (elitegrab)
+		if elitegrab
 			c = c_green;
-		if (color != c_white)
+		if color != c_white
 			c = color;
 		
-		var b = get_dark(c, obj_drawcontroller.use_dark);
-		if (object_index == obj_peppinoclone)
-		{
-			shader_set(shd_pal_swapper);
-			pal_swap_set(spr_peppalette, 1, false);
-		}
-		else if (usepalette && palette)
-		{
-			shader_set(shd_pal_swapper);
-			if (object_index == obj_fakepepboss || object_index == obj_gustavograbbable)
-				pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale * xscale, image_yscale * yscale, global.palettetexture);
-			pal_swap_set(spr_palette, paletteselect, false);
-		}
 		var _ys = 1;
 		if (state == states.grabbed)
 		{
@@ -111,7 +94,6 @@ function draw_enemy(healthbar, palette, color = c_white)
 				_ys = -1;
 			}
 		}
-		
 		var xx = x, yy = y;
 		if safe_get(id, "sugary")
 		{
@@ -120,7 +102,30 @@ function draw_enemy(healthbar, palette, color = c_white)
 			_drawy += irandom_range(-1, 1);
 			*/
 		}
-		draw_sprite_ext(sprite_index, image_index, x, y + _stun, xscale * image_xscale, yscale * _ys, angle, b, image_alpha);
+		
+		var b = get_dark(c, obj_drawcontroller.use_dark);
+		if obj_drawcontroller.use_dark && SUGARY
+		{
+			draw_set_flash(b);
+			draw_sprite_ext(sprite_index, image_index, x, y + _stun, xscale * image_xscale, yscale * _ys, angle, b, image_alpha);
+			draw_reset_flash();
+		}
+		else
+		{
+			if (object_index == obj_peppinoclone)
+			{
+				shader_set(shd_pal_swapper);
+				pal_swap_set(spr_peppalette, 1, false);
+			}
+			else if (usepalette && palette)
+			{
+				shader_set(shd_pal_swapper);
+				if (object_index == obj_fakepepboss || object_index == obj_gustavograbbable)
+					pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale * xscale, image_yscale * yscale, global.palettetexture);
+				pal_swap_set(spr_palette, paletteselect, false);
+			}
+			draw_sprite_ext(sprite_index, image_index, x, y + _stun, xscale * image_xscale, yscale * _ys, angle, b, image_alpha);
+		}
 		
 		if (healthbar)
 		{
@@ -175,29 +180,42 @@ function draw_superslam_enemy()
 }
 function draw_player()
 {
+	var xx = x + smoothx, yy = y;
+	if state == states.frothstuck && shaketime > 0
+		xx += random_range(shaketime / 6, -shaketime / 6);
+	
 	var b = get_dark(image_blend, obj_drawcontroller.use_dark);
-	if (object_index == obj_player1)
-		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, (xscale * scale_xs), (yscale * scale_ys), global.palettetexture);
-	var ps = paletteselect;
-	var spr = spr_palette;
-	if (isgustavo)
+	if obj_drawcontroller.use_dark && SUGARY
+		draw_set_flash(b);
+	else
 	{
-		spr = spr_ratmountpalette;
-		ps = gustavo_palette(ps);
+		if object_index == obj_player1
+			pattern_set(global.Base_Pattern_Color, sprite_index, image_index, (xscale * scale_xs), (yscale * scale_ys), global.palettetexture);
+	
+		var ps = paletteselect;
+		var spr = spr_palette;
+		if (isgustavo)
+		{
+			spr = spr_peppalette;
+			ps = gustavo_palette(ps);
+		}
+		pal_swap_set(spr, ps % sprite_get_width(spr), false);
 	}
-	pal_swap_set(spr, ps % sprite_get_width(spr), false);
-	draw_sprite_ext(player_sprite(), image_index, x + smoothx, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+	draw_sprite_ext(player_sprite(), image_index, xx, yy, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+	
 	if (global.noisejetpack)
 	{
 		pal_swap_set(spr_peppalette, 2, false);
-		draw_sprite_ext(sprite_index, image_index, x + smoothx, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+		draw_sprite_ext(sprite_index, image_index, xx, yy, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
 	}
 	draw_superslam_enemy();
 	if (global.pistol)
 	{
 		pal_swap_set(spr_peppalette, 0, false);
 		if (pistolcharge >= 4)
-			draw_sprite(spr_revolvercharge, pistolcharge, x + smoothx, y - 70);
+			draw_sprite(spr_revolvercharge, pistolcharge, xx, yy - 70);
 	}
+	
 	pattern_reset();
+	draw_reset_flash();
 }

@@ -1,5 +1,8 @@
-if (!instance_exists(baddieid))
+if !object_exists(content)
+	exit;
+if !instance_exists(baddieid)
 	refresh--;
+
 if (refresh <= 0)
 {
 	image_speed = 0.35;

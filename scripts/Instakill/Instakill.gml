@@ -1,5 +1,8 @@
 function Instakill()
 {
+	if state == states.cotton
+		other.baddieID.image_blend = 0xFE8AFF;
+	
 	var hx = other.baddieID.x;
 	var hy = other.baddieID.y;
 	if (other.baddieID.state == states.hit)

@@ -418,7 +418,7 @@ switch (scene)
 			pizzaface.sprite_index = spr_pizzaface;
 			pizzaface.image_speed = 0.35;
 			gustavo = instance_create(room_width / 2, 386, obj_playerprop);
-			gustavo.spr_palette = spr_ratmountpalette;
+			gustavo.spr_palette = spr_peppalette;
 			gustavo.sprite_index = spr_intro_gustavomap;
 			stick = instance_create(room_width * 0.55, 200, obj_introprop);
 			stick.sprite_index = spr_intro_stick1;

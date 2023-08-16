@@ -1,5 +1,6 @@
 function Approach(a, b, amount)
 {
+	amount = abs(amount);
 	if a < b
 	{
 		a += amount;

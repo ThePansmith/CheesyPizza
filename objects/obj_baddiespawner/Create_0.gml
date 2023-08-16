@@ -1,6 +1,5 @@
 image_speed = 0;
 baddieid = obj_null;
-content = obj_bossdoor;
 refresh = 20;
 depth = 1;
 hsp = 0;
@@ -13,4 +12,4 @@ hsp_carry = 0;
 vsp_carry = 0;
 countdown = 50;
 if SUGARY
-	sprite_index = spr_baddiespawner_ss
+	sprite_index = spr_baddiespawner_ss;

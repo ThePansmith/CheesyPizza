@@ -24,16 +24,25 @@ if (use_dark)
 			if (visible)
 			{
 				var b = get_dark(image_blend, other.use_dark);
-				var ix = image_xscale;
-				if (object_index == obj_vigilantecow)
-					ix = xscale;
-				if variable_instance_exists(id, "spr_palette") && sprite_exists(spr_palette)
+				if SUGARY
 				{
-					shader_set(shd_pal_swapper);
-					pal_swap_set(spr_palette, paletteselect, false);
+					draw_set_flash(b);
+					draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, b, image_alpha);
+					draw_reset_flash();
 				}
-				draw_sprite_ext(sprite_index, image_index, x, y, ix, image_yscale, image_angle, b, image_alpha);
-				pal_swap_reset();
+				else
+				{
+					var ix = image_xscale;
+					if (object_index == obj_vigilantecow)
+						ix = xscale;
+					if variable_instance_exists(id, "spr_palette") && sprite_exists(spr_palette)
+					{
+						shader_set(shd_pal_swapper);
+						pal_swap_set(spr_palette, paletteselect, false);
+					}
+					draw_sprite_ext(sprite_index, image_index, x, y, ix, image_yscale, image_angle, b, image_alpha);
+					pal_swap_reset();
+				}
 			}
 		}
 	}
@@ -140,18 +149,27 @@ with obj_sausageman_dead
 {
 	if !gui && visible && bbox_in_camera(view_camera[0], 32)
 	{
-		b = get_dark(image_blend, other.use_dark);
-		if sprite_exists(spr_palette)
+		var b = get_dark(image_blend, other.use_dark);
+		if other.use_dark && SUGARY
 		{
-			if oldpalettetexture != -4
-				pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, oldpalettetexture);
-			pal_swap_set(spr_palette, paletteselect, false);
+			draw_set_flash(b);
+			draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, b, image_alpha);
+			draw_reset_flash();
 		}
 		else
-			pal_swap_reset();
-		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, b, image_alpha);
-		if oldpalettetexture != -4
-            pattern_reset();
+		{
+			if sprite_exists(spr_palette)
+			{
+				if oldpalettetexture != -4
+					pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, oldpalettetexture);
+				pal_swap_set(spr_palette, paletteselect, false);
+			}
+			else
+				pal_swap_reset();
+			draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, b, image_alpha);
+			if oldpalettetexture != -4
+	            pattern_reset();
+		}
 	}
 }
 pal_swap_reset();

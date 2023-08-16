@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "tutorialssgroup",
-    "path": "texturegroups/tutorialssgroup",
+    "name": "sugarytutgroup",
+    "path": "texturegroups/sugarytutgroup",
   },
   "type": 0,
   "VTile": false,

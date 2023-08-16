@@ -1,5 +1,8 @@
 live_auto_call;
 
+if obj_drawcontroller.use_dark && SUGARY
+	exit;
+
 for(var i = 0; i < array_length(cutoffs); i++)
 {
 	var c = cutoffs[i];

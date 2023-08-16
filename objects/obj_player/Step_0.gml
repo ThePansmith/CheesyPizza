@@ -608,6 +608,9 @@ switch (state)
 	case states.twirl:
 		scr_pizzano_twirl();
 		break;
+	case states.frothstuck:
+		scr_player_frothstuck();
+		break;
 }
 if (state != states.chainsaw)
 {

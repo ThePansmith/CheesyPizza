@@ -23,7 +23,7 @@ exception_unhandled_handler
 		
 		// show and log the crash
 	    show_debug_message(string(e));
-		show_message("The game crashed! longMessage:\n\n" + e.longMessage);
+		show_message("The game crashed!\n\n" + e.longMessage);
 
 		// save it to a file
 		var _f = file_text_open_write("crash_log.txt");

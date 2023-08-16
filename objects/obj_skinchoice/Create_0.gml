@@ -21,7 +21,7 @@ characters = [
 	["P", spr_player_idle, spr_peppalette, [1, 3]], // character, idle, palette sprite, [main color, mixing color]
 	["N", spr_playerN_idle, spr_noisepalette, [1, 4]],
 	["V", spr_playerV_idle, spr_vigipalette, [1, 6]],
-	["G", spr_player_ratmountidle, spr_ratmountpalette, [1, 3]],
+	["G", spr_player_ratmountidle, spr_peppalette, [1, 3]],
 	["SP", spr_playerSP_idle, spr_pizzypalette, [1, 3]],
 	["BN", spr_playerBN_idle, spr_bopalette, [1, 3]],
 	["PN", spr_playerPN_idle, spr_peppalette, [1, 3]]
