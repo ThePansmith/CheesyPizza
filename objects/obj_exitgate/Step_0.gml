@@ -34,11 +34,11 @@ else if (uparrow)
 	uparrow = false;
 	instance_destroy(uparrowID);
 }
-if (drop && (global.panic or (sugary && drop_state == states.normal)))
+if (drop && (global.panic or (sugary && dropstate == states.normal)))
 {
 	if sugary
 	{
-		if !scr_solid(x, y + sign(vsp))
+		if !scr_solid(x, y)
 	    {
 	        y += vsp;
 	        vsp += grav;
@@ -53,6 +53,7 @@ if (drop && (global.panic or (sugary && drop_state == states.normal)))
 				shake_mag = 15;
 				shake_mag_acc = 30 / room_speed;
 			}
+			drop = false;
 	    }
 	}
 	else

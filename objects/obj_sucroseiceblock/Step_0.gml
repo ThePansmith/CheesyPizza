@@ -69,11 +69,11 @@ if state != states.hit && place_meeting(x, y, obj_dashpad) && state != states.gr
 	touching = true;
 }
 
-if state != states.hit && invtime <= 0 && place_meeting(x, y, obj_player1) && state != states.grabbed 
+if state != states.hit && invtime <= 0 && (place_meeting(x, y, obj_player1) or place_meeting(x, y, obj_brickball)) && state != states.grabbed 
 {
 	with (obj_player1) 
 	{
-		if state = states.mach3	|| (state = states.mach2 && sprite_index != spr_mach1) || state = states.rocket or check_kungfu_state() or (state == states.handstandjump && instakillmove)
+		if state = states.mach3	|| (state = states.mach2 && sprite_index != spr_mach1) || state = states.rocket or check_kungfu_state() or (state == states.handstandjump && instakillmove) or (state == states.ratmount && (abs(hsp) >= 12) || state == states.ratmountpunch)
 		{
 			instance_create(other.x, other.y, obj_slapstar);
             instance_create(other.x, other.y, obj_baddiegibs);
@@ -92,10 +92,10 @@ if state != states.hit && invtime <= 0 && place_meeting(x, y, obj_player1) && st
 				other.movespeed += 2
 
 			}
-			other.xscale = xscale
-			other.hsp = (other.movespeed * other.xscale)
+			other.xscale = xscale;
+			other.hsp = (other.movespeed * other.xscale);
 			other.flash = true;
-			other.invtime = 10
+			other.invtime = 10;
 			sound_play_3d(sfx_punch, x, y);
 			with other
 				lag();

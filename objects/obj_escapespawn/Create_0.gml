@@ -1,4 +1,4 @@
-baddieID = -4;
+baddieID = noone;
 active = false;
 disappear = false;
 state = 0; // not an enum
