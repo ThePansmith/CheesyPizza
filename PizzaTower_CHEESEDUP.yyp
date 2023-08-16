@@ -2363,7 +2363,6 @@
     {"id":{"name":"spr_playerSP_parry3","path":"sprites/spr_playerSP_parry3/spr_playerSP_parry3.yy",},},
     {"id":{"name":"tile_midway","path":"tilesets/tile_midway/tile_midway.yy",},},
     {"id":{"name":"minigolf_5","path":"rooms/minigolf_5/minigolf_5.yy",},},
-    {"id":{"name":"shd_circleclip_simple","path":"shaders/shd_circleclip_simple/shd_circleclip_simple.yy",},},
     {"id":{"name":"minigolf_6","path":"rooms/minigolf_6/minigolf_6.yy",},},
     {"id":{"name":"minigolf_7","path":"rooms/minigolf_7/minigolf_7.yy",},},
     {"id":{"name":"minigolf_8","path":"rooms/minigolf_8/minigolf_8.yy",},},

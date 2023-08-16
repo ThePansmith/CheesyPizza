@@ -514,17 +514,16 @@ switch character
 		add_palette(43, "", noone, "Purple Pro", desc, "FUCKED UP");
 		add_palette(44, "", noone, "Bold And Brash", desc, "FUCKED UP");
 		add_palette(45, "", noone, "Fallen Down", desc, "FUCKED UP");
-		add_palette(46, "", noone, "Untextured", desc, "FUCKED UP");
+		add_palette(46, "", noone, "Sketch", desc, "FUCKED UP");
 		add_palette(47, "", noone, "Dead Meat", desc);
-		add_palette(48, "", noone, "Sketch", desc, "FUCKED UP");
-		add_palette(49, "", noone, "Warzone", desc, "FUCKED UP");
-		add_palette(50, "", noone, "Block Party", desc, "FUCKED UP");
-		add_palette(51, "", noone, "Machine Code", desc, "FUCKED UP");
-		add_palette(52, "", noone, "Button Masher", desc);
-		add_palette(53, "", noone, "Orange Juice", desc, "FUCKED UP");
-		add_palette(54, "", noone, "Pasta Power", desc, "FUCKED UP");
-		add_palette(55, "", noone, "Sucrose Snowstorm", desc, "FUCKED UP");
-		add_palette(56, "", noone, "Homero", "Simpson");
+		add_palette(48, "", noone, "Warzone", desc, "FUCKED UP");
+		add_palette(49, "", noone, "Block Party", desc, "FUCKED UP");
+		add_palette(50, "", noone, "Machine Code", desc, "FUCKED UP");
+		add_palette(51, "", noone, "Button Masher", desc);
+		add_palette(52, "", noone, "Orange Juice", desc, "FUCKED UP");
+		add_palette(53, "", noone, "Pasta Power", desc, "FUCKED UP");
+		add_palette(54, "", noone, "Sucrose Snowstorm", desc, "FUCKED UP");
+		add_palette(55, "", noone, "Homero", "Simpson");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "LOL LMFA");

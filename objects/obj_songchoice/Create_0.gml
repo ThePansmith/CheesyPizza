@@ -310,7 +310,11 @@ draw = function(curve)
 			
 			var textwidth = round(string_width(str) - 300);
 			if sel.song == i
-				scroll = wrap(round(++scroll), -50, textwidth + 50);
+			{
+				scroll++;
+				if scroll >= textwidth + 50
+					scroll = -50;
+			}
 			
 			draw_text(64 + charshift[0] - (clamp(scroll, 0, max(textwidth, 0)) * (sel.song == i)), yy + textx, str);
 		}
