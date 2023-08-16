@@ -33,7 +33,7 @@
   "origin": 4,
   "parent": {
     "name": "Spookey",
-    "path": "folders/Sprites/Sugary Spire/Spookey.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Spookey.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

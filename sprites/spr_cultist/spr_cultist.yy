@@ -32,7 +32,7 @@
   "origin": 9,
   "parent": {
     "name": "Cultist",
-    "path": "folders/Sprites/Sugary Spire/Cultist.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Cultist.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

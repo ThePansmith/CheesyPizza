@@ -28,7 +28,7 @@
   "origin": 9,
   "parent": {
     "name": "Cracker Kicker",
-    "path": "folders/Sprites/Sugary Spire/Baddie/Cracker Kicker.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Cracker Kicker.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

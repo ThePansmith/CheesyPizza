@@ -26,7 +26,7 @@
   "origin": 4,
   "parent": {
     "name": "Sucrose",
-    "path": "folders/Sprites/Sugary Spire/BGs and Tiles/Sucrose.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles/Sucrose.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "Escape",
-    "path": "folders/Sprites/Sugary Spire/BGs and Tiles/Estate/Escape.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles/Estate/Escape.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

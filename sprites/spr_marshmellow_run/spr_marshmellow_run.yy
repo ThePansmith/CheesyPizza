@@ -40,7 +40,7 @@
   "origin": 4,
   "parent": {
     "name": "Toppins",
-    "path": "folders/Sprites/Sugary Spire/Toppins.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Toppins.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

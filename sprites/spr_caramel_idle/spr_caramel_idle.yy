@@ -49,7 +49,7 @@
   "origin": 9,
   "parent": {
     "name": "Caramel",
-    "path": "folders/Sprites/Sugary Spire/Caramel.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Caramel.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
