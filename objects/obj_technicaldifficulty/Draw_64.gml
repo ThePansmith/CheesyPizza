@@ -18,7 +18,7 @@ else
 	if (sprite != spr_technicaldifficulty4)
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false);
 	else
-		pal_swap_set(spr_ratmountpalette, gustavo_palette(obj_player1.paletteselect), false);
+		pal_swap_set(spr_peppalette, gustavo_palette(obj_player1.paletteselect), false);
 	
 	if chara == "BN" or chara == "N" or chara == "SP"
 		draw_sprite(sprite, 0, 0, 0);

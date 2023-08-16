@@ -178,26 +178,34 @@ function draw_player()
 	var b = get_dark(image_blend, obj_drawcontroller.use_dark);
 	if (object_index == obj_player1)
 		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, (xscale * scale_xs), (yscale * scale_ys), global.palettetexture);
+	
 	var ps = paletteselect;
 	var spr = spr_palette;
 	if (isgustavo)
 	{
-		spr = spr_ratmountpalette;
+		spr = spr_peppalette;
 		ps = gustavo_palette(ps);
 	}
+	
+	var xx = x + smoothx, yy = y;
+	if state == states.frothstuck && shaketime > 0
+		xx += random_range(shaketime / 12, -shaketime / 12);
+	
 	pal_swap_set(spr, ps % sprite_get_width(spr), false);
-	draw_sprite_ext(player_sprite(), image_index, x + smoothx, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+	draw_sprite_ext(player_sprite(), image_index, xx, yy, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+	
 	if (global.noisejetpack)
 	{
 		pal_swap_set(spr_peppalette, 2, false);
-		draw_sprite_ext(sprite_index, image_index, x + smoothx, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+		draw_sprite_ext(sprite_index, image_index, xx, yy, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
 	}
 	draw_superslam_enemy();
 	if (global.pistol)
 	{
 		pal_swap_set(spr_peppalette, 0, false);
 		if (pistolcharge >= 4)
-			draw_sprite(spr_revolvercharge, pistolcharge, x + smoothx, y - 70);
+			draw_sprite(spr_revolvercharge, pistolcharge, xx, yy - 70);
 	}
+	
 	pattern_reset();
 }

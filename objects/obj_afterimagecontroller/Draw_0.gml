@@ -50,7 +50,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 					{
 						pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
 						if playerid.isgustavo
-							pal = spr_ratmountpalette;
+							pal = spr_peppalette;
 					}
 					pal_swap_set(pal, playerid.paletteselect, false);
 				}

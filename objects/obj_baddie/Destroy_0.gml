@@ -3,7 +3,7 @@ if (room == rm_editor)
 
 if (!in_baddieroom() && (!elite || elitehit <= 0) && destroyable)
 {
-	if (object_index != obj_peppinoclone && object_index != obj_ghoul && object_index != obj_bazookabaddie && object_index != obj_snowman && object_index != obj_twoliterdog)
+	if (object_index != obj_peppinoclone && object_index != obj_ghoul && object_index != obj_bazookabaddie && object_index != obj_snowman && object_index != obj_twoliterdog && object_index != obj_bigcherry)
 	{
 		with (instance_create(x, y, obj_sausageman_dead))
 		{
@@ -133,22 +133,22 @@ if (!in_baddieroom() && important == 0)
 		}
 	}
 	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
-	repeat (3)
+	repeat 3
 	{
-		with (create_debris(x, y, spr_slapstar))
+		with create_debris(x, y, spr_slapstar)
 		{
 			hsp = random_range(-5, 5);
 			vsp = random_range(-10, 10);
 		}
 	}
 	instance_create(x, y, obj_bangeffect);
-	with (obj_camera)
+	with obj_camera
 	{
 		shake_mag = 3;
 		shake_mag_acc = 3 / room_speed;
 	}
 	add_baddieroom();
-	if (escape)
+	if escape
 		ds_list_add(global.escaperoom, ID);
 }
 else if (!in_baddieroom() && important == 1)

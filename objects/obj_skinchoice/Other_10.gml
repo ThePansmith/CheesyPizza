@@ -53,17 +53,16 @@ switch character
 		add_palette(43, "", noone, "Purple Pro", "It's not a Snick reference.", "PURPLE");
 		add_palette(44, "", noone, "Bold And Brash", "More like, belongs in the trash.", "BOLD");
 		add_palette(45, "", noone, "Fallen Down", "Mt. Ebbot 201x.", "SEPIA");
-		add_palette(46, "", noone, "Untextured", "You seem rather pale.", "PALE");
+		add_palette(46, "", noone, "Sketch", "You seem rather pale.", "PALE");
 		add_palette(47, "", noone, "Dead Meat", "That sucks.");
-		add_palette(48, "", noone, "Sketch", "mat_fullbright", "SKETCH");
-		add_palette(49, "", noone, "Warzone", "Deploying tactical italian.", "WORN");
-		add_palette(50, "", noone, "Block Party", "The pillars of the community.", "PILLAR");
-		add_palette(51, "", noone, "Machine Code", "Hack the planet.", "HACKER");
-		add_palette(52, "", noone, "Button Masher", "Don't blame the controller.");
-		add_palette(53, "", noone, "Orange Juice", "Hey Apple", "ORANGE");
-		add_palette(54, "", noone, "Pasta Power", "The princess is in another castle.", "JUMPMAN");
-		add_palette(55, "", noone, "Sucrose Snowstorm", "A little sweetness never hurts.", "SWEET");
-		add_palette(56, "", noone, "Peter", "Griffin");
+		add_palette(48, "", noone, "Warzone", "Deploying tactical italian.", "WORN");
+		add_palette(49, "", noone, "Block Party", "The pillars of the community.", "PILLAR");
+		add_palette(50, "", noone, "Machine Code", "Hack the planet.", "HACKER");
+		add_palette(51, "", noone, "Button Masher", "Don't blame the controller.");
+		add_palette(52, "", noone, "Orange Juice", "Hey Apple", "ORANGE");
+		add_palette(53, "", noone, "Pasta Power", "The princess is in another castle.", "JUMPMAN");
+		add_palette(54, "", noone, "Sucrose Snowstorm", "A little sweetness never hurts.", "SWEET");
+		add_palette(55, "", noone, "Peter", "Griffin");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "When you spam Big Chungus in general.");
@@ -113,7 +112,7 @@ switch character
 		add_palette(17, "", noone, "XMAS", "Give me a break.", "MERRY");
 		add_palette(18, "", noone, "The Noise", "...woag?");
 		add_palette(19, "", noone, "Anton", "Get ready to play with his balls.", "ANTON");
-		add_palette(20, "", noone, "Unfinished", "I found a hole in this sprite");
+		add_palette(20, "", noone, "Unfinished", "There are more holes than a block of cheese on this guy.");
 		add_palette(21, "", noone, "Aether", "Did we find a coder yet?");
 		add_palette(22, "", noone, "Black", "I'll get back to that one.", "BLACK");
 		add_palette(23, "", noone, "Bonmario", "Property of Bonmario of America INC.");
@@ -139,16 +138,15 @@ switch character
 		add_palette(43, "", noone, "Purple Pros", "It's not a Snick reference.", "PURPLE");
 		add_palette(44, "", noone, "Bold And Brash", "More like, belongs in the trash.", "GRAYISH");
 		add_palette(45, "", noone, "Fallen Down", "Mt. Ebbot 201x.", "SEPIA");
-		add_palette(46, "", noone, "Yin Yang", "Perfectly balanced.", "PALE");
+		add_palette(46, "", noone, "Sketch", "You seem rather pale.", "PALE");
 		add_palette(47, "", noone, "Dead Meat", "May contain traces of rat.");
-		add_palette(48, "", noone, "Kentucky Fried", "Original or extra crispy?", "FRIED");
-		add_palette(49, "", noone, "Warzone", "Deploying tactical italian.", "DISGUISED");
-		add_palette(50, "", noone, "Block Party", "The pillars of the community.", "PILLAR");
-		add_palette(51, "", noone, "Machine Code", "Hack the planet.", "HACKER");
-		add_palette(52, "", noone, "Button Masher", "Don't blame the controller.");
-		add_palette(53, "", noone, "Aperture Science", "Start thinking with portals.", "APERTURE");
-		add_palette(54, "", noone, "Pasta Power", "The princess is in another castle.", "JUMPMAN");
-		add_palette(55, "", noone, "Sucrose Snowstorm", "A little sweetness never hurts.", "SWEET");
+		add_palette(48, "", noone, "Warzone", "Deploying tactical italian.", "DISGUISED");
+		add_palette(49, "", noone, "Block Party", "The pillars of the community.", "PILLAR");
+		add_palette(50, "", noone, "Machine Code", "Hack the planet.", "HACKER");
+		add_palette(51, "", noone, "Button Masher", "Don't blame the controller.");
+		add_palette(52, "", noone, "Aperture Science", "Start thinking with portals.", "APERTURE");
+		add_palette(53, "", noone, "Pasta Power", "The princess is in another castle.", "JUMPMAN");
+		add_palette(54, "", noone, "Sucrose Snowstorm", "A little sweetness never hurts.", "SWEET");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "I'm running out of Big Chungus jokes for this.");
