@@ -75,7 +75,7 @@ switch (state)
 				if _dist < 50
 				{
 					inrange = true;
-					cancollide = true;
+					use_collision = true;
 				}
 				
 				if x != player.x
@@ -122,8 +122,9 @@ switch (state)
 
 scr_enemybird();
 scr_scareenemy();
+scr_collide();
 
 if state == states.walk
 	state = states.charge;
-if state != states.wait && cancollide
+if state != states.wait && use_collision
 	scr_boundbox(true);

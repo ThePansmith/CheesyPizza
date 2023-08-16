@@ -40,7 +40,13 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			{
 				a = alpha;
 				b = get_dark(other.image_blend, obj_drawcontroller.use_dark, true, x, y);
-				if (instance_exists(playerid) && playerid.usepalette)
+				
+				if obj_drawcontroller.use_dark && SUGARY
+				{
+					shd = true;
+					draw_set_flash(b);
+				}
+				else if instance_exists(playerid) && playerid.usepalette
 				{
 					shd = true;
 					

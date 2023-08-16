@@ -14,13 +14,24 @@ if y > room_height + 200
 	hsp = 0
 	vsp = 0
 }
+
+if (type == "Normal" || type == "Heavy") && ((state == states.idle && type == "Heavy") || state == states.stun)
+{
+	instance_destroy(instance_place(x + hsp, y + vsp, obj_baddie))
+	instance_destroy(instance_place(x + sign(hsp), y + sign(vsp), obj_baddie))
+	instance_destroy(instance_place(x + hsp, y + vsp, obj_destructibles))
+	instance_destroy(instance_place(x + sign(hsp), y + sign(vsp), obj_destructibles))
+	instance_destroy(instance_place(x + hsp, y + vsp, obj_icewall))
+	instance_destroy(instance_place(x + sign(hsp), y + sign(vsp), obj_icewall))	
+}
 switch state
 {
 	case states.idle:
 		thrown = false
 		grav = 0.5
-		if (grounded) hsp = Approach(hsp, 0, 0.3)
-			scr_collide()
+		if (grounded)
+			hsp = Approach(hsp, 0, 0.3)
+		scr_collide()
 	break
 	
 	case states.stun:
@@ -40,16 +51,6 @@ switch state
 }
 if (flash == 1 && alarm[1] <= 0)
 	alarm[1] = (0.15 * room_speed)
-
-if (type == "Normal" || type == "Heavy") && ((state == states.idle && type == "Heavy") || state == states.stun)
-{
-	instance_destroy(instance_place(x + hsp, y + vsp, obj_baddie))
-	instance_destroy(instance_place(x + sign(hsp), y + sign(vsp), obj_baddie))
-	instance_destroy(instance_place(x + hsp, y + vsp, obj_destructibles))
-	instance_destroy(instance_place(x + sign(hsp), y + sign(vsp), obj_destructibles))
-	instance_destroy(instance_place(x + hsp, y + vsp, obj_icewall))
-	instance_destroy(instance_place(x + sign(hsp), y + sign(vsp), obj_icewall))	
-}
 
 if !place_meeting(x, y, obj_dashpad)
 	touching = false;
@@ -116,7 +117,11 @@ if state != states.hit && invtime <= 0 && place_meeting(x, y, obj_player1) && st
 				other.xscale = sign(pctg)
 			else	
 				other.movespeed = 0
+			
 			other.hsp = (other.movespeed * other.xscale)
+			if state == states.Sjump
+				other.hsp = 0;
+			
 			other.flash = true;
 			other.invtime = 20
 			sound_play_3d(sfx_punch, x, y);

@@ -17,4 +17,4 @@ randomx = irandom_range(50, 100);
 randomy = irandom_range(100, 200);
 timer = irandom_range(60, 180);
 maxtime = timer;
-cancollide = false;
+use_collision = false;

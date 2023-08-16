@@ -3,7 +3,7 @@ if (room == rm_editor)
 
 if (!in_baddieroom() && (!elite || elitehit <= 0) && destroyable)
 {
-	if (object_index != obj_peppinoclone && object_index != obj_ghoul && object_index != obj_bazookabaddie && object_index != obj_snowman && object_index != obj_twoliterdog && object_index != obj_bigcherry)
+	if (object_index != obj_peppinoclone && object_index != obj_ghoul && object_index != obj_bazookabaddie && object_index != obj_snowman && object_index != obj_twoliterdog && object_index != obj_bigcherry && object_index != obj_froth)
 	{
 		with (instance_create(x, y, obj_sausageman_dead))
 		{
@@ -16,6 +16,7 @@ if (!in_baddieroom() && (!elite || elitehit <= 0) && destroyable)
 				sugary = other.sugary;
 			if (other.object_index == obj_ghostknight)
 				image_alpha = 0.3;
+			image_blend = other.image_blend;
 		}
 	}
 	else if (object_index == obj_peppinoclone)

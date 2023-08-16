@@ -23,7 +23,7 @@ function scr_enemy_hit()
 			_state = _player.tauntstoredstate;
 		if (_state == states.mach2 or _state == states.tumble or (_state == states.machslide && _player.sprite_index != _player.spr_mach3boost && _player.sprite_index != _player.spr_machslideboost3fall) or sprite_index == spr_player_ratmountattack or sprite_index == spr_lonegustavo_dash)
 			thrown = false;
-		else
+		else if object_index != obj_bigcherry && object_index != obj_twoliterdog
 			thrown = true;
 		vsp = hitvsp;
 		hsp = hithsp;

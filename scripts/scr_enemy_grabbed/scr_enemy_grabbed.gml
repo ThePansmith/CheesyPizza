@@ -134,7 +134,7 @@ function scr_enemy_grabbed()
 		}
 		if (_obj_player.state == states.finishingblow && (floor(_obj_player.image_index) >= 4 || (floor(_obj_player.image_index) < 1 && _obj_player.sprite_index == _obj_player.spr_swingdingend)))
 		{
-			thrown = 1
+			thrown = true
 			if heavy
 				var lag = 15
 			else
@@ -177,20 +177,20 @@ function scr_enemy_grabbed()
 				{
 					other.hithsp = 0
 					other.hitvsp = -25
-					other.linethrown = 1
+					other.linethrown = true
 				}
 				else
 				{
 					other.hithsp = (-other.image_xscale) * 25
 					other.hitvsp = -8
-					other.linethrown = 1
+					other.linethrown = true
 				}
 				vsp = -6
 			}
 			check_grabbed_solid(_obj_player)
 			hsp = hithsp
 			vsp = hitvsp
-			linethrown = 1
+			linethrown = true
 		}
 		if (_obj_player.state == states.throwing)
 		{

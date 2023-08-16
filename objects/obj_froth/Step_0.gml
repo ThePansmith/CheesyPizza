@@ -80,8 +80,8 @@ switch (state)
 					state = states.frothstuck
 					sprite_index = spr_player_frothstuck
 					breakout = 3
-					instance_destroy()
 				}
+				instance_destroy()
 			}
 			if grounded
 			{

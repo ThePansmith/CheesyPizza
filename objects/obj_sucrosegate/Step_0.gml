@@ -10,17 +10,33 @@ if _check
 {
 	// Powered
 	if !reversed
+	{
 		queuedEvent = GateEvent.RAISE;
+		x = -1000;
+		y = -1000;
+	}
 	else
+	{
 		queuedEvent = GateEvent.LOWER;
+		x = xstart;
+		y = ystart;
+	}
 }
 else
 {
 	// Unpowered
 	if !reversed
+	{
 		queuedEvent = GateEvent.LOWER;
+		x = xstart;
+		y = ystart;
+	}
 	else
-		queuedEvent = GateEvent.RAISE;	
+	{
+		queuedEvent = GateEvent.RAISE;
+		x = -1000;
+		y = -1000;
+	}
 }
 
 // If an event is queued and we are ready for that event, begin the event

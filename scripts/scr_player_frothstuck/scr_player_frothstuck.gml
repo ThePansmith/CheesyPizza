@@ -12,14 +12,14 @@ function scr_player_frothstuck()
 		sprite_index = spr_player_frothstuck_start
 		image_index = 0
 	}
-	if image_index >= imagen_number - 1 && sprite_index == spr_player_frothstuck_start
+	if image_index >= image_number - 1 && sprite_index == spr_player_frothstuck_start
 		sprite_index = spr_player_frothstuck
 
 	if breakout <= 0 
 	{
+		input_buffer_jump = 0;
 		state = states.normal
 		sprite_index = spr_idle
-		x = player_x
 		with instance_create(x, y, obj_parryeffect)
 			sprite_index = spr_snowcloudhit
 		breakout = 0
