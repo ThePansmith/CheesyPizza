@@ -28,7 +28,7 @@ function meta_showcollisions()
 
 function toggle_collisions(enable)
 {
-	var i_love_cock = [obj_solid, obj_slope, obj_platform, obj_secretblock, obj_secretbigblock, obj_secretmetalblock, obj_grindrail, obj_grindrailslope, obj_slope_platform, obj_hallway, obj_verticalhallway];
+	var i_love_cock = [obj_solid, obj_slope, obj_platform, obj_secretblock, obj_secretbigblock, obj_secretmetalblock, obj_grindrail, obj_grindrailslope, obj_slope_platform, obj_hallway, obj_verticalhallway, obj_ladder];
 	with all
 	{
 		if array_contains(i_love_cock, object_index)

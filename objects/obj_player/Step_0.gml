@@ -1187,7 +1187,7 @@ else
 	stunmove = false;
 if (flash == 1 && alarm[0] <= 0)
 	alarm[0] = 0.15 * room_speed;
-if (state != states.ladder)
+if (state != states.ladder && state != states.ratmountladder)
 	hooked = false;
 if (state != states.mach3 && state != states.machslide)
 	autodash = false;

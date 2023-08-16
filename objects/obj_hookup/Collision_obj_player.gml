@@ -10,7 +10,7 @@ with (other)
 		x = other.x + 16;
 		y = other.y + 40;
 	}
-	if (key_up && ladderbuffer == 0 && (state == states.ratmountjump || state == states.ratmountbounce || state == states.ratmount))
+	if (other.appear == -1 && key_up && ladderbuffer == 0 && (state == states.ratmountjump || state == states.ratmountbounce || state == states.ratmount))
 	{
 		fmod_event_instance_play(other.snd);
 		other.hooked = true;

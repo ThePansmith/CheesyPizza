@@ -42,6 +42,8 @@ function scr_player_ratmountladder()
 		hooked = false;
 		input_buffer_jump = 0;
 		ladderbuffer = 20;
+		if (place_meeting(x, y, obj_hookup))
+			ladderbuffer = 30;
 		state = states.ratmountjump;
 		sprite_index = spr_player_ratmountgroundpound;
 		if (key_down)

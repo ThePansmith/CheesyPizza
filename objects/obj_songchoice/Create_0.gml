@@ -104,7 +104,7 @@ add_section("Pizza Tower", [
 #endregion
 #region Modded
 
-add_section("Modded", [
+add_section("Cheesed Up", [
 	["event:/soundtest/pto/title", "Premium Cheese - TheFunGang123, loypoll"],
 	["event:/soundtest/pto/moveitboy", "Move It, Boy - MrSauceman"],
 	["event:/soundtest/pto/saturdays", "Saturdays - loypoll"],
@@ -125,9 +125,6 @@ add_section("Modded", [
 	["event:/soundtest/pto/midway", "bad to the bo - Jessie Productions"],
 	["event:/soundtest/pto/escapeBN", "bo noise escape theme 1 - Jessie Productions"],
 	["event:/soundtest/pto/lapBN", "Noise Rap - vir"],
-	["event:/soundtest/pto/entrancePN", "what the fuck is a gog - poopbucket"],
-	["event:/soundtest/pto/escapePN", "IT'S GARGIN' OUR! - poopbucket"],
-	["event:/soundtest/pto/lapPN", "the garg has just gergediogli - poopbucket"],
 	["event:/soundtest/pto/lap3", "Pillar John's Revenge - Vozaxhi"],
 	["event:/soundtest/pto/deathmode", "Revenge of the Killer Pizza - The Consul"],
 	
@@ -184,8 +181,12 @@ add_section("Modded", [
 	["event:/soundtest/pto/secretmansion", "A Pepperoni Secret - loypoll"],
 	["event:/soundtest/pto/secretmansionSP", "A Pepperoni Secret (Sugary) - loypoll"],
 	["event:/soundtest/pto/secretmansionBN", "A Pepperoni Secret (Bo) - loypoll"],
-	
-	"Sugary Spire",
+]);
+
+#endregion
+#region SUGARY
+
+add_section("Sugary Spire", [
 	["event:/soundtest/sugary/crunchy", "Down-To-Noise - RodMod"],
 	["event:/soundtest/sugary/entranceSN", "Pizzano's Obligatory Orchestral Play - PaperKitty"],
 	["event:/soundtest/sugary/glucose", "Glucose Getaway - RodMod"],
@@ -207,6 +208,17 @@ add_section("Modded", [
 	["event:/soundtest/sugary/secretsucrose", "Sucrose Secret - loypoll"],
 	["event:/soundtest/sugary/secretsucroseSP", "Sucrose Secret\n(Sugary) - "],
 	["event:/soundtest/sugary/secretsucroseBN", "Sucrose Secret\n(Bo) - loypoll"],
+]);
+
+#endregion
+#region PINOLINO
+
+add_section("Pinolino Adventure", [
+	["event:/soundtest/pto/entrancePN", "what the fuck is a gog - poopbucket"],
+	["event:/soundtest/pto/escapePN", "IT'S GARGIN' OUR! - poopbucket"],
+	["event:/soundtest/pto/lapPN", "the garg has just gergediogli - poopbucket"],
+	["event:/soundtest/pto/lap3PN", "Pillar Gog's Revenge - poopbucket"],
+	["event:/soundtest/pto/lap5PN", "Weiner Blaster - TheFunGang123, Wiener Blaster 456"],
 ]);
 
 #endregion

@@ -1,2 +1,2 @@
-drop = 1
-drop_y = 864
+drop = true
+drop_y = 896

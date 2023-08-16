@@ -58,32 +58,39 @@ function state_player_jump()
 			jumpstop = true;
 		}
 	}
-	if character == "N"
+	if (key_jump && wallclingcooldown == 10)
 	{
-		if (key_jump && wallclingcooldown == 10)
+		if (check_solid(x + xscale, y) && character == "N")
 		{
-			if (check_solid(x + xscale, y))
+			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
+			sprite_index = spr_playerN_wallclingstart;
+			image_index = 0;
+			state = states.hang;
+			xscale *= -1;
+			vsp = 0;
+			doublejump = false;
+		}
+		else if (!doublejump && sprite_index != spr_freefall && sprite_index != spr_facestomp)
+		&& (character == "N" or character == "SN")
+		{
+			if character == "SN"
 			{
-				sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
-				sprite_index = spr_playerN_wallclingstart;
-				image_index = 0;
-				state = states.hang;
-				xscale *= -1;
-				vsp = 0;
-				doublejump = false;
+				sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
+				sprite_index = spr_pizzano_doublejump;
+				vsp = -10;
 			}
-			else if (!doublejump && sprite_index != spr_freefall && sprite_index != spr_facestomp)
+			else
 			{
 				sound_play_oneshot_3d("event:/modded/sfx/woosh", x, y);
-				
 				sprite_index = spr_playerN_doublejump;
-				image_index = 0;
-				jumpstop = false;
 				vsp = -9;
-				doublejump = true;
-				particle_set_scale(part.highjumpcloud2, xscale, 1);
-				create_particle(x, y, part.highjumpcloud2, 0);
 			}
+			jumpAnim = false;
+			image_index = 0;
+			jumpstop = false;
+			doublejump = true;
+			particle_set_scale(part.highjumpcloud2, xscale, 1);
+			create_particle(x, y, part.highjumpcloud2, 0);
 		}
 	}
 	if (global.mort && (sprite_index == spr_mortdoublejump || sprite_index == spr_mortdoublejumpstart))

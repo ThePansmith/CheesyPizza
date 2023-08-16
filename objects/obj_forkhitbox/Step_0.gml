@@ -101,6 +101,8 @@ with (ID)
 			}
 			break;
 		case obj_minijohn:
+			if state == states.rage && obj_player1.instakillmove
+				instance_destroy(other);
 			if (state != states.rage && state != states.punch)
 				instance_destroy(other);
 			break;

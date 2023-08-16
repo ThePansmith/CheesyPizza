@@ -50,10 +50,6 @@ function scr_characterspr()
 	spr_stomp = spr_player_stomp;
 	spr_stompprep = spr_player_stompprep;
 	spr_crouchslide = spr_player_crouchslide;
-	spr_crouch = spr_player_crouch; // already set before
-	spr_bump = spr_player_bump; // already set before AGAIN FUCK YOU
-	spr_victory = spr_player_victory; // dude
-	spr_hurt = spr_player_hurt; // jesus fukcing christ ptg
 	spr_climbwall = spr_player_climbwall;
 	spr_grab = spr_player_grab;
 	spr_mach2jump = spr_player_mach2jump;
@@ -348,7 +344,6 @@ function scr_characterspr()
 		spr_crouchslide = spr_playerN_crouchslip;
 		spr_crouch = spr_playerN_crouch;
 		spr_bump = spr_playerN_bump;
-		spr_victory = spr_playerN_victory;
 		spr_hurt = spr_playerN_hurt;
 		spr_climbwall = spr_playerN_climbwall;
 		spr_grab = spr_playerN_grab;
@@ -584,7 +579,6 @@ function scr_characterspr()
 		spr_land2 = spr_playerV_land;
 		spr_lookdoor = spr_playerV_door;
 		spr_walkfront = spr_playerV_walkout;
-		spr_victory = spr_player_victory;
 		spr_Ladder = spr_playerV_ladderstill;
 		spr_laddermove = spr_playerV_climb;
 		spr_ladderdown = spr_playerV_downladder;
@@ -812,7 +806,6 @@ function scr_characterspr()
 		spr_crouchslide = spr_playerSP_crouchslide;
 		spr_crouch = spr_playerSP_crouch;
 		spr_bump = spr_playerSP_bump;
-		spr_victory = spr_playerSP_victory;
 		spr_hurt = spr_playerSP_hurt;
 		spr_climbwall = spr_playerSP_climbwall;
 		//spr_grab = spr_player_grab;
@@ -1086,7 +1079,6 @@ function scr_characterspr()
 		spr_stompprep = spr_playerSP_stompprep;
 		spr_crouchslide = spr_playerSP_crouchslide;
 		spr_bump = spr_playerSP_bump;
-		spr_victory = spr_playerSP_victory;
 		spr_hurt = spr_pizzano_hurt;
 		spr_climbwall = spr_playerSP_climbwall;
 		//spr_grab = spr_player_grab;

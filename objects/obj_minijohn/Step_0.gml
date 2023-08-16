@@ -167,19 +167,6 @@ if (state == states.walk || state == states.idle)
 		image_xscale = -sign(x - targetplayer.x);
 	state = states.chase;
 }
-if (instance_exists(obj_player2))
-{
-	if ((obj_player2.x > (x - 400) && obj_player2.x < (x + 400)) && (y <= (obj_player2.y + 60) && y >= (obj_player2.y - 60)))
-	{
-		if (state != states.idle && obj_player2.state == states.mach3)
-		{
-			state = states.idle;
-			sprite_index = scaredspr;
-			if (x != obj_player2.x)
-				image_xscale = -sign(x - obj_player2.x);
-		}
-	}
-}
 if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
