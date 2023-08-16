@@ -17,7 +17,6 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 					break;
 				 
 				case "SP":
-				case "SN":
 					spr = choose(spr_collect1SP, spr_collect2SP, spr_collect3SP, spr_collect4SP, spr_collect5SP);
 					
 					spr_palette = spr_collectSP_palette;
@@ -75,7 +74,6 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 					break;
 				
 				case "SP":
-				case "SN":
 					spr = choose(spr_giantcollect1SP, spr_giantcollect2SP, spr_giantcollect3SP, spr_giantcollect4SP);
 					break;
 				

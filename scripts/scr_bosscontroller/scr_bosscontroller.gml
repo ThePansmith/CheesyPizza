@@ -173,6 +173,7 @@ function scr_bosscontroller_normal()
 				scr_collect_hat()
 				instance_destroy()
 			}
+			if global.jukebox == noone
 			with (obj_music)
 				fmod_event_instance_stop(music.event, false);
 		}

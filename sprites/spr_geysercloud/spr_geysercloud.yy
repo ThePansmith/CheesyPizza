@@ -55,7 +55,7 @@
   "origin": 6,
   "parent": {
     "name": "Geyser",
-    "path": "folders/Sprites/Sugary Spire/Geyser.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Geyser.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -33,7 +33,7 @@ function state_player_normal()
 		idlespr = spr_player_pistolidle;
 		movespr = spr_player_pistolwalk;
 	}
-	if (instance_exists(obj_soundtest) && obj_soundtest.play)
+	if (safe_get(obj_soundtest, "play") or global.jukebox != noone)
 	{
 		idlespr = spr_pepdance;
 		movespr = spr_pepdance;
@@ -557,8 +557,6 @@ function pepperman_grab_reset()
 }
 function state_snick_normal()
 {
-	if live_call() return live_result;
-	
 	var acc = 4 * 0.046875;
 	var dec = 3 * 0.5;
 	var frc = 4 * 0.046875;

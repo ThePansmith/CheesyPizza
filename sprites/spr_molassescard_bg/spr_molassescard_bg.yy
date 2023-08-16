@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "Gates and Titlecards",
-    "path": "folders/Sprites/Sugary Spire/Gates and Titlecards.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Gates and Titlecards.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

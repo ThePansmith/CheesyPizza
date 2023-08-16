@@ -28,7 +28,7 @@
   "origin": 9,
   "parent": {
     "name": "Banana",
-    "path": "folders/Sprites/Sugary Spire/Baddie/Banana.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Banana.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

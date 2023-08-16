@@ -87,6 +87,9 @@ function scr_monster_activate()
 		}
 	}
 	instance_create_unique(0, 0, obj_kidspartybg);
+	
+	if global.jukebox != noone
+		exit;
 	with (obj_music)
 	{
 		if (!global.panic && !instance_exists(obj_ghostcollectibles) && !fmod_event_instance_is_playing(kidspartychaseID))

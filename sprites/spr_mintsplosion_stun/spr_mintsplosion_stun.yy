@@ -28,7 +28,7 @@
   "origin": 9,
   "parent": {
     "name": "Mintsplosion",
-    "path": "folders/Sprites/Sugary Spire/Baddie/Mintsplosion.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Baddie/Mintsplosion.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

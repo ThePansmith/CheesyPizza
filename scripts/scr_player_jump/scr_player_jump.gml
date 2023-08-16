@@ -584,8 +584,6 @@ function state_pepperman_jump()
 }
 function state_snick_jump()
 {
-	if live_call() return live_result;
-	
 	state_snick_normal();
 }
 function scr_player_jump()

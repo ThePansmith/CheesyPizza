@@ -16,8 +16,10 @@ panicmusicID = fmod_event_create_instance("event:/music/pizzatime");
 kidspartychaseID = fmod_event_create_instance("event:/music/w5/kidspartychase");
 panicstart = false;
 
+global.jukebox = noone;
 custom_music = [];
 current_custom = noone;
+waiting = false;
 
 #region PIZZA TOWER
 
@@ -265,6 +267,7 @@ add_music(tower_extra2, "event:/music/hub", "event:/music/pillarmusic", 0, hub_s
 add_music(tower_freerun, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_hubroomE, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_sage, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
+add_music(tower_sugary, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 
 add_music(characterselect, "event:/music/characterselect", -4, 0)
 add_music(midway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
@@ -308,7 +311,6 @@ add_music(molasses_1, "event:/modded/sugary/molasses", "event:/modded/sugary/mol
 	if s != -1
 		fmod_event_instance_set_parameter(event, "state", s, false);
 });
-add_music(estate_1, "event:/modded/sugary/cafe", "event:/modded/modded/cottonsecret", 0);
 add_music(sucrose_1, "event:/modded/sugary/sucrose", "event:/modded/modded/sucrosesecret", 0);
 
 #endregion

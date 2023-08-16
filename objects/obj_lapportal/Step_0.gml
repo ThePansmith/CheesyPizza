@@ -18,7 +18,7 @@ if (global.panic || instance_exists(obj_wartimer))
 				other.playerid = id;
 				
 				var collect = 3000;
-				if check_modifier(MOD.Lap3)
+				if (MOD.Lap3)
 				{
 					if global.laps == 1
 						collect = 6000;
@@ -81,7 +81,7 @@ if (global.panic || instance_exists(obj_wartimer))
 				global.lap = true;
 				instance_create(0, 0, obj_fadeout);
 				
-				if check_modifier(MOD.Lap3)
+				if (MOD.Lap3)
 				{
 					switch global.laps
 					{
