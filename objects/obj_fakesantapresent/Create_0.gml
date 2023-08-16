@@ -7,4 +7,4 @@ platformid = -4;
 grav = 0.5;
 grounded = false;
 spawn = true;
-baddieID = -4;
+baddieID = noone;

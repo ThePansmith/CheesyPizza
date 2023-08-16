@@ -4,7 +4,7 @@ var _y = y
 if state = states.grabbed
 	_y += 8
 draw_sprite(spr_sucroseice_bg, color_index, x, _y)
-if contentspr != -4
+if contentspr != noone
 {
 	if !surface_exists(contentsurf)
 		contentsurf = surface_create(64, 64)
