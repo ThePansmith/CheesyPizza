@@ -4,7 +4,8 @@ event_inherited();
 if move_ver != 0
 {
 	var length = array_length(sections[sel.game].songs) - 1;
-
+	
+	scroll = -50;
 	sel.song += move_ver;
 	sel.song = wrap(sel.song, 0, length);
 	

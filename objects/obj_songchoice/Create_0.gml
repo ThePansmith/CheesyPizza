@@ -120,7 +120,7 @@ add_section("Cheesed Up", [
 	["event:/soundtest/pto/distasteful", "Distasteful Anchovi - ClascyJitto"],
 	["event:/soundtest/pto/pestoanchovi", "Pesto Anchovi - ClascyJitto"],
 	["event:/soundtest/pto/forafewtoppings", "For A Few Toppings More - MrSauceman"],
-	["event:/soundtest/pto/5minutes", "06 Minutes Til' Boom! - [c]"],
+	["event:/soundtest/pto/5minutes", "06 Minutes Til' Boom! - [c]ness"],
 	["event:/soundtest/pto/leaningnightmare", "Leaning Nightmare - ClascyJitto"],
 	["event:/soundtest/pto/midway", "bad to the bo - Jessie Productions"],
 	["event:/soundtest/pto/escapeBN", "bo noise escape theme 1 - Jessie Productions"],
@@ -132,9 +132,9 @@ add_section("Cheesed Up", [
 	["event:/soundtest/pto/secretnoise", "A Jam-Packed Secret - loypoll"],
 	
 	["event:/soundtest/pto/secretentranceSP", "An Entrance Secret (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretentranceBN", "An Entrance Secret (Bo) - loypoll"],
-	["event:/soundtest/pto/secretpizzascapeSP", "A Medieval Secret (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretpizzascapeBN", "A Medieval Secret (Bo) - loypoll"],
+	["event:/soundtest/pto/secretentranceBN", "An Entrance Secret (Bo) - Jessie Productions"],
+	["event:/soundtest/pto/secretpizzascapeSP", "A Medieval Secret (Sugary) - RodMod"],
+	["event:/soundtest/pto/secretpizzascapeBN", "A Medieval Secret (Bo) - Jessie Productions"],
 	["event:/soundtest/pto/secretruinSP", "A Secret Under The Debris (Sugary) - loypoll"],
 	["event:/soundtest/pto/secretruinBN", "A Secret Under The Debris (Bo) - loypoll"],
 	["event:/soundtest/pto/secretdungeonSP", "A Hidden Pepperoni In The Cage (Sugary) - loypoll"],
@@ -172,7 +172,7 @@ add_section("Cheesed Up", [
 	["event:/soundtest/pto/secretwarSP", "My Secret War Crimes (Sugary) - loypoll"],
 	["event:/soundtest/pto/secretwarBN", "My Secret War Crimes (Bo) - loypoll"],
 	
-	["event:/soundtest/pto/secretstrongcold", "Secrets of The Saintes - [c]"],
+	["event:/soundtest/pto/secretstrongcold", "Secrets of The Saintes - [c]ness"],
 	["event:/soundtest/pto/secretstrongcoldSP", "Secrets of The Saintes (Sugary) - loypoll"],
 	["event:/soundtest/pto/secretstrongcoldBN", "Secrets of The Saintes (Bo) - loypoll"],
 	["event:/soundtest/pto/secretchateau", "A Secret In My Spaghetti - loypoll"],
@@ -194,10 +194,11 @@ add_section("Sugary Spire", [
 	["event:/soundtest/sugary/lap2", "Sweet Release of Death - RodMod"],
 	["event:/soundtest/sugary/cottontown", "Steamy Cotton Candy - RodMod"],
 	["event:/soundtest/sugary/clock", "Around The Gateau's Gears - RodMod"],
-	["event:/soundtest/sugary/lostchocolate", "Lost Chocolate - Jessie Productions"],
+	["event:/soundtest/sugary/lostchocolate", "Lost Chocolate - RodMod, Jessie Productions"],
 	["event:/soundtest/sugary/foundchocolate", "Found Chocolate - Jessie Productions"],
 	["event:/soundtest/sugary/sucrose", "Sugarcube Hailstorm - PaperKitty"],
 	
+	"Secrets",
 	["event:/soundtest/sugary/secretentranceSN", "Lol Funny - loypoll"],
 	["event:/soundtest/sugary/secretcotton", "A Steamy Surprise - loypoll"],
 	["event:/soundtest/sugary/secretcottonSP", "A Steamy Surprise\n(Sugary) - RodMod"],
@@ -206,7 +207,7 @@ add_section("Sugary Spire", [
 	["event:/soundtest/sugary/secretswampSP", "man's lost secret.\n(Sugary) - RodMod"],
 	["event:/soundtest/sugary/secretswampBN", "man's lost secret.\n(Bo) - loypoll"],
 	["event:/soundtest/sugary/secretsucrose", "Sucrose Secret - loypoll"],
-	["event:/soundtest/sugary/secretsucroseSP", "Sucrose Secret\n(Sugary) - "],
+	["event:/soundtest/sugary/secretsucroseSP", "Sucrose Secret\n(Sugary) - RodMod"],
 	["event:/soundtest/sugary/secretsucroseBN", "Sucrose Secret\n(Bo) - loypoll"],
 ]);
 
@@ -222,6 +223,9 @@ add_section("Pinolino Adventure", [
 ]);
 
 #endregion
+
+scroll = -50;
+textx = 540;
 
 draw = function(curve)
 {
@@ -267,7 +271,19 @@ draw = function(curve)
 	
 	// song list
 	draw_set_halign(fa_left);
-
+	
+	shader_set(shd_rectclip);
+	var clip = shader_get_uniform(shd_rectclip, "u_clip_bounds");
+	shader_set_uniform_f_array(clip, [64, 0, 364, 540]);
+	
+	if anim_con == 0
+	{
+		if curve >= .7
+			textx = lerp(textx, 0, .25);
+	}
+	else
+		textx = lerp(960, 0, curve);
+	
 	var scroller = max((sel.song - 8) * 16, 0);
 	for(var i = 0; i < array_length(sections[sel.game].songs); i++)
 	{
@@ -292,19 +308,30 @@ draw = function(curve)
 			var ballsack = string_split(song[1], " - ", false, 1);
 			var str = string_replace_all(ballsack[0], "\n", " ");
 			
-			//draw_text_color(64 + 1, yy + 1, str, 0, 0, 0, 0, draw_get_alpha() * 0.5);
-			draw_text(64 + charshift[0], yy, str);
+			var textwidth = round(string_width(str) - 300);
+			if sel.song == i
+				scroll = wrap(round(++scroll), -50, textwidth + 50);
+			
+			draw_text(64 + charshift[0] - (clamp(scroll, 0, max(textwidth, 0)) * (sel.song == i)), yy + textx, str);
 		}
 		else
 		{
+			// section
 			
 		}
 	}
 	
+	shader_reset();
+	
 	draw_set_alpha(talpha);
-	draw_sprite(spr_cursor, -1, 64 - 36 + xo + charshift[0], 128 + 10 - scroller + sel.song * 16);
+	draw_sprite(spr_cursor, -1, 64 - 36 + xo + charshift[0], 128 + 10 - scroller + sel.song * 16 + textx);
 	
 	draw_set_align();
+	
+	if curve < 1
+		shader_set_circleclip(960 / 2, 540 / 2, 560 * curve, false, true);
+	else
+		shader_reset();
 	
 	// song position
 	var pos = 0;
