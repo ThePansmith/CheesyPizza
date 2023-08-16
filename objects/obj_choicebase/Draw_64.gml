@@ -34,8 +34,8 @@ var origin_pos = shader_get_uniform(shd_circleclip, "u_origin");
 
 // The Pizza Matrix™
 var prev_matrix = matrix_get(matrix_world);
-matrix_set(matrix_world, matrix_build(bg_pos, bg_pos, 0, 0, 0, 0, 1, 1, 1));
 shader_set_uniform_f(origin_pos, (960 / 2) - bg_pos, (540 / 2) - bg_pos);
+matrix_set(matrix_world, matrix_build(bg_pos, bg_pos, 0, 0, 0, 0, 1, 1, 1));
 gpu_set_blendmode(bm_normal);
 vertex_submit(pizza_vbuffer, pr_trianglelist, sprite_get_texture(spr_skinmenupizza, bg_image));
 matrix_set(matrix_world, prev_matrix);
