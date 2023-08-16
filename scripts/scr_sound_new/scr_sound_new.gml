@@ -134,7 +134,7 @@ function sound_play_oneshot_3d(event, xx, yy)
 		audio_play_sound(event, 0, false, global.option_sfx_volume * global.option_master_volume);
 		exit;
 	}
-	if (MOD.Mirror)
+	if check_modifier(MOD.Mirror)
 		xx = room_width - xx;
 	
 	fmod_event_one_shot_3d(event, xx, yy);
@@ -143,7 +143,7 @@ function sound_instance_move(event, xx, yy)
 {
 	if is_real(event) && audio_exists(event)
 		exit;
-	if (MOD.Mirror)
+	if check_modifier(MOD.Mirror)
 		xx = room_width - xx;
 	
 	if is_string(event)

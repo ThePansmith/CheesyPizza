@@ -127,8 +127,6 @@
     {"name":"inst_CDAEF020","path":"rooms/dungeon_6/dungeon_6.yy",},
     {"name":"inst_51526E98","path":"rooms/dungeon_6/dungeon_6.yy",},
     {"name":"inst_D615DC10","path":"rooms/dungeon_6/dungeon_6.yy",},
-    {"name":"inst_29D4E649","path":"rooms/dungeon_6/dungeon_6.yy",},
-    {"name":"inst_18A13CF6","path":"rooms/dungeon_6/dungeon_6.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -253,8 +251,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_CDAEF020","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollect","path":"objects/obj_escapecollect/obj_escapecollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":640.0,"y":256.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_51526E98","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollect","path":"objects/obj_escapecollect/obj_escapecollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":608.0,"y":256.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_D615DC10","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollect","path":"objects/obj_escapecollect/obj_escapecollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":576.0,"y":256.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_29D4E649","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":608.0,"y":768.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_18A13CF6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1792.0,"y":1664.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":60,"SerialiseWidth":88,"TileCompressedData":[
 -5,13,4,15,0,0,268435471,-84,13,4,25,0,0,268435481,-84,13,4,35,0,0,268435491,-84,13,54,15,0,0,41,13,42,43,44,42,43,44,42,43,44,42,43,44,42,43,44,42,43,42,43,44,42,43,44,42,43,44,42,43,44,42,43,44,42,43,42,43,44,42,43,44,42,43,44,42,43,44,42,43,44,-34,13,1,25,-53,0,1,11,-33,13,

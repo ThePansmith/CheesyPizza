@@ -1,6 +1,6 @@
 function scr_is_p_rank()
 {
-	var enemykilled = global.prank_enemykilled or (MOD.Pacifist);
+	var enemykilled = global.prank_enemykilled or check_modifier(MOD.Pacifist);
 	
 	if global.leveltosave == "dragonlair" or global.leveltosave == "grinch"
 		return !global.combodropped && enemykilled;
@@ -123,6 +123,7 @@ function scr_do_rank(showtoppins = true, boss = false)
 					targetRoom = Endingroom;
 					targetDoor = "A";
 					instance_destroy(obj_pigtotal);
+					audio_stop_all();
 					stop_music();
 					fmod_event_instance_stop(global.snd_rank);
 					sound_play_oneshot("event:/sfx/ending/towercollapsetrack");

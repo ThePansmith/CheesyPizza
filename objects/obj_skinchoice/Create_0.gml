@@ -1,5 +1,5 @@
 event_inherited();
-live_auto_call;
+if live_call() return live_result;
 
 // animation
 init = false;
@@ -188,6 +188,7 @@ draw_skin_palette = function(_x, _y, _color, _alpha)
 draw_skin_pattern = function(_x, _y, _color, _alpha, _sprite, _subimage)
 {
 	var uvs = sprite_get_uvs(_sprite, _subimage);
+	//var tex = sprite_get_texture(_sprite, _subimage);
 	var uv_info = {
 		left : uvs[0],
 		top : uvs[1],
@@ -264,15 +265,22 @@ draw = function(curve)
 		if pal.texture != noone
 			pattern_set(global.Base_Pattern_Color, characters[sel.char][1], -1, 2, 2, pal.texture);	
 		pal_swap_set(characters[sel.char][2], sel.mix > 0 ? mixables[sel.mix].palette : pal.palette, false);
+		//draw_sprite_ext(characters[sel.char][1], -1, charx, chary, 2, 2, 0, c_white, curve * charshift[2]);
 		draw_sprite(characters[sel.char][1], -1, 128, 128);
 		
 		pattern_reset();
 		
 		surface_reset_target();
 		if (curv_prev < 1)
-			shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev);
-
-		
+		{
+			shader_set(shd_circleclip);
+			var origin_pos = shader_get_uniform(shd_circleclip, "u_origin");
+			var radius_pos = shader_get_uniform(shd_circleclip, "u_radius");
+			var alphafix_pos = shader_get_uniform(shd_circleclip, "u_alphafix");
+			shader_set_uniform_f(origin_pos, 960 / 2, 540 / 2);
+			shader_set_uniform_f(radius_pos, 560 * curv_prev);
+			shader_set_uniform_f(alphafix_pos, 0);
+		}
 		draw_surface_ext(player_surface, charx - 256, chary - 256, 2, 2, 0, c_white, curve * charshift[2]);
 	}
 	
@@ -314,8 +322,6 @@ draw = function(curve)
 	vertex_begin(vertex_buffer, vertex_format);
 	
 	var cache = [];
-	var fuckset = false;
-	
 	for(var i = 0; i < array_length(array); i++)
 	{
 		var xdraw = xx;
@@ -353,11 +359,11 @@ draw = function(curve)
 			draw_reset_flash();
 		}
 		else if fuck >= 0 // special palettes
-			array_push(cache, { x: 408 + xdraw, y: 70 + ydraw, pattern: spr_skinchoicecustom, subimage : fuck});
+			draw_skin_pattern(408 + xdraw, 70 + ydraw, c_white, 1, spr_skinchoicecustom, fuck);
 		else if mixing or array[i].texture == noone // palettes
 			draw_skin_palette(408 + xdraw, 70 + ydraw, pal_swap_get_pal_color(palspr, array[i].palette, characters[sel.char][3][mixing]), 1);
 		else // patterns, cached and drawn later
-			array_push(cache, { x: 408 + xdraw, y: 70 + ydraw, pattern: array[i].texture, subimage : noone});
+			array_push(cache, { x: 408 + xdraw, y: 70 + ydraw, pattern: array[i].texture});
 		
 		// position next palette
 		xx += 36;
@@ -370,9 +376,15 @@ draw = function(curve)
 	vertex_end(vertex_buffer);
 	
 	if curv_prev < 1
-		shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev);
-	shader_reset();
-	
+	{
+		shader_set(shd_circleclip);
+		var origin_pos = shader_get_uniform(shd_circleclip, "u_origin");
+		var radius_pos = shader_get_uniform(shd_circleclip, "u_radius");
+		var alphafix_pos = shader_get_uniform(shd_circleclip, "u_alphafix");
+		shader_set_uniform_f(origin_pos, 960 / 2, 540 / 2);
+		shader_set_uniform_f(radius_pos, 560 * curv_prev);
+		shader_set_uniform_f(alphafix_pos, 0);
+	}
 	vertex_submit(vertex_buffer, pr_trianglelist, tex);
 	
 	// RX: not really a better way to do this without rewriting the entire thing
@@ -383,15 +395,13 @@ draw = function(curve)
 			pattern_surface = surface_create(32, 32);
 		surface_set_target(pattern_surface);
 		
+		//scr_palette_texture(spr_skinchoicepalette, 0, 0, 0, 1, 1, 0, c_white, 1, true, cache[i].pattern);
 		shader_set(shd_pal_swapper);
 		if cache[i].pattern != noone
-		{
-			if cache[i].subimage == noone
-				pattern_set_temp(global.Base_Pattern_Color, spr_skinchoicepalette, 0, 1, 1, cache[i].pattern);
-			else
-				pattern_set_temp(global.Base_Pattern_Color, spr_skinchoicepalette, 0, 1, 1, cache[i].pattern, cache[i].subimage);
-		}
+			pattern_set_temp(global.Base_Pattern_Color, spr_skinchoicepalette, 0, 1, 1, cache[i].pattern);
+		//pal_swap_set_tiles()
 		pal_swap_set(spr_skinchoicepal, 1);
+		//draw_sprite_ext(characters[sel.char][1], -1, charx, chary, scale, scale, 0, c_white, 1);
 		draw_sprite(spr_skinchoicepalette, 0, 0, 0);
 		pattern_reset();
 		shader_reset();
@@ -399,13 +409,28 @@ draw = function(curve)
 		
 		// RX: it's super cool because the above uses a shader so we get to set the fucking clip shader AGAIN
 		if curv_prev < 1
-			shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev);
-			
+		{
+			shader_set(shd_circleclip);
+			var origin_pos = shader_get_uniform(shd_circleclip, "u_origin");
+			var radius_pos = shader_get_uniform(shd_circleclip, "u_radius");
+			var alphafix_pos = shader_get_uniform(shd_circleclip, "u_alphafix");
+			shader_set_uniform_f(origin_pos, 960 / 2, 540 / 2);
+			shader_set_uniform_f(radius_pos, 560 * curv_prev);
+			shader_set_uniform_f(alphafix_pos, 0);
+		}
+		//else // RX: I don't think we can "flash" as as selection during the intro/outro
+		//{
+			//if flashpal[0] == cache[i].index
+			//	draw_set_flash();
+		//
+				
 		draw_surface(pattern_surface, cache[i].x, cache[i].y);
-
+		
+		//if flashpal[0] != cache[i].index
+		//	draw_reset_flash();
 		draw_sprite_ext(spr_skinchoicepalette, 1, cache[i].x, cache[i].y, 1, 1, 0, c_white, 1);
 	}
-	
+
 	// hand
 	draw_sprite_ext(spr_skinchoicehand, 0, handx, handy + sin(current_time / 1000) * 4, 2, 2, 0, c_white, 1);
 	draw_set_align();

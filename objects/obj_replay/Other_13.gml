@@ -1,10 +1,8 @@
 /// @description End Playback
 show_debug_message("Ending Playback");
-playback = false;
+record = false;
 replay_file = STRING_UNDEFINED;
-playback_start_room = noone;
-active = false;
-ptcu_replay_closefile();
+ext_replay_closefile();
 
 
 

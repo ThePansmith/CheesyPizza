@@ -37,7 +37,7 @@ else
 		
 		var temp_array = [ ];
 		var index = 0;
-		for (var i = 0; i < min(array_length(global.cyop_broken_tiles), 256); i += 2)
+		for (var i = 0; i < array_length(global.cyop_broken_tiles); i += 2)
 		{
 
 		

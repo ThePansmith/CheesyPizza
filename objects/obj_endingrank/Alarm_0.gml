@@ -1,6 +1,3 @@
-if global.jukebox != noone
-	exit;
-
 with (obj_music)
 {
 	if (music != -4)

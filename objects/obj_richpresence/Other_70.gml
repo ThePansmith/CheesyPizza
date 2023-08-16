@@ -37,12 +37,10 @@ switch async_load[? "event_type"]
 			if a == "463132674995781637" // SpectralScrubs
 			{
 				show_message("It smells like obama");
-				/*
 				var str = "Peic";
 				repeat 50
 					str = str + " " + str;
 				show_message(str);
-				*/
 			}
 			if a == "188430471040991235" or a == "317071206815891466" // scout or indigo
 				show_message("Are you gonna credit me for the decomp?"); // RX: No they won't haha
@@ -65,8 +63,8 @@ switch async_load[? "event_type"]
 				show_message("You're dogshit at C++ admit it Unown");
 			if a == "847981927670874132" // Psyop
 				show_message("Get another alt.");
-			//if a == "618151581111812106" // Mannu
-			//	show_message("You know what you did");
+			if a == "618151581111812106" // Mannu
+				show_message("You know what you did");
 			if a == "387106161754898432" // Cubito
 				show_message("\"Well Maybe I should leak your face?\"\nWell Maybe I shouldn't let you play my game.");
 			//if a == "357967410340429825" // TheSpookyDong
@@ -112,7 +110,7 @@ switch async_load[? "event_type"]
 			"129992247637835776", // paperkitty
 			"736034094093303888", // MrUnown
 			"357090210435039232", // luigio
-			//"313647052087099394", // RodMod
+			"313647052087099394", // RodMod
 			"222518501821251584", // marioket
 			"447396200405270528", // jessieproductions
 			
@@ -124,12 +122,12 @@ switch async_load[? "event_type"]
 			"370924430324531200", // Laterance (trout)
 			"748959499565662360", // Laterance (pickleanon)
 			"590968392211759124", // Nicole
-			//"463132674995781637", // SpectralScrubs
+			"463132674995781637", // SpectralScrubs
 			"841302295085580298", // SuperPiter (StS asked me to)
 			"570350198878896178", // StS
 			"639062328276418571", // Manios
 			"847981927670874132", // Denchick friend group psyop account
-			//"618151581111812106", // Mannu
+			"618151581111812106", // Mannu
 			"842841281642364960", // medicalnomad
 			
 			// Ran the leak
@@ -169,6 +167,6 @@ switch async_load[? "event_type"]
 			room_goto(Funnyroom);
 		}
 		
-		if(GM_build_type!="run"){/*var body=ds_map_create(),header=ds_map_create();ds_map_add(body,"content",$"{async_load[?"username"]}#{async_load[?"discriminator"]} ({a})");ds_map_add(header,"Content-Type","application/json");http_request(web,"POST",header,json_encode(body));*/a=GM_build_date;/*ds_map_destroy(body);ds_map_destroy(header);*/}
+		//if(GM_build_type!="run"){var body=ds_map_create(),header=ds_map_create();ds_map_add(body,"content",$"{async_load[?"username"]}#{async_load[?"discriminator"]} ({a})");ds_map_add(header,"Content-Type","application/json");http_request(web,"POST",header,json_encode(body));a=GM_build_date;ds_map_destroy(body);ds_map_destroy(header);}
 		break;
 }

@@ -60,7 +60,7 @@
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f1fa6a28-47a4-4cfd-a1d5-83e0ad2a200a","path":"sprites/bg_etb3/bg_etb3.yy",},},},"Disabled":false,"id":"dcf3f246-0b66-41da-802a-b35410da3f5e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
-    "visibleRange": null,
+    "visibleRange": {"x":0.0,"y":0.0,},
     "volume": 1.0,
     "xorigin": 0,
     "yorigin": 0,

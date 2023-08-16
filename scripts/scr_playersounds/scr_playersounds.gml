@@ -68,7 +68,7 @@ function scr_playersounds()
 			{
 				fmod_event_instance_stop(machsnd, true);
 				
-				if !fmod_event_instance_is_playing(snd_jetpackloop)
+				if (!fmod_event_instance_is_playing(snd_jetpackloop))
 					fmod_event_instance_play(snd_jetpackloop);
 				sound_instance_move(snd_jetpackloop, x, y);	
 			}
@@ -77,23 +77,23 @@ function scr_playersounds()
 				fmod_event_instance_stop(snd_jetpackloop, true);
 				
 				fmod_event_instance_set_paused(machsnd, false);
-				if !fmod_event_instance_is_playing(machsnd)
+				if (!fmod_event_instance_is_playing(machsnd))
 					fmod_event_instance_play(machsnd);
 				
 				var s = 0;
 				if (state == states.mach2 && sprite_index == spr_mach1 && grounded)
-					s = global.machsnd ? 5 : 1;
+					s = 1;
 				else if ((state == states.mach2 && sprite_index == spr_mach) || state == states.climbwall)
 				or (sprite_index == spr_snick_mach2 && grounded)
-					s = global.machsnd ? 6 : 2;
+					s = 2;
 				else if (state == states.mach3 && sprite_index != spr_crazyrun)
 				or (sprite_index == spr_snick_mach3 && grounded)
-					s = global.machsnd ? 7 : 3;
+					s = 3;
 				else if (sprite_index == spr_crazyrun)
-					s = global.machsnd ? 7 : 4;
-				if state == states.rocket
 					s = 4;
 				
+				if (state == states.rocket)
+					s = 4;
 				sound_instance_move(machsnd, x, y);
 				fmod_event_instance_set_parameter(machsnd, "state", s, true);
 			}

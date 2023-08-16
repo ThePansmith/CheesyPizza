@@ -40,5 +40,5 @@ if MIDWAY
 }
 ID = id;
 
-if (MOD.DeathMode)
+if check_modifier(MOD.DeathMode)
 	instance_destroy();

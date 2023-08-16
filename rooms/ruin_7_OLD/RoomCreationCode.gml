@@ -1,1 +1,0 @@
-global.roommessage = "ROUNDABOUT ROUTE"

@@ -15,8 +15,6 @@ else
 	if (fadealpha <= 0 && !music && title_music != -4)
 	{
 		music = true;
-		
-		if global.jukebox == noone
-			sound_play_oneshot(title_music);
+		sound_play_oneshot(title_music);
 	}
 }

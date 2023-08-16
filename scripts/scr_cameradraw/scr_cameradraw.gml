@@ -203,9 +203,9 @@ function scr_cameradraw()
 			var bx = hud_xx - 63, by = hud_yy - 16, bpad = 42;
 		    var bspr = spr_peppinobullet_collectible;
 		
-			if global.doublegrab == 3 && obj_player1.character != "SN"
+			if global.doublegrab == 3
 				bpad = 25;
-			
+		
 		    if obj_player1.character == "N"
 		    {
 		        bx = hud_xx - 69;
@@ -239,7 +239,7 @@ function scr_cameradraw()
 		}
 	
 		// chainsaw
-		if global.doublegrab == 3 && obj_player1.character != "V" && obj_player1.character != "S" && obj_player1.character != "SN"
+		if global.doublegrab == 3 && obj_player1.character != "V" && obj_player1.character != "S"
 		{
 			var bx = hud_xx - 63, by = hud_yy + 60, bpad = 25;
 		    var bspr = spr_fuelHUD;

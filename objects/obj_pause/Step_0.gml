@@ -37,21 +37,12 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 	// pause
 	if (obj_savesystem.state == 0 && !_cutscenehandler && (room != rank_room && room != Realtitlescreen && room != timesuproom && room != rm_baby) && !instance_exists(obj_jumpscare) && !instance_exists(obj_technicaldifficulty))
 	{
-		refresh_options();
-		if global.jukebox != noone
-		{
-			array_push(pause_menu, "CLEAR JUKEBOX");
-			scr_pauseicon_add(spr_pauseicons, 4, -5);
-		}
-		
 		selected = 0;
 		fadein = true;
 		pause = true;
 		fade = 0;
 		with (obj_music)
 		{
-			if global.jukebox != noone
-				waiting = true;
 			if (music != -4)
 			{
 				other.savedmusicpause = fmod_event_instance_get_paused(music.event);
@@ -191,12 +182,8 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 		else
 			transfotext = -4;
 		scr_pause_deactivate_objects();
-		
-		if global.jukebox == noone
-		{
-			fmod_event_instance_play(pausemusicID);
-			fmod_event_instance_set_paused(pausemusicID, false);
-		}
+		fmod_event_instance_play(pausemusicID);
+		fmod_event_instance_set_paused(pausemusicID, false);
 	}
 }
 with (obj_player1)
@@ -266,7 +253,7 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 	}
 	moveselect = -key_up2 + key_down2;
 	selected += moveselect;
-	if (moveselect != 0 && selected >= 0 && selected <= array_length(pause_menu) - 1)
+	if (moveselect != 0 && selected >= 0 && selected <= 3)
 	{
 		sound_play_oneshot("event:/sfx/ui/angelmove");
 		update_cursor = true;
@@ -315,18 +302,6 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 				sound_play_oneshot("event:/sfx/ui/select");
 				with (instance_create(x, y, obj_option))
 					depth = other.depth - 1;
-				break;
-			
-			case 4: // clear jukebox
-				refresh_options();
-				selected = 0;
-				
-				fmod_event_instance_stop(global.jukebox.instance, true);
-				fmod_event_instance_release(global.jukebox.instance);
-				global.jukebox = noone;
-				
-				fmod_event_instance_play(pausemusicID);
-				fmod_event_instance_set_paused(pausemusicID, false);
 				break;
 			
 			case 3:

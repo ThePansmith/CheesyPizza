@@ -19,7 +19,7 @@ function scr_playerreset(roomstart = false, restart = false)
 	
 	if !roomstart && !restart
 	{
-		reset_modifier();
+		global.modifier = 0;
 		global.snickchallenge = false;
 	}
 	if global.snickchallenge

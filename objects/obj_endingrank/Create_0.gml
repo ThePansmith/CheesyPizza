@@ -13,14 +13,11 @@ brown = false;
 brownfade = 0;
 depth = -601;
 alarm[0] = 1;
-
-if global.jukebox == noone
 with (obj_music)
 {
 	if (music != -4)
 		fmod_event_instance_stop(music.event, true);
 }
-
 var mins = global.file_minutes;
 for (var hours = 0; mins > 59; mins -= 60)
 	hours++;

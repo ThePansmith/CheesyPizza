@@ -1,18 +1,26 @@
 function sh_modifier(args)
 {
 	if !WC_debug && !string_starts_with(room_get_name(room), "tower")
-		return "You cannot use this command inside of a level";
+		return "You do not have permission to use this command";
 	if array_length(args) < 2
 		return "Argument missing: modifier";
 	
 	var modifier = args[1];
-	if !variable_struct_exists(MOD, modifier)
-		return $"Modifier {modifier} not found";
+	switch modifier
+	{
+		case "Encore": modifier = MOD.Encore; break;
+		case "Pacifist": modifier = MOD.Pacifist; break;
+		case "NoToppings": modifier = MOD.NoToppings; break;
+		case "HardMode": modifier = MOD.HardMode; break;
+		case "Mirror": modifier = MOD.Mirror; break;
+		case "Lap3": modifier = MOD.Lap3; break;
+		case "DeathMode": modifier = MOD.DeathMode; break;
+		
+		default: return "Modifier not found";
+	}
 	
-	var value = !variable_struct_get(MOD, modifier);
-	variable_struct_set(MOD, modifier, value);
-	
-	return $"{modifier} modifier {value ? "ON" : "OFF"}";
+	global.modifier ^= modifier;
+	return $"{args[1]} modifier {check_modifier(modifier) ? "ON" : "OFF"}";
 }
 function meta_modifier()
 {
@@ -21,12 +29,7 @@ function meta_modifier()
 		description: "toggle a modifier",
 		arguments: ["modifier"],
 		suggestions: [
-			function()
-			{
-				var state_array = variable_struct_get_names(MOD);
-				array_sort(state_array, true);
-				return state_array;
-			},
+			["Encore", "Pacifist", "NoToppings", "HardMode", "Mirror", "Lap3", "DeathMode"]
 		],
 	}
 }

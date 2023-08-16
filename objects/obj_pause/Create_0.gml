@@ -10,6 +10,7 @@ image_speed = 0;
 depth = -500;
 backbuffer = 0;
 savedmusicmuffle = 0;
+pause_menu = ["pause_resume", "pause_options", "pause_restart", "pause_exit"];
 cursor_index = 0;
 cursor_sprite_number = sprite_get_number(spr_angelpriest);
 cursor_sprite_height = sprite_get_height(spr_angelpriest);
@@ -41,26 +42,12 @@ instance_list = ds_list_create();
 sound_list = ds_list_create();
 priest_list = ds_list_create();
 start = false;
+pause_icons = array_create(0);
+scr_pauseicon_add(spr_pauseicons, 0, -20, -12);
+scr_pauseicon_add(spr_pauseicons, 1, 5, -15);
+scr_pauseicon_add(spr_pauseicons, 2, -10);
+scr_pauseicon_add(spr_pauseicons, 3, -10);
 alarm[1] = 1;
 
 screensprite = noone;
 screensprite2 = noone;
-
-// options
-pause_menu_base = ["pause_resume", "pause_options", "pause_restart", "pause_exit"];
-pause_menu = -1;
-
-pause_icons_base = array_create(0);
-scr_pauseicon_add(spr_pauseicons, 0, -20, -12, pause_icons_base);
-scr_pauseicon_add(spr_pauseicons, 1, 5, -15, pause_icons_base);
-scr_pauseicon_add(spr_pauseicons, 2, -10, 0, pause_icons_base);
-scr_pauseicon_add(spr_pauseicons, 3, -10, 0, pause_icons_base);
-pause_icons = -1;
-
-refresh_options = function()
-{
-	pause_menu = array_create(0);
-	pause_icons = array_create(0);
-	array_copy(pause_menu, 0, pause_menu_base, 0, array_length(pause_menu_base));
-	array_copy(pause_icons, 0, pause_icons_base, 0, array_length(pause_icons_base));
-}

@@ -3,6 +3,7 @@ with (other)
 {
 	if (place_meeting(x, y, other) && key_up && grounded && (state == states.ratmount || state == states.normal || state == states.mach1 || state == states.mach2 || state == states.mach3) && !instance_exists(obj_noisesatellite) && !instance_exists(obj_fadeout) && state != states.victory && state != states.comingoutdoor && spotlight == 1)
 	{
+		audio_stop_all();
 		stop_music();
 		if REMIX
 		{

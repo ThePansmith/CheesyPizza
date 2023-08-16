@@ -1,1 +1,0 @@
-global.roommessage = "RUINED EXPLORATION"

@@ -14,21 +14,6 @@ if state == 0
 			}
 			
 			sound_play("event:/modded/sfx/diagopen");
-			
-			state = states.actor;
-			sprite_index = spr_lookdoor;
-			image_index = 0;
-			if isgustavo
-				sprite_index = spr_ratmount_enterdoor;
-			hsp = 0;
-			vsp = 50;
-			
-			if REMIX
-			{
-				smoothx = x - (other.x + 50);
-				x = other.x + 50;
-			}
-			
 			other.state = 1;
 		}
 	}

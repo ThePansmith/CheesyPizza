@@ -9,8 +9,7 @@ if !start
 	    start = true;
 		
 		title_music = fmod_event_create_instance(info.song);
-		if global.jukebox == noone
-			fmod_event_instance_play(title_music);
+		fmod_event_instance_play(title_music);
 		
 		switch info.bginfo[1]
 		{

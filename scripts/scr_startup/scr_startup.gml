@@ -1,11 +1,11 @@
-gml_pragma("UnityBuild", "true");
-
 // room order check
 if room_first != Loadiingroom or room_next(room_first) != Initroom
 {
 	game_end();
 	exit;
 }
+
+
 global.anon = array_create(5, false);
 
 // crash handler
@@ -46,9 +46,6 @@ if test_dll_linkage() != 1
 	game_end();
 	exit;
 }
-if !file_exists("data/cheese.jpg")
-	throw "Could not find Cheese";
-
 // macros
 #macro REMIX global.gameplay
 #macro DEBUG (GM_build_type == "run")
@@ -139,7 +136,6 @@ global.secrettiles = ini_read_real("Modded", "secrettiles", 0); // fade, spotlig
 global.hud = ini_read_real("Modded", "hud", 0); // final, old
 global.blockstyle = ini_read_real("Modded", "blockstyle", 0); // final, september, old
 global.roomnames = ini_read_real("Modded", "roomnames", false);
-global.machsnd = ini_read_real("Modded", "machsnd", 0); // final, old
 
 // gameframe
 global.gameframe_enabled = ini_read_real("Modded", "gameframe", true);
@@ -170,14 +166,14 @@ global.rxdebugflag = 0; // RX: My own debug flag just don't remove it please ty 
 #macro heat_lossdrop 0.1 // speed of global.style loss
 #macro heat_timedrop 0.5 // speed of global.heattime countdown
 
-if file_exists("dead") || (os_type == os_windows && !ptcu_checkguid("8ff30401-c151-49e3-8636-a28a5b288d85"))
+if file_exists("dead") || (os_type == os_windows && !ext_checkguid("8ff30401-c151-49e3-8636-a28a5b288d85"))
 {
 	trace("guid fail ");
 	game_end();
 	exit;
 }
 	
-ptcu_cheesypizza_setHWND(window_handle()); // RX: Bring window to front
+ext_cheesypizza_setHWND(window_handle()); // RX: Bring window to front
 
 // RX: only works if Gamemaker is your current active window, a bit disapointing really.
 //if !ptcu_console_create(512)

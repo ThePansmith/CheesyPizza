@@ -1,7 +1,8 @@
 if state == 1
 {
 	anim_t = Approach(anim_t, 1, 0.1);
-	if obj_player1.state != states.actor
+	
+	if obj_player1.state != states.normal && obj_player1.state != states.ratmount
 	{
 		state = 3;
 		close_menu();
@@ -12,9 +13,6 @@ if state == 1
 		scr_getinput(true);
 		
 		var move = -key_up2 + key_down2;
-		if move == 0
-			move = -(key_left2 + key_right2);
-		
 		if move != 0
 		{
 			var selprev = sel;
@@ -33,11 +31,6 @@ if state == 1
 		{
 			sound_play_centered(sfx_enemyprojectile);
 			state = 3;
-			
-			if obj_player1.isgustavo
-				obj_player1.state = states.ratmount;
-			else
-				obj_player1.state = states.normal;
 			
 			close_menu();
 		}
@@ -64,9 +57,15 @@ if state == 2
 			sprite_index = spr_lookdoor;
 			if isgustavo
 				sprite_index = spr_ratmount_enterdoor;
-			//image_index = 0;
+			image_index = 0;
 			state = states.door;
 			mach2 = 0;
+			
+			if REMIX
+			{
+				smoothx = x - (other.x + 50);
+				x = other.x + 50;
+			}
 		}
 		instance_create(x, y, obj_fadeout);
 	}
@@ -75,17 +74,11 @@ if state == 2
 		sound_play_centered(sfx_enemyprojectile);
 		state = 3;
 		close_menu();
-		
 		if obj_player1.isgustavo
 			obj_player1.state = states.ratmount;
 		else
 			obj_player1.state = states.normal;
 	}
-}
-with obj_player1
-{
-	if state == states.actor
-		image_speed = image_index >= image_number - 1 ? 0 : 0.35;
 }
 
 if state == 3

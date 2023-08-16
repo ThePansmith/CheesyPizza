@@ -21,8 +21,8 @@
   },
   "spriteNoExport": true,
   "textureGroupId": {
-    "name": "levelstructuregroup",
-    "path": "texturegroups/levelstructuregroup",
+    "name": "unusedgroup",
+    "path": "texturegroups/unusedgroup",
   },
   "tile_count": 64,
   "tileAnimation": {

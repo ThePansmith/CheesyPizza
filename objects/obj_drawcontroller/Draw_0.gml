@@ -147,8 +147,6 @@ with obj_sausageman_dead
 				pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, oldpalettetexture);
 			pal_swap_set(spr_palette, paletteselect, false);
 		}
-		else
-			pal_swap_reset();
 		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, b, image_alpha);
 		if oldpalettetexture != -4
             pattern_reset();

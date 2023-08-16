@@ -1,4 +1,4 @@
-live_auto_call;
+if live_call() return live_result;
 
 // prep
 depth = -600;
@@ -773,18 +773,6 @@ var opt = add_option("Room Names", "roomnames", "Each room in a level will show 
 {
 	
 });
-
-#endregion
-#region MACH SOUND
-
-var opt = add_option("Mach Sound", "machsnd", "Choose between the normal version of the mach sound or an older one.", function(val)
-{
-	
-});
-opt.opts = [
-	["FINAL", 0],
-	["OLD", 1],
-]
 
 #endregion
 

@@ -5,8 +5,8 @@ global.levelattempts++;
 
 ds_list_clear(global.saveroom);
 ds_list_clear(global.baddieroom);
-ds_list_clear(global.escaperoom);
-clear_particles();
+ds_list_clear(global.debris_list);
+ds_list_clear(global.collect_list);
 
 instance_destroy(obj_fadeout);
 

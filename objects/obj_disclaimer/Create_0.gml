@@ -14,7 +14,7 @@ incubic = animcurve_get_channel(curve_menu, "incubic");
 req = -1;
 str = "Please connect to the internet.";
 
-if true//DEBUG
+if DEBUG
 {
 	net = true;
 	state = 2;

@@ -131,7 +131,7 @@ function activate_panic(instapanic = false)
 	}
 	
 	// if a hard modifier is on, extend timer a lot.
-	if (MOD.Pacifist) or (MOD.NoToppings)
+	if check_modifier(MOD.Pacifist) or check_modifier(MOD.NoToppings)
 		global.fill *= 3;
 	
 	with obj_tv
@@ -163,7 +163,7 @@ function activate_snickchallenge()
 		global.fill = 7188; // 9:59
 		// (((9 * 60) + 59) * 60) * 0.2
 		
-		if (MOD.Pacifist) or (MOD.NoToppings)
+		if check_modifier(MOD.Pacifist) or check_modifier(MOD.NoToppings)
 			global.fill *= 3;
 		
 		with obj_tv

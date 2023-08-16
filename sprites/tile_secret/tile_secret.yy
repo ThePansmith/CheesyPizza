@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "levelstructuregroup",
-    "path": "texturegroups/levelstructuregroup",
+    "name": "hubgroup",
+    "path": "texturegroups/hubgroup",
   },
   "type": 0,
   "VTile": false,

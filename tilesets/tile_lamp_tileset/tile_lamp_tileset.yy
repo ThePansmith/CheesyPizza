@@ -19,10 +19,10 @@
     "name": "tile_lamp",
     "path": "sprites/tile_lamp/tile_lamp.yy",
   },
-  "spriteNoExport": true,
+  "spriteNoExport": false,
   "textureGroupId": {
-    "name": "levelstructuregroup",
-    "path": "texturegroups/levelstructuregroup",
+    "name": "unusedgroup",
+    "path": "texturegroups/unusedgroup",
   },
   "tile_count": 64,
   "tileAnimation": {

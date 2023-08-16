@@ -11,9 +11,6 @@ fade = 0;
 fade2 = 0;
 fade2start = false;
 state = states.jump;
-
-if global.jukebox != noone
-	exit;
 with (obj_music)
 {
 	if (music != -4)
