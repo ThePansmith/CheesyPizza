@@ -41,4 +41,5 @@ if (global.panic)
 outback = animcurve_get_channel(curve_menu, "outback");
 incubic = animcurve_get_channel(curve_menu, "incubic");
 anim_t = 0;
+angle = 360;
 scr_init_input();

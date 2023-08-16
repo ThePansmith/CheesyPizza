@@ -1,4 +1,3 @@
-live_auto_call;
 for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 {
 	var b = ds_list_find_value(global.afterimage_list, i);
@@ -44,10 +43,16 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 				if (instance_exists(playerid) && playerid.usepalette)
 				{
 					shd = true;
+					
+					var pal = playerid.spr_palette;
 					shader_set(shd_pal_swapper);
-					if (playerid.object_index == obj_player1)
+					if playerid.object_index == obj_player1
+					{
 						pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
-					pal_swap_set(playerid.spr_palette, playerid.paletteselect, false);
+						if playerid.isgustavo
+							pal = spr_ratmountpalette;
+					}
+					pal_swap_set(pal, playerid.paletteselect, false);
 				}
 			}
 			else if ((identifier == afterimage.mach3effect or identifier == afterimage.simple)/* && REMIX*/)

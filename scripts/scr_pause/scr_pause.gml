@@ -83,9 +83,9 @@ function scr_delete_pause_image()
 	if sprite_exists(screensprite2)
 		sprite_delete(screensprite2);
 }
-function scr_pauseicon_add(sprite, index, xoffset = 0, yoffset = 0)
+function scr_pauseicon_add(sprite, index, xoffset = 0, yoffset = 0, array = pause_icons)
 {
-	array_push(pause_icons, 
+	array_push(array, 
 	{
 		sprite_index: sprite,
 		image_index: index,
@@ -126,6 +126,7 @@ function scr_pause_activate_objects(unpause_sounds = true)
 		for (i = 0; i < ds_list_size(sound_list); i++)
 			fmod_event_instance_set_paused(ds_list_find_value(sound_list, i), false);
 		fmod_event_instance_set_paused_all(false);
+		fmod_set_parameter("musicmuffle", savedmusicmuffle, false);
 	}
 	ds_list_clear(instance_list);
 	ds_list_clear(sound_list);
@@ -136,7 +137,15 @@ function scr_pause_activate_objects(unpause_sounds = true)
 function scr_pause_deactivate_objects(pause_sounds = true)
 {
 	if pause_sounds
+	{
+		savedmusicmuffle = fmod_get_parameter("musicmuffle");
 		sound_pause_all(true);
+		if global.jukebox != noone
+		{
+			fmod_event_instance_set_paused(global.jukebox.instance, false);
+			fmod_set_parameter("musicmuffle", true, false);
+		}
+	}
 	
 	ds_list_clear(instance_list);
 	for (var i = 0; i < instance_count; i++)

@@ -29,6 +29,9 @@ function add_music(_room, _event, _eventsecret, _continuous, _on_room_start = no
 }
 function stop_music()
 {
+	if global.jukebox != noone
+		exit;
+	
 	with (obj_music)
 	{
 		if (music != -4)
@@ -104,6 +107,10 @@ function hub_state(_room, _sound, _secretsound)
 		
 		case tower_hubroomE:
 			s = 7;
+			break;
+		
+		case tower_sugary:
+			s = 8;
 			break;
 	}
 	fmod_event_instance_set_parameter(_sound, "hub", s, false);

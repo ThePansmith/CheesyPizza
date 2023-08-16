@@ -1,6 +1,9 @@
 record = false;
 playback = false;
+playback_start_room = noone;
 replay_file = STRING_UNDEFINED;
+active = false;
+
 
 serialize_input = function()
 {
@@ -39,29 +42,29 @@ deserialize_input = function(value)
 {
 	var bit_index = 0;
 	
-	key_up = value & (0b1 << bit_index++);
-	key_up2 = value & (0b1 << bit_index++); 
-	key_right  = value & (0b1 << bit_index++);
-	key_right2  = value & (0b1 << bit_index++);
-	key_left  = value & (0b1 << bit_index++);
-	key_left2  = value & (0b1 << bit_index++);
-	key_down  = value & (0b1 << bit_index++);
-	key_down2  = value & (0b1 << bit_index++);
-	key_jump  = value & (0b1 << bit_index++);
-	key_jump2  = value & (0b1 << bit_index++);
-	key_slap  = value & (0b1 << bit_index++);
-	key_slap2  = value & (0b1 << bit_index++);
-	key_taunt = value & (0b1 << bit_index++);
-	key_taunt2  = value & (0b1 << bit_index++);
-	key_attack  = value & (0b1 << bit_index++);
-	key_attack2   = value & (0b1 << bit_index++);
-	key_shoot  = value & (0b1 << bit_index++);
-	key_shoot2  = value & (0b1 << bit_index++);
-	key_start  = value & (0b1 << bit_index++);
-	key_escape   = value & (0b1 << bit_index++);
-	key_chainsaw  = value & (0b1 << bit_index++);
-	key_chainsaw2  = value & (0b1 << bit_index++);
-	stickpressed  = value & (0b1 << bit_index++);
-	stickpressed_horizontal = value & (0b1 << bit_index++);
-	stickpressed_vertical  = value & (0b1 << bit_index++);
+	obj_player1.key_up = value & (0b1 << bit_index++);
+	obj_player1.key_up2 = value & (0b1 << bit_index++); 
+	obj_player1.key_right = value & (0b1 << bit_index++);
+	obj_player1.key_right2 = value & (0b1 << bit_index++);
+	obj_player1.key_left = value & (0b1 << bit_index++);
+	obj_player1.key_left2 = value & (0b1 << bit_index++);
+	obj_player1.key_down = value & (0b1 << bit_index++);
+	obj_player1.key_down2 = value & (0b1 << bit_index++);
+	obj_player1.key_jump = value & (0b1 << bit_index++);
+	obj_player1.key_jump2 = value & (0b1 << bit_index++);
+	obj_player1.key_slap = value & (0b1 << bit_index++);
+	obj_player1.key_slap2 = value & (0b1 << bit_index++);
+	obj_player1.key_taunt = value & (0b1 << bit_index++);
+	obj_player1.key_taunt2 = value & (0b1 << bit_index++);
+	obj_player1.key_attack = value & (0b1 << bit_index++);
+	obj_player1.key_attack2 = value & (0b1 << bit_index++);
+	obj_player1.key_shoot = value & (0b1 << bit_index++);
+	obj_player1.key_shoot2 = value & (0b1 << bit_index++);
+	obj_player1.key_start = value & (0b1 << bit_index++);
+	obj_player1.key_escape = value & (0b1 << bit_index++);
+	obj_player1.key_chainsaw = value & (0b1 << bit_index++);
+	obj_player1.key_chainsaw2 = value & (0b1 << bit_index++);
+	obj_player1.stickpressed = value & (0b1 << bit_index++);
+	obj_player1.stickpressed_horizontal = value & (0b1 << bit_index++);
+	obj_player1.stickpressed_vertical = value & (0b1 << bit_index++);
 }
