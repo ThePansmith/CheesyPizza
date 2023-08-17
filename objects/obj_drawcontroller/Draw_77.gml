@@ -1,1 +1,1 @@
-global.Pattern_Texture_Indexed = -4;
+global.Pattern_Texture_Indexed = noone;

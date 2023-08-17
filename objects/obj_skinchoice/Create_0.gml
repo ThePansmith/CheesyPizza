@@ -253,7 +253,7 @@ draw = function(curve)
 		
 		// character
 		if !surface_exists(player_surface)
-			player_surface = surface_create(256, 256);
+			player_surface = surface_create(128, 128);
 			
 		shader_reset();
 		
@@ -265,15 +265,14 @@ draw = function(curve)
 			pattern_set(global.Base_Pattern_Color, characters[sel.char][1], -1, 2, 2, pal.texture);	
 		pal_swap_set(characters[sel.char][2], sel.mix > 0 ? mixables[sel.mix].palette : pal.palette, false);
 		draw_sprite(characters[sel.char][1], -1, 128, 128);
-		gpu_set_blendmode(bm_normal);
 		pattern_reset();
 		
+		surface_reset_target();
+		shader_reset();
 		
 		if (curv_prev < 1)
-			shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev);
-
+			shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev, true);
 		draw_surface_ext(player_surface, charx - 256, chary - 256, 2, 2, 0, c_white, curve * charshift[2]);
-		surface_reset_target();
 	}
 	shader_reset();
 	
