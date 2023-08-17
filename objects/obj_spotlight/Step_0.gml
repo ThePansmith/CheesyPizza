@@ -1,12 +1,12 @@
 if (to_peak)
-	offset += spotlight_speed;
+	offset += move_speed;
 else
-	offset -= spotlight_speed;
+	offset -= move_speed;
 
 
-if (offset > spotlight_track_size)
+if (offset > track_size)
 {
-	offset = spotlight_track_size;
+	offset = track_size;
 	to_peak = false;
 }
 if (offset < 0)
