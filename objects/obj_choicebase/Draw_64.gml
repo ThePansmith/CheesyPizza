@@ -40,6 +40,7 @@ gpu_set_blendmode(bm_normal);
 vertex_submit(pizza_vbuffer, pr_trianglelist, sprite_get_texture(spr_skinmenupizza, bg_image));
 matrix_set(matrix_world, prev_matrix);
 
+
 // draw content
 if is_method(draw)
 	draw(curve);

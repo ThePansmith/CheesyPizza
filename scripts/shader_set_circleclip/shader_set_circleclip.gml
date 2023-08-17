@@ -3,7 +3,7 @@
 /// @arg	{real}	_origin_y	Y-Position of the circle clip
 /// @arg	{real]	_clip_radius	The radius of the clip in pixels
 /// @arg	{bool}	_alpha_fix		Simulate the alphafix to all pixels inside the clip
-/// @arg	{bool}	_simple			Use the simple version of the shader, enable this for your "draw_circle"/"draw_rectangle" functions
+/// @arg	{bool}	_simple			Use the simple version of the shader, enable this for your "draw_circle"/"draw_ellipse"/"draw_rectangle"/"draw_triangle" functions
 /// @returns	{bool}
 function shader_set_circleclip(_origin_x, _origin_y, _clip_radius, _alpha_fix = false, _simple = false)
 {

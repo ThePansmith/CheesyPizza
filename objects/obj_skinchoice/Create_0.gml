@@ -252,7 +252,7 @@ draw = function(curve)
 		}
 		
 		// character
-		if (!surface_exists(player_surface))
+		if !surface_exists(player_surface)
 			player_surface = surface_create(256, 256);
 			
 		shader_reset();
@@ -265,16 +265,17 @@ draw = function(curve)
 			pattern_set(global.Base_Pattern_Color, characters[sel.char][1], -1, 2, 2, pal.texture);	
 		pal_swap_set(characters[sel.char][2], sel.mix > 0 ? mixables[sel.mix].palette : pal.palette, false);
 		draw_sprite(characters[sel.char][1], -1, 128, 128);
-		
+		gpu_set_blendmode(bm_normal);
 		pattern_reset();
 		
-		surface_reset_target();
+		
 		if (curv_prev < 1)
 			shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev);
 
-		
 		draw_surface_ext(player_surface, charx - 256, chary - 256, 2, 2, 0, c_white, curve * charshift[2]);
+		surface_reset_target();
 	}
+	shader_reset();
 	
 	// text
 	var name = string_upper(pal.name), desc = pal.description;
@@ -287,7 +288,6 @@ draw = function(curve)
 	draw_set_font(lang_get_font("bigfont"));
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
-	
 	var xx = 960 / 1.5 - string_width(name) / 2;
 	for(var i = 1; i <= string_length(name); i++)
 	{
@@ -296,7 +296,7 @@ draw = function(curve)
 		var yy = 360;
 		if curve2 != 1 // letters jump up
 			yy = lerp(540, 360, min(animcurve_channel_evaluate(outback, curve2 + ((i % 3) * 0.075))));
-		
+			
 		draw_text(xx + random_range(-1, 1), yy + random_range(-1, 1), char);
 		xx += string_width(char);
 	}
@@ -405,7 +405,7 @@ draw = function(curve)
 
 		draw_sprite_ext(spr_skinchoicepalette, 1, cache[i].x, cache[i].y, 1, 1, 0, c_white, 1);
 	}
-	
+	shader_reset();
 	// hand
 	draw_sprite_ext(spr_skinchoicehand, 0, handx, handy + sin(current_time / 1000) * 4, 2, 2, 0, c_white, 1);
 	draw_set_align();

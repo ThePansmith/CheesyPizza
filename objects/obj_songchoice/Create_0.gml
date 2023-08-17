@@ -213,8 +213,8 @@ add_section("Modded", [
 
 draw = function(curve)
 {
+	shader_set_circleclip(960 / 2, 540 / 2, 560 * curve);
 	var talpha = 1;
-	
 	// background and disc
 	draw_set_colour(c_black);
 	draw_set_alpha(0.75);
