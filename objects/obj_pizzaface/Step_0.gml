@@ -92,7 +92,6 @@ if (_move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.sta
 				visible = true;
 				image_blend = c_white;
 				stop_music();
-				sound_play_oneshot("event:/music/timesup");
 			}
 			instance_destroy();
 			instance_destroy(obj_wartimer);

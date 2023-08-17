@@ -21,3 +21,9 @@ instance_destroy(obj_snickexe);
 
 if global.modifier_failed
 	sprite_index = spr_modfailed;
+if REMIX
+	create_transformation_tip("{u}[T] Restart Level/", "quickrestart");
+buffer = 30;
+
+snd = fmod_event_create_instance("event:/music/timesup");
+fmod_event_instance_play(snd);

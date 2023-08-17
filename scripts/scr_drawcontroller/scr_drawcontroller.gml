@@ -94,20 +94,27 @@ function draw_enemy(healthbar, palette, color = c_white)
 				_ys = -1;
 			}
 		}
-		var xx = x, yy = y;
-		if safe_get(id, "sugary")
-		{
-			/*
-			_drawx += irandom_range(-1, 1);
-			_drawy += irandom_range(-1, 1);
-			*/
-		}
 		
 		var b = get_dark(c, obj_drawcontroller.use_dark);
+		var xx = x, yy = y;
+		
+		// aggro sugary enemy by taunting
+		if safe_get(id, "sugary")
+		{
+			var player = instance_nearest(x, y, obj_player);
+			if player.state == states.backbreaker && point_in_rectangle(x, y, player.x - 480, player.y - 270, player.x + 480, player.y + 270)
+			{
+				xx += irandom_range(-1, 1);
+				yy += irandom_range(-1, 1);
+				
+				draw_sprite_ext(spr_angrycloud, (++aggrimg) * 0.35, xx, yy + _stun, 1, 1, 0, b, image_alpha);
+			}
+		}
+		
 		if obj_drawcontroller.use_dark && SUGARY
 		{
 			draw_set_flash(b);
-			draw_sprite_ext(sprite_index, image_index, x, y + _stun, xscale * image_xscale, yscale * _ys, angle, b, image_alpha);
+			draw_sprite_ext(sprite_index, image_index, xx, yy + _stun, xscale * image_xscale, yscale * _ys, angle, b, image_alpha);
 			draw_reset_flash();
 		}
 		else
@@ -124,7 +131,7 @@ function draw_enemy(healthbar, palette, color = c_white)
 					pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale * xscale, image_yscale * yscale, global.palettetexture);
 				pal_swap_set(spr_palette, paletteselect, false);
 			}
-			draw_sprite_ext(sprite_index, image_index, x, y + _stun, xscale * image_xscale, yscale * _ys, angle, b, image_alpha);
+			draw_sprite_ext(sprite_index, image_index, xx, yy + _stun, xscale * image_xscale, yscale * _ys, angle, b, image_alpha);
 		}
 		
 		if (healthbar)

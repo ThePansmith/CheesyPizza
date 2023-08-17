@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "steamy_sideroom",
-  "creationCodeFile": null,
+  "creationCodeFile": "rooms/steamy_sideroom/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

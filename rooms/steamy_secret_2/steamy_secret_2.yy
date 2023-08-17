@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "steamy_secret_2",
-  "creationCodeFile": null,
+  "creationCodeFile": "rooms/steamy_secret_2/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

@@ -1,4 +1,4 @@
-activateRegion = 0
+activateRegion = false
 activationCode = function()
 {
     return activateRegion;

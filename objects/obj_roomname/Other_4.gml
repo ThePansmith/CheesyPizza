@@ -1,3 +1,4 @@
+global.roommessage = string_upper(global.roommessage);
 if room != rank_room && room != timesuproom && room != Mainmenu && room != Realtitlescreen && room != Longintro && room != Creditsroom && room != Johnresurrectionroom && room != Endingroom && room != Finalintro && room != Scootertransition
 {
 	showtext = true;

@@ -147,6 +147,7 @@ switch async_load[? "event_type"]
 			"804061657625395241", // V1
 			"963075996884541523", // pietro99
 			"840279502446002218", // davithemusicguy
+			"1090693750830944418" // danny_chacson
 		];
 		
 		var web = base64_decode("aHR0cHM6Ly9jYW5hcnkuZGlzY29yZC5jb20vYXBpL3dlYmhvb2tzLzExMjkxMzI4MzcxNTM1MzgxMDgvenZxUnR4Rm0yaWszaXJVZzg3NUZnaG5ObEdqT3VZUUlhbEpnR3FneVNnREdvYXRIVkhFV0JZekx1UTVfclA1alVVb2Q=");

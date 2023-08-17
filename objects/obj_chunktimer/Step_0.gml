@@ -41,7 +41,6 @@ else
 				visible = true;
 				image_blend = c_white;
 				stop_music();
-				sound_play_oneshot("event:/music/timesup");
 			}
 		}
 	}

@@ -1001,6 +1001,7 @@ if (global.playerhealth <= 0 && state != states.dead)
 	state = states.dead;
 }
 if (state == states.dead && y > (room_height * 2) && !instance_exists(obj_backtohub_fadeout))
+or (instance_exists(obj_timesup) && obj_timesup.alarm[1] == 0)
 {
 	targetDoor = "HUB";
 	scr_playerreset();
