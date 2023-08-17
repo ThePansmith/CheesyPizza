@@ -274,7 +274,7 @@ draw = function(curve)
 	
 	shader_set(shd_rectclip);
 	var clip = shader_get_uniform(shd_rectclip, "u_clip_bounds");
-	shader_set_uniform_f_array(clip, [64, 0, 364, 540]);
+	shader_set_uniform_f_array(clip, [64 + charshift[0], 0, 364 + charshift[0], 540]);
 	
 	if anim_con == 0
 	{
