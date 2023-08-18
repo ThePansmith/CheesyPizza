@@ -3934,6 +3934,7 @@
     {"id":{"name":"spr_canongoblin_walk","path":"sprites/spr_canongoblin_walk/spr_canongoblin_walk.yy",},},
     {"id":{"name":"spr_tv_idleSN","path":"sprites/spr_tv_idleSN/spr_tv_idleSN.yy",},},
     {"id":{"name":"spr_towerending","path":"sprites/spr_towerending/spr_towerending.yy",},},
+    {"id":{"name":"spr_rankF","path":"sprites/spr_rankF/spr_rankF.yy",},},
     {"id":{"name":"spr_canongoblin_stun","path":"sprites/spr_canongoblin_stun/spr_canongoblin_stun.yy",},},
     {"id":{"name":"obj_customeffect","path":"objects/obj_customeffect/obj_customeffect.yy",},},
     {"id":{"name":"spr_gate_badland","path":"sprites/spr_gate_badland/spr_gate_badland.yy",},},

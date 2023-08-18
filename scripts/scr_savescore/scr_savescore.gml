@@ -1,6 +1,8 @@
 function scr_savescore(level)
 {
-	if ((global.collect + global.collectN) >= global.srank)
+	if MOD.EasyMode
+		global.rank = "f";
+	else if ((global.collect + global.collectN) >= global.srank)
 	{
 		global.rank = "s";
 		if (scr_is_p_rank())
