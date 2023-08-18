@@ -92,7 +92,8 @@ if level == "golf"
 if level == "snickchallenge"
 {
 	add_section("Level");
-	add_modifier("Old Levels", "OldLevels", "A more accurate Snick's Challenge, using level design closer to the SAGE 2019 demo.");
+	add_modifier("Old Levels", "OldLevels", "A more accurate Snick's Challenge, using level design closer to the SAGE 2019 demo.", [seq_oldlevels_off, seq_oldlevels_on]);
+	add_modifier("No Snick", "NoSnick", "More of a World 1 timed challenge without that bastard following you around.");
 }
 
 #endregion

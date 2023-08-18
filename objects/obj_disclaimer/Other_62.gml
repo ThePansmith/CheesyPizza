@@ -7,7 +7,7 @@ if ds_map_find_value(async_load, "id") == req
 		
 		try
 		{
-			if real(firstline) != 2
+			if real(firstline) != 3
 				str = string_copy(str, string_pos("\n", str) + 1, string_length(str));
 			else
 			{

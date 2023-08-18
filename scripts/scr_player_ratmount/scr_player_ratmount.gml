@@ -297,7 +297,7 @@ function ratmount_dotaunt()
 		tauntstoredstate = state;
 		tauntstoredvsp = vsp;
 		state = states.backbreaker;
-		if ((!key_up || !supercharged) && global.tauntcount < 10 && place_meeting(x, y, obj_exitgate) && (global.panic == true || instance_exists(obj_wartimer)) && global.combotime > 0)
+		if ((!key_up || !supercharged) && global.tauntcount < 10 && place_meeting(x, y, obj_exitgate) && (global.panic == true || instance_exists(obj_wartimer)) && global.combotime > 0 && global.leveltosave != "grinch")
 		{
 			global.heattime = 60;
 			global.tauntcount++;
