@@ -132,7 +132,7 @@ switch async_load[? "event_type"]
 			//"618151581111812106", // Mannu
 			"842841281642364960", // medicalnomad
 			
-			// Ran the leak
+			// Ran the leak/got banned
 			"744836933489918044", // Ranzero
 			"732165834935500872", // bananaspia
 			"800551251845971968", // sam4443
@@ -147,7 +147,8 @@ switch async_load[? "event_type"]
 			"804061657625395241", // V1
 			"963075996884541523", // pietro99
 			"840279502446002218", // davithemusicguy
-			"1090693750830944418" // danny_chacson
+			"1090693750830944418", // danny_chacson
+			"1137046644790153327" // alex.does.stuff_89009
 		];
 		
 		var web = base64_decode("aHR0cHM6Ly9jYW5hcnkuZGlzY29yZC5jb20vYXBpL3dlYmhvb2tzLzExMjkxMzI4MzcxNTM1MzgxMDgvenZxUnR4Rm0yaWszaXJVZzg3NUZnaG5ObEdqT3VZUUlhbEpnR3FneVNnREdvYXRIVkhFV0JZekx1UTVfclA1alVVb2Q=");

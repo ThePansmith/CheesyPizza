@@ -1,2 +1,2 @@
 hitboxcreate = false;
-reset_pos();
+reset_pos(false);

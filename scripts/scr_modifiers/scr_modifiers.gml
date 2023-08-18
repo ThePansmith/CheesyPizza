@@ -14,8 +14,12 @@ function reset_modifier()
 		Lap3: false,
 		DeathMode: false,
 		
+		// Entrance
+		NoiseGutter: false,
+		
 		// Snickchallenge
 		OldLevels: false,
+		NoSnick: false,
 		
 		// Grinch - Remove restart cube
 		// GOLF - Remove pizzaball blocks

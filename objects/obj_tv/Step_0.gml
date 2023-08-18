@@ -69,10 +69,10 @@ else switch state
 				idlespr = spr_tv_escapeG;
 		}
 		
-		if obj_player1.character == "SP" && instance_exists(obj_ghostcollectibles)
+		if (REMIX or obj_player1.character == "SP") && instance_exists(obj_ghostcollectibles)
 		{
-			sprite_index = spr_tv_secretSP;
-			idlespr = -1;
+			targetspr = spr_tv_exprsecret;
+			idlespr = spr_tv_exprsecret;
 			idleanim = 240;
 		}
 		

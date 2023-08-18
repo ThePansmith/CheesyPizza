@@ -1,5 +1,5 @@
 global.coop = false;
-global.currentsavefile = 0;
+global.currentsavefile = 9;
 var achievement_arr = ["sranks1", "sranks2", "sranks3", "sranks4", "sranks5"];
 var data_arr = ["saves/saveData1.ini", "saves/saveData2.ini", "saves/saveData3.ini"];
 global.stickreq[0] = 100;
