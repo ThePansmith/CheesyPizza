@@ -22,6 +22,16 @@ if MIDWAY
 
 if MOD.DeathMode
 {
-    sprite_index = spr_pizzaface_docile
-    destroyable = 0
+    sprite_index = spr_pizzaface_docile;
+    destroyable = 0;
+	
+	mode = 0;
+	end_turn = 0;
 }
+hsp = 0;
+vsp = 0;
+state = states.chase;
+flash = false;
+
+if REMIX
+	depth = obj_drawcontroller.depth + 1;

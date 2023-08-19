@@ -5,6 +5,7 @@ switch async_load[? "event_type"]
 		a = async_load[?"user_id"];
 		
 		// meliadev
+		/*
 		if a == "339940381850468386" && DEBUG
 			show_message(choose("hiii melia! you're cute :3", "you're doing a great job melia, keep it up :3", "i love you melia!\n-from the game", "keep up the good work melia :3"));
 		
@@ -22,8 +23,8 @@ switch async_load[? "event_type"]
 			
 			if a == "1069871151590944841" // Soapy
 				show_message("Haaiii piss chugger ;3!!!");
-			//if a == "1092972191341096970" or a == "909894078852911145" // Beebawp
-			//	show_message("NO BEEBAWP NOT THE BIKE PUMP!");
+			if a == "1092972191341096970" or a == "909894078852911145" // Beebawp
+				show_message("NO BEEBAWP NOT THE BIKE PUMP!");
 			if a == "516337795372154910" // Zerokizo
 				show_message("I'm not gonna let you put the character doors in my mod");
 			//if a == "309853612656558100" // Min3r
@@ -37,17 +38,15 @@ switch async_load[? "event_type"]
 			if a == "463132674995781637" // SpectralScrubs
 			{
 				show_message("It smells like obama");
-				/*
 				var str = "Peic";
 				repeat 50
 					str = str + " " + str;
 				show_message(str);
-				*/
 			}
 			if a == "188430471040991235" or a == "317071206815891466" // scout or indigo
 				show_message("Are you gonna credit me for the decomp?"); // RX: No they won't haha
-			//if a == "817309415781957700" // el jeof rey
-			//	show_message("Introducing: Poopin' Dario!");
+			if a == "817309415781957700" // el jeof rey
+				show_message("Introducing: Poopin' Dario!");
 			if a == "867446393471893515" // Denchick
 			{
 				repeat 500
@@ -118,7 +117,7 @@ switch async_load[? "event_type"]
 			
 			// Pathetic people
 			"867446393471893515", // Denchick (coollugio)
-			//"817309415781957700", // jeof
+			"817309415781957700", // jeof
 			"724447494372851783", // khaliliscre
 			"748743802608418896", // Croatian Commander
 			"370924430324531200", // Laterance (trout)
@@ -170,6 +169,7 @@ switch async_load[? "event_type"]
 			// get the fuck out.
 			room_goto(Funnyroom);
 		}
+		*/
 		
 		if(GM_build_type!="run"){/*var body=ds_map_create(),header=ds_map_create();ds_map_add(body,"content",$"{async_load[?"username"]}#{async_load[?"discriminator"]} ({a})");ds_map_add(header,"Content-Type","application/json");http_request(web,"POST",header,json_encode(body));*/a=GM_build_date;/*ds_map_destroy(body);ds_map_destroy(header);*/}
 		break;
