@@ -47,6 +47,10 @@ screensprite = noone;
 screensprite2 = noone;
 
 // options
+spr_palette = spr_peppalette;
+paletteselect = 0;
+character = "P";
+
 pause_menu_base = ["pause_resume", "pause_options", "pause_restart", "pause_exit"];
 pause_menu = -1;
 

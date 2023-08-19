@@ -24,7 +24,8 @@ function scr_create_pause_image()
 	gpu_set_blendmode_ext(bm_one, bm_inv_src_alpha); // FIXES THE WEIRD DARKENING ISSUE!
 	
 	scr_draw_screen(0, 0, 1, 1, 1, true);
-	draw_surface(obj_screensizer.gui_surf, 0, 0);
+	if !SUGARY or instance_exists(obj_titlecard)
+		draw_surface(obj_screensizer.gui_surf, 0, 0);
 	
 	shader_reset();
 	
@@ -58,11 +59,13 @@ function scr_create_pause_image()
 }
 function scr_draw_pause_image()
 {
+	if live_call() return live_result;
+	
 	if REMIX && sprite_exists(screensprite2)
 	{
 		if fade < 1 && sprite_exists(screensprite)
 			draw_sprite_ext(screensprite, 0, 0, 0, screenscale, screenscale, 0, c_white, 1);
-		else if fade != 0
+		if fade != 0
 			draw_sprite_ext(screensprite2, 0, 0, 0, screenscale, screenscale, 0, c_white, fade);
 	}
 	else if sprite_exists(screensprite)
@@ -165,6 +168,7 @@ function scr_pause_deactivate_objects(pause_sounds = true)
 	instance_activate_object(obj_shell);
 	instance_activate_object(obj_richpresence);
 	instance_activate_object(obj_inputdisplay);
+	instance_activate_object(obj_gmlive);
 }
 function pause_spawn_priests()
 {

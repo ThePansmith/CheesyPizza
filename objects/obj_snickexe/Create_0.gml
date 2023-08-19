@@ -20,6 +20,9 @@ reset_pos = function(particle = true)
 	hitboxcreate = false;
 	maxspeed = 2;
 	
+	if MOD.Lap3
+		maxspeed = 4;
+	
 	if room == ruin_4 or room == ruin_7
 	or room == ruin_4_OLD or room == ruin_7_OLD
 		y = room_height + 50;

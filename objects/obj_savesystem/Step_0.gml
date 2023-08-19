@@ -78,10 +78,8 @@ else if (showicon)
 }
 if (showicon)
 {
-	icon_index += 0.35;
-	if (icon_index > (icon_max - 1))
-	{
-		var t = frac(icon_index);
-		icon_index = t;
-	}
+	if SUGARY
+		icon_index += .35;
+	else
+		icon_index = (icon_index + 0.35) % icon_max;
 }

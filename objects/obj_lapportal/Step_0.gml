@@ -90,15 +90,23 @@ if (global.panic || instance_exists(obj_wartimer))
 					{
 						case 2:
 							global.fill = 0;
+							if !global.panic
+							{
+								instance_create(obj_player1.x, obj_player1.y, obj_pizzaface);
+								sound_play_oneshot("event:/sfx/pizzaface/laugh");
+							}
 							break;
 						
 						case 3:
+							/*
 							with obj_wartimer
 							{
 								addseconds = 60 * 2 + 30; // 2:30
 								alarm[0] = -1;
 								alarm[2] = 1;
 							}
+							*/
+							
 							with instance_create_unique(0, 0, obj_wartimer)
 							{
 								switch global.leveltosave

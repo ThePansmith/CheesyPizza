@@ -137,8 +137,8 @@ if (boundbox == 0)
 {
 	with (instance_create(x, y, obj_baddiecollisionbox))
 	{
-		sprite_index = other.sprite_index;
-		mask_index = other.sprite_index;
+		sprite_index = spr_pizzaface_og;
+		mask_index = spr_pizzaface_og;
 		baddieID = other.id;
 		other.boundbox = true;
 	}

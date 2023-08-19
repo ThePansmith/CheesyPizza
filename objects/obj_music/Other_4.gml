@@ -68,7 +68,7 @@ if (secret)
 		fmod_event_instance_set_timeline_pos(ev, pos);
 		fmod_event_instance_set_paused(music.event, true);
 	}
-	if (global.panic)
+	if (global.panic && global.leveltosave != "sucrose")
 	{
 		trace("Pausing panic music: room_start");
 		savedpanicpos = fmod_event_instance_get_timeline_pos(panicmusicID);
@@ -85,7 +85,7 @@ else if (secretend)
 		if !REMIX
 			fmod_event_instance_set_timeline_pos(music.event, savedmusicpos);
 	}
-	if (global.panic)
+	if (global.panic && global.leveltosave != "sucrose")
 	{
 		fmod_event_instance_set_timeline_pos(panicmusicID, savedpanicpos);
 		fmod_event_instance_set_paused(panicmusicID, false);

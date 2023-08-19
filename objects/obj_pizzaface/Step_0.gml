@@ -1,15 +1,18 @@
 live_auto_call;
 
-if REMIX
-	depth = -10;
-
 var playerid = obj_player1;
 if obj_player1.spotlight == 0
 	playerid = obj_player2;
 
-sound_instance_move(snd, x, y);
-if !fmod_event_instance_is_playing(snd)
-	fmod_event_instance_play(snd);
+if !MOD.DeathMode or sprite_index == spr_pizzaface
+{
+	sound_instance_move(snd, x, y);
+	if !fmod_event_instance_is_playing(snd)
+		fmod_event_instance_play(snd);
+}
+else
+	fmod_event_instance_stop(snd, true);
+
 if !instance_exists(playerid)
 	exit;
 
@@ -26,25 +29,15 @@ if !treasure
 {
 	if image_alpha >= 1
 	{
-		if MOD.DeathMode
+		if MOD.DeathMode && !(MOD.Lap3 && global.laps >= 2)
 		{
-			if !variable_instance_exists(id, "mode")
-			{
-				mode = 0;
-				hsp = 0;
-				vsp = 0;
-				state = states.chase;
-				end_turn = 0;
-			}
-		
 			var has_time = instance_exists(obj_deathmode) && obj_deathmode.time > 0;
-			if sprite_index == spr_pizzaface_recovering
+			if sprite_index == spr_pizzaface_recovering or sprite_index == spr_pizzaface_attackend
 	        {
 				if image_index >= image_number - 1
 				{
 		            image_index = 0;
 		            sprite_index = mode ? spr_pizzaface : spr_pizzaface_docile;
-		            flash = true;
 				}
 	        }
 	        else if has_time && mode == 1
@@ -53,7 +46,7 @@ if !treasure
 			
 	            image_index = 0;
 	            sprite_index = spr_pizzaface_recovering;
-	            flash = 1;
+	            flash = true;
 			
 				/*
 	            with (create_debris(x, y, 4013))
@@ -71,7 +64,7 @@ if !treasure
 				mode = 1;
 			
 	            image_index = 0;
-	            sprite_index = spr_pizzaface_recovering;
+	            sprite_index = spr_pizzaface_attackend;
 	            flash = true;
 			
 				/*
@@ -177,6 +170,9 @@ else
 	x = -200;
 	y = -200;
 }
+
+if flash && alarm[2] <= 0
+	alarm[2] = 0.15 * room_speed;
 
 if _move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.state != states.actor && !instance_exists(obj_fadeout) && !instance_exists(obj_endlevelfade) && image_alpha >= 1
 {

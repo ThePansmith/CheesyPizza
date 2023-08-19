@@ -6,8 +6,12 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 		if (!loop)
 			_cutscenehandler = true;
 	}
-	with (obj_player)
+	with (obj_player1)
 	{
+		other.spr_palette = spr_palette;
+		other.paletteselect = paletteselect;
+		other.character = character;
+		
 		if ((state == states.victory && place_meeting(x, y, obj_startgate)) || (state == states.door && place_meeting(x, y, obj_exitgate)))
 			_cutscenehandler = true;
 	}
@@ -37,6 +41,9 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 	// pause
 	if (obj_savesystem.state == 0 && !_cutscenehandler && (room != rank_room && room != Realtitlescreen && room != timesuproom && room != rm_baby) && !instance_exists(obj_jumpscare) && !instance_exists(obj_technicaldifficulty))
 	{
+		fmod_event_instance_release(pausemusicID);
+		pausemusicID = fmod_event_create_instance(SUGARY ? "event:/modded/sugary/pause" : "event:/music/pause");
+		
 		refresh_options();
 		if global.jukebox != noone
 		{
@@ -268,7 +275,7 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 	selected += moveselect;
 	if (moveselect != 0 && selected >= 0 && selected <= array_length(pause_menu) - 1)
 	{
-		sound_play_oneshot("event:/sfx/ui/angelmove");
+		sound_play_oneshot(SUGARY ? sfx_step : "event:/sfx/ui/angelmove");
 		update_cursor = true;
 	}
 	selected = clamp(selected, 0, array_length(pause_menu) - 1);
