@@ -27,6 +27,8 @@ function scr_playerreset(roomstart = false, restart = false)
 		global.snickchallenge = false;
 		activate_snickchallenge();
 	}
+	with obj_deathmode
+		active = false;
 	global.modifier_failed = false;
 	
 	global.lap = false;

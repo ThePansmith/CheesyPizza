@@ -1,3 +1,8 @@
+live_auto_call;
+
+if REMIX
+	depth = -10;
+
 var playerid = obj_player1;
 if obj_player1.spotlight == 0
 	playerid = obj_player2;
@@ -15,18 +20,153 @@ with (obj_player)
 	or (state == states.comingoutdoor && place_meeting(x, y, obj_exitgate))
 		_move = false;
 }
-if (!treasure)
+
+// move
+if !treasure
 {
-	if (image_alpha >= 1)
+	if image_alpha >= 1
 	{
-		if (!instance_exists(obj_fadeout) && !obj_player1.cutscene)
+		if MOD.DeathMode
 		{
-			if (_move)
+			if !variable_instance_exists(id, "mode")
 			{
-				var dir = point_direction(x, y, playerid.x, playerid.y);
-				x += lengthdir_x(maxspeed, dir);
-				y += lengthdir_y(maxspeed, dir);
+				mode = 0;
+				hsp = 0;
+				vsp = 0;
+				state = states.chase;
+				end_turn = 0;
 			}
+		
+			var has_time = instance_exists(obj_deathmode) && obj_deathmode.time > 0;
+			if sprite_index == spr_pizzaface_recovering
+	        {
+				if image_index >= image_number - 1
+				{
+		            image_index = 0;
+		            sprite_index = mode ? spr_pizzaface : spr_pizzaface_docile;
+		            flash = true;
+				}
+	        }
+	        else if has_time && mode == 1
+	        {
+				mode = 0;
+			
+	            image_index = 0;
+	            sprite_index = spr_pizzaface_recovering;
+	            flash = 1;
+			
+				/*
+	            with (create_debris(x, y, 4013))
+	                image_index = 2
+	            with (create_debris((x + 20), y, 4013))
+	                image_index = 3
+	            with (create_debris((x - 20), y, 4013))
+	                image_index = 4
+	            with (create_debris(x, (y + 30), 4013))
+	                image_index = 5
+				*/
+	        }
+	        else if !has_time && mode == 0
+	        {
+				mode = 1;
+			
+	            image_index = 0;
+	            sprite_index = spr_pizzaface_recovering;
+	            flash = true;
+			
+				/*
+	            with (create_debris(x, y, 3124))
+	                image_index = 0
+	            with (create_debris(x, (y + 30), 3124))
+	                image_index = 1
+				*/
+	        }
+			
+			var mvsp = maxspeed + (abs(obj_player1.hsp) / 8)
+			var multiplier = 1
+			
+			if obj_deathmode.time > 0 mvsp *= 0.44
+			else if obj_deathmode.time <= 0 mvsp *= 1.75
+			
+			var hamkuff_nerf = false
+			with obj_hamkuff
+			{
+				if state == states.blockstance
+					hamkuff_nerf = true
+			}
+	
+			if hamkuff_nerf
+				multiplier = 0.2
+			else if playerid.state == states.cheesepep || playerid.state == states.cheesepepjump || playerid.state == states.cheesepepstickside || playerid.state == states.cheesepepstick multiplier = 0.75
+				mvsp *= multiplier
+			
+			var turnspd = mvsp / 50
+			if !bbox_in_camera(view_camera[0], 100)
+			{
+				mvsp *= 1.75
+				turnspd *= 2.5
+			}
+			
+			// distance_to_object(playerid) >= 1200 ? mvsp / 10 : (mvsp / 50)
+			var inradius = point_in_circle(x, y, playerid.x, playerid.y, 250)
+			var dir = point_direction(x, y, playerid.x + playerid.hsp, playerid.y + playerid.vsp)
+			var next_pos = point_direction(x, y, x + hsp, y + vsp)
+			
+			switch state
+			{
+				case states.chase:
+					if !_move
+					{
+						mvsp = 0
+						turnspd = 0.3	
+					}
+			
+					hsp = Approach(hsp, lengthdir_x(mvsp, dir), turnspd)
+					vsp = Approach(vsp, lengthdir_y(mvsp, dir), turnspd)
+					if inradius && !end_turn
+					{
+						state = states.turning
+						saved_angle = dir
+						if (saved_angle - 10 <= next_pos && saved_angle + 10 >= next_pos)
+							state = states.chase
+					}
+					else if !inradius
+						end_turn = 0
+					x += hsp
+					y += vsp
+					break;
+				
+				case states.turning:
+					hsp = Approach(hsp, 0, turnspd)
+					vsp = Approach(vsp, 0, turnspd)
+					if abs(hsp) <= 0 && abs(vsp) <= 0
+					{
+						state = states.chase
+						end_turn = 1
+					}
+					x += hsp
+					y += vsp
+					break;
+			}
+		}
+		else
+		{
+			if image_alpha >= 1
+			{
+				if !instance_exists(obj_fadeout) && !obj_player1.cutscene
+				{
+					if _move
+					{
+						var dir = point_direction(x, y, playerid.x, playerid.y);
+						x += lengthdir_x(maxspeed, dir);
+						y += lengthdir_y(maxspeed, dir);
+					}
+				}
+				if maxspeed < 3
+					maxspeed += 0.01;
+			}
+			if !_move
+				image_alpha = Approach(image_alpha, 0, 0.1);
 		}
 	}
 	else
@@ -37,14 +177,12 @@ else
 	x = -200;
 	y = -200;
 }
-if (!_move)
-	image_alpha = Approach(image_alpha, 0, 0.1);
 
-if (_move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.state != states.actor && !instance_exists(obj_fadeout) && !instance_exists(obj_endlevelfade) && image_alpha >= 1)
+if _move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.state != states.actor && !instance_exists(obj_fadeout) && !instance_exists(obj_endlevelfade) && image_alpha >= 1
 {
 	fmod_event_instance_stop(snd, true);
 	
-	if (instance_exists(obj_toppinwarrior))
+	if instance_exists(obj_toppinwarrior)
 	{
 		if (variable_global_exists("toppinwarriorid1") && instance_exists(global.toppinwarriorid1))
 			instance_destroy(global.toppinwarriorid1);
@@ -98,10 +236,7 @@ if (_move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.sta
 		}
 	}
 }
-if (maxspeed < 3 && image_alpha >= 1)
-	maxspeed += 0.01;
-
-if (REMIX or global.laps >= 2) && !instance_exists(tracker)
+if (REMIX or global.laps >= 2) && !instance_exists(tracker) && !treasure
 {
 	tracker = instance_create(0, 0, obj_objecticontracker);
 	tracker.objectID = id;

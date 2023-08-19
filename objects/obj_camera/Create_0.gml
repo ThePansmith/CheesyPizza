@@ -77,3 +77,4 @@ limitcam = [0, 0, 960, 540];
 angle = 0;
 panicangle = 0;
 camzoom = 1;
+panspeed = 32;

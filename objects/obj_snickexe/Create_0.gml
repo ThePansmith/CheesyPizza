@@ -23,8 +23,6 @@ reset_pos = function(particle = true)
 	if room == ruin_4 or room == ruin_7
 	or room == ruin_4_OLD or room == ruin_7_OLD
 		y = room_height + 50;
-	if room == ruin_7_OLD
-		maxspeed = 1;
 }
 
 // pto

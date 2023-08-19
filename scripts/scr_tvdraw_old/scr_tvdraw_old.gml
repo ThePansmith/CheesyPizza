@@ -153,11 +153,13 @@ function scr_tvdraw_old()
 		if sugary // propeller
 			draw_sprite_ext(spr_tvempty_ss, -1, tvx, tvy, 1, 1, 0, c_white, alpha);
 		
-		draw_set_align();
+		draw_set_align(fa_center);
 		draw_text(tvx + 20, tvy + 1, string(global.combo));
 	}
 	else if room != Realtitlescreen
 	{
+		draw_set_align(fa_center, fa_middle);
+		
 		// tv
 		draw_sprite_ext(sprite, -1, tvx, tvy, 1, 1, 0, c_white, alpha);
 		if tvsprite == spr_tvdefault
@@ -181,7 +183,7 @@ function scr_tvdraw_old()
 	*/
 	
 	// timer
-	if (global.panic or global.snickchallenge) && !instance_exists(obj_ghostcollectibles)
+	if (global.panic or global.snickchallenge) && !instance_exists(obj_ghostcollectibles) && !MOD.DeathMode
 	{
 		var minutes = 0;
 		for (var seconds = ceil(global.fill / 12); seconds > 59; seconds -= 60)

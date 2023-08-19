@@ -194,7 +194,7 @@ function instance_random(object)
 }
 function heat_calculate(heat)
 {
-	if global.heatmeter
+	if global.heatmeter or MOD.DeathMode
 		heat += round(heat * global.stylemultiplier);
 	return heat;
 }

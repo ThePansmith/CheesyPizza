@@ -6,6 +6,7 @@ draw_set_color(c_white);
 var xx = SCREEN_WIDTH / 2;
 var yy = SCREEN_HEIGHT - 50;
 if (global.panic && !instance_exists(obj_ghostcollectibles))
+or MOD.DeathMode
 	yy -= 60;
 var s = text_size;
 xx -= (s[0] / 2);

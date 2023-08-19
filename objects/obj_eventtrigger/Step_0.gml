@@ -1,3 +1,6 @@
+if !instance_exists(obj_player) // pause crash prevention
+	exit;
+
 // If Condition is correct then output
 if condition != noone && condition()
 {

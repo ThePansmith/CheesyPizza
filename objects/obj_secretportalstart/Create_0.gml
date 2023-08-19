@@ -1,5 +1,8 @@
+active = true;
+
 override_state = noone;
-override_sprite = noone;
+override_sprite = obj_player1.spr_hurt;
+override_vars = {};
 
 spr_open = spr_secretportal_spawnopen;
 spr_idle = spr_secretportal_spawnidle;
@@ -23,5 +26,16 @@ if MIDWAY
 }
 
 // If we aren't coming or going from a secret, we don't need to exist.
-if !room_is_secret(obj_player1.lastroom) && !room_is_secret(room) && !instance_exists(obj_ghostcollectibles) && !instance_exists(obj_levelLoader)
-	instance_destroy();
+death = object_index == obj_deathportalexit;
+if death
+{
+	if !MOD.DeathMode
+		instance_destroy();
+	image_blend = #D8B8F8;
+}
+
+if death or (!room_is_secret(obj_player1.lastroom) && !room_is_secret(room) && !instance_exists(obj_ghostcollectibles) && !instance_exists(obj_levelLoader))
+{
+	active = false;
+	visible = false;
+}

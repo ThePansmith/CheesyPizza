@@ -258,6 +258,7 @@
     {"name":"inst_B612310","path":"rooms/graveyard_5c/graveyard_5c.yy",},
     {"name":"inst_6A9A321D","path":"rooms/graveyard_5c/graveyard_5c.yy",},
     {"name":"inst_6A9273DB","path":"rooms/graveyard_5c/graveyard_5c.yy",},
+    {"name":"inst_106632E5","path":"rooms/graveyard_5c/graveyard_5c.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -513,6 +514,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B612310","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_nocutoff","path":"objects/obj_nocutoff/obj_nocutoff.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":4.0,"x":3776.0,"y":864.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6A9A321D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_nocutoff","path":"objects/obj_nocutoff/obj_nocutoff.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":2752.0,"y":544.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6A9273DB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_nocutoff","path":"objects/obj_nocutoff/obj_nocutoff.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":3488.0,"y":448.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_106632E5","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathportalexit","path":"objects/obj_deathportalexit/obj_deathportalexit.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2592.0,"y":1280.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_Secret1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":75,"SerialiseWidth":222,"TileCompressedData":[
 -9243,0,-21,73,-201,0,-21,73,-200,0,1,51,-21,73,-200,0,1,68,-21,73,-200,0,1,85,-21,73,-200,0,1,66,-22,73,-217,0,-5,73,-207,0,-15,73,-207,0,-15,73,-207,0,-15,73,-190,0,-2,74,-30,73,-190,0,-2,74,-30,73,-190,0,2,108,15,-30,73,-190,0,2,125,85,-30,73,-190,0,2,48,49,-30,73,-190,0,2,65,66,-30,73,-194,0,-25,73,-197,0,-15,73,-3624,0,],"TileDataFormat":1,},"tilesetId":{"name":"tile_graveyardmine","path":"tilesets/tile_graveyardmine/tile_graveyardmine.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},

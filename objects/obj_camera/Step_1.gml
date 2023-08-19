@@ -52,11 +52,15 @@ else
 	if limitcam[3] > targetcam[3] && camy + camh < limitcam[3]
 		limitcam[3] = camy + camh;
 	
-	limitcam[0] = Approach(limitcam[0], targetcam[0], 32);
-	limitcam[1] = Approach(limitcam[1], targetcam[1], 32);
-	limitcam[2] = Approach(limitcam[2], targetcam[2], 32);
-	limitcam[3] = Approach(limitcam[3], targetcam[3], 32);
-
+	limitcam[0] = Approach(limitcam[0], targetcam[0], panspeed);
+	limitcam[1] = Approach(limitcam[1], targetcam[1], panspeed);
+	limitcam[2] = Approach(limitcam[2], targetcam[2], panspeed);
+	limitcam[3] = Approach(limitcam[3], targetcam[3], panspeed);
+	
+	if limitcam[0] == targetcam[0] && limitcam[1] == targetcam[1]
+	&& limitcam[2] == targetcam[2] && limitcam[3] == targetcam[3]
+		panspeed = 32;
+	
 	camzoom = lerp(camzoom, targetzoom, 0.25);
 	angle = lerp(angle, targetangle, 0.25);
 }

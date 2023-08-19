@@ -19,3 +19,9 @@ if SUGARY
 	sprite_index = spr_coneball;
 if MIDWAY
 	sprite_index = spr_pizzaface_bo;
+
+if MOD.DeathMode
+{
+    sprite_index = spr_pizzaface_docile
+    destroyable = 0
+}

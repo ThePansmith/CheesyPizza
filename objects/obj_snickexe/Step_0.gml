@@ -1,5 +1,5 @@
 if (!global.snickchallenge && (global.laps < 2 or !(MOD.Lap3)))
-or room == timesuproom or room == rank_room or MOD.NoSnick
+or room == timesuproom or room == rank_room or MOD.EasyMode
 {
 	instance_destroy();
 	exit;
@@ -52,4 +52,5 @@ if (!hitboxcreate && (!obj_player1.instakillmove && obj_player1.state != states.
 // spontaneously evaporate if player is in cutscene
 if (place_meeting(x, y, obj_player1) && (obj_player1.instakillmove || obj_player1.state == states.handstandjump))
 or (obj_player1.state == states.keyget or obj_player.state == states.victory) or place_meeting(x, y, obj_playerexplosion) or place_meeting(x, y, obj_dynamiteexplosion)
+or safe_get(obj_pizzagoblinbomb, "state") == states.grabbed
 	reset_pos();

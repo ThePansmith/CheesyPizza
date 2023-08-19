@@ -10,7 +10,7 @@ function scr_is_p_rank()
 		return !global.combodropped && !string_starts_with(room_get_name(room), "medieval");
 	
 	if global.leveltosave != "exit"
-		return global.lap && global.secretfound >= 3 && global.treasure && !global.combodropped && enemykilled;
+		return (global.lap or MOD.DeathMode) && global.secretfound >= 3 && global.treasure && !global.combodropped && enemykilled;
 	else
 		return !global.combodropped;
 }

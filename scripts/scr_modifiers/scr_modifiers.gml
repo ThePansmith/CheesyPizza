@@ -17,12 +17,12 @@ function reset_modifier()
 		// Entrance
 		NoiseGutter: false,
 		
-		// Snickchallenge
+		// Snick Challenge
 		OldLevels: false,
-		NoSnick: false,
 		
 		// Grinch - Remove restart cube
 		// GOLF - Remove pizzaball blocks
+		// Snick Challenge - Remove snick
 		EasyMode: false
 	}
 }
