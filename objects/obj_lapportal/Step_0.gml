@@ -18,7 +18,7 @@ if (global.panic || instance_exists(obj_wartimer))
 				other.playerid = id;
 				
 				var collect = 3000;
-				if (MOD.Lap3)
+				if MOD.Lap3
 				{
 					if global.laps == 1
 						collect = 6000;
@@ -27,6 +27,9 @@ if (global.panic || instance_exists(obj_wartimer))
 				}
 				else if !instance_exists(obj_wartimer) && global.lap
 					global.fill += 180;
+				
+				if MOD.DeathMode with obj_deathmode
+					time_fx += 30;
 				
 				sound_play_oneshot_3d(other.sugary ? "event:/modded/sfx/secretenterSP" : "event:/sfx/misc/lapenter", x, y);
 				if !in_saveroom(other.id)

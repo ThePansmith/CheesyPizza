@@ -1,4 +1,4 @@
-if !global.heatmeter
+if !global.heatmeter && !MOD.DeathMode
 {
 	global.style = 0;
 	global.stylethreshold = 0;
@@ -7,6 +7,12 @@ if !global.heatmeter
 	global.baddiepowerup = false;
 	global.baddierage = false;
 	exit;
+}
+if MOD.DeathMode
+{
+	global.style = 55;
+	global.stylethreshold = 3;
+	global.baddiespeed = 1;
 }
 
 visible = obj_tv.visible;

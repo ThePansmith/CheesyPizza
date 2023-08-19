@@ -9,7 +9,7 @@ if ((sprite_index == spr_close or sprite_index == spr_secretportal_close) && !to
 }
 else
 	image_speed = 0.35;
-if (touched && sprite_index == spr_close)
+if (touched && sprite_index == spr_close && (!death or instance_exists(obj_deathportalexit)))
 {
 	with (playerid)
 	{
@@ -36,9 +36,25 @@ if (floor(image_index) >= (image_number - 1))
 		
 		case spr_close:
 			image_index = image_number - 1;
-			if (touched)
+			if touched
 			{
-				if (!instance_exists(obj_fadeout))
+				if death
+				{
+					with obj_camera
+					{
+						lock = false;
+						limitcam = [camera_get_view_x(view_camera[0]), camera_get_view_y(view_camera[0]), camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]), camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0])];
+						panspeed = 50;
+					}
+					with obj_deathportalexit
+					{
+						visible = true;
+						active = true;
+						image_index = 0;
+					}
+					instance_destroy();
+				}
+				else if !instance_exists(obj_fadeout)
 				{
 					with (obj_player)
 					{

@@ -346,7 +346,7 @@ if global.panic or global.snickchallenge
 		else
 			panicangle = 0;
 		
-		if instance_exists(obj_pizzaface)
+		if instance_exists(obj_pizzaface) && !MOD.DeathMode
 			greyscale = Approach(greyscale, 0.45, 0.005);
 		else
 			greyscale = Approach(greyscale, 0, 0.01);

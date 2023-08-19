@@ -219,7 +219,7 @@ function scr_tvdraw()
 	draw_set_halign(1);
 	*/
 
-	if (global.panic or global.snickchallenge)
+	if (global.panic or global.snickchallenge) && !MOD.DeathMode
 	{
 		// smooth timer
 		if global.fill < fill_lerp

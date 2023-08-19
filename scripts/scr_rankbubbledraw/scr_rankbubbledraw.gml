@@ -61,7 +61,8 @@ function scr_rankbubbledraw(rx, ry)
 		switch rank_ix
 		{
 			case 4:
-				perc = 1;
+			case 5:
+				perc = 0;
 				break;
 			case 3:
 				perc = (_score - global.arank) / (global.srank - global.arank);

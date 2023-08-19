@@ -39,6 +39,9 @@ function activate_panic(instapanic = false)
 			shake_mag_acc = 3 / room_speed;
 		}
 		notification_push(notifs.hungrypillar_dead, [room]);
+		
+		with obj_deathmode
+			time_fx = 30;
 	}
 	
 	global.fill = 4000;

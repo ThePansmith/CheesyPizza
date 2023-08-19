@@ -19,10 +19,8 @@ global.comboscore = 0;
 instance_destroy(obj_comboend);
 instance_destroy(obj_snickexe);
 
-if global.modifier_failed
+if global.modifier_failed or MOD.DeathMode
 	sprite_index = spr_modfailed;
-if REMIX
-	create_transformation_tip("{u}[T] Restart Level/", "quickrestart");
 buffer = 30;
 
 snd = fmod_event_create_instance("event:/music/timesup");

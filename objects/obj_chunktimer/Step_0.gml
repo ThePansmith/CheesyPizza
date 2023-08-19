@@ -1,4 +1,4 @@
-if (!global.panic && !global.snickchallenge) or global.tutorial_room
+if (!global.panic && !global.snickchallenge) or global.tutorial_room or MOD.DeathMode
 	exit;
 
 if global.fill > 0

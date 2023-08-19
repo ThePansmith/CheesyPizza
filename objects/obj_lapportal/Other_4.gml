@@ -6,7 +6,9 @@ if array_contains(levels, global.leveltosave) && !global.sandbox
 		instance_destroy();
 	ini_close();
 }
-if (MOD.Lap3) && global.laps >= 3
+if !MOD.Lap3 && MOD.DeathMode
+	instance_destroy();
+if MOD.Lap3 && global.laps >= 3
 	instance_destroy();
 if global.snickchallenge
 	instance_destroy();

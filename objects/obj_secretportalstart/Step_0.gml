@@ -1,3 +1,6 @@
+if !active
+	exit;
+
 image_speed = 0.35;
 switch (sprite_index)
 {
@@ -30,11 +33,15 @@ switch (sprite_index)
 			{
 				if ((object_index != obj_player2 || global.coop))
 				{
-					if (other.override_state != noone && other.override_sprite != noone)
+					if (other.override_state != noone)
 					{
 						state = other.override_state;
 						sprite_index = other.override_sprite;
 						image_index = 0;
+						
+						var vars = variable_struct_get_names(other.override_vars);
+						for(var i = 0; i < array_length(vars); i++)
+							variable_instance_set(id, vars[i], other.override_vars[$vars[i]]);
 					}
 					else
 					{

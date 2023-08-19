@@ -67,6 +67,10 @@ add_button("OK", "Start the level.", function()
 add_section("Modifiers");
 //add_modifier("Encore", MOD.Encore, "Remixes the level to make it harder.");
 
+var deathmode_allow = ["entrance", "medieval", "ruin", "dungeon"];
+if array_contains(deathmode_allow, level) or DEBUG
+	add_modifier("Death Mode", "DeathMode", "You like Scoutdigo? We did it better.", [seq_deathmode_off, seq_deathmode_on]);
+
 if !boss && level != "tutorial" && global.experimental
 	add_modifier("No Toppings", "NoToppings", "Spawns Pizzaface when collecting a topping.\nCurrently impossible, so it's part of EXPERIMENTAL.", [seq_notoppings_off, seq_notoppings_on]);
 if !boss && level != "tutorial"
@@ -93,7 +97,7 @@ if level == "snickchallenge"
 {
 	add_section("Level");
 	add_modifier("Old Levels", "OldLevels", "A more accurate Snick's Challenge, using level design closer to the SAGE 2019 demo.", [seq_oldlevels_off, seq_oldlevels_on]);
-	add_modifier("No Snick", "NoSnick", "More of a World 1 timed challenge without that bastard following you around.");
+	add_modifier("No Snick", "EasyMode", "More of a World 1 timed challenge without that bastard following you around.");
 }
 
 #endregion

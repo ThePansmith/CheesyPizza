@@ -1,3 +1,6 @@
+if MOD.DeathMode
+	exit;
+
 if (global.panic or global.snickchallenge) && !instance_exists(obj_ghostcollectibles)
 {
 	global.seconds -= 1;

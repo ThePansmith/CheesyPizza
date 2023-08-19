@@ -39,5 +39,6 @@ if MIDWAY
 }
 ID = id;
 
-if (MOD.DeathMode)
-	instance_destroy();
+death = MOD.DeathMode;
+if death // placeholder. will use custom sprites
+	image_blend = #D8B8F8;
