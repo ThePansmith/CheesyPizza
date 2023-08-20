@@ -358,7 +358,7 @@ function scr_pizzaface_p3_punch()
 	hsp = Approach(hsp, 0, 0.25);
 	if (floor(image_index) == 15)
 		hsp = image_xscale * 5;
-	if (floor(image_index) >= 17 && floor(image_index) < 38 && hitboxID == -4)
+	if (floor(image_index) >= 17 && floor(image_index) < 38 && hitboxID == noone)
 	{
 		fmod_event_instance_play(snd_bigpunch);
 		with (instance_create(x, y, obj_forkhitbox))

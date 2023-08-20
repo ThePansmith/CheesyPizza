@@ -345,7 +345,7 @@ function check_grabbed_solid(player)
 		exit;
 	
 	var strict = !destroyable;
-	if (!place_meeting(x, y, obj_destructibles) && (scr_solid(x, y) || collision_line(x, y, player.x, player.y, obj_solid, false, true) != -4))
+	if (!place_meeting(x, y, obj_destructibles) && (scr_solid(x, y) || collision_line(x, y, player.x, player.y, obj_solid, false, true) != noone))
 	{
 		var _dist = abs(x - obj_player.x);
 		

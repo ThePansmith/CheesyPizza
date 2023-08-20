@@ -1,6 +1,6 @@
 draw_set_font(lang_get_font("bigfont"));
-draw_set_halign(0);
-draw_set_valign(0);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
 draw_set_color(c_white);
 draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
 if (player == 0)

@@ -1,6 +1,6 @@
-func = function(argument0)
+func = function(player)
 {
-	if (active == 0 && argument0.state == states.backbreaker)
+	if (active == 0 && player.state == states.backbreaker)
 	{
 		active = true;
 		obj_secretmanager.touchedtriggers += 1;

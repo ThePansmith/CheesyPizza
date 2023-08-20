@@ -28,7 +28,7 @@ switch (state)
 				{
 					var pid = scr_puppet_detect();
 					trace(pid);
-					if (pid != -4)
+					if (pid != noone)
 					{
 						playerid = pid;
 						substate = states.chase;

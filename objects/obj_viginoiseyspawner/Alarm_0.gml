@@ -20,7 +20,7 @@ if (!instance_exists(obj_noisey))
 			if (id != other.id)
 				b = id;
 		}
-		if (b != -4)
+		if (b != noone)
 		{
 			if (b.x != x)
 				image_xscale = sign(b.x - x);

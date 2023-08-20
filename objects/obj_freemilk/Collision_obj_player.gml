@@ -1,4 +1,4 @@
-if (global.noisejetpack && playerid == -4)
+if (global.noisejetpack && playerid == noone)
 {
 	with (other)
 	{

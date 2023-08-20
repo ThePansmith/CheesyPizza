@@ -76,7 +76,7 @@ function add_achievement_update(_name, _update_rate, _creation_code, _update_fun
 	};
 	q.update_func = method(q, _update_func);
 	
-	if (_creation_code != -4)
+	if (_creation_code != noone)
 	{
 		q.creation_code = method(q, _creation_code);
 		q.creation_code();
@@ -95,7 +95,7 @@ function add_achievement_notify(_name, _creation_code, _func, _local = true, _sa
 		variables: ds_map_create()
 	};
 	q.func = method(q, _func);
-	if (_creation_code != -4)
+	if (_creation_code != noone)
 	{
 		q.creation_code = method(q, _creation_code);
 		q.creation_code();
@@ -309,7 +309,7 @@ function achievement_get_struct(_name)
 			break;
 		}
 	}
-	if (b == -4)
+	if (b == noone)
 	{
 		l = obj_achievementtracker.achievements_notify;
 		for (i = 0; i < array_length(l); i++)

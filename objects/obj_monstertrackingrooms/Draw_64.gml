@@ -15,7 +15,7 @@ for (var i = 0; i < ds_grid_width(room_grid); i++)
 			else if (monster_pos[xx].x == i && monster_pos[xx].y == j && monster_active[xx])
 				_drawNum += 1;
 		}
-		if (_room != -4)
+		if (_room != noone)
 		{
 			var _c = (_room != room_get_name(room)) ? c_white : 65280;
 			if (i == sound_pos.x && j == sound_pos.y)

@@ -31,5 +31,5 @@ function scr_get_gamepadicon(button)
 		case gp_padr:
 			return 17;
 	}
-	return -4;
+	return noone;
 }

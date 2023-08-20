@@ -12,7 +12,7 @@ dialog_func = function()
 	else
 		do_dialog(ag_dialog[0]);
 };
-if (global.anarchistcutscene1 == -4)
+if (global.anarchistcutscene1 == noone)
 	global.anarchistcutscene1 = quick_ini_read_real(get_savefile_ini(), "cutscene", "anarchist1", false);
 if (global.anarchistcutscene1)
 	instance_destroy();

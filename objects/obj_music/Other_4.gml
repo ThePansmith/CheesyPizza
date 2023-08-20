@@ -9,20 +9,20 @@ if ((!global.panic && !global.snickchallenge && !(MOD.DeathMode)) or global.leve
 	if !is_undefined(mu)
 	{
 		var prevmusic = music;
-		if (prevmusic == -4 || mu.event_name != prevmusic.event_name)
+		if (prevmusic == noone || mu.event_name != prevmusic.event_name)
 		{
 			fmod_event_instance_play(mu.event);
 			fmod_event_instance_set_paused(mu.event, false);
-			if (mu.continuous && prevmusic != -4)
+			if (mu.continuous && prevmusic != noone)
 			{
 				var pos = fmod_event_instance_get_timeline_pos(prevmusic.event);
 				pos = music_get_pos_wrap(pos, fmod_event_get_length(mu.event_name));
 				fmod_event_instance_set_timeline_pos(mu.event, pos);
 			}
-			if (prevmusic != -4)
+			if (prevmusic != noone)
 			{
 				fmod_event_instance_stop(prevmusic.event, room != Mainmenu);
-				if (prevmusic.event_secret != -4)
+				if (prevmusic.event_secret != noone)
 					fmod_event_instance_stop(prevmusic.event_secret, true);
 			}
 			music = mu;
@@ -39,7 +39,7 @@ if ((!global.panic && !global.snickchallenge && !(MOD.DeathMode)) or global.leve
 	else
 		fmod_event_instance_stop(pillarmusicID, true);
 	
-	if music != -4
+	if music != noone
 	{
 		if secret
 		{
@@ -51,13 +51,13 @@ if ((!global.panic && !global.snickchallenge && !(MOD.DeathMode)) or global.leve
 			}
 			fmod_event_instance_set_parameter(music.event_secret, "state", s, true);
 		}
-		if music.on_room_start != -4
+		if music.on_room_start != noone
 			music.on_room_start(room, music.event, music.event_secret);
 	}
 }
 if (secret)
 {
-	if (music != -4 && music.event_secret != -4)
+	if (music != noone && music.event_secret != noone)
 	{
 		var ev = music.event_secret, evname = music.event_secret_name;
 		fmod_event_instance_play(ev);
@@ -78,7 +78,7 @@ if (secret)
 else if (secretend)
 {
 	secretend = false;
-	if (music != -4)
+	if (music != noone)
 	{
 		fmod_event_instance_stop(music.event_secret, true);
 		fmod_event_instance_set_paused(music.event, false);
@@ -94,7 +94,7 @@ else if (secretend)
 }
 if (room == rank_room || room == boss_pizzaface || room == boss_noise || room == boss_vigilante || room == boss_fakepep || room == boss_pepperman)
 {
-	if (music != -4)
+	if (music != noone)
 	{
 		fmod_event_instance_stop(music.event, true);
 		fmod_event_instance_stop(music.event_secret, true);

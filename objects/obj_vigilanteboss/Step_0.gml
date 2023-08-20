@@ -87,7 +87,7 @@ switch (state)
 		break;
 }
 boss_update_pizzaheadKO(spr_bossfight_vigiHP, spr_bossfight_vigipalette);
-if (state != states.flamethrower && flameID != -4)
+if (state != states.flamethrower && flameID != noone)
 {
 	instance_destroy(obj_flamethrowerhurtbox);
 	flameID = -4;

@@ -1,4 +1,4 @@
-if backgroundID != -4
+if backgroundID != noone
 {
     var cx = camera_get_view_x(view_camera[0]);
     var cy = camera_get_view_y(view_camera[0]);
@@ -10,7 +10,7 @@ if backgroundID != -4
     var lx = layer_get_x(backgroundID);
     var ly = layer_get_y(backgroundID);
     draw_sprite_tiled(background_spr, 0, lx - cx, ly - cy);
-    if chunks != -4
+    if chunks != noone
     {
         for (var i = 0; i < array_length(chunks); i++)
         {

@@ -206,7 +206,7 @@ function scr_playersounds()
 			fmod_event_instance_set_parameter(mrpinchsnd, "state", 1, true);
 			sound_instance_move(mrpinchsnd, x + hsp, y + vsp);
 		}
-		if (hamkuffID != -4 && instance_exists(hamkuffID) && !launched)
+		if (hamkuffID != noone && instance_exists(hamkuffID) && !launched)
 		{
 			if (!fmod_event_instance_is_playing(hamkuffsnd))
 				fmod_event_instance_play(hamkuffsnd);

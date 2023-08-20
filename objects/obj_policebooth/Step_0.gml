@@ -1,6 +1,6 @@
 if (!released && global.panic)
 {
-	if (inst != -4 && !instance_exists(inst))
+	if (inst != noone && !instance_exists(inst))
 		inst = -4;
 	if (obj_player.x > x)
 	{

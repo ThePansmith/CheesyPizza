@@ -69,7 +69,7 @@ if !selecting
 			var _v = input[i][0];
 			if controller
 				_v = concat(_v, "C");
-			if variable_global_get(_v) == -4
+			if variable_global_get(_v) == noone
 			{
 				if _v != "key_superjumpC" && _v != "key_groundpoundC"
 					_found = true;
@@ -171,7 +171,7 @@ else if (!controller)
 else
 {
 	var val = scr_checkanygamepad(obj_inputAssigner.player_input_device[0])
-	if (val != -4 && val != gp_padu && val != gp_padr && val != gp_padd && val != gp_padl && val != gp_select && val != gp_start)
+	if (val != noone && val != gp_padu && val != gp_padr && val != gp_padd && val != gp_padl && val != gp_select && val != gp_start)
 	{
 		for (i = 0; i < array_length(input); i++)
 		{

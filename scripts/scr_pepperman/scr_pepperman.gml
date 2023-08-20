@@ -40,7 +40,7 @@ function scr_pepperman_sounds()
 		shrinkstate = Approach(shrinkstate, 0, 0.05);
 	with (obj_music)
 	{
-		if (music != -4)
+		if (music != noone)
 			fmod_event_instance_set_parameter(music.event, "state", other.shrinkstate, true);
 	}
 }

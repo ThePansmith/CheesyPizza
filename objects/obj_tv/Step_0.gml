@@ -19,17 +19,17 @@ if instance_exists(obj_endlevelfade) && REMIX
 
 if global.hud == 0
 	image_speed = 0.35;
-if (targetgolf != -4 && !instance_exists(targetgolf))
+if (targetgolf != noone && !instance_exists(targetgolf))
 	targetgolf = -4;
-if (targetgolf != -4 && !view_visible[1])
+if (targetgolf != noone && !view_visible[1])
 {
 	view_visible[1] = true;
 	view_enabled = true;
 }
 
-if (bubblespr != -4 && bubblespr != spr_tv_bubbleclosed)
+if (bubblespr != noone && bubblespr != spr_tv_bubbleclosed)
 {
-	if (prompt != -4)
+	if (prompt != noone)
 		prompt_buffer = 2;
 	bubbleindex += image_speed;
 	if (floor(bubbleindex) == sprite_get_number(bubblespr))
@@ -42,7 +42,7 @@ if (bubblespr != -4 && bubblespr != spr_tv_bubbleclosed)
                 break
             case spr_tv_bubbleclose:
                 bubblespr = spr_tv_bubbleclosed
-                if (prompt == -4 or prompt == "")
+                if (prompt == noone or prompt == "")
                     bubblespr = -4
                 break
 		}
@@ -82,7 +82,7 @@ else switch state
 		
 		var _transfo = true;
 		var _transfospr = scr_tv_get_transfo_sprite();
-		if (_transfospr == -4)
+		if (_transfospr == noone)
 			_transfo = false;
 		else
 			idlespr = _transfospr;
@@ -149,7 +149,7 @@ else switch state
 			{
 				var b = ds_list_find_value(tvprompts_list, 0);
 				prompt_buffer = prompt_max;
-				if (b[0] != "" && b[0] != -4)
+				if (b[0] != "" && b[0] != noone)
 				{
 					bubblespr = spr_tv_bubbleopen;
 					bubbleindex = 0;
@@ -159,7 +159,7 @@ else switch state
 				}
 				else
 				{
-					if (bubblespr != -4 && bubblespr != spr_tv_bubbleclosed)
+					if (bubblespr != noone && bubblespr != spr_tv_bubbleclosed)
 						bubblespr = spr_tv_bubbleclose;
 					if (bubblespr == spr_tv_bubbleclosed)
 						bubblespr = -4;
@@ -220,7 +220,7 @@ else switch state
 	case states.tv_whitenoise:
 		if (tv_trans >= sprite_get_number(spr_tv_whitenoise))
 		{
-			if (expressionsprite != -4)
+			if (expressionsprite != noone)
 			{
 				state = states.tv_expression;
 				targetspr = expressionsprite;
@@ -273,7 +273,7 @@ else switch state
 				break;
 			
 			case spr_tv_exprcombo:
-				if (global.combo < 3 or _transfospr != -4 or obj_player1.isgustavo or obj_player1.mach4mode or obj_player1.state == states.hurt or obj_player1.state == states.mach3 or obj_player1.sprite_index == obj_player1.spr_mach3boost or global.stylethreshold >= 3)
+				if (global.combo < 3 or _transfospr != noone or obj_player1.isgustavo or obj_player1.mach4mode or obj_player1.state == states.hurt or obj_player1.state == states.mach3 or obj_player1.sprite_index == obj_player1.spr_mach3boost or global.stylethreshold >= 3)
 				{
 					state = states.tv_whitenoise;
 					expressionsprite = -4;
@@ -327,7 +327,7 @@ else switch state
 				_transfo = false;
 				with (obj_player1)
 				{
-					if (_transfospr != -4)
+					if (_transfospr != noone)
 						_transfo = true;
 					if (isgustavo)
 						_transfo = true;
@@ -391,7 +391,7 @@ else
 var change_pos = false;
 if (obj_player.x > (room_width - 224) && obj_player.y < 187)
 	change_pos = true;
-if (bubblespr != -4 && obj_player.x > 316 && obj_player.y < 101)
+if (bubblespr != noone && obj_player.x > 316 && obj_player.y < 101)
 	change_pos = true;
 
 var spd = 15;

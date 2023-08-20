@@ -36,15 +36,15 @@ function scr_pizzaball_grabbed()
 	state = states.golf;
 	create_transformation_tip(lang_get_value("golftip"), "golf");
 }
-function scr_pizzaball_go_to_thrown(argument0, argument1, argument2 = true)
+function scr_pizzaball_go_to_thrown(hsp, vsp, capped_vsp = true)
 {
 	instance_create_unique(156, SCREEN_HEIGHT + 400, obj_pizzaball_golfhit)
 	hitbuffer = 8;
-	hitspeed = abs(argument0);
-	if (sign(argument0) != 0)
-		image_xscale = sign(argument0);
-	jumpspeed = abs(argument1);
-	if (argument2 && jumpspeed < 12)
+	hitspeed = abs(hsp);
+	if (sign(hsp) != 0)
+		image_xscale = sign(hsp);
+	jumpspeed = abs(vsp);
+	if (capped_vsp && jumpspeed < 12)
 		jumpspeed = 12;
 	vsp = -jumpspeed;
 	bounced = false;

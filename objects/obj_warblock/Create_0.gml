@@ -1,5 +1,5 @@
 destroy = false;
-if (global.warcutscene == -4)
+if (global.warcutscene == noone)
 	global.warcutscene = quick_ini_read_real(get_savefile_ini(), "cutscene", "war", false);
 if (global.warcutscene)
 {

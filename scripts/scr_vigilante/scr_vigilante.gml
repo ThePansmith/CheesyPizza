@@ -84,7 +84,7 @@ function scr_vigilante_update_sounds()
 		songstate = Approach(songstate, 0, 0.05);
 	with (obj_music)
 	{
-		if (music != -4)
+		if (music != noone)
 			fmod_event_instance_set_parameter(music.event, "state", other.songstate, true);
 	}
 }
@@ -485,12 +485,12 @@ function scr_vigilante_throw_cow()
 	else
 		return false;
 }
-function scr_vigilante_do_revolver(argument0, argument1, argument2 = false)
+function scr_vigilante_do_revolver(_shot, _buffer, _jump = false)
 {
-	shot = argument0;
-	jump = argument2;
+	shot = _shot;
+	jump = _jump;
 	state = states.revolver;
-	revolverbuffer = argument1;
+	revolverbuffer = _buffer;
 	if (sprite_index != spr_playerV_revolvershoot && sprite_index != spr_playerV_revolverend)
 		sprite_index = spr_playerV_revolverstart;
 	else

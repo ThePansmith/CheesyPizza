@@ -57,7 +57,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 				y += vsp;
 				if (alpha <= 0 && alarm[0] != 0)
 					alarm[0] = 0;
-				if (playerid != -4 && instance_exists(playerid))
+				if (playerid != noone && instance_exists(playerid))
 					visible = playerid.visible;
 				else
 					visible = true;

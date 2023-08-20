@@ -104,7 +104,7 @@ switch (state)
 						ds_list_delete(other.particlelist, i--);
 					else
 					{
-						if (palettetexture != -4)
+						if (palettetexture != noone)
 							pattern_set(global.Base_Pattern_Color, sprite_index, image_index, 1, 1, palettetexture);
 						pal_swap_set(spr_palette, paletteselect, false);
 						draw_sprite(sprite_index, image_index, x, y);

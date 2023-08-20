@@ -8,7 +8,7 @@ if (!finish && (keyboard_check_pressed(global.key_slap) || gamepad_button_check_
 		{
 			while (credits_pos < array_length(credits))
 			{
-				if (credits[credits_pos][1] != -4)
+				if (credits[credits_pos][1] != noone)
 					break;
 				credits_pos++;
 			}

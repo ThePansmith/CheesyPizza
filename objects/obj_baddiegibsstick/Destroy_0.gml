@@ -1,4 +1,4 @@
-if (storedx != -4 && storedy != -4)
+if (storedx != noone && storedy != noone)
 {
 	var i = 0;
 	if (!ds_list_empty(global.baddietomb))

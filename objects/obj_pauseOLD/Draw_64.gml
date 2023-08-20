@@ -5,8 +5,8 @@ if (pause)
 	var pad = 48;
 	draw_set_alpha(1);
 	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
-	draw_set_halign(0);
-	draw_set_valign(0);
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
 	var xx = (SCREEN_WIDTH / 2) + 10;
 	var yy = 48;
 	for (var i = 0; i < array_length(pause_menu); i++)
@@ -27,7 +27,7 @@ if (pause)
 	draw_sprite(peppino_sprite, peppino_index, xx, yy);
 	reset_shader_fix();
 	draw_set_font(global.collectfont);
-	draw_set_halign(1);
+	draw_set_halign(fa_center);
 	xx = (SCREEN_WIDTH / 2) + 209;
 	yy = (SCREEN_HEIGHT / 2) + 146;
 	draw_sprite(spr_pizzascore, 0, xx, yy);

@@ -1,4 +1,4 @@
-if (playerid != -4)
+if (playerid != noone)
 {
 	visible = false;
 	if (playerid.state != states.rocket && playerid.state != states.rocketslide && playerid.state != states.chainsaw)

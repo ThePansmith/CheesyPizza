@@ -1,10 +1,10 @@
 function scr_editor_get_input()
 {
-	key_mbleft = mouse_check_button(1);
-	key_mbleft2 = mouse_check_button_pressed(1);
-	key_mbright = mouse_check_button(2);
-	key_mbright2 = mouse_check_button_pressed(2);
-	key_mbmiddle = mouse_check_button(3);
+	key_mbleft = mouse_check_button(mb_left);
+	key_mbleft2 = mouse_check_button_pressed(mb_left);
+	key_mbright = mouse_check_button(mb_right);
+	key_mbright2 = mouse_check_button_pressed(mb_right);
+	key_mbmiddle = mouse_check_button(mb_middle);
 	key_up = keyboard_check(ord("W"));
 	key_down = keyboard_check(ord("S"));
 	key_left = keyboard_check(ord("A"));

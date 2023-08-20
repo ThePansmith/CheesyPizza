@@ -5,7 +5,7 @@ if (!fadeout)
 	fadeout = true;
 	if (monster)
 		scr_monster_activate();
-	if (content != -4)
+	if (content != noone)
 	{
 		if (content == obj_bazooka)
 			content = obj_pineappleprojectilespawn;

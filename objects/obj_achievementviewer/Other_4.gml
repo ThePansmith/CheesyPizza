@@ -1,5 +1,5 @@
 var ach = achievement_get_struct(achievement);
-if (ach != -4)
+if (ach != noone)
 {
 	if (ach.unlocked)
 	{

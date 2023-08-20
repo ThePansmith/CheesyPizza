@@ -14,8 +14,8 @@ if instance_exists(obj_keyconfig) or instance_exists(obj_screenconfirm) or safe_
 	exit;
 
 draw_set_font(lang_get_font("bigfont"));
-draw_set_halign(1);
-draw_set_valign(1);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
 draw_set_color(c_white);
 
 var _os = optionselected;
@@ -29,8 +29,8 @@ var yy = (SCREEN_HEIGHT / 2) - (size / 4);
 switch (m.anchor)
 {
 	case anchor.center:
-		draw_set_halign(1);
-		draw_set_valign(0);
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_top);
 		var c = c_white;
 		var a = 1;
 		for (i = 0; i < len; i++)
@@ -47,8 +47,8 @@ switch (m.anchor)
 		break;
 	
 	case anchor.left:
-		draw_set_halign(0);
-		draw_set_valign(0);
+		draw_set_halign(fa_left);
+		draw_set_valign(fa_top);
 		xx = m.xpad;
 		c = c_white;
 		a = 1;

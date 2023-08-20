@@ -1,4 +1,4 @@
-if (grabbedPlayer != -4)
+if (grabbedPlayer != noone)
 {
     var xx = xstart
     var yy = ystart
@@ -12,7 +12,7 @@ if (grabbedPlayer != -4)
 }
 else
     draw_sprite(spr_flingFrog, -1, xstart, ystart)
-if (grabbedPlayer != -4)
+if (grabbedPlayer != noone)
     draw_sprite(spr_flingfrog_handsmove, -1, x, y)
 else
 {

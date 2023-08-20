@@ -3,7 +3,7 @@ with (obj_player)
 
 if (scene >= 0)
 {
-	if (!showtext && (keyboard_check_pressed(vk_anykey) or scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != -4))
+	if (!showtext && (keyboard_check_pressed(vk_anykey) or scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != noone))
 	{
 		showtext = true;
 		alarm[0] = 120;
@@ -69,7 +69,7 @@ switch (scene)
 			bg.depth = 4;
 			with (obj_music)
 			{
-				if (music != -4)
+				if (music != noone)
 					fmod_event_instance_set_parameter(music.event, "state", 1, true);
 			}
 			*/

@@ -17,7 +17,7 @@ function scr_pausedraw_ss()
 		draw_sprite(spr_pause_ss, 0, 0, 0);
 		
 		// confecti
-		if global.leveltosave != -4
+		if global.leveltosave != noone
 		{
 			draw_sprite(spr_pauseconfecti1, global.shroomfollow, 0, 0);
 			draw_sprite(spr_pauseconfecti2, global.cheesefollow, 0, 0);
@@ -37,7 +37,7 @@ function scr_pausedraw_ss()
 		shader_set(shd_pal_swapper);
 		pattern_set(global.Base_Pattern_Color, spr_pause_char, char * 2 + global.panic, 1, 1, global.palettetexture);
 		pal_swap_set(spr_palette, paletteselect, false);
-		draw_sprite(spr_pause_char, char + global.panic, 686, 285);
+		draw_sprite(spr_pause_char, char * 2 + global.panic, 686, 285);
 		pal_swap_reset();
 		
 		// timer

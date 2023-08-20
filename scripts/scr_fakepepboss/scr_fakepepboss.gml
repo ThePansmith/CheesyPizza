@@ -176,15 +176,15 @@ function scr_fakepep_update_sounds()
 	else
 		fmod_event_instance_stop(snd_flailing, false);
 }
-function scr_fakepepboss_do_projectiles(argument0, argument1)
+function scr_fakepepboss_do_projectiles(phase, wastedhits)
 {
 	if (pizzahead)
 		exit;
 	var t = targetplayer;
-	if (currentprojectile >= array_length(projectile_list[argument0][argument1]))
+	if (currentprojectile >= array_length(projectile_list[phase][wastedhits]))
 		currentprojectile = 0;
 	var currp = currentprojectile;
-	var _attack = fakepep_get_projectile(argument0, argument1, currentprojectile);
+	var _attack = fakepep_get_projectile(phase, wastedhits, currentprojectile);
 	currentprojectile += 1;
 	deformed_cooldown = _attack.cooldown;
 	
@@ -589,7 +589,7 @@ function scr_fakepepboss_grabthrow()
 		y = other.y;
 	}
 	hsp = Approach(hsp, 0, 1);
-	if (floor(image_index) >= 4 && playerID != -4)
+	if (floor(image_index) >= 4 && playerID != noone)
 	{
 		playerID.invtime = 0;
 		scr_hurtplayer(playerID);

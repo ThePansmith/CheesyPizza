@@ -24,7 +24,7 @@ function scr_create_pause_image()
 	gpu_set_blendmode_ext(bm_one, bm_inv_src_alpha); // FIXES THE WEIRD DARKENING ISSUE!
 	
 	scr_draw_screen(0, 0, 1, 1, 1, true);
-	if !SUGARY or instance_exists(obj_titlecard)
+	if !SUGARY or object_index != obj_pause
 		draw_surface(obj_screensizer.gui_surf, 0, 0);
 	
 	shader_reset();
@@ -194,7 +194,7 @@ function pause_unpause_music()
 {
 	with (obj_music)
 	{
-		if (music != -4)
+		if (music != noone)
 		{
 			fmod_event_instance_set_paused(music.event, other.savedmusicpause);
 			fmod_event_instance_set_paused(music.event_secret, other.savedsecretpause);

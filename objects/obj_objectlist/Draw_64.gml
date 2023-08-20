@@ -1,5 +1,5 @@
 draw_self();
-if (object_list != -4)
+if (object_list != noone)
 {
 	var text = -4;
 	var xx = 0;
@@ -28,11 +28,11 @@ if (object_list != -4)
 	}
 	surface_reset_target();
 	draw_surface(surface, x, y);
-	if (text != -4)
+	if (text != noone)
 	{
 		draw_set_font(global.editorfont);
-		draw_set_halign(1);
-		draw_set_valign(1);
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_middle);
 		draw_set_color(c_white);
 		var ty2 = y + scroll_y + ty1;
 		while (ty2 > ((y + sprite_height) - 12))

@@ -12,8 +12,8 @@ if sugary
 }
 if (state > 0)
 {
-	draw_set_valign(0);
-	draw_set_halign(0);
+	draw_set_valign(fa_top);
+	draw_set_halign(fa_left);
 	draw_set_font(sugary ? global.collectfontSP : global.collectfont);
 	var text_y = 0;
 	switch (floor(image_index))

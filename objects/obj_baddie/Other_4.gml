@@ -8,7 +8,7 @@ while instance_exists(obj_levelLoader) && place_meeting(x, y, obj_solid)
 
 if (safe_get(id, "escape"))
 {
-	if (escapespawnID == -4)
+	if (escapespawnID == noone)
 	{
 		with (instance_create(x, y, obj_escapespawn))
 		{

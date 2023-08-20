@@ -31,7 +31,7 @@ enum texttype
 function create_transformation_tip(str, save_entry = noone)
 {
 	ini_open_from_string(obj_savesystem.ini_str);
-	if (save_entry != -4 && ini_read_real("Tip", save_entry, false))
+	if (save_entry != noone && ini_read_real("Tip", save_entry, false))
 	{
 		ini_close();
 		exit;
@@ -43,7 +43,7 @@ function create_transformation_tip(str, save_entry = noone)
 		text = str;
 		b = id;
 	}
-	if (save_entry != -4)
+	if (save_entry != noone)
 		ini_write_real("Tip", save_entry, true);
 	obj_savesystem.ini_str = ini_close();
 	return b;
@@ -82,7 +82,7 @@ function scr_compile_icon_text(text, pos = 1, return_array = false)
 						te = texteffect.updown;
 						break;
 				}
-				array_push(arr, [char_x, char_y, texttype.array, te, n[0]]); // probably. originally 2
+				array_push(arr, [char_x, char_y, texttype.array, te, n[0]]); // 2 << 0
 				pos = n[1];
 				char_x = n[2];
 				char_y = n[3];
@@ -158,7 +158,7 @@ function scr_compile_icon_text(text, pos = 1, return_array = false)
 						break;
 				}
 				n = string_copy(text, start, (pos - start) + 1);
-				array_push(arr, [char_x, char_y, texttype.normal, n]); // probably. originally 0
+				array_push(arr, [char_x, char_y, texttype.normal, n]); // 0 << 0
 				char_x += string_width(n);
 				break;
 		}
@@ -233,7 +233,7 @@ function scr_draw_granny_texture(x, y, xscale, yscale, tex_x, tex_y, sprite = sp
 	// draw the looping texture
 	surface_set_target(surffinal);
 	draw_sprite_tiled(sprite, 0, tex_x + txo, tex_y + tyo);
-	gpu_set_blendmode(3);
+	gpu_set_blendmode(bm_subtract);
 	draw_surface(surfclip, 0, 0);
 	gpu_set_blendmode(bm_normal);
 	surface_reset_target();
@@ -393,7 +393,7 @@ function scr_draw_text_arr(x, y, text_arr, color = c_white, alpha = 1, effect = 
 						
 						case texteffect.updown:
 							var o = 1;
-							if (option_struct != -4)
+							if (option_struct != noone)
 								o = option_struct.offset;
 							var d = ((i % 2) == 0) ? -1 : 1;
 							var _dir = floor(Wave(-1, 1, 0.1, 0));
@@ -402,20 +402,20 @@ function scr_draw_text_arr(x, y, text_arr, color = c_white, alpha = 1, effect = 
 					}
 				}
 				
-				if spr != -4
+				if spr != noone
 				{
-					if ix != -4
+					if ix != noone
 						draw_sprite(spr, ix, cx, cy);
-					if txt != -4
+					if txt != noone
 					{
 						var f = draw_get_font();
-						draw_set_halign(1);
-						draw_set_valign(1);
+						draw_set_halign(fa_center);
+						draw_set_valign(fa_middle);
 						draw_set_font(global.tutorialfont);
 						draw_text_color(cx + 16, cy + 14, txt, c_black, c_black, c_black, c_black, alpha);
 						draw_set_font(f);
-						draw_set_halign(0);
-						draw_set_valign(0);
+						draw_set_halign(fa_left);
+						draw_set_valign(fa_top);
 					}
 				}
 				break;
@@ -450,7 +450,7 @@ function scr_draw_text_arr(x, y, text_arr, color = c_white, alpha = 1, effect = 
 								q = string_char_at(val, j);
 								var s = 0;
 								o = 1;
-								if (option_struct != -4)
+								if (option_struct != noone)
 									o = option_struct.offset;
 								d = ((j % 2) == 0) ? -1 : 1;
 								_dir = floor(Wave(-1, 1, 0.1, 0));

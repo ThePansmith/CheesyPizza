@@ -1,4 +1,4 @@
-if (prompt_array != -4 && prompt_condition != -4 && prompt_condition())
+if (prompt_array != noone && prompt_condition != noone && prompt_condition())
 {
 	if !in_saveroom()
 	{

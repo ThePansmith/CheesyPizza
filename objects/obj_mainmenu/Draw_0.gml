@@ -24,17 +24,17 @@ if currentselect != -1
 			spr = sprite_index;
 	}
 }
-if (tex != -4)
+if (tex != noone)
 	pattern_set(global.Base_Pattern_Color, spr, image_index, image_xscale, image_yscale, tex);
 pal_swap_set(spr_peppalette, pal, false);
 draw_sprite_ext(spr, image_index, _x, _y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
-if (tex != -4)
+if (tex != noone)
     pattern_reset();
 pal_swap_reset();
 
 draw_set_font(lang_get_font("bigfont"));
-draw_set_halign(1);
-draw_set_valign(1);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
 draw_set_color(c_white);
 draw_set_alpha(extrauialpha);
 var qx = 0;
@@ -42,8 +42,8 @@ var qy = 0;
 draw_sprite(spr_quitgame, 0, qx, qy);
 scr_draw_text_arr(qx + 50, qy + 100, grab_key);
 draw_set_font(lang_get_font("bigfont"));
-draw_set_halign(1);
-draw_set_valign(1);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
 draw_set_color(c_white);
 draw_sprite(spr_controlseggplant, (obj_inputAssigner.player_input_device[0] < 0 ? 0 : 1), SCREEN_WIDTH * 0.853125, 84);
 var status_x = 183;

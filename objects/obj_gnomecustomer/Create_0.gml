@@ -9,7 +9,7 @@ xscale = 1;
 image_speed = 0;
 depth = 99;
 image_index = 0;
-if (collision_line(x, y, x, y + 400, obj_solid, false, true) != -4)
+if (collision_line(x, y, x, y + 400, obj_solid, false, true) != noone)
 {
 	while (!check_solid(x, y + 1))
 		y++;

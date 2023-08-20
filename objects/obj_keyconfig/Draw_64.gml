@@ -35,13 +35,13 @@ for (var i = i1; i < array_length(input); i++)
 	
 	if !controller
 	{
-		if val != -4
+		if val != noone
 			draw_text_color((SCREEN_WIDTH / 2) + 100, yy, scr_keyname(val), c, c, c, c, 1);
 	}
-	else if val != -4
+	else if val != noone
 	{
 		var index = scr_get_gamepadicon(val);
-		if index != -4
+		if index != noone
 			draw_sprite_ext(spr_tutorialgamepad, index, (SCREEN_WIDTH / 2) + 90, yy - 16, 1, 1, 0, c, 1);
 		else
 			draw_text_color((SCREEN_WIDTH / 2) + 100, yy, lang_get_value("option_press"), c, c, c, c, 1);

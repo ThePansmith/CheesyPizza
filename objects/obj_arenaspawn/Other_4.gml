@@ -18,7 +18,7 @@ else
 	}
 	with (obj_arenadoor)
 	{
-		if (objectlist != -4 && (array_length(objectlist) - 1) > other.maxwave)
+		if (objectlist != noone && (array_length(objectlist) - 1) > other.maxwave)
 			other.maxwave = array_length(objectlist) - 1;
 	}
 }

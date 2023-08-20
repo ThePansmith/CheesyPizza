@@ -1,10 +1,10 @@
-func = function(argument0)
+func = function(player)
 {
-	if (!active && argument0.state == states.handstandjump)
+	if (!active && player.state == states.handstandjump)
 	{
 		active = true;
 		obj_secretmanager.hittriggers++;
-		with (argument0)
+		with (player)
 			scr_pummel();
 	}
 };

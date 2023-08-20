@@ -1,7 +1,7 @@
 if locked
 {
 	sprite_index = spr_doorblocked;
-	if uparrowID != -4
+	if uparrowID != noone
 	{
 		instance_destroy(uparrowID);
 		uparrowID = -4;

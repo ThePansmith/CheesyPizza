@@ -1,6 +1,6 @@
 draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
 draw_set_font(lang_get_font("bigfont"));
-draw_set_halign(1);
+draw_set_halign(fa_center);
 draw_set_color(c_white);
 draw_text(SCREEN_WIDTH / 2, 200, "ARE YOU SURE?");
 if (optionselected == 0)

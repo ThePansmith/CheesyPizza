@@ -69,7 +69,7 @@ if (pause && !instance_exists(obj_option))
 					rm = global.leveltorestart;
 					ds_list_clear(global.saveroom);
 					ds_list_clear(global.baddieroom);
-					if (rm != -4 && rm != -1)
+					if (rm != noone && rm != -1)
 					{
 						instance_destroy(obj_fadeout);
 						instance_activate_all();

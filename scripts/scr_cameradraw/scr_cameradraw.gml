@@ -279,7 +279,7 @@ function scr_cameradraw()
 		}
 	
 		draw_set_font(lang_get_font("bigfont"));
-		draw_set_halign(1);
+		draw_set_halign(fa_center);
 		draw_set_color(c_white);
 		if (obj_player1.character == "V")
 			draw_text(200 + healthshake, 125 + healthshake, global.playerhealth);

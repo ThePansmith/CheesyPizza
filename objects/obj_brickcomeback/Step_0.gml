@@ -30,7 +30,7 @@ if (!trapped)
 	if (comeback)
 		sprite_index = spr_lonebrick_comeback;
 }
-else if (baddieID == -4)
+else if (baddieID == noone)
 {
 	vsp = -10;
 	if ((y + vsp) < 80 || scr_solid(x, y - 78))

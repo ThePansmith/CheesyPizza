@@ -117,7 +117,7 @@ with (obj_smallnumber)
 	if (visible && flash)
 	{
 		draw_set_font(global.smallnumber_fnt);
-		draw_set_halign(1);
+		draw_set_halign(fa_center);
 		draw_text(x, y, number);
 	}
 }
@@ -160,14 +160,14 @@ with obj_sausageman_dead
 		{
 			if sprite_exists(spr_palette)
 			{
-				if oldpalettetexture != -4
+				if oldpalettetexture != noone
 					pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, oldpalettetexture);
 				pal_swap_set(spr_palette, paletteselect, false);
 			}
 			else
 				pal_swap_reset();
 			draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, b, image_alpha);
-			if oldpalettetexture != -4
+			if oldpalettetexture != noone
 	            pattern_reset();
 		}
 	}

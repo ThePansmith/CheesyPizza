@@ -1,2 +1,2 @@
-if (sign_id == -4)
+if (sign_id == noone)
 	event_inherited();

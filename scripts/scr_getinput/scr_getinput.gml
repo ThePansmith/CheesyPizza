@@ -94,9 +94,9 @@ function scr_getinput(is_menu = false)
 	key_escape = (keyboard_check_pressed(vk_escape) || gamepad_button_check(_dvc, gp_select));
 	key_chainsaw = (keyboard_check(global.key_chainsaw) || gamepad_button_check(_dvc, global.key_chainsawC));
 	key_chainsaw2 = (keyboard_check_pressed(global.key_chainsaw) || gamepad_button_check_pressed(_dvc, global.key_chainsawC));
-	key_superjump = (global.key_superjumpC != -4 ? gamepad_button_check(_dvc, global.key_superjumpC) : false);
-	key_groundpound = (global.key_groundpoundC != -4 ? gamepad_button_check_pressed(_dvc, global.key_groundpoundC) : false);
-	key_groundpound2 = (global.key_groundpoundC != -4 ? gamepad_button_check(_dvc, global.key_groundpoundC) : false);
+	key_superjump = (global.key_superjumpC != noone ? gamepad_button_check(_dvc, global.key_superjumpC) : false);
+	key_groundpound = (global.key_groundpoundC != noone ? gamepad_button_check_pressed(_dvc, global.key_groundpoundC) : false);
+	key_groundpound2 = (global.key_groundpoundC != noone ? gamepad_button_check(_dvc, global.key_groundpoundC) : false);
 	
 	// mirror modifiers swaps left and right
 	if (MOD.Mirror) && object_index == obj_player1

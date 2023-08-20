@@ -7,7 +7,7 @@ var cy = camera_get_view_y(view_camera[0]);
 draw_set_color(c_black);
 draw_set_alpha(0.8);
 draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false);
-gpu_set_blendmode(3);
+gpu_set_blendmode(bm_subtract);
 draw_set_color(c_white);
 draw_set_alpha(1);
 var tx = room_width / 2;
@@ -18,6 +18,6 @@ if (instance_exists(objectID))
 	ty = objectID.y;
 }
 draw_circle_color(tx - cx, ty - cy, radius, c_white, c_white, 0);
-gpu_set_blendmode(0);
+gpu_set_blendmode(bm_normal);
 surface_reset_target();
 draw_surface(surface, 0, 0);

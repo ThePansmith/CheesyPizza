@@ -23,7 +23,7 @@ function scr_player_ratmountgrind()
 	if (move != 0)
 	{
 		var inst = instance_place(x + hsp, y - 32, obj_grindrailslope);
-		if (inst == -4)
+		if (inst == noone)
 			inst = instance_place(x + hsp, y + 32, obj_grindrailslope);
 		with (inst)
 		{

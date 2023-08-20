@@ -1,6 +1,6 @@
-func = function(argument0)
+func = function(player)
 {
-	if (!active && argument0.state == states.backbreaker)
+	if (!active && player.state == states.backbreaker)
 	{
 		active = true;
 		obj_secretmanager.totems++;

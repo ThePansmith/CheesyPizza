@@ -73,7 +73,7 @@ switch (state)
 			wave = other.wave;
 			alarm[0] = 10;
 			finish = false;
-			if (objectlist[wave] == -4)
+			if (objectlist[wave] == noone)
 			{
 				alarm[0] = -1;
 				finish = true;

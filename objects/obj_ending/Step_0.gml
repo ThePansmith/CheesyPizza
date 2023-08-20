@@ -58,18 +58,18 @@ switch (state)
 			if (credits_pos < array_length(credits))
 			{
 				b = credits[credits_pos++];
-				if (b[1] == -4 || !instance_exists(obj_credits))
+				if (b[1] == noone || !instance_exists(obj_credits))
 				{
 					with (instance_create(0, 0, obj_endingcard))
 					{
-						if (b[0] == -4)
+						if (b[0] == noone)
 						{
 							showsprite = false;
 							image_alpha = 1;
 						}
 						image_index = b[0];
 						text = b[1];
-						if (text == -4)
+						if (text == noone)
 						{
 							depth = -50;
 							alarm[0] = 1200;
@@ -110,7 +110,7 @@ switch (state)
 		var _continue = false;
 		with (obj_music)
 		{
-			if (music != -4 && !fmod_event_instance_is_playing(music.event))
+			if (music != noone && !fmod_event_instance_is_playing(music.event))
 				_continue = true;
 		}
 		if (keyboard_check_pressed(global.key_slap) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], global.key_slapC))
@@ -158,7 +158,7 @@ switch (state)
 		fade = Approach(fade, 0, 0.05);
 		if (buffer > 0)
 			buffer--;
-		else if (fade <= 0 && (keyboard_check_pressed(vk_anykey) || scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != -4))
+		else if (fade <= 0 && (keyboard_check_pressed(vk_anykey) || scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != noone))
 			state++;
 		break;
 	

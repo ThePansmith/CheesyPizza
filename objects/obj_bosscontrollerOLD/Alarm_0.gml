@@ -9,7 +9,7 @@ if (obj_player.state != states.playersuperattack)
 	{
 		instance_destroy(obj_baddiespawner);
 		instance_destroy(obj_noisey);
-		if (endroundfunc != -4)
+		if (endroundfunc != noone)
 			endroundfunc();
 		if (round_count < round_max)
 		{

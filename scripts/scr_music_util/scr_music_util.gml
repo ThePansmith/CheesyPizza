@@ -11,14 +11,14 @@ function add_music(_room, _event, _eventsecret, _continuous, _on_room_start = no
 	};
 	with (b)
 	{
-		if (_on_room_start != -4)
+		if (_on_room_start != noone)
 			on_room_start = method(self, _on_room_start);
-		if (_event != -4)
+		if (_event != noone)
 		{
 			event_name = _event;
 			event = fmod_event_create_instance(_event);
 		}
-		if (_eventsecret != -4)
+		if (_eventsecret != noone)
 		{
 			event_secret_name = _eventsecret;
 			event_secret = fmod_event_create_instance(_eventsecret);
@@ -34,7 +34,7 @@ function stop_music()
 	
 	with (obj_music)
 	{
-		if (music != -4)
+		if (music != noone)
 		{
 			if (obj_pause.pause)
 			{

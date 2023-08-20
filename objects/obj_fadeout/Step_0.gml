@@ -1,5 +1,5 @@
 var f = 1;
-if (group_arr != -4)
+if (group_arr != noone)
 	f = 1.2;
 if (fadealpha > f)
 {
@@ -35,7 +35,7 @@ if (fadealpha > f)
 		}
 	}
 	fadein = true;
-	if (q && group_arr != -4)
+	if (q && group_arr != noone)
 	{
 		instance_destroy(obj_pigtotal);
 		var ga = group_arr;
@@ -51,7 +51,7 @@ if (fadealpha > f)
 	}
 	else
 	{
-		if (q && offload_arr != -4)
+		if (q && offload_arr != noone)
 		{
 			for (var i = 0; i < array_length(offload_arr); i++)
 				texture_flush(offload_arr[i]);

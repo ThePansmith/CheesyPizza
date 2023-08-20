@@ -1,4 +1,4 @@
-if (bossID == -4)
+if (bossID == noone)
 	exit;
 if (!instance_exists(bossID))
 	exit;

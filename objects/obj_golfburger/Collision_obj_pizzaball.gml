@@ -1,4 +1,4 @@
-if (golfcooldown <= 0 && state != states.throwing && state != states.stun && state != states.grabbed && other.state != states.golf && other.state != states.grabbed && other.bigcheeseID == -4)
+if (golfcooldown <= 0 && state != states.throwing && state != states.stun && state != states.grabbed && other.state != states.golf && other.state != states.grabbed && other.bigcheeseID == noone)
 {
 	golfid = other.id;
 	shot = false;

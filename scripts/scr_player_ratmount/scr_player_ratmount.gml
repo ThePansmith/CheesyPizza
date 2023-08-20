@@ -2,7 +2,7 @@ function scr_player_ratmount()
 {
 	move = key_left + key_right;
 	doublejump = false;
-	if (ratgrabbedID != -4 && !instance_exists(ratgrabbedID))
+	if (ratgrabbedID != noone && !instance_exists(ratgrabbedID))
 		ratgrabbedID = -4;
 	if (place_meeting(x, y + 1, obj_railparent))
 	{
@@ -118,7 +118,7 @@ function scr_player_ratmount()
 				if (sprite_index != spr_player_ratmountidleanim)
 				{
 					sprite_index = spr_player_ratmountidle;
-					if (ratgrabbedID == -4)
+					if (ratgrabbedID == noone)
 					{
 						if (idle < 400)
 							idle++;
@@ -355,7 +355,7 @@ function ratmount_kickbrick()
 }
 function ratmount_shootpowerup()
 {
-	if (key_shoot2 && ratpowerup != -4 && ratshootbuffer <= 0)
+	if (key_shoot2 && ratpowerup != noone && ratshootbuffer <= 0)
 	{
 		switch (ratpowerup)
 		{

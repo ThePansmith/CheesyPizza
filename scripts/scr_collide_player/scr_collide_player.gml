@@ -88,7 +88,7 @@ function scr_collide_player()
 		vsp += grav;
 	
 	// moving platforms
-	if (platformid != -4)
+	if (platformid != noone)
 	{
 		if (vsp < -1 || !instance_exists(platformid) || (!place_meeting(x, y + 16, platformid) || !place_meeting(x, y + 32, platformid)))
 		{
@@ -136,9 +136,9 @@ function scr_collide_player()
 	grounded |= ((vsp >= 0 or !REMIX) && !place_meeting(x, y, obj_platform) && plat != noone);
 	grinding = !place_meeting(x, y, obj_grindrail) && place_meeting(x, y + 1, obj_grindrail);
 	grounded |= grinding;
-	if (platformid != -4 || (place_meeting(x, y + 1, obj_movingplatform) && !place_meeting(x, y - 3, obj_movingplatform)) || place_meeting(x, y + 8, obj_movingplatform && !place_meeting(x, y + 6, obj_movingplatform)))
+	if (platformid != noone || (place_meeting(x, y + 1, obj_movingplatform) && !place_meeting(x, y - 3, obj_movingplatform)) || place_meeting(x, y + 8, obj_movingplatform && !place_meeting(x, y + 6, obj_movingplatform)))
 		grounded = true;
-	if (grounded && platformid == -4)
+	if (grounded && platformid == noone)
 		y = floor(y);
 	
 	// snap on top of sloped platforms

@@ -11,7 +11,7 @@ function scr_palette_textureOLD()
 	draw_sprite_ext(sprite, index, _x, _y, _xscale, _yscale, _angle, blend, 1);
 	gpu_set_blendenable(true);
 	gpu_set_colorwriteenable(true, true, true, true);
-	gpu_set_blendmode_ext(7, 8);
+	gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha);
 	gpu_set_alphatestenable(true);
 	var xs = sprite_get_width(sprite) / sprite_get_width(global.palettetexture);
 	var ys = sprite_get_height(sprite) / sprite_get_height(global.palettetexture);
@@ -25,7 +25,17 @@ function scr_palette_textureOLD()
 
 function scr_get_texture_palette(texture)
 {
-	var _arr = [["funny", spr_peppattern1], ["itchy", spr_peppattern2], ["pizza", spr_peppattern3], ["stripes", spr_peppattern4], ["goldemanne", spr_peppattern5], ["bones", spr_peppattern6], ["pp", spr_peppattern7], ["war", spr_peppattern8], ["john", spr_peppattern9]]
+	var _arr = [
+		["funny", spr_peppattern1],
+		["itchy", spr_peppattern2],
+		["pizza", spr_peppattern3],
+		["stripes", spr_peppattern4],
+		["goldemanne", spr_peppattern5],
+		["bones", spr_peppattern6],
+		["pp", spr_peppattern7],
+		["war", spr_peppattern8],
+		["john", spr_peppattern9]
+	];
 	if (texture != "none")
 	{
 		for (var i = 0; i < array_length(_arr); i++)
@@ -36,7 +46,7 @@ function scr_get_texture_palette(texture)
 		if asset_get_type(texture) == asset_sprite
 			return asset_get_index(texture);
 	}
-	return -4;
+	return noone;
 }
 /// @desc	Apply a palette texture (a pattern) to a given sprite and draw it
 function scr_palette_texture(sprite, subimg, x, y, xscale, yscale, rot = 0, col = c_white, alpha = 1, gui = 0, texture = noone)
@@ -46,7 +56,7 @@ function scr_palette_texture(sprite, subimg, x, y, xscale, yscale, rot = 0, col 
 	if texture == noone
 		exit;
 	
-	if event_type == 8 && event_number == ev_gui
+	if event_type == ev_draw && event_number == ev_gui
 		gui = true;
 	else
 		gui = false;

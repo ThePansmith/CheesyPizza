@@ -553,7 +553,7 @@ function state_pepperman_jump()
 		vsp = 14;
 		sprite_index = spr_bodyslamfall;
 	}
-	if (key_attack && (!check_solid(x + xscale, y) || place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw)
+	if (key_attack && (!check_solid(x + xscale, y) || place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == noone && sprite_index != spr_pepperman_throw)
 	{
 		if (move != 0)
 			xscale = move;

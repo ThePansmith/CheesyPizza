@@ -10,8 +10,8 @@ if (brown)
 	draw_set_alpha(1);
 }
 draw_set_font(lang_get_font("bigfont"));
-draw_set_halign(0);
-draw_set_valign(0);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
 for (var i = 0; i < array_length(text); i++)
 {
 	var b = text[i];
@@ -24,8 +24,8 @@ draw_set_alpha(1);
 if (state == 2)
 {
 	draw_set_font(global.combofont);
-	draw_set_halign(1);
-	draw_set_valign(1);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
 	var _x = (SCREEN_WIDTH / 2) - 17;
 	draw_sprite(spr_towerstatusmenu, 0, _x, SCREEN_HEIGHT / 2);
 	draw_text_color(_x + 8, (SCREEN_HEIGHT / 2) + 10, floor(percvisual), c_white, c_white, c_white, c_white, 1);

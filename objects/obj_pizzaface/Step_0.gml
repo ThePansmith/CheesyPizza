@@ -100,6 +100,11 @@ if !treasure
 				turnspd *= 2.5
 			}
 			
+			if (playerid.state == states.firemouth && playerid.sprite_index == playerid.spr_firemouthintro)
+				_move = false;
+			if playerid.cutscene
+				_move = false;
+			
 			// distance_to_object(playerid) >= 1200 ? mvsp / 10 : (mvsp / 50)
 			var inradius = point_in_circle(x, y, playerid.x, playerid.y, 250)
 			var dir = point_direction(x, y, playerid.x + playerid.hsp, playerid.y + playerid.vsp)
