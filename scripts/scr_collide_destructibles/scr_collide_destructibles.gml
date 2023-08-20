@@ -33,7 +33,7 @@ function scr_collide_destructibles()
 			with instance_place(x + hsp, y, obj_destructibles)
 			{
 				var HP = safe_get(id, "hp");
-				if is_undefined(HP) or HP <= 1 or (other.state != states.handstandjump && other.state != states.mach2)
+				if is_undefined(HP) or HP <= 1 or (other.state != states.handstandjump && other.state != states.mach2 && !check_kungfu_state(other))
 				{
 					GamepadSetVibration(0, 0.8, 0.8, 0.5);
 					instance_destroy();

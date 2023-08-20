@@ -213,17 +213,18 @@ function scr_cameradraw_old()
 					hudface = spr_pinolinoHUD
 				break;
 		}
+		if _state == states.cotton or _state == states.cottonroll or _state == states.cottondrill
+			hudface = spr_pizzyHUDcotton;
 		
 		var xx = 125;
 		if player.character == "SP"
-			xx -= 25;
+			xx -= 20;
 		
 		if sprite_exists(hudface)
 		{
 			shader_set(shd_pal_swapper);
 			pattern_set(global.Base_Pattern_Color, hudface, -1, 1, 1, global.palettetexture);
-			if _state != states.cotton
-				pal_swap_set(player.spr_palette, player.paletteselect, false);
+			pal_swap_set(player.spr_palette, player.paletteselect, false);
 			draw_sprite_ext(hudface, -1, xx, global.heatmeter ? 125 : 100, 1, 1, 0, c_white, alpha);
 			pal_swap_reset();
 			

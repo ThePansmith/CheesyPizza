@@ -3,7 +3,7 @@ if image_alpha != 1
 
 global.heattime = 60;
 global.combotime = 60;
-sound_play(sfx_secretfound);
+sound_play("event:/modded/sfx/deathcollect");
 instance_destroy();
 with obj_deathmode
     time_fx += 10;

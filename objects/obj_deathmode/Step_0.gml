@@ -2,7 +2,7 @@ live_auto_call;
 
 if !MOD.DeathMode
 	active = false;
-if !active or room == rank_room or room == timesuproom
+if !active or room == rank_room or room == timesuproom or (global.laps >= 3 && MOD.Lap3)
 	exit;
 
 if show_time > 0

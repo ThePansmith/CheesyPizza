@@ -158,7 +158,7 @@ function scr_tvdraw_old()
 	}
 	else if room != Realtitlescreen
 	{
-		draw_set_align(fa_center, fa_middle);
+		draw_set_align(fa_center);
 		
 		// tv
 		draw_sprite_ext(sprite, -1, tvx, tvy, 1, 1, 0, c_white, alpha);

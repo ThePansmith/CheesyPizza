@@ -75,8 +75,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "bossgroup",
-    "path": "texturegroups/bossgroup",
+    "name": "baddiegroup",
+    "path": "texturegroups/baddiegroup",
   },
   "type": 0,
   "VTile": false,
