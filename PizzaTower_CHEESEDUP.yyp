@@ -152,6 +152,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Fakepep","folderPath":"folders/Scripts/Baddies/Fakepep.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"States","folderPath":"folders/Scripts/Baddies/States.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"CheesyPizza","folderPath":"folders/Scripts/CheesyPizza.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"3D","folderPath":"folders/Scripts/CheesyPizza/3D.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"HUD","folderPath":"folders/Scripts/CheesyPizza/HUD.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Level Editor","folderPath":"folders/Scripts/CheesyPizza/Level Editor.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilemap","folderPath":"folders/Scripts/CheesyPizza/Level Editor/Tilemap.yy",},
@@ -584,7 +585,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"3D","folderPath":"folders/Scripts/CheesyPizza/3D.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"cheese.jpg","CopyToMask":-1,"filePath":"datafiles/data",},

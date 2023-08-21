@@ -2,7 +2,7 @@ var tex = array_pop(tex_list);
 if tex != undefined
 {
 	trace("Loading texture: ", tex);
-	//if !texture_is_ready(tex)
+	if !texture_is_ready(tex)
 		texture_prefetch(tex);
 	
 	alarm[0] = 1;
