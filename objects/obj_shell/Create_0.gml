@@ -11,6 +11,8 @@ visibleHeight = 0;
 cursorPos = 1;
 consoleString = "";
 savedConsoleString = "";
+selectedConsoleTextPos = -1;
+selectedConsoleTextLength = 0;
 scrollPosition = 0;
 maxScrollPosition = 0;
 targetScrollPosition = 0;
@@ -503,3 +505,33 @@ function _remap(value, min_input, max_input, min_output, max_output) {
 }
 
 scr_wc_create();
+
+function draw_console_text(_x, _y, _string, offsetX, offsetW)
+{
+	if offsetX > -1
+	{
+		trace($"offsetX: {offsetX}");
+		var prefix = string_get_substring(_string, 1, offsetX);
+		var selection = string_get_substring(_string, offsetX, offsetW);
+		var suffix = string_get_substring(_string, offsetX + offsetW);
+
+		
+		var prefix_width = string_width(prefix);
+		var selection_width = string_width(selection);
+		var suffix_width = string_width(suffix);
+		
+		var font_height = string_height(selection_width);
+		draw_text(_x, _y, prefix);
+		var beforeColor = draw_get_color();
+		draw_set_color(make_color_rgb(0x05, 0x62, 0xd1)); // RX: Selection color
+		draw_rectangle(_x + prefix_width, _y, _x + prefix_width + selection_width, _y + font_height, false);
+		draw_set_color(beforeColor);
+		draw_text(_x + prefix_width, _y, selection);
+		draw_text(_x + prefix_width + selection_width, _y, suffix)
+		
+	}
+	else
+		draw_text(_x, _y, _string);
+
+		
+}

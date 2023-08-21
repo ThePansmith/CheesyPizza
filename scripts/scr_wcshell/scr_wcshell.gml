@@ -266,6 +266,67 @@ function scr_wc_step()
 	depth = -16000;
 	WC_debug = global.experimental && !instance_exists(obj_disclaimer);
 	
+	if isOpen
+	{
+		if (keyboard_check(vk_control) && keyboard_check_pressed(ord("V")))
+		{
+			if clipboard_has_text()
+			{
+				consoleString += clipboard_get_text();
+				cursorPos += string_length(clipboard_get_text())	
+			}
+			else
+				trace("SHELL: Unable to copy text from clipboard, because clipboard has no text.");
+		}
+		
+		/*
+		// Selection
+		if keyboard_check(vk_shift)
+		{
+			if keyboard_check_pressed(vk_left)
+			{
+				if selectedConsoleTextPos == -1 // Start a Selection
+				{
+					selectedConsoleTextPos = cursorPos;
+					selectedConsoleTextLength = 1;
+				}
+			    var old_pos = selectedConsoleTextPos;
+				var right = selectedConsoleTextPos + selectedConsoleTextLength;
+				selectedConsoleTextPos = cursorPos;
+				selectedConsoleTextLength = (selectedConsoleTextLength) + (old_pos - selectedConsoleTextPos)
+				
+				
+			  //	var minpos = min(cursorPos, cursorPos - );
+				//selectedConsoleTextPos = cursorPos;
+				//selectedConsoleTextLength = ((old_pos - 1) - cursorPos) + 1;
+				trace($"textpos: {selectedConsoleTextPos} len: {selectedConsoleTextLength}");
+			}
+			if keyboard_check_pressed(vk_right)
+			{
+				if selectedConsoleTextPos == -1 // Start a Selection
+				{
+					selectedConsoleTextPos = cursorPos;
+					selectedConsoleTextLength = 1;
+				}
+				selectedConsoleTextLength = cursorPos - selectedConsoleTextPos + 1;
+			}
+		}
+		
+		if (selectedConsoleTextPos != -1 && keyboard_string != "")
+		{
+			consoleString = string_delete(consoleString, selectedConsoleTextPos, selectedConsoleTextLength);
+			//consoleString = string_insert(keyboard_string, consoleString, selectedConsoleTextPos);
+			
+			cursorPos = selectedConsoleTextPos;
+			//keyboard_string = "";
+			selectedConsoleTextPos = -1;
+			selectedConsoleTextLength = 0;
+			targetScrollPosition = maxScrollPosition;
+		}
+		*/
+	}
+	
+	
 	#region bound keys
 	
 	for(var i = ds_map_find_first(WC_binds); !is_undefined(i); i = ds_map_find_next(WC_binds, i))
