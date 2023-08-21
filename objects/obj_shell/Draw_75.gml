@@ -66,10 +66,11 @@ if (isOpen) {
 		// Draw our command prompt
 		draw_set_color(promptColor);
 		draw_text(shellOriginX + consolePaddingH, yOffset, prompt);
-	
+		
 		// Draw whatever text has been entered so far
 		draw_set_color(fontColor);
-		draw_text(shellOriginX + promptXOffset, yOffset, consoleString);
+		//draw_text(shellOriginX + promptXOffset, yOffset, consoleString);
+		draw_console_text(shellOriginX + promptXOffset, yOffset, consoleString, selectedConsoleTextPos, selectedConsoleTextLength);
 		
 		// Draw text cursor
 		var cursorPosX = shellOriginX + promptXOffset + string_width(string_copy(consoleString + " ", 1, cursorPos - 1));

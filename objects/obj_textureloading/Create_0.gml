@@ -1,4 +1,4 @@
-tex_list = -4;
+tex_list = noone;
 var group_arr = ["hudgroup", "playergroup", "introgroup", "smallgroup", "levelstructuregroup", "baddiegroup"];
 //if DEBUG
 	array_push(group_arr, "debuggroup");

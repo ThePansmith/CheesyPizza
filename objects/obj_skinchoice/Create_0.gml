@@ -216,6 +216,9 @@ draw = function(curve)
 		curve2 = 1; // the timer
 	}
 
+	if (curv_prev < 1)
+		shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev, true);
+						
 	// drawer
 	var pal = palettes[sel.pal];
 	if anim_con != 2 or obj_player1.visible
@@ -234,6 +237,7 @@ draw = function(curve)
 					draw_set_font(global.font_small);
 					draw_set_align(fa_center);
 					draw_set_colour(c_white);
+						
 					draw_text(charx, chary - 68, "Pogo");
 				}
 			}
@@ -274,7 +278,6 @@ draw = function(curve)
 			shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev, true);
 		draw_surface_ext(player_surface, charx - 256, chary - 256, 2, 2, 0, c_white, curve * charshift[2]);
 	}
-	shader_reset();
 	
 	// text
 	var name = string_upper(pal.name), desc = pal.description;
@@ -305,7 +308,8 @@ draw = function(curve)
 	draw_set_font(global.font_small);
 	draw_text_ext(960 / 1.5, 400, desc, 16, 600);
 	draw_set_alpha(1);
-	
+	shader_reset();
+		
 	// palettes
 	var palspr = characters[sel.char][2];
 	var xx = 0, yy = 0;
@@ -370,9 +374,9 @@ draw = function(curve)
 	
 	if curv_prev < 1
 		shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev);
-	shader_reset();
 	
 	vertex_submit(vertex_buffer, pr_trianglelist, tex);
+	shader_reset();
 	
 	// RX: not really a better way to do this without rewriting the entire thing
 	for (var i = 0; i < array_length(cache); i++)
