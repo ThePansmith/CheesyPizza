@@ -2,9 +2,9 @@ fadein = false;
 fadealpha = 0;
 start = false;
 loading = false;
-group_arr = -4;
-title_music = -4;
-offload_arr = -4;
+group_arr = noone;
+title_music = noone;
+offload_arr = noone;
 
 depth = -600;
 with obj_gusbrickchase

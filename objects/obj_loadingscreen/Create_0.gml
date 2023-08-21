@@ -1,5 +1,5 @@
-group_arr = -4;
-offload_arr = -4;
+group_arr = noone;
+offload_arr = noone;
 alarm[0] = 1;
 depth = -601;
 dark = false;

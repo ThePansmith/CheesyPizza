@@ -54,7 +54,10 @@ if (fadealpha > f)
 		if (q && offload_arr != noone)
 		{
 			for (var i = 0; i < array_length(offload_arr); i++)
+			{
 				texture_flush(offload_arr[i]);
+				trace($"[obj_fadeout] Flushed Texture: {offload_arr[i]}");
+			}
 		}
 		event_perform(ev_alarm, 0);
 	}
