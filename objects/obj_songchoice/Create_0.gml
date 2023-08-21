@@ -78,6 +78,7 @@ add_section("Pizza Tower", [
 	["event:/soundtest/base/hip", "Hip To Be Italian - MrSauceman"],
 	["event:/soundtest/base/notime", "Receding Hairline Celebration Party - MrSauceman"],
 	["event:/soundtest/base/meatphobia", "Meatphobia - MrSauceman"],
+	["event:/soundtest/base/pause", "space - ClascyJitto"],
 	["event:/soundtest/base/mayhem", "Pizza Mayhem Instrumental - MrSauceman"],
 	["event:/soundtest/base/mayhem2", "Pizza Mayhem - MrSauceman"],
 	
@@ -188,6 +189,7 @@ add_section("Cheesed Up", [
 #region SUGARY
 
 add_section("Sugary Spire", [
+	["event:/soundtest/sugary/hub", "Welcome Back! - 101Undertale"],
 	["event:/soundtest/sugary/crunchy", "Down-To-Noise - RodMod"],
 	["event:/soundtest/sugary/entranceSN", "Pizzano's Obligatory Orchestral Play - PaperKitty"],
 	["event:/soundtest/sugary/glucose", "Glucose Getaway - RodMod"],
@@ -198,6 +200,7 @@ add_section("Sugary Spire", [
 	["event:/soundtest/sugary/lostchocolate", "Lost Chocolate - RodMod, Jessie Productions"],
 	["event:/soundtest/sugary/foundchocolate", "Found Chocolate - Jessie Productions"],
 	["event:/soundtest/sugary/sucrose", "Sugarcube Hailstorm - PaperKitty"],
+	["event:/soundtest/sugary/pause", "Paused - "],
 	
 	"Secrets",
 	["event:/soundtest/sugary/secretentranceSN", "Lol Funny - loypoll"],

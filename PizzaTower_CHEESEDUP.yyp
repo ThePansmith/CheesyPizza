@@ -931,6 +931,7 @@
     {"id":{"name":"spr_playerBN_idleface","path":"sprites/spr_playerBN_idleface/spr_playerBN_idleface.yy",},},
     {"id":{"name":"tileset_steamy2","path":"tilesets/tileset_steamy2/tileset_steamy2.yy",},},
     {"id":{"name":"obj_secretportalstart","path":"objects/obj_secretportalstart/obj_secretportalstart.yy",},},
+    {"id":{"name":"spr_icon_pizzagooch","path":"sprites/spr_icon_pizzagooch/spr_icon_pizzagooch.yy",},},
     {"id":{"name":"obj_playereffectprop","path":"objects/obj_playereffectprop/obj_playereffectprop.yy",},},
     {"id":{"name":"spr_playerPN_chainsawdash","path":"sprites/spr_playerPN_chainsawdash/spr_playerPN_chainsawdash.yy",},},
     {"id":{"name":"obj_ratblock","path":"objects/obj_ratblock/obj_ratblock.yy",},},

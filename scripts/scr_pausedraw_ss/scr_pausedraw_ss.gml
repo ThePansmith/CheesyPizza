@@ -32,6 +32,8 @@ function scr_pausedraw_ss()
 		{
 			case "SN": char = 1; break;
 			case "PN": char = 2; break;
+			case "P": char = 3; break;
+			case "N": char = 4; break;
 		}
 		
 		shader_set(shd_pal_swapper);

@@ -116,7 +116,7 @@ function DoFinisher()
 	}
 	else
 	{
-		state = states.tackle;
+		state = states.punch;
 		sprite_index = spr_lungehit;
 		image_index = 0;
 		movespeed = 14;

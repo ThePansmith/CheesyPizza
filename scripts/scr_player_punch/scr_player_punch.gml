@@ -211,16 +211,18 @@ function scr_player_punch()
 		image_speed = character == "SN" ? 0.45 : 0.4;
 		if breakdance > 0
 			breakdance--;
+		
+		var bump = sprite_index == spr_kungfujump or sprite_index == spr_lungehit;
 		if move != 0
 		{
 			if move != xscale && movespeed > -6
 			{
-				if (sprite_index != spr_kungfujump)
+				if !bump
 					movespeed -= 1;
 				else
 					movespeed -= 0.1;
 			}
-			else if move == xscale && movespeed < 6 && sprite_index != spr_kungfujump
+			else if move == xscale && movespeed < 6 && !bump
 				movespeed += 0.2;
 		}
 		hsp = xscale * movespeed;
@@ -357,11 +359,14 @@ function scr_player_punch()
 				case spr_player_Sjumpcancelland:
 					sprite_index = spr_player_Sjumpcancelslide;
 					break;
+				case spr_lungehit:
+					image_index = image_number - 1;
+					break;
 			}
 		}
 		if !_kungfuground && !_Sjumpcancel
 		{
-			if grounded && vsp >= 0
+			if grounded && vsp >= 0 && (image_index >= image_number - 2 or sprite_index != spr_lungehit)
 			{
 				if key_attack && movespeed > 0 && !(character == "N" && noisetype == 1)
 				{
@@ -406,7 +411,7 @@ function scr_player_punch()
 				image_speed = abs(movespeed) / 15;
 		}
 		
-		if sprite_index != spr_kungfujump && check_solid(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles) && !check_slope(x + xscale, y)
+		if !bump && check_solid(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles) && !check_slope(x + xscale, y)
 		{
 			if ledge_bump(32)
 			{

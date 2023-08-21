@@ -249,5 +249,15 @@ if (REMIX or global.laps >= 2) && !instance_exists(tracker) && !treasure
 		case spr_coneball: tracker.sprite_index = spr_icon_coneball; break;
 	}
 }
+if MOD.DeathMode
+{
+	with tracker
+	{
+		if other.mode == 0
+			sprite_index = spr_icon_pizzagooch;
+		if other.mode == 1
+			sprite_index = spr_icon_pizzaface;
+	}
+}
 if keyboard_check_pressed(ord("F")) && DEBUG
 	frozen = !frozen;
