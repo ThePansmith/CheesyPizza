@@ -16,7 +16,7 @@ switch character
 		add_palette(4, "money", noone, "Money Green", "I love money too.");
 		add_palette(5, "sage", noone, "Sage Blue", "The PTSD was great.");
 		add_palette(6, "blood", noone, "Blood Red", "Is it that famous plumber on TV?");
-		add_palette(7, "tv", noone, "TV Purple", "Go ahead. Get this legitimately.");
+		add_palette(7, "tv", noone, "TV Purple", "The true champion's vest.");
 		add_palette(8, "dark", noone, "Dark", "It's not just a phase, MOM.");
 		add_palette(9, "shitty", noone, "Shitty", "Weird, mine's usually red.");
 		add_palette(10, "golden", noone, "Golden God", "No Italian is worth this much.");
@@ -67,7 +67,7 @@ switch character
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "When you spam Big Chungus in general.");
 		add_palette(12, "itchy", spr_peppattern2, "Itchy Sweater", "Woven with Grandpa's intestines.");
-		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "You DID pirate it, right?");
+		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "You single-handedly made a whole tower crumble.");
 		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "Freefire o si");
 		add_palette(12, "goldemanne", spr_peppattern5, "Goldemanne", "Take my upvote and leave.");
 		add_palette(12, "bones", spr_peppattern6, "Bad Bones", "(Guitar riff)");
@@ -80,13 +80,13 @@ switch character
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
 		add_palette(12, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
-		add_palette(12, "", spr_pattern_snick, "Snick", "Didn't know SAGE had merch.");
+		add_palette(12, "", spr_pattern_snick, "Snick", "My precious porcupine.");
 		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
 		add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
-		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "Gotta' speed, Keed.");
+		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
 		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		break;
@@ -164,13 +164,13 @@ switch character
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
 		add_palette(12, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
-		add_palette(12, "", spr_pattern_snick, "Snick", "Didn't know SAGE had merch.");
+		add_palette(12, "", spr_pattern_snick, "Snick", "My precious porcupine.");
 		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
 		add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
-		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "Gotta' speed, Keed.");
+		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
 		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		break;
@@ -220,13 +220,13 @@ switch character
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
 		add_palette(12, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
-		add_palette(12, "", spr_pattern_snick, "Snick", "Didn't know SAGE had merch.");
+		add_palette(12, "", spr_pattern_snick, "Snick", "My precious porcupine.");
 		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
 		add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
-		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "Gotta' speed, Keed.");
+		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
 		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		break;
@@ -286,13 +286,13 @@ switch character
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
 		add_palette(12, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
-		add_palette(12, "", spr_pattern_snick, "Snick", "Didn't know SAGE had merch.");
+		add_palette(12, "", spr_pattern_snick, "Snick", "My precious porcupine.");
 		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
 		add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
-		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "Gotta' speed, Keed.");
+		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
 		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		break;
@@ -323,7 +323,7 @@ switch character
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "When you spam Big Chungus in general.");
 		add_palette(12, "itchy", spr_peppattern2, "Itchy Sweater", "Woven with Grandpa's intestines.");
-		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "You DID pirate it, right?");
+		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "You single-handedly made a whole tower crumble.");
 		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "Freefire o si");
 		add_palette(12, "goldemanne", spr_peppattern5, "Goldemanne", "Take my upvote and leave.");
 		add_palette(12, "bones", spr_peppattern6, "Bad Bones", "(Guitar riff)");
@@ -336,13 +336,13 @@ switch character
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
 		add_palette(12, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
-		add_palette(12, "", spr_pattern_snick, "Snick", "Didn't know SAGE had merch.");
+		add_palette(12, "", spr_pattern_snick, "Snick", "My precious porcupine.");
 		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
 		add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
-		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "Gotta' speed, Keed.");
+		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
 		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		break;
@@ -399,13 +399,13 @@ switch character
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
 		add_palette(12, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
-		add_palette(12, "", spr_pattern_snick, "Snick", "Didn't know SAGE had merch.");
+		add_palette(12, "", spr_pattern_snick, "Snick", "My precious porcupine.");
 		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "You wanna play with balls don't you.");
 		add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
-		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "Gotta' speed, Keed.");
+		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
 		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		break;
@@ -439,14 +439,14 @@ switch character
 		add_palette(24, "", noone, "Concept", "The original.");
 		
 		// Patterns
-		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "10 years behind bars for spamming Big Chungus.");
-		add_palette(12, "itchy", spr_peppattern2, "Itchy Sweater", "Woven with Grandma's intestines.");
-		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "I thought he... collected candy?");
+		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "It's even funnier the 10th time!");
+		add_palette(12, "itchy", spr_peppattern2, "Itchy Sweater", "Woven with vir's intestines.");
+		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "You single-handedly made a whole tower crumble.");
 		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "He committed genocide against RATS.");
 		add_palette(12, "goldemanne", spr_peppattern5, "Goldemanne", "Thanks for the gold, kind stranger.");
-		add_palette(12, "bones", spr_peppattern6, "Bad Bones", "Bad to the Noise.");
+		add_palette(12, "bones", spr_peppattern6, "Bad Bones", "Jad to the Boise.");
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "I'm trying really hard to laugh.");
-		add_palette(12, "war", spr_peppattern8, "War Camo", "Every war had a distraction clown.");
+		add_palette(12, "war", spr_peppattern8, "War Camo", "Every war has a distraction clown.");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Genuinely, the concept of this is morbid.");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "The Noise says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
@@ -454,13 +454,13 @@ switch character
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
 		add_palette(12, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
-		add_palette(12, "", spr_pattern_snick, "Snick", "Didn't know SAGE had merch.");
+		add_palette(12, "", spr_pattern_snick, "Snick", "My precious porcupine.");
 		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
 		add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
-		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "Gotta' speed, Keed.");
+		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
 		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		break;
@@ -547,7 +547,7 @@ switch character
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "im ddo the codes");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "why is dead");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "wire is not alive");
-		add_palette(12, "", spr_pattern_mobius, "Mobius Strip", "i will conker mobiusa with this strip.");
+		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "i will conker mobiusa with this strip.");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "so... re...so retr... so...");
 		add_palette(12, "", spr_pattern_mario, "Mario", "brother");
 		break;
@@ -557,6 +557,43 @@ switch character
 	
 	case "SN":
 		add_palette(1, "", noone, "Pizzano", "The voice of the people.", "");
+		add_palette(1, "", noone, "Familiar Gremlin", "Close enough, but not quite.", "NOISY");
+		add_palette(1, "", noone, "Familiar Chef", "A somewhat overweight Italian accident.");
+		add_palette(1, "", noone, "Lasagna", "Mondays.");
+		add_palette(1, "", noone, "Spice", "The secret ingredient to all candy.");
+		add_palette(1, "", noone, "Plumber", "This is so retro, right guys? Please laugh! I'm funny!");
+		add_palette(1, "", noone, "Green Apple", "Blue orange.");
+		add_palette(1, "", noone, "Grape Soda", "Grape? Like the");
+		add_palette(1, "", noone, "Antipathic", "Isn't it anti-pathetic?");
+		add_palette(1, "", noone, "Gummy Bear", "Tastes like... blood?");
+		add_palette(1, "", noone, "Lime", "Unfortunate palette placement.");
+		add_palette(1, "", noone, "Crystalized", "You're the goddamn iron chef!");
+		
+		// Patterns
+		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "Some joke about a fat rabbit here.");
+		add_palette(12, "itchy", spr_peppattern2, "Itchy Sweater", "Woven with real people.");
+		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "Well, he used to be one.");
+		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "Let's go bowling! Let's go bowling!");
+		add_palette(12, "goldemanne", spr_peppattern5, "Goldemanne", "Pizzano is a Redditor.");
+		add_palette(12, "bones", spr_peppattern6, "Bad Bones", "Did he have bones to begin with?");
+		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "laugh-track.mp3");
+		add_palette(12, "war", spr_peppattern8, "War Camo", "An excellent human shield.");
+		add_palette(12, "john", spr_peppattern9, "John Suit", "Something's up...");
+		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Pizzano says Trans Rights!");
+		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
+		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
+		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
+		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that blue licorice.");
+		add_palette(12, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
+		add_palette(12, "", spr_pattern_snick, "Snick", "My precious porcupine.");
+		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Red sphere or blue sphere?");
+		add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
+		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
+		add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
+		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
+		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
+		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		break;
 	
 	#endregion
