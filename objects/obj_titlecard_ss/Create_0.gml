@@ -30,9 +30,9 @@ bgY = 0;
 titleX = 0;
 titleY = 0;
 
-group_arr = -4;
-title_music = -4;
-offload_arr = -4;
+group_arr = noone;
+title_music = noone;
+offload_arr = noone;
 loading = false;
 
 depth = -600;

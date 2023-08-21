@@ -8,7 +8,7 @@ function textures_offload(texturegroup_array)
 		{
 			offload_arr = array_create(0);
 			array_copy(offload_arr, 0, global.offload_tex, 0, array_length(global.offload_tex));
-			global.offload_tex = -4;
+			global.offload_tex = noone;
 		}
 	}
 	return b;

@@ -5,8 +5,8 @@ sugary = SUGARY;
 if sugary
 	depth = 50;
 targetDoor = "A";
-group_arr = -4;
-offload_arr = -4;
+group_arr = noone;
+offload_arr = noone;
 locked = false;
 john = false;
 alarm[0] = 1;
