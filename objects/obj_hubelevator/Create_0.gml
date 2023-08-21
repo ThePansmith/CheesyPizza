@@ -20,19 +20,10 @@ depth = 99;
 sprite_index = spr_elevatoropen;
 
 state = 0;
-hub_array = [
-	[5, tower_5, "E"],
-	[4, tower_4, "B"],
-	[3, tower_3, "C"],
-	[2, tower_2, "E"],
-	[1, tower_1, "E"],
-	[0, tower_extra, "G"],
-	[6, tower_sugary, "A"],
-]
 targetDoor = "A";
 sel = 0;
 
-if (global.panic)
+if global.panic
 {
 	instance_create(x + 50, y + 96, obj_rubble);
 	instance_destroy();
@@ -43,3 +34,21 @@ incubic = animcurve_get_channel(curve_menu, "incubic");
 anim_t = 0;
 angle = 360;
 scr_init_input();
+
+// floors
+hub_array = [];
+function add_floor(button_index, target_room, target_door, group_arr = noone, offload_arr = noone)
+{
+	var a = [button_index, target_room, target_door, group_arr, offload_arr];
+	array_push(hub_array, a);
+	return a;
+}
+add_floor(5, tower_5, "E");
+add_floor(4, tower_4, "B");
+add_floor(3, tower_3, "C");
+add_floor(2, tower_2, "E");
+add_floor(1, tower_1, "E");
+add_floor(0, tower_extra, "G");
+add_floor(6, tower_sugary, "A", ["sugarygroup"]);
+
+offload_arr = noone;

@@ -20,50 +20,36 @@ function scr_player_handstandjump()
 		airattackdash = spr_airattack;
 		airattackdashstart = spr_airattackstart;
 	}
+	else if sprite_index == spr_player_lunge
+		attackdash = spr_player_lunge;
 	else if character == "SP" && (image_index < 8 && !(key_down && image_index > 5) && !(image_index > 5 && vsp > 1))
 	{
 		movespeed = max(movespeed, 10);
 		vsp = 0;
 	}
 	
-	if (global.attackstyle != 3)
+	if (movespeed < 10)
 	{
-		if (movespeed < 10)
-		{
-			if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && movespeed < 8)
-				movespeed += 0.25;
-			else if (sprite_index == spr_player_lunge && movespeed < 12)
-				movespeed += 0.8;
-			else if (movespeed < 10)
-				movespeed += 0.5;
-		}
+		if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && movespeed < 8)
+			movespeed += 0.25;
+		else if (sprite_index == spr_player_lunge && movespeed < 12)
+			movespeed += 0.8;
+		else if (movespeed < 10)
+			movespeed += 0.5;
 	}
-	else
+	if (global.pummeltest && sprite_index == spr_player_lunge && !instance_exists(lungeattackID))
 	{
-		if (movespeed < 10)
+		with (instance_create(x, y, obj_lungehitbox))
 		{
-			if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && movespeed < 8)
-				movespeed += 0.25;
-			else if (movespeed < 10)
-				movespeed += 0.5;
-		}
-		if (global.pummeltest && !instance_exists(lungeattackID))
-		{
-			with (instance_create(x, y, obj_lungehitbox))
-			{
-				playerid = other.id;
-				other.lungeattackID = id;
-			}
+			playerid = other.id;
+			other.lungeattackID = id;
 		}
 	}
 	
 	if (sprite_index == spr_player_lungestart && floor(image_index) == (image_number - 1))
 		sprite_index = spr_player_lunge;
-	
-	/*
-	if (global.attackstyle == 2)
+	if (attackdash == spr_player_lunge)
 		vsp = 0;
-	*/
 	
 	// double tap move
 	if input_buffer_slap > 0 or input_buffer_grab > 0
@@ -79,7 +65,7 @@ function scr_player_handstandjump()
 		vsp /= 20;
 		jumpstop = true;
 	}
-	if (input_buffer_jump > 0 && can_jump && !key_down/* && global.attackstyle != 2*/)
+	if (input_buffer_jump > 0 && (can_jump or global.attackstyle == 3) && !key_down/* && global.attackstyle != 2*/)
 	{
 		input_buffer_jump = 0;
 		particle_set_scale(part.jumpdust, xscale, 1);
@@ -99,7 +85,7 @@ function scr_player_handstandjump()
 				sprite_index = spr_mach2jump;
 		}
 	}
-	if (sprite_index == attackdash && !grounded && character != "SP")
+	if (sprite_index == attackdash && !grounded && character != "SP" && global.attackstyle != 3)
 	{
 		image_index = 0;
 		sprite_index = airattackdashstart;

@@ -1327,6 +1327,21 @@ if smoothx != 0
 smoothx = Approach(smoothx, 0, 4);
 
 // pto extra
+if finisher_hits == 5 && !finisher
+{
+	with instance_create(x, y, obj_finishereffect)
+		playerid = other.id;
+	finisher = true;
+	instance_create(x, y, obj_tauntaftereffectspawner);
+}
+if state != states.lungeattack && state != states.chainsaw
+{
+	finisher_hits = 0;
+	finisher = false;
+	lunge_hits = 0;
+	hit_connected = false;
+}
+
 if state != states.mach3 && state != states.Sjump && state != states.Sjumpprep && state != states.chainsaw
 	jetpackcancel = false;
 if character == "N" && noisetype == 1

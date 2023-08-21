@@ -61,6 +61,30 @@ function scr_perform_move(move, prestate = state)
 				movespeed = max(movespeed, 10);
 				image_index = 0;
 				break;
+			
+			case 3: // lunge
+				if !suplexmove
+				{
+					if grounded
+					{
+						with instance_create(x, y, obj_superdashcloud)
+							image_xscale = other.xscale;
+					}
+					sprite_index = spr_player_lunge;
+					suplexmove = true;
+				
+					particle_set_scale(part.jumpdust, xscale, 1);
+					create_particle(x, y, part.jumpdust, 0);
+					particle_set_scale(part.crazyrunothereffect, xscale, 1);
+					create_particle(x, y, part.crazyrunothereffect);
+							
+					fmod_event_instance_play(suplexdashsnd);
+					state = states.handstandjump;
+					movespeed = max(movespeed, 10);
+					vsp = 0;
+					image_index = 0;
+				}
+				break;
 		}
 	}
 	if move == moves.doublegrab

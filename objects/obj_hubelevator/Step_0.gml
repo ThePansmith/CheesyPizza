@@ -46,8 +46,9 @@ if state == 1
 
 if state == 2
 {
-	obj_player1.targetRoom = hub_array[sel][1];
-	obj_player1.targetDoor = hub_array[sel][2];
+	var hub = hub_array[sel];
+	obj_player1.targetRoom = hub[1];
+	obj_player1.targetDoor = hub[2];
 	
 	if obj_player1.targetRoom != room
 	{
@@ -68,7 +69,11 @@ if state == 2
 			state = states.door;
 			mach2 = 0;
 		}
-		instance_create(x, y, obj_fadeout);
+		with instance_create(x, y, obj_fadeout)
+		{
+			group_arr = hub[3];
+			offload_arr = other.offload_arr;
+		}
 	}
 	else
 	{

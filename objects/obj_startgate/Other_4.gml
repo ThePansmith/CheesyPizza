@@ -124,7 +124,7 @@ if (object_index == obj_startgate && level != "exit" && level != "tutorial" && l
 		{
 			last_current_time = current_time + (600000 * i * 2);
 			timer = last_current_time;
-			trace(other.level, " secret eye ", i, timer);
+			//trace(other.level, " secret eye ", i, timer);
 			time_x += (i - 1);
 			time_y += ((i - 1) * 2);
 			if (b)

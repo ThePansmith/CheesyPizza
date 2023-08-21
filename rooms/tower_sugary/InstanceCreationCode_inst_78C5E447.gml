@@ -1,1 +1,1 @@
-group_arr = ["sugarygroup", "sugarytutgroup"];
+group_arr = ["sugarytutgroup"];

@@ -12,4 +12,4 @@ info =
 bgparallax = [0, 0.15, 0.35, 0.5];
 
 msg = "Crunchy Construction";
-group_arr = ["sugarygroup", "entrywaygroup"];
+group_arr = ["entrywaygroup"];

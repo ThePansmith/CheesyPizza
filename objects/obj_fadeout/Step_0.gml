@@ -38,14 +38,12 @@ if (fadealpha > f)
 	if (q && group_arr != noone)
 	{
 		instance_destroy(obj_pigtotal);
-		var ga = group_arr;
-		var oa = offload_arr;
 		alarm[0] = 1;
 		with (instance_create(0, 0, obj_loadingscreen))
 		{
 			dark = true;
-			group_arr = ga;
-			offload_arr = oa;
+			group_arr = other.group_arr;
+			offload_arr = other.offload_arr;
 			persistent = true;
 		}
 	}
@@ -54,7 +52,10 @@ if (fadealpha > f)
 		if (q && offload_arr != noone)
 		{
 			for (var i = 0; i < array_length(offload_arr); i++)
+			{
 				texture_flush(offload_arr[i]);
+				trace("Flushing texture: ", offload_arr[i]);
+			}
 		}
 		event_perform(ev_alarm, 0);
 	}

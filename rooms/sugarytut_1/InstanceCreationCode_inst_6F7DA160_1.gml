@@ -1,1 +1,1 @@
-offload_arr = ["sugarygroup", "sugarytutgroup"];
+offload_arr = ["sugarytutgroup"];

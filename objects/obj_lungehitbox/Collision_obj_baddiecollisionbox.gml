@@ -1,7 +1,7 @@
 var _baddieID = other.baddieID;
 if (!instance_exists(_baddieID))
 	exit;
-if (_baddieID.state != states.grabbed && !_baddieID.invincible && _baddieID.hittable && _baddieID.state != states.ghostpossess)
+if (_baddieID.state != states.grabbed && _baddieID.object_index != obj_pizzaball && !_baddieID.invincible && _baddieID.hittable && _baddieID.state != states.ghostpossess)
 {
 	with (playerid)
 	{
@@ -15,7 +15,8 @@ if (_baddieID.state != states.grabbed && !_baddieID.invincible && _baddieID.hitt
 				ds_list_add(hitlist, baddie_id);
 				with (_baddieID)
 				{
-					hp -= 0.5;
+					sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
+					hp = min(hp - 0.3, 1);
 					instance_create(x, y, obj_bangeffect);
 					state = states.hit;
 					image_xscale = -other.xscale;
@@ -33,16 +34,21 @@ if (_baddieID.state != states.grabbed && !_baddieID.invincible && _baddieID.hitt
 						global.combotime = 60;
 						global.heattime = 60;
 					}
+					other.lunge_hit_buffer = 100;
 				}
-				hit_connected = true;
-				lunge_hits++;
-				finisher_hits++;
-				lunge_hit_buffer = 100;
-				if (state == states.handstandjump)
+				if _baddieID.hp <= -1
+					DoFinisher();
+				else
 				{
-					state = states.lungeattack;
-					randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
-					image_index = 0;
+					hit_connected = true;
+					lunge_hits++;
+					finisher_hits++;
+					if (state == states.handstandjump)
+					{
+						state = states.lungeattack;
+						randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
+						image_index = 0;
+					}
 				}
 				tauntstoredstate = state;
 				tauntstoredsprite = sprite_index;
@@ -57,7 +63,7 @@ if (_baddieID.state != states.grabbed && !_baddieID.invincible && _baddieID.hitt
 					hitvsp = vsp;
 				hitY = y;
 				var debriscount = floor(lunge_hits / 5);
-				repeat (2 + debriscount)
+				repeat debriscount
 				{
 					with (create_debris(x, y, spr_slapstar))
 						vsp = irandom_range(-6, -11);

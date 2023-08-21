@@ -119,7 +119,7 @@ if (instance_exists(baddieID) && _obj_player && !_obj_player.cutscene)
 					image_speed = 0.35;
 				}
 			}
-			else if (state == states.handstandjump && global.attackstyle == 3 && !other.baddieID.invincible)
+			else if (state == states.handstandjump && global.attackstyle == 3 && !global.pummeltest && !other.baddieID.invincible)
 			{
 				var _ms = movespeed;
 				movespeed = 0;
@@ -129,6 +129,7 @@ if (instance_exists(baddieID) && _obj_player && !_obj_player.cutscene)
 				other.baddieID.state = states.grabbed;
 				other.baddieID.grabbedby = _playerindex;
 				heavy = other.baddieID.heavy;
+				
 				if (global.pummeltest)
 				{
 					if (image_index > 6)

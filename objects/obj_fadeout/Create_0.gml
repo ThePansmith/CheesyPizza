@@ -10,5 +10,5 @@ yy = 0;
 fadein = false;
 gotonoplayer = 0;
 finalhallway = false;
-group_arr = -4;
-offload_arr = -4;
+group_arr = noone;
+offload_arr = noone;
