@@ -557,17 +557,17 @@ switch character
 	
 	case "SN":
 		add_palette(1, "", noone, "Pizzano", "The voice of the people.", "");
-		add_palette(1, "", noone, "Familiar Gremlin", "Close enough, but not quite.", "NOISY");
-		add_palette(1, "", noone, "Familiar Chef", "A somewhat overweight Italian accident.");
-		add_palette(1, "", noone, "Lasagna", "Mondays.");
-		add_palette(1, "", noone, "Spice", "The secret ingredient to all candy.");
-		add_palette(1, "", noone, "Plumber", "This is so retro, right guys? Please laugh! I'm funny!");
-		add_palette(1, "", noone, "Green Apple", "Blue orange.");
-		add_palette(1, "", noone, "Grape Soda", "Grape? Like the");
-		add_palette(1, "", noone, "Antipathic", "Isn't it anti-pathetic?");
-		add_palette(1, "", noone, "Gummy Bear", "Tastes like... blood?");
-		add_palette(1, "", noone, "Lime", "Unfortunate palette placement.");
-		add_palette(1, "", noone, "Crystalized", "You're the goddamn iron chef!");
+		add_palette(2, "", noone, "Familiar Gremlin", "Close enough, but not quite.", "NOISY");
+		add_palette(3, "", noone, "Familiar Chef", "A somewhat overweight Italian accident.");
+		add_palette(4, "", noone, "Lasagna", "Mondays.");
+		add_palette(5, "", noone, "Spice", "The secret ingredient to all candy.");
+		add_palette(6, "", noone, "Plumber", "This is so retro, right guys? Please laugh! I'm funny!");
+		add_palette(7, "", noone, "Green Apple", "Blue orange.");
+		add_palette(8, "", noone, "Grape Soda", "Grape? Like the");
+		add_palette(9, "", noone, "Antipathic", "Isn't it anti-pathetic?");
+		add_palette(10, "", noone, "Gummy Bear", "Tastes like... blood?");
+		add_palette(11, "", noone, "Lime", "Unfortunate palette placement.");
+		add_palette(12, "", noone, "Crystalized", "You're the goddamn iron chef!");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "Some joke about a fat rabbit here.");

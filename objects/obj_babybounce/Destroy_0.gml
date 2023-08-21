@@ -15,5 +15,8 @@ if (phase == 2)
     event_inherited()
     sound_play_oneshot("event:/modded/sfx/babyface");
     with (instance_create(x, y, obj_pizzaface))
-        sprite_index = spr_babyface
+	{
+        spr_idle = spr_babyface;
+		sprite_index = spr_idle;
+	}
 }
