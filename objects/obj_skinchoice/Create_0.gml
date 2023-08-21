@@ -408,7 +408,9 @@ draw = function(curve)
 
 		draw_sprite_ext(spr_skinchoicepalette, 1, cache[i].x, cache[i].y, 1, 1, 0, c_white, 1);
 	}
-	shader_reset();
+	
+	if shader_current() != shd_circleclip
+		shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev);
 	// hand
 	draw_sprite_ext(spr_skinchoicehand, 0, handx, handy + sin(current_time / 1000) * 4, 2, 2, 0, c_white, 1);
 	draw_set_align();
