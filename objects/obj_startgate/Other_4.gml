@@ -73,6 +73,7 @@ if (object_index != obj_bossdoor && sprite_index != spr_snickchallengecomputer)
 
 ini_open_from_string(obj_savesystem.ini_str);
 highscore = ini_read_real("Highscore", string(level), 0);
+laps = ini_read_real("Laps", string(level), 0)
 hats = ini_read_real("Hats", string(level), 0);
 secret_count = ini_read_string("Secret", string(level), 0);
 toppin[0] = ini_read_real("Toppin", string(level) + "1", 0);
@@ -83,6 +84,8 @@ toppin[4] = ini_read_real("Toppin", string(level) + "5", 0);
 rank = ini_read_string("Ranks", string(level), "d");
 ini_close();
 
+if (!SUGARY)
+{
 var _toppinspr = [
 	[spr_toppinshroom, spr_toppinshroom_run, spr_toppinshroom_taunt, -75],
 	[spr_toppincheese, spr_toppincheese_run, spr_toppincheese_taunt, -35],
@@ -91,21 +94,22 @@ var _toppinspr = [
 	[spr_toppinpineapple, spr_toppinpineapple_run, spr_toppinpineapple_taunt, 75]
 ];
 for (var i = 0; i < array_length(_toppinspr); i++)
-{
-	var b = _toppinspr[i];
-	if (toppin[i])
 	{
-		with (instance_create(x + b[3], y + 100, obj_toppinprop))
+		var b = _toppinspr[i];
+		if (toppin[i])
 		{
-			tauntspr = b[2];
-			movespr = b[1];
-			idlespr = b[0];
-			if (place_meeting(x, y, obj_platform))
-				y -= 2;
+			with (instance_create(x + b[3], y + 100, obj_toppinprop))
+			{
+				tauntspr = b[2];
+				movespr = b[1];
+				idlespr = b[0];
+				if (place_meeting(x, y, obj_platform))
+					y -= 2;
+			}
 		}
 	}
 }
-if (object_index == obj_startgate && level != "exit" && level != "tutorial" && level != "dragonlair" && level != "snickchallenge" && level != "grinch" && level != "oldexit")
+if (object_index == obj_startgate && level != "exit" && level != "tutorial" && level != "dragonlair" && level != "snickchallenge" && level != "grinch" && level != "oldexit" && !SUGARY)
 {
 	var count = 3;
 	if level == "etb"
