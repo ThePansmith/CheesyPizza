@@ -1,4 +1,6 @@
-function scr_add_background_chunk(argument0, argument1, argument2, argument3)
+// unused function
+function scr_add_background_chunk(sprite, xoffset, yoffset, imagespeed)
 {
-	return [argument0, argument1, argument2, 0, argument3];
+	// 4th value is current image index
+	return [sprite, xoffset, yoffset, 0, imagespeed];
 }

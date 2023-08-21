@@ -140,8 +140,8 @@ else
 		}
 	}
 	draw_set_font(lang_get_font("bigfont"));
-	draw_set_halign(0);
-	draw_set_valign(0);
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
 	for (i = 0; i < array_length(text); i++)
 	{
 		var b = text[i];

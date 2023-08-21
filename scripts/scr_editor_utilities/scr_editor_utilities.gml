@@ -7,35 +7,35 @@ function snap_tile(value, snap)
 {
 	return floor(value / snap) * snap;
 }
-function add_object(argument0, argument1, argument2, argument3, argument4 = 0, argument5 = 0)
+function add_object(lay, name, sprite, object, xoffset = 0, yoffset = 0)
 {
 	var s = 1;
-	if (sprite_get_width(argument2) >= 64 || sprite_get_height(argument2) >= 64)
-		s = min(64 / sprite_get_width(argument2), 64 / sprite_get_height(argument2));
-	ds_list_add(object_list[argument0], 
+	if (sprite_get_width(sprite) >= 64 || sprite_get_height(sprite) >= 64)
+		s = min(64 / sprite_get_width(sprite), 64 / sprite_get_height(sprite));
+	ds_list_add(object_list[lay], 
 	{
-		name: argument1,
-		sprite_index: argument2,
+		name: name,
+		sprite_index: sprite,
 		image_xscale: s,
 		image_yscale: s,
-		object_index: argument3,
-		image_xoffset: argument4,
-		image_yoffset: argument5,
+		object_index: object,
+		image_xoffset: xoffset,
+		image_yoffset: yoffset,
 		place_xoffset: 0,
 		place_yoffset: 0,
 		layerdepth: 0
 	});
 }
-function set_object_place_offset(argument0, argument1, argument2)
+function set_object_place_offset(lay, xoffset, yoffset)
 {
-	var b = ds_list_find_value(array_get(object_list, argument0), ds_list_size(objectlist) - 1);
-	b.place_xoffset = argument1;
-	b.place_yoffset = argument1;
+	var b = ds_list_find_value(array_get(object_list, lay), ds_list_size(objectlist) - 1);
+	b.place_xoffset = xoffset;
+	b.place_yoffset = xoffset;
 }
-function set_object_layerdepth(argument0, argument1)
+function set_object_layerdepth(lay, depth)
 {
-	var b = ds_list_find_value(array_get(object_list, argument0), ds_list_size(objectlist) - 1);
-	b.layerdepth = argument1;
+	var b = ds_list_find_value(array_get(object_list, lay), ds_list_size(objectlist) - 1);
+	b.layerdepth = depth;
 }
 function objectlist_calculate_scrollsize()
 {
@@ -54,25 +54,25 @@ function objectlist_calculate_scrollsize()
 	if (scroll_ymax < 0)
 		scroll_ymax = 0;
 }
-function create_buttons_array(argument0, argument1, argument2, argument3, argument4)
+function create_buttons_array(x, y, width, height, array)
 {
 	var xsize = 0;
 	draw_set_font(global.editorfont);
-	for (var i = 0; i < array_length(argument4); i++)
+	for (var i = 0; i < array_length(array); i++)
 	{
-		var b = argument4[i];
+		var b = array[i];
 		var t = string_width(b[0]);
 		if (t > xsize)
-			xsize = t + argument2;
+			xsize = t + width;
 	}
-	for (i = 0; i < array_length(argument4); i++)
+	for (i = 0; i < array_length(array); i++)
 	{
-		b = argument4[i];
-		with (instance_create_depth(argument0, argument1 + (i * argument3), depth, obj_textbutton))
+		b = array[i];
+		with (instance_create_depth(x, y + (i * height), depth, obj_textbutton))
 		{
 			buttonid = i;
 			sprite_index = spr_bigbutton;
-			sprite_set_size(xsize, argument3);
+			sprite_set_size(xsize, height);
 			label = b[0];
 			if (b[1] != -4)
 				OnSelect = method(id, b[1]);

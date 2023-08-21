@@ -1,6 +1,6 @@
 draw_set_font(lang_get_font("creditsfont"));
-draw_set_halign(0);
-draw_set_valign(0);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
 draw_set_alpha(fade);
 draw_set_color(c_white);
 var xx = SCREEN_WIDTH / 2;

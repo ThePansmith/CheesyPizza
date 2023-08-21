@@ -1,5 +1,9 @@
 function baddiecollisionbox_update(player)
 {
+	// unused function
+	// unused function
+	// unused function
+	
 	if (player.cutscene == 0 && player.state != states.firemouth)
 	{
 		with (player)
@@ -86,7 +90,7 @@ function baddiecollisionbox_update(player)
 				}
 			}
 			var pepp_grab = false;
-			if (character == "M" && instance_exists(other.baddieID) && (state == states.normal || state == states.jump) && state != states.pummel && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw && other.baddieID.state == states.staggered && other.baddieID.state != states.pummel && other.baddieID.state != states.stun && other.baddieID.stuntouchbuffer == 0 && !other.baddieID.thrown && !other.baddieID.invincible)
+			if (character == "M" && instance_exists(other.baddieID) && (state == states.normal || state == states.jump) && state != states.pummel && pepperman_grabID == noone && sprite_index != spr_pepperman_throw && other.baddieID.state == states.staggered && other.baddieID.state != states.pummel && other.baddieID.state != states.stun && other.baddieID.stuntouchbuffer == 0 && !other.baddieID.thrown && !other.baddieID.invincible)
 			{
 				other.baddieID.pepperman_grab = true;
 				pepperman_grabID = other.baddieID.id;

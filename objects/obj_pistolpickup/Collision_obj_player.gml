@@ -17,7 +17,7 @@ if (other.state == states.handstandjump or check_kungfu_state(other) && other.gr
 	{
 		with (obj_music)
 		{
-			if (music != -4)
+			if (music != noone)
 				fmod_event_instance_set_parameter(music.event, "state", 1.4, true);
 		}
 	}

@@ -1,9 +1,9 @@
 trigger = 1;
-func = function(argument0)
+func = function(player)
 {
 	if (!active)
 	{
-		if (argument0.state == states.freefallland)
+		if (player.state == states.freefallland)
 			active = true;
 	}
 };

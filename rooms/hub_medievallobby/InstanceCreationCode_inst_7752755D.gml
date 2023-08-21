@@ -1,4 +1,4 @@
-if (global.ruincutscene == -4)
+if (global.ruincutscene == noone)
 	global.ruincutscene = quick_ini_read_real(get_savefile_ini(), "cutscene", "ruin", false);
 if (!global.ruincutscene)
 	instance_destroy();

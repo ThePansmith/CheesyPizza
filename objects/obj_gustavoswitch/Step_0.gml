@@ -22,7 +22,7 @@ if (sprite_index == spr_gustavoswitch2 && floor(image_index) == (image_number - 
 		{
 			with (obj_music)
 			{
-				if (music != -4)
+				if (music != noone)
 					fmod_event_instance_set_parameter(music.event, "state", 1, true);
 			}
 		}
@@ -30,7 +30,7 @@ if (sprite_index == spr_gustavoswitch2 && floor(image_index) == (image_number - 
 		{
 			with (obj_music)
 			{
-				if (music != -4)
+				if (music != noone)
 					fmod_event_instance_set_parameter(music.event, "state", 2, true);
 			}
 		}

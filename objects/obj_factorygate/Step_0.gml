@@ -4,7 +4,7 @@ switch (state)
 	case states.normal:
 		if (sprite_index == spr_arenagate_opened)
 		{
-			if (blockinst != -4 && instance_exists(blockinst))
+			if (blockinst != noone && instance_exists(blockinst))
 			{
 				blockinst = -4;
 				instance_destroy(blockinst);

@@ -4,7 +4,7 @@ function textures_offload(texturegroup_array)
 	with (b)
 	{
 		group_arr = texturegroup_array;
-		if (global.offload_tex != -4)
+		if (global.offload_tex != noone)
 		{
 			offload_arr = array_create(0);
 			array_copy(offload_arr, 0, global.offload_tex, 0, array_length(global.offload_tex));

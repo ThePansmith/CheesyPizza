@@ -83,7 +83,7 @@ function scr_collide()
 	}
 	if (vsp < 10)
 		vsp += grav;
-	if (platformid != -4)
+	if (platformid != noone)
 	{
 		if (vsp < 0 || !instance_exists(platformid) || !place_meeting(x, y + 12 + (abs(platformid.v_velocity) * 2), platformid))
 		{
@@ -134,7 +134,7 @@ function scr_collide()
 	// on ground check
 	grounded |= scr_solid(x, y + 1);
 	grounded |= (!place_meeting(x, y, obj_platform) && place_meeting(x, y + 1, obj_platform));
-	if (platformid != -4 || (place_meeting(x, y + 1, obj_movingplatform) && !place_meeting(x, y - 2, obj_movingplatform)))
+	if (platformid != noone || (place_meeting(x, y + 1, obj_movingplatform) && !place_meeting(x, y - 2, obj_movingplatform)))
 		grounded = true;
 	
 	if grounded && vsp >= 0

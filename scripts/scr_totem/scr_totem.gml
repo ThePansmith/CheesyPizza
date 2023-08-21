@@ -4,7 +4,7 @@ function totem_empty(totem)
 	{
 		for (var i = 0; i < array_length(cheeseID); i++)
 		{
-			if (cheeseID[i] == -4)
+			if (cheeseID[i] == noone)
 				return true;
 		}
 		return false;
@@ -16,7 +16,7 @@ function totem_add(totem, ID)
 	{
 		for (var i = 0; i < array_length(cheeseID); i++)
 		{
-			if (cheeseID[i] == -4)
+			if (cheeseID[i] == noone)
 			{
 				cheeseID[i] = ID;
 				return true;
@@ -31,7 +31,7 @@ function totem_clear(totem)
 	{
 		for (var i = 0; i < array_length(cheeseID); i++)
 		{
-			if (cheeseID[i] != -4 && (!instance_exists(cheeseID[i]) || cheeseID[i].state != states.totem))
+			if (cheeseID[i] != noone && (!instance_exists(cheeseID[i]) || cheeseID[i].state != states.totem))
 			{
 				if (instance_exists(cheeseID[i]))
 					cheeseID[i].totemID = -4;
@@ -47,7 +47,7 @@ function totem_count(totem)
 	{
 		for (var i = 0; i < array_length(cheeseID); i++)
 		{
-			if (cheeseID[i] != -4)
+			if (cheeseID[i] != noone)
 				c++;
 		}
 		return c;

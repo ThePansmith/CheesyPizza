@@ -8,7 +8,7 @@ if (state == states.walk)
 	if (!chasing)
 	{
 		sprite_index = idlespr;
-		if (collision_line(x, y, targetplayer.x, targetplayer.y, obj_solid, false, true) == -4 && ((image_xscale < 0 && targetplayer.x < x) || (image_xscale > 0 && targetplayer.x > x)) && (targetplayer.y < (y + threshold_y) && targetplayer.y > (y - threshold_y)))
+		if (collision_line(x, y, targetplayer.x, targetplayer.y, obj_solid, false, true) == noone && ((image_xscale < 0 && targetplayer.x < x) || (image_xscale > 0 && targetplayer.x > x)) && (targetplayer.y < (y + threshold_y) && targetplayer.y > (y - threshold_y)))
 			targetplayer = instance_nearest(x, y, obj_player);
 		if ((targetplayer.x > (x - 150) && targetplayer.x < (x + 150)) && (y <= (targetplayer.y + 60) && y >= (targetplayer.y - 60)))
 		{
@@ -77,7 +77,7 @@ else if (state == states.chase)
 		sprite_index = spr_shrimp_land;
 		image_index = 0;
 	}
-	if (((inst_front != -4 || inst_up != -4) || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != states.charge)
+	if (((inst_front != noone || inst_up != noone) || (inst_down == noone && inst_down2 == noone)) && targetplayer.y <= (y + 32) && grounded && state != states.charge)
 	{
 		vsp = -11;
 		sprite_index = spr_shrimp_jump;

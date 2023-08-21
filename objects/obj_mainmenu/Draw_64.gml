@@ -6,8 +6,8 @@ if (state == states.bombdelete)
 	draw_rectangle_color(0, 0, room_width, room_height, 0, 0, 0, 0, false);
 	draw_set_alpha(1);
 	draw_set_font(lang_get_font("bigfont"));
-	draw_set_halign(1);
-	draw_set_valign(1);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
 	var _str = embed_value_string(lang_get_value("menu_delete"), [string(currentselect + 1)]);
 	draw_text_color(SCREEN_WIDTH / 2, (SCREEN_HEIGHT / 2) - 30, _str, c_red, c_red, c_red, c_red, 1);
 	var w = string_width(_str) / 2;
@@ -24,8 +24,8 @@ else if (state == states.finale)
 	draw_rectangle_color(0, 0, room_width, room_height, 0, 0, 0, 0, false);
 	draw_set_alpha(1);
 	draw_set_font(lang_get_font("bigfont"));
-	draw_set_halign(1);
-	draw_set_valign(1);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
 	draw_sprite(spr_menu_byebye, index, (SCREEN_WIDTH / 2) + 210, SCREEN_HEIGHT / 2);
 	draw_sprite(spr_menu_byebye, index, (SCREEN_WIDTH / 2) - 210, SCREEN_HEIGHT / 2);
 	draw_text_color(SCREEN_WIDTH / 2, (SCREEN_HEIGHT / 2) - 30, lang_get_value("menu_exit"), c_white, c_white, c_white, c_white, 1);

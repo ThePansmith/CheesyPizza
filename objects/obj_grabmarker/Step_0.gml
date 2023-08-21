@@ -21,5 +21,5 @@ if (instance_exists(ID))
 			break;
 	}
 }
-else if (ID != -4)
+else if (ID != noone)
 	instance_destroy();

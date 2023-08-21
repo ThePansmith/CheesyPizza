@@ -7,6 +7,6 @@ if global.jukebox != noone
 fmod_event_instance_play(snd);
 with (obj_music)
 {
-	if (music != -4)
+	if (music != noone)
 		fmod_event_instance_stop(music.event, false);
 }

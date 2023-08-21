@@ -1,6 +1,6 @@
 if (lock)
 	exit;
-if (followid != -4 && !instance_exists(obj_player1))
+if (followid != noone && !instance_exists(obj_player1))
 	exit;
 playerid = obj_player1.id;
 if (playerid.state != states.ladder && playerid.state != states.door && playerid.state != states.comingoutdoor)
@@ -14,13 +14,13 @@ else
 	space = Approach(space, 0, spaceaccel);
 if (dir != playerid.xscale)
 	dir = playerid.xscale;
-if (followid != -4 && !instance_exists(followid))
+if (followid != noone && !instance_exists(followid))
 	followid = -4;
 var tx = round(xoffset * space);
-var xx = (followid == -4) ? playerid.x : followid.x;
-var yy = (followid == -4) ? playerid.y : followid.y;
-var msk = (followid == -4) ? playerid.mask_index : followid.mask_index;
-var ixs = (followid == -4) ? playerid.xscale : followid.image_xscale;
+var xx = (followid == noone) ? playerid.x : followid.x;
+var yy = (followid == noone) ? playerid.y : followid.y;
+var msk = (followid == noone) ? playerid.mask_index : followid.mask_index;
+var ixs = (followid == noone) ? playerid.xscale : followid.image_xscale;
 ds_queue_enqueue(followqueue, xx + tx);
 ds_queue_enqueue(followqueue, yy);
 ds_queue_enqueue(followqueue, msk);

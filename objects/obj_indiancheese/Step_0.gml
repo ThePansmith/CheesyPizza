@@ -11,7 +11,7 @@ switch (state)
 		break;
 	case states.walk:
 		scr_enemy_walk();
-		if (totemID != -4)
+		if (totemID != noone)
 			state = states.totem;
 		break;
 	case states.land:
@@ -37,7 +37,7 @@ switch (state)
 		break;
 }
 scr_scareenemy();
-if (state == states.totem && totemID != -4)
+if (state == states.totem && totemID != noone)
 {
 	image_speed = 0.35;
 	if (sprite_index != spr_indiancheese_dance)
@@ -74,7 +74,7 @@ if (state == states.totem && totemID != -4)
 		}
 	}
 }
-else if (state == states.totem && totemID == -4)
+else if (state == states.totem && totemID == noone)
 	state = states.walk;
 if (state == states.stun && stunned > 40 && birdcreated == 0)
 {

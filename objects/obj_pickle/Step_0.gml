@@ -133,7 +133,7 @@ if (state == states.chase)
 			if (image_xscale == 0)
 				image_xscale = old_xscale;
 			state = states.pizzagoblinthrow;
-			if ((elite or global.stylethreshold >= 3) && cloneid == -4)
+			if ((elite or global.stylethreshold >= 3) && cloneid == noone)
 			{
 				var tx = image_xscale * 32;
 				if (scr_solid(x + tx, y))

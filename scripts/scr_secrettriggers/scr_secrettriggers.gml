@@ -3,7 +3,7 @@ function secret_add(create_func, func)
 	with (obj_secretmanager)
 	{
 		ds_list_add(secrettriggers, [func]);
-		if (create_func != -4)
+		if (create_func != noone)
 			method(id, create_func)();
 	}
 }
@@ -18,7 +18,7 @@ function secret_add_touchall_requirement(idx, trigger)
 }
 function secret_check_touchall()
 {
-	if (touchrequirement != -4 && is_array(touchrequirement))
+	if (touchrequirement != noone && is_array(touchrequirement))
 	{
 		for (var xx = 0; xx < array_length(touchrequirement); xx++)
 		{

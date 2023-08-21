@@ -167,7 +167,7 @@ function scr_keyname(_key)
 	{
         case vk_backspace:
             return "BACKSPACE";
-        case 9:
+        case vk_tab:
             return "TAB";
         case vk_enter:
             return "ENTER";
@@ -199,81 +199,81 @@ function scr_keyname(_key)
             return "INSERT";
         case vk_delete:
             return "DELETE";
-        case 48:
+        case ord("0"):
             return "0";
-        case 49:
+        case ord("1"):
             return "1";
-        case 50:
+        case ord("2"):
             return "2";
-        case 51:
+        case ord("3"):
             return "3";
-        case 52:
+        case ord("4"):
             return "4";
-        case 53:
+        case ord("5"):
             return "5";
-        case 54:
+        case ord("6"):
             return "6";
-        case 55:
+        case ord("7"):
             return "7";
-        case 56:
+        case ord("8"):
             return "8";
-        case 57:
+        case ord("9"):
             return "9";
-        case 65:
+        case ord("A"):
             return "A";
-        case 66:
+        case ord("B"):
             return "B";
-        case 67:
+        case ord("C"):
             return "C";
-        case 68:
+        case ord("D"):
             return "D";
-        case 69:
+        case ord("E"):
             return "E";
-        case 70:
+        case ord("F"):
             return "F";
-        case 71:
+        case ord("G"):
             return "G";
-        case 72:
+        case ord("H"):
             return "H";
-        case 73:
+        case ord("I"):
             return "I";
-        case 74:
+        case ord("J"):
             return "J";
-        case 75:
+        case ord("K"):
             return "K";
-        case 76:
+        case ord("L"):
             return "L";
-        case 77:
+        case ord("M"):
             return "M";
-        case 78:
+        case ord("N"):
             return "N";
-        case 79:
+        case ord("O"):
             return "O";
-        case 80:
+        case ord("P"):
             return "P";
-        case 81:
+        case ord("Q"):
             return "Q";
-        case 82:
+        case ord("R"):
             return "R";
-        case 83:
+        case ord("S"):
             return "S";
-        case 84:
+        case ord("T"):
             return "T";
-        case 85:
+        case ord("U"):
             return "U";
-        case 86:
+        case ord("V"):
             return "V";
-        case 87:
+        case ord("W"):
             return "W";
-        case 88:
+        case ord("X"):
             return "X";
-        case 89:
+        case ord("Y"):
             return "Y";
-        case 90:
+        case ord("Z"):
             return "Z";
-        case 91:
+        case ord("["):
             return "LEXPLR";
-        case 92:
+        case ord("\\"):
             return "REXPLR";
         case vk_numpad0:
             return "NUMPAD 0";

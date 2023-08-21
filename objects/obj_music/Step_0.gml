@@ -20,7 +20,7 @@ if (fmod_event_instance_is_playing(kidspartychaseID) && instance_exists(obj_paus
 	trace("Stopping kidsparty music");
 	fmod_event_instance_stop(kidspartychaseID, false);
 	instance_destroy(obj_kidspartybg);
-	if (music != -4)
+	if (music != noone)
 	{
 		fmod_event_instance_set_paused(music.event, savedmusicpause);
 		fmod_event_instance_set_paused(music.event_secret, savedsecretpause);
@@ -82,7 +82,7 @@ if ((global.panic or ((global.snickchallenge or (MOD.DeathMode)) && !instance_ex
 			fmod_event_instance_set_paused(panicmusicID, false);
 			fmod_event_instance_set_parameter(panicmusicID, "state", 0, true);
 		}
-		if (music != -4)
+		if (music != noone)
 		{
 			fmod_event_instance_stop(music.event, true);
 			fmod_event_instance_stop(music.event_secret, true);

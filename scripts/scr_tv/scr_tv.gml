@@ -85,7 +85,7 @@ function tv_push_prompt_once(prompt_array, prompt_entry)
 {
 	with (obj_tv)
 	{
-		if (special_prompts == -4)
+		if (special_prompts == noone)
 			return false;
 		var b = ds_map_find_value(special_prompts, prompt_entry);
 		if (is_undefined(b))
@@ -110,7 +110,7 @@ function tv_do_expression(sprite)
 {
 	with (obj_tv)
 	{
-		if (expressionsprite != sprite && bubblespr == -4)
+		if (expressionsprite != sprite && bubblespr == noone)
 		{
 			state = states.tv_whitenoise;
 			expressionsprite = sprite;

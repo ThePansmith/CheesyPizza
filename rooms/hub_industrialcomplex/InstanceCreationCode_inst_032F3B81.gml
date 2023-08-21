@@ -38,11 +38,11 @@ dialog_func = function()
 {
 	do_dialog_cutscene(scene_info);
 };
-if (global.anarchistcutscene1 == -4)
+if (global.anarchistcutscene1 == noone)
 	global.anarchistcutscene1 = quick_ini_read_real(get_savefile_ini(), "cutscene", "anarchist1", false);
 if (!global.anarchistcutscene1)
 	instance_destroy();
-if (global.anarchistcutscene2 == -4)
+if (global.anarchistcutscene2 == noone)
 	global.anarchistcutscene2 = quick_ini_read_real(get_savefile_ini(), "cutscene", "anarchist2", false);
 if (global.anarchistcutscene2)
 	instance_destroy();

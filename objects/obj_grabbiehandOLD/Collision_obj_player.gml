@@ -1,6 +1,6 @@
 if (other.state == states.gotoplayer)
 	exit;
-if (sprite_index == spr_grabbiehand_fall && player == -4)
+if (sprite_index == spr_grabbiehand_fall && player == noone)
 {
 	with (other)
 	{
@@ -59,7 +59,7 @@ if (sprite_index == spr_grabbiehand_fall && player == -4)
 }
 if (sprite_index == spr_grabbiehand_catch)
 {
-	if (player == -4)
+	if (player == noone)
 		player = other.id;
 	other.vsp = 0;
 	other.hsp = 0;

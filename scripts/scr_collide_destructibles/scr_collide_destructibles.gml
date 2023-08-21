@@ -14,7 +14,7 @@ function scr_collide_destructibles()
 					for (var j = 0; j < num; j++)
 					{
 						var inst = ds_list_find_value(global.instancelist, j);
-						if (inst != -4 && inst != -1 && inst != undefined)
+						if (inst != noone && inst != -1 && inst != undefined)
 						{
 							with (inst)
 							{

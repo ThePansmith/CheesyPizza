@@ -25,7 +25,7 @@ for (var i = 0; i < array_length(collision_list); i++)
 {
 	var b = collision_list[i];
 	var _inst = collision_line(x, y, _x, y, b, false, true);
-	if (_inst == -4)
+	if (_inst == noone)
 		_inst = instance_place(x, y, b);
 	with (_inst)
 	{

@@ -1,5 +1,5 @@
 destroy = false;
-if (global.factoryblock == -4)
+if (global.factoryblock == noone)
 	global.factoryblock = quick_ini_read_real(get_savefile_ini(), "cutscene", "factoryblock", false);
 if (global.factoryblock)
 {

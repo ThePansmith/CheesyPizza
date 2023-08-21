@@ -175,7 +175,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 					_txt = lang_get_value("weenietip");
 					break;
 			}
-			if (_txt == -4)
+			if (_txt == noone)
 			{
 				if (shotgunAnim)
 				{
@@ -190,8 +190,8 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 		if (_txt != -4)
 		{
 			draw_set_font(lang_get_font("creditsfont"));
-			draw_set_halign(0);
-			draw_set_valign(0);
+			draw_set_halign(fa_left);
+			draw_set_valign(fa_top);
 			transfotext = scr_compile_icon_text(_txt);
 			transfotext_size = scr_text_arr_size(transfotext);
 		}

@@ -1,4 +1,4 @@
-func = function(argument0)
+func = function(player)
 {
 	if (active == 0)
 	{

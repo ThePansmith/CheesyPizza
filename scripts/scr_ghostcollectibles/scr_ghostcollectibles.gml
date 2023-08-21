@@ -1,4 +1,4 @@
-function scr_ghostcollectible(argument0 = false)
+function scr_ghostcollectible(pizzasona = false)
 {
 	var q = -4;
 	var b = id;
@@ -13,7 +13,7 @@ function scr_ghostcollectible(argument0 = false)
 			image_number: b.image_number,
 			image_alpha: 0.5,
 			image_index: 0,
-			pizzasona: argument0
+			pizzasona: pizzasona
 		};
 		//trace(q);
 		ds_list_add(collectiblelist, q);

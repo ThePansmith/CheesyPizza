@@ -41,8 +41,8 @@ if (hours < 10)
 	hours = concat(0, hours);
 else
 	hours = string(hours);
-draw_set_halign(0);
-draw_set_valign(2);
+draw_set_halign(fa_left);
+draw_set_valign(fa_bottom);
 draw_set_font(SUGARY ? global.smallfont_ss : global.smallfont);
 draw_set_alpha(1);
 draw_set_color(c_white);

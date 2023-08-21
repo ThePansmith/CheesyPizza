@@ -713,7 +713,7 @@ else if (state == states.hurt || state == states.bump || instance_exists(obj_vig
 }
 if state != states.pistol && state != states.normal && sprite_index != spr_player_pistoljump2
 	pistol = false;
-if (pistolanim != -4)
+if (pistolanim != noone)
 {
 	pistolindex += 0.35;
 	if (!machslideAnim && state != states.machslide && state != states.fireass)

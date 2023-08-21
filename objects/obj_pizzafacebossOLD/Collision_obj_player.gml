@@ -2,7 +2,7 @@ if (phase == 0 && attacking)
 {
 	if (state == states.pizzaface_ram)
 	{
-		if (other.state == states.backbreaker && other.parry_inst != -4)
+		if (other.state == states.backbreaker && other.parry_inst != noone)
 		{
 			state = states.normal;
 			boss_hurt(10, other.id);
@@ -29,7 +29,7 @@ if (phase == 0 && attacking)
 				{
 					lostattacks--;
 					var choseattack = -4;
-					for (var j = 0; choseattack == -4; choseattack = phase1attacks[j])
+					for (var j = 0; choseattack == noone; choseattack = phase1attacks[j])
 						j = irandom_range(1, array_length(phase1attacks)) - 1;
 					phase1attacks[j] = -4;
 					with (instance_create(x, y, obj_pizzafacepart))

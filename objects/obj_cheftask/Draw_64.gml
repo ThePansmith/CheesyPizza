@@ -6,11 +6,11 @@ if (sprite_index != spr_newclothes)
 else
 {
 	shader_set(shd_pal_swapper);
-	if (texture != -4)
+	if (texture != noone)
 		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, texture);
 	pal_swap_set(spr_peppalette, paletteselect, false);
 	draw_sprite(sprite_index, image_index, x, y);
-	if (texture != -4)
+	if (texture != noone)
         pattern_reset();
 	reset_shader_fix();
 }

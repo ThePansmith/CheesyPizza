@@ -20,7 +20,7 @@ switch (state)
 			image_index = image_number - 1;
 		if (floor(image_index) >= 3)
 		{
-			if (onebyoneID == -4)
+			if (onebyoneID == noone)
 			{
 				global.collect -= 150;
 				onebyoneID = instance_create(x, y - 30, obj_pizzasona_points);

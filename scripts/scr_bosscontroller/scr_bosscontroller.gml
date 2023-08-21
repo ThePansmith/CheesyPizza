@@ -1,38 +1,38 @@
-function scr_bosscontroller_particle_hp(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7 = noone)
+function scr_bosscontroller_particle_hp(sprite, image, x, y, hsp, spr_palette, paletteselect, palettetexture = noone)
 {
 	with (obj_bosscontroller)
 	{
 		var q = 
 		{
 			type: 0,
-			sprite_index: argument0,
-			image_index: argument1,
-			x: argument2,
-			y: argument3,
-			hsp: 8 * argument4,
+			sprite_index: sprite,
+			image_index: image,
+			x: x,
+			y: y,
+			hsp: 8 * hsp,
 			vsp: -6,
-			spr_palette: argument5,
-			paletteselect: argument6,
-			palettetexture: argument7
+			spr_palette: spr_palette,
+			paletteselect: paletteselect,
+			palettetexture: palettetexture
 		};
 		ds_list_add(particlelist, q);
 		return q;
 	}
 }
-function scr_bosscontroller_particle_anim(argument0, argument1, argument2, argument3, argument4, argument5 = spr_peppalette, argument6 = 0)
+function scr_bosscontroller_particle_anim(sprite, image, x, y, imagespeed, spr_palette = spr_peppalette, paletteselect = 0)
 {
 	with (obj_bosscontroller)
 	{
 		var q = 
 		{
 			type: 1,
-			sprite_index: argument0,
-			image_index: argument1,
-			image_speed: argument4,
-			x: argument2,
-			y: argument3,
-			spr_palette: argument5,
-			paletteselect: argument6
+			sprite_index: sprite,
+			image_index: image,
+			image_speed: imagespeed,
+			x: x,
+			y: y,
+			spr_palette: spr_palette,
+			paletteselect: paletteselect
 		};
 		ds_list_add(particlelist, q);
 		return q;
@@ -118,7 +118,7 @@ function scr_bosscontroller_intro()
 }
 function scr_bosscontroller_normal()
 {
-	if (boss_func != -4)
+	if (boss_func != noone)
 		boss_func();
 	if (boss_prevhp != boss_hp)
 	{
@@ -218,36 +218,36 @@ function scr_bosscontroller_pizzaface_p3_health()
 	var eh = e + ((e - 1) * pizzahead_maxsubhp) + pizzahead_subhp;
 	return eh;
 }
-function scr_bosscontroller_draw_health(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9, argument10, argument11 = noone, argument12 = noone, argument13 = noone)
+function scr_bosscontroller_draw_health(sprite, rows, columns, hp, maxhp, x, y, xpad, ypad, index, alpha, spr_palette = noone, paletteselect = noone, palettetexture = noone)
 {
 	var hpp = 0;
-	for (var _index = 0; hpp < argument4; _index++)
+	for (var _index = 0; hpp < maxhp; _index++)
 	{
 		var c = c_white;
 		var zpad = _index * 3;
-		if (argument11 != -4)
+		if (spr_palette != -4)
 		{
-			if (argument12 == -4)
-				pal_swap_set(argument11, _index, false);
+			if (paletteselect == noone)
+				pal_swap_set(spr_palette, _index, false);
 			else
-				pal_swap_set(argument11, argument12, false);
+				pal_swap_set(spr_palette, paletteselect, false);
 		}
 		var _x = 0;
 		var _y = 0;
-		repeat (argument1 * argument2)
+		repeat (rows * columns)
 		{
-			if (_index == 0 && argument3 < (argument1 * argument2) && hpp >= argument3)
+			if (_index == 0 && hp < (rows * columns) && hpp >= hp)
 				c = 0;
-			if (_index == 0 || hpp < argument3)
+			if (_index == 0 || hpp < hp)
 			{
-				var xf = (argument5 + (_x * argument7)) - zpad;
-				var yf = (argument6 + (_y * argument8)) - zpad;
-				if (argument13 != -4)
-					pattern_set(global.Base_Pattern_Color, argument0, argument9, 1, 1, argument13);
-				draw_sprite_ext(argument0, argument9, xf, yf, 1, 1, 0, c, argument10);
+				var xf = (x + (_x * xpad)) - zpad;
+				var yf = (y + (_y * ypad)) - zpad;
+				if (palettetexture != -4)
+					pattern_set(global.Base_Pattern_Color, sprite, index, 1, 1, palettetexture);
+				draw_sprite_ext(sprite, index, xf, yf, 1, 1, 0, c, alpha);
 			}
 			_x++;
-			if (_x >= argument2)
+			if (_x >= columns)
 			{
 				_x = 0;
 				_y++;
@@ -257,21 +257,21 @@ function scr_bosscontroller_draw_health(argument0, argument1, argument2, argumen
 	}
 	pattern_reset();
 }
-function scr_bosscontroller_get_health_pos(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8 = false)
+function scr_bosscontroller_get_health_pos(hp, rows, columns, maxhp, x, y, xpad, ypad, unused_arg = false)
 {
 	var hpp = 0;
-	for (var _index = 0; hpp < argument3; _index++)
+	for (var _index = 0; hpp < maxhp; _index++)
 	{
 		var zpad = _index * 3;
 		var _x = 0;
 		var _y = 0;
-		repeat (argument1 * argument2)
+		repeat (rows * columns)
 		{
 			hpp++;
-			if (hpp >= argument0)
-				return [(argument4 + (_x * argument6)) - zpad, (argument5 + (_y * argument7)) - zpad, _index];
+			if (hpp >= hp)
+				return [(x + (_x * xpad)) - zpad, (y + (_y * ypad)) - zpad, _index];
 			_x++;
-			if (_x >= argument2)
+			if (_x >= columns)
 			{
 				_x = 0;
 				_y++;

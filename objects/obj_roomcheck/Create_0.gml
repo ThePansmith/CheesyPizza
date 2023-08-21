@@ -1,4 +1,5 @@
 room_arr = [
+	Funnyroom,
 	tower_entrancehall,
 	tower_johngutterhall,
 	tower_1,

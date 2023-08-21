@@ -1,4 +1,4 @@
-if (playerid == -4 && other.state != states.actor && !instance_exists(obj_bossplayerdeath))
+if (playerid == noone && other.state != states.actor && !instance_exists(obj_bossplayerdeath))
 {
 	playerid = other.id;
 	other.state = states.skateboardnoise;

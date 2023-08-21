@@ -48,7 +48,7 @@ if floor(other.image_index) == other.image_number - 1 && other.state == states.v
 		{
 			if (gate.object_index != obj_bossdoor)
 			{
-				if gate.info != -4
+				if gate.info != noone
 				{
 					// sugary
 					with instance_create_unique(x, y, obj_titlecard_ss)

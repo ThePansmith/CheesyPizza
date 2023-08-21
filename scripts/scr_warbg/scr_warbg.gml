@@ -1,6 +1,6 @@
 function warbg_start()
 {
-	if event_type == 8 && event_number == 0
+	if event_type == ev_draw && event_number == 0
 	or object_index == obj_parallax
 	{
 		var time = shader_get_uniform(shd_war, "time");
@@ -14,12 +14,12 @@ function warbg_start()
 }
 function warbg_end()
 {
-	if event_type == 8 && event_number == 0
+	if event_type == ev_draw && event_number == 0
 		shader_reset();
 }
 function pizzahead_bg_start()
 {
-	if event_type == 8 && event_number == 0
+	if event_type == ev_draw && event_number == 0
 	{
 		var time = shader_get_uniform(shd_rainbow, "u_time");
 		var _speed = shader_get_uniform(shd_rainbow, "u_speed");
@@ -30,14 +30,14 @@ function pizzahead_bg_start()
 }
 function pizzahead_bg_end()
 {
-	if event_type == 8 && event_number == 0
+	if event_type == ev_draw && event_number == 0
 		shader_reset();
 }
 function pizzahead_bg_init()
 {
 	
 }
-function warbg_generic(argument0, argument1, argument2 = noone)
+function warbg_generic(begin_script, end_script, layer_map = noone)
 {
 	var arr = ["Foreground_1", "Foreground_2", "Foreground_3", "Foreground_Ground1"];
 	var lays = layer_get_all();
@@ -46,19 +46,19 @@ function warbg_generic(argument0, argument1, argument2 = noone)
 		var _id = lays[i];
 		if (layer_background_get_id(_id) >= 0)
 		{
-			var _found = 0;
+			var _found = false;
 			for (var j = 0; j < array_length(arr); j++)
 			{
 				if (layer_get_name(_id) == arr[j])
 					_found = true;
 			}
-			if (argument2 != -4 && is_undefined(ds_map_find_value(argument2, layer_get_name(_id))))
+			if (layer_map != -4 && is_undefined(ds_map_find_value(layer_map, layer_get_name(_id))))
 				_found = false;
 			if (!_found)
 			{
 				trace("Adding script to Background: ", layer_get_name(_id));
-				layer_script_begin(_id, argument0);
-				layer_script_end(_id, argument1);
+				layer_script_begin(_id, begin_script);
+				layer_script_end(_id, end_script);
 			}
 			else
 				trace("Excluding scripts to Background: ", layer_get_name(_id));

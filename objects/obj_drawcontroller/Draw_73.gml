@@ -26,18 +26,18 @@ if (kidsparty_lightning || dark_lightning)
 		draw_clear_alpha(0, 0);
 		draw_rectangle_color(0, 0, tsw, tsh, 0, 0, 0, 0, false);
 		var p = get_triangle_points(0, tsh / 2, 0, 300, 24);
-		gpu_set_blendmode(3);
+		gpu_set_blendmode(bm_subtract);
 		draw_triangle_color(0, tsh / 2, p[0], p[1], p[2], p[3], c_white, c_white, c_white, false);
 		surface_reset_target();
 		surface_set_target(patrolcone_tex);
-		gpu_set_blendmode(0);
+		gpu_set_blendmode(bm_normal);
 		draw_clear_alpha(0, 0);
 		draw_sprite(spr_patrol_lightgradient, 0, 0, tsh / 2);
-		gpu_set_blendmode(3);
+		gpu_set_blendmode(bm_subtract);
 		draw_surface(s, 0, 0);
 		surface_reset_target();
 		surface_free(s);
-		gpu_set_blendmode(0);
+		gpu_set_blendmode(bm_normal);
 	}
 	if (kidsparty_lightning && !surface_exists(surf2))
 		surf2 = surface_create(cw, ch);
@@ -52,7 +52,7 @@ if (kidsparty_lightning || dark_lightning)
 			draw_set_color(c_black);
 			draw_set_alpha(1);
 			draw_rectangle(0, 0, cw, ch, false);
-			gpu_set_blendmode(3);
+			gpu_set_blendmode(bm_subtract);
 			draw_set_color(c_white);
 			with (obj_patrolcone)
 			{
@@ -63,7 +63,7 @@ if (kidsparty_lightning || dark_lightning)
 					draw_triangle_color(x - surf_x, y - surf_y, points[0] - surf_x, points[1] - surf_y, points[2] - surf_x, points[3] - surf_y, c, c, c, false);
 				}
 			}
-			gpu_set_blendmode(0);
+			gpu_set_blendmode(bm_normal);
 			draw_set_alpha(1);
 			surface_reset_target();
 		}
@@ -74,7 +74,7 @@ if (kidsparty_lightning || dark_lightning)
 			draw_set_color(c_black);
 			draw_set_alpha(1);
 			draw_rectangle(0, 0, cw, ch, false);
-			gpu_set_blendmode(3);
+			gpu_set_blendmode(bm_subtract);
 			draw_set_color(c_white);
 			with (obj_patrolcone)
 			{
@@ -84,7 +84,7 @@ if (kidsparty_lightning || dark_lightning)
 					draw_surface_ext(other.patrolcone_tex, x - surf_x, y - surf_y - (tsh / 2), (image_angle > 90) ? -1 : 1, 1, 0, c, 1);
 				}
 			}
-			gpu_set_blendmode(0);
+			gpu_set_blendmode(bm_normal);
 			draw_surface(surf, 0, 0);
 			gpu_set_blendmode(1);
 			draw_set_alpha(0.3);
@@ -100,7 +100,7 @@ if (kidsparty_lightning || dark_lightning)
 				}
 			}
 			surface_reset_target();
-			gpu_set_blendmode(0);
+			gpu_set_blendmode(bm_normal);
 			draw_set_alpha(bg_alpha);
 			draw_surface(surf2, surf_x, surf_y);
 			draw_set_alpha(1);
@@ -115,7 +115,7 @@ if (kidsparty_lightning || dark_lightning)
 			draw_set_color(c_black);
 			draw_set_alpha(0.8);
 			draw_rectangle(0, 0, cw, ch, false);
-			gpu_set_blendmode(3);
+			gpu_set_blendmode(bm_subtract);
 			draw_set_color(c_white);
 			for (var i = 0; i < 2; i++)
 			{
@@ -140,7 +140,7 @@ if (kidsparty_lightning || dark_lightning)
 				draw_set_alpha(circle_alpha_in);
 				draw_circle((x - surf_x) + irandom_range(-1, 1), (y - surf_y) + irandom_range(-1, 1), circle_size_in, false);
 			}
-			gpu_set_blendmode(0);
+			gpu_set_blendmode(bm_normal);
 			draw_set_alpha(1);
 			surface_reset_target();
 			draw_surface(surf, surf_x, surf_y);

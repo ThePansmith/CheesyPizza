@@ -56,9 +56,9 @@ function scr_destroy_tile(x, y, tilemap)
 }
 function scr_solid_line(instance)
 {
-	if (collision_line(x, y, instance.x, instance.y, obj_solid, false, true) != -4)
+	if (collision_line(x, y, instance.x, instance.y, obj_solid, false, true) != noone)
 		return true;
-	if (collision_line(x, y, instance.x, instance.y, obj_slope, false, true) != -4)
+	if (collision_line(x, y, instance.x, instance.y, obj_slope, false, true) != noone)
 		return true;
 	return false;
 }

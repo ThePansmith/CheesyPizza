@@ -6,7 +6,7 @@ if (global.panic || instance_exists(obj_wartimer))
 		playerid = -4;
 		with (obj_player)
 		{
-			if (other.playerid == -4 && place_meeting(x, y, other))
+			if (other.playerid == noone && place_meeting(x, y, other))
 			{
 				sound_play_oneshot_3d("event:/sfx/misc/secretenter", x, y);
 				with (obj_camera)

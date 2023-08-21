@@ -58,7 +58,7 @@ with (instance_place(x + image_xscale, y, obj_destructibles))
 		var x1 = other.x;
 		var y1 = other.y;
 		var _col = collision_line(x + (35 * image_xscale), y + (16 * image_yscale), x1, y1, obj_solid, false, true);
-		if (_col == -4)
+		if (_col == noone)
 			instance_destroy();
 		else
 			instance_destroy(other);

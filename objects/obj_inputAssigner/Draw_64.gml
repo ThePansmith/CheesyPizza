@@ -1,7 +1,7 @@
 var _halign = draw_get_halign();
 var _valign = draw_get_halign();
-draw_set_halign(1);
-draw_set_halign(1);
+draw_set_halign(fa_center);
+draw_set_halign(fa_center);
 draw_set_alpha(1);
 draw_set_color(c_white);
 if (!deactivated)

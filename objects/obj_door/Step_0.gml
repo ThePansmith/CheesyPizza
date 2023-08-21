@@ -4,7 +4,7 @@ if (john && global.panic)
 		sprite_index = spr_doorblockedsaloon;
 	else
 		sprite_index = spr_doorblocked;
-	if (uparrowID != -4)
+	if (uparrowID != noone)
 	{
 		instance_destroy(uparrowID);
 		uparrowID = -4;

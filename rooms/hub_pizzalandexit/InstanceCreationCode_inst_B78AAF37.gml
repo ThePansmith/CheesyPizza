@@ -8,9 +8,9 @@ ef_dialog[2] = [dialog_create("Your exit fee is paid, go right ahead!")];
 sprite_index = spr_pizzaslug_idle;
 dialog_func = function()
 {
-	if (global.beercutscene == -4)
+	if (global.beercutscene == noone)
 		global.beercutscene = quick_ini_read_real(get_savefile_ini(), "cutscene", "beer", false);
-	if (global.exitfeecutscene == -4)
+	if (global.exitfeecutscene == noone)
 		global.exitfeecutscene = quick_ini_read_real(get_savefile_ini(), "cutscene", "exitfee", false);
 	if (!global.exitfeecutscene)
 	{

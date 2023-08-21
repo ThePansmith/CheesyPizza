@@ -57,7 +57,7 @@ if (state == states.walk)
 	var t = playerid.x > (x - x1) && playerid.x < (x + x1) && playerid.y > (y - 100) && playerid.y < (y + 100);
 	if (cooldown > 0)
 		cooldown--;
-	else if (t && collision_line(x, y, playerid.x, playerid.y, obj_solid, false, true) == -4)
+	else if (t && collision_line(x, y, playerid.x, playerid.y, obj_solid, false, true) == noone)
 	{
 		state = states.jump;
 		sprite_index = ragespr;
@@ -94,7 +94,7 @@ else if (state == states.charge)
 	t = playerid.x > (x - x1) && playerid.x < (x + x1) && playerid.y > (y - 400) && playerid.y < (y + 400);
 	hsp = image_xscale * attackspeed;
 	var q = outofsight;
-	if (!t || collision_line(x, y, playerid.x, playerid.y, obj_solid, true, false) != -4)
+	if (!t || collision_line(x, y, playerid.x, playerid.y, obj_solid, true, false) != noone)
 		outofsight = true;
 	if (t)
 		outofsight = false;
@@ -118,7 +118,7 @@ else if (state == states.charge)
 	if (check_solid(x + hsp, y) && !check_slope(x + hsp, y))
 		image_xscale *= -1;
 }
-if (state != states.charge && hitboxID != -4 && instance_exists(hitboxID))
+if (state != states.charge && hitboxID != noone && instance_exists(hitboxID))
 {
 	instance_destroy(hitboxID);
 	hitboxID = -4;

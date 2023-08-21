@@ -123,7 +123,7 @@ function boss_hurt_noplayer(argument0)
 }
 function player_hurt(argument0, argument1)
 {
-	if (argument1.state != states.backbreaker || argument1.parry_inst == -4)
+	if (argument1.state != states.backbreaker || argument1.parry_inst == noone)
 	{
 		var _prevstate = state;
 		SUPER_player_hurt(argument0, argument1);

@@ -2,7 +2,7 @@ boss_maxhp = boss_hp;
 boss_prevhp = boss_maxhp;
 player_maxhp = player_hp;
 persistent = false;
-if (boss_func != -4)
+if (boss_func != noone)
 	boss_func();
 boss_prevhp = boss_hp;
 playerx = -sprite_get_width(playerspr);

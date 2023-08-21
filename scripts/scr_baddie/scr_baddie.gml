@@ -10,7 +10,7 @@ function scr_scareenemy()
 			if ((player.state == states.chainsawbump || player.ratmount_movespeed == 12 || player.state == states.mach3 || (player.character == "S" && abs(player.hsp) >= 16) || player.state == states.rideweenie || player.state == states.rocket || player.state == states.tacklecharge || player.state == states.knightpepslopes || (player.state == states.grab && player.swingdingdash <= 0 && player.sprite_index == player.spr_swingding)
 			or (player.state == states.twirl && player.movespeed >= 12)))
 			{
-				if (collision_line(x, y, player.x, player.y, obj_solid, false, true) == -4)
+				if (collision_line(x, y, player.x, player.y, obj_solid, false, true) == noone)
 				{
 					state = states.idle;
 					sprite_index = scaredspr;

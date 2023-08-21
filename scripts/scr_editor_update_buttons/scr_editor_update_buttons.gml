@@ -13,11 +13,11 @@ function scr_editor_update_buttons()
 	}
 	with (button)
 		other.info = info;
-	if (button == -4)
+	if (button == noone)
 		info = -4;
 	if (key_mbleft2)
 	{
-		if (button != -4)
+		if (button != noone)
 		{
 			with (obj_button)
 			{
@@ -26,13 +26,13 @@ function scr_editor_update_buttons()
 					if (!selected)
 					{
 						selected = true;
-						if (OnSelect != -4)
+						if (OnSelect != noone)
 							OnSelect();
 					}
 					else
 					{
 						selected = false;
-						if (OnDeselect != -4)
+						if (OnDeselect != noone)
 							OnDeselect();
 					}
 				}
@@ -40,7 +40,7 @@ function scr_editor_update_buttons()
 				{
 					if (selected)
 					{
-						if (OnDeselect != -4)
+						if (OnDeselect != noone)
 							OnDeselect();
 					}
 					selected = false;
@@ -53,7 +53,7 @@ function scr_editor_update_buttons()
 			{
 				if (selected)
 				{
-					if (OnDeselect != -4)
+					if (OnDeselect != noone)
 						OnDeselect();
 				}
 				selected = false;

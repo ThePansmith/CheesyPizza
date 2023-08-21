@@ -15,8 +15,8 @@ if (!b || addseconds > 0)
 	draw_sprite(spr_wartimer, (addseconds > 0) ? 1 : 0, xx, yy);
 else
 	draw_sprite(spr_wartimer_panic, timer_index, xx, yy);
-draw_set_halign(0);
-draw_set_valign(1);
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
 draw_set_color(c_white);
 var t = string(minutes);
 if (string_length(t) < 2)

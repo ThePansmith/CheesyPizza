@@ -50,7 +50,7 @@ function scr_monster_stop_music()
 		if (fmod_event_instance_is_playing(kidspartychaseID))
 		{
 			fmod_event_instance_stop(kidspartychaseID, false);
-			if (music != -4)
+			if (music != noone)
 			{
 				fmod_event_instance_set_paused(music.event, savedmusicpause);
 				fmod_event_instance_set_paused(music.event_secret, savedsecretpause);
@@ -95,7 +95,7 @@ function scr_monster_activate()
 		if (!global.panic && !instance_exists(obj_ghostcollectibles) && !fmod_event_instance_is_playing(kidspartychaseID))
 		{
 			fmod_event_instance_play(kidspartychaseID);
-			if (music != -4)
+			if (music != noone)
 			{
 				savedmusicpause = fmod_event_instance_get_paused(music.event);
 				savedsecretpause = fmod_event_instance_get_paused(music.event_secret);
@@ -109,23 +109,23 @@ function scr_monster_activate()
 		}
 	}
 }
-function get_triangle_points(argument0, argument1, argument2, argument3, argument4)
+function get_triangle_points(x, y, angle, length, size)
 {
-	var x2 = argument0 + lengthdir_x(argument3, argument2 - argument4);
-	var y2 = argument1 + lengthdir_y(argument3, argument2 - argument4);
-	var x3 = argument0 + lengthdir_x(argument3, argument2 + argument4);
-	var y3 = argument1 + lengthdir_y(argument3, argument2 + argument4);
+	var x2 = x + lengthdir_x(length, angle - size);
+	var y2 = y + lengthdir_y(length, angle - size);
+	var x3 = x + lengthdir_x(length, angle + size);
+	var y3 = y + lengthdir_y(length, angle + size);
 	return [x2, y2, x3, y3];
 }
-function scr_monster_detect(argument0, argument1, argument2)
+function scr_monster_detect(width, height, player)
 {
-	var _dir = (image_xscale > 0) ? (argument2.x > x) : (argument2.x < x);
-	if (_dir && argument2.x < (x + argument0) && argument2.x > (x - argument0) && argument2.y < (y + argument1) && argument2.y > (y - argument1))
+	var _dir = (image_xscale > 0) ? (player.x > x) : (player.x < x);
+	if (_dir && player.x < (x + width) && player.x > (x - width) && player.y < (y + height) && player.y > (y - height))
 	{
 		var detect = false;
-		if (argument2.y > (y - 200))
+		if (player.y > (y - 200))
 		{
-			with (argument2)
+			with (player)
 			{
 				if (state != states.crouch || (!scr_solid(x, y - 24) && !place_meeting(x, y - 24, obj_platform)))
 					detect = true;
@@ -145,7 +145,7 @@ function scr_puppet_detect()
 			return id;
 		}
 	}
-	return -4;
+	return noone;
 }
 function scr_puppet_appear(player)
 {
@@ -177,7 +177,7 @@ function scr_puppet_appear(player)
 		}
 	}
 	var _col = collision_line(x, y, x, y - room_height, obj_solid, true, false);
-	if (_col != -4)
+	if (_col != noone)
 	{
 		while (!check_solid(x, y - 1))
 			y--;
@@ -249,5 +249,9 @@ function scr_monster_detect_audio()
 }
 function scr_monster_audio_check()
 {
-	
+	/*
+	if (audio_is_playing(sfx_groundpound) || audio_is_playing(sfx_scream5))
+        return true;
+    return false;
+	*/
 }

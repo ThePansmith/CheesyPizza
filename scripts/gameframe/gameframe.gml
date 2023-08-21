@@ -79,7 +79,7 @@ function gameframe_update() {
 		gameframe_set_window_cursor(__cursor);
 	}
 	gameframe_button_update(__buttons_x, __borderWidth, __titleHeight, _mx, _my);
-	if (gameframe_can_input && mouse_check_button_pressed(1)) {
+	if (gameframe_can_input && mouse_check_button_pressed(mb_left)) {
 		if (__titleHit) {
 			var __now = current_time;
 			if (__now < gameframe_last_title_click_at + gameframe_double_click_time) {
@@ -93,7 +93,7 @@ function gameframe_update() {
 		}
 	}
 	if (gameframe_can_input) {
-		if (mouse_check_button_released(1)) gameframe_drag_stop(); else gameframe_drag_update();
+		if (mouse_check_button_released(mb_left)) gameframe_drag_stop(); else gameframe_drag_update();
 	} else if (gameframe_drag_flags != 0) {
 		gameframe_drag_stop();
 	}
@@ -461,8 +461,8 @@ function gameframe_button_update(_x, _y, _height, _mx, _my) {
 		if (_mx != gameframe_button_wait_for_movement_x || _my != gameframe_button_wait_for_movement_y) gameframe_button_wait_for_movement = false; else _over_row = false;
 	}
 	var _dpiScale = gameframe_effective_scale;
-	var _pressed = mouse_check_button_pressed(1);
-	var _released = mouse_check_button_released(1);
+	var _pressed = mouse_check_button_pressed(mb_left);
+	var _released = mouse_check_button_released(mb_left);
 	var _disable = gameframe_drag_flags != 0 || !gameframe_can_input;
 	var _i = 0;
 	for (var __g1 = array_length(gameframe_button_array); _i < __g1; _i++) {
@@ -830,7 +830,7 @@ function gameframe_caption_draw_caption_text_default(__x, __y, __width, __height
 		draw_set_font(__newFont);
 	} else __oldFont = -1;
 	draw_set_halign(gameframe_caption_text_align);
-	draw_set_valign(0);
+	draw_set_valign(fa_top);
 	var __alpha = draw_get_alpha();
 	var __textWidth = __right - __x;
 	draw_set_alpha((gameframe_alpha * gameframe_caption_alpha));

@@ -221,7 +221,7 @@ function boss_pepperman_jump()
 	if (sprite_index == spr_pepperman_jump && image_index > (image_number - 1))
 		sprite_index = spr_pepperman_fall;
 	var col = collision_line(x, y, x, y + 96, obj_solid, false, true);
-	if (!jumping_pepper && !groundpound_fakeout && col == -4 && ((x > (target_x - 24) && x < (target_x + 24)) || (x > (targetplayer.x - 24) && x < (targetplayer.x + 24)) || vsp > 3))
+	if (!jumping_pepper && !groundpound_fakeout && col == noone && ((x > (target_x - 24) && x < (target_x + 24)) || (x > (targetplayer.x - 24) && x < (targetplayer.x + 24)) || vsp > 3))
 	{
 		state = states.freefallprep;
 		vsp = 10;
@@ -232,7 +232,7 @@ function boss_pepperman_jump()
 	if (groundpound_fakeout && (vsp > 3 || (x > (target_x - 24) && x < (target_x + 24))))
 	{
 		var col2 = collision_line(x, y, x, y + 148, obj_solid, false, true);
-		if (col2 == -4)
+		if (col2 == noone)
 		{
 			groundpound_readjust_buffer = groundpound_readjust_max;
 			readjusting = true;

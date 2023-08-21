@@ -1,8 +1,8 @@
-if (global.kidspartycutscene == -4)
+if (global.kidspartycutscene == noone)
 	global.kidspartycutscene = quick_ini_read_real(get_savefile_ini(), "cutscene", "kidsparty", false);
 if (!global.kidspartycutscene)
 	instance_destroy();
-if (global.ghostsoldiercutscene == -4)
+if (global.ghostsoldiercutscene == noone)
 	global.ghostsoldiercutscene = quick_ini_read_real(get_savefile_ini(), "cutscene", "ghostsoldier", false);
 if (global.ghostsoldiercutscene)
 	poweredon = true;

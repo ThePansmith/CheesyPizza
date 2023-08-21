@@ -103,9 +103,9 @@ function scr_tvdraw()
 		surface_set_target(goo_surface);
 		draw_clear_alpha(0, 0);
 		draw_sprite(spr_tv_combometergooSP, propeller_index, -3 + 50, _hy + 100);
-		gpu_set_blendmode(3);
+		gpu_set_blendmode(bm_subtract);
 		draw_sprite(spr_tv_combometercutSP, 0, 50, 91);
-		gpu_set_blendmode(0);
+		gpu_set_blendmode(bm_normal);
 		surface_reset_target();
 		draw_surface(goo_surface, _cx - 50, _cy - 91);
 	
@@ -193,15 +193,15 @@ function scr_tvdraw()
 	}
 
 	/*
-	if (bubblespr != -4)
+	if (bubblespr != noone)
 		draw_sprite_ext(bubblespr, bubbleindex, SCREEN_WIDTH - 448, 53, 1, 1, 1, c_white, alpha);
 	if (!surface_exists(promptsurface))
 		promptsurface = surface_create(290, 102);
 	surface_set_target(promptsurface);
 	draw_clear_alpha(0, 0);
 	draw_set_font(font1);
-	draw_set_halign(0);
-	draw_set_valign(1);
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_middle);
 	if (bubblespr == spr_tv_bubble)
 	{
 		promptx -= promptspd;
@@ -212,11 +212,11 @@ function scr_tvdraw()
 		}
 		draw_text_color(promptx - 350, 50, prompt, c_black, c_black, c_black, c_black, 1);
 	}
-	draw_set_halign(0);
+	draw_set_halign(fa_left);
 	surface_reset_target();
 	draw_surface(promptsurface, SCREEN_WIDTH - 610, 0);
 	draw_set_font(global.smallnumber_fnt);
-	draw_set_halign(1);
+	draw_set_halign(fa_center);
 	*/
 
 	if (global.panic or global.snickchallenge) && !MOD.DeathMode

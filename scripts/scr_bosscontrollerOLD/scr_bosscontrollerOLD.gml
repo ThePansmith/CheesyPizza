@@ -20,7 +20,7 @@ function mrstick_start_round()
 	with (obj_mrstickboss)
 	{
 		var b = boss_array[phase - 1];
-		if (b != -4)
+		if (b != noone)
 		{
 			var tx = (x > (room_width / 2)) ? 1 : -1;
 			var xx = tx * 32;

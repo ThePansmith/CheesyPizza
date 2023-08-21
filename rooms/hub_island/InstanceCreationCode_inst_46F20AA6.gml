@@ -9,7 +9,7 @@ dialog_func = function()
 {
 	if (!global.bottlecutscene || !global.papercutscene)
 		do_dialog(pm_dialog[0]);
-	else if (global.beachboatcutscene == -4 || !global.beachboatcutscene)
+	else if (global.beachboatcutscene == noone || !global.beachboatcutscene)
 	{
 		do_dialog_cutscene(pm_scene_info);
 		global.beachboatcutscene = true;
@@ -18,13 +18,13 @@ dialog_func = function()
 	else
 		do_dialog(pm_dialog[1]);
 };
-if (global.bottlecutscene == -4)
+if (global.bottlecutscene == noone)
 	global.bottlecutscene = quick_ini_read_real(get_savefile_ini(), "cutscene", "bottle", false);
-if (global.papercutscene == -4)
+if (global.papercutscene == noone)
 	global.papercutscene = quick_ini_read_real(get_savefile_ini(), "cutscene", "paper", false);
-if (global.beachboatcutscene == -4)
+if (global.beachboatcutscene == noone)
 	global.beachboatcutscene = quick_ini_read_real(get_savefile_ini(), "cutscene", "beachboat", false);
-if (global.beachcutscene == -4)
+if (global.beachcutscene == noone)
 	global.beachcutscene = quick_ini_read_real(get_savefile_ini(), "cutscene", "beach", false);
 if (global.beachcutscene)
 	instance_destroy();

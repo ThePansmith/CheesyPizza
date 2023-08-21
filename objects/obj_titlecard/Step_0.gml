@@ -12,7 +12,7 @@ if (!fadein)
 else
 {
 	fadealpha = Approach(fadealpha, 0, 0.1);
-	if (fadealpha <= 0 && !music && title_music != -4)
+	if (fadealpha <= 0 && !music && title_music != noone)
 	{
 		music = true;
 		

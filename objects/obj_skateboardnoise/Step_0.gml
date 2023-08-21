@@ -2,7 +2,7 @@ hsp = spd * image_xscale;
 if (check_solid(x + sign(hsp), y))
 	instance_destroy();
 scr_collide();
-if (playerid != -4)
+if (playerid != noone)
 {
 	with (playerid)
 	{

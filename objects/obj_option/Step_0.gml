@@ -64,7 +64,7 @@ var move2 = key_left2 + key_right2;
 switch (option.type)
 {
 	case menutype.press:
-		if (key_jump && option.func != -4)
+		if (key_jump && option.func != noone)
 		{
 			sound_play_oneshot("event:/sfx/ui/select");
 			option.func();
@@ -76,7 +76,7 @@ switch (option.type)
 		{
 			sound_play_oneshot("event:/sfx/ui/select");
 			option.value = !option.value;
-			if (option.on_changed != -4)
+			if (option.on_changed != noone)
 				option.on_changed(option.value);
 		}
 		break;
@@ -90,7 +90,7 @@ switch (option.type)
 				option.value = 0;
 			if (option.value < 0)
 				option.value = array_length(option.values) - 1;
-			if (option.on_changed != -4)
+			if (option.on_changed != noone)
 				option.on_changed(option.values[option.value].value);
 		}
 		break;
@@ -122,12 +122,12 @@ for (i = 0; i < array_length(m.options); i++)
 		{
 			b.moved = false;
 			b.moving = false;
-			if (b.on_changed != -4)
+			if (b.on_changed != noone)
 				b.on_changed(b.value);
 		}
-		if (b.on_move != -4 && b.moving)
+		if (b.on_move != noone && b.moving)
 			b.on_move(b.value);
-		if (b.sound != -4)
+		if (b.sound != noone)
 		{
 			if (b.moving)
 			{
@@ -179,7 +179,7 @@ if ((key_back or key_slap2 or keyboard_check_pressed(vk_escape)) && !instance_ex
 				b = m.options[i];
 				if b.type == menutype.slide
 				{
-					if b.sound != -4
+					if b.sound != noone
 						fmod_event_instance_stop(b.sound, true);
 				}
 			}

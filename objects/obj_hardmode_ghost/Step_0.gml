@@ -2,7 +2,7 @@ disable = safe_get(obj_player1, "cutscene");
 
 highest_y = -270;
 var _instY = collision_line(obj_player1.x, obj_player1.y, obj_player1.x, obj_player1.y - 270, obj_solid, false, true);
-if _instY != -4
+if _instY != noone
 	highest_y = -abs(obj_player1.y - _instY.y + _instY.sprite_height) - 32;
 
 if random_buffer > 0
@@ -10,7 +10,7 @@ if random_buffer > 0
 else if !disable
 {
 	var _col = collision_line(x, y, obj_player1.x, obj_player1.y, obj_solid, false, true);
-	if !check_solid(x, y) && !check_slope(x, y) && _col == -4
+	if !check_solid(x, y) && !check_slope(x, y) && _col == noone
 	{
 		var n = irandom(array_length(content) - 1);
 		with instance_create(x, y, content[n])

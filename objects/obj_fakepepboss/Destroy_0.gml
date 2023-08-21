@@ -8,7 +8,7 @@ if (pizzahead && elitehit <= 0 && destroyable)
 	instance_destroy(obj_fakepeptauntspawner);
 	with (obj_music)
 	{
-		if (music != -4)
+		if (music != noone)
 			fmod_event_instance_set_parameter(music.event, "state", 4, true);
 	}
 	with (instance_create(room_width / 2, room_height + 100, obj_pizzafaceboss_p3))

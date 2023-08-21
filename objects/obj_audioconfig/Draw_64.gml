@@ -1,6 +1,6 @@
 draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
 draw_set_font(lang_get_font("bigfont"));
-draw_set_halign(0);
+draw_set_halign(fa_left);
 draw_set_color(c_white);
 var _os = audio_select;
 draw_text_colour((SCREEN_WIDTH / 2) - 150, 100, "BACK", c_white, c_white, c_white, c_white, (_os == -1) ? 1 : 0.5);

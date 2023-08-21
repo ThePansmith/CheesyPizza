@@ -88,7 +88,7 @@ else
 		loading = true;
 		with instance_create(x, y, obj_fadeout)
 			restarttimer = true;
-		if group_arr != -4
+		if group_arr != noone
 		{
 			with instance_create(x, y, obj_loadingscreen)
 			{

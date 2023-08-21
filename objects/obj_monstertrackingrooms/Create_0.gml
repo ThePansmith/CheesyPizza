@@ -238,7 +238,7 @@ function grid_meeting(argument0, argument1)
 {
 	if (argument0 < 0 || argument0 > (map_width - 1) || argument1 < 0 || argument1 > (map_height - 1))
 		return false;
-	if (ds_grid_get(room_grid, argument0, argument1) != -4)
+	if (ds_grid_get(room_grid, argument0, argument1) != noone)
 		return true;
 	return false;
 }
@@ -251,6 +251,6 @@ function grid_length_x(argument0, argument1, argument2)
 function room_place(argument0, argument1)
 {
 	if (argument0 < 0 || argument0 > (map_width - 1) || argument1 < 0 || argument1 > (map_height - 1))
-		return -4;
+		return noone;
 	return ds_grid_get(room_grid, argument0, argument1);
 }

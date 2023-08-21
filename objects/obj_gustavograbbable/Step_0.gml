@@ -18,7 +18,7 @@ switch (state)
 			if (object_index != obj_gustavograbbable)
 				_boss = id;
 		}
-		if (_boss != -4)
+		if (_boss != noone)
 		{
 			if (_boss.x != x)
 				image_xscale = sign(_boss.x - x);

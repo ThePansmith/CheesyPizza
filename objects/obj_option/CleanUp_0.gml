@@ -6,7 +6,7 @@ for (var j = 0; j < array_length(menus); j++)
 		var b = m.options[i];
 		if (b.type == menutype.slide)
 		{
-			if (b.sound != -4)
+			if (b.sound != noone)
 			{
 				fmod_event_instance_stop(b.sound, true);
 				sound_destroy_instance(b.sound);

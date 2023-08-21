@@ -1,4 +1,4 @@
-if (playerid != -4)
+if (playerid != noone)
 {
 	with (playerid)
 	{

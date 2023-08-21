@@ -1,8 +1,12 @@
-// ????????
+/*
+unused tile-based collision checking
+this was tested in rm_testing4 but they gave up
+*/
+
 enum tile_flag
 {
 	solid = 2,
-	wall = 4,
+	platform = 4,
 	slope = 8
 }
 
@@ -12,7 +16,7 @@ function tile_meeting(tileX, tileY, layer_id, flags = tile_flag.solid)
 	var move_x = tileX - x;
 	var move_y = tileY - y;
 	
-	var solid_flag = (flags & tile_flag.solid) > 0 || (flags & tile_flag.wall) > 0;
+	var solid_flag = (flags & tile_flag.solid) > 0 || (flags & tile_flag.platform) > 0;
 	var slope_flag = (flags & tile_flag.solid) > 0 || (flags & tile_flag.slope) > 0;
 	
 	var _x1 = tilemap_get_cell_x_at_pixel(_tm, bbox_left + move_x, bbox_top + move_y);

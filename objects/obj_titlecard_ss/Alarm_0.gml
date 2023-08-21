@@ -5,7 +5,7 @@ with (instance_create(x, y, obj_fadeout))
 	if (room == tower_finalhallwaytitlecard)
 		finalhallway = true;
 }
-if (group_arr != -4)
+if (group_arr != noone)
 {
 	with (instance_create(x, y, obj_loadingscreen))
 	{
