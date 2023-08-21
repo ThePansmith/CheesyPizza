@@ -35,6 +35,7 @@ function seq_kill_sound()
 }
 function seq_killingblow_sound()
 {
+	sound_play_centered_oneshot(sfx_punch);
 	sound_play_centered_oneshot(sfx_killingblow);
 }
 function seq_dive_sound()

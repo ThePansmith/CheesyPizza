@@ -45,10 +45,6 @@ if (backbuffer > 0)
 	key_back = false;
 }
 
-// priority
-if key_jump && key_back
-	key_back = false;
-
 var move = key_down2 - key_up2;
 if (move != 0)
 {
@@ -152,7 +148,7 @@ else
 if (slidebuffer > 0)
 	slidebuffer--;
 
-if ((key_back or key_slap2 or keyboard_check_pressed(vk_escape)) && !instance_exists(obj_keyconfig) && !instance_exists(obj_audioconfig))
+if (!key_jump && (key_back or key_slap2 or keyboard_check_pressed(vk_escape)) && !instance_exists(obj_keyconfig) && !instance_exists(obj_audioconfig))
 {
 	sound_play_oneshot("event:/sfx/ui/back");
 	if menu == menus.options
