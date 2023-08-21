@@ -14,7 +14,7 @@ else
 if (!pizza && (highscore > 0 || (boss && hats > 0)) && bbox_in_camera(view_camera[0], 0) && distance_to_object(obj_player) < 150)
 {
 	pizza = true;
-	if (!boss)
+	if (!boss && !SUGARY)
 	{
 		with (instance_create(x, y - SCREEN_HEIGHT, obj_startgate_pizza))
 		{
@@ -56,7 +56,7 @@ if (!pizza && (highscore > 0 || (boss && hats > 0)) && bbox_in_camera(view_camer
 			}
 		}
 	}
-	else
+	else if (!SUGARY)
 	{
 		with (instance_create(x, y - 125, obj_startgate_hats))
 		{
@@ -100,3 +100,8 @@ if (!drawing)
 }
 else
 	bgalpha = Approach(bgalpha, 0, 0.1);
+	
+if (distance_to_object(obj_player) < 50 && SUGARY)
+	showtext = true;
+else
+	showtext = false;
