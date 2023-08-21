@@ -73,7 +73,7 @@ if (object_index != obj_bossdoor && sprite_index != spr_snickchallengecomputer)
 
 ini_open_from_string(obj_savesystem.ini_str);
 highscore = ini_read_real("Highscore", string(level), 0);
-laps = ini_read_real("Laps", string(level), 0)
+laps = ini_read_real("Laps", string(level), 0);
 hats = ini_read_real("Hats", string(level), 0);
 secret_count = ini_read_string("Secret", string(level), 0);
 toppin[0] = ini_read_real("Toppin", string(level) + "1", 0);
@@ -86,14 +86,14 @@ ini_close();
 
 if (!SUGARY)
 {
-var _toppinspr = [
-	[spr_toppinshroom, spr_toppinshroom_run, spr_toppinshroom_taunt, -75],
-	[spr_toppincheese, spr_toppincheese_run, spr_toppincheese_taunt, -35],
-	[spr_toppintomato, spr_toppintomato_run, spr_toppintomato_taunt, 0],
-	[spr_toppinsausage, spr_toppinsausage_run, spr_toppinsausage_taunt, 35],
-	[spr_toppinpineapple, spr_toppinpineapple_run, spr_toppinpineapple_taunt, 75]
-];
-for (var i = 0; i < array_length(_toppinspr); i++)
+	var _toppinspr = [
+		[spr_toppinshroom, spr_toppinshroom_run, spr_toppinshroom_taunt, -75],
+		[spr_toppincheese, spr_toppincheese_run, spr_toppincheese_taunt, -35],
+		[spr_toppintomato, spr_toppintomato_run, spr_toppintomato_taunt, 0],
+		[spr_toppinsausage, spr_toppinsausage_run, spr_toppinsausage_taunt, 35],
+		[spr_toppinpineapple, spr_toppinpineapple_run, spr_toppinpineapple_taunt, 75]
+	];
+	for (var i = 0; i < array_length(_toppinspr); i++)
 	{
 		var b = _toppinspr[i];
 		if (toppin[i])

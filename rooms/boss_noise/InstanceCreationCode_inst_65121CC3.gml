@@ -1,8 +1,14 @@
 bossspr = spr_vsnoise;
 boss_hp = 16;
-vstitle = spr_vstitle_noise
+vstitle = spr_vstitle_noise;
 boss_hpsprite = spr_bossfight_noiseHP;
-boss_palette = spr_bossfight_noisepalette
+boss_palette = spr_bossfight_noisepalette;
+if check_char("N") && obj_player1.paletteselect != 20
+{
+	vstitle = spr_vstitle_doise;
+	bossspr = spr_vsdoise;
+}
+
 boss_func = function()
 {
 	var eh = 0;

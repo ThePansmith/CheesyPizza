@@ -121,11 +121,13 @@ function player_init_sounds()
 	
 	// fireass
 	if character == "P" or character == "PN"
-		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireass");
+		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireassP");
 	else if character == "SP"
 		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireassSP");
-	else
+	else if character == "N"
 		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireassN");
+	else
+		global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireass");
 	
 	// parry
 	if character == "SP" or character == "SN"

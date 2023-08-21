@@ -9,3 +9,7 @@ hsp_carry = 0;
 vsp_carry = 0;
 platformid = 0;
 grounded = false;
+
+paletteselect = 0;
+if obj_player1.character == "N" && obj_player1.paletteselect != 20
+	paletteselect = 20;

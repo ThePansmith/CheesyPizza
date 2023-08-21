@@ -137,6 +137,13 @@ function scr_bosscontroller_normal()
 					bpalsel = obj_player1.paletteselect;
 					btex = global.palettetexture;
 				}
+				if (boss_hpsprite == spr_bossfight_noiseHP)
+				{
+					bpal = spr_noisepalette;
+					bpalsel = 0;
+					if obj_player1.paletteselect != 20 && obj_player1.character == "N"
+						bpalsel = 20;
+				}
 				scr_bosscontroller_particle_hp(boss_hpsprite, irandom(sprite_get_number(boss_hpsprite) - 1), pos[0], pos[1], -1, bpal, bpalsel, btex);
 			}
 		}

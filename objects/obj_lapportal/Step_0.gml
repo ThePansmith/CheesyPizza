@@ -93,7 +93,7 @@ if (global.panic || instance_exists(obj_wartimer))
 							if !global.panic
 							{
 								instance_create(obj_player1.x, obj_player1.y, obj_pizzaface);
-								sound_play_oneshot("event:/sfx/pizzaface/laugh");
+								scr_pizzaface_laugh();
 							}
 							break;
 						

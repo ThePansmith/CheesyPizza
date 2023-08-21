@@ -42,11 +42,40 @@ else if safe_get(global, "panic")
 	else
 		details = string("Escaping - {0}:{1} left", minutes, seconds);
 }
+else
+{
+	var stack = [];
+	if MOD.Encore
+		array_push(stack, "Encore");
+	if MOD.Mirror
+		array_push(stack, MOD.DeathMode or MOD.HardMode or MOD.EasyMode ? "Mirrored" : "Mirror Mode");
+	if MOD.EasyMode
+		array_push(stack, MOD.DeathMode or MOD.HardMode ? "Easy" : "Easy Mode");
+	if MOD.HardMode
+		array_push(stack, MOD.DeathMode ? "Hard" : "Hard Mode");
+	if MOD.Pacifist
+		array_push(stack, "Pacifist");
+	if MOD.Lap3
+		array_push(stack, "Lap Hell");
+	if MOD.DeathMode
+		array_push(stack, "Death Mode");
+	
+	if array_length(stack)
+	{
+		if array_length(stack) > 2
+			details = "";
+		else
+			details = "Playing";
+		
+		while array_length(stack)
+			details += $" {array_shift(stack)}";
+	}
+}
 
 // level
 switch safe_get(global, "leveltosave")
 {
-	case "entrance": state = "John Gutter"; break;
+	case "entrance": state = MOD.NoiseGutter ? "Noise Gutter" : "John Gutter"; break;
 	case "medieval": state = "Pizzascape"; break;
 	case "ruin": state = "Ancient Cheese"; break;
 	case "dungeon": state = "Bloodsauce Dungeon"; break;
@@ -105,7 +134,7 @@ switch safe_get(global, "leveltosave")
 }
 
 // add rank and score
-if state != ""
+if state != "" && !instance_exists(obj_startgate)
 {
 	var rank = "?";
 	if global.collect >= global.srank

@@ -37,13 +37,17 @@ var _dvc = obj_inputAssigner.player_input_device[0];
 if (key_jump && _dvc >= 0 && gamepad_button_check_pressed(_dvc, global.key_jumpC) && global.key_jumpC == gp_face2)
     key_jump = false;
 key_jump = (key_jump or (global.key_start != vk_return && keyboard_check_pressed(vk_return)) or (global.key_start != vk_space && keyboard_check_pressed(vk_space)) or gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face1));
-key_back = (keyboard_check_pressed(vk_escape) or keyboard_check_pressed(vk_return) or gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face2));
+key_back = (keyboard_check_pressed(vk_escape)/* or keyboard_check_pressed(vk_return)*/ or gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face2));
 if (backbuffer > 0)
 {
 	backbuffer--;
 	key_jump = false;
 	key_back = false;
 }
+
+// priority
+if key_jump && key_back
+	key_back = false;
 
 var move = key_down2 - key_up2;
 if (move != 0)

@@ -2,6 +2,10 @@ if (instance_exists(obj_pizzafaceboss_p3intro) || instance_exists(obj_blackoutli
 	exit;
 if (image_alpha <= 0)
 	exit;
+
+reset_blendmode();
+reset_shader_fix();
+
 switch (state)
 {
 	case states.arenaintro:
@@ -88,6 +92,13 @@ switch (state)
 			bpalsel = obj_player1.paletteselect;
 			btex = global.palettetexture;
 		}
+		if (boss_hpsprite == spr_bossfight_noiseHP)
+		{
+			bpal = spr_noisepalette;
+			bpalsel = 0;
+			if obj_player1.paletteselect != 20 && obj_player1.character == "N"
+				bpalsel = 20;
+		}
 		scr_bosscontroller_draw_health(boss_hpsprite, boss_rowmax, boss_columnmax, boss_prevhp, boss_maxhp, boss_hp_x, boss_hp_y, boss_xpad, boss_ypad, boss_index, image_alpha, bpal, bpalsel, btex);
 		for (var i = 0; i < ds_list_size(particlelist); i++)
 		{
@@ -125,6 +136,8 @@ switch (state)
 			}
 		}
 		pattern_reset();
-		reset_shader_fix();
 		break;
 }
+
+gpu_set_blendmode(bm_normal);
+shader_reset();

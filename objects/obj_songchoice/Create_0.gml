@@ -75,6 +75,7 @@ add_section("Pizza Tower", [
 	["event:/soundtest/base/unexpectancy2", "Unexpectancy, Part 2 - MrSauceman"],
 	["event:/soundtest/base/unexpectancy3", "Unexpectancy, Part 3 - MrSauceman"],
 	["event:/soundtest/base/bye", "Bye Bye There! - MrSauceman"],
+	["event:/soundtest/base/hip", "Hip To Be Italian - MrSauceman"],
 	["event:/soundtest/base/notime", "Receding Hairline Celebration Party - MrSauceman"],
 	["event:/soundtest/base/meatphobia", "Meatphobia - MrSauceman"],
 	["event:/soundtest/base/mayhem", "Pizza Mayhem Instrumental - MrSauceman"],

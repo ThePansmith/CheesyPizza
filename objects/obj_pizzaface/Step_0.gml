@@ -4,7 +4,7 @@ var playerid = obj_player1;
 if obj_player1.spotlight == 0
 	playerid = obj_player2;
 
-if !MOD.DeathMode or sprite_index == spr_pizzaface
+if !MOD.DeathMode or sprite_index == spr_idle
 {
 	sound_instance_move(snd, x, y);
 	if !fmod_event_instance_is_playing(snd)
@@ -29,15 +29,15 @@ if !treasure
 {
 	if image_alpha >= 1
 	{
-		if MOD.DeathMode && !(MOD.Lap3 && global.laps >= 2)
+		if MOD.DeathMode && !(MOD.Lap3 && global.laps >= 2) && !global.modifier_failed
 		{
 			var has_time = instance_exists(obj_deathmode) && obj_deathmode.time > 0;
-			if sprite_index == spr_pizzaface_recovering or sprite_index == spr_pizzaface_attackend
+			if sprite_index == spr_todocile or sprite_index == spr_toangry
 	        {
 				if image_index >= image_number - 1
 				{
 		            image_index = 0;
-		            sprite_index = mode ? spr_pizzaface : spr_pizzaface_docile;
+		            sprite_index = mode ? spr_idle : spr_docile;
 				}
 	        }
 	        else if has_time && mode == 1
@@ -45,7 +45,7 @@ if !treasure
 				mode = 0;
 			
 	            image_index = 0;
-	            sprite_index = spr_pizzaface_recovering;
+	            sprite_index = spr_todocile;
 	            flash = true;
 			
 				/*
@@ -64,7 +64,7 @@ if !treasure
 				mode = 1;
 			
 	            image_index = 0;
-	            sprite_index = spr_pizzaface_attackend;
+	            sprite_index = spr_toangry;
 	            flash = true;
 			
 				/*
@@ -149,6 +149,7 @@ if !treasure
 		}
 		else
 		{
+			sprite_index = spr_idle;
 			if image_alpha >= 1
 			{
 				if !instance_exists(obj_fadeout) && !obj_player1.cutscene

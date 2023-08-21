@@ -118,8 +118,19 @@ for (var i = 0; i < array_length(layers); i++)
 	#endregion
 	#region HIDE TILES
 	
-	if global.hidetiles && layer_tilemap_get_id(lay) != -1
-		layer_set_visible(lay, false);
+	var tilemap = layer_tilemap_get_id(lay);
+	if tilemap != -1
+	{
+		if global.hidetiles
+			layer_set_visible(lay, false);
+		else if REMIX
+		{
+			// transparent ice in freezer
+			var newtileset = asset_get_index(tileset_get_name(tilemap_get_tileset(tilemap)) + "_NEW");
+			if newtileset != -1
+				tilemap_tileset(tilemap, newtileset);
+		}
+	}
 	
 	#endregion
 	#region AUTO-FOREGROUND

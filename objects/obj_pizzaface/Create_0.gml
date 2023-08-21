@@ -15,14 +15,20 @@ snd = fmod_event_create_instance("event:/sfx/pizzaface/moving");
 tracker = noone;
 frozen = false;
 
-if SUGARY
-	sprite_index = spr_coneball;
-if MIDWAY
-	sprite_index = spr_pizzaface_bo;
+spr_idle = spr_pizzaface;
+spr_docile = spr_pizzaface_docile;
+spr_toangry = spr_pizzaface_attackend;
+spr_todocile = spr_pizzaface_recovering;
 
+if SUGARY
+	spr_idle = spr_coneball;
+if MIDWAY
+	spr_idle = spr_pizzaface_bo;
+
+sprite_index = spr_idle;
 if MOD.DeathMode
 {
-    sprite_index = spr_pizzaface_docile;
+    sprite_index = spr_docile;
     destroyable = 0;
 	
 	mode = 0;

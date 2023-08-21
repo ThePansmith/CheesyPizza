@@ -8,11 +8,12 @@ if sprite_index != spr_snickchallengecomputer
 
 if (SUGARY)
 {
-	if showtext {
+	if showtext
+	{
 		draw_set_font(global.smallfont_ss);
 		draw_set_halign(fa_center);
 		draw_set_color(c_white);
-		if(laps == 0 && highscore == 0)
+		if (laps == 0 && highscore == 0)
 			laps = -1;
 		draw_text(x - 1, (y - 108), string(highscore) + " POINTS - " + string(laps + 1) + " LAPS");
 		draw_text(x, (y - 134), secret_count + " OF 3 SECRETS");	
@@ -29,33 +30,13 @@ if (SUGARY)
 		var _rankspr = 6;
 		switch (rank)
 		{
-			case "p":
-			_rankspr = 5;
-			break;
-			
-			case "s":
-			_rankspr = 4;
-			break;
-			
-			case "a":
-			_rankspr = 3;
-			break;
-			
-			case "b":
-			_rankspr = 2;
-			break;
-			
-			case "c":
-			_rankspr = 1;
-			break;
-			
-			case "d":
-			_rankspr = 0;
-			break;
-			
-			default:
-			_rankspr = 6;
-			break;
+			case "p": _rankspr = 5; break;
+			case "s": _rankspr = 4; break;
+			case "a": _rankspr = 3; break;
+			case "b": _rankspr = 2; break;
+			case "c": _rankspr = 1; break;
+			case "d": _rankspr = 0; break;
+			default: _rankspr = 6; break;
 		}
 		if (rank == "d" && highscore == 0)
 			_rankspr = 6;

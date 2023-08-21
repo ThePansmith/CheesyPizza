@@ -27,14 +27,14 @@ transfotip = noone;
 msg = "";
 door_index = -1;
 
-// FOR USE IN CYOP.
-levelName = "";
+levelName = ""; // FOR USE IN CYOP.
 
-
-//sugary shit
+// sugary startgate
 showtext = 0;
-confecti_sprs = [ { sprite: spr_marshmellow_taunt, image: choose(0, 1) },
-					{ sprite: spr_chocolate_taunt, image: choose(0, 1) },
-					{ sprite: spr_crack_taunt, image: choose(0, 1) },
-					{ sprite: spr_gummyworm_taunt, image: choose(0, 1) },
-					{ sprite: spr_candy_taunt, image: choose(0, 1) } ];
+confecti_sprs = [
+	{ sprite: spr_marshmellow_taunt, image: choose(0, 1) },
+	{ sprite: spr_chocolate_taunt, image: choose(0, 1) },
+	{ sprite: spr_crack_taunt, image: choose(0, 1) },
+	{ sprite: spr_gummyworm_taunt, image: choose(0, 1) },
+	{ sprite: spr_candy_taunt, image: choose(0, 1) }
+];

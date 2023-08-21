@@ -21,6 +21,9 @@ if (image_xscale == -1)
 	}
 }
 
+if global.blockstyle == 2
+	sprite_index = spr_onewaybigblock_old;
+
 sugary = SUGARY;
 if sugary
 	sprite_index = spr_onewaybigblock_ss;
