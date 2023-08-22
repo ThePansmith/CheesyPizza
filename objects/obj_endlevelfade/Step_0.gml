@@ -17,8 +17,12 @@ with (obj_player)
 		x = Approach(x, tx, abs(lx));
 		y = Approach(y, ty, abs(ly));
 		
-		if x == tx && y == ty && other.sugary
-			other.rankwait = Approach(other.rankwait, 0, 0.1);
+		if x == tx && y == ty
+		{
+			reset_modifier();
+			if other.sugary
+				other.rankwait = Approach(other.rankwait, 0, 0.1);
+		}
 	}
 }
 if (fadealpha > 1)

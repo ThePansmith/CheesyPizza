@@ -35,6 +35,7 @@ if floor(other.image_index) == other.image_number - 1 && other.state == states.v
 			global.exitrank = true;
 		if (targetRoom == tower_finalhallway)
 			global.exitrank = true;
+		obj_tv.tv_bg.sprite = gate.bgsprite;
 		
 		if gate.levelName != ""
 		{

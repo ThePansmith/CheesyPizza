@@ -13,3 +13,6 @@ grabbedspr = spr_farmer2_idle;
 scaredspr = spr_farmer2_scared;
 ragespr = spr_farmer2_attack;
 spr_dead = spr_farmer2_dead;
+
+spr_palette = spr_farmerbaddie2_palette;
+usepalette = true;

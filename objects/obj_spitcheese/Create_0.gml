@@ -34,3 +34,5 @@ important = false;
 heavy = false;
 depth = 0;
 spitcheesespr = spr_spitcheese_spit;
+spr_palette = spr_spitcheese_palette;
+usepalette = true;

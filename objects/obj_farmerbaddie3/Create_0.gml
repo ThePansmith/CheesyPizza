@@ -13,3 +13,5 @@ scaredspr = spr_peasanto_scared;
 ragespr = spr_peasanto_flameattack;
 spr_dead = spr_peasanto_dead;
 sprite_index = walkspr;
+spr_palette = spr_peasanto_palette;
+usepalette = true;

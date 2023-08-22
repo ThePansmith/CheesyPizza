@@ -41,3 +41,5 @@ grabbedby = 0;
 stuntouchbuffer = 0;
 ragedash = 0;
 ragecooldown = 0;
+spr_palette = spr_ghostknight_palette;
+usepalette = true;

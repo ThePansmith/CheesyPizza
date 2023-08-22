@@ -38,3 +38,5 @@ shoot = false;
 turntimer = 0;
 turnstart = false;
 turner = true;
+spr_palette = spr_ufolive_palette;
+usepalette = true;

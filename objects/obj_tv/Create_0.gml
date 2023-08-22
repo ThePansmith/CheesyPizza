@@ -82,6 +82,7 @@ hand_index = 0;
 bar_surface = -4;
 barfill_x = 0;
 showtime_buffer = 0;
+tv_bg = {surf: noone, sprite: spr_gate_entranceBG, parallax: [0.65, 0.75, 0.85], x: 0, y: 0};
 
 // pto
 lapflag_index = 0;

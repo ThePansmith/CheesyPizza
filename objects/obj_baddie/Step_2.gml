@@ -95,12 +95,10 @@ else
 */
 
 // heat palettes
-if !(object_index == obj_cheeseslime && snotty) && object_index != obj_sausageman
-&& !check_boss(object_index) && (object_index != obj_kentukykenny or !important)
-&& object_index != obj_ninja && usepalette
+if check_heat()
 {
 	var newpalette = 0;
-	if (safe_get(id, "elite") or global.stylethreshold >= 3) && usepalette
+	if safe_get(id, "elite") or global.stylethreshold >= 3
 		newpalette = elitepal;
 	
 	if paletteselect != newpalette

@@ -69,7 +69,7 @@ add_section("Modifiers");
 
 var deathmode_allow = ["entrance", "medieval", "ruin", "dungeon"];
 if array_contains(deathmode_allow, level) or DEBUG
-	add_modifier("Death Mode", "DeathMode", "You like Scoutdigo? We did it better.", [seq_deathmode_off, seq_deathmode_on]);
+	add_modifier("Death Mode", "DeathMode", "My favorite Pizza Tower modem.", [seq_deathmode_off, seq_deathmode_on]);
 
 if !boss && level != "tutorial" && global.experimental
 	add_modifier("No Toppings", "NoToppings", "Spawns Pizzaface when collecting a topping.\nCurrently impossible, so it's part of EXPERIMENTAL.", [seq_notoppings_off, seq_notoppings_on]);

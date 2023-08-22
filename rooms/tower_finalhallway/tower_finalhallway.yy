@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "tower_finalhallway",
-  "creationCodeFile": "${project_dir}/rooms/tower_finalhallway/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/tower_finalhallway/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

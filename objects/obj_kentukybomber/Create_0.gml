@@ -38,3 +38,5 @@ laserbuffer = 100;
 shoot = false;
 turntimer = 0;
 turnstart = false;
+spr_palette = spr_kentukybomber_palette;
+usepalette = true;
