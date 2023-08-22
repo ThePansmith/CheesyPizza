@@ -4,6 +4,7 @@
 // ONLY AUTHORIZED FOR USE IN "Pizza Tower: Cheesed Up!"
 // This Code is protected under United States Copyright law
 // All Rights Reserved.
+// don't steal my fucking shaders
 
 varying vec2 v_vPosition;
 varying vec4 v_vColour;
