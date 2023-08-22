@@ -60,7 +60,7 @@ if curve < 1
 	shader_set_uniform_f(texcoord_center_pos, tex_center_x, tex_center_y);
 	shader_set_uniform_f(sprite_size_pos, sprite_get_width(spr_skinmenupizza), sprite_get_height(spr_skinmenupizza));
 	//trace($"curve: {curve * 1.125}");
-	shader_set_uniform_f(curve_pos, curve * 1.125);
+	shader_set_uniform_f(curve_pos, curve);
 }
 	
 // The Pizza Matrix™

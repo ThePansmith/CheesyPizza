@@ -21,10 +21,14 @@ void main()
 	vec4 source = texture2D( gm_BaseTexture, v_vTexcoord );
 	DoAlphaTest( source );
     
-	for(float i = palette_UVs.y; i < palette_UVs.w; i += texel_size.y) {
-		if (distance(source, texture2D(palette_texture, vec2(palette_UVs.x, i))) <= 0.004) {
-			float palette_V = palette_UVs.x + texel_size.x * palette_index;
-			source = texture2D(palette_texture, vec2(palette_V, i));
+	for(float color_index = palette_UVs.y; color_index < palette_UVs.w; color_index += texel_size.y) // iterate through each color
+	{
+		vec4 palette_color = texture2D(palette_texture, vec2(palette_UVs.x, color_index));
+		if (distance(source, palette_color) <= 0.004) // check if the color matches
+		{
+			float texel_palette_offset = texel_size.x * palette_index;
+			float palette_V = palette_UVs.x + texel_palette_offset;
+			source = texture2D(palette_texture, vec2(palette_V, color_index)); // Palette color at specific offset
 
 			
 			if (pattern_enabled == 1) 
