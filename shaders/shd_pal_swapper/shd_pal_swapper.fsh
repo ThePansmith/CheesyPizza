@@ -35,7 +35,7 @@ void main()
 			{
 				for(int j = 0; j < 2; j += 1) 
 				{
-					if (color_array[j] == floor((i - palette_UVs.y) * (1.0 / texel_size.y))) 
+					if (color_array[j] == floor((color_index - palette_UVs.y) * (1.0 / texel_size.y))) 
 					{
 						// convert to (0,0) and convert to integer size in texture page
 						vec2 pos = (v_vTexcoord - sprite_UVs.xy) * sprite_tex_data.zw;
