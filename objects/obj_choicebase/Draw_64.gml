@@ -24,7 +24,7 @@ bg_pos = (bg_pos + 0.5) % 64;
 
 if curve < 1
 	shader_set_circleclip(960 / 2, 540 / 2, 560 * curve);
-
+	
 draw_set_alpha(0.75)
 draw_set_color(make_color_rgb(121, 103, 151));
 draw_rectangle(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT, false);
@@ -33,7 +33,7 @@ draw_set_color(c_white);
 
 var origin_pos = shader_get_uniform(shd_circleclip, "u_origin");
 
-if curve < 1 // circular clipping shader
+if curve < 1 
 {
 	var shader = shd_skinchoice_animation;
 	shader_set(shader);
@@ -59,9 +59,10 @@ if curve < 1 // circular clipping shader
 	
 	shader_set_uniform_f(texcoord_center_pos, tex_center_x, tex_center_y);
 	shader_set_uniform_f(sprite_size_pos, sprite_get_width(spr_skinmenupizza), sprite_get_height(spr_skinmenupizza));
-	shader_set_uniform_f(curve_pos, curve);
+	//trace($"curve: {curve * 1.125}");
+	shader_set_uniform_f(curve_pos, curve * 1.125);
 }
-
+	
 // The Pizza Matrix™
 var prev_matrix = matrix_get(matrix_world);
 shader_set_uniform_f(origin_pos, (960 / 2) - bg_pos, (540 / 2) - bg_pos);
@@ -72,7 +73,8 @@ matrix_set(matrix_world, prev_matrix);
 shader_reset();
 
 if curve < 1
-	shader_set_circleclip(960 / 2, 540 / 2, 560 * curve);
+	shader_set_circleclip(960 / 2, 540 / 2, 560 * curve, true);
+	
 // draw content
 if is_method(draw)
 	draw(curve);

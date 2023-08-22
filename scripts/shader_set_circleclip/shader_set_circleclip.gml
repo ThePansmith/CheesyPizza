@@ -1,7 +1,7 @@
 /// @desc	Sets the current shader to the circleclip shader, returns false if shaders aren't supported, returns true otherwise
 /// @arg	{real}	_origin_x	X-Position of the circle clip
 /// @arg	{real}	_origin_y	Y-Position of the circle clip
-/// @arg	{real]	_clip_radius	The radius of the clip in pixels
+/// @arg	{real}	_clip_radius	The radius of the clip in pixels
 /// @arg	{bool}	_alpha_fix		Simulate the alphafix to all pixels inside the clip
 /// @arg	{bool}	_simple			Use the simple version of the shader, enable this for your "draw_circle"/"draw_ellipse"/"draw_rectangle"/"draw_triangle" functions
 /// @returns	{bool}
