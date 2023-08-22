@@ -6,6 +6,7 @@ title_index = 5;
 title_sprite = spr_titlecards_title2;
 titlecard_index = 15;
 title_music = -4;
+
 var _found = false;
 ini_open_from_string(obj_savesystem.ini_str);
 if (ini_read_string("Game", "finalrank", "none") != "none")
@@ -13,4 +14,6 @@ if (ini_read_string("Game", "finalrank", "none") != "none")
 ini_close();
 if (!_found && !global.sandbox)
 	instance_destroy();
+
 msg = "The Crumbling Tower Of Pizza";
+group_arr = ["hubgroup", "citygroup", "bossgroup"];

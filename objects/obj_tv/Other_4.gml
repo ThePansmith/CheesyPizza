@@ -1,3 +1,6 @@
+live_auto_call;
+
+// tower escape
 var r = string_letters(room_get_name(room));
 if (r != "towertutorial" && string_copy(r, 1, 5) == "tower")
 {
@@ -18,17 +21,53 @@ if (r != "towertutorial" && string_copy(r, 1, 5) == "tower")
 }
 else
 	timer_tower = false;
+
+// transfo prompts
+if (special_prompts == noone && room != Realtitlescreen && room != characterselect)
+{
+	special_prompts = ds_map_create();
+	ini_open(concat("saveData", global.currentsavefile, ".ini"));
+	ds_map_set(special_prompts, "knight", ini_read_real("Prompts", "knight", 0));
+	ds_map_set(special_prompts, "boxxedpep", ini_read_real("Prompts", "boxxedpep", 0));
+	ds_map_set(special_prompts, "mort", ini_read_real("Prompts", "mort", 0));
+	ds_map_set(special_prompts, "squished", ini_read_real("Prompts", "squished", 0));
+	ds_map_set(special_prompts, "skateboard", ini_read_real("Prompts", "skateboard", 0));
+	ds_map_set(special_prompts, "cheeseball", ini_read_real("Prompts", "cheeseball", 0));
+	ds_map_set(special_prompts, "shotgun", ini_read_real("Prompts", "shotgun", 0));
+	ds_map_set(special_prompts, "ghost", ini_read_real("Prompts", "ghost", 0));
+	ds_map_set(special_prompts, "firemouth", ini_read_real("Prompts", "firemouth", 0));
+	ds_map_set(special_prompts, "fireass", ini_read_real("Prompts", "fireass", 0));
+	ds_map_set(special_prompts, "bombpep", ini_read_real("Prompts", "bombpep", 0));
+	ds_map_set(special_prompts, "rocket", ini_read_real("Prompts", "rocket", 0));
+	ini_close();
+}
+if (room == Realtitlescreen)
+{
+	if (special_prompts != noone)
+		ds_map_destroy(special_prompts);
+	special_prompts = -4;
+}
+
+// level settings
 tv_bg_index = 0;
+
+var tvbg_sprite = asset_get_index(concat("spr_gate_", global.leveltosave, "BG"));
+if sprite_exists(tvbg_sprite)
+	tv_bg.sprite = tvbg_sprite;
+
+tv_bg.y = 134;
 switch (global.leveltosave)
 {
 	case "entrance":
 		tv_bg_index = 1;
+		tv_bg.y = 68;
 		break;
 	case "medieval":
 		tv_bg_index = 2;
 		break;
 	case "ruin":
 		tv_bg_index = 3;
+		//tv_bg.y = 68;
 		break;
 	case "dungeon":
 		tv_bg_index = 4;
@@ -56,6 +95,7 @@ switch (global.leveltosave)
 		break;
 	case "minigolf":
 		tv_bg_index = 12;
+		tv_bg.sprite = spr_gate_golfBG;
 		break;
 	case "street":
 		tv_bg_index = 13;
@@ -80,17 +120,18 @@ switch (global.leveltosave)
 		break;
 	
 	// old levels
-	case "beach": tv_bg_index = 9; break;
-	case "factory": tv_bg_index = 15; break;
-	case "city": tv_bg_index = 13; break;
-	case "oldsewer": tv_bg_index = 14; break;
-	case "oldfactory": tv_bg_index = 15; break;
-	case "oldfreezer": tv_bg_index = 16; break;
+	case "beach": tv_bg_index = 9; tv_bg.sprite = spr_gate_plageBG; break;
+	case "factory": tv_bg_index = 15; tv_bg.sprite = spr_gate_industrialBG; break;
+	case "city": tv_bg_index = 13; tv_bg.sprite = spr_gate_streetBG; break;
+	case "oldsewer": tv_bg_index = 14; tv_bg.sprite = spr_gate_sewerBG; break;
+	case "oldfactory": tv_bg_index = 15; tv_bg.sprite = spr_gate_industrialBG; break;
+	case "oldfreezer": tv_bg_index = 16; tv_bg.sprite = spr_gate_freezerBG; break;
 	case "golf": tv_bg_index = 12; break;
 	case "pinball": tv_bg_index = 22; break;
 	case "mansion": tv_bg_index = 21; break;
 	case "strongcold": tv_bg_index = 23; break;
 	case "grinch": tv_bg_index = 25; break;
+	case "desert": tv_bg_index = 5; tv_bg.sprite = spr_gate_badlandBG; break;
 	
 	// sugary
 	case "entryway": tv_bg_index = 0; break;
@@ -107,38 +148,26 @@ switch (global.leveltosave)
 	case "midway": tv_bg_index = 24; break;
 	case "snickchallenge":
 		if string_starts_with(r, "medieval")
+		{
 			tv_bg_index = 2;
+			tv_bg.sprite = spr_gate_medievalBG;
+		}
 		if string_starts_with(r, "ruin")
+		{
 			tv_bg_index = 3;
+			tv_bg.sprite = spr_gate_ruinBG;
+		}
 		if string_starts_with(r, "dungeon")
+		{
 			tv_bg_index = 4;
+			tv_bg.sprite = spr_gate_dungeonBG;
+		}
 		if room == snick_challengeend
+		{
 			tv_bg_index = 1;
+			tv_bg.sprite = spr_gate_entranceBG;
+		}
 		break;
-}
-if (special_prompts == noone && room != Realtitlescreen && room != characterselect)
-{
-	special_prompts = ds_map_create();
-	ini_open(concat("saveData", global.currentsavefile, ".ini"));
-	ds_map_set(special_prompts, "knight", ini_read_real("Prompts", "knight", 0));
-	ds_map_set(special_prompts, "boxxedpep", ini_read_real("Prompts", "boxxedpep", 0));
-	ds_map_set(special_prompts, "mort", ini_read_real("Prompts", "mort", 0));
-	ds_map_set(special_prompts, "squished", ini_read_real("Prompts", "squished", 0));
-	ds_map_set(special_prompts, "skateboard", ini_read_real("Prompts", "skateboard", 0));
-	ds_map_set(special_prompts, "cheeseball", ini_read_real("Prompts", "cheeseball", 0));
-	ds_map_set(special_prompts, "shotgun", ini_read_real("Prompts", "shotgun", 0));
-	ds_map_set(special_prompts, "ghost", ini_read_real("Prompts", "ghost", 0));
-	ds_map_set(special_prompts, "firemouth", ini_read_real("Prompts", "firemouth", 0));
-	ds_map_set(special_prompts, "fireass", ini_read_real("Prompts", "fireass", 0));
-	ds_map_set(special_prompts, "bombpep", ini_read_real("Prompts", "bombpep", 0));
-	ds_map_set(special_prompts, "rocket", ini_read_real("Prompts", "rocket", 0));
-	ini_close();
-}
-if (room == Realtitlescreen)
-{
-	if (special_prompts != noone)
-		ds_map_destroy(special_prompts);
-	special_prompts = -4;
 }
 switch (room)
 {

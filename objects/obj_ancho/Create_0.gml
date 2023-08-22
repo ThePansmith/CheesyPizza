@@ -32,3 +32,5 @@ heavy = false;
 depth = 0;
 grabbedby = 0;
 stuntouchbuffer = 0;
+spr_palette = spr_ancho_palette;
+usepalette = true;

@@ -18,8 +18,14 @@ if (refresh <= 0)
 			vsp = -5;
 			other.baddieid = id;
 			important = true;
-			if (object_index == obj_pizzagoblinbomb)
+			
+			if object_index == obj_pizzagoblinbomb
 				countdown = other.countdown;
+			if object_is_ancestor(object_index, obj_baddie)
+			{
+				if check_heat() && global.stylethreshold >= 3
+					paletteselect = elitepal;
+			}
 		}
 		refresh = 100;
 	}

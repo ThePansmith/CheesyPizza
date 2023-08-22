@@ -40,9 +40,7 @@ if (object_index == obj_cheeseslime && snotty)
 	}
 	ini_close();
 }
-if (safe_get(id, "elite") or global.stylethreshold >= 3) && usepalette
-&& object_index != obj_sausageman && (object_index != obj_kentukykenny or !important)
-&& object_index != obj_ninja
+if check_heat() && (safe_get(id, "elite") or global.stylethreshold >= 3)
 	paletteselect = elitepal;
 
 // snap to ground if sugary

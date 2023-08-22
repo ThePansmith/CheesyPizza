@@ -37,3 +37,5 @@ heavy = false;
 depth = 0;
 grabbedby = 0;
 stuntouchbuffer = 0;
+spr_palette = spr_teeth_palette;
+usepalette = true;

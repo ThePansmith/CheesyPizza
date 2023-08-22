@@ -41,3 +41,5 @@ stuntouchbuffer = 0;
 content = obj_cheeseslime;
 spr_content_dead = spr_slimedead;
 spawnenemyID = obj_null;
+spr_palette = spr_tank_palette;
+usepalette = true;

@@ -22,7 +22,7 @@ if (_baddieID.state != states.grabbed && _baddieID.object_index != obj_pizzaball
 					image_xscale = -other.xscale;
 					hit_connected = true;
 					hithsp = ((other.x + ((other.movespeed + 0.5) * 60 * other.xscale)) - x) / 60;
-					hitvsp = (other.y - 180 - y) / 60;
+					hitvsp = round((other.y - y) / 10);
 					trace([hithsp, hitvsp]);
 					hitLag = lag;
 					hitX = x;

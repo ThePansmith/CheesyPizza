@@ -31,8 +31,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "NEEDS TO BE SORTED",
-    "path": "folders/Sprites/CheesyPizza/NEEDS TO BE SORTED.yy",
+    "name": "Modifiers",
+    "path": "folders/Sprites/CheesyPizza/Modifiers.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

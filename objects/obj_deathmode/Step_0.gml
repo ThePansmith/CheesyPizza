@@ -19,15 +19,21 @@ if time == 0
 	global.prank_cankillenemy = false;
     global.prank_enemykilled = false;
 }
-if time_fx > 0
-{
-	var spd = 0.25;
-	time += 60 * spd;
-	time_fx -= spd;
-	time_fx_y = 10;
-}
+
 if time_fx_y > 0
 	time_fx_y--;
+ybump = lerp(ybump, 0, 0.5);
+
+if time_fx > 0
+{
+	var spd = max((time_fx / 10) * 0.25, 0.2);
+	time += 60 * spd;
+	time_fx -= spd;
+	time_fx_y = 15;
+	
+	if frac(time_fx) == 0
+		ybump = -4;
+}
 
 var tgt_y = 0;
 if show_time > 0

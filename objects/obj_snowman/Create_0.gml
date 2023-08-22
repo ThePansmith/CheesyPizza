@@ -36,3 +36,5 @@ important = false;
 depth = 0;
 heavy = false;
 mask_index = spr_player_mask;
+spr_palette = spr_newpizzice_palette;
+usepalette = true;

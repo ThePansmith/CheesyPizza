@@ -149,7 +149,17 @@ function draw_enemy(healthbar, palette, color = c_white)
 				draw_sprite_ext(sprite_index, image_index, x, y + _stun, xscale * image_xscale, yscale * _ys, angle, b, image_alpha);
 			}
 		}
-		if (object_index == obj_peppinoclone || (usepalette && palette))
+		if object_index == obj_peppinoclone
+		{
+			pattern_reset();
+			if elite or global.stylethreshold >= 3
+			{
+				pal_swap_set(spr_peppalette, 2, false);
+				draw_sprite_ext(sprite_index, image_index, xx, yy + _stun, xscale * image_xscale, yscale * _ys, angle, b, image_alpha);
+			}
+			pal_swap_reset();
+		}
+		else if usepalette && palette
 		{
 			pattern_reset();
 			pal_swap_reset();

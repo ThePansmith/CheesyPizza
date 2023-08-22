@@ -121,7 +121,7 @@ function scr_tvdraw()
 	if (room != strongcold_endscreen)
 	{
 		// background
-		if REMIX or sugary or sugarylevel
+		if sugary or sugarylevel
 		{
 			// secrets
 			var bgindex = tv_bg_index, bgcol = c_white;
@@ -152,6 +152,37 @@ function scr_tvdraw()
 				draw_sprite_ext(sprite, bgindex, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, obj_hungrypillarflash.fade * alpha);
 				draw_reset_flash();
 			}
+		}
+		else if REMIX
+		{
+			// secrets
+			var bgindex = tv_bg.sprite, bgcol = c_white;
+			if instance_exists(obj_ghostcollectibles)
+				bgindex = bg_secret;
+			if obj_player1.state == states.secretenter && instance_exists(obj_fadeout)
+				bgcol = merge_color(c_white, c_black, clamp(obj_fadeout.fadealpha, 0, 1));
+			
+			// move it
+			var movespeed// = -obj_player1.hsp / 15;
+			//if round(movespeed) == 0
+				movespeed = -0.25;
+			
+			tv_bg.x += movespeed;
+			if !surface_exists(tv_bg.surf)
+				tv_bg.surf = surface_create(278, 268);
+			
+			// draw it
+			surface_set_target(tv_bg.surf);
+			
+			for(var i = 0; i < sprite_get_number(bgindex); i++)
+				draw_sprite_tiled(bgindex, i, 278 / 2 + tv_bg.x * max(lerp(-1, 1, tv_bg.parallax[i]), 0), 268);
+			
+			gpu_set_blendmode(bm_subtract);
+			draw_sprite(spr_tv_clip, 1, 278 / 2, 268 - tv_bg.y);
+			gpu_set_blendmode(bm_normal);
+			
+			surface_reset_target();
+			draw_surface_ext(tv_bg.surf, tv_x + collect_x - 278 / 2, tv_y + collect_y + hud_posY - 268 + tv_bg.y, 1, 1, 0, bgcol, alpha);
 		}
 		else
 			draw_sprite_ext(spr_tv_bgfinal, tv_bg_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);

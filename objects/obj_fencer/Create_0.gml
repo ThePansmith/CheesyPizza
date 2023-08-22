@@ -37,3 +37,5 @@ stuntouchbuffer = 0;
 spr_palette = palette_forknight;
 usepalette = true;
 paletteselect = 0;
+if REMIX
+	spr_palette = spr_fencer_palette;

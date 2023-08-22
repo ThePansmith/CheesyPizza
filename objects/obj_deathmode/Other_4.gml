@@ -9,6 +9,7 @@ if !active && MOD.DeathMode
 	dead = false;
 	time_fx = 0;
 	time_fx_y = 0;
+	ybump = 0;
 	surfy = 60;
 	surfscale = 0.5;
 	image_speed = .35;

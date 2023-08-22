@@ -119,7 +119,7 @@ function DoFinisher()
 		state = states.punch;
 		sprite_index = spr_lungehit;
 		image_index = 0;
-		movespeed = key_attack ? 7 : 14;
+		movespeed = !key_attack ? 7 : 14;
 		with (instance_create(x, y, obj_superdashcloud))
 			image_xscale = other.xscale;
 		particle_set_scale(part.crazyrunothereffect, xscale, 1);

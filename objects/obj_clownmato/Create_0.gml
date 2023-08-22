@@ -27,3 +27,5 @@ grabbedspr = spr_clownmato_stun;
 scaredspr = spr_clownmato_fall;
 spr_dead = spr_clownmato_dead;
 balloontimer = 100;
+spr_palette = spr_clownmato_palette;
+usepalette = true;

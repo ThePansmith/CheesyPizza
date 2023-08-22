@@ -341,6 +341,8 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 					break;
 				else
 				{
+					reset_modifier();
+					
 					pause_unpause_music();
 					stop_music();
 					scr_pause_stop_sounds();

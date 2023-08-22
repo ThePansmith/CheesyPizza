@@ -45,3 +45,5 @@ alarm[7] = 1;
 tacklesnd = fmod_event_create_instance("event:/sfx/pep/suplexdash");
 mach2snd = fmod_event_create_instance("event:/sfx/pep/machslideboost");
 snd = true;
+spr_palette = spr_robot_palette;
+usepalette = true;

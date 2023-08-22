@@ -38,3 +38,5 @@ depth = 0;
 jumptimer = 50;
 arcprojectiletimer = 25;
 elite = true;
+spr_palette = spr_indiancheese_palette;
+usepalette = true;

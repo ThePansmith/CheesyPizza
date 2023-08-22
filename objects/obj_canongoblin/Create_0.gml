@@ -34,3 +34,5 @@ important = false;
 depth = 0;
 grabbedby = 0;
 stuntouchbuffer = 0;
+spr_palette = spr_canongoblin_palette;
+usepalette = true;
