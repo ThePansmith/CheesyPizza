@@ -64,7 +64,10 @@ if (!place_meeting(x, y, obj_doorblocked))
 				sound_play_3d("event:/sfx/misc/keyunlock", x, y);
 				instance_destroy(obj_keydoor_shake);
 				with instance_create(door.x + 50, door.y + 50, obj_keydoor_shake)
+				{
+					depth = obj_geromedoor.depth - 1;
 					sprite_index = door.sugary ? spr_geromedoor_shake_ss : spr_geromedoor_shake;
+				}
 			}
 		}
 	}
