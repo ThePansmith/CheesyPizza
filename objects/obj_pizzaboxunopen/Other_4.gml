@@ -2,7 +2,9 @@ if (global.timeattack == 1)
 	instance_destroy();
 if in_saveroom()
 	instance_destroy();
-
+if !is_real(content)
+	content = real(content);
+	
 if (content == obj_pizzakinshroom && global.shroomfollow)
 	instance_destroy();
 if (content == obj_pizzakincheese && global.cheesefollow)

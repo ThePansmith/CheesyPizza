@@ -1,4 +1,4 @@
-live_auto_call;
+//live_auto_call;
 
 // prep
 sound_play("event:/modded/sfx/diagopen");

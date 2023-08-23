@@ -1,4 +1,4 @@
-live_auto_call;
+//live_auto_call;
 
 if obj_drawcontroller.use_dark && SUGARY
 	exit;

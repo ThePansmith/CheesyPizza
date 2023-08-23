@@ -1,5 +1,4 @@
 image_speed = 0.35;
-content = obj_pizzakinshroom;
 depth = 0;
 subimg = 0;
 image_speed = 0.35;

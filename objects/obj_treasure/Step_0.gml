@@ -1,6 +1,26 @@
 if (instance_place(x, y, obj_glassblock))
 	exit;
 
+if (sugary)
+{
+	if place_meeting(x, y, obj_player)
+	{
+		with (instance_create(x + 16, y, obj_smallnumber))
+			number = 3000;
+		repeat (15)
+		{
+			create_collect(x + random_range(-60, 60) - 16, y + random_range(-60, 60) - 16, scr_collectspr(obj_collect, obj_player1, false));
+		}
+		sound_play_oneshot(global.snd_collectgiantpizza);
+		if (obj_player1.character == "V")
+			global.playerhealth = clamp(global.playerhealth + 10, 0, 100);
+		instance_destroy();
+	
+		exit;
+	}
+}
+
+
 var _p = player == 2 ? obj_player2 : obj_player1;
 switch state
 {

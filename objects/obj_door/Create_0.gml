@@ -4,7 +4,6 @@ depth = 103;
 sugary = SUGARY;
 if sugary
 	depth = 50;
-targetDoor = "A";
 group_arr = noone;
 offload_arr = noone;
 locked = false;
