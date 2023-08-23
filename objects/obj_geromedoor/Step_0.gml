@@ -20,11 +20,11 @@ if (player && !global.horse && (player.state == states.normal or player.state ==
 	sound_play("event:/sfx/misc/cheers");
 	if (global.gerome)
 	{
-		obj_geromefollow.visible = false;
-		obj_geromefollow.do_end = true;
-		
 		if !sugary
 		{
+			obj_geromefollow.visible = false;
+			obj_geromefollow.do_end = true;
+		
 			with (instance_create(player.x - 30, player.y, obj_geromeanim))
 			{
 				sprite_index = spr_gerome_opendoor;
@@ -47,7 +47,8 @@ if (player && !global.horse && (player.state == states.normal or player.state ==
 				x = other.x + 50;
 			}
 		}
-		global.gerome = false;
+		if !sugary
+			global.gerome = false;
 	}
 	image_index = 1;
 }

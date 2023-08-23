@@ -30,7 +30,15 @@
   "physicsShape": 0,
   "physicsShapePoints": [],
   "physicsStartAwake": true,
-  "properties": [],
+  "properties": [
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"content","filters":[],"listItems":[
+        "obj_pizzakinshroom",
+        "obj_pizzakincheese",
+        "obj_pizzakintomato",
+        "obj_pizzakinsausage",
+        "obj_pizzakinpineapple",
+      ],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"obj_pizzakinshroom","varType":6,},
+  ],
   "solid": false,
   "spriteId": {
     "name": "spr_pizzaboxunopen",
