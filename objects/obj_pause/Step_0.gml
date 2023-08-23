@@ -266,6 +266,13 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
         key_jump = false;
     key_jump = (key_jump || (global.key_start != vk_return && keyboard_check_pressed(vk_return)) || (global.key_start != vk_space && keyboard_check_pressed(vk_space)) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face1));
 	key_back = (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_return) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face2) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_start));
+	
+	if safe_get(obj_shell, "isOpen")
+	{
+		key_jump = false;
+		key_back = false;
+	}
+	
 	if (backbuffer > 0)
 	{
 		backbuffer--;

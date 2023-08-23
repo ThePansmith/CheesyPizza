@@ -11,7 +11,7 @@ info =
 }
 bgparallax = [0, 1/3, 2/3, 1];
 
-msg = "Sucrose Snowstorm";
+msg = "Sucrose Snowstorm WIP";
 group_arr = ["sucrosegroup"];
 
 if !global.experimental

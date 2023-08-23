@@ -136,6 +136,8 @@ if grabbedPlayer != noone
 			sprite_index = spr_player_candytransitionup;
 			if sign(hsp) != 0
 				xscale = sign(hsp);
+			if REMIX
+				instance_create(x, y, obj_speedlinesup);
 		}
 		grabbedPlayer = noone;
 		waitTimer = 25;	

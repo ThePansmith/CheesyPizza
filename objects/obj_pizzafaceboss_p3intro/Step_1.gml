@@ -290,7 +290,7 @@ switch (introstate)
 				with (instance_create(x, y, obj_parryeffect))
 					sprite_index = spr_superdashcloud;
 				hsp = 14;
-				sprite_index = spr_player_lunge;
+				sprite_index = spr_lunge;
 				image_index = 7;
 			}
 		}

@@ -47,6 +47,7 @@
     {"name":"inst_7E0E115B","path":"rooms/tower_sugary/tower_sugary.yy",},
     {"name":"inst_3BEE4E22","path":"rooms/tower_sugary/tower_sugary.yy",},
     {"name":"inst_7121F7B6","path":"rooms/tower_sugary/tower_sugary.yy",},
+    {"name":"inst_3A2B2649","path":"rooms/tower_sugary/tower_sugary.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -94,6 +95,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7E0E115B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":3.0,"scaleY":12.999999,"x":1024.0,"y":4736.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3BEE4E22","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":5.0,"scaleY":26.0,"x":736.0,"y":4320.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7121F7B6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":5.0,"scaleY":4.0,"x":896.0,"y":4320.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3A2B2649","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":4.0,"scaleY":2.0,"x":896.0,"y":4640.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_6B974E76","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"bg_shubcrane","path":"sprites/bg_shubcrane/bg_shubcrane.yy",},"x":2272.0,"y":4262.0,},

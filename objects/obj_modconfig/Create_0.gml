@@ -159,7 +159,8 @@ var opt = add_option("Attack Style", "attackstyle", "Alternatives to the basic g
 opt.opts = [
 	["GRAB", 0],
 	["KUNG FU", 1],
-	["SHOULDER BASH", 2]
+	["SHOULDERBASH", 2],
+	["LUNGE", 3],
 ];
 
 #endregion

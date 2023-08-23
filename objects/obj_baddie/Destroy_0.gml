@@ -149,7 +149,7 @@ if (!in_baddieroom() && important == 0)
 		shake_mag_acc = 3 / room_speed;
 	}
 	add_baddieroom();
-	if escape
+	if escape && !in_saveroom(ID, global.escaperoom)
 		ds_list_add(global.escaperoom, ID);
 }
 else if (!in_baddieroom() && important == 1)

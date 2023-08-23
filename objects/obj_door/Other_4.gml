@@ -1,15 +1,15 @@
-if place_meeting(x, y, obj_player) && !in_saveroom()
-	add_saveroom();
-if in_saveroom()
-	visited = true;
-if visited == true && sprite_index != spr_cheftaskdoor && sprite_index != spr_pepperdoor && sprite_index != spr_elevatordown1 && sprite_index != spr_elevatordown2 && sprite_index != spr_elevatordown3 && sprite_index != spr_elevatordown4
+if string_ends_with(room_get_name(room), "_treasure")
 {
-	if sugary
-		sprite_index = spr_doorvisited_ss;
-	else 
-		sprite_index = spr_doorvisited;
+	visible = false;
+	exit;
 }
-if sprite_index == spr_doorvisited || sprite_index == spr_doorunvisited
+if variable_instance_exists(id, "target_x") && variable_instance_exists(id, "target_y")
+	compatibility = true;
+
+if sugary
+	exit;
+
+if sprite_index != spr_cheftaskdoor && sprite_index != spr_pepperdoor && sprite_index != spr_elevatordown1 && sprite_index != spr_elevatordown2 && sprite_index != spr_elevatordown3 && sprite_index != spr_elevatordown4
 {
 	sprite_index = global.door_sprite;
 	image_index = global.door_index;
@@ -63,9 +63,5 @@ if sprite_index == spr_cheftaskdoor
 	if !_found
 		sprite_index = spr_cheftaskdoor_gold;
 }
-if string_ends_with(room_get_name(room), "_treasure")
-	visible = false;
-if variable_instance_exists(id, "target_x") && variable_instance_exists(id, "target_y")
-	compatibility = true;
 if MIDWAY
 	sprite_index = spr_midwaydoor;

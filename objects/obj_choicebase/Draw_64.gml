@@ -33,10 +33,11 @@ draw_set_color(c_white);
 
 var origin_pos = shader_get_uniform(shd_circleclip, "u_origin");
 
-if curve < 1 
+if anim_t < 1
 {
 	var shader = shd_skinchoice_animation;
 	shader_set(shader);
+	
 	// RX: Circle Clip
 	var origin_pos = shader_get_uniform(shader, "u_origin");
 	var radius_pos = shader_get_uniform(shader, "u_radius");
@@ -59,10 +60,9 @@ if curve < 1
 	
 	shader_set_uniform_f(texcoord_center_pos, tex_center_x, tex_center_y);
 	shader_set_uniform_f(sprite_size_pos, sprite_get_width(spr_skinmenupizza), sprite_get_height(spr_skinmenupizza));
-	//trace($"curve: {curve * 1.125}");
 	shader_set_uniform_f(curve_pos, curve);
 }
-	
+
 // The Pizza Matrix™
 var prev_matrix = matrix_get(matrix_world);
 shader_set_uniform_f(origin_pos, (960 / 2) - bg_pos, (540 / 2) - bg_pos);

@@ -70,7 +70,7 @@ function scr_perform_move(move, prestate = state)
 						with instance_create(x, y, obj_superdashcloud)
 							image_xscale = other.xscale;
 					}
-					sprite_index = spr_player_lunge;
+					sprite_index = spr_lunge;
 					suplexmove = true;
 				
 					particle_set_scale(part.jumpdust, xscale, 1);

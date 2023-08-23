@@ -59,8 +59,6 @@ function scr_create_pause_image()
 }
 function scr_draw_pause_image()
 {
-	if live_call() return live_result;
-	
 	if REMIX && sprite_exists(screensprite2)
 	{
 		if fade < 1 && sprite_exists(screensprite)

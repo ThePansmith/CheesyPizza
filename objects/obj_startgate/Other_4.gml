@@ -82,6 +82,7 @@ toppin[2] = ini_read_real("Toppin", string(level) + "3", 0);
 toppin[3] = ini_read_real("Toppin", string(level) + "4", 0);
 toppin[4] = ini_read_real("Toppin", string(level) + "5", 0);
 rank = ini_read_string("Ranks", string(level), "d");
+death_rank = ini_read_string("Ranks", string(level) + "-death", "");
 ini_close();
 
 if (!SUGARY)

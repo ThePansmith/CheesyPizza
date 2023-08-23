@@ -10,11 +10,13 @@ if MOD.Lappable
 {
 	with obj_baddie
 	{
-		if object_index != obj_pepbat && object_index != obj_pizzaball && object_index != obj_kentukybomber
+		if global.lap && (object_index == obj_robot or object_index == obj_ninja)
 		{
 			escape = true;
 			event_perform(ev_other, ev_room_start);
 		}
+		else if object_index != obj_ghostknight && !in_saveroom(id, global.escaperoom)
+			add_saveroom(id, global.escaperoom);
 	}
 	with obj_collect
 	{

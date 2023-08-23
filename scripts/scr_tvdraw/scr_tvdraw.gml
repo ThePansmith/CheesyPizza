@@ -182,7 +182,18 @@ function scr_tvdraw()
 			gpu_set_blendmode(bm_normal);
 			
 			surface_reset_target();
+			
+			if (global.panic or global.snickchallenge)
+			&& global.panicbg && !instance_exists(obj_ghostcollectibles)
+			{
+				shader_set(shd_panicbg);
+				var panic_id = shader_get_uniform(shd_panicbg, "panic");
+				shader_set_uniform_f(panic_id, clamp(global.wave / global.maxwave, -0.5, 1));
+				var time_id = shader_get_uniform(shd_panicbg, "time");
+				shader_set_uniform_f(time_id, scr_current_time() / 1000);
+			}
 			draw_surface_ext(tv_bg.surf, tv_x + collect_x - 278 / 2, tv_y + collect_y + hud_posY - 268 + tv_bg.y, 1, 1, 0, bgcol, alpha);
+			shader_reset();
 		}
 		else
 			draw_sprite_ext(spr_tv_bgfinal, tv_bg_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);

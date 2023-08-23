@@ -21,6 +21,9 @@ function scr_savescore(level)
 	if global.saveloaded
 	{
 		ini_open_from_string(obj_savesystem.ini_str);
+		if MOD.DeathMode
+			level += "-death";
+		
 		ini_write_real("Attempts", level, ini_read_real("Attempts", level, 0) + global.levelattempts + 1);
 		global.levelattempts = 0;
 		if (ini_read_real("Highscore", level, 0) < global.collect)

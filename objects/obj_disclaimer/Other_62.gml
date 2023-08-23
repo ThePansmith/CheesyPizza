@@ -7,7 +7,7 @@ if ds_map_find_value(async_load, "id") == req
 		
 		try
 		{
-			if real(firstline) != 3
+			if real(firstline) > 3
 				str = string_copy(str, string_pos("\n", str) + 1, string_length(str));
 			else
 			{
@@ -18,13 +18,13 @@ if ds_map_find_value(async_load, "id") == req
 		catch (error)
 		{
 			trace("DISCLAIMER\nstr: ", str, "\nerror: ", error);
-			str = "Server error!\nSomething went horribly wrong???";
+			str = "Server error!\n\nSomething went horribly wrong?\nYou may have the game blocked on your firewall.";
 		}
 	}
 	else
 	{
 		trace("DISCLAIMER\nstatus: ", async_load[? "status"]);
-		str = "Server error!\nPlease check your internet connection.";
+		str = "Server error!\n\nPlease check your internet connection.\nYou may have the game blocked on your firewall.";
 	}
 	
 	// open disclaimer

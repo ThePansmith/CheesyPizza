@@ -1,7 +1,5 @@
 function scr_pausedraw_ss()
 {
-	if live_call() return live_result;
-	
 	if fade > 0
 	{
 		draw_set_color(c_white);
@@ -12,7 +10,7 @@ function scr_pausedraw_ss()
 		}
 		
 		draw_set_alpha(pause ? fade * 2 : fade);
-		draw_sprite_tiled(spr_pausebg_ss, 0, current_time / 60, current_time / 60);
+		draw_sprite_tiled(spr_pausebg_ss, 0, (current_time / 60) % 250, (current_time / 60) % 100);
 		gpu_set_blendmode(bm_normal);
 		draw_sprite(spr_pause_ss, 0, 0, 0);
 		

@@ -78,7 +78,7 @@ function Wave(from, to, duration, offset, time = noone)
 	// STOLEN! https://forum.gamemaker.io/index.php?threads/wave-script.62475/
 	var a4 = (to - from) * 0.5;
 	
-	var t = current_time;
+	var t = scr_current_time();
 	if time != noone
 		t = time;
 	

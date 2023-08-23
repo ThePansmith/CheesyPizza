@@ -267,6 +267,7 @@ function scr_characterspr()
 	spr_kungfu1 = spr_player_kungfu1;
 	spr_kungfu2 = spr_player_kungfu2;
 	spr_kungfu3 = spr_player_kungfu3;
+	spr_lunge = spr_player_lunge;
 	spr_lungehit = spr_player_lungehit;
 	spr_throw = spr_player_throw;
 	spr_kungfuair1 = spr_player_kungfuair1;
@@ -1291,7 +1292,8 @@ function scr_characterspr()
 		spr_kungfu1 = spr_pizzano_kungfu1;
 		spr_kungfu2 = spr_pizzano_kungfu2;
 		spr_kungfu3 = spr_pizzano_kungfu4;
-		spr_lungehit = spr_player_lungehit;
+		spr_lunge = spr_playerSP_lunge;
+		spr_lungehit = spr_playerSP_lungehit;
 		spr_throw = spr_player_throw;
 		spr_kungfuair1 = spr_pizzano_kungfuair1;
 		spr_kungfuair2 = spr_pizzano_kungfuair2;
@@ -2043,6 +2045,7 @@ function scr_characterspr()
 		spr_kungfu1 = spr_playerPN_kungfu1;
 		spr_kungfu2 = spr_playerPN_kungfu2;
 		spr_kungfu3 = spr_playerPN_kungfu3;
+		spr_lunge = spr_playerPN_lunge;
 		spr_lungehit = spr_playerPN_lungehit;
 		spr_throw = spr_playerPN_throw;
 		spr_kungfuair1 = spr_playerPN_kungfuair1;

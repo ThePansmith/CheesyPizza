@@ -29,7 +29,7 @@ if (global.panic || instance_exists(obj_wartimer))
 					global.fill += global.leveltosave == "exit" ? 360 : 180;
 				
 				if global.leveltosave == "exit" && !global.lap
-					global.fill += calculate_filltime(2 * 60);
+					global.fill += calculate_filltime((2 * 60) + 30); // 2:30
 				
 				if MOD.DeathMode with obj_deathmode
 					time_fx += 30;

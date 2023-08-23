@@ -4,7 +4,7 @@ if image_alpha == 1
 	gpu_set_blendmode(bm_add);
     for (var i = 0; i < r; i++)
     {
-        var my_time = ((current_time / 800) - i) % r;
+        var my_time = ((scr_current_time() / 800) - i) % r;
         my_time = max(my_time, 0);
         var set_cos = (my_time / r) * pi;
         var a = (-cos(set_cos) + 1) / 2;

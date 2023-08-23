@@ -20,8 +20,8 @@ function scr_player_handstandjump()
 		airattackdash = spr_airattack;
 		airattackdashstart = spr_airattackstart;
 	}
-	else if sprite_index == spr_player_lunge
-		attackdash = spr_player_lunge;
+	else if sprite_index == spr_lunge
+		attackdash = spr_lunge;
 	else if character == "SP" && (image_index < 8 && !(key_down && image_index > 5) && !(image_index > 5 && vsp > 1))
 	{
 		movespeed = max(movespeed, 10);
@@ -32,12 +32,12 @@ function scr_player_handstandjump()
 	{
 		if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && movespeed < 8)
 			movespeed += 0.25;
-		else if (sprite_index == spr_player_lunge && movespeed < 12)
+		else if (sprite_index == spr_lunge && movespeed < 12)
 			movespeed += 0.8;
 		else if (movespeed < 10)
 			movespeed += 0.5;
 	}
-	if (global.pummeltest && sprite_index == spr_player_lunge && !instance_exists(lungeattackID))
+	if (global.pummeltest && sprite_index == spr_lunge && !instance_exists(lungeattackID))
 	{
 		with (instance_create(x, y, obj_lungehitbox))
 		{
@@ -47,8 +47,8 @@ function scr_player_handstandjump()
 	}
 	
 	if (sprite_index == spr_player_lungestart && floor(image_index) == (image_number - 1))
-		sprite_index = spr_player_lunge;
-	if (attackdash == spr_player_lunge)
+		sprite_index = spr_lunge;
+	if (attackdash == spr_lunge)
 		vsp = 0;
 	
 	// double tap move

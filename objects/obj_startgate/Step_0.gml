@@ -54,6 +54,16 @@ if (!pizza && (highscore > 0 || (boss && hats > 0)) && bbox_in_camera(view_camer
 					sprite_index = spr_gatepizza_1;
 					break;
 			}
+			switch (other.death_rank)
+			{
+				case "p": death_rank = 5; break;
+				case "s": death_rank = 4; break;
+				case "a": death_rank = 3; break;
+				case "b": death_rank = 2; break;
+				case "c": death_rank = 1; break;
+				case "d": death_rank = 0; break;
+				default: death_rank = -1;
+			}
 		}
 	}
 	else if (!SUGARY)

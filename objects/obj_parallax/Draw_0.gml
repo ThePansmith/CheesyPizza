@@ -82,7 +82,7 @@ if string_starts_with(room_get_name(room), "grinch_") && room != grinch_10
 	
 	shader_set(shd_wind);
 	var uTime = shader_get_uniform(shd_wind, "Time");
-	shader_set_uniform_f(uTime, current_time / 1000);
+	shader_set_uniform_f(uTime, scr_current_time() / 1000);
 	draw_sprite_tiled(bg_grinch_santa, 0, -cam_x * 0.25, -cam_y * 0.25);
 	shader_reset();
 	
@@ -101,7 +101,7 @@ else if (global.panic or global.snickchallenge)
 	var panic_id = shader_get_uniform(shd_panicbg, "panic");
 	shader_set_uniform_f(panic_id, clamp(global.wave / global.maxwave, -0.5, 1));
 	var time_id = shader_get_uniform(shd_panicbg, "time");
-	shader_set_uniform_f(time_id, current_time / 1000);
+	shader_set_uniform_f(time_id, scr_current_time() / 1000);
 }
 
 draw_surface(bg_surface, cam_x, cam_y);

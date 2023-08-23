@@ -43,13 +43,7 @@ add_music(tower_2, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_3, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_4, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_5, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
-add_music(tower_finalhallway, "event:/music/finalescape", noone, 0, function(room, event)
-{
-	if global.laps > 1 && instance_exists(obj_pizzaface)
-		fmod_event_instance_set_parameter(event, "state", 20, true);
-	else if global.lap
-		fmod_event_instance_set_parameter(event, "state", 2, true);
-})
+add_music(tower_finalhallway, "event:/music/finalescape", noone, 0)
 add_music(tower_finalhallwaytitlecard, "event:/music/pillarmusic", noone, 0)
 add_music(tower_pizzafacehall, "event:/music/w5/finalhallway", -4, 0)
 add_music(tower_outside, "event:/sfx/misc/windloop", noone, 0)

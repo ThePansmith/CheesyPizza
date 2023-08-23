@@ -66,7 +66,11 @@ if object_index != obj_player2 or global.coop
 	with obj_doorX
 	{
 		if safe_get(id, "door") == other.targetDoor
+		{
 			door_obj = self;
+			with instance_place(x, y, obj_door)
+				event_user(0);
+		}
 	}
 	if instance_exists(door_obj)
 	{

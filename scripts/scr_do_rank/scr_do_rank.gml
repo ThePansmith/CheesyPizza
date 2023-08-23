@@ -1,6 +1,6 @@
 function scr_is_p_rank()
 {
-	var enemykilled = global.prank_enemykilled or (MOD.Pacifist);
+	var enemykilled = global.prank_enemykilled or MOD.Pacifist;
 	
 	if global.leveltosave == "dragonlair" or global.leveltosave == "grinch"
 		return !global.combodropped && enemykilled;
@@ -9,8 +9,10 @@ function scr_is_p_rank()
 	if global.leveltosave == "snickchallenge"
 		return !global.combodropped && !string_starts_with(room_get_name(room), "medieval");
 	
-	if global.leveltosave != "exit"
-		return (global.lap or MOD.DeathMode) && global.secretfound >= 3 && global.treasure && !global.combodropped && enemykilled;
+	if global.leveltosave != "exit" && !MOD.DeathMode
+		return global.lap && global.secretfound >= 3 && global.treasure && !global.combodropped && enemykilled;
+	else if MOD.DeathMode
+		return global.secretfound >= 3 && global.treasure && !global.combodropped && enemykilled && global.shroomfollow && global.cheesefollow && global.tomatofollow && global.sausagefollow && global.pineapplefollow;
 	else
 		return !global.combodropped;
 }

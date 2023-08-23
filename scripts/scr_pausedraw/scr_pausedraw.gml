@@ -1,7 +1,5 @@
 function scr_pausedraw()
 {
-	if live_call() return live_result;
-	
 	if (fade > 0)
 	{
 		draw_set_color(c_white);

@@ -155,7 +155,7 @@ function scr_player_mach3()
 			//if (character == "V")
 			//	sprite_index = spr_playerV_divekickstart;
 		}
-		if ((!grounded && (check_solid(x + hsp, y) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && (!place_meeting(x + hsp, y, obj_metalblock) or character == "V")) || (grounded && (check_solid(x + sign(hsp), y - 16) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && !place_meeting(x + hsp, y, obj_metalblock) && check_slope(x, y + 1)))
+		if ((!grounded && (check_solid(x + hsp, y) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && (!place_meeting(x + hsp, y, obj_metalblock) or character == "V")) || (grounded && (check_solid(x + sign(hsp), y - 16) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && (!place_meeting(x + hsp, y, obj_metalblock) or character == "V") && check_slope(x, y + 1)))
 		{
 			wallspeed = movespeed;
 			grabclimbbuffer = 0;

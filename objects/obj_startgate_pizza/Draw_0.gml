@@ -55,5 +55,12 @@ if (state > 0)
 		draw_text(xx, ((_char_y + yy) - 56) + ty, _char);
 		xx += (w / num);
 	}
-	draw_sprite_ext(sugary ? spr_ranks_hudSP : spr_ranks_hud, rank_index, x, y + 58, rank_scale, rank_scale, 0, c_white, 1);
+	
+	var xx = x;
+	if death_rank != -1
+	{
+		xx = x - 40;
+		draw_sprite_ext(spr_ranks_death, death_rank, x + 40, y + 58, rank_scale, rank_scale, 0, c_white, 1);
+	}
+	draw_sprite_ext(sugary ? spr_ranks_hudSP : spr_ranks_hud, rank_index, xx, y + 58, rank_scale, rank_scale, 0, c_white, 1);
 }

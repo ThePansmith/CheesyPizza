@@ -12,9 +12,9 @@ incubic = animcurve_get_channel(curve_menu, "incubic");
 
 // check availability
 req = -1;
-str = "Please connect to the internet.";
+str = "This is an anti-leaking measure.\n\nPlease connect to the internet to continue.\nYou may have the game blocked on your firewall.";
 
-if true//DEBUG
+if DEBUG
 {
 	net = true;
 	state = 2;
@@ -24,7 +24,10 @@ else
 {
 	net = os_is_network_connected(false);
 	if net // radix please provide us with a better way...
-		req = http_get("http://pto-level-editor.000webhostapp.com/disclaimer");
+	{
+		//req = http_get("http://pto-level-editor.000webhostapp.com/disclaimer");
+		req = http_get(base64_decode("aHR0cDovL3B0by1sZXZlbC1lZGl0b3IuMDAwd2ViaG9zdGFwcC5jb20vZGlzY2xhaW1lcg=="));
+	}
 	else
 	{
 		t = -.5;

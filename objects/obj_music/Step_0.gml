@@ -86,17 +86,25 @@ if ((global.panic or ((global.snickchallenge or (MOD.DeathMode)) && !instance_ex
 		{
 			fmod_event_instance_stop(music.event, true);
 			fmod_event_instance_stop(music.event_secret, true);
-		}
-		if (room == tower_finalhallway)
-		{
-			exitmusic = true;
-			fmod_event_instance_stop(panicmusicID);
-			fmod_event_instance_play(music.event);
+			
+			if (room == tower_finalhallway)
+			{
+				exitmusic = true;
+				fmod_event_instance_stop(panicmusicID);
+				fmod_event_instance_play(music.event);
+			}
 		}
 		fmod_event_instance_stop(pillarmusicID, true);
 		fmod_set_parameter("pillarfade", 0, true);
 		fmod_event_instance_set_parameter(panicmusicID, "state", 0, true);
 	}
+	else if global.leveltosave == "exit"
+	{
+		if global.laps > 1 && instance_exists(obj_pizzaface)
+			fmod_event_instance_set_parameter(music.event, "state", 20, true);
+		else if global.lap
+			fmod_event_instance_set_parameter(music.event, "state", 2, true);
+	}	
 	else if (fmod_event_instance_is_playing(panicmusicID))
 	{
 		if (!global.lap)

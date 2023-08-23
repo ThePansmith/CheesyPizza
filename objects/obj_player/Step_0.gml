@@ -1273,6 +1273,7 @@ if (character != "M")
 else
 	mask_index = spr_pepperman_mask;
 if (state == states.gottreasure || sprite_index == spr_knightpepstart || sprite_index == spr_knightpepthunder || state == states.keyget || state == states.chainsaw || state == states.door || state == states.ejected || state == states.victory || state == states.comingoutdoor || state == states.dead || state == states.gotoplayer || state == states.policetaxi || state == states.actor || (collision_flags & colflag.secret) > 0)
+or (sprite_index == spr_firemouthintro && REMIX)
 	cutscene = true;
 else
 	cutscene = false;
