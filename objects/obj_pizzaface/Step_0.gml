@@ -1,4 +1,4 @@
-live_auto_call;
+//live_auto_call;
 
 var playerid = obj_player1;
 if obj_player1.spotlight == 0

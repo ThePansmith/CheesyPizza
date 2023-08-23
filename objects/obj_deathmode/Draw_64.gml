@@ -1,4 +1,4 @@
-live_auto_call;
+//live_auto_call;
 
 if !active or room == timesuproom or room == rank_room
 	exit;

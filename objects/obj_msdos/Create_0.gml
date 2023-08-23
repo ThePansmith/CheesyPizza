@@ -1,4 +1,4 @@
-live_auto_call;
+//live_auto_call;
 
 open_menu();
 con = 0;
