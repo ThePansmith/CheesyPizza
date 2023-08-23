@@ -590,7 +590,6 @@
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"cheese.jpg","CopyToMask":-1,"filePath":"datafiles/data",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles/data",},
-    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"intro_shit.mp4","CopyToMask":-1,"filePath":"datafiles/data",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"intro.mp4","CopyToMask":-1,"filePath":"datafiles/data",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"english.txt","CopyToMask":-1,"filePath":"datafiles/data/lang",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"radix.obj","CopyToMask":-1,"filePath":"datafiles/data/model",},
@@ -1582,7 +1581,6 @@
     {"id":{"name":"obj_pizzakinshroom","path":"objects/obj_pizzakinshroom/obj_pizzakinshroom.yy",},},
     {"id":{"name":"obj_pizzakincheese","path":"objects/obj_pizzakincheese/obj_pizzakincheese.yy",},},
     {"id":{"name":"obj_pizzakintomato","path":"objects/obj_pizzakintomato/obj_pizzakintomato.yy",},},
-    {"id":{"name":"obj_scoutdigoframerate","path":"objects/obj_scoutdigoframerate/obj_scoutdigoframerate.yy",},},
     {"id":{"name":"obj_pizzakinsausage","path":"objects/obj_pizzakinsausage/obj_pizzakinsausage.yy",},},
     {"id":{"name":"obj_pizzakinpineapple","path":"objects/obj_pizzakinpineapple/obj_pizzakinpineapple.yy",},},
     {"id":{"name":"obj_noisebomb","path":"objects/obj_noisebomb/obj_noisebomb.yy",},},
