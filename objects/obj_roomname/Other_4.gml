@@ -1,5 +1,5 @@
 global.roommessage = string_upper(global.roommessage);
-if room != rank_room && room != timesuproom && room != Mainmenu && room != Realtitlescreen && room != Longintro && room != Creditsroom && room != Johnresurrectionroom && room != Endingroom && room != Finalintro && room != Scootertransition
+if room != rank_room && room != timesuproom && room != Mainmenu && room != Realtitlescreen && room != Longintro && room != Creditsroom && room != Johnresurrectionroom && room != Endingroom && room != Finalintro && room != Scootertransition && !is_bossroom()
 {
 	showtext = true;
 	alarm[0] = 200;
@@ -7,7 +7,7 @@ if room != rank_room && room != timesuproom && room != Mainmenu && room != Realt
 level = false;
 
 var r = string_letters(room_get_name(room));
-if room != tower_soundtest && room != Mainmenu && r != "towertutorial" && r != "towerup" && (string_copy(r, 1, 5) == "tower" || (string_starts_with(r, "streethouse") && REMIX)) && !global.panic && !is_bossroom()
+if room != tower_soundtest && room != Mainmenu && r != "towertutorial" && r != "towerup" && (string_copy(r, 1, 5) == "tower" || (string_starts_with(r, "streethouse") && REMIX)) && !global.panic
 {
 	if string_starts_with(r, "streethouse")
 		level = true;

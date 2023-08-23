@@ -14,7 +14,7 @@ else
 		var s = string_letters(room_get_name(room));
 		var tower = string_copy(s, 1, 5) == "tower";
 		
-		if !tower && !global.snickchallenge
+		if (!tower or MOD.Lap3) && !global.snickchallenge
 		{
 			instance_create(obj_player1.x, obj_player1.y, obj_pizzaface);
 			scr_pizzaface_laugh();

@@ -16,4 +16,4 @@ if (!_found && !global.sandbox)
 	instance_destroy();
 
 msg = "The Crumbling Tower Of Pizza";
-group_arr = ["hubgroup", "citygroup", "bossgroup"];
+group_arr = ["hubgroup", "citygroup", "bossgroup", "farmgroup", "chateaugroup"];

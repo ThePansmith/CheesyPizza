@@ -43,7 +43,13 @@ add_music(tower_2, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_3, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_4, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_5, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
-add_music(tower_finalhallway, "event:/music/finalescape", noone, 0)
+add_music(tower_finalhallway, "event:/music/finalescape", noone, 0, function(room, event)
+{
+	if global.laps > 1 && instance_exists(obj_pizzaface)
+		fmod_event_instance_set_parameter(event, "state", 20, true);
+	else if global.lap
+		fmod_event_instance_set_parameter(event, "state", 2, true);
+})
 add_music(tower_finalhallwaytitlecard, "event:/music/pillarmusic", noone, 0)
 add_music(tower_pizzafacehall, "event:/music/w5/finalhallway", -4, 0)
 add_music(tower_outside, "event:/sfx/misc/windloop", noone, 0)
@@ -59,12 +65,12 @@ add_music(boss_fakepepkey, "event:/music/pillarmusic", noone, 0)
 add_music(boss_noise, "event:/music/boss/noise", noone, 0)
 add_music(boss_pepperman, "event:/music/boss/pepperman", noone, 0)
 
-add_music(boss_pizzaface, "event:/music/boss/pizzaface", noone, false, function(room, parameter)
+add_music(boss_pizzaface, "event:/music/boss/pizzaface", noone, false, function(room, event)
 {
 	if room == boss_pizzaface
-		fmod_event_instance_set_parameter(parameter, "state", 0, true);
+		fmod_event_instance_set_parameter(event, "state", 0, true);
 	else if room == boss_pizzafacehub
-		fmod_event_instance_set_parameter(parameter, "state", 5, false);
+		fmod_event_instance_set_parameter(event, "state", 5, false);
 });
 
 var entrance_func = function(room, event, event_secret)

@@ -54,3 +54,10 @@ if (place_meeting(x, y, obj_player1) && (obj_player1.instakillmove || obj_player
 or (obj_player1.state == states.keyget or obj_player.state == states.victory) or place_meeting(x, y, obj_playerexplosion) or place_meeting(x, y, obj_dynamiteexplosion)
 or safe_get(obj_pizzagoblinbomb, "state") == states.grabbed
 	reset_pos();
+
+// aftarimages
+if --after <= 0
+{
+	after = 5;
+	create_red_afterimage(x, y, sprite_index, image_index, image_xscale);
+}

@@ -1,3 +1,9 @@
+if global.panic
+{
+	instance_destroy(id, false);
+	exit;
+}
+
 //depth = -1000;
 xScale = 32;
 yScale = 32;

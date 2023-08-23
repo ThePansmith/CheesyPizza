@@ -6410,6 +6410,7 @@
     {"id":{"name":"spr_captaingoblin","path":"sprites/spr_captaingoblin/spr_captaingoblin.yy",},},
     {"id":{"name":"spr_tv_exprconfecti3","path":"sprites/spr_tv_exprconfecti3/spr_tv_exprconfecti3.yy",},},
     {"id":{"name":"obj_eskimoprojectile","path":"objects/obj_eskimoprojectile/obj_eskimoprojectile.yy",},},
+    {"id":{"name":"tower_lap","path":"rooms/tower_lap/tower_lap.yy",},},
     {"id":{"name":"spr_pizzacar_jump","path":"sprites/spr_pizzacar_jump/spr_pizzacar_jump.yy",},},
     {"id":{"name":"spr_tv_exprhurt1SP","path":"sprites/spr_tv_exprhurt1SP/spr_tv_exprhurt1SP.yy",},},
     {"id":{"name":"spr_toppinwarriorbutton","path":"sprites/spr_toppinwarriorbutton/spr_toppinwarriorbutton.yy",},},
@@ -10870,6 +10871,7 @@
     {"roomId":{"name":"sucrose_secret1","path":"rooms/sucrose_secret1/sucrose_secret1.yy",},},
     {"roomId":{"name":"sucrose_secret2","path":"rooms/sucrose_secret2/sucrose_secret2.yy",},},
     {"roomId":{"name":"sucrose_secret3","path":"rooms/sucrose_secret3/sucrose_secret3.yy",},},
+    {"roomId":{"name":"tower_lap","path":"rooms/tower_lap/tower_lap.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":false,"loadType":"default","mipsToGenerate":0,"targets":-1,},

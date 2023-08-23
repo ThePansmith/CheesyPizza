@@ -43,7 +43,7 @@ or global.modifier_failed or (global.leveltosave == "dragonlair" && !global.gian
 // exit
 with (other)
 {
-	if (grounded && (x > (other.x - 160) && x < (other.x + 160)) && key_up && (state == states.ratmount || state == states.normal || state == states.Sjumpprep || state == states.mach1 || state == states.mach2 || state == states.mach3) && (global.panic || global.snickchallenge || room == war_13) && room != sucrose_1)
+	if (grounded && (x > (other.x - 160) && x < (other.x + 160)) && key_up && (state == states.ratmount || state == states.normal || state == states.Sjumpprep || state == states.mach1 || state == states.mach2 || state == states.mach3) && (global.panic || global.snickchallenge || room == war_13) && room != sucrose_1 && room != tower_finalhallway)
 	{
 		global.noisejetpack = false;
 		global.startgate = false;

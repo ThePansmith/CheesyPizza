@@ -17,6 +17,9 @@ function reset_modifier()
 		// Entrance
 		NoiseGutter: false,
 		
+		// CTOP
+		Lappable: false,
+		
 		// Snick Challenge
 		OldLevels: false,
 		

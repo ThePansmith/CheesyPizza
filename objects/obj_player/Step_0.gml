@@ -1005,14 +1005,6 @@ or (instance_exists(obj_timesup) && obj_timesup.alarm[1] == 0)
 {
 	targetDoor = "HUB";
 	scr_playerreset();
-	if (global.coop == 1)
-	{
-		with (obj_player2)
-		{
-			scr_playerreset();
-			targetDoor = "HUB";
-		}
-	}
 	with (obj_player1)
 	{
 		image_index = 0;

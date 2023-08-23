@@ -32,3 +32,4 @@ reset_pos = function(particle = true)
 knocked = false;
 enemybird = false;
 enemybirdi = 0;
+after = 0;

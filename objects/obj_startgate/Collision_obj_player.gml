@@ -31,9 +31,7 @@ if floor(other.image_index) == other.image_number - 1 && other.state == states.v
 		obj_music.fadeoff = 0;
 		targetDoor = other.targetDoor;
 		targetRoom = other.targetRoom;
-		if (targetRoom == exit_1)
-			global.exitrank = true;
-		if (targetRoom == tower_finalhallway)
+		if (targetRoom == tower_finalhallway or targetRoom == exit_1)
 			global.exitrank = true;
 		obj_tv.tv_bg.sprite = gate.bgsprite;
 		

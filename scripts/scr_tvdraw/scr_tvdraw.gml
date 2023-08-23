@@ -279,7 +279,7 @@ function scr_tvdraw()
 		{
 			var bar = spr_timer_bar;
 			var barfill = spr_timer_barfill;
-			var timerspr = timer_tower ? spr_timer_tower : pizzaface_sprite;
+			var timerspr = timer_tower && !MOD.Lap3 ? spr_timer_tower : pizzaface_sprite;
 			johnface_sprite = spr_timer_johnface;
 		
 			if bolevel

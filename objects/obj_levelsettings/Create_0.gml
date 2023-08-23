@@ -99,5 +99,10 @@ if level == "snickchallenge"
 	add_modifier("Old Levels", "OldLevels", "A more accurate Snick's Challenge, using level design closer to the SAGE 2019 demo.", [seq_oldlevels_off, seq_oldlevels_on]);
 	add_modifier("No Snick", "EasyMode", "More of a World 1 timed challenge without that bastard following you around.");
 }
+if level == "exit"
+{
+	add_section("Level");
+	add_modifier("Lappable", "Lappable", "Adds a lap portal to CTOP. Lap 2 will give you 2 extra minutes.");
+}
 
 #endregion
