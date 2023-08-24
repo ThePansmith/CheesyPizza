@@ -39,7 +39,7 @@ if (place_meeting(x, y + 1, obj_player1) || place_meeting(x, y - 1, obj_player1)
 		instance_destroy();
 	}
 	
-	if sugary
+	if SUGARY
 	{
 		if place_meeting(x, y + 1, obj_player1) && obj_player1.state == states.Sjump
 		{

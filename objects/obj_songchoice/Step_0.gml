@@ -46,6 +46,12 @@ if key_jump
 	image_index = 8;
 	xo = 10;
 	
+	if !dumbass && (global.option_music_volume == 0 or global.option_master_volume == 0)
+	{
+		dumbass = true;
+		create_transformation_tip("Turn up your volume.");
+	}
+	
 	if global.jukebox != noone
 	{
 		fmod_event_instance_stop(global.jukebox.instance, true);

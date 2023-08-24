@@ -15,6 +15,7 @@ if global.jukebox != noone
 
 charshift = [0, 0, 1];
 discrot = 0;
+dumbass = false;
 
 // sections
 sections = [];

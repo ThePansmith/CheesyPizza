@@ -132,6 +132,13 @@ if drawer
 		// innovation
 		if !layer_exists(sequence_layer)
 		{
+			if surface_exists(global.modsurf)
+			{
+				surface_set_target(global.modsurf);
+				draw_clear_alpha(c_black, 0);
+				surface_reset_target();
+			}
+			
 			sequence_layer = layer_create(-1, "sequence_layer");
 			if is_array(opt.drawfunc)
 				sequence = layer_sequence_create(sequence_layer, 0, 0, opt.drawfunc[opt.value]);

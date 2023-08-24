@@ -69,18 +69,18 @@ add_section("Modifiers");
 
 var deathmode_allow = ["entrance", "medieval", "ruin", "dungeon"];
 if array_contains(deathmode_allow, level) or DEBUG
-	add_modifier("Death Mode", "DeathMode", "My favorite Pizza Tower modem.", [seq_deathmode_off, seq_deathmode_on]);
+	add_modifier("Death Mode", "DeathMode", "Avoid Pizzaface within a very tight timer!", [seq_deathmode_off, seq_deathmode_on]);
 
 if !boss && level != "tutorial" && global.experimental
-	add_modifier("No Toppings", "NoToppings", "Spawns Pizzaface when collecting a topping.\nCurrently impossible, so it's part of EXPERIMENTAL.", [seq_notoppings_off, seq_notoppings_on]);
+	add_modifier("No Toppings", "NoToppings", "Summons Pizzaface when collecting a topping.\nCurrently impossible, so it's part of EXPERIMENTAL.", [seq_notoppings_off, seq_notoppings_on]);
 if !boss && level != "tutorial"
 	add_modifier("Pacifist", "Pacifist", "Avoid murdering anyone while going through the stage. The escape time will be extended.", [seq_pacifist_off, seq_pacifist_on]);
 
 add_modifier("Hard Mode", "HardMode", "A placeholder entity will rain enemies upon you!", [seq_hardmode_off, seq_hardmode_on]);
-add_modifier("Mirrored", "Mirror", "Flips the screen horizontally without messing up your controls, effectively mirroring the level.", [seq_mirrored_off, seq_mirrored_on]);
+add_modifier("Mirrored", "Mirror", "Experience the horrors of graphics that weren't supposed to be flipped.", [seq_mirrored_off, seq_mirrored_on]);
 
-if !boss && level != "grinch" && level != "dragonlair" && level != "exit" && level != "snickchallenge" && level != "tutorial"
-	add_modifier("Lap Hell", "Lap3", "Spawns Pizzaface on the third lap, and on the fourth lap... more.", [seq_lap3_off, seq_lap3_on]);
+if !boss && level != "grinch" && level != "dragonlair" && level != "snickchallenge" && level != "tutorial"
+	add_modifier("Lap Hell", "Lap3", "A challenge awaits you on the third lap!", [seq_lap3_off, seq_lap3_on]);
 
 // Level specific
 if level == "grinch"

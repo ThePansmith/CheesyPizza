@@ -35,7 +35,6 @@
     {"name":"inst_76DDB585","path":"rooms/street_secret1/street_secret1.yy",},
     {"name":"inst_FB8023FD","path":"rooms/street_secret1/street_secret1.yy",},
     {"name":"inst_8034A065","path":"rooms/street_secret1/street_secret1.yy",},
-    {"name":"inst_8034A065","path":"rooms/street_secret1/street_secret1.yy",},
   ],
   "isDnd": false,
   "layers": [
