@@ -309,7 +309,10 @@ enum states
 	cottonroll,
 	fling,
 	twirl,
-	frothstuck
+	frothstuck,
+	
+	// pto
+	debugfly
 }
 
 #endregion
@@ -610,12 +613,17 @@ states = {
 	teleport : 297,
 	KO : 298,
 	camera_followtarget : 299,
+	
+	// sugary
 	cotton : 300,
 	cottondrill : 301,
 	cottonroll : 302,
 	fling : 303,
 	twirl : 304,
-	frothstuck : 305
+	frothstuck : 305,
+	
+	// pto
+	debugfly : 306
 }
 
 #endregion

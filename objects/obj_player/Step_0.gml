@@ -68,550 +68,194 @@ with (obj_ratblock)
 
 switch (state)
 {
-	case states.normal:	
-		scr_player_normal();
-		break;
-	case states.revolver:
-		scr_player_revolver();
-		break;
-	case states.dynamite:
-		scr_player_dynamite();
-		break;
-	case states.boots:
-		scr_player_boots();
-		break;
-	case states.grabbed:
-		scr_player_grabbed();
-		break;
-	case states.finishingblow:
-		scr_player_finishingblow();
-		break;
-	case states.tumble:
-		scr_player_tumble();
-		break;
-	case states.titlescreen:
-		scr_player_titlescreen();
-		break;
-	case states.ejected:
-		scr_player_ejected();
-		break;
-	case states.firemouth:
-		scr_player_firemouth();
-		break;
-	case states.fireass:
-		scr_player_fireass();
-		break;
-	case states.transition:
-		scr_player_transitioncutscene();
-		break;
-	case states.hookshot:
-		scr_playerN_hookshot();
-		break;
-	case states.slap:
-		scr_player_slap();
-		break;
-	case states.tacklecharge:
-		scr_player_tacklecharge();
-		break;
-	case states.cheesepep:
-		scr_player_cheesepep();
-		break;
-	case states.cheesepepjump:
-		scr_player_cheesepepjump();
-		break;
-	case states.cheesepepfling:
-		scr_player_cheesepepfling();
-		break;
-	case states.cheeseball:
-		scr_player_cheeseball();
-		break;
-	case states.cheeseballclimbwall:
-		scr_player_cheeseballclimbwall();
-		break;
-	case states.cheesepepstickside:
-		scr_player_cheesepepstickside();
-		break;
-	case states.cheesepepstickup:
-		scr_player_cheesepepstickup();
-		break;
-	case states.cheesepepstick:
-		scr_player_cheesepepstick();
-		break;
-	case states.cheesepeplaunch:
-		scr_player_cheesepeplaunch();
-		break;
-	case states.boxxedpep:
-		scr_player_boxxedpep();
-		break;
-	case states.boxxedpepjump:
-		scr_player_boxxedpepjump();
-		break;
-	case states.boxxedpepspin:
-		scr_player_boxxedpepspin();
-		break;
-	case states.pistolaim:
-		scr_player_pistolaim();
-		break;
-	case states.climbwall:
-		scr_player_climbwall();
-		break;
-	case states.knightpepslopes:
-		scr_player_knightpepslopes();
-		break;
-	case states.portal:
-		scr_player_portal();
-		break;
-	case states.secondjump:
-		scr_player_secondjump();
-		break;
-	case states.chainsawbump:
-		scr_player_chainsawbump();
-		break;
-	case states.handstandjump:
-		scr_player_handstandjump();
-		break;
-	case states.lungeattack:
-		scr_player_lungeattack();
-		break;
-	case states.lungegrab:
-		scr_player_lungegrab();
-		break;
-	case states.dashtumble:
-		scr_player_dashtumble();
-		break;
-	case states.shoulderbash:
-		scr_player_shoulderbash();
-		break;
-	case states.gottreasure:
-		scr_player_gottreasure();
-		break;
-	case states.knightpep:
-		scr_player_knightpep();
-		break;
-	case states.knightpepattack:
-		scr_player_knightpepattack();
-		break;
-	case states.knightpepbump:
-		scr_player_knightpepbump();
-		break;
-	case states.meteorpep:
-		scr_player_meteorpep();
-		break;
-	case states.bombpep:
-		scr_player_bombpep();
-		break;
-	case states.bombpepup:
-		scr_player_bombpepup();
-		break;
-	case states.bombpepside:
-		scr_player_bombpepside();
-		break;
-	case states.bombgrab:
-		scr_player_bombgrab();
-		break;
-	case states.grabbing:
-		scr_player_grabbing();
-		break;
-	case states.chainsawpogo:
-		scr_player_chainsawpogo();
-		break;
-	case states.shotgunjump:
-		scr_player_shotgunjump();
-		break;
-	case states.stunned:
-		scr_player_stunned();
-		break;
-	case states.highjump:
-		scr_player_highjump();
-		break;
-	case states.chainsaw:
-		scr_player_chainsaw();
-		break;
-	case states.hit:
-		scr_player_hit();
-		break;
-	case states.thrown:
-		scr_player_thrown();
-		break;
-	case states.facestomp:
-		scr_player_facestomp();
-		break;
-	case states.timesup:
-		scr_player_timesup();
-		break;
-	case states.machroll:
-		scr_player_machroll();
-		break;
-	case states.pistol:
-		scr_player_pistol();
-		break;
-	case states.shotgun:
-		scr_player_shotgun();
-		break;
-	case states.shotguncrouch:
-		scr_player_shotguncrouch();
-		break;
-	case states.shotguncrouchjump:
-		scr_player_shotguncrouchjump();
-		break;
-	case states.shotgunshoot:
-		scr_player_shotgunshoot();
-		break;
-	case states.shotgunfreefall:
-		scr_player_shotgunfreefall();
-		break;
-	case states.shotgundash:
-		scr_player_shotgundash();
-		break;
-	case states.machfreefall:
-		scr_player_machfreefall();
-		break;
-	case states.throwing:
-		scr_player_throwing();
-		break;
-	case states.superslam:
-		scr_player_superslam();
-		break;
-	case states.slam:
-		scr_player_slam();
-		break;
-	case states.skateboard:
-		scr_player_skateboard();
-		break;
-	case states.grind:
-		scr_player_grind();
-		break;
-	case states.grab:
-		scr_player_grab();
-		break;
-	case states.punch:
-		scr_player_punch();
-		break;
-	case states.backkick:
-		scr_player_backkick();
-		break;
-	case states.uppunch:
-		scr_player_uppunch();
-		break;
-	case states.shoulder:
-		scr_player_shoulder();
-		break;
-	case states.backbreaker:
-		scr_player_backbreaker();
-		break;
-	case states.graffiti:
-		scr_player_graffiti();
-		break;
-	case states.bossdefeat:
-		scr_player_bossdefeat();
-		break;
-	case states.bossintro:
-		scr_player_bossintro();
-		break;
-	case states.smirk:
-		scr_player_smirk();
-		break;
-	case states.pizzathrow:
-		scr_player_pizzathrow();
-		break;
-	case states.dead:
-		scr_player_gameover();
-		break;
-	case states.Sjumpland:
-		scr_player_Sjumpland();
-		break;
-	case states.freefallprep:
-		scr_player_freefallprep();
-		break;
-	case states.runonball:
-		scr_player_runonball();
-		break;
-	case states.boulder:
-		scr_player_boulder();
-		break;
-	case states.keyget:
-		scr_player_keyget();
-		break;
-	case states.tackle:
-		scr_player_tackle();
-		break;
-	case states.slipnslide:
-		scr_player_slipnslide();
-		break;
-	case states.ladder:
-		scr_player_ladder();
-		break;
-	case states.jump:
-		scr_player_jump();
-		break;
-	case states.victory:
-		scr_player_victory();
-		break;
-	case states.comingoutdoor:
-		scr_player_comingoutdoor();
-		break;
-	case states.Sjump:
-		scr_player_Sjump();
-		break;
-	case states.Sjumpprep:
-		scr_player_Sjumpprep();
-		break;
-	case states.crouch:
-		scr_player_crouch();
-		break;
-	case states.crouchjump:
-		scr_player_crouchjump();
-		break;
-	case states.crouchslide:
-		scr_player_crouchslide();
-		break;
-	case states.mach1:
-		scr_player_mach1();
-		break;
-	case states.mach2:
-		scr_player_mach2();
-		break;
-	case states.mach3:
-		scr_player_mach3();
-		break;
-	case states.machslide:
-		scr_player_machslide();
-		break;
-	case states.bump:
-		scr_player_bump();
-		break;
-	case states.hurt:
-		scr_player_hurt();
-		break;
-	case states.freefall:
-		scr_player_freefall();
-		break;
-	case states.freefallland:
-		scr_player_freefallland();
-		break;
-	case states.hang:
-		scr_player_hang();
-		break;
-	case states.door:
-		scr_player_door();
-		break;
-	case states.barrel:
-		scr_player_barrel();
-		break;
-	case states.barreljump:
-		scr_player_barreljump();
-		break;
-	case states.barrelslide:
-		scr_player_barrelslide();
-		break;
-	case states.barrelclimbwall:
-		scr_player_barrelclimbwall();
-		break;
-	case states.current:
-		scr_player_current();
-		break;
-	case states.taxi:
-		scr_player_taxi();
-		break;
-	case states.policetaxi:
-		scr_player_taxi();
-		break;
-	case states.pogo:
-		scr_player_pogo();
-		break;
-	case states.rideweenie:
-		scr_player_rideweenie();
-		break;
-	case states.motorcycle:
-		scr_player_motorcycle();
-		break;
-	case states.faceplant:
-		scr_player_faceplant();
-		break;
-	case states.ghost:
-		scr_player_ghost();
-		break;
-	case states.ghostpossess:
-		scr_player_ghostpossess();
-		break;
-	case states.mort:
-		scr_player_mort();
-		break;
-	case states.mortjump:
-		scr_player_mortjump();
-		break;
-	case states.mortattack:
-		scr_player_mortattack();
-		break;
-	case states.morthook:
-		scr_player_morthook();
-		break;
-	case states.hook:
-		scr_player_hook();
-		break;
-	case states.arenaintro:
-		scr_player_arenaintro();
-		break;
-	case states.actor:
-		scr_player_actor();
-		break;
-	case states.parry:
-		scr_player_parry();
-		break;
-	case states.golf:
-		scr_player_golf();
-		break;
-	case states.tube:
-		scr_player_tube();
-		break;
-	case states.pummel:
-		scr_player_pummel();
-		break;
-	case states.slipbanan:
-		scr_player_slipbanan();
-		break;
-	case states.bombdelete:
-		scr_player_bombdelete();
-		break;
-	case states.rocket:
-		scr_player_rocket();
-		break;
-	case states.rocketslide:
-		scr_player_rocketslide();
-		break;
-	case states.gotoplayer:
-		scr_player_gotoplayer();
-		break;
-	case states.trickjump:
-		scr_player_trickjump();
-		break;
-	case states.ridecow:
-		scr_player_ridecow();
-		break;
-	case states.ratmount:
-		scr_player_ratmount();
-		break;
-	case states.ratmounthurt:
-		scr_player_ratmounthurt();
-		break;
-	case states.ratmountjump:
-		scr_player_ratmountjump();
-		break;
-	case states.ratmountattack:
-		scr_player_ratmountattack();
-		break;
-	case states.ratmountspit:
-		scr_player_ratmountspit();
-		break;
-	case states.ratmountclimbwall:
-		scr_player_ratmountclimbwall();
-		break;
-	case states.ratmountgroundpound:
-		scr_player_ratmountgroundpound();
-		break;
-	case states.ratmountbounce:
-		scr_player_ratmountbounce();
-		break;
-	case states.ratmountballoon:
-		scr_player_ratmountballoon();
-		break;
-	case states.ratmountgrind:
-		scr_player_ratmountgrind();
-		break;
-	case states.ratmounttumble:
-		scr_player_ratmounttumble();
-		break;
-	case states.ratmountpunch:
-		scr_player_ratmountpunch();
-		break;
-	case states.ratmounttrickjump:
-		scr_player_ratmounttrickjump();
-		break;
-	case states.ratmountskid:
-		scr_player_ratmountskid();
-		break;
-	case states.blockstance:
-		scr_player_blockstance();
-		break;
-	case states.balloon:
-		scr_player_balloon();
-		break;
-	case states.debugstate:
-		scr_player_debugstate();
-		break;
-	case states.trashjump:
-		scr_player_trashjump();
-		break;
-	case states.trashroll:
-		scr_player_trashroll();
-		break;
-	case states.stringfling:
-		scr_player_stringfling();
-		break;
-	case states.stringjump:
-		scr_player_stringjump();
-		break;
-	case states.stringfall:
-		scr_player_stringfall();
-		break;
-	case states.noisejetpack:
-		scr_player_noisejetpack();
-		break;
-	case states.spiderweb:
-		scr_player_spiderweb();
-		break;
-	case states.animatronic:
-		scr_player_animatronic();
-		break;
-	case states.playersuperattack:
-		scr_player_playersuperattack();
-		break;
-	case states.jetpackjump:
-		scr_player_jetpackjump();
-		break;
-	case states.bee:
-		scr_player_bee();
-		break;
-	case states.ratmountcrouch:
-		scr_player_ratmountcrouch();
-		break;
-	case states.ratmountladder:
-		scr_player_ratmountladder();
-		break;
-	case states.antigrav:
-		scr_player_antigrav();
-		break;
-	case states.estampede:
-		scr_player_estampede();
-		break;
-	case states.backtohub:
-		scr_player_backtohub();
-		break;
-	case states.animation:
-		scr_player_animation();
-		break;
-	case states.supergrab:
-		scr_player_supergrab();
-		break;
-	case states.cotton:
-		state_player_cotton();
-		break;
-	case states.cottondrill:
-		state_player_cottondrill();
-		break;
-	case states.cottonroll:
-		state_player_cottonroll();
-		break;
-	case states.fling:
-		scr_player_fling();
-		break;
-	case states.twirl:
-		scr_pizzano_twirl();
-		break;
-	case states.frothstuck:
-		scr_player_frothstuck();
-		break;
+	case states.normal:	scr_player_normal(); break;
+	case states.revolver: scr_player_revolver(); break;
+	case states.dynamite: scr_player_dynamite(); break;
+	case states.boots: scr_player_boots(); break;
+	case states.grabbed: scr_player_grabbed(); break;
+	case states.finishingblow: scr_player_finishingblow(); break;
+	case states.tumble: scr_player_tumble(); break;
+	case states.titlescreen: scr_player_titlescreen(); break;
+	case states.ejected: scr_player_ejected(); break;
+	case states.firemouth: scr_player_firemouth(); break;
+	case states.fireass: scr_player_fireass(); break;
+	case states.transition: scr_player_transitioncutscene(); break;
+	case states.hookshot: scr_playerN_hookshot(); break;
+	case states.slap: scr_player_slap(); break;
+	case states.tacklecharge: scr_player_tacklecharge(); break;
+	case states.cheesepep: scr_player_cheesepep(); break;
+	case states.cheesepepjump: scr_player_cheesepepjump(); break;
+	case states.cheesepepfling: scr_player_cheesepepfling(); break;
+	case states.cheeseball: scr_player_cheeseball(); break;
+	case states.cheeseballclimbwall: scr_player_cheeseballclimbwall(); break;
+	case states.cheesepepstickside: scr_player_cheesepepstickside(); break;
+	case states.cheesepepstickup: scr_player_cheesepepstickup(); break;
+	case states.cheesepepstick: scr_player_cheesepepstick(); break;
+	case states.cheesepeplaunch: scr_player_cheesepeplaunch(); break;
+	case states.boxxedpep: scr_player_boxxedpep(); break;
+	case states.boxxedpepjump: scr_player_boxxedpepjump(); break;
+	case states.boxxedpepspin: scr_player_boxxedpepspin(); break;
+	case states.pistolaim: scr_player_pistolaim(); break;
+	case states.climbwall: scr_player_climbwall(); break;
+	case states.knightpepslopes: scr_player_knightpepslopes(); break;
+	case states.portal: scr_player_portal(); break;
+	case states.secondjump: scr_player_secondjump(); break;
+	case states.chainsawbump: scr_player_chainsawbump(); break;
+	case states.handstandjump: scr_player_handstandjump(); break;
+	case states.lungeattack: scr_player_lungeattack(); break;
+	case states.lungegrab: scr_player_lungegrab(); break;
+	case states.dashtumble: scr_player_dashtumble(); break;
+	case states.shoulderbash: scr_player_shoulderbash(); break;
+	case states.gottreasure: scr_player_gottreasure(); break;
+	case states.knightpep: scr_player_knightpep(); break;
+	case states.knightpepattack: scr_player_knightpepattack(); break;
+	case states.knightpepbump: scr_player_knightpepbump(); break;
+	case states.meteorpep: scr_player_meteorpep(); break;
+	case states.bombpep: scr_player_bombpep(); break;
+	case states.bombpepup: scr_player_bombpepup(); break;
+	case states.bombpepside: scr_player_bombpepside(); break;
+	case states.bombgrab: scr_player_bombgrab(); break;
+	case states.grabbing: scr_player_grabbing(); break;
+	case states.chainsawpogo: scr_player_chainsawpogo(); break;
+	case states.shotgunjump: scr_player_shotgunjump(); break;
+	case states.stunned: scr_player_stunned(); break;
+	case states.highjump: scr_player_highjump(); break;
+	case states.chainsaw: scr_player_chainsaw(); break;
+	case states.hit: scr_player_hit(); break;
+	case states.thrown: scr_player_thrown(); break;
+	case states.facestomp: scr_player_facestomp(); break;
+	case states.timesup: scr_player_timesup(); break;
+	case states.machroll: scr_player_machroll(); break;
+	case states.pistol: scr_player_pistol(); break;
+	case states.shotgun: scr_player_shotgun(); break;
+	case states.shotguncrouch: scr_player_shotguncrouch(); break;
+	case states.shotguncrouchjump: scr_player_shotguncrouchjump(); break;
+	case states.shotgunshoot: scr_player_shotgunshoot(); break;
+	case states.shotgunfreefall: scr_player_shotgunfreefall(); break;
+	case states.shotgundash: scr_player_shotgundash(); break;
+	case states.machfreefall: scr_player_machfreefall(); break;
+	case states.throwing: scr_player_throwing(); break;
+	case states.superslam: scr_player_superslam(); break;
+	case states.slam: scr_player_slam(); break;
+	case states.skateboard: scr_player_skateboard(); break;
+	case states.grind: scr_player_grind(); break;
+	case states.grab: scr_player_grab(); break;
+	case states.punch: scr_player_punch(); break;
+	case states.backkick: scr_player_backkick(); break;
+	case states.uppunch: scr_player_uppunch(); break;
+	case states.shoulder: scr_player_shoulder(); break;
+	case states.backbreaker: scr_player_backbreaker(); break;
+	case states.graffiti: scr_player_graffiti(); break;
+	case states.bossdefeat: scr_player_bossdefeat(); break;
+	case states.bossintro: scr_player_bossintro(); break;
+	case states.smirk: scr_player_smirk(); break;
+	case states.pizzathrow: scr_player_pizzathrow(); break;
+	case states.dead: scr_player_gameover(); break;
+	case states.Sjumpland: scr_player_Sjumpland(); break;
+	case states.freefallprep: scr_player_freefallprep(); break;
+	case states.runonball: scr_player_runonball(); break;
+	case states.boulder: scr_player_boulder(); break;
+	case states.keyget: scr_player_keyget(); break;
+	case states.tackle: scr_player_tackle(); break;
+	case states.slipnslide: scr_player_slipnslide(); break;
+	case states.ladder: scr_player_ladder(); break;
+	case states.jump: scr_player_jump(); break;
+	case states.victory: scr_player_victory(); break;
+	case states.comingoutdoor: scr_player_comingoutdoor(); break;
+	case states.Sjump: scr_player_Sjump(); break;
+	case states.Sjumpprep: scr_player_Sjumpprep(); break;
+	case states.crouch: scr_player_crouch(); break;
+	case states.crouchjump: scr_player_crouchjump(); break;
+	case states.crouchslide: scr_player_crouchslide(); break;
+	case states.mach1: scr_player_mach1(); break;
+	case states.mach2: scr_player_mach2(); break;
+	case states.mach3: scr_player_mach3(); break;
+	case states.machslide: scr_player_machslide(); break;
+	case states.bump: scr_player_bump(); break;
+	case states.hurt: scr_player_hurt(); break;
+	case states.freefall: scr_player_freefall(); break;
+	case states.freefallland: scr_player_freefallland(); break;
+	case states.hang: scr_player_hang(); break;
+	case states.door: scr_player_door(); break;
+	case states.barrel: scr_player_barrel(); break;
+	case states.barreljump: scr_player_barreljump(); break;
+	case states.barrelslide: scr_player_barrelslide(); break;
+	case states.barrelclimbwall: scr_player_barrelclimbwall(); break;
+	case states.current: scr_player_current(); break;
+	case states.taxi: scr_player_taxi(); break;
+	case states.policetaxi: scr_player_taxi(); break;
+	case states.pogo: scr_player_pogo(); break;
+	case states.rideweenie: scr_player_rideweenie(); break;
+	case states.motorcycle: scr_player_motorcycle(); break;
+	case states.faceplant: scr_player_faceplant(); break;
+	case states.ghost: scr_player_ghost(); break;
+	case states.ghostpossess: scr_player_ghostpossess(); break;
+	case states.mort: scr_player_mort(); break;
+	case states.mortjump: scr_player_mortjump(); break;
+	case states.mortattack: scr_player_mortattack(); break;
+	case states.morthook: scr_player_morthook(); break;
+	case states.hook: scr_player_hook(); break;
+	case states.arenaintro: scr_player_arenaintro(); break;
+	case states.actor: scr_player_actor(); break;
+	case states.parry: scr_player_parry(); break;
+	case states.golf: scr_player_golf(); break;
+	case states.tube: scr_player_tube(); break;
+	case states.pummel: scr_player_pummel(); break;
+	case states.slipbanan: scr_player_slipbanan(); break;
+	case states.bombdelete: scr_player_bombdelete(); break;
+	case states.rocket: scr_player_rocket(); break;
+	case states.rocketslide: scr_player_rocketslide(); break;
+	case states.gotoplayer: scr_player_gotoplayer(); break;
+	case states.trickjump: scr_player_trickjump(); break;
+	case states.ridecow: scr_player_ridecow(); break;
+	case states.ratmount: scr_player_ratmount(); break;
+	case states.ratmounthurt: scr_player_ratmounthurt(); break;
+	case states.ratmountjump: scr_player_ratmountjump(); break;
+	case states.ratmountattack: scr_player_ratmountattack(); break;
+	case states.ratmountspit: scr_player_ratmountspit(); break;
+	case states.ratmountclimbwall: scr_player_ratmountclimbwall(); break;
+	case states.ratmountgroundpound: scr_player_ratmountgroundpound(); break;
+	case states.ratmountbounce: scr_player_ratmountbounce(); break;
+	case states.ratmountballoon: scr_player_ratmountballoon(); break;
+	case states.ratmountgrind: scr_player_ratmountgrind(); break;
+	case states.ratmounttumble: scr_player_ratmounttumble(); break;
+	case states.ratmountpunch: scr_player_ratmountpunch(); break;
+	case states.ratmounttrickjump: scr_player_ratmounttrickjump(); break;
+	case states.ratmountskid: scr_player_ratmountskid(); break;
+	case states.blockstance: scr_player_blockstance(); break;
+	case states.balloon: scr_player_balloon(); break;
+	case states.debugstate: scr_player_debugstate(); break;
+	case states.trashjump: scr_player_trashjump(); break;
+	case states.trashroll: scr_player_trashroll(); break;
+	case states.stringfling: scr_player_stringfling(); break;
+	case states.stringjump: scr_player_stringjump(); break;
+	case states.stringfall: scr_player_stringfall(); break;
+	case states.noisejetpack: scr_player_noisejetpack(); break;
+	case states.spiderweb: scr_player_spiderweb(); break;
+	case states.animatronic: scr_player_animatronic(); break;
+	case states.playersuperattack: scr_player_playersuperattack(); break;
+	case states.jetpackjump: scr_player_jetpackjump(); break;
+	case states.bee: scr_player_bee(); break;
+	case states.ratmountcrouch: scr_player_ratmountcrouch(); break;
+	case states.ratmountladder: scr_player_ratmountladder(); break;
+	case states.antigrav: scr_player_antigrav(); break;
+	case states.estampede: scr_player_estampede(); break;
+	case states.backtohub: scr_player_backtohub(); break;
+	case states.animation: scr_player_animation(); break;
+	case states.supergrab: scr_player_supergrab(); break;
+	
+	// sugary
+	case states.cotton: state_player_cotton(); break;
+	case states.cottondrill: state_player_cottondrill(); break;
+	case states.cottonroll: state_player_cottonroll(); break;
+	case states.fling: scr_player_fling(); break;
+	case states.twirl: scr_pizzano_twirl(); break;
+	case states.frothstuck: scr_player_frothstuck(); break;
+	
+	// pto
+	case states.debugfly: scr_player_debugstate(); break;
 }
+
 if (state != states.chainsaw)
 {
 	if (!bodyslam_notif)

@@ -5,17 +5,26 @@ function sh_noclip(args)
 	if !instance_exists(obj_player1)
 		return "The player is not in the room";
 	
+	var collide = false;
+	if array_length(args) > 1
+	{
+		if args[1] == "1" or args[1] == "true"
+			collide = true;
+	}
+	
 	with obj_player1
 	{
-		if state == states.debugstate
+		var targetstate = collide ? states.debugfly : states.debugstate;
+		if state == targetstate
 			state = states.normal;
 		else
-			state = states.debugstate;
+			state = targetstate;
 	}
 }
 function meta_noclip()
 {
 	return {
 		description: "puts the player in the debug state",
+		arguments: ["<collision>"],
 	}
 }
