@@ -87,8 +87,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "chateaugroup",
-    "path": "texturegroups/chateaugroup",
+    "name": "levelstructuregroup",
+    "path": "texturegroups/levelstructuregroup",
   },
   "type": 0,
   "VTile": false,

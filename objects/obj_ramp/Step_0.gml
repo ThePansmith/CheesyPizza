@@ -18,11 +18,11 @@ if place_meeting(x, y - s, obj_player) && !collision_point(x + sprite_width + im
 		if (state == states.mach3 || state == states.ratmounttumble || (state == states.ratmount && ratmount_movespeed >= 12))
 			bx = 18;
 		
-		if ((state == states.mach2 || (state == states.ratmount && ratmount_movespeed > 8) || state == states.ratmounttumble || state == states.trashroll || state == states.tumble || state == states.mach3 || state == states.trickjump) && y <= (other.y + by) && xscale == sign(other.image_xscale) && place_meeting(x, y + s, other))
+		if ((state == states.mach2 || (state == states.ratmount && ratmount_movespeed > 8) || state == states.ratmounttumble || state == states.trashroll || state == states.tumble || state == states.mach3 || state == states.trickjump || state == states.ratmounttrickjump) && y <= (other.y + by) && xscale == sign(other.image_xscale) && place_meeting(x, y + s, other))
 		{
 			vsp = -12;
 			movespeed = 14;
-			if (sprite_index != spr_rampjump)
+			if (sprite_index != spr_rampjump && sprite_index != spr_player_ratmountwalljump)
 			{
 				sound_play_oneshot("event:/sfx/pep/rampjump");
 				sprite_index = spr_rampjump;
@@ -41,7 +41,7 @@ if place_meeting(x, y - s, obj_player) && !collision_point(x + sprite_width + im
 				other.used = true;
 			}
 			ramp_buffer = 16;
-			trace("trickjump");
+			//trace("trickjump");
 		}
 	}
 }

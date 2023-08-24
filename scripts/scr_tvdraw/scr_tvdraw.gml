@@ -174,6 +174,9 @@ function scr_tvdraw()
 			// draw it
 			surface_set_target(tv_bg.surf);
 			
+			reset_blendmode();
+			reset_shader_fix();
+			
 			for(var i = 0; i < sprite_get_number(bgindex); i++)
 				draw_sprite_tiled(bgindex, i, 278 / 2 + tv_bg.x * max(lerp(-1, 1, tv_bg.parallax[i]), 0), 268);
 			
