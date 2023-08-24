@@ -1170,10 +1170,12 @@ global.room_map = -1; // ds_map
 global.asset_cache = -1; // ds_map
 global.custom_fill = 4000;
 global.custom_path = "";
-global.hub_level = "";
+global.custom_hub_level = "";
+global.custom_level_name = noone;
 
 function cyop_cleanup()
 {
+	global.custom_level_name = noone;
 	cyop_freemusic();
 	
 	// sprites
@@ -1349,7 +1351,7 @@ function cyop_load(ini)
 	recursive_func(concat(filename_path(ini), "/audio"), "");
 	
 	// load into the main level
-	global.hub_level = targetLevel;
+	global.custom_hub_level = targetLevel;
 	return cyop_load_level(targetLevel);
 }
 function cyop_load_level(ini)
@@ -1358,7 +1360,7 @@ function cyop_load_level(ini)
 	ini_open(ini);
 	var isWorld = ini_read_real("data", "isWorld", false);
 	global.srank = ini_read_real("data", "pscore", 8000);
-	var name = ini_read_string("data", "name", "");
+	global.custom_level_name = ini_read_string("data", "name", "");
 	global.custom_fill = ini_read_real("data", "escape", 4000);
 	var titlecardSprite = ini_read_string("data", "titlecardSprite", "no titlecard");
 	var titleSprite = ini_read_string("data", "titleSprite", "");

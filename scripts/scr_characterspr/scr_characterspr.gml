@@ -1030,6 +1030,8 @@ function scr_characterspr()
 		spr_faceplant = spr_playerSP_faceplant;
 		spr_cottonidle = spr_cotton_idle;
 		spr_attackdash = spr_playerSP_attackdash;
+		spr_lunge = spr_playerSP_lunge;
+		spr_lungehit = spr_playerSP_lungehit;
 		spr_palette = spr_pizzypalette;
 		paletteselect = 1;
 	}

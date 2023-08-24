@@ -42,7 +42,7 @@ else if safe_get(global, "panic")
 	else
 		details = string("Escaping - {0}:{1} left", minutes, seconds);
 }
-else
+else if !instance_exists(obj_levelLoader)
 {
 	var stack = [];
 	if MOD.Encore
@@ -71,6 +71,8 @@ else
 			details += $" {array_shift(stack)}";
 	}
 }
+else
+	details = "Playing CYOP";
 
 // level
 switch safe_get(global, "leveltosave")
@@ -127,11 +129,9 @@ switch safe_get(global, "leveltosave")
 	case "estate": state = "Choco Cafe"; break;
 	case "mountain": state = "Mt. Fudgetop"; break;
 	case "sucrose": state = "Sucrose Snowstorm"; break;
-	
-	
-	// cheesed up
-	case "metro": state = "Metropolis" break;
 }
+if global.custom_level_name != noone
+	state = string(global.custom_level_name);
 
 // add rank and score
 if state != "" && !instance_exists(obj_startgate)

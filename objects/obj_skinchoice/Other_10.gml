@@ -202,10 +202,10 @@ switch character
 		add_palette(22, "", noone, "The Noid", "Better avoid him.", "NOID");
 		add_palette(23, "", noone, "Galaxy", "Wow it is Just like the Samsung Galaxy S23", "GALAXY");
 		add_palette(24, "", noone, "Concept", "The original.");
-		add_palette(25, "", noone, "Chungus", "Big");
+		add_palette(25, "", noone, "Big", "Chungus.");
 		
 		// Patterns
-		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "10 years behind bars for spamming Big Chungus.");
+		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "The perfect attire for a clown.");
 		add_palette(12, "itchy", spr_peppattern2, "Itchy Sweater", "Woven with Grandma's intestines.");
 		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "I thought he... collected candy?");
 		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "He committed genocide against RATS.");
@@ -557,17 +557,17 @@ switch character
 	
 	case "SN":
 		add_palette(1, "", noone, "Pizzano", "The voice of the people.", "");
-		add_palette(2, "", noone, "Familiar Gremlin", "Close enough, but not quite.", "NOISY");
+		add_palette(2, "", noone, "Familiar Gremlin", "Close enough, but not quite.");
 		add_palette(3, "", noone, "Familiar Chef", "A somewhat overweight Italian accident.");
 		add_palette(4, "", noone, "Lasagna", "Mondays.");
 		add_palette(5, "", noone, "Spice", "The secret ingredient to all candy.");
 		add_palette(6, "", noone, "Plumber", "This is so retro, right guys? Please laugh! I'm funny!");
 		add_palette(7, "", noone, "Green Apple", "Blue orange.");
-		add_palette(8, "", noone, "Grape Soda", "Grape? Like the");
-		add_palette(9, "", noone, "Antipathic", "Isn't it anti-pathetic?");
-		add_palette(10, "", noone, "Gummy Bear", "Tastes like... blood?");
-		add_palette(11, "", noone, "Lime", "Unfortunate palette placement.");
-		add_palette(12, "", noone, "Crystalized", "You're the goddamn iron chef!");
+		add_palette(8, "", noone, "Grape Soda", "Grape? Like the", "GRAPE");
+		add_palette(9, "", noone, "Antipathic", "Isn't it anti-pathetic?", "ANTI");
+		add_palette(10, "", noone, "Gummy Bear", "Tastes like... blood?", "GUMMY");
+		add_palette(11, "", noone, "Lime", "Unfortunate palette placement.", "LIME");
+		add_palette(13, "", noone, "Crystalized", "You're the goddamn iron chef!", "CRYSTAL");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "Some joke about a fat rabbit here.");

@@ -1,6 +1,9 @@
-var tex = array_pop(tex_list);
-if tex != undefined
+var item = array_shift(tex_list);
+if item != undefined
 {
+	var tex = item[0];
+	text = $"Loading {item[1]}";
+	
 	trace("Loading texture: ", tex);
 	if !texture_is_ready(tex)
 		texture_prefetch(tex);

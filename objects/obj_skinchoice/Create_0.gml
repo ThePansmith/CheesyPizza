@@ -23,6 +23,7 @@ characters = [
 	["V", spr_playerV_idle, spr_vigipalette, [1, 6]],
 	["G", spr_player_ratmountidle, spr_peppalette, [1, 3]],
 	["SP", spr_playerSP_idle, spr_pizzypalette, [1, 3]],
+	["SN", spr_pizzano_idle, spr_pizzanopalette, [1, 5]],
 	["BN", spr_playerBN_idle, spr_bopalette, [1, 3]],
 	["PN", spr_playerPN_idle, spr_peppalette, [1, 3]]
 ];
@@ -30,7 +31,6 @@ characters = [
 if global.experimental
 {
 	array_push(characters, ["S", spr_snick_idle, spr_snickpalette, [1, 4]]);
-	array_push(characters, ["SN", spr_pizzano_idle, spr_pizzanopalette, [1, 5]]);
 }
 
 // set in user event 0
