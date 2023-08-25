@@ -1,2 +1,2 @@
 targetRoom = tower_1up;
-targetRoom2 = 752;
+targetRoom2 = tower_2;
