@@ -1,6 +1,12 @@
 /// @description camera regions
 // from pto i mean sugary spire of course
 
+if room == Mainmenu or room == rank_room or room == timesuproom
+{
+	limitcam = [0, 0, room_width, room_height];
+	exit;
+}
+
 var camx = camera_get_view_x(view_camera[0]), camy = camera_get_view_y(view_camera[0]);
 var camw = camera_get_view_width(view_camera[0]), camh = camera_get_view_height(view_camera[0]);
 

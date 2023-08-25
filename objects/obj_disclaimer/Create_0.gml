@@ -1,5 +1,3 @@
-if live_call() return live_result;
-
 state = 0;
 are_you_sure = false;
 fade_alpha = 1;

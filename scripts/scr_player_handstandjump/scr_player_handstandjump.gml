@@ -79,7 +79,7 @@ function scr_player_handstandjump()
 			fmod_event_instance_play(rollgetupsnd);
 			state = states.mach2;
 			
-			if character == "P" or character == "PN" or character == "BN"
+			if character == "P" or spr_longjump != spr_player_longjump
 				sprite_index = spr_longjump;
 			else
 				sprite_index = spr_mach2jump;

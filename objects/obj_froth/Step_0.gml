@@ -11,7 +11,8 @@ switch (state)
 		scr_enemy_turn();
 		break;
 	case states.walk:
-		scr_enemy_walk();
+		state = states.float;
+		substate = 0;
 		break;
 	case states.hit:
 		scr_enemy_hit();

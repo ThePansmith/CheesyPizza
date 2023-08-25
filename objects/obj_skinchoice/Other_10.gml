@@ -253,7 +253,7 @@ switch character
 		add_palette(16, "", noone, "Morshu", "It's yours, my friend.", "MORSHU");
 		add_palette(17, "", noone, "Snotty", "Snotty Approved", "SNOTTY");
 		add_palette(18, "", noone, "Vigirat", "That sneaky, lonesome, and cheese-loving outlaw.", "RAT");
-		add_palette(19, "", noone, "Satan's Choice", "Get ready for a flavor that's hotter than a Texas summer day.", "DEVILISH");
+		add_palette(19, "", noone, "Satan's Choice", "Hotter than a Texas summer day.", "DEVILISH");
 		add_palette(20, "", noone, "Gas Station Weed", "Man, I feel like a tumbleweed caught in a tornado.", "WEED");
 		add_palette(21, "", noone, "Platinum Pardner", "Lookin' just as fancy as a silver dollar.", "PLATINUM");
 		add_palette(22, "", noone, "Country Blues", "The perfect soundtrack for your taste buds.", "MOLDY");
@@ -448,7 +448,7 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "I'm trying really hard to laugh.");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "Every war has a distraction clown.");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Genuinely, the concept of this is morbid.");
-		add_palette(12, "", spr_pattern_trans, "Trans Flag", "The Noise says Trans Rights!");
+		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Bo Noise says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
 		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
@@ -547,7 +547,7 @@ switch character
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "im ddo the codes");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "why is dead");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "wire is not alive");
-		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "i will conker mobiusa with this strip.");
+		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "sweet and duggary. like my boogeries.");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "so... re...so retr... so...");
 		add_palette(12, "", spr_pattern_mario, "Mario", "brother");
 		break;
@@ -564,7 +564,7 @@ switch character
 		add_palette(6, "", noone, "Plumber", "This is so retro, right guys? Please laugh! I'm funny!");
 		add_palette(7, "", noone, "Green Apple", "Blue orange.");
 		add_palette(8, "", noone, "Grape Soda", "Grape? Like the", "GRAPE");
-		add_palette(9, "", noone, "Antipathic", "Isn't it anti-pathetic?", "ANTI");
+		add_palette(9, "", noone, "Antipathic", "Isn't it anti-pathetic?", "PATHIC");
 		add_palette(10, "", noone, "Gummy Bear", "Tastes like... blood?", "GUMMY");
 		add_palette(11, "", noone, "Lime", "Unfortunate palette placement.", "LIME");
 		add_palette(13, "", noone, "Crystalized", "You're the goddamn iron chef!", "CRYSTAL");

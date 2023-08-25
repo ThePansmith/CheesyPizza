@@ -155,7 +155,7 @@ add_option("Experimental", "experimental", "Allows access to fun console command
 
 #region ATTACK STYLE
 
-var opt = add_option("Attack Style", "attackstyle", "Alternatives to the basic grab move. The original grab is moved to the CHAINSAW button.", [seq_attackstyle_grab, seq_attackstyle_kungfu, seq_attackstyle_shoulderbash, seq_template]);
+var opt = add_option("Attack Style", "attackstyle", "Alternatives to the basic grab move. The original grab is moved to the CHAINSAW button.", [seq_attackstyle_grab, seq_attackstyle_kungfu, seq_attackstyle_shoulderbash, seq_attackstyle_lunge]);
 opt.opts = [
 	["GRAB", 0],
 	["KUNG FU", 1],

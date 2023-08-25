@@ -1,3 +1,8 @@
+with obj_levelLoader
+{
+	if id != other.id
+		instance_destroy();
+}
 show_message("This feature is very experimental!\n\nExpect a lot of issues, and if you're gonna upload footage, please clarify that it's very early in development.");
 
 // init

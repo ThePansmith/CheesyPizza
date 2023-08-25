@@ -1,5 +1,3 @@
-if live_call() return live_result;
-
 if instance_exists(obj_loadingscreen)
 	exit;
 

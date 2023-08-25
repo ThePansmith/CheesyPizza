@@ -79,7 +79,7 @@ if (instance_exists(baddieID) && _obj_player && !_obj_player.cutscene)
 			if (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && ((other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat) or state != states.tumble) && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
 			&& (instakillmove && !(state == states.handstandjump && check_boss(other.baddieID.object_index)))
 				Instakill();
-			else if (instance_exists(other.baddieID) && (state == states.handstandjump or check_kungfu_state()) && global.attackstyle != 3 && other.baddieID.invtime <= 0 && !other.baddieID.invincible)
+			else if (instance_exists(other.baddieID) && (state == states.handstandjump or check_kungfu_state()) && sprite_index != spr_lunge && other.baddieID.invtime <= 0 && !other.baddieID.invincible)
 			{
 				swingdingthrow = false;
 				image_index = 0;
@@ -119,7 +119,7 @@ if (instance_exists(baddieID) && _obj_player && !_obj_player.cutscene)
 					image_speed = 0.35;
 				}
 			}
-			else if (state == states.handstandjump && global.attackstyle == 3 && !global.pummeltest && !other.baddieID.invincible)
+			else if (state == states.handstandjump && !global.pummeltest && !other.baddieID.invincible)
 			{
 				var _ms = movespeed;
 				movespeed = 0;
