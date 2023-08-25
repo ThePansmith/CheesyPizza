@@ -22,7 +22,30 @@
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e10d5598-1fbc-45ba-8917-090b61e494df","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
-  "nineSlice": null,
+  "nineSlice": {
+    "resourceType": "GMNineSliceData",
+    "resourceVersion": "1.0",
+    "bottom": 13,
+    "enabled": true,
+    "guideColour": [
+      4294902015,
+      4294902015,
+      4294902015,
+      4294902015,
+    ],
+    "highlightColour": 1728023040,
+    "highlightStyle": 0,
+    "left": 5,
+    "right": 5,
+    "tileMode": [
+      0,
+      1,
+      0,
+      0,
+      1,
+    ],
+    "top": 17,
+  },
   "origin": 0,
   "parent": {
     "name": "Debug",

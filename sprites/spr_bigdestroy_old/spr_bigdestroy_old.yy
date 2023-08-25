@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Destroyable",
-    "path": "folders/Sprites/Level Structure/Destroyable.yy",
+    "name": "OLD ASSET",
+    "path": "folders/Sprites/CheesyPizza/OLD ASSET.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

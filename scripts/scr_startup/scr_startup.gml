@@ -113,36 +113,43 @@ for (var i = 0; i < ds_map_size(global.lang_map); i++)
 }
 
 // settings
-ini_open("saveData.ini");
-global.gameplay = ini_read_real("Modded", "gameplay", true); // misc. improvements on or off?
-global.experimental = ini_read_real("Modded", "experimental", DEBUG);
+function load_moddedconfig()
+{
+	ini_open("saveData.ini");
+	global.gameplay = ini_read_real("Modded", "gameplay", true); // misc. improvements on or off?
+	global.experimental = ini_read_real("Modded", "experimental", DEBUG);
 
-// gameplay settings
-global.poundjump = ini_read_real("Modded", "poundjump", false);
-global.attackstyle = ini_read_real("Modded", "attackstyle", 0); // grab, kungfu, shoulderbash
-global.shootstyle = ini_read_real("Modded", "shootstyle", 0); // nothing, pistol, breakdance
-global.doublegrab = ini_read_real("Modded", "doublegrab", 0); // nothing, shoulderbash, tumble, chainsaw
-global.autoparry = ini_read_real("Modded", "autoparry", false);
-global.shootbutton = ini_read_real("Modded", "shootbutton", 0); // 0 replace grab, 1 move to A, 2 only shotgun
-global.heatmeter = ini_read_real("Modded", "heatmeter", false);
-global.swapgrab = ini_read_real("Modded", "swapgrab", false);
+	// gameplay settings
+	global.poundjump = ini_read_real("Modded", "poundjump", false);
+	global.attackstyle = ini_read_real("Modded", "attackstyle", 0); // grab, kungfu, shoulderbash
+	global.shootstyle = ini_read_real("Modded", "shootstyle", 0); // nothing, pistol, breakdance
+	global.doublegrab = ini_read_real("Modded", "doublegrab", 0); // nothing, shoulderbash, tumble, chainsaw
+	global.autoparry = ini_read_real("Modded", "autoparry", false);
+	global.shootbutton = ini_read_real("Modded", "shootbutton", 0); // 0 replace grab, 1 move to A, 2 only shotgun
+	global.heatmeter = ini_read_real("Modded", "heatmeter", false);
+	global.swapgrab = ini_read_real("Modded", "swapgrab", false);
 
-// visual settings
-global.panicbg = ini_read_real("Modded", "panicbg", true);
-global.panictilt = ini_read_real("Modded", "panictilt", false);
-global.sloperot = ini_read_real("Modded", "sloperot", false);
-global.sloperot = false;
-global.inputdisplay = ini_read_real("Modded", "inputdisplay", false);
-global.showfps = ini_read_real("Modded", "showfps", false);
-global.afterimage = ini_read_real("Modded", "afterimage", 0); // final, eggplant
-global.smoothcam = ini_read_real("Modded", "smoothcam", 0); // 0 through 1 lerp amount
-global.secrettiles = ini_read_real("Modded", "secrettiles", 0); // fade, spotlight
-global.hud = ini_read_real("Modded", "hud", 0); // final, old
-global.blockstyle = ini_read_real("Modded", "blockstyle", 0); // final, september, old
-global.roomnames = ini_read_real("Modded", "roomnames", false);
-global.machsnd = ini_read_real("Modded", "machsnd", 0); // final, old
+	// visual settings
+	global.panicbg = ini_read_real("Modded", "panicbg", true);
+	global.panictilt = ini_read_real("Modded", "panictilt", false);
+	global.sloperot = ini_read_real("Modded", "sloperot", false);
+	global.sloperot = false;
+	global.inputdisplay = ini_read_real("Modded", "inputdisplay", false);
+	global.showfps = ini_read_real("Modded", "showfps", false);
+	global.afterimage = ini_read_real("Modded", "afterimage", 0); // final, eggplant
+	global.smoothcam = ini_read_real("Modded", "smoothcam", 0); // 0 through 1 lerp amount
+	global.secrettiles = ini_read_real("Modded", "secrettiles", 0); // fade, spotlight
+	global.hud = ini_read_real("Modded", "hud", 0); // final, old
+	global.blockstyle = ini_read_real("Modded", "blockstyle", 0); // final, september, old
+	global.roomnames = ini_read_real("Modded", "roomnames", false);
+	global.machsnd = ini_read_real("Modded", "machsnd", 0); // final, old
+	
+	ini_close();
+}
+load_moddedconfig();
 
 // gameframe
+ini_open("saveData.ini");
 global.gameframe_enabled = ini_read_real("Modded", "gameframe", true);
 if os_version < 655360 or os_type != os_windows // below windows 10
 {
@@ -150,7 +157,6 @@ if os_version < 655360 or os_type != os_windows // below windows 10
 	global.gameframe_enabled = false;
 }
 window_set_showborder(!global.gameframe_enabled);
-
 ini_close();
 
 // etc

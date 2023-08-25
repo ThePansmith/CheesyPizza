@@ -10,6 +10,8 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 			{
 				default:
 					spr = choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect);
+					if global.blockstyle == 2
+						spr = asset_get_index(sprite_get_name(spr) + "_old");
 					break;
 				
 				case "N":
@@ -18,6 +20,8 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 				 
 				case "SP":
 					spr = choose(spr_collect1SP, spr_collect2SP, spr_collect3SP, spr_collect4SP, spr_collect5SP);
+					if global.blockstyle == 2
+						spr = asset_get_index(sprite_get_name(spr) + "_old");
 					
 					spr_palette = spr_collectSP_palette;
 					paletteselect = choose(1, 2, 3, 4, 5);
@@ -38,6 +42,8 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 			{
 				default:
 					spr = choose(spr_pizzacollect1, spr_pizzacollect2, spr_pizzacollect3, spr_pizzacollect4, spr_pizzacollect5);
+					if global.blockstyle == 2
+						spr = choose(spr_pizzacollect1_old, spr_pizzacollect2_old, spr_pizzacollect3_old);
 					break;
 				
 				case "N":
@@ -46,6 +52,8 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 				
 				case "SP":
 					spr = choose(spr_bigcollect1SP, spr_bigcollect2SP, spr_bigcollect3SP, spr_bigcollect4SP, spr_bigcollect5SP, spr_bigcollect6SP);
+					if global.blockstyle == 2
+						spr = choose(spr_bigcollect1SP_old, spr_bigcollect2SP_old, spr_bigcollect3SP_old);
 					break;
 				
 				case "SN":
@@ -75,6 +83,8 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 				
 				case "SP":
 					spr = choose(spr_giantcollect1SP, spr_giantcollect2SP, spr_giantcollect3SP, spr_giantcollect4SP);
+					if global.blockstyle == 2
+						spr = spr_giantcollectSP_old;
 					break;
 				
 				case "S":

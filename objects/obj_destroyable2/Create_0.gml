@@ -15,6 +15,13 @@ if obj_player1.character == "SP"
 	sprite_index = spr_candydestroyable2;
 	particlespr = -1;
 	spr_dead = spr_candyblockdead;
+	
+	if global.blockstyle == 2
+	{
+		// old
+		sprite_index = spr_destroyable2SP_old;
+		particlespr = spr_candydebris;
+	}
 }
 else if obj_player1.character == "BN"
 {

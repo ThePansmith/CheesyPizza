@@ -653,7 +653,7 @@ opt.opts = [
 #endregion
 #region BLOCKS
 
-var opt = add_option("Block Style", "blockstyle", "Just for you, face block fans.", function(val)
+var opt = add_option("Asset Style", "blockstyle", "Just for you, face block fans.", function(val)
 {
 	if val == 0
 	{
