@@ -1,4 +1,6 @@
+live_auto_call;
+
+playerid = obj_player1;
 depth = -10;
-image_xscale = obj_player.xscale;
-image_speed = obj_player.image_speed;
-global.cowboyhat = false;
+yoffset = 0;
+xoffset = 0;

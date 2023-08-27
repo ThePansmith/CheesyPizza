@@ -51,7 +51,7 @@ if state == 1 && t >= 1
 	draw_set_valign(fa_middle);
 	draw_set_colour(c_white);
 	draw_set_font(font1);
-	draw_text(960 / 2, 540 / 2 - 16, str);
+	draw_text(960 / 2, 540 / 2 - 16, self.str);
 
 	/*
 	if cancon or !drm

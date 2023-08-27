@@ -14,8 +14,9 @@ else if time > 0
 }
 
 // disable p rank
-if time == 0
+if time <= 0
 {
+	time = 0;
 	global.prank_cankillenemy = false;
     global.prank_enemykilled = false;
 }

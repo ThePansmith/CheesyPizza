@@ -254,9 +254,6 @@ switch (state)
 	
 	// pto
 	case states.debugfly: scr_player_debugstate(); break;
-	
-	// cheesed up
-	case states.polespin: scr_player_polespin(); break;
 }
 
 if (state != states.chainsaw)
@@ -986,6 +983,12 @@ if state != states.mach3 && state != states.Sjump && state != states.Sjumpprep &
 	jetpackcancel = false;
 if character == "N" && noisetype == 1
 	jetpackcancel = true;
+
+if hat != -1 && !instance_exists(obj_cowboyhat)
+{
+	with instance_create(x, y, obj_cowboyhat)
+		playerid = other.id;
+}
 
 if !variable_global_exists("anon")
 {

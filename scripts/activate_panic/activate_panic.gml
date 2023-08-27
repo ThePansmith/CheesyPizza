@@ -117,7 +117,7 @@ function activate_panic(instapanic = false)
 			global.fill = 4056;
 			break;
 		
-		// cheesed up
+		// pto
 		case strongcold_1:
 			global.fill = 3240;
 			break;
