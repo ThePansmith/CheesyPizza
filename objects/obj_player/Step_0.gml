@@ -254,6 +254,9 @@ switch (state)
 	
 	// pto
 	case states.debugfly: scr_player_debugstate(); break;
+	
+	// cheesed up
+	case states.polespin: scr_player_polespin(); break;
 }
 
 if (state != states.chainsaw)

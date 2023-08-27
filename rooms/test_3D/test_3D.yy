@@ -1,28 +1,24 @@
 {
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
-  "name": "Funnyroom",
-  "creationCodeFile": "rooms/Funnyroom/RoomCreationCode.gml",
+  "name": "test_3D",
+  "creationCodeFile": "rooms/test_3D/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
   "instanceCreationOrder": [],
   "isDnd": false,
   "layers": [
-    {"resourceType":"GMREffectLayer","resourceVersion":"1.0","name":"Effect_2","depth":0,"effectEnabled":true,"effectType":"_filter_contrast","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[
-        {"name":"g_ContrastIntensity","type":0,"value":"1",},
-        {"name":"g_ContrastBrightness","type":0,"value":"0.9",},
-      ],"userdefinedDepth":false,"visible":true,},
-    {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Backgrounds_1","animationFPS":0.0,"animationSpeedType":1,"colour":4294967295,"depth":100,"effectEnabled":true,"effectType":"_filter_vignette","gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[
-        {"name":"g_VignetteEdges","type":0,"value":"0",},
-        {"name":"g_VignetteEdges","type":0,"value":"1",},
-        {"name":"g_VignetteSharpness","type":0,"value":"1",},
-        {"name":"g_VignetteTexture","type":2,"value":"_filter_vignette_texture",},
-      ],"spriteId":{"name":"spr_finaljudgement2","path":"sprites/spr_finaljudgement2/spr_finaljudgement2.yy",},"stretch":false,"userdefinedAnimFPS":true,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
+    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":17,"SerialiseWidth":30,"TileCompressedData":[
+-3,105,4,147,127,127,147,-26,105,4,147,127,127,147,-26,105,4,147,127,127,147,-26,105,4,147,127,127,147,-26,105,
+4,147,127,127,147,-26,105,4,147,127,127,147,-26,105,4,147,127,127,147,-26,105,4,147,127,127,147,-26,105,4,147,
+127,127,147,-26,105,3,147,127,127,-24,147,-3,105,1,147,-26,127,-3,105,1,147,-26,127,-3,105,3,147,127,127,-24,
+147,-3,105,4,147,127,127,147,-26,105,4,147,127,127,147,-26,105,4,147,127,127,147,-26,105,4,147,127,127,147,-23,
+105,],"TileDataFormat":1,},"tilesetId":{"name":"tile_tower_tileset","path":"tilesets/tile_tower_tileset/tile_tower_tileset.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
   ],
   "parent": {
-    "name": "CheesyPizza",
-    "path": "folders/Rooms/CheesyPizza.yy",
+    "name": "3D",
+    "path": "folders/Rooms/CheesyPizza/3D.yy",
   },
   "parentRoom": null,
   "physicsSettings": {
@@ -39,9 +35,6 @@
     "Width": 960,
   },
   "sequenceId": null,
-  "tags": [
-    "hidden",
-  ],
   "views": [
     {"hborder":1280,"hport":1080,"hspeed":-1,"hview":540,"inherit":false,"objectId":null,"vborder":960,"visible":true,"vspeed":-1,"wport":1920,"wview":960,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1024,"wview":1024,"xport":0,"xview":0,"yport":0,"yview":0,},

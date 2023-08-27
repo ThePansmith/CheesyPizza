@@ -60,7 +60,12 @@ function meta_room()
 				else
 				{
 					for(var i = 0; room_exists(i); i++)
-						array_push(room_array, room_get_name(i));
+					{
+						var tags = asset_get_tags(room_get_name(i));
+						
+						if (!array_contains(tags, "hidden"))
+							array_push(room_array, room_get_name(i));
+					}
 					array_sort(room_array, true);
 				}
 				return room_array;

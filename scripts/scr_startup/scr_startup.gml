@@ -1,5 +1,12 @@
 gml_pragma("UnityBuild", "true");
 
+enum blockstyles
+{
+	final,
+	september,
+	old
+}
+
 // room order check
 if room_first != Loadiingroom or room_next(room_first) != Initroom
 {
@@ -140,7 +147,7 @@ function load_moddedconfig()
 	global.smoothcam = ini_read_real("Modded", "smoothcam", 0); // 0 through 1 lerp amount
 	global.secrettiles = ini_read_real("Modded", "secrettiles", 0); // fade, spotlight
 	global.hud = ini_read_real("Modded", "hud", 0); // final, old
-	global.blockstyle = ini_read_real("Modded", "blockstyle", 0); // final, september, old
+	global.blockstyle = ini_read_real("Modded", "blockstyle", blockstyles.final); // final, september, old
 	global.roomnames = ini_read_real("Modded", "roomnames", false);
 	global.machsnd = ini_read_real("Modded", "machsnd", 0); // final, old
 	

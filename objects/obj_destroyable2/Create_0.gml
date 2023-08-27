@@ -1,7 +1,7 @@
 particlespr = spr_pizzadebris;
 spr_dead = spr_pizzablockdead;
 
-if global.blockstyle == 2
+if global.blockstyle == blockstyles.old
 {
 	// old
 	sprite_index = spr_destroyable2_old;
@@ -16,7 +16,7 @@ if obj_player1.character == "SP"
 	particlespr = -1;
 	spr_dead = spr_candyblockdead;
 	
-	if global.blockstyle == 2
+	if global.blockstyle == blockstyles.old
 	{
 		// old
 		sprite_index = spr_destroyable2SP_old;

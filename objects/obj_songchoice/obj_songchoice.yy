@@ -9,12 +9,12 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "CheesyPizza",
-    "path": "folders/Objects/CheesyPizza.yy",
+    "name": "UI",
+    "path": "folders/Objects/CheesyPizza/UI.yy",
   },
   "parentObjectId": {
-    "name": "obj_choicebase",
-    "path": "objects/obj_choicebase/obj_choicebase.yy",
+    "name": "par_choicebase",
+    "path": "objects/par_choicebase/par_choicebase.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

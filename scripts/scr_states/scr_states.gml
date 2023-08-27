@@ -312,7 +312,10 @@ enum states
 	frothstuck,
 	
 	// pto
-	debugfly
+	debugfly,
+	
+	// cheesed up
+	polespin,
 }
 
 #endregion

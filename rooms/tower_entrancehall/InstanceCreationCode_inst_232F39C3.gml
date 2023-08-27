@@ -15,7 +15,7 @@ vertex_format_add_texcoord();
 format =  vertex_format_end();
 //format = rx_obj_CreateVertexTextureFormat(); // temp
 var parserHint = rx_obj_parserhint.ignore_none;
-parserHint = enum_set_flag(parserHint, rx_obj_parserhint.ignore_normal_list);
-parserHint = enum_set_flag(parserHint, rx_obj_parserhint.ignore_texcoord_list);
+parserHint = enum_flag_set(parserHint, rx_obj_parserhint.ignore_normal_list);
+parserHint = enum_flag_set(parserHint, rx_obj_parserhint.ignore_texcoord_list);
 
 model = mdl_Load_OBJ_Model_File("data/model/radix.obj", format, parserHint, true);

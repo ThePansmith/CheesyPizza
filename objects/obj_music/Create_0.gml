@@ -395,13 +395,13 @@ add_music(desert_1, "event:/music/w2/desert", "event:/music/w2/desertsecret", 0,
 #endregion
 #region ENCORE
 
-add_music(e_medieval_1, "event:/music/w1/medieval", "event:/music/w1/medievalsecret", 0, function(room, event, event_secret)
+add_music(e_medieval_1, "event:/modded/encore/w1/medieval", "event:/music/w1/medievalsecret", 0, function(room, event, event_secret)
 {
 	var s = -1;
 	switch room
 	{
 		case e_medieval_1:
-		case medieval_2:
+		case e_medieval_2:
 			s = 0
 			break
 		case medieval_3:

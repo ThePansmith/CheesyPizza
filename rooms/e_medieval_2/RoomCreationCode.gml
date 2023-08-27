@@ -1,1 +1,1 @@
-global.roommessage = "VALIANT AND LAZY KNIGHT";
+global.showcollisions = 1;
