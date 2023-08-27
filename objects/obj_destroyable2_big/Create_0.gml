@@ -8,7 +8,7 @@ if check_char("SP")
 	sprite_index = spr_candybigbreakable;
 	spr_dead = spr_bigcandyblockdead;
 	
-	if global.blockstyle == 2
+	if global.blockstyle == blockstyles.old
 	{
 		// old
 		sprite_index = spr_bigbreakableSP_old;
@@ -25,7 +25,7 @@ else if check_char("PN")
 	sprite_index = spr_bigbreakablePN;
 	spr_dead = spr_bigpizzablockdeadPN;
 }
-else if global.blockstyle == 2
+else if global.blockstyle == blockstyles.old
 {
 	// old
 	sprite_index = spr_bigbreakable_old;

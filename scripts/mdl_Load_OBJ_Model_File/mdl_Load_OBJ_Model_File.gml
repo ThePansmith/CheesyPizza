@@ -64,19 +64,19 @@ function mdl_Load_OBJ_Model_File(filepath, format, parserHint, debug = false)
 				break; // We should never reach here, but just in case
 			
 			case RX_OBJFILE_GEOMETRY_ID:
-				if (enum_has_flag(parserHint, rx_obj_parserhint.ignore_geometry_list))
+				if (enum_flag_get(parserHint, rx_obj_parserhint.ignore_geometry_list))
 					continue;
 				var data = string_split(string_get_substring(line, RX_OBJFILE_GEOMETRY_ID_LEN + 2), " ", true);
 				ds_list_add(vertexGeometryList, real(data[0]), real(data[1]), real(data[2]));
 				break;
 			case RX_OBJFILE_NORMAL_ID:
-				if (enum_has_flag(parserHint, rx_obj_parserhint.ignore_normal_list))
+				if (enum_flag_get(parserHint, rx_obj_parserhint.ignore_normal_list))
 					continue;
 				var data = string_split(string_get_substring(line, RX_OBJFILE_NORMAL_ID_LEN + 2), " ", true);
 				ds_list_add(vertexNormalList, real(data[0]), real(data[1]), real(data[2]));
 				break;
 			case RX_OBJFILE_TEXTURECOORD_ID:
-				if (enum_has_flag(parserHint, rx_obj_parserhint.ignore_texcoord_list))
+				if (enum_flag_get(parserHint, rx_obj_parserhint.ignore_texcoord_list))
 					continue;
 				var data = string_split(string_get_substring(line, RX_OBJFILE_TEXTURECOORD_ID_LEN + 2), " ", true);
 				ds_list_add(vertexTextureCoordList, real(data[0]), real(data[1]));
@@ -109,27 +109,27 @@ function mdl_Load_OBJ_Model_File(filepath, format, parserHint, debug = false)
 								trace($"Invalid Tri Face information: \"{faceInfoString}\"");
 								return noone;
 							case rx_obj_faceformat.vertex:
-								if (!enum_has_flag(parserHint, rx_obj_parserhint.ignore_geometry_list))
+								if (!enum_flag_get(parserHint, rx_obj_parserhint.ignore_geometry_list))
 									positionIndex = real(vertexIndexInfo[0]);
 								break;
 							case rx_obj_faceformat.vertex_texture:
-								if (!enum_has_flag(parserHint, rx_obj_parserhint.ignore_geometry_list))
+								if (!enum_flag_get(parserHint, rx_obj_parserhint.ignore_geometry_list))
 									positionIndex = real(vertexIndexInfo[0]);
-								if (!enum_has_flag(parserHint, rx_obj_parserhint.ignore_texcoord_list))
+								if (!enum_flag_get(parserHint, rx_obj_parserhint.ignore_texcoord_list))
 									texCoordIndex = real(vertexIndexInfo[1]);
 								break;
 							case rx_obj_faceformat.vertex_normal:
-								if (!enum_has_flag(parserHint, rx_obj_parserhint.ignore_geometry_list))
+								if (!enum_flag_get(parserHint, rx_obj_parserhint.ignore_geometry_list))
 									positionIndex = real(vertexIndexInfo[0]);
-								if (!enum_has_flag(parserHint, rx_obj_parserhint.ignore_normal_list))
+								if (!enum_flag_get(parserHint, rx_obj_parserhint.ignore_normal_list))
 									normalIndex = real(vertexIndexInfo[1]);
 								break;
 							case rx_obj_faceformat.vertex_texture_normal:
-								if (!enum_has_flag(parserHint, rx_obj_parserhint.ignore_geometry_list))
+								if (!enum_flag_get(parserHint, rx_obj_parserhint.ignore_geometry_list))
 									positionIndex = real(vertexIndexInfo[0]);
-								if (!enum_has_flag(parserHint, rx_obj_parserhint.ignore_texcoord_list))
+								if (!enum_flag_get(parserHint, rx_obj_parserhint.ignore_texcoord_list))
 									texCoordIndex = real(vertexIndexInfo[1]);
-								if (!enum_has_flag(parserHint, rx_obj_parserhint.ignore_normal_list))
+								if (!enum_flag_get(parserHint, rx_obj_parserhint.ignore_normal_list))
 									normalIndex = real(vertexIndexInfo[2]);
 								break;
 						}

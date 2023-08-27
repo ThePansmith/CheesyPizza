@@ -2,7 +2,7 @@ playerindex = 0;
 depth = 1;
 particlespr = spr_metalblockdebris;
 
-if global.blockstyle == 1
+if global.blockstyle == blockstyles.september
 {
 	// september
 	sprite_index = spr_metalb;

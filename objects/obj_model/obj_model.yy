@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "CheesyPizza",
-    "path": "folders/Objects/CheesyPizza.yy",
+    "name": "Level objects",
+    "path": "folders/Objects/CheesyPizza/Level objects.yy",
   },
   "parentObjectId": null,
   "persistent": false,

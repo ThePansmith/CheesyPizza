@@ -1,3 +1,9 @@
+if (scr_split_object())
+{
+	instance_destroy(id, false);
+	exit;
+}
+
 event_inherited();
 
 global.breaksound = 0;
@@ -5,13 +11,13 @@ depth = 1;
 particlespr = spr_towerblockdebris;
 particlespd = 0.35;
 
-if global.blockstyle == 1
+if global.blockstyle == blockstyles.september
 {
 	// september
 	sprite_index = spr_destroyable;
 	particlespr = spr_doughblockdead;
 }
-if global.blockstyle == 2
+if global.blockstyle ==  blockstyles.old
 {
 	// old
 	sprite_index = spr_destroyable_old;
