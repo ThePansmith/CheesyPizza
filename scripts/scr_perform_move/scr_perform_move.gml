@@ -155,6 +155,9 @@ function scr_perform_move(move, prestate = state)
 				state = states.faceplant;
 				image_speed = 0.5;
 				
+				if character == "N"
+					sound_play_3d(sfx_spin, x, y);
+				
 				particle_set_scale(part.jumpdust, xscale, 1);
 				create_particle(x, y, part.jumpdust);
 				

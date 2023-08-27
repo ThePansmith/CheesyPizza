@@ -21,6 +21,7 @@ with (other)
 		obj_camera.chargecamera = 0;
 		image_index = 0;
 		state = states.victory;
+		create_transformation_tip("{u}[T] Modifiers/", "modifiers");
 		exit;
 	}
 }

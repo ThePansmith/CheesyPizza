@@ -553,6 +553,7 @@ function scr_characterspr()
 		spr_kungfuair3transition = spr_playerN_kungfuair3transition;
 		spr_machslideboostfall = spr_playerN_machslideboostfall;
 		spr_machslideboost3fall = spr_playerN_machslideboost3fall;
+		spr_faceplant = spr_playerN_spin;
 		spr_palette = spr_noisepalette;
 		paletteselect = 0;
 	}

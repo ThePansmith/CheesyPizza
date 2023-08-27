@@ -199,7 +199,8 @@ function scr_cameradraw()
 		reset_shader_fix();
 	
 		// bullets
-		if global.shootstyle == 1 && obj_player1.character != "V" && obj_player1.character != "S"
+		var showbullet = obj_player1.character != "V" && obj_player1.character != "S" && !obj_player1.isgustavo;
+		if global.shootstyle == 1 && showbullet
 		{
 			bulletimage += 0.35;
 		
@@ -242,11 +243,11 @@ function scr_cameradraw()
 		}
 	
 		// chainsaw
-		if global.doublegrab == 3 && obj_player1.character != "V" && obj_player1.character != "S" && obj_player1.character != "SN"
+		if global.doublegrab == 3 && showbullet && obj_player1.character != "SN"
 		{
 			var bx = hud_xx - 63, by = hud_yy + 60, bpad = 25;
 		    var bspr = spr_fuelHUD;
-		
+			
 			if global.shootstyle != 1
 			{
 				bulletimage += 0.35;

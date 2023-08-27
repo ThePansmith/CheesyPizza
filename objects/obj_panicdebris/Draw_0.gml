@@ -1,5 +1,8 @@
 live_auto_call;
 
+if instance_exists(obj_ghostcollectibles) or !global.panic
+	exit;
+
 if draw && global.leveltosave != "exit"
 {
 	y += 3;
