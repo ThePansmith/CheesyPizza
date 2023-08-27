@@ -1,12 +1,15 @@
-global.experimental = false;
+global.gameframe_caption_text = ""; // empty window title
+global.experimental = false; // make console useless
+fmod_destroy(); // mute all audio
 
-fmod_destroy();
+// delete anything that might help you escape
 with all
 {
 	if object_index != obj_screensizer && object_index != obj_gmlive
 	&& (object_index != obj_shell or !DEBUG)
 		instance_destroy(id, false);
 }
+
+// fade in
 with instance_create(0, 0, obj_genericfade)
 	deccel = 0.01;
-global.gameframe_caption_text = "";

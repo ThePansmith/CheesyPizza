@@ -35,7 +35,7 @@
   "origin": 0,
   "parent": {
     "name": "Collectible",
-    "path": "folders/Sprites/Effects and Particles/Collectible.yy",
+    "path": "folders/Sprites/Level Structure/Collectible.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

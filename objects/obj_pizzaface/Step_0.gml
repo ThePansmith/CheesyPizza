@@ -180,61 +180,75 @@ else
 if flash && alarm[2] <= 0
 	alarm[2] = 0.15 * room_speed;
 
-if _move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.state != states.actor && !instance_exists(obj_fadeout) && !instance_exists(obj_endlevelfade) && image_alpha >= 1
+if _move && image_alpha >= 1
 {
-	fmod_event_instance_stop(snd, true);
-	
-	if instance_exists(obj_toppinwarrior)
+	var _parry = instance_place(x, y, obj_parryhitbox);
+	if _parry && !_parry.collisioned && !MOD.DeathMode && !MOD.Lap3 && (REMIX or global.laps > 1) && !global.modifier_failed
 	{
-		if (variable_global_exists("toppinwarriorid1") && instance_exists(global.toppinwarriorid1))
-			instance_destroy(global.toppinwarriorid1);
-		else if (variable_global_exists("toppinwarriorid2") && instance_exists(global.toppinwarriorid2))
-			instance_destroy(global.toppinwarriorid2);
-		else if (variable_global_exists("toppinwarriorid3") && instance_exists(global.toppinwarriorid3))
-			instance_destroy(global.toppinwarriorid3);
-		else if (variable_global_exists("toppinwarriorid4") && instance_exists(global.toppinwarriorid4))
-			instance_destroy(global.toppinwarriorid4);
-		else if (variable_global_exists("toppinwarriorid5") && instance_exists(global.toppinwarriorid5))
-			instance_destroy(global.toppinwarriorid5);
+		if playerid.x != x
+			playerid.xscale = sign(x - playerid.x);
 		
 		instance_create(x, y, obj_flash);
-		global.fill = (60 * 60) / 0.2;
+		global.fill += calculate_filltime(15);
+		with _parry
+			event_user(0);
 		instance_destroy();
 	}
-	else if !instance_exists(obj_toppinwarrior)
+	else if place_meeting(x, y, playerid) && !playerid.cutscene && playerid.state != states.actor && !instance_exists(obj_fadeout) && !instance_exists(obj_endlevelfade)
 	{
-		if sprite_index == spr_babyface
+		fmod_event_instance_stop(snd, true);
+		if instance_exists(obj_toppinwarrior)
 		{
-	        with (playerid)
-	        {
-	            instance_destroy(obj_fadeout)
-	            targetDoor = "A"
-	            state = states.timesup
-				stop_music()
-	            sound_stop_all(true)
-				scr_room_goto(rm_baby)
-	        }
-	        instance_destroy()
-			instance_destroy(obj_wartimer);
-	    }
-		else
-		{
-			with (playerid)
-			{
-				instance_destroy(obj_fadeout);
-				targetDoor = "A";
-				room = timesuproom;
-				state = states.timesup;
-				sprite_index = spr_Timesup;
-				image_index = 0;
-				if (isgustavo)
-					sprite_index = spr_player_ratmounttimesup;
-				visible = true;
-				image_blend = c_white;
-				stop_music();
-			}
+			if (variable_global_exists("toppinwarriorid1") && instance_exists(global.toppinwarriorid1))
+				instance_destroy(global.toppinwarriorid1);
+			else if (variable_global_exists("toppinwarriorid2") && instance_exists(global.toppinwarriorid2))
+				instance_destroy(global.toppinwarriorid2);
+			else if (variable_global_exists("toppinwarriorid3") && instance_exists(global.toppinwarriorid3))
+				instance_destroy(global.toppinwarriorid3);
+			else if (variable_global_exists("toppinwarriorid4") && instance_exists(global.toppinwarriorid4))
+				instance_destroy(global.toppinwarriorid4);
+			else if (variable_global_exists("toppinwarriorid5") && instance_exists(global.toppinwarriorid5))
+				instance_destroy(global.toppinwarriorid5);
+			
+			instance_create(x, y, obj_flash);
+			global.fill = (60 * 60) / 0.2;
 			instance_destroy();
-			instance_destroy(obj_wartimer);
+		}
+		else if !instance_exists(obj_toppinwarrior)
+		{
+			if sprite_index == spr_babyface
+			{
+		        with (playerid)
+		        {
+		            instance_destroy(obj_fadeout)
+		            targetDoor = "A"
+		            state = states.timesup
+					stop_music()
+		            sound_stop_all(true)
+					scr_room_goto(rm_baby)
+		        }
+		        instance_destroy()
+				instance_destroy(obj_wartimer);
+		    }
+			else
+			{
+				with (playerid)
+				{
+					instance_destroy(obj_fadeout);
+					targetDoor = "A";
+					room = timesuproom;
+					state = states.timesup;
+					sprite_index = spr_Timesup;
+					image_index = 0;
+					if (isgustavo)
+						sprite_index = spr_player_ratmounttimesup;
+					visible = true;
+					image_blend = c_white;
+					stop_music();
+				}
+				instance_destroy();
+				instance_destroy(obj_wartimer);
+			}
 		}
 	}
 }

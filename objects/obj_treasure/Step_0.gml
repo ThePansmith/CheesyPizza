@@ -1,6 +1,7 @@
-if (instance_place(x, y, obj_glassblock))
+if instance_place(x, y, obj_glassblock)
 	exit;
 
+/*
 if (sugary)
 {
 	if place_meeting(x, y, obj_player)
@@ -19,7 +20,7 @@ if (sugary)
 		exit;
 	}
 }
-
+*/
 
 var _p = player == 2 ? obj_player2 : obj_player1;
 switch state
