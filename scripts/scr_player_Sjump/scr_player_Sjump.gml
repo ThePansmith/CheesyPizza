@@ -61,7 +61,7 @@ function scr_player_Sjump()
 	if (scr_solid_player(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles))
 	{
 		var mb = instance_place(x, y - 1, obj_metalblock);
-		if !mb or !mb.sugary
+		if !mb or !SUGARY
 		{
 			pizzapepper = 0;
 			a = 0;
