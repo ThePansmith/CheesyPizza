@@ -10,7 +10,7 @@ draw_set_alpha(1);
 if menu == 1
 {
 	shader_set_circleclip(960 / 2, 540 / 2, 560 * curve);
-	draw_sprite_tiled(spr_optionsBG, 5, ++x, x);
+	draw_sprite_tiled(SUGARY ? bg_options_ss : spr_optionsBG, 5, ++x, x);
 	event_inherited();
 }
 #endregion
