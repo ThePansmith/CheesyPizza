@@ -3,4 +3,5 @@
 
 
 
-global.rxdebugflag = 0;
+global.rxdebugflag--;
+trace(global.rxdebugflag);
