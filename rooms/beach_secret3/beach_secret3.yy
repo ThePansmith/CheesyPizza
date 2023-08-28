@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "beach_secret3",
-  "creationCodeFile": "${project_dir}/rooms/beach_secret3/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/beach_secret3/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

@@ -34,7 +34,9 @@ if floor(other.image_index) == other.image_number - 1 && other.state == states.v
 		targetRoom = other.targetRoom;
 		if (targetRoom == tower_finalhallway or targetRoom == exit_1)
 			global.exitrank = true;
+		
 		obj_tv.tv_bg.sprite = gate.bgsprite;
+		obj_tv.tv_bg.parallax = gate.bgparallax;
 		
 		if gate.levelName != ""
 		{

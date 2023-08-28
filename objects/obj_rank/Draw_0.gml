@@ -32,7 +32,7 @@ if sugary
 	var r = obj_endlevelfade.rank;
 	if global.rank == "p"
 	{
-		if obj_player1.character == "SP"
+		if obj_player1.character == "SP" or obj_player1.character == "SN"
 			r = 7;
 		else
 			r = 6;
