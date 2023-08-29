@@ -6,7 +6,6 @@ if type == "Heavy"
 	grav2 = 0.7;
 }
 
-/*
 if (room == sucrose_6 || room == sucrose_6_1 || room == sucrose_7 || room == sucrose_8) 
 {
 	color_index = 1
@@ -15,7 +14,6 @@ if (room == sucrose_6 || room == sucrose_6_1 || room == sucrose_7 || room == suc
 		dark : #000000
 	}
 }
-*/
 
 if content != noone
 {

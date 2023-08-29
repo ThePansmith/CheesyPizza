@@ -18,6 +18,9 @@ if MOD.Lappable
 		else if object_index != obj_ghostknight && !in_saveroom(id, global.escaperoom)
 			add_saveroom(id, global.escaperoom);
 	}
+}
+if MOD.Lappable or (safe_get(global, "leveltosave") == "sucrose" && !room_is_secret(room))
+{
 	with obj_collect
 	{
 		instance_change(obj_escapecollect, false);

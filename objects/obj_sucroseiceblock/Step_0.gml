@@ -55,11 +55,15 @@ if (flash == 1 && alarm[1] <= 0)
 if !place_meeting(x, y, obj_dashpad)
 	touching = false;
 
-if state != states.hit && place_meeting(x, y, obj_dashpad) && state != states.grabbed && touching == false
+var _pad = instance_place(x, y, obj_dashpad)
+if state != states.hit && _pad && state != states.grabbed && !touching
 {
+	if !dashpadbuffer
+		sound_play_oneshot_3d("event:/sfx/misc/dashpad", x, y);
+	dashpadbuffer = true;
+	
 	state = states.stun
 	vsp = -7
-	var _pad = instance_place(x, y, obj_dashpad)
 	x = _pad.x 
 	y = _pad.y
 	xscale = _pad.image_xscale
@@ -68,6 +72,8 @@ if state != states.hit && place_meeting(x, y, obj_dashpad) && state != states.gr
 	other.flash = true;
 	touching = true;
 }
+else
+	dashpadbuffer = false;
 
 if state != states.hit && invtime <= 0 && (place_meeting(x, y, obj_player1) or place_meeting(x, y, obj_brickball)) && state != states.grabbed 
 {
