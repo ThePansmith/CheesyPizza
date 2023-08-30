@@ -4,7 +4,7 @@ function scr_player_ratmountladder()
 	hsp = 0;
 	if (key_up && !hooked)
 	{
-		sprite_index = spr_lonegustavo_ladder;
+		sprite_index = spr_lonegustavoladder;
 		vsp = -6;
 		if (steppybuffer > 0)
 			steppybuffer--;
@@ -18,13 +18,13 @@ function scr_player_ratmountladder()
 	}
 	else if (key_down && !hooked)
 	{
-		sprite_index = spr_lonegustavo_ladderdown;
+		sprite_index = spr_lonegustavoladderdown;
 		vsp = 10;
 		image_speed = -0.35;
 	}
 	else
 	{
-		sprite_index = spr_lonegustavo_ladder;
+		sprite_index = spr_lonegustavoladder;
 		vsp = 0;
 		image_speed = 0;
 	}
@@ -33,7 +33,7 @@ function scr_player_ratmountladder()
 	{
 		hooked = false;
 		state = states.ratmountjump;
-		sprite_index = spr_player_ratmountgroundpoundfall;
+		sprite_index = spr_ratmount_groundpoundfall;
 		image_index = 0;
 		vsp = 0;
 	}
@@ -45,7 +45,7 @@ function scr_player_ratmountladder()
 		if (place_meeting(x, y, obj_hookup))
 			ladderbuffer = 30;
 		state = states.ratmountjump;
-		sprite_index = spr_player_ratmountgroundpound;
+		sprite_index = spr_ratmount_groundpound;
 		if (key_down)
 			vsp = 5;
 		else
@@ -55,7 +55,7 @@ function scr_player_ratmountladder()
 	if (key_down && grounded && !place_meeting(x, y, obj_platform))
 	{
 		hooked = false;
-		sprite_index = spr_player_ratmountgroundpoundfall;
+		sprite_index = spr_ratmount_groundpoundfall;
 		state = states.ratmountjump;
 		image_index = 0;
 	}

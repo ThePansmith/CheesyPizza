@@ -11,7 +11,7 @@ if (sprite_index == spr_gustavoswitch2 && floor(image_index) == (image_number - 
 		isgustavo = true;
 		state = states.ratmount;
 		jumpAnim = false;
-		sprite_index = spr_player_ratmountidle;
+		sprite_index = spr_ratmount_idle;
 		brick = true;
 		x = obj_gustavoswitch.x;
 		y = obj_gustavoswitch.y;

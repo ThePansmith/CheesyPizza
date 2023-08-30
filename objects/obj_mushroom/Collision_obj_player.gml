@@ -27,15 +27,15 @@ if (!other.cutscene && sprite_index != spr_bounce && other.state != states.gotop
 	{
 		if (other.ratmount_movespeed < 12)
 		{
-			other.sprite_index = spr_player_ratmountmushroombounce;
+			other.sprite_index = other.spr_ratmount_mushroombounce;
 			if (!other.brick)
-				other.sprite_index = spr_lonegustavo_jumpstart;
+				other.sprite_index = other.spr_lonegustavojumpstart;
 		}
 		else
 		{
-			other.sprite_index = spr_player_ratmountdashjump;
+			other.sprite_index = other.spr_ratmount_dashjump;
 			if (!other.brick)
-				other.sprite_index = spr_lonegustavo_dashjump;
+				other.sprite_index = other.spr_lonegustavodashjump;
 		}
 		other.jumpAnim = true;
 		other.state = states.ratmountjump;

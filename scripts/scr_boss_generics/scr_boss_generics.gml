@@ -69,11 +69,11 @@ function scr_boss_pizzaheadjump()
 			case spr_playerV_jump:
 				sprite_index = spr_playerV_fall;
 				break;
-			case spr_lonegustavo_jumpstart:
-				sprite_index = spr_lonegustavo_jump;
+			case obj_player1.spr_lonegustavojumpstart:
+				sprite_index = obj_player1.spr_lonegustavojump;
 				break;
-			case spr_player_ratmountgroundpound:
-				sprite_index = spr_player_ratmountgroundpoundfall;
+			case obj_player1.spr_ratmount_groundpound:
+				sprite_index = obj_player1.spr_ratmount_groundpoundfall;
 				break;
 			case spr_playerN_jump:
 				sprite_index = spr_playerN_fall;

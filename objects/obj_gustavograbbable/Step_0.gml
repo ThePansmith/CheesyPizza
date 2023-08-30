@@ -9,7 +9,7 @@ switch (state)
 		scr_enemy_turn();
 		break;
 	case states.walk:
-		sprite_index = spr_lonegustavo_grabbable;
+		sprite_index = obj_player1.spr_lonegustavograbbable;
 		image_speed = 0.35;
 		hsp = 0;
 		var _boss = -4;
@@ -33,7 +33,7 @@ switch (state)
 	case states.stun:
 		scr_enemy_stun();
 		if (sprite_index == spr_dead)
-			sprite_index = spr_lonegustavo_dashjump;
+			sprite_index = obj_player1.spr_lonegustavodashjump;
 		break;
 	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();

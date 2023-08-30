@@ -16,6 +16,7 @@ if SUGARY
 	spr_panic = spr_candy_panic;
 	spr_taunt = spr_candy_taunt;
 	spr_supertaunt = spr_candy_supertaunt;
+	spr_panicrun = spr_candy_panicrun;
 	
 	tv_do_expression(spr_tv_exprconfecti5);
 }

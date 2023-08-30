@@ -1,0 +1,53 @@
+enum PET
+{
+	noiserat,
+	berry, // tictorian
+	sneck, // sts
+	boykiss, // mgvio
+}
+
+event_inherited();
+image_speed = 0.35;
+
+xoffset = 35;
+yoffset = 0;
+grav = 0.23;
+state = states.normal;
+
+spr_run = spr_toppinshroom_run;
+spr_idle = spr_toppinshroom;
+spr_panic = -1;
+spr_panicrun = -1;
+spr_taunt = -1;
+spr_supertaunt = -1;
+
+switch pet
+{
+	case PET.noiserat:
+		spr_run = spr_playerN_cheesedmove;
+		spr_idle = spr_playerN_cheesedidle;
+		break;
+	
+	case PET.berry:
+		spr_idle = spr_petberry_idle;
+		spr_panic = spr_petberry_panic;
+		spr_run = spr_petberry_run;
+		spr_panicrun = spr_petberry_panicrun;
+		spr_taunt = spr_petberry_taunt;
+		spr_supertaunt = spr_petberry_supertaunt;
+		break;
+	
+	case PET.sneck:
+		spr_idle = spr_petsneck_idle;
+		spr_run = spr_petsneck_run;
+		break;
+	
+	case PET.boykiss:
+		spr_idle = spr_petboykiss_idle;
+		spr_run = spr_petboykiss_run;
+		spr_taunt = spr_petboykiss_taunt;
+		break;
+}
+
+xprev = x;
+yprev = y;

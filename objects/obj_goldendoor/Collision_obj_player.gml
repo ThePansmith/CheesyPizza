@@ -33,7 +33,7 @@ if (!place_meeting(x, y, obj_doorblocked))
 			if (object_index == obj_player1)
 			{
 				if (obj_player1.isgustavo)
-					obj_player1.sprite_index = spr_ratmount_enterdoor;
+					obj_player1.sprite_index = spr_ratmountenterdoor;
 				else
 					obj_player1.sprite_index = obj_player1.spr_lookdoor;
 			}

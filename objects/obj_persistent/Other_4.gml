@@ -10,7 +10,7 @@ if MOD.Lappable
 {
 	with obj_baddie
 	{
-		if global.lap && (object_index == obj_robot or object_index == obj_ninja or object_index == obj_tank)
+		if global.lap && (object_index == obj_robot or object_index == obj_ninja or object_index == obj_bazookabaddie)
 		{
 			escape = true;
 			event_perform(ev_other, ev_room_start);

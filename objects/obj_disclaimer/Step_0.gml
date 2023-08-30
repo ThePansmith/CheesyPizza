@@ -1,10 +1,8 @@
 if instance_exists(obj_loadingscreen)
 	exit;
-if keyboard_check_pressed(ord("R"))
-	room_restart();
 
 // restart the disclaimer if you turn on your internet
-if !net && net != os_is_network_connected(false)
+if !net && net != os_is_network_connected(true)
 	room_restart();
 
 // animation

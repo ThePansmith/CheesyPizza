@@ -15,7 +15,7 @@ function scr_player_victory()
 	if (place_meeting(x, y, obj_keydoor) || place_meeting(x, y, obj_geromedoor))
 		sprite_index = spr_victory;
 	if (place_meeting(x, y, obj_startgate))
-		sprite_index = isgustavo ? spr_ratmount_entergate : spr_entergate;
+		sprite_index = isgustavo ? spr_ratmountentergate : spr_entergate;
 	
 	if (floor(image_index) == (image_number - 1))
 		image_speed = 0;

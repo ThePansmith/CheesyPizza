@@ -29,9 +29,9 @@ function scr_player_ratmount()
 				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 				state = states.bump;
 				if (brick)
-					sprite_index = spr_player_ratmountbump;
+					sprite_index = spr_ratmount_bump;
 				else
-					sprite_index = spr_lonegustavo_bump;
+					sprite_index = spr_lonegustavobump;
 				image_index = 0;
 				instance_create(x + (xscale * 15), y + 10, obj_bumpeffect);
 				hsp = -xscale * 4;
@@ -62,7 +62,7 @@ function scr_player_ratmount()
 			}
 		}
 	}
-	if (move != xscale && move != 0 && gusdashpadbuffer <= 0 && sprite_index != spr_lonegustavo_kick)
+	if (move != xscale && move != 0 && gusdashpadbuffer <= 0 && sprite_index != spr_lonegustavokick)
 	{
 		xscale = move;
 		if (abs(movespeed) > 2 && abs(hsp) > 2 && grounded)
@@ -96,7 +96,7 @@ function scr_player_ratmount()
 		image_speed = abs(movespeed) / 12;
 	else
 		image_speed = 0.35;
-	if (sprite_index == spr_player_ratmountmach3 || sprite_index == spr_lonegustavo_mach3)
+	if (sprite_index == spr_ratmount_mach3 || sprite_index == spr_lonegustavomach3)
 		image_speed = 0.4;
 	var front = scr_solid(x + sign(hsp), y) && !check_slope(x + sign(hsp), y);
 	if (brick)
@@ -106,25 +106,25 @@ function scr_player_ratmount()
 			if (hsp != 0 && !front)
 			{
 				if (ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
-					sprite_index = spr_player_ratmountmach3;
+					sprite_index = spr_ratmount_mach3;
 				else if (key_attack)
-					sprite_index = spr_player_ratmountattack;
+					sprite_index = spr_ratmount_attack;
 				else
-					sprite_index = spr_player_ratmountmove;
+					sprite_index = spr_ratmount_move;
 			}
 			else
 			{
 				image_speed = 0.35;
-				if (sprite_index != spr_player_ratmountidleanim)
+				if (sprite_index != spr_ratmount_idleanim)
 				{
-					sprite_index = spr_player_ratmountidle;
+					sprite_index = spr_ratmount_idle;
 					if (ratgrabbedID == noone)
 					{
 						if (idle < 400)
 							idle++;
 						if (idle >= 150)
 						{
-							sprite_index = spr_player_ratmountidleanim;
+							sprite_index = spr_ratmount_idleanim;
 							image_index = 0;
 						}
 					}
@@ -132,17 +132,17 @@ function scr_player_ratmount()
 				else if (floor(image_index) == (image_number - 1))
 				{
 					idle = 0;
-					sprite_index = spr_player_ratmountidle;
+					sprite_index = spr_ratmount_idle;
 				}
 			}
 		}
 		if (floor(image_index) == (image_number - 1))
 		{
 			landAnim = false;
-			if (sprite_index == spr_player_ratmountland)
-				sprite_index = spr_player_ratmountidle;
+			if (sprite_index == spr_ratmount_land)
+				sprite_index = spr_ratmount_idle;
 		}
-		if (sprite_index == spr_player_ratmountland)
+		if (sprite_index == spr_ratmount_land)
 			image_speed = 0.35;
 	}
 	else
@@ -150,14 +150,14 @@ function scr_player_ratmount()
 		if (hsp != 0 && !front)
 		{
 			if (ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
-				sprite_index = spr_lonegustavo_mach3;
+				sprite_index = spr_lonegustavomach3;
 			else if (key_attack)
-				sprite_index = spr_lonegustavo_dash;
+				sprite_index = spr_lonegustavodash;
 			else
-				sprite_index = spr_lonegustavo_walk;
+				sprite_index = spr_lonegustavowalk;
 		}
 		else
-			sprite_index = spr_lonegustavo_idle;
+			sprite_index = spr_lonegustavoidle;
 		image_speed = 0.35;
 	}
 	if (hsp != 0 && grounded && vsp > 0 && !front)
@@ -180,35 +180,35 @@ function scr_player_ratmount()
 		if (brick)
 		{
 			if ((ratmount_movespeed >= 12 && key_attack) || gusdashpadbuffer > 0)
-				sprite_index = spr_player_ratmountdashjump;
+				sprite_index = spr_ratmount_dashjump;
 			else
-				sprite_index = spr_player_ratmountjump;
+				sprite_index = spr_ratmount_jump;
 		}
 		else if ((ratmount_movespeed >= 12 && key_attack) || gusdashpadbuffer > 0)
-			sprite_index = spr_lonegustavo_dashjump;
+			sprite_index = spr_lonegustavodashjump;
 		else
-			sprite_index = spr_player_ratmountgroundpound;
+			sprite_index = spr_ratmount_groundpound;
 		image_index = 0;
 		jumpAnim = true;
 		state = states.ratmountjump;
 		vsp = -11;
 		jumpstop = false;
 	}
-	if (!grounded && sprite_index != spr_player_ratmountswallow)
+	if (!grounded && sprite_index != spr_ratmount_swallow)
 	{
 		state = states.ratmountjump;
 		jumpAnim = false;
 		if (ratmount_movespeed >= 12)
 		{
 			if (brick)
-				sprite_index = spr_player_ratmountdashjump;
+				sprite_index = spr_ratmount_dashjump;
 			else
-				sprite_index = spr_lonegustavo_dashjump;
+				sprite_index = spr_lonegustavodashjump;
 		}
 		else if (brick)
-			sprite_index = spr_player_ratmountfall;
+			sprite_index = spr_ratmount_fall;
 		else
-			sprite_index = spr_player_ratmountgroundpoundfall;
+			sprite_index = spr_ratmount_groundpoundfall;
 	}
 	if (key_attack && grounded && !check_solid(x + xscale, y))
 	{
@@ -244,7 +244,7 @@ function scr_player_ratmount()
 		if (move != 0)
 			xscale = move;
 		movespeed = xscale * 12;
-		sprite_index = spr_lonegustavo_punch;
+		sprite_index = spr_lonegustavopunch;
 	}
 	if (!instance_exists(dashcloudid) && grounded && ratmount_movespeed >= 12)
 	{
@@ -265,7 +265,7 @@ function scr_player_ratmount()
 			create_particle(x, y, part.jumpdust);
 			movespeed = max(abs(movespeed), 2);
 			crouchslipbuffer = 25;
-			sprite_index = spr_lonegustavo_crouchwalk;
+			sprite_index = spr_lonegustavocrouchwalk;
 			machhitAnim = false;
 			state = states.tumble;
 			fmod_event_instance_play(snd_crouchslide);
@@ -311,7 +311,7 @@ function ratmount_dotaunt()
 		{
 			scr_create_parryhitbox();
 			sound_play_oneshot_3d("event:/sfx/pep/taunt", x, y);
-			sprite_index = spr_player_ratmounttaunt;
+			sprite_index = spr_ratmount_taunt;
 			image_index = irandom(sprite_get_number(sprite_index) - 1);
 			with (instance_create(x, y, obj_taunteffect))
 				player = other.id;
@@ -322,7 +322,7 @@ function ratmount_dotaunt()
 			ini_write_real("Game", "supertaunt", true);
 			obj_savesystem.ini_str = ini_close();
 			sound_play_oneshot_3d("event:/sfx/pep/supertaunt", x, y);
-			sprite_index = spr_player_ratmountsupertaunt;
+			sprite_index = spr_ratmount_supertaunt;
 			image_index = 0;
 		}
 	}
@@ -347,7 +347,7 @@ function ratmount_kickbrick()
 		xoffset = _pad;
 	}
 	state = states.ratmountgroundpound;
-	sprite_index = spr_lonegustavo_kick;
+	sprite_index = spr_lonegustavokick;
 	image_index = 0;
 	image_speed = 0.35;
 	gustavokicktimer = 5;

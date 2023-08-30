@@ -16,6 +16,7 @@ if SUGARY
 	spr_panic = spr_gummyworm_panic;
 	spr_taunt = spr_gummyworm_taunt;
 	spr_supertaunt = spr_gummyworm_supertaunt;
+	spr_panicrun = spr_gummyworm_panicrun;
 	
 	tv_do_expression(spr_tv_exprconfecti4);
 }

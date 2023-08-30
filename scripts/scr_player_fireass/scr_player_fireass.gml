@@ -58,7 +58,7 @@ function scr_player_fireass()
 				if isgustavo
 				{
 					state = states.ratmount;
-					sprite_index = spr_player_ratmountidle;
+					sprite_index = spr_ratmount_idle;
 				}
 				image_index = 0;
 			}
@@ -84,7 +84,7 @@ function scr_player_fireass()
 			if isgustavo
 			{
 				state = states.ratmount;
-				sprite_index = spr_player_ratmountidle;
+				sprite_index = spr_ratmount_idle;
 			}
 			image_index = 0;
 		}
@@ -103,7 +103,7 @@ function scr_player_fireass()
 			if isgustavo
 			{
 				state = states.ratmount;
-				sprite_index = spr_player_ratmountidle;
+				sprite_index = spr_ratmount_idle;
 			}
 			image_index = 0;
 		}

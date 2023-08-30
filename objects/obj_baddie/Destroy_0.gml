@@ -100,7 +100,7 @@ if (!in_baddieroom() && (!elite || elitehit <= 0) && destroyable)
 	}
 	notification_push(notifs.baddie_kill, [room, id, object_index]);
 	
-	if global.leveltosave == "sucrose"
+	if global.leveltosave == "sucrose" && !instance_exists(obj_pizzaface)
 		global.fill += calculate_filltime(2.5);
 }
 if (!in_baddieroom() && important == 0)

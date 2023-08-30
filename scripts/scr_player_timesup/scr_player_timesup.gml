@@ -3,7 +3,7 @@ function scr_player_timesup()
 	xscale = 1;
 	inv_frames = false;
 	movespeed = 0;
-	if (sprite_index != spr_player_ratmounttimesup)
+	if (sprite_index != spr_ratmount_timesup)
 		sprite_index = spr_Timesup;
 	alarm[7] = -1;
 	alarm[8] = -1;
@@ -11,11 +11,11 @@ function scr_player_timesup()
 	if (place_meeting(x, y, obj_timesup))
 	{
 		state = states.dead;
-		if (sprite_index != spr_player_ratmounttimesup)
+		if (sprite_index != spr_ratmount_timesup)
 			sprite_index = spr_deathend;
 		else
 		{
-			sprite_index = spr_player_ratmountgameover;
+			sprite_index = spr_ratmount_gameover;
 			with (create_debris(x, y, spr_ratblock_dead))
 			{
 				hsp = 4;

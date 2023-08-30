@@ -11,7 +11,7 @@ if (playerid.visible == 0)
 		if (isgustavo)
 		{
 			state = states.ratmount;
-			sprite_index = spr_player_ratmountidle;
+			sprite_index = spr_ratmount_idle;
 		}
 	}
 	if (global.coop == 1)

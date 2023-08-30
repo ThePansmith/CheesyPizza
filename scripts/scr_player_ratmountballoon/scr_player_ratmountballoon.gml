@@ -1,6 +1,6 @@
 function scr_player_ratmountballoon()
 {
-	sprite_index = spr_player_ratmountballoon;
+	sprite_index = spr_ratmount_balloon;
 	hsp = movespeed;
 	move = key_left + key_right;
 	if (vsp < 2)
@@ -26,7 +26,7 @@ function scr_player_ratmountballoon()
 		sound_play_oneshot_3d("event:/sfx/rat/deflateeat", x, y);
 		create_particle(x, y, part.ratmountballooncloud, 0);
 		state = states.ratmountjump;
-		sprite_index = spr_player_ratmountballoonend1;
+		sprite_index = spr_ratmount_balloonend1;
 		image_index = 0;
 		jumpAnim = true;
 		vsp = -20;

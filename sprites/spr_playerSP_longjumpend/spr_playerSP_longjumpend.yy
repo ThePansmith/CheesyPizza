@@ -13,8 +13,8 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"68241cb4-1ef2-4d7e-9cff-3beb50d94969",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c296a8cf-9ed7-4243-b543-e2e4261ac006",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"49244dec-2944-4f39-9be7-59031be95649",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"14ec2b1d-f32a-4098-a511-25682addeb06",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"68241cb4-1ef2-4d7e-9cff-3beb50d94969","path":"sprites/spr_playerSP_longjumpend/spr_playerSP_longjumpend.yy",},},},"Disabled":false,"id":"8249ee1d-d5ce-4e40-995f-24b3ac1b7e54","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c296a8cf-9ed7-4243-b543-e2e4261ac006","path":"sprites/spr_playerSP_longjumpend/spr_playerSP_longjumpend.yy",},},},"Disabled":false,"id":"5b6fa5de-0b5f-4854-9265-6b731c25edce","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"49244dec-2944-4f39-9be7-59031be95649","path":"sprites/spr_playerSP_longjumpend/spr_playerSP_longjumpend.yy",},},},"Disabled":false,"id":"c85ab45a-3ae4-49ba-ab57-83a9be910eb4","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"14ec2b1d-f32a-4098-a511-25682addeb06","path":"sprites/spr_playerSP_longjumpend/spr_playerSP_longjumpend.yy",},},},"Disabled":false,"id":"ec325bc9-6f2f-442b-8a73-414074819b7c","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

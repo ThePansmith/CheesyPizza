@@ -46,3 +46,4 @@ stuntouchbuffer = 0;
 scaredbuffer = 0;
 snotty = false;
 phase = 0
+important = true;

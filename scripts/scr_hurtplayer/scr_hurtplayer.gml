@@ -22,7 +22,7 @@ function scr_hurtplayer(player)
 		else if (sprite_index == spr_player_jetpackstart2)
 		{
 		}
-		else if ((state == states.backbreaker && (parrytimer > 0 || instance_exists(obj_parryhitbox) || sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4 || sprite_index == spr_player_ratmountsupertaunt)) || state == states.chainsaw || state == states.phase1hurt || state == states.actor || instance_exists(obj_bossdark))
+		else if ((state == states.backbreaker && (parrytimer > 0 || instance_exists(obj_parryhitbox) || sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4 || sprite_index == spr_ratmount_supertaunt)) || state == states.chainsaw || state == states.phase1hurt || state == states.actor || instance_exists(obj_bossdark))
 		{
 			if (state == states.backbreaker)
 				trace(parrytimer);
@@ -301,7 +301,7 @@ function scr_hurtplayer(player)
 					case "CT": char = "Chemstoon"; break;
 				}
 				if isgustavo
-					char = "Gustavo";
+					char = obj_player1.character != "PN" ? "Gustavo" : "Mario";
 				
 				txt = embed_value_string(txt, [char, damage_n]);
 				create_transformation_tip(txt);

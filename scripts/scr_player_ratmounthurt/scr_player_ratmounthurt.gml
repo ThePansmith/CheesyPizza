@@ -15,8 +15,8 @@ function scr_player_ratmounthurt()
 		movespeed = 0;
 	}
 	if (brick)
-		sprite_index = spr_player_ratmounthurt;
+		sprite_index = spr_ratmount_hurt;
 	else
-		sprite_index = spr_lonegustavo_hurt;
+		sprite_index = spr_lonegustavohurt;
 	image_speed = 0.35;
 }

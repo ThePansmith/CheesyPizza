@@ -19,9 +19,9 @@ function scr_player_backbreaker()
 		state = states.machslide;
 		sprite_index = spr_player_crouchslide;
 	}
-	if (sprite_index == spr_taunt or sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4 or sprite_index == spr_player_supertaunt5 or sprite_index == spr_player_ratmounttaunt or sprite_index == spr_player_ratmountsupertaunt)
+	if (sprite_index == spr_taunt or sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4 or sprite_index == spr_player_supertaunt5 or sprite_index == spr_ratmount_taunt or sprite_index == spr_ratmount_supertaunt)
 	{
-		if (supercharged == 1 && (sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4 or sprite_index == spr_player_supertaunt5 or sprite_index == spr_player_ratmountsupertaunt) && !instance_exists(obj_tauntaftereffectspawner))
+		if (supercharged == 1 && (sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4 or sprite_index == spr_player_supertaunt5 or sprite_index == spr_ratmount_supertaunt) && !instance_exists(obj_tauntaftereffectspawner))
 		{
 			if REMIX
 				global.combotime = 60;
@@ -33,7 +33,7 @@ function scr_player_backbreaker()
 		taunttimer--;
 		vsp = 0;
 	}
-	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4 or sprite_index == spr_player_supertaunt5 or sprite_index == spr_player_ratmountsupertaunt))
+	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4 or sprite_index == spr_player_supertaunt5 or sprite_index == spr_ratmount_supertaunt))
 	{
 		if (isgustavo)
 			ratmount_movespeed = tauntstoredratmount_movespeed;
@@ -53,7 +53,7 @@ function scr_player_backbreaker()
 		if (is_array(global.hasfarmer) && global.hasfarmer[farmerpos])
 			scr_change_farmers();
 	}
-	if ((sprite_index == spr_taunt or sprite_index == spr_player_ratmounttaunt) && taunttimer == 0)
+	if ((sprite_index == spr_taunt or sprite_index == spr_ratmount_taunt) && taunttimer == 0)
 	{
 		if (isgustavo)
 			ratmount_movespeed = tauntstoredratmount_movespeed;
@@ -73,7 +73,7 @@ function scr_player_backbreaker()
 		state = states.normal;
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_throw)
 		state = states.normal;
-	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_Timesup or sprite_index == spr_ratmount_doorclosed) && place_meeting(x, y, obj_exitgate))
+	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_Timesup or sprite_index == spr_ratmountdoorclosed) && place_meeting(x, y, obj_exitgate))
 		state = states.normal;
 	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_player_levelcomplete or sprite_index == spr_playerN_victory))
 		state = states.normal;

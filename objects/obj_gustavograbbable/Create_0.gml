@@ -26,23 +26,28 @@ stomped = false;
 shot = false;
 reset = false;
 flash = false;
-landspr = spr_lonegustavo_idle;
-idlespr = spr_lonegustavo_grabbable;
-fallspr = spr_lonegustavo_jump;
-stunfallspr = spr_lonegustavo_stun;
-walkspr = spr_lonegustavo_walk;
-turnspr = spr_lonegustavo_idle;
-recoveryspr = spr_lonegustavo_idle;
-grabbedspr = spr_lonegustavo_grabbable;
-scaredspr = spr_lonegustavo_grabbable;
-ragespr = spr_lonegustavo_grabbable;
+
+with obj_player1
+{
+	other.landspr = spr_lonegustavoidle;
+	other.idlespr = spr_lonegustavograbbable;
+	other.fallspr = spr_lonegustavojump;
+	other.stunfallspr = spr_lonegustavostun;
+	other.walkspr = spr_lonegustavowalk;
+	other.turnspr = spr_lonegustavoidle;
+	other.recoveryspr = spr_lonegustavoidle;
+	other.grabbedspr = spr_lonegustavograbbable;
+	other.scaredspr = spr_lonegustavograbbable;
+	other.ragespr = spr_lonegustavograbbable;
+	other.spr_dead = spr_lonegustavohurt;
+}
+
 image_xscale = -1;
 hp = 1;
 slapped = false;
 grounded = true;
 birdcreated = false;
 boundbox = false;
-spr_dead = spr_lonegustavo_hurt;
 important = true;
 heavy = false;
 depth = 0;

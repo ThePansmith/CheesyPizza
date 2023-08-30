@@ -7,12 +7,12 @@ function scr_player_ratmountgrind()
 	{
 		xscale = move;
 		movespeed = Approach(movespeed, move * 6, 0.5);
-		sprite_index = spr_lonegustavo_hangwalk;
+		sprite_index = spr_lonegustavohangwalk;
 	}
 	else
 	{
 		movespeed = Approach(movespeed, 0, 0.5);
-		sprite_index = spr_lonegustavo_hang;
+		sprite_index = spr_lonegustavohang;
 	}
 	image_speed = 0.35;
 	if (!place_meeting(x, y, obj_grindrailslope))
@@ -37,7 +37,7 @@ function scr_player_ratmountgrind()
 	if (!place_meeting(x, y, obj_grindrail) && !place_meeting(x, y, obj_grindrailslope))
 	{
 		state = states.ratmountjump;
-		sprite_index = spr_player_ratmountgroundpoundfall;
+		sprite_index = spr_ratmount_groundpoundfall;
 	}
 	if (input_buffer_jump > 0)
 	{
@@ -45,13 +45,13 @@ function scr_player_ratmountgrind()
 		state = states.ratmountjump;
 		if (key_down)
 		{
-			sprite_index = spr_player_ratmountgroundpoundfall;
+			sprite_index = spr_ratmount_groundpoundfall;
 			vsp = 5;
 		}
 		else
 		{
 			image_index = 0;
-			sprite_index = spr_player_ratmountgroundpound;
+			sprite_index = spr_ratmount_groundpound;
 			vsp = -11;
 		}
 		jumpstop = false;

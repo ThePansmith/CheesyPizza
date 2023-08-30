@@ -4,13 +4,13 @@ function scr_player_ratmountpunch()
 	hsp = movespeed;
 	move = key_left + key_right;
 	landAnim = false;
-	sprite_index = spr_lonegustavo_punch;
+	sprite_index = spr_lonegustavopunch;
 	if (grounded)
 		movespeed = Approach(movespeed, xscale * 4, 0.1);
 	ratmountpunchtimer--;
 	if (ratmountpunchtimer < 0 && (!key_slap || gustavohitwall))
 	{
-		sprite_index = spr_lonegustavo_walk;
+		sprite_index = spr_lonegustavowalk;
 		state = states.ratmount;
 		if (hsp != 0)
 		{
@@ -36,7 +36,7 @@ function scr_player_ratmountpunch()
 			create_particle(x, y, part.jumpdust);
 			movespeed = 12;
 			crouchslipbuffer = 25;
-			sprite_index = spr_lonegustavo_crouchwalk;
+			sprite_index = spr_lonegustavocrouchwalk;
 			machhitAnim = false;
 			state = states.tumble;
 			fmod_event_instance_play(snd_crouchslide);
@@ -49,7 +49,7 @@ function scr_player_ratmountpunch()
 		movespeed = hsp;
 		state = states.ratmountgroundpound;
 		image_index = 0;
-		sprite_index = spr_lonegustavo_groundpoundstart;
+		sprite_index = spr_lonegustavogroundpoundstart;
 	}
 	if (punch_afterimage > 0)
 		punch_afterimage--;

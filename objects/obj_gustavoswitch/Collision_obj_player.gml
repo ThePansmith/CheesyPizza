@@ -19,5 +19,5 @@ if (global.switchbuffer == 0 && global.panic == escape)
 		image_index = 0;
 	}
 	with (instance_create(0, 0, obj_charswitch_intro))
-		spr = spr_backtopeppino;
+		spr = other.switchspr;
 }

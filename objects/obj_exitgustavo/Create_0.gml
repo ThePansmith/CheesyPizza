@@ -2,8 +2,8 @@ state = states.titlescreen;
 vsp = 0;
 depth = 0;
 
-spr_fall = spr_lonegustavo_groundpound;
-spr_idle = spr_gustavo_exitsign;
+spr_fall = obj_player1.spr_lonegustavogroundpound;
+spr_idle = obj_player1.character != "PN" ? spr_gustavo_exitsign : spr_mario_exitsign;
 
 if string_letters(room_get_name(room)) == "freezer"
 {
@@ -17,7 +17,5 @@ else if string_letters(room_get_name(room)) == "chateau"
 	spr_idle = spr_gustavorat_exitsign;
 	spr_fall = spr_gustavorat_fall;
 }
-else
-	spr_idle = spr_gustavo_exitsign;
 if room == space_11b
 	spr_fall = spr_gustavo_exitshuttle;

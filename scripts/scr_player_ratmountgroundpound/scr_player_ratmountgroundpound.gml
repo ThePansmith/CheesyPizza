@@ -1,22 +1,22 @@
 function scr_player_ratmountgroundpound()
 {
-	if (sprite_index == spr_player_ratmountgroundpound)
+	if (sprite_index == spr_ratmount_groundpound)
 	{
 		if (floor(image_index) == (image_number - 1))
-			sprite_index = spr_player_ratmountgroundpoundfall;
+			sprite_index = spr_ratmount_groundpoundfall;
 	}
 	move = key_left + key_right;
 	hsp = movespeed;
 	if (brick == 1)
 	{
 		state = states.ratmountjump;
-		sprite_index = spr_player_ratmountfall;
+		sprite_index = spr_ratmount_fall;
 	}
 	if (gustavokicktimer > 0)
 		gustavokicktimer--;
 	if (gustavokicktimer == 0)
 	{
-		if (sprite_index == spr_lonegustavo_jumpstart)
+		if (sprite_index == spr_lonegustavojumpstart)
 		{
 			vsp = -11;
 			instance_create(x, y - 20, obj_bangeffect);
@@ -25,26 +25,26 @@ function scr_player_ratmountgroundpound()
 			instance_create(x + (xscale * 50), y + 20, obj_bangeffect);
 		gustavokicktimer = -1;
 	}
-	if (sprite_index == spr_lonegustavo_jumpstart && gustavokicktimer > 0)
+	if (sprite_index == spr_lonegustavojumpstart && gustavokicktimer > 0)
 	{
 		vsp = 0;
 		hsp = 0;
 	}
 	if (move != 0)
 	{
-		if (sprite_index == spr_lonegustavo_groundpoundland)
+		if (sprite_index == spr_lonegustavogroundpoundland)
 			movespeed = Approach(movespeed, move * ratmount_movespeed, 0.25);
 		else
 			movespeed = Approach(movespeed, move * ratmount_movespeed, 0.5);
 	}
 	else
 		movespeed = Approach(movespeed, 0, 0.5);
-	if (sprite_index == spr_lonegustavo_groundpoundstart && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_lonegustavogroundpoundstart && floor(image_index) == (image_number - 1))
 	{
 		image_index = 0;
-		sprite_index = spr_lonegustavo_groundpound;
+		sprite_index = spr_lonegustavogroundpound;
 	}
-	if (sprite_index == spr_lonegustavo_groundpound || sprite_index == spr_lonegustavo_groundpoundstart)
+	if (sprite_index == spr_lonegustavogroundpound || sprite_index == spr_lonegustavogroundpoundstart)
 	{
 		vsp++;
 		if (grounded && vsp > 0 && !place_meeting(x, y + vsp + 2, obj_grindrail) && !place_meeting(x, y + 10, obj_grindrail) && !place_meeting(x, y + vsp, obj_destructibles) && !place_meeting(x, y + vsp + 2, obj_destructibles) && !place_meeting(x, y + 10, obj_destructibles))
@@ -66,7 +66,7 @@ function scr_player_ratmountgroundpound()
 				if (move != 0)
 					movespeed = xscale * 3;
 				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
-				sprite_index = spr_lonegustavo_groundpoundland;
+				sprite_index = spr_lonegustavogroundpoundland;
 				image_index = 0;
 				jumpAnim = true;
 				jumpstop = false;
@@ -102,21 +102,21 @@ function scr_player_ratmountgroundpound()
 			}
 		}
 	}
-	if (sprite_index == spr_lonegustavo_groundpoundland && floor(image_index) == (image_number - 1))
+	if (sprite_index == spr_lonegustavogroundpoundland && floor(image_index) == (image_number - 1))
 	{
 		if (sign(hsp) != 0)
 			xscale = sign(hsp);
-		sprite_index = spr_lonegustavo_idle;
+		sprite_index = spr_lonegustavoidle;
 		state = states.ratmount;
 	}
-	if ((sprite_index == spr_lonegustavo_kick || sprite_index == spr_lonegustavo_jumpstart) && floor(image_index) == (image_number - 1))
+	if ((sprite_index == spr_lonegustavokick || sprite_index == spr_lonegustavojumpstart) && floor(image_index) == (image_number - 1))
 	{
 		if (sign(hsp) != 0)
 			xscale = sign(hsp);
-		if (sprite_index == spr_lonegustavo_kick)
-			sprite_index = spr_player_ratmountgroundpoundfall;
+		if (sprite_index == spr_lonegustavokick)
+			sprite_index = spr_ratmount_groundpoundfall;
 		else
-			sprite_index = spr_lonegustavo_jump;
+			sprite_index = spr_lonegustavojump;
 		state = states.ratmount;
 	}
 	image_speed = 0.35;

@@ -69,9 +69,9 @@ if (instance_exists(baddieID) && _obj_player && !_obj_player.cutscene)
 					jumpstop = true;
 					instance_destroy(other.baddieID);
 					if (brick)
-						sprite_index = spr_player_ratmountmushroombounce;
+						sprite_index = spr_ratmount_mushroombounce;
 					else
-						sprite_index = spr_lonegustavo_jumpstart;
+						sprite_index = spr_lonegustavojumpstart;
 					state = states.ratmountjump;
 					image_index = 0;
 				}
@@ -222,7 +222,7 @@ if (instance_exists(baddieID) && _obj_player && !_obj_player.cutscene)
 				other.baddieID.grabbedby = _playerindex;
 				pepp_grab = true;
 			}
-			if (instance_exists(other.baddieID) && other.baddieID.bumpable && other.baddieID.object_index != obj_bigcheese && state != states.chainsaw && (state == states.tumble or state == states.mach2 or state == states.machslide or sprite_index == spr_player_ratmountattack or sprite_index == spr_lonegustavo_dash) && other.baddieID.state != states.punch && other.baddieID.state != states.hit && !pepp_grab && other.baddieID.thrown == 0 && other.baddieID.stuntouchbuffer <= 0 && other.baddieID.state != states.grabbed && other.baddieID.state != states.chainsawbump && other.baddieID.state != states.chainsaw && !other.baddieID.invincible)
+			if (instance_exists(other.baddieID) && other.baddieID.bumpable && other.baddieID.object_index != obj_bigcheese && state != states.chainsaw && (state == states.tumble or state == states.mach2 or state == states.machslide or sprite_index == spr_ratmount_attack or sprite_index == spr_lonegustavodash) && other.baddieID.state != states.punch && other.baddieID.state != states.hit && !pepp_grab && other.baddieID.thrown == 0 && other.baddieID.stuntouchbuffer <= 0 && other.baddieID.state != states.grabbed && other.baddieID.state != states.chainsawbump && other.baddieID.state != states.chainsaw && !other.baddieID.invincible)
 			{
 				var lag = 0;
 				other.baddieID.stuntouchbuffer = 15;

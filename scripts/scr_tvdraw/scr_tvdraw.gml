@@ -385,9 +385,7 @@ function scr_tvdraw()
 			if pizzaface_sprite == spr_timer_pizzaface3
 				draw_sprite(spr_sucrosetimer_coneball, 25, SCREEN_WIDTH / 2, timer_y + 25);
 			
-			if gaining_time
-				timer_ind += 0.1;
-			else if seconds_prev != seconds
+			if seconds_prev != seconds
 			{
 				timer_ind = timer_ind ? 0 : 1;
 				seconds_prev = seconds;

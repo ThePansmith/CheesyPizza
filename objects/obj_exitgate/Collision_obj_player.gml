@@ -17,7 +17,7 @@ if ((image_index == 1 && !sugary) or (sugary && sprite_index != spr_sugarygatecl
 			GamepadSetVibration(0, 1, 1, 0.9);
 			GamepadSetVibration(1, 1, 1, 0.9);
 			set_lastroom();
-			sprite_index = isgustavo ? spr_ratmount_doorclosed : spr_Timesup;
+			sprite_index = isgustavo ? spr_ratmountdoorclosed : spr_Timesup;
 			image_index = 0;
 			with (obj_camera)
 			{

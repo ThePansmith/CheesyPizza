@@ -2,6 +2,7 @@ if (lock)
 	exit;
 if (followid != noone && !instance_exists(obj_player1))
 	exit;
+
 playerid = obj_player1.id;
 if (playerid.state != states.ladder && playerid.state != states.door && playerid.state != states.comingoutdoor)
 {
@@ -16,6 +17,7 @@ if (dir != playerid.xscale)
 	dir = playerid.xscale;
 if (followid != noone && !instance_exists(followid))
 	followid = -4;
+
 var tx = round(xoffset * space);
 var xx = (followid == noone) ? playerid.x : followid.x;
 var yy = (followid == noone) ? playerid.y : followid.y;
