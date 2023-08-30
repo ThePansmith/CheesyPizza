@@ -1,5 +1,6 @@
 function scr_player_ladder()
 {
+	suplexmove = false;
 	jumpAnim = true;
 	dashAnim = true;
 	landAnim = false;
@@ -12,6 +13,7 @@ function scr_player_ladder()
 	jumpstop = false;
 	movespeed = 0;
 	hsp = 0;
+	
 	if (key_up && hooked == 0)
 	{
 		sprite_index = spr_laddermove;

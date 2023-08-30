@@ -91,8 +91,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "molassesgroup",
-    "path": "texturegroups/molassesgroup",
+    "name": "sugarygroup",
+    "path": "texturegroups/sugarygroup",
   },
   "type": 0,
   "VTile": false,

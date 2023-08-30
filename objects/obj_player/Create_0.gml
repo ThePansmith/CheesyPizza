@@ -767,3 +767,4 @@ suplexmove2 = false;
 oldHallway = false;
 breakout = 0;
 shaketime = 0;
+hat = -1;

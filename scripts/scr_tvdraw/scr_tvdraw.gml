@@ -267,8 +267,15 @@ function scr_tvdraw()
 	if (global.panic or global.snickchallenge) && !MOD.DeathMode
 	{
 		// smooth timer
-		if global.fill < fill_lerp
+		var gaining_time = true;
+		
+		if global.fill <= fill_lerp
+		{
 			fill_lerp = global.fill;
+			gaining_time = false;
+		}
+		else if global.leveltosave == "sucrose"
+			fill_lerp = Approach(fill_lerp, global.fill, 2);
 		else
 			fill_lerp = lerp(fill_lerp, global.fill, 0.25);
 	
@@ -338,7 +345,7 @@ function scr_tvdraw()
 			// pizzaface
 			if !global.snickchallenge
 				draw_sprite(timerspr, pizzaface_index, timer_x + 320, timer_y + 10);
-		
+			
 			// timer
 			draw_set_align(1, 1);
 			draw_set_font(global.bigfont);
@@ -364,6 +371,47 @@ function scr_tvdraw()
 		
 				scr_draw_lap_display(lap_x, lap_y, lapflag_index);
 			}
+		}
+		else if global.leveltosave == "sucrose"
+		{
+			static timer_ind = 0;
+			static seconds_prev = "";
+			
+			// sucrose snowstorm
+			if pizzaface_sprite == spr_timer_pizzaface1
+				draw_sprite(spr_sucrosetimer_coneball_idle, pizzaface_index, SCREEN_WIDTH / 2, timer_y + 25);
+			if pizzaface_sprite == spr_timer_pizzaface2
+				draw_sprite(spr_sucrosetimer_coneball, pizzaface_index, SCREEN_WIDTH / 2, timer_y + 25);
+			if pizzaface_sprite == spr_timer_pizzaface3
+				draw_sprite(spr_sucrosetimer_coneball, 25, SCREEN_WIDTH / 2, timer_y + 25);
+			
+			if gaining_time
+				timer_ind += 0.1;
+			else if seconds_prev != seconds
+			{
+				timer_ind = timer_ind ? 0 : 1;
+				seconds_prev = seconds;
+			}
+			
+			var _tmr_spr = gaining_time ? spr_sucrosetimer_gain : spr_sucrosetimer;
+			draw_sprite(_tmr_spr, timer_ind, SCREEN_WIDTH / 2, timer_y + 25);
+			
+			// text
+			var minsx = SCREEN_WIDTH / 2 - 90
+			var secx = SCREEN_WIDTH / 2 - 10
+			var minsy = timer_y + 25 - 15
+			
+			if minutes < 10
+				minutes = concat("0", minutes);
+			minutes = string(minutes);
+			
+			var col = gaining_time ? #60D048 : #F80000;
+			
+			draw_sprite_ext(spr_sucrosetimer_font, ord(string_char_at(minutes, 1)) - ord("0"), minsx, minsy, 1, 1, 0, col, 1);
+			draw_sprite_ext(spr_sucrosetimer_font, ord(string_char_at(minutes, 2)) - ord("0"), minsx + 28, minsy, 1, 1, 0, col, 1);
+			
+			draw_sprite_ext(spr_sucrosetimer_font, ord(string_char_at(seconds, 1)) - ord("0"), secx, minsy, 1, 1, 0, col, 1);
+			draw_sprite_ext(spr_sucrosetimer_font, ord(string_char_at(seconds, 2)) - ord("0"), secx + 28, minsy, 1, 1, 0, col, 1);
 		}
 		else
 		{

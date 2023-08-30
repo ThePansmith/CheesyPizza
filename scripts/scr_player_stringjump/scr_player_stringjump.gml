@@ -29,6 +29,7 @@ function scr_player_stringjump()
 }
 function scr_player_stringfall()
 {
+	suplexmove = false;
 	if (instance_exists(stringid))
 	{
 		sprite_index = spr_player_mrpinch;

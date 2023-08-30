@@ -11,5 +11,10 @@ else
 {
 	draw_self();
 	if !sugary
-		draw_sprite(spr_lap2warning, 1, x, y + Wave(-5, 5, 0.5, 5));
+	{
+		if !global.lap
+			draw_sprite(spr_lap2warning, 1, x, y + Wave(-5, 5, 0.5, 5));
+		else if MOD.Lap3 && global.laps == 1
+			draw_sprite(spr_lap3warning, 1, x, y + Wave(-5, 5, 0.5, 5));
+	}
 }

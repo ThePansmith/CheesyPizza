@@ -4,6 +4,11 @@ if room != rank_room && room != timesuproom && room != Mainmenu && room != Realt
 	showtext = true;
 	alarm[0] = 200;
 }
+else
+{
+	showtext = false;
+	yi = -50;
+}
 level = false;
 
 var r = string_letters(room_get_name(room));

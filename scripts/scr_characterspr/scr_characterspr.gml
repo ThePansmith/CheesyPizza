@@ -1008,8 +1008,8 @@ function scr_characterspr()
 		spr_freezeridle = spr_playerSP_freezeridle;
 		spr_rampjump = spr_playerSP_rampjump;
 		spr_wallsplat = spr_playerSP_wallsplat;
-		spr_longjump = spr_player_longjump;
-		spr_longjumpend = spr_player_longjumpend;
+		spr_longjump = spr_playerSP_longjump;
+		spr_longjumpend = spr_playerSP_longjumpend;
 		spr_backslide = spr_player_backslide;
 		spr_backslideland = spr_player_backslideland;
 		spr_gnomecutscene1 = spr_player_gnomecutscene1;

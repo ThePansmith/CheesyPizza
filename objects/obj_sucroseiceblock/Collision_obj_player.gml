@@ -4,10 +4,10 @@ if invtime <= 0 && state != states.grabbed
 	{
 		if state == states.mach3
 		{
-			create_slapstar(other.baddieID.x, other.baddieID.y);
-            create_baddiegibs(other.baddieID.x, other.baddieID.y);
-			instance_create(other.baddieID.x, other.baddieID.y, obj_bangeffect);
-			instance_create(other.baddieID.x, other.baddieID.y, obj_parryeffect);
+			create_slapstar(other.x, other.y);
+            create_baddiegibs(other.x, other.y);
+			instance_create(other.x, other.y, obj_bangeffect);
+			instance_create(other.x, other.y, obj_parryeffect);
 			machpunchAnim = true;
 			other.state = states.thrown
 			other.vsp = -11

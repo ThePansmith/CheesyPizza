@@ -1,1 +1,1 @@
-global.roommessage = "SUPER JUMP CAVERN";
+//global.roommessage = "SUPER JUMP CAVERN";

@@ -24,6 +24,7 @@ contentspr = -4;
 hp = 999;
 stunfallspr = sprite_index;
 destroyable = false;
+dashpadbuffer = false;
 
 lag = function()
 {

@@ -313,9 +313,6 @@ enum states
 	
 	// pto
 	debugfly,
-	
-	// cheesed up
-	polespin,
 }
 
 #endregion
