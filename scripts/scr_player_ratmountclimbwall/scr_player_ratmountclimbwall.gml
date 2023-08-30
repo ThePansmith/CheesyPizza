@@ -3,9 +3,9 @@ function scr_player_ratmountclimbwall()
 	image_speed = 0.5;
 	hsp = 0;
 	vsp = 0;
-	if (sprite_index != spr_player_ratmountbounceside)
+	if (sprite_index != spr_ratmount_bounceside)
 	{
-		sprite_index = spr_player_ratmountbounceside;
+		sprite_index = spr_ratmount_bounceside;
 		image_index = 0;
 	}
 	else if (floor(image_index) == (image_number - 1))
@@ -14,7 +14,7 @@ function scr_player_ratmountclimbwall()
 	{
 		state = states.ratmountjump;
 		jumpAnim = false;
-		sprite_index = spr_player_ratmountfall;
+		sprite_index = spr_ratmount_fall;
 	}
 	if (floor(image_index) == (image_number - 1))
 	{
@@ -26,12 +26,12 @@ function scr_player_ratmountclimbwall()
 			ratmount_fallingspeed = 0;
 			movespeed = xscale * 10;
 			sound_play_oneshot_3d("event:/sfx/ratmount/walljump2", x, y);
-			sprite_index = spr_player_ratmountwalljump;
+			sprite_index = spr_ratmount_walljump;
 		}
 		else
 		{
 			state = states.ratmountjump;
-			sprite_index = spr_player_ratmountfall;
+			sprite_index = spr_ratmount_fall;
 		}
 	}
 }

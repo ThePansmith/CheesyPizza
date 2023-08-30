@@ -1,7 +1,7 @@
 function sh_var(args)
 {
-	if instance_exists(obj_disclaimer) or room == Initroom
-		return "No";
+	if (instance_exists(obj_disclaimer) or room == Initroom) && !DEBUG
+		return "No.";
 	if !WC_debug
 		return "You do not have permission to use this command";
 	if array_length(args) < 3

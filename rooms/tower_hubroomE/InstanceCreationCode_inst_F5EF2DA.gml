@@ -16,7 +16,7 @@ output = function()
 	with obj_player1
 	{
 		state = states.victory;
-		sprite_index = isgustavo ? spr_ratmount_enterdoor : spr_lookdoor;
+		sprite_index = isgustavo ? spr_ratmountenterdoor : spr_lookdoor;
 	}
 	
 	with instance_create(x, y, obj_eventtrigger)

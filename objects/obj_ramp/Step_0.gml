@@ -22,7 +22,7 @@ if place_meeting(x, y - s, obj_player) && !collision_point(x + sprite_width + im
 		{
 			vsp = -12;
 			movespeed = 14;
-			if (sprite_index != spr_rampjump && sprite_index != spr_player_ratmountwalljump)
+			if (sprite_index != spr_rampjump && sprite_index != spr_ratmount_walljump)
 			{
 				sound_play_oneshot("event:/sfx/pep/rampjump");
 				sprite_index = spr_rampjump;
@@ -30,7 +30,7 @@ if place_meeting(x, y - s, obj_player) && !collision_point(x + sprite_width + im
 			}
 			if (isgustavo)
 			{
-				sprite_index = spr_player_ratmountwalljump;
+				sprite_index = spr_ratmount_walljump;
 				state = states.ratmounttrickjump;
 			}
 			else

@@ -15,7 +15,7 @@ if (myplayer.state != states.hurt)
 		if (!isgustavo)
 			sprite_index = choose(spr_parry1, spr_parry2, spr_parry3);
 		else
-			sprite_index = spr_player_ratmountspit;
+			sprite_index = spr_ratmount_spit;
 		image_index = 0;
 		image_speed = 0.35;
 		taunttimer = 20;

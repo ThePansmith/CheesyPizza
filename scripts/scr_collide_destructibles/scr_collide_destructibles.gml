@@ -60,10 +60,10 @@ function scr_collide_destructibles()
 				}
 			}
 		}
-		if ((state == states.knightpep || sprite_index == spr_lonegustavo_groundpoundstart || state == states.ratmountbounce || sprite_index == spr_lonegustavo_groundpound || state == states.jetpackjump || state == states.firemouth || state == states.slipbanan || state == states.superslam || state == states.hookshot || (state == states.bombpepup && bombup_dir == 1)) && vsp > 0)
+		if ((state == states.knightpep || sprite_index == spr_lonegustavogroundpoundstart || state == states.ratmountbounce || sprite_index == spr_lonegustavogroundpound || state == states.jetpackjump || state == states.firemouth || state == states.slipbanan || state == states.superslam || state == states.hookshot || (state == states.bombpepup && bombup_dir == 1)) && vsp > 0)
 		{
 			var vy = 1;
-			if (state == states.ratmountbounce || sprite_index == spr_lonegustavo_groundpoundstart || sprite_index == spr_lonegustavo_groundpound)
+			if (state == states.ratmountbounce || sprite_index == spr_lonegustavogroundpoundstart || sprite_index == spr_lonegustavogroundpound)
 				vy = vsp;
 			if (place_meeting(x, y + vy, obj_destructibles))
 			{

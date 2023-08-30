@@ -68,7 +68,7 @@ add_section("Modifiers");
 //add_modifier("Encore", MOD.Encore, "Remixes the level to make it harder.");
 
 var deathmode_allow = ["entrance", "medieval", "ruin", "dungeon"];
-if array_contains(deathmode_allow, level) or DEBUG
+if array_contains(deathmode_allow, level)// or DEBUG
 	add_modifier("Death Mode", "DeathMode", "Avoid Pizzaface within a very tight timer!", [seq_deathmode_off, seq_deathmode_on]);
 
 if !boss && level != "tutorial" && global.experimental

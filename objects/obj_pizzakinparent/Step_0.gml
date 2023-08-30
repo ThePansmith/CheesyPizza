@@ -14,8 +14,13 @@ if (state != states.backbreaker)
 			sprite_index = (xprev != x) ? spr_run : spr_idle;
 			depth = -6;
 		}
-		if (global.panic && sprite_index == spr_idle && !instance_exists(obj_ghostcollectibles))
-			sprite_index = spr_panic;
+		if (global.panic && !instance_exists(obj_ghostcollectibles))
+		{
+			if sprite_index == spr_idle && spr_panic != noone
+				sprite_index = spr_panic;
+			if sprite_index == spr_run && spr_panicrun != noone
+				sprite_index = spr_panicrun;
+		}
 	}
 	else if (object_index == obj_pizzakinpineapple)
 	{
@@ -45,7 +50,7 @@ else
 	if (sprite_index != spr_supertaunt)
 	{
 		var s = obj_player1.sprite_index;
-		if (s == obj_player1.spr_supertaunt1 || s == obj_player1.spr_supertaunt2 || s == obj_player1.spr_supertaunt3 || s == obj_player1.spr_supertaunt4 || s == spr_player_ratmountsupertaunt)
+		if (s == obj_player1.spr_supertaunt1 || s == obj_player1.spr_supertaunt2 || s == obj_player1.spr_supertaunt3 || s == obj_player1.spr_supertaunt4 || s == obj_player1.spr_ratmount_supertaunt)
 		{
 			sprite_index = spr_supertaunt;
 			image_index = 0;

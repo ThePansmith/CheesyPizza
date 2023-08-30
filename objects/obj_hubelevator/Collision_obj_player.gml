@@ -20,7 +20,7 @@ if state == 0
 			sprite_index = spr_lookdoor;
 			image_index = 0;
 			if isgustavo
-				sprite_index = spr_ratmount_enterdoor;
+				sprite_index = spr_ratmountenterdoor;
 			hsp = 0;
 			vsp = 50;
 			

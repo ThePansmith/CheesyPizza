@@ -1,7 +1,7 @@
 function scr_player_ratmountjump()
 {
 	move = key_left + key_right;
-	if (sprite_index == spr_lonegustavo_dashjump)
+	if (sprite_index == spr_lonegustavodashjump)
 		image_speed = 0.6;
 	else
 		image_speed = 0.35;
@@ -28,9 +28,9 @@ function scr_player_ratmountjump()
 				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
 				state = states.bump;
 				if (brick)
-					sprite_index = spr_player_ratmountbump;
+					sprite_index = spr_ratmount_bump;
 				else
-					sprite_index = spr_lonegustavo_bump;
+					sprite_index = spr_lonegustavobump;
 				image_index = 0;
 				hsp = -xscale * 4;
 				vsp = -5;
@@ -71,33 +71,33 @@ function scr_player_ratmountjump()
 		jumpAnim = false;
 		switch (sprite_index)
 		{
-			case spr_lonegustavo_jumpstart:
-				sprite_index = spr_lonegustavo_jump;
+			case spr_lonegustavojumpstart:
+				sprite_index = spr_lonegustavojump;
 				break;
-			case spr_lonegustavo_dashjump:
-				sprite_index = spr_lonegustavo_dashjump;
+			case spr_lonegustavodashjump:
+				sprite_index = spr_lonegustavodashjump;
 				break;
-			case spr_player_ratmountgroundpound:
-				sprite_index = spr_player_ratmountgroundpoundfall;
+			case spr_ratmount_groundpound:
+				sprite_index = spr_ratmount_groundpoundfall;
 				break;
-			case spr_player_ratmountjump:
-				sprite_index = spr_player_ratmountfall;
+			case spr_ratmount_jump:
+				sprite_index = spr_ratmount_fall;
 				break;
-			case spr_player_ratmountjump2:
-				sprite_index = spr_player_ratmountfall2;
+			case spr_ratmount_jump2:
+				sprite_index = spr_ratmount_fall2;
 				break;
-			case spr_player_ratmountballoonend2:
-				sprite_index = spr_player_ratmountballoonend3;
+			case spr_ratmount_balloonend2:
+				sprite_index = spr_ratmount_balloonend3;
 				break;
-			case spr_player_ratmountmushroombounce:
+			case spr_ratmount_mushroombounce:
 				jumpAnim = true;
 				image_index = image_number - 1;
 				break;
-			case spr_player_ratmountballoonend1:
+			case spr_ratmount_balloonend1:
 				if (vsp > 0)
 				{
 					jumpAnim = true;
-					sprite_index = spr_player_ratmountballoonend2;
+					sprite_index = spr_ratmount_balloonend2;
 				}
 				else
 					jumpAnim = true;
@@ -118,7 +118,7 @@ function scr_player_ratmountjump()
 		movespeed = hsp;
 		state = states.ratmountgroundpound;
 		image_index = 0;
-		sprite_index = spr_lonegustavo_groundpoundstart;
+		sprite_index = spr_lonegustavogroundpoundstart;
 	}
 	if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick)
 	{
@@ -143,7 +143,7 @@ function scr_player_ratmountjump()
 		if (move != 0)
 			xscale = move;
 		movespeed = xscale * 12;
-		sprite_index = spr_lonegustavo_punch;
+		sprite_index = spr_lonegustavopunch;
 	}
 	var bounce = true;
 	if (input_buffer_jump > 0 && can_jump && gusdashpadbuffer == 0 && !place_meeting(x, y + 5, obj_grindrail))
@@ -156,14 +156,14 @@ function scr_player_ratmountjump()
 		if (brick)
 		{
 			if (ratmount_movespeed >= 12 && key_attack)
-				sprite_index = spr_player_ratmountdashjump;
+				sprite_index = spr_ratmount_dashjump;
 			else
-				sprite_index = spr_player_ratmountjump;
+				sprite_index = spr_ratmount_jump;
 		}
 		else if (ratmount_movespeed >= 12 && key_attack)
-			sprite_index = spr_lonegustavo_dashjump;
+			sprite_index = spr_lonegustavodashjump;
 		else
-			sprite_index = spr_player_ratmountgroundpound;
+			sprite_index = spr_ratmount_groundpound;
 		image_index = 0;
 		jumpAnim = true;
 		state = states.ratmountjump;
@@ -175,11 +175,11 @@ function scr_player_ratmountjump()
 		GamepadSetVibration(0, 0.8, 0.8, 0.65);
 		state = states.ratmountbounce;
 		instance_create(x, y, obj_highjumpcloud2);
-		sprite_index = spr_player_ratmountwalljump;
+		sprite_index = spr_ratmount_walljump;
 		image_index = 0;
 		vsp = -16;
 	}
-	if (grounded && vsp > 0 && sprite_index != spr_lonegustavo_kick)
+	if (grounded && vsp > 0 && sprite_index != spr_lonegustavokick)
 	{
 		doublejump = false;
 		create_particle(x, y, part.landcloud, 0);
@@ -187,7 +187,7 @@ function scr_player_ratmountjump()
 		landAnim = true;
 		jumpstop = false;
 		if (brick && !key_attack)
-			sprite_index = spr_player_ratmountland;
+			sprite_index = spr_ratmount_land;
 		else
 			landAnim = false;
 		image_index = 0;

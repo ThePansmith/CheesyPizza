@@ -37,7 +37,7 @@ else
 					backtohubstarty = 690;
 				}
 				if isgustavo
-					sprite_index = spr_player_ratmounttimesup;
+					sprite_index = spr_ratmount_timesup;
 				visible = true;
 				image_blend = c_white;
 				stop_music();

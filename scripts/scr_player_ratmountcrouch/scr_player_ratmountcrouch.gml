@@ -32,15 +32,15 @@ function scr_player_ratmountcrouch()
 	{
 		state = states.ratmountjump;
 		jumpAnim = false;
-		sprite_index = spr_player_ratmountgroundpoundfall;
+		sprite_index = spr_ratmount_groundpoundfall;
 	}
 	if (((grounded && !key_down) || brick) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
 		state = states.ratmount;
 	
 	if !grounded && REMIX
-		sprite_index = spr_lonegustavo_crouchfall;
+		sprite_index = spr_lonegustavocrouchfall;
 	else if hsp != 0
-		sprite_index = spr_lonegustavo_crouchwalk;
+		sprite_index = spr_lonegustavocrouchwalk;
 	else
-		sprite_index = spr_lonegustavo_crouch;
+		sprite_index = spr_lonegustavocrouch;
 }

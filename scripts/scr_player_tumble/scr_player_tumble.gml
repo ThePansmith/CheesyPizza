@@ -4,8 +4,8 @@ function scr_player_tumble()
 	var divespr = spr_dive;
 	if isgustavo
 	{
-		machrollspr = spr_lonegustavo_crouchwalk;
-		divespr = spr_lonegustavo_groundpound;
+		machrollspr = spr_lonegustavocrouchwalk;
+		divespr = spr_lonegustavogroundpound;
 	}
 	
 	if (place_meeting(x, y + 1, obj_railparent))

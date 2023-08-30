@@ -188,6 +188,9 @@ if _move && image_alpha >= 1
 		if playerid.x != x
 			playerid.xscale = sign(x - playerid.x);
 		
+		global.combotime = 60;
+		global.heattime = 60;
+		
 		instance_create(x, y, obj_flash);
 		global.fill += calculate_filltime(15);
 		with _parry
@@ -241,7 +244,7 @@ if _move && image_alpha >= 1
 					sprite_index = spr_Timesup;
 					image_index = 0;
 					if (isgustavo)
-						sprite_index = spr_player_ratmounttimesup;
+						sprite_index = spr_ratmount_timesup;
 					visible = true;
 					image_blend = c_white;
 					stop_music();

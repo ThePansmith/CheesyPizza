@@ -21,7 +21,7 @@ function scr_dotaunt()
 		if (!finisher)
 		{
 			taunttimer = 20;
-			if (state != states.backbreaker && sprite_index != spr_supertaunt1 && sprite_index != spr_supertaunt2 && sprite_index != spr_supertaunt3 && sprite_index != spr_supertaunt4 && sprite_index != spr_player_ratmountsupertaunt)
+			if (state != states.backbreaker && sprite_index != spr_supertaunt1 && sprite_index != spr_supertaunt2 && sprite_index != spr_supertaunt3 && sprite_index != spr_supertaunt4 && sprite_index != spr_ratmount_supertaunt)
 			{
 				tauntstoredmovespeed = movespeed;
 				tauntstoredhsp = hsp;
@@ -43,7 +43,7 @@ function scr_dotaunt()
 				else
 					sprite_index = choose(spr_supertaunt1, spr_supertaunt2, spr_supertaunt3, spr_supertaunt4);
 				if (isgustavo)
-					sprite_index = spr_player_ratmountsupertaunt;
+					sprite_index = spr_ratmount_supertaunt;
 			}
 			else
 			{

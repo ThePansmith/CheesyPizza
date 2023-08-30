@@ -408,6 +408,26 @@ johnface_index += sugarylevel ? 0.015 : 0.35;
 if ((global.panic or global.snickchallenge) && global.fill > 0 && !instance_exists(obj_pizzaface))
 {
 	showtime_buffer = 100;
+	
+	if !sugarylevel // we need sprites for that
+	{
+		if pizzaface_sprite == spr_timer_pizzafaceparry
+		{
+			if floor(pizzaface_index) == sprite_get_number(pizzaface_sprite) - 1
+			{
+				pizzaface_sprite = spr_timer_pizzafacewait;
+				pizzaface_index = 0;
+			}
+		}
+		else if pizzaface_sprite != spr_timer_pizzaface1 && pizzaface_sprite != spr_timer_pizzafacewait
+		{
+			pizzaface_sprite = spr_timer_pizzafaceparry;
+			pizzaface_index = 0;
+		}
+	}
+	else
+		pizzaface_sprite = spr_timer_pizzaface1;
+	
 	if (!instance_exists(obj_ghostcollectibles))
 		timer_y = Approach(timer_y, timer_ystart, 1);
 	else
@@ -420,7 +440,12 @@ else if (global.panic or global.snickchallenge)
 		pizzaface_sprite = spr_timer_pizzaface2;
 		pizzaface_index = 0;
 	}
-	else if (pizzaface_sprite == spr_timer_pizzaface2)
+	else if (pizzaface_sprite == spr_timer_pizzafacewait)
+	{
+		pizzaface_sprite = spr_timer_pizzafaceback;
+		pizzaface_index = 0;
+	}
+	else if (pizzaface_sprite == spr_timer_pizzaface2 or pizzaface_sprite == spr_timer_pizzafaceback)
 	{
 		if (floor(pizzaface_index) == sprite_get_number(pizzaface_sprite) - 1 && !sugarylevel) or floor(pizzaface_index) >= 70
 		{

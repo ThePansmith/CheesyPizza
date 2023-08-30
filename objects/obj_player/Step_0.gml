@@ -984,11 +984,23 @@ if state != states.mach3 && state != states.Sjump && state != states.Sjumpprep &
 if character == "N" && noisetype == 1
 	jetpackcancel = true;
 
-if hat != -1 && !instance_exists(obj_cowboyhat)
+if room != rank_room && room != timesuproom
 {
-	with instance_create(x, y, obj_cowboyhat)
-		playerid = other.id;
+	if hat != -1 && !instance_exists(obj_cowboyhat)
+	{
+		with instance_create(x, y, obj_cowboyhat)
+			playerid = other.id;
+	}
+	if pet != pet_prev or (pet != -1 && !instance_exists(petID))
+	{
+		instance_destroy(petID);
+		if pet != -1
+			petID = instance_create_depth(x, y, depth + 1, obj_petfollow, {pet: pet});
+		pet_prev = pet;
+	}
 }
+if grounded && state != states.Sjump && state != states.Sjumpprep
+	superjumped = false;
 
 if !variable_global_exists("anon")
 {

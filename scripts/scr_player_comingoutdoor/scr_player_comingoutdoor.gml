@@ -15,7 +15,7 @@ function scr_player_comingoutdoor()
 		c += 5;
 	image_blend = make_colour_hsv(0, 0, c);
 	
-	if sprite_index != spr_Timesup && sprite_index != spr_ratmount_doorclosed
+	if sprite_index != spr_Timesup && sprite_index != spr_ratmountdoorclosed
 	{
 		if steppybuffer > 0
 			steppybuffer--;
@@ -26,7 +26,7 @@ function scr_player_comingoutdoor()
 		}
 		
 		if isgustavo
-			sprite_index = spr_ratmount_exitdoor;
+			sprite_index = spr_ratmountexitdoor;
 		else
 			sprite_index = spr_walkfront;
 	}

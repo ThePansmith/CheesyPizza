@@ -22,7 +22,7 @@ if (room == hub_loadingscreen && state != 2)
 				gustavodash = 0;
 				isgustavo = true;
 				state = states.ratmount;
-				sprite_index = spr_player_ratmountidle;
+				sprite_index = spr_ratmount_idle;
 				brick = true;
 			}
 			hat = ini_read_real("Game", "hat", -1);

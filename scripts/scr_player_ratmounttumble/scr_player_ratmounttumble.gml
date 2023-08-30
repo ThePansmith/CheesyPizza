@@ -2,7 +2,7 @@ function scr_player_ratmounttumble()
 {
 	hsp = xscale * movespeed;
 	move = key_left + key_right;
-	sprite_index = spr_player_ratmountwalljump;
+	sprite_index = spr_ratmount_walljump;
 	image_speed = -abs(movespeed) / 15;
 	if (!key_attack)
 		movespeed = Approach(movespeed, 0, 1);
@@ -24,7 +24,7 @@ function scr_player_ratmounttumble()
 	if (key_jump && brick && key_up)
 	{
 		state = states.ratmountgroundpound;
-		sprite_index = spr_lonegustavo_jumpstart;
+		sprite_index = spr_lonegustavojumpstart;
 		image_index = 0;
 		image_speed = 0.35;
 		gustavokicktimer = 5;

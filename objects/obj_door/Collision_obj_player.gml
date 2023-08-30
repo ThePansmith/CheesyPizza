@@ -32,7 +32,7 @@ if !place_meeting(x, y, obj_doorblocked)
 			add_saveroom();
 			
 			if isgustavo
-				sprite_index = spr_ratmount_enterdoor;
+				sprite_index = spr_ratmountenterdoor;
 			else
 				sprite_index = obj_player1.spr_lookdoor;
 			

@@ -219,7 +219,7 @@ if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && ob
 		sound_play_oneshot_3d("event:/sfx/rat/ratdead", x, y)
 		sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y)
 		brick = 0
-		sprite_index = spr_lonegustavo_idle
+		sprite_index = spr_lonegustavoidle
 		state = states.ratmount
 	}
 }

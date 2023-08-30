@@ -74,7 +74,7 @@ if (active && !instance_exists(obj_jumpscare) && !in_saveroom())
 				if (!other.isgustavo)
 					other.sprite_index = other.spr_hurt;
 				else
-					other.sprite_index = spr_player_ratmounthurt;
+					other.sprite_index = other.spr_ratmount_hurt;
 				other.image_speed = 0.35;
 			}
 			if (other.state == states.knightpepslopes)

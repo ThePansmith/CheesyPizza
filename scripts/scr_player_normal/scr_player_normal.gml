@@ -170,7 +170,7 @@ function state_player_normal()
 						sprite_index = spr_breakdance;
 					else if (global.fill <= 0 && !instance_exists(obj_ghostcollectibles))
 						sprite_index = spr_hurtidle;
-					else if (global.panic && !instance_exists(obj_ghostcollectibles))
+					else if (global.panic && !instance_exists(obj_ghostcollectibles) && global.fill <= global.maxwave)
 						sprite_index = spr_panic;
 					else if (global.heatmeter && global.stylethreshold == 2)
 						sprite_index = spr_3hpidle;

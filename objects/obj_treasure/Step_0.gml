@@ -40,7 +40,7 @@ switch state
 					hsp = 0;
 					vsp = 0;
 					state = states.actor;
-					sprite_index = isgustavo ? spr_ratmount_doorclosed : spr_Timesup;
+					sprite_index = isgustavo ? spr_ratmountdoorclosed : spr_Timesup;
 					image_index = 0;
 					image_speed = 0.35;
 				}

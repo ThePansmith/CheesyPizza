@@ -115,7 +115,7 @@ select = function()
 			gustavodash = 0;
 			isgustavo = true;
 			state = states.ratmount;
-			sprite_index = spr_player_ratmountidle;
+			sprite_index = spr_ratmount_idle;
 			brick = true;
 		}
 		

@@ -6,3 +6,7 @@ depth = -5;
 
 if obj_player1.character == "G"
 	instance_destroy();
+
+switchspr = spr_backtopeppino;
+if obj_player1.character == "PN"
+	switchspr = spr_backtopinolino;

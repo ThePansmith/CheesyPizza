@@ -435,7 +435,7 @@ switch (scene)
 			if (peppino.x >= (gustavo.x - 25))
 			{
 				instance_create(peppino.x + 16, peppino.y, obj_bangeffect);
-				gustavo.sprite_index = spr_lonegustavo_hurt;
+				gustavo.sprite_index = spr_lonegustavohurt;
 				gustavo.hsp = 8;
 				gustavo.vsp = -11;
 			}

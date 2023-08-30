@@ -64,7 +64,7 @@ if state == 2
 			set_lastroom();
 			sprite_index = spr_lookdoor;
 			if isgustavo
-				sprite_index = spr_ratmount_enterdoor;
+				sprite_index = spr_ratmountenterdoor;
 			//image_index = 0;
 			state = states.door;
 			mach2 = 0;

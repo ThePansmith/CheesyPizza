@@ -768,3 +768,7 @@ oldHallway = false;
 breakout = 0;
 shaketime = 0;
 hat = -1;
+pet = -1;
+pet_prev = -1;
+petID = noone;
+superjumped = false;

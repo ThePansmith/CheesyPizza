@@ -18,7 +18,7 @@ switch (state)
 			obj_camera.lock = false;
 			with (obj_player1)
 			{
-				if (other.spr == spr_backtopeppino)
+				if (other.spr == spr_backtopeppino or other.spr == spr_backtopinolino)
 				{
 					x = obj_peppinoswitch.x;
 					y = obj_peppinoswitch.y;
