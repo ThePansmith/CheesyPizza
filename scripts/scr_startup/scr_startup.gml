@@ -167,6 +167,7 @@ window_set_showborder(!global.gameframe_enabled);
 ini_close();
 
 // etc
+global.goodmode = false; // makes everything a living nightmare
 global.sandbox = true;
 global.saveloaded = false;
 global.panicwavetime = 0; // RX: don't remove im gonna do something with this later
@@ -190,7 +191,7 @@ if file_exists("dead") || (os_type == os_windows && !ptcu_checkguid("8ff30401-c1
 	game_end();
 	exit;
 }
-	
+
 ptcu_cheesypizza_setHWND(window_handle()); // RX: Bring window to front
 
 // RX: only works if Gamemaker is your current active window, a bit disapointing really.

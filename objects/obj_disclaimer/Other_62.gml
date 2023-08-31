@@ -20,13 +20,13 @@ if ds_map_find_value(async_load, "id") == req
 		catch (error)
 		{
 			trace("DISCLAIMER\nstr: ", str, "\nerror: ", error);
-			str = "Server error!\n\nSomething went horribly wrong?\nYou may have the game blocked on your firewall.";
+			str = "Server error!\nSomething went horribly wrong?\n\nYou may have the game blocked on your firewall.\nRestarting also might work.";
 		}
 	}
 	else
 	{
 		trace("DISCLAIMER\nstatus: ", async_load[? "status"]);
-		str = "Server error!\n\nPlease check your internet connection.\nYou may have the game blocked on your firewall.";
+		str = "Server error!\nPlease check your internet connection.\n\nYou may have the game blocked on your firewall.\nRestarting also might work.";
 	}
 	
 	// open disclaimer
