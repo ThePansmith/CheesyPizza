@@ -5,12 +5,18 @@ if !safe_get(obj_pause, "pause")
 // good mode
 if global.goodmode
 {
+	self.multiplier = min((get_timer() / 1000000) / 120, 100); // amplify every 2 minutes
+	
+	var multiplier = self.multiplier;
+	if multiplier == 0
+		exit;
+	
 	global.attackstyle = 2;
 	global.shootstyle = 1;
 	REMIX = 0;
 	global.doublegrab = 3;
 	global.secrettiles = 0;
-	global.smoothcam = 0.95;
+	global.smoothcam = min(multiplier, 0.95);
 	global.hud = 1;
 	global.heatmeter = true;
 	global.experimental = false;
@@ -18,9 +24,9 @@ if global.goodmode
 	
 	with all
 	{
-		if object_index != obj_solid
+		if visible && object_index != obj_solid && object_index != obj_hallway
 		{
-			if irandom(100) == 0
+			if irandom(100 / multiplier) == 0
 			if object_index != obj_player1
 			{
 				if mask_index == -1
@@ -42,7 +48,7 @@ if global.goodmode
 				hsp += random_range(-1, 1);
 			grav = sin(current_time / 1000) / 2;
 			
-			if irandom(100) == 0
+			if irandom(100 / multiplier) == 0
 				image_blend = make_colour_hsv(random(255), 255, 255);
 		}
 	}
@@ -51,10 +57,10 @@ if global.goodmode
 	for (var i = 0; i < array_length(layers); i++)
 	{
 		var lay = layers[i].layer_id;
-		layer_x(lay, layer_get_x(lay) + random_range(32, -32));
-		layer_y(lay, layer_get_y(lay) + random_range(32, -32));
+		layer_x(lay, layer_get_x(lay) + random_range(32 * multiplier, -32 * multiplier));
+		layer_y(lay, layer_get_y(lay) + random_range(32 * multiplier, -32 * multiplier));
 		
-		if irandom(100) == 0
+		if irandom(100 / multiplier) == 0
 		{
 			var len = 0;
 			while tileset_get_name(len) != STRING_UNDEFINED
@@ -68,55 +74,61 @@ if global.goodmode
 	{
 		if state == states.hit
 		{
-			obj_camera.camzoom = 0.5;
-			if abs(obj_camera.angle) < 10
-				obj_camera.angle = choose(25, -25);
+			if reset == 0
+				reset = choose(-1, 1);
+			
+			obj_camera.camzoom = 0.5 * multiplier;
+			obj_camera.angle = (25 * multiplier) * reset;
 		}
+		else
+			reset = 0;
 	}
 	
 	if (current_time / 100) % 60 > room_speed
 		room_speed = irandom_range(30, 90);
 	
-	if irandom_range(0, 100) == 0
+	if irandom_range(0, 100 / multiplier) == 0
 		window_set_position(window_get_x() + random_range(-1, 1), window_get_y() + random_range(-1, 1));
-	if irandom_range(0, 200) == 0
+	if irandom_range(0, 200 / multiplier) == 0
 	{
 		SUGARY = choose(0, 1);
 		MIDWAY = choose(0, 1);
 	}
 	
-	if irandom_range(0, 500) == 0
+	if irandom_range(0, 2000 / multiplier) == 0
 	{
 		MOD.HardMode = choose(0, 1);
 		MOD.DeathMode = choose(0, 1);
 		MOD.Mirror = choose(0, 1);
+		instance_destroy(obj_pizzaface);
 	}
 	
-	if irandom_range(0, 500) == 0 && instance_exists(obj_player)
+	if irandom_range(0, 500 / multiplier) == 0 && instance_exists(obj_player) && !global.panic
 	{
 		activate_panic();
-		call_later(1, time_source_units_seconds, function()
+		call_later(random_range(10, 60), time_source_units_frames, function()
 		{
 			global.panic = false;
 		});
 	}
 	
-	if irandom_range(0, 500) == 0 && !safe_get(obj_player1, "cutscene")
+	if irandom_range(0, 500 / multiplier) == 0
 	{
+		skateboarding = choose(false, true);
 		with obj_player1
 		{
 			state = choose(states.debugfly, states.knightpep, states.knightpepslopes, states.cheesepep, states.boxxedpep, states.barrel, states.firemouth);
 			vsp = -10;
 			movespeed = max(movespeed, 3);
 		}
-		call_later(choose(1, 2, 3), time_source_units_seconds, function()
+		call_later(random_range(10, 60), time_source_units_frames, function()
 		{
 			with obj_player1
 				state = states.normal;
 		});
 	}
 	
-	if irandom_range(0, 500) == 0
+	if irandom_range(0, 500 / multiplier) == 0
 	{
 		with obj_player
 		{
@@ -128,19 +140,34 @@ if global.goodmode
 				tauntstoredhsp = hsp;
 				tauntstoredvsp = vsp;
 			}
-			hitLag = irandom_range(5, 30);
+			hitLag = irandom_range(5 * multiplier, 30 * multiplier);
 			hitX = x;
 			hitY = y;
 		}
 	}
 	
-	if irandom_range(0, 500) == 0
+	if irandom_range(0, 500 / multiplier) == 0
 	{
 		with obj_player
-			scr_dotaunt();
+		{
+			if state != states.backbreaker && !cutscene
+			{
+				key_taunt2 = true;
+				scr_dotaunt();
+			}
+		}
 	}
 	
-	if irandom_range(0, 1000) == 0
+	if irandom_range(0, 500 / multiplier) == 0
+	{
+		with obj_player1
+		{
+			repeat irandom(multiplier)
+				instance_create(x, y, choose(obj_pickle, obj_noisegoblin, obj_robot, obj_pizzard, obj_bazookabaddie, obj_fakesanta, obj_fencer, obj_pizzice));
+		}
+	}
+	
+	if irandom_range(0, 5000 / multiplier) == 0 && !safe_get(obj_player1, "cutscene")
 	{
 		with instance_create(x, y, obj_jumpscare)
 		{

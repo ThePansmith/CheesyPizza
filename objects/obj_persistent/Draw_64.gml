@@ -17,3 +17,11 @@ if global.showfps && global.option_hud
 	draw_text_transformed(xx, yy, string(fps), 1, 1, 0);
 }
 draw_set_align();
+
+if global.goodmode
+{
+	draw_set_colour(c_white);
+	draw_set_halign(fa_center);
+	draw_set_font(global.font_small);
+	draw_text(SCREEN_WIDTH / 2 + random_range(-multiplier, multiplier), 32 + random_range(-multiplier, multiplier), concat("Good Mode ", multiplier, "x"));
+}
