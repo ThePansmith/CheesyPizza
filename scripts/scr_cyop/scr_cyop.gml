@@ -1197,6 +1197,8 @@ function cyop_cleanup()
 	ds_map_clear(global.custom_tiles);
 	
 	// audio
+	audio_stop_all();
+	
 	var i = ds_map_find_first(global.custom_audio);
 	while !is_undefined(i)
 	{
@@ -1206,6 +1208,8 @@ function cyop_cleanup()
 	ds_map_clear(global.custom_audio);
 	
 	// etc
+	with obj_cyop_tilelayer
+		instance_destroy();
 	ds_map_clear(global.room_map);
 	ds_map_clear(global.asset_cache);
 }
@@ -1231,29 +1235,10 @@ function cyop_load(ini)
 	ini_close();
 	
 	// target level
-	/*
-	var targetLevel = "";
-	switch type
-	{
-		default:
-			return "Level type currently unsupported";
-		
-		case 0: // tower
-			
-			break;
-		
-		case 1: // level
-	*/
-	
 	global.custom_path = filename_path(ini);
 	var targetLevel = concat(global.custom_path, "/levels/", mainlevel, "/level.ini");
 	if !file_exists(targetLevel)
 		return "Main level doesn't exist";
-	
-	/*
-			break;
-	}
-	*/
 	
 	recursive_func = function(folder, prefix)
 	{
@@ -1280,7 +1265,7 @@ function cyop_load(ini)
 					
 						// properties
 						ini_open(concat(folder, "/", filename, ".ini"));
-						var images = ini_read_real("properties", "images", 1);
+						var images = ini_read_real("properties", "images", 0);
 						var image_width = ini_read_real("properties", "image_width", 0);
 					
 						var centered = ini_read_real("offset", "centered", false);
@@ -1291,15 +1276,18 @@ function cyop_load(ini)
 						ini_close();
 					
 						// add sprite
-						var spr = sprite_add(filepath, 1, 0, 0, 0, 0); // temporary
-						if images <= 1 && image_width > 0
+						var spr = sprite_add(filepath, images == -1 ? 1 : images, 0, 0, 0, 0); // temporary
+						if images == 0 && image_width != 0
 							images = floor(sprite_get_width(spr) / image_width);
 						if centered
 						{
-							x_offset += sprite_get_width(spr) / 2;
+							if image_width != 0
+								x_offset += image_width / 2;
+							else
+								x_offset += sprite_get_width(spr) / 2;
 							y_offset += sprite_get_height(spr) / 2;
 						}
-						sprite_replace(spr, filepath, images, 0, 0, x_offset, y_offset);
+						sprite_replace(spr, filepath, images == -1 ? 1 : images, 0, 0, x_offset, y_offset);
 					
 						// add to map
 						if tileset_size > 0
@@ -1351,7 +1339,14 @@ function cyop_load(ini)
 	recursive_func(concat(filename_path(ini), "/audio"), "");
 	
 	// load into the main level
-	global.custom_hub_level = targetLevel;
+	if type == 0
+		global.custom_hub_level = targetLevel;
+	else
+	{
+		global.startgate = false;
+		global.custom_hub_level = "";
+	}
+	
 	return cyop_load_level(targetLevel);
 }
 function cyop_load_level(ini)
@@ -1429,13 +1424,19 @@ function cyop_load_level(ini)
 	}
 	
 	// load in
-	global.leveltorestart = "main";
+	if isWorld
+	{
+		global.startgate = false;
+		global.leveltorestart = noone;
+	}
+	else
+		global.leveltorestart = "main";
 	global.leveltosave = "custom";
 	
 	var reset = global.levelreset;
 	global.levelreset = false;
 	
-	scr_playerreset();
+	scr_playerreset(false, true);
 	with obj_player1
 	{
 		if !reset

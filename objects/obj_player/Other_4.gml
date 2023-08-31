@@ -65,7 +65,7 @@ if object_index != obj_player2 or global.coop
 	var door_obj = noone;
 	with obj_doorX
 	{
-		if safe_get(id, "door") == other.targetDoor
+		if safe_get(id, "door") == other.targetDoor && door_obj == noone
 		{
 			door_obj = self;
 			with instance_place(x, y, obj_door)

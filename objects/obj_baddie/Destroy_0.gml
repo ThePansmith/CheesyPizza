@@ -5,6 +5,7 @@ if (!in_baddieroom() && (!elite || elitehit <= 0) && destroyable)
 {
 	if (object_index != obj_peppinoclone && object_index != obj_ghoul && object_index != obj_bazookabaddie && object_index != obj_snowman && object_index != obj_twoliterdog && object_index != obj_bigcherry && object_index != obj_froth)
 	{
+		
 		with (instance_create(x, y, obj_sausageman_dead))
 		{
 			sprite_index = other.spr_dead;
@@ -99,9 +100,6 @@ if (!in_baddieroom() && (!elite || elitehit <= 0) && destroyable)
 		gamesave_async_save();
 	}
 	notification_push(notifs.baddie_kill, [room, id, object_index]);
-	
-	if global.leveltosave == "sucrose" && !instance_exists(obj_pizzaface)
-		global.fill += calculate_filltime(2.5);
 }
 if (!in_baddieroom() && important == 0)
 {
@@ -151,6 +149,11 @@ if (!in_baddieroom() && important == 0)
 	add_baddieroom();
 	if escape && !in_saveroom(ID, global.escaperoom)
 		ds_list_add(global.escaperoom, ID);
+	
+	if 0.05 > random(1) && safe_get(id, "sugary")
+		sound_play_oneshot_3d("event:/modded/sfx/sugaryenemykill", x, y);
+	if global.leveltosave == "sucrose" && !instance_exists(obj_pizzaface) && global.fill != 0
+		global.fill += calculate_filltime(2.5);
 }
 else if (!in_baddieroom() && important == 1)
 {

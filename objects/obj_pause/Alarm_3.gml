@@ -1,21 +1,14 @@
 pause = false;
 scr_pause_stop_sounds();
+scr_pause_activate_objects();
 
 var rm = room;
-if instance_exists(obj_levelLoader)
+if !hub
 {
-	scr_pause_activate_objects();
-	with instance_create(0, 0, obj_backtohub_fadeout)
-		fadealpha = 0.9;
-	global.levelreset = true;
-	cyop_load_level(global.custom_hub_level);
-}
-else if !hub
-{
+	instance_destroy(obj_levelLoader);
+		
 	pause = false;
-	scr_pause_activate_objects();
 	obj_player1.targetRoom = Realtitlescreen;
-	obj_player2.targetRoom = Realtitlescreen;
 	room = Realtitlescreen;
 	with (obj_player1)
 	{
@@ -27,7 +20,6 @@ else if !hub
 	scr_playerreset();
 	alarm[0] = 2;
 	obj_player1.state = states.titlescreen;
-	obj_player2.state = states.titlescreen;
 	obj_player1.targetDoor = "A";
 	if (instance_exists(obj_player2))
 		obj_player2.targetDoor = "A";
@@ -36,16 +28,27 @@ else if !hub
 }
 else
 {
-	scr_pause_activate_objects();
-	with (instance_create(0, 0, obj_backtohub_fadeout))
-		fadealpha = 0.9;
-	scr_playerreset();
-	global.levelreset = true;
-	obj_player1.targetDoor = "HUB";
-	if (instance_exists(obj_player2))
-		obj_player2.targetDoor = "HUB";
-	global.leveltorestart = -4;
-	global.leveltosave = -4;
+	if instance_exists(obj_levelLoader)
+	{
+		with instance_create(0, 0, obj_backtohub_fadeout)
+			fadealpha = 0.9;
+		global.levelreset = true;
+		cyop_load_level(global.custom_hub_level);
+	}
+	else
+	{
+		instance_destroy(obj_levelLoader);
+		
+		with (instance_create(0, 0, obj_backtohub_fadeout))
+			fadealpha = 0.9;
+		scr_playerreset();
+		global.levelreset = true;
+		obj_player1.targetDoor = "HUB";
+		if (instance_exists(obj_player2))
+			obj_player2.targetDoor = "HUB";
+		global.leveltorestart = -4;
+		global.leveltosave = -4;
+	}
 }
 if (rm == boss_pizzaface || rm == boss_noise || rm == boss_pepperman || rm == boss_fakepep || rm == boss_vigilante)
 	global.bossintro = true;

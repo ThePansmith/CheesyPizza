@@ -350,6 +350,7 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 				{
 					reset_modifier();
 					
+					instance_activate_object(obj_levelLoader);
 					pause_unpause_music();
 					stop_music();
 					scr_pause_stop_sounds();
@@ -363,7 +364,8 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 					var arr = noone;
 					ds_list_copy(sl, sound_list);
 					ds_list_copy(il, instance_list);
-					if (room == hub_room1 || room == Finalintro || room == characterselect || room == cowboytask || room == Titlescreen || room == Mainmenu || room == Scootertransition || room == rm_levelselect || (string_copy(room_get_name(room), 1, 5) == "tower" && (!global.panic)))
+					if (room == hub_room1 || room == Finalintro || room == characterselect || room == cowboytask || room == Titlescreen || room == Mainmenu || room == Scootertransition || room == rm_levelselect || (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic))
+					or ((!global.startgate or global.custom_hub_level == "") && instance_exists(obj_levelLoader))
 					{
 						if global.startgate
 						{

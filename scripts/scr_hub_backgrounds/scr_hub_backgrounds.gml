@@ -48,6 +48,9 @@ function scr_hub_bg_step()
 }
 function scr_hub_bg_draw(x, y, sprite, frame, gui = false)
 {
+	if !sprite_exists(sprite)
+		exit;
+	
 	if (bgalpha < 1)
 	{
 		var w = sprite_get_width(sprite);

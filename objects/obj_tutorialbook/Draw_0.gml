@@ -1,2 +1,2 @@
 if (showgranny)
-	draw_self();
+	draw_self_safe();

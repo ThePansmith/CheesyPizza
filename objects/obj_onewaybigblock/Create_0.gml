@@ -2,24 +2,12 @@ if (room == rm_editor)
 	exit;
 image_speed = 0.35;
 depth = 1;
-solid_inst = -4;
+solid_inst = noone;
 
-if (image_xscale == 1)
-{
-	with (instance_create(x, y, obj_solid))
-	{
-		image_yscale = 2;
-		other.solid_inst = id;
-	}
-}
-if (image_xscale == -1)
-{
-	with (instance_create(x - 32, y, obj_solid))
-	{
-		image_yscale = 2;
-		other.solid_inst = id;
-	}
-}
+if instance_exists(obj_levelLoader)
+	alarm[0] = 1;
+else
+	event_perform(ev_alarm, 0);
 
 if global.blockstyle == blockstyles.old
 	sprite_index = spr_onewaybigblock_old;

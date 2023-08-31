@@ -1,2 +1,2 @@
 if (appear == -1)
-	draw_self();
+	draw_self_safe();

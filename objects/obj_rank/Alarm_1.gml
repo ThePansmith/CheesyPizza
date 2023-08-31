@@ -1,5 +1,11 @@
 global.levelcomplete = true;
 scr_playerreset();
+
+if (!global.startgate or global.custom_hub_level == "")
+	instance_destroy(obj_levelLoader);
+else if instance_exists(obj_levelLoader)
+	cyop_load_level(global.custom_hub_level);
+
 with (obj_player1)
 {
 	targetDoor = "HUB";

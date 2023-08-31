@@ -1,6 +1,6 @@
 shader_set(shd_pal_swapper);
 pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
 pal_swap_set(spr_peppalette, gustavo_palette(obj_player1.paletteselect), false);
-draw_self();
+draw_self_safe();
 pattern_reset();
 shader_reset();

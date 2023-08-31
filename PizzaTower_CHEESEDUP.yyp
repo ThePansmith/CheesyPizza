@@ -3182,6 +3182,7 @@
     {"id":{"name":"spr_snowcloudstun","path":"sprites/spr_snowcloudstun/spr_snowcloudstun.yy",},},
     {"id":{"name":"tower_farmland","path":"rooms/tower_farmland/tower_farmland.yy",},},
     {"id":{"name":"tower_laundryroom","path":"rooms/tower_laundryroom/tower_laundryroom.yy",},},
+    {"id":{"name":"draw_self_safe","path":"scripts/draw_self_safe/draw_self_safe.yy",},},
     {"id":{"name":"spr_molassessign","path":"sprites/spr_molassessign/spr_molassessign.yy",},},
     {"id":{"name":"tower_noisettecafe","path":"rooms/tower_noisettecafe/tower_noisettecafe.yy",},},
     {"id":{"name":"tower_ruinsecret","path":"rooms/tower_ruinsecret/tower_ruinsecret.yy",},},

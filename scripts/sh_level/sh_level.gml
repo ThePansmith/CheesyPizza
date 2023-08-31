@@ -2,41 +2,56 @@ function sh_level(args)
 {
 	if !WC_debug
 		return "You do not have permission to use this command";
-	instance_destroy(obj_levelLoader);
+	if array_length(args) < 2
+		return "Level argument missing";
+	
+	if args[1] == "tower"
+		instance_destroy(obj_levelLoader);
 	isOpen = false;
 	
 	var level = args[1], targetRoom = -1;
-	switch level
+	if instance_exists(obj_levelLoader)
 	{
-		default: targetRoom = asset_get_index(level + "_1"); break;
-		
-		case "farm": targetRoom = farm_2; break;
-		case "plage": targetRoom = plage_entrance; break;
-		case "street": targetRoom = street_intro; break;
-		case "exit": targetRoom = tower_finalhallway; break;
-		case "oldexit": targetRoom = exit_1; break;
-		case "strongcold": targetRoom = strongcold_10; break;
-		
-		case "snickchallenge":
-			targetRoom = medieval_1;
-			activate_snickchallenge();
-			break;
+		var targetLevel = concat(global.custom_path, "/levels/", level, "/level.ini");
+		if !file_exists(targetLevel)
+			return $"{level} level doesn't exist";
+		else
+			cyop_load_level(targetLevel);
 	}
-	
-	if room_exists(targetRoom)
+	else
 	{
-		with obj_player1
+		switch level
 		{
-			global.startgate = true;
-			global.leveltosave = level;
-			global.leveltorestart = targetRoom;
-			global.levelattempts = 0;
-			backtohubstartx = x;
-			backtohubstarty = y;
-			backtohubroom = room;
-			targetDoor = "A";
+			default: targetRoom = asset_get_index(level + "_1"); break;
+		
+			case "farm": targetRoom = farm_2; break;
+			case "plage": targetRoom = plage_entrance; break;
+			case "street": targetRoom = street_intro; break;
+			case "exit": targetRoom = tower_finalhallway; break;
+			case "oldexit": targetRoom = exit_1; break;
+			case "strongcold": targetRoom = strongcold_10; break;
+		
+			case "snickchallenge":
+				targetRoom = medieval_1;
+				activate_snickchallenge();
+				break;
 		}
-		scr_room_goto(targetRoom);
+		
+		if room_exists(targetRoom)
+		{
+			with obj_player1
+			{
+				global.startgate = true;
+				global.leveltosave = level;
+				global.leveltorestart = targetRoom;
+				global.levelattempts = 0;
+				backtohubstartx = x;
+				backtohubstarty = y;
+				backtohubroom = room;
+				targetDoor = "A";
+			}
+			scr_room_goto(targetRoom);
+		}
 	}
 }
 function meta_level()
@@ -45,9 +60,28 @@ function meta_level()
 		description: "travel to a level",
 		arguments: ["level"],
 		suggestions: [
-			["entrance", "medieval", "ruin", "dungeon", "badland", "graveyard", "farm", "saloon", "plage", "forest", "space", "minigolf", "street", "sewer", "industrial", "freezer", "kidsparty", "chateau", "war", "exit",
-			"oldexit", "beach", "mansion", "strongcold", "dragonlair", "etb", "ancient", "grinch", "snickchallenge", "midway",
-			"entryway", "steamy", "molasses", "sucrose"]
+			function()
+			{
+				if instance_exists(obj_levelLoader)
+				{
+					var levels = [];
+					
+					var file = file_find_first(concat(global.custom_path, "levels/*"), fa_directory);
+					while file != ""
+					{
+						if directory_exists(concat(global.custom_path, "levels/", file))
+							array_push(levels, file);
+						file = file_find_next();
+					}
+					
+					array_push(levels, "tower");
+					return levels;
+				}
+				else
+					return ["entrance", "medieval", "ruin", "dungeon", "badland", "graveyard", "farm", "saloon", "plage", "forest", "space", "minigolf", "street", "sewer", "industrial", "freezer", "kidsparty", "chateau", "war", "exit",
+				"oldexit", "beach", "mansion", "strongcold", "dragonlair", "etb", "ancient", "grinch", "snickchallenge", "midway",
+				"entryway", "steamy", "molasses", "sucrose"];
+			}
 		]
 	}
 }

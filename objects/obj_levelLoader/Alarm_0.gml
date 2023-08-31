@@ -64,8 +64,23 @@ for(var i = 0; i < array_length(_room.instances); i++)
 		
 		for (var j = 0; j < array_length(varNames); j++)
 		{
-		    if varNames[j] != "x" && varNames[j] != "y"
+			if varNames[j] == "useLayerDepth" && struct[$ varNames[j]]
+				inst.depth = -inst_data.layer;
+		    else if varNames[j] != "x" && varNames[j] != "y"
 		        variable_instance_set(inst, varNames[j], cyop_resolvevalue(struct[$ varNames[j]], varNames[j]));
+			
+			if varNames[j] == "levelName" && REMIX
+			{
+				var ini = concat(global.custom_path, "/levels/", inst.levelName, "/level.ini");
+				if file_exists(ini)
+				{
+					ini_open(ini);
+					var name = ini_read_string("data", "name", "");
+					if name != "Level Name"
+						inst.msg = name;
+					ini_close();
+				}
+			}
 		}
 		
 		if safe_get(inst, "flipX")

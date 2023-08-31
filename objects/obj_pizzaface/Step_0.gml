@@ -149,7 +149,7 @@ if !treasure
 		}
 		else
 		{
-			sprite_index = spr_idle;
+			//sprite_index = spr_idle;
 			if image_alpha >= 1
 			{
 				if !instance_exists(obj_fadeout) && !obj_player1.cutscene
