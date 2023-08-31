@@ -140,7 +140,6 @@ function load_moddedconfig()
 	global.panicbg = ini_read_real("Modded", "panicbg", true);
 	global.panictilt = ini_read_real("Modded", "panictilt", false);
 	global.sloperot = ini_read_real("Modded", "sloperot", false);
-	global.sloperot = false;
 	global.inputdisplay = ini_read_real("Modded", "inputdisplay", false);
 	global.showfps = ini_read_real("Modded", "showfps", false);
 	global.afterimage = ini_read_real("Modded", "afterimage", 0); // final, eggplant

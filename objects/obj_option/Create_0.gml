@@ -65,6 +65,8 @@ add_option_press(categories, 3, "option_controls", function()
 	*/
 	menu_goto(menus.controls);
 });
+
+if !global.goodmode
 add_option_press(categories, 4, "option_mod", function()
 {
 	obj_option.key_jump = false;
