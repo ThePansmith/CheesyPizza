@@ -655,7 +655,7 @@ or (instance_exists(obj_timesup) && obj_timesup.alarm[1] == 0)
 		image_blend = c_white;
 		visible = true;
 	}
-	if (!global.startgate or global.custom_hub_level == "")
+	if (global.is_hubworld or global.custom_hub_level == "")
 		instance_destroy(obj_levelLoader);
 	else if instance_exists(obj_levelLoader)
 		cyop_load_level(global.custom_hub_level);

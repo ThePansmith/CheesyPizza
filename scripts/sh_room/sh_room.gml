@@ -24,9 +24,16 @@ function sh_room(args)
 		else if asset_get_type(roomgoto) != asset_room
 			return "The asset " + roomgoto + " is not a room";
 		
-		if roomgoto == "Initroom"
-			return "Not a good idea";
+		if roomgoto == "Initroom" or roomgoto == "Loadiingroom"
+			return "Not a good idea.";
 		roomgoto = asset_get_index(roomgoto);
+		
+		if !DEBUG
+		{
+			var tags = asset_get_tags(roomgoto);
+			if array_contains(tags, "hidden")
+				return "The asset " + roomgoto + " is not a room";
+		}
 	}
 	
 	var door = "NONE";

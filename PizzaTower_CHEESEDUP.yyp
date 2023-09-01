@@ -8835,6 +8835,7 @@
     {"id":{"name":"obj_inputdisplay","path":"objects/obj_inputdisplay/obj_inputdisplay.yy",},},
     {"id":{"name":"spr_ninja_kickattack","path":"sprites/spr_ninja_kickattack/spr_ninja_kickattack.yy",},},
     {"id":{"name":"bg_golffront2","path":"sprites/bg_golffront2/bg_golffront2.yy",},},
+    {"id":{"name":"tower_pizzaboy","path":"rooms/tower_pizzaboy/tower_pizzaboy.yy",},},
     {"id":{"name":"bg_vigiboss_dark","path":"sprites/bg_vigiboss_dark/bg_vigiboss_dark.yy",},},
     {"id":{"name":"spr_pizzafacedoor","path":"sprites/spr_pizzafacedoor/spr_pizzafacedoor.yy",},},
     {"id":{"name":"spr_playerSP_rocket","path":"sprites/spr_playerSP_rocket/spr_playerSP_rocket.yy",},},
@@ -10984,6 +10985,7 @@
     {"roomId":{"name":"sugarytut_2","path":"rooms/sugarytut_2/sugarytut_2.yy",},},
     {"roomId":{"name":"test_3D","path":"rooms/test_3D/test_3D.yy",},},
     {"roomId":{"name":"e_medieval_2","path":"rooms/e_medieval_2/e_medieval_2.yy",},},
+    {"roomId":{"name":"tower_pizzaboy","path":"rooms/tower_pizzaboy/tower_pizzaboy.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":false,"loadType":"default","mipsToGenerate":0,"targets":-1,},

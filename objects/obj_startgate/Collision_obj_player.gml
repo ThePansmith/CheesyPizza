@@ -97,6 +97,7 @@ else if other.key_taunt2 && other.state == states.victory
 
 // level name at the bottom of the screen
 if REMIX && other.state != states.victory && other.state != states.backtohub && (highscore > 0 or global.sandbox or (boss && hats > 0))
+&& !place_meeting(x, y, obj_tutorialbook)
 {
 	if !instance_exists(transfotip)
 	{

@@ -1,3 +1,6 @@
+if instance_exists(obj_levelLoader)
+	exit;
+
 with (instance_create(x, y, obj_fadeout))
 {
 	obj_player1.targetRoom = hub_loadingscreen;

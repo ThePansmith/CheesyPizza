@@ -1172,6 +1172,7 @@ global.custom_fill = 4000;
 global.custom_path = "";
 global.custom_hub_level = "";
 global.custom_level_name = noone;
+global.is_hubworld = false;
 
 function cyop_cleanup()
 {
@@ -1342,10 +1343,7 @@ function cyop_load(ini)
 	if type == 0
 		global.custom_hub_level = targetLevel;
 	else
-	{
-		global.startgate = false;
 		global.custom_hub_level = "";
-	}
 	
 	return cyop_load_level(targetLevel);
 }
@@ -1353,7 +1351,7 @@ function cyop_load_level(ini)
 {
 	// load ini
 	ini_open(ini);
-	var isWorld = ini_read_real("data", "isWorld", false);
+	global.is_hubworld = ini_read_real("data", "isWorld", false);
 	global.srank = ini_read_real("data", "pscore", 8000);
 	global.custom_level_name = ini_read_string("data", "name", "");
 	global.custom_fill = ini_read_real("data", "escape", 4000);
@@ -1424,11 +1422,8 @@ function cyop_load_level(ini)
 	}
 	
 	// load in
-	if isWorld
-	{
-		global.startgate = false;
+	if global.is_hubworld
 		global.leveltorestart = noone;
-	}
 	else
 		global.leveltorestart = "main";
 	global.leveltosave = "custom";
@@ -1503,7 +1498,7 @@ function cyop_resolvevalue(value, varname)
 		else
 			return value;
 	}
-	if varname == "visible"
+	//if varname == "visible" or varname == "start"
 	{
 		if value == "true"
 			value = 1;

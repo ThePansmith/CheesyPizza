@@ -2,23 +2,21 @@ if !instance_exists(obj_player) // pause crash prevention
 	exit;
 
 // If Condition is correct then output
-if condition != noone && condition()
+if condition != noone
 {
-    if !activated || !flags.do_once
+	var input = condition();
+	if reverse_output != noone && !input && (activated || !flags.do_once) // Reverse of the Condition
+	{
+		reverse_output(input);
+		activated = false;
+	}
+    else if input && (!activated || !flags.do_once)
     {
-		output();
+		output(input);
 		if flags.do_save && !in_saveroom(id, flags.saveroom)
 			ds_list_add(flags.saveroom, id);
 		
 		activated = true;
-    }
-}
-else if reverse_output != noone && condition != noone && !condition() // Reverse of the Condition
-{
-    if activated || !flags.do_once
-    {
-		reverse_output();
-		activated = false;
     }
 }
 

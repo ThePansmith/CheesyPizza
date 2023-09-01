@@ -5,21 +5,24 @@ function sh_char(args)
 	if !instance_exists(obj_player1)
 		return "The player is not in the room";
 	if array_length(args) < 2
-		return "Missing argument: char";
+		return "Missing argument: character";
 	
 	with obj_player1
 	{
 		character = args[1];
 		scr_characterspr();
 	}
+	
+	if args[1] == "M"
+		return "Yeah, good luck with that.";
 }
 function meta_char()
 {
 	return {
 		description: "change characters",
-		arguments: ["char"],
+		arguments: ["character"],
 		suggestions: [
-			["P", "N", "V", "S", "SP", "BN", "PN"],
+			["P", "N", "V", "S", "SP", "SN", "BN", "PN"],
 		],
 	}
 }
