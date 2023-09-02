@@ -19,8 +19,21 @@ bo = (obj_player1.character == "BN");
 if sugary
 {
 	sprite_index = spr_comboend_titleSP;
+	x -= 2;
+	
 	if global.hud == 0
-		y -= 50;
+		y -= 40;
+	
+	image_alpha = 3;
+	type = clamp(floor(global.combo / 25), 0, 3);
+	
+	switch type
+	{
+		case 0: image_xscale = 0 image_yscale = 0 break;	
+		case 1: image_xscale = 3 image_yscale = 0 break;	
+		case 2: image_xscale = 0 image_yscale = 3 break;	
+		case 3: image_xscale = 0 image_yscale = 0 break;	
+	}
 }
 else if bo
 {

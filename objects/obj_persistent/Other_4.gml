@@ -1,6 +1,14 @@
+shell_force_off = room == tower_pizzaboy;
+if shell_force_off
+{
+	global.showcollisions = false;
+	with obj_shell
+		WC_showcollisions = false;
+}
+
+// panic backgrounds
 if instance_exists(obj_parallax)
 {
-	// panic backgrounds
 	if global.panic && room != custom_lvl_room
 	    event_user(1);
 }

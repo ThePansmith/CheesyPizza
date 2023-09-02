@@ -264,7 +264,7 @@ function scr_wc_create()
 function scr_wc_step()
 {
 	depth = -16000;
-	WC_debug = DEBUG or (global.experimental && !instance_exists(obj_disclaimer));
+	WC_debug = DEBUG or (global.experimental && !instance_exists(obj_disclaimer) && !safe_get(obj_persistent, "shell_force_off"));
 	
 	if isOpen
 	{

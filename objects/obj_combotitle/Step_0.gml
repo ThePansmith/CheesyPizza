@@ -14,7 +14,50 @@ y = ystart;
 if sugary
 {
 	if title <= 24
+	{
 		image_index = title;
+		
+		if image_alpha > 0
+		    image_alpha -= 0.05;
+		else
+		    instance_destroy();
+		
+		switch type
+		{
+			default:
+				if image_alpha > 1
+				{
+					image_xscale = Approach(image_xscale, 1, .1)
+					image_yscale = Approach(image_yscale, 1, .1)
+				}
+				else
+				{
+					image_xscale = Approach(image_xscale, 5, .05)
+					image_yscale = Approach(image_xscale, 5, .05)
+				}
+				break;
+			
+			case 0:
+				if image_alpha > 1
+				{
+					image_xscale = Approach(image_xscale, 1, .1)
+					image_yscale = Approach(image_yscale, 1, .1)
+				}
+				else
+				{
+					image_xscale = image_alpha
+					image_yscale = image_alpha	
+				}
+				break
+
+			case 3:
+				image_xscale = Approach(image_xscale, 1, .1)
+				image_yscale = Approach(image_yscale, 1, .1)
+				if image_angle != 360
+					image_angle = Approach(image_angle, 360, 30)
+				break;
+		}
+	}
 	else
 		visible = false;
 }

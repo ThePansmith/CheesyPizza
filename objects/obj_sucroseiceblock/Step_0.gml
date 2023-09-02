@@ -81,8 +81,9 @@ if state != states.hit && invtime <= 0 && (place_meeting(x, y, obj_player1) or p
 	{
 		if state = states.mach3	|| (state = states.mach2 && sprite_index != spr_mach1) || state = states.rocket or check_kungfu_state() or (state == states.handstandjump && instakillmove) or (state == states.ratmount && (abs(hsp) >= 12) || state == states.ratmountpunch)
 		{
-			instance_create(other.x, other.y, obj_slapstar);
-            instance_create(other.x, other.y, obj_baddiegibs);
+			repeat 3
+				create_slapstar(other.x, other.y);
+            //instance_create(other.x, other.y, obj_baddiegibs);
 			instance_create(other.x, other.y, obj_bangeffect);
 			instance_create(other.x, other.y, obj_parryeffect)
 			machpunchAnim = true;
@@ -109,8 +110,9 @@ if state != states.hit && invtime <= 0 && (place_meeting(x, y, obj_player1) or p
 		else if state = states.Sjump || state = states.punch
 		{
 			var pctg = other.x - x
-			instance_create(other.x, other.y, obj_slapstar);
-	        instance_create(other.x, other.y, obj_baddiegibs);
+			repeat 3
+				create_slapstar(other.x, other.y);
+	        //instance_create(other.x, other.y, obj_baddiegibs);
 			instance_create(other.x, other.y, obj_bangeffect);
 			instance_create(other.x, other.y, obj_parryeffect)
 			machpunchAnim = true;

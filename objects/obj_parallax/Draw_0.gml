@@ -95,7 +95,7 @@ if instance_exists(obj_wartimer)
 
 // prepare to draw with panicbg
 else if (global.panic or global.snickchallenge)
-&& global.panicbg && !instance_exists(obj_ghostcollectibles)
+&& global.panicbg && !instance_exists(obj_ghostcollectibles) && global.leveltosave != "sucrose"
 {
 	shader_set(shd_panicbg);
 	var panic_id = shader_get_uniform(shd_panicbg, "panic");

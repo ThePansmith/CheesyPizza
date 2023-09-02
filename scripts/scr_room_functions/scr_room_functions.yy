@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "room_get_layers",
+  "name": "scr_room_functions",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
