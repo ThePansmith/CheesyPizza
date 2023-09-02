@@ -772,3 +772,4 @@ pet = -1;
 pet_prev = -1;
 petID = noone;
 superjumped = false;
+image_blend_func = noone;

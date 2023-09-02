@@ -39,3 +39,10 @@ if death or (!room_is_secret(obj_player1.lastroom) && !room_is_secret(room) && !
 	active = false;
 	visible = false;
 }
+if !death && SUGARY
+{
+	with obj_player1
+	{
+		image_blend_func = noone; // TODO: SUGARY STYLE BLENDING!!!!
+	}
+}
