@@ -9,7 +9,6 @@ rank = "d";
 group_arr = -4;
 boss = false;
 drawing = false;
-targetDoor = "A";
 highscore = 0;
 secret_count = 0;
 toppin = array_create(5, 0);
@@ -22,6 +21,8 @@ titlecard_index = 0;
 title_sprite = spr_titlecards_title;
 title_index = 0;
 title_music = "event:/music/w1/entrancetitle";
+show_titlecard = true;
+allow_modifier = true;
 
 transfotip = noone;
 msg = "";

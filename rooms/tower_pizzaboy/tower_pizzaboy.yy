@@ -31,7 +31,6 @@
     {"name":"inst_7A1E43BD","path":"rooms/tower_pizzaboy/tower_pizzaboy.yy",},
     {"name":"inst_351422CE","path":"rooms/tower_pizzaboy/tower_pizzaboy.yy",},
     {"name":"inst_1017C54","path":"rooms/tower_pizzaboy/tower_pizzaboy.yy",},
-    {"name":"inst_5E4783EC","path":"rooms/tower_pizzaboy/tower_pizzaboy.yy",},
     {"name":"inst_67340EB5","path":"rooms/tower_pizzaboy/tower_pizzaboy.yy",},
   ],
   "isDnd": false,
@@ -70,7 +69,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7A1E43BD","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_slope","path":"objects/obj_slope/obj_slope.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":1696.0,"y":1952.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_351422CE","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_startgate","path":"objects/obj_startgate/obj_startgate.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1408.0,"y":1872.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1017C54","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":3.0,"scaleY":117.0,"x":-352.0,"y":-2144.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5E4783EC","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_eventtrigger","path":"objects/obj_eventtrigger/obj_eventtrigger.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1536.0,"y":1952.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_67340EB5","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":11.0,"scaleY":6.0,"x":1248.0,"y":1536.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
