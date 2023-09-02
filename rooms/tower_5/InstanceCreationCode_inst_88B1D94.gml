@@ -1,6 +1,6 @@
 condition = function()
 {
-	return !place_meeting(x + 1, y, obj_solid) && obj_player1.x < x && obj_player1.targetDoor == "X";
+	return (!place_meeting(x + 1, y, obj_solid) && obj_player1.x < x && obj_player1.targetDoor == "X") or obj_player1.targetDoor == "PB";
 }
 output = function()
 {
@@ -11,6 +11,14 @@ output = function()
 	
 	ds_list_clear(global.saveroom);
 	with obj_player
-		targetDoor = "NONE";
+	{
+		if targetDoor == "PB"
+		{
+			state = states.comingoutdoor;
+			image_index = 0;
+		}
+		else
+			targetDoor = "NONE";
+	}
 	room_restart();
 }

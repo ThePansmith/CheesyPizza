@@ -46,7 +46,7 @@ if floor(other.image_index) == other.image_number - 1 && other.state == states.v
 			else
 				cyop_load_level(targetLevel);
 		}
-		else if gate.level != "tutorial"
+		else if gate.level != "tutorial" && gate.show_titlecard
 		{
 			if (gate.object_index != obj_bossdoor)
 			{
@@ -89,7 +89,7 @@ if floor(other.image_index) == other.image_number - 1 && other.state == states.v
 		}
 	}
 }
-else if other.key_taunt2 && other.state == states.victory
+else if other.key_taunt2 && other.state == states.victory && allow_modifier
 {
 	other.state = states.actor;
 	instance_create_depth(0, 0, 0, obj_levelsettings, {level: level, levelname: msg})

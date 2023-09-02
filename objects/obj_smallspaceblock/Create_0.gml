@@ -1,5 +1,4 @@
 event_inherited();
 
-sprite_index = spr_bigdestroy;
-depth = 1;
+sprite_index = spr_destroyable;
 new_behavior = instance_exists(obj_levelLoader);

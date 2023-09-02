@@ -4,7 +4,12 @@ function secret_add(create_func, func)
 	{
 		ds_list_add(secrettriggers, [func]);
 		if (create_func != noone)
-			method(id, create_func)();
+		{
+			if live_enabled
+				live_method(id, create_func)();
+			else
+				method(id, create_func)();
+		}
 	}
 }
 function secret_add_touchall(room, trigger, touchallID)

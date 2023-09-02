@@ -7099,7 +7099,7 @@
     {"id":{"name":"spr_bossfight_pizzyhp","path":"sprites/spr_bossfight_pizzyhp/spr_bossfight_pizzyhp.yy",},},
     {"id":{"name":"spr_pizzasona11","path":"sprites/spr_pizzasona11/spr_pizzasona11.yy",},},
     {"id":{"name":"spr_monstercheese_walk","path":"sprites/spr_monstercheese_walk/spr_monstercheese_walk.yy",},},
-    {"id":{"name":"room_get_layers","path":"scripts/room_get_layers/room_get_layers.yy",},},
+    {"id":{"name":"scr_room_functions","path":"scripts/scr_room_functions/scr_room_functions.yy",},},
     {"id":{"name":"spr_halloweendeco1","path":"sprites/spr_halloweendeco1/spr_halloweendeco1.yy",},},
     {"id":{"name":"bg_factoryproduction_chunk2","path":"sprites/bg_factoryproduction_chunk2/bg_factoryproduction_chunk2.yy",},},
     {"id":{"name":"spr_halloweendeco2","path":"sprites/spr_halloweendeco2/spr_halloweendeco2.yy",},},

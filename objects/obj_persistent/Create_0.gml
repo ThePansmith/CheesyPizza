@@ -1,5 +1,6 @@
 room_tiles = [];
 room_bgs = [];
+dynamic_layers = ds_map_create();
 global.in_menu = false;
 global.showcollisions = false;
 global.time = 0;
@@ -10,3 +11,6 @@ globalvar SUGARY;
 SUGARY = false;
 globalvar MIDWAY;
 MIDWAY = false;
+
+// 
+shell_force_off = false;

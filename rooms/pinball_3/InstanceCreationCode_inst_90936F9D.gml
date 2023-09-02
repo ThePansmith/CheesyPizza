@@ -1,1 +1,1 @@
-time_max = room_speed * 10;
+time_max = room_speed * 5;

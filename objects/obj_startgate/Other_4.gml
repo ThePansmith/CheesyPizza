@@ -71,67 +71,81 @@ if (object_index != obj_bossdoor && sprite_index != spr_snickchallengecomputer)
 	}
 }
 
-ini_open_from_string(obj_savesystem.ini_str);
-highscore = ini_read_real("Highscore", string(level), 0);
-laps = ini_read_real("Laps", string(level), 0);
-hats = ini_read_real("Hats", string(level), 0);
-secret_count = ini_read_string("Secret", string(level), 0);
-toppin[0] = ini_read_real("Toppin", string(level) + "1", 0);
-toppin[1] = ini_read_real("Toppin", string(level) + "2", 0);
-toppin[2] = ini_read_real("Toppin", string(level) + "3", 0);
-toppin[3] = ini_read_real("Toppin", string(level) + "4", 0);
-toppin[4] = ini_read_real("Toppin", string(level) + "5", 0);
-rank = ini_read_string("Ranks", string(level), "d");
-death_rank = ini_read_string("Ranks", string(level) + "-death", "");
-ini_close();
-
-if (!SUGARY)
+if level == noone
 {
-	var _toppinspr = [
-		[spr_toppinshroom, spr_toppinshroom_run, spr_toppinshroom_taunt, -75],
-		[spr_toppincheese, spr_toppincheese_run, spr_toppincheese_taunt, -35],
-		[spr_toppintomato, spr_toppintomato_run, spr_toppintomato_taunt, 0],
-		[spr_toppinsausage, spr_toppinsausage_run, spr_toppinsausage_taunt, 35],
-		[spr_toppinpineapple, spr_toppinpineapple_run, spr_toppinpineapple_taunt, 75]
-	];
-	for (var i = 0; i < array_length(_toppinspr); i++)
+	highscore = 0;
+	laps = 0;
+	hats = 0;
+	secret_count = 0;
+	toppin = [0, 0, 0, 0, 0];
+	rank = "d";
+	death_rank = "";
+}
+else
+{
+	ini_open_from_string(obj_savesystem.ini_str);
+	highscore = ini_read_real("Highscore", string(level), 0);
+	laps = ini_read_real("Laps", string(level), 0);
+	hats = ini_read_real("Hats", string(level), 0);
+	secret_count = ini_read_string("Secret", string(level), 0);
+	toppin[0] = ini_read_real("Toppin", string(level) + "1", 0);
+	toppin[1] = ini_read_real("Toppin", string(level) + "2", 0);
+	toppin[2] = ini_read_real("Toppin", string(level) + "3", 0);
+	toppin[3] = ini_read_real("Toppin", string(level) + "4", 0);
+	toppin[4] = ini_read_real("Toppin", string(level) + "5", 0);
+	rank = ini_read_string("Ranks", string(level), "d");
+	death_rank = ini_read_string("Ranks", string(level) + "-death", "");
+	ini_close();
+	
+	if !SUGARY
 	{
-		var b = _toppinspr[i];
-		if (toppin[i])
+		var _toppinspr = [
+			[spr_toppinshroom, spr_toppinshroom_run, spr_toppinshroom_taunt, -75],
+			[spr_toppincheese, spr_toppincheese_run, spr_toppincheese_taunt, -35],
+			[spr_toppintomato, spr_toppintomato_run, spr_toppintomato_taunt, 0],
+			[spr_toppinsausage, spr_toppinsausage_run, spr_toppinsausage_taunt, 35],
+			[spr_toppinpineapple, spr_toppinpineapple_run, spr_toppinpineapple_taunt, 75]
+		];
+		for (var i = 0; i < array_length(_toppinspr); i++)
 		{
-			with (instance_create(x + b[3], y + 100, obj_toppinprop))
+			var b = _toppinspr[i];
+			if (toppin[i])
 			{
-				tauntspr = b[2];
-				movespr = b[1];
-				idlespr = b[0];
-				if (place_meeting(x, y, obj_platform))
-					y -= 2;
+				with (instance_create(x + b[3], y + 100, obj_toppinprop))
+				{
+					tauntspr = b[2];
+					movespr = b[1];
+					idlespr = b[0];
+					if (place_meeting(x, y, obj_platform))
+						y -= 2;
+				}
 			}
 		}
-	}
-}
-if (object_index == obj_startgate && level != "exit" && level != "tutorial" && level != "dragonlair" && level != "snickchallenge" && level != "grinch" && level != "oldexit" && !SUGARY)
-{
-	var count = 3;
-	if level == "etb"
-		count = 2;
 	
-	for (i = 1; i <= count; i++)
-	{
-		b = true;
-		if (i > secret_count)
-			b = false;
-		with (instance_create(x, y, obj_startgate_secreteye))
+		if (object_index == obj_startgate && level != "exit" && level != "tutorial" && level != "dragonlair" && level != "snickchallenge" && level != "grinch" && level != "oldexit")
 		{
-			last_current_time = current_time + (600000 * i * 2);
-			timer = last_current_time;
-			//trace(other.level, " secret eye ", i, timer);
-			time_x += (i - 1);
-			time_y += ((i - 1) * 2);
-			if (b)
-				sprite_index = spr_gatesecreteyeopen;
-			else
-				sprite_index = spr_gatesecreteyeclosed;
+			var count = 3;
+			if level == "etb"
+				count = 2;
+	
+			for (i = 1; i <= count; i++)
+			{
+				b = true;
+				if (i > secret_count)
+					b = false;
+				with (instance_create(x, y, obj_startgate_secreteye))
+				{
+					last_current_time = current_time + (600000 * i * 2);
+					timer = last_current_time;
+					//trace(other.level, " secret eye ", i, timer);
+					time_x += (i - 1);
+					time_y += ((i - 1) * 2);
+					if (b)
+						sprite_index = spr_gatesecreteyeopen;
+					else
+						sprite_index = spr_gatesecreteyeclosed;
+				}
+			}
 		}
 	}
 }
