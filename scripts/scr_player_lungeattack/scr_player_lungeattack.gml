@@ -1,6 +1,6 @@
 function scr_player_lungeattack()
 {
-	if (sprite_index != spr_player_backflip)
+	if (sprite_index != spr_suplexland)
 	{
 		image_speed = 0.35;
 		hsp = xscale * movespeed;
@@ -33,6 +33,9 @@ function scr_player_lungeattack()
 	*/
 	
 	var cancelindex = 4;
+	if image_index >= 6
+		image_index = image_number - 1;
+	
 	/*
 	if (floor(image_index) > (image_number - 2) && !hit_connected)
 	{
@@ -72,7 +75,10 @@ function scr_player_lungeattack()
 				finisher_buffer += 15;
 			input_attack_buffer = 0;
 			state = states.lungeattack;
-			randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
+			if character == "P"
+				randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
+			else
+				randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_punch]);
 			image_index = 0;
 		}
 	}

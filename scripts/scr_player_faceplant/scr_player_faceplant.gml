@@ -75,7 +75,7 @@ function scr_player_faceplant()
 		particle_set_scale(part.jumpdust, xscale, 1);
 		create_particle(x, y, part.jumpdust);
 		
-		movespeed = 12;
+		movespeed = max(movespeed, 12);
 		crouchslipbuffer = 25;
 		grav = 0.5;
 		sprite_index = spr_crouchslip;
