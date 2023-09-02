@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 cooldown = 0;
 hitboxID = -4;
 grav = 0.5;

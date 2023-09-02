@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 attack_max = 180;
 attack_random = 30;
 attack_buffer = attack_max;

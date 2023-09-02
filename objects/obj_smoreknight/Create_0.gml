@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 stunfallspr = spr_smoreknight_stun;
 walkspr = spr_smoreknight_walk;
 scaredspr = spr_smoreknight_scared;

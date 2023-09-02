@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 grav = 0.5;
 kickbuffer = 0;
 hsp = 0;

@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 content = [obj_snowman];
 random_buffer = 100;
 random_max = 100;

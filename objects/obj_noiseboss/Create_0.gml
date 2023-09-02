@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 scr_noise_init_sounds();
 fightball_buffer1 = 0;
 fightball_buffer2 = 0;
@@ -76,7 +76,10 @@ heavy = true;
 paletteselect = 0;
 spr_palette = spr_noisepalette;
 if check_char("N") && obj_player1.paletteselect != 20
+{
+	basepal = 20;
 	paletteselect = 20;
+}
 usepalette = true;
 
 grabbedby = 0;

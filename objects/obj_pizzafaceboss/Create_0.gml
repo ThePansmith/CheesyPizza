@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 scr_pizzaface_init_sounds();
 on_y = false;
 skipintro = false;

@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 start_xscale = image_xscale;
 grav = 0.5;
 hsp = 0;

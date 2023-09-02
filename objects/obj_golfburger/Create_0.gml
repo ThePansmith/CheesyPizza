@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 golfid = -4;
 shot = false;
 shootdir = 0;

@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 fadeout_time = 0.05;
 fadein_time = 0.05;
 threshold_x = 200;

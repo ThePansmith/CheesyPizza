@@ -1,5 +1,3 @@
-if (elitehit <= 0 && destroyable)
-	scr_noise_destroy_sounds();
 if (pizzahead && elitehit <= 0 && destroyable)
 {
 	with (instance_create(room_width / 4, room_height + 100, obj_fakepepboss))

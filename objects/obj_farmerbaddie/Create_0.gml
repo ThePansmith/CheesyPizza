@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 idle = true;
 cooldown = 0;
 leaderID = -4;

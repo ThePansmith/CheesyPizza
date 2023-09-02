@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 idlespr = spr_crackerkicker_walk;
 stunfallspr = spr_crackerkicker_stunned;
 walkspr = spr_crackerkicker_walk;

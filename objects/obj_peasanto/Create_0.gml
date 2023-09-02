@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 attack_cooldown = 0;
 attack_max = 120;
 flame_buffer = 0;

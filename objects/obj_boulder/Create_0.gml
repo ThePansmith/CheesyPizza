@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 destroyable = false;
 killbyenemy = false;
 parryable = false;

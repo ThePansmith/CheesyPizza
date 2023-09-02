@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 hidden = true;
 possess_movespeed = 0;
 cooldown = 0;

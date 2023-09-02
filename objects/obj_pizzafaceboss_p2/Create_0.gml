@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 scr_pizzaface_p2_init_sounds();
 leveldown = false;
 fishcount = 1;

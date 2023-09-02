@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 destroyable = false;
 stunstate = 0;
 stuntimer = 0;

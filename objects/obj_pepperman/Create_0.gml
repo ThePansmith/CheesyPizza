@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 scr_pepperman_init_sounds();
 shrinkstate = 0;
 throwknight = true;

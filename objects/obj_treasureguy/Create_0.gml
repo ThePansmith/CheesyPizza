@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 underground = true;
 threshold_x = 400;
 threshold_y = 96;

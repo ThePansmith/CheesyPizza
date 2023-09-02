@@ -97,8 +97,8 @@ else
 // heat palettes
 if check_heat()
 {
-	var newpalette = 0;
-	if safe_get(id, "elite") or global.stylethreshold >= 3
+	var newpalette = basepal;
+	if (safe_get(id, "elite") && use_elite) or global.stylethreshold >= 3
 		newpalette = elitepal;
 	
 	if paletteselect != newpalette

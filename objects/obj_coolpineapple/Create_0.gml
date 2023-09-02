@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 taunt_count = 0;
 taunt_max = 40;
 taunt_storedgrav = 0.5;

@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 usepalette = true;
 threshold_x = 80;
 threshold_y = 60;

@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 
 idlespr = spr_bigcherrystun;
 stunfallspr = spr_bigcherrystun;

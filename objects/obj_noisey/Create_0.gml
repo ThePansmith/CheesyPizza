@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 bounce = false;
 important = true;
 grav = 0.5;

@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 
 landspr = spr_charcherry_run;
 idlespr = spr_charcherry_run;

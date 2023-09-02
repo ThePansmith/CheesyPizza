@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 //bumpable = false;
 stunnable = false;
 parryable = false;

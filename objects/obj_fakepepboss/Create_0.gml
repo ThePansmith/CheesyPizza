@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 scr_fakepep_init_sounds();
 
 var default_deformed_timer = 500;

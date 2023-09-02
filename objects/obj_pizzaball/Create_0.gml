@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 bigcheeseID = -4;
 pointerID = -4;
 destroyable = false;
