@@ -1,4 +1,4 @@
 msg = "...";
-level = "";
+level = "undefined";
 targetRoom = Funnyroom;
 visible = false;
