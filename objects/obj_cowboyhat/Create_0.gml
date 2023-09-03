@@ -1,4 +1,4 @@
-live_auto_call;
+//live_auto_call;
 
 playerid = obj_player1;
 depth = -10;

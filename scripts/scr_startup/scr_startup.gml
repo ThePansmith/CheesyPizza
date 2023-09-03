@@ -1,4 +1,15 @@
 gml_pragma("UnityBuild", "true");
+var path_cheesypizzalib = "CheesyPizza";
+
+switch os_type
+{
+	case os_windows:
+		path_cheesypizzalib = $"{path_cheesypizzalib}.dll";
+		break;
+	case os_linux:
+		path_cheesypizzalib = $"{path_cheesypizzalib}.so";
+		break;
+}
 
 enum blockstyles
 {
@@ -39,20 +50,26 @@ exception_unhandled_handler
 	}
 );
 
-// fuck you
-if !file_exists("CheesyPizza.dll")
+
+
+if os_type == os_windows // this is temp
 {
-	trace("Cheesypizza.dll not found!");
-	game_end();
-	exit;
-}
-if test_dll_linkage() != 1
-{
-	show_message("Dude what the fuck is wrong with you");
+	// fuck you
+	if !file_exists(path_cheesypizzalib)
+	{
+		trace($"{path_cheesypizzalib} not found!");
+		game_end();
+		exit;
+	}
+	if test_dll_linkage() != 1
+	{
+		show_message("Dude what the fuck is wrong with you");
 	
-	game_end();
-	exit;
+		game_end();
+		exit;
+	}
 }
+
 if !file_exists("data/cheese.jpg")
 	throw "Could not find Cheese";
 
@@ -165,12 +182,15 @@ load_moddedconfig();
 // gameframe
 ini_open("saveData.ini");
 global.gameframe_enabled = ini_read_real("Modded", "gameframe", true);
+
 if os_version < 655360 or os_type != os_windows // below windows 10
 {
 	trace("Running on fucked up software, turned off gameframe");
 	global.gameframe_enabled = false;
 }
 window_set_showborder(!global.gameframe_enabled);
+
+	
 ini_close();
 
 // etc
@@ -186,20 +206,23 @@ global.secrettile_fade_intensity = 32; // dropoff intensity
 global.colorblind_type = -1; // 0 - Protanopia, 1 - Deuteranopia, 2 - Tritanopia
 global.colorblind_intensity = 0.5;
 
-global.rxdebugflag = 0; // RX: My own debug flag just don't remove it please ty <3
-
 #macro heat_nerf 5 // divides the style gain by this
 #macro heat_lossdrop 0.1 // speed of global.style loss
 #macro heat_timedrop 0.5 // speed of global.heattime countdown
 
-if file_exists("dead") || (os_type == os_windows && !ptcu_checkguid("8ff30401-c151-49e3-8636-a28a5b288d85"))
+if os_type == os_windows
 {
-	trace("guid fail ");
-	game_end();
-	exit;
+	if file_exists("dead") || (os_type == os_windows && !ptcu_checkguid("8ff30401-c151-49e3-8636-a28a5b288d85"))
+	{
+		trace("guid fail ");
+		game_end();
+		exit;
+	}
+	ptcu_cheesypizza_setHWND(window_handle()); // RX: Bring window to front
 }
 
-ptcu_cheesypizza_setHWND(window_handle()); // RX: Bring window to front
+
+//ptcu_cheesypizza_setHWND(window_handle()); // RX: Bring window to front
 
 // RX: only works if Gamemaker is your current active window, a bit disapointing really.
 //if !ptcu_console_create(512)
