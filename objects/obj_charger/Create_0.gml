@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 idlespr = spr_banana_idle;
 stunfallspr = spr_banana_stun;
 walkspr = spr_banana_idle;

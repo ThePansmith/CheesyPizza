@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 stunfallspr = spr_snowcloudstun;
 walkspr = spr_snowcloudwalk;
 scaredspr = spr_snowcloudscared;

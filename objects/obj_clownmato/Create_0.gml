@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 stompable = false;
 grav = 0.5;
 hsp = 0;

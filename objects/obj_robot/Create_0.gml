@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 machspeed = 16;
 startmachspeed = 8;
 tacklespeed = 11;

@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 turner = true;
 grav = 0;
 hsp = 0;

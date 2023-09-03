@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 scr_pizzaface_p3_init_sounds();
 
 scr_pizzaface_p3_init_attack(0);

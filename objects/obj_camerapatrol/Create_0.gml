@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 coneID = -4;
 cooldown = 0;
 patroltimer = 0;

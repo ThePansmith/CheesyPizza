@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 pizzaball = false;
 shakestun = false;
 parryable = false;

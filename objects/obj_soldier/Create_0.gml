@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 bullet_count = 0;
 bullet_max = 3;
 can_fire = true;

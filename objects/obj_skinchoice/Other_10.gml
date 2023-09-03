@@ -235,7 +235,7 @@ switch character
 	#region Vigilante
 	
 	case "V":
-		add_palette(0, "", noone, "Vigilante", "AKA Vigert Ebenezer Lantte.", "");
+		add_palette(0, "", noone, "Vigilante", "Outlaws beware...", "");
 		add_palette(1, "", noone, "Halloween", "Trick or treat... this is a threat.", "SCARY");
 		add_palette(2, "", noone, "MM8BDM", "A very exciting night.", "DEATHMATCH");
 		add_palette(3, "", noone, "Chocolante", "It's still cheese, trust me.", "CHOCOLATE");

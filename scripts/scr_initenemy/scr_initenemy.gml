@@ -141,6 +141,8 @@ function scr_initenemy()
 	
 	shoulderbashed = false;
 	stored_id = id;
-	elitepal = 1;
+	elitepal = 1; // heat palette
+	basepal = 0;
+	use_elite = true; // use heat palette when elite?
 	aggrimg = 0;
 }

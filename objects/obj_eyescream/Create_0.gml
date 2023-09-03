@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 
 idlespr = spr_eyescreamsandwich;
 stunfallspr = spr_eyescreamsandwich_dead;
@@ -12,7 +12,7 @@ sugary = true;
 state = states.wait;
 lerpamt = 0.2;
 substate = 0;
-targety  = 0;
+targety = 0;
 randomx = irandom_range(50, 100);
 randomy = irandom_range(100, 200);
 timer = irandom_range(60, 180);

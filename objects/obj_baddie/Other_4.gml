@@ -3,8 +3,18 @@ if in_baddieroom()
 	instance_destroy();
 	exit;
 }
-while instance_exists(obj_levelLoader) && place_meeting(x, y, obj_solid)
-    y--;
+
+if instance_exists(obj_levelLoader)
+{
+	while place_meeting(x, y, obj_solid)
+	    y--;
+	
+	if paletteselect != 0
+	{
+		basepal = paletteselect;
+		elitepal = paletteselect;
+	}
+}
 
 if (safe_get(id, "escape"))
 {
@@ -40,7 +50,7 @@ if (object_index == obj_cheeseslime && snotty)
 	}
 	ini_close();
 }
-if check_heat() && (safe_get(id, "elite") or global.stylethreshold >= 3)
+if check_heat() && ((safe_get(id, "elite") && use_elite) or global.stylethreshold >= 3)
 	paletteselect = elitepal;
 
 // snap to ground if sugary

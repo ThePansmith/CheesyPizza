@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 snd = fmod_event_create_instance("event:/sfx/enemies/demoncharge");
 snd_count = 0;
 underground = true;

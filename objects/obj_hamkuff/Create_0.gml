@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 is_controllable = true;
 possess_movespeed = 0;
 attract_player = false;

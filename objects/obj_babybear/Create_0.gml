@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 usepalette = true;
 stunfallspr = spr_babybear_stun;
 walkspr = spr_babybear_walk;

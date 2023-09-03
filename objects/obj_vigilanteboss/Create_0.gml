@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 important = true;
 scr_vigilante_init_sounds();
 attack_list = -4;

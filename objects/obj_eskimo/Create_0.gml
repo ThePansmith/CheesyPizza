@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 stunfallspr = spr_eskimo_stun;
 walkspr = spr_eskimo_walk;
 scaredspr = spr_eskimo_scared;

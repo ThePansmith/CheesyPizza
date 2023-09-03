@@ -58,6 +58,4 @@ if (elitehit <= 0 && pizzahead && destroyable)
 		vigilante_add_attack(0, 9, vigi_attacks.wait, 25);
 	}
 }
-if (destroyable && elitehit <= 0)
-	scr_pepperman_destroy_sounds();
 event_inherited();

@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 shot = false;
 totemID = -4;
 totemdir = 1;
@@ -40,3 +40,4 @@ arcprojectiletimer = 25;
 elite = true;
 spr_palette = spr_indiancheese_palette;
 usepalette = true;
+use_elite = false;

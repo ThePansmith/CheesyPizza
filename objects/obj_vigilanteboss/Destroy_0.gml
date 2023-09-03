@@ -1,5 +1,3 @@
-if (destroyable && elitehit <= 0)
-	scr_vigilante_destroy_sounds();
 if (elitehit <= 0 && pizzahead && destroyable)
 {
 	instance_destroy(obj_johnecheese);

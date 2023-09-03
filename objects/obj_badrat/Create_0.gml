@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 cooldown = 50;
 hitboxID = -4;
 possess_movespeed = 0;

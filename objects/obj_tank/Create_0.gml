@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 slope_buffer = 8;
 tired = false;
 killprotection = true;

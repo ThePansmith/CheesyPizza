@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 usepalette = true;
 stunfallspr = spr_gumslime_stun;
 walkspr = spr_gumslime_walk;

@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 usepalette = true;
 elitepal = 2;
 is_controllable = true;

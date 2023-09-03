@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 substate = states.walk;
 substate_max = 3 * room_speed;
 substate_buffer = substate_max;

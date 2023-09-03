@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 turnmax = 100;
 grav = 0;
 hsp = 0;

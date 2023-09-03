@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 killbyenemy = false;
 pizzahead = true;
 elite = true;

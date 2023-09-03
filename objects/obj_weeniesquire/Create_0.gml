@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 is_controllable = false;
 possess_movespeed = 0;
 grav = 0.5;

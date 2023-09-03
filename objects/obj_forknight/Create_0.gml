@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 is_controllable = true;
 grav = 0.5;
 hsp = 0;

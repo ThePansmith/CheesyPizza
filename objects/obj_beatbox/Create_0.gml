@@ -1,4 +1,10 @@
-scr_initenemy();
+platformid = noone;
+hsp_carry = 0;
+vsp_carry = 0;
+grav = 0.5;
+hsp = 0;
+grounded = false;
+
 vsp = -11;
 depth = -3;
 snd = fmod_event_create_instance("event:/sfx/misc/breakdancemusic");

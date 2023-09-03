@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 patrolling = false;
 patrolmax = 100;
 spawnreset = 200;

@@ -1,4 +1,4 @@
-scr_initenemy();
+event_inherited();
 stunfallspr = spr_mintsplosion_stun;
 walkspr = spr_mintsplosion_walk;
 scaredspr = spr_mintsplosion_scared;
