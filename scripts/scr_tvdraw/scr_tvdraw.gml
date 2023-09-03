@@ -121,7 +121,7 @@ function scr_tvdraw()
 	if (room != strongcold_endscreen)
 	{
 		// background
-		if sugary or sugarylevel
+		if sugarylevel
 		{
 			// secrets
 			var bgindex = tv_bg_index, bgcol = c_white;
@@ -131,16 +131,9 @@ function scr_tvdraw()
 				bgcol = merge_color(c_white, c_black, clamp(obj_fadeout.fadealpha, 0, 1));
 			
 			// decide sprite
-			var sprite = spr_tv_bgfinal_NEW;
+			var sprite = global.panic ? spr_tv_bgescape_ss : spr_tv_bgfinal_ss;
 			if sugary
-			{
-				if sugarylevel
-					sprite = global.panic ? spr_tv_bgescape_ssSP : spr_tv_bgfinal_ssSP;
-				else
-					sprite = spr_tv_bgfinalSP;
-			}
-			else if sugarylevel
-				sprite = global.panic ? spr_tv_bgescape_ss : spr_tv_bgfinal_ss;
+				sprite = global.panic ? spr_tv_bgescape_ssSP : spr_tv_bgfinal_ssSP;
 			
 			// draw
 			draw_sprite_ext(sprite, bgindex, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, bgcol, alpha);
@@ -181,7 +174,7 @@ function scr_tvdraw()
 				draw_sprite_tiled(bgindex, i, 278 / 2 + tv_bg.x * max(lerp(-1, 1, tv_bg.parallax[i]), 0), 268);
 			
 			gpu_set_blendmode(bm_subtract);
-			draw_sprite(spr_tv_clip, 1, 278 / 2, 268 - tv_bg.y);
+			draw_sprite(sugary ? spr_tv_clipSP : spr_tv_clip, 1, 278 / 2, 268 - tv_bg.y);
 			gpu_set_blendmode(bm_normal);
 			
 			surface_reset_target();

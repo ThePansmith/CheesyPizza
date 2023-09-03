@@ -44,7 +44,7 @@ if (floor(image_index) >= (image_number - 1))
 					{
 						lock = false;
 						limitcam = [camera_get_view_x(view_camera[0]), camera_get_view_y(view_camera[0]), camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]), camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0])];
-						panspeed = 50;
+						panspeed = 40;
 					}
 					with obj_deathportalexit
 					{

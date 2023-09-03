@@ -1,5 +1,3 @@
-//live_auto_call;
-
 if (used)
 	image_index = 1;
 else

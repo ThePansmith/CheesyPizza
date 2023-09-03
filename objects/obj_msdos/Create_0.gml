@@ -1,5 +1,3 @@
-//live_auto_call;
-
 open_menu();
 con = 0;
 fade = 0;

@@ -1,5 +1,3 @@
-//live_auto_call;
-
 if sugary
 {
 	alarm[3] = 0;

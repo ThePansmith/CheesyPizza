@@ -72,6 +72,9 @@ function scr_destroy_nearby_tiles()
 
 function scr_cutoff()
 {
+	if global.performance
+		exit;
+	
 	if instance_exists(obj_levelLoader)
 	{
 		scr_cutoff_old();

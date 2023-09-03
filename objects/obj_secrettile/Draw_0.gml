@@ -2,7 +2,8 @@ var mario = global.secrettiles && !instance_exists(obj_fakeplayer);
 if !bbox_in_camera(view_camera[0], 32) or (image_alpha <= 0 && !mario)
 	exit;
 
-if (!mario && image_alpha < 1) or global.secrettile_clip_distance > 0
+// setup shader
+if ((!mario && image_alpha < 1) or global.secrettile_clip_distance > 0) && !global.performance
 {
 	shader_set(shd_secrettile);
 	var bounds = shader_get_uniform(shd_secrettile, "u_secret_tile_bounds");
@@ -27,7 +28,13 @@ if (!mario && image_alpha < 1) or global.secrettile_clip_distance > 0
 	}
 }
 
+// draw each tile
+if global.performance
+	draw_set_alpha(image_alpha);
+
 array_foreach(tiles, function(i) {
 	draw_tile(i.tileset, i.tile_data, 0, i.x, i.y);
 });
+
+draw_set_alpha(1);
 shader_reset();

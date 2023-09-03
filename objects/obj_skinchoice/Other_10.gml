@@ -1,7 +1,8 @@
-//live_auto_call;
+live_auto_call;
 
 palettes = [];
 mixables = [];
+sel.pal = 0;
 
 /// @description skins
 var character = characters[sel.char][0];
@@ -10,6 +11,8 @@ switch character
 	#region Peppino
 	
 	default:
+		sel.pal = 1; // default palette.
+		
 		add_palette(0, "yellow", noone, "Yellow", "Legends say he was pissed on...");
 		add_palette(1, "classic", noone, "Peppino", "A somewhat overweight Italian chef.", "");
 		add_palette(3, "unfunny", noone, "Unfunny", "Just like me, fr!");
@@ -95,6 +98,8 @@ switch character
 	#region Gustavo (clone of pep's palettes)
 	
 	case "G":
+		sel.pal = 1; // default palette.
+		
 		add_palette(0, "yellow", noone, "Yellow", "When you see it, you'll shit Bricks.");
 		add_palette(1, "classic", noone, "Gustavo and Brick", "The iconic duo.", "");
 		add_palette(3, "unfunny", noone, "Unfunny", "He turned himself into a rat!\nFunniest shit I've ever seen.");
@@ -351,6 +356,8 @@ switch character
 	#region Pizzelle
 	
 	case "SP":
+		sel.pal = 1; // default palette.
+		
 		add_palette(0, "", noone, "Yellow", "Take the first 4 letters of his name.");
 		add_palette(1, "", noone, "Pizzelle", "It's the Candy-making patisje!", "");
 		add_palette(2, "", noone, "Sugar", "Obviously sugar is green.");
@@ -470,6 +477,7 @@ switch character
 	
 	case "PN":
 		var desc = "Oh my god, I'm HUMPING MY COUCH!";
+		sel.pal = 1; // default palette.
 		
 		add_palette(0, "yellow", noone, "Yellow", "do not use");
 		add_palette(1, "classic", noone, "Pinolino", desc);
@@ -598,40 +606,49 @@ switch character
 	
 	#endregion
 }
-pal_swap_index_palette(characters[sel.char][2]);
+
+#region Boring extra setup code
+
 init = true;
 
-// automatically select current palette
-sel.pal = ((character == "P" or character == "SP" or character == "G" or character == "PN") ? 1 : 0);
-
-var pchar = obj_player1.character;
-if pchar == "P"
+if global.performance
 {
-	if obj_player1.isgustavo
-		pchar = "G";
+	mixables = [];
+	palettes = [palettes[sel.pal]];
+	sel.pal = 0;
 }
-
-if instance_exists(obj_player1) && pchar == character
+else
 {
-	var pal = obj_player1.paletteselect;
-	for(var i = 0; i < array_length(palettes); i++)
+	pal_swap_index_palette(characters[sel.char][2]);
+	
+	var pchar = obj_player1.character;
+	if pchar == "P" && obj_player1.isgustavo
+		pchar = "G";
+
+	if instance_exists(obj_player1) && pchar == character
 	{
-		if global.palettetexture != noone
+		var pal = obj_player1.paletteselect;
+		for(var i = 0; i < array_length(palettes); i++)
 		{
-			if global.palettetexture == palettes[i].texture
+			if global.palettetexture != noone
 			{
-				sel.pal = i;
-				if pal != 12
+				if global.palettetexture == palettes[i].texture
 				{
-					for(var j = 0; j < array_length(mixables); j++)
+					sel.pal = i;
+					if pal != 12
 					{
-						if pal == mixables[j].palette
-							sel.mix = j;
+						for(var j = 0; j < array_length(mixables); j++)
+						{
+							if pal == mixables[j].palette
+								sel.mix = j;
+						}
 					}
 				}
 			}
+			else if pal == palettes[i].palette
+				sel.pal = i;
 		}
-		else if pal == palettes[i].palette
-			sel.pal = i;
 	}
 }
+
+#endregion

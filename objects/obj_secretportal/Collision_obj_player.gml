@@ -10,6 +10,10 @@ if (active && !instance_exists(obj_jumpscare) && !in_saveroom())
 	if death
 	{
 		sound_play("event:/modded/sfx/deathcollect");
+		scr_sound_multiple(global.snd_collect, x, y);
+		
+		global.combotime = 60;
+		global.heattime = 60;
 		
 		var val = heat_calculate(750);
 		global.collect += val;

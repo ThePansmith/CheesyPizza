@@ -1,6 +1,4 @@
-//live_auto_call;
-
-if obj_drawcontroller.use_dark && SUGARY
+if (obj_drawcontroller.use_dark && SUGARY) or global.performance
 	exit;
 
 for(var i = 0; i < array_length(cutoffs); i++)

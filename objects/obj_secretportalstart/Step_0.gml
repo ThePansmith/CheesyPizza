@@ -22,6 +22,11 @@ switch (sprite_index)
 				visible = false;
 			}
 		}
+		with obj_camera
+		{
+			if !point_in_rectangle(other.x, other.y, limitcam[0], limitcam[1], limitcam[2], limitcam[3])
+				other.image_index = 0;
+		}
 		waitbuffer = 80;
 		drop = false;
 		if (floor(image_index) == (image_number - 1))

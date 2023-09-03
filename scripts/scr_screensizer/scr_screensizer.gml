@@ -108,10 +108,16 @@ function reset_gui_target()
 }
 function reset_blendmode()
 {
-	gpu_set_blendmode_ext(bm_one, bm_inv_src_alpha);
+	if global.performance
+		gpu_set_blendmode(bm_normal);
+	else
+		gpu_set_blendmode_ext(bm_one, bm_inv_src_alpha);
 }
 function reset_shader_fix()
 {
+	if global.performance
+		exit;
+	
 	if shader_current() == shd_pal_swapper
 		pal_swap_reset();
 	else if shader_current() != -1

@@ -7,8 +7,9 @@
 /// @returns	{bool}
 function shader_set_circleclip(_origin_x, _origin_y, _clip_radius, _alpha_fix = false, _simple = false)
 {
-	if !shaders_are_supported()
+	if global.performance
 		return false;
+	
 	var shader = _simple ? shd_circleclip_basic : shd_circleclip;
 	shader_set(shader);
 	var origin_pos = shader_get_uniform(shader, "u_origin");

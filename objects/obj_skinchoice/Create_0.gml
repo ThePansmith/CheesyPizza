@@ -1,5 +1,5 @@
 event_inherited();
-//live_auto_call;
+live_auto_call;
 
 // animation
 init = false;
@@ -317,8 +317,6 @@ draw = function(curve)
 	vertex_begin(vertex_buffer, vertex_format);
 	
 	var cache = [];
-	var fuckset = false;
-	
 	for(var i = 0; i < array_length(array); i++)
 	{
 		var xdraw = xx;

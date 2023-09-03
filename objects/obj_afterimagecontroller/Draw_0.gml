@@ -64,7 +64,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			else if ((identifier == afterimage.mach3effect or identifier == afterimage.simple)/* && REMIX*/)
 			{
 				var trans = check_char("SP");
-				if REMIX or trans
+				if (REMIX or trans) && !global.performance
 				{
 					shader_set(shd_mach3effect);
 					shd = true;

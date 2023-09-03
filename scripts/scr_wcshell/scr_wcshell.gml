@@ -21,6 +21,25 @@ function scr_wc_create()
 	ds_map_add(WC_builtins, "false", false);
 	ds_map_add(WC_builtins, "noone", noone);
 	
+	ds_map_add(WC_builtins, "c_white", c_white);
+	ds_map_add(WC_builtins, "c_aqua", c_aqua);
+	ds_map_add(WC_builtins, "c_black", c_black);
+	ds_map_add(WC_builtins, "c_dkgray", c_dkgray);
+	ds_map_add(WC_builtins, "c_fuchsia", c_fuchsia);
+	ds_map_add(WC_builtins, "c_gray", c_gray);
+	ds_map_add(WC_builtins, "c_green", c_green);
+	ds_map_add(WC_builtins, "c_lime", c_lime);
+	ds_map_add(WC_builtins, "c_ltgray", c_ltgray);
+	ds_map_add(WC_builtins, "c_maroon", c_maroon);
+	ds_map_add(WC_builtins, "c_navy", c_navy);
+	ds_map_add(WC_builtins, "c_olive", c_olive);
+	ds_map_add(WC_builtins, "c_orange", c_orange);
+	ds_map_add(WC_builtins, "c_purple", c_purple);
+	ds_map_add(WC_builtins, "c_red", c_red);
+	ds_map_add(WC_builtins, "c_silver", c_silver);
+	ds_map_add(WC_builtins, "c_teal", c_teal);
+	ds_map_add(WC_builtins, "c_yellow", c_yellow);
+	
 	// all command aliases
 	WCscr_altname("clear", "cls");
 	WCscr_altname("var", "variable");

@@ -1,3 +1,6 @@
+if global.performance
+	exit;
+
 if !ds_list_empty(global.debris_list)
 {
 	if obj_drawcontroller.use_dark && SUGARY
