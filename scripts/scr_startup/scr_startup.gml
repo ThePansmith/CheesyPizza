@@ -175,17 +175,13 @@ load_moddedconfig();
 ini_open("saveData.ini");
 global.gameframe_enabled = ini_read_real("Modded", "gameframe", true);
 
-if os_type == os_windows
+if os_version < 655360 or os_type != os_windows // below windows 10
 {
-	if os_version < 655360 or os_type != os_windows // below windows 10
-	{
-		trace("Running on fucked up software, turned off gameframe");
-		global.gameframe_enabled = false;
-	}
-	window_set_showborder(!global.gameframe_enabled);
+	trace("Running on fucked up software, turned off gameframe");
+	global.gameframe_enabled = false;
 }
-else
-	window_set_showborder(true);
+window_set_showborder(!global.gameframe_enabled);
+
 	
 ini_close();
 
