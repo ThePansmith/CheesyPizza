@@ -1,13 +1,13 @@
 gml_pragma("UnityBuild", "true");
-var path_cheesypizzadll = "CheesyPizza";
+var path_cheesypizzalib = "CheesyPizza";
 
 switch os_type
 {
 	case os_windows:
-		path_cheesypizzadll = $"{path_cheesypizzadll}.dll";
+		path_cheesypizzalib = $"{path_cheesypizzalib}.dll";
 		break;
 	case os_linux:
-		path_cheesypizzadll = $"{path_cheesypizzadll}.so";
+		path_cheesypizzalib = $"{path_cheesypizzalib}.so";
 		break;
 }
 
@@ -52,12 +52,12 @@ exception_unhandled_handler
 
 
 
-if os_type == os_windows
+if os_type == os_windows // this is temp
 {
 	// fuck you
-	if !file_exists(path_cheesypizzadll)
+	if !file_exists(path_cheesypizzalib)
 	{
-		trace("Cheesypizza.dll not found!");
+		trace($"{path_cheesypizzalib} not found!");
 		game_end();
 		exit;
 	}
