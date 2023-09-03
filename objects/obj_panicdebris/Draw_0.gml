@@ -1,4 +1,4 @@
-live_auto_call;
+//live_auto_call;
 
 if instance_exists(obj_ghostcollectibles) or !global.panic
 	exit;

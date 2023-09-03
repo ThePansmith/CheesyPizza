@@ -121,12 +121,19 @@ function activate_panic(instapanic = false)
 		case strongcold_1:
 			global.fill = 3240;
 			break;
-		case entryway_11:
-			global.fill = 2500;
-			break;
 		case grinch_1:
 		case etb_1:
 			global.fill = 2148;
+			break;
+		// sugary
+		case entryway_11:
+			global.fill = 2500;
+			break;
+		case steamy_12:
+			global.fill = 14400;
+			break;
+		case molasses_9:
+			global.fill = 18000;
 			break;
 		case sucrose_1:
 			global.fill = calculate_filltime(30);
