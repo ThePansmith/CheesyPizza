@@ -1,4 +1,15 @@
 gml_pragma("UnityBuild", "true");
+var path_cheesypizzadll = "CheesyPizza";
+
+switch os_type
+{
+	case os_windows:
+		path_cheesypizzadll = $"{path_cheesypizzadll}.dll";
+		break;
+	case os_linux:
+		path_cheesypizzadll = $"{path_cheesypizzadll}.so";
+		break;
+}
 
 enum blockstyles
 {
@@ -39,10 +50,12 @@ exception_unhandled_handler
 	}
 );
 
+
+
 if os_type == os_windows
 {
 	// fuck you
-	if !file_exists("CheesyPizza.dll")
+	if !file_exists(path_cheesypizzadll)
 	{
 		trace("Cheesypizza.dll not found!");
 		game_end();
