@@ -198,8 +198,6 @@ global.secrettile_fade_intensity = 32; // dropoff intensity
 global.colorblind_type = -1; // 0 - Protanopia, 1 - Deuteranopia, 2 - Tritanopia
 global.colorblind_intensity = 0.5;
 
-global.rxdebugflag = 0; // RX: My own debug flag just don't remove it please ty <3
-
 #macro heat_nerf 5 // divides the style gain by this
 #macro heat_lossdrop 0.1 // speed of global.style loss
 #macro heat_timedrop 0.5 // speed of global.heattime countdown
