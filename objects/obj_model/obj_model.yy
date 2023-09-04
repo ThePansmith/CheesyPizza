@@ -31,10 +31,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spr_cube",
-    "path": "sprites/spr_cube/spr_cube.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

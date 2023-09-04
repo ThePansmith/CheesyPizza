@@ -18,6 +18,7 @@ if (player && !global.horse && (player.state == states.normal or player.state ==
 	add_saveroom();
 	sound_play_3d("event:/sfx/misc/keyunlock", x, y);
 	sound_play("event:/sfx/misc/cheers");
+	
 	if (global.gerome)
 	{
 		if !sugary
@@ -47,8 +48,7 @@ if (player && !global.horse && (player.state == states.normal or player.state ==
 				x = other.x + 50;
 			}
 		}
-		if !sugary
-			global.gerome = false;
+		global.gerome = false;
 	}
 	image_index = 1;
 }

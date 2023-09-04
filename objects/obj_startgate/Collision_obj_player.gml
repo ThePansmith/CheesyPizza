@@ -21,7 +21,7 @@ with (other)
 		obj_camera.chargecamera = 0;
 		image_index = 0;
 		state = states.victory;
-		create_transformation_tip("{u}[T] Modifiers/", "modifiers");
+		create_transformation_tip("{u}[T] Modifiers/", "modifiers", true);
 		exit;
 	}
 }
@@ -104,7 +104,7 @@ if REMIX && other.state != states.victory && other.state != states.backtohub && 
 		if instance_exists(obj_transfotip)
 			transfotip = obj_transfotip.id;
 		else
-			transfotip = instance_create(x, y, obj_transfotip);
+			transfotip = instance_create(x, y, obj_transfotip, {destroy: true});
 	}
 	else with transfotip
 	{

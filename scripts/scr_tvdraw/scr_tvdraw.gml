@@ -257,7 +257,7 @@ function scr_tvdraw()
 	draw_set_halign(fa_center);
 	*/
 
-	if (global.panic or global.snickchallenge) && !MOD.DeathMode
+	if (global.panic or global.snickchallenge) && !MOD.DeathMode && !instance_exists(obj_wartimer)
 	{
 		// smooth timer
 		var gaining_time = true;

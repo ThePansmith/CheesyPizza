@@ -14,12 +14,17 @@ if buffer <= 0 && global.leveltorestart != noone && global.leveltorestart != -1 
 	if obj_player1.key_taunt2
 	{
 		fmod_event_instance_stop(snd, true);
-		with obj_pause
+		if is_struct(global.checkpoint_data)
+			load_checkpoint();
+		else
 		{
-			alarm[5] = 1;
-			roomtorestart = global.leveltorestart;
+			with obj_pause
+			{
+				alarm[5] = 1;
+				roomtorestart = global.leveltorestart;
+			}
+			with instance_create(0, 0, obj_genericfade)
+				persistent = true;
 		}
-		with instance_create(0, 0, obj_genericfade)
-			persistent = true;
 	}
 }

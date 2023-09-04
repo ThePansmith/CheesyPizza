@@ -181,7 +181,7 @@ if flash && alarm[2] <= 0
 if _move && image_alpha >= 1
 {
 	var _parry = instance_place(x, y, obj_parryhitbox);
-	if _parry && !_parry.collisioned && !MOD.DeathMode && !MOD.Lap3 && (REMIX or global.laps > 1) && !global.modifier_failed
+	if _parry && !_parry.collisioned && !MOD.DeathMode && MOD.Lap3 != 2 && (REMIX or global.laps > 1) && !global.modifier_failed
 	{
 		if playerid.x != x
 			playerid.xscale = sign(x - playerid.x);
@@ -190,7 +190,7 @@ if _move && image_alpha >= 1
 		global.heattime = 60;
 		
 		instance_create(x, y, obj_flash);
-		global.fill += calculate_panic_timer(0, 15);
+		global.fill += calculate_panic_timer(0, 10);
 		with _parry
 			event_user(0);
 		instance_destroy();

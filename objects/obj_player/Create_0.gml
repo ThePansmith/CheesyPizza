@@ -14,50 +14,52 @@ function player_destroy_sounds()
 {
 	if !soundinit exit;
 	
-	fmod_event_instance_release(snd_voiceok);
-	fmod_event_instance_release(snd_voicetransfo);
-	fmod_event_instance_release(snd_voiceouttransfo);
-	fmod_event_instance_release(snd_voicehurt);
-	fmod_event_instance_release(global.snd_fireass);
-	fmod_event_instance_release(global.snd_parry);
-	fmod_event_instance_release(global.snd_supertaunt);
-	fmod_event_instance_release(machsnd);
-	fmod_event_instance_release(jumpsnd);
-	fmod_event_instance_release(machrollsnd);
-	fmod_event_instance_release(weeniebumpsnd);
-	fmod_event_instance_release(knightslidesnd);
-	fmod_event_instance_release(gravecorpsesnd);
-	fmod_event_instance_release(barrelslidesnd);
-	fmod_event_instance_release(barrelbumpsnd);
-	fmod_event_instance_release(waterslidesnd);
-	fmod_event_instance_release(mrpinchsnd);
-	fmod_event_instance_release(hamkuffsnd);
-	fmod_event_instance_release(ratmountmachsnd);
-	fmod_event_instance_release(ratmountballsnd);
-	fmod_event_instance_release(ratmountgroundpoundsnd);
-	fmod_event_instance_release(ratmountpunchsnd);
-	fmod_event_instance_release(cheeseballsnd);
-	fmod_event_instance_release(boxxedspinsnd);
-	fmod_event_instance_release(pizzapeppersnd);
-	fmod_event_instance_release(ratdeflatesnd);
-	fmod_event_instance_release(ghostspeedsnd);
-	fmod_event_instance_release(freefallsnd);
-	fmod_event_instance_release(rollgetupsnd);
-	fmod_event_instance_release(tumblesnd);
-	fmod_event_instance_release(snd_uppercut);
-	fmod_event_instance_release(snd_dive);
-	fmod_event_instance_release(snd_crouchslide);
-	fmod_event_instance_release(snd_dashpad);
-	fmod_event_instance_release(animatronicsnd);
-	fmod_event_instance_release(burpsnd);
-	fmod_event_instance_release(superjumpsnd);
-	fmod_event_instance_release(suplexdashsnd);
-	fmod_event_instance_release(gallopingsnd);
-	fmod_event_instance_release(flippingsnd);
-	fmod_event_instance_release(snd_jetpackloop);
-	fmod_event_instance_release(sjumpcancelsnd);
-	fmod_event_instance_release(spindashsnd);
-	fmod_event_instance_release(global.snd_rank);
+	destroy_sounds([
+		snd_voiceok,
+		snd_voicetransfo,
+		snd_voiceouttransfo,
+		snd_voicehurt,
+		global.snd_fireass,
+		global.snd_parry,
+		global.snd_supertaunt,
+		machsnd,
+		jumpsnd,
+		machrollsnd,
+		weeniebumpsnd,
+		knightslidesnd,
+		gravecorpsesnd,
+		barrelslidesnd,
+		barrelbumpsnd,
+		waterslidesnd,
+		mrpinchsnd,
+		hamkuffsnd,
+		ratmountmachsnd,
+		ratmountballsnd,
+		ratmountgroundpoundsnd,
+		ratmountpunchsnd,
+		cheeseballsnd,
+		boxxedspinsnd,
+		pizzapeppersnd,
+		ratdeflatesnd,
+		ghostspeedsnd,
+		freefallsnd,
+		rollgetupsnd,
+		tumblesnd,
+		snd_uppercut,
+		snd_dive,
+		snd_crouchslide,
+		snd_dashpad,
+		animatronicsnd,
+		burpsnd,
+		superjumpsnd,
+		suplexdashsnd,
+		gallopingsnd,
+		flippingsnd,
+		snd_jetpackloop,
+		sjumpcancelsnd,
+		spindashsnd,
+		global.snd_rank,
+	]);
 }
 function player_init_sounds()
 {
@@ -80,10 +82,10 @@ function player_init_sounds()
 	// the voices
 	if character == "P" or character == "PN"
 	{
-		snd_voiceok = fmod_event_create_instance("event:/sfx/voice/ok");
+		snd_voiceok = fmod_event_create_instance(isgustavo ? "event:/sfx/voice/gusok" : "event:/sfx/voice/ok");
 		snd_voicetransfo = fmod_event_create_instance("event:/sfx/voice/transfo");
 		snd_voiceouttransfo = fmod_event_create_instance("event:/sfx/voice/outtransfo");
-		snd_voicehurt = fmod_event_create_instance("event:/sfx/voice/hurt");
+		snd_voicehurt = fmod_event_create_instance(isgustavo ? "event:/sfx/voice/gushurt" : "event:/sfx/voice/hurt");
 		snd_voicemyea = "event:/sfx/voice/myea";
 	}
 	else if character == "SP"
@@ -709,6 +711,8 @@ if (!variable_global_exists("saveroom"))
 	global.noisejetpack = false;
 	global.hasfarmer = array_create(3, false);
 	global.savedattackstyle = -4;
+	
+	global.checkpoint_data = noone;
 }
 angle = 0;
 mach4mode = false;
