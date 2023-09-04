@@ -1,3 +1,9 @@
+if obj_player.state == states.dead
+{
+	instance_destroy();
+	exit;
+}
+
 if !april
 {
 	with (instance_place(x + spd, y, obj_shotgunblock))
