@@ -1,5 +1,8 @@
 /// @description Build Pizza Vertex Array
 
+if global.performance
+	exit;
+
 // raw texture coordinates
 var uvs = sprite_get_uvs(spr_skinmenupizza, bg_image);
 var uv_info = {

@@ -1,5 +1,3 @@
-//live_auto_call;
-
 // sugary
 if sugary && room == rank_room
 {

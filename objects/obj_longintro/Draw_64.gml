@@ -1,5 +1,3 @@
-//live_auto_call;
-
 if scene == 0
 {
 	var _data = video_draw();

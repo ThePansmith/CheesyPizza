@@ -1,6 +1,6 @@
 with (other)
 {
-	if ((state == states.ghost || (state == states.chainsaw && tauntstoredstate == states.ghost)) && other.visible == 1)
+	if ((state == states.ghost || (state == states.chainsaw && tauntstoredstate == states.ghost)) && other.visible)
 	{
 		ghostdash = true;
 		GamepadSetVibration(0, 0.6, 0.6, 0.2);

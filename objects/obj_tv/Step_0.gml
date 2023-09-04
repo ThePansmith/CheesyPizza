@@ -368,16 +368,25 @@ else switch state
 if targetspr != -1 && global.hud == 0
 {
 	var char = obj_player1.character;
-	
 	var charspr = asset_get_index(sprite_get_name(targetspr) + char);
-	if charspr > -1
+	var charspr_new = asset_get_index(sprite_get_name(targetspr) + char + "_NEW");
+	
+	if charspr_new > -1
+		sprite_index = charspr_new;
+	else if charspr > -1
 		sprite_index = charspr;
 	else
 	{
-		if obj_player1.character == "SP" or obj_player1.character == "SN"
-			sprite_index = spr_tv_failsafeSP;
+		var charspr_new = asset_get_index(sprite_get_name(targetspr) + "_NEW");
+		if charspr_new > -1
+			sprite_index = charspr_new;
 		else
-			sprite_index = targetspr;
+		{
+			if obj_player1.character == "SP" or obj_player1.character == "SN"
+				sprite_index = spr_tv_failsafeSP;
+			else
+				sprite_index = targetspr;
+		}
 	}
 }
 

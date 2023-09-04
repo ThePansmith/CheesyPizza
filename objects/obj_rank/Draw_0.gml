@@ -1,5 +1,3 @@
-//live_auto_call;
-
 if (brownfade < 1)
 {
 	shader_set(shd_pal_swapper);

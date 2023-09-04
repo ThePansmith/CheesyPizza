@@ -1,4 +1,4 @@
-//live_auto_call;
+live_auto_call;
 
 // get input
 if anim_con == 0

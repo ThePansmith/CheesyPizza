@@ -140,8 +140,10 @@ for (var i = 0; i < ds_map_size(global.lang_map); i++)
 function load_moddedconfig()
 {
 	ini_open("saveData.ini");
+	
 	global.gameplay = ini_read_real("Modded", "gameplay", true); // misc. improvements on or off?
 	global.experimental = ini_read_real("Modded", "experimental", DEBUG);
+	global.performance = ini_read_real("Modded", "performance", false);
 
 	// gameplay settings
 	global.poundjump = ini_read_real("Modded", "poundjump", false);
@@ -166,6 +168,12 @@ function load_moddedconfig()
 	global.blockstyle = ini_read_real("Modded", "blockstyle", blockstyles.final); // final, september, old
 	global.roomnames = ini_read_real("Modded", "roomnames", false);
 	global.machsnd = ini_read_real("Modded", "machsnd", 0); // final, old
+	
+	if !shaders_are_supported() && !global.performance
+	{
+		show_message("It seems your device doesn't support shaders.\nPerformance mode has been turned on.");
+		global.performance = true;
+	}
 	
 	ini_close();
 }
@@ -221,3 +229,13 @@ if os_type == os_windows
 //	trace("unable to create console window!");
 //else
 //	trace("opened new console window");
+
+// performance mode
+#macro shader_set_base shader_set
+#macro shader_set shader_set_fix
+function shader_set_fix(shader)
+{
+	if global.performance
+		exit;
+	shader_set_base(shader);
+}

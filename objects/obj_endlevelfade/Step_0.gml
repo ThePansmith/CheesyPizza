@@ -1,5 +1,3 @@
-//live_auto_call;
-
 var accel = 2;
 with (obj_player)
 {

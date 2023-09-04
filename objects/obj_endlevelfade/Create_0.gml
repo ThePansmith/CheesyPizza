@@ -1,5 +1,3 @@
-//live_auto_call;
-
 fadealpha = 0;
 fadein = false;
 do_rank = true;

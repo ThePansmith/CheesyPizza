@@ -1,4 +1,4 @@
-//live_auto_call;
+live_auto_call;
 
 if room_started
 	exit;
@@ -9,7 +9,7 @@ old_bg = false;
 if instance_exists(obj_levelLoader)
 	exit;
 
-if string_starts_with(room_get_name(room), "boss") or room == Longintro
+if string_starts_with(room_get_name(room), "boss") or room == Longintro or global.performance
 	old_bg = true;
 
 // fuck

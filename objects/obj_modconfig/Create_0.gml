@@ -1,4 +1,4 @@
-//live_auto_call;
+live_auto_call;
 
 // prep
 depth = -600;
@@ -106,15 +106,45 @@ add_section("Gameplay");
 
 #region REMIX
 
+tv_bg = {surf: noone, sprite: spr_gate_entranceBG, parallax: [0.65, 0.75, 0.85], x: 0, y: 68};
+
 color1 = shader_get_uniform(shd_mach3effect, "color1");
 color2 = shader_get_uniform(shd_mach3effect, "color2");
-var opt = add_option("Remix", "gameplay", "Adds extra quality of life improvements to a bunch of stuff.", function(val)
+var opt = add_option("Remix", "gameplay", "Adds a lot of extra quality of life improvements, and a few new moves too.", function(val)
 {
-	draw_sprite_ext(val == 1 ? spr_tv_bgfinal_NEW : spr_tv_bgfinal, 1, 110, 70, 1, 1, 0, c_white, 1);
+	if val == 1
+	{
+		// move it
+		var movespeed = -0.25;
+		
+		tv_bg.x += movespeed;
+		if !surface_exists(tv_bg.surf)
+			tv_bg.surf = surface_create(278, 268);
+			
+		// draw it
+		surface_set_target(tv_bg.surf);
+			
+		reset_blendmode();
+		reset_shader_fix();
+			
+		for(var i = 0; i < sprite_get_number(tv_bg.sprite); i++)
+			draw_sprite_tiled(tv_bg.sprite, i, 278 / 2 + tv_bg.x * max(lerp(-1, 1, tv_bg.parallax[i]), 0), 268);
+		
+		gpu_set_blendmode(bm_subtract);
+		draw_sprite(spr_tv_clip, 1, 278 / 2, 268 - tv_bg.y);
+		gpu_set_blendmode(bm_normal);
+			
+		surface_reset_target();
+		
+		draw_surface_ext(tv_bg.surf, 110 - 278 / 2, 70 - 268 + tv_bg.y, 1, 1, 0, c_white, 1);
+		shader_reset();
+	}
+	else
+		draw_sprite_ext(spr_tv_bgfinal, 1, 110, 70, 1, 1, 0, c_white, 1);
 	
 	shader_set(shd_pal_swapper);
 	pal_swap_set(spr_peppalette, 1, 0);
-	draw_sprite_ext(spr_tv_idle, 0, 110, 70, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(val == 1 ? spr_tv_idle_NEW : spr_tv_idle, -1, 110, 70, 1, 1, 0, c_white, 1);
 	shader_reset();
 	
 	if val == 1
@@ -452,27 +482,30 @@ opt.opts = [
 #endregion
 #region PANIC BG
 
-var opt = add_option("Panic Background", "panicbg", "Brings back the wavy background effect from old builds when escaping.", function(val)
+if !global.performance
 {
-	if val
+	var opt = add_option("Panic Background", "panicbg", "Brings back the wavy background effect from old builds when escaping.", function(val)
 	{
-		shader_set(shd_panicbg);
+		if val
+		{
+			shader_set(shd_panicbg);
 		
-		shader_set_uniform_f(shader_get_uniform(shd_panicbg, "panic"), 1);
-		shader_set_uniform_f(shader_get_uniform(shd_panicbg, "time"), current_time / 1000);
+			shader_set_uniform_f(shader_get_uniform(shd_panicbg, "panic"), 1);
+			shader_set_uniform_f(shader_get_uniform(shd_panicbg, "time"), current_time / 1000);
 		
-		draw_sprite_tiled_ext(bg_desertescape, -1, 0, 0, 0.4, 0.4, c_white, 1);
+			draw_sprite_tiled_ext(bg_desertescape, -1, 0, 0, 0.4, 0.4, c_white, 1);
 		
-		shader_reset();
-	}
-	else
-		draw_sprite_ext(bg_desertescape, -1, 0, 0, 0.4, 0.4, 0, c_white, 1);
-});
-opt.opts = [
-	["OFF", false],
-	["ON", true],
-	["ON + BLUR", 2]
-]
+			shader_reset();
+		}
+		else
+			draw_sprite_ext(bg_desertescape, -1, 0, 0, 0.4, 0.4, 0, c_white, 1);
+	});
+	opt.opts = [
+		["OFF", false],
+		["ON", true],
+		["ON + BLUR", 2]
+	]
+}
 
 #endregion
 #region SLOPE ROTATION
@@ -699,6 +732,16 @@ opt.opts = [
 	["FINAL", 0],
 	["OLD", 1],
 ]
+
+#endregion
+#region PERFORMANCE
+
+/*
+var opt = add_option("Performance Mode", "performance", "Disables a bunch of stuff that would slow down the game.", function(val)
+{
+	
+});
+*/
 
 #endregion
 

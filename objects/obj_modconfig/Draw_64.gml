@@ -1,4 +1,4 @@
-//live_auto_call;
+live_auto_call;
 
 // options left side
 draw_set_colour(c_white);
@@ -136,6 +136,8 @@ if drawer
 			{
 				surface_set_target(global.modsurf);
 				draw_clear_alpha(c_black, 0);
+				draw_set_colour(c_white);
+				draw_roundrect(0, 0, 384 - 2, 216 - 2, true);
 				surface_reset_target();
 			}
 			
