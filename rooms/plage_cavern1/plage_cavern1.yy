@@ -161,6 +161,8 @@
     {"name":"inst_165417C6","path":"rooms/plage_cavern1/plage_cavern1.yy",},
     {"name":"inst_48C38331","path":"rooms/plage_cavern1/plage_cavern1.yy",},
     {"name":"inst_7C004F9C","path":"rooms/plage_cavern1/plage_cavern1.yy",},
+    {"name":"inst_291A654A","path":"rooms/plage_cavern1/plage_cavern1.yy",},
+    {"name":"inst_39F3339B","path":"rooms/plage_cavern1/plage_cavern1.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -319,6 +321,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_165417C6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_nocutoff","path":"objects/obj_nocutoff/obj_nocutoff.yy",},"properties":[],"rotation":0.0,"scaleX":4.0,"scaleY":1.0,"x":2240.0,"y":2336.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_48C38331","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_nocutoff","path":"objects/obj_nocutoff/obj_nocutoff.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":2.0,"x":2048.0,"y":2272.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7C004F9C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_nocutoff","path":"objects/obj_nocutoff/obj_nocutoff.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":16.0,"x":2272.0,"y":1664.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_291A654A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2512.0,"y":2480.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_39F3339B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2048.0,"y":2304.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_41658CB4","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_beachtorch","path":"sprites/spr_beachtorch/spr_beachtorch.yy",},"x":1280.0,"y":1184.0,},

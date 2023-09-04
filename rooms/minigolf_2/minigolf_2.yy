@@ -59,6 +59,8 @@
     {"name":"inst_2ED95F36","path":"rooms/minigolf_2/minigolf_2.yy",},
     {"name":"inst_A38CCDAE","path":"rooms/minigolf_2/minigolf_2.yy",},
     {"name":"inst_28304B16","path":"rooms/minigolf_2/minigolf_2.yy",},
+    {"name":"inst_11BAEF13","path":"rooms/minigolf_2/minigolf_2.yy",},
+    {"name":"inst_92E937A","path":"rooms/minigolf_2/minigolf_2.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -115,6 +117,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2ED95F36","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_golfdemon","path":"objects/obj_golfdemon/obj_golfdemon.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3226.0,"y":306.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_A38CCDAE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pizzard","path":"objects/obj_pizzard/obj_pizzard.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":1804.0,"y":306.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_28304B16","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pizzard","path":"objects/obj_pizzard/obj_pizzard.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":1900.0,"y":306.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_11BAEF13","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollectescape","path":"objects/obj_deathcollectescape/obj_deathcollectescape.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1744.0,"y":400.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_92E937A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4544.0,"y":224.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_2","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":17,"SerialiseWidth":154,"TileCompressedData":[
 -1733,0,1,25,-66,0,1,27,-85,0,2,25,49,-66,0,2,51,27,-83,0,2,25,49,-68,0,2,51,27,-82,0,1,49,-70,0,1,51,-353,0,],"TileDataFormat":1,},"tilesetId":{"name":"tileset_minigolfprops","path":"tilesets/tileset_minigolfprops/tileset_minigolfprops.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},

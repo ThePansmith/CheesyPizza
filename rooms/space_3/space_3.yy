@@ -127,6 +127,7 @@
     {"name":"inst_2BB02A6D","path":"rooms/space_3/space_3.yy",},
     {"name":"inst_A07498D5","path":"rooms/space_3/space_3.yy",},
     {"name":"inst_5D6A2B46","path":"rooms/space_3/space_3.yy",},
+    {"name":"inst_1222AA35","path":"rooms/space_3/space_3.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -251,6 +252,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2BB02A6D","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_secretblock","path":"objects/obj_secretblock/obj_secretblock.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":320.0,"y":1056.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_A07498D5","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_secretbigblock","path":"objects/obj_secretbigblock/obj_secretbigblock.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1504.0,"y":896.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5D6A2B46","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_spaceshuttle","path":"objects/obj_spaceshuttle/obj_spaceshuttle.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":8691.0,"y":678.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1222AA35","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":8416.0,"y":672.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_2","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_EBE40F5","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_rocketplatformR","path":"sprites/spr_rocketplatformR/spr_rocketplatformR.yy",},"x":3776.0,"y":864.0,},

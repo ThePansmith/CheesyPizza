@@ -126,6 +126,7 @@
     {"name":"inst_ED888271","path":"rooms/forest_G5/forest_G5.yy",},
     {"name":"inst_623CF0E9","path":"rooms/forest_G5/forest_G5.yy",},
     {"name":"inst_F7FF6E51","path":"rooms/forest_G5/forest_G5.yy",},
+    {"name":"inst_59F4A264","path":"rooms/forest_G5/forest_G5.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -250,6 +251,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_ED888271","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_collect","path":"objects/obj_collect/obj_collect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2752.0,"y":576.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_623CF0E9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_collect","path":"objects/obj_collect/obj_collect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2720.0,"y":576.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_F7FF6E51","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_collect","path":"objects/obj_collect/obj_collect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2688.0,"y":576.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_59F4A264","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2560.0,"y":608.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_Foreground2","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":62,"SerialiseWidth":91,"TileCompressedData":[
 -568,0,2,6,7,-89,0,2,20,21,-6,0,2,82,83,-81,0,2,34,35,-6,0,2,96,97,-30,0,2,108,109,-10,0,2,9,10,-62,0,1,53,-14,0,2,122,123,-10,0,2,23,24,-5,0,1,68,-6,0,1,53,-20,0,2,80,81,-47,0,2,108,109,-5,0,2,37,38,-33,0,2,94,95,-15,0,2,80,81,-30,0,2,122,123,-14,0,2,104,

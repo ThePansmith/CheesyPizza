@@ -77,6 +77,7 @@
     {"name":"inst_E56834FB","path":"rooms/plage_entrance/plage_entrance.yy",},
     {"name":"inst_3DE69BF4","path":"rooms/plage_entrance/plage_entrance.yy",},
     {"name":"inst_8AEB5F2","path":"rooms/plage_entrance/plage_entrance.yy",},
+    {"name":"inst_44485E04","path":"rooms/plage_entrance/plage_entrance.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -151,6 +152,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_E56834FB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cheeseslime","path":"objects/obj_cheeseslime/obj_cheeseslime.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":1190.0,"y":1650.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3DE69BF4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_nocutoff","path":"objects/obj_nocutoff/obj_nocutoff.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":1.0,"x":1120.0,"y":832.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_8AEB5F2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_nocutoff","path":"objects/obj_nocutoff/obj_nocutoff.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":1.0,"x":928.0,"y":576.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_44485E04","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1504.0,"y":480.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_Foreground2","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":64,"SerialiseWidth":63,"TileCompressedData":[
 -4032,0,],"TileDataFormat":1,},"tilesetId":{"name":"tile_beachcavern","path":"tilesets/tile_beachcavern/tile_beachcavern.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},

@@ -102,6 +102,7 @@
     {"name":"inst_ADCA769C","path":"rooms/forest_8/forest_8.yy",},
     {"name":"inst_327DF405","path":"rooms/forest_8/forest_8.yy",},
     {"name":"inst_B630627D","path":"rooms/forest_8/forest_8.yy",},
+    {"name":"inst_3398AA25","path":"rooms/forest_8/forest_8.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -202,6 +203,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_ADCA769C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_collect","path":"objects/obj_collect/obj_collect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":992.0,"y":1504.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_327DF405","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_collect","path":"objects/obj_collect/obj_collect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1024.0,"y":1472.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B630627D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_collect","path":"objects/obj_collect/obj_collect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1024.0,"y":1504.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3398AA25","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1216.0,"y":224.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_5EBBDC6C","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_cigarshroom","path":"sprites/spr_cigarshroom/spr_cigarshroom.yy",},"x":672.0,"y":384.0,},
