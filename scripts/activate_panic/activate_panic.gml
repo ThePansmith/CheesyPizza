@@ -1,6 +1,11 @@
-function calculate_filltime(seconds)
+/// @func calculate_panic_timer(minutes, seconds)
+/// @desc Calulcates the panic timer from given minutes and seconds and returns the given time in frames
+/// @param {Real}	_minutes	How many minutes should be given?
+/// @param {Real}	_seconds	How many seconds should be given?
+/// @returns	{Real}
+function calculate_panic_timer(_minutes = 5, _seconds = 30)
 {
-	return (seconds * 60) * 0.2;
+	return (((_minutes * 60) + _seconds) * 60) * 0.2;
 }
 function activate_panic(instapanic = false)
 {
@@ -130,13 +135,13 @@ function activate_panic(instapanic = false)
 			global.fill = 2500;
 			break;
 		case steamy_12:
-			global.fill = 14400;
+			global.fill = calculate_panic_timer(2, 0);;
 			break;
 		case molasses_9:
-			global.fill = 18000;
+			global.fill = calculate_panic_timer(2, 30);
 			break;
 		case sucrose_1:
-			global.fill = calculate_filltime(30);
+			global.fill = calculate_panic_timer(0, 30);
 			break;
 	}
 	
