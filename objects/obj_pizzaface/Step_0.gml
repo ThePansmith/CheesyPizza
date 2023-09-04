@@ -190,7 +190,7 @@ if _move && image_alpha >= 1
 		global.heattime = 60;
 		
 		instance_create(x, y, obj_flash);
-		global.fill += calculate_filltime(15);
+		global.fill += calculate_panic_timer(0, 15);
 		with _parry
 			event_user(0);
 		instance_destroy();

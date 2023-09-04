@@ -153,7 +153,7 @@ if (!in_baddieroom() && important == 0)
 	if 0.05 > random(1) && safe_get(id, "sugary")
 		sound_play_oneshot_3d("event:/modded/sfx/sugaryenemykill", x, y);
 	if global.leveltosave == "sucrose" && !instance_exists(obj_pizzaface) && global.fill != 0
-		global.fill += calculate_filltime(2.5);
+		global.fill += calculate_panic_timer(0, 2.5);
 }
 else if (!in_baddieroom() && important == 1)
 {
