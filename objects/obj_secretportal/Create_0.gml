@@ -1,7 +1,7 @@
 active = true;
 trigger = 0;
 touched = false;
-playerid = -4;
+playerid = noone;
 secret = room_is_secret(room);
 depth = 107;
 soundtest = false;
