@@ -67,7 +67,13 @@ add_button("OK", "Start the level.", function()
 add_section("Modifiers");
 //add_modifier("Encore", MOD.Encore, "Remixes the level to make it harder.");
 
-var deathmode_allow = ["entrance", "medieval", "ruin", "dungeon"];
+var deathmode_allow = 
+	[ 
+		"entryway", // Sugary
+		"entrance", "medieval", "ruin", "dungeon", // W1
+		"badland", "graveyard", "saloon", "farm" // W2
+		
+		];
 if array_contains(deathmode_allow, level)// or DEBUG
 	add_modifier("Death Mode", "DeathMode", "Avoid Pizzaface within a very tight timer!", [seq_deathmode_off, seq_deathmode_on]);
 

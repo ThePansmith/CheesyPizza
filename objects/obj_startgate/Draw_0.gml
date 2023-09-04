@@ -41,6 +41,30 @@ if (SUGARY)
 		}
 		if (rank == "d" && highscore == 0)
 			_rankspr = 6;
-		draw_sprite_ext(spr_ranks_hudSP, _rankspr, x, y - 43, 1, 1, 0, c_white, 1)
+		var _deathspr = -1;
+		
+		if death_rank != ""
+		{
+			switch death_rank
+			{
+				case "p": _deathspr = 5; break;
+				case "s": _deathspr = 4; break;
+				case "a": _deathspr = 3; break;
+				case "b": _deathspr = 2; break;
+				case "c": _deathspr = 1; break;
+				case "d": _deathspr = 0; break;
+				default: _deathspr = 6; break;
+			}
+		}
+		if _deathspr != -1
+		{
+			var offset = (sprite_get_width(spr_ranks_hudSP) + sprite_get_width(spr_ranks_deathss)) / 4;
+			
+			draw_sprite_ext(spr_ranks_hudSP, _rankspr, x - offset, y - 43, 1, 1, 0, c_white, 1);
+			draw_sprite_ext(spr_ranks_deathss, _deathspr, x + offset, y - 43, 1, 1, 0, c_white, 1);
+		}
+		else
+			draw_sprite_ext(spr_ranks_hudSP, _rankspr, x, y - 43, 1, 1, 0, c_white, 1);
+		
 	}
 }

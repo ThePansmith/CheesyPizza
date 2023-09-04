@@ -51,6 +51,8 @@
     {"name":"inst_C8FCB8F5","path":"rooms/badland_mart4/badland_mart4.yy",},
     {"name":"inst_5DBF266D","path":"rooms/badland_mart4/badland_mart4.yy",},
     {"name":"inst_D26294E5","path":"rooms/badland_mart4/badland_mart4.yy",},
+    {"name":"inst_39719A5B","path":"rooms/badland_mart4/badland_mart4.yy",},
+    {"name":"inst_44BDFF32","path":"rooms/badland_mart4/badland_mart4.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -102,6 +104,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_C8FCB8F5","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3872.0,"y":736.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5DBF266D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":5.000001,"scaleY":6.0,"x":3840.0,"y":480.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_D26294E5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_clerk","path":"objects/obj_clerk/obj_clerk.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3008.0,"y":960.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_39719A5B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3072.0,"y":960.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_44BDFF32","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3552.0,"y":704.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":49,"SerialiseWidth":132,"TileCompressedData":[
 -1902,34,67,26,27,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,53,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,268435483,268435482,-65,34,2,36,37,-63,0,2,268435493,268435492,-65,34,1,25,-65,0,1,21,-65,34,1,35,-65,0,1,21,-65,34,1,45,-65,0,1,31,-23,34,43,26,27,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,268435483,268435482,34,34,26,27,53,

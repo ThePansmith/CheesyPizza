@@ -6,7 +6,7 @@ level = "none";
 world = 1;
 pizza = false;
 rank = "d";
-group_arr = -4;
+group_arr = noone;
 boss = false;
 drawing = false;
 highscore = 0;
@@ -15,7 +15,7 @@ toppin = array_create(5, 0);
 scr_hub_bg_init();
 scr_create_uparrowhitbox();
 
-info = -4; // SET IF YOU WANT A SUGARY TITLECARD.
+info = noone; // SET IF YOU WANT A SUGARY TITLECARD.
 titlecard_sprite = spr_titlecards;
 titlecard_index = 0;
 title_sprite = spr_titlecards_title;
