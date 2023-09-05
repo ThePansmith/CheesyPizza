@@ -70,6 +70,7 @@ var deathmode_allow =
 	"entrance", "medieval", "ruin", "dungeon", // W1
 	"badland", "graveyard", "saloon", "farm", // W2
 	"plage", "space", "minigolf", "forest", // W3
+	"freezer", "street", "industrial", "sewer", // W4
 ];
 if array_contains(deathmode_allow, level)// or DEBUG
 	add_modifier("Death Mode", "DeathMode", "Avoid Pizzaface within a very tight timer!", [seq_deathmode_off, seq_deathmode_on]);
