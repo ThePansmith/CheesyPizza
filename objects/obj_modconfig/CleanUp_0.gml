@@ -1,4 +1,4 @@
-live_auto_call;
+//live_auto_call;
 
 surface_free(global.modsurf);
 if layer_exists(sequence_layer)

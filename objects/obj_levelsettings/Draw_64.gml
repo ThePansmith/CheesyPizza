@@ -1,4 +1,4 @@
-live_auto_call;
+//live_auto_call;
 
 shader_reset();
 

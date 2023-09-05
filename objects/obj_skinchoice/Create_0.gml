@@ -1,5 +1,5 @@
 event_inherited();
-live_auto_call;
+//live_auto_call;
 
 // animation
 init = false;
