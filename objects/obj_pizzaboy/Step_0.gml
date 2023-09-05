@@ -1,5 +1,6 @@
 if (room == rm_editor)
 	exit;
+
 switch (state)
 {
 	case states.idle:
@@ -43,5 +44,42 @@ if (boundbox == 0)
 		mask_index = other.sprite_index;
 		baddieID = other.id;
 		other.boundbox = true;
+	}
+}
+
+if global.stylethreshold >= 3 && state != states.hit
+{
+	if abs(obj_player1.x - x) < 50 + abs(obj_player1.hsp) && abs(obj_player1.y - y) < 100
+	{
+		var xp = x, yp = y;
+		
+		x -= obj_player1.xscale * irandom_range(200, 400);
+		while scr_solid(x, y)
+			y--;
+		while !scr_solid(x, y + 1)
+			y++;
+		
+		image_xscale = sign(obj_player1.x - x);
+		vsp = -4;
+		
+		if !bbox_in_camera()
+		{
+			x = xp;
+			y = yp;
+			
+			vsp = -20;
+		}
+		else
+		{
+			global.combotime = 60;
+			global.heattime = 60;
+			
+			var n = 5;
+			for(var i = 0; i < n; i++)
+			{
+				with create_red_afterimage(lerp(xp, x, i / n), lerp(yp, y, i / n), sprite_index, image_index, image_xscale)
+					alpha = lerp(0.35, 1, i / n);
+			}
+		}
 	}
 }

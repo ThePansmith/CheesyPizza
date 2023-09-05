@@ -103,7 +103,8 @@ if check_heat()
 	
 	if paletteselect != newpalette
 	{
-		create_particle(x, y, part.genericpoofeffect);
+		if state != states.underground && visible && !MOD.DeathMode
+			create_particle(x, y, part.genericpoofeffect);
 		paletteselect = newpalette;
 	}
 }

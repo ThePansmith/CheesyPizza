@@ -24,7 +24,10 @@ if buffer <= 0 && global.leveltorestart != noone && global.leveltorestart != -1 
 				roomtorestart = global.leveltorestart;
 			}
 			with instance_create(0, 0, obj_genericfade)
+			{
 				persistent = true;
+				depth = -1000;
+			}
 		}
 	}
 }

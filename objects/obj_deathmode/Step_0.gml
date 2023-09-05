@@ -5,11 +5,19 @@ if !MOD.DeathMode
 if !active or room == rank_room or room == timesuproom or (global.laps >= 3 && MOD.Lap3)
 	exit;
 
+var stop = false;
+with obj_player
+{
+	if state == states.taxi || state == states.victory || state == states.keyget || state == states.gottreasure || state == states.door || state == states.spaceshuttle
+		stop = true;
+}
+
 if show_time > 0
     show_time--;
 else if time > 0
 {
-    time--;
+	if !stop
+		time--;
 	instance_create_unique(obj_player1.x, obj_player1.y, obj_pizzaface);
 }
 

@@ -129,16 +129,19 @@ function sh_var(args)
 		variable_instance_set(target, variable, value);
 		
 		// handle frozen var
-		for(var i = 0; i < ds_list_size(WC_frozen); i++)
+		with obj_shell
 		{
-			var frozen = WC_frozen[|i];
-			if target != global && instance_exists(frozen[0]) && instance_exists(target)
+			for(var i = 0; i < ds_list_size(WC_frozen); i++)
 			{
-				if frozen[0].id == target.id && frozen[1] == variable
+				var frozen = WC_frozen[|i];
+				if target != global && instance_exists(frozen[0]) && instance_exists(target)
+				{
+					if frozen[0].id == target.id && frozen[1] == variable
+						WC_frozen[|i][2] = value;
+				}
+				else if frozen[0] == global && frozen[1] == variable
 					WC_frozen[|i][2] = value;
 			}
-			else if frozen[0] == global && frozen[1] == variable
-				WC_frozen[|i][2] = value;
 		}
 		return ret;
 	}

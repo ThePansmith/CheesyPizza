@@ -38,4 +38,4 @@ heavy = false;
 depth = 0;
 stuntouchbuffer = 0;
 spr_palette = spr_pizzaboy_palette;
-usepalette = true;
+usepalette = false;
