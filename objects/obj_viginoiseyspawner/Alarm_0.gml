@@ -9,7 +9,7 @@ if (!instance_exists(obj_noisey))
 			with (instance_create(x, y, obj_grabmarker))
 				ID = other.id;
 		}
-		sprite_index = spr_ratmount_groundpound;
+		sprite_index = spr_ratmountgroundpound;
 		image_index = 0;
 		state = states.pizzaheadjump;
 		hsp = 0;
