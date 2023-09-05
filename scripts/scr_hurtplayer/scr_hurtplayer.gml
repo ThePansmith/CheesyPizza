@@ -85,7 +85,10 @@ function scr_hurtplayer(player)
 				if (x != other.x)
 					xscale = sign(other.x - x);
 				if (irandom(100) <= 50)
-					sound_play_oneshot_3d("event:/sfx/voice/gushurt", x, y);
+				{
+					fmod_event_instance_set_3d_attributes(snd_voicehurt, x, y);
+					fmod_event_instance_play(snd_voicehurt);
+				}
 				state = states.ratmounthurt;
 				movespeed = 6;
 				vsp = -9;

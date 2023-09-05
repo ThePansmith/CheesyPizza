@@ -114,7 +114,7 @@ if ((global.panic or ((global.snickchallenge or (MOD.DeathMode)) && !instance_ex
 		}
 		else
 		{
-			if MOD.Lap3 && instance_exists(obj_pizzaface) // pillar john's revenge
+			if MOD.Lap3 && global.laps >= 2 // pillar john's revenge
 				fmod_event_instance_set_parameter(panicmusicID, "state", 20, true);
 			else if global.laps >= 4 // blue licorice
 				fmod_event_instance_set_parameter(panicmusicID, "state", 3, true);

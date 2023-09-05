@@ -13,4 +13,7 @@ if !active && MOD.DeathMode
 	surfy = 60;
 	surfscale = 0.5;
 	image_speed = .35;
+	
+	if check_char("G")
+		time += room_speed * 5;
 }

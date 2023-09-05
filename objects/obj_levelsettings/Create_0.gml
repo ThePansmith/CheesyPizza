@@ -45,10 +45,7 @@ add_button("OK", "Start the level.", function()
 	{
 		var opt = options_array[i];
 		if opt.type == modconfig.modifier
-		{
-			if opt.opts[opt.value][1]
-				variable_struct_set(MOD, opt.vari, true);
-		}
+			variable_struct_set(MOD, opt.vari, opt.opts[opt.value][1]);
 	}
 	
 	state = states.door;
@@ -68,12 +65,12 @@ add_section("Modifiers");
 //add_modifier("Encore", MOD.Encore, "Remixes the level to make it harder.");
 
 var deathmode_allow = 
-	[ 
-		"entryway", // Sugary
-		"entrance", "medieval", "ruin", "dungeon", // W1
-		"badland", "graveyard", "saloon", "farm", // W2
-		"plage", "space", "minigolf", "forest", // W3
-		];
+[ 
+	"entryway", // Sugary
+	"entrance", "medieval", "ruin", "dungeon", // W1
+	"badland", "graveyard", "saloon", "farm", // W2
+	"plage", "space", "minigolf", "forest", // W3
+];
 if array_contains(deathmode_allow, level)// or DEBUG
 	add_modifier("Death Mode", "DeathMode", "Avoid Pizzaface within a very tight timer!", [seq_deathmode_off, seq_deathmode_on]);
 
@@ -86,7 +83,14 @@ add_modifier("Hard Mode", "HardMode", "A placeholder entity will rain enemies up
 add_modifier("Mirrored", "Mirror", "Experience the horrors of graphics that weren't supposed to be flipped.", [seq_mirrored_off, seq_mirrored_on]);
 
 if !boss && level != "grinch" && level != "dragonlair" && level != "snickchallenge" && level != "tutorial"
-	add_modifier("Lap Hell", "Lap3", "A challenge awaits you on the third lap!", [seq_lap3_off, seq_lap3_on]);
+{
+	var opt = add_modifier("Lap Hell", "Lap3", "A challenge awaits you on the third lap!", [seq_lap3_off, seq_lap3_on, seq_lap3_on]);
+	opt.opts = [
+		["OFF", false],
+		["ON", true],
+		["HARD", 2] // No parrying pizzaface, restart the whole level if failed
+	]
+}
 
 // Level specific
 if level == "grinch"

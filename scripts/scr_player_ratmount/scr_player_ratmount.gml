@@ -299,6 +299,8 @@ function ratmount_dotaunt()
 		state = states.backbreaker;
 		if ((!key_up || !supercharged) && global.tauntcount < 10 && place_meeting(x, y, obj_exitgate) && (global.panic == true || instance_exists(obj_wartimer)) && global.combotime > 0 && global.leveltosave != "grinch")
 		{
+			if REMIX
+				global.combotime = min(global.combotime + 10, 60);
 			global.heattime = 60;
 			global.tauntcount++;
 			global.collect += 25;

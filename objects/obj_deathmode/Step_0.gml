@@ -34,6 +34,8 @@ if time_fx > 0
 	
 	if frac(time_fx) == 0
 		ybump = -4;
+	if check_char("G") or check_char("V")
+		time += 15 * spd;
 }
 
 var tgt_y = 0;

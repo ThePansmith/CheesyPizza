@@ -31,9 +31,9 @@ function reset_modifier()
 }
 reset_modifier();
 
-function fail_modifier(flags)
+function fail_modifier(flags, value = true)
 {
-	if flags
+	if flags == value
 	{
 		global.modifier_failed = true;
 		instance_create_unique(obj_player1.x, obj_player1.y, obj_pizzaface);

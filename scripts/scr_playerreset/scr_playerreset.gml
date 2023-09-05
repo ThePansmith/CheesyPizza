@@ -31,6 +31,9 @@ function scr_playerreset(roomstart = false, restart = false)
 		active = false;
 	global.modifier_failed = false;
 	
+	if is_struct(global.checkpoint_data) && global.checkpoint_data.loaded != 2
+		clear_checkpoint();
+	
 	global.lap = false;
 	if (room != boss_pizzaface && room != boss_noise && room != boss_pepperman && room != boss_fakepep && room != boss_vigilante)
 		global.bossintro = false;
@@ -263,8 +266,8 @@ function scr_playerreset(roomstart = false, restart = false)
 	with (obj_player)
 	{
 		transformationsnd = false;
-		fmod_event_instance_release(snd_voiceok);
-		snd_voiceok = fmod_event_create_instance("event:/sfx/voice/ok");
+		player_destroy_sounds();
+		player_init_sounds();
 		image_alpha = 1;
 		hallway = false;
 		verticalhallway = false;

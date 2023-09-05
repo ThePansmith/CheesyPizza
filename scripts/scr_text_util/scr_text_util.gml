@@ -28,7 +28,7 @@ enum texttype
 }
 
 // functions
-function create_transformation_tip(str, save_entry = noone)
+function create_transformation_tip(str, save_entry = noone, destroy = false)
 {
 	ini_open_from_string(obj_savesystem.ini_str);
 	if (save_entry != noone && ini_read_real("Tip", save_entry, false))
@@ -38,7 +38,7 @@ function create_transformation_tip(str, save_entry = noone)
 	}
 	instance_destroy(obj_transfotip);
 	var b = -4;
-	with (instance_create(0, 0, obj_transfotip))
+	with instance_create(0, 0, obj_transfotip, {destroy: destroy})
 	{
 		text = str;
 		b = id;

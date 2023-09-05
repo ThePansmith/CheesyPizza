@@ -1,4 +1,4 @@
-if (!global.snickchallenge && (global.laps < 2 or !(MOD.Lap3)))
+if (!global.snickchallenge && (global.laps < 2 or !MOD.Lap3))
 or room == timesuproom or room == rank_room or MOD.EasyMode
 {
 	instance_destroy();

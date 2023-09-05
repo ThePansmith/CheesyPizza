@@ -17,8 +17,9 @@ if (sprite_index == spr_peppinoswitch2 && floor(image_index) == (image_number - 
 		x = obj_peppinoswitch.x;
 		y = obj_peppinoswitch.y;
 		global.switchbuffer = 100;
-		fmod_event_instance_release(snd_voiceok);
-		snd_voiceok = fmod_event_create_instance("event:/sfx/voice/ok");
+		
+		player_destroy_sounds();
+		player_init_sounds();
 	}
 	sprite_index = spr_gustavosign;
 }
