@@ -8,7 +8,7 @@ if draw && global.leveltosave != "exit"
 	y += 3;
 	
 	var blend = get_dark(c_white, obj_drawcontroller.use_dark);
-	draw_sprite_tiled_ext(bg_fallingbricksforefront, 0, x, y, 1, 1, blend, 1);
+	draw_sprite_tiled_ext(bg_fallingbricksforefront, SUGARY, x, y, 1, 1, blend, 1);
 }
 
 var debris_sprite = spr_towerblockdebris;
