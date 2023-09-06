@@ -26,5 +26,5 @@ if (room == custom_lvl_room)
 scr_getinput();
 event_inherited();
 	
-if (obj_onlineclient.connected)
+if instance_exists(obj_onlineclient) && obj_onlineclient.connected
 	online_server_step_update();

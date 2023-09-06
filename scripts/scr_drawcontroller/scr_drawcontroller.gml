@@ -211,7 +211,7 @@ function draw_player()
 	
 		var ps = paletteselect;
 		var spr = spr_palette;
-		if (isgustavo)
+		if isgustavo && spr != spr_peppalette
 		{
 			spr = spr_peppalette;
 			ps = gustavo_palette(ps);

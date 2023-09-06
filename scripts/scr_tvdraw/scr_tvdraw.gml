@@ -370,7 +370,6 @@ function scr_tvdraw()
 			static timer_ind = 0;
 			static seconds_prev = "";
 			
-			trace($"{sprite_get_name(pizzaface_sprite)}");
 			// sucrose snowstorm
 			if pizzaface_sprite == spr_timer_pizzaface1
 				draw_sprite(spr_sucrosetimer_coneball_idle, pizzaface_index, SCREEN_WIDTH / 2, timer_y + 25);

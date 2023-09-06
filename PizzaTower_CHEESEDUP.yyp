@@ -599,6 +599,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
   ],
   "IncludedFiles": [
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"cheese.jpg","CopyToMask":-1,"filePath":"datafiles/data",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles/data",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"intro.mp4","CopyToMask":-1,"filePath":"datafiles/data",},
@@ -1531,6 +1532,7 @@
     {"id":{"name":"obj_arenagate","path":"objects/obj_arenagate/obj_arenagate.yy",},},
     {"id":{"name":"obj_supriseenemy","path":"objects/obj_supriseenemy/obj_supriseenemy.yy",},},
     {"id":{"name":"spr_molassesGround","path":"sprites/spr_molassesGround/spr_molassesGround.yy",},},
+    {"id":{"name":"spr_sucrosetimer_lap4","path":"sprites/spr_sucrosetimer_lap4/spr_sucrosetimer_lap4.yy",},},
     {"id":{"name":"obj_escapeenemy","path":"objects/obj_escapeenemy/obj_escapeenemy.yy",},},
     {"id":{"name":"spr_toppinshroom_run_bo","path":"sprites/spr_toppinshroom_run_bo/spr_toppinshroom_run_bo.yy",},},
     {"id":{"name":"obj_arenaspawn","path":"objects/obj_arenaspawn/obj_arenaspawn.yy",},},
@@ -6113,6 +6115,7 @@
     {"id":{"name":"spr_speedbarmax","path":"sprites/spr_speedbarmax/spr_speedbarmax.yy",},},
     {"id":{"name":"spr_complexmetal","path":"sprites/spr_complexmetal/spr_complexmetal.yy",},},
     {"id":{"name":"spr_tv_cheeseballSP","path":"sprites/spr_tv_cheeseballSP/spr_tv_cheeseballSP.yy",},},
+    {"id":{"name":"spr_yogurtexe","path":"sprites/spr_yogurtexe/spr_yogurtexe.yy",},},
     {"id":{"name":"spr_tv_exprhurt","path":"sprites/spr_tv_exprhurt/spr_tv_exprhurt.yy",},},
     {"id":{"name":"spr_speedbar","path":"sprites/spr_speedbar/spr_speedbar.yy",},},
     {"id":{"name":"spr_pizzahealthbar","path":"sprites/spr_pizzahealthbar/spr_pizzahealthbar.yy",},},

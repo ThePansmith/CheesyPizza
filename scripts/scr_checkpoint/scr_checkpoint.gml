@@ -12,11 +12,17 @@ function set_checkpoint()
 		saveroom: ds_list_create(),
 		escaperoom: ds_list_create(),
 		wartime: -1,
+		deathtime: -1,
 		loaded: 0
 	};
 	var c = global.checkpoint_data;
 	with obj_wartimer
-		c.wartime = (minutes * 60) + seconds + addseconds;
+	{
+		if active
+			c.wartime = (minutes * 60) + seconds + addseconds;
+	}
+	with obj_deathmode
+		c.deathtime = time + (time_fx * 60);
 	
 	ds_list_copy(c.baddieroom, global.baddieroom);
 	ds_list_copy(c.saveroom, global.saveroom);
@@ -88,6 +94,16 @@ function load_checkpoint()
 								minutes++;
 								seconds -= 60;
 							}
+						}
+					}
+					break;
+				case "deathtime":
+					if c.deathtime > -1
+					{
+						with obj_deathmode
+						{
+							event_perform(ev_other, ev_room_start);
+							time = c.deathtime;
 						}
 					}
 					break;

@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "CheesyPizza",
-    "path": "folders/Sprites/CheesyPizza.yy",
+    "name": "Modifiers",
+    "path": "folders/Sprites/CheesyPizza/Modifiers.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

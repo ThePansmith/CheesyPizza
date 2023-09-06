@@ -1,6 +1,7 @@
 seconds--;
 alarm[0] = 60;
 sound_play_oneshot("event:/sfx/ui/wartimer");
+
 if (seconds < 0)
 {
 	if (minutes > 0)
