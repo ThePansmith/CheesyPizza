@@ -33,3 +33,6 @@ knocked = false;
 enemybird = false;
 enemybirdi = 0;
 after = 0;
+
+if SUGARY
+	sprite_index = spr_yogurtexe;

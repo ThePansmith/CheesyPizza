@@ -411,7 +411,7 @@ function scr_player_punch()
 				image_speed = abs(movespeed) / 15;
 		}
 		
-		if !bump && check_solid(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles) && !check_slope(x + xscale, y)
+		if !bump && (check_solid(x + xscale, y - grounded * 16) or scr_solid_slope(x + xscale, y - grounded * 16)) && !place_meeting(x + xscale, y, obj_destructibles)
 		{
 			if ledge_bump(32)
 			{

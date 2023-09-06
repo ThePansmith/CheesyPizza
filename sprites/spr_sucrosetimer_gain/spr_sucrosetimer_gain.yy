@@ -67,8 +67,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "sucrosegroup",
-    "path": "texturegroups/sucrosegroup",
+    "name": "sugarygroup",
+    "path": "texturegroups/sugarygroup",
   },
   "type": 0,
   "VTile": false,
