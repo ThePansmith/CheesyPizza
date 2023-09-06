@@ -35,7 +35,7 @@
   "origin": 4,
   "parent": {
     "name": "Secret Portal",
-    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Secret Portal.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Level Structure/Secret Portal.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
