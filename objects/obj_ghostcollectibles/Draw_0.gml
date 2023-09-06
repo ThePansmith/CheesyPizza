@@ -4,5 +4,5 @@ for (var i = 0; i < ds_list_size(collectiblelist); i++)
 	var b = ds_list_find_value(collectiblelist, i);
 	draw_sprite_ext(b.sprite_index, b.image_index, b.x, b.y, 1, 1, 0, c_white, b.image_alpha);
 	if (b.pizzasona)
-		draw_sprite_ext(SUGARY ? spr_movingplatformSS : spr_chigaco, b.image_index, b.x, b.y + 46, 1, 1, 0, c_white, b.image_alpha);
+		draw_sprite_ext(SUGARY ? spr_movingplatformSS : spr_chigaco, b.image_index, b.x, b.y + REMIX ? 46 : 49, 1, 1, 0, c_white, b.image_alpha);
 }
