@@ -456,7 +456,7 @@ else if (global.panic or global.snickchallenge)
 	}
 	else if (pizzaface_sprite == spr_timer_pizzaface2 or pizzaface_sprite == spr_timer_pizzafaceback)
 	{
-		if (floor(pizzaface_index) == sprite_get_number(pizzaface_sprite) - 1 && !sugarylevel) or floor(pizzaface_index) >= 70
+		if (floor(pizzaface_index) == sprite_get_number(pizzaface_sprite) - 1 && (!sugarylevel or global.leveltosave == "sucrose")) or floor(pizzaface_index) >= 70
 		{
 			pizzaface_sprite = spr_timer_pizzaface3;
 			pizzaface_index = 0;
