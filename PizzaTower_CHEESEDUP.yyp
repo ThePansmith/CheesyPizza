@@ -8637,6 +8637,7 @@
     {"id":{"name":"spr_finalhallwaycolor","path":"sprites/spr_finalhallwaycolor/spr_finalhallwaycolor.yy",},},
     {"id":{"name":"spr_secrettile","path":"sprites/spr_secrettile/spr_secrettile.yy",},},
     {"id":{"name":"spr_player_Sjumpcancel","path":"sprites/spr_player_Sjumpcancel/spr_player_Sjumpcancel.yy",},},
+    {"id":{"name":"online_sync","path":"scripts/online_sync/online_sync.yy",},},
     {"id":{"name":"spr_menu_finaljudgement","path":"sprites/spr_menu_finaljudgement/spr_menu_finaljudgement.yy",},},
     {"id":{"name":"spr_palettedresserpalettes","path":"sprites/spr_palettedresserpalettes/spr_palettedresserpalettes.yy",},},
     {"id":{"name":"spr_titlepep_forward","path":"sprites/spr_titlepep_forward/spr_titlepep_forward.yy",},},
