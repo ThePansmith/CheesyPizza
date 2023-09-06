@@ -130,7 +130,7 @@ function scr_bosscontroller_normal()
 			{
 				var bpal = boss_palette;
 				var bpalsel = pos[2];
-				var btex = -4;
+				var btex = noone;
 				if (boss_hpsprite == spr_bossfight_fakepephp)
 				{
 					bpal = spr_peppalette;
@@ -169,7 +169,7 @@ function scr_bosscontroller_normal()
 			{
 				fmod_event_instance_play(global.snd_bossbeaten);
 				global.pistol = false;
-				pistolanim = -4;
+				pistolanim = noone;
 				sprite_index = spr_player_levelcomplete;
 				image_speed = 0.35;
 				image_index = 0;
@@ -232,7 +232,7 @@ function scr_bosscontroller_draw_health(sprite, rows, columns, hp, maxhp, x, y, 
 	{
 		var c = c_white;
 		var zpad = _index * 3;
-		if (spr_palette != -4)
+		if (spr_palette != noone)
 		{
 			if (paletteselect == noone)
 				pal_swap_set(spr_palette, _index, false);
@@ -249,7 +249,7 @@ function scr_bosscontroller_draw_health(sprite, rows, columns, hp, maxhp, x, y, 
 			{
 				var xf = (x + (_x * xpad)) - zpad;
 				var yf = (y + (_y * ypad)) - zpad;
-				if (palettetexture != -4)
+				if (palettetexture != noone)
 					pattern_set(global.Base_Pattern_Color, sprite, index, 1, 1, palettetexture);
 				draw_sprite_ext(sprite, index, xf, yf, 1, 1, 0, c, alpha);
 			}

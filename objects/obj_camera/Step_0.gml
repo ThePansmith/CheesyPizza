@@ -3,7 +3,7 @@ if room == editor_room
 
 var player = (obj_player1.spotlight == 1) ? obj_player1 : obj_player2;
 if !instance_exists(obj_pizzaball)
-	targetgolf = -4;
+	targetgolf = noone;
 
 // shaking when collect get
 if collect_shake > 0

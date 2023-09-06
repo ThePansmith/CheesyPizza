@@ -184,7 +184,7 @@ switch character
 	#region Noise
 	
 	case "N":
-		add_palette(0, "", noone, "The Noise", "The mischievous gremlin.", "");
+		add_palette(1, "", noone, "The Noise", "The mischievous gremlin.", "");
 		add_palette(2, "", noone, "Peppino", "The one and only...?");
 		add_palette(3, "", noone, "Snick", "It's him...?", "PURPLE");
 		add_palette(4, "", noone, "Grinch", "IIIIIIT'S CHRIMMAAAAAAAA", "GRINCH");

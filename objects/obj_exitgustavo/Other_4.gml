@@ -6,7 +6,7 @@ else if irandom(100) <= 15
 	stick = true;
 
 var r = string_letters(room_get_name(room));
-if sprite_index != spr_gustavo_exitsign || r == "saloon" || room == space_11b || r == "freezer" || r == "chateau"
+if sprite_index != spr_gustavo_exitsign || r == "saloon" || room == space_11b || r == "freezer" || r == "chateau" || r == "floor5"
 	stick = false;
 
 if check_char("G") && !sugary

@@ -10,7 +10,7 @@ condition = function()
 {
 	with obj_music
 	{
-		if music != -4
+		if music != noone
 			return fmod_event_instance_get_timeline_pos(music.event) >= 8.17 * 1000 - 60;
 	}
 }

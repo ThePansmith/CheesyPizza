@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "Pause",
-    "path": "folders/Sprites/CheesyPizza/Pause.yy",
+    "path": "folders/Sprites/CheesyPizza/Sugary Spire/Level Structure/Blocks/Pause.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

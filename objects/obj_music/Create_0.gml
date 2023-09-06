@@ -25,7 +25,7 @@ waiting = false;
 
 add_music(Endingroom, "event:/music/ending", noone, false);
 add_music(Creditsroom, "event:/music/credits", noone, false);
-add_music(Johnresurrectionroom, "event:/music/ending", -4, false);
+add_music(Johnresurrectionroom, "event:/music/ending", noone, false);
 add_music(Longintro, "event:/music/intro", noone, false, function(room, parameter)
 {
 	fmod_event_instance_set_parameter(parameter, "state", 0, true);
@@ -356,6 +356,8 @@ add_music(strongcold_10, "event:/modded/level/strongcold", "event:/modded/level/
 	if s != -1
 		fmod_event_instance_set_parameter(event, "state", s, true);
 });
+add_music(floor5_room1, "event:/music/w4/freezer", "event:/music/w4/freezersecret", 0, noone);
+
 add_music(factory_1, "event:/music/w4/industrial", "event:/music/w4/industrialsecret", 0, function(room, event, event_secret)
 {
 	var s = -1;

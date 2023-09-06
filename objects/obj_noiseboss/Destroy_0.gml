@@ -14,6 +14,7 @@ if (pizzahead && elitehit <= 0 && destroyable)
 		vsp = -18;
 		elitehit = 4;
 		prevhp = elitehit;
+		use_elite = false;
 		
 		fakepep_set_attack(1, 0, fakepep_attacks.grabclone, 80, 0);
 		fakepep_set_attack(1, 1, fakepep_attacks.bodyslamclone, 80, 0);

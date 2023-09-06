@@ -8,6 +8,8 @@ if (instance_number(object_index) > 1)
 		exit;
 	}
 }
+palette_override_active = false;
+palette_override_colors = array_create(64);
 
 soundinit = false;
 function player_destroy_sounds()

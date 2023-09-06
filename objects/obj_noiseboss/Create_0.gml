@@ -79,9 +79,9 @@ if check_char("N") && obj_player1.paletteselect != 20
 {
 	basepal = 20;
 	paletteselect = 20;
+	use_elite = false;
 }
 usepalette = true;
-
 grabbedby = 0;
 stuntouchbuffer = 0;
 scaredbuffer = 0;

@@ -1,7 +1,20 @@
 if (room == rm_editor)
 	exit;
-spr_palette = obj_player1.spr_palette;
-paletteselect = obj_player1.paletteselect;
+if obj_player1.character == "P"
+{
+	spr_palette = obj_player1.spr_palette;
+	elitepal = obj_player1.spr_palette;
+	basepal = obj_player1.paletteselect;
+	paletteselect = obj_player1.paletteselect;
+}
+else
+{
+	spr_palette = spr_peppalette;
+	elitepal =  spr_peppalette;
+	basepal = 1;
+	paletteselect = 1;
+}
+
 targetplayer = obj_player1.id;
 if (!pizzahead)
 	wastedhits = 6 - elitehit;

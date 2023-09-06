@@ -11,7 +11,7 @@ function scr_loophallway(hallway)
 				other.x = x + (sprite_width / 2);
 				other.y = (y + (sprite_height * _per)) - 1;
 				if (other.object_index == obj_vigilanteboss)
-					other.oldtargetspot = -4;
+					other.oldtargetspot = noone;
 			}
 		}
 	}

@@ -90,7 +90,7 @@ function scr_initenemy()
 	turntimer = 0;
 	turnstart = false;
 	timedgate = false;
-	chargeID = -4;
+	chargeID = noone;
 	angle = image_angle;
 	is_controllable = false;
 	possess_movespeed = 0;

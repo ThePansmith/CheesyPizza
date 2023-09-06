@@ -16,6 +16,10 @@ uniform vec4 sprite_UVs;
 uniform vec4 sprite_tex_data; // (x, y) = trimmed l/t offset | (z, w) = texture size
 uniform vec2 sprite_scale; // (xscale, yscale)
 
+uniform int use_palette_override;
+uniform float palette_override[64];
+#define TOLERANCE 0.004
+
 void main()
 {
 	vec4 source = texture2D( gm_BaseTexture, v_vTexcoord );
@@ -23,13 +27,20 @@ void main()
     
 	for(float color_index = palette_UVs.y; color_index < palette_UVs.w; color_index += texel_size.y) // iterate through each color
 	{
+		float raw_color_index = (color_index - palette_UVs.y) / texel_size.y;
 		vec4 palette_color = texture2D(palette_texture, vec2(palette_UVs.x, color_index));
-		if (distance(source, palette_color) <= 0.004) // check if the color matches
+		if (distance(source, palette_color) <= TOLERANCE) // RX: Check our color vs the reference
 		{
 			float texel_palette_offset = texel_size.x * palette_index;
 			float palette_V = palette_UVs.x + texel_palette_offset;
 			source = texture2D(palette_texture, vec2(palette_V, color_index)); // Palette color at specific offset
-
+			
+			if (use_palette_override == 1)
+			{
+				int index = int(raw_color_index   * 4.0);
+				
+				source = vec4(palette_override[index], palette_override[index + int(1.0)], palette_override[index + int(2.0)], palette_override[index + int(3.0)]);
+			}
 			
 			if (pattern_enabled == 1) 
 			{
@@ -68,10 +79,10 @@ void main()
 						
 						// RadixComet: This isn't a good way of doing this, 
 						// but it will do for now.
-						//vec4 shadeColor = vec4(0.0, 0.0, 0.0, 0.40625);
-						vec4 shadeColor = vec4(0.0, 0.0, 0.0, 0.0);
-						//if (j == 0)
-						//	shadeColor.a = 0.0;
+						vec4 shadeColor = vec4(0.0, 0.0, 0.0, 0.40625);
+						//vec4 shadeColor = vec4(0.0, 0.0, 0.0, 0.0);
+						if (j != 1) // RX: PT uses 2 for a shade but we can emulate that
+							shadeColor.a = 0.0;
 						
 						vec3 m = mix(pat.rgb, shadeColor.rgb, shadeColor.a);
 						

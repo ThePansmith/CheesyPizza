@@ -166,7 +166,7 @@ function create_blur_afterimage(_x, _y, _sprite, _image_index, _xscale)
 	with (b)
 	{
 		fadeout = false;
-		fadeoutstate = -4;
+		fadeoutstate = noone;
 		identifier = afterimage.blur;
 		alarm[0] = -1;
 		alarm[1] = -1;
@@ -174,7 +174,7 @@ function create_blur_afterimage(_x, _y, _sprite, _image_index, _xscale)
 		image_blend = c_white;
 		image_xscale = _xscale;
 		alpha = 0.8;
-		playerid = -4;
+		playerid = noone;
 		spd = 0.15;
 		hsp = 0;
 		vsp = 0;
