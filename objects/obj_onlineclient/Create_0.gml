@@ -27,6 +27,7 @@ network_socket = network_create_socket(network_socket_udp);
 connected = false;
 player_guid = array_create(16, 0);
 player_name = "Player";
+
 write_buffer = buffer_create(8, buffer_grow, 1);
 
 function buf_write_string(_value)
@@ -36,4 +37,9 @@ function buf_write_string(_value)
 function buf_write_float(_value)
 {
 	buffer_write(write_buffer, buffer_f32, _value);
+}
+function buf_write_array(_value)
+{
+	for (var i = 0; i < array_length(_value); i++)
+		buffer_write(write_buffer, buffer_u8, _value[i]);
 }
