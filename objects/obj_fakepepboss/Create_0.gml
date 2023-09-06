@@ -24,7 +24,7 @@ fakepep_set_attack(2, 3, fakepep_attacks.stunned, 0, default_deformed_timer);
 fakepep_set_attack(2, 4, fakepep_attacks.stunned, 0, default_deformed_timer);
 fakepep_set_attack(2, 5, fakepep_attacks.stunned, 0, default_deformed_timer);
 
-projectile_list = -4;
+projectile_list = noone;
 fakepep_start_projectiles(0, 0);
 fakepep_add_grabclone(0, 0, 1, 80);
 fakepep_add_grabclone(0, 0, -1, 80);

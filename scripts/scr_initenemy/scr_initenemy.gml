@@ -2,17 +2,17 @@ function scr_initenemy()
 {
 	ID = id;
 	chargesnd = fmod_event_create_instance("event:/sfx/enemies/charge");
-	pizzaheadKO = -4;
-	pizzaheadKO_ID = -4;
+	pizzaheadKO = noone;
+	pizzaheadKO_ID = noone;
 	pizzaheadKO_buffer = 0;
 	pizzahead_maxsubhp = 3;
 	pizzahead_subhp = pizzahead_maxsubhp;
 	camzoom = 1;
 	mach2 = false;
 	steppy = false;
-	santaID = -4;
+	santaID = noone;
 	rattime = 0;
-	platformid = -4;
+	platformid = noone;
 	usepalette = false;
 	blur_effect = 0;
 	hsp_carry = 0;
@@ -27,7 +27,7 @@ function scr_initenemy()
 	flying = false;
 	straightthrow = false;
 	stomped = false;
-	escapespawnID = -4;
+	escapespawnID = noone;
 	reset = false;
 	bombreset = 0;
 	hp = 1;
