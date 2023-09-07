@@ -30,10 +30,11 @@ if !obj_pause.pause
 #endregion
 
 
-#region Info
-	buf_write_string("info"); // chunk header
+#region Server Info
+	buf_write_string("srvr"); // chunk header
 	buf_write_string(player_name);
 	buf_write_array(player_guid);
+	
 #endregion
 }
 
