@@ -96,6 +96,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
+		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		break;
 	
 	#endregion
@@ -186,6 +187,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
+		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		break;
 	
 	#endregion
@@ -246,6 +248,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
+		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		break;
 	
 	#endregion
@@ -316,6 +319,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
+		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		break;
 	
 	#endregion
@@ -370,6 +374,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
+		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		break;
 	
 	#endregion
@@ -439,6 +444,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
+		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_alright, "Alright", "That combo was...");
 		add_palette(12, "", spr_pattern_smooth, "Smooth", "How do you call this smooth.");
 		add_palette(12, "", spr_pattern_lookingood, "Lookin' Good", "Why, thank you!");
@@ -508,6 +514,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
+		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		break;
 	
 	#endregion
@@ -600,6 +607,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "sso spicy.. like suggary spicy!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "yummy :)");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "my legs i cant feel my legs");
+		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "owie owie");
 		break;
 	
 	#endregion
@@ -648,6 +656,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
+		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_alright, "Alright", "That combo was...");
 		add_palette(12, "", spr_pattern_smooth, "Smooth", "How do you call this smooth.");
 		add_palette(12, "", spr_pattern_lookingood, "Lookin' Good", "Why, thank you!");

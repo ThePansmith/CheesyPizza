@@ -1404,6 +1404,7 @@
     {"id":{"name":"spr_rankSNA","path":"sprites/spr_rankSNA/spr_rankSNA.yy",},},
     {"id":{"name":"obj_pizzaheadbomb_explosion","path":"objects/obj_pizzaheadbomb_explosion/obj_pizzaheadbomb_explosion.yy",},},
     {"id":{"name":"obj_mortblock","path":"objects/obj_mortblock/obj_mortblock.yy",},},
+    {"id":{"name":"spr_pattern_paintballed","path":"sprites/spr_pattern_paintballed/spr_pattern_paintballed.yy",},},
     {"id":{"name":"obj_morthitbox","path":"objects/obj_morthitbox/obj_morthitbox.yy",},},
     {"id":{"name":"obj_kentukykenny_projectile","path":"objects/obj_kentukykenny_projectile/obj_kentukykenny_projectile.yy",},},
     {"id":{"name":"obj_pizzard_bolt","path":"objects/obj_pizzard_bolt/obj_pizzard_bolt.yy",},},
