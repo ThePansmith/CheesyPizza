@@ -10,7 +10,7 @@ if (!fakedeath)
 		}
 	}
 	gamesave_async_save();
-	room = hub_mrstickarena;
+	scr_room_goto(hub_mrstickarena);
 }
 else
 {

@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "Longintro",
-  "creationCodeFile": "${project_dir}/rooms/Longintro/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/Longintro/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

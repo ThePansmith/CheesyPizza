@@ -1,3 +1,3 @@
 scr_playerreset();
 obj_player.targetDoor = "null";
-room = hub_room1;
+scr_room_goto(hub_room1);

@@ -624,7 +624,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.6.0.92",
+    "IDEVersion": "2023.8.0.98",
   },
   "resources": [
     {"id":{"name":"obj_bossdoor","path":"objects/obj_bossdoor/obj_bossdoor.yy",},},
@@ -11006,6 +11006,7 @@
     {"roomId":{"name":"tower_pizzaboy","path":"rooms/tower_pizzaboy/tower_pizzaboy.yy",},},
     {"roomId":{"name":"sugarytut_3","path":"rooms/sugarytut_3/sugarytut_3.yy",},},
   ],
+  "templateType": null,
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":false,"loadType":"default","mipsToGenerate":0,"targets":-1,},
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"baddiegroup","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},

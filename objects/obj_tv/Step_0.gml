@@ -539,5 +539,4 @@ if (combofill_index > (sprite_get_number(spr_tv_combobubblefill) - 1))
 	combofill_index = frac(combofill_index);
 
 // pto
-sleepingjohnface_index += 0.15;
 lapflag_index = (lapflag_index + 0.35) % sprite_get_number(spr_lapflag);

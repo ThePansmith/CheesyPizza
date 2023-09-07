@@ -238,7 +238,7 @@ if _move && image_alpha >= 1
 				{
 					instance_destroy(obj_fadeout);
 					targetDoor = "A";
-					room = timesuproom;
+					scr_room_goto(timesuproom);
 					state = states.timesup;
 					sprite_index = spr_Timesup;
 					image_index = 0;

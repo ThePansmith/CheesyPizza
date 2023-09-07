@@ -282,7 +282,8 @@ function scr_playerreset(roomstart = false, restart = false)
 		ghostbump = 1;
 		ghostbumpbuffer = -1;
 		obj_camera.targetgolf = -4;
-		ds_list_clear(global.baddietomb);
+		if variable_global_exists("baddietomb")
+			ds_list_clear(global.baddietomb);
 		obj_player.supercharge = 0;
 		obj_player.supercharged = false;
 		pistol = false;

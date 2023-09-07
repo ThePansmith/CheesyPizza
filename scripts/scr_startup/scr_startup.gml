@@ -21,6 +21,7 @@ enum blockstyles
 // room order check
 if room_first != Loadiingroom or room_next(room_first) != Initroom
 {
+	show_message("Room order check failed!");
 	game_end();
 	exit;
 }
@@ -57,7 +58,8 @@ if os_type == os_windows // this is temp
 	// fuck you
 	if !file_exists(path_cheesypizzalib)
 	{
-		trace($"{path_cheesypizzalib} not found!");
+		show_message($"{path_cheesypizzalib} not found!");
+		
 		game_end();
 		exit;
 	}
@@ -214,7 +216,8 @@ if os_type == os_windows
 {
 	if file_exists("dead") || (os_type == os_windows && !ptcu_checkguid("8ff30401-c151-49e3-8636-a28a5b288d85"))
 	{
-		trace("guid fail ");
+		show_message("Guid fail!");
+		
 		game_end();
 		exit;
 	}
