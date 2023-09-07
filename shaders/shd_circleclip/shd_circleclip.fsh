@@ -29,3 +29,4 @@ void main()
 		game_out_color = vec4(game_out_color.rgb * game_out_color.a, game_out_color.a);
     gl_FragColor = game_out_color;
 }
+

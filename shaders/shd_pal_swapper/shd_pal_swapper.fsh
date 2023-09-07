@@ -15,6 +15,7 @@ uniform vec4 pattern_UVs;
 uniform vec4 sprite_UVs;
 uniform vec4 sprite_tex_data; // (x, y) = trimmed l/t offset | (z, w) = texture size
 uniform vec2 sprite_scale; // (xscale, yscale)
+uniform vec2 pattern_offset;
 
 uniform int use_palette_override;
 uniform float palette_override[64];
@@ -50,12 +51,15 @@ void main()
 					{
 						// convert to (0,0) and convert to integer size in texture page
 						vec2 pos = (v_vTexcoord - sprite_UVs.xy) * sprite_tex_data.zw;
+						
 						// get the edges of the palette sprite and convert to integer size in texture page
 						vec2 edge = (pattern_UVs.zw - pattern_UVs.xy) * pattern_tex_data.zw;
-		
+						
+						pos += pattern_offset;
+						
 						// wrap around the edges
 						pos = mod(pos + sprite_tex_data.xy, edge + pattern_tex_data.xy);
-		
+						
 						// convert the position back to texel size
 						pos = pos / pattern_tex_data.zw;
 		

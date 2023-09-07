@@ -11,6 +11,7 @@ varying vec4 v_vColour;
 varying vec2 v_vPosition;
 
 uniform vec4 u_clip_bounds;
+uniform float u_alphafix;
 
 bool rx_Vec4ContainsVec2(vec4 rect, vec2 pos)
 {
@@ -37,5 +38,7 @@ void main()
 	
 	game_out_color.a = rx_Vec4ContainsVec2(clip_bounds, v_vPosition) ? game_out_color.a : 0.0;
 	
+	if (u_alphafix > 0.5)
+		game_out_color = vec4(game_out_color.rgb * game_out_color.a, game_out_color.a);
     gl_FragColor = game_out_color;
 }

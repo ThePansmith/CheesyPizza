@@ -3047,6 +3047,7 @@
     {"id":{"name":"forest_G5","path":"rooms/forest_G5/forest_G5.yy",},},
     {"id":{"name":"forest_john","path":"rooms/forest_john/forest_john.yy",},},
     {"id":{"name":"forest_escape1","path":"rooms/forest_escape1/forest_escape1.yy",},},
+    {"id":{"name":"shader_set_rectangleclip","path":"scripts/shader_set_rectangleclip/shader_set_rectangleclip.yy",},},
     {"id":{"name":"forest_escape2","path":"rooms/forest_escape2/forest_escape2.yy",},},
     {"id":{"name":"plage_entrance","path":"rooms/plage_entrance/plage_entrance.yy",},},
     {"id":{"name":"plage_beach1","path":"rooms/plage_beach1/plage_beach1.yy",},},
