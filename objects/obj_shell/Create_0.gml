@@ -11,8 +11,6 @@ visibleHeight = 0;
 cursorPos = 1;
 consoleString = "";
 savedConsoleString = "";
-selectedConsoleTextPos = -1;
-selectedConsoleTextLength = 0;
 scrollPosition = 0;
 maxScrollPosition = 0;
 targetScrollPosition = 0;
@@ -50,6 +48,11 @@ deferredQueue = ds_queue_create();
 savedHistoryFilePath = working_directory + "rt-shell-saved-history.data";
 loadedSavedHistory = false;
 loadedHistoryScrolled = false;
+
+// pto
+selection_left = noone;
+selection_right = noone;
+
 
 // Mouse-argument data types
 enum mouseArgumentType {
@@ -506,14 +509,13 @@ function _remap(value, min_input, max_input, min_output, max_output) {
 
 scr_wc_create();
 
-function draw_console_text(_x, _y, _string, offsetX, offsetW)
+function draw_console_text(_x, _y, _string, offset_left, offset_right)
 {
-	if offsetX > -1
+	if (selection_left != noone && selection_right != noone)
 	{
-		trace($"offsetX: {offsetX}");
-		var prefix = string_get_substring(_string, 1, offsetX);
-		var selection = string_get_substring(_string, offsetX, offsetW);
-		var suffix = string_get_substring(_string, offsetX + offsetW);
+		var prefix = string_get_substring(_string, 1, selection_left);
+		var selection = string_get_substring(_string, selection_left, (selection_left - selection_right));
+		var suffix = string_get_substring(_string, selection_right);
 
 		
 		var prefix_width = string_width(prefix);

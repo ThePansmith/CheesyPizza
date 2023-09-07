@@ -13,7 +13,7 @@ function pattern_set_temp(color_array, sprite, subimg, xscale, yscale, pattern, 
 {
 	if pattern == noone
         exit;
-	
+
 	pattern_enable(true);
 	
 	// Pattern Texture

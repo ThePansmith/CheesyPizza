@@ -36,7 +36,32 @@ if (!isOpen) {
 		} else {
 			self.close()
 		}
-	} else if (self._key_combo_pressed([metaKey], ord("A")) or keyboard_check_pressed(vk_home)) {
+	}
+	/*else if (keyboard_check(vk_shift)) // RX: Handle Selections
+	{
+		if keyboard_check_pressed(vk_left)
+		{
+			if (selection_left == noone && selection_right == noone)
+			{
+				selection_left = cursorPos;
+				selection_right = cursorPos;
+			}
+			cursorPos = max(1, cursorPos - 1);
+			targetScrollPosition = maxScrollPosition;
+			selection_left = min(selection_left, cursorPos);
+		}
+		else if keyboard_check_pressed(vk_right)
+		{
+			if (selection_left == noone && selection_right == noone)
+			{
+				selection_left = cursorPos;
+				selection_right = cursorPos;
+			}
+			cursorPos = min(string_length(consoleString) + 1, cursorPos + 1);
+			selection_right = max(selection_right, cursorPos);
+		}
+	}*/
+	else if (self._key_combo_pressed([metaKey], ord("A")) or keyboard_check_pressed(vk_home)) {
 		// Jump to beginning of line
 		cursorPos = 1;
 		targetScrollPosition = maxScrollPosition;
@@ -191,6 +216,8 @@ if (!isOpen) {
 			savedConsoleString = "";
 			cursorPos = 1;
 		}
+		selection_left = noone;
+		selection_right = noone;
 		commandSubmitted = true;
 	} else if (self._key_combo_pressed(cycleSuggestionsModifiers, cycleSuggestionsKey)) {
 		if (array_length(filteredSuggestions) != 0) {
@@ -215,7 +242,8 @@ if (!isOpen) {
 		}
 	} else if (keyboard_check_pressed(vk_insert)) {
 		insertMode = !insertMode;
-	} else if (keyboard_string != "") {
+	}
+	else if (keyboard_string != "") {
 		var t = keyboard_string;
 		if (!insertMode) { consoleString = string_delete(consoleString, cursorPos, string_length(t)); }
 		consoleString = string_insert(t, consoleString, cursorPos);

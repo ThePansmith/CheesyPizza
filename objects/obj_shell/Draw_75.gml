@@ -70,7 +70,8 @@ if (isOpen) {
 		// Draw whatever text has been entered so far
 		draw_set_color(fontColor);
 		//draw_text(shellOriginX + promptXOffset, yOffset, consoleString);
-		draw_console_text(shellOriginX + promptXOffset, yOffset, consoleString, selectedConsoleTextPos, selectedConsoleTextLength);
+		
+		draw_console_text(shellOriginX + promptXOffset, yOffset, consoleString, selection_left, selection_right);
 		
 		// Draw text cursor
 		var cursorPosX = shellOriginX + promptXOffset + string_width(string_copy(consoleString + " ", 1, cursorPos - 1));

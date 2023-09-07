@@ -23,16 +23,17 @@ incubic = animcurve_get_channel(curve_menu, "incubic");
 
 // check availability
 req = -1;
+
 str = "This is an anti-leaking measure.\n\nPlease connect to the internet to continue.\nYou may have the game blocked on your firewall.";
 
-if true//DEBUG
-{
-	net = true;
-	state = 2;
-	are_you_sure = true;
-}
-else
-{
+//if true//DEBUG
+//{
+//	net = true;
+///	state = 2;
+//	are_you_sure = true;
+//}
+//else
+//{
 	net = os_is_network_connected(true);
 	if net // radix please provide us with a better way...
 	{
@@ -45,4 +46,4 @@ else
 		state = 1;
 		sound_play("event:/modded/sfx/diagopen");
 	}
-}
+//}
