@@ -453,7 +453,7 @@ switch character
 		add_palette(12, "", spr_pattern_striking, "Striking", "Keep your cool with these shades!");
 		add_palette(12, "", spr_pattern_soulcrushing, "Soul Crushing", "Ouch.");
 		add_palette(12, "", spr_pattern_awesome, "Awesome", "Incredible, incredible.");
-		add_palette(12, "", spr_pattern_wtf, "WTF!!!", "Do I even need to explain this one?.");
+		add_palette(12, "", spr_pattern_wtf, "WTF!!!", "Do I even need to explain this one?");
 		add_palette(12, "", spr_pattern_sugary, "Sugary", "Of course the last combo has to be the game's name.");
 		break;
 	
@@ -665,7 +665,7 @@ switch character
 		add_palette(12, "", spr_pattern_striking, "Striking", "Keep your cool with these shades!");
 		add_palette(12, "", spr_pattern_soulcrushing, "Soul Crushing", "Ouch.");
 		add_palette(12, "", spr_pattern_awesome, "Awesome", "Incredible, incredible.");
-		add_palette(12, "", spr_pattern_wtf, "WTF!!!", "Do I even need to explain this one?.");
+		add_palette(12, "", spr_pattern_wtf, "WTF!!!", "Do I even need to explain this one?");
 		add_palette(12, "", spr_pattern_sugary, "Sugary", "Of course the last combo has to be game's name.");
 		break;
 	
