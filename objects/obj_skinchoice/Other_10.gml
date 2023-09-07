@@ -439,6 +439,16 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
+		add_palette(12, "", spr_pattern_alright, "Alright", "That combo was...");
+		add_palette(12, "", spr_pattern_smooth, "Smooth", "How do you call this smooth.");
+		add_palette(12, "", spr_pattern_lookingood, "Lookin' Good", "Why, thank you!");
+		add_palette(12, "", spr_pattern_fruity, "Fruity", "No.");
+		add_palette(12, "", spr_pattern_mesmerizing, "Mesermizing", "Truly a sight to behold.");
+		add_palette(12, "", spr_pattern_striking, "Striking", "Keep your cool with these shades!");
+		add_palette(12, "", spr_pattern_soulcrushing, "Soul Crushing", "Ouch.");
+		add_palette(12, "", spr_pattern_awesome, "Awesome", "Incredible, incredible.");
+		add_palette(12, "", spr_pattern_wtf, "WTF!!!", "Do I even need to explain this one?.");
+		add_palette(12, "", spr_pattern_sugary, "Sugary", "Of course the last combo has to be the game's name.");
 		break;
 	
 	#endregion
@@ -638,6 +648,16 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
+		add_palette(12, "", spr_pattern_alright, "Alright", "That combo was...");
+		add_palette(12, "", spr_pattern_smooth, "Smooth", "How do you call this smooth.");
+		add_palette(12, "", spr_pattern_lookingood, "Lookin' Good", "Why, thank you!");
+		add_palette(12, "", spr_pattern_fruity, "Fruity", "No.");
+		add_palette(12, "", spr_pattern_mesmerizing, "Mesermizing", "Truly a sight to behold.");
+		add_palette(12, "", spr_pattern_striking, "Striking", "Keep your cool with these shades!");
+		add_palette(12, "", spr_pattern_soulcrushing, "Soul Crushing", "Ouch.");
+		add_palette(12, "", spr_pattern_awesome, "Awesome", "Incredible, incredible.");
+		add_palette(12, "", spr_pattern_wtf, "WTF!!!", "Do I even need to explain this one?.");
+		add_palette(12, "", spr_pattern_sugary, "Sugary", "Of course the last combo has to be game's name.");
 		break;
 	
 	#endregion
