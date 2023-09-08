@@ -5,7 +5,7 @@ if (sprite_index == spr_pizzaportalend)
 		visible = true;
 		sprite_index = spr_pizzaportalentrancestart;
 		image_index = 0;
-		room = treasure_room;
+		scr_room_goto(treasure_room);
 		player_x = treasure_x;
 		player_y = treasure_y;
 		ds_list_clear(global.baddieroom);

@@ -17,12 +17,12 @@ function set_checkpoint()
 	};
 	var c = global.checkpoint_data;
 	with obj_wartimer
+		c.wartime = (minutes * 60) + seconds + addseconds;
+	with obj_deathmode
 	{
 		if active
-			c.wartime = (minutes * 60) + seconds + addseconds;
+			c.deathtime = time + (time_fx * 60);
 	}
-	with obj_deathmode
-		c.deathtime = time + (time_fx * 60);
 	
 	ds_list_copy(c.baddieroom, global.baddieroom);
 	ds_list_copy(c.saveroom, global.saveroom);

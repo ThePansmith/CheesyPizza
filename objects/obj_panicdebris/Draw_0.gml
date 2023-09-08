@@ -37,8 +37,8 @@ for(var i = 0; i < array_length(debris); i++)
 	{
 		if d.y >= room_height + 64
 		{
-			array_delete(debris, i, 1);
 			delete d;
+			array_delete(debris, i, 1);
 		}
 		else
 		{

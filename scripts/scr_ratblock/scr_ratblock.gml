@@ -1,13 +1,10 @@
 function scr_ratblock_destroy()
 {
-	if (place_meeting(x, y, obj_canonexplosion))
+	with (instance_place(x, y, obj_canonexplosion))
 	{
-		with (instance_place(x, y, obj_canonexplosion))
-		{
-			instance_destroy(other);
-			if (baddie)
-				notification_push(notifs.ratblock_explode, [room]);
-		}
+		instance_destroy(other);
+		if (baddie)
+			notification_push(notifs.ratblock_explode, [room]);
 	}
 	with (obj_player)
 	{

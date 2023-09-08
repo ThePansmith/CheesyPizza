@@ -26,10 +26,10 @@ waiting = false;
 add_music(Endingroom, "event:/music/ending", noone, false);
 add_music(Creditsroom, "event:/music/credits", noone, false);
 add_music(Johnresurrectionroom, "event:/music/ending", noone, false);
-add_music(Longintro, "event:/music/intro", noone, false, function(room, parameter)
+/*add_music(Longintro, "event:/music/intro", noone, false, function(room, parameter)
 {
 	fmod_event_instance_set_parameter(parameter, "state", 0, true);
-});
+});*/
 add_music(Mainmenu, "event:/music/title", noone, false, function(room, parameter)
 {
 	fmod_event_instance_set_parameter(parameter, "state", 0, true);

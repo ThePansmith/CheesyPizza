@@ -4,6 +4,9 @@ if backgroundID != noone
     var cy = camera_get_view_y(view_camera[0]);
     var cw = camera_get_view_width(view_camera[0]);
     var ch = camera_get_view_height(view_camera[0]);
+	
+	if !sprite_exists(background_spr)
+		exit;
     var sprw = sprite_get_width(background_spr);
     var sprh = sprite_get_height(background_spr);
 	

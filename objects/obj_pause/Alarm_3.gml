@@ -9,7 +9,7 @@ if !hub
 		
 	pause = false;
 	obj_player1.targetRoom = Realtitlescreen;
-	room = Realtitlescreen;
+	scr_room_goto(Realtitlescreen);
 	with (obj_player1)
 	{
 		character = "P";

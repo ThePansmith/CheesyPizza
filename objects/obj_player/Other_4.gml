@@ -214,3 +214,7 @@ if state == states.chainsaw
 	hitLag = 0;
 }
 smoothx = 0;
+
+// instance order fuckery, sigh
+with all
+	event_user(15);

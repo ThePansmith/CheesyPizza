@@ -48,7 +48,7 @@ switch (state)
 		{
 			whitefade = Approach(whitefade, 2, 0.05);
 			if (whitefade >= 2)
-				room = Johnresurrectionroom;
+				scr_room_goto(Johnresurrectionroom);
 		}
 		break;
 	

@@ -18,6 +18,8 @@ global.combo = 0;
 global.comboscore = 0;
 instance_destroy(obj_comboend);
 instance_destroy(obj_snickexe);
+if REMIX
+	instance_destroy(obj_lap2visual);
 
 if global.modifier_failed or MOD.DeathMode
 	sprite_index = spr_modfailed;

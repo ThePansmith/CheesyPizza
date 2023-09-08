@@ -99,7 +99,7 @@ if (pause && !instance_exists(obj_option))
 				{
 					pause = false;
 					instance_activate_all();
-					room = Realtitlescreen;
+					scr_room_goto(Realtitlescreen);
 					with (obj_player1)
 					{
 						character = "P";
