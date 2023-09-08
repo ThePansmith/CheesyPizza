@@ -18,7 +18,7 @@ function sound_stop_all(force = true)
 }
 function sound_create_instance(event)
 {
-	if is_real(event) && audio_exists(event)
+	if is_handle(event) && audio_exists(event)
 	{
 		var snd = audio_play_sound(event, 0, false, 0);
 		audio_stop_sound(snd);
@@ -34,7 +34,7 @@ function sound_create_instance(event)
 }
 function sound_destroy_instance(inst)
 {
-	if is_real(inst) && audio_exists(inst)
+	if is_handle(inst) && audio_exists(inst)
 		audio_stop_sound(inst);
 	else
 	{
@@ -60,7 +60,7 @@ function sound_stop(event, force = true)
 		if sound != undefined
 			fmod_event_instance_stop(sound, force);
 	}
-	else if audio_exists(event)
+	else if is_handle(event) && audio_exists(event)
 		audio_stop_sound(event);
 	else
 		fmod_event_instance_stop(event, force);
@@ -73,7 +73,7 @@ function sound_is_playing(event)
 		if sound != undefined
 			return fmod_event_instance_is_playing(sound);
 	}
-	else if audio_exists(event)
+	else if is_handle(event) && audio_exists(event)
 		return audio_is_playing(event);
 	else
 		return fmod_event_instance_is_playing(event);
@@ -83,7 +83,7 @@ function sound_play(event) {
 }
 function sound_play_3d(event, xx = undefined, yy = undefined)
 {
-	if is_real(event) && audio_exists(event)
+	if is_handle(event) && audio_exists(event)
 	{
 		audio_play_sound(event, 0, false, global.option_sfx_volume * global.option_master_volume);
 		exit;
@@ -111,7 +111,7 @@ function sound_play_centered(event) {
 }
 function sound_play_centered_oneshot(event)
 {
-	if is_real(event) && audio_exists(event)
+	if is_handle(event) && audio_exists(event)
 	{
 		audio_play_sound(event, 0, false, global.option_sfx_volume * global.option_master_volume);
 		exit;
@@ -120,7 +120,7 @@ function sound_play_centered_oneshot(event)
 }
 function sound_play_oneshot(event)
 {
-	if is_real(event) && audio_exists(event)
+	if is_handle(event) && audio_exists(event)
 	{
 		audio_play_sound(event, 0, false, global.option_sfx_volume * global.option_master_volume);
 		exit;
@@ -129,7 +129,7 @@ function sound_play_oneshot(event)
 }
 function sound_play_oneshot_3d(event, xx, yy)
 {
-	if is_real(event) && audio_exists(event)
+	if is_handle(event) && audio_exists(event)
 	{
 		audio_play_sound(event, 0, false, global.option_sfx_volume * global.option_master_volume);
 		exit;
@@ -141,7 +141,7 @@ function sound_play_oneshot_3d(event, xx, yy)
 }
 function sound_instance_move(event, xx, yy)
 {
-	if is_real(event) && audio_exists(event)
+	if is_handle(event) && audio_exists(event)
 		exit;
 	if (MOD.Mirror)
 		xx = room_width - xx;
