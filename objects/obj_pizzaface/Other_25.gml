@@ -15,13 +15,21 @@ if (room == rank_room)
 // lap 3
 if global.laps >= 2
 {
+	// from "LAP HELL - Hotfix n' Ready" by TheCyVap
+	maxspeed = 8;
 	if room == graveyard_6
 		maxspeed = 5;
 	if room == graveyard_7
-	{
 		maxspeed = 4;
-		sprite_index = spr_pizzahead_haywire;
-		destroy_sounds([snd]);
-		snd = fmod_event_create_instance("event:/sfx/pizzahead/haywire");
-	}
+	if room == graveyard_9b
+	    maxspeed = 5;
+	if room == farm_4
+	    maxspeed = 6;
+	if room == forest_lap
+	    maxspeed = 7;
+	
+	if maxspeed < 8
+		sprite_index = spr_haywire;
+	else
+		sprite_index = spr_idle;
 }

@@ -101,91 +101,90 @@ if (global.panic || instance_exists(obj_wartimer))
 							break;
 						
 						case 3:
-							/*
+							instance_create_unique(0, 0, obj_snickexe);
 							with obj_wartimer
 							{
 								addseconds = 60 * 2 + 30; // 2:30
 								alarm[0] = -1;
 								alarm[2] = 1;
 							}
-							*/
 							
 							with instance_create_unique(0, 0, obj_wartimer)
 							{
 								switch global.leveltosave
 							    {
 							        case "entrance":
-							            minutes = 1
-							            break
+							            minutes = 1;
+							            break;
 							        case "medieval":
-							            minutes = 1
-							            seconds = 30
-							            break
+							            minutes = 1;
+							            seconds = 30;
+							            break;
 							        case "ruin":
-							            minutes = 1
-							            seconds = 30
-							            break
+							            minutes = 1;
+							            seconds = 30;
+							            break;
 							        case "dungeon":
-							            minutes = 2
-							            break
+							            minutes = 2;
+							            break;
 							        case "badland":
-							            minutes = 2
-							            break
+							            minutes = 2;
+							            break;
 							        case "graveyard":
-							            minutes = 2
-							            break
+							            minutes = 2;
+							            break;
 							        case "farm":
-							            minutes = 1
-							            break
+							            minutes = 1;
+							            break;
 							        case "saloon":
-							            minutes = 1
-							            seconds = 30
-							            break
+							            minutes = 1;
+							            seconds = 30;
+							            break;
 							        case "plage":
-							            minutes = 1
-							            seconds = 30
-							            break
+							            minutes = 1;
+							            seconds = 30;
+							            break;
 							        case "forest":
-							            minutes = 2
-							            break
+							            minutes = 2;
+							            break;
 							        case "space":
-							            minutes = 1
-							            seconds = 30
-							            break
+							            minutes = 1;
+							            seconds = 30;
+							            break;
 							        case "minigolf":
-							            minutes = 2
-							            seconds = 30
-							            break
+							            minutes = 2;
+							            seconds = 30;
+							            break;
 							        case "street":
-							            minutes = 1
-							            seconds = 30
-							            break
+							            minutes = 1;
+							            seconds = 30;
+							            break;
 							        case "sewer":
-							            minutes = 2
-							            seconds = 30
-							            break
+							            minutes = 2;
+							            seconds = 30;
+							            break;
 							        case "industrial":
-							            minutes = 2
-							            break
+							            minutes = 2;
+							            break;
 							        case "freezer":
-							            minutes = 2
-							            break
+							            minutes = 2;
+							            break;
 							        case "chateau":
-							            minutes = 2
-							            break
+							            minutes = 2;
+							            break;
 							        case "kidsparty":
-							            minutes = 2
-							            break
+							            minutes = 2;
+							            break;
 							        case "exit":
-							            minutes = 3
-							            seconds = 30
-							            break
+							            minutes = 3;
+							            seconds = 30;
+							            break;
+									
 							        default:
-							            minutes = 2
-							            break
+							            minutes = 2;
+							            break;
 							    }
 							}
-		                    instance_create_unique(0, 0, obj_snickexe);
 							break;
 					}
 				}
