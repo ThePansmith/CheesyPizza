@@ -3,6 +3,10 @@ global.modifier_failed = false;
 
 function reset_modifier()
 {
+	global.hardmode = false;
+	with obj_deathmode
+		active = false;
+	
 	MOD = 
 	{
 		// Global modifiers

@@ -51,8 +51,6 @@ exception_unhandled_handler
 	}
 );
 
-
-
 if os_type == os_windows // this is temp
 {
 	// fuck you
@@ -81,6 +79,10 @@ if !file_exists("data/cheese.jpg")
 #macro YYC code_is_compiled()
 
 #macro STRING_UNDEFINED "<undefined>"
+#macro CAMX camera_get_view_x(view_camera[view_current])
+#macro CAMY camera_get_view_y(view_camera[view_current])
+#macro CAMW camera_get_view_width(view_camera[view_current])
+#macro CAMH camera_get_view_height(view_camera[view_current])
 
 // initialize
 scr_get_languages();

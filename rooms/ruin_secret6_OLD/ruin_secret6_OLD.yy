@@ -113,7 +113,6 @@
     {"name":"inst_40CCC77C","path":"rooms/ruin_secret6_OLD/ruin_secret6_OLD.yy",},
     {"name":"inst_C47035E4","path":"rooms/ruin_secret6_OLD/ruin_secret6_OLD.yy",},
     {"name":"inst_5923B36D","path":"rooms/ruin_secret6_OLD/ruin_secret6_OLD.yy",},
-    {"name":"inst_5923B36D","path":"rooms/ruin_secret6_OLD/ruin_secret6_OLD.yy",},
   ],
   "isDnd": false,
   "layers": [

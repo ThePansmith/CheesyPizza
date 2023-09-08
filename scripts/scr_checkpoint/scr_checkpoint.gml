@@ -102,7 +102,7 @@ function load_checkpoint()
 					{
 						with obj_deathmode
 						{
-							event_perform(ev_other, ev_room_start);
+							event_user(15);
 							time = c.deathtime;
 						}
 					}

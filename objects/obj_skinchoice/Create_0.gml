@@ -274,7 +274,7 @@ draw = function(curve)
 		surface_reset_target();
 		shader_reset();
 		
-		if (curv_prev < 1)
+		if curv_prev < 1
 			shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev, true);
 		draw_surface_ext(player_surface, charx - 256, chary - 256, 2, 2, 0, c_white, curve * charshift[2]);
 	}
@@ -285,11 +285,18 @@ draw = function(curve)
 	{
 		name = string_upper(mixables[sel.mix].prefix + pal.name);
 		desc = mixables[sel.mix].name + " + " + pal.name;
+		
+		if name == "BURNT TRANS FLAG"
+		{
+			name = "DUE TO";
+			desc = "Legal reasons we cannot show this combo name";
+		}
 	}
 	
 	draw_set_font(lang_get_font("bigfont"));
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
+	
 	var xx = 960 / 1.5 - string_width(name) / 2;
 	for(var i = 1; i <= string_length(name); i++)
 	{
@@ -298,8 +305,12 @@ draw = function(curve)
 		var yy = 360;
 		if curve2 != 1 // letters jump up
 			yy = lerp(540, 360, min(animcurve_channel_evaluate(outback, curve2 + ((i % 3) * 0.075))));
-			
-		draw_text(xx + random_range(-1, 1), yy + random_range(-1, 1), char);
+		
+		var d = (i % 2 == 0) ? -1 : 1;
+		var _dir = floor(Wave(-1, 1, 0.1, 0));
+		yy += _dir * d;
+		
+		draw_text(floor(xx), floor(yy), char);
 		xx += string_width(char);
 	}
 	
@@ -401,14 +412,15 @@ draw = function(curve)
 		// RX: it's super cool because the above uses a shader so we get to set the fucking clip shader AGAIN
 		if curv_prev < 1
 			shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev);
-			
+		
 		draw_surface(pattern_surface, cache[i].x, cache[i].y);
-
+		
 		draw_sprite_ext(spr_skinchoicepalette, 1, cache[i].x, cache[i].y, 1, 1, 0, c_white, 1);
 	}
 	
 	if shader_current() != shd_circleclip
 		shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev);
+	
 	// hand
 	draw_sprite_ext(spr_skinchoicehand, 0, handx, handy + sin(current_time / 1000) * 4, 2, 2, 0, c_white, 1);
 	draw_set_align();

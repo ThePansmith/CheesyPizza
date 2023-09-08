@@ -13,7 +13,7 @@ switch character
 	default:
 		sel.pal = 1; // default palette.
 		
-		add_palette(0, "yellow", noone, "Yellow", "Legends say he was pissed on...");
+		add_palette(0, "yellow", noone, "Yellow", irandom(20) == 0 ? "Brought to you by Soapy and co." : "Legends say he was pissed on...");
 		add_palette(1, "classic", noone, "Peppino", "A somewhat overweight Italian chef.", "");
 		add_palette(3, "unfunny", noone, "Unfunny", "Just like me, fr!");
 		add_palette(4, "money", noone, "Money Green", "I love money too.");
@@ -28,7 +28,7 @@ switch character
 		
 		add_palette(16, "", noone, "Gameboy Color", "What a ripoff.");
 		add_palette(17, "", noone, "XMAS", "Give me a break.", "MERRY");
-		add_palette(18, "", noone, "The Noise", "...woag?");
+		add_palette(18, "", noone, "Familiar Gremlin", "...woag?");
 		add_palette(19, "", noone, "Anton", "Get ready to play with his balls.", "ANTON");
 		add_palette(20, "", noone, "Unfinished", "I found a hole in this sprite");
 		add_palette(21, "", noone, "Aether", "Did we find a coder yet?");
@@ -79,24 +79,26 @@ switch character
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Finally, you can wear merch of dead people.");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Peppino says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Oh, fiddlesticks! What now?");
-		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
-		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
-		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
+		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
+		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
+		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
 		add_palette(12, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
 		add_palette(12, "", spr_pattern_snick, "Snick", "My precious porcupine.");
-		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
+		/*add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
 		add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
-		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
 		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
-		add_palette(12, "", spr_pattern_banana, "Bananas", "In my opinion, the worst flavor.");
+		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
+		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
+		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
 		break;
 	
 	#endregion
@@ -120,7 +122,7 @@ switch character
 		
 		add_palette(16, "", noone, "Gameboy Color", "What a ripoff.");
 		add_palette(17, "", noone, "XMAS", "Give me a break.", "MERRY");
-		add_palette(18, "", noone, "The Noise", "...woag?");
+		add_palette(18, "", noone, "Familiar Gremlin", "...woag?");
 		add_palette(19, "", noone, "Anton", "Get ready to play with his balls.", "ANTON");
 		add_palette(20, "", noone, "Unfinished", "There are more holes than a block of cheese on this guy.");
 		add_palette(21, "", noone, "Aether", "Did we find a coder yet?");
@@ -159,35 +161,37 @@ switch character
 		add_palette(54, "", noone, "Sucrose Snowstorm", "A little sweetness never hurts.", "SWEET");
 		
 		// Patterns
-		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "I'm running out of Big Chungus jokes for this.");
+		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "I'm running out of jokes for this.");
 		add_palette(12, "itchy", spr_peppattern2, "Itchy Sweater", "Just the right fit.");
 		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "Makes sense.");
-		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "About 30 rats were killed to get this.\nThink about that.");
-		add_palette(12, "goldemanne", spr_peppattern5, "Goldemanne", "What are those white spots.");
+		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "Brick glares as his brothers succumb to the sweet release of death.");
+		add_palette(12, "goldemanne", spr_peppattern5, "Goldemanne", "We're golden.");
 		add_palette(12, "bones", spr_peppattern6, "Bad Bones", "You seem to have a severe lack of calcium.\nLet me give you some of my milk.");
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "Look, the rat's clearly laughing.");
-		add_palette(12, "war", spr_peppattern8, "War Camo", "At one point, Gustavo was canonically Peppino's brother.");
-		add_palette(12, "john", spr_peppattern9, "John Suit", "I mean, he only killed 2 of them.");
+		add_palette(12, "war", spr_peppattern8, "War Camo", "The mad man handles a rocket launcher in WAR.");
+		add_palette(12, "john", spr_peppattern9, "John Suit", "Finally, you can wear merch of dead people.");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Gustavo and Brick say Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", " ");
-		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
-		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
-		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
+		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
+		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
+		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
 		add_palette(12, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
 		add_palette(12, "", spr_pattern_snick, "Snick", "My precious porcupine.");
-		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
+		/*add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
 		add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
-		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
 		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
-		add_palette(12, "", spr_pattern_banana, "Bananas", "In my opinion, the worst flavor.");
+		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
+		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
+		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
 		break;
 	
 	#endregion
@@ -195,8 +199,8 @@ switch character
 	
 	case "N":
 		add_palette(1, "", noone, "The Noise", "The mischievous gremlin.", "");
-		add_palette(2, "", noone, "Peppino", "The one and only...?");
-		add_palette(3, "", noone, "Snick", "It's him...?", "PURPLE");
+		add_palette(2, "", noone, "Familiar Chef", "The one and only...?");
+		add_palette(3, "", noone, "Familiar Porcupine", "It's him...?", "PURPLE");
 		add_palette(4, "", noone, "Grinch", "IIIIIIT'S CHRIMMAAAAAAAA", "GRINCH");
 		add_palette(5, "", noone, "Inverted", "Ooo... scary...!");
 		add_palette(6, "", noone, "Naked", "Wow. Yikes.");
@@ -231,24 +235,26 @@ switch character
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Genuinely, the concept of this is morbid.");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "The Noise says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
-		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
-		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
-		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
+		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
+		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
+		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
 		add_palette(12, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
 		add_palette(12, "", spr_pattern_snick, "Snick", "My precious porcupine.");
-		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
+		/*add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
 		add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
-		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
 		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
-		add_palette(12, "", spr_pattern_banana, "Bananas", "In my opinion, the worst flavor.");
+		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
+		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
+		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
 		break;
 	
 	#endregion
@@ -259,67 +265,69 @@ switch character
 		add_palette(1, "", noone, "Halloween", "Trick or treat... this is a threat.", "SCARY");
 		add_palette(2, "", noone, "MM8BDM", "A very exciting night.", "DEATHMATCH");
 		add_palette(3, "", noone, "Chocolante", "It's still cheese, trust me.", "CHOCOLATE");
-		add_palette(4, "", noone, "Gutter Colored", "A hungry slime.", "GUTTED");
+		add_palette(4, "", noone, "Gutted", "A hungry slime.", "GUTTED");
 		add_palette(5, "", noone, "Golden", "Something, something, carrots.", "GOLDEN");
 		add_palette(6, "", noone, "Cheddar", "Cheddar cheese is a relatively hard, off-white (or orange if colourings such as annatto are added), sometimes sharp-tasting, natural cheese. Originating in the English village of Cheddar in Somerset, cheeses of this style are now produced beyond the region and in several countries around the world.", "CHEDDAR");
 		add_palette(7, "", noone, "Sepia", "Wildstyle pistolero.", "SEPIA");
-		add_palette(8, "", noone, "Snick", "It's NOT him. Never trust purple cheese.", "PURPLE");
+		add_palette(8, "", noone, "Familiar Porcupine", "It's NOT him. Never trust purple cheese.", "PURPLE");
 		add_palette(9, "", noone, "Emerald", "Hmm.", "EMERALD");
 		add_palette(10, "", noone, "Holiday", "Merry Cheesemas!", "HOLIDAY");
 		add_palette(11, "", noone, "Cheese Man", "A gag of the Johnson subject.", "TANKMAN");
 		add_palette(13, "", noone, "Vigilatte", "Chocolate milk. Hey, didn't we see this before?", "MILKY");
-		add_palette(14, "", noone, "Bloodsauce", "Who the hell dipped cheese in ketchup?!", "BLOODY");
+		add_palette(14, "", noone, "Bloodsauce", "Who the hell dipped my cheese in ketchup?!", "BLOODY");
 		add_palette(15, "", noone, "Vigilatex", "What the fuck", "DARK");
 		add_palette(16, "", noone, "Morshu", "It's yours, my friend.", "MORSHU");
 		add_palette(17, "", noone, "Snotty", "Snotty Approved", "SNOTTY");
-		add_palette(18, "", noone, "Vigirat", "That sneaky, lonesome, and cheese-loving outlaw.", "RAT");
-		add_palette(19, "", noone, "Satan's Choice", "Hotter than a Texas summer day.", "DEVILISH");
-		add_palette(20, "", noone, "Gas Station Weed", "Man, I feel like a tumbleweed caught in a tornado.", "WEED");
-		add_palette(21, "", noone, "Platinum Pardner", "Lookin' just as fancy as a silver dollar.", "PLATINUM");
-		add_palette(22, "", noone, "Country Blues", "The perfect soundtrack for your taste buds.", "MOLDY");
+		add_palette(18, "", noone, "Vigirat", "That cheese-loving outlaw.", "RAT");
+		add_palette(19, "", noone, "Satan's Choice", "As seen on TV.", "DEVILISH");
+		add_palette(20, "", noone, "Gas Station Weed", "That's the good shit.", "WEED");
+		//add_palette(21, "", noone, "Platinum Pardner", "Lookin' just as fancy as a silver dollar.", "PLATINUM");
+		//add_palette(22, "", noone, "Country Blues", "The perfect soundtrack for your taste buds.", "MOLDY");
 		add_palette(23, "", noone, "Nubert", "Everybody loves him.", "NUBERT");
-		add_palette(24, "", noone, "Big Iron", "Walk softly and carry a big gun.", "IRON");
-		add_palette(25, "", noone, "Digital Cheese", "Just one little byte.", "DIGITAL");
-		add_palette(26, "", noone, "Hell Raisin", "Pruned to perfection.", "RAISIN");
-		add_palette(27, "", noone, "Game Genie", "Winners don't use cheats!", "CHEATER");
-		add_palette(28, "", noone, "Sticky Jumper", "Aye, that's the way ye do it.", "STICKY");
-		add_palette(29, "", noone, "Fruit Punch", "Taste these fists, Punk!", "FRUITY");
-		add_palette(30, "", noone, "8-Bit Bandit", "Get your head in the game.", "8-BIT");
-		add_palette(31, "", noone, "Virtual Boy", "Digital nausea guaranteed.", "VIRTUAL");
-		add_palette(32, "", noone, "Downwell", "Fully loaded and ready to roll.", "DOWNWELL");
-		add_palette(33, "", noone, "Lightner", "You still can't cast magic.", "LIGHTNER");
-		add_palette(34, "", noone, "Ectoplasm", "Who you gonna' call?", "ECTOPLASM");
+		//add_palette(24, "", noone, "Big Iron", "Walk softly and carry a big gun.", "IRON");
+		add_palette(25, "", noone, "Digital Cheese", "Just one little byte...", "DIGITAL");
+		//add_palette(26, "", noone, "Hell Raisin", "Pruned to perfection.", "RAISIN");
+		//add_palette(27, "", noone, "Game Genie", "Winners don't use cheats!", "CHEATER");
+		//add_palette(28, "", noone, "Sticky Jumper", "Aye, that's the way ye do it.", "STICKY");
+		add_palette(29, "", noone, "Fruit Punch", "WHY IS THE FRUIT FIGHTING ME.", "FRUITY");
+		add_palette(30, "", noone, "8-Bit Bandit", "Get your head in the game!", "8-BIT");
+		add_palette(31, "", noone, "Virtual Boy", "A \"timeless\" \"classic\".", "VB");
+		add_palette(32, "", noone, "Downwell", "Falling with style.", "DOWNWELL");
+		add_palette(33, "", noone, "Lightner", "Ralsei cast PACIFY!", "LIGHTNER");
+		add_palette(34, "", noone, "Ectoplasm", "Who you gonna call?", "ECTOPLASM");
 		
 		// Patterns
-		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "There are clown cowboys?");
-		add_palette(12, "itchy", spr_peppattern2, "Itchy Sombrero", "That's not a fucking sweater.");
-		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "He's a pizza ingredient...");
-		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "Dynamite. Genius.\nThat's exactly how I'd take out rats.");
+		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "Take that off, you look stupid.");
+		add_palette(12, "itchy", spr_peppattern2, "Itchy Sweater", "That's not a fucking sweater.");
+		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "It's a tumor now.");
+		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "Rat infestation? Dynamite.");
 		add_palette(12, "goldemanne", spr_peppattern5, "Goldemanne", "All enemies turn golden too, right? Please.");
 		add_palette(12, "bones", spr_peppattern6, "Bad Bones", "Cheesy reference goes here.");
 		add_palette(12, "pp", spr_peppattern7, "PP Hat", "Who's been drawing ºººº");
-		add_palette(12, "war", spr_peppattern8, "War Camo", "This doesn't fit.");
-		add_palette(12, "john", spr_peppattern9, "John Cap", "Now you can wear a HAT of dead people.");
+		add_palette(12, "war", spr_peppattern8, "War Camo", "You're... halfway there.");
+		add_palette(12, "john", spr_peppattern9, "John Hat", "The dead people merch market keeps expanding.");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "The Vigilante says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "You can find them online, don't worry.");
-		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
-		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
-		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
+		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
+		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
+		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
 		add_palette(12, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
 		add_palette(12, "", spr_pattern_snick, "Snick", "My precious porcupine.");
-		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
+		/*add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
 		add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
-		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
 		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
-		add_palette(12, "", spr_pattern_banana, "Bananas", "In my opinion, the worst flavor.");
+		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
+		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
+		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
 		break;
 	
 	#endregion
@@ -332,18 +340,18 @@ switch character
 		add_palette(3, "", noone, "Boots", "Unlike Snick...");
 		add_palette(4, "", noone, "Snickette", "Not to be confused with... you know.");
 		add_palette(5, "", noone, "Master System", "Brought to you by Snicksoft!");
-		add_palette(6, "", noone, "Dark", "The obligatory emo palette.");
-		add_palette(7, "", noone, "Cyan", "There's a reference here I'm not saying.");
-		add_palette(8, "", noone, "Transparent", "I know him inside out.");
+		add_palette(6, "", noone, "Dark", "Hosting a game expo is tough, man.");
+		add_palette(7, "", noone, "Cyan", "Deadname.");
+		add_palette(8, "", noone, "Transparent", "Trust me, I know him inside out.");
 		add_palette(9, "", noone, "Manual", "He's hosting his own event!");
 		add_palette(10, "", noone, "Sketch", "Let's just say he likes burgers.");
 		add_palette(11, "", noone, "Shitty", "Particularly fond of GOLF.");
 		add_palette(13, "", noone, "Halloween", "Haha don't worry, he's not dead YET.");
-		add_palette(14, "", noone, "Gameboy", "So retro.");
+		add_palette(14, "", noone, "Gameboy", "Can't wait for Super Snick Land 2.");
 		add_palette(15, "", noone, "Hellsnick", "Si.");
-		add_palette(16, "", noone, "Majin", "Don't you dare.");
+		add_palette(16, "", noone, "Majin", "It's all fun and games until 46-12-25.");
 		add_palette(17, "", noone, "Neon", "Cool? Check. Eye-straining? Also check.");
-		add_palette(18, "", noone, "Super Snick", "He got the 7 chaos rubies.");
+		add_palette(18, "", noone, "Super Snick", "He got the 7 Havoc Rubies!");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "When you spam Big Chungus in general.");
@@ -357,24 +365,26 @@ switch character
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Finally, you can wear merch of dead people.");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Snick says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Oh, fiddlesticks! What now?");
-		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
-		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
-		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
+		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
+		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
+		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
 		add_palette(12, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
-		add_palette(12, "", spr_pattern_snick, "Snick", "My precious porcupine.");
-		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
+		add_palette(12, "", spr_pattern_snick, "Snick", "He's made out of himself?");
+		/*add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
 		add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
-		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
 		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
-		add_palette(12, "", spr_pattern_banana, "Bananas", "In my opinion, the worst flavor.");
+		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
+		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
+		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
 		break;
 	
 	#endregion
@@ -427,34 +437,38 @@ switch character
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Use the next palette instead.");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Correct.");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Use the previous palette instead.");
-		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
-		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
-		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
+		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
+		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
+		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
 		add_palette(12, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
 		add_palette(12, "", spr_pattern_snick, "Snick", "My precious porcupine.");
-		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "You wanna play with balls don't you.");
-		add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
-		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
-		add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
-		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
-		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
-		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		//add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "You wanna play with balls don't you.");
+		//add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
+		//add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
+		//add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
+		//add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
+		//add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
+		//add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
 		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
-		add_palette(12, "", spr_pattern_banana, "Bananas", "In my opinion, the worst flavor.");
+		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
-		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
+		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire\nand throw them at power lines");
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
+		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
+		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
+		
 		add_palette(12, "", spr_pattern_alright, "Alright", "That combo was...");
-		add_palette(12, "", spr_pattern_smooth, "Smooth", "How do you call this smooth.");
+		add_palette(12, "", spr_pattern_smooth, "Smooth", "How do you call this smooth?");
 		add_palette(12, "", spr_pattern_lookingood, "Lookin' Good", "Why, thank you!");
-		add_palette(12, "", spr_pattern_fruity, "Fruity", "No.");
-		add_palette(12, "", spr_pattern_mesmerizing, "Mesermizing", "Truly a sight to behold.");
+		add_palette(12, "", spr_pattern_fruity, "Fruity", "I love fruits! I'm very fruity with other men.");
+		add_palette(12, "", spr_pattern_mesmerizing, "Mesermizing", "Truly, a sight to behold.");
+		add_palette(12, "", spr_pattern_carpet, "Solid", "Go instance_destroy() yourself.");
 		add_palette(12, "", spr_pattern_striking, "Striking", "Keep your cool with these shades!");
-		add_palette(12, "", spr_pattern_soulcrushing, "Soul Crushing", "Ouch.");
+		add_palette(12, "", spr_pattern_soulcrushing, "Soul Crushing", "Ouch...");
 		add_palette(12, "", spr_pattern_awesome, "Awesome", "Incredible, incredible.");
-		add_palette(12, "", spr_pattern_wtf, "WTF!!!", "Do I even need to explain this one?");
-		add_palette(12, "", spr_pattern_sugary, "Sugary", "Of course the last combo has to be the game's name.");
+		add_palette(12, "", spr_pattern_wtf, "WTF!!!", "Stop saying cuss words, guys!");
+		add_palette(12, "", spr_pattern_sugary, "Sugary", "OOOH NAMEDROP!");
 		break;
 	
 	#endregion
@@ -462,8 +476,8 @@ switch character
 	
 	case "BN":
 		add_palette(0, "", noone, "Bo Noise", "Only the Bo-est of Noises.", "");
-		add_palette(2, "", noone, "Peppino", "The one and only...?");
-		add_palette(3, "", noone, "Snick", "It's him...?", "PURPLE");
+		add_palette(2, "", noone, "Familiar Chef", "The one and only...?");
+		add_palette(3, "", noone, "Familiar Porcupine", "It's him...?", "PURPLE");
 		add_palette(4, "", noone, "Grinch", "IIIIIIT'S CHRIMMAAAAAAAA", "GRINCH");
 		add_palette(5, "", noone, "Inverted", "Ooo... scary...!");
 		add_palette(6, "", noone, "Naked", "Wow. Yikes.");
@@ -484,6 +498,7 @@ switch character
 		add_palette(22, "", noone, "The Noid", "Better avoid him.", "NOID");
 		add_palette(23, "", noone, "Galaxy", "Wow it is Just like the Samsung Galaxy S23", "GALAXY");
 		add_palette(24, "", noone, "Concept", "The original.");
+		add_palette(25, "", noone, "Pink Hat", "I'm getting so VIRDESERT V2 right now.");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "It's even funnier the 10th time!");
@@ -497,24 +512,26 @@ switch character
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Genuinely, the concept of this is morbid.");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Bo Noise says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
-		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
-		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
-		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
+		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
+		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
+		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
 		add_palette(12, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
 		add_palette(12, "", spr_pattern_snick, "Snick", "My precious porcupine.");
-		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
+		/*add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Still playing with balls?");
 		add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
-		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
 		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
-		add_palette(12, "", spr_pattern_banana, "Bananas", "In my opinion, the worst flavor.");
-		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
+		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
+		add_palette(12, "", spr_pattern_flamin, "Flamin Hot'", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
+		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
+		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
 		break;
 	
 	#endregion
@@ -539,7 +556,7 @@ switch character
 		
 		add_palette(16, "", noone, "Gameboy Color", desc);
 		add_palette(17, "", noone, "XMAS", desc, "FUCKED UP");
-		add_palette(18, "", noone, "The Noise", desc);
+		add_palette(18, "", noone, "Familiar Gremlin", desc);
 		add_palette(19, "", noone, "Anton", desc, "FUCKED UP");
 		add_palette(20, "", noone, "Unfinished", desc);
 		add_palette(21, "", noone, "Aether", desc);
@@ -590,24 +607,26 @@ switch character
 		add_palette(12, "john", spr_peppattern9, "John Suit", "What the fuck is a gog?");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Trans Rizz");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "I know you like d");
-		add_palette(12, "", spr_pattern_dogma, "Dogma", "w");
-		add_palette(12, "", spr_pattern_giygas, "Giygas", "sccary ramen!");
-		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "IM FEELING SUGGARY!");
+		//add_palette(12, "", spr_pattern_dogma, "Dogma", "w");
+		//add_palette(12, "", spr_pattern_giygas, "Giygas", "sccary ramen!");
+		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "IM FEELING SUGGARY!");
 		add_palette(12, "", spr_pattern_nether, "Nether Portal", "go to");
 		add_palette(12, "", spr_pattern_snick, "Snick", "whar");
-		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "funnies sonic turbo");
+		/*add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "funnies sonic turbo");
 		add_palette(12, "", spr_pattern_warped, "Warped", "crash 3:");
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "im ddo the codes");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "why is dead");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "wire is not alive");
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "sweet and duggary. like my boogeries.");
-		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "so... re...so retr... so...");
+		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "so... re...so retr... so...");*/
 		add_palette(12, "", spr_pattern_mario, "Mario", "brother");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "ooh ooh ah ah");
-		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "sso spicy.. like suggary spicy!");
+		add_palette(12, "", spr_pattern_flamin, "Flamin' Hot", "sso spicy.. like suggary spicy!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "yummy :)");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "my legs i cant feel my legs");
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "owie owie");
+		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "get");
+		add_palette(12, "", spr_pattern_evil, "Evil", "I am");
 		break;
 	
 	#endregion
@@ -624,8 +643,10 @@ switch character
 		add_palette(8, "", noone, "Grape Soda", "Grape? Like the", "GRAPE");
 		add_palette(9, "", noone, "Antipathic", "Isn't it anti-pathetic?", "PATHIC");
 		add_palette(10, "", noone, "Gummy Bear", "Tastes like... blood?", "GUMMY");
-		add_palette(11, "", noone, "Lime", "Unfortunate palette placement.", "LIME");
+		add_palette(11, "", noone, "Lime", "With just a slight hint of sweetness.", "LIME");
 		add_palette(13, "", noone, "Crystalized", "You're the goddamn iron chef!", "CRYSTAL");
+		add_palette(14, "", noone, "Virtual Boy", "Ultimate classic system!", "SWEET");
+		add_palette(15, "", noone, "Sucrose Snowstorm", "A little sweetness never hurts.", "SWEET");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "Some joke about a fat rabbit here.");
@@ -639,34 +660,38 @@ switch character
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Something's up...");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Pizzano says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
-		add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
-		add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
-		add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that blue licorice.");
+		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
+		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
+		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that blue licorice.");
 		add_palette(12, "", spr_pattern_nether, "Nether Portal", "Go to hell. In Minecraft.");
 		add_palette(12, "", spr_pattern_snick, "Snick", "My precious porcupine.");
-		add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Red sphere or blue sphere?");
+		/*add_palette(12, "", spr_pattern_spheres, "Blue Spheres", "Red sphere or blue sphere?");
 		add_palette(12, "", spr_pattern_warped, "Warped", "What's wrong with these trees?");
 		add_palette(12, "", spr_pattern_hackerman, "Hackerman", "Welcome to the Matrix.");
 		add_palette(12, "", spr_pattern_reddeath, "Red Death", "[FATAL ERROR]");
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
-		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
+		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
 		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
-		add_palette(12, "", spr_pattern_banana, "Bananas", "In my opinion, the worst flavor.");
+		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
+		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
+		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
+		
 		add_palette(12, "", spr_pattern_alright, "Alright", "That combo was...");
-		add_palette(12, "", spr_pattern_smooth, "Smooth", "How do you call this smooth.");
+		add_palette(12, "", spr_pattern_smooth, "Smooth", "How do you call this smooth?");
 		add_palette(12, "", spr_pattern_lookingood, "Lookin' Good", "Why, thank you!");
-		add_palette(12, "", spr_pattern_fruity, "Fruity", "No.");
-		add_palette(12, "", spr_pattern_mesmerizing, "Mesermizing", "Truly a sight to behold.");
+		add_palette(12, "", spr_pattern_fruity, "Fruity", "I love fruits! I'm very fruity with other men.");
+		add_palette(12, "", spr_pattern_mesmerizing, "Mesermizing", "Truly, a sight to behold.");
+		add_palette(12, "", spr_pattern_carpet, "Solid", "Go instance_destroy() yourself.");
 		add_palette(12, "", spr_pattern_striking, "Striking", "Keep your cool with these shades!");
-		add_palette(12, "", spr_pattern_soulcrushing, "Soul Crushing", "Ouch.");
+		add_palette(12, "", spr_pattern_soulcrushing, "Soul Crushing", "Ouch...");
 		add_palette(12, "", spr_pattern_awesome, "Awesome", "Incredible, incredible.");
-		add_palette(12, "", spr_pattern_wtf, "WTF!!!", "Do I even need to explain this one?");
-		add_palette(12, "", spr_pattern_sugary, "Sugary", "Of course the last combo has to be game's name.");
+		add_palette(12, "", spr_pattern_wtf, "WTF!!!", "Stop saying cuss words, guys!");
+		add_palette(12, "", spr_pattern_sugary, "Sugary", "OOOH NAMEDROP!");
 		break;
 	
 	#endregion

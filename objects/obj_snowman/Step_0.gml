@@ -28,6 +28,15 @@ switch (state)
 		scr_enemy_grabbed();
 		break;
 }
+
+if !instance_exists(obj_levelLoader)
+{
+	if global.stylethreshold >= 3
+		walkspr = spr_newpizzice_heat;
+	else
+		walkspr = spr_newpizzice_walk;
+}
+
 if (state == states.stun && stunned > 40 && birdcreated == 0)
 {
 	birdcreated = true;
