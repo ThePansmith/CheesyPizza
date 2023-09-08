@@ -645,7 +645,7 @@ switch character
 		add_palette(10, "", noone, "Gummy Bear", "Tastes like... blood?", "GUMMY");
 		add_palette(11, "", noone, "Lime", "With just a slight hint of sweetness.", "LIME");
 		add_palette(13, "", noone, "Crystalized", "You're the goddamn iron chef!", "CRYSTAL");
-		add_palette(14, "", noone, "Virtual Boy", "Ultimate classic system!", "SWEET");
+		add_palette(14, "", noone, "Virtual Boy", "Ultimate classic system!", "VB");
 		add_palette(15, "", noone, "Sucrose Snowstorm", "A little sweetness never hurts.", "SWEET");
 		
 		// Patterns
