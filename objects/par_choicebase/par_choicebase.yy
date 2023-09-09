@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "UI",
-    "path": "folders/Objects/CheesyPizza/UI.yy",
+    "name": "CheesyPizza",
+    "path": "folders/Objects/CheesyPizza.yy",
   },
   "parentObjectId": null,
   "persistent": false,

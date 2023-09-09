@@ -419,4 +419,21 @@ add_music(e_medieval_1, "event:/modded/encore/w1/medieval", "event:/music/w1/med
 		fmod_event_instance_set_parameter(event, "state", s, 1)
 });
 
+add_music(e_molasses_1, "event:/modded/encore/sugary/swamp", "event:/modded/sugary/molassessecret", 0, function(room, event, event_secret)
+{
+	var s = -1;
+	switch room
+	{
+		case e_molasses_1:
+		case molasses_6:
+			s = 0;
+			break;
+		
+		case molasses_6b:
+			s = 1;
+			break;
+	}
+	if s != -1
+		fmod_event_instance_set_parameter(event, "state", s, false);
+});
 #endregion

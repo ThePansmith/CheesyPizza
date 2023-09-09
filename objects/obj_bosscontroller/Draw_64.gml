@@ -62,7 +62,7 @@ switch (state)
 			if (bossspr == spr_vsfakepep || bossspr == spr_vsfakepep2)
 			{
 				pattern_set(global.Base_Pattern_Color, bossspr, 0, _xs, _ys, global.palettetexture);
-				pal_swap_set(spr_peppalette, obj_player1.paletteselect, false);
+				pal_swap_set(spr_peppalette, gustavo_palette(obj_player1.paletteselect), false);
 			}
 			else
 				pal_swap_set(spr_peppalette, 0, false);

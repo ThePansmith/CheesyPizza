@@ -5,20 +5,16 @@
 // This Code is protected under United States Copyright law
 // All Rights Reserved.
 // RX: just don't fucking steal my fucking shaders oh my fucking god
-
 attribute vec3 in_Position;                  // (x,y,z)
 //attribute vec3 in_Normal;                  // (x,y,z)     unused in this shader.
 attribute vec4 in_Colour;                    // (r,g,b,a)
 attribute vec2 in_TextureCoord;              // (u,v)
-
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 varying vec2 v_vPosition;
-
 uniform vec2 u_texcoord_center;
 uniform vec2 u_sprite_size;
 uniform float u_curve;
-
 void main()
 {
     

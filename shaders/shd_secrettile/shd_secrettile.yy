@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "shd_secrettile",
   "parent": {
-    "name": "Shaders",
-    "path": "folders/Shaders.yy",
+    "name": "Level",
+    "path": "folders/Shaders/Level.yy",
   },
   "type": 1,
 }
