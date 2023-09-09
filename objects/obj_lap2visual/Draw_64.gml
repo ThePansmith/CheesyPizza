@@ -25,6 +25,7 @@ else
 		var wd = sprite_get_width(spr_lapfontbig) * string_length(lap_text);
 		
 		// numbers!
+		var state = draw_save_state();
 		gpu_set_zwriteenable(true);
 		gpu_set_ztestenable(true);
 		gpu_set_alphatestenable(true);
@@ -45,15 +46,11 @@ else
 		}
 		gpu_set_blendmode(bm_normal);
 		
-		gpu_set_zwriteenable(false);
-		gpu_set_ztestenable(false);
-		
 		// the thingy
 		draw_sprite(sprite_index, 2, xx - ((wd - 64) / 3), yy);
 		gpu_set_blendmode_ext(bm_dest_color, bm_zero);
 		draw_sprite(sprite_index, 3, xx - ((wd - 64) / 3), yy);
-		gpu_set_blendmode(bm_normal);
 		
-		gpu_set_alphatestenable(false);
+		draw_restore_state(state);
 	}
 }
