@@ -83,6 +83,7 @@
     {"name":"inst_B25494D","path":"rooms/etb_5b/etb_5b.yy",},
     {"name":"inst_19C9D8B1","path":"rooms/etb_5b/etb_5b.yy",},
     {"name":"inst_5FF018D7","path":"rooms/etb_5b/etb_5b.yy",},
+    {"name":"inst_968447C","path":"rooms/etb_5b/etb_5b.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -163,6 +164,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B25494D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_collect","path":"objects/obj_collect/obj_collect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":192.0,"y":288.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_19C9D8B1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_sausageman","path":"objects/obj_sausageman/obj_sausageman.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":448.0,"y":466.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5FF018D7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_sausageman","path":"objects/obj_sausageman/obj_sausageman.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":619.0,"y":466.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_968447C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":832.0,"y":544.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_20CDD011","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_lamp","path":"sprites/spr_lamp/spr_lamp.yy",},"x":1088.0,"y":512.0,},
