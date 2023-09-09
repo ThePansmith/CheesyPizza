@@ -1,5 +1,7 @@
 function scr_draw_lap_display(x, y, lapflag_index, sugary = false)
 {
+	if live_call(x, y, lapflag_index, sugary) return live_result;
+	
 	var posx = x - 72, posy = y - 18;
 	draw_sprite(sugary ? spr_lapflag_ss : spr_lapflag, lapflag_index, posx, posy);
 	draw_set_colour(c_white);

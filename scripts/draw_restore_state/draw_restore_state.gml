@@ -9,4 +9,8 @@ function draw_restore_state(_state)
 	draw_set_font(_state.font);
 	draw_set_valign(_state.valign);
 	draw_set_halign(_state.halign);
+	
+	gpu_set_zwriteenable(_state.zwrite);
+	gpu_set_ztestenable(_state.ztest);
+	gpu_set_alphatestenable(_state.alphatest);
 }

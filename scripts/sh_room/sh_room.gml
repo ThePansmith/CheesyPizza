@@ -59,10 +59,10 @@ function meta_room()
 				}
 				else
 				{
+					var tags = tag_get_asset_ids("hidden", asset_room);
 					for(var i = 0; room_exists(i); i++)
 					{
-						var tags = asset_get_tags(room_get_name(i));
-						if !array_contains(tags, "hidden")
+						if !array_contains(tags, i)
 							array_push(room_array, room_get_name(i));
 					}
 					array_sort(room_array, true);
