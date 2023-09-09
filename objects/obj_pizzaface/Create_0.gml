@@ -11,9 +11,7 @@ alarm[1] = 10;
 image_alpha = 0;
 treasure = false;
 snd = fmod_event_create_instance("event:/sfx/pizzaface/moving");
-
-if MOD.Lap3
-	slow_snd = fmod_event_create_instance("event:/sfx/pizzahead/haywire");
+slow_snd = fmod_event_create_instance("event:/sfx/pizzahead/haywire");
 
 tracker = noone;
 frozen = false;

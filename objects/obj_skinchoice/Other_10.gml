@@ -295,6 +295,7 @@ switch character
 		add_palette(32, "", noone, "Downwell", "Falling with style.", "DOWNWELL");
 		add_palette(33, "", noone, "Lightner", "Ralsei cast PACIFY!", "LIGHTNER");
 		add_palette(34, "", noone, "Ectoplasm", "Who you gonna call?", "ECTOPLASM");
+		add_palette(35, "", noone, "Gum", "Give me a drink, bartender.", "GUM");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "Take that off, you look stupid.");
