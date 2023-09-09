@@ -12,8 +12,7 @@ if sprite_index == spr_haywire
 }
 else
 {
-	if MOD.Lap3
-		fmod_event_instance_stop(slow_snd, true);
+	fmod_event_instance_stop(slow_snd, true);
 	
 	if !MOD.DeathMode or sprite_index == spr_idle
 	{
