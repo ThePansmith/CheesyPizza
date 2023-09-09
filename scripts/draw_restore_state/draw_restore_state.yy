@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "draw_self_safe",
+  "name": "draw_restore_state",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

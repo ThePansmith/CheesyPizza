@@ -1,3 +1,4 @@
+/// @func	shader_set_rectclip(x, y, width, height, alpha_fix, simple)
 /// @desc	Sets the current shader to the rectclip shader, returns false if shaders aren't supported, returns true otherwise
 /// @arg	{real}	_x	X-Position of the clip region
 /// @arg	{real}	_y	Y-Position of the clip region

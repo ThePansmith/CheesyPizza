@@ -25,3 +25,5 @@ if (global.panic == true || instance_exists(obj_wartimer))
 		movespeed++;
 	}
 }
+else
+	image_alpha = 0.35;
