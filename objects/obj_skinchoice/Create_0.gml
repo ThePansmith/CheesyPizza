@@ -257,7 +257,7 @@ draw = function(curve)
 		
 		// character
 		if !surface_exists(player_surface)
-			player_surface = surface_create(128, 128);
+			player_surface = surface_create(256, 256);
 			
 		shader_reset();
 		
