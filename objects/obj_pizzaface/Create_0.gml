@@ -22,6 +22,9 @@ spr_toangry = spr_pizzaface_attackend;
 spr_todocile = spr_pizzaface_recovering;
 spr_haywire = spr_pizzahead_haywire;
 
+offsetx = 3;
+offsety = 11;
+
 if SUGARY
 	spr_idle = spr_coneball;
 if MIDWAY

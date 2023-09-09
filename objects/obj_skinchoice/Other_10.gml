@@ -659,7 +659,7 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "laugh-track.mp3");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "An excellent human shield.");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Something's up...");
-		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Pizzano says Trans rights, and Trans wrongs! You should rob a bank!");
+		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Pizzano says Trans rights, and Trans wrongs!\nYou should rob a bank!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
