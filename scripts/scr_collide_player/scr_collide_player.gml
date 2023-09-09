@@ -130,9 +130,13 @@ function scr_collide_player()
 	
 	// on ground check
 	grounded |= scr_solid_player(x, y + 1);
+	
 	var plat = instance_place(x, y + 1, obj_platform);
 	if plat && plat.image_yscale < 0
 		plat = noone;
+	if plat.object_index == obj_cottonplatform_tiled && state != states.cotton && state != states.cottonroll
+		plat = noone;
+	
 	grounded |= ((vsp >= 0 or !REMIX) && !place_meeting(x, y, obj_platform) && plat != noone);
 	grinding = !place_meeting(x, y, obj_grindrail) && place_meeting(x, y + 1, obj_grindrail);
 	grounded |= grinding;

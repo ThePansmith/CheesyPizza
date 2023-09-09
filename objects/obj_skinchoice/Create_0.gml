@@ -218,7 +218,9 @@ draw = function(curve)
 
 	if (curv_prev < 1)
 		shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev, true);
-						
+		
+#region Drawer	
+
 	// drawer
 	var pal = palettes[sel.pal];
 	if anim_con != 2 or obj_player1.visible
@@ -254,10 +256,12 @@ draw = function(curve)
 			if check_skin(SKIN.pn_homer, "PN", pal.palette)
 				characters[sel.char][1] = spr_playerPN_homer;
 		}
-		
+#endregion
+
+#region Character
 		// character
 		if !surface_exists(player_surface)
-			player_surface = surface_create(128, 128);
+			player_surface = surface_create(256, 256);
 			
 		shader_reset();
 		
@@ -278,7 +282,9 @@ draw = function(curve)
 			shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev, true);
 		draw_surface_ext(player_surface, charx - 256, chary - 256, 2, 2, 0, c_white, curve * charshift[2]);
 	}
-	
+#endregion
+
+#region Text
 	// text
 	var name = string_upper(pal.name), desc = pal.description;
 	if sel.mix > 0
@@ -320,14 +326,17 @@ draw = function(curve)
 	draw_text_ext(960 / 1.5, 400, desc, 16, 600);
 	draw_set_alpha(1);
 	shader_reset();
-		
+#endregion
+
+#region Palettes
 	// palettes
 	var palspr = characters[sel.char][2];
 	var xx = 0, yy = 0;
 	var array = !mixing ? palettes : mixables;
 	vertex_begin(vertex_buffer, vertex_format);
 	
-	var cache = [];
+	var cache = []; // RX: Loy yell at me if forget to remove this variable
+	
 	for(var i = 0; i < array_length(array); i++)
 	{
 		var xdraw = xx;
@@ -383,44 +392,26 @@ draw = function(curve)
 	
 	if curv_prev < 1
 		shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev);
-	
 	vertex_submit(vertex_buffer, pr_trianglelist, tex);
-	shader_reset();
-	
+		
 	// RX: not really a better way to do this without rewriting the entire thing
 	for (var i = 0; i < array_length(cache); i++)
 	{
-		// RX: I fucking hate pizza tower
-		if !surface_exists(pattern_surface)
-			pattern_surface = surface_create(32, 32);
-		surface_set_target(pattern_surface);
+		shader_set_maskclip(cache[i].x, cache[i].y, spr_skinchoicepalette);
+		var spr_xscale = (32 / sprite_get_width(cache[i].pattern));
+		var spr_yscale = (32 / sprite_get_height(cache[i].pattern));
 		
-		shader_set(shd_pal_swapper);
-		if cache[i].pattern != noone
-		{
-			if cache[i].subimage == noone
-				pattern_set_temp(global.Base_Pattern_Color, spr_skinchoicepalette, 0, 1, 1, cache[i].pattern);
-			else
-				pattern_set_temp(global.Base_Pattern_Color, spr_skinchoicepalette, 0, 1, 1, cache[i].pattern, cache[i].subimage);
-		}
-		pal_swap_set(spr_skinchoicepal, 1);
-		draw_sprite(spr_skinchoicepalette, 0, 0, 0);
-		pattern_reset();
-		shader_reset();
-		surface_reset_target();
-		
-		// RX: it's super cool because the above uses a shader so we get to set the fucking clip shader AGAIN
 		if curv_prev < 1
-			shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev);
+			shader_maskclip_apply_circleclip(960 / 2, 540 / 2, 560 * curv_prev);
 		
-		draw_surface(pattern_surface, cache[i].x, cache[i].y);
-		
-		draw_sprite_ext(spr_skinchoicepalette, 1, cache[i].x, cache[i].y, 1, 1, 0, c_white, 1);
+		draw_sprite_ext(cache[i].pattern, cache[i].subimage, cache[i].x, cache[i].y, spr_xscale, spr_yscale, 0, c_white, 1);
 	}
 	
 	if shader_current() != shd_circleclip
 		shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev);
-	
+#endregion
+
+
 	// hand
 	draw_sprite_ext(spr_skinchoicehand, 0, handx, handy + sin(current_time / 1000) * 4, 2, 2, 0, c_white, 1);
 	draw_set_align();

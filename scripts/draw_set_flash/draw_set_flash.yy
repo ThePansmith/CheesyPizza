@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Utility",
-    "path": "folders/Scripts/CheesyPizza/Utility.yy",
+    "name": "Draw",
+    "path": "folders/Scripts/CheesyPizza/Utility/Draw.yy",
   },
 }

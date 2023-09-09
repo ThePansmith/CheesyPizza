@@ -64,7 +64,7 @@ else
 				flashpal[1] = 4;
 			}
 			
-			if palettes[sel.pal].texture == noone
+			if palettes[sel.pal].texture == noone or palettes[sel.pal].palette != 12
 			{
 				sel.mix = 0;
 				mixing = false;

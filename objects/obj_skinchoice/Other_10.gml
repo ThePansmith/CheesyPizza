@@ -295,6 +295,7 @@ switch character
 		add_palette(32, "", noone, "Downwell", "Falling with style.", "DOWNWELL");
 		add_palette(33, "", noone, "Lightner", "Ralsei cast PACIFY!", "LIGHTNER");
 		add_palette(34, "", noone, "Ectoplasm", "Who you gonna call?", "ECTOPLASM");
+		add_palette(35, "", noone, "Gum", "Give me a drink, bartender.", "GUM");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "Take that off, you look stupid.");
@@ -645,7 +646,7 @@ switch character
 		add_palette(10, "", noone, "Gummy Bear", "Tastes like... blood?", "GUMMY");
 		add_palette(11, "", noone, "Lime", "With just a slight hint of sweetness.", "LIME");
 		add_palette(13, "", noone, "Crystalized", "You're the goddamn iron chef!", "CRYSTAL");
-		add_palette(14, "", noone, "Virtual Boy", "Ultimate classic system!", "SWEET");
+		add_palette(14, "", noone, "Virtual Boy", "Ultimate classic system!", "VB");
 		add_palette(15, "", noone, "Sucrose Snowstorm", "A little sweetness never hurts.", "SWEET");
 		
 		// Patterns
@@ -658,7 +659,7 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "laugh-track.mp3");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "An excellent human shield.");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Something's up...");
-		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Pizzano says Trans Rights!");
+		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Pizzano says Trans rights, and Trans wrongs! You should rob a bank!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");

@@ -11,6 +11,7 @@ alarm[1] = 10;
 image_alpha = 0;
 treasure = false;
 snd = fmod_event_create_instance("event:/sfx/pizzaface/moving");
+slow_snd = fmod_event_create_instance("event:/sfx/pizzahead/haywire");
 
 tracker = noone;
 frozen = false;
@@ -19,6 +20,7 @@ spr_idle = spr_pizzaface;
 spr_docile = spr_pizzaface_docile;
 spr_toangry = spr_pizzaface_attackend;
 spr_todocile = spr_pizzaface_recovering;
+spr_haywire = spr_pizzahead_haywire;
 
 if SUGARY
 	spr_idle = spr_coneball;

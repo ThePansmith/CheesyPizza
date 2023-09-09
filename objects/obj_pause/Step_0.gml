@@ -37,6 +37,8 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
         _cutscenehandler = true;
 	if global.in_menu
 		_cutscenehandler = true;
+	with obj_modconfig
+		_cutscenehandler = true;
 	
 	// pause
 	if (obj_savesystem.state == 0 && !_cutscenehandler && (room != rank_room && room != Realtitlescreen && room != timesuproom && room != rm_baby) && !instance_exists(obj_jumpscare) && !instance_exists(obj_technicaldifficulty))

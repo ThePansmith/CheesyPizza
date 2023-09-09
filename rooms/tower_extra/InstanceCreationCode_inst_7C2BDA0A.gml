@@ -9,9 +9,9 @@ group_arr = ["mansiongroup"];
 bgsprite = spr_gate_mansionBG;
 
 titlecard_sprite = spr_titlecards_new;
-titlecard_index = 1;
+titlecard_index = 3;
 title_sprite = spr_titlecards_newtitles;
-title_index = 1;
+title_index = 3;
 
 if !global.experimental
 	instance_destroy();

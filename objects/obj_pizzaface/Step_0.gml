@@ -2,15 +2,27 @@ var playerid = obj_player1;
 if obj_player1.spotlight == 0
 	playerid = obj_player2;
 
-if !MOD.DeathMode or sprite_index == spr_idle
+if sprite_index == spr_haywire
 {
-	sound_instance_move(snd, x, y);
-	if !fmod_event_instance_is_playing(snd)
-		fmod_event_instance_play(snd);
+	fmod_event_instance_stop(snd, true);
+	
+	if !fmod_event_instance_is_playing(slow_snd)
+		fmod_event_instance_play(slow_snd);
+	sound_instance_move(slow_snd, x, y);
 }
 else
-	fmod_event_instance_stop(snd, true);
-
+{
+	fmod_event_instance_stop(slow_snd, true);
+	
+	if !MOD.DeathMode or sprite_index == spr_idle
+	{
+		if !fmod_event_instance_is_playing(snd)
+			fmod_event_instance_play(snd);
+		sound_instance_move(snd, x, y);
+	}
+	else
+		fmod_event_instance_stop(snd, true);
+}
 if !instance_exists(playerid)
 	exit;
 
