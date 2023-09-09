@@ -37,6 +37,13 @@ if bo
 	draw_sprite_ext(spr, -1, x + random_range(-1, 1), y - 25 + yoffset, image_xscale, image_yscale, image_angle, _blend, image_alpha);
 }
 
-draw_self();
+if MOD.Encore && !bo
+{
+	shader_set(shd_pal_swapper);
+	pal_swap_set(spr_cagepalette, 1);
+}
+draw_sprite(sprite_index, image_index, x, y);
+
 if !bo
 	draw_sprite_ext(sugary ? spr_confecticage_help : spr_toppinhelp, subimg, x, y - 70, (MOD.Mirror) ? -1 : 1, 1, 0, c_white, 1);
+shader_reset();

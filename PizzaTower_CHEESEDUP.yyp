@@ -168,6 +168,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Server","folderPath":"folders/Scripts/CheesyPizza/Online/Events/Server.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Shell","folderPath":"folders/Scripts/CheesyPizza/Shell.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Utility","folderPath":"folders/Scripts/CheesyPizza/Utility.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Draw","folderPath":"folders/Scripts/CheesyPizza/Utility/Draw.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Replay","folderPath":"folders/Scripts/CheesyPizza/Utility/Replay.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Room","folderPath":"folders/Scripts/CheesyPizza/Utility/Room.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Shader","folderPath":"folders/Scripts/CheesyPizza/Utility/Shader.yy",},
@@ -598,7 +599,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Draw","folderPath":"folders/Scripts/CheesyPizza/Utility/Draw.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles",},
@@ -8102,6 +8102,7 @@
     {"id":{"name":"spr_playerBN_uppizzabox","path":"sprites/spr_playerBN_uppizzabox/spr_playerBN_uppizzabox.yy",},},
     {"id":{"name":"bg_chateaupizzaskull","path":"sprites/bg_chateaupizzaskull/bg_chateaupizzaskull.yy",},},
     {"id":{"name":"spr_fallingplatform","path":"sprites/spr_fallingplatform/spr_fallingplatform.yy",},},
+    {"id":{"name":"spr_currentpalette","path":"sprites/spr_currentpalette/spr_currentpalette.yy",},},
     {"id":{"name":"spr_playerN_kungfuair2transition","path":"sprites/spr_playerN_kungfuair2transition/spr_playerN_kungfuair2transition.yy",},},
     {"id":{"name":"spr_pizzano_mach3hitwall","path":"sprites/spr_pizzano_mach3hitwall/spr_pizzano_mach3hitwall.yy",},},
     {"id":{"name":"spr_tv_idleBN","path":"sprites/spr_tv_idleBN/spr_tv_idleBN.yy",},},
