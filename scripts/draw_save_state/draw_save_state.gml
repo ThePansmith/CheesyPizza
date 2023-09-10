@@ -1,5 +1,5 @@
 /// @func draw_save_state
-/// @desc	Saves the current state of drawing and returns a 
+/// @desc	Saves the current state of drawing
 /// @return  {struct.DrawState}
 function draw_save_state()
 {
@@ -14,5 +14,7 @@ function draw_save_state()
 		zwrite : gpu_get_zwriteenable(),
 		ztest : gpu_get_ztestenable(),
 		alphatest : gpu_get_alphatestenable(),
+		gpu_depth : gpu_get_depth(),
+		world_matrix : matrix_get(matrix_world)
 	};
 }

@@ -75,7 +75,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 			fmod_event_instance_set_paused(panicmusicID, true);
 			fmod_event_instance_set_paused(kidspartychaseID, true);
 		}
-		if (global.leveltosave != -4)
+		if (global.leveltosave != noone)
 		{
 			ini_open_from_string(obj_savesystem.ini_str);
 			treasurefound = ini_read_real("Treasure", global.leveltosave, false);
@@ -113,8 +113,8 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 		cursor_y = -300;
 		cursor_index = 0;
 		backbuffer = 2;
-		var _state = -4;
-		var _txt = -4;
+		var _state = noone;
+		var _txt = noone;
 		with (obj_player1)
 		{
 			_state = state;
@@ -198,7 +198,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 			transfotext_size = scr_text_arr_size(transfotext);
 		}
 		else
-			transfotext = -4;
+			transfotext = noone;
 		scr_pause_deactivate_objects();
 		
 		if global.jukebox == noone

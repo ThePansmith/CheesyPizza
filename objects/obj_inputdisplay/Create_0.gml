@@ -175,6 +175,7 @@ draw_inputdisplay_key = function(xx, yy, keycode, width, height = width)
 			break;
 	}
 	
+
 	// square
 	draw_set_colour(pressed ? pressedcol : c_ltgray);
 	draw_roundrect(xx, yy, xx + width - 1, yy + height - 1, false);
@@ -210,6 +211,8 @@ draw_inputdisplay_key = function(xx, yy, keycode, width, height = width)
 		if siz > 1
 			siz = max(floor(siz / 2), 1);
 		draw_sprite_ext(spr_controlicons, drawer, xo + floor(xx + width / 2), yo + floor(yy + height / 2), siz, siz, 0, c_white, 1);
+		gpu_set_blendmode(bm_normal);
+		
 	}
 }
 
