@@ -13,4 +13,6 @@ function draw_restore_state(_state)
 	gpu_set_zwriteenable(_state.zwrite);
 	gpu_set_ztestenable(_state.ztest);
 	gpu_set_alphatestenable(_state.alphatest);
+	gpu_set_depth(_state.gpu_depth);
+	matrix_set(matrix_world, _state.world_matrix);
 }
