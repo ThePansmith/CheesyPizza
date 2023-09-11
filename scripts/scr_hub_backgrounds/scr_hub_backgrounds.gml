@@ -1,6 +1,6 @@
 function scr_hub_bg_init(parallax_multiplier = 1)
 {
-	bgsprite = spr_gate_entranceBG;
+	//bgsprite = spr_gate_entranceBG;
 	bgsprite_number = sprite_get_number(bgsprite);
 	bgsprite_width = sprite_get_width(bgsprite);
 	bgsprite_height = sprite_get_height(bgsprite);
@@ -10,8 +10,8 @@ function scr_hub_bg_init(parallax_multiplier = 1)
 	bg_useparallax = false;
 	bgparallax = [0.65 * parallax_multiplier, 0.75 * parallax_multiplier, 0.85 * parallax_multiplier];
 	bgparallax2 = [0.1 * parallax_multiplier, 0.15 * parallax_multiplier, 0.2 * parallax_multiplier];
-	bgmask_surface = -4;
-	bgclip_surface = -4;
+	bgmask_surface = noone;
+	bgclip_surface = noone;
 }
 function scr_hub_bg_reinit(xoffset, yoffset)
 {
