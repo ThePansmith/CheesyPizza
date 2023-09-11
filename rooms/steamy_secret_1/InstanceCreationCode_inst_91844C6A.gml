@@ -1,3 +1,3 @@
+targetRoom = steamy_3
+secret = true;
 secret_close_portalID();
-secret = 1;
-targetRoom = steamy_3;
