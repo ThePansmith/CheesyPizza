@@ -251,7 +251,10 @@ switch (state)
 	case states.fling: scr_player_fling(); break;
 	case states.twirl: scr_pizzano_twirl(); break;
 	case states.frothstuck: scr_player_frothstuck(); break;
-	
+	case states.rupertnormal: scr_player_rupertnormal(); break;
+	case states.rupertslide: scr_player_rupertslide(); break;
+	case states.rupertjump: scr_player_rupertjump(); break;
+	case states.rupertstick: scr_player_rupertstick(); break;
 	// pto
 	case states.debugfly: scr_player_debugstate(); break;
 }
@@ -805,7 +808,7 @@ if (state != states.ratmount && state != states.ratmountjump && state != states.
 }
 if (inv_frames == 0 && hurted == 0 && state != states.ghost)
 	image_alpha = 1;
-if (state == states.punch || (state == states.jump && sprite_index == spr_playerN_noisebombspinjump) || state == states.tacklecharge || state == states.skateboard || state == states.knightpep || state == states.cheesepep || state == states.knightpepslopes || state == states.knightpepattack || state == states.bombpep || state == states.facestomp || state == states.machfreefall || state == states.facestomp || state == states.mach3 || state == states.freefall || state == states.Sjump)
+if ((state == states.rupertjump && sprite_index == spr_player_skatespin) || state == states.punch || (state == states.jump && sprite_index == spr_playerN_noisebombspinjump) || state == states.tacklecharge || state == states.skateboard || state == states.knightpep || state == states.cheesepep || state == states.knightpepslopes || state == states.knightpepattack || state == states.bombpep || state == states.facestomp || state == states.machfreefall || state == states.facestomp || state == states.mach3 || state == states.freefall || state == states.Sjump)
 	attacking = true;
 else
 	attacking = false;
