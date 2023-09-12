@@ -92,6 +92,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"September","folderPath":"folders/Rooms/CheesyPizza/Mansion/September.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Midway","folderPath":"folders/Rooms/CheesyPizza/Midway.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Pineapple Beach","folderPath":"folders/Rooms/CheesyPizza/Pineapple Beach.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sky","folderPath":"folders/Rooms/CheesyPizza/Sky.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Snick's Challenge","folderPath":"folders/Rooms/CheesyPizza/Snick's Challenge.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Dungeon","folderPath":"folders/Rooms/CheesyPizza/Snick's Challenge/Dungeon.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Medieval","folderPath":"folders/Rooms/CheesyPizza/Snick's Challenge/Medieval.yy",},
@@ -599,7 +600,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sky","folderPath":"folders/Rooms/CheesyPizza/Sky.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles",},
