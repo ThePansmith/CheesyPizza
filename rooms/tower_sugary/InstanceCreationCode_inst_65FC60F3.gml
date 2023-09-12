@@ -3,16 +3,16 @@ level = "sucrose";
 sprite_index = spr_sucrose_startgate;
 bgsprite = spr_sucrose_startgateBG;
 
-info =
+info = 
 {
 	bginfo : [spr_sucrosecard_bg, cardtype.left, cardtype.linear, cardtype.none, 0, 0],
 	titleinfo : [spr_sucrosecard_title, cardtype.up, cardtype.interp, cardtype.waving, 0, 0],
-	song : "event:/modded/sugary/sucrosetitle"
+	song : "event:/modded/sugary/surcosetitle"
 }
 bgparallax = [0, 1/3, 2/3, 1];
 
 msg = "Sucrose Snowstorm WIP";
-group_arr = ["sucrosegroup"];
+group_arr = ["sugarygroup", "sucrosegroup"];
 
 if !global.experimental
 	instance_destroy();

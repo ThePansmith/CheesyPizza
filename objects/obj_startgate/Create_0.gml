@@ -1,8 +1,6 @@
-targetRoom = entrance_1;
-targetDoor = "A";
+sprite_index = gateSprite;
 depth = 100;
 image_speed = 0;
-level = "none";
 world = 1;
 pizza = false;
 rank = "d";
@@ -16,16 +14,16 @@ scr_hub_bg_init();
 scr_create_uparrowhitbox();
 
 info = noone; // SET IF YOU WANT A SUGARY TITLECARD.
-titlecard_sprite = spr_titlecards;
-titlecard_index = 0;
-title_sprite = spr_titlecards_title;
-title_index = 0;
-title_music = "event:/music/w1/entrancetitle";
+//titlecard_sprite = spr_titlecards;
+//titlecard_index = 0;
+//title_sprite = spr_titlecards_title;
+//title_index = 0;
+//title_music = "event:/music/w1/entrancetitle";
 show_titlecard = true;
 allow_modifier = true;
 
 transfotip = noone;
-msg = "";
+
 door_index = -1;
 
 levelName = ""; // FOR USE IN CYOP.

@@ -3,7 +3,7 @@ level = "steamy";
 sprite_index = spr_steamy_startgate;
 bgsprite = spr_steamy_startgateBG;
 
-info =
+info = 
 {
 	bginfo : [spr_steamycard_bg, cardtype.left, cardtype.linear, cardtype.none, 0, 0],
 	titleinfo : [spr_steamycard_title, cardtype.up, cardtype.interp, cardtype.waving, 0, 0],
@@ -12,4 +12,4 @@ info =
 bgparallax = [0, 0.35, 0.05, 0.55, 0.75, 0.9];
 
 msg = "Cottontown";
-group_arr = ["steamygroup"];
+group_arr = ["sugarygroup", "steamygroup"];
