@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_hats",
-    "path": "sprites/spr_hats/spr_hats.yy",
+    "name": "spr_cowboyhat",
+    "path": "sprites/spr_cowboyhat/spr_cowboyhat.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -1,4 +1,4 @@
-//live_auto_call;
+live_auto_call;
 
 if !instance_exists(playerid) or playerid.hat < 0
 {
@@ -9,7 +9,7 @@ if !instance_exists(playerid) or playerid.hat < 0
 xoffset = 0//lerp(xoffset, lerp(sprite_get_bbox_left(playerid.sprite_index), sprite_get_bbox_right(playerid.sprite_index), 0.5) - playerid.sprite_xoffset, 0.25);
 yoffset = lerp(yoffset, sprite_get_bbox_top(playerid.sprite_index) - 50, 0.5);
 
-image_index = playerid.hat;
+//image_index = playerid.hat;
 x = playerid.x + xoffset + playerid.smoothx;
 y = playerid.y + yoffset + abs(sin(scr_current_time() / 200) * 4);
 image_xscale = playerid.xscale;

@@ -5084,7 +5084,7 @@
     {"id":{"name":"spr_player_taunt","path":"sprites/spr_player_taunt/spr_player_taunt.yy",},},
     {"id":{"name":"spr_exittile","path":"sprites/spr_exittile/spr_exittile.yy",},},
     {"id":{"name":"spr_playerN_chungus","path":"sprites/spr_playerN_chungus/spr_playerN_chungus.yy",},},
-    {"id":{"name":"spr_hats","path":"sprites/spr_hats/spr_hats.yy",},},
+    {"id":{"name":"spr_cowboyhat","path":"sprites/spr_cowboyhat/spr_cowboyhat.yy",},},
     {"id":{"name":"spr_player_slapup","path":"sprites/spr_player_slapup/spr_player_slapup.yy",},},
     {"id":{"name":"spr_player_hitboxslapup","path":"sprites/spr_player_hitboxslapup/spr_player_hitboxslapup.yy",},},
     {"id":{"name":"GMLive_http","path":"scripts/GMLive_http/GMLive_http.yy",},},

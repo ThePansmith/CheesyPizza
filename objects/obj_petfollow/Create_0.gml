@@ -4,6 +4,8 @@ enum PET
 	berry, // tictorian
 	sneck, // sts
 	boykiss, // mgvio
+	willigie, // nathan124fs
+	
 }
 
 event_inherited();
