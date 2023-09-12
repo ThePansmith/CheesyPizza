@@ -60,8 +60,6 @@ if (floor(image_index) >= (image_number - 1))
 					{
 						lastTargetDoor = targetDoor;
 						targetDoor = "S";
-						//if (instance_exists(obj_secretportalstart))
-						//		secretportalID = other.ID;
 						if !other.secret
 						{
 							set_lastroom();
