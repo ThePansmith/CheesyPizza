@@ -184,6 +184,9 @@
     {"name":"inst_2BB6FFF3","path":"rooms/chateau_6/chateau_6.yy",},
     {"name":"inst_B0796D6B","path":"rooms/chateau_6/chateau_6.yy",},
     {"name":"inst_352CDBD3","path":"rooms/chateau_6/chateau_6.yy",},
+    {"name":"inst_3EA79DB1","path":"rooms/chateau_6/chateau_6.yy",},
+    {"name":"inst_3431F576","path":"rooms/chateau_6/chateau_6.yy",},
+    {"name":"inst_42B64E5E","path":"rooms/chateau_6/chateau_6.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -369,6 +372,9 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2BB6FFF3","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_achievement_custom","path":"objects/obj_achievement_custom/obj_achievement_custom.yy",},"properties":[],"rotation":0.0,"scaleX":15.5,"scaleY":16.0,"x":704.0,"y":992.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B0796D6B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_PTG","path":"objects/obj_PTG/obj_PTG.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2656.0,"y":3168.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_352CDBD3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_doorD","path":"objects/obj_doorD/obj_doorD.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-128.0,"y":3648.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3EA79DB1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":800.0,"y":1600.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3431F576","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1600.0,"y":2304.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_42B64E5E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1600.0,"y":3040.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_41D7FE20","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_chateauskulltorch","path":"sprites/spr_chateauskulltorch/spr_chateauskulltorch.yy",},"x":832.0,"y":3680.0,},

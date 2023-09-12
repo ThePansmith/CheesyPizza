@@ -27,8 +27,9 @@ with (other)
 			}
 			with (obj_escapecollect)
 				image_alpha = 1;
-			with (obj_music)
-				fmod_event_instance_play(music.event);
+			if !MOD.DeathMode
+				with (obj_music)
+					fmod_event_instance_play(music.event);
 		}
 		global.heattime = 60;
 	}

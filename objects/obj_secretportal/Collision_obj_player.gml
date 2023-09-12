@@ -72,7 +72,7 @@ if (active && !instance_exists(obj_jumpscare) && !in_saveroom())
 		}
 		if (!touched)
 		{
-			other.superchargedeffectid = -4;
+			other.superchargedeffectid = noone;
 			if (other.state != states.knightpep && other.state != states.knightpepslopes && other.state != states.knightpepbump && other.state != states.firemouth)
 			{
 				if (!other.isgustavo)
