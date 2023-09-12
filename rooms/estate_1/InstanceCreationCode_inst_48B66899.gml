@@ -1,1 +1,0 @@
-firstGumslime = 1

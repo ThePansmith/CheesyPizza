@@ -117,12 +117,13 @@ function scr_cameradraw()
 	
 		var rx = hud_xx + 142;
 		var ry = hud_yy - 22;
+		if sugary
+		{
+			rx = hud_xx + 120;
+			ry = hud_yy - 44;
+		}
+		scr_rankbubbledraw(rx, ry);
 		
-		if (sugary)
-			scr_rankbubbledraw(hud_xx + 120, hud_yy - 44);
-		else
-			scr_rankbubbledraw(rx, ry);
-	
 		draw_set_align();
 		var collectfont = global.collectfont;
 		if sugary

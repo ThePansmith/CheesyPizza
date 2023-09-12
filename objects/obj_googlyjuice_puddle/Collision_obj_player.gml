@@ -6,8 +6,8 @@ with other
 		sprite_index = spr_slipbanan1;
 		vsp = -11;
 		movespeed = abs(movespeed);
-		if movespeed < 14
-			movespeed += 2;
+		//if movespeed < 14
+		//	movespeed += 2;
 		hsp = movespeed * xscale;
 		image_index = 0;
 		state = states.slipbanan;

@@ -110,8 +110,3 @@ if (!drawing)
 }
 else
 	bgalpha = Approach(bgalpha, 0, 0.1);
-	
-if (distance_to_object(obj_player) < 50 && SUGARY)
-	showtext = true;
-else
-	showtext = false;

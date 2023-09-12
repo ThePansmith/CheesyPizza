@@ -1,2 +1,3 @@
-targetRoom = steamy_3;
-visible = false;
+targetRoom = steamy_3
+targetDoor = "A"
+visible = false

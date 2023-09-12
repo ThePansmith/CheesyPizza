@@ -106,6 +106,7 @@ else
 			[spr_toppinsausage, spr_toppinsausage_run, spr_toppinsausage_taunt, 35],
 			[spr_toppinpineapple, spr_toppinpineapple_run, spr_toppinpineapple_taunt, 75]
 		];
+		
 		for (var i = 0; i < array_length(_toppinspr); i++)
 		{
 			var b = _toppinspr[i];
