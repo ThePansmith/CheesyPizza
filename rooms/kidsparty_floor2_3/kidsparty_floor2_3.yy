@@ -163,6 +163,7 @@
     {"name":"inst_625F86AC","path":"rooms/kidsparty_floor2_3/kidsparty_floor2_3.yy",},
     {"name":"inst_E702F414","path":"rooms/kidsparty_floor2_3/kidsparty_floor2_3.yy",},
     {"name":"inst_6BC5728C","path":"rooms/kidsparty_floor2_3/kidsparty_floor2_3.yy",},
+    {"name":"inst_3EFEEF0B","path":"rooms/kidsparty_floor2_3/kidsparty_floor2_3.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -204,6 +205,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_625F86AC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_monstersolid","path":"objects/obj_monstersolid/obj_monstersolid.yy",},"properties":[],"rotation":0.0,"scaleX":9.0,"scaleY":2.0,"x":672.0,"y":544.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_E702F414","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_monstersolid","path":"objects/obj_monstersolid/obj_monstersolid.yy",},"properties":[],"rotation":0.0,"scaleX":9.0,"scaleY":2.0,"x":672.0,"y":736.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6BC5728C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_monstersolid","path":"objects/obj_monstersolid/obj_monstersolid.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":4.0,"x":672.0,"y":608.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3EFEEF0B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2688.0,"y":864.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_F079E0F4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":73.0,"scaleY":4.0,"x":6112.0,"y":480.0,},

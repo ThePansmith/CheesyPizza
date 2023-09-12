@@ -121,6 +121,8 @@
     {"name":"inst_B4A01FDF","path":"rooms/kidsparty_floor2_1/kidsparty_floor2_1.yy",},
     {"name":"inst_3D452CFE","path":"rooms/kidsparty_floor2_1/kidsparty_floor2_1.yy",},
     {"name":"inst_39539D47","path":"rooms/kidsparty_floor2_1/kidsparty_floor2_1.yy",},
+    {"name":"inst_2125CF83","path":"rooms/kidsparty_floor2_1/kidsparty_floor2_1.yy",},
+    {"name":"inst_2CFD0C41","path":"rooms/kidsparty_floor2_1/kidsparty_floor2_1.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -223,6 +225,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2FFDA167","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pizzaboy","path":"objects/obj_pizzaboy/obj_pizzaboy.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":555.0,"y":1010.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B4A01FDF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pizzaboy","path":"objects/obj_pizzaboy/obj_pizzaboy.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":632.0,"y":1010.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_39539D47","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_camerapatrol","path":"objects/obj_camerapatrol/obj_camerapatrol.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3712.0,"y":416.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2125CF83","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2752.0,"y":352.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2CFD0C41","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3520.0,"y":960.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances_2","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_BE070BBF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_monstersolid","path":"objects/obj_monstersolid/obj_monstersolid.yy",},"properties":[],"rotation":0.0,"scaleX":20.0,"scaleY":3.0,"x":4608.0,"y":480.0,},

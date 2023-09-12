@@ -7,8 +7,9 @@ function scr_player_addslopemomentum(slow_acc, fast_acc)
 			if abs(image_yscale) < abs(image_xscale) // wide slope
 				other.movespeed += slow_acc;
 			else // normal slope
-				other.movespeed += fast_acc;
+				other.movespeed += slow_acc;
 		}
+			
 	}
 }
 function scr_pizzaball_addslopemomentum(slow_acc, fast_acc)

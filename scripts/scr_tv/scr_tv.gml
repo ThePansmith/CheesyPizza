@@ -288,6 +288,12 @@ function scr_tv_get_transfo_sprite()
 		case states.cottonroll:
 			_spr = spr_tv_cotton;
 			break;
+		case states.rupertnormal:
+		case states.rupertjump:
+		case states.rupertstick:
+		case states.rupertslide:
+			_spr = spr_tv_skate;
+			break;
 		case states.fling:
 			_spr = spr_tv_croaked;
 			break;

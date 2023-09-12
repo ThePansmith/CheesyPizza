@@ -583,6 +583,11 @@ transformation[40] = states.barrelclimbwall;
 transformation[41] = states.cotton;
 transformation[42] = states.cottondrill;
 transformation[43] = states.cottonroll;
+transformation[44] = states.rupertnormal;
+transformation[45] = states.rupertslide;
+transformation[46] = states.rupertjump;
+transformation[47] = states.rupertstick;
+
 keysound = false;
 c = 0;
 stallblock = 0;
@@ -759,6 +764,9 @@ gravesurfingjumpbuffer = 0;
 spinsndbuffer = 5;
 boxxedspinbuffer = 0;
 noisebossscream = false;
+
+// sugary
+doublejumped = false;
 
 // pto new
 smoothx = 0;

@@ -71,6 +71,7 @@ var deathmode_allow =
 	"badland", "graveyard", "saloon", "farm", // W2
 	"plage", "space", "minigolf", "forest", // W3
 	"freezer", "street", "industrial", "sewer", // W4
+	"chateau", "kidsparty", "war", // W5
 	"etb", //Extra
 ];
 if array_contains(deathmode_allow, level)// or DEBUG

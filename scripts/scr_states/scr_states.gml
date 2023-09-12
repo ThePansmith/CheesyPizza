@@ -310,6 +310,10 @@ enum states
 	fling,
 	twirl,
 	frothstuck,
+	rupertnormal,
+	rupertslide,
+	rupertjump, 
+	rupertstick,
 	
 	// pto
 	debugfly,
@@ -621,9 +625,13 @@ states = {
 	fling : 303,
 	twirl : 304,
 	frothstuck : 305,
+	rupertnormal : 307,
+	rupertslide : 308,
+	rupertjump : 309,
+	rupertstick : 310,
 	
 	// pto
-	debugfly : 306
+	debugfly : 311
 }
 
 #endregion
