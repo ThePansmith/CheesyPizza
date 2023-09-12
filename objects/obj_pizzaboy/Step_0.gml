@@ -56,7 +56,7 @@ if global.stylethreshold >= 3 && state != states.hit
 		x -= obj_player1.xscale * irandom_range(200, 400);
 		while scr_solid(x, y)
 			y--;
-		while !scr_solid(x, y + 1)
+		while !scr_solid(x, y + 1) && y < room_height
 			y++;
 		
 		image_xscale = sign(obj_player1.x - x);

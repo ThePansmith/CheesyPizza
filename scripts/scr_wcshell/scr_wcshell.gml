@@ -616,8 +616,8 @@ function scr_wc_step()
 							else
 								var value = get_string("Creating new variable " + variable + " with value...", "");
 							
-							consoleString = "var " + string_replace(WC_select_inst.id, "ref ", "") + " " + variable + " " + value;
-							_execute_script(_input_string_split(consoleString));
+							consoleString = "var " + string_replace(WC_select_inst.id, "ref instance ", "") + " " + variable + " " + value;
+							_execute_script(_input_string_split(consoleString), true);
 							consoleString = "";
 						}
 						break;

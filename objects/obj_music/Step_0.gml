@@ -100,7 +100,7 @@ if ((global.panic or ((global.snickchallenge or (MOD.DeathMode)) && !instance_ex
 		fmod_set_parameter("pillarfade", 0, true);
 		fmod_event_instance_set_parameter(panicmusicID, "state", 0, true);
 	}
-	else if global.leveltosave == "exit"
+	else if global.leveltosave == "exit" && is_struct(music)
 	{
 		if global.laps > 1 && instance_exists(obj_pizzaface)
 			fmod_event_instance_set_parameter(music.event, "state", 20, true);

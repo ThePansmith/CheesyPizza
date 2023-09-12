@@ -116,7 +116,7 @@ charshift[1] = lerp(charshift[1], 0, 0.25); // vertical
 charshift[2] = lerp(charshift[2], 1, 0.25); // alpha
 
 // toggle noise pogo
-if characters[sel.char][0] == "N"
+if characters[sel.char][0] == "N" && global.experimental
 {
 	create_transformation_tip("{u}[T] Toggle Pogo/", "noisetype");
 	if key_taunt2

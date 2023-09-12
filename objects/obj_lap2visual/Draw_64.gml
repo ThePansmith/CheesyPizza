@@ -2,8 +2,8 @@ if global.laps < 2
 	draw_sprite(sprite_index, image_index, x + irandom_range(-1, 1), y + irandom_range(-1, 1));
 else
 {
-	var xx = x// + irandom_range(-1, 1);
-	var yy = y// + irandom_range(-1, 1);
+	var xx = x + irandom_range(-1, 1);
+	var yy = y + irandom_range(-1, 1);
 	
 	draw_sprite(sprite_index, 1, xx, yy);
 	
@@ -25,7 +25,6 @@ else
 		var wd = sprite_get_width(spr_lapfontbig) * string_length(lap_text);
 		
 		// numbers!
-		var state = draw_save_state();
 		gpu_set_zwriteenable(true);
 		gpu_set_ztestenable(true);
 		gpu_set_alphatestenable(true);
@@ -44,13 +43,16 @@ else
 			gpu_set_blendmode_ext(bm_dest_color, bm_zero);
 			draw_sprite(spr_lapfontbig, letter + 10, lx, ly);
 		}
-		gpu_set_blendmode(bm_normal);
+		gpu_set_zwriteenable(false);
+		gpu_set_ztestenable(false);
 		
 		// the thingy
+		gpu_set_blendmode(bm_normal);
 		draw_sprite(sprite_index, 2, xx - ((wd - 64) / 3), yy);
 		gpu_set_blendmode_ext(bm_dest_color, bm_zero);
 		draw_sprite(sprite_index, 3, xx - ((wd - 64) / 3), yy);
+		gpu_set_blendmode(bm_normal);
 		
-		draw_restore_state(state);
+		gpu_set_alphatestenable(false);
 	}
 }

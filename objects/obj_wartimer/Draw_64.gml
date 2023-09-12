@@ -83,9 +83,9 @@ else
 }
 
 // lap display
-if global.laps > 1 && !global.panic
+if global.lap && !global.panic
 {
 	lap_y = Approach(lap_y, SCREEN_HEIGHT - 56, 1);
 	lapflag_index += 0.35;
-	scr_draw_lap_display(xx - 170, lap_y, lapflag_index, sugary);
+	scr_draw_lap_display(xx - 170 + (sugary * 50), lap_y, lapflag_index, sugary);
 }
