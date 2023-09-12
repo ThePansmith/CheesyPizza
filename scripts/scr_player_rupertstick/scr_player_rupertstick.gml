@@ -12,7 +12,7 @@ function scr_player_rupertstick()
 		movespeed = xscale * 5;
 		state = states.rupertjump;
 	}
-	if (animation_end())
+	if (floor(image_index) >= image_number - 1)
 	{
 		if (sprite_index == spr_player_skatewallrun)
 		{

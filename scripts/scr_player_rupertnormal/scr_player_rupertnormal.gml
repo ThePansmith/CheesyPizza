@@ -22,7 +22,7 @@ function scr_player_rupertnormal()
 	// Slide.
 	if (grounded && scr_solid_slope(x, y)) {		
 		movespeed = 8;
-		xscale = -slopeMomentum_direction();
+		xscale = -slope_direction();
 		with (instance_create(x, y, obj_jumpdust)) {
 			image_xscale = other.xscale;			
 		}

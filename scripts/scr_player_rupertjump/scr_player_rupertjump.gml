@@ -1,7 +1,7 @@
 function scr_player_rupertjump()
 {
 	static blue_aft = 0;
-	if (sprite_index != spr_player_skatespin && animation_end())
+	if (sprite_index != spr_player_skatespin && floor(image_index) >= image_number - 1)
 	{
 		image_index = 0;
 		switch (sprite_index)
@@ -99,7 +99,7 @@ function scr_player_rupertjump()
 			if (check_slope(x, y))
 			{
 				movespeed = 11;
-				xscale = -slopeMomentum_direction();
+				xscale = -slope_direction();
 				with (instance_create(x, y, obj_jumpdust))
 					image_xscale = other.xscale;
 				state = states.rupertslide;
@@ -139,7 +139,7 @@ function scr_player_rupertjump()
 			if (check_slope(x, y + 1))
 			{
 				movespeed = 8;
-				xscale = -slopeMomentum_direction();
+				xscale = -slope_direction();
 				with (instance_create(x, y, obj_jumpdust))
 					image_xscale = other.xscale;
 				state = states.rupertslide;

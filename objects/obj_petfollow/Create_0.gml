@@ -5,7 +5,7 @@ enum PET
 	sneck, // sts
 	boykiss, // mgvio
 	willigie, // nathan124fs
-	
+	rush // rush
 }
 
 event_inherited();
@@ -48,6 +48,21 @@ switch pet
 		spr_idle = spr_petboykiss_idle;
 		spr_run = spr_petboykiss_run;
 		spr_taunt = spr_petboykiss_taunt;
+		break;
+	
+	case PET.willigie:
+		spr_idle = spr_petwilligie_idle;
+		spr_run = spr_petwilligie_walk;
+		spr_taunt = spr_petwilligie_taunt;
+		break;
+	
+	case PET.rush:
+		spr_idle = spr_petrush_idle;
+		spr_run = spr_petrush_run;
+		spr_panic = spr_petrush_panicidle;
+		spr_panicrun = spr_petrush_panicrun;
+		spr_taunt = spr_petrush_taunt;
+		spr_supertaunt = spr_petrush_supertaunt;
 		break;
 }
 

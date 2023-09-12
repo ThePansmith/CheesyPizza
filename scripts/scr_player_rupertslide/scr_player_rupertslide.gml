@@ -35,7 +35,7 @@ function scr_player_rupertslide()
 		scr_player_addslopemomentum(0.25, 0);
 	if ((sprite_index != spr_player_skatedoublejumpstart && sprite_index != spr_player_skatedoublejump) || (grounded && vsp > 0))
 		sprite_index = spr_player_skatewalk;
-	if (animation_end() && sprite_index == spr_player_skatedoublejumpstart)
+	if (floor(image_index) >= image_number - 1 && sprite_index == spr_player_skatedoublejumpstart)
 	{
 		image_index = 0;
 		sprite_index = spr_player_skatedoublejump;
