@@ -60,11 +60,11 @@ if (floor(image_index) >= (image_number - 1))
 					{
 						lastTargetDoor = targetDoor;
 						targetDoor = "S";
+						secretportalID = other.ID;
 						if !other.secret
 						{
 							set_lastroom();
 							targetRoom = other.targetRoom;
-							secretportalID = other.ID;
 						}
 						else
 						{
