@@ -1,5 +1,12 @@
-function slope_direction() 
+function slope_direction(_id = noone) 
 {
-	with check_slope(x, y + 1)
-		return sign(image_xscale);
+	var slope = _id;
+	
+	if slope == noone
+		slope = check_slope(x, y + 1);
+	
+	if slope == noone
+		return 0;
+	
+	return sign(slope.image_xscale);
 }

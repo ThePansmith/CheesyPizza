@@ -37,7 +37,10 @@ function scr_enemy_walk()
 		turntimer--;
 	if ((scr_solid(x + image_xscale, y) || place_meeting(x + hsp, y, obj_hallway) || (x + hsp) > (room_width + 50) || (x + hsp) < -50) || (turntimer <= 0 && turner))
 	{
-		if (!check_slope(x + sign(hsp), y))
+		
+		var slope = check_slope(x + sign(hsp), y);
+		var slope_dir = slope_direction(slope);
+		if (!slope && (x + sign(image_xscale) != slope_dir))
 		{
 			if (object_index == obj_forknight)
 			{
