@@ -92,6 +92,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"September","folderPath":"folders/Rooms/CheesyPizza/Mansion/September.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Midway","folderPath":"folders/Rooms/CheesyPizza/Midway.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Pineapple Beach","folderPath":"folders/Rooms/CheesyPizza/Pineapple Beach.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sky","folderPath":"folders/Rooms/CheesyPizza/Sky.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Snick's Challenge","folderPath":"folders/Rooms/CheesyPizza/Snick's Challenge.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Dungeon","folderPath":"folders/Rooms/CheesyPizza/Snick's Challenge/Dungeon.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Medieval","folderPath":"folders/Rooms/CheesyPizza/Snick's Challenge/Medieval.yy",},
@@ -1388,6 +1389,7 @@
     {"id":{"name":"obj_introscooter","path":"objects/obj_introscooter/obj_introscooter.yy",},},
     {"id":{"name":"spr_sugarygateopen","path":"sprites/spr_sugarygateopen/spr_sugarygateopen.yy",},},
     {"id":{"name":"spr_tv_happyGPN","path":"sprites/spr_tv_happyGPN/spr_tv_happyGPN.yy",},},
+    {"id":{"name":"sky_1","path":"rooms/sky_1/sky_1.yy",},},
     {"id":{"name":"obj_haystack","path":"objects/obj_haystack/obj_haystack.yy",},},
     {"id":{"name":"obj_firemouth_projectile","path":"objects/obj_firemouth_projectile/obj_firemouth_projectile.yy",},},
     {"id":{"name":"server_disconnect","path":"scripts/server_disconnect/server_disconnect.yy",},},
@@ -11049,6 +11051,7 @@
     {"roomId":{"name":"steamy_secret_1","path":"rooms/steamy_secret_1/steamy_secret_1.yy",},},
     {"roomId":{"name":"steamy_secret_2","path":"rooms/steamy_secret_2/steamy_secret_2.yy",},},
     {"roomId":{"name":"steamy_secret_3","path":"rooms/steamy_secret_3/steamy_secret_3.yy",},},
+    {"roomId":{"name":"sky_1","path":"rooms/sky_1/sky_1.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [
