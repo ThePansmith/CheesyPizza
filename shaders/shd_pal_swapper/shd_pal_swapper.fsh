@@ -85,7 +85,7 @@ void main()
 						
 						// RadixComet: This isn't a good way of doing this, 
 						// but it will do for now.
-						vec4 shadeColor = vec4(0.0, 0.0, 0.0, 0.40625 * shade_multiplier);
+						vec4 shadeColor = vec4(0.0, 0.0, 0.0, 0.40625);
 
 						if (j != 1) // RX: PT uses 2 for a shade but we can emulate that
 							shadeColor.a = 0.0;
@@ -93,7 +93,7 @@ void main()
 						//if (source.rgb == vec3(0.0, 0.0, 0.0))
 						//	source.a *= source.a;
 
-						vec3 m = mix(pat.rgb, shadeColor.rgb, shadeColor.a);
+						vec3 m = mix(pat.rgb, shadeColor.rgb, shadeColor.a * shade_multiplier);
 						
 						if (source.rgb == vec3(0.0, 0.0, 0.0) && (source.a != 0.0 && source.a != 1.0))
 							m.rgb = mix(m.rgb, vec3(0.0, 0.0, 0.0), source.a); // RX: if the color is clear, it's a shade color
