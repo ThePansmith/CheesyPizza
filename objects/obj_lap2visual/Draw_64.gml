@@ -1,3 +1,5 @@
+live_auto_call;
+
 if global.laps < 2
 	draw_sprite(sprite_index, image_index, x + irandom_range(-1, 1), y + irandom_range(-1, 1));
 else
@@ -23,6 +25,8 @@ else
 	{
 		var lap_text = string(global.laps + 1);
 		var wd = sprite_get_width(spr_lapfontbig) * string_length(lap_text);
+		
+		shader_reset();
 		
 		// numbers!
 		gpu_set_zwriteenable(true);
