@@ -30,6 +30,8 @@ if (global.panic || instance_exists(obj_wartimer))
 				
 				if global.leveltosave == "exit" && !global.lap
 					global.fill += calculate_panic_timer(2, 30); // 2:30
+				if global.leveltosave == "sucrose" && !global.lap
+					global.fill += calculate_panic_timer(1, 0);
 				
 				if MOD.DeathMode with obj_deathmode
 					time_fx += 30;

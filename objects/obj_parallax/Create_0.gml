@@ -13,11 +13,16 @@ bg_surface = -1;
 background_layers = [];
 old_bg = false;
 
+portal_offset = {x: 0, y: 0};
+
 function layer_get_parallax(lay)
 {
 	var _cam_x = camera_get_view_x(view_camera[0]), _cam_y = camera_get_view_y(view_camera[0]);
 	var _cam_w = SCREEN_WIDTH, _cam_h = SCREEN_HEIGHT;
 	var per = 0;
+	
+	_cam_x += portal_offset.x;
+	_cam_y += portal_offset.y;
 	
 	// --------
 	

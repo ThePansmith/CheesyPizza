@@ -193,6 +193,8 @@ layer_vspeed("Backgrounds_zigzag2", 0);
 layer_vspeed("Backgrounds_stillZH1", 0);
 layer_vspeed("Backgrounds_stillZH2", 0);
 
+portal_offset = {x: 0, y: 0};
+
 // panic bg
 /*
 if (global.panic or global.snickchallenge) && global.panicbg && !instance_exists(obj_ghostcollectibles)

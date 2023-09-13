@@ -1,4 +1,4 @@
-//live_auto_call;
+live_auto_call;
 event_inherited();
 
 if move_ver != 0

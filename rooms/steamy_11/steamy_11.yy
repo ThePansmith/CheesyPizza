@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "steamy_11",
-  "creationCodeFile": null,
+  "creationCodeFile": "rooms/steamy_11/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
@@ -358,7 +358,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7A107E6B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":1.0,"x":96.0,"y":1984.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_FFC4ECD3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cottonwitch","path":"objects/obj_cottonwitch/obj_cottonwitch.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":2016.0,"y":2322.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_83775A5B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cottonwitch","path":"objects/obj_cottonwitch/obj_cottonwitch.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":1280.0,"y":850.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_082AC8C3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_priest","path":"objects/obj_priest/obj_priest.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1633.0,"y":969.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_082AC8C3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_priest","path":"objects/obj_priest/obj_priest.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1633.0,"y":978.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances_BG","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_8DDE453B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_bggear","path":"objects/obj_bggear/obj_bggear.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2432.0,"y":2880.0,},
