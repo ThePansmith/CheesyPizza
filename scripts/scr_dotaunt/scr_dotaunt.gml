@@ -1,9 +1,14 @@
 function scr_dotaunt()
 {
+	var geyser = instance_place(x, y, obj_geyser);
+	if instance_exists(geyser)
+		if geyser.geyser_timer
+			return;
+	
 	if ((key_taunt2 || input_finisher_buffer > 0 || (state == states.backbreaker && key_up && supercharged)) && !skateboarding)
 	{
 		input_finisher_buffer = 0;
-		pistolanim = -4;
+		pistolanim = noone;
 		flash = false;
 		notification_push(notifs.taunt, [room]);
 		if ((!key_up || !supercharged) && global.tauntcount < 10 && place_meeting(x, y, obj_exitgate) && (global.panic == true || instance_exists(obj_wartimer)) && global.combotime > 0 && global.leveltosave != "grinch")
