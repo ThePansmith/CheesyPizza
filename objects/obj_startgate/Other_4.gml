@@ -151,3 +151,13 @@ else
 	}
 }
 scr_hub_bg_reinit(x, y);
+
+// fuck it, I give up, this will work, and if it doesn't
+// then you can write it better loy
+for (var i = 0; i < array_length(group_arr); i++)
+{
+	var textures = texturegroup_get_textures(group_arr[i]);
+	for (var j = 0; j < array_length(textures); j++)
+		texture_flush(textures[j]);
+	
+}
