@@ -1,5 +1,7 @@
 function pattern_set_pattern(sprite, subimg)
 {
+	static shader_multiplier = shader_get_uniform(shd_pal_swapper, "shade_multiplier");
+	
     if sprite == global.Pattern_Texture_Indexed && global.Pattern_Texture_Indexed != noone
         exit;
     if sprite == noone
