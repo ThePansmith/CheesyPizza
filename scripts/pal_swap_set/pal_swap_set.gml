@@ -1,5 +1,6 @@
 function pal_swap_set(_pal_sprite, _pal_index)
 {
+	static shader_multiplier = shader_get_uniform(shd_pal_swapper, "shader_multiplier");
 	var _surface = false;
 	if (!_surface)
 	{
@@ -28,4 +29,5 @@ function pal_swap_set(_pal_sprite, _pal_index)
 		shader_set_uniform_f(global.Pal_UVs, texel_hx, texel_hy, 1 + texel_hx, 1 + texel_hy);
 		shader_set_uniform_f(global.Pal_Index, _pal_index);
 	}
+	shader_set_uniform_f(shader_multiplier, global.shader_mulitplier);
 }

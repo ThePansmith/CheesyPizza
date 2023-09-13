@@ -16,6 +16,7 @@ uniform vec4 sprite_UVs;
 uniform vec4 sprite_tex_data; // (x, y) = trimmed l/t offset | (z, w) = texture size
 uniform vec2 sprite_scale; // (xscale, yscale)
 uniform vec2 pattern_offset;
+uniform float shade_multiplier;
 
 uniform int use_palette_override;
 uniform float palette_override[64];
@@ -34,6 +35,7 @@ void main()
 		{
 			float texel_palette_offset = texel_size.x * palette_index;
 			float palette_V = palette_UVs.x + texel_palette_offset;
+			vec4 prev_source = source;
 			source = texture2D(palette_texture, vec2(palette_V, color_index)); // Palette color at specific offset
 			
 			if (use_palette_override == 1)
@@ -83,7 +85,7 @@ void main()
 						
 						// RadixComet: This isn't a good way of doing this, 
 						// but it will do for now.
-						vec4 shadeColor = vec4(0.0, 0.0, 0.0, 0.40625);
+						vec4 shadeColor = vec4(0.0, 0.0, 0.0, 0.40625 * shade_multiplier);
 
 						if (j != 1) // RX: PT uses 2 for a shade but we can emulate that
 							shadeColor.a = 0.0;
@@ -93,7 +95,7 @@ void main()
 
 						vec3 m = mix(pat.rgb, shadeColor.rgb, shadeColor.a);
 						
-						if (source.rgb == vec3(0.0, 0.0, 0.0) && source.a != 0.0)
+						if (source.rgb == vec3(0.0, 0.0, 0.0) && (source.a != 0.0 && source.a != 1.0))
 							m.rgb = mix(m.rgb, vec3(0.0, 0.0, 0.0), source.a); // RX: if the color is clear, it's a shade color
 							
 						source = vec4(m.rgb, pat.a);
