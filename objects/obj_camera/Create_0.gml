@@ -72,6 +72,8 @@ greyscale = 0;
 smooth_buffer = 0;
 camx = 0;
 camy = 0;
+camx_real = 0;
+camy_real = 0;
 
 limitcam = [0, 0, 960, 540];
 angle = 0;

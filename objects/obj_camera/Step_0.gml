@@ -252,8 +252,11 @@ if instance_exists(target) && !lock && player.state != states.timesup && player.
 	
 	if !global.coop or room == characterselect or room == rm_levelselect or room == Realtitlescreen
 	{
-		camx = lerp(tx - cam_width / 2 + chargecamera + p2pdistancex, camx, smooth_buffer * global.smoothcam);
-		camy = lerp(ty - cam_height / 2 - 50 * camzoom + floor(crouchcamera), camy, smooth_buffer * global.smoothcam);
+		camx_real = tx - cam_width / 2 + chargecamera + p2pdistancex;
+		camy_real = ty - cam_height / 2 - 50 * camzoom + floor(crouchcamera);
+		
+		camx = lerp(camx_real, camx, smooth_buffer * global.smoothcam);
+		camy = lerp(camy_real, camy, smooth_buffer * global.smoothcam);
 		
 		if !safe_get(obj_shell, "WC_oobcam")
 		{

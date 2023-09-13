@@ -4397,6 +4397,7 @@
     {"id":{"name":"spr_pizzard_stun","path":"sprites/spr_pizzard_stun/spr_pizzard_stun.yy",},},
     {"id":{"name":"spr_gustavo_war2","path":"sprites/spr_gustavo_war2/spr_gustavo_war2.yy",},},
     {"id":{"name":"bg_fakepeppinokey","path":"sprites/bg_fakepeppinokey/bg_fakepeppinokey.yy",},},
+    {"id":{"name":"obj_worldportal","path":"objects/obj_worldportal/obj_worldportal.yy",},},
     {"id":{"name":"spr_lonegustavo_skid","path":"sprites/spr_lonegustavo_skid/spr_lonegustavo_skid.yy",},},
     {"id":{"name":"obj_3DCam","path":"objects/obj_3DCam/obj_3DCam.yy",},},
     {"id":{"name":"spr_horsey_win","path":"sprites/spr_horsey_win/spr_horsey_win.yy",},},

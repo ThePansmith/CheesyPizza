@@ -131,6 +131,8 @@ function scr_player_climbwall()
 				
 				if (character == "SP" or character == "SN") && !skateboarding
 				{
+					movespeed = max(abs(wallspeed), 6);
+					
 					if key_down
 					{
 						state = states.machroll;
@@ -138,8 +140,6 @@ function scr_player_climbwall()
 					}
 					else
 					{
-						movespeed = max(abs(wallspeed), 6);
-						
 						particle_set_scale(part.jumpdust, xscale, 1);
 						create_particle(x, y, part.jumpdust);
 						

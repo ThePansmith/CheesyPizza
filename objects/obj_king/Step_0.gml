@@ -16,3 +16,9 @@ else
 		timer = max_time * 0.5 * 20;
 	}
 }
+if room == tower_soundtest
+{
+	xstart = CAMX + 480;
+	if --buffer > 0
+		x = xstart;
+}
