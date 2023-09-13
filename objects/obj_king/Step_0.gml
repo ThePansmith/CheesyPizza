@@ -17,4 +17,8 @@ else
 	}
 }
 if room == tower_soundtest
+{
 	xstart = CAMX + 480;
+	if --buffer > 0
+		x = xstart;
+}
