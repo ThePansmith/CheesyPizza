@@ -1,12 +1,11 @@
 event_inherited();
+spr_dead = spr_ratblock_dead;
 
-if !variable_instance_exists(id, "spr_dead")
-	spr_dead = spr_ratblock_dead;
-	
 depth = 2;
 anim = false;
 baddie = false;
 animy = 0;
+
 sniffsnd = fmod_event_create_instance("event:/sfx/rat/ratsniff");
 sound_instance_move(sniffsnd, x, y);
 use_sound = true;
@@ -20,6 +19,7 @@ if MIDWAY && sprite_index == spr_ratblock
 {
 	sprite_index = spr_ratblock_bo;
 	spr_dead = spr_ratblock_dead_bo;
+	use_sound = false;
 }
 
 sugary = SUGARY;
@@ -27,4 +27,5 @@ if sugary && sprite_index == spr_ratblock
 {
 	sprite_index = spr_chocofrogbig;
 	spr_dead = spr_chocofrogbigdead;
+	use_sound = false;
 }
