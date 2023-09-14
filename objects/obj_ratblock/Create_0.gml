@@ -1,6 +1,8 @@
 event_inherited();
 
-spr_dead = spr_ratblock_dead;
+if !variable_instance_exists(id, "spr_dead")
+	spr_dead = spr_ratblock_dead;
+	
 depth = 2;
 anim = false;
 baddie = false;
@@ -14,14 +16,14 @@ if (place_meeting(x + 1, y, object_index) && place_meeting(x - 1, y, object_inde
 if (use_sound && place_meeting(x + 1, y, object_index) && !place_meeting(x - 1, y, object_index))
 	use_sound = false;
 
-if MIDWAY
+if MIDWAY && sprite_index == spr_ratblock
 {
 	sprite_index = spr_ratblock_bo;
 	spr_dead = spr_ratblock_dead_bo;
 }
 
 sugary = SUGARY;
-if sugary
+if sugary && sprite_index == spr_ratblock
 {
 	sprite_index = spr_chocofrogbig;
 	spr_dead = spr_chocofrogbigdead;
