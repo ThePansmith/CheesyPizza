@@ -11,8 +11,5 @@ info =
 }
 bgparallax = [0, 1/3, 2/3, 1];
 
-msg = "Sucrose Snowstorm WIP";
+msg = "Sucrose Snowstorm";
 group_arr = ["sugarygroup", "sucrosegroup"];
-
-if !global.experimental
-	instance_destroy();

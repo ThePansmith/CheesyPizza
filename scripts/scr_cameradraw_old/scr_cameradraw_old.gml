@@ -17,7 +17,7 @@ function scr_cameradraw_old()
 					_state = storedstate;
 			}
 		}
-		if _state == states.chainsaw
+		if _state == states.chainsaw or _state == states.secretenter
 			_state = player.tauntstoredstate;
 		
 		var hudface = -1;
