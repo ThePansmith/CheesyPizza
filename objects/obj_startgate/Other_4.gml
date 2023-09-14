@@ -156,6 +156,8 @@ scr_hub_bg_reinit(x, y);
 // then you can write it better loy
 for (var i = 0; i < array_length(group_arr); i++)
 {
+	if (group_arr[i] == "sugarygroup" || group_arr[i] == "hubgroup")
+		continue;
 	var textures = texturegroup_get_textures(group_arr[i]);
 	for (var j = 0; j < array_length(textures); j++)
 		texture_flush(textures[j]);

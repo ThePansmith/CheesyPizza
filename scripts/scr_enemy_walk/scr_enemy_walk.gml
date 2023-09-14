@@ -40,7 +40,7 @@ function scr_enemy_walk()
 		
 		var slope = check_slope(x + sign(hsp), y);
 		var slope_dir = slope_direction(slope);
-		if (!slope && (x + sign(image_xscale) != slope_dir))
+		if (sign(image_xscale) != slope_dir)
 		{
 			if (object_index == obj_forknight)
 			{

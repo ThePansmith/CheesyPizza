@@ -1,6 +1,6 @@
 if !in_saveroom()
 {
-	if sugary
+	if SUGARY
 	{
 		with instance_create(x - sprite_xoffset + sprite_width / 2, y - sprite_yoffset + sprite_height / 2, obj_sausageman_dead)
 		{
