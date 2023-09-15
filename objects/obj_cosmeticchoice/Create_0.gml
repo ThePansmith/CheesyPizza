@@ -95,6 +95,12 @@ function add_pet(pet, sprite, name = "HAT", desc = "loypoll please add details",
 // hats
 add_hat(-1, spr_nocosmetic, "No Hat", "Don't you already have a hat?");
 add_hat(0, spr_cowboyhat, "Cowboy Hat", "Yeehaw!");
+add_hat(1, spr_duncehat, "Dunce Hat", "Shame on you.");
+add_hat(2, spr_dragonhat, "Cheese Dragon's Head", "loypoll please add details");
+add_hat(3, spr_towerhat, "#1 Tower Enthusiast", "Finally, you can wear THE Pizza Tower!");
+add_hat(4, spr_crownhat, "Golden Crown", "A relic left behind from the medieval times.");
+add_hat(5, spr_shroomhat, "Shroom's Head", "loypoll please add details");
+add_hat(6, spr_catearshat, "Cat Ears", "mmmrp mrrow nya :3");
 
 // pets
 add_pet(-1, spr_nocosmetic, "No Pet", "All alone...");

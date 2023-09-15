@@ -30,7 +30,7 @@
   "origin": 9,
   "parent": {
     "name": "Pets",
-    "path": "folders/Sprites/CheesyPizza/Pets.yy",
+    "path": "folders/Sprites/CheesyPizza/Cosmetics/Pets.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
