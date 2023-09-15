@@ -1,6 +1,6 @@
 function scr_player_rupertstick()
 {
-	doublejumped = false;
+	doublejump = false;
 	jumpstop = true;
 	momemtum = false;
 	hsp = 0;

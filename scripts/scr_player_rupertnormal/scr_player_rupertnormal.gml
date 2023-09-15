@@ -1,6 +1,6 @@
 function scr_player_rupertnormal()
 {
-	doublejumped = false;
+	doublejump = false;
 	momemtum = false;
 	#region Move Code
 	move = (key_left + key_right);
