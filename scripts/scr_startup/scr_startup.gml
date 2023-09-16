@@ -247,8 +247,8 @@ function shader_set_fix(shader)
 }
 
 // custom patterns shit what??? what???
-#macro CACHE_DIRECTORY $"{working_directory}cache"
-#macro PATTERN_DIRECTORY $"{working_directory}patterns/"
+#macro CACHE_DIRECTORY working_directory"cache"
+#macro PATTERN_DIRECTORY working_directory"patterns/"
 #macro TEXTURE_PAGE_SIZE 4096
 
 if !directory_exists(PATTERN_DIRECTORY)
@@ -260,7 +260,7 @@ if !directory_exists(pattern_example_directory)
 	directory_create(pattern_example_directory);
 	
 	var file = file_text_open_write($"{pattern_example_directory}Pattern.json");
-	var examplepattern = new custom_pattern();
+	var examplepattern = new custom_pattern_json();
 	file_text_write_string(file, json_stringify(examplepattern, true));
 	delete examplepattern;
 	file_text_close(file);
