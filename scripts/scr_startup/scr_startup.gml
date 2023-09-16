@@ -245,13 +245,14 @@ function shader_set_fix(shader)
 		exit;
 	shader_set_base(shader);
 }
+
+// custom patterns shit what??? what???
 #macro CACHE_DIRECTORY $"{working_directory}cache"
 #macro PATTERN_DIRECTORY $"{working_directory}patterns/"
 #macro TEXTURE_PAGE_SIZE 4096
 
 if !directory_exists(PATTERN_DIRECTORY)
 	directory_create(PATTERN_DIRECTORY);
-
 
 var pattern_example_directory = $"{PATTERN_DIRECTORY}/Example/";
 if !directory_exists(pattern_example_directory)

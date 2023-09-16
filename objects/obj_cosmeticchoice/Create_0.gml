@@ -26,39 +26,39 @@ select = function()
 }
 draw = function(curve)
 {
-	// hat
 	var hat = hats[sel.hat];
-	draw_sprite_ext(hat.sprite, -1, lerp(0, 960, 0.3), 540 / 2 + charshift[0], 2, 2, 0, c_white, charshift[2]);
-	
-	// pet
 	var pet = pets[sel.pet];
-	draw_sprite_ext(pet.sprite, -1, lerp(0, 960, 0.7), 540 / 2 + charshift[1], 2, 2, 0, c_white, charshift[3]);
+	
+	// hat
+	var sprite;
+	switch sel.side
+	{
+		case 0: sprite = hat.sprite; break;
+		case 1: sprite = pet.sprite; break;
+	}
+	
+	var col = c_white;
+	if sprite == spr_nocosmetic
+	{
+		col = c_black;
+		if sel.side == 0
+			sprite = spr_cowboyhat;
+		else
+			sprite = spr_toppinshroom;
+	}
+	var yoffset = 25 + (sprite_get_yoffset(sprite) - lerp(sprite_get_bbox_bottom(sprite), sprite_get_bbox_top(sprite), 0.5) * 2);
+	draw_sprite_ext(sprite, -1, lerp(0, 960, 0.5) + charshift[0], 540 / 2 + charshift[1] + floor(yoffset), 2, 2, 0, col, charshift[2]);
 	
 	// text
 	draw_set_font(global.bigfont);
 	draw_set_align(fa_left);
 	
-	var str = string_upper(hat.name), xx = lerp(0, 960, 0.3) - string_width(str) / 2;
+	var str = string_upper(sel.side == 0 ? hat.name : pet.name), xx = lerp(0, 960, 0.5) - string_width(str) / 2;
 	for(var i = 1; i <= string_length(str); i++)
 	{
 		// hat
 		var char = string_char_at(str, i);
-		var yy = 380;
-		
-		var d = (i % 2 == 0) ? -1 : 1;
-		var _dir = floor(Wave(-1, 1, 0.1, 0));
-		yy += _dir * d;
-		
-		draw_text(round(xx), yy, char);
-		xx += string_width(char);
-	}
-	
-	var str = string_upper(pet.name), xx = lerp(0, 960, 0.7) - string_width(str) / 2;
-	for(var i = 1; i <= string_length(str); i++)
-	{
-		// pet
-		var char = string_char_at(str, i);
-		var yy = 380;
+		var yy = 360;
 		
 		var d = (i % 2 == 0) ? -1 : 1;
 		var _dir = floor(Wave(-1, 1, 0.1, 0));
@@ -70,15 +70,37 @@ draw = function(curve)
 	
 	draw_set_font(global.font_small);
 	draw_set_align(fa_center);
-	draw_text_ext(lerp(0, 960, 0.3), 420, hat.desc, 16, 400);
-	draw_text_ext(lerp(0, 960, 0.7), 420, pet.desc, 16, 400);
+	draw_text_ext(lerp(0, 960, 0.5), 400, sel.side == 0 ? hat.desc : pet.desc, 16, 600);
 	
+	/*
 	switch sel.side
 	{
 		case 0: handx = lerp(handx, lerp(0, 960, 0.3) - 70, 0.25); break;
 		case 1: handx = lerp(handx, lerp(0, 960, 0.7) - 70, 0.25); break;
 	}
 	draw_sprite_ext(spr_skinchoicehand, 0, handx, 200, 2, 2, 0, c_white, 1);
+	*/
+	
+	// arrows
+	var arrow_sel = sel.side == 0 ? sel.hat : sel.pet;
+	var arrow_max = sel.side == 0 ? array_length(hats) : array_length(pets);
+	
+	if arrow_sel > 0
+	{
+		var xx = 960 / 2 - 120 - sin(current_time / 200) * 4, yy = 540 / 2 - 16;
+		if charshift[0] < 0
+			xx += charshift[0];
+		
+		draw_sprite_ext(spr_palettearrow, 0, xx, yy, 1, 1, 90, c_white, 1);
+	}
+	if arrow_sel < arrow_max - 1
+	{
+		var xx = 960 / 2 + 120 + sin(current_time / 200) * 4, yy = 540 / 2 - 16;
+		if charshift[0] > 0
+			xx += charshift[0];
+		
+		draw_sprite_ext(spr_palettearrow, 0, xx, yy, 1, 1, 270, c_white, 1);
+	}
 }
 charshift = [0, 0, 1, 1];
 handx = 0;
@@ -94,13 +116,12 @@ function add_pet(pet, sprite, name = "HAT", desc = "loypoll please add details",
 
 // hats
 add_hat(-1, spr_nocosmetic, "No Hat", "Don't you already have a hat?");
-add_hat(0, spr_cowboyhat, "Cowboy Hat", "Yeehaw!");
-add_hat(1, spr_duncehat, "Dunce Hat", "Shame on you.");
-add_hat(2, spr_dragonhat, "Cheese Dragon's Head", "loypoll please add details");
-add_hat(3, spr_towerhat, "#1 Tower Enthusiast", "Finally, you can wear THE Pizza Tower!");
-add_hat(4, spr_crownhat, "Golden Crown", "A relic left behind from the medieval times.");
-add_hat(5, spr_shroomhat, "Shroom's Head", "loypoll please add details");
-add_hat(6, spr_catearshat, "Cat Ears", "mmmrp mrrow nya :3");
+add_hat(HAT.cowboy, spr_cowboyhat, "Cowboy Hat", "Yeehaw!");
+add_hat(HAT.dunce, spr_duncehat, "Dunce Hat", "Shame on you.");
+//add_hat(HAT.dragon, spr_dragonhat, "Cheese Dragon's Head", "loypoll please add details");
+//add_hat(HAT.tower, spr_towerhat, "#1 Tower Enthusiast", "Finally, you can wear THE Pizza Tower!");
+add_hat(HAT.crown, spr_crownhat, "Golden Crown", "A relic left behind from the medieval times.");
+add_hat(HAT.uwunya, spr_catearshat, "Cat Ears", "mmmrp mrrow nya :3");
 
 // pets
 add_pet(-1, spr_nocosmetic, "No Pet", "All alone...");
@@ -122,3 +143,4 @@ for(var i = 0; i < array_length(pets); i++)
 	if obj_player1.pet == pets[i].pet
 		sel.pet = i;
 }
+shown_tip = false;

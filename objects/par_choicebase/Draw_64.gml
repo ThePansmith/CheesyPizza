@@ -80,6 +80,25 @@ if !global.performance
 if is_method(draw)
 	draw(curve);
 
+with obj_transfotip
+{
+	if visible
+	{
+		draw_set_colour(c_black);
+		
+		var xx = SCREEN_WIDTH / 2;
+		var yy = SCREEN_HEIGHT - 50;
+		var s = text_size;
+		
+		xx -= (s[0] / 2);
+		yy -= s[1];
+		
+		draw_set_alpha(fade / 2);
+		draw_roundrect(xx - 16, yy - 10, xx + s[0] + 16, yy + s[1] + 10, false);
+		draw_set_alpha(1);
+	}
+}
+
 shader_reset();
 
 // post draw content
