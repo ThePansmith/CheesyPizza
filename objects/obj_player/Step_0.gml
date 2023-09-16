@@ -996,7 +996,7 @@ if room != rank_room && room != timesuproom
 {
 	if hat != -1 && !instance_exists(obj_cowboyhat)
 	{
-		with instance_create(x, y, obj_cowboyhat)
+		with instance_create(x, y, obj_cowboyhat, {hat: hat})
 			playerid = other.id;
 	}
 	if pet != pet_prev or (pet != -1 && !instance_exists(petID))
