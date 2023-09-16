@@ -313,7 +313,7 @@ function scr_player_mach3()
 				vsp = -6;
 			}
 		}
-		if (scr_check_superjump() && fightball == 0 && state == states.mach3 && character != "V" && grounded && vsp > 0 && sprite_index != spr_dashpadmach && !place_meeting(x, y, obj_dashpad))
+		if (scr_check_superjump() && fightball == 0 && state == states.mach3 && character != "V" && (grounded or character == "SP") && vsp > 0 && sprite_index != spr_dashpadmach && !place_meeting(x, y, obj_dashpad))
 		{
 			sprite_index = spr_superjumpprep;
 			state = states.Sjumpprep;
