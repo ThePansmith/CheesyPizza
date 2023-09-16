@@ -976,6 +976,7 @@
     {"id":{"name":"obj_johnresurrection","path":"objects/obj_johnresurrection/obj_johnresurrection.yy",},},
     {"id":{"name":"obj_pizzaheadbrickball","path":"objects/obj_pizzaheadbrickball/obj_pizzaheadbrickball.yy",},},
     {"id":{"name":"obj_particlesystem","path":"objects/obj_particlesystem/obj_particlesystem.yy",},},
+    {"id":{"name":"spr_missing","path":"sprites/spr_missing/spr_missing.yy",},},
     {"id":{"name":"obj_destroyable_respawner","path":"objects/obj_destroyable_respawner/obj_destroyable_respawner.yy",},},
     {"id":{"name":"obj_mainmenu","path":"objects/obj_mainmenu/obj_mainmenu.yy",},},
     {"id":{"name":"spr_comboveryPN","path":"sprites/spr_comboveryPN/spr_comboveryPN.yy",},},
@@ -3096,6 +3097,7 @@
     {"id":{"name":"obj_cosmeticdresser","path":"objects/obj_cosmeticdresser/obj_cosmeticdresser.yy",},},
     {"id":{"name":"vertex_build_quad3D","path":"scripts/vertex_build_quad3D/vertex_build_quad3D.yy",},},
     {"id":{"name":"spr_snick_tumble","path":"sprites/spr_snick_tumble/spr_snick_tumble.yy",},},
+    {"id":{"name":"texturegroup_free","path":"scripts/texturegroup_free/texturegroup_free.yy",},},
     {"id":{"name":"spr_gate_dragonlairBG","path":"sprites/spr_gate_dragonlairBG/spr_gate_dragonlairBG.yy",},},
     {"id":{"name":"badland_3","path":"rooms/badland_3/badland_3.yy",},},
     {"id":{"name":"badland_4","path":"rooms/badland_4/badland_4.yy",},},
@@ -11107,5 +11109,7 @@
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"molassesgroup","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"sugarytutgroup","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"estategroup","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
+    {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"soundtestgroup","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
+    {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"patterndynamicgroup","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"dynamicpages","mipsToGenerate":0,"targets":-1,},
   ],
 }

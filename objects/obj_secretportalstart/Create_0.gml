@@ -46,3 +46,6 @@ if !death && SUGARY
 		image_blend_func = noone; // TODO: SUGARY STYLE BLENDING!!!!
 	}
 }
+
+if (room != tower_soundtest)
+	texturegroup_free("soundtestgroup");
