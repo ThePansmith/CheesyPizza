@@ -1,4 +1,4 @@
-//live_auto_call;
+live_auto_call;
 
 if !init
 	exit;
@@ -75,11 +75,6 @@ if !global.performance
 	if curve < 1
 		shader_set_circleclip(960 / 2, 540 / 2, 560 * curve, true);
 }
-
-// draw content
-if is_method(draw)
-	draw(curve);
-
 with obj_transfotip
 {
 	if visible
@@ -99,6 +94,10 @@ with obj_transfotip
 	}
 }
 
+// draw content
+draw_set_colour(c_white);
+if is_method(draw)
+	draw(curve);
 shader_reset();
 
 // post draw content
