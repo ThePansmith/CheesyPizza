@@ -103,8 +103,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "soundtestgroup",
+    "path": "texturegroups/soundtestgroup",
   },
   "type": 0,
   "VTile": false,

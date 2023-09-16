@@ -3,7 +3,7 @@ live_auto_call;
 depth = -100;
 
 offset_by = function(by)
-{
+{		
 	obj_player1.x += by;
 	
 	with obj_camera
@@ -27,7 +27,7 @@ offset_by = function(by)
 		}
 		
 		portal_offset.x -= by;
-		trace(portal_offset);
+		//trace(portal_offset);
 		event_perform(ev_step, ev_step_end);
 	}
 }
