@@ -18,10 +18,10 @@ function scr_player_rupertslide()
 		sprite_index = spr_player_skatedoublejumpstart;
 		image_index = 0;
 	}
-	if (key_jump && !grounded && doublejumped == 0)
+	if (key_jump && !grounded && doublejump == 0)
 	{
 		jumpstop = true;
-		doublejumped = 1;
+		doublejump = 1;
 		vsp = -14;
 		image_index = 0;
 		sprite_index = spr_player_skatedoublejumpstart;

@@ -17,10 +17,10 @@ function scr_player_rupertjump()
 				break;
 		}
 	}
-	if (key_jump && !grounded && doublejumped == 0)
+	if (key_jump && !grounded && doublejump == 0)
 	{
 		jumpstop = true;
-		doublejumped = 1;
+		doublejump = 1;
 		vsp = -14;
 		image_index = 0;
 		sprite_index = spr_player_skatedoublejumpstart;
@@ -28,7 +28,7 @@ function scr_player_rupertjump()
 			image_xscale = other.xscale;
 		sound_play_oneshot_3d(sfx_jump, x, y);
 	}
-	if (vsp >= 10 || sprite_index == spr_player_skatespin || ((doublejumped || sprite_index == spr_player_skatewalljump || sprite_index == spr_player_skatewalljumpstart) && vsp >= 1))
+	if (vsp >= 10 || sprite_index == spr_player_skatespin || ((doublejump || sprite_index == spr_player_skatewalljump || sprite_index == spr_player_skatewalljumpstart) && vsp >= 1))
 	{
 		jumpstop = true;
 		if (sprite_index != spr_player_skatespin)
@@ -93,7 +93,7 @@ function scr_player_rupertjump()
 	}
 	if (grounded && vsp > 0)
 	{
-		doublejumped = false;
+		doublejump = false;
 		if (sprite_index == spr_player_skatespin && !place_meeting(x, y + 1, obj_destructibles) && !place_meeting(x, y + 1, obj_metalblock) && !place_meeting(x, y + 1, obj_ratblock))
 		{
 			if (check_slope(x, y))

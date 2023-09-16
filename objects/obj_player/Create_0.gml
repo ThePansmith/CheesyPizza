@@ -765,9 +765,6 @@ spinsndbuffer = 5;
 boxxedspinbuffer = 0;
 noisebossscream = false;
 
-// sugary
-doublejumped = false;
-
 // pto new
 smoothx = 0;
 oldHallway = false;
