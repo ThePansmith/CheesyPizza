@@ -1,7 +1,10 @@
-if instance_number(object_index) >= 2
+with obj_parallax
 {
-	trace("Extra obj_parallax in " + room_get_name(room));
-	instance_destroy();
+	if id != other.id
+	{
+		trace("Extra obj_parallax in " + room_get_name(room));
+		instance_destroy(other);
+	}
 }
 depth = 1000;
 
