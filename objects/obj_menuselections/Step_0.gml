@@ -65,7 +65,7 @@ if (levelselect == 1)
 				}
 				if (other.b == 1)
 				{
-					obj_player.targetRoom = floor2_room0;
+					obj_player.targetRoom = oldmansion_0;
 					obj_player.player_x = 208;
 					obj_player.player_y = 434;
 					obj_player.character = "P";
@@ -79,14 +79,14 @@ if (levelselect == 1)
 				}
 				if (other.b == 3)
 				{
-					obj_player.targetRoom = floor4_room0;
+					obj_player.targetRoom = oldsewer_0;
 					obj_player.player_x = 304;
 					obj_player.player_y = 402;
 					obj_player.character = "P";
 				}
 				if (other.b == 4)
 				{
-					obj_player.targetRoom = floor5_room1;
+					obj_player.targetRoom = oldfreezer_1;
 					obj_player.player_x = 244;
 					obj_player.player_y = 187;
 					obj_player.character = "P";
@@ -112,7 +112,7 @@ if (levelselect == 1)
 				}
 				if (other.b == 1)
 				{
-					obj_player.targetRoom = floor2_roomtreasure;
+					obj_player.targetRoom = oldmansion_treasure;
 					obj_player.player_x = 250;
 					obj_player.player_y = 250;
 					obj_player.character = "P";

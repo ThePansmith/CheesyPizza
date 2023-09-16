@@ -1,5 +1,5 @@
 msg = "The Noise-rator WIP";
-targetRoom = floor5_room1;
+targetRoom = oldfreezer_1;
 level = "oldfreezer";
 door_index = 3;
 

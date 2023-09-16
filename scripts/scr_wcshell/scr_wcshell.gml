@@ -59,7 +59,7 @@ function scr_wc_create()
 	WC_select_inst = noone;
 	
 	// instance drag
-	WC_drag_toggle = true;
+	WC_drag_toggle = DEBUG;
 	WC_drag_alt = false;
 	WC_drag_offset = [0, 0];
 	WC_drag_grid = [1, 1];
