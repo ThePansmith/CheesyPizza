@@ -243,7 +243,7 @@ if instance_exists(target) && !lock && player.state != states.timesup && player.
 		crouchcamera = 0;
 	}
 			
-	// actually move the camera
+	// prepare camera position
 	with obj_screensizer
 		camera_set_view_size(view_camera[0], SCREEN_WIDTH * camzoom * other.camzoom, SCREEN_HEIGHT * camzoom * other.camzoom);
 	
@@ -300,23 +300,34 @@ if instance_exists(target) && !lock && player.state != states.timesup && player.
 			cam_y += (cam_height - limitcam[3]) / 2;
 	}
 	
-	if lag > 0
-		lagpos = undefined;
-	if lag-- <= 0
+	// snick spindash lag
+	var camx_final = cam_x;
+	if lag == 0
 	{
 		if lagpos == undefined
 			lagpos = camera_get_view_x(view_camera[0]) - cam_x;
-		camera_set_view_pos(view_camera[0], round(cam_x + lagpos), round(cam_y));
+		else
+		{
+			lagpos = Approach(lagpos, 0, 25);
+			if lagpos == 0
+				lag = -1;
+		}
+		camx_final += lagpos;
 	}
-	else
-		camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]), round(cam_y));
-	lag = max(lag, 0);
+	else if lag > 0
+	{
+		lagpos = undefined;
+		lag--;
+		
+		camx_final = CAMX;
+	}
 	
-	if lagpos != undefined
-		lagpos = Approach(lagpos, 0, 25);
-	
+	// stored camera pos
 	lockx = cam_x;
 	locky = cam_y;
+	
+	// finally set the camera position
+	camera_set_view_pos(view_camera[0], round(camx_final), round(cam_y));
 }
 else if REMIX && room != rank_room && room != timesuproom && room != rm_baby && !instance_exists(obj_bosscontroller)
 {
