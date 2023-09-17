@@ -90,9 +90,6 @@
     {"name":"inst_41B3504A","path":"rooms/dragonlair_5/dragonlair_5.yy",},
     {"name":"inst_C666CEB2","path":"rooms/dragonlair_5/dragonlair_5.yy",},
     {"name":"inst_5B194C2A","path":"rooms/dragonlair_5/dragonlair_5.yy",},
-    {"name":"inst_3F917A1C","path":"rooms/dragonlair_5/dragonlair_5.yy",},
-    {"name":"inst_365A8F9A","path":"rooms/dragonlair_5/dragonlair_5.yy",},
-    {"name":"inst_6EC4200B","path":"rooms/dragonlair_5/dragonlair_5.yy",},
   ],
   "isDnd": false,
   "layers": [
