@@ -9,7 +9,7 @@ for (var i = 0; i < array_length(banks); i++)
 {
 	var b = working_directory + banks[i];
 	trace($"Attemping to load: \"{b}\"");
-	var bank_handle = fmod_bank_load(b, 0);
+	var bank_handle = fmod_bank_load(b, FMOD_STUDIO_LOAD_BANK_FLAGS.NORMAL);
 	trace($"Loaded Bank: \"{b}\" with id: {bank_handle}");
 	if (bank_handle == FMOD_INVALID_HANDLE)
 		trace("Could not load bank: ", b);

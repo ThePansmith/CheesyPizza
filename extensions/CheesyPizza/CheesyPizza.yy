@@ -176,7 +176,10 @@
             2,
             2,
           ],"documentation":"","externalName":"FMOD_SetListenerAttributes","help":"fmod_set_listener_attributes(listener, x, y)","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_event_instance_set_paused_all_exclude","argCount":0,"args":[],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":1,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_event_instance_set_paused_all_exclude","argCount":0,"args":[
+            2,
+            2,
+          ],"documentation":"","externalName":"FMOD_EventInstance_SetPausedAllExclude","help":"fmod_event_instance_set_paused_all_exclude(paused, excludedEventID)","hidden":false,"kind":1,"returnType":2,},
       ],"init":"","kind":1,"order":[
         {"name":"launch_external","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"test_dll_linkage","path":"extensions/CheesyPizza/CheesyPizza.yy",},
