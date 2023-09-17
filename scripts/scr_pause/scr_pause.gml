@@ -127,7 +127,6 @@ function scr_pause_activate_objects(unpause_sounds = true)
 		for (i = 0; i < ds_list_size(sound_list); i++)
 			fmod_event_instance_set_paused(ds_list_find_value(sound_list, i), false);
 		sound_pause_all(false, global.jukebox == noone ? -1 : global.jukebox.instance);
-		
 		fmod_set_parameter("musicmuffle", savedmusicmuffle, true);
 	}
 	ds_list_clear(instance_list);

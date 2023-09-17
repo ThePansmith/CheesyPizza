@@ -18,7 +18,7 @@
   "exportToGame": true,
   "extensionVersion": "0.1.0",
   "files": [
-    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":64,"filename":"CheesyPizza.dll","final":"ptcu_cleanup","functions":[
+    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":96,"filename":"CheesyPizza.dll","final":"ptcu_cleanup","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"launch_external","argCount":0,"args":[
             1,
           ],"documentation":"","externalName":"cheesypizza_launchexternal","help":"","hidden":false,"kind":1,"returnType":2,},
@@ -100,10 +100,10 @@
           ],"documentation":"","externalName":"FMOD_Bank_LoadSampleData","help":"fmod_bank_load_sample_data(bankHandle)","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_event_create_instance","argCount":0,"args":[
             1,
-          ],"documentation":"","externalName":"FMOD_EventDescription_CreateInstance","help":"fmod_event_create_instance(path)","hidden":false,"kind":1,"returnType":2,},
+          ],"documentation":"","externalName":"FMOD_EventDescription_CreateInstance","help":"fmod_event_create_instance(eventPath)","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_event_instance_release","argCount":0,"args":[
             2,
-          ],"documentation":"","externalName":"FMOD_EventDescription_ReleaseInstance","help":"fmod_event_instance_release(eventHandle)","hidden":false,"kind":1,"returnType":2,},
+          ],"documentation":"","externalName":"FMOD_EventDescription_ReleaseInstance","help":"fmod_event_instance_release(eventID)","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_event_get_instance_count","argCount":0,"args":[
             1,
           ],"documentation":"","externalName":"FMOD_EventDescription_GetInstanceCount","help":"fmod_event_get_instance_count(eventPath) (WIP)","hidden":false,"kind":1,"returnType":2,},
