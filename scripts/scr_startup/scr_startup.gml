@@ -247,8 +247,8 @@ function shader_set_fix(shader)
 }
 
 // custom patterns shit what??? what???
-#macro CACHE_DIRECTORY working_directory"cache"
-#macro PATTERN_DIRECTORY working_directory"patterns/"
+#macro CACHE_DIRECTORY $"{working_directory}cache"
+#macro PATTERN_DIRECTORY $"{working_directory}patterns/"
 #macro TEXTURE_PAGE_SIZE 4096
 
 if !directory_exists(PATTERN_DIRECTORY)

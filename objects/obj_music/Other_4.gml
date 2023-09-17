@@ -45,6 +45,7 @@ if ((!global.panic && !global.snickchallenge && !MOD.DeathMode) or global.levelt
 	{
 		if secret
 		{
+			trace("here 1");
 			var s = 0;
 			switch obj_player1.character
 			{
@@ -61,6 +62,7 @@ if (secret)
 {
 	if (music != noone && music.event_secret != noone)
 	{
+					trace("here 2");
 		var ev = music.event_secret, evname = music.event_secret_name;
 		fmod_event_instance_play(ev);
 		fmod_event_instance_set_paused(ev, false);

@@ -17,6 +17,22 @@ enum FMOD_INIT_FLAGS
 	// Enables detailed memory usage statistics. Increases memory footprint and impacts performance.
 	MEMORY_TRACKING			= 0x00000020,	
 }
+enum FMOD_STUDIO_LOAD_BANK_FLAGS
+{
+    NORMAL             = 0x00000000,
+    NONBLOCKING        = 0x00000001,
+    DECOMPRESS_SAMPLES = 0x00000002,
+    UNENCRYPTED        = 0x00000004,
+}
+
+enum FMOD_STUDIO_PLAYBACK_STATE
+{
+    PLAYING,
+    SUSTAINING,
+    STOPPED,
+    STARTING,
+    STOPPING,
+}
 
 enum FMOD_EVENTINSTANCE_STOPMODE
 {
