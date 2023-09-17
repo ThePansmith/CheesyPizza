@@ -19,7 +19,7 @@ if place_meeting(x, y, obj_player)
 		global.panic = true;
 		switch (room)
 		{
-			case floor2_roomtreasure:
+			case oldmansion_treasure:
 				global.minutes = 2;
 				global.seconds = 40;
 				break;
@@ -27,11 +27,11 @@ if place_meeting(x, y, obj_player)
 				global.minutes = 2;
 				global.seconds = 30;
 				break;
-			case floor4_roomtreasure:
+			case oldsewer_treasure:
 				global.minutes = 2;
 				global.seconds = 0;
 				break;
-			case floor5_roomtreasure:
+			case oldfreezer_treasure:
 				global.minutes = 2;
 				global.seconds = 0;
 				break;

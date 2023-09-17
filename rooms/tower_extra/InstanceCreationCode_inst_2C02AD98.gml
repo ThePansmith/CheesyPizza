@@ -1,5 +1,5 @@
 msg = "Old Shit! WIP";
-targetRoom = floor4_room0;
+targetRoom = oldsewer_0;
 level = "oldsewer";
 door_index = 3;
 

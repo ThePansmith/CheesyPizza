@@ -11,6 +11,8 @@ function scr_player_Sjump()
 	crouchslideAnim = true;
 	crouchAnim = false;
 	machhitAnim = false;
+	superjumped = true;
+	
 	if (sprite_index == spr_superjump)
 	{
 		if (steppybuffer > 0)

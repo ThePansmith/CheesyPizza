@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "OLD",
-    "path": "folders/Sprites/Tilesets/OLD.yy",
+    "name": "Freezer",
+    "path": "folders/Sprites/Tilesets/Freezer.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
