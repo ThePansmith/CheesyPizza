@@ -3,7 +3,7 @@ if instance_exists(obj_levelLoader)
 if global.jukebox != noone
 	exit;
 if MOD.DeathMode
-	music = -4;
+	music = noone;
 
 if ((!global.panic && !global.snickchallenge && !MOD.DeathMode) or global.leveltosave == "dragonlair" or global.leveltosave == "grinch" or global.leveltosave == "sucrose")
 {
