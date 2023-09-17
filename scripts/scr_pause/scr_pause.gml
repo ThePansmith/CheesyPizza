@@ -126,7 +126,7 @@ function scr_pause_activate_objects(unpause_sounds = true)
 	{
 		for (i = 0; i < ds_list_size(sound_list); i++)
 			fmod_event_instance_set_paused(ds_list_find_value(sound_list, i), false);
-		fmod_event_instance_set_paused_all(false);
+		sound_pause_all(false, global.jukebox == noone ? -1 : global.jukebox);
 		fmod_set_parameter("musicmuffle", savedmusicmuffle, false);
 	}
 	ds_list_clear(instance_list);
@@ -140,12 +140,10 @@ function scr_pause_deactivate_objects(pause_sounds = true)
 	if pause_sounds
 	{
 		savedmusicmuffle = fmod_get_parameter("musicmuffle");
-		sound_pause_all(true);
+		sound_pause_all(true, global.jukebox == noone ? -1 : global.jukebox);
 		if global.jukebox != noone
-		{
-			fmod_event_instance_set_paused(global.jukebox.instance, false);
 			fmod_set_parameter("musicmuffle", true, false);
-		}
+		
 	}
 	
 	ds_list_clear(instance_list);
@@ -155,13 +153,14 @@ function scr_pause_deactivate_objects(pause_sounds = true)
 		if (instance_exists(obj) && obj.object_index != obj_pause && obj.object_index != obj_inputAssigner && obj.object_index != obj_screensizer)
 			ds_list_add(instance_list, obj);
 	}
+
 	instance_deactivate_all(true);
+	instance_activate_object(obj_fmod);
 	instance_activate_object(obj_inputAssigner);
 	instance_activate_object(obj_savesystem);
 	instance_activate_object(obj_pause);
 	instance_activate_object(obj_screensizer);
 	instance_activate_object(obj_music);
-	instance_activate_object(obj_fmod);
 	instance_activate_object(obj_persistent);
 	instance_activate_object(obj_shell);
 	instance_activate_object(obj_richpresence);

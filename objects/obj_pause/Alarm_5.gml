@@ -6,7 +6,7 @@ ds_list_clear(global.baddieroom);
 ds_list_clear(global.debris_list);
 ds_list_clear(global.collect_list);
 alarm[4] = 1;
-obj_music.music = -4;
+obj_music.music = noone;
 instance_destroy(obj_fadeout);
 
 global.levelreset = false;

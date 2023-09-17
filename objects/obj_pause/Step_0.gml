@@ -61,7 +61,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 		{
 			if global.jukebox != noone
 				waiting = true;
-			if (music != -4)
+			if (music != noone)
 			{
 				other.savedmusicpause = fmod_event_instance_get_paused(music.event);
 				other.savedsecretpause = fmod_event_instance_get_paused(music.event_secret);
@@ -189,7 +189,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 					_txt = lang_get_value("jetpack2tip");
 			}
 		}
-		if (_txt != -4)
+		if (_txt != noone)
 		{
 			draw_set_font(lang_get_font("creditsfont"));
 			draw_set_halign(fa_left);
