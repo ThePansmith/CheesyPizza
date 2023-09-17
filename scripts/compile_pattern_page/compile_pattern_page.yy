@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "custom_pattern",
+  "name": "compile_pattern_page",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

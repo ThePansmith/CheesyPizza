@@ -260,7 +260,7 @@ if !directory_exists(pattern_example_directory)
 	directory_create(pattern_example_directory);
 	
 	var file = file_text_open_write($"{pattern_example_directory}Pattern.json");
-	var examplepattern = new custom_pattern();
+	var examplepattern = new custom_pattern_json();
 	file_text_write_string(file, json_stringify(examplepattern, true));
 	delete examplepattern;
 	file_text_close(file);

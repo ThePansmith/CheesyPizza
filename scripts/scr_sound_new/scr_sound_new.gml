@@ -43,14 +43,17 @@ function sound_destroy_instance(inst)
 		fmod_event_instance_release(inst);
 	}
 }
-function sound_pause_all(enable)
+function sound_pause_all(enable, excludeEventID = -1)
 {
 	if enable
 		audio_pause_all();
 	else
 		audio_resume_all();
 	
-	fmod_event_instance_set_paused_all(enable);
+	if excludeEventID == -1
+		fmod_event_instance_set_paused_all(enable);
+	else
+		fmod_event_instance_set_paused_all_exclude(enable, excludeEventID);
 }
 function sound_stop(event, force = true)
 {

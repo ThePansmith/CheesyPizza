@@ -3,11 +3,11 @@ function add_music(_room, _event, _eventsecret, _continuous, _on_room_start = no
 	var b = 
 	{
 		continuous: _continuous,
-		on_room_start: -4,
+		on_room_start: noone,
 		value: 0,
 		immediate: false,
-		event: -4,
-		event_secret: -4
+		event: noone,
+		event_secret: noone
 	};
 	with (b)
 	{

@@ -46,8 +46,8 @@ else
 		obj_player1.targetDoor = "HUB";
 		if (instance_exists(obj_player2))
 			obj_player2.targetDoor = "HUB";
-		global.leveltorestart = -4;
-		global.leveltosave = -4;
+		global.leveltorestart = noone;
+		global.leveltosave = noone;
 	}
 }
 if (rm == boss_pizzaface || rm == boss_noise || rm == boss_pepperman || rm == boss_fakepep || rm == boss_vigilante)
