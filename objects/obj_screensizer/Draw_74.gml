@@ -1,4 +1,4 @@
-global.Pattern_Texture_Indexed = -4;
+global.Pattern_Texture_Indexed = noone;
 
 if !surface_exists(gui_surf)
 	gui_surf = surface_create(display_get_gui_width(), display_get_gui_height());

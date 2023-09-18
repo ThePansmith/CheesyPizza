@@ -11,7 +11,7 @@ function scr_draw_screen(x, y, xscale, yscale, alpha = 1, gui = false)
 				var fader = shader_get_uniform(shd_greyscale, "fade");
 				shader_set_uniform_f(fader, greyscale);
 			}
-		}
+		}	
 	}
 	else
 	{

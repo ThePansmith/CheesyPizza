@@ -1,5 +1,5 @@
-surface = -4;
+surface = noone;
 radius = 130;
 expand = false;
-objectID = -4;
+objectID = noone;
 depth = -599;
