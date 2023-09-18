@@ -6,7 +6,7 @@ with (other)
 		state = states.rocket;
 		other.playerid = id;
 		create_transformation_tip(lang_get_value("rockettip"), "rocket");
-		sprite_index = spr_rocketstart;
+		sprite_index = SUGARY ? spr_rocketbottle_start : spr_rocketstart;
 		image_index = 0;
 		if (movespeed < 8)
 			movespeed = 8;

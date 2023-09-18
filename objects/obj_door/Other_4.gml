@@ -66,3 +66,5 @@ if sprite_index == spr_cheftaskdoor
 }
 if MIDWAY
 	sprite_index = spr_midwaydoor;
+if room == steamy_8
+	sprite_index = spr_clockdoor;

@@ -1,4 +1,4 @@
-//live_auto_call;
+live_auto_call;
 
 event_inherited();
 
@@ -230,13 +230,15 @@ add_section("Pinolino Adventure", [
 #endregion
 
 scroll = -50;
-textx = 540;
+textx = 0;
 
 draw = function(curve)
 {
 	draw_set_spotlight(960 / 2, 540 / 2, 560 * curve);
-	var talpha = 1;
+	
 	// background and disc
+	var talpha = 1;
+	
 	draw_set_colour(c_black);
 	draw_set_alpha(0.75);
 	draw_rectangle(0, 0, 960, 540, false);
@@ -285,14 +287,6 @@ draw = function(curve)
 	//var clip = shader_get_uniform(shd_rectclip, "u_clip_bounds");
 	//shader_set_uniform_f_array(clip, [64 + charshift[0], 0, 364 + charshift[0], 540]);
 	
-	if anim_con == 0
-	{
-		if curve >= .7
-			textx = lerp(textx, 0, .25);
-	}
-	else
-		textx = lerp(960, 0, curve);
-	
 	var scroller = max((sel.song - 8) * 16, 0);
 	for(var i = 0; i < array_length(sections[sel.game].songs); i++)
 	{
@@ -336,7 +330,7 @@ draw = function(curve)
 	
 	draw_reset_clip();
 	if curve < 1
-		draw_set_spotlight(960 / 2, 540 / 2, 560 * curve, false, true);
+		draw_set_spotlight(960 / 2, 540 / 2, 560 * curve, false, false);
 	draw_set_alpha(talpha);
 	draw_sprite(spr_cursor, -1, 64 - 36 + xo + charshift[0], 128 + 10 - scroller + sel.song * 16 + textx);
 	

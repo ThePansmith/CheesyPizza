@@ -224,6 +224,8 @@ function scr_characterspr()
 	spr_cheesepepstickfloor = spr_cheesepep_stick;
 	spr_rocketstart = spr_player_rocketstart;
 	spr_rocket = spr_player_rocket;
+	spr_rocketrun = spr_player_rocketrun;
+	spr_rocketslide = spr_player_rocketslide;
 	spr_rockethitwall = spr_player_rockethitwall;
 	spr_slipbanan1 = spr_player_slipbanan1;
 	spr_slipbanan2 = spr_player_slipbanan2;
@@ -289,6 +291,10 @@ function scr_characterspr()
 	spr_chainsawrev = spr_player_chainsawrev;
 	spr_chainsawdash = spr_player_chainsawdash;
 	spr_chainsawdashstart = spr_player_chainsawdashstart;
+	spr_rocketbottle_start = spr_playerSP_bottlerocketstart;
+	spr_rocketbottle = spr_playerSP_bottlerocket;
+	spr_rocketbottle_turn = spr_player_rocketslide;
+	spr_rocketbottle_ground = spr_playerSP_bottlerocket_grounded;
 	
 	spr_lonegustavocrouchwalk = spr_lonegustavo_crouchwalk;
 	spr_lonegustavohangwalk = spr_lonegustavo_hangwalk;

@@ -9,9 +9,10 @@ with (obj_player)
 {
 	if (object_index != obj_player2 || global.coop)
 	{
-		if (targetDoor == "S" && secretportalID == other.ID)
+		if (targetDoor == "S" && (secretportalID == noone or secretportalID == other.ID))
 		{
-			if (!instance_exists(obj_secretportalstart)) // RX: Create a secret exit if one doesn't exist
+			secretportalID = noone;
+			if !instance_exists(obj_secretportalstart) // RX: Create a secret exit if one doesn't exist
 			{	
 				x = other.x;
 				y = other.y;

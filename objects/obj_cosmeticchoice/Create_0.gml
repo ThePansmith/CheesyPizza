@@ -1,4 +1,4 @@
-//live_auto_call;
+live_auto_call;
 event_inherited();
 
 image_speed = 0.35;
@@ -46,7 +46,7 @@ draw = function(curve)
 		else
 			sprite = spr_toppinshroom;
 	}
-	var yoffset = 25 + (sprite_get_yoffset(sprite) - lerp(sprite_get_bbox_bottom(sprite), sprite_get_bbox_top(sprite), 0.5) * 2);
+	var yoffset = 50 + (sprite_get_yoffset(sprite) - lerp(sprite_get_bbox_bottom(sprite), sprite_get_bbox_top(sprite), 0.5) * 2);
 	draw_sprite_ext(sprite, -1, lerp(0, 960, 0.5) + charshift[0], 540 / 2 + charshift[1] + floor(yoffset), 2, 2, 0, col, charshift[2]);
 	
 	// text
@@ -58,7 +58,7 @@ draw = function(curve)
 	{
 		// hat
 		var char = string_char_at(str, i);
-		var yy = 360;
+		var yy = 380;
 		
 		var d = (i % 2 == 0) ? -1 : 1;
 		var _dir = floor(Wave(-1, 1, 0.1, 0));
@@ -70,7 +70,7 @@ draw = function(curve)
 	
 	draw_set_font(global.font_small);
 	draw_set_align(fa_center);
-	draw_text_ext(lerp(0, 960, 0.5), 400, sel.side == 0 ? hat.desc : pet.desc, 16, 600);
+	draw_text_ext(lerp(0, 960, 0.5), 420, sel.side == 0 ? hat.desc : pet.desc, 16, 600);
 	
 	/*
 	switch sel.side
@@ -87,7 +87,7 @@ draw = function(curve)
 	
 	if arrow_sel > 0
 	{
-		var xx = 960 / 2 - 120 - sin(current_time / 200) * 4, yy = 540 / 2 - 16;
+		var xx = 960 / 2 - 120 - sin(current_time / 200) * 4, yy = 540 / 2 + 16;
 		if charshift[0] < 0
 			xx += charshift[0];
 		
@@ -95,7 +95,7 @@ draw = function(curve)
 	}
 	if arrow_sel < arrow_max - 1
 	{
-		var xx = 960 / 2 + 120 + sin(current_time / 200) * 4, yy = 540 / 2 - 16;
+		var xx = 960 / 2 + 120 + sin(current_time / 200) * 4, yy = 540 / 2 + 16;
 		if charshift[0] > 0
 			xx += charshift[0];
 		

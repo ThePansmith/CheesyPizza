@@ -1,4 +1,4 @@
-//live_auto_call;
+live_auto_call;
 
 // prep
 depth = -600;
@@ -181,7 +181,21 @@ var opt = add_option("Remix", "gameplay", "Adds a lot of extra quality of life i
 
 #endregion
 
-add_option("Experimental", "experimental", "Allows access to fun console commands and other WIP stuff. Please do not report bugs from these!");
+add_option("Experimental", "experimental", "Allows access to fun console commands and other WIP stuff. Please do not report bugs from these!", function(val)
+{
+	draw_set_colour(0);
+	draw_rectangle(0, 0, 384, 216, false);
+	draw_sprite_ext(spr_experimental, 0, 0, 0, 1, 1, 0, c_white, val ? 1 : 0.35);
+	
+	draw_set_colour(c_white);
+	if !val
+	{
+		draw_set_font(global.font_small);
+		draw_set_align(fa_center, fa_middle);
+		draw_text(384 / 2, 216 / 1.2, "Experimental's off!");
+		draw_set_align();
+	}
+});
 
 #region ATTACK STYLE
 
@@ -388,7 +402,28 @@ var opt = add_option("Heat Meter", "heatmeter", "Rewards good gameplay with more
 add_section("Input");
 #region SWAP GRAB
 
-add_option("Swap Grab", "swapgrab", "Binds the grab back to the normal bind, and moves whatever attack style you have to the CHAINSAW button.\n\nChange it in the key config.");
+add_option("Swap Grab", "swapgrab", "Binds the grab back to the normal bind, and moves whatever attack style you have to the CHAINSAW button.", function(val)
+{
+	var cx = 80, cy = 50;
+	draw_sprite(spr_tutorialkey, 0, cx, cy);
+	draw_set_align(1, 1);
+	draw_set_font(global.tutorialfont);
+	draw_text_color(cx + 16, cy + 14, chr(global.key_slap), c_black, c_black, c_black, c_black, 1);
+	draw_set_align();
+	
+	var cx = 260, cy = 50;
+	draw_sprite(spr_tutorialkey, 0, cx, cy);
+	draw_set_align(1, 1);
+	draw_set_font(global.tutorialfont);
+	draw_text_color(cx + 16, cy + 14, chr(global.key_chainsaw), c_black, c_black, c_black, c_black, 1);
+	draw_set_align();
+	
+	shader_set(shd_pal_swapper);
+	pal_swap_set(spr_peppalette, 1, false);
+	draw_sprite(val ? spr_player_suplexdash : spr_player_kungfu1, 6, 100, 130);
+	draw_sprite(val ? spr_player_kungfu1 : spr_player_suplexdash, 6, 280, 130);
+	pal_swap_reset();
+});
 
 #endregion
 #region SHOOT BUTTON
@@ -716,17 +751,122 @@ opt.opts = [
 #endregion
 #region ROOM NAMES
 
+rname_y = -50;
 var opt = add_option("Room Names", "roomnames", "Each room in a level will show a unique name, like in the hub.", function(val)
 {
+	if val
+		rname_y = Approach(rname_y, 32, 5);
+	else
+		rname_y = Approach(rname_y, -50, 1);
 	
+	var xi = 384 / 2, yy = rname_y;
+	draw_sprite_tiled(bg_secret, -1, current_time / 100, current_time / 100);
+	draw_sprite(spr_roomnamebg, 0, xi, yy);
+	
+	draw_set_font(lang_get_font("smallfont"));
+	draw_set_align(fa_center, fa_middle);
+	draw_set_color(c_white);
+	draw_text_ext(xi, yy + 8, "BALLSACK CITY", 12, 280);
+	draw_set_align();
 });
 
 #endregion
 #region MACH SOUND
 
+machsnd = sound_create_instance(sfx_mach);
 var opt = add_option("Mach Sound", "machsnd", "Choose between the normal version of the mach sound or an older one.", function(val)
 {
+	var p = simuplayer;
+	if p.state == states.titlescreen
+	{
+		p.state = states.actor;
+		p.timer = 0;
+		p.sprite = spr_player_idle;
+		p.x = 384 / 2;
+		p.hsp = 0;
+	}
 	
+	++p.timer;
+	p.image += 0.35;
+	
+	if !sound_is_playing(machsnd)
+		sound_play(machsnd);
+	
+	fmod_event_instance_set_3d_attributes(machsnd, camera_get_view_x(view_camera[0]) + 960 / 2, camera_get_view_y(view_camera[0]) + 540 / 2);
+	switch p.sprite
+	{
+		case spr_player_idle:
+			fmod_event_instance_set_parameter(machsnd, "state", 0, true);
+			if p.timer >= 30
+			{
+				p.sprite = spr_player_mach1;
+				p.image = 0;
+			}
+			break;
+		
+		case spr_player_mach1:
+			fmod_event_instance_set_parameter(machsnd, "state", val ? 5 : 1, true);
+			
+			p.timer = 0;
+			if p.image >= sprite_get_number(p.sprite) - 1
+				p.sprite = spr_player_mach;
+			break;
+		
+		case spr_player_mach:
+			fmod_event_instance_set_parameter(machsnd, "state", val ? 6 : 2, true);
+			
+			p.image += 0.2;
+			if p.timer >= 40
+			{
+				p.sprite = spr_player_mach4;
+				p.timer = 0;
+			}
+			break;
+		
+		case spr_player_mach4:
+			fmod_event_instance_set_parameter(machsnd, "state", val ? 7 : 3, true);
+			
+			if p.timer >= 80
+			{
+				p.sprite = spr_player_machslidestart;
+				p.timer = 0;
+				p.image = 0;
+				
+				sound_play_centered_oneshot("event:/sfx/pep/break", x, y);
+			}
+			break;
+		
+		case spr_player_machslidestart:
+			fmod_event_instance_set_parameter(machsnd, "state", 0, true);
+			
+			if p.image >= sprite_get_number(p.sprite) - 1
+			{
+				p.sprite = spr_player_machslide;
+				p.timer = 0;
+			}
+			break;
+		case spr_player_machslide:
+			if p.timer > 10
+			{
+				p.sprite = spr_player_machslideend;
+				p.image = 0;
+			}
+			break;
+		case spr_player_machslideend:
+			if p.image >= sprite_get_number(p.sprite) - 1
+			{
+				p.sprite = spr_player_idle;
+				p.timer = 0;
+			}
+			break;
+	}
+	/*
+	if p.image >= sprite_get_number(p.sprite) - 1
+	{
+		
+	}
+	*/
+	draw_simuplayer();
 });
 opt.opts = [
 	["FINAL", 0],

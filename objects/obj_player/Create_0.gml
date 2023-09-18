@@ -764,6 +764,7 @@ gravesurfingjumpbuffer = 0;
 spinsndbuffer = 5;
 boxxedspinbuffer = 0;
 noisebossscream = false;
+secretportalID = noone;
 
 // pto new
 smoothx = 0;
