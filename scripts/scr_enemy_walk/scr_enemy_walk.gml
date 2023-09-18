@@ -35,6 +35,83 @@ function scr_enemy_walk()
 		hsp = 0;
 	if (turntimer > 0 && turner == 1)
 		turntimer--;
+	
+	var hitting_wall = scr_solid(x + hsp, y);
+
+	var slope = check_slope(x + hsp, y);
+	if hitting_wall && slope
+	{
+		// Are we hitting the back of the slope?
+		hitting_wall = sign(slope.image_xscale) != sign(hsp)
+	}
+	
+	hitting_wall |= place_meeting(x + hsp, y, obj_hallway);
+	
+	var outside_room = (x + hsp) > (room_width + 50) || (x + hsp) < -50;
+	var do_turn = turner && turntimer <= 0; // Only turn if we are a turner AND we aren't already turning
+	
+	if (do_turn || (hitting_wall || outside_room))
+	{
+		if (object_index == obj_forknight)
+		{
+			image_xscale *= -1;
+			image_index = 0;
+			sprite_index = turnspr;
+			state = states.idle;
+		}
+		else if (object_index == obj_snowman)
+		{
+			image_xscale *= -1;
+			image_index = 0;
+			sprite_index = spr_newpizzice_turn;
+			state = states.idle;
+		}
+		else if (object_index == obj_patroller)
+		{
+			if (!patrolfound)
+			{
+				image_xscale *= -1;
+				image_index = 0;
+				sprite_index = spr_patroller_turn;
+				state = states.idle;
+			}
+		}
+		else if (object_index == obj_tank)
+		{
+			image_xscale *= -1;
+			image_index = 0;
+			sprite_index = spr_tank_turn;
+			state = states.idle;
+		}
+		else if (object_index == obj_ghostknight)
+		{
+			image_xscale *= -1;
+			image_index = 0;
+			sprite_index = spr_ghostknight_turn;
+			state = states.idle;
+		}
+		else if (object_index == obj_smoreknight)
+		{
+			image_xscale *= -1;
+			image_index = 0;
+			sprite_index = spr_smoreknight_turn;
+			state = states.idle;
+		}
+		else
+		{
+			if (!turnstart)
+				turnstart = true;
+			else
+				image_xscale *= -1;
+			if (object_index == obj_pickle)
+				hsp = 0;
+			if (object_index == obj_miniufo || object_index == obj_kentukybomber)
+				turntimer = turnmax;
+		}
+		turntimer = turnmax;
+	}
+		
+	/* Final game code for reference
 	if ((scr_solid(x + image_xscale, y) || place_meeting(x + hsp, y, obj_hallway) || (x + hsp) > (room_width + 50) || (x + hsp) < -50) || (turntimer <= 0 && turner))
 	{
 		
@@ -100,7 +177,8 @@ function scr_enemy_walk()
 			}
 			turntimer = turnmax;
 		}
-	}
+	}*/
+	
 	if (object_index != obj_ancho && object_index != obj_camerapatrol)
 	{
 		if (!(scr_solid(x + (image_xscale * 15), y + 31) || place_meeting(x + (image_xscale * 15), y + 31, obj_platform)) || (x + hsp) > (room_width + 50) || (x + hsp) < -50)
