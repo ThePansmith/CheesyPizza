@@ -1,4 +1,4 @@
-live_auto_call;
+//live_auto_call;
 
 if !instance_exists(playerid) or playerid.hat < 0
 {

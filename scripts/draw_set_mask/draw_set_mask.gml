@@ -6,7 +6,7 @@
 /// @param	{real}				_clip_sprite_subimage	The subimage of the sprite asset to use
 /// @arg	{bool}	_alpha_fix		Simulate the alphafix to all pixels inside the clip
 /// @returns	{bool}
-function shader_set_maskclip(_x, _y, _clip_sprite, _clip_sprite_subimage = 0, _alpha_fix = false)
+function draw_set_mask(_x, _y, _clip_sprite, _clip_sprite_subimage = 0, _alpha_fix = false)
 {
 	if global.performance
 		return false;

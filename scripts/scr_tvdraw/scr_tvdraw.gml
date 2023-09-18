@@ -97,22 +97,12 @@ function scr_tvdraw()
 			hand_y = lerp(hand_y, lerp(35, -30, _perc), 0.25);
 		}
 	
-		//if !surface_exists(goo_surface)
-		//	goo_surface = surface_create(100, 180);
-	
-		//surface_set_target(goo_surface);
-		//draw_clear_alpha(0, 0);
 		var xx = (_cx - 50) + (-3 + 50);
 		var yy = (_cy - 91) + (_hy + 100);
 		
-		shader_set_maskclip(_cx - 50, _cy - 91, spr_tv_combometercutSP);
+		draw_set_mask(_cx - 50, _cy - 91, spr_tv_combometercutSP);
 		draw_sprite(spr_tv_combometergooSP, propeller_index, xx, yy);
-		//gpu_set_blendmode(bm_subtract);
-		//draw_sprite(spr_tv_combometercutSP, 0, 50, 91);
-		//gpu_set_blendmode(bm_normal);
-		//surface_reset_target();
-		//draw_surface(goo_surface, _cx - 50, _cy - 91)
-		shader_reset();
+		draw_reset_mask();
 
 		draw_sprite(spr_tv_combobubbleSP, -1, _cx, _cy);
 		draw_sprite(spr_tv_combometerhandSP, -1, _cx + hand_x + 80, max(_cy, 60 + hud_posY) + min(hand_y, 20) + 24);

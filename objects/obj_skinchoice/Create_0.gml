@@ -397,7 +397,7 @@ draw = function(curve)
 	// RX: not really a better way to do this without rewriting the entire thing
 	for (var i = 0; i < array_length(cache); i++)
 	{
-		shader_set_maskclip(cache[i].x, cache[i].y, spr_skinchoicepalette);
+		draw_set_mask(cache[i].x, cache[i].y, spr_skinchoicepalette);
 		var spr_xscale = (32 / sprite_get_width(cache[i].pattern));
 		var spr_yscale = (32 / sprite_get_height(cache[i].pattern));
 		
