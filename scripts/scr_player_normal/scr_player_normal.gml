@@ -642,7 +642,7 @@ function state_snick_normal()
 		if grounded && vsp >= 0
 		{
 			state = states.normal;
-			sound_play_3d("event:/sfx/pep/step", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
 			create_particle(x, y, part.landcloud, 0);
 		}
 	}
@@ -663,7 +663,7 @@ function state_snick_normal()
 			{
 				if sprite_index != spr_machslide
 				{
-					sound_play_3d("event:/sfx/pep/break", x, y);
+					sound_play_oneshot_3d("event:/sfx/pep/break", x, y);
 					image_index = 0;
 				}
 				sprite_index = spr_machslide;

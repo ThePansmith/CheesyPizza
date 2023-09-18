@@ -147,7 +147,7 @@ function scr_player_freefall()
 		}
 		else
 		{
-			sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+			sound_play_oneshot_3d(sfx_groundpound, x, y);
 			if (sprite_index == spr_poundcancel1 or sprite_index == spr_playerSP_poundcancel1)
 				sprite_index = spr_poundcancel2;
 			else if (shotgunAnim == 0)

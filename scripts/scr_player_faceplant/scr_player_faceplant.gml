@@ -45,7 +45,7 @@ function scr_player_faceplant()
 		{
 			if grounded
 			{
-				sound_play_3d(sfx_bumpwall, x, y);
+				sound_play_oneshot_3d(sfx_bumpwall, x, y);
 				vsp = -4;
 				sprite_index = spr_kungfujump;
 				image_index = 0;

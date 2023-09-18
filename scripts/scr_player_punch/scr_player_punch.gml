@@ -162,7 +162,7 @@ function scr_player_punch()
 			{
 				if sprite_index == spr_buttattack or sprite_index == spr_buttattackstart or sprite_index == spr_buttattackend
 				{
-					sound_play_3d(sfx_bumpwall, x, y);
+					sound_play_oneshot_3d(sfx_bumpwall, x, y);
 					vsp = -4;
 					sprite_index = spr_kungfujump;
 					image_index = 0;
@@ -171,7 +171,7 @@ function scr_player_punch()
 				}
 				else if sprite_index != spr_breakdancesuper
 				{
-					sound_play_oneshot_3d("event:/sfx/pep/splat", x, y);
+					sound_play_oneshot_3d(sfx_splat, x, y);
 					state = states.bump;
 					image_index = 0;
 					sprite_index = spr_wallsplat;

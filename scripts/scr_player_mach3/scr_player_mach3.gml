@@ -253,8 +253,8 @@ function scr_player_mach3()
 				if (!fightball)
 				{
 					sprite_index = spr_hitwall;
-					sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
-					sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
+					sound_play_oneshot_3d(sfx_groundpound, x, y);
+					sound_play_oneshot_3d(sfx_bumpwall, x, y);
 					hsp = 0;
 					flash = false;
 					state = states.bump;
@@ -270,8 +270,8 @@ function scr_player_mach3()
 					with (obj_player)
 					{
 						sprite_index = spr_hitwall;
-						sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
-						sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
+						sound_play_oneshot_3d(sfx_groundpound, x, y);
+						sound_play_oneshot_3d(sfx_bumpwall, x, y);
 						hsp = 0;
 						flash = false;
 						state = states.bump;

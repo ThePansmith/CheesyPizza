@@ -22,7 +22,7 @@ function respawn_player()
 			state = states.actor;
 			visible = false;
 			hsp = 0;
-			sound_play_3d("event:/sfx/pep/groundpound", x, room_height - 100);
+			sound_play_oneshot_3d(sfx_groundpound, x, room_height - 100);
 			with instance_create(x, y + 540, obj_technicaldifficulty)
 				playerid = other.id
 			vsp = 10;
