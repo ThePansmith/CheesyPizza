@@ -16,7 +16,7 @@
   "date": "2023-07-04T14:56:06.5718393-04:00",
   "description": "",
   "exportToGame": true,
-  "extensionVersion": "0.1.0",
+  "extensionVersion": "0.2.0",
   "files": [
     {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":64,"filename":"CheesyPizza.dll","final":"ptcu_cleanup","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"launch_external","argCount":0,"args":[
@@ -204,7 +204,6 @@
         {"name":"ptcu_replay_readstringraw","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"ptcu_replay_writestringdictionary","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"ptcu_cheesypizza_setHWND","path":"extensions/CheesyPizza/CheesyPizza.yy",},
-        {"name":"ptcu_discord_check_id","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"ptcu_console_create","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"ptcu_cleanup","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"ptcu_replay_readheader","path":"extensions/CheesyPizza/CheesyPizza.yy",},
