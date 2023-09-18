@@ -98,12 +98,15 @@ function scr_tvdraw()
 	
 		var xx = (_cx - 50) + (-3 + 50);
 		var yy = (_cy - 91) + (_hy + 100);
-		
+
 		draw_reset_clip();
 		draw_set_mask(_cx - 50, _cy - 91, spr_tv_combometercutSP);
+		//draw_sprite(spr_tv_combometercutSP, 0, _cx, _cy);
+		gpu_set_depth(depth - 100);
 		draw_sprite(spr_tv_combometergooSP, propeller_index, xx, yy);
+				//draw_sprite(spr_tv_combometercutSP, 0, _cx, _cy);
 		draw_reset_clip();
-
+		
 		draw_sprite(spr_tv_combobubbleSP, -1, _cx, _cy);
 		draw_sprite(spr_tv_combometerhandSP, -1, _cx + hand_x + 80, max(_cy, 60 + hud_posY) + min(hand_y, 20) + 24);
 	
@@ -389,7 +392,7 @@ function scr_tvdraw()
 					
 					draw_set_bounds(clipx, clipy, clipx + _barfillpos, clipy + 50);
 					draw_sprite(spr_bartimer_strip, 0, clipx + 184, clipy);
-					shader_reset();
+					draw_reset_clip();
 				}
 				draw_sprite(spr_bartimer_roll, johnface_index, max(timer_x + _barfillpos, timer_x) - 24, timer_y + 55 - 15 * max(_perc, 0));
 		
