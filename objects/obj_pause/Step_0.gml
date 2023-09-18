@@ -12,7 +12,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 		other.paletteselect = paletteselect;
 		other.character = character;
 		
-		if ((state == states.victory && place_meeting(x, y, obj_startgate)) || (state == states.door && place_meeting(x, y, obj_exitgate)))
+		if ((instance_exists(obj_bosskey) && state == states.victory) || (state == states.victory && place_meeting(x, y, obj_startgate)) || (state == states.door && place_meeting(x, y, obj_exitgate)))
 			_cutscenehandler = true;
 	}
 	with (obj_charswitch_intro)
