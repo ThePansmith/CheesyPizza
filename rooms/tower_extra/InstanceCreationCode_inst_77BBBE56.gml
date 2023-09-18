@@ -10,4 +10,7 @@ title_sprite = spr_titlecards_newtitles;
 titlecard_index = 0;
 titlecard_sprite = spr_titlecards_new;
 title_music = "event:/modded/level/dragonlairtitle";
-msg = "Dragon's Lair";
+msg = "Dragon's Lair WIP";
+
+if !global.experimental
+	instance_destroy();

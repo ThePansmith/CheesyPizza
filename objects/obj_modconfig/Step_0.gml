@@ -1,4 +1,4 @@
-//live_auto_call;
+live_auto_call;
 
 // subsection
 if !visible
@@ -60,6 +60,8 @@ var move = key_down2 - key_up2;
 if move != 0
 {
 	sound_play_oneshot(sfx_step);
+	sound_stop(machsnd, true);
+	
 	simuplayer.state = states.titlescreen;
 	simuplayer.changed = true;
 	simuplayer.angle = 0;

@@ -19,6 +19,7 @@ function scr_tvdraw()
 	// sugary bobbing
 	if sugary
 		collect_y += Wave(2, -2, 3, 0); // collect_y serves as an offset
+	
 	// combo
 	if !sugary
 	{
@@ -149,7 +150,7 @@ function scr_tvdraw()
 			// secrets
 			var bgindex = tv_bg.sprite, bgcol = c_white;
 			if instance_exists(obj_ghostcollectibles)
-				bgindex = bg_secret;
+				bgindex = sugary ? bg_secret_ss : bg_secret;
 			if obj_player1.state == states.secretenter && instance_exists(obj_fadeout)
 				bgcol = merge_color(c_white, c_black, clamp(obj_fadeout.fadealpha, 0, 1));
 			

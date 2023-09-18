@@ -74,11 +74,11 @@
 31,32,34,35,-4,0,2,31,32,-10,56,2,34,35,-8,0,4,31,32,34,35,-4,0,2,41,42,-10,43,2,44,
 45,-8,0,4,31,32,34,35,-4,0,2,51,52,-10,53,2,54,55,-8,0,5,31,32,34,16,46,-25,0,6,31,
 32,34,16,16,46,-24,0,3,31,32,34,-3,16,-6,13,22,15,17,18,17,18,27,28,11,13,15,17,18,17,18,
-17,18,0,0,31,32,71,16,-8,53,1,55,-6,0,3,51,53,55,-8,0,4,31,32,34,35,-26,0,4,31,32,
+17,18,0,0,31,32,71,72,-8,53,1,55,-6,0,3,51,53,55,-8,0,4,31,32,34,35,-26,0,4,31,32,
 34,35,-26,0,4,31,32,34,35,-26,0,4,31,32,34,35,-26,0,4,31,32,34,35,-26,0,4,31,32,34,35,
 -25,0,5,36,16,32,34,35,-8,0,2,11,15,-4,0,2,11,15,-8,0,6,36,16,16,32,91,92,-8,13,2,
 94,92,-4,13,2,94,92,-8,13,-3,16,3,95,101,102,-14,23,2,104,102,-10,23,2,104,105,-30,56,],"TileDataFormat":1,},"tilesetId":{"name":"tileset_secret","path":"tilesets/tileset_secret/tileset_secret.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
-    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":30,"SerialiseWidth":30,"TileCompressedData":[
+    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_BG1","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":30,"SerialiseWidth":30,"TileCompressedData":[
 -106,-2147483648,-13,132,-17,-2147483648,-13,132,-17,-2147483648,-13,132,-17,-2147483648,-13,132,-17,-2147483648,-13,132,-2,-2147483648,-5,132,1,0,-4,132,-5,-2147483648,
 -13,132,-2,-2147483648,-5,132,1,0,-4,132,-5,-2147483648,-13,132,2,-2147483648,0,-10,132,-5,-2147483648,-13,132,2,-2147483648,0,-10,132,-5,-2147483648,
 -13,132,2,-2147483648,0,-10,132,-5,-2147483648,-13,132,2,-2147483648,0,-10,132,-5,-2147483648,-13,132,2,-2147483648,0,-10,132,-5,-2147483648,-13,132,2,

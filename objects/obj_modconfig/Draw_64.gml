@@ -1,4 +1,4 @@
-//live_auto_call;
+live_auto_call;
 
 // options left side
 draw_set_colour(c_white);
@@ -39,8 +39,8 @@ for(var i = 0; i < array_length(options_array); i++)
 			{
 				var scale = min(string_width(str), 100) / string_width(str);
 				
-				draw_text_transformed_color(2 + 350, 2 + yy, str, scale, 1, 0, 0, 0, 0, 0, 0.25);
-				draw_text_transformed(350, yy, str, scale, 1, 0);
+				draw_text_transformed_color(2 + 320, 2 + yy, str, scale, 1, 0, 0, 0, 0, 0, 0.25);
+				draw_text_transformed(320, yy, str, scale, 1, 0);
 			}
 			
 			yy += 20;

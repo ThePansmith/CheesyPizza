@@ -4513,6 +4513,9 @@ function live_bits_gmlive_indexer_add_assets() {
 		if (l_s == "<undefined>" || l_s == "" || l_s == undefined) break;
 		gml_asset_add(l_s, l_i);
 	}
+	for (l_i = 0; sequence_exists(l_i); l_i++) {
+		gml_asset_add(sequence_get(l_i).name, l_i);
+	}
 }
 
 if (live_enabled) 

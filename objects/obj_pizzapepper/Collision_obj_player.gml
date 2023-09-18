@@ -11,6 +11,8 @@ if (visible == 1)
 	}
 	with (other)
 	{
+		if REMIX
+			movespeed = abs(movespeed);
 		if (state == states.jetpackjump)
 		{
 			if (sprite_index != spr_player_jetpackstart2)

@@ -1,5 +1,18 @@
 function scr_player_rocket()
 {
+	var rocketstart = spr_rocketstart;
+	var rocket = spr_rocket;
+	var rocketslide = spr_rocketslide;
+	var rocketrun = spr_rocketrun;
+	
+	if SUGARY
+	{
+		rocketstart = spr_rocketbottle_start;
+		rocket = spr_rocketbottle;
+		rocketslide = spr_rocketbottle_turn;
+		rocketrun = spr_rocketbottle_ground;
+	}
+	
 	hsp = xscale * movespeed;
 	move = key_right + key_left;
 	with (instance_place(x + hsp, y, obj_asteroid))
@@ -8,7 +21,7 @@ function scr_player_rocket()
 	alarm[8] = 60;
 	alarm[7] = 120;
 	hurted = true;
-	if (sprite_index != spr_rocketstart)
+	if (sprite_index != rocketstart)
 	{
 		var _spd = 6;
 		var _accel = 1;
@@ -30,7 +43,7 @@ function scr_player_rocket()
 		vsp = 0;
 		if (floor(image_index) == (image_number - 1))
 		{
-			sprite_index = spr_rocket;
+			sprite_index = rocket;
 			image_index = 0;
 			movespeed = 12;
 		}
@@ -62,21 +75,21 @@ function scr_player_rocket()
 	}
 	if (fightball == 0)
 	{
-		if (sprite_index != spr_rocketstart)
+		if (sprite_index != rocketstart)
 		{
-			sprite_index = spr_rocket;
+			sprite_index = rocket;
 			if (grounded && vsp >= 0)
-				sprite_index = spr_player_rocketrun;
+				sprite_index = rocketrun;
 		}
 	}
 	if (grounded)
 	{
 		move = key_left + key_right;
-		if (move != 0 && move != xscale && sprite_index != spr_rocketstart && state != states.mach2)
+		if (move != 0 && move != xscale && sprite_index != rocketstart && state != states.mach2)
 		{
 			state = states.rocketslide;
 			sound_play_oneshot_3d("event:/sfx/pep/machslideboost", x, y);
-			sprite_index = spr_player_rocketslide;
+			sprite_index = rocketslide;
 			image_index = 0;
 		}
 	}
@@ -135,7 +148,7 @@ function scr_player_rocket()
 			other.dashcloudid = id;
 		}
 	}
-	if (sprite_index != spr_rocketstart && !instance_exists(chargeeffectid))
+	if (sprite_index != rocketstart && !instance_exists(chargeeffectid))
 	{
 		with (instance_create(x, y, obj_chargeeffect))
 		{
