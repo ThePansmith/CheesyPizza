@@ -18,7 +18,7 @@
   "exportToGame": true,
   "extensionVersion": "0.1.0",
   "files": [
-    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":96,"filename":"CheesyPizza.dll","final":"ptcu_cleanup","functions":[
+    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":64,"filename":"CheesyPizza.dll","final":"ptcu_cleanup","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"launch_external","argCount":0,"args":[
             1,
           ],"documentation":"","externalName":"cheesypizza_launchexternal","help":"","hidden":false,"kind":1,"returnType":2,},
@@ -45,14 +45,14 @@
           ],"documentation":"","externalName":"cheesypizza_replay_writeint32","help":"ptcu_replay_writeint32(value)","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_replay_writeint16","argCount":0,"args":[
             2,
-          ],"documentation":"","externalName":"cheesedup_replay_writeint16","help":"ptcu_replay_writeint16(value)","hidden":false,"kind":1,"returnType":2,},
+          ],"documentation":"","externalName":"cheesypizza_replay_writeint16","help":"ptcu_replay_writeint16(value)","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_replay_writeint8","argCount":0,"args":[
             2,
-          ],"documentation":"","externalName":"cheesedup_replay_writeint8","help":"ptcu_replay_writeint8","hidden":false,"kind":1,"returnType":2,},
+          ],"documentation":"","externalName":"cheesypizza_replay_writeint8","help":"ptcu_replay_writeint8","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_replay_readint64","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_readint64","help":"ptcu_replay_readint64()","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_replay_readint32","argCount":0,"args":[],"documentation":"","externalName":"cheesedup_replay_readint32","help":"ptcu_replay_readint32()","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_replay_readint16","argCount":0,"args":[],"documentation":"","externalName":"cheesedup_replay_readint16","help":"ptcu_replay_readint16()","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_replay_readint8","argCount":0,"args":[],"documentation":"","externalName":"cheesedup_replay_readint8","help":"ptcu_replay_readint8()","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_replay_readint32","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_readint32","help":"ptcu_replay_readint32()","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_replay_readint16","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_readint16","help":"ptcu_replay_readint16()","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_replay_readint8","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_replay_readint8","help":"ptcu_replay_readint8()","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_replay_seek","argCount":0,"args":[
             2,
           ],"documentation":"","externalName":"cheesypizza_replay_seek","help":"ptcu_replay_seek(offset)","hidden":false,"kind":1,"returnType":2,},
@@ -69,9 +69,6 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_cheesypizza_setHWND","argCount":0,"args":[
             1,
           ],"documentation":"","externalName":"cheesypizza_setHWND","help":"ptcu_cheesypizza_setHWND(pointer)","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_discord_check_id","argCount":0,"args":[
-            2,
-          ],"documentation":"","externalName":"","help":"","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_console_create","argCount":0,"args":[
             2,
           ],"documentation":"","externalName":"cheesypizza_create_console","help":"ptcu_console_create(lines)","hidden":false,"kind":1,"returnType":2,},

@@ -219,7 +219,7 @@ function scr_tvdraw()
 			
 			draw_sprite(charspr > -1 ? charspr : spr_tv_whitenoise, tv_trans, tv_x + collect_x, tv_y + collect_y + hud_posY);
 		}
-	
+		
 		// propeller
 		if sugary && targetspr != spr_tv_off && targetspr != spr_tv_open
 		{
