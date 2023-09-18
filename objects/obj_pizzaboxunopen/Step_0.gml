@@ -1,8 +1,13 @@
 var roomname = string_letters(room_get_name(room));
-if place_meeting(x, y, obj_player)
+if place_meeting(x, y, obj_player) && sprite_index != spr_pizzaboxopen
 {
+	global.heattime = 60;
 	global.combotime = 60;
-	sound_play_oneshot(sugary ? "event:/modded/sfx/collecttoppinSP" : "event:/sfx/misc/collecttoppin");
+	
+	if content == obj_bigcollect
+		sound_play_oneshot(sfx_stompenemy);
+	else
+		sound_play_oneshot(sugary ? "event:/modded/sfx/collecttoppinSP" : "event:/sfx/misc/collecttoppin");
 	
 	if (content == obj_noisebomb)
 	{
@@ -85,10 +90,31 @@ if place_meeting(x, y, obj_player)
 			vsp = -5;
 		}
 	}
-	instance_destroy();
+	
+	if sprite_index == spr_pizzaboxunopen_old
+	{
+		image_index = 0;
+		sprite_index = spr_pizzaboxopen;
+	}
+	else
+		instance_destroy();
 }
+
+if sprite_index == spr_pizzaboxopen
+{
+	if floor(image_index) >= 3 && !start
+	{
+		start = true;
+		depth = 105;
+		with instance_create(x, y, content)
+			ID = other.id;
+	}
+	if floor(image_index) >= image_number - 1
+		instance_destroy(id, false);
+}
+
 subimg += 0.35;
-if (subimg > (sprite_get_number(spr_toppinhelp) - 1))
+if subimg > sprite_get_number(spr_toppinhelp) - 1 && sprite_index != spr_pizzaboxunopen_old
 {
 	subimg = frac(subimg);
 	scr_fmod_soundeffect(snd, x, y);

@@ -5,7 +5,6 @@ image_speed = 0.35;
 start = false;
 image_xscale = 1;
 snd = fmod_event_create_instance("event:/sfx/misc/toppinhelp");
-scr_fmod_soundeffect(snd, x, y);
 
 sugary = SUGARY;
 if sugary

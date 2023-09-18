@@ -17,10 +17,19 @@ if (content == obj_pizzakinpineapple && global.pineapplefollow)
 	instance_destroy();
 
 if global.snickchallenge
+{
 	instance_destroy(id, false);
+	exit;
+}
 
 if content == obj_bigcollect
 {
+	/*
 	instance_change(obj_bigcollect, false);
 	event_perform_object(obj_bigcollect, ev_create, 0);
+	*/
+	sprite_index = spr_pizzaboxunopen_old;
+	mask_index = -1;
+	exit;
 }
+scr_fmod_soundeffect(snd, x, y);

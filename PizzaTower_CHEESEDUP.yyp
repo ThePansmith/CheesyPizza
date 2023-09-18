@@ -5257,6 +5257,7 @@
     {"id":{"name":"spr_player_mortattack","path":"sprites/spr_player_mortattack/spr_player_mortattack.yy",},},
     {"id":{"name":"spr_player_mortdash","path":"sprites/spr_player_mortdash/spr_player_mortdash.yy",},},
     {"id":{"name":"spr_pizzahead_beatdown5","path":"sprites/spr_pizzahead_beatdown5/spr_pizzahead_beatdown5.yy",},},
+    {"id":{"name":"spr_pizzaboxunopen_old","path":"sprites/spr_pizzaboxunopen_old/spr_pizzaboxunopen_old.yy",},},
     {"id":{"name":"spr_childwithautismarea","path":"sprites/spr_childwithautismarea/spr_childwithautismarea.yy",},},
     {"id":{"name":"spr_pizzice_palette","path":"sprites/spr_pizzice_palette/spr_pizzice_palette.yy",},},
     {"id":{"name":"spr_player_mortjump","path":"sprites/spr_player_mortjump/spr_player_mortjump.yy",},},

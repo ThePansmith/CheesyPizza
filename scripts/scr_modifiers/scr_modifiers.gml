@@ -17,6 +17,8 @@ function reset_modifier()
 		Mirror: false,
 		Lap3: false,
 		DeathMode: false,
+		JohnGhost: false,
+		Spotlight: false,
 		
 		// Entrance
 		NoiseGutter: false,
