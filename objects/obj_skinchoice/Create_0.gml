@@ -5,7 +5,6 @@ event_inherited();
 init = false;
 charshift = [0, 0, 0];
 player_surface = surface_create(256, 256);
-pattern_surface = surface_create(32, 32);
 
 // selection
 noisetype = 0;
