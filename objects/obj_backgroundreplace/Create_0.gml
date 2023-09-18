@@ -1,5 +1,5 @@
-backgroundID = -4;
-backgroundBG_ID = -4;
+backgroundID = noone;
+backgroundBG_ID = noone;
 background_name = "";
-background_spr = -4;
-chunks = -4;
+background_spr = noone;
+chunks = noone;
