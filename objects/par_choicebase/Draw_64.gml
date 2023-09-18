@@ -22,7 +22,7 @@ if anim_con == 1 or anim_con == 2
 // background
 bg_pos = (bg_pos + 0.5) % 64;
 if curve < 1
-	shader_set_circleclip(960 / 2, 540 / 2, 560 * curve);
+	draw_set_spotlight(960 / 2, 540 / 2, 560 * curve);
 	
 draw_set_alpha(0.75)
 draw_set_color(make_color_rgb(121, 103, 151));
@@ -32,7 +32,6 @@ draw_set_color(c_white);
 
 if !global.performance
 {
-	var origin_pos = shader_get_uniform(shd_circleclip, "u_origin");
 	if anim_t < 1 && !global.performance
 	{
 		var shader = shd_skinchoice_animation;
@@ -65,7 +64,8 @@ if !global.performance
 
 	// The Pizza Matrix™
 	var prev_matrix = matrix_get(matrix_world);
-	shader_set_uniform_f(origin_pos, (960 / 2) - bg_pos, (540 / 2) - bg_pos);
+	if (anim_t < 1 && !global.performance)
+		shader_set_uniform_f(origin_pos, (960 / 2) - bg_pos, (540 / 2) - bg_pos);
 	matrix_set(matrix_world, matrix_build(bg_pos, bg_pos, 0, 0, 0, 0, 1, 1, 1));
 	gpu_set_blendmode(bm_normal);
 	vertex_submit(pizza_vbuffer, pr_trianglelist, sprite_get_texture(spr_skinmenupizza, bg_image));
@@ -73,7 +73,7 @@ if !global.performance
 	shader_reset();
 	
 	if curve < 1
-		shader_set_circleclip(960 / 2, 540 / 2, 560 * curve, true);
+		draw_set_spotlight(960 / 2, 540 / 2, 560 * curve);
 }
 with obj_transfotip
 {

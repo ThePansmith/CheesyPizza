@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "fmod_debug_overlay",
+  "name": "draw_set_bounds",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Debug Overlays",
-    "path": "folders/Scripts/CheesyPizza/Debug Overlays.yy",
+    "name": "Clipping",
+    "path": "folders/Scripts/CheesyPizza/Utility/Draw/Clipping.yy",
   },
 }

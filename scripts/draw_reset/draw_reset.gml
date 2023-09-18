@@ -1,1 +1,0 @@
-function draw_reset_mask() { shader_reset(); }

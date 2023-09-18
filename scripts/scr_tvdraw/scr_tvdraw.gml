@@ -19,7 +19,6 @@ function scr_tvdraw()
 	// sugary bobbing
 	if sugary
 		collect_y += Wave(2, -2, 3, 0); // collect_y serves as an offset
-	
 	// combo
 	if !sugary
 	{
@@ -100,9 +99,10 @@ function scr_tvdraw()
 		var xx = (_cx - 50) + (-3 + 50);
 		var yy = (_cy - 91) + (_hy + 100);
 		
+		draw_reset_clip();
 		draw_set_mask(_cx - 50, _cy - 91, spr_tv_combometercutSP);
 		draw_sprite(spr_tv_combometergooSP, propeller_index, xx, yy);
-		draw_reset_mask();
+		draw_reset_clip();
 
 		draw_sprite(spr_tv_combobubbleSP, -1, _cx, _cy);
 		draw_sprite(spr_tv_combometerhandSP, -1, _cx + hand_x + 80, max(_cy, 60 + hud_posY) + min(hand_y, 20) + 24);
@@ -308,22 +308,18 @@ function scr_tvdraw()
 				barfill = spr_timer_barfillPN;
 				johnface_sprite = spr_timer_johnfacePN;
 			}
-		
-			if !surface_exists(bar_surface)
-				bar_surface = surface_create(298, 30);
-		
+			shader_reset();
+			
 			var _barfillpos = floor(_barpos) + 13;
 			if _barfillpos > 0
 			{
-				surface_resize(bar_surface, _barfillpos, 30);
-				surface_set_target(bar_surface);
-				draw_clear_alpha(0, 0);
 				var clip_x = timer_x + 3;
 				var clip_y = timer_y + 5;
+				draw_set_bounds(clip_x, clip_y, clip_x + _barfillpos, clip_y + 30);
 				for (i = 0; i < 3; i++)
-					draw_sprite(barfill, 0, barfill_x + (i * 173), 0);
-				surface_reset_target();
-				draw_surface(bar_surface, clip_x, clip_y);
+					draw_sprite(barfill, 0, clip_x + barfill_x + (i * 173), clip_y);
+				
+				draw_reset_clip();
 			}
 			draw_sprite(bar, -1, timer_x, timer_y);
 		
@@ -384,19 +380,16 @@ function scr_tvdraw()
 			if pizzaface_sprite == spr_timer_pizzaface1
 			{
 				draw_sprite(spr_bartimer_normalBack, pizzaface_index, timer_x + 164, timer_y + 20);
-		
-				if (!surface_exists(bar_surface))
-					bar_surface = surface_create(298, 50);
-		
+				
 				var _barfillpos = floor(_barpos) + 13;
 				if (_barfillpos > 0)
 				{
-					surface_resize(bar_surface, _barfillpos, 50);
-					surface_set_target(bar_surface);
-					draw_clear_alpha(0, 0);
-					draw_sprite(spr_bartimer_strip, 0, 184, 0);
-					surface_reset_target();
-					draw_surface(bar_surface, timer_x - 20, timer_y + 20);
+					var clipx = timer_x - 20;
+					var clipy = timer_y + 20;
+					
+					draw_set_bounds(clipx, clipy, clipx + _barfillpos, clipy + 50);
+					draw_sprite(spr_bartimer_strip, 0, clipx + 184, clipy);
+					shader_reset();
 				}
 				draw_sprite(spr_bartimer_roll, johnface_index, max(timer_x + _barfillpos, timer_x) - 24, timer_y + 55 - 15 * max(_perc, 0));
 		
@@ -431,8 +424,6 @@ function scr_tvdraw()
 			scr_draw_lap_display(lap_x, lap_y, lapflag_index, sugarylevel);
 		}
 	}
-	else if surface_exists(bar_surface)
-		surface_free(bar_surface);
 
 	draw_set_align();
 }

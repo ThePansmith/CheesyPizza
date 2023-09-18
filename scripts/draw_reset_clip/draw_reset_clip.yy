@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "shader_set_rectangleclip",
+  "name": "draw_reset_clip",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Shader",
-    "path": "folders/Scripts/CheesyPizza/Utility/Shader.yy",
+    "name": "Clipping",
+    "path": "folders/Scripts/CheesyPizza/Utility/Draw/Clipping.yy",
   },
 }

@@ -217,7 +217,7 @@ draw = function(curve)
 	}
 
 	if (curv_prev < 1)
-		shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev, true);
+		draw_set_spotlight(960 / 2, 540 / 2, 560 * curv_prev, true);
 		
 #region Drawer	
 
@@ -279,7 +279,7 @@ draw = function(curve)
 		shader_reset();
 		
 		if curv_prev < 1
-			shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev, true);
+			draw_set_spotlight(960 / 2, 540 / 2, 560 * curv_prev, true);
 		draw_surface_ext(player_surface, charx - 256, chary - 256, 2, 2, 0, c_white, curve * charshift[2]);
 	}
 #endregion
@@ -390,10 +390,15 @@ draw = function(curve)
 	}
 	vertex_end(vertex_buffer);
 	
+	shader_reset();
 	if curv_prev < 1
-		shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev);
-	vertex_submit(vertex_buffer, pr_trianglelist, tex);
+		draw_set_spotlight(960 / 2, 540 / 2, 560 * curv_prev);
 		
+	vertex_submit(vertex_buffer, pr_trianglelist, tex);
+	
+	shader_reset();
+	if curv_prev < 1
+		draw_set_spotlight(960 / 2, 540 / 2, 560 * curv_prev);
 	// RX: not really a better way to do this without rewriting the entire thing
 	for (var i = 0; i < array_length(cache); i++)
 	{
@@ -401,16 +406,14 @@ draw = function(curve)
 		var spr_xscale = (32 / sprite_get_width(cache[i].pattern));
 		var spr_yscale = (32 / sprite_get_height(cache[i].pattern));
 		
-		if curv_prev < 1
-			shader_maskclip_apply_circleclip(960 / 2, 540 / 2, 560 * curv_prev);
 		
 		draw_sprite_ext(cache[i].pattern, cache[i].subimage, cache[i].x, cache[i].y, spr_xscale, spr_yscale, 0, c_white, 1);
+		draw_remove_mask();
 	}
 	
-	if shader_current() != shd_circleclip
-		shader_set_circleclip(960 / 2, 540 / 2, 560 * curv_prev);
+	//if shader_current() != shd_masterclip || shader_current() != shd_masterclip_basic
+	//	draw_set_spotlight(960 / 2, 540 / 2, 560 * curv_prev);
 #endregion
-
 
 	// hand
 	draw_sprite_ext(spr_skinchoicehand, 0, handx, handy + sin(current_time / 1000) * 4, 2, 2, 0, c_white, 1);

@@ -234,7 +234,7 @@ textx = 540;
 
 draw = function(curve)
 {
-	shader_set_circleclip(960 / 2, 540 / 2, 560 * curve);
+	draw_set_spotlight(960 / 2, 540 / 2, 560 * curve);
 	var talpha = 1;
 	// background and disc
 	draw_set_colour(c_black);
@@ -277,9 +277,13 @@ draw = function(curve)
 	// song list
 	draw_set_halign(fa_left);
 	
-	shader_set(shd_rectclip);
-	var clip = shader_get_uniform(shd_rectclip, "u_clip_bounds");
-	shader_set_uniform_f_array(clip, [64 + charshift[0], 0, 364 + charshift[0], 540]);
+	draw_reset_clip();
+	draw_set_bounds(64 + charshift[0], 0, 364 + charshift[0], 540);
+	if curve < 1
+		draw_set_spotlight(960 / 2, 540 / 2, 560 * curve, false, true);
+	//shader_set(shd_rectclip);
+	//var clip = shader_get_uniform(shd_rectclip, "u_clip_bounds");
+	//shader_set_uniform_f_array(clip, [64 + charshift[0], 0, 364 + charshift[0], 540]);
 	
 	if anim_con == 0
 	{
@@ -330,17 +334,18 @@ draw = function(curve)
 		}
 	}
 	
-	shader_reset();
-	
+	draw_reset_clip();
+	if curve < 1
+		draw_set_spotlight(960 / 2, 540 / 2, 560 * curve, false, true);
 	draw_set_alpha(talpha);
 	draw_sprite(spr_cursor, -1, 64 - 36 + xo + charshift[0], 128 + 10 - scroller + sel.song * 16 + textx);
 	
 	draw_set_align();
-	
+	draw_reset_clip();
 	if curve < 1
-		shader_set_circleclip(960 / 2, 540 / 2, 560 * curve, false, true);
+		draw_set_spotlight(960 / 2, 540 / 2, 560 * curve, false, true);
 	else
-		shader_reset();
+		draw_reset_clip();
 	
 	// song position
 	var pos = 0;
