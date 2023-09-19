@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "ref_get_name",
+  "name": "check_sugary",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

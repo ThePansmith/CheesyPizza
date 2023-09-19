@@ -54,7 +54,7 @@ toppin_buffer = 0;
 brown = false;
 brownfade = 0;
 alarm[2] = 400;
-if obj_player1.character == "SP" or obj_player1.character == "SN"
+if check_sugarychar()
 {
 	alarm[2] = room_speed * 2;
 	if global.rank == "p" or obj_endlevelfade.sugary

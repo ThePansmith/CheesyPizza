@@ -172,7 +172,26 @@ function load_moddedconfig()
 	global.blockstyle = ini_read_real("Modded", "blockstyle", blockstyles.final); // final, september, old
 	global.roomnames = ini_read_real("Modded", "roomnames", false);
 	global.machsnd = ini_read_real("Modded", "machsnd", 0); // final, old
+	global.sugaryoverride = ini_read_real("Modded", "sugaryoverride", false);
 	
+	// convert from PTT
+	if ini_key_exists("Modded", "pizzellesugaryoverride")
+	{
+		global.sugaryoverride = ini_read_real("Modded", "pizzellesugaryoverride", false);
+		ini_write_real("Modded", "sugaryoverride", global.sugaryoverride);
+		
+		ini_key_delete("Modded", "pizzellesugaryoverride");
+		ini_key_delete("Modded", "vigisuperjump");
+	}
+	
+	// taunt PTU players
+	if ini_section_exists("ControlsKeysPTU")
+	{
+		show_message("PTU key config detected!\nYou disgust me.");
+		ini_section_delete("ControlsKeysPTU");
+	}
+	
+	// turn on performance mode
 	if !shaders_are_supported() && !global.performance
 	{
 		show_message("It seems your device doesn't support shaders.\nPerformance mode has been turned on.");

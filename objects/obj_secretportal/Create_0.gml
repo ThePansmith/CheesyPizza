@@ -17,7 +17,11 @@ secret_close_portalID
 secret_open_portalID
 */
 
-sugary = SUGARY;
+death = MOD.DeathMode;
+if death // placeholder. will use custom sprites
+	image_blend = #D8B8F8;
+
+sugary = !global.sugaryoverride or death ? SUGARY : check_sugarychar();
 if sugary
 {
 	spr_open = spr_secretportal_open_ss;
@@ -38,7 +42,3 @@ if MIDWAY
 	mask_index = spr_idle;
 }
 ID = id;
-
-death = MOD.DeathMode;
-if death // placeholder. will use custom sprites
-	image_blend = #D8B8F8;

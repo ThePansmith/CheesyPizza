@@ -12,7 +12,7 @@ very = false;
 afterimages = array_create(0);
 sound_play_oneshot("event:/sfx/ui/comboup");
 
-sugary = (obj_player1.character == "SP" or obj_player1.character == "SN");
+sugary = check_sugarychar();
 pino = (obj_player1.character == "PN");
 bo = (obj_player1.character == "BN");
 
@@ -62,3 +62,6 @@ else if bo
 else if pino
 	sprite_index = spr_comboend_titlePN;
 ystart = y;
+
+if REMIX
+	persistent = true;

@@ -18,7 +18,7 @@ with (obj_player)
 		global.combodropped = true;
 }
 
-sugary = (obj_player1.character == "SP" or obj_player1.character == "SN");
+sugary = check_sugarychar();
 bo = (obj_player1.character == "BN");
 pino = (obj_player1.character == "PN");
 

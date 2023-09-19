@@ -6,7 +6,7 @@ if MIDWAY
 	sprite_index = spr_ratblock6_bo;
 	spr_dead = spr_ratblock6_dead_bo;
 }
-if SUGARY
+if sugary
 {
 	sprite_index = spr_chocofrogsmall;
 	spr_dead = spr_chocofrogsmalldead;

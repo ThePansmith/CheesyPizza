@@ -202,73 +202,94 @@ if (global.panic or global.snickchallenge) && global.panicbg && !instance_exists
 */
 
 // pizzelle's secrets
-if (obj_player1.character == "SP" or obj_player1.character == "SN")
-&& room_is_secret(room)
+if room_is_secret(room) && global.sugaryoverride
 {
-	var layers = layer_get_all();
-	for (var i = 0; i < array_length(layers); i++)
+	var target_tiles = -1;
+	if check_sugarychar()
 	{
-		var lay = layers[i];
-		if !layer_exists(lay)
-			continue;
-		
-		var tilemap = layer_tilemap_get_id(lay);
-		if tilemap != -1 && tilemap_get_tileset(tilemap) == tileset_secret
+		if !SUGARY
+			target_tiles = tileset_secret_to_ss;
+	}
+	else if SUGARY
+		target_tiles = tileset_secret_ss_to_pt;
+	
+	if target_tiles != -1
+	{
+		var layers = layer_get_all();
+		for (var i = 0; i < array_length(layers); i++)
 		{
-			tilemap_tileset(tilemap, tileset_secret_to_ss);
-			for(var xx = 0; xx < tilemap_get_width(tilemap); xx++)
+			var lay = layers[i];
+			if !layer_exists(lay)
+				continue;
+		
+			// tiles
+			var tilemap = layer_tilemap_get_id(lay), tileset = tilemap_get_tileset(tilemap);
+			if tilemap > -1 && (tileset == tileset_secret or tileset == tileset_secret_ss)
 			{
-				for(var yy = 0; yy < tilemap_get_height(tilemap); yy++)
+				tilemap_tileset(tilemap, target_tiles);
+				if target_tiles == tileset_secret_to_ss
 				{
-					var tile = tilemap_get(tilemap, xx, yy) & tile_index_mask;
-					if tile == 0
-						continue;
-					
-					if tile == 36 // RIGHT SLOPE /|
+					for(var xx = 0; xx < tilemap_get_width(tilemap); xx++)
 					{
-						if (tilemap_get(tilemap, xx + 1, yy) & tile_index_mask == 16
-						or tilemap_get(tilemap, xx, yy + 1) & tile_index_mask == 22)
-						&& tilemap_get(tilemap, xx + 1, yy - 1) & tile_index_mask != 36
-							tilemap_set(tilemap, 57, xx + 1, yy);
-						if tilemap_get(tilemap, xx, yy + 1) & tile_index_mask == 16
-						or tilemap_get(tilemap, xx, yy + 1) & tile_index_mask == 22
-							tilemap_set(tilemap, 37, xx, yy + 1);
-					}
-					if tile == 46 // LEFT SLOPE |\
-					{
-						if tilemap_get(tilemap, xx - 1, yy) & tile_index_mask == 16
-							tilemap_set(tilemap, 47, xx - 1, yy);
-						if tilemap_get(tilemap, xx, yy + 1) & tile_index_mask == 16
-							tilemap_set(tilemap, 47, xx, yy + 1);
-					}
+						for(var yy = 0; yy < tilemap_get_height(tilemap); yy++)
+						{
+							var tile = tilemap_get(tilemap, xx, yy) & tile_index_mask;
+							if tile == 0
+								continue;
 					
-					if tile >= 12 && tile <= 14 // FLOOR
-						tilemap_set(tilemap, 12 + (xx % 3), xx, yy);
-					if tile >= 52 && tile <= 54 // CEILING
-						tilemap_set(tilemap, 52 + (xx % 3), xx, yy);
+							if tile == 36 // RIGHT SLOPE /|
+							{
+								if (tilemap_get(tilemap, xx + 1, yy) & tile_index_mask == 16
+								or tilemap_get(tilemap, xx, yy + 1) & tile_index_mask == 22)
+								&& tilemap_get(tilemap, xx + 1, yy - 1) & tile_index_mask != 36
+									tilemap_set(tilemap, 94, xx + 1, yy);
+								if tilemap_get(tilemap, xx, yy + 1) & tile_index_mask == 16
+								or tilemap_get(tilemap, xx, yy + 1) & tile_index_mask == 22
+									tilemap_set(tilemap, 37, xx, yy + 1);
+							}
+							if tile == 46 // LEFT SLOPE |\
+							{
+								if tilemap_get(tilemap, xx - 1, yy) & tile_index_mask == 16
+									tilemap_set(tilemap, 47, xx - 1, yy);
+								if tilemap_get(tilemap, xx, yy + 1) & tile_index_mask == 16
+									tilemap_set(tilemap, 47, xx, yy + 1);
+							}
 					
-					if tile == 96 // LONG RIGHT SLOPE //|
-						tilemap_set(tilemap, 99, xx, yy + 1);
-					if tile == 97 // LONG RIGHT SLOPE //|
-						tilemap_set(tilemap, 89, xx, yy + 1);
-					if tile == 77 // LONG LEFT SLOPE |\\
-						tilemap_set(tilemap, 69, xx, yy + 1);
-					if tile == 78 // LONG LEFT SLOPE |\\
-						tilemap_set(tilemap, 79, xx, yy + 1);
+							if tile >= 12 && tile <= 14 // FLOOR
+								tilemap_set(tilemap, 12 + (xx % 3), xx, yy);
+							if tile >= 52 && tile <= 54 // CEILING
+								tilemap_set(tilemap, 52 + (xx % 3), xx, yy);
 					
-					if tile == 88 // beach_secret1
-					{
-						if tilemap_get(tilemap, xx - 1, yy) & tile_index_mask > 0
-							tilemap_set(tilemap, 98, xx, yy + 1);
+							if tile == 96 // LONG RIGHT SLOPE //|
+								tilemap_set(tilemap, 99, xx, yy + 1);
+							if tile == 97 // LONG RIGHT SLOPE //|
+								tilemap_set(tilemap, 89, xx, yy + 1);
+							if tile == 77 // LONG LEFT SLOPE |\\
+								tilemap_set(tilemap, 69, xx, yy + 1);
+							if tile == 78 // LONG LEFT SLOPE |\\
+								tilemap_set(tilemap, 79, xx, yy + 1);
+					
+							if tile == 88 // beach_secret1
+							{
+								if tilemap_get(tilemap, xx - 1, yy) & tile_index_mask > 0
+									tilemap_set(tilemap, 98, xx, yy + 1);
+							}
+						}
 					}
 				}
+				continue;
 			}
-			continue;
-		}
 		
-		var background = layer_background_get_id(lay);
-		if background != -1 && layer_background_get_sprite(background) == bg_secret
-			layer_background_sprite(background, bg_secret_ss);
+			// background
+			var background = layer_background_get_id(lay), sprite = layer_background_get_sprite(background);
+			if background != -1 && (sprite == bg_secret or sprite == bg_secret_ss)
+			{
+				if target_tiles == tileset_secret_to_ss
+					layer_background_sprite(background, bg_secret_ss);
+				if target_tiles == tileset_secret_ss_to_pt
+					layer_background_sprite(background, bg_secret);
+			}
+		}
 	}
 }
 

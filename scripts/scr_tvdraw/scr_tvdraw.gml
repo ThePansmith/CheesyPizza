@@ -1,5 +1,7 @@
 function scr_tvdraw()
 {
+	if live_call() return live_result;
+	
 	if tvreset != global.hud
 	{
 		tvreset = global.hud;
@@ -9,7 +11,7 @@ function scr_tvdraw()
 	}
 	
 	var chara = obj_player1.character;
-	var sugary = chara == "SP" or chara == "SN";
+	var sugary = check_sugarychar();
 	var bo = chara == "BN";
 	var pino = chara == "PN";
 	
@@ -28,6 +30,13 @@ function scr_tvdraw()
 		var _perc = global.combotime / 60;
 		var _minX = _cx - 56;
 		var _maxX = _cx + 59;
+		
+		if REMIX
+		{
+			_cx = round(_cx);
+			_cy = round(_cy);
+		}
+		
 		if bo
 		{
 			combofill_x = lerp(combofill_x, _maxX + ((_minX - _maxX) * _perc), 0.5);
@@ -66,13 +75,28 @@ function scr_tvdraw()
 	
 		var _tx = _cx - 64;
 		var _ty = _cy - 12;
-	
+		
+		// shake numbers on combo up
+		static combo_shake = 0;
+		if REMIX
+		{
+			static combo_prev = 0;
+			if combo_prev < visualcombo
+			{
+				combo_prev = visualcombo;
+				combo_shake = 2;
+			}
+			combo_shake = Approach(combo_shake, 0, 0.15);
+		}
+		else
+			combo_shake = 0;
+		
 		var _str = string(visualcombo);
 		var num = string_length(_str);
 		for (var i = num; i > 0; i--)
 		{
 			var char = string_char_at(_str, i);
-			draw_text(_tx, _ty, char);
+			draw_text(_tx + random_range(-combo_shake, combo_shake), _ty + random_range(-combo_shake, combo_shake), char);
 			_tx -= 22;
 			_ty -= 8;
 		}

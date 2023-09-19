@@ -1,4 +1,4 @@
 if bo
 	type = 0;
-else
+else if !REMIX
 	instance_destroy();

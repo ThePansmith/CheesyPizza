@@ -22,7 +22,7 @@ if MIDWAY && sprite_index == spr_ratblock
 	use_sound = false;
 }
 
-sugary = SUGARY;
+sugary = SUGARY; //check_sugary();
 if sugary && sprite_index == spr_ratblock
 {
 	sprite_index = spr_chocofrogbig;

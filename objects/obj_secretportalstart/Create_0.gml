@@ -8,7 +8,15 @@ spr_open = spr_secretportal_spawnopen;
 spr_idle = spr_secretportal_spawnidle;
 spr_close = spr_secretportal_spawnclose;
 
-sugary = SUGARY;
+death = object_index == obj_deathportalexit;
+if death
+{
+	if !MOD.DeathMode
+		instance_destroy();
+	image_blend = #D8B8F8;
+}
+
+sugary = !global.sugaryoverride or death ? SUGARY : check_sugarychar();
 if sugary
 {
 	spr_open = spr_secretportal_spawnopen_ss;
@@ -26,26 +34,20 @@ if MIDWAY
 }
 
 // If we aren't coming or going from a secret, we don't need to exist.
-death = object_index == obj_deathportalexit;
-if death
-{
-	if !MOD.DeathMode
-		instance_destroy();
-	image_blend = #D8B8F8;
-}
-
 if death or (!room_is_secret(obj_player1.lastroom) && !room_is_secret(room) && !instance_exists(obj_ghostcollectibles) && !instance_exists(obj_levelLoader))
 {
 	active = false;
 	visible = false;
 }
-if !death && SUGARY
+
+// sugary blending
+if sugary
 {
 	with obj_player1
 	{
-		image_blend_func = noone; // TODO: SUGARY STYLE BLENDING!!!!
+		image_blend_func = noone;
 	}
 }
 
-if (room != tower_soundtest)
+if room != tower_soundtest
 	texturegroup_free("soundtestgroup");

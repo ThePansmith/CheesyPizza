@@ -129,7 +129,7 @@ function scr_player_climbwall()
 				key_jump = false;
 				railmovespeed = 0;
 				
-				if (character == "SP" or character == "SN") && !skateboarding
+				if check_sugarychar() && !skateboarding
 				{
 					movespeed = max(abs(wallspeed), 6);
 					
