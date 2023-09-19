@@ -552,7 +552,7 @@ function pepperman_grab_reset()
 	if (pepperman_grabID != noone)
 	{
 		if (!instance_exists(pepperman_grabID))
-			pepperman_grabID = -4;
+			pepperman_grabID = noone;
 	}
 }
 function state_snick_normal()
@@ -785,7 +785,7 @@ function state_snick_normal()
 		sprite_index = spr_bodyslamstart;
 		image_index = 0;
 		state = states.freefall;
-		pistolanim = -4;
+		pistolanim = noone;
 		vsp = -6;
 		dir = move;
 		movespeed = abs(movespeed);

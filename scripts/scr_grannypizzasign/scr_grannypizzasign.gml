@@ -18,7 +18,7 @@ function scr_add_grannypizzalevel(level, _icon, _secrets = true, _toppins = true
 		treasure: _treasure,
 		gottreasure: false,
 		rank: _rank,
-		gotrank: -4
+		gotrank: noone
 	};
 	ini_open_from_string(obj_savesystem.ini_str);
 	if (q.secrets)

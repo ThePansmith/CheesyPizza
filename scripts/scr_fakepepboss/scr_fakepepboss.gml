@@ -603,7 +603,7 @@ function scr_fakepepboss_grabthrow()
 				y = other.y;
 			}
 		}
-		playerID = -4;
+		playerID = noone;
 	}
 	if (floor(image_index) == (image_number - 1))
 	{

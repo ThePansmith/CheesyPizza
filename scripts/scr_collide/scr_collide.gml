@@ -87,7 +87,7 @@ function scr_collide()
 	{
 		if (vsp < 0 || !instance_exists(platformid) || !place_meeting(x, y + 12 + (abs(platformid.v_velocity) * 2), platformid))
 		{
-			platformid = -4;
+			platformid = noone;
 			y = floor(y);
 		}
 		else

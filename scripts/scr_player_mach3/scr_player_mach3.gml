@@ -455,7 +455,7 @@ function scr_player_mach3()
 			sprite_index = spr_bodyslamstart;
 			image_index = 0;
 			state = states.freefall;
-			pistolanim = -4;
+			pistolanim = noone;
 			vsp = -6;
 		}
 	}

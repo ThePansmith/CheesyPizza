@@ -7,7 +7,7 @@ sprite_index = spr_juicepuddleair;
 mask_index = spr_juicepuddledone;
 draw_angle = 0;
 vsp = 0.2;
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;
 

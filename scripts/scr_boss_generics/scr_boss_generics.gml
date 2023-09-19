@@ -128,13 +128,13 @@ function boss_hurt_gustavo()
 					if (other.hsp != 0)
 						image_xscale = -sign(other.hsp);
 					hsp = -image_xscale * 8;
-					vsp = -4;
+					vsp = noone;
 					instance_destroy(other);
 				}
 				if (_slam)
 				{
 					with (obj_player)
-						baddiegrabbedID = -4;
+						baddiegrabbedID = noone;
 					instance_destroy();
 				}
 			}

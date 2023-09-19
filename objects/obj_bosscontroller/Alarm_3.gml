@@ -4,8 +4,8 @@ with (obj_player1)
 	global.peppino_damage = 0;
 	global.bossplayerhurt = false;
 	global.pistol = false;
-	global.leveltorestart = -4;
-	pistolanim = -4;
+	global.leveltorestart = noone;
+	pistolanim = noone;
 	targetDoor = "HUB";
 	scr_room_goto(backtohubroom);
 	x = backtohubstartx;

@@ -234,6 +234,7 @@ function scr_bosscontroller_draw_health(sprite, rows, columns, hp, maxhp, x, y, 
 		var zpad = _index * 3;
 		if (spr_palette != noone)
 		{
+							pal_swap_set(spr_palette, _index, false);
 			if (paletteselect == noone)
 				pal_swap_set(spr_palette, _index, false);
 			else

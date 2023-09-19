@@ -251,7 +251,7 @@ function scr_pizzaface_p3_walk()
 					sprite_index = spr_pizzahead_bigpunch;
 					image_index = 0;
 					instance_destroy(hitboxID);
-					hitboxID = -4;
+					hitboxID = noone;
 					break;
 				
 				case pizzaface_p3_attacks.stomp:

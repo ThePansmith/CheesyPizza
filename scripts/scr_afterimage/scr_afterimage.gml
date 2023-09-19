@@ -101,7 +101,7 @@ function create_firemouth_afterimage(_x, _y, _sprite, _image_index, _xscale)
 	with (b)
 	{
 		fadeout = false;
-		fadeoutstate = -4;
+		fadeoutstate = noone;
 		identifier = afterimage.firemouth;
 		alarm[0] = -1;
 		alarm[1] = -1;
@@ -110,7 +110,7 @@ function create_firemouth_afterimage(_x, _y, _sprite, _image_index, _xscale)
 		image_blend = make_color_rgb(248, 112, 24);
 		alpha = 0.8;
 		basealpha = 1;
-		playerid = -4;
+		playerid = noone;
 		vertical = false;
 		maxmovespeed = 10;
 	}
@@ -127,7 +127,7 @@ function create_blue_afterimage(_x, _y, _sprite, _image_index, _xscale)
 		with (b)
 		{
 			fadeout = false;
-			fadeoutstate = -4;
+			fadeoutstate = noone;
 			identifier = afterimage.blue;
 			alarm[0] = -1;
 			alarm[1] = -1;
@@ -136,7 +136,7 @@ function create_blue_afterimage(_x, _y, _sprite, _image_index, _xscale)
 			image_blend = global.blueimg_color;
 			alpha = 0.8;
 			basealpha = 1;
-			playerid = -4;
+			playerid = noone;
 			vertical = false;
 			maxmovespeed = 10;
 		}

@@ -69,8 +69,8 @@ function add_achievement_update(_name, _update_rate, _creation_code, _update_fun
 		name: _name,
 		update_rate: _update_rate,
 		frames: 0,
-		update_func: -4,
-		creation_code: -4,
+		update_func: noone,
+		creation_code: noone,
 		variables: ds_map_create(),
 		unlocked: false
 	};
@@ -89,8 +89,8 @@ function add_achievement_notify(_name, _creation_code, _func, _local = true, _sa
 	var q = 
 	{
 		name: _name,
-		creation_code: -4,
-		func: -4,
+		creation_code: noone,
+		func: noone,
 		unlocked: false,
 		variables: ds_map_create()
 	};
@@ -299,7 +299,7 @@ function achievements_load(achievement_array)
 function achievement_get_struct(_name)
 {
 	var l = obj_achievementtracker.achievements_update;
-	var b = -4;
+	var b = noone;
 	for (var i = 0; i < array_length(l); i++)
 	{
 		var q = l[i];

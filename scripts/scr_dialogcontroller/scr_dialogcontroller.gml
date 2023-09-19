@@ -1,8 +1,8 @@
 function scr_get_tutorial_key(char)
 {
-	var spr = -4;
+	var spr = noone;
 	var ix = 0;
-	var txt = -4;
+	var txt = noone;
 	switch (char)
 	{
 		case vk_left:

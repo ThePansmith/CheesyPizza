@@ -239,7 +239,7 @@ function state_player_jump()
 			sprite_index = spr_bodyslamstart;
 			image_index = 0;
 			state = states.freefall;
-			pistolanim = -4;
+			pistolanim = noone;
 			vsp = -6;
 		}
 		else

@@ -21,7 +21,7 @@ function cutscene_superpinball_start()
 }
 function cutscene_superpinball_middle()
 {
-	var t = -4;
+	var t = noone;
 	with (obj_superpinballmachine)
 	{
 		x -= other.movespeed;
