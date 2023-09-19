@@ -8307,6 +8307,7 @@
     {"id":{"name":"spr_tv_clip","path":"sprites/spr_tv_clip/spr_tv_clip.yy",},},
     {"id":{"name":"spr_wardebris","path":"sprites/spr_wardebris/spr_wardebris.yy",},},
     {"id":{"name":"spr_gustavotvstreet","path":"sprites/spr_gustavotvstreet/spr_gustavotvstreet.yy",},},
+    {"id":{"name":"spr_pattern_spooky","path":"sprites/spr_pattern_spooky/spr_pattern_spooky.yy",},},
     {"id":{"name":"spr_playerN_clownfall","path":"sprites/spr_playerN_clownfall/spr_playerN_clownfall.yy",},},
     {"id":{"name":"spr_gerome_collected_ss","path":"sprites/spr_gerome_collected_ss/spr_gerome_collected_ss.yy",},},
     {"id":{"name":"spr_spacesector4","path":"sprites/spr_spacesector4/spr_spacesector4.yy",},},
@@ -11137,6 +11138,6 @@
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"sugarytutgroup","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"estategroup","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"soundtestgroup","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
-    {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"patterndynamicgroup","autocrop":false,"border":0,"compressFormat":"png","directory":"data/custom","groupParent":null,"isScaled":true,"loadType":"dynamicpages","mipsToGenerate":0,"targets":-1,},
+    {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"patterngroup","autocrop":true,"border":0,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
   ],
 }

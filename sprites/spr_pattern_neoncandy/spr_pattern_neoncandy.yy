@@ -88,8 +88,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "playergroup",
-    "path": "texturegroups/playergroup",
+    "name": "patterngroup",
+    "path": "texturegroups/patterngroup",
   },
   "type": 0,
   "VTile": false,
