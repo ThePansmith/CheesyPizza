@@ -32,7 +32,7 @@ if sugary
 		if global.rank == "p"
 		{
 			obj_endlevelfade.rank = 5;
-			if obj_player1.character == "SP" or obj_player1.character == "SN"
+			if check_sugarychar()
 				setcolors(188, 108, 143, 134, 40, 66);
 			else
 				setcolors(152, 80, 248, 80, 0, 184);

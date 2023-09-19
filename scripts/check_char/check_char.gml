@@ -7,3 +7,9 @@ function check_char(char)
 	}
 	return false;
 }
+function check_sugarychar()
+{
+	with obj_player1
+		return character == "SP" or character == "SN"
+	return false;
+}

@@ -383,7 +383,7 @@ if targetspr != -1 && global.hud == 0
 			sprite_index = charspr_new;
 		else
 		{
-			if obj_player1.character == "SP" or obj_player1.character == "SN"
+			if check_sugarychar()
 				sprite_index = spr_tv_failsafeSP;
 			else
 				sprite_index = targetspr;

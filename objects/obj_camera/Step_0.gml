@@ -355,10 +355,13 @@ if global.panic or global.snickchallenge
 	global.wave = global.maxwave - global.fill;
 	if SUGARY
 	{
-		if global.leveltosave != "sucrose" && !instance_exists(obj_ghostcollectibles)
-			panicangle = scr_sin(3.5 * clamp(global.wave / global.maxwave, 0, 1), 65 - (5 * clamp(global.wave / global.maxwave, 0, 1)));
-		else
-			panicangle = 0;
+		if !lock
+		{
+			if global.leveltosave != "sucrose" && !instance_exists(obj_ghostcollectibles)
+				panicangle = scr_sin(3.5 * clamp(global.wave / global.maxwave, 0, 1), 65 - (5 * clamp(global.wave / global.maxwave, 0, 1)));
+			else
+				panicangle = 0;
+		}
 		
 		if instance_exists(obj_pizzaface) && !MOD.DeathMode
 			greyscale = Approach(greyscale, 0.45, 0.005);

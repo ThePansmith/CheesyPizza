@@ -1,12 +1,4 @@
-title_index += 0.35;
-if (title_index >= 2)
-	title_index = frac(title_index);
-image_index = (title * 2) + title_index;
-if image_index > sprite_get_number(sprite_index)
-{
-	image_index -= sprite_get_number(sprite_index);
-	very = true;
-}
+title_index = (title_index + 0.35) % 2;
 paletteselect = 0;
 vsp -= 1;
 
@@ -15,8 +7,6 @@ if sugary
 {
 	if title <= 24
 	{
-		image_index = title;
-		
 		if image_alpha > 0
 		    image_alpha -= 0.05;
 		else
@@ -61,7 +51,7 @@ if sugary
 	else
 		visible = false;
 }
-if bo
+else if bo
 {
 	if image_alpha > 0
 	    image_alpha -= 0.05;
@@ -78,4 +68,10 @@ if bo
 	    image_xscale = Approach(image_xscale, 5, 0.05);
 	    image_yscale = Approach(image_yscale, 5, 0.05);
 	}
+}
+else if REMIX && alarm[1] <= 0
+{
+	image_alpha -= 0.1;
+	if image_alpha <= 0
+		instance_destroy();
 }

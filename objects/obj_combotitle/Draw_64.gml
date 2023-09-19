@@ -9,6 +9,4 @@ if !REMIX
 		afterimages[i][4] -= 0.15;
 	}
 }
-draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
-if very && !sugary
-	draw_sprite(pino ? spr_comboveryPN : spr_combovery, 0, x - 65, y - 6);
+scr_combotitledraw(sprite_index, x, y, title, title_index);

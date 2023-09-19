@@ -1,6 +1,6 @@
 function scr_rankbubbledraw(rx, ry)
 {
-	var sugary = (obj_player1.character == "SP" or obj_player1.character == "SN");
+	var sugary = check_sugarychar();
 	var bo = (obj_player1.character == "BN");
 	var pino = (obj_player1.character == "PN");
 	
