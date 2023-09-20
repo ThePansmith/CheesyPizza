@@ -1431,6 +1431,12 @@ function cyop_load_level(ini)
 	var reset = global.levelreset;
 	global.levelreset = false;
 	
+	with obj_player
+	{
+		backtohubstartx = x;
+		backtohubstarty = y;
+	}
+	
 	scr_playerreset(false, true);
 	with obj_player1
 	{

@@ -81,10 +81,11 @@ function scr_tvdraw()
 		if REMIX
 		{
 			static combo_prev = 0;
-			if combo_prev < visualcombo
+			if combo_prev != visualcombo
 			{
+				if combo_prev < visualcombo
+					combo_shake = 2;
 				combo_prev = visualcombo;
-				combo_shake = 2;
 			}
 			combo_shake = Approach(combo_shake, 0, 0.15);
 		}

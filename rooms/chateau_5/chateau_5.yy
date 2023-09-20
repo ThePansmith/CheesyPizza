@@ -142,6 +142,7 @@
     {"name":"inst_1588CE6E","path":"rooms/chateau_5/chateau_5.yy",},
     {"name":"inst_67C8DFFB","path":"rooms/chateau_5/chateau_5.yy",},
     {"name":"inst_5832AC05","path":"rooms/chateau_5/chateau_5.yy",},
+    {"name":"inst_50E22866","path":"rooms/chateau_5/chateau_5.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -282,6 +283,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1588CE6E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_bigcollect","path":"objects/obj_bigcollect/obj_bigcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":6289.0,"y":736.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_67C8DFFB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2944.0,"y":672.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5832AC05","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":5632.0,"y":448.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_50E22866","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cutoff","path":"objects/obj_cutoff/obj_cutoff.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":6880.0,"y":640.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_Secret1","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":32,"SerialiseWidth":307,"TileCompressedData":[
 -5144,0,-4,34,7,35,34,35,34,35,34,35,-296,0,11,95,11,12,49,50,49,50,49,50,49,50,-297,0,10,26,27,64,65,64,65,64,65,64,65,-297,0,10,32,33,79,80,79,80,79,80,79,80,-297,0,10,47,48,34,35,34,35,34,35,34,35,-297,0,10,62,63,49,50,49,50,49,50,49,50,-297,0,10,56,57,64,65,64,65,64,65,64,65,-297,0,10,71,72,79,80,79,80,79,80,79,80,-2520,0,],"TileDataFormat":1,},"tilesetId":{"name":"tileset_chateau1","path":"tilesets/tileset_chateau1/tileset_chateau1.yy",},"userdefinedDepth":true,"visible":true,"x":0,"y":0,},
