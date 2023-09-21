@@ -16,7 +16,7 @@
   "date": "2023-07-04T20:56:06.5718393+02:00",
   "description": "",
   "exportToGame": true,
-  "extensionVersion": "0.1.0",
+  "extensionVersion": "0.2.0",
   "files": [
     {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":64,"filename":"CheesyPizza.dll","final":"ptcu_cleanup","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"launch_external","argCount":0,"args":[

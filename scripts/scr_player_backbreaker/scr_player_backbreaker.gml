@@ -48,7 +48,7 @@ function scr_player_backbreaker()
 		if (instance_exists(parry_inst))
 		{
 			instance_destroy(parry_inst);
-			parry_inst = -4;
+			parry_inst = noone;
 		}
 		if (is_array(global.hasfarmer) && global.hasfarmer[farmerpos])
 			scr_change_farmers();
@@ -64,7 +64,7 @@ function scr_player_backbreaker()
 		if (instance_exists(parry_inst))
 		{
 			instance_destroy(parry_inst);
-			parry_inst = -4;
+			parry_inst = noone;
 		}
 		if (is_array(global.hasfarmer) && global.hasfarmer[farmerpos])
 			scr_change_farmers();

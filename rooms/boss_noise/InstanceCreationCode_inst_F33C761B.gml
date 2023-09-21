@@ -1,1 +1,1 @@
-target = 480;
+target = obj_noiseboss;

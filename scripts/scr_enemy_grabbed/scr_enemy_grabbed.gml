@@ -313,7 +313,7 @@ function scr_enemy_grabbed()
 			vsp = -6;
 			_player.sprite_index = spr_pepperman_throw;
 			_player.image_index = 0;
-			_player.pepperman_grabID = -4;
+			_player.pepperman_grabID = noone;
 		}
 		if (_player.key_attack && _player.key_up)
 		{
@@ -327,11 +327,11 @@ function scr_enemy_grabbed()
 			vsp = -20;
 			_player.sprite_index = spr_pepperman_throw;
 			_player.image_index = 0;
-			_player.pepperman_grabID = -4;
+			_player.pepperman_grabID = noone;
 		}
 		if (_player.state != states.normal && _player.state != states.jump)
 		{
-			_player.pepperman_grabID = -4;
+			_player.pepperman_grabID = noone;
 			state = states.stun;
 			pepperman_grab = false;
 		}

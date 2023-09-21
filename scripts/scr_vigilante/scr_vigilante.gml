@@ -242,7 +242,7 @@ function scr_vigilante_phase1hurt()
 		hsp = 0;
 		vsp = 0;
 		state = states.actor;
-		pistolanim = -4;
+		pistolanim = noone;
 		sprite_index = spr_player_pistolshotend;
 		invtime = 30;
 	}
@@ -320,7 +320,7 @@ function scr_vigilante_walk()
 					if (id != other.spotID)
 						t = id;
 				}
-				oldspotID = -4;
+				oldspotID = noone;
 				if (x != t.x)
 					image_xscale = sign(t.x - x);
 				state = states.mach2;
@@ -340,7 +340,7 @@ function scr_vigilante_walk()
 					t = id;
 			}
 			spotID = t;
-			oldspotID = -4;
+			oldspotID = noone;
 			if (x != t.x)
 				image_xscale = sign(t.x - x);
 			state = states.mach2;
@@ -789,7 +789,7 @@ function scr_vigilante_duel()
 	{
 		pistolcharge = 0;
 		pistolchargeshooting = false;
-		pistolanim = -4;
+		pistolanim = noone;
 	}
 	if (duelphase == 2)
 	{

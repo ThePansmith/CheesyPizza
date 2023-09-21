@@ -92,7 +92,7 @@ function scr_collide_player()
 	{
 		if (vsp < -1 || !instance_exists(platformid) || (!place_meeting(x, y + 16, platformid) || !place_meeting(x, y + 32, platformid)))
 		{
-			platformid = -4;
+			platformid = noone;
 			y = floor(y);
 		}
 		else

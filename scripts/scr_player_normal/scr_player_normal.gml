@@ -552,7 +552,7 @@ function pepperman_grab_reset()
 	if (pepperman_grabID != noone)
 	{
 		if (!instance_exists(pepperman_grabID))
-			pepperman_grabID = -4;
+			pepperman_grabID = noone;
 	}
 }
 function state_snick_normal()
@@ -642,7 +642,7 @@ function state_snick_normal()
 		if grounded && vsp >= 0
 		{
 			state = states.normal;
-			sound_play_3d("event:/sfx/pep/step", x, y);
+			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
 			create_particle(x, y, part.landcloud, 0);
 		}
 	}
@@ -663,7 +663,7 @@ function state_snick_normal()
 			{
 				if sprite_index != spr_machslide
 				{
-					sound_play_3d("event:/sfx/pep/break", x, y);
+					sound_play_oneshot_3d("event:/sfx/pep/break", x, y);
 					image_index = 0;
 				}
 				sprite_index = spr_machslide;
@@ -785,7 +785,7 @@ function state_snick_normal()
 		sprite_index = spr_bodyslamstart;
 		image_index = 0;
 		state = states.freefall;
-		pistolanim = -4;
+		pistolanim = noone;
 		vsp = -6;
 		dir = move;
 		movespeed = abs(movespeed);

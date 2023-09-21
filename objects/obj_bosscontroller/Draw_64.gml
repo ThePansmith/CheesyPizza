@@ -84,8 +84,8 @@ switch (state)
 		shader_set(shd_pal_swapper);
 		scr_bosscontroller_draw_health(spr_playerhp, player_rowmax, player_columnmax, player_hp, player_maxhp, player_hp_x, player_hp_y, player_xpad, player_ypad, player_index, image_alpha, spr_palette, obj_player1.paletteselect, global.palettetexture);
 		var bpal = boss_palette;
-		var bpalsel = -4;
-		var btex = -4;
+		var bpalsel = noone;
+		var btex = noone;
 		if (boss_hpsprite == spr_bossfight_fakepephp)
 		{
 			bpal = spr_peppalette;

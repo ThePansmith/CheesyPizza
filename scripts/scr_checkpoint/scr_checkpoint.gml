@@ -124,7 +124,7 @@ function load_checkpoint()
 			global.combotime = 60;
 		
 		global.levelattempts++;
-		obj_music.music = -4;
+		obj_music.music = noone;
 		
 		with instance_create(0, 0, obj_fadeout)
 			obj_player1.targetRoom = c.room;

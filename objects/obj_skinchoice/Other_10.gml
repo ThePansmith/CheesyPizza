@@ -99,6 +99,7 @@ switch character
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "<Loypoll please put description here>");
 		break;
 	
 	#endregion
@@ -255,6 +256,7 @@ switch character
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "<Loypoll please put description here>");
 		break;
 	
 	#endregion
@@ -329,6 +331,7 @@ switch character
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "<Loypoll please put description here>");
 		break;
 	
 	#endregion
@@ -386,6 +389,7 @@ switch character
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "<Loypoll please put description here>");
 		break;
 	
 	#endregion
@@ -470,6 +474,7 @@ switch character
 		add_palette(12, "", spr_pattern_awesome, "Awesome", "Incredible, incredible.");
 		add_palette(12, "", spr_pattern_wtf, "WTF!!!", "Stop saying cuss words, guys!");
 		add_palette(12, "", spr_pattern_sugary, "Sugary", "OOOH NAMEDROP!");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "<Loypoll please put description here>");
 		break;
 	
 	#endregion
@@ -533,6 +538,7 @@ switch character
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "<Loypoll please put description here>");
 		break;
 	
 	#endregion
@@ -628,6 +634,7 @@ switch character
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "owie owie");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "get");
 		add_palette(12, "", spr_pattern_evil, "Evil", "I am");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "<Loypoll please put description here>");
 		break;
 	
 	#endregion
@@ -693,6 +700,7 @@ switch character
 		add_palette(12, "", spr_pattern_awesome, "Awesome", "Incredible, incredible.");
 		add_palette(12, "", spr_pattern_wtf, "WTF!!!", "Stop saying cuss words, guys!");
 		add_palette(12, "", spr_pattern_sugary, "Sugary", "OOOH NAMEDROP!");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "<Loypoll please put description here>");
 		break;
 	
 	#endregion

@@ -221,7 +221,7 @@ function scr_playersounds()
 			fmod_event_instance_set_parameter(hamkuffsnd, "state", 2, true);
 			sound_instance_move(hamkuffsnd, x + hsp, y + vsp);
 		}
-		hamkuffID = -4;
+		hamkuffID = noone;
 	}
 	if ((state == states.ratmount || state == states.ratmountjump) && ratmount_movespeed >= 12 && (sprite_index == spr_ratmount_attack || sprite_index == spr_ratmount_mach3 || sprite_index == spr_ratmount_dashjump || sprite_index == spr_lonegustavodash || sprite_index == spr_lonegustavomach3 || sprite_index == spr_lonegustavodashjump))
 	{
