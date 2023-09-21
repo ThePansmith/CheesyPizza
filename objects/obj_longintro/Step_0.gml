@@ -77,7 +77,7 @@ switch (scene)
 		break;
 	
 	case 0:
-		video_set_volume((global.option_unfocus_mute && !window_has_focus()) ? 0 : global.option_master_volume);
+		
 		break;
 	
 	/*
