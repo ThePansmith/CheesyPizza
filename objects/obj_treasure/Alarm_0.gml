@@ -1,4 +1,4 @@
-var p = -4;
+var p = noone;
 if (player == 1)
 	p = obj_player1.id;
 else if (player == 2)

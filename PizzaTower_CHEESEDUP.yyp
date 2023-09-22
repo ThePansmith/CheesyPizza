@@ -7360,6 +7360,7 @@
     {"id":{"name":"obj_cottoncreator","path":"objects/obj_cottoncreator/obj_cottoncreator.yy",},},
     {"id":{"name":"tile_secret_ss_to_pt","path":"sprites/tile_secret_ss_to_pt/tile_secret_ss_to_pt.yy",},},
     {"id":{"name":"spr_noise_intro2","path":"sprites/spr_noise_intro2/spr_noise_intro2.yy",},},
+    {"id":{"name":"spr_spookyhat","path":"sprites/spr_spookyhat/spr_spookyhat.yy",},},
     {"id":{"name":"spr_gustavokitchen4","path":"sprites/spr_gustavokitchen4/spr_gustavokitchen4.yy",},},
     {"id":{"name":"spr_gustavokitchen5","path":"sprites/spr_gustavokitchen5/spr_gustavokitchen5.yy",},},
     {"id":{"name":"spr_farmroot2","path":"sprites/spr_farmroot2/spr_farmroot2.yy",},},

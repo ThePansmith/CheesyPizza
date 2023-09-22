@@ -357,6 +357,7 @@ add_music(strongcold_10, "event:/modded/level/strongcold", "event:/modded/level/
 		fmod_event_instance_set_parameter(event, "state", s, true);
 });
 add_music(oldfreezer_1, "event:/music/w4/freezer", "event:/music/w4/freezersecret", 0, noone);
+add_music(oldfactory_0, "event:/music/w4/industrial", "event:/music/w4/industrialsecret", 0, noone);
 
 add_music(factory_1, "event:/music/w4/industrial", "event:/music/w4/industrialsecret", 0, function(room, event, event_secret)
 {

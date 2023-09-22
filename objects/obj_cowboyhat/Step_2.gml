@@ -15,6 +15,7 @@ switch playerid.hat
 	case HAT.tower: sprite_index = spr_towerhat; break;
 	case HAT.crown: sprite_index = spr_crownhat; break;
 	case HAT.uwunya: sprite_index = spr_catearshat; yo = 25; break;
+	case HAT.spooky: sprite_index = spr_spookyhat; yo = -50; break;
 }
 if prev != sprite_index
 {

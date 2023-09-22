@@ -7,7 +7,8 @@ enum HAT
 	dragon,
 	tower,
 	crown,
-	uwunya
+	uwunya,
+	spooky
 }
 
 playerid = obj_player1;

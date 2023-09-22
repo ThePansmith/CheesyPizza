@@ -13,6 +13,8 @@
     {"name":"inst_7EDAE32F","path":"rooms/e_medieval_2/e_medieval_2.yy",},
     {"name":"inst_1190C941","path":"rooms/e_medieval_2/e_medieval_2.yy",},
     {"name":"inst_3B7AEB45","path":"rooms/e_medieval_2/e_medieval_2.yy",},
+    {"name":"inst_4C51C1C2","path":"rooms/e_medieval_2/e_medieval_2.yy",},
+    {"name":"inst_C41B9A8","path":"rooms/e_medieval_2/e_medieval_2.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -22,9 +24,11 @@
           ],"rotation":0.0,"scaleX":-2.0,"scaleY":1.5,"x":-32.0,"y":1088.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_74AD9DC7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_doorB","path":"objects/obj_doorB/obj_doorB.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-64.0,"y":1152.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_32334BE0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":32.0,"scaleY":21.0,"x":-448.0,"y":1184.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7EDAE32F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":19.0,"scaleY":3.0,"x":-448.0,"y":992.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7EDAE32F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":17.0,"scaleY":3.0,"x":-448.0,"y":992.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1190C941","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_platform","path":"objects/obj_platform/obj_platform.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-160.0,"y":832.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3B7AEB45","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_slope","path":"objects/obj_slope/obj_slope.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-160.0,"y":896.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4C51C1C2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":9.0,"scaleY":5.0,"x":576.0,"y":1248.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_C41B9A8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_slope","path":"objects/obj_slope/obj_slope.yy",},"properties":[],"rotation":0.0,"scaleX":-3.0,"scaleY":2.0,"x":672.0,"y":1184.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
   ],
   "parent": {

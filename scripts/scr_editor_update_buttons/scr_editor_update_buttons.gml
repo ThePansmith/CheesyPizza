@@ -1,6 +1,6 @@
 function scr_editor_update_buttons()
 {
-	button = -4;
+	button = noone;
 	with (obj_button)
 	{
 		if (position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), self))
@@ -14,7 +14,7 @@ function scr_editor_update_buttons()
 	with (button)
 		other.info = info;
 	if (button == noone)
-		info = -4;
+		info = noone;
 	if (key_mbleft2)
 	{
 		if (button != noone)
