@@ -75,7 +75,7 @@ function scr_cutoff()
 	if global.performance
 		exit;
 	
-	if instance_exists(obj_levelLoader)
+	if instance_exists(obj_levelLoader) or instance_exists(obj_cutoff)
 	{
 		scr_cutoff_old();
 		exit;

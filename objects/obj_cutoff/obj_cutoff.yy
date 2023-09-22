@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Visuals",
-    "path": "folders/Objects/Visuals.yy",
+    "name": "Miscellaneous",
+    "path": "folders/Objects/Room Structure/Miscellaneous.yy",
   },
   "parentObjectId": null,
   "persistent": false,

@@ -61,7 +61,7 @@ function scr_playerreset(roomstart = false, restart = false)
 	{
 		lock = false;
 		state = states.normal;
-		lag = 0;
+		lag = -1;
 		lagpos = 0;
 	}
 	with obj_roomname

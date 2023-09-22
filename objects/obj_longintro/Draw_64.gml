@@ -1,5 +1,7 @@
 if scene == 0
 {
+	video_set_volume((global.option_unfocus_mute && !window_has_focus()) ? 0 : global.option_master_volume);
+	
 	var _data = video_draw();
 	var _status = _data[0];
 	
