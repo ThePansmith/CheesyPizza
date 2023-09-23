@@ -165,7 +165,7 @@ if instance_exists(target) && !lock && player.state != states.timesup && player.
 	var tx = target.x;
 	var ty = target.y;
 	
-	if target.object_index == obj_player1
+	if target.object_index == obj_player1 && !MOD.Spotlight
 	{
 		if REMIX
 			tx += target.smoothx;

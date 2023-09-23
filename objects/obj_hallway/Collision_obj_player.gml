@@ -32,7 +32,7 @@ with (other)
 		}
 		
 		hall.visited = true;
-		sound_play_oneshot("event:/sfx/misc/door");
+		sound_play("event:/sfx/misc/door");
 		with (instance_create(x, y, obj_fadeout))
 		{
 			offload_arr = hall.offload_arr;

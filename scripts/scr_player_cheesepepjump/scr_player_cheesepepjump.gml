@@ -22,7 +22,7 @@ function scr_player_cheesepepjump()
 	if (check_solid(x + sign(movespeed), y) && !check_slope(x, y + 1) && !place_meeting(x + sign(movespeed), y, obj_ratblock))
 	{
 		state = states.cheesepepstick;
-		sound_play_oneshot_3d("event:/sfx/cheese/step", x, y);
+		sound_play_3d("event:/sfx/cheese/step", x, y);
 		sprite_index = spr_cheesepepstickside;
 		hsp = 0;
 		vsp = 0;
@@ -38,11 +38,11 @@ function scr_player_cheesepepjump()
 		image_index = 0;
 		sprite_index = spr_cheesepepjump;
 		state = states.cheesepepjump;
-		sound_play_oneshot_3d("event:/sfx/cheese/jump", x, y);
+		sound_play_3d("event:/sfx/cheese/jump", x, y);
 	}
 	if (grounded && vsp > 0)
 	{
-		sound_play_oneshot_3d("event:/sfx/cheese/step", x, y);
+		sound_play_3d("event:/sfx/cheese/step", x, y);
 		repeat (3)
 			create_debris(x + random_range(-8, 8), y + 43, spr_cheesechunk);
 		state = states.cheesepep;

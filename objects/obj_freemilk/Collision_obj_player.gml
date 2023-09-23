@@ -5,7 +5,7 @@ if (global.noisejetpack && playerid == noone)
 		hsp = 0;
 		vsp = 0;
 		landAnim = false;
-		sound_play_oneshot_3d("event:/sfx/pep/cheesejump", x, y);
+		sound_play_3d("event:/sfx/pep/cheesejump", x, y);
 		sprite_index = spr_firemouthend;
 		image_index = 0;
 		image_speed = 0.35;

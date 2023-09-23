@@ -17,6 +17,6 @@ else
 		music = true;
 		
 		if global.jukebox == noone
-			sound_play_oneshot(title_music);
+			sound_play(title_music);
 	}
 }

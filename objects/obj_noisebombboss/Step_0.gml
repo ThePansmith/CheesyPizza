@@ -4,7 +4,7 @@ switch (state)
 		hsp = 0;
 		if (grounded && vsp > 0)
 		{
-			sound_play_oneshot_3d("event:/sfx/noise/bombbounce", x, y);
+			sound_play_3d("event:/sfx/noise/bombbounce", x, y);
 			sprite_index = spr_playerN_noisebombland;
 			image_index = 0;
 			state = states.land;
@@ -21,7 +21,7 @@ switch (state)
 		}
 		if (grounded && vsp > 0)
 		{
-			sound_play_oneshot_3d("event:/sfx/noise/bombbounce", x, y);
+			sound_play_3d("event:/sfx/noise/bombbounce", x, y);
 			sprite_index = spr_playerN_noisebombland;
 			image_index = 0;
 			state = states.land;

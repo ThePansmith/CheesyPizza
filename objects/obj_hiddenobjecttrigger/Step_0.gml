@@ -19,5 +19,5 @@ if (_sound)
 		fmod_event_instance_play(global.snd_secretwall);
 	}
 	else if !SUGARY
-		sound_play_oneshot("event:/sfx/misc/collectpizza");
+		sound_play("event:/sfx/misc/collectpizza");
 }

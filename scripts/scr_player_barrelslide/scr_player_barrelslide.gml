@@ -64,7 +64,7 @@ function scr_player_barrelslide()
 				vsp = -abs(movespeed);
 			state = states.barrelclimbwall;
 			movespeed = 0;
-			sound_play_oneshot_3d("event:/sfx/barrel/slope", x, y);
+			sound_play_3d("event:/sfx/barrel/slope", x, y);
 			if (sprite_index != spr_player_barrelroll)
 				sprite_index = spr_player_barrelroll;
 		}

@@ -9,7 +9,7 @@ if (buffer <= 0 && other.state != states.ghost)
 			notification_push(notifs.corpsesurf, [room]);
 			add_saveroom(other.id);
 		}
-		sound_play_oneshot_3d("event:/sfx/pep/gravecorpsestart", x, y);
+		sound_play_3d("event:/sfx/pep/gravecorpsestart", x, y);
 		vsp = -11;
 		movespeed = abs(movespeed);
 		dir = xscale;

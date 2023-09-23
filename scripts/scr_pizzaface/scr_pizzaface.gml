@@ -81,7 +81,7 @@ function scr_pizzaface_arenaintro()
 					}
 					else if (grounded && vsp > 0)
 					{
-						sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+						sound_play_3d("event:/sfx/pep/groundpound", x, y);
 						other.introstate++;
 						other.introbuffer = 80;
 						sprite_index = spr_slipbanan2;
@@ -162,7 +162,7 @@ function scr_pizzaface_arenaintro()
 					introstate++;
 					with (obj_player1)
 					{
-						sound_play_oneshot_3d("event:/sfx/voice/peppinoangryscream", x, y);
+						sound_play_3d("event:/sfx/voice/peppinoangryscream", x, y);
 						sprite_index = spr_pepbossintro3;
 						image_index = 0;
 					}
@@ -174,7 +174,7 @@ function scr_pizzaface_arenaintro()
 				var _finish = false;
 				if (floor(image_index) == (image_number - 1) && sprite_index == spr_pizzaface_intro1)
 				{
-					sound_play_oneshot("event:/sfx/pizzaface/laugh");
+					sound_play("event:/sfx/pizzaface/laugh");
 					sprite_index = spr_pizzaface_intro2;
 					image_index = 0;
 				}
@@ -355,7 +355,7 @@ function scr_pizzaface_ram()
 				vsp = 12;
 			if ((vsp > 0 && grounded) || check_solid(x + sign(hsp), y))
 			{
-				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+				sound_play_3d("event:/sfx/pep/groundpound", x, y);
 				substate = states.land;
 				landbuffer = 80;
 				hitX = x;
@@ -385,7 +385,7 @@ function scr_pizzaface_ram()
 			y = hitY + irandom_range(-1, 1);
 			if (floor(image_index) == (image_number - 1))
 			{
-				sound_play_oneshot_3d("event:/sfx/pizzaface/jump", x, y);
+				sound_play_3d("event:/sfx/pizzaface/jump", x, y);
 				substate = states.jump;
 				sprite_index = spr_pizzaface_attackjump;
 				image_index = 0;
@@ -455,13 +455,13 @@ function scr_pizzaface_transitioncutscene()
 				substate = states.hit;
 				sprite_index = spr_pizzahead_intro2;
 				image_index = 0;
-				sound_play_oneshot_3d("event:/sfx/pizzaface/open", x, y);
+				sound_play_3d("event:/sfx/pizzaface/open", x, y);
 			}
 			break;
 		case states.hit:
 			if (floor(image_index) == (image_number - 1))
 			{
-				sound_play_oneshot_3d("event:/sfx/misc/explosion", x, y);
+				sound_play_3d("event:/sfx/misc/explosion", x, y);
 				with (instance_create(x, y, obj_explosioneffect))
 					sprite_index = spr_bombexplosion;
 				with (instance_create(x, y, obj_pizzafaceboss_p2))

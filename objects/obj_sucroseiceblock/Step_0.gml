@@ -59,7 +59,7 @@ var _pad = instance_place(x, y, obj_dashpad)
 if state != states.hit && _pad && state != states.grabbed && !touching
 {
 	if !dashpadbuffer
-		sound_play_oneshot_3d("event:/sfx/misc/dashpad", x, y);
+		sound_play_3d("event:/sfx/misc/dashpad", x, y);
 	dashpadbuffer = true;
 	
 	state = states.stun

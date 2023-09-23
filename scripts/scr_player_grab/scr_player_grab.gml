@@ -138,7 +138,7 @@ function scr_player_grab()
 		hsp = xscale * movespeed;
 		if (floor(image_index) == 0 && spinsndbuffer == 0)
 		{
-			sound_play_oneshot_3d("event:/sfx/pep/spin", x, y);
+			sound_play_3d("event:/sfx/pep/spin", x, y);
 			spinsndbuffer = 5;
 		}
 		else if (spinsndbuffer > 0)

@@ -7,9 +7,9 @@ with (obj_camera)
 if global.snd_collectpizza == global.snd_collect
 	scr_sound_multiple(global.snd_collectpizza, x, y);
 else
-	sound_play_oneshot(global.snd_collectpizza);
+	sound_play(global.snd_collectpizza);
 if object_index == obj_escapecollectbig
-	sound_play_oneshot_3d("event:/sfx/misc/bellcollectbig", x, y);
+	sound_play_3d("event:/sfx/misc/bellcollectbig", x, y);
 instance_destroy();
 global.combotime = 60;
 var val = heat_calculate(value);

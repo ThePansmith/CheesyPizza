@@ -15,7 +15,7 @@ function scr_pizzaball_thrown()
 			{
 				if (!bounced)
 				{
-					sound_play_oneshot_3d("event:/sfx/misc/golfbump", x, y);
+					sound_play_3d("event:/sfx/misc/golfbump", x, y);
 					sprite_index = spr_pizzaball_hitwall2;
 					image_index = 0;
 					hitspeed *= 0.8;
@@ -28,7 +28,7 @@ function scr_pizzaball_thrown()
 			}
 			if (scr_solid(x + hsp, y) && !check_slope(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles))
 			{
-				sound_play_oneshot_3d("event:/sfx/misc/golfbump", x, y);
+				sound_play_3d("event:/sfx/misc/golfbump", x, y);
 				sprite_index = spr_pizzaball_hitwall;
 				image_index = 0;
 				image_xscale *= -1;

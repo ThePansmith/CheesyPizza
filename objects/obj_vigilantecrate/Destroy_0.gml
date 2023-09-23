@@ -24,4 +24,4 @@ else
 	with (instance_create(x, y, obj_junk))
 		vsp = -6;
 }
-sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+sound_play_3d("event:/sfx/pep/groundpound", x, y);

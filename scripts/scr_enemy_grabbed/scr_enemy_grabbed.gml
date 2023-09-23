@@ -157,8 +157,8 @@ function scr_enemy_grabbed()
 			if (!important)
 				global.style += 5 + floor(global.combo / heat_nerf)
 			GamepadSetVibration(_obj_player.object_index == obj_player1 ? 0 : 1, 0.8, 0.8, 0.65)
-			sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y)
-			sound_play_oneshot_3d("event:/sfx/pep/punch", x, y)
+			sound_play_3d("event:/sfx/enemies/killingblow", x, y)
+			sound_play_3d("event:/sfx/pep/punch", x, y)
 			state = states.stun
 			image_xscale = -_obj_player.xscale
 			repeat 3

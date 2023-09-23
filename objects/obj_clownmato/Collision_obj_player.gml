@@ -2,7 +2,7 @@ with (other)
 {
 	if ((!instakillmove || state == states.mach2) && state != states.animatronic && state != states.bump && other.state == states.walk && state != states.chainsaw)
 	{
-		sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
+		sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 		vsp = -4;
 		hsp = -3 * xscale;
 		state = states.bump;

@@ -26,7 +26,7 @@ function scr_player_rupertjump()
 		sprite_index = spr_player_skatedoublejumpstart;
 		with (instance_create(x, y, obj_highjumpcloud2))
 			image_xscale = other.xscale;
-		sound_play_oneshot_3d(sfx_jump, x, y);
+		sound_play_3d(sfx_jump, x, y);
 	}
 	if (vsp >= 10 || sprite_index == spr_player_skatespin || ((doublejump || sprite_index == spr_player_skatewalljump || sprite_index == spr_player_skatewalljumpstart) && vsp >= 1))
 	{

@@ -50,7 +50,7 @@ switch (state)
 		if (idle >= 200)
 		{
 			if !instance_exists(obj_titlecard)
-				sound_play_oneshot_3d("event:/sfx/voice/mrstick", x, y);
+				sound_play_3d("event:/sfx/voice/mrstick", x, y);
 			sprite_index = choose(spr_stick_idleanim1, spr_stick_idleanim2, spr_stick_idleanim3);
 			image_index = 0;
 			idle = 0;
@@ -61,7 +61,7 @@ switch (state)
 			drawing = false;
 		if (drawing && obj_player1.key_up && (global.pigtotal - global.pigreduction) >= maxscore)
 		{
-			sound_play_oneshot_3d("event:/sfx/misc/kashing", x, y);
+			sound_play_3d("event:/sfx/misc/kashing", x, y);
 			instance_destroy(arrowID);
 			obj_stick_forsale.visible = false;
 			ini_open_from_string(obj_savesystem.ini_str);
@@ -97,7 +97,7 @@ switch (state)
 			if (floor(image_index) >= 16 && !shot)
 			{
 				shot = true;
-				sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
+				sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 				with (obj_player1)
 				{
 					hsp = -xscale * 4;
@@ -109,7 +109,7 @@ switch (state)
 				image_xscale *= -1;
 				sprite_index = spr_stick_takemoney2;
 				image_index = 0;
-				sound_play_oneshot_3d("event:/sfx/voice/mrsticklaugh", x, y);
+				sound_play_3d("event:/sfx/voice/mrsticklaugh", x, y);
 			}
 		}
 		else if (sprite_index == spr_stick_takemoney2)

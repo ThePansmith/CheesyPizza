@@ -131,7 +131,7 @@ if (!in_baddieroom() && important == 0)
 			global.comboscore += combototal;
 		}
 	}
-	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_3d("event:/sfx/enemies/kill", x, y);
 	repeat 3
 	{
 		with create_debris(x, y, spr_slapstar)
@@ -151,7 +151,7 @@ if (!in_baddieroom() && important == 0)
 		ds_list_add(global.escaperoom, ID);
 	
 	if 0.05 > random(1) && safe_get(id, "sugary")
-		sound_play_oneshot_3d("event:/modded/sfx/sugaryenemykill", x, y);
+		sound_play_3d("event:/modded/sfx/sugaryenemykill", x, y);
 	if global.leveltosave == "sucrose" && !instance_exists(obj_pizzaface) && global.fill != 0
 		global.fill += calculate_panic_timer(0, 2.5);
 }
@@ -163,7 +163,7 @@ else if (!in_baddieroom() && important == 1)
 		create_slapstar(x, y);
 		create_baddiegibs(x, y);
 	}
-	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_3d("event:/sfx/enemies/kill", x, y);
 	with (obj_camera)
 	{
 		shake_mag = 3;

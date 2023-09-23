@@ -41,7 +41,7 @@ switch (state)
 		image_index -= 0.35;
 		if (image_index <= 0)
 		{
-			sound_play_oneshot("event:/sfx/ui/tvswitchback");
+			sound_play("event:/sfx/ui/tvswitchback");
 			instance_destroy();
 		}
 		break;

@@ -6,7 +6,7 @@ if (playerid != noone)
 		{
 			if (global.noisejetpack == 1)
 			{
-				sound_play_oneshot_3d("event:/sfx/misc/cow", x, y);
+				sound_play_3d("event:/sfx/misc/cow", x, y);
 				global.noisejetpack = false;
 			}
 		}

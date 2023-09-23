@@ -1,6 +1,6 @@
 image_speed = 0;
 depth = -1;
-sound_play_oneshot_3d("event:/sfx/enemies/projectile", x, y);
+sound_play_3d("event:/sfx/enemies/projectile", x, y);
 snd = fmod_event_create_instance("event:/sfx/pizzahead/cog");
 hsp = 0;
 vsp = 0;

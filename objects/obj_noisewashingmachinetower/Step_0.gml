@@ -1,7 +1,7 @@
 if (grounded && vsp > 0)
 {
-	sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
-	sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
+	sound_play_3d("event:/sfx/enemies/killingblow", x, y);
+	sound_play_3d("event:/sfx/pep/jump", x, y);
 	vsp = -11;
 	image_index = 0;
 	instance_create(x, y + 43, obj_bangeffect);

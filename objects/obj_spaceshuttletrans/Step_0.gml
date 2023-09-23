@@ -9,8 +9,8 @@ if (y > (obj_spaceshuttlestop.y - 18))
 			visible = true;
 			pizzapepper = 0;
 			sprite_index = spr_rockethitwall;
-			sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
-			sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
+			sound_play_3d("event:/sfx/pep/groundpound", x, y);
+			sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 			with (obj_camera)
 			{
 				shake_mag = 50;

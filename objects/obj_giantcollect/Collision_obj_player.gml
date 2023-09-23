@@ -9,7 +9,7 @@ if (other.state != states.gotoplayer)
 		healthshaketime = 120;
 	
 	scr_sound_multiple(global.snd_collect, x, y);
-	sound_play_oneshot(global.snd_collectgiantpizza);
+	sound_play(global.snd_collectgiantpizza);
 	
 	var val = heat_calculate(1000);
 	if (other.object_index == obj_player1)

@@ -11,7 +11,7 @@ if (move)
 		{
 			if (bounce > 0)
 			{
-				sound_play_oneshot_3d("event:/sfx/pizzahead/tvbounce", x, y);
+				sound_play_3d("event:/sfx/pizzahead/tvbounce", x, y);
 				vsp = -18;
 				sprite_index = spr_pizzahead_TVprojectilebounce;
 				image_index = 0;
@@ -38,7 +38,7 @@ if (move)
 		}
 		if (check_solid(x + sign(hsp), y))
 		{
-			sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
+			sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 			dir *= -1;
 			hsp *= -1;
 		}

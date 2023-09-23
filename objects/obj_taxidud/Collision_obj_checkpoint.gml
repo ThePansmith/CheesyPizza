@@ -4,7 +4,7 @@ if (playerid.visible == 0)
 	global.failcutscene = false;
 	with (obj_player1)
 	{
-		sound_play_oneshot("event:/sfx/misc/taxibeep");
+		sound_play("event:/sfx/misc/taxibeep");
 		state = states.normal;
 		create_particle(x, y, part.genericpoofeffect);
 		cutscene = false;

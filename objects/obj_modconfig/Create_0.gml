@@ -240,7 +240,7 @@ var opt = add_option("Shoot Style", "shootstyle", "Extra attacks bound to the SH
 			p.timer = 0;
 			if val == 1 && floor(bullets) > 0 && frac(bullets) == 0
 			{
-				sound_play_centered_oneshot(sfx_pistolshot);
+				sound_play_centered(sfx_pistolshot);
 				p.state = states.pistol;
 				p.sprite = spr_player_pistolshot;
 				p.image = 0;
@@ -250,7 +250,7 @@ var opt = add_option("Shoot Style", "shootstyle", "Extra attacks bound to the SH
 			{
 				p.hsp = p.xscale * 6;
 				p.timer = -50;
-				sound_play_centered_oneshot(sfx_breakdance);
+				sound_play_centered(sfx_breakdance);
 				p.state = states.punch;
 				p.sprite = spr_player_breakdancestart;
 				p.image = 0;
@@ -332,7 +332,7 @@ var opt = add_option("Grab Special", "doublegrab", "Press the GRAB button twice 
 				p.timer = -30;
 				if val == 1
 				{
-					sound_play_centered_oneshot(sfx_dive);
+					sound_play_centered(sfx_dive);
 					p.sprite = spr_player_attackdash;
 					p.image = 0;
 				}
@@ -355,7 +355,7 @@ var opt = add_option("Grab Special", "doublegrab", "Press the GRAB button twice 
 			else
 			{
 				p.timer = 10;
-				//sound_play_centered_oneshot(sfx_suplexdash);
+				//sound_play_centered(sfx_suplexdash);
 				
 				p.state = states.handstandjump;
 				p.sprite = spr_player_suplexdash;
@@ -792,7 +792,7 @@ var opt = add_option("Mach Sound", "machsnd", "Choose between the normal version
 	if !sound_is_playing(machsnd)
 		sound_play(machsnd);
 	
-	fmod_event_instance_set_3d_attributes(machsnd, camera_get_view_x(view_camera[0]) + 960 / 2, camera_get_view_y(view_camera[0]) + 540 / 2);
+	sound_instance_move(machsnd, camera_get_view_x(view_camera[0]) + 960 / 2, camera_get_view_y(view_camera[0]) + 540 / 2);
 	switch p.sprite
 	{
 		case spr_player_idle:
@@ -832,7 +832,7 @@ var opt = add_option("Mach Sound", "machsnd", "Choose between the normal version
 				p.timer = 0;
 				p.image = 0;
 				
-				sound_play_centered_oneshot("event:/sfx/pep/break", x, y);
+				sound_play_centered("event:/sfx/pep/break", x, y);
 			}
 			break;
 		

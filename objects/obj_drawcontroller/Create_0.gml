@@ -23,3 +23,5 @@ dark_arr = ["Tiles_1", "Tiles_2", "Tiles_3", "Tiles_4"];
 objdark_arr = [obj_parryeffect, obj_uziprojectile, obj_pistolbullet, obj_rancherbullet_debris, obj_targetguy, obj_exitgustavo, obj_vigilantecrate, obj_vigilantebazooka, obj_escapespawn, obj_followcharacter, obj_metalblock, obj_destructibles, obj_collect, obj_bigcollect, obj_giantcollect, obj_secretportal, obj_vigilantecow, obj_cowstampede, obj_cowfall, obj_vigilantedynamite, obj_hppickup, obj_vigilantecow, obj_stampedecloud, obj_ladderhorizontal, obj_vigilanteshot];
 array_push(objdark_arr, obj_brickball, obj_brickcomeback);
 array_push(objdark_arr, obj_gigacherrydead, obj_baddiespawner, obj_eyescreammine, obj_boxofpizza, obj_pizzaboxunopen, obj_rocket, obj_ratblock, obj_superspring, obj_ramp);
+
+spotlight_size = 50;

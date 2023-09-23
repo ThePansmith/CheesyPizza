@@ -7,7 +7,7 @@ function scr_player_hang()
 	wallclingcooldown = 0;
 	if (floor(image_index) == (image_number - 1))
 	{
-		sound_play_oneshot_3d("event:/modded/sfx/woosh", x, y);
+		sound_play_3d("event:/modded/sfx/woosh", x, y);
 		
 		jumpstop = false;
 		vsp = -15;

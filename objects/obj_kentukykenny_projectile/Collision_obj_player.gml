@@ -6,7 +6,7 @@ with (other)
 	{
 		if (state != states.firemouth && state != states.parry && hurted == 0)
 		{
-			sound_play_oneshot_3d("event:/sfx/firemouth/start", x, y);
+			sound_play_3d("event:/sfx/firemouth/start", x, y);
 			create_transformation_tip(lang_get_value("firemouthtip"), "firemouth");
 			firemouthflames = false;
 			is_firing = false;

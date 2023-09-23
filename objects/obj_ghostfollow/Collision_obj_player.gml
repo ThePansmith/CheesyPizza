@@ -9,7 +9,7 @@ if (state != states.johnghost && other.state != states.door && other.state != st
 		sprite_index = spr_hurt;
 		image_speed = 0.35;
 	}
-	sound_play_oneshot("event:/sfx/pep/johnghost");
+	sound_play("event:/sfx/pep/johnghost");
 	fadein = false;
 	state = states.johnghost;
 	playerid = other.id;

@@ -4,7 +4,7 @@ if (player < 0)
 	{
 		if (other.state != states.teleport && other.state != states.backbreaker && other.state != states.chainsaw && other.state != states.hit && other.state != states.gotoplayer)
 		{
-			sound_play_oneshot_3d("event:/sfx/misc/teleporterstart", x, y);
+			sound_play_3d("event:/sfx/misc/teleporterstart", x, y);
 			player = other.id;
 			player.visible = false;
 			storedstate = player.state;

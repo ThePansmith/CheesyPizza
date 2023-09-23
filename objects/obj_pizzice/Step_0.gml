@@ -31,7 +31,7 @@ switch (state)
 		else
 		{
 			shot--;
-			sound_play_oneshot_3d("event:/sfx/enemies/projectile", x, y);
+			sound_play_3d("event:/sfx/enemies/projectile", x, y);
 			var dirs = [[1, 1], [1, -1], [-1, 1], [-1, -1]];
 			cooldown = 35;
 			flash = true;

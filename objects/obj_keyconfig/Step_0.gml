@@ -38,14 +38,14 @@ if !selecting
 {
 	if key_up2
 	{
-		sound_play_oneshot("event:/sfx/ui/step");
+		sound_play("event:/sfx/ui/step");
 		key_select--;
 		if (controller && key_select >= 0 && key_select < 4)
 			key_select = -1;
 	}
 	if key_down2
 	{
-		sound_play_oneshot("event:/sfx/ui/step");
+		sound_play("event:/sfx/ui/step");
 		key_select++;
 		if (controller && key_select >= 0 && key_select < 4)
 			key_select = 4;
@@ -80,7 +80,7 @@ if !selecting
 		
 		if !_found
 		{
-			sound_play_oneshot("event:/sfx/ui/select")
+			sound_play("event:/sfx/ui/select")
 			ini_open_from_string(obj_savesystem.ini_str_options)
 			
 			if !controller
@@ -133,7 +133,7 @@ if !selecting
 			instance_destroy()
 		}
 		else
-			sound_play_oneshot("event:/sfx/ui/select")
+			sound_play("event:/sfx/ui/select")
 	}
 	else if (key_select > -1 && key_jump)
 	{

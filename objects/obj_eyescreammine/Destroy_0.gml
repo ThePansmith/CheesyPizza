@@ -3,7 +3,7 @@ repeat 3
 	create_slapstar(x, y);
 	create_baddiegibs(x, y);
 }
-sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
+sound_play_3d("event:/sfx/enemies/kill", x, y);
 instance_create(x, y + 30, obj_bangeffect);
 with obj_camera
 {

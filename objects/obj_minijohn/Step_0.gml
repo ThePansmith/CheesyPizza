@@ -47,7 +47,7 @@ switch (state)
 			hsp = Approach(hsp, 0, 1);
 			if (floor(image_index) == (image_number - 1))
 			{
-				sound_play_oneshot_3d("event:/sfx/enemies/minijohnpunch", x, y);
+				sound_play_3d("event:/sfx/enemies/minijohnpunch", x, y);
 				punchspd = 8;
 				hsp = punchspd * image_xscale;
 				sprite_index = spr_minijohn_punch;
@@ -89,7 +89,7 @@ switch (state)
 				underground = false;
 				if (player.x != x)
 					image_xscale = sign(x - player.x);
-				sound_play_oneshot_3d("event:/sfx/enemies/comingoutground", x, y);
+				sound_play_3d("event:/sfx/enemies/comingoutground", x, y);
 			}
 		}
 		else if (sprite_index == spr_minijohn_ground)

@@ -126,14 +126,14 @@ function scr_player_mach3()
 		if (!key_attack && fightball == 0 && !launched) && sprite_index != spr_dashpadmach && grounded && vsp > 0
 		{
 			sprite_index = spr_machslidestart;
-			sound_play_oneshot_3d("event:/sfx/pep/break", x, y);
+			sound_play_3d("event:/sfx/pep/break", x, y);
 			state = states.machslide;
 			image_index = 0;
 			launched = false;
 		}
 		if (move == -xscale && grounded && vsp > 0 && !launched && fightball == 0 && sprite_index != spr_dashpadmach)
 		{
-			sound_play_oneshot_3d("event:/sfx/pep/machslideboost", x, y);
+			sound_play_3d("event:/sfx/pep/machslideboost", x, y);
 			sprite_index = spr_mach3boost;
 			state = states.machslide;
 			image_index = 0;
@@ -253,8 +253,8 @@ function scr_player_mach3()
 				if (!fightball)
 				{
 					sprite_index = spr_hitwall;
-					sound_play_oneshot_3d(sfx_groundpound, x, y);
-					sound_play_oneshot_3d(sfx_bumpwall, x, y);
+					sound_play_3d(sfx_groundpound, x, y);
+					sound_play_3d(sfx_bumpwall, x, y);
 					hsp = 0;
 					flash = false;
 					state = states.bump;
@@ -270,8 +270,8 @@ function scr_player_mach3()
 					with (obj_player)
 					{
 						sprite_index = spr_hitwall;
-						sound_play_oneshot_3d(sfx_groundpound, x, y);
-						sound_play_oneshot_3d(sfx_bumpwall, x, y);
+						sound_play_3d(sfx_groundpound, x, y);
+						sound_play_3d(sfx_bumpwall, x, y);
 						hsp = 0;
 						flash = false;
 						state = states.bump;
@@ -296,7 +296,7 @@ function scr_player_mach3()
 				is_solid = false;
 				image_xscale = other.xscale;
 			}
-			sound_play_oneshot_3d("event:/sfx/pep/pistolshot", x + (xscale * 20), y);
+			sound_play_3d("event:/sfx/pep/pistolshot", x + (xscale * 20), y);
 		}
 		if (key_chainsaw2 && character == "V" && !instance_exists(dynamite_inst))
 		{
@@ -438,8 +438,8 @@ function scr_player_mach3()
 					}
 				}
 				sprite_index = spr_hitwall;
-				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
-				sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
+				sound_play_3d("event:/sfx/pep/groundpound", x, y);
+				sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 				hsp = 0;
 				flash = false;
 				state = states.bump;

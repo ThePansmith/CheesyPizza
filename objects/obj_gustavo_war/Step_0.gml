@@ -6,7 +6,7 @@ if (sprite_index == spr_gustavo_war1)
 		image_index = 0;
 		hsp = -image_xscale * 8;
 		vsp = -12;
-		sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
+		sound_play_3d("event:/sfx/enemies/killingblow", x, y);
 		with (instance_create(x + (image_xscale * 60), y + 8, obj_gustavo_warmissile))
 		{
 			if (other.image_xscale > 0)

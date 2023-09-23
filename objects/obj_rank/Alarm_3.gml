@@ -7,7 +7,7 @@ else
 		shake_mag = 2;
 		shake_mag_acc = 3 / room_speed;
 	}
-	sound_play_oneshot_3d("event:/sfx/enemies/killingblow", room_width / 2, room_height / 2);
+	sound_play_3d("event:/sfx/enemies/killingblow", room_width / 2, room_height / 2);
 	text[text_pos][0] = true;
 	text_pos++;
 	alarm[3] = 40;

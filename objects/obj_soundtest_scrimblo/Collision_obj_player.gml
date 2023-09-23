@@ -2,8 +2,8 @@ if ((other.instakillmove == 1 || other.state == states.handstandjump || other.st
 {
 	death = true;
 	var t = other.id;
-	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
-	sound_play_oneshot_3d("event:/modded/sfx/voice/scrimbdeath", x, y);
+	sound_play_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_3d("event:/modded/sfx/voice/scrimbdeath", x, y);
 	notification_push(notifs.baddie_kill, [room, id, object_index]);
 	add_baddieroom();
 	instance_create(x, y, obj_bangeffect);

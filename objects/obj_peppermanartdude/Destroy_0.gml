@@ -6,7 +6,7 @@ if (noshake == 0)
 	create_baddiegibs(x, y);
 	create_baddiegibs(x, y);
 	create_baddiegibs(x, y);
-	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_3d("event:/sfx/enemies/kill", x, y);
 	with (obj_camera)
 	{
 		shake_mag = 3;

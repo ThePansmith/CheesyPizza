@@ -17,5 +17,5 @@ else
 
 with (instance_create(_x, _y, obj_shakeanddie))
 	sprite_index = spr_pizzahead_intro1;
-sound_play_oneshot_3d("event:/sfx/misc/explosion", _x, _y);
-sound_play_oneshot_3d("event:/sfx/pep/groundpound", _x, _y);
+sound_play_3d("event:/sfx/misc/explosion", _x, _y);
+sound_play_3d("event:/sfx/pep/groundpound", _x, _y);

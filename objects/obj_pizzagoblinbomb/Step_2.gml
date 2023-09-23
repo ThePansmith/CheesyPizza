@@ -70,7 +70,7 @@ if (sprite_index == spr_bomb)
 	if (floor(image_index) == 5 && !bouncesound)
 	{
 		bouncesound = true;
-		sound_play_oneshot_3d("event:/sfx/pep/bombbounce", x, y);
+		sound_play_3d("event:/sfx/pep/bombbounce", x, y);
 	}
 	else if (floor(image_index) != 5)
 		bouncesound = false;

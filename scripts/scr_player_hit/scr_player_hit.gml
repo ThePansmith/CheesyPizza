@@ -9,7 +9,7 @@ function scr_player_hit()
 	image_speed = 0;
 	if (hitLag <= 0)
 	{
-		sound_play_oneshot_3d("event:/sfx/pep/hurt", x, y);
+		sound_play_3d("event:/sfx/pep/hurt", x, y);
 		image_speed = 0.35;
 		x = hitX;
 		y = hitY;

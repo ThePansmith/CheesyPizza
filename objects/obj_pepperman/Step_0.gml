@@ -108,7 +108,7 @@ if (!pizzahead && wastedhits >= 10 && phase == 1 && state == states.walk && flic
 	elitehit = 10;
 	wastedhits = 0;
 	phase = 2;
-	sound_play_oneshot_3d("event:/sfx/voice/peppermanlaugh", x, y);
+	sound_play_3d("event:/sfx/voice/peppermanlaugh", x, y);
 	instance_destroy(obj_pepper_marbleblock);
 	with (obj_pepper_marblespot)
 		created = false;
@@ -127,8 +127,8 @@ if (state == states.stun)
 		if (wastedhits >= 10 && phase == 2 && !pizzahead)
 		{
 			instance_destroy(obj_pepper_marbleblock);
-			sound_play_oneshot_3d("event:/sfx/pepperman/shrink", x, y);
-			sound_play_oneshot_3d("event:/sfx/voice/peppermanscared", x, y);
+			sound_play_3d("event:/sfx/pepperman/shrink", x, y);
+			sound_play_3d("event:/sfx/voice/peppermanscared", x, y);
 			state = states.mini;
 			ministate = states.transition;
 			minibuffer = 480;
@@ -144,7 +144,7 @@ if (prevhp != elitehit)
 	if (elitehit < prevhp)
 	{
 		if (irandom(100) <= 33)
-			sound_play_oneshot_3d("event:/sfx/voice/peppermanscared", x, y);
+			sound_play_3d("event:/sfx/voice/peppermanscared", x, y);
 		pizzahead_subhp = pizzahead_maxsubhp;
 		bowlingballcount = 0;
 		GIANTbowlingballcount = 0;

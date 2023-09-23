@@ -11,7 +11,7 @@ with (playerid)
 {
 	if (state != states.morthook)
 	{
-		sound_play_oneshot_3d("event:/sfx/mort/hook", other.x, other.y);
+		sound_play_3d("event:/sfx/mort/hook", other.x, other.y);
 		state = states.morthook;
 		morthookID = mh_id;
 		tauntstoredmovespeed = movespeed;

@@ -30,7 +30,7 @@ with (other)
 }
 if (_transfo)
 {
-	sound_play_oneshot("event:/sfx/pep/pray");
+	sound_play("event:/sfx/pep/pray");
 	var p = other.id;
 	with (instance_create(other.x - 540, camera_get_view_y(view_camera[0]) - 100, obj_priestangel))
 	{

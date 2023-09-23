@@ -7,7 +7,7 @@ repeat (3)
 		vsp = random_range(-10, 10);
 	}
 }
-sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
+sound_play_3d("event:/sfx/enemies/kill", x, y);
 instance_create(x, y, obj_bangeffect);
 with (obj_camera)
 {

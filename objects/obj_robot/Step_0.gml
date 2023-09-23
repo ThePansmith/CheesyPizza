@@ -55,7 +55,7 @@ switch (state)
 			instance_destroy();
 		if (check_solid(x + sign(hsp), y) && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x, y, obj_destructibles))
 		{
-			sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
+			sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 			state = states.stun;
 			stunned = 100;
 			vsp = -4;
@@ -84,7 +84,7 @@ switch (state)
 		}
 		if (check_solid(x + sign(hsp), y) && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x, y, obj_destructibles))
 		{
-			sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
+			sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 			state = states.stun;
 			stunned = 100;
 			vsp = -8;
@@ -126,7 +126,7 @@ if (x != targetplayer.x && state != states.pizzagoblinthrow && bombreset == 0)
 	{
 		if (state == states.walk || (state == states.idle && sprite_index != scaredspr))
 		{
-			sound_play_oneshot_3d("event:/sfx/enemies/projectile", x, y);
+			sound_play_3d("event:/sfx/enemies/projectile", x, y);
 			image_index = 0;
 			image_xscale = -sign(x - targetplayer.x);
 			state = chosenstate;
@@ -181,7 +181,7 @@ if (state == states.slap && image_index > 11)
 {
 	if (snd == 0)
 	{
-		sound_play_oneshot_3d("event:/sfx/enemies/robotslapsteam", x, y);
+		sound_play_3d("event:/sfx/enemies/robotslapsteam", x, y);
 		fmod_event_instance_play("event:/sfx/enemies/minijohnpunch", x, y);
 	}
 	snd = true;

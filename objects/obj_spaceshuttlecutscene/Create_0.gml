@@ -9,4 +9,4 @@ depth = -600;
 start = false;
 time = 0;
 fadein = true;
-sound_play_oneshot("event:/sfx/misc/escaperumble");
+sound_play("event:/sfx/misc/escaperumble");

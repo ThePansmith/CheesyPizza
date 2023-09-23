@@ -105,7 +105,7 @@ function scr_player_firemouth()
 				image_index = 0;
 				if (move != 0)
 					xscale = move;
-				sound_play_oneshot_3d("event:/sfx/firemouth/dash", x + (12 * xscale), y);
+				sound_play_3d("event:/sfx/firemouth/dash", x + (12 * xscale), y);
 				dir = xscale;
 				movespeed = 12;
 			}
@@ -146,7 +146,7 @@ function scr_player_firemouth()
 	{
 		GamepadSetVibration(0, 0.2, 0.2, 0.4);
 		input_buffer_jump = 0;
-		sound_play_oneshot_3d("event:/sfx/firemouth/jump", x, y);
+		sound_play_3d("event:/sfx/firemouth/jump", x, y);
 		with (instance_create(x, y, obj_highjumpcloud2))
 			sprite_index = spr_player_firemouthjumpdust;
 		repeat (5)

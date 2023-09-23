@@ -7,7 +7,7 @@ if (!horseyfinish && start)
 		vsp = 0;
 		if (state != states.dead)
 		{
-			sound_play_oneshot_3d("event:/sfx/misc/winrace", other.x, other.y);
+			sound_play_3d("event:/sfx/misc/winrace", other.x, other.y);
 			add_saveroom();
 		}
 		state = states.dead;

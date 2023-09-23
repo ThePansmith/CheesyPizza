@@ -4,7 +4,7 @@ if sprite_index == spr_cheesedragon_hurt or sprite_index == spr_cheesedragon_goi
 
 if !lastform
 {
-	sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
+	sound_play_3d("event:/sfx/pep/punch", x, y);
 	
 	add_baddieroom();
 	sprite_index = spr_cheesedragon_hurt;
@@ -23,7 +23,7 @@ if !lastform
 }
 else
 {
-	sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
+	sound_play_3d("event:/sfx/pep/punch", x, y);
 	
 	with (instance_create(x, y, obj_sausageman_dead))
 	{

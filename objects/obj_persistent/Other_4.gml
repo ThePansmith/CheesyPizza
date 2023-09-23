@@ -45,3 +45,26 @@ if MOD.Lappable or (safe_get(global, "leveltosave") == "sucrose" && !room_is_sec
 			image_alpha = 1;
 	}
 }
+
+if MOD.JohnGhost
+{
+	if !instance_exists(obj_exitgate) && !instance_exists(obj_hungrypillar) && !instance_exists(obj_lapportal)
+	&& room != timesuproom && room != rank_room
+	{
+		call_later(1, time_source_units_frames, function()
+		{
+			var xx = obj_player1.x, yy = obj_player1.y;
+		
+			if yy > room_height / 2
+				yy = room_height + 200;
+			else
+				yy = -200;
+			if xx > room_width / 2
+				xx += 100;
+			else
+				xx -= 100;
+		
+			instance_create_unique(xx, yy, obj_ghostfollow);
+		});
+	}
+}

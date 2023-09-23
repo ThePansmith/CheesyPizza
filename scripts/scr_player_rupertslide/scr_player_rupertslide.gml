@@ -14,7 +14,7 @@ function scr_player_rupertslide()
 	{
 		vsp = -10;
 		instance_create(x, y, obj_highjumpcloud2);
-		sound_play_oneshot_3d(sfx_jump, x, y);
+		sound_play_3d(sfx_jump, x, y);
 		sprite_index = spr_player_skatedoublejumpstart;
 		image_index = 0;
 	}
@@ -27,7 +27,7 @@ function scr_player_rupertslide()
 		sprite_index = spr_player_skatedoublejumpstart;
 		with (instance_create(x, y, obj_highjumpcloud2))
 			image_xscale = other.xscale;
-		sound_play_oneshot_3d(sfx_jump, x, y);
+		sound_play_3d(sfx_jump, x, y);
 		state = states.rupertjump;
 		movespeed = hsp;
 	}
@@ -60,7 +60,7 @@ function scr_player_rupertslide()
 		}
 		else
 		{
-			sound_play_oneshot_3d(sfx_bumpwall, x, y);
+			sound_play_3d(sfx_bumpwall, x, y);
 			sprite_index = spr_player_skatefall;
 			state = states.rupertjump;
 			vsp = -4;

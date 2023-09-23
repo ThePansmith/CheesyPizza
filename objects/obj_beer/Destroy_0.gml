@@ -10,7 +10,7 @@ if !in_saveroom()
 		repeat (3)
 			create_debris(x + random_range(0, sprite_width), y + random_range(0, sprite_height), spr_beerdebris);
 	}
-	sound_play_oneshot_3d("event:/sfx/misc/beerbreak", x, y);
+	sound_play_3d("event:/sfx/misc/beerbreak", x, y);
 	notification_push(notifs.beer_destroy, [room, id, object_index]);
 	if (obj_player1.character == "V")
 		global.playerhealth = clamp(global.playerhealth + 1, 0, 100);

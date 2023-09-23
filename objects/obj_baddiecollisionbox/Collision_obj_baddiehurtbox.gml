@@ -1,6 +1,6 @@
 if (other.team == 1 && instance_exists(baddieID) && baddieID.parryable && baddieID.state != states.grabbed && baddieID.state != states.hit && !baddieID.invincible && baddieID.instantkillable)
 {
-	sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
+	sound_play_3d("event:/sfx/pep/punch", x, y);
 	if (!baddieID.important)
 	{
 		global.style += 5 + floor(global.combo / heat_nerf);

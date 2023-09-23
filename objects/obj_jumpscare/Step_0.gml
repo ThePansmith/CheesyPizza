@@ -18,7 +18,7 @@ if (sprite_index == spr_tvstatic)
 			if (state == states.actor)
 				state = states.animatronic;
 		}
-		sound_play_oneshot("event:/sfx/ui/tvswitchback");
+		sound_play("event:/sfx/ui/tvswitchback");
 		instance_destroy();
 	}
 }

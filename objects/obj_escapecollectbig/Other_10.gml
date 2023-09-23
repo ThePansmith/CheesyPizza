@@ -19,7 +19,7 @@ if !instance_exists(obj_wartimer)
 }
 else
 {
-	sound_play_oneshot("event:/sfx/ui/wartimerup")
+	sound_play("event:/sfx/ui/wartimerup")
 	with obj_wartimer
 	{
 		addseconds += 5;

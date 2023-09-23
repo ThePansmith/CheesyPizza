@@ -95,6 +95,9 @@ if !boss && level != "grinch" && level != "dragonlair" && level != "snickchallen
 	]
 }
 
+add_modifier("John Ghost", "JohnGhost", "Once you pass the first room, the John ghost from Wasteyard will spawn everywhere!");
+add_modifier("Lights Out", "Spotlight", "The size of the spotlight is tied to your combo time. Grab collectibles and kill enemies to reset it.");
+
 // Level specific
 if level == "grinch"
 {

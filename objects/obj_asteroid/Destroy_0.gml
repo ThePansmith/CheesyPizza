@@ -3,7 +3,7 @@ if !in_saveroom()
 	add_saveroom();
 	scr_sound_multiple(global.snd_collect, x, y);
 	repeat 2
-		sound_play_oneshot_3d("event:/sfx/misc/breakblock", x, y);
+		sound_play_3d("event:/sfx/misc/breakblock", x, y);
 	global.heattime += 10;
 	global.heattime = clamp(global.heattime, 0, 60);
 	global.combotime = 60;

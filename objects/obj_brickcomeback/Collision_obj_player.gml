@@ -27,7 +27,7 @@ if (!trapped)
 }
 else if (other.state == states.ratmountpunch && baddieID == noone)
 {
-	sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
+	sound_play_3d("event:/sfx/pep/punch", x, y);
 	vsp = -6;
 	hsp = other.xscale * 8;
 	trapped = false;

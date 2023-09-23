@@ -60,7 +60,7 @@ function scr_pizzaface_p2_update_sounds()
 	if (sprite_index == spr_pizzahead_giddy && !steppysnd && (floor(image_index) == 2 || floor(image_index) == 6))
 	{
 		steppysnd = true;
-		sound_play_oneshot_3d("event:/sfx/pizzahead/step", x, y + 40);
+		sound_play_3d("event:/sfx/pizzahead/step", x, y + 40);
 	}
 	else if (floor(image_index) != 2 && floor(image_index) != 6)
 		steppysnd = false;
@@ -133,7 +133,7 @@ function scr_pizzaface_p2_fall()
 				layer_set_visible("Backgrounds_1", true);
 				layer_set_visible("Backgrounds_zigzag1", true);
 				layer_background_change(bg, bg_pizzaface_p2_sky);
-				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+				sound_play_3d("event:/sfx/pep/groundpound", x, y);
 				substate = states.transition;
 				sprite_index = spr_pizzahead_intro4;
 				image_index = 0;
@@ -148,7 +148,7 @@ function scr_pizzaface_p2_fall()
 				{
 					sprite_index = spr_gnomecutscene3;
 					image_index = 0;
-					sound_play_oneshot("event:/sfx/pep/screamboss");
+					sound_play("event:/sfx/pep/screamboss");
 				}
 				with (obj_camera)
 				{
@@ -165,7 +165,7 @@ function scr_pizzaface_p2_fall()
 			if (!laugh_snd && floor(image_index) >= 52)
 			{
 				laugh_snd = true;
-				sound_play_oneshot("event:/sfx/voice/pizzahead");
+				sound_play("event:/sfx/voice/pizzahead");
 			}
 			if (floor(image_index) == (image_number - 1))
 			{
@@ -474,7 +474,7 @@ function boss_pizzahead_pullinglevel()
 			if (!instance_exists(obj_forknight_pizzahead) && !instance_exists(obj_medievalprojectile))
 			{
 				state = states.pizzahead_pullinglevel;
-				sound_play_oneshot("event:/sfx/pizzahead/medievalbringup");
+				sound_play("event:/sfx/pizzahead/medievalbringup");
 				sprite_index = spr_pizzahead_pullinglevel2;
 				image_index = 0;
 				with (obj_pizzaheadswordstone)
@@ -581,7 +581,7 @@ function boss_pizzahead_shotgun()
 				ammo--;
 				if (ammo > 0)
 				{
-					sound_play_oneshot_3d("event:/sfx/pizzahead/uzi", x, y);
+					sound_play_3d("event:/sfx/pizzahead/uzi", x, y);
 					with (instance_create(x, y, obj_pizzaheadbullet))
 					{
 						image_angle = other.minigun_angle;
@@ -603,7 +603,7 @@ function boss_pizzahead_shotgun()
 				}
 				else
 				{
-					sound_play_oneshot_3d("event:/sfx/pizzahead/throw", x, y);
+					sound_play_3d("event:/sfx/pizzahead/throw", x, y);
 					with (instance_create(x - (image_xscale * 30), y, obj_pizzaheadminigun))
 					{
 						image_xscale = other.image_xscale;
@@ -624,7 +624,7 @@ function boss_pizzahead_shotgun()
 			{
 				if (sprite_index == spr_pizzahead_grabbox)
 				{
-					sound_play_oneshot_3d("event:/sfx/pizzahead/throw", x, y);
+					sound_play_3d("event:/sfx/pizzahead/throw", x, y);
 					sprite_index = spr_pizzahead_throwaway;
 					image_index = 0;
 					idle_buffer = 0;
@@ -636,7 +636,7 @@ function boss_pizzahead_shotgun()
 				}
 				else if (sprite_index == spr_pizzahead_grabdynamite)
 				{
-					sound_play_oneshot_3d("event:/sfx/pizzahead/throw", x, y);
+					sound_play_3d("event:/sfx/pizzahead/throw", x, y);
 					idle_buffer = 0;
 					sprite_index = spr_pizzahead_throwaway;
 					image_index = 0;

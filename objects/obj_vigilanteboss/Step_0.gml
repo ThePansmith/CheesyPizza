@@ -114,7 +114,7 @@ if (!pizzahead && obj_player1.state != states.actor && obj_player1.state != stat
 				vsp = -3;
 				state = states.tackle;
 				grounded = false;
-				sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
+				sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 				instance_create(x, y, obj_bumpeffect);
 			}
 		}
@@ -127,7 +127,7 @@ if (prevhp != elitehit)
 	if (elitehit < prevhp && (wastedhits != 10 || destroyable))
 	{
 		if (irandom(100) <= 25)
-			sound_play_oneshot_3d("event:/sfx/voice/vigiduel", x, y);
+			sound_play_3d("event:/sfx/voice/vigiduel", x, y);
 		pizzahead_subhp = pizzahead_maxsubhp;
 		reposition = true;
 		oldspotID = -4;
@@ -166,7 +166,7 @@ if (((phase == 1 && elitehit <= 0) || (phase == 2 && elitehit <= 0)) && !pizzahe
 		wastedhits = 0;
 		phase = 2;
 		scr_sleep(25);
-		sound_play_oneshot_3d("event:/sfx/voice/vigiangry", x, y);
+		sound_play_3d("event:/sfx/voice/vigiangry", x, y);
 		var lay1 = layer_get_id("Backgrounds_Ring");
 		var lay2 = layer_get_id("Backgrounds_2");
 		var lay3 = layer_get_id("Backgrounds_1");
@@ -186,7 +186,7 @@ if (((phase == 1 && elitehit <= 0) || (phase == 2 && elitehit <= 0)) && !pizzahe
 	{
 		instance_destroy(obj_johnecheese);
 		instance_destroy(obj_johnecheese_spawner);
-		sound_play_oneshot_3d("event:/sfx/voice/vigiduel", x, y);
+		sound_play_3d("event:/sfx/voice/vigiduel", x, y);
 		if (!destroyable)
 		{
 			state = states.duel;
@@ -207,7 +207,7 @@ if (((phase == 1 && elitehit <= 0) || (phase == 2 && elitehit <= 0)) && !pizzahe
 			duelplayer = false;
 			signspr = spr_preparetodraw;
 			signy = -sprite_get_height(signspr);
-			sound_play_oneshot("event:/sfx/voice/vigiduel");
+			sound_play("event:/sfx/voice/vigiduel");
 			instance_destroy(obj_vigilantecrate);
 			instance_destroy(obj_vigilantebazooka);
 			instance_destroy(obj_vigilantebazookatrail);

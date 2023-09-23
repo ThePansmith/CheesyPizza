@@ -15,7 +15,7 @@ if !in_saveroom()
 				fmod_event_instance_play(music.event);
 		}
 	}
-	sound_play_oneshot("event:/sfx/ui/wartimerup");
+	sound_play("event:/sfx/ui/wartimerup");
 	with (obj_wartimer)
 	{
 		for (addseconds += other.seconds; other.minutes > 0; addseconds += 60)

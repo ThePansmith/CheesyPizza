@@ -1,6 +1,6 @@
 if (cooldown <= 0 && (escape == 0 || global.panic == true))
 {
-	sound_play_oneshot_3d("event:/sfx/enemies/cannongoblin", x, y);
+	sound_play_3d("event:/sfx/enemies/cannongoblin", x, y);
 	with (instance_create(x + (image_xscale * 15), y, obj_canongoblinbomb))
 	{
 		other.ID = id;

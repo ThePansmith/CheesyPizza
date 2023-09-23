@@ -12,7 +12,7 @@ function scr_player_ratmountladder()
 		{
 			create_particle(x, y + 43, part.cloudeffect, 0);
 			steppybuffer = 12;
-			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
+			sound_play_3d("event:/sfx/pep/step", x, y);
 		}
 		image_speed = 0.35;
 	}

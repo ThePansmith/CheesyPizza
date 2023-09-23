@@ -127,7 +127,7 @@ function scr_do_rank(showtoppins = true, boss = false)
 					instance_destroy(obj_pigtotal);
 					stop_music();
 					fmod_event_instance_stop(global.snd_rank);
-					sound_play_oneshot("event:/sfx/ending/towercollapsetrack");
+					sound_play("event:/sfx/ending/towercollapsetrack");
 				}
 				else
 					toppinvisible = false;

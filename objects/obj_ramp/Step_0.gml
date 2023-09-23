@@ -22,7 +22,7 @@ if place_meeting(x, y - s, obj_player) && !collision_point(x + sprite_width + im
 			movespeed = 14;
 			if (sprite_index != spr_rampjump && sprite_index != spr_ratmount_walljump)
 			{
-				sound_play_oneshot("event:/sfx/pep/rampjump");
+				sound_play("event:/sfx/pep/rampjump");
 				sprite_index = spr_rampjump;
 				image_index = 0;
 			}

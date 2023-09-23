@@ -1,6 +1,6 @@
 if (spawn)
 {
-	sound_play_oneshot_3d("event:/sfx/misc/breakice", x, y);
+	sound_play_3d("event:/sfx/misc/breakice", x, y);
 	with (instance_create(x, y, content))
 	{
 		santaID = other.baddieID;

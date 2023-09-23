@@ -15,4 +15,4 @@ if (bbox_in_camera(view_camera[0], 78))
 	GamepadSetVibration(0, 1, 1, 0.9);
 	GamepadSetVibration(1, 1, 1, 0.9);
 }
-sound_play_oneshot_3d("event:/sfx/misc/explosion", x, y);
+sound_play_3d("event:/sfx/misc/explosion", x, y);

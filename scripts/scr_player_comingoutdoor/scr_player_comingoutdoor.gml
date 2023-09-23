@@ -22,7 +22,7 @@ function scr_player_comingoutdoor()
 		else
 		{
 			steppybuffer = 16;
-			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
+			sound_play_3d("event:/sfx/pep/step", x, y);
 		}
 		
 		if isgustavo

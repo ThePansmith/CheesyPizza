@@ -21,7 +21,7 @@ function scr_player_crouchjump()
 		crouchAnim = true;
 		image_index = 0;
 		jumpstop = false;
-		sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
+		sound_play_3d("event:/sfx/pep/step", x, y);
 	}
 	if (jumpAnim == 1)
 	{

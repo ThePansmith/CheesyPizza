@@ -5,7 +5,7 @@ switch (introstate)
 		vsp = 0;
 		if (floor(image_index) == (image_number - 1))
 		{
-			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
+			sound_play_3d("event:/sfx/pep/step", x, y);
 			image_index = image_number - 1;
 			introbuffer = 120;
 			introstate++;
@@ -29,7 +29,7 @@ switch (introstate)
 		if (floor(image_index) >= 21 && !keyshot)
 		{
 			keyshot = true;
-			sound_play_oneshot("event:/sfx/pizzahead/recover");
+			sound_play("event:/sfx/pizzahead/recover");
 		}
 		if (floor(image_index) >= 50 && sprite_index != obj_player1.spr_gnomecutscene1)
 			image_xscale = -1;
@@ -132,7 +132,7 @@ switch (introstate)
 			}
 			if (floor(image_index) == (image_number - 1))
 			{
-				sound_play_oneshot_3d("event:/sfx/pizzahead/throw", x, y);
+				sound_play_3d("event:/sfx/pizzahead/throw", x, y);
 				sprite_index = spr_pizzahead_throwaway;
 				image_index = 0;
 				with (propID)
@@ -239,7 +239,7 @@ switch (introstate)
 		}
 		if (obj_player1.image_index >= 20 && !shot)
 		{
-			sound_play_oneshot("event:/sfx/voice/peppinoangryscream2");
+			sound_play("event:/sfx/voice/peppinoangryscream2");
 			shot = true;
 			sprite_index = spr_pizzahead_phase3_intro3;
 			with (obj_camera)
@@ -414,7 +414,7 @@ mask_index = spr_pizzahead_idle;
 if (sprite_index == spr_pizzahead_giddy && !steppysnd && (floor(image_index) == 2 || floor(image_index) == 6))
 {
 	steppysnd = true;
-	sound_play_oneshot_3d("event:/sfx/pizzahead/step", x, y + 40);
+	sound_play_3d("event:/sfx/pizzahead/step", x, y + 40);
 }
 else if (floor(image_index) != 2 && floor(image_index) != 6)
 	steppysnd = false;

@@ -284,7 +284,7 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 	selected += moveselect;
 	if (moveselect != 0 && selected >= 0 && selected <= array_length(pause_menu) - 1)
 	{
-		sound_play_oneshot(SUGARY ? sfx_step : "event:/sfx/ui/angelmove");
+		sound_play(SUGARY ? sfx_step : "event:/sfx/ui/angelmove");
 		update_cursor = true;
 	}
 	selected = clamp(selected, 0, array_length(pause_menu) - 1);
@@ -323,12 +323,12 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 						pause = false;
 					}
 					else
-						sound_play_oneshot("event:/sfx/ui/select");
+						sound_play("event:/sfx/ui/select");
 					break;
 				}
 			
 			case 1:
-				sound_play_oneshot("event:/sfx/ui/select");
+				sound_play("event:/sfx/ui/select");
 				with (instance_create(x, y, obj_option))
 					depth = other.depth - 1;
 				break;

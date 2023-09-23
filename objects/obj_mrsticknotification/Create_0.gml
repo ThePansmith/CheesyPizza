@@ -4,4 +4,4 @@ start = false;
 finish = false;
 alarm[0] = 150;
 image_speed = 0.35;
-sound_play_oneshot("event:/sfx/misc/kashing");
+sound_play("event:/sfx/misc/kashing");

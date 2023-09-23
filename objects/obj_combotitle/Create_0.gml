@@ -10,7 +10,7 @@ x = 832;
 y = global.hud == 0 ? 290 : 197;
 very = false;
 afterimages = array_create(0);
-sound_play_oneshot("event:/sfx/ui/comboup");
+sound_play("event:/sfx/ui/comboup");
 
 sugary = check_sugarychar();
 pino = (obj_player1.character == "PN");

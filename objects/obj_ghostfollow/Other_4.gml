@@ -1,8 +1,5 @@
 if (global.panic == false)
-{
-	destroy_sounds([snd]);
 	instance_destroy();
-}
 else
 {
 	with (instance_create(x, y, obj_objecticontracker))

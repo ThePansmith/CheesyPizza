@@ -4,12 +4,12 @@ if (selecting == -1)
 	if (((key_up2 && key_down2 != key_up2) || keyboard_check_pressed(vk_up)) && key_select > -1)
 	{
 		key_select -= 1;
-		sound_play_oneshot("event:/sfx/ui/step");
+		sound_play("event:/sfx/ui/step");
 	}
 	if (((key_down2 && key_up2 != key_down2) || keyboard_check_pressed(vk_down)) && key_select < 9)
 	{
 		key_select += 1;
-		sound_play_oneshot("event:/sfx/ui/step");
+		sound_play("event:/sfx/ui/step");
 	}
 }
 if (selecting == -1)
@@ -21,7 +21,7 @@ if (selecting == -1)
 }
 if ((key_jump2 || keyboard_check_pressed(vk_enter)) && selecting == -1 && key_select == -1)
 {
-	sound_play_oneshot("event:/sfx/ui/select");
+	sound_play("event:/sfx/ui/select");
 	ini_open("saveData.ini");
 	ini_write_string("ControlsKeys", "up", global.key_up);
 	ini_write_string("ControlsKeys", "right", global.key_right);

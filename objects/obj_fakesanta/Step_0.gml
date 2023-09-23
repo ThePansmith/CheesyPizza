@@ -61,7 +61,7 @@ if (activated == 1)
 							{
 								shot = true;
 								var n = irandom(array_length(content) - 1);
-								sound_play_oneshot_3d("event:/sfx/enemies/presentfall", x, y);
+								sound_play_3d("event:/sfx/enemies/presentfall", x, y);
 								with (instance_create(x, y + 50, obj_fakesantapresent))
 								{
 									baddieID = other.id;

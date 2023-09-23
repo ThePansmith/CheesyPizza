@@ -1,7 +1,7 @@
 if !in_saveroom()
 {
 	scr_rockblock_tag();
-	sound_play_oneshot_3d("event:/sfx/misc/breakblock", x, y);
+	sound_play_3d("event:/sfx/misc/breakblock", x, y);
 	if (place_meeting(x + 1, y, obj_rockblock))
 	{
 		with (instance_place(x + 1, y, obj_rockblock))
