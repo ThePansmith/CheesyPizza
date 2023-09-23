@@ -18,10 +18,34 @@ if global.showfps && global.option_hud
 }
 draw_set_align();
 
+// the good meter
 if global.goodmode
 {
 	draw_set_colour(c_white);
-	draw_set_halign(fa_center);
+	draw_set_align(fa_center);
 	draw_set_font(global.font_small);
 	draw_text(SCREEN_WIDTH / 2 + random_range(-multiplier, multiplier), 32 + random_range(-multiplier, multiplier), concat("Good Mode ", multiplier, "x"));
+}
+
+// gif
+if keyboard_check_pressed(vk_f1) && DEBUG
+{
+	gif_record = !gif_record;
+	if gif_record
+		gif_image = gif_open(SCREEN_WIDTH, SCREEN_HEIGHT);
+	else
+	{
+		gif_save(gif_image, $"screenshots/{current_year}-{current_month}-{current_day} {current_hour}-{current_minute}-{current_second}.gif");
+		if !window_get_fullscreen() && os_type == os_windows
+			launch_external("explorer %appdata%\\PizzaTower_CHEESEDUP\\screenshots");
+	}
+}
+if gif_record
+{
+	gif_add_surface(gif_image, application_surface, 60 / 100);
+	
+	draw_set_colour(c_red);
+	draw_set_align(fa_center);
+	draw_set_font(global.font_small);
+	draw_text(SCREEN_WIDTH / 2, 32, "Recording GIF");
 }
