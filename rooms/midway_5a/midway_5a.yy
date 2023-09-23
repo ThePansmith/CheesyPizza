@@ -165,6 +165,7 @@
     {"name":"inst_5145CEB7","path":"rooms/midway_5a/midway_5a.yy",},
     {"name":"inst_32216EC3","path":"rooms/midway_5a/midway_5a.yy",},
     {"name":"inst_51327B4A","path":"rooms/midway_5a/midway_5a.yy",},
+    {"name":"inst_5CFB6F3","path":"rooms/midway_5a/midway_5a.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -359,6 +360,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_51327B4A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_forknight","path":"objects/obj_forknight/obj_forknight.yy",},"properties":[
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":null,"propertyId":null,"value":"False",},
           ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":543.0,"y":877.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5CFB6F3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollectescape","path":"objects/obj_deathcollectescape/obj_deathcollectescape.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":320.0,"y":608.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_Secret1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":57,"SerialiseWidth":225,"TileCompressedData":[
 -219,0,-6,-2147483648,-219,0,-6,-2147483648,-219,0,-6,-2147483648,-219,0,-6,-2147483648,-219,0,-6,-2147483648,-219,0,-6,-2147483648,-219,0,-6,-2147483648,-219,0,-6,-2147483648,-219,0,-6,-2147483648,-219,0,-6,-2147483648,-219,0,-6,-2147483648,-219,0,-6,-2147483648,-216,0,-3,259,-3,1439,-3,-2147483648,-215,0,1,57,-3,259,-3,1439,-3,-2147483648,-215,0,4,85,1550,1551,1552,-3,1439,-3,-2147483648,-215,0,4,113,1578,1579,1580,-3,1439,-3,-2147483648,-215,0,4,57,1606,1607,1608,-3,1439,-3,-2147483648,-214,0,2,146,116,-3,259,-3,1439,-3,-2147483648,-215,0,-4,259,-3,1439,-3,-2147483648,-215,0,4,259,187,188,259,-3,1439,-3,-2147483648,-215,0,4,259,215,216,259,-3,1439,-3,-2147483648,-215,0,-3,259,1,1442,-3,1439,-3,-2147483648,-215,0,-3,259,1,1470,-3,1439,-3,-2147483648,-215,0,-3,259,1,1498,-3,1439,-3,-2147483648,-211,0,-8,259,-3,1439,-3,-2147483648,-210,0,3,57,259,253,-6,259,-3,1439,-3,-2147483648,-210,0,1,85,-3,259,5,1358,1359,1360,259,259,-3,1439,-3,-2147483648,-210,0,1,113,-3,259,5,1386,1387,1388,259,259,-3,1439,-3,-2147483648,-210,0,1,

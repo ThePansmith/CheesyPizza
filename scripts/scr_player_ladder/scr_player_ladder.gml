@@ -56,21 +56,17 @@ function scr_player_ladder()
 		image_index = 0;
 		if (!hooked && vsp < 0)
 		{
-			var _y = y;
-			while (!scr_solid(x, y + 1))
+			var _y = 1;
+			while !scr_solid(x, y + _y)
 			{
-				y++;
-				if (scr_solid(x, y))
+				_y++;
+				if _y > 32
 				{
-					y--;
-					break;
-				}
-				if (y > (room_height + 300))
-				{
-					y = _y;
+					_y = 0;
 					break;
 				}
 			}
+			y += _y - 1;
 		}
 		vsp = 0;
 		hooked = false;

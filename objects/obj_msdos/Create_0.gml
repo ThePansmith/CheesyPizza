@@ -474,7 +474,24 @@ var mario = DOS_file(folder, "marior", function()
 	repeat 10
 		DOS_instruct(lag, function() {output += "\n";});
 	DOS_instruct(lag, function() {output = "";});
-	DOS_instruct(100, function() {output = "Congratulation\n";});
+	DOS_instruct(100, function()
+	{
+		ini_open_from_string(obj_savesystem.ini_str_options);
+		if !ini_read_real("Palettes", "mario", false)
+		{
+			with instance_create(0, 0, obj_cheftask)
+			{
+				achievement_spr = noone;
+				sprite_index = spr_newclothes;
+				paletteselect = 12;
+				texture = spr_pattern_mario;
+			}
+			ini_write_real("Palettes", "mario", true);
+			gamesave_async_save_options();
+		}
+		obj_savesystem.ini_str_options = ini_close();
+		output = "Congratulation\n";
+	});
 	DOS_instruct(100, function() {output += "Press any key to continue . . .\n"; input_mode = 2;});
 });
 mario.SIZE = 64;

@@ -38,7 +38,7 @@ if (use_dark)
 					if variable_instance_exists(id, "spr_palette") && sprite_exists(spr_palette)
 					{
 						shader_set(shd_pal_swapper);
-						pal_swap_set(spr_palette, paletteselect, false);
+						pal_swap_set(spr_palette, paletteselect);
 					}
 					draw_sprite_ext(sprite_index, image_index, x, y, ix, image_yscale, image_angle, b, image_alpha);
 					pal_swap_reset();

@@ -4,6 +4,12 @@ if load == ""
 	exit;
 cyop_cleanup();
 
+with obj_player
+{
+	backtohubstartx = x;
+	backtohubstarty = y;
+}
+
 var result = cyop_load(load);
 if is_string(result)
 {

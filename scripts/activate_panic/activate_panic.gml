@@ -28,6 +28,7 @@ function activate_panic(instapanic = false)
 	instance_activate_object(obj_destroyable2_escape);
 	instance_activate_object(obj_destroyable2_bigescape);
 	instance_activate_object(obj_destroyable3_escape);
+	instance_activate_object(obj_deathcollectescape);
 	
 	if !instapanic
 	{
@@ -127,9 +128,10 @@ function activate_panic(instapanic = false)
 			global.fill = 3240;
 			break;
 		case grinch_1:
-		case etb_1:
+		case etb_8:
 			global.fill = 2148;
 			break;
+		
 		// sugary
 		case entryway_11:
 			global.fill = 2500;
