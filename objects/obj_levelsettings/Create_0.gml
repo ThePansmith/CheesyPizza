@@ -96,7 +96,7 @@ if !boss && level != "grinch" && level != "dragonlair" && level != "snickchallen
 }
 
 add_modifier("John Ghost", "JohnGhost", "Once you pass the first room, the John ghost from Wasteyard will spawn everywhere!");
-add_modifier("Lights Out", "Spotlight", "The size of the spotlight is tied to your combo time. Grab collectibles and kill enemies to reset it.");
+add_modifier("Lights Out", "Spotlight", "The size of the spotlight is tied to your combo time. Grab collectibles and kill enemies to reset it.", [seq_lightsout_off, seq_lightsout_on]);
 
 // Level specific
 if level == "grinch"
@@ -118,7 +118,7 @@ if level == "snickchallenge"
 if level == "exit"
 {
 	add_section("Level");
-	add_modifier("Lappable", "Lappable", "Adds a lap portal to CTOP. Lap 2 will give you 2 extra minutes.");
+	add_modifier("Lappable", "Lappable", "Adds a lap portal to CTOP. Lap 2 will give you 2 extra minutes.", [seq_lappable_off, seq_lappable_on]);
 }
 
 #endregion
