@@ -4,7 +4,7 @@ if (other.state != states.gotoplayer)
 {
 	fail_modifier(MOD.NoToppings);
 	
-	if (object_index != obj_escapecollect)
+	if (object_index != obj_escapecollect or global.blockstyle == blockstyles.old)
 		scr_sound_multiple(global.snd_collect, x, y);
 	else
 	{
