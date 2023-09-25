@@ -11,3 +11,5 @@ if SUGARY
 	sprite_index = spr_escapecollect_ss
 if global.blockstyle == blockstyles.old
     sprite_index = choose(spr_bananacollect, spr_baconcollect, spr_eggcollect, spr_fishcollect, spr_shrimpcollect)
+if SUGARY
+sprite_index = spr_escapecollect_ss
