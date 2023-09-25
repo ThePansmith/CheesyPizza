@@ -13,3 +13,6 @@ if (global.panic)
 global.door_sprite = spr_door;
 global.door_index = 1;
 scr_random_granny();
+
+if global.panic = true
+global.roommessage = "WANTED TO NEEDED"

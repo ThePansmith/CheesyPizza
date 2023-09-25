@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "tower_escape6",
-  "creationCodeFile": "${project_dir}/rooms/tower_escape6/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/tower_escape6/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

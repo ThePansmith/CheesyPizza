@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "tower_johngutterhall",
-  "creationCodeFile": "${project_dir}/rooms/tower_johngutterhall/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/tower_johngutterhall/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

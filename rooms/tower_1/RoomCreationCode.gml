@@ -13,3 +13,6 @@ if (global.panic)
 	instance_destroy(obj_bossdoor);
 }
 scr_random_granny();
+
+if global.panic = true
+global.roommessage = "A PEPPER IN DISTRESS"

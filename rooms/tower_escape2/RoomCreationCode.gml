@@ -1,1 +1,1 @@
-global.roommessage = "PIZZA TOWER ISLAND";
+global.roommessage = "BACK AND FORTH, LEFT AND RIGHT";
