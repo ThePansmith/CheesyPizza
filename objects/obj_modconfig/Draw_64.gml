@@ -111,7 +111,7 @@ if drawer
 		surface_set_target(global.modsurf);
 		draw_clear_alpha(c_black, 0);
 		
-		if opt.type == modconfig.option
+		if opt.type == modconfig.option or opt.type == modconfig.modifier
 			opt.drawfunc(opt.opts[opt.value][1]);
 		else if opt.type == modconfig.slider
 		{

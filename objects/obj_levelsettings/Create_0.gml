@@ -96,7 +96,28 @@ if !boss && level != "grinch" && level != "dragonlair" && level != "snickchallen
 }
 
 add_modifier("John Ghost", "JohnGhost", "Once you pass the first room, the John ghost from Wasteyard will spawn everywhere!");
-add_modifier("Lights Out", "Spotlight", "The size of the spotlight is tied to your combo time. Grab collectibles and kill enemies to reset it.", [seq_lightsout_off, seq_lightsout_on]);
+
+circle_size = 250;
+add_modifier("Lights Out", "Spotlight", "The size of the spotlight is tied to your combo time. Grab collectibles and kill enemies to reset it.", function(val)
+{
+	// draw circle first to crop out
+	shader_reset();
+	
+	draw_clear(c_black);
+	circle_size = lerp(circle_size, val ? 70 : 250, 0.25);
+	
+	gpu_set_blendmode(bm_subtract);
+	draw_circle(384/2 + random_range(-1, 1), 216/2 + random_range(-1, 1), circle_size, false);
+	draw_set_alpha(0.35);
+	draw_circle(384/2 + random_range(-1, 1), 216/2 + random_range(-1, 1), circle_size + 30, false);
+	
+	draw_set_alpha(1);
+	gpu_set_blendmode(bm_normal);
+	
+	// player
+	var p = simuplayer;
+	draw_sprite(spr_playerN_move, p.image, 384 / 2, 216 / 2);
+});
 
 // Level specific
 if level == "grinch"
