@@ -54,11 +54,11 @@ function scr_dotaunt()
 			{
 				scr_create_parryhitbox();
 				if character == "SP"
-					sound_play_oneshot_3d("event:/modded/sfx/pizzytaunt", x, y);
+					sound_play_3d("event:/modded/sfx/pizzytaunt", x, y);
 				else if character == "SN"
-					sound_play_oneshot_3d("event:/modded/sfx/pizzanotaunt", x, y);
+					sound_play_3d("event:/modded/sfx/pizzanotaunt", x, y);
 				else
-					sound_play_oneshot_3d("event:/sfx/pep/taunt", x, y);
+					sound_play_3d("event:/sfx/pep/taunt", x, y);
 				taunttimer = 20;
 				sprite_index = spr_taunt;
 				if character == "P" && !isgustavo && !REMIX

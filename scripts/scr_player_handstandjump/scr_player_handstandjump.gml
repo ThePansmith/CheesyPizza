@@ -157,7 +157,7 @@ function scr_player_handstandjump()
 		var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
 		if (_bump)
 		{
-			sound_play_oneshot_3d("event:/sfx/pep/splat", x, y);
+			sound_play_3d("event:/sfx/pep/splat", x, y);
 			jumpstop = true;
 			state = states.jump;
 			vsp = -4;
@@ -176,7 +176,7 @@ function scr_player_handstandjump()
 		image_index = 0;
 		if (!grounded)
 		{
-			sound_play_oneshot_3d("event:/sfx/pep/grabcancel", x, y);
+			sound_play_3d("event:/sfx/pep/grabcancel", x, y);
 			sprite_index = spr_suplexcancel;
 			jumpAnim = true;
 			grav = 0.5;

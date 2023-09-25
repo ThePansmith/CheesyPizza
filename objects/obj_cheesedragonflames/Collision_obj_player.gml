@@ -12,7 +12,7 @@ with (other)
 		sprite_index = spr_fireass;
 		image_index = 0;
 		movespeed = hsp;
-		sound_play_oneshot_3d("event:/sfx/pep/burn", x, y);
+		sound_play_3d("event:/sfx/pep/burn", x, y);
 		if !fmod_event_instance_is_playing(global.snd_fireass)
 			fmod_event_instance_play(global.snd_fireass);
 	}

@@ -58,4 +58,4 @@ grabbedby = 0;
 stuntouchbuffer = 0;
 scaredbuffer = 0;
 snotty = false;
-sound_play_oneshot_3d("event:/sfx/pep/jump", x, y);
+sound_play_3d("event:/sfx/pep/jump", x, y);

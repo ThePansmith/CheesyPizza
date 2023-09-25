@@ -1,7 +1,7 @@
 if (!start && !in_saveroom())
 {
 	start = true;
-	sound_play_oneshot_3d("event:/sfx/misc/racestart", x, y);
+	sound_play_3d("event:/sfx/misc/racestart", x, y);
 	with (obj_horsey)
 	{
 		hsp = other.hsp * other.spd;

@@ -10,7 +10,7 @@ function scr_player_cheesepepstick()
 	}
 	if (grounded)
 	{
-		sound_play_oneshot_3d("event:/sfx/cheese/step", x, y);
+		sound_play_3d("event:/sfx/cheese/step", x, y);
 		state = states.cheesepep;
 		sprite_index = spr_cheesepepland;
 		image_index = 0;
@@ -20,7 +20,7 @@ function scr_player_cheesepepstick()
 	if (input_buffer_jump > 0)
 	{
 		input_buffer_jump = 0;
-		sound_play_oneshot_3d("event:/sfx/cheese/jump", x, y);
+		sound_play_3d("event:/sfx/cheese/jump", x, y);
 		scr_fmod_soundeffect(jumpsnd, x, y);
 		xscale *= -1;
 		dir = xscale;

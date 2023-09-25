@@ -86,14 +86,14 @@ function scr_hurtplayer(player)
 					xscale = sign(other.x - x);
 				if (irandom(100) <= 50)
 				{
-					fmod_event_instance_set_3d_attributes(snd_voicehurt, x, y);
+					sound_instance_move(snd_voicehurt, x, y);
 					fmod_event_instance_play(snd_voicehurt);
 				}
 				state = states.ratmounthurt;
 				movespeed = 6;
 				vsp = -9;
 				flash = true;
-				sound_play_oneshot_3d("event:/sfx/pep/hurt", x, y);
+				sound_play_3d("event:/sfx/pep/hurt", x, y);
 				alarm[8] = 100;
 				alarm[5] = 2;
 				alarm[7] = 150;
@@ -159,7 +159,7 @@ function scr_hurtplayer(player)
 			alarm[8] = 60;
 			alarm[7] = 120;
 			hurted = true;
-			sound_play_oneshot_3d("event:/sfx/pep/hurt", x, y);
+			sound_play_3d("event:/sfx/pep/hurt", x, y);
 		}
 		else if (state != states.hurt && state != states.ratmounthurt && state != states.grabbed && (hurted == 0 || state == states.cheesepep || state == states.cheesepepstickside || state == states.cheesepepstickup) && cutscene == 0)
 		{
@@ -182,7 +182,7 @@ function scr_hurtplayer(player)
 				xscale = sign(other.x - x);
 			if (state == states.mort || state == states.morthook || state == states.mortjump || state == states.mortattack)
 			{
-				sound_play_oneshot_3d("event:/sfx/mort/mortdead", x, y);
+				sound_play_3d("event:/sfx/mort/mortdead", x, y);
 				create_debris(x, y - 40, spr_mortdead);
 			}
 			if (instance_exists(obj_hardmode))
@@ -222,7 +222,7 @@ function scr_hurtplayer(player)
 			if (state == states.trashroll || state == states.trashjump)
 				create_debris(x, y, spr_player_trashlid);
 			scr_sleep(100);
-			sound_play_oneshot_3d("event:/sfx/pep/hurt", x, y);
+			sound_play_3d("event:/sfx/pep/hurt", x, y);
 			if (irandom(100) <= 50)
 				fmod_event_instance_play(snd_voicehurt);
 			instance_create(x, y, obj_bangeffect);

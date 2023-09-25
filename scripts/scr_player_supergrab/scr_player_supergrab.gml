@@ -50,7 +50,7 @@ function scr_player_supergrab()
 						reposition = true;
 					if (reposition)
 						x = lerp(x, room_width / 2, 0.05);
-					sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
+					sound_play_3d("event:/sfx/pep/punch", x, y);
 					hsp = xscale * 3;
 					punchcount--;
 					supergrabstate = states.hit;
@@ -179,8 +179,8 @@ function scr_player_supergrab()
 			}
 			if (floor(image_index) >= 0 && !shot)
 			{
-				sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
-				sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
+				sound_play_3d("event:/sfx/pep/punch", x, y);
+				sound_play_3d("event:/sfx/enemies/killingblow", x, y);
 				GamepadSetVibration((object_index == obj_player1) ? 0 : 1, 0.8, 0.8, 0.65);
 				shot = true;
 				movespeed = -xscale * 8;

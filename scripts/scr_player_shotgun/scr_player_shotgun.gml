@@ -86,7 +86,7 @@ function scr_player_shotgun()
 	}
 	if (key_slap2)
 	{
-		sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
+		sound_play_3d("event:/sfx/enemies/kill", x, y);
 		state = states.shotgunshoot;
 		sprite_index = spr_shotgunshoot;
 		image_index = 0;

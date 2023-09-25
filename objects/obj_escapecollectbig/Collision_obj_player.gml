@@ -13,11 +13,11 @@ if (image_alpha == 1)
 		global.combotime = 60;
 		if sprite_index != spr_escapecollectbig_ss
 		{
-			sound_play_oneshot_3d(global.snd_collectpizza, x, y);
-			sound_play_oneshot_3d("event:/sfx/misc/bellcollectbig", x, y);
+			sound_play_3d(global.snd_collectpizza, x, y);
+			sound_play_3d("event:/sfx/misc/bellcollectbig", x, y);
 		}
 		else
-			sound_play_oneshot_3d("event:/sfx/misc/bellcollectbig_ss", x, y);
+			sound_play_3d("event:/sfx/misc/bellcollectbig_ss", x, y);
 		instance_destroy();
 		
 		if !global.snickchallenge

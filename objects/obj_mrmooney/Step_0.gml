@@ -4,7 +4,7 @@ if (sprite_index == spr_mrmooney_idle)
 	if (showmoney && obj_player1.key_up2 && (global.pigtotal - global.pigreduction) >= maxscore)
 	{
 		sprite_index = spr_mrmooney_smile;
-		sound_play_oneshot_3d("event:/sfx/misc/kashing", x, y);
+		sound_play_3d("event:/sfx/misc/kashing", x, y);
 		instance_destroy(uparrowID);
 		ini_open_from_string(obj_savesystem.ini_str);
 		ini_write_real("w5stick", "mooneyunlocked", true);

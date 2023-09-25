@@ -62,7 +62,7 @@ switch (state)
 						sprite_index = spr_kingghost_anchor2
 						if (state != states.fall && state != states.jump && obj_player1.x > x - 100 && obj_player1.x < x + 100 && obj_player1.y > y && obj_player1.y < y + 500)
 						{
-							sound_play_oneshot_3d("event:/sfx/enemies/presentfall", x, y)
+							sound_play_3d("event:/sfx/enemies/presentfall", x, y)
 							state = states.fall
 							vsp = 10
 						}
@@ -73,7 +73,7 @@ switch (state)
 						{
 							state = states.punch
 							sprite_index = spr_kingghost_spike3
-							sound_play_oneshot_3d("event:/sfx/enemies/pizzardelectricity", x, y)
+							sound_play_3d("event:/sfx/enemies/pizzardelectricity", x, y)
 							image_index = 0
 							attackbuffer = 30
 							cooldown = 50

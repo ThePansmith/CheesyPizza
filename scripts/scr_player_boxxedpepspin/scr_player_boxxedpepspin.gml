@@ -16,7 +16,7 @@ function scr_player_boxxedpepspin()
 	instance_destroy(instance_place(x + hsp, y, obj_destructibles));
 	if (scr_solid(x + hsp, y) && !place_meeting(x + hsp, y, obj_ratblock) && !place_meeting(x + hsp, y, obj_destructibles) && (!check_slope(x + hsp, y) || scr_solid_slope(x + hsp, y)))
 	{
-		sound_play_oneshot_3d("event:/sfx/boxxed/step", x, y);
+		sound_play_3d("event:/sfx/boxxed/step", x, y);
 		instance_create(x + hsp, y, obj_bangeffect);
 		movespeed = -(sign(hsp) * 6);
 		GamepadSetVibration(0, 0.4, 0.4, 0.65);

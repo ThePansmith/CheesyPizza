@@ -25,7 +25,7 @@ function scr_player_ratmountjump()
 			var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
 			if (_bump)
 			{
-				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+				sound_play_3d("event:/sfx/pep/groundpound", x, y);
 				state = states.bump;
 				if (brick)
 					sprite_index = spr_ratmount_bump;

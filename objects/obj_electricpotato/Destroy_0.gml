@@ -14,7 +14,7 @@ if !in_baddieroom()
 	var combototal = 10 + floor(global.combo * 0.5);
 	global.collect += combototal;
 	global.comboscore += combototal;
-	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_3d("event:/sfx/enemies/kill", x, y);
 	repeat (3)
 	{
 		with (create_debris(x, y, spr_slapstar))

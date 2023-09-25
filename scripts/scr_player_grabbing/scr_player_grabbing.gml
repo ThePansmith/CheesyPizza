@@ -45,7 +45,7 @@ function scr_player_grabbing()
 	grav = 0;
 	if ((scr_solid(x + 1, y) && xscale == 1) && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)))
 	{
-		sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
+		sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 		grav = 0.5;
 		movespeed = 0;
 		state = states.bump;
@@ -59,7 +59,7 @@ function scr_player_grabbing()
 	}
 	if ((scr_solid(x - 1, y) && xscale == -1) && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)))
 	{
-		sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
+		sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 		grav = 0.5;
 		movespeed = 0;
 		state = states.bump;

@@ -14,7 +14,7 @@ if (floor(image_index) == (image_number - 1))
 	{
 		case spr_appear:
 			if !sugary
-				sound_play_oneshot_3d("event:/sfx/misc/secretexit", x, y);
+				sound_play_3d("event:/sfx/misc/secretexit", x, y);
 			sprite_index = spr_spit;
 			break;
 		

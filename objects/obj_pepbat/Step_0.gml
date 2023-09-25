@@ -110,7 +110,7 @@ if (state != states.stun)
 	thrown = false;
 if (sprite_index == spr_pepbat_move && floor(image_index) == 3 && sfxcooldown == 0)
 {
-	sound_play_oneshot_3d("event:/sfx/enemies/batwing", x, y);
+	sound_play_3d("event:/sfx/enemies/batwing", x, y);
 	sfxcooldown = 10;
 }
 else if (sfxcooldown > 0)

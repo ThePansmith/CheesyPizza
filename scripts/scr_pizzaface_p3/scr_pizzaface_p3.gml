@@ -99,7 +99,7 @@ function scr_pizzaface_p3_arenaintro()
 				}
 				else
 				{
-					sound_play_oneshot("event:/sfx/misc/checkpoint");
+					sound_play("event:/sfx/misc/checkpoint");
 					sprite_index = spr_pizzahead_phase3_intro2;
 					image_index = 0;
 					introstate = states.jump;
@@ -220,7 +220,7 @@ function scr_pizzaface_p3_walk()
 			{
 				case pizzaface_p3_attacks.laugh:
 					laugh = cooldown;
-					sound_play_oneshot("event:/sfx/voice/pizzahead");
+					sound_play("event:/sfx/voice/pizzahead");
 					vulnerable_buffer = laugh;
 					break;
 				
@@ -239,7 +239,7 @@ function scr_pizzaface_p3_walk()
 				
 				case pizzaface_p3_attacks.swing:
 					state = states.swinging;
-					sound_play_oneshot_3d("event:/sfx/pizzahead/swingstart", x, y);
+					sound_play_3d("event:/sfx/pizzahead/swingstart", x, y);
 					sprite_index = spr_pizzahead_swingingstart;
 					image_index = 0;
 					attackspeed = 0;
@@ -247,7 +247,7 @@ function scr_pizzaface_p3_walk()
 				
 				case pizzaface_p3_attacks.punch:
 					state = states.punch;
-					sound_play_oneshot_3d("event:/sfx/pizzahead/bigpunchstart", x, y);
+					sound_play_3d("event:/sfx/pizzahead/bigpunchstart", x, y);
 					sprite_index = spr_pizzahead_bigpunch;
 					image_index = 0;
 					instance_destroy(hitboxID);
@@ -256,7 +256,7 @@ function scr_pizzaface_p3_walk()
 				
 				case pizzaface_p3_attacks.stomp:
 					state = states.stomp;
-					sound_play_oneshot_3d("event:/sfx/pizzahead/giantstomp", x, y);
+					sound_play_3d("event:/sfx/pizzahead/giantstomp", x, y);
 					sprite_index = spr_pizzahead_stomp;
 					image_index = 0;
 					shot = false;
@@ -323,7 +323,7 @@ function scr_pizzaface_p3_stomp()
 	if (floor(image_index) >= 20 && !shot)
 	{
 		shot = true;
-		sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+		sound_play_3d("event:/sfx/pep/groundpound", x, y);
 		create_particle(x + (119 * image_xscale), y + 35, part.groundpoundeffect);
 		with (obj_camera)
 		{
@@ -467,7 +467,7 @@ function scr_pizzaface_p3_supergrab()
 				case states.finishingblow:
 					if (floor(image_index) >= 3 && !shot)
 					{
-						sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
+						sound_play_3d("event:/sfx/pep/punch", x, y);
 						shot = true;
 						with (other)
 						{

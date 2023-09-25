@@ -4,7 +4,7 @@ if (playerid.visible == 0)
 	start = true;
 	with (obj_player1)
 	{
-		sound_play_oneshot("event:/sfx/misc/taxibeep");
+		sound_play("event:/sfx/misc/taxibeep");
 		if (isgustavo)
 		{
 			state = states.ratmount;

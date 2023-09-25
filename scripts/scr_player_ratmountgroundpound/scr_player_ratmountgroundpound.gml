@@ -65,7 +65,7 @@ function scr_player_ratmountgroundpound()
 			{
 				if (move != 0)
 					movespeed = xscale * 3;
-				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+				sound_play_3d("event:/sfx/pep/groundpound", x, y);
 				sprite_index = spr_lonegustavogroundpoundland;
 				image_index = 0;
 				jumpAnim = true;

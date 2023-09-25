@@ -171,7 +171,7 @@ if global.goodmode
 	{
 		with instance_create(x, y, obj_jumpscare)
 		{
-			sound_play_oneshot("event:/sfx/voice/yodeling");
+			sound_play("event:/sfx/voice/yodeling");
 			oktoberfest = true;
 		}
 	}

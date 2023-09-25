@@ -4,7 +4,7 @@ if (active && !instance_exists(obj_jumpscare) && !in_saveroom())
 	{
 		sprite_index = spr_close;
 		image_index = 0;
-		sound_play_oneshot_3d(sugary ? "event:/modded/sfx/secretenterSP" : "event:/sfx/misc/secretenter", x, y);
+		sound_play_3d(sugary ? "event:/modded/sfx/secretenterSP" : "event:/sfx/misc/secretenter", x, y);
 	}
 	
 	if death

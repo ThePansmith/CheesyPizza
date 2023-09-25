@@ -4,5 +4,5 @@ if !in_saveroom()
 	repeat (4)
 		create_debris(x, y, spr_mortcubedebris);
 	notification_push(notifs.mort_block, [room]);
-	sound_play_oneshot("event:/sfx/mort/cube");
+	sound_play("event:/sfx/mort/cube");
 }

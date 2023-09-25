@@ -5,9 +5,9 @@ if place_meeting(x, y, obj_player) && sprite_index != spr_pizzaboxopen
 	global.combotime = 60;
 	
 	if content == obj_bigcollect
-		sound_play_oneshot(sfx_stompenemy);
+		sound_play(sfx_stompenemy);
 	else
-		sound_play_oneshot(sugary ? "event:/modded/sfx/collecttoppinSP" : "event:/sfx/misc/collecttoppin");
+		sound_play(sugary ? "event:/modded/sfx/collecttoppinSP" : "event:/sfx/misc/collecttoppin");
 	
 	if (content == obj_noisebomb)
 	{
@@ -81,7 +81,7 @@ if place_meeting(x, y, obj_player) && sprite_index != spr_pizzaboxopen
 	}
 	if (content == obj_noisey)
 	{
-		sound_play_oneshot_3d("event:/sfx/enemies/projectile", x, y);
+		sound_play_3d("event:/sfx/enemies/projectile", x, y);
 		with (instance_create(x, y - 25, content))
 		{
 			image_xscale = other.image_xscale;

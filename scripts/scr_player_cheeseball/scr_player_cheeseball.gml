@@ -20,14 +20,14 @@ function scr_player_cheeseball()
 	}
 	if ((x > (slopejumpx - 10) && x < (slopejumpx + 10)) && slopejump == 1 && cheeseballbounce == 0)
 	{
-		sound_play_oneshot_3d("event:/sfx/cheese/jump", x, y);
+		sound_play_3d("event:/sfx/cheese/jump", x, y);
 		vsp = -12;
 		cheeseballbounce = 1;
 		slopejump = false;
 	}
 	if (grounded && vsp > 0 && cheeseballbounce > 0)
 	{
-		sound_play_oneshot_3d("event:/sfx/cheese/jump", x, y);
+		sound_play_3d("event:/sfx/cheese/jump", x, y);
 		if (cheeseballbounce == 2)
 			vsp = -7;
 		else if (cheeseballbounce == 1)
@@ -45,7 +45,7 @@ function scr_player_cheeseball()
 	{
 		cheeseballbounce = 0;
 		slopejump = false;
-		sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+		sound_play_3d("event:/sfx/pep/groundpound", x, y);
 		image_index = 0;
 		movespeed = 0;
 		cheesepeptimer = 2;

@@ -4,7 +4,7 @@ function scr_player_cheeseballclimbwall()
 	vsp = -wallspeed;
 	if (scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles) && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)) && !check_slope(x - sign(hsp), y))
 	{
-		sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+		sound_play_3d("event:/sfx/pep/groundpound", x, y);
 		image_index = 0;
 		movespeed = 0;
 		cheesepeptimer = 2;

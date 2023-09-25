@@ -1,7 +1,7 @@
 var accel = 0.1;
 if (image_index > 3 && snd == 0)
 {
-	sound_play_oneshot_3d("event:/sfx/enemies/minijohnpunch", x, y);
+	sound_play_3d("event:/sfx/enemies/minijohnpunch", x, y);
 	snd = true;
 }
 if (!fadeout)

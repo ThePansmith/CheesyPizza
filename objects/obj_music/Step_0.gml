@@ -49,95 +49,100 @@ else
 if prevpillar_on_camera != pillar_on_camera
 	fmod_set_parameter("pillarfade", pillar_on_camera, false);
 
-if ((global.panic or ((global.snickchallenge or (MOD.DeathMode)) && !instance_exists(obj_titlecard))) && global.leveltosave != "dragonlair" && global.leveltosave != "grinch" && global.leveltosave != "sucrose")
+if !safe_get(obj_pause, "pause") && instance_exists(obj_player1)
 {
-	if (!panicstart && instance_exists(obj_player1))
+	if (global.panic && global.leveltosave != "dragonlair" && global.leveltosave != "grinch" && global.leveltosave != "sucrose")
+	or ((global.snickchallenge or MOD.DeathMode) && !instance_exists(obj_titlecard))
 	{
-		fmod_event_instance_release(panicmusicID);
-		
-		if global.snickchallenge
-			panicmusicID = fmod_event_create_instance("event:/modded/level/snickchallenge");
-		else if (MOD.DeathMode)
-			panicmusicID = fmod_event_create_instance("event:/modded/deathmode");
-		else
+		if !panicstart
 		{
-			var char = obj_player1.character;
-			switch char
+			fmod_event_instance_release(panicmusicID);
+			
+			if global.snickchallenge
+				panicmusicID = fmod_event_create_instance("event:/modded/level/snickchallenge");
+			else if MOD.DeathMode
+				panicmusicID = fmod_event_create_instance("event:/modded/deathmode");
+			else
 			{
-				default: panicmusicID = fmod_event_create_instance("event:/music/pizzatime"); break;
-				case "N": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeN"); break;
-				case "V": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeV"); break;
-				case "S": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeS"); break;
-				case "SP": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeSP"); break;
-				case "BN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeBN"); break;
-				case "PN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimePN"); break;
-				case "SN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeSN"); break;
+				var char = obj_player1.character;
+				switch char
+				{
+					default: panicmusicID = fmod_event_create_instance("event:/music/pizzatime"); break;
+					case "N": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeN"); break;
+					case "V": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeV"); break;
+					case "S": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeS"); break;
+					case "SP": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeSP"); break;
+					case "BN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeBN"); break;
+					case "PN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimePN"); break;
+					case "SN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeSN"); break;
+				}
 			}
-		}
-		cyop_freemusic();
-		
-		trace("Starting panic music: step");
-		panicstart = true;
-		if (room != tower_finalhallway)
-		{
-			fmod_event_instance_play(panicmusicID);
-			fmod_event_instance_set_paused(panicmusicID, false);
+			cyop_freemusic();
+			
+			trace("Starting panic music: step");
+			panicstart = true;
+			if (room != tower_finalhallway or MOD.DeathMode)
+			{
+				fmod_event_instance_play(panicmusicID);
+				fmod_event_instance_set_paused(panicmusicID, false);
+				fmod_event_instance_set_parameter(panicmusicID, "state", 0, true);
+			}
+			if (music != noone)
+			{
+				fmod_event_instance_stop(music.event, true);
+				fmod_event_instance_stop(music.event_secret, true);
+			
+				if (room == tower_finalhallway && !MOD.DeathMode)
+				{
+					exitmusic = true;
+					fmod_event_instance_stop(panicmusicID);
+					fmod_event_instance_play(music.event);
+				}
+			}
+			fmod_event_instance_stop(pillarmusicID, true);
+			fmod_set_parameter("pillarfade", 0, true);
 			fmod_event_instance_set_parameter(panicmusicID, "state", 0, true);
 		}
-		if (music != noone)
+		else if global.leveltosave == "exit" && is_struct(music)
 		{
-			fmod_event_instance_stop(music.event, true);
-			fmod_event_instance_stop(music.event_secret, true);
-			
-			if (room == tower_finalhallway)
+			if global.laps > 1 && instance_exists(obj_pizzaface)
+				fmod_event_instance_set_parameter(music.event, "state", 20, true);
+			else if global.lap
+				fmod_event_instance_set_parameter(music.event, "state", 2, true);
+		}	
+		else if fmod_event_instance_is_playing(panicmusicID)
+		{
+			if !global.lap
 			{
-				exitmusic = true;
-				fmod_event_instance_stop(panicmusicID);
-				fmod_event_instance_play(music.event);
+				if global.fill <= 672 // time running out
+					fmod_event_instance_set_parameter(panicmusicID, "state", 1, true);
+			}
+			else
+			{
+				if MOD.Lap3 && global.laps >= 2 // pillar john's revenge
+					fmod_event_instance_set_parameter(panicmusicID, "state", 20, true);
+				else if global.laps >= 4 // blue licorice
+					fmod_event_instance_set_parameter(panicmusicID, "state", 3, true);
+				else // the death that I deservioli
+					fmod_event_instance_set_parameter(panicmusicID, "state", 2, true);
 			}
 		}
-		fmod_event_instance_stop(pillarmusicID, true);
-		fmod_set_parameter("pillarfade", 0, true);
-		fmod_event_instance_set_parameter(panicmusicID, "state", 0, true);
 	}
-	else if global.leveltosave == "exit" && is_struct(music)
+	else
 	{
-		if global.laps > 1 && instance_exists(obj_pizzaface)
-			fmod_event_instance_set_parameter(music.event, "state", 20, true);
-		else if global.lap
-			fmod_event_instance_set_parameter(music.event, "state", 2, true);
-	}	
-	else if (fmod_event_instance_is_playing(panicmusicID))
-	{
-		if (!global.lap)
-		{
-			if (global.fill <= 672) // time running out
-				fmod_event_instance_set_parameter(panicmusicID, "state", 1, true);
-		}
-		else
-		{
-			if MOD.Lap3 && global.laps >= 2 // pillar john's revenge
-				fmod_event_instance_set_parameter(panicmusicID, "state", 20, true);
-			else if global.laps >= 4 // blue licorice
-				fmod_event_instance_set_parameter(panicmusicID, "state", 3, true);
-			else // the death that I deservioli
-				fmod_event_instance_set_parameter(panicmusicID, "state", 2, true);
-		}
-	}
-}
-else
-{
-	panicstart = false;
-	fmod_event_instance_stop(panicmusicID, true);
+		panicstart = false;
+		fmod_event_instance_stop(panicmusicID, true);
 	
-	if instance_exists(obj_player)
-	{
-		if instance_exists(obj_levelLoader)
-			cyop_music();
-		else
-			cyop_freemusic();
+		if instance_exists(obj_player)
+		{
+			if instance_exists(obj_levelLoader)
+				cyop_music();
+			else
+				cyop_freemusic();
+		}
 	}
 }
+
 var _found = false;
 with (obj_totem)
 {

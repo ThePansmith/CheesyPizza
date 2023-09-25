@@ -1,6 +1,6 @@
 if (other.state == states.knightpep && other.sprite_index != other.spr_knightpepstart && other.sprite_index != other.spr_knightpepthunder)
 {
-	sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
+	sound_play_3d("event:/sfx/pep/punch", x, y);
 	state = states.stun;
 	stunned = 1000;
 	lastattack = pizzaface_p2_attacks.pullinglevel;

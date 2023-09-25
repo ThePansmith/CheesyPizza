@@ -53,7 +53,7 @@ if !treasure
 	        else if has_time && mode == 1
 	        {
 				mode = 0;
-			
+				
 	            image_index = 0;
 	            sprite_index = spr_todocile;
 	            flash = true;

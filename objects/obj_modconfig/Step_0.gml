@@ -51,7 +51,7 @@ if (key_back or keyboard_check_pressed(vk_escape)) && object_index != obj_levels
 		depth = -700;
 		alarm[1] = 100;
 	}
-	sound_play_oneshot(sfx_back);
+	sound_play(sfx_back);
 	instance_destroy();
 }
 
@@ -59,7 +59,7 @@ if (key_back or keyboard_check_pressed(vk_escape)) && object_index != obj_levels
 var move = key_down2 - key_up2;
 if move != 0
 {
-	sound_play_oneshot(sfx_step);
+	sound_play(sfx_step);
 	sound_stop(machsnd, true);
 	
 	simuplayer.state = states.titlescreen;
@@ -119,7 +119,7 @@ else
 			opt.value = clamp(opt.value + move2, 0, array_length(opt.opts) - 1);
 	
 			if valueold != opt.value
-				sound_play_oneshot(sfx_step);
+				sound_play(sfx_step);
 		}
 	
 		if layer_exists(sequence_layer)
@@ -130,7 +130,7 @@ else
 		image_index = 8;
 		xo = 10;
 	
-		sound_play_oneshot(sfx_select);
+		sound_play(sfx_select);
 	
 		if opt.type != modconfig.button
 			opt.value = wrap(opt.value + 1, 0, array_length(opt.opts) - 1);

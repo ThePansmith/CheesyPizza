@@ -26,5 +26,5 @@ with instance_create(x, y, obj_sausageman_dead)
 if !important
 {
 	notification_push(notifs.pizzaboy_dead, [room]);
-	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_3d("event:/sfx/enemies/kill", x, y);
 }

@@ -24,10 +24,10 @@ function scr_pizzagoblin_throw()
 		switch (object_index)
 		{
 			case obj_rancher:
-				sound_play_oneshot_3d("event:/sfx/enemies/rancherpistol", x, y);
+				sound_play_3d("event:/sfx/enemies/rancherpistol", x, y);
 				break;
 			default:
-				sound_play_oneshot_3d("event:/sfx/enemies/projectile", x, y);
+				sound_play_3d("event:/sfx/enemies/projectile", x, y);
 				break;
 		}
 		
@@ -140,7 +140,7 @@ function scr_pizzagoblin_throw()
 			case obj_pizzard:
 				with (instance_create(x, y, obj_pizzard_bolt))
 				{
-					sound_play_oneshot_3d("event:/sfx/enemies/pizzardelectricity", x, y);
+					sound_play_3d("event:/sfx/enemies/pizzardelectricity", x, y);
 					image_xscale = other.image_xscale;
 				}
 				break;
@@ -221,7 +221,7 @@ function scr_pizzagoblin_throw()
 			case obj_smokingpizzaslice:
 				substate = choose(states.walk, states.idle, states.idle);
 				substate_buffer = substate_max;
-				sound_play_oneshot_3d("event:/sfx/enemies/coughing", x, y);
+				sound_play_3d("event:/sfx/enemies/coughing", x, y);
 				with (instance_create(x + (50 * image_xscale), y + 20, obj_smokingprojectile))
 					image_xscale = other.image_xscale;
 				break;
@@ -239,7 +239,7 @@ function scr_pizzagoblin_throw()
 			case obj_miniufo_grounded:
 				with (instance_create(x + (8 * image_xscale), y, obj_ufobullet))
 				{
-					sound_play_oneshot_3d("event:/sfx/enemies/ufolivelaser", x, y);
+					sound_play_3d("event:/sfx/enemies/ufolivelaser", x, y);
 					image_xscale = other.image_xscale;
 				}
 				break;

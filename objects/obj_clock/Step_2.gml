@@ -42,9 +42,9 @@ if (!init)
 else if (last_index != image_index)
 {
 	if (last_index > image_index)
-		sound_play_oneshot("event:/sfx/misc/timercount");
+		sound_play("event:/sfx/misc/timercount");
 	else
-		sound_play_oneshot("event:/sfx/misc/timerbegin");
+		sound_play("event:/sfx/misc/timerbegin");
 	last_index = image_index;
 }
 if (timedgate && !global.timedgatetimer)

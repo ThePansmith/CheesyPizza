@@ -53,7 +53,7 @@ if (!activated && (state == states.walk || state == states.idle))
 	sprite_index = spr_banditochicken_sleep;
 if ((state == states.walk || state == states.idle) && activated == 1 && sprite_index != spr_banditochicken_wake && sprite_index != spr_banditochicken_scared)
 {
-	sound_play_oneshot_3d("event:/sfx/enemies/banditochicken", x, y);
+	sound_play_3d("event:/sfx/enemies/banditochicken", x, y);
 	movespeed = 0;
 	if (x != targetplayer.x)
 		image_xscale = -sign(x - targetplayer.x);
@@ -84,7 +84,7 @@ if (bonebuffer == 0)
 {
 	with (instance_create(x, y - 20, obj_banditochicken_dynamite))
 	{
-		sound_play_oneshot_3d("event:/sfx/enemies/projectile", x, y);
+		sound_play_3d("event:/sfx/enemies/projectile", x, y);
 		vsp = -10;
 		image_xscale = other.image_xscale;
 		hsp = 0;

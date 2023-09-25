@@ -181,7 +181,7 @@ function scr_player_climbwall()
 					sprite_index = spr_superjumpland;
 					if character == "SP"
 						sprite_index = spr_playerSP_ceilingcrash;
-					sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+					sound_play_3d("event:/sfx/pep/groundpound", x, y);
 					image_index = 0;
 					state = states.Sjumpland;
 					machhitAnim = false;
@@ -338,7 +338,7 @@ function scr_player_climbwall()
 				if (!skateboarding)
 				{
 					sprite_index = spr_superjumpland;
-					sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+					sound_play_3d("event:/sfx/pep/groundpound", x, y);
 					image_index = 0;
 					state = states.Sjumpland;
 					machhitAnim = false;

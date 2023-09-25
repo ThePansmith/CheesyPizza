@@ -35,12 +35,16 @@ if global.experimental
 // set in user event 0
 palettes = [];
 mixables = [];
-unlockables = ["unfunny", "money", "sage", "blood", "tv", "dark", "shitty", "golden", "garish", "mooney", "funny", "itchy", "pizza", "stripes", "goldemanne", "bones", "pp", "war", "john"];
+unlockables = [];
+
+if !global.sandbox
+	array_push(unlockables, "unfunny", "money", "sage", "blood", "tv", "dark", "shitty", "golden", "garish", "mooney", "funny", "itchy", "pizza", "stripes", "goldemanne", "bones", "pp", "war", "john");
+array_push(unlockables, "mario");
 
 function add_palette(palette, entry, texture = noone, name = "PALETTE", description = "(No Description)", mix_prefix)
 {
 	// check if the palette was unlocked
-	if array_get_index(unlockables, entry) != -1 && !global.sandbox
+	if array_get_index(unlockables, entry) != -1
 	{
 		ini_open_from_string(obj_savesystem.ini_str_options);
 		if !ini_read_real("Palettes", entry, false)

@@ -91,7 +91,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
-		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "mario", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
@@ -185,7 +185,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
-		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "mario", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
@@ -248,7 +248,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
-		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "mario", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
@@ -323,7 +323,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
-		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "mario", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
@@ -381,7 +381,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
-		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "mario", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
@@ -454,7 +454,7 @@ switch character
 		//add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		//add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		//add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
-		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "mario", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
@@ -530,7 +530,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
-		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "mario", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot'", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
@@ -626,7 +626,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "wire is not alive");
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "sweet and duggary. like my boogeries.");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "so... re...so retr... so...");*/
-		add_palette(12, "", spr_pattern_mario, "Mario", "brother");
+		add_palette(12, "mario", spr_pattern_mario, "Mario", "brother");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "ooh ooh ah ah");
 		add_palette(12, "", spr_pattern_flamin, "Flamin' Hot", "sso spicy.. like suggary spicy!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "yummy :)");
@@ -680,7 +680,7 @@ switch character
 		add_palette(12, "", spr_pattern_livewire, "Livewire", "Light up the night.");
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
-		add_palette(12, "", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "mario", spr_pattern_mario, "Mario", "My favorite plumber merch.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");

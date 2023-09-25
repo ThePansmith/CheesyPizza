@@ -10,7 +10,7 @@ if !in_saveroom()
 		shake_mag = 20;
 		shake_mag_acc = 40 / room_speed;
 	}
-	sound_play_oneshot("event:/sfx/misc/breakmetal");
+	sound_play("event:/sfx/misc/breakmetal");
 	add_saveroom();
 }
 depth = 1;

@@ -25,7 +25,7 @@ function scr_player_ratmountclimbwall()
 			vsp = -14;
 			ratmount_fallingspeed = 0;
 			movespeed = xscale * 10;
-			sound_play_oneshot_3d("event:/sfx/ratmount/walljump2", x, y);
+			sound_play_3d("event:/sfx/ratmount/walljump2", x, y);
 			sprite_index = spr_ratmount_walljump;
 		}
 		else

@@ -7,7 +7,7 @@ y = Approach(y, y1, spd);
 if (x == x1 && y == y1 && state != states.dead)
 {
 	if (other.horseyfinish == 0)
-		sound_play_oneshot_3d("event:/sfx/misc/loserace", x, y);
+		sound_play_3d("event:/sfx/misc/loserace", x, y);
 	spd = 0;
 	other.horseyfinish = true;
 	if (state != states.finishingblow)

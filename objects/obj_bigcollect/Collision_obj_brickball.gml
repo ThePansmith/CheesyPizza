@@ -9,9 +9,9 @@ if (image_alpha == 1 && !place_meeting(x, y, obj_metalblock))
 	if global.snd_collectpizza == global.snd_collect
 		scr_sound_multiple(global.snd_collectpizza, x, y);
 	else
-		sound_play_oneshot(global.snd_collectpizza);
+		sound_play(global.snd_collectpizza);
 	if object_index == obj_escapecollectbig
-		sound_play_oneshot_3d("event:/sfx/misc/bellcollectbig", x, y);
+		sound_play_3d("event:/sfx/misc/bellcollectbig", x, y);
 	instance_destroy();
 	
 	if !global.snickchallenge

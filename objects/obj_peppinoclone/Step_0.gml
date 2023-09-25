@@ -138,7 +138,7 @@ switch (state)
 						particle_set_scale(part.highjumpcloud2, xscale, 1);
 						create_particle(x, y, part.highjumpcloud2, 0);
 						
-						sound_play_oneshot_3d(sfx_jump, x, y);
+						sound_play_3d(sfx_jump, x, y);
 					}
 				}
 			}
@@ -310,8 +310,8 @@ switch (state)
 					instance_create(x, y, obj_parryeffect);
 					xscale = -other.image_xscale;
 					
-					sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
-					sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
+					sound_play_3d("event:/sfx/enemies/killingblow", x, y);
+					sound_play_3d("event:/sfx/pep/punch", x, y);
 					
 					state = states.normal;
 					cutscene = false;

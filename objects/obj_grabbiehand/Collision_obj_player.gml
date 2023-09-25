@@ -2,7 +2,7 @@ if (state != states.grabbing && other.state != states.bombgrab && x == xstart &&
 {
 	with (other)
 	{
-		sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
+		sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 		fmod_event_instance_play(other.snd);
 		if (state != states.chainsaw && state != states.backbreaker)
 		{

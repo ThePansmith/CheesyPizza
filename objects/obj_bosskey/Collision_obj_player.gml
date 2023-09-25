@@ -2,7 +2,7 @@ if (state == states.normal)
 {
 	with (other)
 	{
-		sound_play_oneshot("event:/sfx/misc/bosskey");
+		sound_play("event:/sfx/misc/bosskey");
 		state = states.gottreasure;
 	}
 	state = states.gottreasure;

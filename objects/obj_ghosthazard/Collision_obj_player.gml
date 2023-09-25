@@ -6,7 +6,7 @@ with (other)
 	{
 		scr_losepoints();
 		create_transformation_tip(lang_get_value("ghosttip"), "ghost");
-		sound_play_oneshot("event:/sfx/pep/ghostintro");
+		sound_play("event:/sfx/pep/ghostintro");
 		grav /= 2;
 		state = states.ghost;
 		movespeed = hsp;

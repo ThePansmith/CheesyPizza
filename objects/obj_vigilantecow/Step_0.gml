@@ -7,7 +7,7 @@ x += hsp;
 y += vsp;
 if (y >= ystart && vsp > 0)
 {
-	sound_play_oneshot_3d("event:/sfx/vigilante/cowstomp", x, y);
+	sound_play_3d("event:/sfx/vigilante/cowstomp", x, y);
 	vsp = -16;
 	sprite_index = spr_cowbounce;
 	image_index = 0;

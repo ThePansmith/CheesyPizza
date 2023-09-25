@@ -2,7 +2,7 @@ y = -sprite_height;
 down = true;
 movespeed = 2;
 depth = -100;
-sound_play_oneshot("event:/sfx/misc/lap2start");
+sound_play("event:/sfx/misc/lap2start");
 
 sugary = SUGARY;
 if sugary

@@ -38,8 +38,8 @@ function scr_player_chainsawbump()
 					shake_mag = 10;
 					shake_mag_acc = 30 / room_speed;
 				}
-				sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
-				sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
+				sound_play_3d("event:/sfx/pep/groundpound", x, y);
+				sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 				vsp = -6;
 				movespeed = -4;
 				sprite_index = spr_chainsawhitwall;

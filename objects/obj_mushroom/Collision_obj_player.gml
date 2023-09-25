@@ -13,7 +13,7 @@ if (!other.cutscene && sprite_index != spr_bounce && other.state != states.gotop
 			state = states.mach2;
 	}
 	if (sprite_index != spr_bounce || image_index > 5)
-		sound_play_oneshot_3d("event:/sfx/misc/mushroombounce", x, y);
+		sound_play_3d("event:/sfx/misc/mushroombounce", x, y);
 	sprite_index = spr_bounce;
 	if (other.state == states.jump || other.state == states.normal)
 	{

@@ -10,7 +10,7 @@ if !in_saveroom()
 		shake_mag_acc = 40 / room_speed;
 	}
 	GamepadSetVibration(playerindex, 1, 1, 0.8);
-	sound_play_oneshot_3d("event:/sfx/misc/breakmetal", x, y);
+	sound_play_3d("event:/sfx/misc/breakmetal", x, y);
 	add_saveroom();
 }
 depth = 1;

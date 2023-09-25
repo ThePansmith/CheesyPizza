@@ -14,7 +14,7 @@ switch (state)
 					if (hsp == 0)
 						hsp = player_inst.xscale;
 					instance_destroy(inst);
-					sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
+					sound_play_3d("event:/sfx/enemies/killingblow", x, y);
 					with (b)
 					{
 						hitX = x;

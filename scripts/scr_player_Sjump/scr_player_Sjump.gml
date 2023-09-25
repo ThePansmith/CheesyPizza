@@ -85,7 +85,7 @@ function scr_player_Sjump()
 						vsp = -7;
 				}
 			}
-			sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+			sound_play_3d("event:/sfx/pep/groundpound", x, y);
 			image_index = 0;
 			state = states.Sjumpland;
 			machhitAnim = false;
@@ -99,14 +99,14 @@ function scr_player_Sjump()
 		sound_instance_move(sjumpcancelsnd, x, y);
 		if character == "N"
 		{
-			sound_play_oneshot_3d(sfx_woag, x, y);
+			sound_play_3d(sfx_woag, x, y);
 			
 			/*
 			if input_buffer_slap > 0 or noisetype == 1
 			{
 				jetpackcancel = true;
 				if REMIX
-					sound_play_oneshot_3d(sfx_jetpackstart, x, y);
+					sound_play_3d(sfx_jetpackstart, x, y);
 			}
 			else
 			*/

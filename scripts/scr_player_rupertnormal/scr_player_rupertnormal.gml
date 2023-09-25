@@ -39,7 +39,7 @@ function scr_player_rupertnormal()
 		jumpstop = false;
 		image_index = 0;
 		sprite_index = spr_player_skatejumpstart;
-	    sound_play_oneshot_3d(sfx_jump, x, y);
+	    sound_play_3d(sfx_jump, x, y);
 	    instance_create(x, y, obj_highjumpcloud2);
 	    vsp = -10;
 		movespeed = hsp;

@@ -18,10 +18,10 @@ if !in_saveroom()
 		}
 	}
 	
-	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_3d("event:/sfx/enemies/kill", x, y);
 	if (fmod_event_instance_is_playing(sniffsnd))
 		fmod_event_instance_stop(sniffsnd, true);
-	sound_play_oneshot_3d(deadsnd, x, y);
+	sound_play_3d(deadsnd, x, y);
 	var x1 = (x - sprite_xoffset) + (sprite_width / 2);
 	var y1 = (y - sprite_yoffset) + (sprite_height / 2);
 	

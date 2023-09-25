@@ -9,17 +9,17 @@ if (use_collision)
 				sprite_index = spr_gnomecutscene1;
 			alarm[1] = -1;
 			create_particle(x, y, part.landcloud);
-			sound_play_oneshot_3d("event:/sfx/pep/step", x, y);
+			sound_play_3d("event:/sfx/pep/step", x, y);
 			hsp = 0;
 			start = true;
 			if (sprite_index == spr_pepperman_scared)
-				sound_play_oneshot_3d("event:/sfx/voice/peppermanscared", x, y);
+				sound_play_3d("event:/sfx/voice/peppermanscared", x, y);
 			if (sprite_index == spr_playerV_hurt)
-				sound_play_oneshot_3d("event:/sfx/voice/vigiangry", x, y);
+				sound_play_3d("event:/sfx/voice/vigiangry", x, y);
 			if (sprite_index == spr_playerN_hurt)
-				sound_play_oneshot_3d("event:/sfx/voice/noisepositive", x, y);
+				sound_play_3d("event:/sfx/voice/noisepositive", x, y);
 			if (sprite_index == spr_fakepeppino_stun)
-				sound_play_oneshot_3d("event:/sfx/voice/fakepeppositive", x, y);
+				sound_play_3d("event:/sfx/voice/fakepeppositive", x, y);
 		}
 	}
 	else

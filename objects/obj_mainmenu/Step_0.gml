@@ -17,14 +17,14 @@ switch state
 			dark = 0
 			darkbuffer = 5
 			jumpscarecount = 0
-			sound_play_oneshot("event:/sfx/ui/lightswitch")
+			sound_play("event:/sfx/ui/lightswitch")
 			with (obj_music)
 				fmod_event_instance_set_parameter(music.event, "state", 1, 1)
 		}
 		if (jumpscarecount > 2400 && (!instance_exists(obj_mainmenu_jumpscare)))
 		{
 			instance_create(480, 270, obj_mainmenu_jumpscare)
-			sound_play_oneshot("event:/sfx/enemies/jumpscare")
+			sound_play("event:/sfx/enemies/jumpscare")
 		}
 		break
 	
@@ -155,13 +155,13 @@ switch state
 					if (trigger == other.currentselect)
 					{
 						fmod_event_instance_stop(obj_music.music.event, 1)
-						sound_play_oneshot("event:/sfx/ui/fileselect")
+						sound_play("event:/sfx/ui/fileselect")
 						state = states.victory
 						sprite_index = confirmspr
 					}
 				}
 				alarm[0] = 250
-				sound_play_oneshot("event:/sfx/misc/collectpizza")
+				sound_play("event:/sfx/misc/collectpizza")
 				switch currentselect
 				{
 					case 0:
@@ -199,7 +199,7 @@ switch state
 				deletebuffer = 0
 				state = states.bombdelete
 				deleteselect = 1
-				sound_play_oneshot_3d("event:/sfx/voice/pig", 480, 270)
+				sound_play_3d("event:/sfx/voice/pig", 480, 270)
 				switch currentselect
 				{
 					case 0:
@@ -243,8 +243,8 @@ switch state
 				global.game_judgement[currentselect] = "none"
 				global.game_palette[currentselect] = 1
 				global.game_palettetexture[currentselect] = -4
-				sound_play_oneshot_3d("event:/sfx/misc/explosion", 480, 270)
-				sound_play_oneshot_3d("event:/sfx/mort/mortdead", 480, 270)
+				sound_play_3d("event:/sfx/misc/explosion", 480, 270)
+				sound_play_3d("event:/sfx/mort/mortdead", 480, 270)
 				with (obj_menutv)
 				{
 					if (trigger == other.currentselect && sprite_index == selectedspr)

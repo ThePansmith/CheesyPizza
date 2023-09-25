@@ -4,7 +4,7 @@ if (global.panic || (instance_exists(obj_wartimer) && room != war_1)) && room !=
 	{
 		if uparrow
 		{
-			sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+			sound_play_3d("event:/sfx/pep/groundpound", x, y);
 			
 			uparrow = false;
 			instance_destroy(uparrowID);
@@ -47,7 +47,7 @@ if (drop && (global.panic or sugary))
 	    {
 	        y = drop_y;
 	        drop_state = states.idle;
-	        sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+	        sound_play_3d("event:/sfx/pep/groundpound", x, y);
 	        with obj_camera
 			{
 				shake_mag = 15;
@@ -64,7 +64,7 @@ if (drop && (global.panic or sugary))
 			sprite_index = spr_exitgategrabbed;
 			if (snd == 0)
 			{
-				sound_play_oneshot_3d("event:/sfx/pep/hitwall", x, y);
+				sound_play_3d("event:/sfx/pep/hitwall", x, y);
 				snd = true;
 			}
 		}
@@ -114,7 +114,7 @@ if (drop && (global.panic or sugary))
 				if (y >= drop_y)
 				{
 					depth = 50;
-					sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+					sound_play_3d("event:/sfx/pep/groundpound", x, y);
 					y = drop_y;
 					dropstate = states.idle;
 					handsprite = spr_grabbiehand_idle;

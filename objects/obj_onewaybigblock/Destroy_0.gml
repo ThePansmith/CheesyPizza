@@ -17,7 +17,7 @@ if !in_saveroom()
 			with instance_create(x + 32, y + 32, obj_sausageman_dead)
 				sprite_index = spr_bigdoughblockdead;
 		}
-		sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
+		sound_play_3d("event:/sfx/enemies/killingblow", x, y);
 	}
 	else if bo
 	{
@@ -26,7 +26,7 @@ if !in_saveroom()
 			sprite_index = spr_bigdoughblockdead_bo;
 			image_xscale = other.image_xscale;
 		}
-		sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
+		sound_play_3d("event:/sfx/enemies/killingblow", x, y);
 	}
 	else if sugary
 	{

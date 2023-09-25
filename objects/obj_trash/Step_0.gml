@@ -71,7 +71,7 @@ switch (state)
 					movespeed = 0;
 					state = states.trashjump;
 					vsp = -25;
-					sound_play_oneshot_3d("event:/sfx/misc/trashjump2", x, y + vsp);
+					sound_play_3d("event:/sfx/misc/trashjump2", x, y + vsp);
 					instance_create(x, y, obj_speedlinesup);
 				}
 			}

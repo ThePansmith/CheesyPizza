@@ -15,7 +15,7 @@ if (_baddieID.state != states.grabbed && _baddieID.object_index != obj_pizzaball
 				ds_list_add(hitlist, baddie_id);
 				with (_baddieID)
 				{
-					sound_play_oneshot_3d("event:/sfx/pep/punch", x, y);
+					sound_play_3d("event:/sfx/pep/punch", x, y);
 					hp = min(hp - 0.3, 1);
 					instance_create(x, y, obj_bangeffect);
 					state = states.hit;

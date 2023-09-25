@@ -64,7 +64,7 @@ if !in_saveroom()
 			alarm[1] = timer;
 		}
 	}
-	sound_play_oneshot_3d("event:/sfx/misc/rockbreak", x + 32, y + 32);
+	sound_play_3d("event:/sfx/misc/rockbreak", x + 32, y + 32);
 	repeat (7)
 		create_debris(x + 32, y + 32, spr_rockdebris);
 	add_saveroom();

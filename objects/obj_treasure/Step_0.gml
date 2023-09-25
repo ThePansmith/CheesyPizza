@@ -12,7 +12,7 @@ if (sugary)
 		{
 			create_collect(x + random_range(-60, 60) - 16, y + random_range(-60, 60) - 16, scr_collectspr(obj_collect, obj_player1, false));
 		}
-		sound_play_oneshot(global.snd_collectgiantpizza);
+		sound_play(global.snd_collectgiantpizza);
 		if (obj_player1.character == "V")
 			global.playerhealth = clamp(global.playerhealth + 10, 0, 100);
 		instance_destroy();

@@ -2,7 +2,7 @@ if grounded
 {
 	if bounce == 0
 	{
-		sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+		sound_play_3d("event:/sfx/pep/groundpound", x, y);
 		with (obj_camera)
 		{
 			shake_mag = 3;
@@ -20,7 +20,7 @@ if grounded
 	}
 	else if bounce == 1
 	{
-		sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+		sound_play_3d("event:/sfx/pep/groundpound", x, y);
 		with instance_create(x, y, obj_explosioneffect)
 		{
 			sprite_index = spr_landcloud;

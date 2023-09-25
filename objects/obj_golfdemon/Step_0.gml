@@ -62,7 +62,7 @@ if (state == states.walk || state == states.idle)
 	var targetplayer = instance_nearest(x, y, obj_player);
 	if (sprite_index != spr_golfdemon_idle2 && targetplayer.x > (x - 200) && targetplayer.x < (x + 200) && targetplayer.y > (y - 200) && targetplayer.y < (y + 200))
 	{
-		sound_play_oneshot_3d("event:/sfx/enemies/demonsuprise", x, y);
+		sound_play_3d("event:/sfx/enemies/demonsuprise", x, y);
 		sprite_index = spr_golfdemon_idle2;
 		image_index = 0;
 	}

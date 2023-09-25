@@ -3,7 +3,7 @@ if (obj_player1.character == "V")
 global.heattime = 60;
 with (obj_camera)
 	healthshaketime = 60;
-sound_play_oneshot(global.snd_collectpizza);
+sound_play(global.snd_collectpizza);
 instance_destroy();
 global.combotime = 60;
 var val = heat_calculate(100);

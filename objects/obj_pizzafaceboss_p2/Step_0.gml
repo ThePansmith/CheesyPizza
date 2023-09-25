@@ -65,7 +65,7 @@ if (obj_player1.state != states.actor && obj_player1.y >= (y - 20) && obj_player
 				vsp = -7;
 				state = states.tackle;
 				grounded = false;
-				sound_play_oneshot_3d("event:/sfx/pep/bumpwall", x, y);
+				sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 				instance_create(x, y, obj_bumpeffect);
 			}
 		}

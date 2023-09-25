@@ -154,7 +154,7 @@ function state_player_cotton()
 		state = states.cottondrill;
 		sprite_index = spr_cotton_drill;
 		image_index = 0;
-		sound_play_centered_oneshot(sfx_suplexdash);
+		sound_play_centered(sfx_suplexdash);
 		flash = 1;
 		//with (instance_create(x, y, obj_afterimageoutward))
 		//	hspeed = 7;

@@ -29,6 +29,6 @@ if (floor(other.x) == (x + _offset_x) && floor(other.y) == (y + _offset_y))
 	other.vsp = vsp * movespeed;
 	other.tube_vsp = vsp * movespeed;
 	stored_spd = 0;
-	sound_play_oneshot_3d("event:/sfx/pipe/bump", x, y);
+	sound_play_3d("event:/sfx/pipe/bump", x, y);
 	trace("hsp: ", other.hsp, " vsp: ", other.vsp);
 }

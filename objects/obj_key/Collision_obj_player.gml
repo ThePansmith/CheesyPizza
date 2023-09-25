@@ -9,7 +9,7 @@ with (other)
 	{
 		instance_destroy(other);
 		global.key_inv = true;
-		sound_play_oneshot("event:/sfx/misc/collecttoppin");
+		sound_play("event:/sfx/misc/collecttoppin");
 		global.combotime = 60;
 		global.heattime = 60;
 		instance_create(x, y, obj_spookeyfollow);
@@ -24,7 +24,7 @@ with (other)
 			global.key_inv = true;
 			key_particles = true;
 			alarm[7] = 30;
-			sound_play_oneshot("event:/sfx/misc/collecttoppin");
+			sound_play("event:/sfx/misc/collecttoppin");
 			state = states.keyget;
 			image_index = 0;
 			keysound = false;

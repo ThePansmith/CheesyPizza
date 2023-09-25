@@ -284,7 +284,7 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 	selected += moveselect;
 	if (moveselect != 0 && selected >= 0 && selected <= array_length(pause_menu) - 1)
 	{
-		sound_play_oneshot(SUGARY ? sfx_step : "event:/sfx/ui/angelmove");
+		sound_play(SUGARY ? sfx_step : "event:/sfx/ui/angelmove");
 		update_cursor = true;
 	}
 	selected = clamp(selected, 0, array_length(pause_menu) - 1);
@@ -323,12 +323,12 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 						pause = false;
 					}
 					else
-						sound_play_oneshot("event:/sfx/ui/select");
+						sound_play("event:/sfx/ui/select");
 					break;
 				}
 			
 			case 1:
-				sound_play_oneshot("event:/sfx/ui/select");
+				sound_play("event:/sfx/ui/select");
 				with (instance_create(x, y, obj_option))
 					depth = other.depth - 1;
 				break;
@@ -403,6 +403,15 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 				}
 		}
 	}
+}
+if keyboard_check_pressed(vk_f12) && sprite_exists(screensprite)
+{
+	sprite_save(screensprite, 0, $"screenshots/{current_year}-{current_month}-{current_day} {current_hour}-{current_minute}-{current_second}.png");
+	if !window_get_fullscreen() && os_type == os_windows
+		launch_external("explorer %appdata%\\PizzaTower_CHEESEDUP\\screenshots");
+	
+	with create_transformation_tip("{u}Screenshot taken!/")
+		depth = other.depth - 1;
 }
 if (pause)
 	scr_pauseicons_update(selected);

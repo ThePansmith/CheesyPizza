@@ -13,7 +13,7 @@ if (destroy)
 		add_baddieroom();
 		notification_push(notifs.monster_dead, [object_index]);
 	}
-	sound_play_oneshot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_3d("event:/sfx/enemies/kill", x, y);
 	instance_create(x, y, obj_bangeffect);
 	with (obj_camera)
 	{

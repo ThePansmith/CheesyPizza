@@ -9,7 +9,7 @@ if (other.state != states.gotoplayer)
 	if global.snd_collectpizza == global.snd_collect
 		scr_sound_multiple(global.snd_collectpizza, x, y);
 	else
-		sound_play_oneshot(global.snd_collectpizza);
+		sound_play(global.snd_collectpizza);
 	instance_destroy();
 	global.combotime = 60;
 	

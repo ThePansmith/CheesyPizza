@@ -20,7 +20,7 @@ if (showgranny)
 		sprite_index = spr_talk;
 		if (voicecooldown == 0 && !SUGARY)
 		{
-			sound_play_oneshot_3d("event:/sfx/voice/pizzagranny", x, y);
+			sound_play_3d("event:/sfx/voice/pizzagranny", x, y);
 			voicecooldown = 100;
 		}
 	}

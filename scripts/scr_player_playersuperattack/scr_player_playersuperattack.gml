@@ -54,7 +54,7 @@ function scr_player_playersuperattack()
 					punchcount--;
 					randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
 					image_index = 0;
-					sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
+					sound_play_3d("event:/sfx/enemies/killingblow", x, y);
 					with (bossID)
 					{
 						boss_hurt_noplayer(25);
@@ -76,7 +76,7 @@ function scr_player_playersuperattack()
 						movespeed = abs(hsp);
 						hitLag = 10;
 					}
-					sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
+					sound_play_3d("event:/sfx/enemies/killingblow", x, y);
 					superattackstate = states.grab;
 					sprite_index = choose(spr_finishingblow1, spr_finishingblow2, spr_finishingblow3, spr_finishingblow4, spr_finishingblow5);
 					image_index = 0;

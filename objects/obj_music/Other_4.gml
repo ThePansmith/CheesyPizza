@@ -5,7 +5,10 @@ if global.jukebox != noone
 if MOD.DeathMode
 	music = noone;
 
-if ((!global.panic && !global.snickchallenge && !MOD.DeathMode) or global.leveltosave == "dragonlair" or global.leveltosave == "grinch" or global.leveltosave == "sucrose")
+var fucker = (global.panic && global.leveltosave != "dragonlair" && global.leveltosave != "grinch" && global.leveltosave != "sucrose")
+or ((global.snickchallenge or MOD.DeathMode) && !instance_exists(obj_titlecard));
+
+if !fucker
 {
 	var mu = ds_map_find_value(music_map, room);
 	if !is_undefined(mu)
@@ -62,7 +65,6 @@ if (secret)
 {
 	if (music != noone && music.event_secret != noone)
 	{
-					trace("here 2");
 		var ev = music.event_secret, evname = music.event_secret_name;
 		fmod_event_instance_play(ev);
 		fmod_event_instance_set_paused(ev, false);
@@ -72,7 +74,7 @@ if (secret)
 		fmod_event_instance_set_timeline_pos(ev, pos);
 		fmod_event_instance_set_paused(music.event, true);
 	}
-	if (global.panic && global.leveltosave != "sucrose")
+	if fucker
 	{
 		trace("Pausing panic music: room_start");
 		savedpanicpos = fmod_event_instance_get_timeline_pos(panicmusicID);
@@ -89,7 +91,7 @@ else if (secretend)
 		if !REMIX
 			fmod_event_instance_set_timeline_pos(music.event, savedmusicpos);
 	}
-	if (global.panic && global.leveltosave != "sucrose")
+	if fucker
 	{
 		fmod_event_instance_set_timeline_pos(panicmusicID, savedpanicpos);
 		fmod_event_instance_set_paused(panicmusicID, false);

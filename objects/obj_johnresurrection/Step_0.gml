@@ -213,7 +213,7 @@ if (!fadein)
 						x = other.x + 64;
 						y = other.y - 128;
 						depth = 0;
-						sound_play_oneshot_3d("event:/sfx/enemies/killingblow", x, y);
+						sound_play_3d("event:/sfx/enemies/killingblow", x, y);
 					}
 					with (obj_camera)
 					{
@@ -254,7 +254,7 @@ if (!fadein)
 					image_yscale = image_xscale;
 					if (image_xscale <= 0 || y >= ((room_height / 2) + 120))
 					{
-						sound_play_oneshot("event:/sfx/ending/star");
+						sound_play("event:/sfx/ending/star");
 						image_xscale = 1;
 						image_yscale = 1;
 						sprite_index = spr_glint;
@@ -291,7 +291,7 @@ if (!fadein)
 				{
 					sprite_index = spr_johnresurrected_gerome2;
 					image_index = 0;
-					sound_play_oneshot("event:/sfx/misc/cheers");
+					sound_play("event:/sfx/misc/cheers");
 				}
 				with (obj_johnresurrection_peppino)
 					sprite_index = spr_player_smirk;

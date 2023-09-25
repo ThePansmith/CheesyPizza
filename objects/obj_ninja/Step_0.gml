@@ -90,7 +90,7 @@ else if (state == states.punch)
 	{
 		if (!hitboxcreate)
 		{
-			sound_play_oneshot_3d("event:/sfx/enemies/ninjakicks", x, y);
+			sound_play_3d("event:/sfx/enemies/ninjakicks", x, y);
 			hitboxcreate = true;
 			with (instance_create(x, y, obj_forkhitbox))
 			{
@@ -119,7 +119,7 @@ if (sprite_index == spr_pizzaboy)
 		{
 			if (sprite_index == spr_pizzaboy)
 				create_particle(x, y, part.balloonpop, 0);
-			sound_play_oneshot_3d("event:/sfx/pep/uppercut", x, y);
+			sound_play_3d("event:/sfx/pep/uppercut", x, y);
 			image_xscale = -sign(x - targetplayer.x);
 			sprite_index = spr_ninja_uppercut;
 			image_index = 0;

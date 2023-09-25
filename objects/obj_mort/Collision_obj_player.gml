@@ -10,7 +10,7 @@ if (sprite_index != spr_mortspawn)
 			instance_create_unique(x, y, obj_mortfollow);
 			movespeed = hsp;
 			state = states.mort;
-			sound_play_oneshot_3d("event:/sfx/mort/mortpickup", x, y);
+			sound_play_3d("event:/sfx/mort/mortpickup", x, y);
 			create_transformation_tip(lang_get_value("morttip"), "morttip");
 			instance_destroy(other);
 		}

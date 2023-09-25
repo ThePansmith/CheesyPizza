@@ -11,13 +11,13 @@ else
 	{
 		updown_buffer = updown_max;
 		audio_select -= 1;
-		sound_play_oneshot("event:/sfx/pep/step");
+		sound_play("event:/sfx/pep/step");
 	}
 	if ((key_down2 || keyboard_check_pressed(vk_down)) && audio_select < 2)
 	{
 		updown_buffer = updown_max;
 		audio_select += 1;
-		sound_play_oneshot("event:/sfx/pep/step");
+		sound_play("event:/sfx/pep/step");
 	}
 }
 if (key_jump || keyboard_check_pressed(vk_enter))

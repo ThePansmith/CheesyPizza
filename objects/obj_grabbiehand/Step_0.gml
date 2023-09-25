@@ -86,7 +86,7 @@ switch (state)
 		}
 		if (scr_solid(x, y - 1) || ((reverse && scr_solid(x, y + 1)) || place_meeting(x, y, obj_verticalhallway) || place_meeting(x, y, obj_hallway)))
 		{
-			sound_play_oneshot_3d("event:/sfx/enemies/projectile", x, y);
+			sound_play_3d("event:/sfx/enemies/projectile", x, y);
 			if (playerid == obj_player1.id)
 			{
 				with (playerid)

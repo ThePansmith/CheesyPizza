@@ -6,4 +6,4 @@ depth = -599;
 image_speed = 0.2;
 sprite_index = choose(spr_pepperman_smallstatue1, spr_pepperman_smallstatue2, spr_pepperman_smallstatue3);
 destroy = false;
-sound_play_oneshot_3d("event:/sfx/pepperman/statueappear", x, y + 100);
+sound_play_3d("event:/sfx/pepperman/statueappear", x, y + 100);

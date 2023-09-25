@@ -72,7 +72,7 @@ function scr_player_knightpepslopes()
 		sprite_index = spr_knightpep_bump;
 		image_index = floor(image_number - 1);
 		state = states.knightpepbump;
-		sound_play_oneshot_3d("event:/sfx/pep/groundpound", x, y);
+		sound_play_3d("event:/sfx/pep/groundpound", x, y);
 		notification_push(notifs.knightpep_bump, []);
 	}
 	if (scr_slope())
@@ -88,7 +88,7 @@ function scr_player_knightpepslopes()
 	}
 	if (!grounded && scr_check_groundpound() && sprite_index != spr_knightpepdownthrust)
 	{
-		sound_play_oneshot_3d("event:/sfx/knight/down", x, y);
+		sound_play_3d("event:/sfx/knight/down", x, y);
 		if (vsp >= 12)
 		{
 			with (instance_create(x, y - 16, obj_parryeffect))

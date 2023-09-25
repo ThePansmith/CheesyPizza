@@ -8,7 +8,7 @@ if (fall == 1)
 	y += 9;
 if (check_solid(x, y + 1) && fall == 1)
 {
-	sound_play_oneshot_3d("event:/sfx/pepperman/statuedestroy", x, y);
+	sound_play_3d("event:/sfx/pepperman/statuedestroy", x, y);
 	destroy = true;
 	instance_destroy();
 }
