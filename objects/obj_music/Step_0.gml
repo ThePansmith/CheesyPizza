@@ -68,14 +68,17 @@ if !safe_get(obj_pause, "pause") && instance_exists(obj_player1)
 				switch char
 				{
 					default: panicmusicID = fmod_event_create_instance("event:/music/pizzatime"); break;
-					case "N": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeN"); break;
-					case "V": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeV"); break;
-					case "S": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeS"); break;
-					case "SP": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeSP"); break;
-					case "BN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeBN"); break;
-					case "PN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimePN"); break;
-					case "SN": panicmusicID = fmod_event_create_instance("event:/music/pizzatimeSN"); break;
+					case "N": 
+					case "V": 
+					case "S": 
+					case "SP":
+					case "BN":
+					case "PN":
+					case "SN":
+						panicmusicID = fmod_event_create_instance($"event:/music/pizzatime{obj_player1.character}");
+						break;
 				}
+				
 			}
 			cyop_freemusic();
 			
@@ -99,9 +102,12 @@ if !safe_get(obj_pause, "pause") && instance_exists(obj_player1)
 					fmod_event_instance_play(music.event);
 				}
 			}
-			fmod_event_instance_stop(pillarmusicID, true);
-			fmod_set_parameter("pillarfade", 0, true);
-			fmod_event_instance_set_parameter(panicmusicID, "state", 0, true);
+			if instance_exists(obj_hungrypillar)
+			{
+				fmod_event_instance_stop(pillarmusicID, true);
+				fmod_set_parameter("pillarfade", 0, true);
+				fmod_event_instance_set_parameter(panicmusicID, "state", 0, true);
+			}
 		}
 		else if global.leveltosave == "exit" && is_struct(music)
 		{
@@ -110,7 +116,7 @@ if !safe_get(obj_pause, "pause") && instance_exists(obj_player1)
 			else if global.lap
 				fmod_event_instance_set_parameter(music.event, "state", 2, true);
 		}	
-		else if fmod_event_instance_is_playing(panicmusicID)
+		else if fmod_event_instance_is_playing(panicmusicID) && !MOD.DeathMode
 		{
 			if !global.lap
 			{

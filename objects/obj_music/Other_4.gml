@@ -41,7 +41,7 @@ if !fucker
 		fmod_event_instance_play(pillarmusicID);
 		fmod_set_parameter("pillarfade", 0, true);
 	}
-	else
+	else // RADIX TODO: Add an "fmod_event_instance_exists"
 		fmod_event_instance_stop(pillarmusicID, true);
 	
 	if music != noone
