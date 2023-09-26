@@ -45,6 +45,8 @@ else if safe_get(global, "panic")
 else if !instance_exists(obj_levelLoader)
 {
 	var stack = [];
+	if MOD.Lappable
+		array_push(stack, "Lappable");
 	if MOD.Encore
 		array_push(stack, "Encore");
 	if MOD.Mirror
@@ -53,12 +55,18 @@ else if !instance_exists(obj_levelLoader)
 		array_push(stack, MOD.DeathMode or MOD.HardMode ? "Easy" : "Easy Mode");
 	if MOD.HardMode
 		array_push(stack, MOD.DeathMode ? "Hard" : "Hard Mode");
+	if MOD.JohnGhost
+		array_push(stack, "John Ghost");
 	if MOD.Pacifist
 		array_push(stack, "Pacifist");
+	if MOD.Spotlight
+		array_push(stack, "Lights Out");
 	if MOD.Lap3
 		array_push(stack, "Lap Hell");
 	if MOD.DeathMode
 		array_push(stack, "Death Mode");
+	if MOD.OldLevels
+		array_push(stack, "on old levels");
 	
 	if array_length(stack)
 	{
