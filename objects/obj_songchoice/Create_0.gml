@@ -27,6 +27,9 @@ add_section = function(name, songs)
 }
 
 #region Base
+var audio = fmod_get_soundtest_events();
+
+trace($"Found: {array_length(audio)} soundtest compatible events.");
 
 add_section("Pizza Tower", [
 	["event:/soundtest/base/intro", "Time For A Smackdown - MrSauceman"],

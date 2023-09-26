@@ -13,6 +13,7 @@
   "Folders": [
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Animation Curves","folderPath":"folders/Animation Curves.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Extensions","folderPath":"folders/Extensions.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"CheesyPizza","folderPath":"folders/Extensions/CheesyPizza.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"GMLive","folderPath":"folders/Extensions/GMLive.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Internal","folderPath":"folders/Extensions/GMLive/Internal.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Compiler","folderPath":"folders/Extensions/GMLive/Internal/Compiler.yy",},
@@ -7961,6 +7962,7 @@
     {"id":{"name":"spr_bigcheese_palette","path":"sprites/spr_bigcheese_palette/spr_bigcheese_palette.yy",},},
     {"id":{"name":"bg_pizzaface1","path":"sprites/bg_pizzaface1/bg_pizzaface1.yy",},},
     {"id":{"name":"spr_backtopeppino","path":"sprites/spr_backtopeppino/spr_backtopeppino.yy",},},
+    {"id":{"name":"fmod_get_soundtest_events","path":"scripts/fmod_get_soundtest_events/fmod_get_soundtest_events.yy",},},
     {"id":{"name":"spr_playerV_gotkey","path":"sprites/spr_playerV_gotkey/spr_playerV_gotkey.yy",},},
     {"id":{"name":"spr_playerV_gottreasure","path":"sprites/spr_playerV_gottreasure/spr_playerV_gottreasure.yy",},},
     {"id":{"name":"spr_playerV_slipping","path":"sprites/spr_playerV_slipping/spr_playerV_slipping.yy",},},

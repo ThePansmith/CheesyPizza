@@ -1,4 +1,3 @@
-#macro FMOD_INVALID_HANDLE -1
 
 enum FMOD_INIT_FLAGS
 {

@@ -3,17 +3,43 @@ fmod_init(32);
 
 fmod_set_num_listeners(1);
 
-var banks = ["data/sound/Master.strings.bank", "data/sound/Master.bank", "data/sound/music.bank", "data/sound/sfx.bank"];
+
+
+banks = 
+[
+	{ // 0
+		eventPath : "data/sound/Master.strings.bank",
+		handle : FMOD_INVALID_BANK
+	},
+	{ // 1
+		eventPath : "data/sound/Master.bank",
+		handle : FMOD_INVALID_BANK
+	},
+	{ // 2
+		eventPath : "data/sound/music.bank",
+		handle : FMOD_INVALID_BANK
+	},
+	{ // 3
+		eventPath : "data/sound/sfx.bank",
+		handle : FMOD_INVALID_BANK
+	}
+]
+
+#macro FMOD_BANK_MASTER_STRINGS obj_fmod.banks[0].handle
+#macro FMOD_BANK_MASTER obj_fmod.banks[1].handle
+#macro FMOD_BANK_MUSIC obj_fmod.banks[2].handle
+#macro FMOD_BANK_SFX obj_fmod.banks[3].handle
+
 trace("Loading banks!");
 for (var i = 0; i < array_length(banks); i++)
 {
-	var b = working_directory + banks[i];
+	var b = working_directory + banks[i].eventPath;
 	trace($"Attemping to load: \"{b}\"");
-	var bank_handle = fmod_bank_load(b, FMOD_STUDIO_LOAD_BANK_FLAGS.NORMAL);
-	trace($"Loaded Bank: \"{b}\" with id: {bank_handle}");
-	if (bank_handle == FMOD_INVALID_HANDLE)
+	banks[i].handle = fmod_bank_load(b, FMOD_STUDIO_LOAD_BANK_FLAGS.NORMAL);
+	trace($"Loaded Bank: \"{b}\" with id: {banks[i].handle}");
+	if (banks[i].handle == FMOD_INVALID_BANK)
 		trace("Could not load bank: ", b);
-	else if (!fmod_bank_load_sample_data(bank_handle))
+	else if (!fmod_bank_load_sample_data(banks[i].handle))
 		trace("Could not load sample data: ", b);
 }
 
