@@ -2,8 +2,8 @@ if instance_exists(obj_loadingscreen)
 	exit;
 
 // restart the disclaimer if you turn on your internet
-if !net && net != os_is_network_connected(true)
-	room_restart();
+//if !net && net != os_is_network_connected(true)
+//	room_restart();
 
 // animation
 if state == 1 or (menu > 0 && state == 2)

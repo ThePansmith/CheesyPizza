@@ -274,6 +274,7 @@ if !directory_exists(PATTERN_DIRECTORY)
 	directory_create(PATTERN_DIRECTORY);
 
 var pattern_example_directory = $"{PATTERN_DIRECTORY}/Example/";
+/*
 if !directory_exists(pattern_example_directory)
 {
 	directory_create(pattern_example_directory);
@@ -283,6 +284,6 @@ if !directory_exists(pattern_example_directory)
 	file_text_write_string(file, json_stringify(examplepattern, true));
 	delete examplepattern;
 	file_text_close(file);
-	// We can't save sprites added from the IDE for some reason so
-	file_copy("data/pattern_example.png", $"{pattern_example_directory}0.png")
+	sprite_save(spr_pattern_example, 0, $"{pattern_example_directory}0.png");
 }
+*/

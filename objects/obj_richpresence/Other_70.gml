@@ -3,9 +3,14 @@ switch async_load[? "event_type"]
 	case "DiscordReady": // ready
 		active = true;
 		a = async_load[?"user_id"];
+		userid = a;
 		
-		// meliadev
+		// Null
+		//if a == "746159804057255998" or a == "710801584337977358"
+			event_perform(ev_alarm, 0);
+		
 		/*
+		// meliadev
 		if a == "339940381850468386" && DEBUG
 			show_message(choose("hiii melia! you're cute :3", "you're doing a great job melia, keep it up :3", "i love you melia!\n-from the game", "keep up the good work melia :3"));
 		
