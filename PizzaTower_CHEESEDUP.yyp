@@ -8807,7 +8807,6 @@
     {"id":{"name":"spr_tv_mort","path":"sprites/spr_tv_mort/spr_tv_mort.yy",},},
     {"id":{"name":"spr_gameframe_border","path":"sprites/spr_gameframe_border/spr_gameframe_border.yy",},},
     {"id":{"name":"spr_gusdance","path":"sprites/spr_gusdance/spr_gusdance.yy",},},
-    {"id":{"name":"spr_noise_phasetrans1loop","path":"sprites/spr_noise_phasetrans1loop/spr_noise_phasetrans1loop.yy",},},
     {"id":{"name":"scr_checkpoint","path":"scripts/scr_checkpoint/scr_checkpoint.yy",},},
     {"id":{"name":"bg_chateaupeddito","path":"sprites/bg_chateaupeddito/bg_chateaupeddito.yy",},},
     {"id":{"name":"spr_charcherry_wait","path":"sprites/spr_charcherry_wait/spr_charcherry_wait.yy",},},
