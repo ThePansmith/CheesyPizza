@@ -28,7 +28,7 @@ if global.goodmode
 }
 
 // gif
-if keyboard_check_pressed(vk_f1) && DEBUG
+if keyboard_check_pressed(vk_f11) && DEBUG
 {
 	gif_record = !gif_record;
 	if gif_record
