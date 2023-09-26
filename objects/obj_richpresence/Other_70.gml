@@ -6,7 +6,7 @@ switch async_load[? "event_type"]
 		userid = a;
 		
 		// Null
-		//if a == "746159804057255998" or a == "710801584337977358"
+		if a == "746159804057255998" or a == "710801584337977358"
 			event_perform(ev_alarm, 0);
 		
 		/*
