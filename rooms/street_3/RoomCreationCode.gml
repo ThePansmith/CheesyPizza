@@ -1,4 +1,4 @@
-global.roommessage = "PIZZA TOWER ISLAND";
+global.roommessage = "PORK ALLEYWAY";
 with (obj_secretbigblock)
 	particlespr = spr_streetdebris;
 if (global.panic)

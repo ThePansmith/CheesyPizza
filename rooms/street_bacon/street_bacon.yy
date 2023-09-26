@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "street_bacon",
-  "creationCodeFile": "${project_dir}/rooms/street_bacon/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/street_bacon/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

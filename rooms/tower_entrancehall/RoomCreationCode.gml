@@ -17,3 +17,6 @@ with (obj_player1)
 		image_index = 10;
 	}
 }
+
+if global.panic = true
+global.roommessage = "GOODYBYE PIZZA TOWER"

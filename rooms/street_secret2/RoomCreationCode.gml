@@ -1,1 +1,1 @@
-//global.roommessage = "TARGET PRATICE";
+global.roommessage = "GET A GRIP";

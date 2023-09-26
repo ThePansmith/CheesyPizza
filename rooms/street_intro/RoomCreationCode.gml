@@ -1,4 +1,4 @@
-global.roommessage = "PIZZA TOWER ISLAND";
+global.roommessage = "THE STREETS OF PIZZA TOWER";
 global.gameframe_caption_text = "The mean Pizza Tower streets";
 with (obj_secretbigblock)
 	particlespr = spr_streetdebris;
