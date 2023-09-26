@@ -20,7 +20,7 @@ if !in_saveroom()
 			with (create_debris(x + 10, y, spr_cagedebris, false))
 				image_index = 4;
 		}
-		sound_play_3d("event:/misc/breakblock", x, y);
+		//sound_play_3d("event:/misc/breakblock", x, y);
 	}
 	add_saveroom();
 }

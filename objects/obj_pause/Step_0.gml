@@ -43,7 +43,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 	// pause
 	if (obj_savesystem.state == 0 && !_cutscenehandler && (room != rank_room && room != Realtitlescreen && room != timesuproom && room != rm_baby) && !instance_exists(obj_jumpscare) && !instance_exists(obj_technicaldifficulty))
 	{
-		fmod_event_instance_release(pausemusicID);
+		destroy_sounds([pausemusicID]);
 		pausemusicID = fmod_event_create_instance(SUGARY ? "event:/modded/sugary/pause" : "event:/music/pause");
 		
 		refresh_options();

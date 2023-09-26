@@ -20,7 +20,15 @@ if (fmod_event_instance_is_playing(kidspartychaseID) && instance_exists(obj_paus
 	trace("Stopping kidsparty music");
 	fmod_event_instance_stop(kidspartychaseID, false);
 	instance_destroy(obj_kidspartybg);
-	if (music != noone)
+	if current_custom != noone && instance_exists(obj_levelLoader)
+	{
+		var song = custom_music[current_custom];
+		if song.fmod
+			fmod_event_instance_set_paused(song.instance, savedmusicpause);
+		else if !savedmusicpause
+			audio_resume_sound(song.instance);
+	}
+	else if (music != noone)
 	{
 		fmod_event_instance_set_paused(music.event, savedmusicpause);
 		fmod_event_instance_set_paused(music.event_secret, savedsecretpause);
@@ -56,7 +64,7 @@ if !safe_get(obj_pause, "pause") && instance_exists(obj_player1)
 	{
 		if !panicstart
 		{
-			fmod_event_instance_release(panicmusicID);
+			destroy_sounds([panicmusicID]);
 			
 			if global.snickchallenge
 				panicmusicID = fmod_event_create_instance("event:/modded/level/snickchallenge");
@@ -78,7 +86,6 @@ if !safe_get(obj_pause, "pause") && instance_exists(obj_player1)
 						panicmusicID = fmod_event_create_instance($"event:/music/pizzatime{obj_player1.character}");
 						break;
 				}
-				
 			}
 			cyop_freemusic();
 			

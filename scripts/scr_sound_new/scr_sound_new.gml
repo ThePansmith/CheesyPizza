@@ -100,7 +100,7 @@ function sound_play_3d(event, xx = undefined, yy = undefined)
 		audio_play_sound(event, 0, false, global.option_sfx_volume * global.option_master_volume);
 		exit;
 	}
-	if MOD.Mirror
+	if MOD.Mirror && xx != undefined
 		xx = room_width - xx;
 	
 	/*

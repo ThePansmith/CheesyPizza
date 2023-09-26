@@ -44,6 +44,6 @@ if MOD.Encore && !bo
 }
 draw_sprite(sprite_index, image_index, x, y);
 
-if !bo && sprite_index != spr_pizzaboxunopen_old
+if !bo && sprite_index != spr_pizzaboxunopen_old && sprite_index != spr_pizzaboxopen
 	draw_sprite_ext(sugary ? spr_confecticage_help : spr_toppinhelp, subimg, x, y - 70, (MOD.Mirror) ? -1 : 1, 1, 0, c_white, 1);
 shader_reset();

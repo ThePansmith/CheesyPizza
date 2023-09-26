@@ -50,7 +50,15 @@ function scr_monster_stop_music()
 		if (fmod_event_instance_is_playing(kidspartychaseID))
 		{
 			fmod_event_instance_stop(kidspartychaseID, false);
-			if (music != noone)
+			if current_custom != noone && instance_exists(obj_levelLoader)
+			{
+				var song = custom_music[current_custom];
+				if song.fmod
+					fmod_event_instance_set_paused(song.instance, savedmusicpause);
+				else if !savedmusicpause
+					audio_resume_sound(song.instance);
+			}
+			else if (music != noone)
 			{
 				fmod_event_instance_set_paused(music.event, savedmusicpause);
 				fmod_event_instance_set_paused(music.event_secret, savedsecretpause);
@@ -95,7 +103,21 @@ function scr_monster_activate()
 		if (!global.panic && !instance_exists(obj_ghostcollectibles) && !fmod_event_instance_is_playing(kidspartychaseID))
 		{
 			fmod_event_instance_play(kidspartychaseID);
-			if (music != noone)
+			if current_custom != noone && instance_exists(obj_levelLoader)
+			{
+				var song = custom_music[current_custom];
+				if song.fmod
+				{
+					savedmusicpause = fmod_event_instance_get_paused(song.instance);
+					fmod_event_instance_set_paused(song.instance, true);
+				}
+				else
+				{
+					savedmusicpause = audio_is_paused(song.instance);
+					audio_pause_sound(song.instance);
+				}
+			}
+			else if music != noone
 			{
 				savedmusicpause = fmod_event_instance_get_paused(music.event);
 				savedsecretpause = fmod_event_instance_get_paused(music.event_secret);
