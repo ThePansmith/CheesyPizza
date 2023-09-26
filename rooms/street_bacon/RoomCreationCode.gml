@@ -1,1 +1,1 @@
-global.roommessage = "PIZZA TOWER ISLAND"
+global.roommessage = "THE SCENT OF MAPLE AND GREASE"
