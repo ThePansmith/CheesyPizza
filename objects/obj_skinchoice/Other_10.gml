@@ -92,6 +92,8 @@ switch character
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
 		add_palette(12, "mario", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "", spr_pattern_secret, "Secret", "Pepperoni Secret.");
+		add_palette(12, "", spr_pattern_interstellar, "Interstellar", "Become one with the void.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
@@ -186,6 +188,8 @@ switch character
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
 		add_palette(12, "mario", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "", spr_pattern_secret, "Secret", "Pepperoni Secret.");
+		add_palette(12, "", spr_pattern_interstellar, "Interstellar", "Become one with the void.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
@@ -249,6 +253,8 @@ switch character
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
 		add_palette(12, "mario", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "", spr_pattern_secret, "Secret", "Pepperoni Secret.");
+		add_palette(12, "", spr_pattern_interstellar, "Interstellar", "Become one with the void.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
@@ -324,6 +330,8 @@ switch character
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
 		add_palette(12, "mario", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "", spr_pattern_secret, "Secret", "Pepperoni Secret.");
+		add_palette(12, "", spr_pattern_interstellar, "Interstellar", "Become one with the void.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
@@ -382,6 +390,8 @@ switch character
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
 		add_palette(12, "mario", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "", spr_pattern_secret, "Secret", "Pepperoni Secret.");
+		add_palette(12, "", spr_pattern_interstellar, "Interstellar", "Become one with the void.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
@@ -455,6 +465,7 @@ switch character
 		//add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		//add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");
 		add_palette(12, "mario", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "", spr_pattern_interstellar, "Interstellar", "Become one with the void.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
@@ -531,6 +542,7 @@ switch character
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
 		add_palette(12, "mario", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "", spr_pattern_interstellar, "Interstellar", "Become one with the void.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot'", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
@@ -627,6 +639,7 @@ switch character
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "sweet and duggary. like my boogeries.");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "so... re...so retr... so...");*/
 		add_palette(12, "mario", spr_pattern_mario, "Mario", "brother");
+		add_palette(12, "", spr_pattern_interstellar, "Interstellar", "Become one with the void.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "ooh ooh ah ah");
 		add_palette(12, "", spr_pattern_flamin, "Flamin' Hot", "sso spicy.. like suggary spicy!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "yummy :)");
@@ -655,6 +668,7 @@ switch character
 		add_palette(13, "", noone, "Crystalized", "You're the goddamn iron chef!", "CRYSTAL");
 		add_palette(14, "", noone, "Virtual Boy", "Ultimate classic system!", "VB");
 		add_palette(15, "", noone, "Sucrose Snowstorm", "A little sweetness never hurts.", "SWEET");
+		add_palette(16, "", noone, "Classic Plumber", "<Loypoll please put description here>", "CLASSIC");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "Some joke about a fat rabbit here.");
@@ -681,6 +695,7 @@ switch character
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "BEES!");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "Invaders must die.");*/
 		add_palette(12, "mario", spr_pattern_mario, "Mario", "My favorite plumber merch.");
+		add_palette(12, "", spr_pattern_interstellar, "Interstellar", "Become one with the void.");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "Slip 'n slide...");
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
