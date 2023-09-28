@@ -71,8 +71,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "introgroup",
-    "path": "texturegroups/introgroup",
+    "name": "levelstructuregroup",
+    "path": "texturegroups/levelstructuregroup",
   },
   "type": 0,
   "VTile": false,

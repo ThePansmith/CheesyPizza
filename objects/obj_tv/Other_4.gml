@@ -253,7 +253,7 @@ switch (room)
 		global.srank = 22000;
 		break;
 	case grinch_1:
-		global.srank = 7986;
+		global.srank = 7952;
 		break;
 	case midway_1:
 		global.srank = 10300;

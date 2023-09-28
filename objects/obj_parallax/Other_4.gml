@@ -11,6 +11,8 @@ if instance_exists(obj_levelLoader)
 
 if string_starts_with(room_get_name(room), "boss") or room == Longintro or global.performance
 	old_bg = true;
+with obj_deathmode
+	depth = 1;
 
 // fuck
 var sugary = SUGARY;
@@ -129,6 +131,13 @@ for (var i = 0; i < array_length(layers); i++)
 			var newtileset = asset_get_index(tileset_get_name(tilemap_get_tileset(tilemap)) + "_NEW");
 			if newtileset != -1
 				tilemap_tileset(tilemap, newtileset);
+		}
+		
+		with obj_deathmode
+		{
+			var dep = layer_get_depth(lay) + 1;
+			if depth < dep
+				depth = dep;
 		}
 	}
 	

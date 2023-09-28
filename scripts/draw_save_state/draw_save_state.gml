@@ -5,6 +5,7 @@ function draw_save_state()
 {
 	return {
 		blendmode : gpu_get_blendmode(),
+		shader : shader_current(),
 		color : draw_get_color(),
 		alpha : draw_get_alpha(),
 		font : draw_get_font(),

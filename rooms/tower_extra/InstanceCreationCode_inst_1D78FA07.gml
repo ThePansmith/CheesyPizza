@@ -12,3 +12,6 @@ titlecard_index = 10;
 title_sprite = spr_titlecards_newtitles;
 title_index = 10;
 title_music = "event:/music/w1/ruintitle";
+
+if !global.experimental
+	instance_destroy();

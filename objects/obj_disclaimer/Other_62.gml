@@ -1,4 +1,4 @@
-if live_call() return live_result;
+live_auto_call;
 
 if ds_map_find_value(async_load, "id") == req
 {

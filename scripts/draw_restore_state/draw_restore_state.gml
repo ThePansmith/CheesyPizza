@@ -4,6 +4,7 @@
 function draw_restore_state(_state)
 {
 	gpu_set_blendmode(_state.blendmode)
+	shader_set(_state.shader)
 	draw_set_color(_state.color);
 	draw_set_alpha(_state.alpha);
 	draw_set_font(_state.font);

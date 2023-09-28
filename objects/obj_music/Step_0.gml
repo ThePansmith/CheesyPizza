@@ -123,7 +123,7 @@ if !safe_get(obj_pause, "pause") && instance_exists(obj_player1)
 			else if global.lap
 				fmod_event_instance_set_parameter(music.event, "state", 2, true);
 		}	
-		else if fmod_event_instance_is_playing(panicmusicID) && !MOD.DeathMode
+		else if fmod_event_instance_is_playing(panicmusicID)
 		{
 			if !global.lap
 			{

@@ -22,8 +22,12 @@ function cyop_music()
 		{
 			if song.instance == noone
 				song.instance = audio_play_sound(song.event, 0, true, global.option_music_volume * 0.5);
-			else if audio_is_paused(song.instance)
-				audio_resume_sound(song.instance);
+			else
+			{
+				audio_sound_gain(song.instance, global.option_music_volume * 0.5, 0);
+				if audio_is_paused(song.instance)
+					audio_resume_sound(song.instance);
+			}
 		}
 	}
 }

@@ -659,7 +659,15 @@ or (instance_exists(obj_timesup) && obj_timesup.alarm[1] == 0)
 		visible = true;
 	}
 	if (global.is_hubworld or global.custom_hub_level == "")
+	{
 		instance_destroy(obj_levelLoader);
+		if is_string(backtohubroom)
+		{
+			backtohubroom = tower_entrancehall;
+			backtohubstartx = 352;
+			backtohubstarty = 690;
+		}
+	}
 	else if instance_exists(obj_levelLoader)
 		cyop_load_level(global.custom_hub_level);
 	

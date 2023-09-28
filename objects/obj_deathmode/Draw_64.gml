@@ -1,4 +1,4 @@
-//live_auto_call;
+live_auto_call;
 
 if !active or room == timesuproom or room == rank_room
 	exit;
@@ -8,6 +8,9 @@ var mins = floor(timeinsecs / 60);
 var secs = timeinsecs % 60;
 if secs < 10
     secs = concat("0", secs);
+
+shader_reset();
+gpu_set_blendmode(bm_normal);
 
 draw_set_font(global.bigfont)
 draw_set_align(fa_left, fa_middle);

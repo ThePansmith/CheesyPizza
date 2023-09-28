@@ -1,7 +1,5 @@
 function scr_tvdraw()
 {
-	if live_call() return live_result;
-	
 	if tvreset != global.hud
 	{
 		tvreset = global.hud;
