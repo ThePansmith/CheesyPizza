@@ -1,3 +1,5 @@
+var curr_pause_music = SUGARY ? pausemusicIDss : pausemusicID;
+
 if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != Mainmenu && room != Finalintro && room != hub_loadingscreen && room != Endingroom && room != Creditsroom && room != Johnresurrectionroom && room != Longintro && room != Realtitlescreen && room != rank_room)
 {
 	var _cutscenehandler = false;
@@ -43,8 +45,8 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 	// pause
 	if (obj_savesystem.state == 0 && !_cutscenehandler && (room != rank_room && room != Realtitlescreen && room != timesuproom && room != rm_baby) && !instance_exists(obj_jumpscare) && !instance_exists(obj_technicaldifficulty))
 	{
-		destroy_sounds([pausemusicID]);
-		pausemusicID = fmod_event_create_instance(SUGARY ? "event:/modded/sugary/pause" : "event:/music/pause");
+		//destroy_sounds([pausemusicID]);
+		//pausemusicID = fmod_event_create_instance(SUGARY ? "event:/modded/sugary/pause" : "event:/music/pause");
 		
 		refresh_options();
 		if global.jukebox != noone
@@ -203,8 +205,8 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 		
 		if global.jukebox == noone
 		{
-			fmod_event_instance_play(pausemusicID);
-			fmod_event_instance_set_paused(pausemusicID, false);
+			fmod_event_instance_play(curr_pause_music);
+			fmod_event_instance_set_paused(curr_pause_music, false);
 		}
 	}
 }
@@ -341,8 +343,8 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 				fmod_event_instance_release(global.jukebox.instance);
 				global.jukebox = noone;
 				
-				fmod_event_instance_play(pausemusicID);
-				fmod_event_instance_set_paused(pausemusicID, false);
+				fmod_event_instance_play(curr_pause_music);
+				fmod_event_instance_set_paused(curr_pause_music, false);
 				break;
 			
 			case 3:
@@ -359,7 +361,7 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 					instance_destroy(obj_option);
 					instance_destroy(obj_keyconfig);
 					fmod_event_instance_stop(global.snd_bossbeaten, true);
-					fmod_event_instance_stop(pausemusicID, true);
+					fmod_event_instance_stop(curr_pause_music, true);
 					obj_music.music = noone;
 					var sl = ds_list_create();
 					var il = ds_list_create();

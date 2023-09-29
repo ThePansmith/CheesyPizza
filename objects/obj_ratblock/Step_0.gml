@@ -11,5 +11,5 @@ else
 	animy = Approach(animy, 0, 1.5);
 if (animy == -10)
 	anim = false;
-if (use_sound && !fmod_event_instance_is_playing(sniffsnd))
+if (use_sound && !fmod_event_instance_is_playing(sniffsnd) && !SUGARY)
 	fmod_event_instance_play(sniffsnd);

@@ -206,7 +206,7 @@ function pause_unpause_music()
 				fmod_event_instance_set_paused(custom_music[i].instance, custom_music[i].paused);
 		}
 	}
-	fmod_event_instance_stop(pausemusicID, true);
+	fmod_event_instance_stop(SUGARY ? obj_pause.pausemusicIDss : obj_pause.pausemusicID, true);
 }
 function pause_update_priests()
 {
