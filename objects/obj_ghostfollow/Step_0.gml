@@ -1,19 +1,35 @@
+var _move = true;
+with (obj_player)
+{
+	if (state == states.taxi || state == states.victory || state == states.keyget || state == states.gottreasure || state == states.door || state == states.spaceshuttle)
+	or (state == states.comingoutdoor && place_meeting(x, y, obj_exitgate))
+		_move = false;
+}
+
 switch (state)
 {
 	case states.normal:
 		targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
-		var _g = distance_to_point(targetplayer.x, targetplayer.y);
-		if (_g < 150)
-			movespeed = 2;
-		else if (_g < 300)
-			movespeed = 3;
-		else if (_g < 450)
-			movespeed = 7;
+		if _move
+		{
+			var _g = distance_to_point(targetplayer.x, targetplayer.y);
+			if (_g < 150)
+				movespeed = 2;
+			else if (_g < 300)
+				movespeed = 3;
+			else if (_g < 450)
+				movespeed = 7;
+			else
+				movespeed = 11;
+			var _d = point_direction(x, y, targetplayer.x, targetplayer.y);
+			hsp = lengthdir_x(movespeed, _d);
+			vsp = lengthdir_y(movespeed, _d);	
+		}
 		else
-			movespeed = 11;
-		var _d = point_direction(x, y, targetplayer.x, targetplayer.y);
-		hsp = lengthdir_x(movespeed, _d);
-		vsp = lengthdir_y(movespeed, _d);
+		{
+			hsp = 0;
+			vsp = 0;
+		}
 		image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : image_xscale;
 		x += hsp;
 		y += vsp;
