@@ -202,6 +202,9 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_suppress_errors","argCount":0,"args":[
             2,
           ],"documentation":"","externalName":"FMOD_SuppressErrors","help":"fmod_suppress_errors(value)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_event_instance_get_index","argCount":0,"args":[
+            1,
+          ],"documentation":"","externalName":"FMOD_EventInstance_Get_Index","help":"fmod_event_instance_get_index(eventPath)","hidden":false,"kind":1,"returnType":2,},
       ],"init":"","kind":1,"order":[
         {"name":"launch_external","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"test_dll_linkage","path":"extensions/CheesyPizza/CheesyPizza.yy",},
@@ -236,7 +239,6 @@
         {"name":"fmod_init","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_update","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_destroy","path":"extensions/CheesyPizza/CheesyPizza.yy",},
-        {"name":"fmod_suppress_errors","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_set_parameter","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_get_parameter","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_bank_load","path":"extensions/CheesyPizza/CheesyPizza.yy",},
@@ -245,6 +247,7 @@
         {"name":"fmod_event_instance_release","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_event_get_instance_count","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_event_one_shot","path":"extensions/CheesyPizza/CheesyPizza.yy",},
+        {"name":"fmod_event_instance_get_index","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_event_instance_stop","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_event_instance_play","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_event_instance_set_timeline_pos","path":"extensions/CheesyPizza/CheesyPizza.yy",},
@@ -269,6 +272,7 @@
         {"name":"fmod_bank_get_event_count","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_bank_get_event_at_index","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_event_get_user_property","path":"extensions/CheesyPizza/CheesyPizza.yy",},
+        {"name":"fmod_suppress_errors","path":"extensions/CheesyPizza/CheesyPizza.yy",},
       ],"origname":"","ProxyFiles":[],"uncompress":false,"usesRunnerInterface":false,},
   ],
   "gradleinject": "",
