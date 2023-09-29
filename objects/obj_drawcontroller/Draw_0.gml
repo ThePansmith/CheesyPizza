@@ -98,6 +98,7 @@ with (obj_baddie)
 		_stun = 25;
 	if (visible && flash && bbox_in_camera(view_camera[0], 32))
 		draw_sprite_ext(sprite_index, image_index, x, y + _stun, xscale * image_xscale, yscale, angle, image_blend, image_alpha);
+	
 }
 if (room == boss_fakepep)
 {
@@ -195,3 +196,6 @@ with obj_boxofpizza
 	if bo
 		draw_sprite_ext(sprite_index, 1, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 }
+
+with obj_secrettile
+	draw_secrettiles(id);

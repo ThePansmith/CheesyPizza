@@ -3667,6 +3667,7 @@
     {"id":{"name":"object_get_depth","path":"scripts/object_get_depth/object_get_depth.yy",},},
     {"id":{"name":"texture_set_interpolation_ext","path":"scripts/texture_set_interpolation_ext/texture_set_interpolation_ext.yy",},},
     {"id":{"name":"tile_layer_delete_at","path":"scripts/tile_layer_delete_at/tile_layer_delete_at.yy",},},
+    {"id":{"name":"draw_secrettiles","path":"scripts/draw_secrettiles/draw_secrettiles.yy",},},
     {"id":{"name":"seq_oldlevels_on","path":"sequences/seq_oldlevels_on/seq_oldlevels_on.yy",},},
     {"id":{"name":"tile_layer_find","path":"scripts/tile_layer_find/tile_layer_find.yy",},},
     {"id":{"name":"spr_pizzano_crouchslide","path":"sprites/spr_pizzano_crouchslide/spr_pizzano_crouchslide.yy",},},

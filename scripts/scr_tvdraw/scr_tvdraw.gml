@@ -214,7 +214,13 @@ function scr_tvdraw()
 			shader_reset();
 		}
 		else
-			draw_sprite_ext(spr_tv_bgfinal, tv_bg_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);
+		{
+			var tv_bg_sprite = spr_tv_bgfinal;
+			if (obj_player1.character == "SP" || obj_player1.character == "SN")
+				tv_bg_sprite = spr_tv_bgfinalSP;
+				
+			draw_sprite_ext(tv_bg_sprite, tv_bg_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);
+		}
 		
 		// player
 		shader_set(shd_pal_swapper);

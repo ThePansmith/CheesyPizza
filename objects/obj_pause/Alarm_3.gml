@@ -15,8 +15,8 @@ if !hub
 		character = "P";
 		scr_characterspr();
 	}
-	global.leveltosave = -4;
-	global.leveltorestart = -4;
+	global.leveltosave = noone;
+	global.leveltorestart = noone;
 	scr_playerreset();
 	alarm[0] = 2;
 	obj_player1.state = states.titlescreen;
