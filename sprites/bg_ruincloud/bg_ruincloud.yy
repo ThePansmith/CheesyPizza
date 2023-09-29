@@ -23,7 +23,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a4a6661f-6cd8-47a5-91ca-6b2b593f4232","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 3,
   "parent": {
     "name": "Ruin",
     "path": "folders/Sprites/Backgrounds/Ruin.yy",
@@ -59,7 +59,7 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 750,
+    "xorigin": 0,
     "yorigin": 250,
   },
   "swatchColours": null,

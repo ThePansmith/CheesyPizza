@@ -1,5 +1,7 @@
 function scr_snick_roll()
 {
+	if live_call() return live_result;
+	
 	if sprite_index == spr_snick_spindash
 	{
 		if !instance_exists(obj_superdashcloud)
@@ -14,7 +16,7 @@ function scr_snick_roll()
 		
 		if movespeed > 0
 			movespeed -= 0.01;
-		if key_jump or key_slap2
+		if key_jump or key_slap2 or key_chainsaw2
 		{
 			image_index = 0;
 			movespeed = min(movespeed + 2, 8);
@@ -23,8 +25,10 @@ function scr_snick_roll()
 			sound_instance_move(spindashsnd, x, y);
 			fmod_event_instance_play(spindashsnd);
 		}
+		if (key_slap or key_chainsaw) && (input_buffer_grab <= 0 && input_buffer_slap <= 0)
+			movespeed = min(movespeed + 0.25, 6);
 		
-		if !key_down
+		if !key_down && (input_buffer_grab <= 0 && input_buffer_slap <= 0) && !key_slap && !key_chainsaw
 		{
 			movespeed = xscale * (8 + movespeed * 2);
 			state = states.machroll;

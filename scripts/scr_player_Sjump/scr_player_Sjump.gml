@@ -127,7 +127,7 @@ function scr_player_Sjump()
 		state = states.jump;
 		movespeed = 12 * xscale;
 		if !key_jump2
-			vsp = 0;
+			vsp = -4;
 		jumpstop = false;
 		sprite_index = spr_walljumpstart;
 		sound_play_3d("event:/modded/sfx/kungfu", x, y);

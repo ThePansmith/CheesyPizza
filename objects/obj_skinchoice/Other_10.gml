@@ -29,7 +29,7 @@ switch character
 		add_palette(16, "", noone, "Gameboy Color", "What a ripoff.");
 		add_palette(17, "", noone, "XMAS", "Give me a break.", "MERRY");
 		add_palette(18, "", noone, "Familiar Gremlin", "...woag?");
-		add_palette(19, "", noone, "Anton", "Get ready to play with his balls.", "ANTON");
+		add_palette(19, "", noone, "Anton", "Get ready to play with his balls.");
 		add_palette(20, "", noone, "Unfinished", "I found a hole in this sprite");
 		add_palette(21, "", noone, "Aether", "Did we find a coder yet?");
 		add_palette(22, "", noone, "Black", "I'll get back to that one.", "BLACK");
@@ -46,7 +46,7 @@ switch character
 		add_palette(33, "", noone, "Snottino", "Picked and flicked.", "SNOTTY");
 		add_palette(34, "", noone, "Majin", "Fun is Infinite.", "MAJIN");
 		add_palette(35, "", noone, "Brulo", "Anton's gonna be PISSED.", "BRULO");
-		add_palette(36, "", noone, "Super Meat Boy", "Push the buttons.", "MEATY");
+		add_palette(36, "", noone, "Super Meat Boy", "Push the buttons.");
 		add_palette(37, "", noone, "Creamsicle", "Stay frosty out there.", "CREAMY");
 		add_palette(38, "", noone, "So Retro", "Batteries sold separately.", "RETRO");
 		add_palette(39, "", noone, "Lean", "Jokes have a lifespan.", "LEAN");
@@ -126,7 +126,7 @@ switch character
 		add_palette(16, "", noone, "Gameboy Color", "What a ripoff.");
 		add_palette(17, "", noone, "XMAS", "Give me a break.", "MERRY");
 		add_palette(18, "", noone, "Familiar Gremlin", "...woag?");
-		add_palette(19, "", noone, "Anton", "Get ready to play with his balls.", "ANTON");
+		add_palette(19, "", noone, "Anton", "Get ready to play with his balls.");
 		add_palette(20, "", noone, "Unfinished", "There are more holes than a block of cheese on this guy.");
 		add_palette(21, "", noone, "Aether", "Did we find a coder yet?");
 		add_palette(22, "", noone, "Black", "I'll get back to that one.", "BLACK");
@@ -143,7 +143,7 @@ switch character
 		add_palette(33, "", noone, "Snottino", "Picked and flicked.", "SNOTTY");
 		add_palette(34, "", noone, "Majin", "Fun is Infinite.", "MAJIN");
 		add_palette(35, "", noone, "Brulo", "Anton's gonna be PISSED.", "BRULO");
-		add_palette(36, "", noone, "Super Meat Boy", "Push the buttons.", "MEATY");
+		add_palette(36, "", noone, "Super Meat Boy", "Push the buttons.");
 		add_palette(37, "", noone, "Creamsicle", "Stay frosty out there.", "CREAMY");
 		add_palette(38, "", noone, "So Retro", "Batteries sold separately.", "RETRO");
 		add_palette(39, "", noone, "Gabaghoul", "Grains Graains.", "GHOULISH");
@@ -224,7 +224,7 @@ switch character
 		add_palette(20, "", noone, "The Doise", "Do not steal.", "DOISE");
 		add_palette(21, "", noone, "Noisette", "Can you out-noise The Noise?");
 		add_palette(22, "", noone, "The Noid", "Better avoid him.", "NOID");
-		add_palette(23, "", noone, "Galaxy", "Wow it is Just like the Samsung Galaxy S23", "GALAXY");
+		add_palette(23, "", noone, "Galaxy", "Wow it is Just like the Samsung Galaxy S23", "GALACTIC");
 		add_palette(24, "", noone, "Concept", "The original.");
 		add_palette(25, "", noone, "Big", "Chungus.");
 		
@@ -513,7 +513,7 @@ switch character
 		add_palette(20, "", noone, "The Doise", "Do not steal.", "DOISE");
 		add_palette(21, "", noone, "Noisette", "Can you out-noise The Noise?");
 		add_palette(22, "", noone, "The Noid", "Better avoid him.", "NOID");
-		add_palette(23, "", noone, "Galaxy", "Wow it is Just like the Samsung Galaxy S23", "GALAXY");
+		add_palette(23, "", noone, "Galaxy", "Wow it is Just like the Samsung Galaxy S23", "GALACTIC");
 		add_palette(24, "", noone, "Concept", "The original.");
 		add_palette(25, "", noone, "Pink Hat", "I'm getting so VIRDESERT V2 right now.");
 		
