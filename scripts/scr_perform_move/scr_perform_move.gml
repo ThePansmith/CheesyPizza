@@ -97,7 +97,7 @@ function scr_perform_move(move, prestate = state)
 					if sprite_index != spr_attackdash && sprite_index != spr_airattackstart && sprite_index != spr_airattack
 					&& !suplexmove2
 					{
-						fmod_event_instance_stop(suplexdashsnd);
+						fmod_event_instance_stop(suplexdashsnd, false);
 						fmod_event_instance_play(snd_dive);
 						
 						state = states.handstandjump;

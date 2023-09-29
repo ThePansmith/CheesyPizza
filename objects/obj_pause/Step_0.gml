@@ -337,7 +337,7 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 				refresh_options();
 				selected = 0;
 				
-				fmod_event_instance_stop(global.jukebox.instance, FMOD_EVENTINSTANCE_STOPMODE.IMMEDIATE);
+				fmod_event_instance_stop(global.jukebox.instance, true);
 				fmod_event_instance_release(global.jukebox.instance);
 				global.jukebox = noone;
 				
@@ -358,8 +358,8 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 					scr_pause_stop_sounds();
 					instance_destroy(obj_option);
 					instance_destroy(obj_keyconfig);
-					fmod_event_instance_stop(global.snd_bossbeaten, 1);
-					fmod_event_instance_stop(pausemusicID, 1);
+					fmod_event_instance_stop(global.snd_bossbeaten, true);
+					fmod_event_instance_stop(pausemusicID, true);
 					obj_music.music = noone;
 					var sl = ds_list_create();
 					var il = ds_list_create();
