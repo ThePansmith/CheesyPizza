@@ -226,7 +226,7 @@ add_section("Pinolino Adventure", [
 	["event:/soundtest/pto/escapePN", "IT'S GARGIN' OUR! - poopbucket"],
 	["event:/soundtest/pto/lapPN", "the garg has just gergediogli - poopbucket"],
 	["event:/soundtest/pto/lap3PN", "Pillar Gog's Revenge - poopbucket"],
-	["event:/soundtest/pto/lap5PN", "Weiner Blaster - TheFunGang123, Wiener Blaster 456"],
+	["event:/soundtest/pto/lap5PN", "Weiner Blaster - Wiener Blaster 456"],
 ]);
 
 #endregion
