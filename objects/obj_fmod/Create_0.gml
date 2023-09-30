@@ -30,18 +30,22 @@ banks =
 #macro FMOD_BANK_MUSIC obj_fmod.banks[2].handle
 #macro FMOD_BANK_SFX obj_fmod.banks[3].handle
 
-trace("Loading banks!");
+
+trace("Loading FMOD Banks...");
 for (var i = 0; i < array_length(banks); i++)
 {
 	var b = working_directory + banks[i].eventPath;
 	trace($"Attemping to load: \"{b}\"");
-	banks[i].handle = fmod_bank_load(b, FMOD_STUDIO_LOAD_BANK_FLAGS.NORMAL);
-	trace($"Loaded Bank: \"{b}\" with id: {banks[i].handle}");
+	banks[i].handle = fmod_bank_load(b, LOAD_BANK_FLAGS.NORMAL);
+	
 	if (banks[i].handle == FMOD_INVALID_BANK)
 		trace("Could not load bank: ", b);
 	else if (!fmod_bank_load_sample_data(banks[i].handle))
 		trace("Could not load sample data: ", b);
+	else
+		trace($"Loaded Bank: \"{b}\" with id: {banks[i].handle}");
 }
+
 
 global.sound_map = ds_map_create();
 global.steam_api = false;

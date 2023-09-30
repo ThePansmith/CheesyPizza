@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "FMOD",
-    "path": "folders/Scripts/CheesyPizza/FMOD.yy",
+    "name": "CheesyPizza",
+    "path": "folders/Extensions/CheesyPizza.yy",
   },
 }
