@@ -111,7 +111,6 @@ add_section("Pizza Tower", [
 #region Modded
 
 add_section("Cheesed Up", [
-	["event:/soundtest/pto/title", "Premium Cheese - TheFunGang123, loypoll"],
 	["event:/soundtest/pto/moveitboy", "Move It, Boy - MrSauceman"],
 	["event:/soundtest/pto/saturdays", "Saturdays - loypoll"],
 	["event:/soundtest/pto/quintessence", "Quintessence - ClascyJitto"],
