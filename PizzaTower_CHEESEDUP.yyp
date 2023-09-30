@@ -6,7 +6,9 @@
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},
   ],
   "configs": {
-    "children": [],
+    "children": [
+      {"children":[],"name":"Release",},
+    ],
     "name": "Default",
   },
   "defaultScriptType": 1,
@@ -162,7 +164,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"3D","folderPath":"folders/Scripts/CheesyPizza/3D.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Internal","folderPath":"folders/Scripts/CheesyPizza/3D/Internal.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Custom Palette and Patterns","folderPath":"folders/Scripts/CheesyPizza/Custom Palette and Patterns.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"FMOD","folderPath":"folders/Scripts/CheesyPizza/FMOD.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"HUD","folderPath":"folders/Scripts/CheesyPizza/HUD.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Level Editor","folderPath":"folders/Scripts/CheesyPizza/Level Editor.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilemap","folderPath":"folders/Scripts/CheesyPizza/Level Editor/Tilemap.yy",},
@@ -2094,6 +2095,7 @@
     {"id":{"name":"obj_snottyexit","path":"objects/obj_snottyexit/obj_snottyexit.yy",},},
     {"id":{"name":"obj_playernoisearrow","path":"objects/obj_playernoisearrow/obj_playernoisearrow.yy",},},
     {"id":{"name":"scr_pausedraw_ss","path":"scripts/scr_pausedraw_ss/scr_pausedraw_ss.yy",},},
+    {"id":{"name":"launch_external","path":"scripts/launch_external/launch_external.yy",},},
     {"id":{"name":"spr_grinch_claus","path":"sprites/spr_grinch_claus/spr_grinch_claus.yy",},},
     {"id":{"name":"obj_cracker","path":"objects/obj_cracker/obj_cracker.yy",},},
     {"id":{"name":"obj_pigcitizen","path":"objects/obj_pigcitizen/obj_pigcitizen.yy",},},

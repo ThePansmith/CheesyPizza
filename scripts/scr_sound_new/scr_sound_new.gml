@@ -69,6 +69,13 @@ function sound_stop(event, force = true)
 		*/
 		
 		// radice method goes here
+		
+		var index = fmod_event_instance_get_index(event);
+		
+		if index == noone
+			return false;
+		
+		fmod_event_instance_stop(index, force);
 	}
 	else if is_handle(event) && audio_exists(event)
 		audio_stop_sound(event);
@@ -84,6 +91,17 @@ function sound_is_playing(event)
 		//	return fmod_event_instance_is_playing(sound);
 		
 		// radice method goes here
+		
+		
+		//... you want me to just check if a sound event string is playing..?
+		// uh, okay I think
+		
+		var index = fmod_event_instance_get_index(event);
+		
+		if index == noone
+			return false;
+		
+		fmod_event_instance_is_playing(index);
 	}
 	else if is_handle(event) && audio_exists(event)
 		return audio_is_playing(event);
@@ -123,7 +141,12 @@ function sound_play_3d(event, xx = undefined, yy = undefined)
 	*/
 	
 	if is_string(event)
-		fmod_event_one_shot_3d(event, xx, yy);
+	{
+		if xx != undefined && yy != undefined
+			fmod_event_one_shot_3d(event, xx, yy);
+		else
+			fmod_event_one_shot(event);
+	}
 	else
 	{
 		fmod_event_instance_set_paused(event, false);
@@ -151,6 +174,12 @@ function sound_instance_move(event, xx, yy)
 		*/
 		
 		// radice method here
+		var index = fmod_event_instance_get_index(event);
+		
+		if index == noone
+			return false;
+		
+		fmod_event_instance_set_3d_attributes(index, xx, yy);
 	}
 	else
 		fmod_event_instance_set_3d_attributes(event, xx, yy);

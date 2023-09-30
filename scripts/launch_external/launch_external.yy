@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "fmod_event_instance_is_playing",
+  "name": "launch_external",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

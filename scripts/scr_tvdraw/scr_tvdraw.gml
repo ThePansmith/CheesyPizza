@@ -1,5 +1,8 @@
 function scr_tvdraw()
 {
+	static timer_ind = 0;
+	static seconds_prev = "";
+	
 	if tvreset != global.hud
 	{
 		tvreset = global.hud;
@@ -370,8 +373,7 @@ function scr_tvdraw()
 		}
 		else if global.leveltosave == "sucrose"
 		{
-			static timer_ind = 0;
-			static seconds_prev = "";
+
 			
 			// sucrose snowstorm
 			if pizzaface_sprite == spr_timer_pizzaface1

@@ -12,20 +12,25 @@
   "androidsourcedir": "",
   "author": "",
   "classname": "",
+  "ConfigValues": {
+    "Release": {"copyToTargets":"0",},
+  },
   "copyToTargets": 64,
   "date": "2023-07-04T14:56:06.5718393-04:00",
   "description": "",
   "exportToGame": true,
-  "extensionVersion": "0.3.0",
+  "extensionVersion": "0.3.2",
   "files": [
     {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[
-        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_SOUNDTEST_CATEGORY_PROPERTY_NAME","hidden":false,"value":"\"soundTestCategory\"",},
-        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_SOUNDTEST_DISPLAYNAME_PROPERTY_NAME","hidden":false,"value":"\"soundTestName\"",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_INVALID_BANK","hidden":false,"value":"-1",},
+        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PROP_DISPLAYNAME","hidden":false,"value":"\"displayName\"",},
+        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PROP_CATEGORY","hidden":false,"value":"\"category\"",},
+        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PROP_AUTHOR","hidden":false,"value":"\"author\"",},
       ],"copyToTargets":64,"filename":"CheesyPizza.dll","final":"ptcu_cleanup","functions":[
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"launch_external","argCount":0,"args":[
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_launch_external","argCount":0,"args":[
             1,
-          ],"documentation":"","externalName":"cheesypizza_launchexternal","help":"","hidden":false,"kind":1,"returnType":2,},
+            1,
+          ],"documentation":"","externalName":"cheesypizza_launchexternal","help":"ptcu_launch_external(path, parameters)","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"test_dll_linkage","argCount":0,"args":[],"documentation":"","externalName":"cheesypizza_testlinkage","help":"","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_replay_openfile","argCount":0,"args":[
             1,
@@ -202,8 +207,18 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_suppress_errors","argCount":0,"args":[
             2,
           ],"documentation":"","externalName":"FMOD_SuppressErrors","help":"fmod_suppress_errors(value)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_event_instance_get_index","argCount":0,"args":[
+            1,
+          ],"documentation":"","externalName":"FMOD_EventInstance_Get_Index","help":"fmod_event_instance_get_index(eventPath)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"RegisterCallbacks","argCount":0,"args":[
+            1,
+            1,
+            1,
+            1,
+          ],"documentation":"","externalName":"RegisterCallbacks","help":"Don't call this","hidden":true,"kind":1,"returnType":2,},
       ],"init":"","kind":1,"order":[
-        {"name":"launch_external","path":"extensions/CheesyPizza/CheesyPizza.yy",},
+        {"name":"RegisterCallbacks","path":"extensions/CheesyPizza/CheesyPizza.yy",},
+        {"name":"ptcu_launch_external","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"test_dll_linkage","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"ptcu_replay_openfile","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"ptcu_replay_isfileopen","path":"extensions/CheesyPizza/CheesyPizza.yy",},
@@ -236,7 +251,6 @@
         {"name":"fmod_init","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_update","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_destroy","path":"extensions/CheesyPizza/CheesyPizza.yy",},
-        {"name":"fmod_suppress_errors","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_set_parameter","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_get_parameter","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_bank_load","path":"extensions/CheesyPizza/CheesyPizza.yy",},
@@ -269,6 +283,8 @@
         {"name":"fmod_bank_get_event_count","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_bank_get_event_at_index","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_event_get_user_property","path":"extensions/CheesyPizza/CheesyPizza.yy",},
+        {"name":"fmod_suppress_errors","path":"extensions/CheesyPizza/CheesyPizza.yy",},
+        {"name":"fmod_event_instance_get_index","path":"extensions/CheesyPizza/CheesyPizza.yy",},
       ],"origname":"","ProxyFiles":[],"uncompress":false,"usesRunnerInterface":false,},
   ],
   "gradleinject": "",

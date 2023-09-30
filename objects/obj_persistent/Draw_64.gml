@@ -35,9 +35,9 @@ if keyboard_check_pressed(vk_f11) && DEBUG
 		gif_image = gif_open(SCREEN_WIDTH, SCREEN_HEIGHT);
 	else
 	{
-		gif_save(gif_image, $"screenshots/{current_year}-{current_month}-{current_day} {current_hour}-{current_minute}-{current_second}.gif");
+		gif_save(gif_image, $"screenshots/{DATE_TIME_NOW}.gif");
 		if !window_get_fullscreen() && os_type == os_windows
-			launch_external("explorer %appdata%\\PizzaTower_CHEESEDUP\\screenshots");
+			launch_external("explorer.exe", $"\"{game_save_id}screenshots\\\"");
 	}
 }
 if gif_record
