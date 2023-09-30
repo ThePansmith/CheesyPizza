@@ -120,7 +120,7 @@ function scr_player_Sjump()
 		
 		input_buffer_slap = 0;
 	}
-	if character == "S" && sprite_index == spr_superjump && key_attack2
+	if character == "S" && sprite_index == spr_superjump && (key_attack2 or input_buffer_slap > 0 or input_buffer_grab > 0)
 	{
 		if move != 0
 			xscale = sign(move);

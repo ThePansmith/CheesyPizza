@@ -9,6 +9,7 @@ con = 0;
 t = 0;
 buffer = 0;
 sequence_layer = -1;
+move_buffer = -1;
 
 enum modconfig
 {

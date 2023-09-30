@@ -42,7 +42,7 @@ if keyboard_check_pressed(vk_f11) && DEBUG
 }
 if gif_record
 {
-	gif_add_surface(gif_image, application_surface, 60 / 100);
+	gif_add_surface(gif_image, application_surface, 2);
 	
 	draw_set_colour(c_red);
 	draw_set_align(fa_center);
