@@ -1,4 +1,4 @@
-//live_auto_call;
+live_auto_call;
 
 draw_set_color(c_white);
 

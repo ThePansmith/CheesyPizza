@@ -242,7 +242,7 @@ switch state
 				global.game_john[currentselect] = 0
 				global.game_judgement[currentselect] = "none"
 				global.game_palette[currentselect] = 1
-				global.game_palettetexture[currentselect] = -4
+				global.game_palettetexture[currentselect] = noone
 				sound_play_3d("event:/sfx/misc/explosion", 480, 270)
 				sound_play_3d("event:/sfx/mort/mortdead", 480, 270)
 				with (obj_menutv)

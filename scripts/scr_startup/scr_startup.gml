@@ -71,7 +71,12 @@ if os_type == os_windows // this is temp
 }
 
 if !file_exists("data/cheese.jpg")
-	throw "Could not find Cheese";
+{
+	show_message("Could not find Cheese.");
+	game_end();
+	exit;
+}
+
 
 // macros
 #macro REMIX global.gameplay
@@ -83,6 +88,7 @@ if !file_exists("data/cheese.jpg")
 #macro CAMY camera_get_view_y(view_camera[view_current])
 #macro CAMW camera_get_view_width(view_camera[view_current])
 #macro CAMH camera_get_view_height(view_camera[view_current])
+#macro DATE_TIME_NOW $"{current_year}-{current_month}-{current_day} {current_hour}-{current_minute}-{current_second}"
 
 // initialize
 scr_get_languages();

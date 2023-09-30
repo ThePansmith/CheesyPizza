@@ -408,9 +408,9 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 }
 if keyboard_check_pressed(vk_f12) && sprite_exists(screensprite)
 {
-	sprite_save(screensprite, 0, $"screenshots/{current_year}-{current_month}-{current_day} {current_hour}-{current_minute}-{current_second}.png");
+	sprite_save(screensprite, 0, $"screenshots/{DATE_TIME_NOW}.png");
 	if !window_get_fullscreen() && os_type == os_windows
-		launch_external("explorer.exe %appdata%\\PizzaTower_CHEESEDUP\\screenshots");
+		launch_external("explorer.exe", $"\"{game_save_id}screenshots\\\"");
 	
 	with create_transformation_tip("{u}Screenshot taken!/")
 		depth = other.depth - 1;

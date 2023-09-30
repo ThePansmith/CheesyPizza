@@ -9,8 +9,8 @@ function fmod_get_soundtest_events()
 	{
 		var event_path = fmod_bank_get_event_at_index(FMOD_BANK_MUSIC, i);
 		
-		var event_category = fmod_event_get_user_property(event_path, FMOD_SOUNDTEST_CATEGORY_PROPERTY_NAME);
-		var event_name = fmod_event_get_user_property(event_path, FMOD_SOUNDTEST_DISPLAYNAME_PROPERTY_NAME);
+		var event_category = fmod_event_get_user_property(event_path, FMOD_PROP_CATEGORY);
+		var event_name = fmod_event_get_user_property(event_path, FMOD_PROP_AUTHOR);
 		
 		if (event_name != STRING_UNDEFINED && event_category != STRING_UNDEFINED)
 		{
