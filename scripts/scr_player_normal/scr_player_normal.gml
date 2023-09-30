@@ -557,9 +557,14 @@ function pepperman_grab_reset()
 }
 function state_snick_normal()
 {
-	var acc = 4 * 0.046875;
-	var dec = 3 * 0.5;
-	var frc = 4 * 0.046875;
+	if live_call() return live_result;
+	
+	static substate = states.normal;
+	static walljump_buffer = 0;
+	
+	var acc = 6 * 0.046875;
+	var dec = 2 * 0.5;
+	var frc = 5 * 0.046875;
 	var top = 16;
 	var roll_frc = 4 * 0.0234375;
 	var roll_dec = 4 * 0.125;
@@ -567,260 +572,435 @@ function state_snick_normal()
 	var move = key_left + key_right;
 	hsp = movespeed;
 	
-	// slope momentum
-	if grounded
-	{
-		with check_slope(x, y + 1)
-			other.movespeed += (other.state == states.machroll ? 0.25 : 0.1) * -sign(image_xscale);
-	}
+	if walljump_buffer > 0
+		walljump_buffer--;
 	
-	if sprite_index != spr_walljumpstart
+	switch substate
 	{
-		if state != states.machroll
-		{
-			if move == -1
+		case states.machslide:
+			if sprite_index == spr_machslide
 			{
-				if movespeed > 0
+				if abs(movespeed) <= 2
 				{
-					movespeed -= dec;
-					if movespeed <= 0
-						movespeed = -0.5;
-				}
-				else if movespeed > -top
-				{
-					movespeed -= acc;
-					if movespeed <= -top
-						movespeed = -top;
-				}
-			}
-	
-			if move == 1
-			{
-				if movespeed < 0
-				{
-					movespeed += dec;
-					if movespeed >= 0
-						movespeed = 0.5;
-				}
-				else if movespeed < top
-				{
-					movespeed += acc;
-					if movespeed >= top
-						movespeed = top;
-				}
-			}
-	
-			if move == 0 && grounded
-			    movespeed -= min(abs(movespeed), frc) * sign(movespeed);
-		}
-		else
-			movespeed -= min(abs(movespeed), (move == -sign(movespeed) && !check_slope(x, y + 1)) ? roll_dec : roll_frc) * sign(movespeed);
-	}
-	
-	// animation
-	if state == states.jump
-	{
-		if sprite_index == spr_fall or sprite_index == spr_move or sprite_index == spr_idle or sprite_index == spr_mach
-			sprite_index = spr_fall;
-		if move != 0 && sprite_index != spr_walljumpstart
-			xscale = sign(move);
-		
-		if !jumpstop
-		{
-			if !key_jump2 && vsp < 0.5 && !stompAnim
-			{
-				vsp /= 3;
-				jumpstop = true;
-			}
-			else if scr_solid(x, y - 1) && !jumpAnim
-			{
-				vsp = grav;
-				jumpstop = true;
-			}
-		}
-		
-		if grounded && vsp >= 0
-		{
-			state = states.normal;
-			sound_play_3d("event:/sfx/pep/step", x, y);
-			create_particle(x, y, part.landcloud, 0);
-		}
-	}
-	else if state == states.machroll
-	{
-		sprite_index = spr_tumble;
-		if abs(movespeed) <= 0 && !scr_slope()
-			state = states.normal;
-	}
-	else
-	{
-		if !grounded
-			state = states.jump;
-		
-		if abs(movespeed) > 0
-		{
-			if move != xscale && move != 0 && (abs(movespeed) > 3 or sprite_index == spr_machslide)
-			{
-				if sprite_index != spr_machslide
-				{
-					sound_play_3d("event:/sfx/pep/break", x, y);
+					sprite_index = spr_machslideend;
 					image_index = 0;
 				}
-				sprite_index = spr_machslide;
-				image_speed = 0.5;
 			}
-			else if abs(movespeed) >= top
+			else if image_index >= image_number - 1
+			or (sprite_index == spr_machslideboost3fall && grounded)
 			{
-				if abs(movespeed) >= 20
-					sprite_index = spr_crazyrun;
+				if sprite_index == spr_machslidestart
+					sprite_index = spr_machslide;
+				else if sprite_index == spr_machslideend
+					substate = states.normal;
 				else
-					sprite_index = spr_mach4;
-				image_speed = 0.5;
-				
-				if scr_check_superjump() && grounded
 				{
-					sprite_index = spr_superjumpprep;
-					state = states.Sjumpprep;
-					image_index = 0;
-					
-					dir = move;
-					movespeed = abs(movespeed);
-				}
-				
-				if !instance_exists(chargeeffectid)
-				{
-					with instance_create(x, y, obj_chargeeffect)
+					if !grounded
+						sprite_index = spr_machslideboost3fall;
+					else
 					{
-						playerid = other.object_index;
-						other.chargeeffectid = id;
+						if move == 0
+						{
+							sound_play_3d("event:/sfx/pep/break", x, y);
+							image_index = 0;
+							sprite_index = spr_machslidestart;
+							image_speed = 0.5;
+						}
+						else
+							substate = states.normal;
+				
+						xscale = -xscale;
+						movespeed = xscale * top;
 					}
 				}
 			}
-			else if abs(movespeed) >= top / 2 && move == xscale
+			movespeed = Approach(movespeed, 0, 0.5);
+			break;
+		
+		case states.normal:
+			// slope momentum
+			if grounded
 			{
-				sprite_index = spr_mach;
-				image_speed = max(0.2, abs(movespeed) / 30);
+				with check_slope(x, y + 1)
+					other.movespeed += (other.state == states.machroll ? 0.25 : 0.1) * -sign(image_xscale);
+			}
+	
+			if sprite_index != spr_walljumpstart
+			{
+				if state != states.machroll
+				{
+					if move == -1
+					{
+						if movespeed > 0
+						{
+							movespeed -= dec;
+							if movespeed <= 0
+								movespeed = -0.5;
+						}
+						else if movespeed > -top
+						{
+							movespeed -= acc;
+							if movespeed <= -top
+								movespeed = -top;
+						}
+					}
+	
+					if move == 1
+					{
+						if movespeed < 0
+						{
+							movespeed += dec;
+							if movespeed >= 0
+								movespeed = 0.5;
+						}
+						else if movespeed < top
+						{
+							movespeed += acc;
+							if movespeed >= top
+								movespeed = top;
+						}
+					}
+	
+					if move == 0 && grounded
+					    movespeed -= min(abs(movespeed), frc) * sign(movespeed);
+				}
+				else
+					movespeed -= min(abs(movespeed), (move == -sign(movespeed) && !check_slope(x, y + 1)) ? roll_dec : roll_frc) * sign(movespeed);
 			}
 			else
 			{
-				sprite_index = spr_move;
-				image_speed = max(0.2, abs(movespeed) / 20);
+				if move == -xscale
+					 movespeed -= min(abs(movespeed), acc) * sign(movespeed);
 			}
 			
-			if move == sign(movespeed)
-				xscale = sign(movespeed);
-		}
-		else
-			sprite_index = spr_idle;
-	}
-	
-	if abs(movespeed) > 2 && key_down && grounded && state != states.machroll && !place_meeting(x, y + 1, obj_ladder) && !place_meeting(x, y + 1, obj_boxofpizza)
-	{
-		sound_play_3d("event:/modded/sfx/snick/roll", x, y);
-		
-		state = states.machroll;
-		sprite_index = spr_tumble;
-	}
-	image_speed = max(image_speed, 0.35);
-	
-	// peelout
-	if key_attack && state == states.normal && abs(movespeed) < 8
-	{
-		// peelout
-		if move != 0
-			xscale = sign(move);
-		
-		if !check_solid(x + xscale, y) or place_meeting(x + xscale, y, obj_destructibles) or place_meeting(x + xscale, y, obj_metalblock) or place_meeting(x + xscale, y, obj_ratblock)
-		{
-			sound_play_3d("event:/modded/sfx/snick/peelrev", x, y);
-			state = states.machroll;
-			sprite_index = spr_move;
-			image_speed = 0.35;
-			movespeed = 0;
-		}
-	}
-	
-	// jump
-	if input_buffer_jump > 0 && grounded
-	{
-		input_buffer_jump = 0;
-		
-		if key_down && state != states.machroll
-		{
-			// spindash
-			if move != 0
-				xscale = sign(move);
-			
-			state = states.machroll;
-			sprite_index = spr_snick_spindash;
-			image_speed = 0.5;
-			movespeed = 0;
-			
-			fmod_event_instance_set_parameter(spindashsnd, "state", 0, true);
-			sound_instance_move(spindashsnd, x, y);
-			fmod_event_instance_play(spindashsnd);
-		}
-		else
-		{
-			scr_fmod_soundeffect(jumpsnd, x, y);
-			particle_set_scale(part.highjumpcloud2, xscale, 1);
-			create_particle(x, y, part.highjumpcloud2, 0);
-			
-			sprite_index = spr_jump;
-			state = states.jump;
-			vsp = -11;
-			jumpstop = false;
-			
-			with check_slope(x, y + 1)
+			// animation
+			if state == states.jump
 			{
-				if other.xscale == image_xscale
-					other.vsp -= abs(other.movespeed) / 2;
+				if sprite_index == spr_fall or sprite_index == spr_move or sprite_index == spr_idle or sprite_index == spr_mach
+					sprite_index = spr_fall;
+				if move != 0 && sprite_index != spr_walljumpstart
+					xscale = sign(move);
+				
+				if !jumpstop
+				{
+					if !key_jump2 && vsp < 0.5 && !stompAnim
+					{
+						vsp /= 3;
+						jumpstop = true;
+					}
+					else if scr_solid(x, y - 1) && !jumpAnim
+					{
+						vsp = grav;
+						jumpstop = true;
+					}
+				}
+		
+				if grounded && vsp >= 0
+				{
+					state = states.normal;
+					sound_play_3d("event:/sfx/pep/step", x, y);
+					create_particle(x, y, part.landcloud, 0);
+				}
+				
+				if (key_jump or key_slap2 or key_chainsaw2) && sprite_index == spr_snick_roll
+				{
+					if move == 0
+						move = xscale;
+					if move != 0
+					{
+						input_buffer_jump = 0;
+					
+						sound_play_3d("event:/modded/sfx/kungfu", x, y);
+						vsp = min(vsp, -3);
+						movespeed = max(abs(movespeed) + 2, 14) * move;
+						sprite_index = spr_walljumpstart;
+						image_speed = 0.5;
+					}
+				}
+				
+				if walljump_buffer <= 0 && (move == -xscale or abs(movespeed) < 8) && sprite_index == spr_walljumpstart
+				{
+					sound_play_3d("event:/sfx/pep/grabcancel", x, y);
+					sprite_index = spr_suplexcancel;
+					image_index = 0;
+					
+					if move == -xscale
+					{
+						movespeed /= 2;
+						vsp = min(vsp, 0);
+					}
+				}
 			}
-		}
-	}
+			else if state == states.machroll
+			{
+				sprite_index = spr_tumble;
+				if abs(movespeed) <= 0 && !scr_slope()
+					state = states.normal;
+			}
+			else
+			{
+				if !grounded
+					state = states.jump;
+		
+				if abs(movespeed) > 0
+				{
+					if move != xscale && move != 0 && (abs(movespeed) > 3 or sprite_index == spr_machslide)
+					{
+						/*
+						if abs(movespeed) >= top - 2
+						{
+							substate = states.machslide;
+							sound_play_3d(sfx_machslideboost, x, y);
+							image_index = 0;
+							sprite_index = spr_mach3boost;
+							image_speed = 0.35;
+						}
+						else
+						*/
+						{
+							if sprite_index != spr_machslide
+							{
+								sound_play_3d("event:/sfx/pep/break", x, y);
+								image_index = 0;
+							}
+							sprite_index = spr_machslide;
+							image_speed = 0.5;
+						}
+					}
+					else if abs(movespeed) >= top
+					{
+						if abs(movespeed) >= 20
+							sprite_index = spr_crazyrun;
+						else
+							sprite_index = spr_mach4;
+						image_speed = 0.5;
+				
+						if scr_check_superjump() && grounded
+						{
+							sprite_index = spr_superjumpprep;
+							state = states.Sjumpprep;
+							image_index = 0;
+					
+							dir = move;
+							movespeed = abs(movespeed);
+						}
+				
+						if !instance_exists(chargeeffectid)
+						{
+							with instance_create(x, y, obj_chargeeffect)
+							{
+								playerid = other.object_index;
+								other.chargeeffectid = id;
+							}
+						}
+					}
+					else if abs(movespeed) >= top / 2 && move == xscale
+					{
+						sprite_index = spr_mach;
+						image_speed = max(0.2, abs(movespeed) / 30);
+					}
+					else
+					{
+						sprite_index = spr_move;
+						image_speed = max(0.2, abs(movespeed) / 20);
+					}
+			
+					if move == sign(movespeed)
+						xscale = sign(movespeed);
+				}
+				else
+					sprite_index = spr_idle;
+			}
 	
-	// bodyslam
-	if !grounded && scr_check_groundpound()
-	{
-		sprite_index = spr_bodyslamstart;
-		image_index = 0;
-		state = states.freefall;
-		pistolanim = noone;
-		vsp = -6;
-		dir = move;
-		movespeed = abs(movespeed);
-	}
+			if abs(movespeed) > 8 && key_down && grounded && state != states.machroll && !place_meeting(x, y + 1, obj_ladder) && !place_meeting(x, y + 1, obj_boxofpizza)
+			{
+				/*
+				sound_play_3d("event:/modded/sfx/snick/roll", x, y);
+				
+				state = states.machroll;
+				sprite_index = spr_tumble;
+				*/
+				
+				substate = states.tumble;
+				sprite_index = spr_machroll;
+			}
+			image_speed = max(image_speed, 0.35);
+			
+			// peelout
+			if key_attack && state == states.normal && abs(movespeed) < 8
+			{
+				// peelout
+				if move != 0
+					xscale = sign(move);
+		
+				if !check_solid(x + xscale, y) or place_meeting(x + xscale, y, obj_destructibles) or place_meeting(x + xscale, y, obj_metalblock) or place_meeting(x + xscale, y, obj_ratblock)
+				{
+					sound_play_3d("event:/modded/sfx/snick/peelrev", x, y);
+					state = states.machroll;
+					sprite_index = spr_move;
+					image_speed = 0.35;
+					movespeed = 0;
+				}
+			}
+			
+			// spindash with X
+			if input_buffer_grab > 0 or input_buffer_slap > 0
+			{
+				if grounded && abs(movespeed) < 10
+				{
+					state = states.machroll;
+					sprite_index = spr_snick_spindash;
+					image_speed = 0.5;
+					movespeed = 0;
+					
+					fmod_event_instance_set_parameter(spindashsnd, "state", 0, true);
+					sound_instance_move(spindashsnd, x, y);
+					fmod_event_instance_play(spindashsnd);
+				}
+			}
+			
+			// jump
+			if input_buffer_jump > 0 && grounded
+			{
+				input_buffer_jump = 0;
+		
+				if key_down && state != states.machroll
+				{
+					// spindash
+					if move != 0
+						xscale = sign(move);
+			
+					state = states.machroll;
+					sprite_index = spr_snick_spindash;
+					image_speed = 0.5;
+					movespeed = 0;
+			
+					fmod_event_instance_set_parameter(spindashsnd, "state", 0, true);
+					sound_instance_move(spindashsnd, x, y);
+					fmod_event_instance_play(spindashsnd);
+				}
+				else
+				{
+					scr_fmod_soundeffect(jumpsnd, x, y);
+					particle_set_scale(part.highjumpcloud2, xscale, 1);
+					create_particle(x, y, part.highjumpcloud2, 0);
+			
+					sprite_index = spr_snick_roll;
+					state = states.jump;
+					vsp = -12;
+					jumpstop = false;
+					
+					with check_slope(x, y + 1)
+					{
+						if other.xscale == image_xscale
+							other.vsp -= abs(other.movespeed) / 2;
+					}
+				}
+			}
 	
-	// climbwall
-	if ((abs(movespeed) > (12 / (scr_slope() + 1)) && move != 0 && sign(movespeed) == xscale) or sprite_index == spr_walljumpstart)
-	&& ((!grounded && (check_solid(x + movespeed, y) || scr_solid_slope(x + movespeed, y)) && !place_meeting(x + movespeed, y, obj_destructibles) && (!place_meeting(x + movespeed, y, obj_metalblock) or abs(movespeed) < 16))
-	|| (grounded && (check_solid(x + movespeed, y - 16) || scr_solid_slope(x + movespeed, y - 16)) && !place_meeting(x + movespeed, y, obj_destructibles) && !place_meeting(x + movespeed, y, obj_metalblock) && check_slope(x, y + 1)))
-	{
-		{
-			input_buffer_jump = 0;
-			wallspeed = abs(movespeed);
-			grabclimbbuffer = 10;
-			state = states.climbwall;
-			if REMIX
-				vsp = -wallspeed;
-		}
-	}
+			// bodyslam
+			if !grounded && scr_check_groundpound()
+			{
+				if abs(movespeed) > 8
+				{
+					sprite_index = spr_dive;
+					substate = states.tumble;
+					vsp = 10;
+					
+					sound_play_3d(sfx_dive, x, y);
+				}
+				else
+				{
+					sprite_index = spr_bodyslamstart;
+					image_index = 0;
+					state = states.freefall;
+					pistolanim = noone;
+					vsp = -6;
+					dir = sign(movespeed);
+					movespeed = abs(movespeed);
+				}
+			}
 	
-	// bump on wall
-	else if (check_solid(x + movespeed, y) or scr_solid_slope(x + movespeed, y))
-	&& (!place_meeting(x + movespeed, y, obj_destructibles) or abs(movespeed) < 10)
-	&& (!place_meeting(x + movespeed, y, obj_ratblock) or abs(movespeed) < 12)
-	&& (!place_meeting(x + movespeed, y, obj_metalblock) or abs(movespeed) < 16)
-	{
-		var _bump = ledge_bump(vsp >= 0 ? 32 : 22);
-		if _bump
-		{
-			movespeed = 0;
-			hsp = 0;
-		}
-	}
+			// climbwall
+			if (((abs(movespeed) > 12 / (scr_slope() + 1) && sign(movespeed) == xscale) or sprite_index == spr_walljumpstart) && !key_down && move == xscale)
+			&& ((!grounded && (check_solid(x + movespeed, y) || scr_solid_slope(x + movespeed, y)) && !place_meeting(x + movespeed, y, obj_destructibles) && (!place_meeting(x + movespeed, y, obj_metalblock) or abs(movespeed) < 16))
+			|| (grounded && (check_solid(x + movespeed, y - 16) || scr_solid_slope(x + movespeed, y - 16)) && !place_meeting(x + movespeed, y, obj_destructibles) && !place_meeting(x + movespeed, y, obj_metalblock) && check_slope(x, y + 1)))
+			{
+				walljump_buffer = 8;
+				
+				input_buffer_jump = 0;
+				wallspeed = abs(movespeed);
+				grabclimbbuffer = 10;
+				state = states.climbwall;
+				if REMIX
+					vsp = -wallspeed;
+			}
 	
-	scr_dotaunt();
+			// bump on wall
+			else if (check_solid(x + movespeed, y) or scr_solid_slope(x + movespeed, y))
+			&& (!place_meeting(x + movespeed, y, obj_destructibles) or abs(movespeed) < 10)
+			&& (!place_meeting(x + movespeed, y, obj_ratblock) or abs(movespeed) < 12)
+			&& (!place_meeting(x + movespeed, y, obj_metalblock) or abs(movespeed) < 16)
+			{
+				var _bump = ledge_bump(vsp >= 0 ? 32 : 22);
+				if _bump
+				{
+					if sprite_index == spr_walljumpstart
+					{
+						sound_play_3d(sfx_bumpwall, x, y);
+						movespeed = 0;
+						image_index = 0;
+						state = states.bump;
+						hsp = xscale * -3;
+						vsp = -4;
+						substate = states.normal;
+					}
+					else
+					{
+						movespeed = 0;
+						hsp = 0;
+					}
+				}
+			}
+	
+			scr_dotaunt();
+			break;
+		
+		case states.tumble: // DIVE
+			state = states.normal;
+			if !grounded
+			{
+				vsp = max(vsp, 10);
+				sprite_index = spr_dive;
+				
+				if key_jump && key_down
+				{
+					sprite_index = spr_poundcancel1;
+					image_index = 0;
+					state = states.freefall;
+					substate = states.normal;
+					dir = sign(movespeed);
+					movespeed = abs(movespeed);
+					vsp = -6;
+				}
+			}
+			else
+				sprite_index = spr_machroll;
+			
+			if !key_down && grounded
+				substate = states.normal;
+			if check_solid(x + xscale, y) && !place_meeting(x + xscale, y, obj_unbumpablewall) && !place_meeting(x + xscale, y, obj_destructibles)
+			{
+				sound_play_3d(sfx_bumpwall, x, y);
+				movespeed = 0;
+				image_index = 0;
+				state = states.bump;
+				hsp = xscale * -3;
+				vsp = -4;
+				substate = states.normal;
+			}
+			break;
+	}
 }
 function scr_player_normal()
 {
