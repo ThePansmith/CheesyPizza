@@ -57,6 +57,22 @@ if (key_back or keyboard_check_pressed(vk_escape)) && object_index != obj_levels
 
 // move
 var move = key_down2 - key_up2;
+if move_buffer == 0
+{
+	move = key_down - key_up;
+	move_buffer = 5;
+}
+else if move != 0 && move_buffer == -1
+	move_buffer = 20;
+
+if key_down - key_up != 0
+{
+	if move_buffer > 0
+		move_buffer--;
+}
+else
+	move_buffer = -1;
+
 if move != 0
 {
 	sound_play(sfx_step);

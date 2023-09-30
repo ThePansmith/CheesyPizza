@@ -440,6 +440,19 @@ function scr_playerreset(roomstart = false, restart = false)
 		noisebossscream = false;
 		scale_xs = 1;
 		scale_ys = 1;
+		
+		// pto
+		smoothx = 0;
+		oldHallway = false;
+		keydoor = false;
+		pistol = false;
+		jetpackcancel = false;
+		suplexmove2 = false;
+		breakout = 0;
+		shaketime = 0;
+		superjumped = false;
+		image_blend_func = noone;
+		substate = states.normal;
 	}
 	with (obj_followcharacter)
 	{

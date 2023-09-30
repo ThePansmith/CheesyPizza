@@ -129,17 +129,25 @@ function scr_player_freefall()
 	}
 	if (grounded && vsp > 0 && (freefallsmash < 10 || !place_meeting(x, y + vsp, obj_metalblock)) && !place_meeting(x, y + vsp, obj_destructibles) && !place_meeting(x, y + vsp + 6, obj_destructibles) && (!place_meeting(x, y + 1, obj_ladder) or !REMIX or !key_down or check_solid(x, y + 1)))
 	{
-		if (scr_slope() && character != "S")
+		if (scr_slope())
 		{
 			with (check_slope(x, y + 1))
 			{
-				other.xscale = -sign(image_xscale);
-				other.state = states.tumble
-				other.sprite_index = other.spr_crouchslip;
-				if (other.freefallsmash > 20)
+				if other.freefallsmash > 20
 					other.movespeed = 12;
 				else
 					other.movespeed = 8;
+				
+				other.xscale = -sign(image_xscale);
+				if other.character == "S"
+				{
+					other.state = states.normal;
+					other.substate = states.tumble;
+					other.movespeed *= other.xscale;
+				}
+				else
+					other.state = states.tumble;
+				other.sprite_index = other.spr_crouchslip;
 				
 				particle_set_scale(part.jumpdust, -sign(image_xscale), 1);
 				create_particle(other.x, other.y, part.jumpdust);

@@ -15,6 +15,8 @@ for(var i = 0; i < array_length(options_array); i++)
 	switch opt.type
 	{
 		default:
+			draw_set_align();
+			
 			draw_set_font(global.font_small);
 			if sel == i
 			{
@@ -38,15 +40,26 @@ for(var i = 0; i < array_length(options_array); i++)
 			if str != ""
 			{
 				var scale = min(string_width(str), 100) / string_width(str);
+				draw_set_align(fa_center);
 				
-				draw_text_transformed_color(2 + 320, 2 + yy, str, scale, 1, 0, 0, 0, 0, 0, 0.25);
-				draw_text_transformed(320, yy, str, scale, 1, 0);
+				draw_text_transformed_color(2 + 350, 2 + yy, str, scale, 1, 0, 0, 0, 0, 0, 0.25);
+				draw_text_transformed(350, yy, str, scale, 1, 0);
+				
+				if sel == i && opt.type != modconfig.slider
+				{
+					if opt.value > 0
+						draw_text(350 - string_width(str) / 2 - Wave(16, 24, 2, 0), yy, "<");
+					if opt.value < array_length(opt.opts) - 1
+						draw_text(350 + string_width(str) / 2 + Wave(16, 24, 2, 0), yy, ">");
+				}
 			}
 			
 			yy += 20;
 			break;
 		
 		case modconfig.section: // SECTION
+			draw_set_align();
+			
 			draw_set_colour(c_white);
 			draw_set_font(global.creditsfont);
 			
@@ -84,8 +97,17 @@ if opt.type == modconfig.option or opt.type == modconfig.modifier
 	draw_set_font(global.smallfont);
 	if opt.value < array_length(opt.opts)
 	{
-		draw_text_color(2 + 700, 2 + 116, opt.opts[opt.value][0], 0, 0, 0, 0, 0.25);
-		draw_text(700, 116, opt.opts[opt.value][0]);
+		var str = opt.opts[opt.value][0];
+		draw_text_color(2 + 700, 2 + 116, str, 0, 0, 0, 0, 0.25);
+		draw_text(700, 116, str);
+		
+		/*
+		draw_set_font(global.font_small);
+		if opt.value > 0
+			draw_text(700 - string_width(str) / 2 - Wave(20, 25, 2, 0), 116, "<");
+		if opt.value < array_length(opt.opts) - 1
+			draw_text(700 + string_width(str) / 2 + Wave(20, 25, 2, 0), 116, ">");
+		*/
 	}
 }
 if opt.type == modconfig.slider
