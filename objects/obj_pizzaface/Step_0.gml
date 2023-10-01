@@ -241,7 +241,7 @@ if _move && image_alpha >= 1
 		            sound_stop_all(true)
 					scr_room_goto(rm_baby)
 		        }
-		        instance_destroy()
+		        instance_destroy(id, !REMIX);
 				instance_destroy(obj_wartimer);
 		    }
 			else
@@ -260,8 +260,14 @@ if _move && image_alpha >= 1
 					image_blend = c_white;
 					stop_music();
 				}
-				instance_destroy();
+				instance_destroy(id, !REMIX);
 				instance_destroy(obj_wartimer);
+				
+				if REMIX
+				{
+					sound_play_3d("event:/sfx/misc/explosion", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+					sound_play_3d("event:/sfx/pep/groundpound", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+				}
 			}
 		}
 	}

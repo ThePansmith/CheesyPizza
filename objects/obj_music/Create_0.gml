@@ -269,7 +269,7 @@ add_music(tower_hubroomE, "event:/music/hub", "event:/music/pillarmusic", 0, hub
 add_music(tower_sage, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_sugary, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 
-add_music(characterselect, "event:/music/characterselect", noone, 0)
+add_music(characterselect, "event:/modded/characterselect", noone, 0)
 add_music(midway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
 
 #endregion
@@ -398,6 +398,7 @@ add_music(desert_1, "event:/music/w2/desert", "event:/music/w2/desertsecret", 0,
 #endregion
 #region ENCORE
 
+/*
 add_music(e_medieval_1, "event:/modded/encore/w1/medieval", "event:/music/w1/medievalsecret", 0, function(room, event, event_secret)
 {
 	var s = -1;
@@ -437,4 +438,6 @@ add_music(e_molasses_1, "event:/modded/encore/sugary/swamp", "event:/modded/suga
 	if s != -1
 		fmod_event_instance_set_parameter(event, "state", s, false);
 });
+*/
+
 #endregion

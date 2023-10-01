@@ -41,7 +41,7 @@ if (fmod_event_instance_is_playing(kidspartychaseID) && instance_exists(obj_paus
 if instance_exists(obj_hungrypillar)
 {
 	fmod_event_instance_set_paused(pillarmusicID, false);
-	fmod_event_instance_set_parameter(pillarmusicID, "state", SUGARY ? 20 : 0);
+	fmod_event_instance_set_parameter(pillarmusicID, "state", SUGARY ? 20 : 0, true);
 	
 	var p = false;
 	with (obj_hungrypillar)

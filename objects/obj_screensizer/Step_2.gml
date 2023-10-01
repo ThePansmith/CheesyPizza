@@ -47,7 +47,7 @@ if cr != cr_beam
     if cr == cr_none
         global.gameframe_set_cursor = false;
     else
-        global.gameframe_set_cursor = true;
+        global.gameframe_set_cursor = true;	
 }
 
 global.gameframe_alpha = captionalpha;

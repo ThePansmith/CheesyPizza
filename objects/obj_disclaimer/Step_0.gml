@@ -1,9 +1,14 @@
+live_auto_call;
+
 if instance_exists(obj_loadingscreen)
 	exit;
 
 // restart the disclaimer if you turn on your internet
 //if !net && net != os_is_network_connected(true)
 //	room_restart();
+
+if DEBUG && keyboard_check_pressed(ord("R"))
+	room_restart();
 
 // animation
 if state == 1 or (menu > 0 && state == 2)
@@ -40,6 +45,8 @@ if menu == 0
 				
 				found = true;
 			}
+			else
+				sel = 1;
 			
 			for(var i = 0; i < 3; i++)
 			{
@@ -59,6 +66,8 @@ if menu == 0
 					
 					found = true;
 				}
+				else if sel - 1 == i
+					sel++;
 			}
 			
 			// open menu
@@ -107,16 +116,21 @@ else
 	}
 	else
 	{
+		fade_alpha = Approach(fade_alpha, 0, 0.1);
 		scr_getinput();
-	
+		
 		var move = key_down2 - key_up2;
 		if move != 0 && sel + move > -1 && sel + move < 5
+		&& (options != noone or sel + move > 0)
 		{
 			sound_play(sfx_step);
 			sel += move;
+			
+			while sel > 0 && sel < 4 && saves[sel - 1] == noone
+				sel += move;
 			pizzashift[1] = -move * 10;
 		}
-	
+		
 		if key_jump or keyboard_check_pressed(vk_enter)
 		{
 			if sel == 4

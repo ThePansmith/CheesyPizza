@@ -1,3 +1,5 @@
+live_auto_call;
+
 if instance_exists(obj_loadingscreen)
 	exit;
 
