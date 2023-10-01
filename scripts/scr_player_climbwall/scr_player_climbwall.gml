@@ -205,20 +205,7 @@ function scr_player_climbwall()
 			// grab if there are destructibles in front of you
 			if REMIX && state == states.climbwall && place_meeting(x + xscale, y, obj_destructibles) && character != "V"
 			{
-				if character == "S" && (input_buffer_grab > 0 or input_buffer_slap > 0)
-				{
-					input_buffer_jump = 0;
-					input_buffer_grab = 0;
-					input_buffer_slap = 0;
-					
-					sound_play_3d("event:/modded/sfx/kungfu", x, y);
-					vsp = min(vsp, -3);
-					movespeed = max(abs(movespeed) + 2, 14) * move;
-					sprite_index = spr_walljumpstart;
-					image_speed = 0.5;
-				}
-				
-				else if (input_buffer_grab > 0 && shotgunAnim == false && !global.pistol)
+				if (input_buffer_grab > 0 && shotgunAnim == false && !global.pistol)
 				{
 					input_buffer_grab = 0;
 					input_buffer_slap = 0;
@@ -361,6 +348,23 @@ function scr_player_climbwall()
 						shake_mag = 3;
 						shake_mag_acc = 4 / room_speed;
 					}
+				}
+			}
+			
+			// grab if there are destructibles in front of you
+			if REMIX && state == states.climbwall && place_meeting(x + xscale, y, obj_destructibles)
+			{
+				if input_buffer_grab > 0 or input_buffer_slap > 0
+				{
+					input_buffer_jump = 0;
+					input_buffer_grab = 0;
+					input_buffer_slap = 0;
+					
+					sound_play_3d("event:/modded/sfx/kungfu", x, y);
+					vsp = min(vsp, -3);
+					movespeed = max(abs(movespeed) + 2, 14) * move;
+					sprite_index = spr_walljumpstart;
+					image_speed = 0.5;
 				}
 			}
 			

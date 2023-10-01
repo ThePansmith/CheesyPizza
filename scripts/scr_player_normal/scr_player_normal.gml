@@ -743,12 +743,13 @@ function state_snick_normal()
 					}
 				}
 				
-				if (key_slap2 or key_chainsaw2) && sprite_index == spr_snick_roll
+				if (key_slap2 or key_chainsaw2) && !suplexmove
 				{
 					if move == 0
 						move = xscale;
 					if move != 0
 					{
+						suplexmove = true;
 						input_buffer_jump = 0;
 						
 						sound_play_3d("event:/modded/sfx/kungfu", x, y);

@@ -118,7 +118,7 @@ if !safe_get(obj_pause, "pause") && instance_exists(obj_player1)
 		}
 		else if global.leveltosave == "exit" && is_struct(music)
 		{
-			if global.laps > 1 && instance_exists(obj_pizzaface)
+			if MOD.Lap3 && global.laps >= 2
 				fmod_event_instance_set_parameter(music.event, "state", 20, true);
 			else if global.lap
 				fmod_event_instance_set_parameter(music.event, "state", 2, true);
