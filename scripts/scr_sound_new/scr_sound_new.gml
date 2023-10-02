@@ -108,11 +108,11 @@ function sound_is_playing(event)
 	else
 		return fmod_event_instance_is_playing(event);
 }
-function sound_play(event, calling_id = id) 
+function sound_play(event, caller = id) 
 {
-	sound_play_3d(event);
+	sound_play_3d(event, undefined, undefined, caller);
 }
-function sound_play_3d(event, xx = undefined, yy = undefined)
+function sound_play_3d(event, xx = undefined, yy = undefined, caller = id)
 {
 	if is_handle(event) && audio_exists(event)
 	{
@@ -153,13 +153,15 @@ function sound_play_3d(event, xx = undefined, yy = undefined)
 		fmod_event_instance_set_paused(event, false);
 		if xx != undefined && yy != undefined
 			sound_instance_move(event, xx, yy);
-		fmod_event_instance_play(event);
+			
+		if !fmod_event_instance_play(event)
+			trace($"FMOD error from inst: {string(caller)} [{object_get_name(caller.object_index)}]");
 	}
 }
 function sound_play_centered(event) {
 	sound_play_3d(event, CAMX + SCREEN_WIDTH / 2, CAMY + SCREEN_HEIGHT / 2);
 }
-function sound_instance_move(event, xx, yy)
+function sound_instance_move(event, xx, yy, caller = id)
 {
 	if is_handle(event) && audio_exists(event)
 		exit;
@@ -180,8 +182,12 @@ function sound_instance_move(event, xx, yy)
 		if index == noone
 			return false;
 		
-		fmod_event_instance_set_3d_attributes(index, xx, yy);
+		if !fmod_event_instance_set_3d_attributes(index, xx, yy)
+			trace($"FMOD error from inst: {string(caller)} [{object_get_name(caller.object_index)}] -- index: {index}");
 	}
 	else
-		fmod_event_instance_set_3d_attributes(event, xx, yy);
+	{
+		if !fmod_event_instance_set_3d_attributes(event, xx, yy)
+			trace($"FMOD error from inst: {string(caller)} [{object_get_name(caller.object_index)}] -- event: {event}");
+	}
 }

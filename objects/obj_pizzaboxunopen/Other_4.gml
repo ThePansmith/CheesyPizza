@@ -1,20 +1,41 @@
 if (global.timeattack == 1)
+{
 	instance_destroy();
+	exit;
+}
 if in_saveroom()
+{
 	instance_destroy();
+	exit;
+}
 if !is_real(content)
 	content = real(content);
 	
 if (content == obj_pizzakinshroom && global.shroomfollow)
+{
 	instance_destroy();
+	exit;
+}
 if (content == obj_pizzakincheese && global.cheesefollow)
+{
 	instance_destroy();
+	exit;
+}
 if (content == obj_pizzakintomato && global.tomatofollow)
+{
 	instance_destroy();
+	exit;
+}
 if (content == obj_pizzakinsausage && global.sausagefollow)
+{
 	instance_destroy();
+	exit;
+}
 if (content == obj_pizzakinpineapple && global.pineapplefollow)
+{
 	instance_destroy();
+	exit;
+}
 
 if global.snickchallenge
 {
