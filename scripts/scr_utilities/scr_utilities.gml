@@ -99,6 +99,9 @@ function get_solid_difference(xoffset, yoffset, distance)
 }
 function trace()
 {
+	if !DEBUG
+		exit;
+		
 	var _string = "";
 	for (var i = 0; i < argument_count; i++)
 		_string += string(argument[i]);

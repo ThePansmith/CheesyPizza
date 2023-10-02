@@ -26,6 +26,7 @@
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PROP_DISPLAYNAME","hidden":false,"value":"\"displayName\"",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PROP_CATEGORY","hidden":false,"value":"\"category\"",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PROP_AUTHOR","hidden":false,"value":"\"author\"",},
+        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_BEAT_EVENT","hidden":false,"value":"256",},
       ],"copyToTargets":64,"filename":"CheesyPizza.dll","final":"ptcu_cleanup","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_launch_external","argCount":0,"args":[
             1,
