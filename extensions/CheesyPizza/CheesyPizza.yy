@@ -216,6 +216,8 @@
             1,
             1,
           ],"documentation":"","externalName":"RegisterCallbacks","help":"Don't call this","hidden":true,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_debug_event_handle_count","argCount":0,"args":[],"documentation":"","externalName":"FMOD_Debug_GetEventHandleCount","help":"fmod_debug_event_handle_count()","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_debug_event_handle_free_count","argCount":0,"args":[],"documentation":"","externalName":"FMOD_Debug_GetEventHandleFreeCount","help":"fmod_debug_event_handle_free_count();","hidden":false,"kind":1,"returnType":2,},
       ],"init":"","kind":1,"order":[
         {"name":"RegisterCallbacks","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"ptcu_launch_external","path":"extensions/CheesyPizza/CheesyPizza.yy",},
@@ -261,6 +263,7 @@
         {"name":"fmod_event_one_shot","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_event_instance_stop","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_event_instance_play","path":"extensions/CheesyPizza/CheesyPizza.yy",},
+        {"name":"fmod_debug_event_handle_count","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_event_instance_set_timeline_pos","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_event_instance_get_timeline_pos","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"fmod_event_instance_set_paused","path":"extensions/CheesyPizza/CheesyPizza.yy",},

@@ -108,7 +108,8 @@ function sound_is_playing(event)
 	else
 		return fmod_event_instance_is_playing(event);
 }
-function sound_play(event) {
+function sound_play(event, calling_id = id) 
+{
 	sound_play_3d(event);
 }
 function sound_play_3d(event, xx = undefined, yy = undefined)

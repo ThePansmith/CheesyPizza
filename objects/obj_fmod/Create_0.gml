@@ -54,6 +54,10 @@ global.screenshotcount = 0;
 sound_cache = ds_map_create();
 instance_cache = ds_list_create();
 
+event_handle_count = 0;
+event_handle_free_count = 0;
+event_handle_used_count = 0;
+
 #region macros
 
 // function aliases
