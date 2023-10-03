@@ -16,7 +16,7 @@ function screen_apply_size()
 			screen_apply_fullscreen(true);
 		else
 		{
-			if global.option_resolution == 0 && global.option_scale_mode == 1
+			if global.option_resolution == 0 && global.option_scale_mode != 0
 				global.option_resolution = 1;
 			if !gameframe_get_fullscreen() && global.gameframe_enabled
 				gameframe_restore();

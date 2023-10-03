@@ -53,5 +53,5 @@ function scr_boundbox(correct_mask = false)
 function check_heat()
 {
 	return usepalette && !(object_index == obj_cheeseslime && snotty) && object_index != obj_ninja
-	&& object_index != obj_sausageman && (object_index != obj_kentukykenny or !important);
+	&& (object_index != obj_kentukykenny or !important);
 }

@@ -155,12 +155,12 @@ postdraw = function(curve)
 {
 	if anim_con == 2 && !obj_player1.visible
 	{
-		handx = lerp(handx, 960 / 2, 0.15);
+		handx = lerp(handx, SCREEN_WIDTH / 2, 0.15);
 		handy = lerp(handy, -50, 0.15);
 		var curve2 = animcurve_channel_evaluate(jumpcurve, 1 - anim_t);
 		
 		var pal = palettes[sel.pal];
-		var charx = 960 / 5 + charshift[0] * 100, chary = 540 / 2 - 16 + charshift[1] * 100, scale = clamp(lerp(1, 2, curve), 1, 2);
+		var charx = SCREEN_WIDTH / 5 + charshift[0] * 100, chary = SCREEN_HEIGHT / 2 - 16 + charshift[1] * 100, scale = clamp(lerp(1, 2, curve), 1, 2);
 		
 		charx = lerp(charx, obj_player1.x - camera_get_view_x(view_camera[0]), 1 - anim_t);
 		chary = lerp(chary, obj_player1.y - camera_get_view_y(view_camera[0]), curve2);
@@ -218,7 +218,7 @@ draw = function(curve)
 	}
 
 	if (curv_prev < 1)
-		draw_set_spotlight(960 / 2, 540 / 2, 560 * curv_prev, true);
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 560 * curv_prev, true);
 		
 #region Drawer	
 
@@ -226,7 +226,7 @@ draw = function(curve)
 	var pal = palettes[sel.pal];
 	if anim_con != 2 or obj_player1.visible
 	{
-		var charx = 960 / 5 + charshift[0] * 75, chary = 540 / 2 - 16 + charshift[1] * 75;
+		var charx = SCREEN_WIDTH / 5 + charshift[0] * 75, chary = SCREEN_HEIGHT / 2 - 16 + charshift[1] * 75;
 		
 		// special skins
 		if characters[sel.char][0] == "N"
@@ -280,7 +280,7 @@ draw = function(curve)
 		shader_reset();
 		
 		if curv_prev < 1
-			draw_set_spotlight(960 / 2, 540 / 2, 560 * curv_prev, true);
+			draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 560 * curv_prev, true);
 		draw_surface_ext(player_surface, charx - 256, chary - 256, 2, 2, 0, c_white, curve * charshift[2]);
 	}
 #endregion
@@ -304,14 +304,14 @@ draw = function(curve)
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	
-	var xx = 960 / 1.5 - string_width(name) / 2;
+	var xx = SCREEN_WIDTH / 1.5 - string_width(name) / 2;
 	for(var i = 1; i <= string_length(name); i++)
 	{
 		var char = string_char_at(name, i);
 		
 		var yy = 360;
 		if curve2 != 1 // letters jump up
-			yy = lerp(540, 360, min(animcurve_channel_evaluate(outback, curve2 + ((i % 3) * 0.075))));
+			yy = lerp(SCREEN_HEIGHT, 360, min(animcurve_channel_evaluate(outback, curve2 + ((i % 3) * 0.075))));
 		
 		var d = (i % 2 == 0) ? -1 : 1;
 		var _dir = floor(Wave(-1, 1, 0.1, 0));
@@ -324,7 +324,7 @@ draw = function(curve)
 	draw_set_halign(fa_center);
 	draw_set_alpha(curve);
 	draw_set_font(global.font_small);
-	draw_text_ext(960 / 1.5, 400, desc, 16, 600);
+	draw_text_ext(SCREEN_WIDTH / 1.5, 400, desc, 16, 600);
 	draw_set_alpha(1);
 	shader_reset();
 #endregion
@@ -393,13 +393,13 @@ draw = function(curve)
 	
 	shader_reset();
 	if curv_prev < 1
-		draw_set_spotlight(960 / 2, 540 / 2, 560 * curv_prev);
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 560 * curv_prev);
 		
 	vertex_submit(vertex_buffer, pr_trianglelist, tex);
 	
 	shader_reset();
 	if curv_prev < 1
-		draw_set_spotlight(960 / 2, 540 / 2, 560 * curv_prev);
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 560 * curv_prev);
 	// RX: not really a better way to do this without rewriting the entire thing
 	for (var i = 0; i < array_length(cache); i++)
 	{
@@ -413,7 +413,7 @@ draw = function(curve)
 	}
 	
 	//if shader_current() != shd_masterclip || shader_current() != shd_masterclip_basic
-	//	draw_set_spotlight(960 / 2, 540 / 2, 560 * curv_prev);
+	//	draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 560 * curv_prev);
 #endregion
 
 	// hand
@@ -421,5 +421,5 @@ draw = function(curve)
 	draw_set_align();
 	shader_reset();
 }
-handx = 960 / 2;
+handx = SCREEN_WIDTH / 2;
 handy = -50;

@@ -143,3 +143,5 @@ if level == "exit"
 }
 
 #endregion
+
+refresh_options();

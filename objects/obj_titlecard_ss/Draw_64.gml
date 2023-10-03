@@ -7,6 +7,6 @@ if start
 
 draw_set_color(c_black);
 draw_set_alpha(instance_exists(obj_fadeout) ? obj_fadeout.fadealpha : fadealpha);
-draw_rectangle(0, 0, 960, 540, false);
+draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false);
 draw_set_alpha(1);
 draw_set_color(c_white);

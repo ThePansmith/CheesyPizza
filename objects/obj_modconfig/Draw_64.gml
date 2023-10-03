@@ -1,5 +1,7 @@
 live_auto_call;
 
+//trace(SCREEN_WIDTH);
+
 // options left side
 draw_set_colour(c_white);
 draw_set_align();
@@ -7,7 +9,7 @@ draw_set_align();
 reset_blendmode();
 reset_shader_fix();
 
-var yy = 70 - ceil(scroll);
+var yy = round(max((SCREEN_HEIGHT / 2) - array_last(options_pos) / 2, 70) - scroll);
 for(var i = 0; i < array_length(options_array); i++)
 {
 	var opt = options_array[i];
@@ -76,11 +78,13 @@ for(var i = 0; i < array_length(options_array); i++)
 draw_set_colour(c_white);
 var opt = options_array[sel];
 
+var right_x = SCREEN_WIDTH - 260;
+
 draw_set_font(global.bigfont);
 draw_set_align(fa_center);
 draw_set_alpha(alpha);
-draw_text_color(2 + 700, 2 + 80, string_upper(opt.name), 0, 0, 0, 0, 0.25);
-draw_text(700, 80, string_upper(opt.name));
+draw_text_color(2 + right_x, 2 + 80, string_upper(opt.name), 0, 0, 0, 0, 0.25);
+draw_text(right_x, 80, string_upper(opt.name));
 
 var drawer = 0;
 if is_callable(opt.drawfunc)
@@ -89,8 +93,8 @@ else if is_array(opt.drawfunc) or sequence_exists(opt.drawfunc)
 	drawer = 2;
 	
 draw_set_font(global.font_small);
-draw_text_ext_color(2 + 700, 2 + 420, opt.desc, 18, 440, 0, 0, 0, 0, 0.25);
-draw_text_ext(700, 420, opt.desc, 18, 440);
+draw_text_ext_color(2 + right_x, 2 + 420, opt.desc, 18, 440, 0, 0, 0, 0, 0.25);
+draw_text_ext(right_x, 420, opt.desc, 18, 440);
 
 if opt.type == modconfig.option or opt.type == modconfig.modifier
 {
@@ -98,8 +102,8 @@ if opt.type == modconfig.option or opt.type == modconfig.modifier
 	if opt.value < array_length(opt.opts)
 	{
 		var str = opt.opts[opt.value][0];
-		draw_text_color(2 + 700, 2 + 116, str, 0, 0, 0, 0, 0.25);
-		draw_text(700, 116, str);
+		draw_text_color(2 + right_x, 2 + 116, str, 0, 0, 0, 0, 0.25);
+		draw_text(right_x, 116, str);
 		
 		/*
 		draw_set_font(global.font_small);
@@ -112,14 +116,14 @@ if opt.type == modconfig.option or opt.type == modconfig.modifier
 }
 if opt.type == modconfig.slider
 {
-	draw_sprite_ext(spr_slider, 0, 600, 116, 1, 1, 0, c_white, 1);
-	draw_sprite(spr_slidericon2, 0, 600 + 200 * opt.value, 116);
+	draw_sprite_ext(spr_slider, 0, right_x - 100, 116, 1, 1, 0, c_white, 1);
+	draw_sprite(spr_slidericon2, 0, right_x - 100 + 200 * opt.value, 116);
 }
 
 if drawer
 {
 	// roundrect background
-	var xx = 700, wd = 384;
+	var xx = right_x, wd = 384;
 	var yy = 260, ht = 216;
 	
 	draw_set_alpha(1);

@@ -1,24 +1,12 @@
+/// @func sound_stop_all([force])
+/// @desc Completely kills all sounds
 function sound_stop_all(force = true)
 {
 	audio_stop_all();
-	
-	/*
-	if ds_exists(obj_fmod.sound_cache, ds_type_map)
-	{
-		var sound = ds_map_find_first(obj_fmod.sound_cache);
-		while sound != undefined
-		{
-			fmod_event_instance_stop(obj_fmod.sound_cache[? sound], force);
-			sound = ds_map_find_next(obj_fmod.sound_cache, sound);
-		}
-	}
-	if ds_exists(obj_fmod.instance_cache, ds_type_list)
-	{
-		for(var i = 0; i < ds_list_size(obj_fmod.instance_cache); i++)
-			fmod_event_instance_stop(obj_fmod.instance_cache[| i]);
-	}
-	*/
 }
+
+/// @func sound_create_instance(event)
+/// @desc Creates an instance of an FMOD event
 function sound_create_instance(event)
 {
 	if is_handle(event) && audio_exists(event)
@@ -27,25 +15,35 @@ function sound_create_instance(event)
 		audio_stop_sound(snd);
 		return snd;
 	}
-	else
+	else if is_string(event)
 	{
 		var inst = fmod_event_create_instance(event);
-		//if ds_exists(obj_fmod.instance_cache, ds_type_list)
-		//	ds_list_add(obj_fmod.instance_cache, inst);
+		if !inst
+			log_source($"Failed to create instance of {event}");
 		return inst;
 	}
+	else
+		log_source($"Event {event} doesn't exist");
 }
+
+/// @func sound_destroy_instance(event)
+/// @desc Destroys an instance of an FMOD event
 function sound_destroy_instance(inst)
 {
+	if inst == noone
+		exit;
+	
 	if is_handle(inst) && audio_exists(inst)
 		audio_stop_sound(inst);
 	else
 	{
-		//if ds_exists(obj_fmod.instance_cache, ds_type_list)
-		//	ds_list_delete(obj_fmod.instance_cache, ds_list_find_index(obj_fmod.instance_cache, inst));
-		fmod_event_instance_release(inst);
+		if !fmod_event_instance_release(inst)
+			log_source($"Failed to release instance {inst}");
 	}
 }
+
+/// @func sound_pause_all(enable, [excludeEventID])
+/// @desc Pauses all sounds
 function sound_pause_all(enable, excludeEventID = -1)
 {
 	if enable
@@ -58,62 +56,60 @@ function sound_pause_all(enable, excludeEventID = -1)
 	else
 		fmod_event_instance_set_paused_all_exclude(enable, excludeEventID);
 }
-function sound_stop(event, force = true)
+
+/// @func sound_stop(inst, [force])
+/// @desc Stops playing the given sound
+function sound_stop(inst, force = true)
 {
-	if is_string(event)
+	if inst == noone
+		exit;
+	
+	if is_string(inst)
 	{
-		/*
-		var sound = ds_map_find_value(obj_fmod.sound_cache, event);
-		if sound != undefined
-			fmod_event_instance_stop(sound, force);
-		*/
-		
-		// radice method goes here
-		
-		var index = fmod_event_instance_get_index(event);
-		
-		if index == noone
-			return false;
-		
-		fmod_event_instance_stop(index, force);
+		var index = fmod_event_instance_get_index(inst);
+		return index == noone ? false : fmod_event_instance_stop(index, force);
 	}
-	else if is_handle(event) && audio_exists(event)
-		audio_stop_sound(event);
+	else if is_handle(inst) && audio_exists(inst)
+		audio_stop_sound(inst);
 	else
-		fmod_event_instance_stop(event, force);
-}
-function sound_is_playing(event)
-{
-	if is_string(event)
 	{
-		//var sound = ds_map_find_value(obj_fmod.sound_cache, event);
-		//if sound != undefined
-		//	return fmod_event_instance_is_playing(sound);
-		
-		// radice method goes here
-		
-		
-		//... you want me to just check if a sound event string is playing..?
-		// uh, okay I think
-		
-		var index = fmod_event_instance_get_index(event);
-		
-		if index == noone
-			return false;
-		
-		fmod_event_instance_is_playing(index);
+		if !fmod_event_instance_stop(inst, force)
+			log_source($"Failed to stop instance {inst}");
 	}
-	else if is_handle(event) && audio_exists(event)
-		return audio_is_playing(event);
+}
+
+/// @func sound_is_playing(inst)
+/// @desc Checks if the given sound is playing
+function sound_is_playing(inst)
+{
+	if inst == noone
+		return false;
+	
+	if is_string(inst)
+	{
+		var index = fmod_event_instance_get_index(inst);
+		return index == noone ? false : fmod_event_instance_is_playing(index);
+	}
+	else if is_handle(inst) && audio_exists(inst)
+		return audio_is_playing(inst);
 	else
-		return fmod_event_instance_is_playing(event);
+		return fmod_event_instance_is_playing(inst);
 }
-function sound_play(event, caller = id) 
+
+/// @func sound_play(event)
+/// @desc Plays a non-3D event or instance
+function sound_play(event) 
 {
-	sound_play_3d(event, undefined, undefined, caller);
+	sound_play_3d(event);
 }
-function sound_play_3d(event, xx = undefined, yy = undefined, caller = id)
+
+/// @func sound_play_3d(event, [x], [y])
+/// @desc Plays a 3D event or instance with the given position
+function sound_play_3d(event, xx = undefined, yy = undefined)
 {
+	if event == noone
+		exit;
+	
 	if is_handle(event) && audio_exists(event)
 	{
 		audio_play_sound(event, 0, false, global.option_sfx_volume * global.option_master_volume);
@@ -122,72 +118,51 @@ function sound_play_3d(event, xx = undefined, yy = undefined, caller = id)
 	if MOD.Mirror && xx != undefined
 		xx = room_width - xx;
 	
-	/*
 	if is_string(event)
 	{
-		var sound = ds_map_find_value(obj_fmod.sound_cache, event);
-		if sound == undefined
+		// ONE SHOT.
+		if xx != undefined && yy != undefined
 		{
-			sound = fmod_event_create_instance(event);
-			ds_map_add(obj_fmod.sound_cache, event, sound);
+			if !fmod_event_one_shot_3d(event, xx, yy)
+				log_source($"Failed to one shot {event}");
+		}
+		else
+		{
+			if !fmod_event_one_shot(event)
+				log_source($"Failed to one shot {event}");
 		}
 	}
 	else
-		var sound = event;
-	
-	fmod_event_instance_set_paused(sound, false);
-	if xx != undefined && yy != undefined
-		sound_instance_move(sound, xx, yy);
-	fmod_event_instance_play(sound);
-	*/
-	
-	if is_string(event)
 	{
-		if xx != undefined && yy != undefined
-			fmod_event_one_shot_3d(event, xx, yy);
-		else
-			fmod_event_one_shot(event);
-	}
-	else
-	{
+		// INSTANCE.
 		fmod_event_instance_set_paused(event, false);
 		if xx != undefined && yy != undefined
 			sound_instance_move(event, xx, yy);
 			
 		if !fmod_event_instance_play(event)
-			trace($"FMOD error from inst: {string(caller)} [{object_get_name(caller.object_index)}]");
+			log_source($"Failed to play instance {event}");
 	}
 }
+
+/// @func sound_play_centered(event)
+/// @desc Plays a 3D event in the center
 function sound_play_centered(event) {
 	sound_play_3d(event, CAMX + SCREEN_WIDTH / 2, CAMY + SCREEN_HEIGHT / 2);
 }
-function sound_instance_move(event, xx, yy, caller = id)
+
+/// @func sound_instance_move(inst, xx, yy)
+/// @desc Moves the position of a sound
+function sound_instance_move(inst, xx, yy)
 {
-	if is_handle(event) && audio_exists(event)
+	if is_handle(inst) && audio_exists(inst)
 		exit;
+	if is_string(inst)
+		inst = fmod_event_instance_get_index(inst);
+	if inst == noone
+		return false;
+	
 	if MOD.Mirror
 		xx = room_width - xx;
-	
-	if is_string(event)
-	{
-		/*
-		var sound = ds_map_find_value(obj_fmod.sound_cache, event);
-		if sound != undefined
-			fmod_event_instance_set_3d_attributes(sound, xx, yy);
-		*/
-		
-		// radice method here
-		var index = fmod_event_instance_get_index(event);
-		
-		if index == noone
-			return false;
-		
-		if !fmod_event_instance_set_3d_attributes(index, xx, yy)
-			trace($"FMOD error from inst: {string(caller)} [{object_get_name(caller.object_index)}] -- index: {index}");
-	}
-	else
-	{
-		if !fmod_event_instance_set_3d_attributes(event, xx, yy)
-			trace($"FMOD error from inst: {string(caller)} [{object_get_name(caller.object_index)}] -- event: {event}");
-	}
+	if !fmod_event_instance_set_3d_attributes(inst, xx, yy)
+		log_source($"Failed to set 3D attributes for instance {inst}");
 }

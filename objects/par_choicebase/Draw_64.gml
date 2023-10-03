@@ -20,9 +20,11 @@ if anim_con == 1 or anim_con == 2
 }
 
 // background
+var spotlight_size = (SCREEN_HEIGHT + 20) * curve;
+
 bg_pos = (bg_pos + 0.5) % 64;
 if curve < 1
-	draw_set_spotlight(960 / 2, 540 / 2, 560 * curve);
+	draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, spotlight_size);
 	
 draw_set_alpha(0.75)
 draw_set_color(merge_colour(make_color_rgb(121, 103, 151), c_green, mixingfade));
@@ -42,8 +44,8 @@ if !global.performance
 		var radius_pos = shader_get_uniform(shader, "u_radius");
 		var alphafix_pos = shader_get_uniform(shader, "u_alphafix");
 	
-		shader_set_uniform_f(origin_pos, 960 / 2, 540 / 2);
-		shader_set_uniform_f(radius_pos, 560 * curve);
+		shader_set_uniform_f(origin_pos, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+		shader_set_uniform_f(radius_pos, spotlight_size);
 		shader_set_uniform_f(alphafix_pos, 0.0);
 	
 		// RX: Now actual Animation stuff
@@ -65,7 +67,7 @@ if !global.performance
 	// The Pizza Matrix™
 	var prev_matrix = matrix_get(matrix_world);
 	if (anim_t < 1 && !global.performance)
-		shader_set_uniform_f(origin_pos, (960 / 2) - bg_pos, (540 / 2) - bg_pos);
+		shader_set_uniform_f(origin_pos, (SCREEN_WIDTH / 2) - bg_pos, (SCREEN_HEIGHT / 2) - bg_pos);
 	matrix_set(matrix_world, matrix_build(bg_pos, bg_pos, 0, 0, 0, 0, 1, 1, 1));
 	gpu_set_blendmode(bm_normal);
 	vertex_submit(pizza_vbuffer, pr_trianglelist, sprite_get_texture(spr_skinmenupizza, bg_image));
@@ -73,7 +75,7 @@ if !global.performance
 	shader_reset();
 	
 	if curve < 1
-		draw_set_spotlight(960 / 2, 540 / 2, 560 * curve);
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, spotlight_size);
 }
 with obj_transfotip
 {

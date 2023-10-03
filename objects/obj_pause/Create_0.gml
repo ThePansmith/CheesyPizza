@@ -69,3 +69,4 @@ refresh_options = function()
 	array_copy(pause_menu, 0, pause_menu_base, 0, array_length(pause_menu_base));
 	array_copy(pause_icons, 0, pause_icons_base, 0, array_length(pause_icons_base));
 }
+window_buffer = 0;

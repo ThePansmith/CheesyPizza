@@ -234,32 +234,34 @@ if (!start)
 	border1_y = border1_yend;
 	vine_y = vine_yend;
 }
-var a = 0.1;
+
+var a = window_buffer-- > 0 ? 1 : 0.1;
 if (!instance_exists(obj_loadingscreen))
 {
 	if (fadein)
 	{
-		fade = Approach(fade, 1, 0.1);
+		fade = Approach(fade, 1, a);
 		border1_x = lerp(border1_x, border1_xstart, a);
 		border1_y = lerp(border1_y, border1_ystart, a);
 		border2_x = lerp(border2_x, border2_xstart, a);
 		border2_y = lerp(border2_y, border2_ystart, a);
 		vine_y = lerp(vine_y, vine_ystart, a);
-		cursor_x = lerp(cursor_x, 0, 0.05);
+		cursor_x = lerp(cursor_x, 0, a / 2);
 		cursor_y = lerp(cursor_y, 0, a);
 	}
 	else
 	{
-		fade = Approach(fade, 0, 0.1);
+		fade = Approach(fade, 0, a);
 		border1_x = lerp(border1_x, border1_xend, a);
 		border1_y = lerp(border1_y, border1_yend, a);
 		border2_x = lerp(border2_x, border2_xend, a);
 		border2_y = lerp(border2_y, border2_yend, a);
 		vine_y = lerp(vine_y, vine_yend, a);
-		cursor_x = lerp(cursor_x, 20, 0.05);
+		cursor_x = lerp(cursor_x, 20, a / 2);
 		cursor_y = lerp(cursor_y, -100, a);
 	}
 }
+
 cursor_index += 0.35;
 pause_update_priests();
 if (pause && !instance_exists(obj_option) && alarm[3] == -1)

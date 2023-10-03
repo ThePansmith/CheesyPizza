@@ -9,9 +9,9 @@ if scene == 0
 	{
 	    var s = _data[1];
 		var w = surface_get_width(s), h = surface_get_height(s);
-		var scale = 540 / h;
+		var scale = SCREEN_HEIGHT / h;
 		
-	    draw_surface_ext(s, 960 / 2 - (w * scale) / 2, 0, scale, scale, 0, c_white, 1);
+	    draw_surface_ext(s, SCREEN_WIDTH / 2 - (w * scale) / 2, 0, scale, scale, 0, c_white, 1);
 	}
 }
 if showtext

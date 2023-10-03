@@ -180,6 +180,22 @@ add_option_toggle(video_menu, 5, "option_hud", function(val)
 	global.option_hud = val;
 }).value = global.option_hud;
 
+var sca = [
+	create_option_value("FIT", 0, false),
+	create_option_value("PIXEL PERFECT", 1, false)
+];
+if global.experimental
+	array_push(sca, create_option_value("ULTRAWIDE (BUGGY)", 2, false));
+
+add_option_multiple(video_menu, 2, "SCALE MODE", sca, function(val)
+{
+	ini_open_from_string(obj_savesystem.ini_str_options);
+	ini_write_real("Option", "scale_mode", val);
+	obj_savesystem.ini_str_options = ini_close();
+	global.option_scale_mode = val;
+	screen_apply_size();
+}).value = global.option_scale_mode;
+
 add_option_toggle(video_menu, 6, "GAMEFRAME", function(val)
 {
 	if val != global.gameframe_enabled

@@ -65,16 +65,5 @@ if (boundbox == 0)
 	}
 }
 
-// heat palettes but the sausageman is weird
-if !whoopass
-{
-	var newpalette = 1;
-	if global.stylethreshold >= 3
-		newpalette = 0;
-	
-	if paletteselect != newpalette
-	{
-		create_particle(x, y, part.genericpoofeffect);
-		paletteselect = newpalette;
-	}
-}
+if whoopass
+	basepal = elitepal;

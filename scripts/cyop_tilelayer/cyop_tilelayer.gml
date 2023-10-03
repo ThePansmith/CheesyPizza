@@ -12,7 +12,6 @@ function cyop_tilelayer() constructor
 	/// @desc	Build the vertex array from an array of "cyop_tile"
 	/// @param	{array.cyop_tile} _tile_array
 	/// @param	{real}	_depth
-	/// @param	{array.GMInstance}	_secret_array
 	/// @return	{bool}
 	static Build = function(_tile_array, _depth)
 	{

@@ -20,8 +20,8 @@ var b = (a % 2) == 1
 if show_time == 0
     b = 1;
 
-var xx = 960 / 2;
-var yy = round(50 + 440 - surfy);
+var xx = SCREEN_WIDTH / 2;
+var yy = round(SCREEN_HEIGHT - 50 - surfy);
 if timeinsecs <= 5
 	xx += random_range(-1, 1);
 

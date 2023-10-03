@@ -42,7 +42,7 @@ if GM_build_type != "run" && !code_is_compiled()
 	draw_set_font(global.font_small);
 	draw_set_align(fa_center);
 	draw_set_color(c_red);
-	draw_text(960 / 2, 32, $"COMPILED IN VM. DO NOT SHARE!\n{date_date_string(GM_build_date)} {date_time_string(GM_build_date)}");
+	draw_text(SCREEN_WIDTH / 2, 32, $"COMPILED IN VM. DO NOT SHARE!\n{date_date_string(GM_build_date)} {date_time_string(GM_build_date)}");
 	draw_set_align();
 }
 if DEBUG
@@ -50,7 +50,7 @@ if DEBUG
 	draw_set_font(global.font_small);
 	draw_set_align(fa_center);
 	draw_set_color(c_red);
-	draw_text(960 / 2, 32, $"Debug build - {date_date_string(GM_build_date)} {date_time_string(GM_build_date)}");
+	draw_text(SCREEN_WIDTH / 2, 32, $"Debug build - {date_date_string(GM_build_date)} {date_time_string(GM_build_date)}");
 	draw_set_align();
 }
 draw_set_colour(c_white);

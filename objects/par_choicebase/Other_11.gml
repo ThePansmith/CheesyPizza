@@ -23,9 +23,9 @@ var pizza_height = sprite_get_height(spr_skinmenupizza);
 */
 
 vertex_begin(pizza_vbuffer, vertex_format);
-for (var xx = -pizza_width; xx < 960 + pizza_width; xx += pizza_width)
+for (var xx = -pizza_width; xx < SCREEN_WIDTH + pizza_width; xx += pizza_width)
 {
-	for (var yy = -pizza_height; yy < 540 + pizza_height; yy += pizza_height)
+	for (var yy = -pizza_height; yy < SCREEN_HEIGHT + pizza_height; yy += pizza_height)
 	{
 		// RX: We have to push data in this order:
 		// 1) position

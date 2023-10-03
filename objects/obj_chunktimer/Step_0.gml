@@ -1,4 +1,4 @@
-if (!global.panic && !global.snickchallenge) or global.tutorial_room or MOD.DeathMode
+if (!global.panic && !global.snickchallenge) or global.tutorial_room or (MOD.DeathMode && !MOD.Lap3)
 	exit;
 if room == timesuproom
 	exit;

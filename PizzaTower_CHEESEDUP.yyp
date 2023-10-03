@@ -6810,6 +6810,7 @@
     {"id":{"name":"spr_tubeup","path":"sprites/spr_tubeup/spr_tubeup.yy",},},
     {"id":{"name":"spr_taximove","path":"sprites/spr_taximove/spr_taximove.yy",},},
     {"id":{"name":"spr_stopsign","path":"sprites/spr_stopsign/spr_stopsign.yy",},},
+    {"id":{"name":"log_source","path":"scripts/log_source/log_source.yy",},},
     {"id":{"name":"spr_junk","path":"sprites/spr_junk/spr_junk.yy",},},
     {"id":{"name":"spr_teleportportal","path":"sprites/spr_teleportportal/spr_teleportportal.yy",},},
     {"id":{"name":"spr_noisehotairempty","path":"sprites/spr_noisehotairempty/spr_noisehotairempty.yy",},},

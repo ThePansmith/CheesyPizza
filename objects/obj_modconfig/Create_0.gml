@@ -891,21 +891,44 @@ yo = 0;
 alpha = 1;
 scroll = 0;
 
-for(var i = 0; i < array_length(options_array); i++)
+refresh_options = function()
 {
-	var opt = options_array[i];
-	if opt.type == modconfig.option
+	var yy = 0;
+	
+	options_pos = [];
+	for(var i = 0; i < array_length(options_array); i++)
 	{
-		var value = variable_global_get(opt.vari);
-		for(var j = 0; j < array_length(opt.opts); j++)
+		var opt = options_array[i];
+		switch opt.type
 		{
-			if opt.opts[j][1] == value
-				opt.value = j;
+			case modconfig.option:
+				yy += 20;
+				
+				var value = variable_global_get(opt.vari);
+				for(var j = 0; j < array_length(opt.opts); j++)
+				{
+					if opt.opts[j][1] == value
+						opt.value = j;
+				}
+				break;
+			
+			case modconfig.slider:
+				yy += 20;
+				
+				var value = variable_global_get(opt.vari);
+				opt.value = (value - opt.range[0]) / (opt.range[1] - opt.range[0]);
+				break;
+			
+			default:
+				yy += 20;
+				break;
+		
+			case modconfig.section:
+				yy += 30;
+				yy += 40;
+				break;
 		}
-	}
-	if opt.type == modconfig.slider
-	{
-		var value = variable_global_get(opt.vari);
-		opt.value = (value - opt.range[0]) / (opt.range[1] - opt.range[0]);
+		options_pos[i] = yy;
 	}
 }
+refresh_options();

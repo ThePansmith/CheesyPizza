@@ -47,13 +47,13 @@ draw = function(curve)
 			sprite = spr_toppinshroom;
 	}
 	var yoffset = 50 + (sprite_get_yoffset(sprite) - lerp(sprite_get_bbox_bottom(sprite), sprite_get_bbox_top(sprite), 0.5) * 2);
-	draw_sprite_ext(sprite, -1, lerp(0, 960, 0.5) + charshift[0], 540 / 2 + charshift[1] + floor(yoffset), 2, 2, 0, col, charshift[2]);
+	draw_sprite_ext(sprite, -1, lerp(0, SCREEN_WIDTH, 0.5) + charshift[0], SCREEN_HEIGHT / 2 + charshift[1] + floor(yoffset), 2, 2, 0, col, charshift[2]);
 	
 	// text
 	draw_set_font(global.bigfont);
 	draw_set_align(fa_left);
 	
-	var str = string_upper(sel.side == 0 ? hat.name : pet.name), xx = lerp(0, 960, 0.5) - string_width(str) / 2;
+	var str = string_upper(sel.side == 0 ? hat.name : pet.name), xx = lerp(0, SCREEN_WIDTH, 0.5) - string_width(str) / 2;
 	for(var i = 1; i <= string_length(str); i++)
 	{
 		// hat
@@ -70,13 +70,13 @@ draw = function(curve)
 	
 	draw_set_font(global.font_small);
 	draw_set_align(fa_center);
-	draw_text_ext(lerp(0, 960, 0.5), 420, sel.side == 0 ? hat.desc : pet.desc, 16, 600);
+	draw_text_ext(lerp(0, SCREEN_WIDTH, 0.5), 420, sel.side == 0 ? hat.desc : pet.desc, 16, 600);
 	
 	/*
 	switch sel.side
 	{
-		case 0: handx = lerp(handx, lerp(0, 960, 0.3) - 70, 0.25); break;
-		case 1: handx = lerp(handx, lerp(0, 960, 0.7) - 70, 0.25); break;
+		case 0: handx = lerp(handx, lerp(0, SCREEN_WIDTH, 0.3) - 70, 0.25); break;
+		case 1: handx = lerp(handx, lerp(0, SCREEN_WIDTH, 0.7) - 70, 0.25); break;
 	}
 	draw_sprite_ext(spr_skinchoicehand, 0, handx, 200, 2, 2, 0, c_white, 1);
 	*/
@@ -87,7 +87,7 @@ draw = function(curve)
 	
 	if arrow_sel > 0
 	{
-		var xx = 960 / 2 - 120 - sin(current_time / 200) * 4, yy = 540 / 2 + 16;
+		var xx = SCREEN_WIDTH / 2 - 120 - sin(current_time / 200) * 4, yy = SCREEN_HEIGHT / 2 + 16;
 		if charshift[0] < 0
 			xx += charshift[0];
 		
@@ -95,7 +95,7 @@ draw = function(curve)
 	}
 	if arrow_sel < arrow_max - 1
 	{
-		var xx = 960 / 2 + 120 + sin(current_time / 200) * 4, yy = 540 / 2 + 16;
+		var xx = SCREEN_WIDTH / 2 + 120 + sin(current_time / 200) * 4, yy = SCREEN_HEIGHT / 2 + 16;
 		if charshift[0] > 0
 			xx += charshift[0];
 		

@@ -9,7 +9,9 @@ var cam_y = camera_get_view_y(view_camera[0]);
 
 // setup bgs
 if !surface_exists(bg_surface)
-	bg_surface = surface_create(960, 540);
+	bg_surface = surface_create(SCREEN_WIDTH, SCREEN_HEIGHT);
+else if surface_get_width(bg_surface) != SCREEN_WIDTH or surface_get_height(bg_surface) != SCREEN_HEIGHT
+	surface_resize(bg_surface, SCREEN_WIDTH, SCREEN_HEIGHT);
 
 surface_set_target(bg_surface);
 draw_clear_alpha(0, 0);
@@ -60,7 +62,7 @@ for(var i = array_length(background_layers) - 1; i >= 0; i--)
 	{
 		draw_set_colour(col);
 		draw_set_alpha(col);
-		draw_rectangle(0, 0, 960, 540, false);
+		draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false);
 		draw_set_alpha(1);
 	}
 	surface_reset_target();

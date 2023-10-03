@@ -5,8 +5,7 @@ if con != 0
 	// pto pause background
 	var s = 72;
 	x = (x + 0.25) % s;
-		
-	// yeah thats right bitch double surface what are you gonna do about that huh
+	
 	if !surface_exists(bordersurf)
 	{
 		bordersurf = surface_create(s * 2, s * 2);
@@ -23,7 +22,7 @@ if con != 0
 	var w = 720, h = 400;
 	if !surface_exists(surf)
 		surf = surface_create(w, h);
-
+	
 	surface_set_target(surf);
 	draw_clear(c_black);
 
@@ -46,7 +45,7 @@ if con != 0
 	// draw the result
 	surface_reset_target();
 	gpu_set_texfilter(true);
-	var xx = (960 - w) / 2, yy = (540 - h) / 2;
+	var xx = (SCREEN_WIDTH - w) / 2, yy = (SCREEN_HEIGHT - h) / 2;
 	draw_surface(surf, xx, yy);
 	gpu_set_texfilter(false);
 }
@@ -68,6 +67,6 @@ if con < 2
 {
 	draw_set_colour(c_black);
 	draw_set_alpha(fade);
-	draw_rectangle(0, 0, 960, 540, false);
+	draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false);
 	draw_set_alpha(1);
 }

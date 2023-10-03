@@ -49,5 +49,6 @@ if sugary
 	}
 }
 
-if room != tower_soundtest
+// unload soundtest room
+if obj_player1.lastroom == tower_soundtest
 	texturegroup_free("soundtestgroup");

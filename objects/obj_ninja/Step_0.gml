@@ -72,7 +72,7 @@ if (state == states.walk)
 			hsp = 0;
 			movespeed = 0;
 		}
-		trace(movespeed, "   ", hsp);
+		//trace(movespeed, "   ", hsp);
 		if (hsp != 0)
 			dir = sign(hsp);
 	}

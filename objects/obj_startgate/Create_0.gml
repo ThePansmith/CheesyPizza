@@ -1,5 +1,6 @@
 sprite_index = gateSprite;
-depth = 100;
+if !SUGARY
+	depth = 100;
 image_speed = 0;
 world = 1;
 pizza = false;

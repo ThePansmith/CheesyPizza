@@ -6,7 +6,7 @@ depth = -300;
 alarm[0] = 3;
 image_speed = 0;
 depth = -100;
-x = 832;
+x = SCREEN_WIDTH - 128;
 y = global.hud == 0 ? 290 : 197;
 very = false;
 afterimages = array_create(0);

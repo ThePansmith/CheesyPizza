@@ -4,7 +4,7 @@ if start
 	var mirror = (MOD.Mirror);
 	
 	shader_set(shd_pal_swapper);
-	pal_swap_set(spr_peppalette, REMIX && instance_exists(obj_player1) && obj_player1.character == "P" && obj_player1.character == "P" ? obj_player1.paletteselect : 1, false);
+	pal_swap_set(spr_peppalette, REMIX && instance_exists(obj_player1) && obj_player1.character == "P" && obj_player1.character == "P" ? obj_player1.paletteselect : 1);
 	if REMIX
 		pattern_set_temp(global.Base_Pattern_Color, titlecard_sprite, titlecard_index, 1, 1, global.palettetexture);
 	

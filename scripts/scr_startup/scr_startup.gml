@@ -219,7 +219,6 @@ if os_version < 655360 or os_type != os_windows // below windows 10
 }
 window_set_showborder(!global.gameframe_enabled);
 
-	
 ini_close();
 
 // etc

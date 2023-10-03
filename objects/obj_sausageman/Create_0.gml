@@ -44,3 +44,5 @@ grabbedby = 0;
 stuntouchbuffer = 0;
 scaredbuffer = 0;
 whoopass = false;
+basepal = 1;
+elitepal = 0;

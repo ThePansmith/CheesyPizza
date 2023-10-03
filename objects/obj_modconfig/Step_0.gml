@@ -162,23 +162,4 @@ else
 }
 
 // figure out scroll
-var yy = -260;
-for(var i = 0; i < array_length(options_array); i++)
-{
-	var opt = options_array[i];
-	switch opt.type
-	{
-		default: // normal
-			yy += 20;
-			break;
-		
-		case modconfig.section: // SECTION
-			yy += 30;
-			yy += 40;
-			break;
-	}
-	
-	if i == sel
-		break;
-}
-scroll = lerp(scroll, max(yy, 0), 0.15);
+scroll = lerp(scroll, max(options_pos[sel] - SCREEN_HEIGHT / 2, 0), 0.2);

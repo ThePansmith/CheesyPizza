@@ -48,7 +48,6 @@ if !fucker
 	{
 		if secret
 		{
-			trace("here 1");
 			var s = 0;
 			switch obj_player1.character
 			{
