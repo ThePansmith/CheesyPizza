@@ -28,7 +28,7 @@ if curve < 1
 	
 draw_set_alpha(0.75)
 draw_set_color(merge_colour(make_color_rgb(121, 103, 151), c_green, mixingfade));
-draw_rectangle(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT, false);
+draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false);
 draw_set_alpha(1);
 draw_set_color(c_white);
 

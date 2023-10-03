@@ -236,14 +236,14 @@ textx = 0;
 
 draw = function(curve)
 {
-	draw_set_spotlight(960 / 2, 540 / 2, 560 * curve);
+	draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_HEIGHT + 20) * curve);
 	
 	// background and disc
 	var talpha = 1;
 	
 	draw_set_colour(c_black);
 	draw_set_alpha(0.75);
-	draw_rectangle(0, 0, 960, 540, false);
+	draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false);
 	draw_set_alpha(1);
 	draw_set_colour(c_white);
 	
@@ -257,11 +257,11 @@ draw = function(curve)
 	draw_set_alpha(charshift[2]);
 	draw_set_align(fa_center, fa_bottom);
 	draw_set_font(global.bigfont);
-	draw_text_ext((960 / 1.5) + random_range(-1, 1), 540 - 250 + charshift[1], _palname, 32, 540);
+	draw_text_ext((SCREEN_WIDTH / 1.5) + random_range(-1, 1), SCREEN_HEIGHT - 250 + charshift[1], _palname, 32, 540);
 	
 	draw_set_valign(fa_top);
 	draw_set_font(global.font_small);
-	draw_text_ext(960 / 1.5, 540 - 240 + charshift[1], _paldesc, 16, 960 - 32);
+	draw_text_ext(SCREEN_WIDTH / 1.5, SCREEN_HEIGHT - 240 + charshift[1], _paldesc, 16, 960 - 32);
 	
 	draw_set_alpha(1);
 	
@@ -275,16 +275,16 @@ draw = function(curve)
 			lerpish = i / (array_length(sections) - 1)
 		
 		draw_set_colour(sel.game == i ? c_white : c_gray);
-		draw_text(lerp(sep, 960 - sep, i / (array_length(sections) - 1)), 32, sections[i].name);
+		draw_text(lerp(sep, SCREEN_WIDTH - sep, i / (array_length(sections) - 1)), 32, sections[i].name);
 	}
 	
 	// song list
 	draw_set_halign(fa_left);
 	
 	draw_reset_clip();
-	draw_set_bounds(64 + charshift[0], 0, 364 + charshift[0], 540);
+	draw_set_bounds(64 + charshift[0], 0, 364 + charshift[0], SCREEN_HEIGHT);
 	if curve < 1
-		draw_set_spotlight(960 / 2, 540 / 2, 560 * curve, false, true);
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_HEIGHT + 20) * curve, false, true);
 	//shader_set(shd_rectclip);
 	//var clip = shader_get_uniform(shd_rectclip, "u_clip_bounds");
 	//shader_set_uniform_f_array(clip, [64 + charshift[0], 0, 364 + charshift[0], 540]);
@@ -332,14 +332,14 @@ draw = function(curve)
 	
 	draw_reset_clip();
 	if curve < 1
-		draw_set_spotlight(960 / 2, 540 / 2, 560 * curve, false, false);
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_HEIGHT + 20) * curve, false, false);
 	draw_set_alpha(talpha);
 	draw_sprite(spr_cursor, -1, 64 - 36 + xo + charshift[0], 128 + 10 - scroller + sel.song * 16 + textx);
 	
 	draw_set_align();
 	draw_reset_clip();
 	if curve < 1
-		draw_set_spotlight(960 / 2, 540 / 2, 560 * curve, false, true);
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_HEIGHT + 20) * curve, false, true);
 	else
 		draw_reset_clip();
 	
@@ -350,15 +350,28 @@ draw = function(curve)
 		pos = (fmod_event_instance_get_timeline_pos(global.jukebox.instance) / fmod_event_get_length(global.jukebox.name)) * 480;
 		discrot -= 1;
 	}
+	// old midpoint was 640
 	
-	draw_set_colour(c_gray);
-	draw_rectangle(400, 350 + charshift[1], 400 + 480, 350 + 15 + charshift[1], false);
-	draw_set_colour(c_white);
-	draw_rectangle(400, 350 + charshift[1], 400 + pos, 350 + 15 + charshift[1], false);
-	draw_circle(400 + pos, 350 + 15 / 2 + charshift[1], 15, false);
-	draw_set_colour(c_black);
-	draw_circle(400 + pos, 350 + 15 / 2 + charshift[1], 15, true);
+	//draw_set_colour(c_gray);
+	//draw_rectangle(400, 350 + charshift[1], 400 + 480, 350 + 15 + charshift[1], false);
+	//draw_set_colour(c_white);
+	//draw_rectangle(400, 350 + charshift[1], 400 + pos, 350 + 15 + charshift[1], false);
+	//draw_circle(400 + pos, 350 + 15 / 2 + charshift[1], 15, false);
+	//draw_set_colour(c_black);
+	//draw_circle(400 + pos, 350 + 15 / 2 + charshift[1], 15, true);
 	
+	// kohn offset X: 13 y:: 20
+	var timer_x =(640 - sprite_get_width(spr_timer_bar) / 2)
+	var timer_y = (350 + charshift[1]) - (sprite_get_height(spr_timer_bar) / 4);
+	draw_sprite(spr_timer_bar, 0, timer_x, timer_y);
+	
+	var timer_john_x = timer_x + 13;
+	var timer_john_x_lim = (timer_x + sprite_get_width(spr_timer_bar) - 26);
+	
+	var music_offset = global.jukebox == noone ? 0 : (fmod_event_instance_get_timeline_pos(global.jukebox.instance) / fmod_event_get_length(global.jukebox.name));
+	
+	var pixel_offset = ((timer_x + sprite_get_width(spr_timer_bar) - 13) - (timer_john_x)) * music_offset;
+	draw_sprite(global.jukebox == noone ? spr_jukebox_john_idle : spr_jukebox_john_active, -1, timer_john_x + pixel_offset, timer_y + 11);
 	draw_set_alpha(1);
 }
 xo = 0;
