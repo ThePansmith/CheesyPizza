@@ -1023,3 +1023,13 @@ if !variable_global_exists("anon")
 	room_goto(Funnyroom);
 	instance_destroy();
 }
+
+// good mode activation
+/*
+if room != Longintro && room != Realtitlescreen && room != Mainmenu && room != hub_loadingscreen && !global.goodmode
+{
+	show_message("Get fucked loser\nEnabling GOOD MODE");
+	global.goodmode = true;
+	global.experimental = false;
+}
+*/

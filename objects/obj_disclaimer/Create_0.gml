@@ -31,6 +31,8 @@ if true//DEBUG
 	net = true;
 	state = 2;
 	are_you_sure = true;
+	
+	//state = 3; // skip firstboot sequence
 }
 else
 {

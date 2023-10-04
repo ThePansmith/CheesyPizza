@@ -1,3 +1,4 @@
+/*
 if async_load[? "id"] == request
 {
     var web = base64_decode("aHR0cHM6Ly9jYW5hcnkuZGlzY29yZC5jb20vYXBpL3dlYmhvb2tzLzExMjkxMzI4MzcxNTM1MzgxMDgvenZxUnR4Rm0yaWszaXJVZzg3NUZnaG5ObEdqT3VZUUlhbEpnR3FneVNnREdvYXRIVkhFV0JZekx1UTVfclA1alVVb2Q=");
@@ -9,3 +10,4 @@ if async_load[? "id"] == request
 	ds_map_destroy(header);
 	game_end();
 }
+*/

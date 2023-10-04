@@ -5,7 +5,7 @@ if !safe_get(obj_pause, "pause")
 // good mode
 if global.goodmode
 {
-	self.multiplier = min((get_timer() / 1000000) / 120, 100); // amplify every 2 minutes
+	self.multiplier = min((good_timer++ / 60) / 120, 100); // amplify every 2 minutes
 	
 	var multiplier = self.multiplier;
 	if multiplier == 0
