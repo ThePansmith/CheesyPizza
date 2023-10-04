@@ -277,6 +277,7 @@ event_handle_used_count = 0;
 #macro sfx_pizzahead_finaleexplosion "event:/sfx/pizzahead/finaleexplosion"
 #macro sfx_pizzahead_tvbounce "event:/sfx/pizzahead/tvbounce"
 #macro sfx_pizzahead_cog "event:/sfx/pizzahead/cog"
+#macro sfx_pizzahead_thunder "event:/sfx/pizzahead/thunder"
 
 #macro sfx_enemyscream "event:/sfx/voice/enemyrarescream"
 #macro sfx_escapespawn "event:/sfx/enemies/escapespawn"

@@ -218,7 +218,7 @@ draw = function(curve)
 	}
 
 	if (curv_prev < 1)
-		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 560 * curv_prev, true);
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, SCREEN_WIDTH * curv_prev, true);
 		
 #region Drawer	
 
@@ -280,7 +280,7 @@ draw = function(curve)
 		shader_reset();
 		
 		if curv_prev < 1
-			draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 560 * curv_prev, true);
+			draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, SCREEN_WIDTH * curv_prev, true);
 		draw_surface_ext(player_surface, charx - 256, chary - 256, 2, 2, 0, c_white, curve * charshift[2]);
 	}
 #endregion
@@ -309,9 +309,13 @@ draw = function(curve)
 	{
 		var char = string_char_at(name, i);
 		
-		var yy = 360;
+		// original height is 560, and we targeted 360
+		// so we need to go from SCREEN_HEIGHT to (SCREEN_HEIGHT * (360/560))
+		var yy = (SCREEN_HEIGHT * (360/560));
 		if curve2 != 1 // letters jump up
-			yy = lerp(SCREEN_HEIGHT, 360, min(animcurve_channel_evaluate(outback, curve2 + ((i % 3) * 0.075))));
+		{
+			yy = lerp(SCREEN_HEIGHT, (SCREEN_HEIGHT * (360/560)), min(animcurve_channel_evaluate(outback, curve2 + ((i % 3) * 0.075))));
+		}
 		
 		var d = (i % 2 == 0) ? -1 : 1;
 		var _dir = floor(Wave(-1, 1, 0.1, 0));
@@ -324,7 +328,7 @@ draw = function(curve)
 	draw_set_halign(fa_center);
 	draw_set_alpha(curve);
 	draw_set_font(global.font_small);
-	draw_text_ext(SCREEN_WIDTH / 1.5, 400, desc, 16, 600);
+	draw_text_ext(SCREEN_WIDTH / 1.5, (SCREEN_HEIGHT * (400/560)), desc, 16, 600);
 	draw_set_alpha(1);
 	shader_reset();
 #endregion
@@ -333,10 +337,17 @@ draw = function(curve)
 	// palettes
 	var palspr = characters[sel.char][2];
 	var xx = 0, yy = 0;
+	if global.option_scale_mode == 2
+	{
+		xx += CAMERA_WIDTH * (CAMERA_WIDTH / SCREEN_WIDTH);
+		yy += CAMERA_HEIGHT * (CAMERA_HEIGHT / SCREEN_HEIGHT);
+	}
 	var array = !mixing ? palettes : mixables;
 	vertex_begin(vertex_buffer, vertex_format);
 	
 	var cache = []; // RX: Loy yell at me if forget to remove this variable
+	
+	// this still needs some work for scalemode 2
 	
 	for(var i = 0; i < array_length(array); i++)
 	{
@@ -386,20 +397,20 @@ draw = function(curve)
 		if i % 13 == 12
 		{
 			yy += 36;
-			xx = 0;
+			xx = CAMERA_WIDTH * (CAMERA_WIDTH / SCREEN_WIDTH);
 		}
 	}
 	vertex_end(vertex_buffer);
 	
 	shader_reset();
 	if curv_prev < 1
-		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 560 * curv_prev);
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, SCREEN_WIDTH * curv_prev);
 		
 	vertex_submit(vertex_buffer, pr_trianglelist, tex);
 	
 	shader_reset();
 	if curv_prev < 1
-		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 560 * curv_prev);
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, SCREEN_WIDTH * curv_prev);
 	// RX: not really a better way to do this without rewriting the entire thing
 	for (var i = 0; i < array_length(cache); i++)
 	{
