@@ -32,7 +32,8 @@ function set_checkpoint()
 	var global_store = [
 		"collect", "combo", "combodropped", "lap", "laps", "secretfound", "comboscore", "fill", "panic",
 		"prank_enemykilled", "prank_cankillenemy", "modifier_failed", "gerome", "treasure", "toppintotal",
-		"shroomfollow", "cheesefollow", "tomatofollow", "sausagefollow", "pineapplefollow", "maxwave"
+		"shroomfollow", "cheesefollow", "tomatofollow", "sausagefollow", "pineapplefollow", "maxwave",
+		"level_minutes", "level_seconds"
 	];
 	var player_store = [
 		"targetDoor",

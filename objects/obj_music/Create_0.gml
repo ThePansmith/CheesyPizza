@@ -15,6 +15,7 @@ pillarmusicID = fmod_event_create_instance("event:/music/pillarmusic");
 panicmusicID = fmod_event_create_instance("event:/music/pizzatime");
 kidspartychaseID = fmod_event_create_instance("event:/music/w5/kidspartychase");
 panicstart = false;
+warstart = false;
 
 global.jukebox = noone;
 custom_music = [];
@@ -258,6 +259,7 @@ add_music(street_1, "event:/music/w4/street", "event:/music/w4/streetsecret", 0,
 add_music(chateau_1, "event:/music/w5/chateau", REMIX ? "event:/music/w5/chateausecret" : "event:/music/w1/medievalsecret", 0)
 add_music(kidsparty_1, "event:/music/w5/kidsparty", "event:/music/w5/kidspartysecret", 0)
 add_music(war_1, "event:/music/w5/war", "event:/music/w5/warsecret", 0)
+add_music(war_lap, "event:/music/w5/war", "event:/music/w5/warsecret", 0)
 
 #endregion
 #region PTO

@@ -4,8 +4,9 @@ if global.jukebox != noone
 	exit;
 if MOD.DeathMode
 	music = noone;
+warstart = false;
 
-var fucker = (global.panic && global.leveltosave != "dragonlair" && global.leveltosave != "grinch" && global.leveltosave != "sucrose")
+var fucker = (global.panic && global.leveltosave != "dragonlair" && global.leveltosave != "grinch" && global.leveltosave != "sucrose" && global.leveltosave != "war")
 or ((global.snickchallenge or MOD.DeathMode) && !instance_exists(obj_titlecard));
 
 if !fucker

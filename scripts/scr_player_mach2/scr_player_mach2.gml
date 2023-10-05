@@ -208,7 +208,7 @@ function scr_player_mach2()
 		}
 		sound_play_3d("event:/sfx/pep/pistolshot", x + (xscale * 20), y);
 	}
-	if (key_chainsaw2 && character == "V" && !instance_exists(dynamite_inst))
+	if ((key_shoot2 or key_chainsaw2) && character == "V" && !instance_exists(dynamite_inst))
 	{
 		vsp = -5;
 		state = states.dynamite;

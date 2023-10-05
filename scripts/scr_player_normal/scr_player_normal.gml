@@ -451,7 +451,7 @@ function state_player_normal()
 				if (movespeed < 6)
 					movespeed = 6;
 			}
-			if (key_chainsaw2 && !instance_exists(dynamite_inst))
+			if ((key_shoot2 or key_chainsaw2) && !instance_exists(dynamite_inst))
 			{
 				if (move == 0)
 					movespeed = 0;

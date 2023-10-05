@@ -13,6 +13,11 @@ if waiting && !safe_get(obj_pause, "pause")
 	waiting = false;
 	event_perform(ev_other, ev_room_start);
 }
+if warstart && !(MOD.DeathMode or global.jukebox != noone)
+{
+	fmod_event_instance_play(music.event);
+	warstart = false;
+}
 
 prevpillar_on_camera = pillar_on_camera;
 if (fmod_event_instance_is_playing(kidspartychaseID) && instance_exists(obj_pause) && !obj_pause.pause && !instance_exists(obj_monster))

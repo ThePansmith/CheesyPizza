@@ -101,7 +101,7 @@ switch character
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "<Loypoll please put description here>");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
 		break;
 	
 	#endregion
@@ -262,7 +262,7 @@ switch character
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "<Loypoll please put description here>");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
 		break;
 	
 	#endregion
@@ -339,7 +339,7 @@ switch character
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "<Loypoll please put description here>");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
 		break;
 	
 	#endregion
@@ -399,7 +399,7 @@ switch character
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "<Loypoll please put description here>");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
 		break;
 	
 	#endregion
@@ -485,7 +485,7 @@ switch character
 		add_palette(12, "", spr_pattern_awesome, "Awesome", "Incredible, incredible.");
 		add_palette(12, "", spr_pattern_wtf, "WTF!!!", "Stop saying cuss words, guys!");
 		add_palette(12, "", spr_pattern_sugary, "Sugary", "OOOH NAMEDROP!");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "<Loypoll please put description here>");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
 		break;
 	
 	#endregion
@@ -550,7 +550,7 @@ switch character
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "<Loypoll please put description here>");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
 		break;
 	
 	#endregion
@@ -639,15 +639,15 @@ switch character
 		add_palette(12, "", spr_pattern_mobius, "Honeycomb", "sweet and duggary. like my boogeries.");
 		add_palette(12, "", spr_pattern_spaceinvader, "Space Invaders", "so... re...so retr... so...");*/
 		add_palette(12, "mario", spr_pattern_mario, "Mario", "brother");
-		add_palette(12, "", spr_pattern_interstellar, "Interstellar", "Become one with the void.");
+		add_palette(12, "", spr_pattern_interstellar, "Interstellar", "there starts");
 		add_palette(12, "", spr_pattern_banana, "Bananas", "ooh ooh ah ah");
-		add_palette(12, "", spr_pattern_flamin, "Flamin' Hot", "sso spicy.. like suggary spicy!");
+		add_palette(12, "", spr_pattern_flamin, "Flamin' Hot", "just like suggary..");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "yummy :)");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "my legs i cant feel my legs");
 		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "owie owie");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "get");
 		add_palette(12, "", spr_pattern_evil, "Evil", "I am");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "<Loypoll please put description here>");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "ooooooo");
 		break;
 	
 	#endregion
@@ -659,7 +659,7 @@ switch character
 		add_palette(3, "", noone, "Familiar Chef", "A somewhat overweight Italian accident.");
 		add_palette(4, "", noone, "Lasagna", "Mondays.");
 		add_palette(5, "", noone, "Spice", "The secret ingredient to all candy.");
-		add_palette(6, "", noone, "Plumber", "This is so retro, right guys? Please laugh! I'm funny!");
+		add_palette(6, "", noone, "Plumber", "As seen on TV!");
 		add_palette(7, "", noone, "Green Apple", "Blue orange.");
 		add_palette(8, "", noone, "Grape Soda", "Grape? Like the", "GRAPE");
 		add_palette(9, "", noone, "Antipathic", "Isn't it anti-pathetic?", "PATHIC");
@@ -668,7 +668,7 @@ switch character
 		add_palette(13, "", noone, "Crystalized", "You're the goddamn iron chef!", "CRYSTAL");
 		add_palette(14, "", noone, "Virtual Boy", "Ultimate classic system!", "VB");
 		add_palette(15, "", noone, "Sucrose Snowstorm", "A little sweetness never hurts.", "SWEET");
-		add_palette(16, "", noone, "Classic Plumber", "<Loypoll please put description here>", "CLASSIC");
+		add_palette(16, "", noone, "Classic Plumber", "This is so retro, right guys? Please laugh! I'm funny!", "CLASSIC");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "Some joke about a fat rabbit here.");
@@ -715,7 +715,7 @@ switch character
 		add_palette(12, "", spr_pattern_awesome, "Awesome", "Incredible, incredible.");
 		add_palette(12, "", spr_pattern_wtf, "WTF!!!", "Stop saying cuss words, guys!");
 		add_palette(12, "", spr_pattern_sugary, "Sugary", "OOOH NAMEDROP!");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "<Loypoll please put description here>");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
 		break;
 	
 	#endregion

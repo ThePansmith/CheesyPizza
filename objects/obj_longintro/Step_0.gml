@@ -32,8 +32,11 @@ switch (scene)
 			with (instance_create(room_width / 2, room_height / 2, obj_logoprop))
 			{
 				sprite_index = spr_intro_fmod;
+				
+				/*
 				image_xscale = 0.5;
 				image_yscale = image_xscale;
+				*/
 			}
 		}
 		break;

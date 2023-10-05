@@ -1,8 +1,12 @@
+/*
 if (scr_split_object())
 {
 	instance_destroy(id, false);
 	exit;
 }
+
+Please don't do that
+*/
 
 event_inherited();
 

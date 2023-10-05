@@ -1,11 +1,10 @@
 fmod_set_parameter("PINOLINO", (safe_get(obj_player1, "character") == "PN"), true);
 fmod_set_parameter("REMIX", REMIX, true);
 
-/*
-if (MOD.Mirror)
-	fmod_set_listener_attributes(0, room_width - (camera_get_view_x(view_camera[0]) + (camera_get_view_width(view_camera[0]) / 2)), camera_get_view_y(view_camera[0]) + (camera_get_view_height(view_camera[0]) / 2));
-else*/
-	fmod_set_listener_attributes(0, camera_get_view_x(view_camera[0]) + (camera_get_view_width(view_camera[0]) / 2), camera_get_view_y(view_camera[0]) + (camera_get_view_height(view_camera[0]) / 2));
+if MOD.Mirror
+	fmod_set_listener_attributes(0, room_width - (CAMX + (CAMW / 2)), CAMY + (CAMH / 2));
+else
+	fmod_set_listener_attributes(0, CAMX + (CAMW / 2), CAMY + (CAMH / 2));
 fmod_update();
 
 event_handle_count = fmod_debug_event_handle_count();

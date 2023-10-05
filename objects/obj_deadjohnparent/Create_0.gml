@@ -1,3 +1,4 @@
+event_inherited();
 hp = 1;
 hurted = false;
 hurtfx = false;

@@ -99,7 +99,7 @@ function scr_player_mach1()
 				}
 				sound_play_3d("event:/sfx/pep/pistolshot", x + (xscale * 20), y);
 			}
-			if (key_chainsaw2 && !instance_exists(dynamite_inst))
+			if ((key_shoot2 or key_chainsaw2) && !instance_exists(dynamite_inst))
 			{
 				image_index = 0;
 				sprite_index = spr_playerV_dynamitethrow;

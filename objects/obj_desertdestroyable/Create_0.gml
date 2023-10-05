@@ -1,2 +1,2 @@
-global.breaksound = 0;
+event_inherited();
 depth = 1;

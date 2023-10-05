@@ -33,8 +33,12 @@ function create_debris(_x, _y, _sprite, _animated = false)
 		grav: 0.4,
 		type: part_type.normal,
 		animated: _animated,
-		destroyonanimation: false
+		destroyonanimation: false,
+		momentum: [0, 0],
 	};
+	if is_struct(safe_get(id, "momentum"))
+		q.momentum = [momentum.x, momentum.y];
+	
 	ds_list_add(global.debris_list, q);
 	return q;
 }

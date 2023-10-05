@@ -1,3 +1,5 @@
+event_inherited();
+
 particlespr = spr_pizzadebris;
 spr_dead = spr_pizzablockdead;
 

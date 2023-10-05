@@ -12,7 +12,7 @@ if !in_saveroom()
 			with (obj_escapecollect)
 				image_alpha = 1;
 			with (obj_music)
-				fmod_event_instance_play(music.event);
+				warstart = true;
 		}
 	}
 	sound_play("event:/sfx/ui/wartimerup");

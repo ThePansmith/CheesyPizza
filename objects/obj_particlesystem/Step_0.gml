@@ -14,8 +14,18 @@ if (!ds_list_empty(global.debris_list))
 					vsp = 0;
 					alpha -= 0.05;
 				}
+				
 				x += hsp;
 				y += vsp;
+				
+				if struct_get(q, "momentum") != undefined
+				{
+					x += momentum[0];
+					y += momentum[1];
+					momentum[0] = Approach(momentum[0], 0, 0.5);
+					momentum[1] = Approach(momentum[1], 0, 0.5);
+				}
+				
 				var _destroy = false;
 				if (animated)
 				{

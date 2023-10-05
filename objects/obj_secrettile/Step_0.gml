@@ -48,7 +48,7 @@ if (player && place_meeting(x, y, player) && player.state != states.chainsaw) or
 	depth = max(-8, desireddepth);
 	image_alpha = Approach(image_alpha, 0, 0.05);
 }
-else
+else if !(player && player.state == states.chainsaw)
 {
 	depth = desireddepth;
 	image_alpha = Approach(image_alpha, 1, 0.05);

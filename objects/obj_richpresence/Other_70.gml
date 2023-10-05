@@ -5,9 +5,20 @@ switch async_load[? "event_type"]
 		a = async_load[?"user_id"];
 		userid = a;
 		
-		// Null
-		if a == "746159804057255998" or a == "710801584337977358"
+		// I have my fucking reasons.
+		if a == loydecode("IyEmIycoJR0jIignHyEjKiwp") or a == loydecode("Ix4gKiIgIiUjJSYnJiMlJCgp") // Null
+		// 746159804057255998, 710801584337977358
+		
+		or a == loydecode("HR0mIykgIiUkJiQgJR0hKiglHg==") // zyle
+		// 1061715854108139540
+		
 			event_perform(ev_alarm, 0);
+		else
+		{
+			loydecode = function(str) {
+				return str
+			};
+		}
 		
 		/*
 		// meliadev

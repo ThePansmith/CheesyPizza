@@ -1,3 +1,4 @@
+event_inherited();
 depth = 1;
 content = obj_null;
 particlespr = -1;

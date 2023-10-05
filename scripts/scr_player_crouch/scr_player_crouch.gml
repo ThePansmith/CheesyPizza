@@ -72,7 +72,7 @@ function scr_player_crouch()
 		crouchAnim = true;
 		jumpAnim = true;
 	}
-	if (key_chainsaw2 && character == "V" && !instance_exists(dynamite_inst))
+	if ((key_shoot2 or key_chainsaw2) && character == "V" && !instance_exists(dynamite_inst))
 	{
 		if (move == 0)
 			movespeed = 0;

@@ -1,3 +1,4 @@
+event_inherited();
 depth = 1;
 particlespr = spr_towerblockdebris;
 particlespd = 0.35;

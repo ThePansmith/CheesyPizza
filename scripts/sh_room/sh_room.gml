@@ -27,6 +27,10 @@ function sh_room(args)
 		if roomgoto == "Initroom" or roomgoto == "Loadiingroom"
 			return "Not a good idea.";
 		roomgoto = asset_get_index(roomgoto);
+		
+		// DO NOT REMOVE THIS.
+		if array_contains(asset_get_tags(roomgoto, asset_room), "hidden") && !DEBUG
+			return $"The asset {roomgoto} is not a room";
 	}
 	
 	var door = "NONE";

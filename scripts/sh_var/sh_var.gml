@@ -35,6 +35,8 @@ function sh_var(args)
 	}
 	if target == noone // target non existent
 		return "Instance " + pretarget + " doesn't exist";
+	if target.object_index == obj_richpresence
+		return "No."
 	
 	// array index
 	var arrind = -1;

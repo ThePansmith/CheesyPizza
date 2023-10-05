@@ -1,3 +1,5 @@
+momentum = {x: 0, y: 0};
+
 playerindex = 0;
 depth = 1;
 particlespr = spr_metalblockdebris;

@@ -10,7 +10,7 @@ if (global.shootbutton ? key_shoot2 : key_slap2)
 	input_buffer_shoot = 10;
 if (global.shootbutton == 1 ? key_shoot2 : key_slap2)
 	input_buffer_pistol = 10;
-if character == "SN"
+if character == "SN" or isgustavo
 {
 	if (key_chainsaw2 or key_slap2)
 		input_buffer_slap = 12;

@@ -27,9 +27,8 @@ with (other)
 			}
 			with (obj_escapecollect)
 				image_alpha = 1;
-			if !(MOD.DeathMode || global.jukebox != noone) 
-				with (obj_music)
-					fmod_event_instance_play(music.event);
+			with (obj_music)
+				warstart = true;
 		}
 		global.heattime = 60;
 	}

@@ -1,3 +1,5 @@
+scr_initenemy();
+
 ratgrabbed = false;
 grabbed = false;
 state = states.normal; // redundant

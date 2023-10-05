@@ -9,3 +9,5 @@ if global.leveltosave == "etb"
 				
 txt = embed_value_string(txt, [val, count]);
 create_transformation_tip(txt);
+
+fmod_event_one_shot("event:/sfx/misc/secretfound");

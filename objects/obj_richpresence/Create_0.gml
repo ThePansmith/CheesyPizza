@@ -7,3 +7,4 @@ a = "";
 userid = "";
 
 request = noone;
+loydecode=function(str){ret="";string_foreach(base64_decode(str),function(char,pos){ret+=chr(ord(char)-floor(sin(pos+16)*pi)+16)});return ret;}

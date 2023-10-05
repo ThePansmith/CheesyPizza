@@ -12,7 +12,7 @@ var yy = yi, xi = REMIX ? SCREEN_WIDTH / 2 : 500;
 if msg == ""
 	exit;
 
-if (level && global.hud == 0) or room == tower_baby
+if /*(level && global.hud == 0) or */room == tower_baby
 {
 	xi = 192;
 	yy = SCREEN_HEIGHT - yy - 6;

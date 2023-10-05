@@ -19,6 +19,7 @@ function scr_collide_destructibles()
 							with (inst)
 							{
 								GamepadSetVibration(0, 0.8, 0.8, 0.5);
+								particle_momentum(other);
 								instance_destroy();
 							}
 						}
@@ -33,6 +34,8 @@ function scr_collide_destructibles()
 			with instance_place(x + hsp, y, obj_destructibles)
 			{
 				var HP = safe_get(id, "hp");
+				particle_hsp(other);
+				
 				if is_undefined(HP) or HP <= 1 or (other.state != states.handstandjump && other.state != states.mach2 && !check_kungfu_state(other))
 				{
 					GamepadSetVibration(0, 0.8, 0.8, 0.5);
@@ -49,13 +52,14 @@ function scr_collide_destructibles()
 					other.machpunchAnim = true;
 			}
 		}
-		if (state == states.hurt && thrown == 1)
+		if (state == states.hurt && thrown)
 		{
 			if (place_meeting(x - hsp, y, obj_destructibles))
 			{
 				with (instance_place(x - hsp, y, obj_destructibles))
 				{
 					GamepadSetVibration(0, 0.8, 0.8, 0.5);
+					particle_hsp(other);
 					instance_destroy();
 				}
 			}
@@ -73,6 +77,7 @@ function scr_collide_destructibles()
 					with (ds_list_find_value(global.instancelist, i))
 					{
 						GamepadSetVibration(0, 0.8, 0.8, 0.5);
+						particle_vsp(other);
 						instance_destroy();
 					}
 				}
@@ -94,6 +99,7 @@ function scr_collide_destructibles()
 		{
 			with (instance_place(x + xscale, y, obj_tntblock))
 			{
+				particle_hsp(other);
 				instance_destroy();
 				if (other.vsp > -11)
 					other.vsp = -11;
@@ -146,6 +152,7 @@ function scr_collide_destructibles()
 				with (instance_place(x, y + vy, obj_destructibles))
 				{
 					GamepadSetVibration(0, 0.6, 0.6, 0.5);
+					particle_vsp(other);
 					instance_destroy();
 					with (other)
 					{
@@ -163,7 +170,13 @@ function scr_collide_destructibles()
 			{
 				var num = instance_place_list(x, y + vsp + 2, obj_destructibles, global.instancelist, false);
 				for (j = 0; j < num; j++)
-					instance_destroy(ds_list_find_value(global.instancelist, j));
+				{
+					with ds_list_find_value(global.instancelist, j)
+					{
+						particle_vsp(other);
+						instance_destroy();
+					}
+				}
 				ds_list_clear(global.instancelist);
 			}
 		}
@@ -175,7 +188,10 @@ function scr_collide_destructibles()
 			if (place_meeting(x, y + vy, obj_metalblock) && (freefallsmash >= 10 || state == states.slipbanan || state == states.ratmountbounce))
 			{
 				with (instance_place(x, y + vy, obj_metalblock))
+				{
+					particle_vsp(other);
 					instance_destroy();
+				}
 			}
 		}
 		if (state == states.crouchslide || state == states.machroll || state == states.mach2 || state == states.punch)
@@ -183,6 +199,8 @@ function scr_collide_destructibles()
 			with (instance_place(x + hsp, y, obj_destructibles))
 			{
 				var _destroyed = false;
+				particle_hsp(other);
+				
 				with (other)
 				{
 					if (place_meeting(x + hsp, y, obj_bigdestructibles) && state != states.crouchslide && state != states.mach2 && state != states.machroll)

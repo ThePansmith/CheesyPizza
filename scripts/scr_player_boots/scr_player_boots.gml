@@ -89,7 +89,7 @@ function scr_player_boots()
 		machhitAnim = false;
 		state = states.crouchslide;
 	}
-	if (key_shoot2 && character == "V")
+	if ((key_shoot2 or key_chainsaw2) && character == "V")
 	{
 		state = states.dynamite;
 		image_index = 0;
