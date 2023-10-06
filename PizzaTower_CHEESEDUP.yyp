@@ -634,7 +634,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.1.102",
+    "IDEVersion": "2023.8.2.106",
   },
   "resources": [
     {"id":{"name":"obj_bossdoor","path":"objects/obj_bossdoor/obj_bossdoor.yy",},},
@@ -5003,6 +5003,7 @@
     {"id":{"name":"spr_climbstairscutscene","path":"sprites/spr_climbstairscutscene/spr_climbstairscutscene.yy",},},
     {"id":{"name":"spr_player_backkickprep","path":"sprites/spr_player_backkickprep/spr_player_backkickprep.yy",},},
     {"id":{"name":"spr_peasanto_throw","path":"sprites/spr_peasanto_throw/spr_peasanto_throw.yy",},},
+    {"id":{"name":"spr_gpb","path":"sprites/spr_gpb/spr_gpb.yy",},},
     {"id":{"name":"spr_player_rockethitwall","path":"sprites/spr_player_rockethitwall/spr_player_rockethitwall.yy",},},
     {"id":{"name":"spr_ending_ground","path":"sprites/spr_ending_ground/spr_ending_ground.yy",},},
     {"id":{"name":"spr_player_grab","path":"sprites/spr_player_grab/spr_player_grab.yy",},},
@@ -9258,6 +9259,7 @@
     {"id":{"name":"spr_pepperman_miniidle","path":"sprites/spr_pepperman_miniidle/spr_pepperman_miniidle.yy",},},
     {"id":{"name":"midway_secret1","path":"rooms/midway_secret1/midway_secret1.yy",},},
     {"id":{"name":"spr_hoop","path":"sprites/spr_hoop/spr_hoop.yy",},},
+    {"id":{"name":"obj_gpb","path":"objects/obj_gpb/obj_gpb.yy",},},
     {"id":{"name":"spr_tv_combobubblefill","path":"sprites/spr_tv_combobubblefill/spr_tv_combobubblefill.yy",},},
     {"id":{"name":"steamy_11","path":"rooms/steamy_11/steamy_11.yy",},},
     {"id":{"name":"spr_playerSP_mach2jump","path":"sprites/spr_playerSP_mach2jump/spr_playerSP_mach2jump.yy",},},
