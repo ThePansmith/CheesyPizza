@@ -9237,6 +9237,7 @@
     {"id":{"name":"spr_headprojectile_idle","path":"sprites/spr_headprojectile_idle/spr_headprojectile_idle.yy",},},
     {"id":{"name":"spr_playerBN_tumble","path":"sprites/spr_playerBN_tumble/spr_playerBN_tumble.yy",},},
     {"id":{"name":"spr_title_funfarm","path":"sprites/spr_title_funfarm/spr_title_funfarm.yy",},},
+    {"id":{"name":"obj_serverlist","path":"objects/obj_serverlist/obj_serverlist.yy",},},
     {"id":{"name":"spr_playerSP_facehurtup","path":"sprites/spr_playerSP_facehurtup/spr_playerSP_facehurtup.yy",},},
     {"id":{"name":"spr_policecarstation","path":"sprites/spr_policecarstation/spr_policecarstation.yy",},},
     {"id":{"name":"sh_live_call","path":"scripts/sh_live_call/sh_live_call.yy",},},

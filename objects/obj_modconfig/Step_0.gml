@@ -162,4 +162,4 @@ else
 }
 
 // figure out scroll
-scroll = lerp(scroll, max(options_pos[sel] - SCREEN_HEIGHT / 2, 0), 0.2);
+scroll = lerp(scroll, max(options_pos[sel] - SCREEN_HEIGHT / 3, 0), 0.2);
