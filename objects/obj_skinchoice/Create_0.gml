@@ -208,7 +208,8 @@ draw_skin_pattern = function(_x, _y, _color, _alpha, _sprite, _subimage)
 
 draw = function(curve)
 {
-	// animation
+	#region Animation
+	
 	var curve2 = anim_t;
 	var curv_prev = curve;
 	if anim_con != 0
@@ -216,13 +217,12 @@ draw = function(curve)
 		curve = 1; // actual animated curve
 		curve2 = 1; // the timer
 	}
-
-	if (curv_prev < 1)
-		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, SCREEN_WIDTH * curv_prev, true);
-		
-#region Drawer	
-
-	// drawer
+	if curv_prev < 1
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_WIDTH / (960 / 560)) * curv_prev, true);
+	
+	#endregion
+	#region Character
+	
 	var pal = palettes[sel.pal];
 	if anim_con != 2 or obj_player1.visible
 	{
@@ -257,10 +257,7 @@ draw = function(curve)
 			if check_skin(SKIN.pn_homer, "PN", pal.palette)
 				characters[sel.char][1] = spr_playerPN_homer;
 		}
-#endregion
 
-#region Character
-		// character
 		if !surface_exists(player_surface)
 			player_surface = surface_create(256, 256);
 			
@@ -280,13 +277,13 @@ draw = function(curve)
 		shader_reset();
 		
 		if curv_prev < 1
-			draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, SCREEN_WIDTH * curv_prev, true);
+			draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_WIDTH / (960 / 560)) * curv_prev, true);
 		draw_surface_ext(player_surface, charx - 256, chary - 256, 2, 2, 0, c_white, curve * charshift[2]);
 	}
-#endregion
-
-#region Text
-	// text
+	
+	#endregion
+	#region Text
+	
 	var name = string_upper(pal.name), desc = pal.description;
 	if sel.mix > 0
 	{
@@ -309,13 +306,9 @@ draw = function(curve)
 	{
 		var char = string_char_at(name, i);
 		
-		// original height is 560, and we targeted 360
-		// so we need to go from SCREEN_HEIGHT to (SCREEN_HEIGHT * (360/560))
 		var yy = (SCREEN_HEIGHT * (360/560));
 		if curve2 != 1 // letters jump up
-		{
 			yy = lerp(SCREEN_HEIGHT, (SCREEN_HEIGHT * (360/560)), min(animcurve_channel_evaluate(outback, curve2 + ((i % 3) * 0.075))));
-		}
 		
 		var d = (i % 2 == 0) ? -1 : 1;
 		var _dir = floor(Wave(-1, 1, 0.1, 0));
@@ -331,24 +324,16 @@ draw = function(curve)
 	draw_text_ext(SCREEN_WIDTH / 1.5, (SCREEN_HEIGHT * (400/560)), desc, 16, 600);
 	draw_set_alpha(1);
 	shader_reset();
-#endregion
+	
+	#endregion
+	#region Palettes
 
-#region Palettes
-	// palettes
 	var palspr = characters[sel.char][2];
 	var xx = 0, yy = 0;
-	if global.option_scale_mode == 2
-	{
-		xx += CAMERA_WIDTH * (CAMERA_WIDTH / SCREEN_WIDTH);
-		yy += CAMERA_HEIGHT * (CAMERA_HEIGHT / SCREEN_HEIGHT);
-	}
 	var array = !mixing ? palettes : mixables;
 	vertex_begin(vertex_buffer, vertex_format);
 	
 	var cache = []; // RX: Loy yell at me if forget to remove this variable
-	
-	// this still needs some work for scalemode 2
-	
 	for(var i = 0; i < array_length(array); i++)
 	{
 		var xdraw = xx;
@@ -397,20 +382,21 @@ draw = function(curve)
 		if i % 13 == 12
 		{
 			yy += 36;
-			xx = CAMERA_WIDTH * (CAMERA_WIDTH / SCREEN_WIDTH);
+			xx = 0;
 		}
 	}
 	vertex_end(vertex_buffer);
 	
 	shader_reset();
 	if curv_prev < 1
-		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, SCREEN_WIDTH * curv_prev);
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_WIDTH / (960 / 560)) * curv_prev);
 		
 	vertex_submit(vertex_buffer, pr_trianglelist, tex);
 	
 	shader_reset();
 	if curv_prev < 1
-		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, SCREEN_WIDTH * curv_prev);
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_WIDTH / (960 / 560)) * curv_prev);
+	
 	// RX: not really a better way to do this without rewriting the entire thing
 	for (var i = 0; i < array_length(cache); i++)
 	{
@@ -418,19 +404,18 @@ draw = function(curve)
 		var spr_xscale = (32 / sprite_get_width(cache[i].pattern));
 		var spr_yscale = (32 / sprite_get_height(cache[i].pattern));
 		
-		
 		draw_sprite_ext(cache[i].pattern, cache[i].subimage, cache[i].x, cache[i].y, spr_xscale, spr_yscale, 0, c_white, 1);
 		draw_remove_mask();
 	}
 	
-	//if shader_current() != shd_masterclip || shader_current() != shd_masterclip_basic
-	//	draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 560 * curv_prev);
-#endregion
-
-	// hand
+	#endregion
+	#region Hand
+	
 	draw_sprite_ext(spr_skinchoicehand, 0, handx, handy + sin(current_time / 1000) * 4, 2, 2, 0, c_white, 1);
 	draw_set_align();
 	shader_reset();
+	
+	#endregion
 }
 handx = SCREEN_WIDTH / 2;
 handy = -50;

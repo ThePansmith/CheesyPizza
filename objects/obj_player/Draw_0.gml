@@ -1,4 +1,4 @@
-if (global.showcollisions > 1) //RX: Loypoll if you say anything about this I will gut you like a fish
+if (global.showcollisions > 1) //LP: Kill yourself
 {
 	//RX: Get the boof
 	var beforeColor = draw_get_color();

@@ -12,7 +12,7 @@ with (obj_player)
 		if (targetDoor == "S" && (secretportalID == noone or secretportalID == other.ID))
 		{
 			secretportalID = noone;
-			if !instance_exists(obj_secretportalstart) // RX: Create a secret exit if one doesn't exist
+			if !instance_exists(obj_secretportalstart)
 			{	
 				x = other.x;
 				y = other.y;

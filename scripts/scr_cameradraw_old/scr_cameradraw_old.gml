@@ -259,7 +259,7 @@ function scr_cameradraw_old()
 			if global.heatmeter
 				yy += 25;
 			
-			var speedbaractive = _state == states.mach1 or _state == states.mach2 or _state == states.mach3 or _state == states.climbwall or _state == states.machslide or _state == states.machroll or _state == states.handstandjump or player.character == "S";
+			var speedbaractive = _state == states.mach1 or _state == states.mach2 or _state == states.mach3 or _state == states.climbwall or _state == states.machslide or _state == states.machroll or _state == states.handstandjump or (player.character == "S" && state == states.normal);
 			var frame = 0, movespeed = abs(player.movespeed);
 			
 			if movespeed < 2.4 or !speedbaractive

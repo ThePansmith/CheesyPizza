@@ -5,7 +5,7 @@ function scr_is_p_rank()
 	if global.leveltosave == "dragonlair" or global.leveltosave == "grinch"
 		return !global.combodropped && enemykilled;
 	if global.leveltosave == "etb"
-		return !global.combodropped && global.secretfound >= 2 && global.lap;
+		return !global.combodropped && global.secretfound >= 2 && (global.lap or MOD.DeathMode);
 	if global.leveltosave == "snickchallenge"
 		return !global.combodropped && !string_starts_with(room_get_name(room), "medieval");
 	

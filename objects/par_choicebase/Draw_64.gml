@@ -20,7 +20,7 @@ if anim_con == 1 or anim_con == 2
 }
 
 // background
-var spotlight_size = (SCREEN_HEIGHT + 20) * curve;
+var spotlight_size = (SCREEN_WIDTH / (960 / 560)) * curve;
 
 bg_pos = (bg_pos + 0.5) % 64;
 if curve < 1

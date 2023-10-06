@@ -1,12 +1,11 @@
 if !player_attached
 {
-	if !collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_player, false, false)
+	if !collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, player, false, false)
 		cooldown = false;
-		
 	exit;
 }
 
-with obj_player
+with player
 {
 	y = other.player_collide_y;
 	x = (other.x + (sprite_get_xoffset(other.player_spr)) / 2); // RX: Center player so we can SPEEN
@@ -18,26 +17,20 @@ with obj_player
 }
 if input_cooldown
 {
-	if (obj_player.key_jump || obj_player.key_jump2)
+	if (player.key_jump || player.key_jump2)
 		exit;
-		
 	input_cooldown = false;
 }
 
-if !(obj_player.key_jump || obj_player.key_jump2) // RX: Do we launch player?
+if !(player.key_jump || player.key_jump2) // RX: Do we launch player?
 	exit;
 
-var left = obj_player.key_left == -1 || obj_player.key_left2  == -1 ? -1 : 0;
-var right = obj_player.key_right == 1 || obj_player.key_right2  == 1 ? 1 : 0;
-
-var player_dir = left + right;
-
+var player_dir = player.key_left + player.key_right;
 if player_dir == 0
 	exit;
-cooldown = true;
-player_attached = false;
 
-with obj_player
+cooldown = true;
+with player
 {
 	machhitAnim = false;
 	state = states.mach3;
@@ -48,6 +41,5 @@ with obj_player
 	dir = xscale;
 	hsp = xscale * movespeed;
 }
-
-
-trace($"Player released with: {obj_player.hsp}, caught with {player_collide_speed}");
+trace($"Player released with: {player.hsp}, caught with {player_collide_speed}");
+player = noone;

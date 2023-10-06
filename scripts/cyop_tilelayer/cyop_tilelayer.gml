@@ -7,7 +7,6 @@ function cyop_tilelayer() constructor
 	
 	tilesize_x = 0;
 	tilesize_y = 0;
-
 	
 	/// @desc	Build the vertex array from an array of "cyop_tile"
 	/// @param	{array.cyop_tile} _tile_array
@@ -18,11 +17,10 @@ function cyop_tilelayer() constructor
 		tiles = _tile_array;
 		tilesize_x = tiles[0].size_x;
 		tilesize_y = tiles[0].size_y;
+		
 		#region Sort by Texture
 		
-		// RX: First sort everything by texture
 		var sorted_map = ds_map_create();
-		
 		for (var i = 0; i < array_length(_tile_array); i++)
 		{
 			var tile = _tile_array[i];
@@ -43,7 +41,6 @@ function cyop_tilelayer() constructor
 		}
 		
 		#endregion
-		// RX: Everything should be sorted now, hopefully
 		
 		// RX: Now build each vertex buffer
 		for (var tex_it = 0; tex_it < array_length(textures); tex_it++)
@@ -69,22 +66,19 @@ function cyop_tilelayer() constructor
                 var tile_tex_pos_x = ((tile.tm_x - (tile_trim_x / tile.size_x)) * tile_tex_size_x) + uv_left;
                 var tile_tex_pos_y = ((tile.tm_y - (tile_trim_y / tile.size_y)) * tile_tex_size_y) + uv_top;
 				
-			
 				// RX: Half texel offset because we sample from center and not edge
 				//tile_tex_pos_x += (tex_w / 2);
 				//tile_tex_pos_y += (tex_h / 2);
-				
 			
                 vertex_build_quad3D(vertex_buffers[tex_it], 
-                                tile.x, tile.y, _depth, tile.size_x,  tile.size_y,// Pos and Size
-                                c_white, 1, // Color and Opacity
-                                tile_tex_pos_x, tile_tex_pos_y, tile_tex_size_x, tile_tex_size_y);
+                    tile.x, tile.y, _depth, tile.size_x,  tile.size_y, // Pos and Size
+                    c_white, 1, // Color and Opacity
+                    tile_tex_pos_x, tile_tex_pos_y, tile_tex_size_x, tile_tex_size_y
+				);
 			}
 			vertex_end(vertex_buffers[tex_it]);
 			vertex_freeze(vertex_buffers[tex_it]); // RX: Make it readonly
 		}
-		
-		// RX: Cleanup
 		ds_map_destroy(sorted_map);
 	}
 	

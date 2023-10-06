@@ -30,7 +30,8 @@ switch state
 		{
 			if escape
 			{
-				stop_music();
+				if !MOD.DeathMode && !global.panic && !global.snickchallenge
+					stop_music();
 				instance_destroy(effectid);
 				visible = false;
 				state = 1;

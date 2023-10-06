@@ -74,7 +74,6 @@ function scr_palette_texture(sprite, subimg, x, y, xscale, yscale, rot = 0, col 
 	if (surface_get_width(global.palettesurfaceclip) != surfw || surface_get_height(global.palettesurfaceclip) != surfh)
 		surface_free(global.palettesurfaceclip);
 	
-	
 	// RX: Oh my fucking god sertif only make surfaces when you fucking need it
 	if (!surface_exists(global.palettesurface))
 		global.palettesurface = surface_create(surfw, surfh);

@@ -1,7 +1,5 @@
 live_auto_call;
 
-//trace(SCREEN_WIDTH);
-
 // options left side
 draw_set_colour(c_white);
 draw_set_align();

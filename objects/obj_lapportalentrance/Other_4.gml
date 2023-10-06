@@ -111,10 +111,21 @@ with (obj_player)
 							    minutes = 3;
 							    seconds = 30;
 							    break;
-									
 							default:
 							    minutes = 2;
 							    break;
+							
+							// pto
+							case "sucrose":
+								minutes = 3;
+								break;
+							case "etb":
+								minutes = 1;
+								break;
+							case "entryway":
+								minutes = 1;
+								seconds = 30;
+								break;
 						}
 					}
 					break;

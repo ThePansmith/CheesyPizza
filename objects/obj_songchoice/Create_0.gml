@@ -236,7 +236,7 @@ textx = 0;
 
 draw = function(curve)
 {
-	draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_HEIGHT + 20) * curve);
+	draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_WIDTH / (960 / 560)) * curve);
 	
 	// background and disc
 	var talpha = 1;
@@ -284,7 +284,7 @@ draw = function(curve)
 	draw_reset_clip();
 	draw_set_bounds(64 + charshift[0], 0, 364 + charshift[0], SCREEN_HEIGHT);
 	if curve < 1
-		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_HEIGHT + 20) * curve, false, true);
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_WIDTH / (960 / 560)) * curve, false, true);
 	//shader_set(shd_rectclip);
 	//var clip = shader_get_uniform(shd_rectclip, "u_clip_bounds");
 	//shader_set_uniform_f_array(clip, [64 + charshift[0], 0, 364 + charshift[0], 540]);
@@ -332,14 +332,14 @@ draw = function(curve)
 	
 	draw_reset_clip();
 	if curve < 1
-		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_HEIGHT + 20) * curve, false, false);
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_WIDTH / (960 / 560)) * curve, false, false);
 	draw_set_alpha(talpha);
 	draw_sprite(spr_cursor, -1, 64 - 36 + xo + charshift[0], 128 + 10 - scroller + sel.song * 16 + textx);
 	
 	draw_set_align();
 	draw_reset_clip();
 	if curve < 1
-		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_HEIGHT + 20) * curve, false, true);
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_WIDTH / (960 / 560)) * curve, false, true);
 	else
 		draw_reset_clip();
 	

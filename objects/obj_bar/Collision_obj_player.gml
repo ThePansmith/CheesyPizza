@@ -1,9 +1,9 @@
-if other.state == states.actor || cooldown || player_attached
+if other.state == states.actor || cooldown || player != noone
 	exit;
-	
+
+player = other.id;
 player_collide_speed = abs(other.hsp);
 player_collide_y = other.y;
-
 
 with other
 {
@@ -17,6 +17,5 @@ with other
 	image_speed = 0.35 + ((other.player_collide_speed / 12) * 0.125);	
 }
 
-player_attached = true;
-input_cooldown = obj_player1.key_jump || obj_player1.key_jump2;
+input_cooldown = other.key_jump || other.key_jump2;
 cooldown = true;
