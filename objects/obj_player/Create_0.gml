@@ -8,7 +8,7 @@ if (instance_number(object_index) > 1)
 		exit;
 	}
 }
-palette_override_active = false;
+palette_override_active = false; // still working on it
 palette_override_colors = array_create(64);
 
 soundinit = false;

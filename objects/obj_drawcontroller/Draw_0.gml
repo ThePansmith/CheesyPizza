@@ -146,10 +146,23 @@ with (obj_player1)
 	if (visible && state != states.titlescreen && bbox_in_camera(view_camera[0], 32))
 		draw_player();
 }
+
+// this is a dumb hack but it works blame me (Radix) if it breaks
+with obj_secrettile
+{
+	var prev_depth = gpu_get_depth();
+	gpu_set_depth(depth);
+	draw_secrettiles(id);
+	gpu_set_depth(prev_depth);
+}
+
 with obj_sausageman_dead
 {
 	if !gui && visible && bbox_in_camera(view_camera[0], 32)
 	{
+		var prev_depth = gpu_get_depth();
+		gpu_set_depth(depth);
+		
 		var b = get_dark(image_blend, other.use_dark);
 		if other.use_dark && SUGARY
 		{
@@ -171,6 +184,7 @@ with obj_sausageman_dead
 			if oldpalettetexture != noone
 	            pattern_reset();
 		}
+		gpu_set_depth(prev_depth);
 	}
 }
 pal_swap_reset();
@@ -196,6 +210,3 @@ with obj_boxofpizza
 	if bo
 		draw_sprite_ext(sprite_index, 1, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 }
-
-with obj_secrettile
-	draw_secrettiles(id);

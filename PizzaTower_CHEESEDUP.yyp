@@ -9431,7 +9431,6 @@
     {"id":{"name":"spr_flush_pizza","path":"sprites/spr_flush_pizza/spr_flush_pizza.yy",},},
     {"id":{"name":"spr_secretportal_spawnopen","path":"sprites/spr_secretportal_spawnopen/spr_secretportal_spawnopen.yy",},},
     {"id":{"name":"spr_achievement_freezer","path":"sprites/spr_achievement_freezer/spr_achievement_freezer.yy",},},
-    {"id":{"name":"obj_musictimer","path":"objects/obj_musictimer/obj_musictimer.yy",},},
     {"id":{"name":"spr_dancingpig","path":"sprites/spr_dancingpig/spr_dancingpig.yy",},},
     {"id":{"name":"spr_boxxedpep_spin","path":"sprites/spr_boxxedpep_spin/spr_boxxedpep_spin.yy",},},
     {"id":{"name":"bg_alienmonkey","path":"sprites/bg_alienmonkey/bg_alienmonkey.yy",},},

@@ -14,7 +14,7 @@
   "classname": "",
   "ConfigValues": {},
   "copyToTargets": 64,
-  "date": "2023-07-04T20:56:06.5718393+02:00",
+  "date": "2023-07-04T14:56:06.5718393-04:00",
   "description": "",
   "exportToGame": true,
   "extensionVersion": "0.3.2",
@@ -25,6 +25,9 @@
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PROP_CATEGORY","hidden":false,"value":"\"category\"",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PROP_AUTHOR","hidden":false,"value":"\"author\"",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_BEAT_EVENT","hidden":false,"value":"256",},
+        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_FMOD_PLAYBACK_START","hidden":false,"value":"65535",},
+        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_FMOD_PLAYBACK_END","hidden":false,"value":"65536",},
+        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"CheesyPizza_Macro8","hidden":false,"value":"",},
       ],"copyToTargets":64,"filename":"CheesyPizza.dll","final":"ptcu_cleanup","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_launch_external","argCount":0,"args":[
             1,
