@@ -24,7 +24,7 @@ characters = [
 	["SP", spr_playerSP_idle, spr_pizzypalette, [1, 3]],
 	["SN", spr_pizzano_idle, spr_pizzanopalette, [1, 5]],
 	
-	["PN", spr_playerPN_idle, spr_peppalette, [1, 3]],
+	//["PN", spr_playerPN_idle, spr_peppalette, [1, 3]],
 	["BN", spr_playerBN_idle, spr_bopalette, [1, 3]],
 ];
 if global.experimental

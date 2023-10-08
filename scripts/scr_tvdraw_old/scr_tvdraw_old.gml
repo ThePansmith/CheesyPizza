@@ -1,7 +1,7 @@
 function scr_tvdraw_old()
 {
 	var panicy = 600 + (string_height(message) - 16);
-	var tvx = 832 + irandom_range(-obj_camera.collect_shake, obj_camera.collect_shake);
+	var tvx = SCREEN_WIDTH - 128 + irandom_range(-obj_camera.collect_shake, obj_camera.collect_shake);
 	var tvy = 74 + irandom_range(-obj_camera.collect_shake, obj_camera.collect_shake);
 	
 	if tvreset != global.hud

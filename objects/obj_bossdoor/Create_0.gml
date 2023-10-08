@@ -6,3 +6,4 @@ vsp = 0;
 grav = 0.5;
 targetRoom = noone;
 targetDoor = "A";
+allow_modifier = false;

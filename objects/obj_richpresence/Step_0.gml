@@ -104,7 +104,7 @@ switch safe_get(global, "leveltosave")
 	case "chateau": state = "Pizzascare"; break;
 	case "kidsparty": state = "Don't Make A Sound"; break;
 	case "war": state = "WAR"; break;
-	case "exit": state = "The Crumbling Tower of Pizza"; break;
+	case "exit": state = "CTOP"; break;
 	
 	// pto
 	case "desert": state = "Old Desert"; break;

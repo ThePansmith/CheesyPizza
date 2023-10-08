@@ -363,6 +363,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"BGs and Tiles","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Cotton","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles/Cotton.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Escape","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles/Cotton/Escape.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Original","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles/Cotton/Original.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Entryway","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles/Entryway.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Estate","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles/Estate.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Escape","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles/Estate/Escape.yy",},
@@ -608,7 +609,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Original","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire/BGs and Tiles/Cotton/Original.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles",},
