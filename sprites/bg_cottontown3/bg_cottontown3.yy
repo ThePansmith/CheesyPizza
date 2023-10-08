@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "bg_cottontown3",
   "bbox_bottom": 539,
-  "bbox_left": 0,
-  "bbox_right": 1278,
+  "bbox_left": 347,
+  "bbox_right": 1251,
   "bbox_top": 286,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"951a638f-16f6-4321-887b-ba4aebf5946b",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"bde7fbd5-dfa6-4da1-9cf4-306380a5e07b",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 540,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"1ce011d2-4582-476e-96fa-2666e5e8b07d","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"9f30c2ff-5a09-4aed-bb80-9b47e2175515","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"951a638f-16f6-4321-887b-ba4aebf5946b","path":"sprites/bg_cottontown3/bg_cottontown3.yy",},},},"Disabled":false,"id":"a4013133-e01c-415a-8786-03d9f71254dd","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"bde7fbd5-dfa6-4da1-9cf4-306380a5e07b","path":"sprites/bg_cottontown3/bg_cottontown3.yy",},},},"Disabled":false,"id":"ef5e949c-7db3-4804-99dc-920ff918f57c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

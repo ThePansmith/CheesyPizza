@@ -305,7 +305,6 @@ if room_is_secret(room) && global.sugaryoverride
 // coded in backgrounds
 if !instance_exists(obj_ghostcollectibles)
 {
-    // change color of entryway effect layer
     if global.leveltosave == "entryway"
     {
         var layerfx = layer_get_fx("Effect_1");
@@ -317,6 +316,9 @@ if !instance_exists(obj_ghostcollectibles)
                 fx_set_parameter(layerfx, "g_TintCol", [255 / 255, 221 / 255, 204 / 255, 1]);
         }
     }
+	
+	if global.leveltosave == "steamy" && global.panic
+		layer_destroy("Effect_1");
 }
 
 // sugary overrides fix

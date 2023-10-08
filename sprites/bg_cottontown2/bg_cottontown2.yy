@@ -13,7 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ba95418c-96e0-45f3-9a2b-d236ed51b207",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"00d1bae5-62ee-42cc-bdf2-8e0f8b89bb67",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"ba95418c-96e0-45f3-9a2b-d236ed51b207","path":"sprites/bg_cottontown2/bg_cottontown2.yy",},},},"Disabled":false,"id":"1efabfd6-c796-4601-98f2-d90f95dfa537","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"00d1bae5-62ee-42cc-bdf2-8e0f8b89bb67","path":"sprites/bg_cottontown2/bg_cottontown2.yy",},},},"Disabled":false,"id":"19e5a022-b772-4aa3-9e9f-a41558b3bbcb","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

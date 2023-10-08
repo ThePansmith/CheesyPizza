@@ -98,7 +98,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
-		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
+		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
 		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
@@ -194,7 +194,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
-		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
+		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
 		break;
@@ -259,7 +259,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
-		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
+		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
 		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
@@ -336,7 +336,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
-		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
+		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
 		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
@@ -396,7 +396,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
-		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
+		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
 		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
@@ -470,7 +470,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire\nand throw them at power lines");
-		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
+		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
 		
@@ -547,7 +547,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot'", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
-		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
+		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
 		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
@@ -644,7 +644,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin' Hot", "just like suggary..");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "yummy :)");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "my legs i cant feel my legs");
-		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "owie owie");
+		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "owie owie");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "get");
 		add_palette(12, "", spr_pattern_evil, "Evil", "I am");
 		add_palette(12, "", spr_pattern_spooky, "Spooky", "ooooooo");
@@ -700,7 +700,7 @@ switch character
 		add_palette(12, "", spr_pattern_flamin, "Flamin Hot", "That's-a spicy meat-a-ball!");
 		add_palette(12, "", spr_pattern_jalapeno, "Jalapeno Popper", "Add some ranch on the side.");
 		add_palette(12, "", spr_pattern_zapped, "Zapped", "MY CHILD WILL Not wrap rocks with copper wire and throw them at power lines");
-		add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
+		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
 		

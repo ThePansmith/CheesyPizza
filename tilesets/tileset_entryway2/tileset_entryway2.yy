@@ -21,8 +21,8 @@
   },
   "spriteNoExport": true,
   "textureGroupId": {
-    "name": "sugarygroup",
-    "path": "texturegroups/sugarygroup",
+    "name": "entrywaygroup",
+    "path": "texturegroups/entrywaygroup",
   },
   "tile_count": 1024,
   "tileAnimation": {
