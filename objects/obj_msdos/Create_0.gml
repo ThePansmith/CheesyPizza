@@ -203,61 +203,61 @@ function DOS_command(IN = input)
 				{
 					default: output += "..."; break;
 					case 0:
-						output += "Hello";
+						output += "Hello...";
 						progression++;
 						break;
 					case 1:	
-						output += "You know the mario brother";
+						output += "You know the Mario Brother?";
 						progression++;
 						break;
 					case 2: 
-						output += "Trust me"; 
+						output += "Trust me."; 
 						progression++;
 						break;
 					case 3:
-						output += "Listen there is a File you have to find do you understand";
+						output += "Listen, there is a file you have to find. Do you understand?";
 						progression++;
 						break;
 					case 4:
-						output += "Listen to ME";
+						output += "LISTEN TO ME.";
 						progression++;
 						break;
 					case 5:
-						output += "Do you need you NEED to know the YEAR Super Mario Bros. on the\nNes released okay that is a FOLDER name you HAVE to go there";
+						output += "You NEED to know the year SUPER Mario Bros. on the\nNES released okay? That is a FOLDER. You HAVE to go there.";
 						progression++;
 						break;
 					case 6:
 					case 6.1:
 						if currentdir.NAME == "1985"
 						{
-							output += "We're golden";
+							output += "We're golden...";
 							progression = 7;
 						}
 						else if currentdir.NAME != root.NAME
 						{
-							output += "What the fuck are you doing";
+							output += "What the fuck are you doing?";
 							progression = 6.1;
 						}
 						else
 						{
-							output += progression == 6 ? "Please do not ask me how to switch folders" : choose("Please", "I beg you", "For the love of god");
+							output += progression == 6 ? "Please don't ask me how to switch folders." : choose("Please", "I beg you", "For the love of god");
 							progression = 6.1;
 						}
 						break;
 					case 7:
-						output += "Okay now LISTEN there is a File";
+						output += "Okay now LISTEN, there is a file.";
 						progression++;
 						break;
 					case 8:
-						output += "Very important file";
+						output += "A very important file.";
 						progression++;
 						break;
 					case 9:
-						output += "You need to RUN this file Okay Run it";
+						output += "You need to RUN this file, okay?";
 						progression++;
 						break;
 					case 10:
-						output += "The file name is";
+						output += "The file name is...";
 						progression++;
 						break;
 					case 11:
@@ -265,7 +265,7 @@ function DOS_command(IN = input)
 						progression++;
 						break;
 					case 12:
-						output += "RUN the marior file NOW";
+						output += "RUN the marior file NOW.";
 						break;
 				}
 				output += "\n";
@@ -410,7 +410,8 @@ function DOS_file(dir, name, func)
 #endregion
 
 DOS_instruct(50, function() {output = "Starting MB-ROS...";});
-DOS_instruct(100, DOS_initstate);
+DOS_instruct(100, function() {output = "Type \"help\" for a list of commands.";});
+DOS_instruct(10, DOS_initstate);
 
 #region FOLDER STRUCTURE
 
