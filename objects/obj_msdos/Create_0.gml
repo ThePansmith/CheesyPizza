@@ -410,7 +410,7 @@ function DOS_file(dir, name, func)
 #endregion
 
 DOS_instruct(50, function() {output = "Starting MB-ROS...";});
-DOS_instruct(100, function() {output = "Type \"help\" for a list of commands.";});
+DOS_instruct(100, function() {output += "\nType \"help\" for a list of commands.";});
 DOS_instruct(10, DOS_initstate);
 
 #region FOLDER STRUCTURE
