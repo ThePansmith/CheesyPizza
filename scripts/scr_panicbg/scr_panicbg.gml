@@ -57,6 +57,26 @@ function scr_panicbg_end()
 		// DRAW APPLICATION SURFACE HERE.
 		// DRAW APPLICATION SURFACE HERE.
 		
+		/*
+		shader_set_uniform_f(shader_get_uniform(shd_panicbg, "use_background_sampler"), 1.0);
+		texture_set_stage(shader_get_sampler_index(shd_panicbg, "background"), surface_get_texture(application_surface));
+		
+		draw_set_color(c_white);
+		draw_set_alpha(1.0);
+		
+		var surf_width = surface_get_width(application_surface);
+		var surf_height = surface_get_height(application_surface);
+		
+		// A - B
+		// | /
+ 		// C   D
+		draw_triangle(0, 0, surf_width, 0, 0, surf_height, false);
+		// A   B
+		//   / |
+ 		// C - D
+		draw_triangle(0, surf_height, surf_width, 0, surf_width, surf_height, false);
+		*/
+		
 		// chunk bg
 		with obj_backgroundreplace
 			event_user(0);
