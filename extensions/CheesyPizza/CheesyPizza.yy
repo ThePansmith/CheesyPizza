@@ -27,8 +27,9 @@
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_BEAT_EVENT","hidden":false,"value":"256",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_FMOD_PLAYBACK_START","hidden":false,"value":"65535",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_FMOD_PLAYBACK_END","hidden":false,"value":"65536",},
-        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"CheesyPizza_Macro8","hidden":false,"value":"",},
-      ],"copyToTargets":64,"filename":"CheesyPizza.dll","final":"ptcu_cleanup","functions":[
+        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_FMOD_PLAYBACK_PAUSED","hidden":false,"value":"65537",},
+        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_FMOD_PLAYBACK_PLAY","hidden":false,"value":"65538",},
+      ],"copyToTargets":64,"filename":"CheesyPizza.dll","final":"","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_launch_external","argCount":0,"args":[
             1,
             1,
