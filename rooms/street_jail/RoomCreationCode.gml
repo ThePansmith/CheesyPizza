@@ -1,1 +1,1 @@
-global.roommessage = "JAILBREAK";
+global.roommessage = "JAIL";

@@ -1,5 +1,6 @@
-global.roommessage = "COW STACK";
+global.roommessage = "PIZZA TOWER AT THE FARM!";
 global.gameframe_caption_text = "Why did the chicken cross the Pizza Tower?";
+
 if (!obj_secretmanager.init)
 {
 	obj_secretmanager.init = true;

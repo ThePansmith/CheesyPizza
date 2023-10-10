@@ -1,1 +1,1 @@
-global.roommessage = "PIZZA TOWER AT THE FARM!";
+global.roommessage = "COW STACK";
