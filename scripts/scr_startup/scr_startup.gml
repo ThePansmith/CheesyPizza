@@ -1,4 +1,4 @@
-gml_pragma("UnityBuild", "true");
+gml_pragma("forceinline");
 var path_cheesypizzalib = "CheesyPizza";
 
 switch os_type

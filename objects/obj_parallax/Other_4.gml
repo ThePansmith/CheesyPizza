@@ -1,22 +1,18 @@
 live_auto_call;
 
+/*
 if room_started
 	exit;
 room_started = true;
+*/
 
 // boss backgrounds ignore new system
-old_bg = false;
 if instance_exists(obj_levelLoader)
 	exit;
-
-if string_starts_with(room_get_name(room), "boss") or room == Longintro or global.performance
-	old_bg = true;
 with obj_deathmode
 	depth = 1;
 
-// fuck
-var sugary = SUGARY;
-
+// handle every kind of layer
 var layers = layer_get_all();
 for (var i = 0; i < array_length(layers); i++)
 {
@@ -80,17 +76,6 @@ for (var i = 0; i < array_length(layers); i++)
 			no = 0;
 		
 		layer_depth(lay, -350 - no);
-	}
-	
-	// Backgrounds
-	var bgid = layer_background_get_id(lay);
-	if bgid != -1 && !old_bg && layer_background_get_sprite(bgid) != bg_etbbrick
-	{
-		if layer_get_depth(lay) > 0
-		{
-			layer_depth(lay, 20000);
-			array_push(background_layers, lay);
-		}
 	}
 	
 	#endregion
@@ -167,7 +152,7 @@ for (var i = 0; i < array_length(layers); i++)
 	#endregion
 	#region SUGARY
 	
-	if string_starts_with(layname, "Backgrounds_Ground") && sugary
+	if string_starts_with(layname, "Backgrounds_Ground") && SUGARY
 	{
 		var roombgs = room_get_bg_layers();
 		for(var j = 0; j < array_length(roombgs); j++)
@@ -204,11 +189,9 @@ layer_vspeed("Backgrounds_stillZH2", 0);
 
 portal_offset = {x: 0, y: 0};
 
-// panic bg
-/*
-if (global.panic or global.snickchallenge) && global.panicbg && !instance_exists(obj_ghostcollectibles)
+// generic background handler
+if !instance_exists(obj_wartimer)
 	scr_panicbg_init();
-*/
 
 // pizzelle's secrets
 if room_is_secret(room) && global.sugaryoverride
