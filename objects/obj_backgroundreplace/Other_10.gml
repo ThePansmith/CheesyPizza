@@ -12,13 +12,13 @@ if backgroundID != noone
 	
     var lx = layer_get_x(backgroundID);
     var ly = layer_get_y(backgroundID);
-    draw_sprite_tiled(background_spr, 0, lx - cx, ly - cy);
+    draw_sprite_tiled(background_spr, 0, lx, ly);
     if chunks != noone
     {
         for (var i = 0; i < array_length(chunks); i++)
         {
             var b = chunks[i];
-            draw_sprite_tiled(b[0], b[3], lx + b[1] - cx, ly + b[2] - cy);
+            draw_sprite_tiled(b[0], b[3], lx + b[1], ly + b[2]);
         }
     }
     for (i = 0; i < array_length(chunks); i++)

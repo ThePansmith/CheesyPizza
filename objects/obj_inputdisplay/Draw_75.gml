@@ -13,7 +13,6 @@ if global.inputdisplay && keyalpha > 0
 	x = pos[0];
 	y = pos[1];
 	
-
 	if !surface_exists(surf)
 		surf = surface_create(maxx, maxy);
 	

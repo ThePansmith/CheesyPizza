@@ -1,6 +1,5 @@
 /// @description background
-live_auto_call;
-
+/*
 if old_bg
 	exit;
 
@@ -110,3 +109,4 @@ draw_surface(bg_surface, cam_x, cam_y);
 
 if !global.goodmode
 	shader_reset(); // remove this for cool effect
+*/

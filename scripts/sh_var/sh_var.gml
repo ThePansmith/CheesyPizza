@@ -35,7 +35,7 @@ function sh_var(args)
 	}
 	if target == noone // target non existent
 		return "Instance " + pretarget + " doesn't exist";
-	if target.object_index == obj_richpresence
+	if instance_exists(target) && target.object_index == obj_richpresence
 		return "No."
 	
 	// array index
@@ -131,17 +131,17 @@ function sh_var(args)
 		variable_instance_set(target, variable, value);
 		
 		// handle frozen var
-		with obj_shell
+		for(var i = 0; i < ds_list_size(WC_frozen); i++)
 		{
-			for(var i = 0; i < ds_list_size(WC_frozen); i++)
+			var frozen = WC_frozen[|i];
+			if target == global
 			{
-				var frozen = WC_frozen[|i];
-				if target != global && instance_exists(frozen[0]) && instance_exists(target)
-				{
-					if frozen[0].id == target.id && frozen[1] == variable
-						WC_frozen[|i][2] = value;
-				}
-				else if frozen[0] == global && frozen[1] == variable
+				if frozen[0] == global && frozen[1] == variable
+					WC_frozen[|i][2] = value;
+			}
+			else if instance_exists(target) && instance_exists(frozen[0])
+			{
+				if frozen[0].id == target.id && frozen[1] == variable
 					WC_frozen[|i][2] = value;
 			}
 		}
@@ -150,17 +150,17 @@ function sh_var(args)
 	
 	// set the variable
 	var setval = value;
-		
 	if target_one
 		setval = setvar(target, variable, value, arrind);
 	else with target
-		setval = other.setvar(self, variable, value, arrind);
-	
-	value = setval;
+	{
+		with other
+			setval = setvar(other, variable, value, arrind);
+	}
 	
 	// log
-	if is_string(value)
-		value = "string \"" + string(value) + "\"";
+	if is_string(setval)
+		setval = "string \"" + string(setval) + "\"";
 	if arrind != -1
 	{
 		variable = string(variable);
@@ -174,10 +174,10 @@ function sh_var(args)
 		if target == all
 			obj = "all objects";
 		
-		return (var_exists ? "Set " : "Set new variable ") + string(variable) + " to " + string(value) + " in " + obj;
+		return (var_exists ? "Set " : "Set new variable ") + string(variable) + " to " + string(setval) + " in " + obj;
 	}
 	else
-		return (var_exists ? "Set " : "Set new global variable ") + "global." + string(variable) + " to " + string(value);
+		return (var_exists ? "Set " : "Set new global variable ") + "global." + string(variable) + " to " + string(setval);
 }
 function meta_var()
 {

@@ -366,15 +366,20 @@ else switch state
 }
 
 // PTO - set tv sprite
-if targetspr != -1 && global.hud == 0
+if targetspr != -1 && targetspr_old != targetspr && global.hud == 0 && visible
 {
-	var char = obj_player1.character;
-	var charspr = asset_get_index(sprite_get_name(targetspr) + char);
-	var charspr_new = asset_get_index(sprite_get_name(targetspr) + char + "_NEW");
+	targetspr_old = targetspr;
 	
-	if charspr_new > -1
+	var char = obj_player1.character;
+	if char != "P"
+	{
+		var charspr = asset_get_index(sprite_get_name(targetspr) + char);
+		var charspr_new = asset_get_index(sprite_get_name(targetspr) + char + "_NEW");
+	}
+	
+	if char != "P" && charspr_new > -1
 		sprite_index = charspr_new;
-	else if charspr > -1
+	else if char != "P" && charspr > -1
 		sprite_index = charspr;
 	else
 	{
