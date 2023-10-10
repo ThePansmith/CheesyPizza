@@ -7,6 +7,8 @@ output = function()
 
 condition = function()
 {
+	if global.panic
+		return true;
     var _bg = layer_background_get_id("Backgrounds_still1");
     var _bg_sprite = layer_background_get_sprite(_bg);
     var _index = layer_background_get_index(_bg);

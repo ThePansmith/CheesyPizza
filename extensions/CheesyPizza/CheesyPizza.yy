@@ -29,6 +29,7 @@
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_FMOD_PLAYBACK_END","hidden":false,"value":"65536",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_FMOD_PLAYBACK_PAUSED","hidden":false,"value":"65537",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_FMOD_PLAYBACK_PLAY","hidden":false,"value":"65538",},
+        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_FMOD_TIMELINE_MARKER","hidden":false,"value":"65539",},
       ],"copyToTargets":64,"filename":"CheesyPizza.dll","final":"","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_launch_external","argCount":0,"args":[
             1,

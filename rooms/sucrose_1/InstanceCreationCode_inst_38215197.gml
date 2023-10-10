@@ -1,3 +1,9 @@
+if global.panic
+{
+	instance_destroy();
+	exit;
+}
+		
 flags.do_once_per_save = true;
 output = function()
 {
