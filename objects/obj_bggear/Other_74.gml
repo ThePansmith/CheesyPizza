@@ -1,4 +1,4 @@
-if (async_load[?"event_type"] != 256)
+if (async_load[?"event_type"] != FMOD_BEAT_CALLBACK)
 	exit;
 	
 if !global.panic

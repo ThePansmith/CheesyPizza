@@ -24,12 +24,12 @@
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PROP_DISPLAYNAME","hidden":false,"value":"\"displayName\"",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PROP_CATEGORY","hidden":false,"value":"\"category\"",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PROP_AUTHOR","hidden":false,"value":"\"author\"",},
-        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_BEAT_EVENT","hidden":false,"value":"256",},
-        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_FMOD_PLAYBACK_START","hidden":false,"value":"65535",},
-        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_FMOD_PLAYBACK_END","hidden":false,"value":"65536",},
-        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_FMOD_PLAYBACK_PAUSED","hidden":false,"value":"65537",},
-        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_FMOD_PLAYBACK_PLAY","hidden":false,"value":"65538",},
-        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"ASYNC_FMOD_TIMELINE_MARKER","hidden":false,"value":"65539",},
+        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_BEAT_CALLBACK","hidden":false,"value":"65535",},
+        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PLAYBACK_START_CALLBACK","hidden":false,"value":"65536",},
+        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PLAYBACK_END_CALLBACK","hidden":false,"value":"65537",},
+        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PLAYBACK_PAUSED_CALLBACK","hidden":false,"value":"65538",},
+        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PLAYBACK_PLAY_CALLBACK","hidden":false,"value":"65539",},
+        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_TIMELINE_MARKER_CALLBACK","hidden":false,"value":"65540",},
       ],"copyToTargets":64,"filename":"CheesyPizza.dll","final":"","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"ptcu_launch_external","argCount":0,"args":[
             1,
