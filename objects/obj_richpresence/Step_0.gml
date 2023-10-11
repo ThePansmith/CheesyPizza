@@ -1,6 +1,6 @@
 if !active exit;
 
-var smallimagetext = "", largeimagetext = "";
+var smallimagetext = "", largeimagetext = GM_version;
 var state = "", details = "", largeimage = "", smallimage = "";
 
 largeimage = "big_icon";
