@@ -134,7 +134,7 @@ function sound_play_3d(event, xx = undefined, yy = undefined)
 			audio_play_sound(event, 0, false, global.option_sfx_volume * global.option_master_volume);
 			exit;
 		}
-	
+		
 		// INSTANCE.
 		fmod_event_instance_set_paused(event, false);
 		if xx != undefined && yy != undefined
@@ -157,7 +157,7 @@ function sound_instance_move(inst, xx, yy)
 {
 	if is_string(inst)
 		inst = fmod_event_instance_get_index(inst);
-	else
+	else if !is_real(inst)
 		exit;
 	//if is_handle(inst) && audio_exists(inst)
 	//	exit;
