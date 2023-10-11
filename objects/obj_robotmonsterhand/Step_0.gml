@@ -18,7 +18,7 @@ if (turn == 1)
 			if (fake && touched)
 				instance_destroy();
 			state = states.chase;
-			throw_inst = -4;
+			throw_inst = noone;
 		}
 		touched_player = false;
 		instance_destroy();

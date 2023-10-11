@@ -1,7 +1,7 @@
 if (!released && global.panic)
 {
 	if (inst != noone && !instance_exists(inst))
-		inst = -4;
+		inst = noone;
 	if (obj_player.x > x)
 	{
 		released = true;

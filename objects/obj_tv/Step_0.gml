@@ -44,7 +44,7 @@ if (bubblespr != noone && bubblespr != spr_tv_bubbleclosed)
             case spr_tv_bubbleclose:
                 bubblespr = spr_tv_bubbleclosed
                 if (prompt == noone or prompt == "")
-                    bubblespr = -4
+                    bubblespr = noone
                 break
 		}
 	}
@@ -163,7 +163,7 @@ else switch state
 					if (bubblespr != noone && bubblespr != spr_tv_bubbleclosed)
 						bubblespr = spr_tv_bubbleclose;
 					if (bubblespr == spr_tv_bubbleclosed)
-						bubblespr = -4;
+						bubblespr = noone;
 					bubbleindex = 0;
 					promptx = promptxstart;
 					prompt = -4;
@@ -197,7 +197,7 @@ else switch state
 				state = states.transition;
 			}
 			else
-				bubblespr = -4;
+				bubblespr = noone;
 		}
 		*/
 		break;
@@ -255,7 +255,7 @@ else switch state
 					else
 					{
 						state = states.tv_whitenoise;
-						expressionsprite = -4;
+						expressionsprite = noone;
 					}
 				}
 				break;
@@ -268,7 +268,7 @@ else switch state
 					else
 					{
 						state = states.tv_whitenoise;
-						expressionsprite = -4;
+						expressionsprite = noone;
 					}
 				}
 				break;
@@ -277,7 +277,7 @@ else switch state
 				if (global.combo < 3 or _transfospr != noone or obj_player1.isgustavo or obj_player1.mach4mode or obj_player1.state == states.hurt or obj_player1.state == states.mach3 or obj_player1.sprite_index == obj_player1.spr_mach3boost or global.stylethreshold >= 3)
 				{
 					state = states.tv_whitenoise;
-					expressionsprite = -4;
+					expressionsprite = noone;
 					if (obj_player1.state == states.hurt)
 						tv_do_expression(spr_tv_exprhurt);
 				}
@@ -296,7 +296,7 @@ else switch state
 				else
 				{
 					state = states.tv_whitenoise;
-					expressionsprite = -4;
+					expressionsprite = noone;
 				}
 				break;
 			
@@ -306,7 +306,7 @@ else switch state
 					if (state != states.mach3 && state != states.climbwall && (state != states.chainsaw or (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)) && sprite_index != spr_mach3boost && mach4mode == 0)
 					{
 						other.state = states.tv_whitenoise;
-						other.expressionsprite = -4;
+						other.expressionsprite = noone;
 					}
 					if (mach4mode)
 						tv_do_expression(spr_tv_exprmach4);
@@ -319,7 +319,7 @@ else switch state
 					if (mach4mode == 0 && (state != states.chainsaw or (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)))
 					{
 						other.state = states.tv_whitenoise;
-						other.expressionsprite = -4;
+						other.expressionsprite = noone;
 					}
 				}
 				break;
@@ -360,7 +360,7 @@ else switch state
 		{
 			state = states.tv_whitenoise;
 			tv_trans = 0;
-			expressionsprite = -4;
+			expressionsprite = noone;
 		}
 		break;
 }

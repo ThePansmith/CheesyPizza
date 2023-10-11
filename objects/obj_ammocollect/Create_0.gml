@@ -4,6 +4,6 @@ grav = 0.5;
 grounded = false;
 flash = true;
 alarm[1] = 5;
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;

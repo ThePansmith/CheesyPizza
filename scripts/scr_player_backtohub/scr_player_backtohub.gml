@@ -1,6 +1,6 @@
 function scr_player_backtohub()
 {
-	global.leveltorestart = -4;
+	global.leveltorestart = noone;
 	hsp = 0;
 	movespeed = 0;
 	if (sprite_index != spr_rockethitwall)

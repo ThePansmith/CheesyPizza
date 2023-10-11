@@ -3,7 +3,7 @@ if (global.ruincutscene == noone)
 if (!global.ruincutscene)
 	instance_destroy();
 sprite_index = spr_pizzagoblin_idle;
-dialog = -4;
+dialog = noone;
 pb_dialog[0] = [dialog_create("Welcome to the bomb store."), dialog_create("Would you like to purchase the only item in stock?"), dialog_create("It doesn't seem you have enough money though, come back later before you miss out in this explosive deal.")];
 pb_dialog[1] = [dialog_create("Welcome to the bomb store."), dialog_create("Would you like to purchase the only item in stock?"), dialog_create("There you go buddy", -4, function()
 {

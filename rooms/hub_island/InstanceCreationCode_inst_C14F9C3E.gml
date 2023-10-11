@@ -12,8 +12,8 @@ if (global.levelcompletename == "FOREST")
 else if (global.levelcomplete && !global.beachcutscene && global.levelcompletename != "FOREST")
 {
 	currentroom = room;
-	peppermanactorID = -4;
-	boatactorID = -4;
+	peppermanactorID = noone;
+	boatactorID = noone;
 	scene_info = [[cutscene_entrance_start], [cutscene_waitfor_sprite, obj_player1], [cutscene_player_idleanim], [cutscene_change_room, hub_sewer], [cutscene_set_player_visible, false], [cutscene_player_float, true], [cutscene_set_player_pos, 923, 281], [cutscene_wait, 60], [function()
 	{
 		boatactorID = instance_create(632, 32, obj_actor);

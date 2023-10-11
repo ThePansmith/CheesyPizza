@@ -21,16 +21,16 @@ if (!obj_secretmanager.init)
 		if (hittriggers >= 2)
 			secret_open_portal(4);
 	});
-	secret_add(-4, function()
+	secret_add(noone, function()
 	{
 		if (secret_check_trigger(1))
 			secret_open_portal(1);
 	});
-	secret_add(-4, function()
+	secret_add(noone, function()
 	{
 		secret_open_portal(2);
 	});
-	secret_add(-4, function()
+	secret_add(noone, function()
 	{
 		if (secret_check_trigger(3))
 			secret_open_portal(3);
@@ -45,12 +45,12 @@ if (!obj_secretmanager.init)
 		if (totems >= 3)
 			secret_open_portal(5);
 	});
-	secret_add(-4, function()
+	secret_add(noone, function()
 	{
 		if (secret_check_trigger(6))
 			secret_open_portal(6);
 	});
-	secret_add(-4, function()
+	secret_add(noone, function()
 	{
 		if (secret_check_trigger(7))
 			secret_open_portal(7);

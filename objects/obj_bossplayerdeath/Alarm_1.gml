@@ -4,12 +4,12 @@ with (obj_player1)
 	global.peppino_damage = 0;
 	global.bossplayerhurt = false;
 	global.pistol = false;
-	global.leveltorestart = -4;
-	global.leveltosave = -4;
+	global.leveltorestart = noone;
+	global.leveltosave = noone;
 	global.startgate = 0;
 	ds_list_clear(global.saveroom);
 	ds_list_clear(global.baddieroom);
-	pistolanim = -4;
+	pistolanim = noone;
 	targetDoor = "HUB";
 	targetRoom = backtohubroom;
 	scr_room_goto(backtohubroom);

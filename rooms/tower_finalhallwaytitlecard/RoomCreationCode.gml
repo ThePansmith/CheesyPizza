@@ -15,7 +15,7 @@ with (instance_create(0, 0, obj_titlecard)) // x and y had to be replaced with 0
 	titlecard_index = 15;
 	title_sprite = spr_titlecards_title2;
 	title_index = 5;
-	title_music = -4;
+	title_music = noone;
 	music = true;
 	fadealpha = 1;
 }

@@ -16,7 +16,7 @@ if (playerid != noone)
 			landAnim = false;
 			with (other)
 			{
-				playerid = -4;
+				playerid = noone;
 				if !in_saveroom()
 				{
 					add_saveroom();

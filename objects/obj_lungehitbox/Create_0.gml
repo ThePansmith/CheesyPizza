@@ -1,1 +1,1 @@
-playerid = -4;
+playerid = noone;

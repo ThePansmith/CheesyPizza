@@ -5,7 +5,7 @@ if (playerid != noone)
 	{
 		visible = true;
 		create_particle(x, y, part.genericpoofeffect);
-		playerid = -4;
+		playerid = noone;
 	}
 }
 else

@@ -6,7 +6,7 @@ depth = -600;
 sprite_index = spr_tvstatic;
 image_index = 0;
 image_speed = 0.35;
-spr = -4;
+spr = noone;
 obj_camera.lock = true;
 sound_play("event:/sfx/ui/tvswitch");
 shakey = 0;

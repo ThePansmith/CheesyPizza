@@ -7,8 +7,8 @@ if (global.levelcomplete && !global.warcutscene)
 		instance_create(argument0, argument1, obj_canonexplosion);
 		cutscene_end_action();
 	};
-	bombactor = -4;
-	planeactor = -4;
+	bombactor = noone;
+	planeactor = noone;
 	scene_info = [[cutscene_entrance_start], [cutscene_waitfor_sprite, obj_player1], [cutscene_player_idleanim], [cutscene_change_room, hub_sky], [cutscene_set_player_visible, false], [cutscene_player_float, true], [cutscene_set_player_pos, 100, 100], [cutscene_wait, 20], [function()
 	{
 		planeactor = instance_create(1056, 128, obj_actor);
@@ -44,8 +44,8 @@ if (global.levelcomplete && !global.warcutscene)
 			{
 				with (other)
 				{
-					planeactor = -4;
-					bombactor = -4;
+					planeactor = noone;
+					bombactor = noone;
 					cutscene_end_action();
 				}
 			}

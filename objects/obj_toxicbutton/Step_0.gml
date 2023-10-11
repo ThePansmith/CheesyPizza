@@ -4,7 +4,7 @@ if (active)
 	{
 		if (trigger == other.trigger && !instance_exists(cloudID))
 		{
-			cloudID = -4;
+			cloudID = noone;
 			other.active = 0;
 		}
 	}

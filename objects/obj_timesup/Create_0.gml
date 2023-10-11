@@ -6,7 +6,7 @@ image_speed = 0;
 alarm[0] = 40;
 global.panic = false;
 alarm[1] = 600;
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;
 ini_open_from_string(obj_savesystem.ini_str);

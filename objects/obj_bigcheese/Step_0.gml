@@ -37,8 +37,8 @@ else if (state == states.throwing)
 	{
 		state = states.walk;
 		sprite_index = spr_bigcheese_idle;
-		golfid = -4;
-		playerid = -4;
+		golfid = noone;
+		playerid = noone;
 	}
 	var tx = x;
 	var ty = y;
@@ -155,8 +155,8 @@ else if (state == states.throwing)
 				hitbuffer = 20;
 			}
 		}
-		golfid = -4;
-		playerid = -4;
+		golfid = noone;
+		playerid = noone;
 	}
 }
 if (state == states.stun && stunned > 40 && birdcreated == 0)

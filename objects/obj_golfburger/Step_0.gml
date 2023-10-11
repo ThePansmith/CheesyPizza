@@ -87,7 +87,7 @@ if (state == states.throwing)
 			scr_pizzaball_go_to_thrown(14 * other.image_xscale, -7, false);
 		}
 		golfcooldown = 100;
-		golfid = -4;
+		golfid = noone;
 	}
 }
 if (state != states.throwing)

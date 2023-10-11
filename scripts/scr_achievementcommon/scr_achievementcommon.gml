@@ -1,6 +1,6 @@
 function add_secrets_achievement(secret, levelarray)
 {
-	var b = add_achievement_notify(concat("secrets", secret), -4, function(achievement)
+	var b = add_achievement_notify(concat("secrets", secret), noone, function(achievement)
 	{
 		var type = achievement[0];
 		if (type == notifs.end_level)
@@ -17,7 +17,7 @@ function add_secrets_achievement(secret, levelarray)
 			}
 			ini_close();
 			if (!_unfinished)
-				achievement_unlock(name, -4, spr_achievement_farm, 0);
+				achievement_unlock(name, noone, spr_achievement_farm, 0);
 		}
 	});
 	
@@ -25,7 +25,7 @@ function add_secrets_achievement(secret, levelarray)
 }
 function add_rank_achievements(world, rank, sprite, index, levelarray)
 {
-	var b = add_achievement_notify(concat(rank, "ranks", world), -4, function(achievement)
+	var b = add_achievement_notify(concat(rank, "ranks", world), noone, function(achievement)
 	{
 		var type = achievement[0];
 		if (type == notifs.end_level)
@@ -61,7 +61,7 @@ function add_rank_achievements(world, rank, sprite, index, levelarray)
 }
 function add_boss_achievements(boss, bossroom, sprite, index)
 {
-	var b = add_achievement_notify(boss, -4, function(achievement)
+	var b = add_achievement_notify(boss, noone, function(achievement)
 	{
 		var type = achievement[0];
 		var arr = achievement[1];

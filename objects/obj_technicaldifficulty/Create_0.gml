@@ -1,6 +1,6 @@
 depth = -100;
 image_speed = 0.35;
-sprite = -4;
+sprite = noone;
 static_index = 0;
 static_max = 15;
 static_dir = 1;

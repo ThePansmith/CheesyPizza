@@ -51,7 +51,7 @@ if (grabbing)
 		player.state = states.freefall;
 		player.x = dropspotx;
 		player.y = dropspoty;
-		player = -4;
+		player = noone;
 		image_index = 0;
 		sprite_index = spr_grabbiehand_release;
 		released = true;

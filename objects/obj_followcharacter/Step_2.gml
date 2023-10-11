@@ -16,7 +16,7 @@ else
 if (dir != playerid.xscale)
 	dir = playerid.xscale;
 if (followid != noone && !instance_exists(followid))
-	followid = -4;
+	followid = noone;
 
 var tx = round(xoffset * space);
 var xx = (followid == noone) ? playerid.x : followid.x;

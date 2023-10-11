@@ -11,7 +11,7 @@ if (global.levelcomplete && !global.streetcutscene)
 		}
 		global.levelcomplete = false;
 		global.streetcutscene = true;
-		global.levelcompletename = -4;
+		global.levelcompletename = noone;
 		quick_ini_write_real(get_savefile_ini(), "cutscene", "street", true);
 		cutscene_end_action();
 	}], [cutscene_save_game]];

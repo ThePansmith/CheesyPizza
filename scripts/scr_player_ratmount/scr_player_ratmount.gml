@@ -3,7 +3,7 @@ function scr_player_ratmount()
 	move = key_left + key_right;
 	doublejump = false;
 	if (ratgrabbedID != noone && !instance_exists(ratgrabbedID))
-		ratgrabbedID = -4;
+		ratgrabbedID = noone;
 	if (place_meeting(x, y + 1, obj_railparent))
 	{
 		var _railinst = instance_place(x, y + 1, obj_railparent);

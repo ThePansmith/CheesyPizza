@@ -684,7 +684,7 @@ function boss_pizzahead_p2_phase1hurt()
 		vsp = 0;
 		invtime = 30;
 		state = states.actor;
-		pistolanim = -4;
+		pistolanim = noone;
 		sprite_index = spr_player_pistolshotend;
 	}
 	instance_create_unique(0, 0, obj_bossdark);

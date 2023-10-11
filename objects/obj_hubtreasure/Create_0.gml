@@ -1,4 +1,4 @@
-got_func = -4;
+got_func = noone;
 spr_got = sprite_index;
-playerid = -4;
+playerid = noone;
 got = false;

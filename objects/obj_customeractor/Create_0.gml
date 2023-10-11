@@ -5,6 +5,6 @@ happy = false;
 image_speed = 0.35;
 spr_idle = spr_gnome1_idle;
 spr_happy = spr_gnome1_happy;
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;

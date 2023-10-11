@@ -6,6 +6,6 @@ image_speed = 0;
 grounded = false;
 baddieID = 0;
 banana = 0;
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;

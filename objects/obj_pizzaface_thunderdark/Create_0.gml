@@ -1,4 +1,4 @@
-surf = -4;
+surf = noone;
 surffinal = -4;
 darkstart = 0.6;
 dark = darkstart;

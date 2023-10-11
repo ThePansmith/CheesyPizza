@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "space_lap",
-  "creationCodeFile": "${project_dir}/rooms/space_lap/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/space_lap/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

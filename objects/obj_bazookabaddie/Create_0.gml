@@ -3,7 +3,7 @@ event_inherited();
 stunnable = false;
 parryable = false;
 stompable = false;
-bazookaID = -4;
+bazookaID = noone;
 grav = 0.5;
 hsp = 0;
 vsp = 0;

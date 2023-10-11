@@ -18,7 +18,7 @@ if (!global.panic)
 			}
 			audio_stop_sound(secretmusicID);
 			audio_stop_sound(pillarmusicID);
-			secretmusicID = -4;
+			secretmusicID = noone;
 			if (room == war_1)
 				audio_stop_sound(musicID);
 			break;
@@ -47,7 +47,7 @@ if (room == rank_room)
 	audio_stop_sound(musicID);
 	audio_stop_sound(secretmusicID);
 	audio_stop_sound(pillarmusicID);
-	musicID = -4;
-	secretmusicID = -4;
-	pillarmusicID = -4;
+	musicID = noone;
+	secretmusicID = noone;
+	pillarmusicID = noone;
 }

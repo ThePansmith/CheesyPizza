@@ -11,7 +11,7 @@ vsp = 0;
 inv_frame = false;
 grav = 0.4;
 image_speed = 0.35;
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;
 

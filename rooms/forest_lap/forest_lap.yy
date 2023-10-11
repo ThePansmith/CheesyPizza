@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "forest_lap",
-  "creationCodeFile": "${project_dir}/rooms/forest_lap/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/forest_lap/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

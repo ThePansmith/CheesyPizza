@@ -34,6 +34,6 @@ if (global.panic)
 		musicID = scr_music(music);
 		if (pillarmusicID != noone)
 			audio_stop_sound(pillarmusicID);
-		pillarmusicID = -4;
+		pillarmusicID = noone;
 	}
 }

@@ -1,9 +1,9 @@
 dir = 1;
 collisioned = false;
-targetplayer = -4;
+targetplayer = noone;
 state = states.normal;
 offset = 200;
-block_inst = -4;
+block_inst = noone;
 targetDoor = "A";
 minutes = 0;
 seconds = 5;

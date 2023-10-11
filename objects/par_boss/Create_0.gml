@@ -1,5 +1,5 @@
 mach3destroy = false;
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;
 thrown = false;
@@ -59,7 +59,7 @@ function SUPER_player_destroy(argument0)
 		other.y = other.hitY;
 		other.state = states.chainsaw;
 		other.hitstate = states.arenaround;
-		other.hitvsp = -4;
+		other.hitvsp = noone;
 		other.hithsp = -other.image_xscale * 8;
 		hitLag = lag;
 		hitX = (room_width / 2) + (other.image_xscale * 16);

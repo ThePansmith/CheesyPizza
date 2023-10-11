@@ -1,5 +1,5 @@
 image_speed = 0.35;
-playerid = -4;
+playerid = noone;
 
 spr_idle = spr_pizzaportal;
 spr_enter = spr_pizzaportalend;

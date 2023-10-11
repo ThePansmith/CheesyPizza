@@ -1,6 +1,6 @@
 event_inherited();
 cooldown = 50;
-hitboxID = -4;
+hitboxID = noone;
 possess_movespeed = 0;
 bumpcooldown = 0;
 grav = 0.5;

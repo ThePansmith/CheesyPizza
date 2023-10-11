@@ -1,2 +1,2 @@
-boulderID = -4;
+boulderID = noone;
 cooldown = 0;

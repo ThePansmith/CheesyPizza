@@ -13,7 +13,7 @@ function cutscene_space_end()
 	}
 	global.levelcomplete = false;
 	global.spacecutscene = true;
-	global.levelcompletename = -4;
+	global.levelcompletename = noone;
 	quick_ini_write_real(get_savefile_ini(), "cutscene", "space", true);
 	cutscene_end_action();
 }

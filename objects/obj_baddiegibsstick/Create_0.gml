@@ -8,6 +8,6 @@ grav = 0.4;
 collisioned = false;
 depth = -1;
 sprite_index = choose(spr_goop, spr_goop2);
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;

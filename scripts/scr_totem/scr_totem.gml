@@ -34,8 +34,8 @@ function totem_clear(totem)
 			if (cheeseID[i] != noone && (!instance_exists(cheeseID[i]) || cheeseID[i].state != states.totem))
 			{
 				if (instance_exists(cheeseID[i]))
-					cheeseID[i].totemID = -4;
-				cheeseID[i] = -4;
+					cheeseID[i].totemID = noone;
+				cheeseID[i] = noone;
 			}
 		}
 	}

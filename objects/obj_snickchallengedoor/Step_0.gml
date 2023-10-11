@@ -4,6 +4,6 @@ if locked
 	if uparrowID != noone
 	{
 		instance_destroy(uparrowID);
-		uparrowID = -4;
+		uparrowID = noone;
 	}
 }

@@ -5,6 +5,6 @@ hsp = 0;
 grounded = false;
 grav = 0.8;
 y_to = room_height;
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;

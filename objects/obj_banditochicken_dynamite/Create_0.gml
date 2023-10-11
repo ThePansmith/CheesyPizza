@@ -10,6 +10,6 @@ playercollision = true;
 obj_explosion = obj_dynamiteexplosion;
 kick = false;
 mask_index = spr_player_mask;
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;

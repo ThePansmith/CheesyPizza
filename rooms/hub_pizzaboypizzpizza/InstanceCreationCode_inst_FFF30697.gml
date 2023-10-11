@@ -1,7 +1,7 @@
 if (global.levelcomplete && !global.kidspartycutscene)
 {
 	currentroom = room;
-	mechactor = -4;
+	mechactor = noone;
 	scene_info = [[cutscene_entrance_start], [cutscene_waitfor_sprite, obj_player1], [cutscene_player_idleanim], [cutscene_change_room, hub_warpath], [cutscene_set_player_visible, false], [cutscene_set_player_pos, 1848, 750], [cutscene_player_float, true], [cutscene_wait, 50], [function()
 	{
 		mechactor = instance_create(1632, 416, obj_actor);

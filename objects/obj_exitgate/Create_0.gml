@@ -17,7 +17,7 @@ hand_y = y - 1000;
 handsprite = spr_grabbiehand_idle;
 handindex = 0;
 uparrow = false;
-uparrowID = -4;
+uparrowID = noone;
 snd = false;
 
 sugary = SUGARY

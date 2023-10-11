@@ -3,11 +3,11 @@ vsp = 0;
 hsp_carry = 0;
 vsp_carry = 0;
 grav = 0.5;
-platformid = -4;
+platformid = noone;
 image_speed = 0.35;
 introstate = 0;
 introbuffer = 0;
-peppermanid = -4;
+peppermanid = noone;
 prop = 0;
 proparr = [
 	[spr_pepperman_scared, spr_pepperman_sour, spr_pepperman_mask, -7],

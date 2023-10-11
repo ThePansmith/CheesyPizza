@@ -1,4 +1,4 @@
-bgsprite = -4;
+bgsprite = noone;
 bgindex = 0;
 shake_mag = 0;
 shake_mag_acc = 0;

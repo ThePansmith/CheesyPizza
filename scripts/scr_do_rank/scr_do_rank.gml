@@ -145,6 +145,6 @@ function scr_do_rank(showtoppins = true, boss = false)
 	image_index = 0;
 	global.panic = false;
 	global.snickchallenge = false;
-	global.leveltorestart = -4;
+	global.leveltorestart = noone;
 	gamesave_async_save();
 }

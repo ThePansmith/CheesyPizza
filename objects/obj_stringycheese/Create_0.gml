@@ -1,4 +1,4 @@
-playerid = -4;
+playerid = noone;
 state = states.normal;
 handx = x;
 handy = y;

@@ -1,4 +1,4 @@
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;
 drop = false;

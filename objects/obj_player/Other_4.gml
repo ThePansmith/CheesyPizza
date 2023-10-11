@@ -29,8 +29,8 @@ if (room == tower_finalhallway && targetDoor == "C" && state == states.comingout
 if (global.levelcomplete)
 {
 	global.levelcomplete = false;
-	global.leveltorestart = -4;
-	global.leveltosave = -4;
+	global.leveltorestart = noone;
+	global.leveltosave = noone;
 	global.startgate = false;
 }
 if (state == states.comingoutdoor && global.coop == 1 && !place_meeting(x, y, obj_exitgate))
@@ -88,7 +88,7 @@ if verticalhallway
 {
 	verticalbuffer = 2;
 	
-	var _vinst = -4;
+	var _vinst = noone;
 	with obj_verticalhallway
 	{
 		event_perform(3, 0);

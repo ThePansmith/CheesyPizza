@@ -146,7 +146,7 @@ switch (state)
 		if (instance_exists(taunteffect_inst) && taunteffect_inst.object_index == obj_baddietaunteffect)
 		{
 			instance_destroy(taunteffect_inst);
-			taunteffect_inst = -4;
+			taunteffect_inst = noone;
 		}
 		if (movespeed > 0)
 			movespeed -= 0.5;
@@ -200,7 +200,7 @@ switch (state)
 			{
 				sprite_index = walkspr;
 				state = states.walk;
-				breakdanceinst = -4;
+				breakdanceinst = noone;
 			}
 		}
 		break;

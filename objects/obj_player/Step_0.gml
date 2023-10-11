@@ -371,7 +371,7 @@ if (pistolanim != noone)
 	}
 	if (floor(pistolindex) == (sprite_get_number(pistolanim) - 1))
 	{
-		pistolanim = -4;
+		pistolanim = noone;
 		pistolindex = 0;
 	}
 }
@@ -672,8 +672,8 @@ or (instance_exists(obj_timesup) && obj_timesup.alarm[1] == 0)
 		cyop_load_level(global.custom_hub_level);
 	
 	instance_create(0, 0, obj_backtohub_fadeout);
-	global.leveltorestart = -4;
-	global.leveltosave = -4;
+	global.leveltorestart = noone;
+	global.leveltosave = noone;
 	global.startgate = 0;
 }
 if (baddiegrabbedID == obj_null && (state == states.grab || state == states.superslam || state == states.tacklecharge))

@@ -17,6 +17,6 @@ stunbuffer = 0;
 stuntouchbuffer = 0;
 stunmax = 50;
 image_speed = 0.35;
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;

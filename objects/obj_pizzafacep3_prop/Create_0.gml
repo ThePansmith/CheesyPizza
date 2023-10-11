@@ -3,12 +3,12 @@ vsp = 0;
 hsp_carry = 0;
 vsp_carry = 0;
 grav = 0.5;
-platformid = -4;
+platformid = noone;
 grounded = false;
 usepalette = false;
 start = false;
-stunspr = -4;
-angryspr = -4;
+stunspr = noone;
+angryspr = noone;
 use_collision = true;
 
 particle_set_scale(part.jumpdust, -1, 1);

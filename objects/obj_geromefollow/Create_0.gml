@@ -7,7 +7,7 @@ vsp = 0;
 grav = 0.5;
 movespeed = 3;
 state = states.normal;
-tauntID = -4;
+tauntID = noone;
 playerid = obj_player1;
 if SUGARY
 {

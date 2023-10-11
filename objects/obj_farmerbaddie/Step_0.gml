@@ -121,7 +121,7 @@ else if (state == states.charge)
 if (state != states.charge && hitboxID != noone && instance_exists(hitboxID))
 {
 	instance_destroy(hitboxID);
-	hitboxID = -4;
+	hitboxID = noone;
 }
 if (state == states.stun && stunned > 100 && birdcreated == 0)
 {

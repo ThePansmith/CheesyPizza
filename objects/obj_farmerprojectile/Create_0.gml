@@ -1,4 +1,4 @@
 hsp = 0;
 vsp = 0;
-func = -4;
+func = noone;
 image_speed = 0.35;

@@ -1,7 +1,7 @@
 draw_self();
 if (object_list != noone)
 {
-	var text = -4;
+	var text = noone;
 	var xx = 0;
 	var yy = 0;
 	if (!surface_exists(surface))

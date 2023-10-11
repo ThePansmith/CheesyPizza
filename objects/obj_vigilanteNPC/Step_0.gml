@@ -9,9 +9,9 @@ with (obj_player)
 			{
 				with (other)
 				{
-					dialog[0] = dialog_create("Not one step closer!", -4, vigilante_add_battle);
+					dialog[0] = dialog_create("Not one step closer!", noone, vigilante_add_battle);
 					do_dialog(dialog);
-					dialog = -4;
+					dialog = noone;
 					warned = true;
 				}
 			}
@@ -46,9 +46,9 @@ if (waitforhurt && !instance_exists(obj_dialogcontroller))
 	if (!b)
 	{
 		waitforhurt = false;
-		dialog[0] = dialog_create("You gotta fight me!", -4, vigilante_add_battle);
+		dialog[0] = dialog_create("You gotta fight me!", noone, vigilante_add_battle);
 		do_dialog(dialog);
-		dialog = -4;
+		dialog = noone;
 		warned = true;
 	}
 }

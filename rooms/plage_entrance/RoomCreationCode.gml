@@ -3,7 +3,7 @@ global.gameframe_caption_text = "Party time in the Pizza Tower";
 if (!obj_secretmanager.init)
 {
 	obj_secretmanager.init = true;
-	secret_add(-4, function()
+	secret_add(noone, function()
 	{
 		if (secret_check_trigger(1))
 			secret_open_portal(1);

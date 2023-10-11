@@ -74,9 +74,9 @@ function create_buttons_array(x, y, width, height, array)
 			sprite_index = spr_bigbutton;
 			sprite_set_size(xsize, height);
 			label = b[0];
-			if (b[1] != -4)
+			if (b[1] != noone)
 				OnSelect = method(id, b[1]);
-			if (b[2] != -4)
+			if (b[2] != noone)
 				OnDeselect = method(id, b[2]);
 			parent = other.id;
 		}

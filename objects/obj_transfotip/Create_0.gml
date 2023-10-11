@@ -1,5 +1,5 @@
 text = "";
-text_arr = -4;
+text_arr = noone;
 text_size = [0, 0];
 fadeout = false;
 fade = 0;

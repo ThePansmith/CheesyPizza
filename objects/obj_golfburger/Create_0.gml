@@ -1,5 +1,5 @@
 event_inherited();
-golfid = -4;
+golfid = noone;
 shot = false;
 shootdir = 0;
 golfcooldown = 0;

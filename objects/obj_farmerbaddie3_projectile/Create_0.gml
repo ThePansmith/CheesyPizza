@@ -4,4 +4,4 @@ vsp = 0;
 hsp_carry = 0;
 vsp_carry = 0;
 grav = 0.8;
-platformid = -4;
+platformid = noone;

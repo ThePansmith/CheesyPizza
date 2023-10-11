@@ -1,3 +1,3 @@
-blockID = -4;
+blockID = noone;
 created = false;
 number = 8;

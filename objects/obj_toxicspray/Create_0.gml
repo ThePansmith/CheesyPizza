@@ -1,3 +1,3 @@
 trigger = 0;
-cloudID = -4;
+cloudID = noone;
 spd = 8;

@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "badland_8b",
-  "creationCodeFile": "${project_dir}/rooms/badland_8b/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/badland_8b/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

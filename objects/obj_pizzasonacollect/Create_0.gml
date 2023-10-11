@@ -1,8 +1,8 @@
 idlespr = spr_pizzasona1;
 throwspr = spr_pizzasona1throw;
 transitionspr = spr_pizzasona1trans;
-collectID = -4;
-onebyoneID = -4;
+collectID = noone;
+onebyoneID = noone;
 index = 0;
 showtext = false;
 state = states.normal;

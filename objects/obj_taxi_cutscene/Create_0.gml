@@ -1,3 +1,3 @@
 pickedup = false;
 hsp = 10;
-targetplayer = -4;
+targetplayer = noone;

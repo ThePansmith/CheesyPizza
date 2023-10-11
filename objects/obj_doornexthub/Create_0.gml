@@ -9,7 +9,7 @@ if ini_key_exists("Ranks", "exit") or global.sandbox
 ini_close();
 
 event_inherited();
-targetDoor = -4;
+targetDoor = noone;
 key = false;
 save = "w1stick";
 unlocked = false;

@@ -6,6 +6,6 @@ image_xscale = sign(obj_player.x - x);
 instance_create(x, y, obj_bangeffect);
 drop = false;
 alarm[0] = 50;
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;

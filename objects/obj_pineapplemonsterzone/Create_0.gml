@@ -1,4 +1,4 @@
 content = obj_bazooka;
 monster = true;
-ID = -4;
+ID = noone;
 shot = false;

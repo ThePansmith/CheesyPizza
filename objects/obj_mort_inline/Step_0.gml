@@ -26,7 +26,7 @@ if (waitforhurt && !instance_exists(obj_dialogcontroller))
 		dialog[0] = dialog_create("Becaw!");
 		dialog[1] = dialog_create("You gotta wait in line sir.");
 		do_dialog(dialog);
-		dialog = -4;
+		dialog = noone;
 		warned = true;
 	}
 }

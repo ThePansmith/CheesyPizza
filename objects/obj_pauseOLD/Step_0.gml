@@ -105,7 +105,7 @@ if (pause && !instance_exists(obj_option))
 						character = "P";
 						scr_characterspr();
 					}
-					global.leveltosave = -4;
+					global.leveltosave = noone;
 					scr_playerreset();
 					alarm[0] = 2;
 					obj_player1.state = states.titlescreen;
@@ -127,8 +127,8 @@ if (pause && !instance_exists(obj_option))
 					obj_player1.targetDoor = "HUB";
 					if (instance_exists(obj_player2))
 						obj_player2.targetDoor = "HUB";
-					global.leveltorestart = -4;
-					global.leveltosave = -4;
+					global.leveltorestart = noone;
+					global.leveltosave = noone;
 				}
 				break;
 		}

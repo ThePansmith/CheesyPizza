@@ -1,4 +1,4 @@
-objectID = -4;
+objectID = noone;
 image_speed = 0;
 depth = -80;
 ypad = 70;

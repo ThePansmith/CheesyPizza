@@ -109,7 +109,7 @@ add_boss_achievements("pizzaface", boss_pizzafacehub, spr_achievement_bosses, 4)
 
 #region PALETTES
 
-add_achievement_notify("pal_unfunny", -4, function(data)
+add_achievement_notify("pal_unfunny", noone, function(data)
 {
 	var type = data[0];
 	var arr = data[1];
@@ -117,14 +117,14 @@ add_achievement_notify("pal_unfunny", -4, function(data)
 		palette_unlock(name, "unfunny", 3);
 }, false, "Palettes", "unfunny");
 
-add_achievement_notify("pal_mooney", -4, function(data)
+add_achievement_notify("pal_mooney", noone, function(data)
 {
 	var type = data[0];
 	if (type == notifs.mrmooney_donated)
 		palette_unlock(name, "mooney", 15);
 }, false, "Palettes", "mooney");
 
-add_achievement_notify("pal_sage", -4, function(data)
+add_achievement_notify("pal_sage", noone, function(data)
 {
 	var type = data[0];
 	if (type == notifs.end_level)
@@ -146,7 +146,7 @@ add_achievement_notify("pal_sage", -4, function(data)
 	}
 }, false, "Palettes", "sage");
 
-add_achievement_notify("pal_money", -4, function(data)
+add_achievement_notify("pal_money", noone, function(data)
 {
 	var type = data[0];
 	if (type == notifs.end_level)
@@ -170,7 +170,7 @@ add_achievement_notify("pal_money", -4, function(data)
 	}
 }, false, "Palettes", "money");
 
-add_achievement_notify("pal_blood", -4, function(data)
+add_achievement_notify("pal_blood", noone, function(data)
 {
 	var type = data[0];
 	if (type == notifs.end_level)
@@ -183,7 +183,7 @@ add_achievement_notify("pal_blood", -4, function(data)
 	}
 }, false, "Palettes", "blood");
 
-add_achievement_notify("pal_tv", -4, function(data)
+add_achievement_notify("pal_tv", noone, function(data)
 {
 	var type = data[0];
 	if (type == notifs.end_level)
@@ -211,7 +211,7 @@ add_achievement_notify("pal_tv", -4, function(data)
 	}
 }, false, "Palettes", "tv");
 
-add_achievement_notify("pal_dark", -4, function(data)
+add_achievement_notify("pal_dark", noone, function(data)
 {
 	var type = data[0];
 	var arr = data[1];
@@ -231,14 +231,14 @@ add_achievement_notify("pal_dark", -4, function(data)
 	}
 }, false, "Palettes", "dark");
 
-add_achievement_notify("pal_shitty", -4, function(data)
+add_achievement_notify("pal_shitty", noone, function(data)
 {
 	var type = data[0];
 	if (type == notifs.crawl_in_shit)
 		palette_unlock(name, "shitty", 9);
 }, false, "Palettes", "shitty");
 
-add_achievement_notify("pal_golden", -4, function(data)
+add_achievement_notify("pal_golden", noone, function(data)
 {
 	var type = data[0];
 	if (type == notifs.end_level)
@@ -280,7 +280,7 @@ add_achievement_notify("pal_garish", function()
 	}
 }, false, "Palettes", "garish");
 
-add_achievement_notify("pal_funny", -4, function(data)
+add_achievement_notify("pal_funny", noone, function(data)
 {
 	var type = data[0];
 	var arr = data[1];
@@ -288,7 +288,7 @@ add_achievement_notify("pal_funny", -4, function(data)
 		palette_unlock(name, "funny", 12, spr_peppattern1);
 }, false, "Palettes", "funny");
 
-add_achievement_notify("pal_itchy", -4, function(data)
+add_achievement_notify("pal_itchy", noone, function(data)
 {
 	var type = data[0];
 	var arr = data[1];
@@ -297,7 +297,7 @@ add_achievement_notify("pal_itchy", -4, function(data)
 		palette_unlock(name, "itchy", 12, spr_peppattern2);
 }, false, "Palettes", "itchy");
 
-add_achievement_notify("pal_pizza", -4, function(data)
+add_achievement_notify("pal_pizza", noone, function(data)
 {
 	var type = data[0];
 	if (type == notifs.firsttime_ending)
@@ -318,7 +318,7 @@ add_achievement_notify("pal_stripes", function()
 	}
 }, false, "Palettes", "stripes");
 
-add_achievement_notify("pal_goldemanne", -4, function(data)
+add_achievement_notify("pal_goldemanne", noone, function(data)
 {
 	var type = data[0];
 	if (type == notifs.unlocked_achievement)
@@ -361,7 +361,7 @@ add_achievement_notify("pal_badbones", function()
 	}
 }, false, "Palettes", "bones");
 
-add_achievement_notify("pal_pp", -4, function(data)
+add_achievement_notify("pal_pp", noone, function(data)
 {
 	var type = data[0];
 	if (type == notifs.firsttime_ending)
@@ -377,7 +377,7 @@ add_achievement_notify("pal_pp", -4, function(data)
 	}
 }, false, "Palettes", "pp");
 
-add_achievement_notify("pal_war", -4, function(data)
+add_achievement_notify("pal_war", noone, function(data)
 {
 	var type = data[0];
 	var arr = data[1];
@@ -391,7 +391,7 @@ add_achievement_notify("pal_war", -4, function(data)
 	}
 }, false, "Palettes", "war");
 
-add_achievement_notify("pal_john", -4, function(data)
+add_achievement_notify("pal_john", noone, function(data)
 {
 	var type = data[0];
 	var arr = data[1];
@@ -680,7 +680,7 @@ add_achievement_notify("farm1", function(data)
 	}
 });
 
-add_achievement_notify("farm2", -4, function(data)
+add_achievement_notify("farm2", noone, function(data)
 {
 	var type = data[0];
 	if (type == notifs.mort_block)
@@ -793,7 +793,7 @@ function(data)
 #endregion
 #region FOREST
 
-add_achievement_update("forest1", 5, -4, function(data)
+add_achievement_update("forest1", 5, noone, function(data)
 {
 	if (global.leveltosave == "forest")
 	{
@@ -964,7 +964,7 @@ add_achievement_notify("minigolf3", function(data)
 
 #region STREET
 
-add_achievement_update("street1", 60, -4, function(data)
+add_achievement_update("street1", 60, noone, function(data)
 {
 	if (room == street_bacon)
 		achievement_unlock(name, "Pan Fried", spr_achievement_street, 0);

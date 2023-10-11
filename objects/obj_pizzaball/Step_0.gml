@@ -95,7 +95,7 @@ if (bigcheeseID != noone)
 	{
 		if (instance_exists(bigcheeseID) && bigcheeseID.object_index == obj_golfburger && sprite_index == stunfallspr)
 			sprite_index = walkspr;
-		bigcheeseID = -4;
+		bigcheeseID = noone;
 	}
 	else
 		invincible = true;

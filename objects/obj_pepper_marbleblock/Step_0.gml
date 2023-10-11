@@ -34,7 +34,7 @@ if (contemplated)
 		else if (state != states.contemplate && state != states.hit && state != states.stun)
 		{
 			other.contemplated = false;
-			marbleblockID = -4;
+			marbleblockID = noone;
 		}
 	}
 }

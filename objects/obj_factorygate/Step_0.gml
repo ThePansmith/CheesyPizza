@@ -6,7 +6,7 @@ switch (state)
 		{
 			if (blockinst != noone && instance_exists(blockinst))
 			{
-				blockinst = -4;
+				blockinst = noone;
 				instance_destroy(blockinst);
 			}
 		}

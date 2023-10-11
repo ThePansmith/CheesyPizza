@@ -4,6 +4,6 @@ grav = 0.5;
 grounded = false;
 active = true;
 depth = 2;
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;

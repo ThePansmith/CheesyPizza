@@ -2,7 +2,7 @@ event_inherited();
 underground = true;
 threshold_x = 400;
 threshold_y = 96;
-targetplayer = -4;
+targetplayer = noone;
 running = false;
 scared_max = 30;
 runmovespeed = 0;

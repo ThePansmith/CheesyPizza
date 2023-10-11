@@ -13,7 +13,7 @@ switch (state)
 		if (blockinst != noone && instance_exists(blockinst))
 		{
 			instance_destroy(blockinst);
-			blockinst = -4;
+			blockinst = noone;
 		}
 		hsp = image_xscale * movespeed;
 		movespeed = Approach(movespeed, 8, 0.5);

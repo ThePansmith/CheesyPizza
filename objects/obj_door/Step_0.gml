@@ -7,7 +7,7 @@ if (john && global.panic)
 	if (uparrowID != noone)
 	{
 		instance_destroy(uparrowID);
-		uparrowID = -4;
+		uparrowID = noone;
 	}
 }
 if ((room == tower_5 && targetRoom == tower_pizzafacehall) or room == tower_pizzafacehall)

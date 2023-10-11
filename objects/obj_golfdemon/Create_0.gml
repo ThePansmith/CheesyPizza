@@ -2,7 +2,7 @@ event_inherited();
 snd = fmod_event_create_instance("event:/sfx/enemies/demoncharge");
 snd_count = 0;
 underground = true;
-hitboxID = -4;
+hitboxID = noone;
 idle = true;
 grav = 0.5;
 hsp = 0;

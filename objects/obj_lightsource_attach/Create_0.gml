@@ -1,2 +1,2 @@
 event_inherited();
-objectID = -4;
+objectID = noone;

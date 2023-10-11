@@ -1,3 +1,3 @@
-content = -4;
+content = noone;
 spawn_buffer = 0;
 visible = false;

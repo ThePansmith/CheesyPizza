@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "industrial_lap",
-  "creationCodeFile": "${project_dir}/rooms/industrial_lap/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/industrial_lap/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

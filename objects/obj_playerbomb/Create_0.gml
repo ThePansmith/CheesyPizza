@@ -11,6 +11,6 @@ depth = -10;
 playercollision = true;
 kick = false;
 mask_index = spr_player_mask;
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;

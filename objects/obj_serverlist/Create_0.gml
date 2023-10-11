@@ -112,8 +112,8 @@ loading = true;
 state = 0;
 
 scr_init_input();
-surfclip = -4;
-surffinal = -4;
+surfclip = noone;
+surffinal = noone;
 
 bgscroll = 0;
 listscroll = 0;

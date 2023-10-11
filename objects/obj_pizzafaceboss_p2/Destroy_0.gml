@@ -5,7 +5,7 @@ if (destroyable && elitehit <= 0)
 	with (obj_player)
 	{
 		sprite_index = spr_idle;
-		pistolanim = -4;
+		pistolanim = noone;
 	}
 	instance_destroy(obj_pizzaheadswordstone);
 	instance_destroy(obj_pizzahead_haywire);

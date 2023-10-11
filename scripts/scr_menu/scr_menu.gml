@@ -96,7 +96,7 @@ function add_option_slide(_menu, _optionid, _name, _onmove = noone, _onchanged =
 		on_move: _onmove,
 		slidecount: 0,
 		moving: false,
-		sound: -4
+		sound: noone
 	};
 	if _sound != noone
 		b.sound = fmod_event_create_instance(_sound);

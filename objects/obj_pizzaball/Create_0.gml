@@ -1,6 +1,6 @@
 event_inherited();
-bigcheeseID = -4;
-pointerID = -4;
+bigcheeseID = noone;
+pointerID = noone;
 destroyable = false;
 shakestun = false;
 hitspeed = 0;

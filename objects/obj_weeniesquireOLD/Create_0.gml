@@ -16,6 +16,6 @@ depth = 0;
 image_xscale = -1;
 boundbox = false;
 chargebuffer = 0;
-platformid = -4;
+platformid = noone;
 hsp_carry = 0;
 vsp_carry = 0;

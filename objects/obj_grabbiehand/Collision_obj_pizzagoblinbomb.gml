@@ -8,7 +8,7 @@ if (state != states.grabbing && x == xstart && y == ystart)
 		{
 			state = states.normal;
 			with (playerid)
-				bombgrabID = -4;
+				bombgrabID = noone;
 		}
 	}
 }

@@ -14,7 +14,7 @@ sound_pos = new Vector2(-1, -1);
 sound_buffer = 0;
 
 room_grid = ds_grid_create(map_width, map_height);
-ds_grid_clear(room_grid, -4);
+ds_grid_clear(room_grid, noone);
 ds_grid_add(room_grid, 0, 0, room_get_name(kidsparty_floor1_1))
 ds_grid_add(room_grid, 1, 0, room_get_name(kidsparty_floor1_2))
 ds_grid_add(room_grid, 2, 0, room_get_name(kidsparty_floor1_3))
@@ -36,31 +36,31 @@ monster_alarm[0] = 300;
 monster_pos[0] = new Vector2(3, 0);
 monster_dir[0] = new Vector2(1, 0);
 monster_active[0] = true;
-monster_room[0] = -4;
+monster_room[0] = noone;
 
 monster_alarm[1] = 300;
 monster_pos[1] = new Vector2(3, 1);
 monster_dir[1] = new Vector2(0, 0);
 monster_active[1] = true;
-monster_room[1] = -4;
+monster_room[1] = noone;
 
 monster_alarm[2] = 10;
 monster_pos[2] = new Vector2(3, 2);
 last_puppet_pos = new Vector2(monster_pos[2].x, monster_pos[2].y);
 monster_dir[2] = new Vector2(0, 0);
 monster_active[2] = true;
-monster_room[2] = -4;
+monster_room[2] = noone;
 
 monster_alarm[3] = 300;
 monster_pos[3] = new Vector2(3, 3);
 monster_dir[3] = new Vector2(0, 0);
 monster_active[3] = true;
-monster_room[3] = -4;
+monster_room[3] = noone;
 
 monster_pos[4] = new Vector2(3, 4);
 monster_alarm[4] = 360;
 monster_active[4] = false;
-monster_room[4] = -4;
+monster_room[4] = noone;
 
 for (var i = 0; i < array_length(monster_pos); i++)
 {
@@ -86,7 +86,7 @@ function robot_create(argument0, argument1)
 			fake = argument1;
 			if (argument0)
 			{
-				var _hinst = -4;
+				var _hinst = noone;
 				with (obj_hallwaymonster)
 				{
 					if ((_dir.x < 0 && x > (room_width / 2)) || (_dir.x > 0 && x < (room_width / 2)))
@@ -103,7 +103,7 @@ function robot_create(argument0, argument1)
 			}
 			else
 			{
-				var _doorInst = -4;
+				var _doorinst = noone;
 				with (obj_doorMonster)
 				{
 					if (!check_solid(x, y - 32))
@@ -135,7 +135,7 @@ function blob_create(argument0, argument1)
 			fake = argument1;
 			if (argument0)
 			{
-				var _hinst = -4;
+				var _hinst = noone;
 				with (obj_hallwaymonster)
 				{
 					if ((_dir.x < 0 && x > (room_width / 2)) || (_dir.x > 0 && x < (room_width / 2)))
@@ -152,7 +152,7 @@ function blob_create(argument0, argument1)
 			}
 			else
 			{
-				var _doorInst = -4;
+				var _doorinst = noone;
 				with (obj_doorMonster)
 					_doorInst = id;
 				if (!instance_exists(_doorInst))
@@ -196,7 +196,7 @@ function hillbilly_create(argument0, argument1)
 			fake = argument1;
 			if (argument0)
 			{
-				var _hinst = -4;
+				var _hinst = noone;
 				with (obj_hallwaymonster)
 				{
 					if ((_dir.x < 0 && x > (room_width / 2)) || (_dir.x > 0 && x < (room_width / 2)))
@@ -213,7 +213,7 @@ function hillbilly_create(argument0, argument1)
 			}
 			else
 			{
-				var _doorInst = -4;
+				var _doorinst = noone;
 				with (obj_doorMonster)
 				{
 					if (!check_solid(x, y - 32))

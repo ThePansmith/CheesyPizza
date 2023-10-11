@@ -11,7 +11,7 @@ if (global.levelcomplete && !global.mansioncutscene)
 		}
 		global.levelcomplete = false;
 		global.mansioncutscene = true;
-		global.levelcompletename = -4;
+		global.levelcompletename = noone;
 		quick_ini_write_real(get_savefile_ini(), "cutscene", "mansion", true);
 		cutscene_end_action();
 	}], [cutscene_save_game]];

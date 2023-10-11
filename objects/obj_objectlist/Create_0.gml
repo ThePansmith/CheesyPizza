@@ -1,6 +1,6 @@
 event_inherited();
-object_list = -4;
-surface = -4;
+object_list = noone;
+surface = noone;
 scroll_y = 0;
 scroll_ymax = 0;
 hovered_object = -1;

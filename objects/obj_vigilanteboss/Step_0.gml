@@ -90,7 +90,7 @@ boss_update_pizzaheadKO(spr_bossfight_vigiHP, spr_bossfight_vigipalette);
 if (state != states.flamethrower && flameID != noone)
 {
 	instance_destroy(obj_flamethrowerhurtbox);
-	flameID = -4;
+	flameID = noone;
 }
 if (state == states.revolver || state == states.wait || state == states.dynamite || state == states.throwing || state == states.estampede)
 {
@@ -130,7 +130,7 @@ if (prevhp != elitehit)
 			sound_play_3d("event:/sfx/voice/vigiduel", x, y);
 		pizzahead_subhp = pizzahead_maxsubhp;
 		reposition = true;
-		oldspotID = -4;
+		oldspotID = noone;
 		if (place_meeting(x, y, obj_vigilantespot))
 			oldspotID = instance_place(x, y, obj_vigilantespot);
 		bullethit = 0;
@@ -221,7 +221,7 @@ if (((phase == 1 && elitehit <= 0) || (phase == 2 && elitehit <= 0)) && !pizzahe
 			instance_destroy(obj_ladderhorizontal);
 			with (obj_player1)
 			{
-				pistolanim = -4;
+				pistolanim = noone;
 				state = states.duel;
 				hsp = 0;
 				vsp = 0;
