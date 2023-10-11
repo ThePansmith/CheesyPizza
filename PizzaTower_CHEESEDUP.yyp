@@ -4291,6 +4291,7 @@
     {"id":{"name":"bg_streetfront","path":"sprites/bg_streetfront/bg_streetfront.yy",},},
     {"id":{"name":"spr_pizzahead_intro1","path":"sprites/spr_pizzahead_intro1/spr_pizzahead_intro1.yy",},},
     {"id":{"name":"spr_bigcheese_idle","path":"sprites/spr_bigcheese_idle/spr_bigcheese_idle.yy",},},
+    {"id":{"name":"obj_cosmicclone","path":"objects/obj_cosmicclone/obj_cosmicclone.yy",},},
     {"id":{"name":"spr_pepperman_minijump","path":"sprites/spr_pepperman_minijump/spr_pepperman_minijump.yy",},},
     {"id":{"name":"spr_pizzaball_stun","path":"sprites/spr_pizzaball_stun/spr_pizzaball_stun.yy",},},
     {"id":{"name":"spr_pizzaball_walk","path":"sprites/spr_pizzaball_walk/spr_pizzaball_walk.yy",},},
