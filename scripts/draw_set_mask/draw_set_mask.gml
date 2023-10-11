@@ -1,13 +1,14 @@
-/// @func	draw_set_mask(x, y, clip_sprite, clip_sprite_subimage, alphafix, simple)
+/// @func	draw_set_mask(x, y, clip_sprite, clip_sprite_subimage, alphafix, simple, inverse)
 /// @desc	Clip everything from a given clipping mask, returns false if shaders aren't supported, returns true otherwise
-/// @param	{real}				_x	The X position of where to draw the clip mask
-/// @param	{real}				_y	The Y position of where to draw the clip mask
-/// @param	{Asset.GMSprite}	_clip_sprite	The sprite asset
-/// @param	{real}				_clip_sprite_subimage	The subimage of the sprite asset to use
-/// @arg	{bool}	_alpha_fix		Simulate the alphafix to all pixels inside the clip
-/// @arg	{bool}	_simple			Use the simple version of the shader, enable this for your "draw_circle"/"draw_ellipse"/"draw_rectangle"/"draw_triangle" functions
+/// @param	{real}				x	The X position of where to draw the clip mask
+/// @param	{real}				y	The Y position of where to draw the clip mask
+/// @param	{Asset.GMSprite}	clip_sprite	The sprite asset
+/// @param	{real}				clip_sprite_subimage	The subimage of the sprite asset to use
+/// @arg	{bool}				alpha_fix		Simulate the alphafix to all pixels inside the clip
+/// @arg	{bool}				simple			Use the simple version of the shader, enable this for your "draw_circle"/"draw_ellipse"/"draw_rectangle"/"draw_triangle" functions
+/// @arg	{bool}	inverse		Simulate the alphafix to all pixels inside the clip
 /// @returns	{bool}
-function draw_set_mask(_x, _y, _clip_sprite, _clip_sprite_subimage = 0, _alpha_fix = false, _simple = false)
+function draw_set_mask(_x, _y, _clip_sprite, _clip_sprite_subimage = 0, _alpha_fix = false, _simple = false, _inverse = false)
 {
 	if global.performance
 		return false;
@@ -25,7 +26,8 @@ function draw_set_mask(_x, _y, _clip_sprite, _clip_sprite_subimage = 0, _alpha_f
 	var u_clip_sprite_worldposition = shader_get_uniform(shader, "u_clip_sprite_worldposition");
 	var u_clip_sprite_trimmed = shader_get_uniform(shader, "u_clip_sprite_trimmed");
 	var u_alphafix = shader_get_uniform(shader, "u_mask_alphafix");
-		
+	var u_inverse = shader_get_uniform(shader, "u_mask_inverse");
+	
 	var clip_sprite_texture = sprite_get_texture(_clip_sprite, _clip_sprite_subimage);
 	var clip_uvs = sprite_get_uvs(_clip_sprite, _clip_sprite_subimage);
 	
@@ -37,5 +39,6 @@ function draw_set_mask(_x, _y, _clip_sprite, _clip_sprite_subimage = 0, _alpha_f
 	shader_set_uniform_f(u_clip_sprite_trimmed, clip_uvs[4], clip_uvs[5], clip_uvs[6], clip_uvs[7]);
 	shader_set_uniform_f(u_clip_sprite_worldposition, _x, _y);
 	shader_set_uniform_f(u_alphafix, _alpha_fix ? 1.0 : 0.0);
+	shader_set_uniform_f(u_inverse, _inverse ? 1.0 : 0.0);
 	return true;
 }

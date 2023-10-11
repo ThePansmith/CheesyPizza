@@ -67,6 +67,7 @@ if (kidsparty_lightning || dark_lightning)
 			draw_set_alpha(1);
 			surface_reset_target();
 		}
+		
 		if (surface_exists(surf2))
 		{
 			surface_set_target(surf2);

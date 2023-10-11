@@ -635,7 +635,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.106",
+    "IDEVersion": "2023.8.2.108",
   },
   "resources": [
     {"id":{"name":"obj_bossdoor","path":"objects/obj_bossdoor/obj_bossdoor.yy",},},
@@ -8929,6 +8929,7 @@
     {"id":{"name":"spr_anchor","path":"sprites/spr_anchor/spr_anchor.yy",},},
     {"id":{"name":"spr_morthook2","path":"sprites/spr_morthook2/spr_morthook2.yy",},},
     {"id":{"name":"bg_entryway2_buildings","path":"sprites/bg_entryway2_buildings/bg_entryway2_buildings.yy",},},
+    {"id":{"name":"shd_pal_swapper_new","path":"shaders/shd_pal_swapper_new/shd_pal_swapper_new.yy",},},
     {"id":{"name":"spr_warprops","path":"sprites/spr_warprops/spr_warprops.yy",},},
     {"id":{"name":"spr_escapespawn_ss","path":"sprites/spr_escapespawn_ss/spr_escapespawn_ss.yy",},},
     {"id":{"name":"sh_var","path":"scripts/sh_var/sh_var.yy",},},
@@ -9238,7 +9239,6 @@
     {"id":{"name":"spr_flashdots","path":"sprites/spr_flashdots/spr_flashdots.yy",},},
     {"id":{"name":"bg_noisettecafe","path":"sprites/bg_noisettecafe/bg_noisettecafe.yy",},},
     {"id":{"name":"spr_technicaldifficulty4","path":"sprites/spr_technicaldifficulty4/spr_technicaldifficulty4.yy",},},
-    {"id":{"name":"rm_geyser_test","path":"rooms/rm_geyser_test/rm_geyser_test.yy",},},
     {"id":{"name":"spr_soldier","path":"sprites/spr_soldier/spr_soldier.yy",},},
     {"id":{"name":"spr_player_jetpackend","path":"sprites/spr_player_jetpackend/spr_player_jetpackend.yy",},},
     {"id":{"name":"spr_headprojectile_idle","path":"sprites/spr_headprojectile_idle/spr_headprojectile_idle.yy",},},
@@ -10985,7 +10985,6 @@
     {"roomId":{"name":"tower_sugary","path":"rooms/tower_sugary/tower_sugary.yy",},},
     {"roomId":{"name":"tower_soundtest","path":"rooms/tower_soundtest/tower_soundtest.yy",},},
     {"roomId":{"name":"sucrose_1","path":"rooms/sucrose_1/sucrose_1.yy",},},
-    {"roomId":{"name":"rm_geyser_test","path":"rooms/rm_geyser_test/rm_geyser_test.yy",},},
     {"roomId":{"name":"molasses_1","path":"rooms/molasses_1/molasses_1.yy",},},
     {"roomId":{"name":"molasses_2","path":"rooms/molasses_2/molasses_2.yy",},},
     {"roomId":{"name":"molasses_3","path":"rooms/molasses_3/molasses_3.yy",},},

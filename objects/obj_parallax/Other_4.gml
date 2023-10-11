@@ -166,41 +166,41 @@ for (var i = 0; i < array_length(layers); i++)
 			}
 		}
 	}
-	
-	if (room == sucrose_1 || room == sucrose_2)
-	{
-		var _bg = layer_background_get_id("Backgrounds_still1");
-		if global.panic
-		{
-			layer_background_sprite(_bg, bg_sucrose_skyActive);
-			layer_background_index(_bg, 0);
-			layer_background_speed(_bg, 0.35);
-		}
-		else
-		{
-			switch sucrose_state
-			{
-				case 0:
-					break;
-				case 1:
-					layer_background_sprite(_bg, bg_sucrose_skyWakingUp);
-					layer_background_index(_bg, 0);
-					layer_background_speed(_bg, 0.25);
-					break;
-				default:
-					instance_create_unique(0, 0, obj_hungrypillarflash);
-					activate_panic(true);
-					layer_background_sprite(_bg, bg_sucrose_skyActive);
-					layer_background_index(_bg, 0);
-					layer_background_speed(_bg, 0.35);
-					break;
-			}
-		}
-	}
 
 	#endregion
 }
 
+if (room == sucrose_1 || room == sucrose_2)
+{
+	var _bg = layer_background_get_id("Backgrounds_still1");
+	if global.panic
+	{
+		layer_background_sprite(_bg, bg_sucrose_skyActive);
+		layer_background_index(_bg, 0);
+		layer_background_speed(_bg, 0.35);
+	}
+	else
+	{
+		switch sucrose_state
+		{
+			case 0:
+				break;
+			case 1:
+				layer_background_sprite(_bg, bg_sucrose_skyWakingUp);
+				layer_background_index(_bg, 0);
+				layer_background_speed(_bg, 0.25);
+				break;
+			default:
+				instance_create_unique(0, 0, obj_hungrypillarflash);
+				activate_panic(true);
+				layer_background_sprite(_bg, bg_sucrose_skyActive);
+				layer_background_index(_bg, 0);
+				layer_background_speed(_bg, 0.35);
+				break;
+		}
+	}
+}
+	
 // some more depths
 if layer_exists("Foreground_1")
 	layer_depth("Foreground_1", -400);

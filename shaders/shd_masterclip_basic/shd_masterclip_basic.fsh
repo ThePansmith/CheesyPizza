@@ -16,36 +16,50 @@ uniform vec2 u_clip_sprite_texelsize;
 uniform vec2 u_clip_sprite_worldposition;
 uniform vec4 u_clip_sprite_trimmed;
 uniform float u_mask_alphafix;
+uniform float u_mask_inverse;
 //////////////////////////////////
 
 /// Circle Clip //////////////////
 uniform float u_docircleclip;
 uniform vec2 u_origin;
 uniform float u_radius;
-uniform float u_inverse;
 uniform float u_circle_alphafix;
+uniform float u_circle_inverse;
 //////////////////////////////////
 
 /// Rect Clip ////////////////////
 uniform float u_dorectclip;
 uniform vec4 u_clip_bounds;
 uniform float u_rect_alphafix;
+uniform float u_rect_inverse;
 //////////////////////////////////
+
+#region Mask Clip
+bool mask_clip_bound_check()
+{
+	vec2 trimmed_world_size = vec2(u_clip_sprite_size - u_clip_sprite_trimmed.xy);
+	
+	vec2 trimmed_pos = u_clip_sprite_worldposition + u_clip_sprite_trimmed.xy;
+	vec2 trimmed_size = u_clip_sprite_size * u_clip_sprite_trimmed.zw;
+	bool inside_bounds = ((v_vPosition.x >= (trimmed_pos.x) && v_vPosition.x <= (trimmed_pos.x + trimmed_size.x)) && (v_vPosition.y >= (trimmed_pos.y) && v_vPosition.y <= (trimmed_pos.y + trimmed_size.y)));
+		
+	if (u_rect_inverse > 0.5)
+		return !inside_bounds;
+	else
+		return inside_bounds;
+}
 
 vec4 mask_clip(vec4 color)
 {
 	vec4 game_out_color = color;
 		
-	vec2 trimmed_world_size = vec2(u_clip_sprite_size - u_clip_sprite_trimmed.xy);
-	
-	vec2 trimmed_pos = u_clip_sprite_worldposition + u_clip_sprite_trimmed.xy;
-	vec2 trimmed_size = u_clip_sprite_size * u_clip_sprite_trimmed.zw;
 	
 	// RX: are we inside the clip region?
-	if	(
-		(v_vPosition.x >= (trimmed_pos.x) && v_vPosition.x <= (trimmed_pos.x + trimmed_size.x)) && 
-		(v_vPosition.y >= (trimmed_pos.y) && v_vPosition.y <= (trimmed_pos.y + trimmed_size.y))
-		)
+	//if	(
+	//	(v_vPosition.x >= (trimmed_pos.x) && v_vPosition.x <= (trimmed_pos.x + trimmed_size.x)) && 
+	//	(v_vPosition.y >= (trimmed_pos.y) && v_vPosition.y <= (trimmed_pos.y + trimmed_size.y))
+	//	)
+	if (mask_clip_bound_check())
 	{
 		vec2 position_in_clip = ((v_vPosition - u_clip_sprite_worldposition - u_clip_sprite_trimmed.xy) * u_clip_sprite_texelsize) + u_clip_sprite_uvs.xy;
 		
@@ -61,6 +75,8 @@ vec4 mask_clip(vec4 color)
 		
 	return game_out_color;
 }
+#endregion
+#region Circle Clip
 
 vec4 circle_clip(vec4 color)
 {
@@ -68,7 +84,7 @@ vec4 circle_clip(vec4 color)
 	
 	float origin_distance = distance(v_vPosition, u_origin);
 	
-	if (u_inverse < 0.5)
+	if (u_circle_inverse < 0.5)
 		game_out_color.a = origin_distance < u_radius ? game_out_color.a : 0.0;
 	else
 		game_out_color.a = origin_distance > u_radius ? game_out_color.a : 0.0;
@@ -77,6 +93,8 @@ vec4 circle_clip(vec4 color)
 		game_out_color = vec4(game_out_color.rgb * game_out_color.a, game_out_color.a);
 	return game_out_color;
 }
+
+#endregion
 
 bool rx_Vec4ContainsVec2(vec4 rect, vec2 pos)
 {
@@ -101,8 +119,11 @@ vec4 rect_clip(vec4 color)
 		clip_bounds.w = -clip_bounds.w;
 	}
 	
-	game_out_color.a = rx_Vec4ContainsVec2(clip_bounds, v_vPosition) ? game_out_color.a : 0.0;
-	
+	if (u_rect_inverse > 0.5)
+		game_out_color.a = (!rx_Vec4ContainsVec2(clip_bounds, v_vPosition)) ? game_out_color.a : 0.0;
+	else
+		game_out_color.a = rx_Vec4ContainsVec2(clip_bounds, v_vPosition) ? game_out_color.a : 0.0;
+		
 	if (u_rect_alphafix > 0.5)
 		game_out_color = vec4(game_out_color.rgb * game_out_color.a, game_out_color.a);
 		

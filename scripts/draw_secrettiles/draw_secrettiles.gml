@@ -2,6 +2,8 @@ function draw_secrettiles(_secrettile)
 {
 	with _secrettile
 	{
+		shader_reset();
+		
 		var mario = global.secrettiles && !instance_exists(obj_fakeplayer);
 		if !bbox_in_camera(view_camera[0], 32) or (image_alpha <= 0 && !mario) or array_length(tiles) == 0
 			exit;
@@ -36,7 +38,7 @@ function draw_secrettiles(_secrettile)
 		if global.performance
 			draw_set_alpha(image_alpha);
 
-		gpu_set_depth(obj_drawcontroller.depth + 1);
+		//gpu_set_depth(obj_drawcontroller.depth + 1);
 		array_foreach(tiles, function(i) {
 			draw_tile(i.tileset, i.tile_data, 0, i.x, i.y);
 		});
