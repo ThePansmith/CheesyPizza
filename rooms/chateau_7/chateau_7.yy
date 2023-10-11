@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "chateau_7",
-  "creationCodeFile": "${project_dir}/rooms/chateau_7/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/chateau_7/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
