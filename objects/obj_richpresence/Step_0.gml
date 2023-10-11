@@ -8,21 +8,54 @@ largeimage = "big_icon";
 // player character
 if instance_exists(obj_player1)
 	character = obj_player1.character;
-smallimage = "char_" + string_lower(character);
-
+smallimage = "char_"; // + string_lower(character);
+smallimagetext = "Playing as ";
 switch character
 {
-	case "P": smallimagetext = "Playing as Peppino"; break;
-	case "N": smallimagetext = "Playing as The Noise"; break;
-	case "V": smallimagetext = "Playing as Vigilante"; break;
-	case "S": smallimagetext = "Playing as Snick"; break;
-	case "G": smallimagetext = "Playing as Gustavo"; break;
-	case "SP": smallimagetext = "Playing as Pizzelle"; break;
-	case "SN": smallimagetext = "Playing as Pizzano"; break;
-	case "PN": smallimagetext = "Playing as Pinolino"; break;
-	case "BN": smallimagetext = "Playing as Bo Noise"; break;
-	case "CT": smallimagetext = "Playing as Chemstoon"; break;
-	case "PUFFER": smallimagetext = "Please do not ask"; break;
+	case "P": 
+		smallimagetext += "Peppino";
+		smallimage += "p";
+		break;
+	case "N": 
+		smallimagetext += "The Noise"; 
+		smallimage += "n";
+		break;
+	case "V": 
+		smallimagetext += "Vigilante"; 
+		smallimage += "v";
+		break;
+	case "S": 
+		smallimagetext += "Snick";
+		smallimage += "s";
+		break;
+	case "G": 
+		smallimagetext += "Gustavo";
+		smallimage += "g";
+		break;
+	case "SP": 
+		smallimagetext += "Pizzelle";
+		smallimage += "sp";
+		break;
+	case "SN": 
+		smallimagetext += "Pizzano";
+		smallimage += "sn";
+		break;
+	case "PN": 
+		smallimagetext += "Pinolino"; 
+		smallimage += "pn";
+		break;
+	case "BN": 
+		smallimagetext += "Bo Noise";
+		smallimage += "bn";
+		break;
+	case "CT": 
+		smallimagetext += "Chemstoon";
+		smallimage += "ct";
+		break;
+	case "PUFFER": 
+		smallimagetext = "Please do not ask";
+		smallimage += "puffer";
+		break;
 }
 
 // status

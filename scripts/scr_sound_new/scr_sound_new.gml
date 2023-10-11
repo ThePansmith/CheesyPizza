@@ -9,18 +9,18 @@ function sound_stop_all(force = true)
 /// @desc Creates an instance of an FMOD event
 function sound_create_instance(event)
 {
-	if is_handle(event) && audio_exists(event)
-	{
-		var snd = audio_play_sound(event, 0, false, 0);
-		audio_stop_sound(snd);
-		return snd;
-	}
-	else if is_string(event)
+	if is_string(event)
 	{
 		var inst = fmod_event_create_instance(event);
 		if !inst
 			log_source($"Failed to create instance of {event}");
 		return inst;
+	}
+	else if is_handle(event) && audio_exists(event)
+	{
+		var snd = audio_play_sound(event, 0, false, 0);
+		audio_stop_sound(snd);
+		return snd;
 	}
 	else
 		log_source($"Event {event} doesn't exist");
@@ -109,12 +109,7 @@ function sound_play_3d(event, xx = undefined, yy = undefined)
 {
 	if event == noone
 		exit;
-	
-	if is_handle(event) && audio_exists(event)
-	{
-		audio_play_sound(event, 0, false, global.option_sfx_volume * global.option_master_volume);
-		exit;
-	}
+
 	if MOD.Mirror && xx != undefined
 		xx = room_width - xx;
 	
@@ -134,6 +129,12 @@ function sound_play_3d(event, xx = undefined, yy = undefined)
 	}
 	else
 	{
+		if is_handle(event) && audio_exists(event)
+		{
+			audio_play_sound(event, 0, false, global.option_sfx_volume * global.option_master_volume);
+			exit;
+		}
+	
 		// INSTANCE.
 		fmod_event_instance_set_paused(event, false);
 		if xx != undefined && yy != undefined
@@ -154,10 +155,12 @@ function sound_play_centered(event) {
 /// @desc Moves the position of a sound
 function sound_instance_move(inst, xx, yy)
 {
-	if is_handle(inst) && audio_exists(inst)
-		exit;
 	if is_string(inst)
 		inst = fmod_event_instance_get_index(inst);
+	else
+		exit;
+	//if is_handle(inst) && audio_exists(inst)
+	//	exit;
 	if inst == noone
 		return false;
 	
