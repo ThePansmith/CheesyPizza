@@ -55,6 +55,8 @@ function scr_playerreset(roomstart = false, restart = false)
 	global.level_seconds = 0;
 	global.pistol = false;
 	
+	obj_parallax.sucrose_state = 0;
+	
 	with (obj_screensizer)
 		camzoom = 1;
 	with (obj_camera)

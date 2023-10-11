@@ -1,3 +1,6 @@
+instance_destroy();
+exit;
+
 if global.panic
 {
 	var _bg2 = layer_background_get_id("Backgrounds_still1");

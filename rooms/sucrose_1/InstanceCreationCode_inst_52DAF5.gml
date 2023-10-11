@@ -1,3 +1,6 @@
+instance_destroy();
+exit;
+
 if global.panic
 {
 	instance_destroy();
