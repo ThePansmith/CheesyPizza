@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "graveyard_2",
-  "creationCodeFile": "${project_dir}/rooms/graveyard_2/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/graveyard_2/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

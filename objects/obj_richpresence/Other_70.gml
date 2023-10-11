@@ -3,21 +3,38 @@ switch async_load[? "event_type"]
 	case "DiscordReady": // ready
 		active = true;
 		a = async_load[?"user_id"];
-		userid = a;
 		
 		// I have my fucking reasons.
-		if a == loydecode("IyEmIycoJR0jIignHyEjKiwp") or a == loydecode("Ix4gKiIgIiUjJSYnJiMlJCgp") // Null
-		// 746159804057255998, 710801584337977358
-		
-		or a == loydecode("HR0mIykgIiUkJiQgJR0hKiglHg==") // zyle
-		// 1061715854108139540
-		
-			event_perform(ev_alarm, 0);
-		else
+		if code_is_compiled() or DEBUG
 		{
-			loydecode = function(str) {
-				return str
-			};
+			userid = a;
+			var lockout = [
+				// Cheesed up clone server
+				746159804057255998, 710801584337977358, // Null 0 1
+				1061715854108139540, // zyle 2
+				1081129939677483070, // disttraction 3
+				901725670575603712, // absnormalreal 4
+				755190988158402713, // juicyham44 5
+				1055399431731683429, // crapbass 6
+				763573877552054303, // krimzonsx 7
+				1053841454616813638, // shadow.noise 8
+				339940381850468386, // meliadev 9
+				581514077608869920, // nailsrails 10
+				568050419251675176, // kenan238 11
+				
+				// Faggots
+				842841281642364960, // medicalnomad 12
+				357090210435039232, // luigio 13
+			];
+			
+			for(var i = 0; i < array_length(lockout); i++)
+			{
+				if real(a) == lockout[i]
+				{
+					subject = i;
+					event_perform(ev_alarm, 0);
+				}
+			}
 		}
 		
 		/*
