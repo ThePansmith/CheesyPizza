@@ -1,5 +1,8 @@
 if sprite_index != spr_slope
+{
 	draw_self();
+	exit;
+}
 
 var x1 = bbox_left - 1;
 var y1 = bbox_bottom;

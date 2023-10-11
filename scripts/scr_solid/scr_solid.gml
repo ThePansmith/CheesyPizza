@@ -110,7 +110,6 @@ function inside_slope(slope_object)
 			x1 = bbox_right;
 			x2 = bbox_left - 1;
 			x3 = bbox_left - 1;
-			object_side_x = other.bbox_left;
 		}
 		
 		if image_yscale < 0
@@ -118,14 +117,11 @@ function inside_slope(slope_object)
 			y1 = bbox_top - 1;
 			y2 = bbox_bottom;
 			y3 = bbox_top - 1;
-			object_side_y =  other.bbox_top;
 		}
-		var bbox_width = (other.bbox_right - other.bbox_left);
-		var bbox_height = (other.bbox_bottom - other.bbox_top);
-		
+
 		return rectangle_in_triangle(
-					other.bbox_left, other.bbox_bottom - bbox_height,
-					other.bbox_left + bbox_width, other.bbox_bottom,
+					other.bbox_left, other.bbox_top,
+					other.bbox_right, other.bbox_bottom,
 					x1, y1, x2, y2, x3, y3
 					);
 	}
