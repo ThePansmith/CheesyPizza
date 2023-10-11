@@ -82,36 +82,8 @@ function check_solid(_x, _y)
 function check_slope(_x, _y)
 {
 	return instance_place(_x, _y, obj_slope_parent);
-	
-	/* var slope = instance_place(_x, _y, obj_slope_parent);
-	
-	if !slope
-		return noone;
-	
-	with slope
-	{
-		var x1 = bbox_left - 1;
-		var y1 = bbox_bottom;
-		
-		var x2 = bbox_right;
-		var y2 = bbox_top - 1;
-		
-		var x3 = bbox_right;
-		var y3 = bbox_bottom;
-		
-		if image_xscale < 0
-		{
-			x1 = bbox_right;
-			x2 = bbox_left - 1;
-			x3 = bbox_left - 1;
-		}
-		
-		return point_in_triangle(_x, _y, x1, y1, x2, y2, x3, y3) ? slope : noone;
-	}
-	return noone;*/
-	
-	//return instance_place(_x, _y, obj_slope_parent);
 }
+
 function inside_slope(slope_object)
 {
 	var slope = instance_place(x, y, slope_object);
@@ -151,8 +123,6 @@ function inside_slope(slope_object)
 		var bbox_width = (other.bbox_right - other.bbox_left);
 		var bbox_height = (other.bbox_bottom - other.bbox_top);
 		
-		//return point_in_triangle(object_side_x, object_side_y, x1, y1, x2, y2, x3, y3);
-		//return rectangle_triangle_collision(solid_get_collision_lines(other), slope_get_collision_lines(self));
 		return rectangle_in_triangle(
 					other.bbox_left, other.bbox_bottom - bbox_height,
 					other.bbox_left + bbox_width, other.bbox_bottom,
@@ -160,32 +130,6 @@ function inside_slope(slope_object)
 					);
 	}
 	return false;
-	
-	/* if !slope
-		return false;
-		
-	with (slope)
-	{	
-		var object_side = 0;
-		var slope_start = 0;
-		var slope_end = 0;
-		if (image_xscale > 0)
-		{
-			object_side = other.bbox_right;
-			slope_start = bbox_bottom;
-			slope_end = bbox_top;
-		}
-		else
-		{
-			object_side = other.bbox_left;
-			slope_start = bbox_top;
-			slope_end = bbox_bottom;
-		}
-		var m = (sign(image_xscale) * (bbox_bottom - bbox_top)) / (bbox_right - bbox_left);
-		slope = slope_start - round(m * (object_side - bbox_left));
-		if (other.bbox_bottom >= slope)
-			return true;
-	}*/
 }
 function check_slope_platform(slope_object, old_y)
 {
