@@ -5903,6 +5903,7 @@
     {"id":{"name":"spr_snick_machslidestart","path":"sprites/spr_snick_machslidestart/spr_snick_machslidestart.yy",},},
     {"id":{"name":"spr_angrycloud","path":"sprites/spr_angrycloud/spr_angrycloud.yy",},},
     {"id":{"name":"spr_player_wallsplat","path":"sprites/spr_player_wallsplat/spr_player_wallsplat.yy",},},
+    {"id":{"name":"scr_collisionlib","path":"scripts/scr_collisionlib/scr_collisionlib.yy",},},
     {"id":{"name":"bg_cottonclockend2escape","path":"sprites/bg_cottonclockend2escape/bg_cottonclockend2escape.yy",},},
     {"id":{"name":"spr_playerBN_minigunshoot","path":"sprites/spr_playerBN_minigunshoot/spr_playerBN_minigunshoot.yy",},},
     {"id":{"name":"spr_enemybird","path":"sprites/spr_enemybird/spr_enemybird.yy",},},

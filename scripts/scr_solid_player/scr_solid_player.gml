@@ -142,7 +142,9 @@ function scr_solid_player(_x, _y)
 }
 function check_slope_player(slope_obj)
 {
-	var slope = instance_place(x, y, slope_obj);
+	return inside_slope(slope_obj);
+	
+	/* var slope = instance_place(x, y, slope_obj);
 	if (slope)
 	{
 		with (slope)
@@ -168,7 +170,7 @@ function check_slope_player(slope_obj)
 				return true;
 		}
 	}
-	return false;
+	return false;*/
 }
 function check_concave_slope_player(concave_slope_object)
 {
