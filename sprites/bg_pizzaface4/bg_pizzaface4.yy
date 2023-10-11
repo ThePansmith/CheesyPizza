@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "bg_pizzaface4",
-  "bbox_bottom": 96,
+  "bbox_bottom": 80,
   "bbox_left": 0,
   "bbox_right": 959,
   "bbox_top": 0,
