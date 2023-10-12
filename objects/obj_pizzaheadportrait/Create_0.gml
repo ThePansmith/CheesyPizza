@@ -11,3 +11,4 @@ move = true;
 depth = -10;
 mask_index = sprite_index;
 alarm[1] = 10;
+dir = 1;

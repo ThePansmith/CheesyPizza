@@ -25,7 +25,7 @@ characters = [
 	["SN", spr_pizzano_idle, spr_pizzanopalette, [1, 5]],
 	
 	//["PN", spr_playerPN_idle, spr_peppalette, [1, 3]],
-	["BN", spr_playerBN_idle, spr_bopalette, [1, 3]],
+	["BN", spr_playerBN_idle, spr_bopalette, [1, 5]],
 ];
 if global.experimental
 	array_push(characters, ["S", spr_snick_idle, spr_snickpalette, [1, 4]]);
@@ -371,11 +371,11 @@ draw = function(curve)
 			draw_reset_flash();
 		}
 		else if fuck >= 0 // special palettes
-			array_push(cache, { x: 408 + xdraw, y: 70 + ydraw, pattern: spr_skinchoicecustom, subimage : fuck});
+			array_push(cache, { x: 408 + xdraw, y: 70 + ydraw, pattern: spr_skinchoicecustom, subimage: fuck});
 		else if mixing or array[i].texture == noone // palettes
 			draw_skin_palette(408 + xdraw, 70 + ydraw, pal_swap_get_pal_color(palspr, array[i].palette, characters[sel.char][3][mixing]), 1);
 		else // patterns, cached and drawn later
-			array_push(cache, { x: 408 + xdraw, y: 70 + ydraw, pattern: array[i].texture, subimage : noone});
+			array_push(cache, { x: 408 + xdraw, y: 70 + ydraw, pattern: array[i].texture, subimage: 0});
 		
 		// position next palette
 		xx += 36;
@@ -403,6 +403,9 @@ draw = function(curve)
 		draw_set_mask(cache[i].x, cache[i].y, spr_skinchoicepalette);
 		var spr_xscale = (32 / sprite_get_width(cache[i].pattern));
 		var spr_yscale = (32 / sprite_get_height(cache[i].pattern));
+		
+		if cache[i].pattern != spr_skinchoicecustom
+			cache[i].subimage += 0.1;
 		
 		draw_sprite_ext(cache[i].pattern, cache[i].subimage, cache[i].x, cache[i].y, spr_xscale, spr_yscale, 0, c_white, 1);
 		draw_remove_mask();

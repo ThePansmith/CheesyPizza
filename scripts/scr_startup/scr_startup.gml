@@ -33,7 +33,11 @@ exception_unhandled_handler
 	function(e)
 	{
 		// force stop all sound
-		fmod_event_instance_set_paused_all(true);
+		with obj_fmod
+		{
+			fmod_event_instance_set_paused_all(true);
+			fmod_update();
+		}
 		
 		// fallback to default audio engine for this
 		audio_master_gain(1);
@@ -41,7 +45,7 @@ exception_unhandled_handler
 		
 		// show and log the crash
 	    show_debug_message(string(e));
-		show_message("The game crashed!\n\n" + e.longMessage);
+		show_message($"The game crashed!\n\n---\n\n{e.longMessage}\n\n---\n\nstacktrace: {e.stacktrace}");
 		
 		// save it to a file
 		var _f = file_text_open_write("crash_log.txt");

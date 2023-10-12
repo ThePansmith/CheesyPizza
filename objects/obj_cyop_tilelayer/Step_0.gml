@@ -1,24 +1,23 @@
 if !secrettile
 	exit;
-	
 if buffer > 0
 	buffer--;
 
-player = obj_player1;
-
-contains_player = false;
+player = noone;
 for (var i = 0; i < array_length(tilelayer.tiles); i++)
 {
 	var tile = tilelayer.tiles[i];
-		
-	if (point_in_rectangle(player.x, player.y, tile.x, tile.y, tile.x + tile.size_x, tile.y + tile.size_y))
-		contains_player = true;
-		
-	if contains_player
-		break;
+	with obj_player
+	{
+		if point_in_rectangle(x, y, tile.x, tile.y, tile.x + tile.size_x, tile.y + tile.size_y)
+		{
+			other.player = id;
+			break;
+		}
+	}
 }
 
-if (player && contains_player && player.state != states.chainsaw) or active
+if (player && player.state != states.chainsaw && player.state != states.backtohub) or active
 {
 	if buffer > 0
 		image_alpha = 0;

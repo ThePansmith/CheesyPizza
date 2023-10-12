@@ -4,7 +4,6 @@ function pattern_set(color_array, sprite, subimg, xscale, yscale, pattern, patte
     if pattern == noone
         exit;
 	
-	
     pattern_enable(true);
     pattern_set_pattern(pattern, pattern_subimage);
     pattern_set_sprite(sprite, subimg, xscale, yscale, sprite_get_xoffset(pattern) + pattern_xoffset, sprite_get_yoffset(pattern) + pattern_yoffset);

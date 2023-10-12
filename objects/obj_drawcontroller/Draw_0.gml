@@ -21,7 +21,7 @@ if (use_dark)
 	{
 		with (objdark_arr[i])
 		{
-			if (visible)
+			if (visible && sprite_exists(sprite_index))
 			{
 				var b = get_dark(image_blend, other.use_dark);
 				if SUGARY

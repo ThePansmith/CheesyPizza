@@ -31,6 +31,8 @@ if (move)
 					image_index = 1;
 				with (create_debris(x, y, spr_pizzahead_tvdebris))
 					image_index = 2;
+				if REMIX
+					scr_sound_multiple("event:/sfx/misc/breakblock", x, y);
 				move = false;
 				hsp = 0;
 				alarm[0] = 150;

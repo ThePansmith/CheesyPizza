@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_placeholder",
-    "path": "sprites/spr_placeholder/spr_placeholder.yy",
+    "name": "spr_petdresser",
+    "path": "sprites/spr_petdresser/spr_petdresser.yy",
   },
   "spriteMaskId": null,
   "visible": true,

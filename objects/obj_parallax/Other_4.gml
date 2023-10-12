@@ -336,5 +336,8 @@ if !instance_exists(obj_ghostcollectibles)
 }
 
 // sugary overrides fix
-with obj_secrettile
-	event_user(0);
+if room != tower_1
+{
+	with obj_secrettile
+		event_user(0);
+}

@@ -2,7 +2,7 @@ if buffer > 0
 	buffer--;
 
 player = instance_place(x, y, obj_player);
-if (player && place_meeting(x, y, player) && player.state != states.chainsaw) or active
+if (player && place_meeting(x, y, player) && player.state != states.chainsaw && player.state != states.backtohub) or active
 {
 	if buffer > 0
 		image_alpha = 0;

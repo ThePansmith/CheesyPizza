@@ -1,4 +1,14 @@
-scr_initenemy();
+if object_index == obj_junk
+{
+	if REMIX
+	{
+		instance_change(obj_junkNEW, false);
+		event_perform_object(obj_junkNEW, ev_create, 0);
+		exit;
+	}
+	else
+		scr_initenemy();
+}
 
 ratgrabbed = false;
 grabbed = false;
