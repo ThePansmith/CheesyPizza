@@ -28,11 +28,12 @@ if sel.side == 0 && anim_con != 2
 		{
 			charshift[1] = move_ver;
 			charshift[2] = 0; // alpha
-			sound_play(sfx_angelmove);
-			event_user(0);
-		
+			
 			mixing = false;
 			sel.mix = 0;
+			
+			sound_play(sfx_angelmove);
+			event_user(0);
 		}
 	}
 }

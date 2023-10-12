@@ -1,6 +1,8 @@
 global.gameframe_caption_text = ""; // empty window title
 global.experimental = false; // make console useless
-fmod_destroy(); // mute all audio
+
+fmod_event_instance_set_paused_all(true);
+sound_play(mu_dungeondepth);
 
 // delete anything that might help you escape
 with all

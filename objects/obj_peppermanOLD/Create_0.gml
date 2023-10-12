@@ -156,7 +156,7 @@ function player_hurt(argument0, argument1)
 		else
 		{
 			hithsp = 0;
-			hitvsp = noone;
+			hitvsp = -4;
 			hitstate = states.normal;
 		}
 	}

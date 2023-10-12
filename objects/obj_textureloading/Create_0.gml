@@ -1,4 +1,4 @@
-group_arr = ["hudgroup", "playergroup", "introgroup", "smallgroup", "levelstructuregroup", "baddiegroup"];
+group_arr = ["hudgroup", "playergroup", "introgroup", "smallgroup", "levelstructuregroup", "baddiegroup", "patterngroup"];
 //if DEBUG
 	array_push(group_arr, "debuggroup");
 

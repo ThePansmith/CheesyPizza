@@ -7,9 +7,9 @@ draw_set_align();
 reset_blendmode();
 reset_shader_fix();
 
-var yy = 70;
-if array_last(options_pos) > SCREEN_HEIGHT / 2
-	yy = round(max((SCREEN_HEIGHT / 2) - array_last(options_pos) / 2, 70) - scroll);
+var yy = 70 - scroll;
+//if array_last(options_pos) < SCREEN_HEIGHT / 3
+//	yy = round(max((SCREEN_HEIGHT / 2) - array_last(options_pos) / 2, 70) - scroll);
 
 for(var i = 0; i < array_length(options_array); i++)
 {

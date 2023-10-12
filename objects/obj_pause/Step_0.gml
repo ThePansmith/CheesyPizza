@@ -365,11 +365,8 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 					fmod_event_instance_stop(global.snd_bossbeaten, true);
 					fmod_event_instance_stop(curr_pause_music, true);
 					obj_music.music = noone;
-					var sl = ds_list_create();
-					var il = ds_list_create();
+					
 					var arr = noone;
-					ds_list_copy(sl, sound_list);
-					ds_list_copy(il, instance_list);
 					if (room == hub_room1 || room == Finalintro || room == characterselect || room == cowboytask || room == Titlescreen || room == Mainmenu || room == Scootertransition || room == rm_levelselect || (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic))
 					or ((global.is_hubworld or global.custom_hub_level == "") && instance_exists(obj_levelLoader))
 					{
@@ -392,17 +389,15 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 						arr = ["hubgroup"];
 					}
 					alarm[3] = 1;
-					ds_list_add(il, id);
 					with textures_offload(arr)
 					{
 						ds_list_clear(sound_list);
 						ds_list_clear(instance_list);
-						ds_list_copy(sound_list, sl);
-						ds_list_copy(instance_list, il);
+						ds_list_copy(sound_list, other.sound_list);
+						ds_list_copy(instance_list, other.instance_list);
+						ds_list_add(instance_list, other.id);
 					}
 					instance_deactivate_object(id);
-					ds_list_destroy(sl);
-					ds_list_destroy(il);
 					break;
 				}
 		}

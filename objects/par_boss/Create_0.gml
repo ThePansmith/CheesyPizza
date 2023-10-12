@@ -59,7 +59,7 @@ function SUPER_player_destroy(argument0)
 		other.y = other.hitY;
 		other.state = states.chainsaw;
 		other.hitstate = states.arenaround;
-		other.hitvsp = noone;
+		other.hitvsp = -4;
 		other.hithsp = -other.image_xscale * 8;
 		hitLag = lag;
 		hitX = (room_width / 2) + (other.image_xscale * 16);

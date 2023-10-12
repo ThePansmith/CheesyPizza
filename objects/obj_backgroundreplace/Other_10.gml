@@ -12,6 +12,12 @@ if backgroundID != noone
 	
     var lx = layer_get_x(backgroundID);
     var ly = layer_get_y(backgroundID);
+	if global.panic && global.panicbg
+	{
+		lx -= cx;
+		ly -= cy;
+	}
+	
     draw_sprite_tiled(background_spr, 0, lx, ly);
     if chunks != noone
     {

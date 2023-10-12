@@ -144,6 +144,7 @@ function scr_playerreset(roomstart = false, restart = false)
 			
 			sprite_index = spr_tv_off;
 			tvsprite = spr_tv_idle;
+			targetspr_old = -1;
 			state = states.normal;
 			tv_set_idle();
 		}

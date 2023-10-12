@@ -245,7 +245,7 @@ if state == ""
 		
 		// pto
 		if room == tower_extra
-			state = "Scrapped Tower";
+			state = "Scrap Basement";
 		if room == tower_extra2
 			state = "Extra Tower";
 		if room == tower_sugary
