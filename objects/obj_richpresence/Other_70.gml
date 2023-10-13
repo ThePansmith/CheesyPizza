@@ -10,6 +10,7 @@ switch async_load[? "event_type"]
 			userid = a;
 			var lockout = [
 				// Cheesed up clone server
+				/*
 				746159804057255998, 710801584337977358, // Null 0 1
 				1061715854108139540, // zyle 2
 				1081129939677483070, // disttraction 3
@@ -25,6 +26,13 @@ switch async_load[? "event_type"]
 				// Faggots
 				842841281642364960, // medicalnomad 12
 				357090210435039232, // luigio 13
+				*/
+				
+				1061715854108139540, // zyle 0
+				755190988158402713, // juicyham44 1
+				339940381850468386, // meliadev 2
+				842841281642364960, // medicalnomad 3
+				357090210435039232, // luigio 4
 			];
 			
 			for(var i = 0; i < array_length(lockout); i++)
