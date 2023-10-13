@@ -13,8 +13,10 @@ function sh_freeze(args)
 		if !instance_exists(inst[0])
 			return "The instance of " + args[1] + " does not exist";
 		inst = inst[0];
+		
+		if array_contains(asset_get_tags(inst.object_index, asset_object), "protected")
+			return "Can't modify protected object";
 	}
-	
 	if array_length(args) < 3
 		return "Missing argument: variable";
 	

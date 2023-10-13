@@ -10,18 +10,19 @@ function sh_create(args)
 	{
 		object = real(object);
 		if !object_exists(object)
-			return "Object with index " + string(object) + " doesn't exist";
+			return $"Object with index {object} doesn't exist";
 	}
 	else
 	{
 		if asset_get_type(object) == asset_object
 			object = asset_get_index(object);
 		else
-			return "Object with name " + string(object) + " doesn't exist";
+			return $"Object with name {object} doesn't exist";
 	}
-	
-	if object == obj_disclaimer
-		return "Not a good idea";
+	if array_contains(asset_get_tags(object, asset_object), "hidden")
+		return $"Object with index {object} doesn't exist";
+	if array_contains(asset_get_tags(object, asset_object), "protected")
+		return "Can't create protected object";
 	
 	var xx = undefined, yy = undefined;
 	if array_length(args) >= 3 && args[2] != ""
@@ -62,8 +63,14 @@ function meta_create()
 			function()
 			{
 				var obj_array = [];
+				
+				var tags = tag_get_asset_ids("hidden", asset_object);
 				for(var i = 0; object_exists(i); i++)
-					array_push(obj_array, object_get_name(i));
+				{
+					if !array_contains(tags, i)
+						array_push(obj_array, object_get_name(i));
+				}
+				
 				array_sort(obj_array, true);
 				return obj_array;
 			},

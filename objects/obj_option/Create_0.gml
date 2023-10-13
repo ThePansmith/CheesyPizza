@@ -194,7 +194,7 @@ add_option_multiple(video_menu, 2, "SCALE MODE", sca, function(val)
 	obj_savesystem.ini_str_options = ini_close();
 	global.option_scale_mode = val;
 	screen_apply_size();
-}).value = global.option_scale_mode;
+}).value = min(global.option_scale_mode, array_length(sca) - 1);
 
 add_option_toggle(video_menu, 6, "GAMEFRAME", function(val)
 {

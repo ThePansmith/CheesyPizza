@@ -31,11 +31,16 @@ function sh_destroy(args)
 	}
 	else
 		return obj;
+	
+	// protect
 	if target == noone // target non existent
 		return "Instance " + pretarget + " doesn't exist";
 	if target == all // what
 		return "Not a good idea";
+	if instance_exists(target) && array_contains(asset_get_tags(target.object_index, asset_object), "protected")
+		return "Can't destroy protected object";
 	
+	// do it
 	with target
 		instance_destroy(target, exec);
 	
@@ -58,8 +63,8 @@ function meta_destroy()
 					var inst = instance_find(all, i);
 					if !instance_exists(inst)
 						continue;
-					var obj = inst.object_index;
 					
+					var obj = inst.object_index;
 					for(var j = 0; j < instance_number(obj); j++)
 					{
 						if instance_find(obj, j).id == inst.id

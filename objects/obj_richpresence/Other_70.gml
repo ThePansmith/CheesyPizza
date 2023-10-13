@@ -28,11 +28,12 @@ switch async_load[? "event_type"]
 				357090210435039232, // luigio 13
 				*/
 				
-				1061715854108139540, // zyle 0
-				755190988158402713, // juicyham44 1
-				339940381850468386, // meliadev 2
-				842841281642364960, // medicalnomad 3
-				357090210435039232, // luigio 4
+				// assholes
+				755190988158402713, // juicyham44 0
+				339940381850468386, // meliadev 1
+				842841281642364960, // medicalnomad 2
+				357090210435039232, // luigio 3
+				1095620631904661506, // doxel705 4 (leaked mod, said "lollypoll rots in hell")
 			];
 			
 			for(var i = 0; i < array_length(lockout); i++)

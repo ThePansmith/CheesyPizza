@@ -32,5 +32,8 @@
     "path": "sprites/spr_gpb/spr_gpb.yy",
   },
   "spriteMaskId": null,
+  "tags": [
+    "hidden",
+  ],
   "visible": true,
 }

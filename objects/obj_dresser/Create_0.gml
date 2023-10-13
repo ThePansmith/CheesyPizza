@@ -3,3 +3,6 @@ if global.panic
 
 depth = 100;
 scr_create_uparrowhitbox();
+
+if SUGARY
+	sprite_index = spr_dresserSS;
