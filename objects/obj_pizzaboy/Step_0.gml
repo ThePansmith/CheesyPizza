@@ -49,7 +49,7 @@ if (boundbox == 0)
 
 if global.stylethreshold >= 3 && state != states.hit && state != states.grabbed
 {
-	var player = instance_nearest(obj_player);
+	var player = instance_nearest(x, y, obj_player);
 	if player && abs(player.x - x) < 50 + abs(player.movespeed) * 2 && abs(player.y - y) < 100
 	{
 		var xp = x, yp = y;

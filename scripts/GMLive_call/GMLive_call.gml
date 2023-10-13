@@ -204,7 +204,7 @@ function live_defcall_ext(l_args1, l_def) {
 
 if (live_enabled) 
 function live_auto_call_1() {
-	#macro live_auto_call if (live_auto_call_1()) { var lac_argc = argument_count, lac_args = array_create(lac_argc), lac_argk = 0; repeat (lac_argc) { lac_args[lac_argk] = argument[lac_argk]; lac_argk++; } if (live_auto_call_2(lac_args)) return live_result; }
+	#macro live_auto_call //if (live_auto_call_1()) { var lac_argc = argument_count, lac_args = array_create(lac_argc), lac_argk = 0; repeat (lac_argc) { lac_args[lac_argk] = argument[lac_argk]; lac_argk++; } if (live_auto_call_2(lac_args)) return live_result; }
 	
 	var l_origin;
 	if (live_request_guid == undefined) {
