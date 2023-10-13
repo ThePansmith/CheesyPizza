@@ -32,6 +32,9 @@
     "name": "spr_palettedresser",
     "path": "sprites/spr_palettedresser/spr_palettedresser.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_palettedresser",
+    "path": "sprites/spr_palettedresser/spr_palettedresser.yy",
+  },
   "visible": true,
 }

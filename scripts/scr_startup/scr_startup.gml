@@ -99,7 +99,7 @@ pal_swap_init_system_fix(shd_pal_swapper, true);
 texture_debug_messages(DEBUG);
 
 // fonts
-global.bigfont = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.1234567890:", true, 0);
+global.bigfont = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.1234567890:?'\"_-[]▼()&#", true, 0);
 global.smallfont = font_add_sprite_ext(spr_smallerfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.:?1234567890", true, 0);
 //global.Net_Font = font_add_sprite_ext(spr_pttfont, "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz!?.,)(*:\\/-1234567890", true, 0);
 global.lapfont = font_add_sprite_ext(spr_lapfont, "1234567890", true, -1);
