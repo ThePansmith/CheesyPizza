@@ -2,21 +2,6 @@ image_angle++;
 
 if (image_angle >= 360)
 	image_angle = 0;
-	
-	
-function point_rotate(px, py, angle, cx, cy)
-{
-	var s = sin(angle);
-	var c = cos(angle);
-	
-	var _ox = px - cx;
-	var _oy = py - cy;
-	
-	var new_x = _ox * c - _oy * s;
-	var new_y = _ox * s + _oy * c;
-	
-	return [new_x + cx, new_y + cy];
-}
 
 var angle = image_angle * (pi / 180);
 

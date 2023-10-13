@@ -24,4 +24,4 @@ ds_queue_enqueue(queue,
 	});
 
 if grace_period > 0
-	grace_period--
+	grace_period--;

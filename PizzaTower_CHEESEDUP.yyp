@@ -1784,6 +1784,7 @@
     {"id":{"name":"obj_boxcrusher","path":"objects/obj_boxcrusher/obj_boxcrusher.yy",},},
     {"id":{"name":"obj_iceblock_temp","path":"objects/obj_iceblock_temp/obj_iceblock_temp.yy",},},
     {"id":{"name":"obj_hubtreasure","path":"objects/obj_hubtreasure/obj_hubtreasure.yy",},},
+    {"id":{"name":"scr_radixmathlib","path":"scripts/scr_radixmathlib/scr_radixmathlib.yy",},},
     {"id":{"name":"obj_cheeseblob","path":"objects/obj_cheeseblob/obj_cheeseblob.yy",},},
     {"id":{"name":"bg_cottontown1","path":"sprites/bg_cottontown1/bg_cottontown1.yy",},},
     {"id":{"name":"obj_cheesemaker","path":"objects/obj_cheesemaker/obj_cheesemaker.yy",},},
