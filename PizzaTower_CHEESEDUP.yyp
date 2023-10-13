@@ -499,6 +499,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Rank","folderPath":"folders/Sprites/Player/Bo Noise/Rank.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Character select","folderPath":"folders/Sprites/Player/Character select.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Gustavo","folderPath":"folders/Sprites/Player/Gustavo.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Rank","folderPath":"folders/Sprites/Player/Gustavo/Rank.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Noise","folderPath":"folders/Sprites/Player/Noise.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Bomb","folderPath":"folders/Sprites/Player/Noise/Bomb.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Boxxed","folderPath":"folders/Sprites/Player/Noise/Boxxed.yy",},
@@ -609,7 +610,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Rank","folderPath":"folders/Sprites/Player/Gustavo/Rank.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles",},
