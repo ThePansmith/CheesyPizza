@@ -10,7 +10,7 @@ if (state == states.normal && !instance_exists(obj_option))
 	image_index = irandom(sprite_get_number(sprite_index) - 1);
 	image_speed = 0;
 	alarm[1] = 20;
-	sound_play_3d("event:/sfx/misc/cowkick", room_width / 2, room_height / 2);
+	sound_play_3d(sfx_cowkick, room_width / 2, room_height / 2);
 	with (instance_create(punch_x, punch_y, obj_bangeffect))
 		depth = other.depth - 1;
 	repeat (2)

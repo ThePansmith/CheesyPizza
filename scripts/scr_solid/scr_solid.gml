@@ -84,10 +84,33 @@ function check_slope(_x, _y)
 	return instance_place(_x, _y, obj_slope_parent);
 }
 
+
+
 function inside_slope(slope_object)
 {
-	var slope = instance_place(x, y, slope_object);
+	//var slope = instance_place(x, y, slope_object);
+	var slope = noone;
+	with slope_object
+	{
+
+			
+		if rectangle_in_rectangle_fast(
+			other.bbox_left, other.bbox_top, other.bbox_right, other.bbox_bottom, 
+			bbox_left, bbox_top, bbox_right, bbox_bottom)
+		{
+			slope = self;
+			break;
+		}
+		else
+			continue;
+	}
 	
+	
+	if slope == noone
+	{
+		return false;
+	}
+		
 	var object_side_x = bbox_right;
 	var object_side_y = bbox_bottom;
 	
@@ -102,7 +125,7 @@ function inside_slope(slope_object)
 		var x2 = bbox_right + 1;
 		var y2 = bbox_top - 1;
 		
-		var x3 = bbox_right;
+		var x3 = bbox_right + 1;
 		var y3 = bbox_bottom + 1;
 		
 		if image_xscale < 0
@@ -120,6 +143,28 @@ function inside_slope(slope_object)
 		}
 		
 
+		if image_angle != 0
+		{
+			var angle = (360 - image_angle) * (pi / 180);
+			
+			var center_x = bbox_left + ((bbox_right - bbox_left) / 2);
+			var center_y = bbox_top + ((bbox_bottom - bbox_top) / 2);
+				
+			var point_a = point_rotate(x1, y1, angle, center_x, center_y);
+			var point_b = point_rotate(x2, y2, angle, center_x, center_y);
+			var point_c = point_rotate(x3, y3, angle, center_x, center_y);
+			
+			x1 = clamp(point_a[0], bbox_left, bbox_right);
+			y1 = clamp(point_a[1], bbox_top, bbox_bottom);
+			
+			x2 = clamp(point_b[0], bbox_left, bbox_right);
+			y2 = clamp(point_b[1], bbox_top, bbox_bottom);
+			
+			x3 = clamp(point_c[0], bbox_left, bbox_right);
+			y3 = clamp(point_c[1], bbox_top, bbox_bottom);
+			
+		}
+		
 		return rectangle_in_triangle(
 					other.bbox_left, other.bbox_top,
 					other.bbox_right, other.bbox_bottom,

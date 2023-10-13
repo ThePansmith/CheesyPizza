@@ -10,3 +10,5 @@ fmod_update();
 event_handle_count = fmod_debug_event_handle_count();
 event_handle_free_count = fmod_debug_event_handle_free_count();
 event_handle_used_count = event_handle_count - event_handle_free_count;
+voice_count = fmod_get_active_voices();
+
