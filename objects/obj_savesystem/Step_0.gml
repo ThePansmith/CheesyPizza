@@ -26,6 +26,7 @@ if (room == hub_loadingscreen && state != 2)
 				brick = true;
 			}
 			hat = ini_read_real("Game", "hat", -1);
+			pet = ini_read_real("Game", "pet", -1);
 			
 			paletteselect = ini_read_real("Game", "palette", character == "P" ? 1 : 0);
 			var _texture = ini_read_string("Game", "palettetexture", "none");

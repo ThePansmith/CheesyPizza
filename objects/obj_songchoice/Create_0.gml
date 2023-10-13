@@ -1,5 +1,4 @@
 live_auto_call;
-
 event_inherited();
 
 // init
@@ -27,8 +26,8 @@ add_section = function(name, songs)
 }
 
 #region Base
-var audio = fmod_get_soundtest_events();
 
+var audio = fmod_get_soundtest_events();
 trace($"Found: {array_length(audio)} soundtest compatible events.");
 
 add_section("Pizza Tower", [

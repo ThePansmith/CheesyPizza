@@ -177,9 +177,6 @@ if MOD.Spotlight && room != timesuproom
 			*/
 			
 			var xx = x + xo - camx;
-			if MOD.Mirror
-				xx = SCREEN_WIDTH - xx;
-			
 			draw_set_alpha(1);
 			draw_circle(xx + random_range(-1, 1), y + yo - camy + random_range(-1, 1), size, false);
 			draw_set_alpha(0.35);

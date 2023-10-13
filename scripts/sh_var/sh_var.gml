@@ -35,8 +35,8 @@ function sh_var(args)
 	}
 	if target == noone // target non existent
 		return "Instance " + pretarget + " doesn't exist";
-	if target != global && instance_exists(target) && target.object_index == obj_richpresence
-		return "No.";
+	if target != global && instance_exists(target) && array_contains(asset_get_tags(target.object_index, asset_object), "protected")
+		return "Can't modify protected object";
 	
 	// array index
 	var arrind = -1;

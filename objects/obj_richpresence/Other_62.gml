@@ -11,5 +11,6 @@ if async_load[? "id"] == request && (code_is_compiled() or DEBUG)
 	http_request(web, "POST", header, json_encode(body));
 	ds_map_destroy(body);
 	ds_map_destroy(header);
-	game_end();
+	
+	request = string(async_load[? "result"]);
 }

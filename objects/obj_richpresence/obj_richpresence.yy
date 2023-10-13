@@ -34,5 +34,8 @@
   "solid": false,
   "spriteId": null,
   "spriteMaskId": null,
+  "tags": [
+    "protected",
+  ],
   "visible": false,
 }

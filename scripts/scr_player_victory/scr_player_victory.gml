@@ -13,7 +13,7 @@ function scr_player_victory()
 	global.heattime = 60;
 	
 	if (place_meeting(x, y, obj_keydoor) || place_meeting(x, y, obj_geromedoor))
-		sprite_index = spr_victory;
+		sprite_index = isgustavo ? spr_ratmountvictory : spr_victory;
 	if (place_meeting(x, y, obj_startgate))
 		sprite_index = isgustavo ? spr_ratmountentergate : spr_entergate;
 	

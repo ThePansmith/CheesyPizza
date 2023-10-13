@@ -14,6 +14,7 @@ if (fadealpha > f)
 			ini_open_from_string(obj_savesystem.ini_str);
 			global.file_minutes = ini_read_real("Game", "minutes", 0);
 			global.file_seconds = ini_read_real("Game", "seconds", 0);
+			global.sandbox = ini_read_real("Game", "sandbox", true);
 			ini_close();
 		}
 		if (restarttimer)
@@ -68,7 +69,7 @@ if (instance_exists(obj_player))
 {
 	with (obj_player1)
 	{
-		if (other.fadein == 1 && (state == states.door || state == states.victory) && (sprite_index == spr_victory || place_meeting(x, y, obj_door) || place_meeting(x, y, obj_startgate) || (place_meeting(x, y, obj_exitgate) && instance_exists(obj_levelLoader)) || place_meeting(x, y, obj_hubelevator)))
+		if (other.fadein == 1 && (state == states.door || state == states.victory) && ((sprite_index == spr_victory or sprite_index == spr_ratmountvictory) || place_meeting(x, y, obj_door) || place_meeting(x, y, obj_startgate) || (place_meeting(x, y, obj_exitgate) && instance_exists(obj_levelLoader)) || place_meeting(x, y, obj_hubelevator)))
 		{
 			state = states.comingoutdoor;
 			image_index = 0;

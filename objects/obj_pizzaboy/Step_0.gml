@@ -47,19 +47,20 @@ if (boundbox == 0)
 	}
 }
 
-if global.stylethreshold >= 3 && state != states.hit
+if global.stylethreshold >= 3 && state != states.hit && state != states.grabbed
 {
-	if abs(obj_player1.x - x) < 50 + abs(obj_player1.hsp) && abs(obj_player1.y - y) < 100
+	var player = instance_nearest(obj_player);
+	if player && abs(player.x - x) < 50 + abs(player.movespeed) * 2 && abs(player.y - y) < 100
 	{
 		var xp = x, yp = y;
 		
-		x -= obj_player1.xscale * irandom_range(200, 400);
+		x -= player.xscale * irandom_range(200, 400);
 		while scr_solid(x, y)
 			y--;
 		while !scr_solid(x, y + 1) && y < room_height
 			y++;
 		
-		image_xscale = sign(obj_player1.x - x);
+		image_xscale = sign(player.x - x);
 		vsp = -4;
 		
 		if !bbox_in_camera()

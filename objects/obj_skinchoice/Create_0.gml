@@ -1,10 +1,11 @@
-event_inherited();
 live_auto_call;
+event_inherited();
 
 // animation
 init = false;
 charshift = [0, 0, 0];
 player_surface = surface_create(256, 256);
+shown_tip = false;
 
 // selection
 noisetype = 0;
@@ -375,7 +376,7 @@ draw = function(curve)
 		else if mixing or array[i].texture == noone // palettes
 			draw_skin_palette(408 + xdraw, 70 + ydraw, pal_swap_get_pal_color(palspr, array[i].palette, characters[sel.char][3][mixing]), 1);
 		else // patterns, cached and drawn later
-			array_push(cache, { x: 408 + xdraw, y: 70 + ydraw, pattern: array[i].texture, subimage: 0});
+			array_push(cache, { x: 408 + xdraw, y: 70 + ydraw, pattern: array[i].texture, subimage: -1});
 		
 		// position next palette
 		xx += 36;
@@ -404,8 +405,8 @@ draw = function(curve)
 		var spr_xscale = (32 / sprite_get_width(cache[i].pattern));
 		var spr_yscale = (32 / sprite_get_height(cache[i].pattern));
 		
-		if cache[i].pattern != spr_skinchoicecustom
-			cache[i].subimage += 0.1;
+		if cache[i].subimage == -1
+			cache[i].subimage = current_time / 600;
 		
 		draw_sprite_ext(cache[i].pattern, cache[i].subimage, cache[i].x, cache[i].y, spr_xscale, spr_yscale, 0, c_white, 1);
 		draw_remove_mask();
