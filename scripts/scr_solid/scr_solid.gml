@@ -281,6 +281,7 @@ function scr_solid_slope(_x, _y)
 	var old_y = y;
 	x = _x;
 	y = _y;
+	// TODO: change this to actually account for rotated slopes lol
 	if (inside_slope(obj_slope))
 	{
 		var inst = instance_place(x, y, obj_slope);
