@@ -349,17 +349,17 @@ draw = function(curve)
 		pos = (fmod_event_instance_get_timeline_pos(global.jukebox.instance) / fmod_event_get_length(global.jukebox.name)) * 480;
 		discrot -= 1;
 	}
-	// old midpoint was 640
 	
-	//draw_set_colour(c_gray);
-	//draw_rectangle(400, 350 + charshift[1], 400 + 480, 350 + 15 + charshift[1], false);
-	//draw_set_colour(c_white);
-	//draw_rectangle(400, 350 + charshift[1], 400 + pos, 350 + 15 + charshift[1], false);
-	//draw_circle(400 + pos, 350 + 15 / 2 + charshift[1], 15, false);
-	//draw_set_colour(c_black);
-	//draw_circle(400 + pos, 350 + 15 / 2 + charshift[1], 15, true);
+	draw_set_colour(c_gray);
+	draw_rectangle(400, 350 + charshift[1], 400 + 480, 350 + 15 + charshift[1], false);
+	draw_set_colour(c_white);
+	draw_rectangle(400, 350 + charshift[1], 400 + pos, 350 + 15 + charshift[1], false);
+	draw_circle(400 + pos, 350 + 15 / 2 + charshift[1], 15, false);
+	draw_set_colour(c_black);
+	draw_circle(400 + pos, 350 + 15 / 2 + charshift[1], 15, true);
 	
 	// kohn offset X: 13 y:: 20
+	/*
 	var timer_x =(640 - sprite_get_width(spr_timer_bar) / 2)
 	var timer_y = (350 + charshift[1]) - (sprite_get_height(spr_timer_bar) / 4);
 	draw_sprite(spr_timer_bar, 0, timer_x, timer_y);
@@ -372,5 +372,6 @@ draw = function(curve)
 	var pixel_offset = ((timer_x + sprite_get_width(spr_timer_bar) - 13) - (timer_john_x)) * music_offset;
 	draw_sprite(global.jukebox == noone ? spr_jukebox_john_idle : spr_jukebox_john_active, -1, timer_john_x + pixel_offset, timer_y + 11);
 	draw_set_alpha(1);
+	*/
 }
 xo = 0;
