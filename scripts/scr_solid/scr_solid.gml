@@ -84,10 +84,33 @@ function check_slope(_x, _y)
 	return instance_place(_x, _y, obj_slope_parent);
 }
 
+
+
 function inside_slope(slope_object)
 {
-	var slope = instance_place(x, y, slope_object);
+	//var slope = instance_place(x, y, slope_object);
+	var slope = noone;
+	with slope_object
+	{
+
+			
+		if rectangle_in_rectangle_fast(
+			other.bbox_left, other.bbox_top, other.bbox_right, other.bbox_bottom, 
+			bbox_left, bbox_top, bbox_right, bbox_bottom)
+		{
+			slope = self;
+			break;
+		}
+		else
+			continue;
+	}
 	
+	
+	if slope == noone
+	{
+		return false;
+	}
+		
 	var object_side_x = bbox_right;
 	var object_side_y = bbox_bottom;
 	
@@ -102,7 +125,7 @@ function inside_slope(slope_object)
 		var x2 = bbox_right + 1;
 		var y2 = bbox_top - 1;
 		
-		var x3 = bbox_right;
+		var x3 = bbox_right + 1;
 		var y3 = bbox_bottom + 1;
 		
 		if image_xscale < 0

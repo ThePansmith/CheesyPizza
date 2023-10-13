@@ -610,6 +610,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Collision Lib","folderPath":"folders/Scripts/CheesyPizza/Collision Lib.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles",},
@@ -9120,6 +9121,7 @@
     {"id":{"name":"spr_lavapot","path":"sprites/spr_lavapot/spr_lavapot.yy",},},
     {"id":{"name":"spr_player_ratmountland","path":"sprites/spr_player_ratmountland/spr_player_ratmountland.yy",},},
     {"id":{"name":"spr_gate_medievalBG","path":"sprites/spr_gate_medievalBG/spr_gate_medievalBG.yy",},},
+    {"id":{"name":"scr_fast_math","path":"scripts/scr_fast_math/scr_fast_math.yy",},},
     {"id":{"name":"spr_targetblock_old","path":"sprites/spr_targetblock_old/spr_targetblock_old.yy",},},
     {"id":{"name":"spr_pizzano_3hpidle","path":"sprites/spr_pizzano_3hpidle/spr_pizzano_3hpidle.yy",},},
     {"id":{"name":"bg_pizzaface2","path":"sprites/bg_pizzaface2/bg_pizzaface2.yy",},},

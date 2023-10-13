@@ -5,17 +5,17 @@ if sprite_index != spr_slope
 }
 
 var x1 = bbox_left - 1;
-var y1 = bbox_bottom + 1;
+var y1 = bbox_bottom;
 
-var x2 = bbox_right + 1;
+var x2 = bbox_right;
 var y2 = bbox_top - 1;
 
 var x3 = bbox_right;
-var y3 = bbox_bottom + 1;
+var y3 = bbox_bottom;
 
 if image_xscale < 0
 {
-	x1 = bbox_right + 1;
+	x1 = bbox_right;
 	x2 = bbox_left - 1;
 	x3 = bbox_left - 1;
 }
@@ -23,7 +23,7 @@ if image_xscale < 0
 if image_yscale < 0
 {
 	y1 = bbox_top - 1;
-	y2 = bbox_bottom + 1;
+	y2 = bbox_bottom;
 	y3 = bbox_top - 1;
 }
 
