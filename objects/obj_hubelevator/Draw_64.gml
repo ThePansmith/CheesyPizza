@@ -3,7 +3,7 @@ if state == 1 or state == 3
 	var len = array_length(hub_array);
 	var curve = animcurve_channel_evaluate(state == 1 ? outback : incubic, anim_t);
 	
-	var xx = x + 50 - camera_get_view_x(view_camera[0]), yy = 180;
+	var xx = x + 50 - CAMX, yy = y - 90 - CAMY;
 	var arrowx = xx, arrowy = yy + 40 * curve;
 	
 	draw_sprite_ext(spr_elevatorpanel_back, 0, xx, yy, 1, curve, 0, c_white, curve);

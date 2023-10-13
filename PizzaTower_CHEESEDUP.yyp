@@ -161,6 +161,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"CheesyPizza","folderPath":"folders/Scripts/CheesyPizza.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"3D","folderPath":"folders/Scripts/CheesyPizza/3D.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Internal","folderPath":"folders/Scripts/CheesyPizza/3D/Internal.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Collision Lib","folderPath":"folders/Scripts/CheesyPizza/Collision Lib.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Custom Palette and Patterns","folderPath":"folders/Scripts/CheesyPizza/Custom Palette and Patterns.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"HUD","folderPath":"folders/Scripts/CheesyPizza/HUD.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Level Editor","folderPath":"folders/Scripts/CheesyPizza/Level Editor.yy",},
@@ -610,7 +611,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Collision Lib","folderPath":"folders/Scripts/CheesyPizza/Collision Lib.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles",},
@@ -8943,6 +8943,7 @@
     {"id":{"name":"shd_pal_swapper_new","path":"shaders/shd_pal_swapper_new/shd_pal_swapper_new.yy",},},
     {"id":{"name":"spr_warprops","path":"sprites/spr_warprops/spr_warprops.yy",},},
     {"id":{"name":"spr_escapespawn_ss","path":"sprites/spr_escapespawn_ss/spr_escapespawn_ss.yy",},},
+    {"id":{"name":"spr_ratmount_victory","path":"sprites/spr_ratmount_victory/spr_ratmount_victory.yy",},},
     {"id":{"name":"sh_var","path":"scripts/sh_var/sh_var.yy",},},
     {"id":{"name":"spr_gustavotutorialsign","path":"sprites/spr_gustavotutorialsign/spr_gustavotutorialsign.yy",},},
     {"id":{"name":"spr_streetsign1","path":"sprites/spr_streetsign1/spr_streetsign1.yy",},},

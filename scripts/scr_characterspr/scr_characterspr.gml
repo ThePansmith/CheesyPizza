@@ -359,6 +359,7 @@ function scr_characterspr()
 	spr_ratmountskid = spr_ratmount_skid;
 	spr_ratmountdoorclosed = spr_ratmount_doorclosed;
 	spr_ratmountentergate = spr_ratmount_entergate;
+	spr_ratmountvictory = spr_ratmount_victory;
 	
 	spr_palette = spr_peppalette;
 	if character == "P" or isgustavo

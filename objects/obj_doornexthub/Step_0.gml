@@ -21,7 +21,7 @@ if (player && key && (player.state == states.normal or player.state == states.ra
 		image_index = 0;
 		x = player.x;
 		y = player.y;
-		sprite_index = spr_victory;
+		sprite_index = isgustavo ? spr_ratmountvictory : spr_victory;
 		
 		if REMIX
 		{

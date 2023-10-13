@@ -45,7 +45,7 @@ for (var i = 0; i < array_length(layers); i++)
 		
 		layer_depth(lay, 100 - no);
 	}
-	else if string_starts_with(layname, "Tiles_")
+	else if string_starts_with(layname, "Tiles_") && !string_starts_with(layname, "Tiles_Secret")
 	{
 		var no = string_digits(layname);
 		if no != ""

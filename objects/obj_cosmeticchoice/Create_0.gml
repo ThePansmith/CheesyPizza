@@ -18,9 +18,18 @@ select = function()
 	
 	with obj_player
 	{
+		var hatprev = hat, petprev = pet;
 		hat = other.hats[other.sel.hat].hat;
 		pet = other.pets[other.sel.pet].pet;
 		
+		if hatprev != hat or petprev != pet
+		{
+			ini_open_from_string(obj_savesystem.ini_str);
+			ini_write_string("Game", "hat", hat);
+			ini_write_real("Game", "pet", pet);
+			obj_savesystem.ini_str = ini_close();
+			gamesave_async_save();
+		}
 		sound_play("event:/sfx/misc/collecttoppin");
 	}
 }
