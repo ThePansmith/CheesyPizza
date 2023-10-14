@@ -1,4 +1,4 @@
-global.Pattern_Texture_Indexed = -4;
+global.Pattern_Texture_Indexed = noone;
 
 var secret_tile = 0;
 if instance_exists(obj_cyop_tilelayer)

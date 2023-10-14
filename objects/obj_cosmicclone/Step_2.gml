@@ -25,3 +25,5 @@ ds_queue_enqueue(queue,
 
 if grace_period > 0
 	grace_period--;
+	
+layer_4_index = (layer_4_index + 0.1) % sprite_get_number(spr_cosmicclone_layer4);

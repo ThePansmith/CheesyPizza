@@ -61,7 +61,8 @@ function scr_panicbg_start()
 			}
 			
 			// target
-			surface_set_target(global.panicbg_surface);
+			if surface_exists(global.panicbg_surface)
+				surface_set_target(global.panicbg_surface);
 		}
 		else if surface_exists(global.panicbg_surface)
 			surface_free(global.panicbg_surface);
@@ -70,7 +71,7 @@ function scr_panicbg_start()
 function scr_panicbg_end()
 {
 	if event_type == ev_draw && event_number == ev_draw_normal && !safe_get(obj_pause, "pause")
-	{
+	{				
 		// chunk bg
 		with obj_backgroundreplace
 			event_user(0);

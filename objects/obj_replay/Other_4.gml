@@ -13,7 +13,7 @@ if playback
 {
 	if !active && playback_start_room == noone
 		event_user(2);
-	trace($"Does {room} == {playback_start_room}");
+	//trace($"Does {room} == {playback_start_room}");
 	if room == playback_start_room 
 		active = true;
 }

@@ -10,23 +10,28 @@ if record
 	var input = serialize_input();
 	with (obj_player1)
 	{
-		ptcu_replay_writestring(room_get_name(room));
-		ptcu_replay_writefloat(x);
-		ptcu_replay_writefloat(y);
-		ptcu_replay_writestring(sprite_get_name(sprite_index));
-		ptcu_replay_writeint16(image_index);
-		ptcu_replay_writeint32(input);
+		pto_replay_writestring(room_get_name(room));
+		//pto_replay_writefloat(x);
+		//pto_replay_writefloat(y);
+		//pto_replay_writestring(sprite_get_name(sprite_index));
+		//pto_replay_writefloat(image_index);
+		pto_replay_writeint32(input);
 	}
 }
+
 if playback
 {
-	var room_name = ptcu_replay_readstring();
-	var xx = ptcu_replay_readfloat();
-	var yy = ptcu_replay_readfloat();
-	var sprite_index_name = ptcu_replay_readstring();
-	var player_image_index = ptcu_replay_readint16();
-	var input = ptcu_replay_readint32();
+	var room_name = pto_replay_readstring();
+	//trace($"[REPLAY] - room_name: {room_name} pos: {pto_replay_tell()}");
+	//var xx = pto_replay_readfloat();
+	//var yy = pto_replay_readfloat();
+	//trace($"[REPLAY] xx: {xx} yy: {yy} pos: {pto_replay_tell()}");
+	//trace($"[REPLAY] - Reading sprite name pos: {pto_replay_tell()}");
+	//var sprite_index_name = pto_replay_readstring();
+	//var player_image_index = pto_replay_readfloat();
+	var input = pto_replay_readint32();
 	
+	trace($"read input: {input}");
 	deserialize_input(input);
 }
 

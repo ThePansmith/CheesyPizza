@@ -14,15 +14,16 @@ var roomNamePrefix = string_get_substring(roomName, 1, string_last_pos("_", room
 
 replay_file = $"{game_save_id}replays\\{roomNamePrefix}__{DATE_TIME_NOW}.rf";
 
-if !ptcu_replay_openfile(replay_file)
+if !pto_replay_openfile(replay_file)
 {
-	trace($"Unable to create replay \"{replay_file}\"");
+	trace($"[REPLAY] - Unable to create replay \"{replay_file}\"");
 	event_user(1);
 	exit;
 }
-ptcu_replay_writeheader();
-
-trace("Starting Recording");
+pto_replay_writeheader();
+write_meta_data();
+trace($"[REPLAY] - Starting Recording in \"{roomName}\"");
+trace($"[REPLAY] - start write pos: {pto_replay_tell()}");
 record = true;
 active = true;
 

@@ -5,5 +5,5 @@
 /// @return {bool}	Returns true if successful
 function launch_external(_path, _parameters = "")
 {
-	return ptcu_launch_external(_path, _parameters);
+	return pto_launch_external(_path, _parameters);
 }
