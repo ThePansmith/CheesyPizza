@@ -19,6 +19,7 @@ if record
 	}
 }
 
+
 if playback
 {
 	var room_name = pto_replay_readstring();
@@ -31,7 +32,6 @@ if playback
 	//var player_image_index = pto_replay_readfloat();
 	var input = pto_replay_readint32();
 	
-	trace($"read input: {input}");
 	deserialize_input(input);
 }
 

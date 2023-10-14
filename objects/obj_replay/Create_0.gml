@@ -98,6 +98,7 @@ serialize_input = function()
 	if obj_player1.stickpressed_vertical
 		tempValue |= game_controls.stickpressed_vertical;
 	
+	trace($"writing {tempValue}");
 		
 	return tempValue;
 }

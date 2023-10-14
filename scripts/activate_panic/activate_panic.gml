@@ -137,10 +137,10 @@ function activate_panic(instapanic = false)
 			global.fill = 2500;
 			break;
 		case steamy_12:
-			global.fill = calculate_panic_timer(2, 30);;
+			global.fill = calculate_panic_timer(3, 00);;
 			break;
 		case molasses_9:
-			global.fill = calculate_panic_timer(2, 30);
+			global.fill = calculate_panic_timer(3, 00);
 			break;
 		case sucrose_1:
 		case sucrose_2:
