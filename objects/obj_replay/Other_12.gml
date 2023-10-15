@@ -32,7 +32,9 @@ if buffer == ""
 
 trace($"[REPLAY] - Playback started, waiting for room: \"{buffer}\"");
 
-pto_replay_seek(pto_replay_tell() - 1);
+pto_replay_seek(pto_replay_tell() - 5);
+replay_dictionary_pos = pto_replay_readint32();
+
 trace($"[REPLAY] - Starting Playback in room: {room_get_name(room)}");
 playback = true;
 playback_start_room = room;

@@ -5,6 +5,7 @@ playback = false;
 playback_start_room = noone;
 replay_file = STRING_UNDEFINED;
 active = false;
+replay_dictionary_pos = -1;
 
 enum game_controls
 {

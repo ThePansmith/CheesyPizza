@@ -1,4 +1,5 @@
 /// @description Record/Push Data
+latest_input = 0;
 
 if (!active || replay_file == STRING_UNDEFINED)
 	exit;
@@ -22,6 +23,12 @@ if record
 
 if playback
 {
+	trace($"============= FRAME START =============");
+	if pto_replay_tell() >= replay_dictionary_pos 
+		event_user(3);
+	trace($"pos: {pto_replay_tell()} / {replay_dictionary_pos}");
+	trace($"room ID: {pto_replay_readint8()}");
+	pto_replay_seek(pto_replay_tell() - 1);
 	var room_name = pto_replay_readstring();
 	//trace($"[REPLAY] - room_name: {room_name} pos: {pto_replay_tell()}");
 	//var xx = pto_replay_readfloat();
@@ -31,8 +38,10 @@ if playback
 	//var sprite_index_name = pto_replay_readstring();
 	//var player_image_index = pto_replay_readfloat();
 	var input = pto_replay_readint32();
-	
+	trace($"input: {input} type: {typeof(input)}");
 	deserialize_input(input);
+	
+	trace($"============= FRAME END =============");
 }
 
 

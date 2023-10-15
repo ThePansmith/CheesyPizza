@@ -27,3 +27,8 @@ if grace_period > 0
 	grace_period--;
 	
 layer_4_index = (layer_4_index + 0.1) % sprite_get_number(spr_cosmicclone_layer4);
+for (var i = 0; i < 3; i++)
+{
+	var index = i * 2;
+	layer_offsets[index] = (layer_offsets[index] + ((i + 1) / 4)) % 64; 
+}

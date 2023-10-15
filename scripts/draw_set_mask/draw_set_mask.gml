@@ -42,3 +42,35 @@ function draw_set_mask(_x, _y, _clip_sprite, _clip_sprite_subimage = 0, _alpha_f
 	shader_set_uniform_f(u_inverse, _inverse ? 1.0 : 0.0);
 	return true;
 }
+function draw_set_mask_texture(_x, _y, _texture, _tex_width, _tex_height, _alpha_fix = false, _simple = false, _inverse = false)
+{
+	if global.performance
+		return false;
+	if (shader_current() != shd_masterclip && shader_current() != shd_masterclip_basic)
+	{
+		var shader = _simple ? shd_masterclip_basic : shd_masterclip;
+		shader_set(shader);
+	}
+	shader = shader_current();
+	
+	var u_clip_sprite_texture = shader_get_sampler_index(shader, "u_clip_sprite_texture");
+	var u_clip_sprite_uvs = shader_get_uniform(shader, "u_clip_sprite_uvs");
+	var u_clip_sprite_size = shader_get_uniform(shader, "u_clip_sprite_size");
+	var u_clip_sprite_texelsize = shader_get_uniform(shader, "u_clip_sprite_texelsize");
+	var u_clip_sprite_worldposition = shader_get_uniform(shader, "u_clip_sprite_worldposition");
+	var u_clip_sprite_trimmed = shader_get_uniform(shader, "u_clip_sprite_trimmed");
+	var u_alphafix = shader_get_uniform(shader, "u_mask_alphafix");
+	var u_inverse = shader_get_uniform(shader, "u_mask_inverse");
+	
+	var clip_uvs = texture_get_uvs(_texture);
+	shader_set_uniform_f(shader_get_uniform(shader, "u_domaskclip"), 1.0);
+	texture_set_stage(u_clip_sprite_texture, _texture);
+	shader_set_uniform_f(u_clip_sprite_uvs, clip_uvs[0], clip_uvs[1], clip_uvs[2], clip_uvs[3]);
+	shader_set_uniform_f(u_clip_sprite_size, _tex_width, _tex_height);
+	shader_set_uniform_f(u_clip_sprite_texelsize, texture_get_texel_width(_texture), texture_get_texel_height(_texture));
+	shader_set_uniform_f(u_clip_sprite_trimmed, clip_uvs[4], clip_uvs[5], clip_uvs[6], clip_uvs[7]);
+	shader_set_uniform_f(u_clip_sprite_worldposition, _x, _y);
+	shader_set_uniform_f(u_alphafix, _alpha_fix ? 1.0 : 0.0);
+	shader_set_uniform_f(u_inverse, _inverse ? 1.0 : 0.0);
+	return true;
+}
