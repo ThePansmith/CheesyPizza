@@ -20,7 +20,7 @@ function scr_player_ratmountgrind()
 		with (instance_place(x, y, obj_grindrail))
 			other.y = y;
 	}
-	if (move != 0)
+	/* if (move != 0)
 	{
 		var inst = instance_place(x + hsp, y - 32, obj_grindrailslope);
 		if (inst == noone)
@@ -32,7 +32,7 @@ function scr_player_ratmountgrind()
 			else
 				other.vsp = 5;
 		}
-	}
+	}*/
 	ds_list_clear(global.instancelist);
 	if (!place_meeting(x, y, obj_grindrail) && !place_meeting(x, y, obj_grindrailslope))
 	{

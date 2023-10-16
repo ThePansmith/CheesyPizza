@@ -4,7 +4,7 @@
 /// Don't steal my fucking code
 /// and if you are, at least fucking credit me.
 
-function object_get_slope_line(_instance)
+function object_get_slope_line(_instance, _left_offset = 0, _top_offset = 0, _right_offset = 0, _bottom_offset = 0)
 {
 	var ret_array = [0, 0, 0, 0];
 	
@@ -12,22 +12,22 @@ function object_get_slope_line(_instance)
 		return ret_array;
 	with _instance
 	{
-		ret_array[0] = bbox_left;
-		ret_array[1] = bbox_bottom;
+		ret_array[0] = bbox_left + _left_offset;
+		ret_array[1] = bbox_bottom + _bottom_offset;
 		
-		ret_array[2] = bbox_right;
-		ret_array[3] = bbox_top;
+		ret_array[2] = bbox_right + _right_offset;
+		ret_array[3] = bbox_top + _top_offset;
 		
 		if image_xscale < 0
 		{
-			ret_array[1] = bbox_top;
-			ret_array[3] = bbox_bottom;
+			ret_array[1] = bbox_top + _top_offset;
+			ret_array[3] = bbox_bottom + _bottom_offset;
 		}
 		
 		if image_yscale < 0
 		{
-			ret_array[0] = bbox_right;
-			ret_array[2] = bbox_left;
+			ret_array[0] = bbox_right + _right_offset;
+			ret_array[2] = bbox_left + _left_offset;
 		}
 		
 		return ret_array;
