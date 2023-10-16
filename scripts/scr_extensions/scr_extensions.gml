@@ -4,8 +4,41 @@
 /// Don't steal my fucking code
 /// and if you are, at least fucking credit me.
 
+function object_get_slope_line(_instance)
+{
+	var ret_array = [0, 0, 0, 0];
+	
+	if !_instance
+		return ret_array;
+	with _instance
+	{
+		ret_array[0] = bbox_left;
+		ret_array[1] = bbox_bottom;
+		
+		ret_array[2] = bbox_right;
+		ret_array[3] = bbox_top;
+		
+		if image_xscale < 0
+		{
+			ret_array[1] = bbox_top;
+			ret_array[3] = bbox_bottom;
+		}
+		
+		if image_yscale < 0
+		{
+			ret_array[0] = bbox_right;
+			ret_array[2] = bbox_left;
+		}
+		
+		return ret_array;
+	}
+}
+
 function object_get_slope_triangle(_instance)
 {
+	if !_instance
+		return [0, 0, 0, 0]
+		
 	with _instance
 	{
 		var x1 = bbox_left - 1;

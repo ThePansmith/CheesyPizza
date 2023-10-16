@@ -2,7 +2,7 @@ if curr_state != noone && room == curr_state.room
 {
 	if global.performance
 	{	
-		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, 1.0);
+		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_purple, 1.0);
 		exit;
 	}
 	
@@ -17,7 +17,7 @@ if curr_state != noone && room == curr_state.room
 		if characters[i][0] != obj_player1.character
 			continue;
 		
-		pal_swap_set(characters[i][1], 58);
+		pal_swap_set(characters[i][1], 58); // RX: Swap to all white palette for mask
 		break;
 	}
 

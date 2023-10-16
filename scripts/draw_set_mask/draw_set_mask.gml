@@ -42,6 +42,15 @@ function draw_set_mask(_x, _y, _clip_sprite, _clip_sprite_subimage = 0, _alpha_f
 	shader_set_uniform_f(u_inverse, _inverse ? 1.0 : 0.0);
 	return true;
 }
+/// @func	draw_set_mask_texture(x, y, texture, alphafix, simple, inverse)
+/// @desc	Clip everything from a given clipping mask, returns false if shaders aren't supported, returns true otherwise
+/// @param	{real}				x	The X position of where to draw the clip mask
+/// @param	{real}				y	The Y position of where to draw the clip mask
+/// @param	{Pointer.Texture}	texture	The texture
+/// @arg	{bool}				alpha_fix		Simulate the alphafix to all pixels inside the clip
+/// @arg	{bool}				simple			Use the simple version of the shader, enable this for your "draw_circle"/"draw_ellipse"/"draw_rectangle"/"draw_triangle" functions
+/// @arg	{bool}	inverse		Simulate the alphafix to all pixels inside the clip
+/// @returns	{bool}
 function draw_set_mask_texture(_x, _y, _texture, _alpha_fix = false, _simple = false, _inverse = false)
 {
 	if global.performance
