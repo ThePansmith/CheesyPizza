@@ -1,2 +1,0 @@
-targetRoom = ancient_treasure;
-

@@ -33,6 +33,7 @@
     {"name":"inst_49EE7BD8","path":"rooms/ancient_3/ancient_3.yy",},
     {"name":"inst_5D6D66FB","path":"rooms/ancient_3/ancient_3.yy",},
     {"name":"inst_383DF4EB","path":"rooms/ancient_3/ancient_3.yy",},
+    {"name":"inst_59FFE97D","path":"rooms/ancient_3/ancient_3.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -63,6 +64,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_49EE7BD8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_reverseminipillar","path":"objects/obj_reverseminipillar/obj_reverseminipillar.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":640.0,"y":64.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5D6D66FB","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_verticalhallway","path":"objects/obj_verticalhallway/obj_verticalhallway.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":-1.0,"x":544.0,"y":-32.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_383DF4EB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_doorD","path":"objects/obj_doorD/obj_doorD.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":592.0,"y":-64.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_59FFE97D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_minipillar","path":"objects/obj_minipillar/obj_minipillar.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":5.0,"x":64.0,"y":288.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_343C97DC","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_lamp","path":"sprites/spr_lamp/spr_lamp.yy",},"x":826.0,"y":224.0,},
