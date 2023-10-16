@@ -135,8 +135,8 @@ add_section("Cheesed Up", [
 	"Secrets",
 	["event:/soundtest/pto/secretnoise", "A Jam-Packed Secret - loypoll"],
 	
-	["event:/soundtest/pto/secretentranceSP", "An Entrance Secret (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretentranceBN", "An Entrance Secret (Bo) - Jessie Productions"],
+	["event:/soundtest/pto/secretentranceSP", "there's a secret in my breakfast? - RodMod"],
+	["event:/soundtest/pto/secretentranceBN", "how bo unlock the secret - Jessie Productions"],
 	["event:/soundtest/pto/secretpizzascapeSP", "A Medieval Secret (Sugary) - RodMod"],
 	["event:/soundtest/pto/secretpizzascapeBN", "A Medieval Secret (Bo) - Jessie Productions"],
 	["event:/soundtest/pto/secretruinSP", "A Secret Under The Debris (Sugary) - loypoll"],
