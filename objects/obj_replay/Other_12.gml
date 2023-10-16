@@ -1,37 +1,41 @@
 /// @description Begin Playback
-if !ptcu_replay_openfile(replay_file)
+trace($"[REPLAY] - Attemping to read replayfile: \"{replay_file}\"");
+
+if !pto_replay_openfile(replay_file)
 {
-	trace($"Unable to open replay \"{replay_file}\"");
+	trace($"[REPLAY] - Unable to open replay \"{replay_file}\"");
 	event_user(3);
 	exit;
 }
 
-if !ptcu_replay_readheader() // Header Check
+if !pto_replay_readheader() // Header Check
 {
-	trace($"Replay had invalid header!");
+	trace($"[REPLAY] - Replay had invalid header!");
 	event_user(3);
 	exit;
 }
 
-if !ptcu_replay_readstringdictionary()
+if !pto_replay_readstringdictionary()
 {
-	trace("Unable to read Replay's string dictionary!");
+	trace("[REPLAY] - Unable to read Replay's string dictionary!");
 	event_user(3);
 	exit;
 }
-trace($"replaypos: {ext_replay_tell()}");
-var buffer = ext_replay_readstring();
+trace($"[REPLAY] - replaypos: {pto_replay_tell()}");
+var buffer = pto_replay_readstring();
 if buffer == ""
 {
-	trace("Unable to read Replay's first room!");
+	trace("[REPLAY] - Unable to read Replay's first room!");
 	event_user(3);
 	exit;
 }
 
-trace($"Playback started, waiting for room: \"{buffer}\"");
+trace($"[REPLAY] - Playback started, waiting for room: \"{buffer}\"");
 
-ptcu_replay_seek(ext_replay_tell() - string_length(buffer));
-trace("Starting Playback");
+pto_replay_seek(pto_replay_tell() - 5);
+replay_dictionary_pos = pto_replay_readint32();
+
+trace($"[REPLAY] - Starting Playback in room: {room_get_name(room)}");
 playback = true;
-playback_start_room = entrance_1;
+playback_start_room = room;
 active = false;

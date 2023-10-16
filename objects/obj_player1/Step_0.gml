@@ -15,7 +15,7 @@ if (room == custom_lvl_room)
     }
     else
     {
-        cam = -4;
+        cam = noone;
         cam_width = 0;
         cam_height = 0;
         instance_activate_all();

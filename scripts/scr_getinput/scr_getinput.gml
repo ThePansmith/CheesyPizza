@@ -57,6 +57,7 @@ function scr_getinput(is_menu = false)
 	if instance_exists(obj_replay) && obj_replay.playback && obj_replay.active
 		exit;
 	
+	
 	if (safe_get(obj_shell, "isOpen"))
 	or (global.in_menu && !is_menu)
 	{

@@ -12,6 +12,7 @@ function sh_showcollisions(args)
 	}
 	WC_showinvisible = 0;
 	WC_showcollisions = togglepanic;
+	global.showcollisions = togglepanic;
 	toggle_collisions(togglepanic);
 }
 function meta_showcollisions()

@@ -4,7 +4,7 @@
   "name": "spr_peppalette",
   "bbox_bottom": 11,
   "bbox_left": 0,
-  "bbox_right": 56,
+  "bbox_right": 57,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 57,
+  "width": 58,
 }

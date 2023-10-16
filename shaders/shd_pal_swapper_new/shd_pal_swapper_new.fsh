@@ -9,6 +9,8 @@ varying vec4 v_vColour;
 
 uniform float palette_index;
 
+
+
 // Palette Image Stuff
 uniform sampler2D palette_texture;
 uniform vec2 texel_size;

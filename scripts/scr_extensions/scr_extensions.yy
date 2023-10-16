@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "replay_get_associated_rooms",
+  "name": "scr_extensions",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Replay",
-    "path": "folders/Scripts/CheesyPizza/Utility/Replay.yy",
+    "name": "Collision Lib",
+    "path": "folders/Scripts/CheesyPizza/Collision Lib.yy",
   },
 }

@@ -6,6 +6,6 @@
   "isDnD": false,
   "parent": {
     "name": "Clipping",
-    "path": "folders/Scripts/CheesyPizza/Utility/Draw/Clipping.yy",
+    "path": "folders/Scripts/CheesyPizza/Drawing/Clipping.yy",
   },
 }

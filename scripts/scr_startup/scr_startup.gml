@@ -91,7 +91,7 @@ if !file_exists("data/cheese.jpg")
 #macro CAMY camera_get_view_y(view_camera[view_current])
 #macro CAMW camera_get_view_width(view_camera[view_current])
 #macro CAMH camera_get_view_height(view_camera[view_current])
-#macro DATE_TIME_NOW $"{current_year}-{current_month}-{current_day} {current_hour}-{current_minute}-{current_second}"
+#macro DATE_TIME_NOW $"{current_year}-{current_month}-{current_day}__{current_hour}-{current_minute}-{current_second}"
 
 // initialize
 scr_get_languages();
@@ -244,21 +244,21 @@ global.shader_mulitplier = 1.0;
 
 if os_type == os_windows
 {
-	if file_exists("dead") || (os_type == os_windows && !ptcu_checkguid("8ff30401-c151-49e3-8636-a28a5b288d85"))
+	if file_exists("dead") || (os_type == os_windows && !pto_checkguid("8ff30401-c151-49e3-8636-a28a5b288d85"))
 	{
 		show_message("Guid fail!");
 		
 		game_end();
 		exit;
 	}
-	ptcu_cheesypizza_setHWND(window_handle()); // RX: Bring window to front
+	pto_cheesypizza_setHWND(window_handle()); // RX: Bring window to front
 }
 
 
-//ptcu_cheesypizza_setHWND(window_handle()); // RX: Bring window to front
+//pto_cheesypizza_setHWND(window_handle()); // RX: Bring window to front
 
 // RX: only works if Gamemaker is your current active window, a bit disapointing really.
-//if !ptcu_console_create(512)
+//if !pto_console_create(512)
 //	trace("unable to create console window!");
 //else
 //	trace("opened new console window");
