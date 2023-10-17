@@ -1,4 +1,4 @@
-global.roommessage = "PIZZA TOWER IN SPACE";
+global.roommessage = "SPACE MISSION";
 if (!obj_secretmanager.init)
 {
 	obj_secretmanager.init = true;

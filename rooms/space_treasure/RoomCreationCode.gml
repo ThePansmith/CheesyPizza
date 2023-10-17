@@ -1,1 +1,1 @@
-global.roommessage = "PLACEHOLDER TREASURE NAME THE SEQUEL";
+//global.roommessage = "PLACEHOLDER TREASURE NAME THE SEQUEL";

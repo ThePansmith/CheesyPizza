@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "chateau_pizzamart",
-  "creationCodeFile": "${project_dir}/rooms/chateau_pizzamart/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/chateau_pizzamart/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

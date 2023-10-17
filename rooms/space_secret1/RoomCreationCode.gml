@@ -1,1 +1,1 @@
-global.roommessage = "AND THIS WAS MY BEDROOM";
+global.roommessage = "BUMP BY BUMP";

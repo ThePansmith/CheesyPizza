@@ -1,1 +1,1 @@
-global.roommessage = "PIZZA TOWER ISLAND";
+global.roommessage = "MY OWN CLONE!";

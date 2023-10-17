@@ -1,4 +1,4 @@
-global.roommessage = "PIZZA TOWER ISLAND";
+global.roommessage = "PIZZA TOWER SEWERS";
 global.gameframe_caption_text = "Pizza Tower smells like shit";
 if global.panic
 {
