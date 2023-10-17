@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "kidsparty_floor2_1",
-  "creationCodeFile": "${project_dir}/rooms/kidsparty_floor2_1/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/kidsparty_floor2_1/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

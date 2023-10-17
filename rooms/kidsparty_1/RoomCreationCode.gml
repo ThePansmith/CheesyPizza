@@ -1,4 +1,4 @@
-global.roommessage = "PIZZA TOWER WITH THE DEAD";
+global.roommessage = "PIZZA TOWER IN THE PIZZERIA";
 global.pepanimatronic = true;
 global.gameframe_caption_text = "Shhh... Pizza Tower...";
 if (global.panic == true)

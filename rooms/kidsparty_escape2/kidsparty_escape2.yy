@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "kidsparty_escape2",
-  "creationCodeFile": "${project_dir}/rooms/kidsparty_escape2/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/kidsparty_escape2/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

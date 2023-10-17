@@ -1,1 +1,1 @@
-global.roommessage = "PIZZA TOWER WITH THE DEAD";
+global.roommessage = "FUN FOR ALL AGES";
