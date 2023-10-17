@@ -39,8 +39,6 @@ else
 		var index = 0;
 		for (var i = 0; i < min(array_length(global.cyop_broken_tiles), 256); i += 2)
 		{
-
-		
 			var xx = global.cyop_broken_tiles[i];
 			var yy = global.cyop_broken_tiles[i + 1];
 		
@@ -84,12 +82,11 @@ else
 			if index < 256
 			{
 				temp_array[index++] = -1;
-				temp_array[index++] = -1
+				temp_array[index++] = -1;
 			}
 			shader_set_uniform_f_array(secret_block_info, temp_array);
 			shader_set_uniform_f(tile_size, tilelayer.tilesize_x, tilelayer.tilesize_y);
-		}	
-		
+		}
 	}
 }
 

@@ -177,7 +177,6 @@ for(var i = 0; i < array_length(tile_layers); i++)
 		
 		var xx = string_copy(tiles[j], 1, string_pos("_", tiles[j]) - 1);
 		var yy = string_copy(tiles[j], string_pos("_", tiles[j]) + 1, string_length(tiles[j]));
-		
 		var tilesize = 32;
 		
 		var sprite = cyop_asset(tile_data.tileset);
@@ -230,11 +229,7 @@ if fmod && string_pos(".", song) != 0
 	song = split[0];
 	state = real(split[1]);
 }
-
-if !fmod
-	var event = cyop_resolvevalue(song, "sound");
-else
-	var event = song;
+var event = fmod ? song : cyop_resolvevalue(song, "sound");
 
 if !is_string(event) or fmod
 {
