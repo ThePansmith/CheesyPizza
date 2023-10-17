@@ -31,7 +31,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_player_airattack",
+    "path": "sprites/spr_player_airattack/spr_player_airattack.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

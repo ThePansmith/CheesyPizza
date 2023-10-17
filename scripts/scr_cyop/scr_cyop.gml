@@ -1239,7 +1239,7 @@ function cyop_load(ini)
 	global.custom_path = filename_path(ini);
 	var targetLevel = concat(global.custom_path, "/levels/", mainlevel, "/level.ini");
 	if !file_exists(targetLevel)
-		return "Main level doesn't exist";
+		return "This tower has no Main Level.";
 	
 	recursive_func = function(folder, prefix)
 	{
@@ -1289,7 +1289,7 @@ function cyop_load(ini)
 							y_offset += sprite_get_height(spr) / 2;
 						}
 						sprite_replace(spr, filepath, images == -1 ? 1 : images, 0, 0, x_offset, y_offset);
-					
+						
 						// add to map
 						if tileset_size > 0
 							ds_map_add(global.custom_tiles, prefix + filename, [spr, tileset_size]);
@@ -1452,7 +1452,7 @@ function cyop_load_level(ini)
 	titleSprite = cyop_resolvevalue(titleSprite, "sprite_index");
 	titleSong = cyop_resolvevalue(titleSong, "sound");
 	
-	if !is_string(titlecardSprite) && titlecardSprite != spr_null
+	if !is_string(titlecardSprite) && titlecardSprite != spr_null && !global.is_hubworld
 	{
 		with instance_create(0, 0, obj_titlecard)
 		{

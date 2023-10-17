@@ -16,4 +16,6 @@ function cyop_tile(_world_x, _world_y, _tm_x, _tm_y, _sprite, _subimage, _tilesi
 	subimage = _subimage;
 	size_x = _tilesize_x;
 	size_y = _tilesize_y;
+	scale_x = 32 / size_x;
+	scale_y = 32 / size_y;
 }
