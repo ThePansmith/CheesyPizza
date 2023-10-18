@@ -1,7 +1,7 @@
 function sh_char(args)
 {
-	if !WC_debug
-		return "You do not have permission to use this command";
+	if !WC_debug && !string_starts_with(room_get_name(room), "tower")
+		return "You cannot use this command inside of a level";
 	if !instance_exists(obj_player1)
 		return "The player is not in the room";
 	if array_length(args) < 2

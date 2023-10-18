@@ -11,21 +11,15 @@ if curr_state != noone && room == curr_state.room
 	
 	surface_set_target(surf);
 	draw_clear_alpha(c_black, 0);
-	shader_set(shd_pal_swapper);
-	for (var i = 0; i < array_length(characters); i++)
-	{
-		if characters[i][0] != obj_player1.character
-			continue;
-		
-		pal_swap_set(characters[i][1], 58); // RX: Swap to all white palette for mask
-		break;
-	}
-
+	
+	shader_set(shd_mach3effect);
+	shader_set_uniform_f(color1, 1, 1, 1);
+	shader_set_uniform_f(color2, 0, 0, 0);
 	draw_sprite_ext(sprite_index, image_index, 100, 100, image_xscale, image_yscale, image_angle, c_white, 1.0);
-	pattern_reset();
 	
 	surface_reset_target();
 	shader_reset();
+	
 	var scaled_size = (32 * 6.25);
 	
 	var x_pos = x - (scaled_size / 2);
