@@ -31,10 +31,10 @@ switch async_load[? "event_type"]
 				// assholes
 				755190988158402713, // juicyham44 0
 				339940381850468386, // meliadev 1
-				842841281642364960, // medicalnomad 2
-				357090210435039232, // luigio 3
-				1095620631904661506, // doxel705 4 (leaked mod, said "lollypoll rots in hell")
-				590968392211759124 // Nicole
+				357090210435039232, // luigio 2
+				1095620631904661506, // doxel705 3 (leaked mod, said "lollypoll rots in hell")
+				590968392211759124, // Nicole 4
+				1143968994479575142, // caunick 5 (found toppinbot exploit, made clone server to shittalk me)
 			];
 			
 			for(var i = 0; i < array_length(lockout); i++)
