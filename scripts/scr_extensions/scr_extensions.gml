@@ -36,9 +36,11 @@ function object_get_slope_line(_instance, _left_offset = 0, _top_offset = 0, _ri
 
 function object_get_slope_triangle(_instance)
 {
+	static ret_array = [0, 0, 0, 0, 0, 0];
+	
 	if !_instance
-		return [0, 0, 0, 0]
-		
+		return noone;
+	
 	with _instance
 	{
 		var x1 = bbox_left - 1;
@@ -64,6 +66,14 @@ function object_get_slope_triangle(_instance)
 			y3 = bbox_top - 1;
 		}
 			
+		ret_array[0] = x1;
+		ret_array[1] = y1;
+		
+		ret_array[2] = x2;
+		ret_array[3] = y2;
+		
+		ret_array[4] = x3;
+		ret_array[5] = y3;
 		
 		if image_angle != 0
 		{
@@ -76,17 +86,17 @@ function object_get_slope_triangle(_instance)
 			var point_b = point_rotate(x2, y2, angle, center_x, center_y);
 			var point_c = point_rotate(x3, y3, angle, center_x, center_y);
 			
-			x1 = clamp(point_a[0], bbox_left, bbox_right);
-			y1 = clamp(point_a[1], bbox_top, bbox_bottom);
+			ret_array[0] = clamp(point_a[0], bbox_left, bbox_right);
+			ret_array[1] = clamp(point_a[1], bbox_top, bbox_bottom);
 			
-			x2 = clamp(point_b[0], bbox_left, bbox_right);
-			y2 = clamp(point_b[1], bbox_top, bbox_bottom);
+			ret_array[2] = clamp(point_b[0], bbox_left, bbox_right);
+			ret_array[3] = clamp(point_b[1], bbox_top, bbox_bottom);
 			
-			x3 = clamp(point_c[0], bbox_left, bbox_right);
-			y3 = clamp(point_c[1], bbox_top, bbox_bottom);
+			ret_array[4] = clamp(point_c[0], bbox_left, bbox_right);
+			ret_array[5] = clamp(point_c[1], bbox_top, bbox_bottom);
 		}
 		
-		return [ x1, y1, x2, y2, x3, y3 ];
+		return ret_array;
 	}
 	
 	return noone;

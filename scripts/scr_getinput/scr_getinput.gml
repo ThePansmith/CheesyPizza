@@ -55,7 +55,9 @@ function scr_getinput(is_menu = false)
 {
 	// we're good.
 	if instance_exists(obj_replay) && obj_replay.playback && obj_replay.active
-		exit;
+	{
+		obj_replay.deserialize_input(obj_replay.latest_input);
+	}
 	
 	
 	if (safe_get(obj_shell, "isOpen"))
