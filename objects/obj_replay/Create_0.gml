@@ -6,6 +6,7 @@ playback_start_room = noone;
 replay_file = STRING_UNDEFINED;
 active = false;
 replay_dictionary_pos = -1;
+latest_input = 0;
 
 enum game_controls
 {
@@ -39,8 +40,8 @@ enum game_controls
 	
 serialize_input = function()
 {
-	var tempValue = game_controls.none;
-		
+	var tempValue = int64(game_controls.none);
+	
 	// Direction
 	if obj_player1.key_up
 		tempValue |= game_controls.key_up;
@@ -106,30 +107,31 @@ serialize_input = function()
 
 deserialize_input = function(value)
 {
-	obj_player1.key_up				    = value & game_controls.key_up;
-	obj_player1.key_up2				    = value & game_controls.key_up2; 
-	obj_player1.key_right			    = value & game_controls.key_right;
-	obj_player1.key_right2			    = value & game_controls.key_right2;
-	obj_player1.key_left			    = value & game_controls.key_left;
-	obj_player1.key_left2			    = value & game_controls.key_left2;
-	obj_player1.key_down			    = value & game_controls.key_down;
-	obj_player1.key_down2			    = value & game_controls.key_down2;
-	obj_player1.key_jump			    = value & game_controls.key_jump;
-	obj_player1.key_jump2			    = value & game_controls.key_jump2;
-	obj_player1.key_slap			    = value & game_controls.key_slap;
-	obj_player1.key_slap2			    = value & game_controls.key_slap2;
-	obj_player1.key_taunt			    = value & game_controls.key_taunt;
-	obj_player1.key_taunt2			    = value & game_controls.key_taunt2;
-	obj_player1.key_attack			    = value & game_controls.key_attack;
-	obj_player1.key_attack2			    = value & game_controls.key_attack2;
-	obj_player1.key_shoot			    = value & game_controls.key_shoot;
-	obj_player1.key_shoot2			    = value & game_controls.key_shoot2;
+	value = int64(value);
+	obj_player1.key_up				    = (value & game_controls.key_up) != 0;
+	obj_player1.key_up2				    = (value & game_controls.key_up2) != 0; 
+	obj_player1.key_right			    = (value & game_controls.key_right) != 0;
+	obj_player1.key_right2			    = (value & game_controls.key_right2) != 0;
+	obj_player1.key_left			    = (value & game_controls.key_left) != 0;
+	obj_player1.key_left2			    = (value & game_controls.key_left2) != 0;
+	obj_player1.key_down			    = (value & game_controls.key_down) != 0;
+	obj_player1.key_down2			    = (value & game_controls.key_down2) != 0;
+	obj_player1.key_jump			    = (value & game_controls.key_jump) != 0;
+	obj_player1.key_jump2			    = (value & game_controls.key_jump2) != 0;
+	obj_player1.key_slap			    = (value & game_controls.key_slap) != 0;
+	obj_player1.key_slap2			    = (value & game_controls.key_slap2) != 0;
+	obj_player1.key_taunt			    = (value & game_controls.key_taunt) != 0;
+	obj_player1.key_taunt2			    = (value & game_controls.key_taunt2) != 0;
+	obj_player1.key_attack			    = (value & game_controls.key_attack) != 0;
+	obj_player1.key_attack2			    = (value & game_controls.key_attack2) != 0;
+	obj_player1.key_shoot			    = (value & game_controls.key_shoot) != 0;
+	obj_player1.key_shoot2			    = (value & game_controls.key_shoot2) != 0;
     // skip 2									 
-	obj_player1.key_chainsaw            = value & game_controls.key_chainsaw;
-	obj_player1.key_chainsaw2           = value & game_controls.key_chainsaw2;
-	obj_player1.stickpressed            = value & game_controls.stickpressed;
-	obj_player1.stickpressed_horizontal = value & game_controls.stickpressed_horizontal;
-	obj_player1.stickpressed_vertical   = value & game_controls.stickpressed_vertical;
+	obj_player1.key_chainsaw            = (value & game_controls.key_chainsaw) != 0;
+	obj_player1.key_chainsaw2           = (value & game_controls.key_chainsaw2) != 0;
+	obj_player1.stickpressed            = (value & game_controls.stickpressed) != 0;
+	obj_player1.stickpressed_horizontal = (value & game_controls.stickpressed_horizontal) != 0;
+	obj_player1.stickpressed_vertical   = (value & game_controls.stickpressed_vertical) != 0;
 }
 
 write_meta_data = function()
