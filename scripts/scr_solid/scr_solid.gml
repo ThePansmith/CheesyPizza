@@ -88,9 +88,9 @@ function check_slope(_x, _y)
 
 function inside_slope(slope_object)
 {
-	//var slope = instance_place(x, y, slope_object);
-	var slope = noone;
-	with slope_object
+	var slope = instance_place(x, y, slope_object);
+	//var slope = noone;
+	/* with slope
 	{
 
 			
@@ -103,7 +103,7 @@ function inside_slope(slope_object)
 		}
 		else
 			continue;
-	}
+	}*/
 	
 	
 	if slope == noone

@@ -5,29 +5,19 @@ var slope_points = object_get_slope_line(id, -1, -1, 1, 1);
 
 with obj_player
 {
-	var bbox_height = (bbox_bottom - bbox_top) + 2;
-	if state == states.ratmountgrind
-			y -= bbox_height;
 	// RX: Are we even in bounds?
 	if !rectangle_in_rectangle_fast(other.bbox_top - 2, other.bbox_left - 2, other.bbox_bottom + 2, other.bbox_right + 2, bbox_top, bbox_left, bbox_bottom, bbox_right)
-	{
-		if state == states.ratmountgrind
-			y += bbox_height;
 		continue;
-	}
+	
+	var bbox_height = (bbox_bottom - bbox_top) + 2;
 	
 	var obj = noone;
 
 	var obj = collision_line(slope_points[0], slope_points[1], slope_points[2], slope_points[3], obj_player, false, false);
 	
 	if obj == noone || obj.id != id
-	{
-		if state == states.ratmountgrind
-			y += bbox_height;
 		continue;
-	}
-	if state == states.ratmountgrind
-		y += bbox_height;
+
 	array_push(player_arr, id);
 }
 
