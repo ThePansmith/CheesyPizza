@@ -105,6 +105,7 @@ switch character
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
 		add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "The perfect placeholder.");
 		break;
 	
 	#endregion
@@ -203,6 +204,7 @@ switch character
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
         add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "The perfect placeholder.");
 		break;
 	
 	#endregion
@@ -272,6 +274,7 @@ switch character
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
 		add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "The perfect placeholder.");
 		break;
 	
 	#endregion
@@ -352,6 +355,7 @@ switch character
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
 		add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "The perfect placeholder.");
 		break;
 	
 	#endregion
@@ -415,6 +419,7 @@ switch character
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
 		add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "The perfect placeholder.");
 		break;
 	
 	#endregion
@@ -489,6 +494,7 @@ switch character
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
 		
+		
 		add_palette(12, "", spr_pattern_alright, "Alright", "That combo was...");
 		add_palette(12, "", spr_pattern_smooth, "Smooth", "How do you call this smooth?");
 		add_palette(12, "", spr_pattern_lookingood, "Lookin' Good", "Why, thank you!");
@@ -504,6 +510,7 @@ switch character
 	    add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
         add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "The perfect placeholder.");
 		break;
 	
 	#endregion
@@ -572,6 +579,7 @@ switch character
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
         add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "The perfect placeholder.");
 		break;
 	
 	#endregion
@@ -744,6 +752,7 @@ switch character
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
         add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "The perfect placeholder.");
 		break;
 	
 	#endregion

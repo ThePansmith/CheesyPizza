@@ -119,6 +119,8 @@ add_modifier("Lights Out", "Spotlight", "The size of the spotlight is tied to yo
 	draw_sprite(spr_playerN_move, p.image, 384 / 2, 216 / 2);
 });
 
+add_modifier("Cosmic Clone", "CosmicClone", "Similar to Fake Peppino from the GOLF Builds, this clone will copy your every move!");
+
 // Level specific
 if level == "grinch"
 {

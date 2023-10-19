@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "timesuproom",
-  "creationCodeFile": "${project_dir}/rooms/timesuproom/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/timesuproom/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
