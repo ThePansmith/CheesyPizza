@@ -1942,6 +1942,7 @@
     {"id":{"name":"obj_highjumpcloud2","path":"objects/obj_highjumpcloud2/obj_highjumpcloud2.yy",},},
     {"id":{"name":"obj_grinchrestartcube","path":"objects/obj_grinchrestartcube/obj_grinchrestartcube.yy",},},
     {"id":{"name":"spr_tv_bombpepPN","path":"sprites/spr_tv_bombpepPN/spr_tv_bombpepPN.yy",},},
+    {"id":{"name":"spr_icon_pizzabo","path":"sprites/spr_icon_pizzabo/spr_icon_pizzabo.yy",},},
     {"id":{"name":"obj_grindeffect","path":"objects/obj_grindeffect/obj_grindeffect.yy",},},
     {"id":{"name":"spr_marshmellow_idle","path":"sprites/spr_marshmellow_idle/spr_marshmellow_idle.yy",},},
     {"id":{"name":"spr_pattern_awesome","path":"sprites/spr_pattern_awesome/spr_pattern_awesome.yy",},},

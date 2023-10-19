@@ -281,6 +281,7 @@ if (REMIX or global.laps >= 2) && !instance_exists(tracker) && !treasure
 		default: tracker.sprite_index = spr_icon_pizzaface; break;
 		case spr_babyface: tracker.sprite_index = spr_icon_baba; break;
 		case spr_coneball: tracker.sprite_index = spr_icon_coneball; break;
+		case spr_pizzaface_bo: tracker.sprite_index = spr_icon_pizzabo; break;
 	}
 }
 if MOD.DeathMode
