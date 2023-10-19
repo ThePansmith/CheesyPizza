@@ -1,2 +1,2 @@
 targetRoom = tower_extra;
-targetDoor = "G";
+targetDoor = "X";

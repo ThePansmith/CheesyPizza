@@ -1,2 +1,2 @@
 targetRoom = tower_tumblr;
-targetDoor = "G";
+targetDoor = "X";
