@@ -150,7 +150,7 @@ function state_player_cotton()
 		sprite_index = spr_cotton_walk;
 	if (key_down2 && !grounded)
 	{
-		verticalMovespeed = -5;
+		drillspeed = -5;
 		state = states.cottondrill;
 		sprite_index = spr_cotton_drill;
 		image_index = 0;

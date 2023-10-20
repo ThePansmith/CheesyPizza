@@ -72,5 +72,5 @@ function warbg_init()
 }
 function warbg_stop()
 {
-	warbg_generic(noon, warbg_end);
+	warbg_generic(noone, warbg_end);
 }

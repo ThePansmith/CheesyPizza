@@ -143,7 +143,7 @@ switch (sprite_index)
 									case states.cottondrill:
 										hsp = 0;
 										movespeed = 0;
-										verticalMovespeed = 0;
+										drillspeed = 0;
 										state = states.cottondrill;
 										sprite_index = spr_cotton_drill;
 										break;

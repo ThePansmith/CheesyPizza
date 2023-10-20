@@ -167,6 +167,8 @@ function load_moddedconfig()
 	global.shootbutton = ini_read_real("Modded", "shootbutton", 0); // 0 replace grab, 1 move to A, 2 only shotgun
 	global.heatmeter = ini_read_real("Modded", "heatmeter", false);
 	global.swapgrab = ini_read_real("Modded", "swapgrab", false);
+	global.unfocus_pause = ini_read_real("Modded", "unfocus_pause", false);
+	global.border = ini_read_real("Modded", "border", -1); // -1 none, 0 space, 1 dynamic
 
 	// visual settings
 	global.panicbg = ini_read_real("Modded", "panicbg", true);

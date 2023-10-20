@@ -5,7 +5,7 @@ with (other)
 	if (state == states.jump)
 		sprite_index = spr_machfreefall;
 	jumpstop = true;
-	if ((state == states.machslide || state == states.freefall) || (state == states.tumble && sprite_index != spr_dive))
+	if ((state == states.machslide || state == states.freefall) || (state == states.tumble && sprite_index != spr_dive) || (state == states.punch && sprite_index == spr_kungfujump))
 	{
 		state = states.jump;
 		movespeed = 0;

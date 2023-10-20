@@ -785,3 +785,4 @@ petID = noone;
 superjumped = false;
 image_blend_func = noone;
 substate = states.normal;
+drillspeed = 0;

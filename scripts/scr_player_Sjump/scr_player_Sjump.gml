@@ -13,6 +13,8 @@ function scr_player_Sjump()
 	machhitAnim = false;
 	superjumped = true;
 	
+	var vigilante = character == "V" && substate != states.Sjump;
+	
 	if (sprite_index == spr_superjump)
 	{
 		if (steppybuffer > 0)
@@ -48,11 +50,15 @@ function scr_player_Sjump()
 			piledrivereffect = 15;
 		}
 	}
-	if ((sprite_index == spr_superjump && character != "V") || sprite_index == spr_superspringplayer)
+	if ((sprite_index == spr_superjump && !vigilante) || sprite_index == spr_superspringplayer)
 		vsp = sjumpvsp;
 	sjumpvsp -= 0.1;
-	if (character == "V" && image_index > 3)
+	if (vigilante && image_index > 3)
 		vsp = -11;
+	
+	if character == "V" && !vigilante && image_index >= 11
+		image_index = 5;
+	
 	if (sprite_index == spr_player_supersidejump)
 	{
 		if (a < 25)
@@ -91,7 +97,7 @@ function scr_player_Sjump()
 			machhitAnim = false;
 		}
 	}
-	else if ((key_attack2 or input_buffer_slap > 0 or input_buffer_grab > 0) && character != "V" && character != "S" && sprite_index != spr_superspringplayer && sprite_index != spr_Sjumpcancelstart)
+	else if ((key_attack2 or input_buffer_slap > 0 or input_buffer_grab > 0) && !vigilante && character != "S" && sprite_index != spr_superspringplayer && sprite_index != spr_Sjumpcancelstart)
 	{
 		image_index = 0;
 		sprite_index = spr_Sjumpcancelstart;
@@ -151,25 +157,27 @@ function scr_player_Sjump()
 				image_xscale = other.xscale;
 		}
 	}
-	/*
-	if (character == "N" && key_jump2)
+	
+	if (character == "N" && noisetype == 1)
 	{
-		jumpstop = false;
-		vsp = -15;
-		state = states.jump;
-		sprite_index = spr_playerN_noisebombspinjump;
-		image_index = 0;
-		with (instance_create(x, y, obj_jumpdust))
-			image_xscale = other.xscale;
+		if key_jump2
+		{
+			jumpstop = false;
+			vsp = -15;
+			state = states.jump;
+			sprite_index = spr_playerN_noisebombspinjump;
+			image_index = 0;
+			with (instance_create(x, y, obj_jumpdust))
+				image_xscale = other.xscale;
+		}
+		else
+		{
+			if (move == 1)
+				hsp = 3;
+			if (move == -1)
+				hsp = -3;
+		}
 	}
-	if (character == "N")
-	{
-		if (move == 1)
-			hsp = 3;
-		if (move == -1)
-			hsp = -3;
-	}
-	*/
 	
 	if character == "SN"
 	{
@@ -178,11 +186,15 @@ function scr_player_Sjump()
 		jetpackcancel = true;
 	}
 	
-	if (character == "V" && floor(image_index) == (image_number - 1) && sprite_index != spr_superspringplayer)
+	if (vigilante && floor(image_index) == (image_number - 1) && sprite_index != spr_superspringplayer)
 	{
 		state = states.jump;
-		sprite_index = spr_playerV_fall;
+		sprite_index = spr_fall;
 	}
+	
+	if state != states.Sjump
+		substate = states.normal;
+	
 	image_speed = 0.5;
 	scr_collide_player();
 }

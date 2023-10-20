@@ -41,7 +41,7 @@
 49,56,-11,0,3,40,41,42,-11,0,5,54,49,59,49,56,-25,0,5,54,49,59,49,56,-25,0,5,54,49,59,
 49,56,-9,0,3,40,41,42,-13,0,5,54,49,59,49,56,-25,0,5,54,49,59,49,56,-25,0,5,54,49,59,
 49,56,-7,0,3,40,41,42,-15,0,5,54,49,59,49,56,-25,0,5,54,49,59,49,56,-25,0,5,54,49,59,
-49,97,-25,45,3,99,49,59,-19,49,1,59,-9,49,-31,59,],"TileDataFormat":1,},"tilesetId":{"name":"tileset_secretOLD","path":"tilesets/tileset_secretOLD/tileset_secretOLD.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+49,97,-25,45,3,99,49,59,-29,49,-31,59,],"TileDataFormat":1,},"tilesetId":{"name":"tileset_secretOLD","path":"tilesets/tileset_secretOLD/tileset_secretOLD.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Backgrounds_scroll","animationFPS":15.0,"animationSpeedType":0,"colour":4294967295,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":1.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":{"name":"bg_secret","path":"sprites/bg_secret/bg_secret.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":1.0,"vtiled":true,"x":0,"y":0,},
   ],
   "parent": {

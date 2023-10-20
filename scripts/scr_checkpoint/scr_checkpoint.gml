@@ -36,7 +36,7 @@ function set_checkpoint()
 		"level_minutes", "level_seconds"
 	];
 	var player_store = [
-		"targetDoor",
+		"targetDoor", "shotgunAnim"
 	];
 	
 	while array_length(global_store)

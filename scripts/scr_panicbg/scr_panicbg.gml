@@ -4,6 +4,7 @@
 */
 
 // setup
+/*
 function scr_panicbg_generic(begin_script, end_script)
 {
 	var begin_id = -1, end_id = -1;
@@ -28,16 +29,41 @@ function scr_panicbg_generic(begin_script, end_script)
 		layer_script_end(end_id, end_script);
 	}
 }
+*/
+
+function scr_panicbg_generic()
+{
+	// finds start and end layers
+	var lay = noone, lay_last = noone;
+	var backs = room_get_bg_layers();
+	
+	for(var i = 0; i < array_length(backs); i++)
+	{
+		lay = backs[i].layer_id;
+		if layer_get_depth(lay) > 0
+		{
+			layer_script_begin(lay, scr_panicbg_start);
+			layer_script_end(lay, scr_panicbg_end);
+			
+			lay_last = lay;
+		}
+	}
+	
+	if lay_last != noone
+		layer_script_end(lay_last, scr_panicbg_draw);
+}
 function scr_panicbg_init()
 {
 	if room != rank_room && room != timesuproom
-		scr_panicbg_generic(scr_panicbg_start, scr_panicbg_end);
+		scr_panicbg_generic();
 }
 
 // draw
 global.panicbg_surface = noone;
 function scr_panicbg_start()
 {
+	if live_call() return live_result;
+	
 	if event_type == ev_draw && event_number == ev_draw_normal
 	{
 		// set up surface
@@ -47,31 +73,19 @@ function scr_panicbg_start()
 				global.panicbg_surface = surface_create(CAMW, CAMH);
 			else if surface_get_width(global.panicbg_surface) != CAMW or surface_get_height(global.panicbg_surface) != CAMH
 				surface_resize(global.panicbg_surface, CAMW, CAMH);
-			
-			// shift layers to account for camera position
-			var backs = room_get_bg_layers();
-			for(var i = 0; i < array_length(backs); i++)
-			{
-				var lay = backs[i].layer_id;
-				if layer_get_depth(lay) > 0
-				{
-					layer_x(lay, layer_get_x(lay) - CAMX);
-					layer_y(lay, layer_get_y(lay) - CAMY);
-				}
-			}
-			
-			// target
-			if surface_exists(global.panicbg_surface)
-				surface_set_target(global.panicbg_surface);
+			surface_set_target(global.panicbg_surface);
 		}
 		else if surface_exists(global.panicbg_surface)
 			surface_free(global.panicbg_surface);
 	}
 }
-function scr_panicbg_end()
+
+function scr_panicbg_draw()
 {
+	if live_call() return live_result;
+	
 	if event_type == ev_draw && event_number == ev_draw_normal && !safe_get(obj_pause, "pause")
-	{				
+	{
 		// chunk bg
 		with obj_backgroundreplace
 			event_user(0);
@@ -91,6 +105,7 @@ function scr_panicbg_end()
 			}
 			
 			draw_sprite_tiled(bg_grinch_santa, 0, xx, yy);
+			shader_reset();
 		}
 		
 		// panicbg shader
@@ -110,4 +125,12 @@ function scr_panicbg_end()
 				shader_reset();
 		}
 	}
+}
+function scr_panicbg_end()
+{
+	if live_call() return live_result;
+	
+	if event_type == ev_draw && event_number == ev_draw_normal
+	&& global.panic && global.panicbg && !safe_get(obj_pause, "pause")
+		surface_reset_target();
 }

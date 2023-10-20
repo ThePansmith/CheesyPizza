@@ -30,7 +30,6 @@
     {"name":"inst_8B0E0787","path":"rooms/medieval_secret5_OLD/medieval_secret5_OLD.yy",},
     {"name":"inst_00B175FF","path":"rooms/medieval_secret5_OLD/medieval_secret5_OLD.yy",},
     {"name":"inst_9564E377","path":"rooms/medieval_secret5_OLD/medieval_secret5_OLD.yy",},
-    {"name":"inst_9564E377","path":"rooms/medieval_secret5_OLD/medieval_secret5_OLD.yy",},
   ],
   "isDnd": false,
   "layers": [

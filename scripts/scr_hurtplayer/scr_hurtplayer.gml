@@ -248,8 +248,9 @@ function scr_hurtplayer(player)
 		{
 			notification_push(notifs.hurt_player, [player.id, _savedstate, _obj]);
 			
-			global.combotime -= 25;
-			global.style -= 25;
+			global.combotime = max(global.combotime - 25, 0);
+			global.style = max(global.style - 25, 0);
+			
 			global.hurtcounter += 1;
 			global.player_damage += 1;
 			if (!isgustavo)

@@ -1,3 +1,5 @@
+live_auto_call;
+
 if keyboard_check_pressed(vk_escape)
 {
 	obj_player1.state = states.normal;
@@ -26,7 +28,6 @@ else
 	else
 	{
 		var lastchar = ord(keyboard_lastchar);
-		keyboard_lastchar = "";
 	
 		// cancel command
 		if lastchar == 127 or lastchar == 3
@@ -47,6 +48,8 @@ else
 		
 		else
 			input = keyboard_string;
+		
+		keyboard_lastchar = "";
 	}
 }
 

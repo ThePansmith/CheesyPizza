@@ -10,24 +10,24 @@ function state_player_cottondrill()
 	move = key_left + key_right;
 	if (move != 0)
 		xscale = move;
-	if (verticalMovespeed < 9)
+	if (drillspeed < 9)
 	{
-		verticalMovespeed = Approach(verticalMovespeed, 20, 2);
+		drillspeed = Approach(drillspeed, 20, 2);
 		hsp = move * 5;
 	}
 	else
 	{
-		verticalMovespeed = Approach(verticalMovespeed, 20, 0.5);
+		drillspeed = Approach(drillspeed, 20, 0.5);
 		hsp = move;
 	}
-	vsp = verticalMovespeed;
+	vsp = drillspeed;
 	sprite_index = spr_cotton_drill;
 	if (grounded && !place_meeting(x, y + 1, obj_destructibles) && !place_meeting(x, y + 1, obj_ratblock))
 	{
 		doublejump = 0;
 		if scr_slope()
 		{
-			movespeed = (verticalMovespeed / 20) * 12;
+			movespeed = (drillspeed / 20) * 12;
 			vsp = 3;
 			state = states.cottonroll;
 			image_index = 0;

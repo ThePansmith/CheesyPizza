@@ -123,6 +123,7 @@ add_option_toggle(audio_menu, 4, "option_unfocus", function(val)
 	obj_savesystem.ini_str_options = ini_close();
 	global.option_unfocus_mute = val;
 }).value = global.option_unfocus_mute;
+
 array_push(menus, audio_menu);
 
 #endregion
@@ -340,8 +341,16 @@ add_option_multiple(game_menu, 4, "option_timer_type", [create_option_value("opt
 	global.option_timer_type = val;
 }).value = global.option_timer_type;
 
-array_push(menus, game_menu);
+add_option_toggle(game_menu, 5, "UNFOCUSED PAUSE", function(val)
+{
+	ini_open_from_string(obj_savesystem.ini_str_options);
+	ini_write_real("Modded", "unfocus_pause", val);
+	obj_savesystem.ini_str_options = ini_close();
+	global.unfocus_pause = val;
+}).value = global.unfocus_pause;
 
+array_push(menus, game_menu);
+ 
 #endregion
 #region controls menu
 

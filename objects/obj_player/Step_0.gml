@@ -363,7 +363,7 @@ if state != states.pistol && state != states.normal && sprite_index != spr_playe
 if (pistolanim != noone)
 {
 	pistolindex += 0.35;
-	if (!machslideAnim && state != states.machslide && state != states.fireass)
+	if (!machslideAnim && state != states.machslide && state != states.fireass && state != states.handstandjump)
 	{
 		idle = 0;
 		sprite_index = pistolanim;

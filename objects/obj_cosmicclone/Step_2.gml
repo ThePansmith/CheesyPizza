@@ -1,4 +1,4 @@
-if ds_queue_size(queue) == distance
+while ds_queue_size(queue) >= distance
 {
 	var struct = ds_queue_dequeue(queue);
 	x = struct.x;

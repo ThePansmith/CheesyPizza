@@ -34,7 +34,9 @@ if player
 				state = states.jump;
 				sprite_index = spr_rockethitwall;
 				jumpAnim = false;
-				movespeed = 8;
+				
+				if character != "S"
+					movespeed = 8;
 				
 				if vsp > -8
 					vsp = -8;

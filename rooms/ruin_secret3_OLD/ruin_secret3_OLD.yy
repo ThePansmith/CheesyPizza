@@ -83,7 +83,6 @@
     {"name":"inst_A27F4B90","path":"rooms/ruin_secret3_OLD/ruin_secret3_OLD.yy",},
     {"name":"inst_2622C908","path":"rooms/ruin_secret3_OLD/ruin_secret3_OLD.yy",},
     {"name":"inst_BBD53780","path":"rooms/ruin_secret3_OLD/ruin_secret3_OLD.yy",},
-    {"name":"inst_BBD53780","path":"rooms/ruin_secret3_OLD/ruin_secret3_OLD.yy",},
   ],
   "isDnd": false,
   "layers": [

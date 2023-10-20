@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "CheesyPizza",
-    "path": "folders/Sprites/CheesyPizza.yy",
+    "name": "Modifiers",
+    "path": "folders/Sprites/CheesyPizza/Modifiers.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "cosmicclonepatterngroup",
-    "path": "texturegroups/cosmicclonepatterngroup",
+    "name": "patterngroup",
+    "path": "texturegroups/patterngroup",
   },
   "type": 0,
   "VTile": false,
