@@ -339,6 +339,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Objects","folderPath":"folders/Sprites/CheesyPizza/Palettes/Encore/Objects.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Stage","folderPath":"folders/Sprites/CheesyPizza/Palettes/Encore/Stage.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sonas","folderPath":"folders/Sprites/CheesyPizza/Sonas.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Dancers","folderPath":"folders/Sprites/CheesyPizza/Sonas/Dancers.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Pizzasona","folderPath":"folders/Sprites/CheesyPizza/Sonas/Pizzasona.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Soundtest","folderPath":"folders/Sprites/CheesyPizza/Soundtest.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Sprites/CheesyPizza/Sugary Spire.yy",},
@@ -610,7 +611,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Dancers","folderPath":"folders/Sprites/CheesyPizza/Sonas/Dancers.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles",},
