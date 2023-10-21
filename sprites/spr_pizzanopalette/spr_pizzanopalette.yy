@@ -4,7 +4,7 @@
   "name": "spr_pizzanopalette",
   "bbox_bottom": 10,
   "bbox_left": 0,
-  "bbox_right": 17,
+  "bbox_right": 18,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 18,
+  "width": 19,
 }

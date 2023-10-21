@@ -71,7 +71,7 @@ switch character
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "When you spam Big Chungus in general.");
 		add_palette(12, "itchy", spr_peppattern2, "Itchy Sweater", "Woven with Grandpa's intestines.");
 		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "You single-handedly made a whole tower crumble.");
-		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "Freefire o si");
+		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "Strike!");
 		add_palette(12, "goldemanne", spr_peppattern5, "Goldemanne", "Take my upvote and leave.");
 		add_palette(12, "bones", spr_peppattern6, "Bad Bones", "(Guitar riff)");
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "Get it? It's funny because");
@@ -105,7 +105,9 @@ switch character
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
 		add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
-		add_palette(12, "", spr_pattern_1034, "sprite1034", "The perfect placeholder.");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "The name itself is a placeholder too.");
+		add_palette(12, "", spr_pattern_doubleflavor, "Double Flavor", "Crunchy, gummy and yummy.");
+		add_palette(12, "grinch", spr_pattern_grinch, "Snowman Block", "I'M UNTOUCHABLE!");
 		break;
 	
 	#endregion
@@ -204,7 +206,9 @@ switch character
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
         add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
-		add_palette(12, "", spr_pattern_1034, "sprite1034", "The perfect placeholder.");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "The name itself is a placeholder too.");
+		add_palette(12, "", spr_pattern_doubleflavor, "Double Flavor", "Crunchy, gummy and yummy.");
+		add_palette(12, "grinch", spr_pattern_grinch, "Snowman Block", "I'M UNTOUCHABLE!");
 		break;
 	
 	#endregion
@@ -218,7 +222,7 @@ switch character
 		add_palette(5, "", noone, "Inverted", "Ooo... scary...!");
 		add_palette(6, "", noone, "Naked", "Wow. Yikes.");
 		add_palette(7, "", noone, "The Groise", "Piss Chuggers Association.");
-		add_palette(8, "", noone, "ARG", "I got the key piece!", "VILE");
+		add_palette(8, "", noone, "ARG", "I got the key piece!", "ARG");
 		add_palette(9, "", noone, "Radie", "Do NOT eat it.", "CUTE");
 		add_palette(10, "", noone, "Spicy", "This adds a whole new layer to the heat meter.", "SPICED");
 		add_palette(11, "", noone, "Mad Milk", "That's not milk.", "MILKY");
@@ -226,7 +230,7 @@ switch character
 		add_palette(14, "", noone, "Ralsei", "The prince of darkness.\n... cutest boy.", "DARKNER");
 		add_palette(15, "", noone, "Snoid", "Snot really funny when it happens to you, is it?", "SNOTTY");
 		add_palette(16, "", noone, "Mr. Orange", "I'm seeing double! Four Noise!");
-		add_palette(17, "", noone, "Inkplot", "Straight outta the 1920's.", "INKY");
+		add_palette(17, "", noone, "Inkplot", "Straight outta the 1920's.", "INK");
 		add_palette(18, "", noone, "Eggplant", "Have we, uh, set those ranks yet...?", "EGGPLANT");
 		add_palette(19, "", noone, "Hardoween", "When the ween is hard!");
 		add_palette(20, "", noone, "The Doise", "Do not steal.", "DOISE");
@@ -235,12 +239,13 @@ switch character
 		add_palette(23, "", noone, "Galaxy", "Wow it is Just like the Samsung Galaxy S23", "GALACTIC");
 		add_palette(24, "", noone, "Concept", "The original.");
 		add_palette(25, "", noone, "Big", "Chungus.");
+		add_palette(26, "", noone, "FL Studio", "Where do I get the Pizza Tower soundfont?", "FL");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "The perfect attire for a clown.");
 		add_palette(12, "itchy", spr_peppattern2, "Itchy Sweater", "Woven with Grandma's intestines.");
 		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "I thought he... collected candy?");
-		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "He committed genocide against RATS.");
+		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "Cannonball!");
 		add_palette(12, "goldemanne", spr_peppattern5, "Goldemanne", "Thanks for the gold, kind stranger.");
 		add_palette(12, "bones", spr_peppattern6, "Bad Bones", "Bad to the Noise.");
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "I'm trying really hard to laugh.");
@@ -274,7 +279,9 @@ switch character
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
 		add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
-		add_palette(12, "", spr_pattern_1034, "sprite1034", "The perfect placeholder.");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "The name itself is a placeholder too.");
+		add_palette(12, "", spr_pattern_doubleflavor, "Double Flavor", "Crunchy, gummy and yummy.");
+		add_palette(12, "grinch", spr_pattern_grinch, "Snowman Block", "I'M UNTOUCHABLE!");
 		break;
 	
 	#endregion
@@ -355,7 +362,9 @@ switch character
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
 		add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
-		add_palette(12, "", spr_pattern_1034, "sprite1034", "The perfect placeholder.");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "The name itself is a placeholder too.");
+		add_palette(12, "", spr_pattern_doubleflavor, "Double Flavor", "Crunchy, gummy and yummy.");
+		add_palette(12, "grinch", spr_pattern_grinch, "Snowman Block", "I'M UNTOUCHABLE!");
 		break;
 	
 	#endregion
@@ -385,7 +394,7 @@ switch character
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "When you spam Big Chungus in general.");
 		add_palette(12, "itchy", spr_peppattern2, "Itchy Sweater", "Woven with Grandpa's intestines.");
 		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "You single-handedly made a whole tower crumble.");
-		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "Freefire o si");
+		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "Strike!");
 		add_palette(12, "goldemanne", spr_peppattern5, "Goldemanne", "Take my upvote and leave.");
 		add_palette(12, "bones", spr_peppattern6, "Bad Bones", "(Guitar riff)");
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "Get it? It's funny because");
@@ -419,7 +428,9 @@ switch character
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
 		add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
-		add_palette(12, "", spr_pattern_1034, "sprite1034", "The perfect placeholder.");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "The name itself is a placeholder too.");
+		add_palette(12, "", spr_pattern_doubleflavor, "Double Flavor", "Crunchy, gummy and yummy.");
+		add_palette(12, "grinch", spr_pattern_grinch, "Snowman Block", "I'M UNTOUCHABLE!");
 		break;
 	
 	#endregion
@@ -428,13 +439,13 @@ switch character
 	case "SP":
 		sel.pal = 1; // default palette.
 		
-		add_palette(0, "", noone, "Yellow", "Take the first 4 letters of his name.");
+		add_palette(0, "", noone, "Yellow", "Take the first 4 letters of their name.");
 		add_palette(1, "", noone, "Pizzelle", "It's the Candy-making patisje!", "");
-		add_palette(2, "", noone, "Sugar", "Obviously sugar is green.");
-		add_palette(3, "", noone, "Familiar Gremlin", "Something's wrong.");
-		add_palette(4, "", noone, "Massacre", "SUGARY SPIRE 2: The Quest for Diabetes.");
-		add_palette(5, "", noone, "Rivals", "Did we find a coder yet?");
-		add_palette(6, "", noone, "Gum", "Don't actually chew him, please.");
+		add_palette(2, "", noone, "Sugar", "Because sugar is green-- oh. I get it."); // booger sugar.
+		add_palette(3, "", noone, "Familiar Gremlin", "Something's wrong...");
+		add_palette(4, "", noone, "Massacre", "SUGARY SPIRE 2: The Quest For Diabetes.");
+		add_palette(5, "", noone, "Rivals", "Pizzelle for Smash!");
+		add_palette(6, "", noone, "Gum", "Don't actually chew them, please.");
 		add_palette(7, "", noone, "Old School", "Also known as... grayscale.", "GRAYSCALE");
 		add_palette(8, "", noone, "Zombified", "Ricochet, eh? I sense some inspiration-ception.");
 		add_palette(9, "", noone, "Forestation", "Made of sugarcane plants.");
@@ -446,14 +457,14 @@ switch character
 		add_palette(16, "", noone, "SAGE", "Do upside down slopes make it a Sonic game?");
 		add_palette(17, "", noone, "DOOM", "It's the rip-n-tearing patisje!", "SLAYER");
 		add_palette(18, "", noone, "Annie", "It's ball-busting time.", "BALL-BUSTING");
-		add_palette(19, "", noone, "Scooter", "I- ...wh- what?", "SCOOTER");
+		add_palette(19, "", noone, "Scooter", "I-- ... wh... what?", "SCOOTER");
 		add_palette(20, "", noone, "Blurple", "Also known as \"test\".");
 		add_palette(21, "", noone, "Paintlad", "Very original name there.", "PAINTLAD");
 		add_palette(22, "", noone, "Cotton Candy", "Delicious colors. I love them.", "COTTON");
 		add_palette(23, "", noone, "Green Apple", "The least favorite candy flavor.", "COATED");
 		add_palette(24, "", noone, "Secret", "Lookie! You've found a pretty sweet surprise.", "SECRET");
-		add_palette(25, "", noone, "Stupid Rat", "Once loved, now you get an achievement for killing them.", "RAT");
-		add_palette(26, "", noone, "Pastel", "Soft on the eyes...", "PASTEL");
+		add_palette(25, "", noone, "Stupid Rat", "An otherwordly creature in this case.", "RAT");
+		add_palette(26, "", noone, "Pastel", "Soft on the eyes.", "PASTEL");
 		add_palette(27, "", noone, "Burnt", "But what went wrong?", "BURNT");
 		add_palette(28, "", noone, "Crazy Frog", "Ding ding!", "CRAZY");
 		add_palette(29, "", noone, "Factory", "PLEASE. I BEG YOU.", "INDUSTRIAL");
@@ -464,9 +475,9 @@ switch character
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "So the exact opposite of the Sugary team.");
 		add_palette(12, "itchy", spr_peppattern2, "Itchy Sweater", "Woven with Grandpa's intestines.");
 		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "Something doesn't add up.");
-		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "Freefire o si");
+		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "Strike!");
 		add_palette(12, "goldemanne", spr_peppattern5, "Goldemanne", "Take my upvote and leave.");
-		add_palette(12, "bones", spr_peppattern6, "Bad Bones", "(Guitar riff)");
+		add_palette(12, "bones", spr_peppattern6, "Bad Bones", "(Violin riff)");
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "Lol! XD! Lmfao. That's so");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "drafted");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Use the next palette instead.");
@@ -493,7 +504,13 @@ switch character
 		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
-		
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
+	    add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
+		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
+        add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "The name itself is a placeholder too.");
+		add_palette(12, "", spr_pattern_doubleflavor, "Double Flavor", "Crunchy, gummy and yummy.");
+		add_palette(12, "grinch", spr_pattern_grinch, "Snowman Block", "I'M UNTOUCHABLE!");
 		
 		add_palette(12, "", spr_pattern_alright, "Alright", "That combo was...");
 		add_palette(12, "", spr_pattern_smooth, "Smooth", "How do you call this smooth?");
@@ -506,11 +523,6 @@ switch character
 		add_palette(12, "", spr_pattern_awesome, "Awesome", "Incredible, incredible.");
 		add_palette(12, "", spr_pattern_wtf, "WTF!!!", "Stop saying cuss words, guys!");
 		add_palette(12, "", spr_pattern_sugary, "Sugary", "OOOH NAMEDROP!");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
-	    add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
-		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
-        add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
-		add_palette(12, "", spr_pattern_1034, "sprite1034", "The perfect placeholder.");
 		break;
 	
 	#endregion
@@ -546,7 +558,7 @@ switch character
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "It's even funnier the 10th time!");
 		add_palette(12, "itchy", spr_peppattern2, "Itchy Sweater", "Woven with vir's intestines.");
 		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "You single-handedly made a whole tower crumble.");
-		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "He committed genocide against RATS.");
+		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "Cannonball!");
 		add_palette(12, "goldemanne", spr_peppattern5, "Goldemanne", "Thanks for the gold, kind stranger.");
 		add_palette(12, "bones", spr_peppattern6, "Bad Bones", "Jad to the Boise.");
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "I'm trying really hard to laugh.");
@@ -579,7 +591,9 @@ switch character
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
         add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
-		add_palette(12, "", spr_pattern_1034, "sprite1034", "The perfect placeholder.");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "The name itself is a placeholder too.");
+		add_palette(12, "", spr_pattern_doubleflavor, "Double Flavor", "Crunchy, gummy and yummy.");
+		add_palette(12, "grinch", spr_pattern_grinch, "Snowman Block", "I'M UNTOUCHABLE!");
 		break;
 	
 	#endregion
@@ -680,6 +694,9 @@ switch character
 		add_palette(12, "", spr_pattern_gba, "Advance", "wario");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "seg");
 		add_palette(12, "", spr_pattern_windows, "Windows", "failure");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "i give up giving these descriptions");
+		add_palette(12, "", spr_pattern_doubleflavor, "Double Flavor", "Crunchy, gummy and yummy.");
+		add_palette(12, "grinch", spr_pattern_grinch, "Snowman Block", "I'M UNTOUCHABLE!");
 		break;
 	
 	#endregion
@@ -702,6 +719,7 @@ switch character
 		add_palette(15, "", noone, "Sucrose Snowstorm", "A little sweetness never hurts.", "SWEET");
 		add_palette(16, "", noone, "Classic Plumber", "This is so retro, right guys? Please laugh! I'm funny!", "CLASSIC");
 		add_palette(17, "", noone, "Massacre", "This time, the chainsaw is built-in.", "");
+		add_palette(18, "", noone, "TV Pink", "Don't think you can get this by P-Ranking...", "");
 		
 		// Patterns
 		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "Some joke about a fat rabbit here.");
@@ -736,6 +754,13 @@ switch character
 		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
+		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
+		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
+		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
+        add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
+		add_palette(12, "", spr_pattern_1034, "sprite1034", "The name itself is a placeholder too.");
+		add_palette(12, "", spr_pattern_doubleflavor, "Double Flavor", "Crunchy, gummy and yummy.");
+		add_palette(12, "grinch", spr_pattern_grinch, "Snowman Block", "I'M UNTOUCHABLE!");
 		
 		add_palette(12, "", spr_pattern_alright, "Alright", "That combo was...");
 		add_palette(12, "", spr_pattern_smooth, "Smooth", "How do you call this smooth?");
@@ -748,11 +773,6 @@ switch character
 		add_palette(12, "", spr_pattern_awesome, "Awesome", "Incredible, incredible.");
 		add_palette(12, "", spr_pattern_wtf, "WTF!!!", "Stop saying cuss words, guys!");
 		add_palette(12, "", spr_pattern_sugary, "Sugary", "OOOH NAMEDROP!");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
-		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
-		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
-        add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
-		add_palette(12, "", spr_pattern_1034, "sprite1034", "The perfect placeholder.");
 		break;
 	
 	#endregion

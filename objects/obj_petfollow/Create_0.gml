@@ -6,7 +6,6 @@ enum PET
 	boykiss, // mgvio
 	willigie, // nathan124fs
 	rush, // rush
-	scrimblo // beebawp
 }
 
 event_inherited();
@@ -64,14 +63,6 @@ switch pet
 		spr_panicrun = spr_petrush_panicrun;
 		spr_taunt = spr_petrush_taunt;
 		spr_supertaunt = spr_petrush_supertaunt;
-		break;
-		
-	case PET.scrimblo:
-		spr_idle = spr_petscrimblo_idle;
-		spr_run = spr_petscrimblo_run;
-		spr_panic = spr_petscrimblo_panicidle;
-		spr_panicrun = spr_petscrimblo_panicrun;
-		spr_taunt = spr_petscrimblo_taunt;
 		break;
 }
 

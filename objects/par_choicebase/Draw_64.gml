@@ -68,7 +68,7 @@ if !global.performance
 	var prev_matrix = matrix_get(matrix_world);
 	if (anim_t < 1 && !global.performance)
 		shader_set_uniform_f(origin_pos, (SCREEN_WIDTH / 2) - bg_pos, (SCREEN_HEIGHT / 2) - bg_pos);
-	matrix_set(matrix_world, matrix_build(bg_pos, bg_pos, 0, 0, 0, 0, 1, 1, 1));
+	matrix_set(matrix_world, matrix_build(round(bg_pos), round(bg_pos), 0, 0, 0, 0, 1, 1, 1));
 	gpu_set_blendmode(bm_normal);
 	vertex_submit(pizza_vbuffer, pr_trianglelist, sprite_get_texture(spr_skinmenupizza, bg_image));
 	matrix_set(matrix_world, prev_matrix);

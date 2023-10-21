@@ -141,7 +141,6 @@ add_pet(PET.sneck, spr_petsneck_idle, "Sneck", "He's here for you.");
 add_pet(PET.boykiss, spr_petboykiss_idle, "Boykisser", "me when uhmmm ummm men men boys i like boys i'm a boy liker i like kissing men on the lips");
 add_pet(PET.willigie, spr_petwilligie_idle, "Willigie", "McPig's original character!");
 add_pet(PET.rush, spr_petrush_idle, "Mini Rush", "Unknown innofensive creature, or dog.\nFeed him with mayo.");
-add_pet(PET.scrimblo, spr_petscrimblo_idle, "Scrimblo", "Take a shot everytime you see beebawp's self-insert.");
 
 // auto select
 for(var i = 0; i < array_length(hats); i++)
