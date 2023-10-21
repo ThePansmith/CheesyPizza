@@ -88,7 +88,9 @@ function check_slope(_x, _y)
 
 function inside_slope(slope_object)
 {
-	var slope = instance_place(x, y, slope_object);
+	ds_list_clear(global.instancelist);
+	var slope = instance_place_list(x, y, slope_object, global.instancelist, true);
+	//slope = slope_object;
 	//var slope = noone;
 	/* with slope
 	{
@@ -104,29 +106,27 @@ function inside_slope(slope_object)
 		else
 			continue;
 	}*/
-	
-	
-	if slope == noone
-	{
-		return false;
-	}
-		
-	var object_side_x = bbox_right;
-	var object_side_y = bbox_bottom;
-	
 	if !slope
 		return false;
 	
-	with slope
+	var object_side_x = bbox_right;
+	var object_side_y = bbox_bottom;
+	
+	for (var i = 0; i < slope; i++)
 	{
-		var arr = object_get_slope_triangle(id);
+		with global.instancelist[|i]
+		{
+			var arr = object_get_slope_triangle(id);
 		
-		return rectangle_in_triangle(
-					other.bbox_left, other.bbox_top,
-					other.bbox_right, other.bbox_bottom,
-					arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]
-					);
+			if (rectangle_in_triangle(other.bbox_left, other.bbox_top, other.bbox_right, other.bbox_bottom, arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]))
+			{
+				ds_list_clear(global.instancelist);
+				return true;
+			}
+		
+		}
 	}
+	ds_list_clear(global.instancelist);
 	return false;
 }
 function check_slope_platform(slope_object, old_y)
