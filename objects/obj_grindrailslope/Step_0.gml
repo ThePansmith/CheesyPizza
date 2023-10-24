@@ -18,8 +18,8 @@ with obj_player
 	// can you look at it for me?
 	if !((state != states.tumble || (sprite_index != spr_tumble && sprite_index != spr_tumblestart && sprite_index != spr_tumbleend)) && state != states.backbreaker && state != states.chainsaw && state != states.bump)
 		continue;
-	if (state == states.ratmountjump && ((y <= yprevious && vsp < 0) || (y != yprevious)) // Don't cling while jumping or falling
-		continue;
+	//if (state == states.ratmountjump && ((y <= yprevious && vsp < 0) || (y != yprevious)) // Don't cling while jumping or falling
+	//	continue;
 	var obj = collision_line(slope_points[0], slope_points[1], slope_points[2], slope_points[3], obj_player, false, false);
 	
 	if obj == noone || obj.id != id
