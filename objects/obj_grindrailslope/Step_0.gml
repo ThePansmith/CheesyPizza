@@ -1,3 +1,5 @@
+exit;
+
 // RX: Support for multiple players because why not
 var player_arr = array_create(0, noone);
 
