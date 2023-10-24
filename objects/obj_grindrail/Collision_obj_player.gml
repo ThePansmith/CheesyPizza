@@ -1,3 +1,4 @@
+// Weird bug I had?
 if other.state == states.ratmountgrind
 {
 	if other.y > y + 8

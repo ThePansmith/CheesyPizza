@@ -1,5 +1,6 @@
 // clone vars that lag behind by a frame
 prevhsp = hsp;
+prevvsp = vsp;
 prevmove = move;
 prevmovespeed = movespeed;
 previcemovespeed = icemovespeed;
