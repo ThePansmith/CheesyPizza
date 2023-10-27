@@ -2526,6 +2526,7 @@
     {"id":{"name":"spr_pattern_hackerman","path":"sprites/spr_pattern_hackerman/spr_pattern_hackerman.yy",},},
     {"id":{"name":"oldsewer_8","path":"rooms/oldsewer_8/oldsewer_8.yy",},},
     {"id":{"name":"oldsewer_9","path":"rooms/oldsewer_9/oldsewer_9.yy",},},
+    {"id":{"name":"spr_loadingscreen_cheesy","path":"sprites/spr_loadingscreen_cheesy/spr_loadingscreen_cheesy.yy",},},
     {"id":{"name":"oldsewer_portal","path":"rooms/oldsewer_portal/oldsewer_portal.yy",},},
     {"id":{"name":"oldsewer_treasure","path":"rooms/oldsewer_treasure/oldsewer_treasure.yy",},},
     {"id":{"name":"oldfactory_0","path":"rooms/oldfactory_0/oldfactory_0.yy",},},

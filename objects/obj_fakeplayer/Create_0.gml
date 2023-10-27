@@ -5,6 +5,6 @@ steppybuffer = 12;
 active = false;
 depth = 1;
 if irandom_range(1, 100) = 50
-	name = "xxx_SLUTFUCKER2006_xxx"
+	name = "xxx_SLUTFUCKER_xxx"
 else
 	name = "Player"

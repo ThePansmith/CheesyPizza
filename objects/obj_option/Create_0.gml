@@ -40,7 +40,7 @@ scr_pauseicon_add(spr_pauseicons, 4);
 scr_pauseicon_add(spr_pauseicons, 5);
 scr_pauseicon_add(spr_pauseicons, 6);
 scr_pauseicon_add(spr_pauseicons, 7, 8, 8);
-scr_pauseicon_add(spr_pauseicons, 8, 0, 16);
+scr_pauseicon_add(spr_pauseicons, 9, 0, 16);
 
 #region categories
 
@@ -67,7 +67,7 @@ add_option_press(categories, 3, "option_controls", function()
 });
 
 if !global.goodmode
-add_option_press(categories, 4, "MODDED", function()
+add_option_press(categories, 4, "option_modded", function()
 {
 	obj_option.key_jump = false;
 	instance_create_unique(0, 0, obj_modconfig);

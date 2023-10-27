@@ -84,9 +84,9 @@ function scr_delete_pause_image()
 	if sprite_exists(screensprite2)
 		sprite_delete(screensprite2);
 }
-function scr_pauseicon_add(sprite, index, xoffset = 0, yoffset = 0, array = pause_icons)
+function scr_pauseicon_add(sprite, index, xoffset = 0, yoffset = 0)
 {
-	array_push(array, 
+	array_push(pause_icons, 
 	{
 		sprite_index: sprite,
 		image_index: index,

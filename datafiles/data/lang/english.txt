@@ -204,6 +204,7 @@ option_audio = "AUDIO"
 option_video = "VIDEO"
 option_controls = "CONTROLS"
 option_game = "GAME"
+option_modded = "MODDED" # pto
 
 option_back = "BACK"
 option_on = "ON"
