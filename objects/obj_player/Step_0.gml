@@ -31,6 +31,10 @@ else
 }
 if (key_jump)
 	input_buffer_jump = 15;
+if (key_down2)
+	input_buffer_down = 15;
+if (key_attack2)
+	input_buffer_mach = 15;
 
 if (grounded && vsp > 0)
 	coyote_time = 8;
@@ -61,10 +65,6 @@ if (check_slope(x, y + 1))
 // state machine
 if character == "S" && !isgustavo
 	mask_index = spr_crouchmask;
-
-// kill yourself
-with (obj_ratblock)
-	scr_ratblock_destroy();
 
 switch (state)
 {
@@ -658,6 +658,11 @@ or (instance_exists(obj_timesup) && obj_timesup.alarm[1] == 0)
 		image_blend = c_white;
 		visible = true;
 	}
+	with (obj_player)
+	{
+		x = -1000;
+		y = -1000;
+	}
 	if (global.is_hubworld or global.custom_hub_level == "")
 	{
 		instance_destroy(obj_levelLoader);
@@ -783,6 +788,10 @@ if (coyote_time > 0)
 	coyote_time--;
 if (input_buffer_jump > 0)
 	input_buffer_jump--;
+if (input_buffer_down > 0)
+	input_buffer_down--;
+if (input_buffer_mach > 0)
+	input_buffer_mach--;
 if (input_buffer_jump_negative > 0)
 	input_buffer_jump_negative--;
 if (input_buffer_secondjump < 8)
@@ -953,11 +962,11 @@ if (abs(hsp) > 12 && (movespeed > 12 && state == states.mach3 or (character == "
 		other.speedlineseffectid = id;
 	}
 }
-scr_collide_destructibles();
 
 var mask = mask_index;
 if character == "S" && !isgustavo
 	mask_index = spr_crouchmask;
+scr_collide_destructibles();
 if (state != -1 && state != states.backtohub && state != states.ghostpossess && state != states.gotoplayer && state != states.debugstate && state != states.titlescreen && state != states.tube && state != states.grabbed && state != states.door && state != states.Sjump && state != states.ejected && state != states.comingoutdoor && state != states.boulder && state != states.keyget && state != states.victory && state != states.portal && state != states.timesup && state != states.gottreasure && state != states.dead)
 	scr_collide_player();
 mask_index = mask;
@@ -968,11 +977,53 @@ if (state == states.tube || state == states.gotoplayer || state == states.debugs
 	y += vsp;
 }
 if (state == states.boulder)
-	scr_collide_player();
+	scr_collide_player();	
+	
+scr_collide_destructibles();
+
+// kill yourself
+with (obj_ratblock)
+	scr_ratblock_destroy();
+
 if (state != states.comingoutdoor)
 	image_blend = c_white;
 prevstate = state;
 prevsprite = sprite_index;
+if (distance_to_object(obj_spike) < 500)
+{
+	var dirs = [[0, 1], [0, -1], [1, 0], [-1, 0]];
+	for(var i = 0; i < array_length(dirs); i++)
+	{
+		var b = dirs[i];
+		with (instance_place(x + b[0], y + b[1], obj_spike))
+		{
+			if (other.state != states.barrel)
+			{
+				var h = other.hurted;
+				scr_hurtplayer(other);
+				if (fake)
+					instance_destroy();
+				if (h != other.hurted && other.hurted)
+				{
+					fmod_event_one_shot_3d("event:/sfx/enemies/pizzardelectricity", x, y);
+					break;
+				}
+			}
+			with (other)
+			{
+				state = states.bump;
+				sprite_index = spr_bump;
+				image_index = 0;
+				hsp = -6 * xscale;
+				vsp = -4;
+				fmod_event_one_shot_3d("event:/sfx/knight/lose", x, y);
+				repeat (3)
+					create_debris(x, y, spr_wooddebris);
+				break;
+			}
+		}
+	}
+}
 
 // smooth x
 if smoothx != 0

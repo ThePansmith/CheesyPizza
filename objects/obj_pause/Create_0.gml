@@ -27,7 +27,10 @@ transfotext = noone;
 transfotext_size = 0;
 roomtorestart = Mainmenu;
 pausemusicIDss = fmod_event_create_instance("event:/modded/sugary/pause");
-pausemusicID = fmod_event_create_instance("event:/music/pause");
+if is_holiday(holiday.halloween)
+	pausemusicID = fmod_event_create_instance("event:/music/halloweenpause");
+else
+	pausemusicID = fmod_event_create_instance("event:/music/pause");
 savedsecretpause = false;
 savedmusicpause = false;
 savedpillarpause = false;

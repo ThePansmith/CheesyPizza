@@ -1,5 +1,6 @@
 function log_source(reason = "")
 {
+	/*
 	var current_event = "Unknown", current_number = event_number;
 	switch event_type
 	{
@@ -17,4 +18,5 @@ function log_source(reason = "")
 		case ev_draw: current_event = "Draw"; break;
 	}
 	trace($"[YOU FUCKED UP!] object: {object_get_name(object_index)} event: {current_event}_{current_number} reason: {reason}");
+	*/
 }

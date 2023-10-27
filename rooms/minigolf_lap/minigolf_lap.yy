@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "minigolf_lap",
-  "creationCodeFile": "rooms/minigolf_lap/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/minigolf_lap/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

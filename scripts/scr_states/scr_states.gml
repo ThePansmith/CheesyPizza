@@ -291,7 +291,7 @@ enum states
 	noiseballooncrash,
 	swinging,
 	stomp,
-	finale, // reused by obj_mainmenu
+	ending, // reused by obj_mainmenu
 	backtohub,
 	johnghost,
 	spaceshuttle,
@@ -302,6 +302,10 @@ enum states
 	teleport,
 	KO,
 	camera_followtarget,
+	UNKNOWN_1, // 300
+	UNKNOWN_2, // 301
+	UNKNOWN_3, // 302
+	UNKNOWN_4, // 303, used by obj_stickhat
 	
 	// sugary
 	cotton,

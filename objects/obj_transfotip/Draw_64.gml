@@ -1,7 +1,11 @@
+if (!global.option_hud)
+	exit;
+	
 var draw_state = draw_save_state();
 
 reset_shader_fix();
 reset_blendmode();
+
 
 draw_set_font(lang_get_font("creditsfont"));
 draw_set_halign(fa_left);

@@ -143,8 +143,13 @@ with (obj_pizzagoblinbomb)
 
 with (obj_player1)
 {
-	if (visible && state != states.titlescreen && bbox_in_camera(view_camera[0], 32))
+	if (!other.hungrypillarflash && visible && state != states.titlescreen && bbox_in_camera(view_camera[0], 32))
 		draw_player();
+}
+for (i = 0; i < array_length(particles); i++)
+{
+	with (particles[i])
+		draw_sprite(sprite_index, image_index, x, y);
 }
 
 // this is a dumb hack but it works blame me (Radix) if it breaks
@@ -158,7 +163,7 @@ with obj_secrettile
 
 with obj_sausageman_dead
 {
-	if !gui && visible && bbox_in_camera(view_camera[0], 32)
+	if !gui && visible
 	{
 		var prev_depth = gpu_get_depth();
 		gpu_set_depth(depth);

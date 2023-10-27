@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "kidsparty_john",
-  "creationCodeFile": "rooms/kidsparty_john/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/kidsparty_john/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
@@ -80,7 +80,6 @@
     {"name":"inst_975EF1B7","path":"rooms/kidsparty_john/kidsparty_john.yy",},
     {"name":"inst_1B127F2F","path":"rooms/kidsparty_john/kidsparty_john.yy",},
     {"name":"inst_90C5ED97","path":"rooms/kidsparty_john/kidsparty_john.yy",},
-    {"name":"inst_3F000FE0","path":"rooms/kidsparty_john/kidsparty_john.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -163,7 +162,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_975EF1B7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_siren","path":"objects/obj_siren/obj_siren.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1760.0,"y":288.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1B127F2F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_siren","path":"objects/obj_siren/obj_siren.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2208.0,"y":192.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_90C5ED97","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_siren","path":"objects/obj_siren/obj_siren.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2464.0,"y":192.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3F000FE0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":864.0,"y":160.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":32,"SerialiseWidth":94,"TileCompressedData":[
 292,69,70,248,249,250,251,252,253,254,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,240,241,242,243,244,245,246,247,248,249,250,251,24,25,265,266,267,268,269,255,256,257,258,259,260,261,262,263,264,265,266,267,268,39,40,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,270,271,272,273,274,275,276,277,278,279,280,281,282,283,39,40,192,193,194,
@@ -206,8 +204,8 @@
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Backgrounds_1","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":{"name":"spr_industrialcomplex","path":"sprites/spr_industrialcomplex/spr_industrialcomplex.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":true,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],
   "parent": {
-    "name": "Kid's Party",
-    "path": "folders/Rooms/Levels/Kid's Party.yy",
+    "name": "Kidsparty",
+    "path": "folders/Rooms/Levels/Kidsparty.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

@@ -1,1 +1,2 @@
-global.roommessage = "HIDDEN IN THE TRENCHES";
+pal_swap_init_system(shd_pal_swapper);
+global.roommessage = "TARGET PRATICE";

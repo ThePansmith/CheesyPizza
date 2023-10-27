@@ -1,2 +1,2 @@
-if check_char("G")
-	instance_destroy(id, false);
+content = obj_pizzagoblinbomb;
+countdown = 120;

@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "boss_vigilante",
-  "creationCodeFile": "${project_dir}/rooms/boss_vigilante/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/boss_vigilante/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

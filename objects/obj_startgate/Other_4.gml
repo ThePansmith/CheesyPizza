@@ -123,7 +123,7 @@ else
 			}
 		}
 	
-		if (object_index == obj_startgate && level != "exit" && level != "tutorial" && level != "dragonlair" && level != "snickchallenge" && level != "grinch" && level != "oldexit")
+		if (object_index == obj_startgate && level != "exit" && level != "tutorial" && level != "dragonlair" && level != "snickchallenge" && level != "grinch" && level != "oldexit" && level != "secretworld")
 		{
 			var count = 3;
 			if level == "etb"

@@ -34,8 +34,8 @@ function activate_panic(instapanic = false)
 	{
 		fmod_event_instance_play(global.snd_escaperumble);
 		fmod_event_instance_play(global.snd_johndead);
-		
-		instance_create_unique(0, 0, obj_hungrypillarflash);
+		with instance_create_unique(0, 0, obj_hungrypillarflash)
+			debrisid = debris;
 		instance_create(0, 0, obj_itspizzatime);
 		
 		with obj_camera

@@ -1,17 +1,9 @@
-var _move = true;
-with (obj_player)
-{
-	if (state == states.taxi || state == states.victory || state == states.keyget || state == states.gottreasure || state == states.door || state == states.spaceshuttle)
-	or (state == states.comingoutdoor && place_meeting(x, y, obj_exitgate))
-		_move = false;
-}
-
 switch (state)
 {
 	case states.normal:
-		targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
-		if _move
+		if (!locked)
 		{
+			targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 			var _g = distance_to_point(targetplayer.x, targetplayer.y);
 			if (_g < 150)
 				movespeed = 2;
@@ -23,16 +15,11 @@ switch (state)
 				movespeed = 11;
 			var _d = point_direction(x, y, targetplayer.x, targetplayer.y);
 			hsp = lengthdir_x(movespeed, _d);
-			vsp = lengthdir_y(movespeed, _d);	
+			vsp = lengthdir_y(movespeed, _d);
+			image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : image_xscale;
+			x += hsp;
+			y += vsp;
 		}
-		else
-		{
-			hsp = 0;
-			vsp = 0;
-		}
-		image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : image_xscale;
-		x += hsp;
-		y += vsp;
 		if (blur_effect > 0)
 			blur_effect--;
 		else
@@ -60,14 +47,34 @@ switch (state)
 			if (image_alpha <= 0)
 			{
 				fadein = true;
-				with (playerid)
+				if (object_index != obj_halloweenfollow)
 				{
-					x = roomstartx;
-					y = roomstarty;
-					ghostdash = false;
-					ghostpepper = 0;
-					other.x = other.xstart;
-					other.y = other.ystart;
+					with (playerid)
+					{
+						x = roomstartx;
+						y = roomstarty;
+						ghostdash = false;
+						ghostpepper = 0;
+						other.x = other.xstart;
+						other.y = other.ystart;
+					}
+				}
+				else
+				{
+					with (playerid)
+                    {
+                        targetRoom = backtohubroom;
+                        targetDoor = "HUB";
+                        ghostdash = 0;
+                        ghostpepper = 0;
+                    }
+                    global.level_minutes = 0;
+                    global.level_seconds = 0;
+                    locked = true;
+                    fadein = false;
+                    if (!instance_exists(obj_backtohub_fadeout))
+                        notification_push(notifs.trickytreat_fail, [room]);
+                    instance_create_unique(0, 0, obj_backtohub_fadeout);
 				}
 			}
 		}
@@ -87,6 +94,6 @@ switch (state)
 		}
 		break;
 }
-sound_instance_move(snd, x, y);
+fmod_event_instance_set_3d_attributes(snd, x, y);
 if (!fmod_event_instance_is_playing(snd))
 	fmod_event_instance_play(snd);

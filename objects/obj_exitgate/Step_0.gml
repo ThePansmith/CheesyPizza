@@ -1,4 +1,4 @@
-if (global.panic || (instance_exists(obj_wartimer) && room != war_1)) && room != sucrose_1
+if (global.panic || random_secret || (instance_exists(obj_wartimer) && room != war_1)) && room != sucrose_1
 {
 	if global.modifier_failed or (global.leveltosave == "dragonlair" && !global.giantkey)
 	{

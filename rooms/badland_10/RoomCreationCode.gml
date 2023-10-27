@@ -1,3 +1,4 @@
+pal_swap_init_system(shd_pal_swapper);
 global.roommessage = "PIZZA TOWER OF THE WEST";
 with (obj_player)
 {
@@ -19,11 +20,11 @@ if (!obj_secretmanager.init)
 		if (touchedtriggers >= 6)
 			secret_open_portal(0);
 	});
-	secret_add(noone, function()
+	secret_add(-4, function()
 	{
 		secret_open_portal(1);
 	});
-	secret_add(noone, function()
+	secret_add(-4, function()
 	{
 		if (secret_check_trigger(2))
 			secret_open_portal(2);

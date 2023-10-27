@@ -4,7 +4,7 @@
 lang = "en"
 display_name = "ENGLISH"
 custom_fonts = false
-game_version = "V1.0.311"
+game_version = "V1.0.5951"
 
 # ---------------
 # IMPORTANT NOTE
@@ -49,6 +49,7 @@ tutorialfont = "tutorialfont_en"
 creditsfont = "creditsfont_en"
 bigfont = "bigfont_en"
 smallfont = "smallfont_en"
+captionfont = "captionfont_en"
 
 # -------------
 # GAMEPAD ICONS
@@ -66,6 +67,19 @@ smallfont = "smallfont_en"
 # [T] Taunt
 # [g] Groundpound
 # [s] Superjump
+# -------------
+# MENU ICONS
+# -------------
+# [u] Up
+# [l] Left
+# [d] Down
+# [r] Right
+# [b] Menu Back
+# [c] Menu Select
+# [x] Menu Delete
+# [q] Menu Quit 
+# [p] Menu Start
+# [y] Reset binds (F1, gp_select)
 # --------
 # EFFECTS
 # --------
@@ -157,33 +171,39 @@ shotguntip = "{u}[G] Shoot [J][g] Shoot down/"
 boxxedtip = "{u}[J] Flap [G] Spin/"
 morttip = "{u}[J][J] Double Jump [G] Attack/"
 ghosttip = "{u}[U][D][L][R] Move/"
-rockettip = "{u}[B] Change Direction [J] Jump/"
+rockettip = "{u}[B] Change Direction [J] Jump Off/"
 barreltip = "{u}[M] Roll/"
-balloontip = "{u}[J] Jump/"
-gravesurftip = "{u}[J] Jump/"
+balloontip = "{u}[J] Jump Off/"
+gravesurftip = "{u}[J] Jump Off/"
 jetpack1tip = "{u}[G] Dash/"
 jetpack2tip = "{u}[J] Hold in the air to spin/"
-trashrolltip = "{u}[J] Jump/"
+trashrolltip = "{u}[J] Jump Off/"
 antigravtip = "{u}[J] Pop/"
 cheesedtip = "{u}[F][J] Stick to wall [J] Walljump/"
 golftip = "{u}[U][L][R] Aim [G] Shoot/"
-weenietip = "{u}[J] Jump/"
+weenietip = "{u}[J] Jump Off/"
 crosspriesttip = "{u}Kill the ghosts!!/"
 supertaunttip = "{u}[U][T] Super Taunt/"
 
 # ---------------
 # OPTIONS TEXT
 # ---------------
+menu_select = "[c] Select"
+menu_back = "[b] Back"
+
 pause_resume = "RESUME"
 pause_options = "OPTIONS"
 pause_restart = "RESTART LEVEL"
 pause_exit = "EXIT LEVEL"
+pause_exit_title = "MAIN MENU"
+pause_achievements = "CHEF TASKS"
+
+achievements_level = "CURRENT LEVEL"
 
 option_audio = "AUDIO"
 option_video = "VIDEO"
 option_controls = "CONTROLS"
 option_game = "GAME"
-option_mod = "MODDED"
 
 option_back = "BACK"
 option_on = "ON"
@@ -222,13 +242,25 @@ option_timer = "TIMER"
 option_timer_type = "TIMER TYPE"
 option_timer_level = "PER LEVEL"
 option_timer_save = "PER SAVE"
+option_timer_speedrun = "SPEEDRUN TIMER"
 option_erase_save = "ERASE SAVE DATA"
+option_screenshake = "SCREEN SHAKE"
 
 option_controller = "CONTROLLER"
 option_keyboard = "KEYBOARD"
 option_reset_config = "RESET CONFIG"
 option_controls_saved = "{u}Controls saved!/"
 option_controls_resetted = "{u}Configuration resetted!/"
+option_binding_tip = "[y] Reset binds\n\n[c] Add bind\n\n[x] Clear bindings"
+option_press_any = "PRESS ANY BUTTON"
+control_menu_left = "MENU LEFT"
+control_menu_right = "MENU RIGHT"
+control_menu_up = "MENU UP"
+control_menu_down = "MENU DOWN"
+control_menu_confirm = "CONFIRM"
+control_menu_back = "BACK"
+control_menu_delete = "DELETE"
+control_menu_quit = "QUIT"
 
 option_deadzone = "GENERAL DEADZONE"
 option_deadzone_title = "DEADZONES"
@@ -241,21 +273,27 @@ option_controller_binds = "BINDINGS"
 option_controller_superjump = "JOYSTICK SUPERJUMP"
 option_controller_groundpound = "JOYSTICK GROUNDPOUND"
 
+option_keyboard_superjump = "DIR. SUPERJUMP"
+option_keyboard_groundpound = "DIR. GROUNDPOUND"
+
 # ---------------
 # MISC TEXT
 # ---------------
 menu_delete = "HOLD TO DELETE SAVE %"
 menu_controller_disconnected = "CONTROLLER DISCONNECTED\n\nPRESS START TO CONTINUE"
 menu_exit = "EXIT THE GAME?"
-menu_skip = "Press [G] to skip"
+menu_skip = "[c] Skip"
 menu_loading = "LOADING..."
-hurt = "{s}You've hurt % % times.../"
+peppinohurt = "{s}You've hurt Peppino % times.../"
+gustavohurt = "{s}You've hurt Gustavo % times.../"
 mrsticknotification = "{u}Come to Mr.Stick to rent a boss gate!/"
 mrmooneynotification = "{u}Will you help Mr.Mooney with a little charity?/"
 computer_text1 = "Toppins: % out of %\nSecrets: % out of %\nTreasure: % out of %"
 computer_text2 = "Achievements: % out of %\nClothes: % out of %\nDamage: %"
-secret_text1 = "{u}You have found % secret out of %!/"
-secret_text2 = "{u}You have found % secrets out of %!/"
+secret_text1 = "{u}You have found % secret out of 3!/"
+secret_text2 = "{u}You have found % secrets out of 3!/"
+pumpkin_text1 = "{u}You have found % pumpkin out of 30!/"
+pumpkin_text2 = "{u}You have found % pumpkins out of 30!/"
 rank_highscore = "HIGHSCORE: "
 rank_damage = "DAMAGE: "
 rank_time = "TIME: "
@@ -268,6 +306,55 @@ key_up = "UP"
 key_left = "LEFT"
 key_right = "RIGHT"
 key_down = "DOWN"
+halloween = "Happy Halloween!"
+halloween_granny = "Pay attention to the color of the arrows! The green arrow leads to a pumpkin on the main path, while the blue arrow leads to a pumpkin on a side path!"
+# ---------------
+# WINDOW CAPTIONS
+# ---------------
+caption_mainmenu = "Select your Pizza Tower"
+caption_longintro = "Are you ready for Pizza Tower"
+caption_tower1 = "Oldest part of the Pizza Tower"
+caption_tower2 = "Howdy, Pizza Tower stranger"
+caption_tower3 = "There is no time to rest in the Pizza Tower"
+caption_tower4 = "The filthy floor of the Pizza Tower"
+caption_tower5 = "Probably shouldn't be in this part of the Pizza Tower"
+caption_tower_outside = "Outside the Pizza Tower"
+caption_tower_entrancehall = "Welcome to the Pizza Tower!"
+caption_ending = "The Pizza Tower is collapsing!"
+caption_credits = "You can call yourself the Pizza Tower now"
+caption_tower_finalhallway = "Bye bye, Pizza Tower"
+caption_tower_pizzafacehall = "Some sort of private room in the Pizza Tower."
+caption_tower_johngutterhall = "A strange hallway in the Pizza Tower"
+caption_johnresurrection = "Mourning at the remains of the Pizza Tower"
+caption_rank = "You did it! Pizza Tower!"
+caption_boss_vigilante = "Shooting at a cowboy cheese person in the Pizza Tower"
+caption_boss_pepperman = "Fighting an artist in the Pizza Tower"
+caption_boss_noise = "Fighting an idiot in the Pizza Tower"
+caption_boss_fakepep = "Fighting a weirdo in the Pizza Tower"
+caption_boss_pizzaface = "Fighting at the top of the Pizza Tower"
+caption_boss_pizzafacehub = "Defeated an idiot at the top of the Pizza Tower"
+
+caption_entrance = "A John graveyard... in the Pizza Tower"
+caption_medieval = "Ye olde Pizza Tower"
+caption_ruin = "A bit cheesy, like Pizza Tower"
+caption_dungeon = "Welcome to the Hell in the Pizza Tower"
+caption_badland = "The weird Pizza Tower west"
+caption_graveyard = "Smells like death in the Pizza Tower"
+caption_farm = "Why did the chicken cross the Pizza Tower?"
+caption_saloon = "Getting drunk in the Pizza Tower"
+caption_plage = "Party time in the Pizza Tower"
+caption_forest = "A forest in the Pizza Tower"
+caption_minigolf = "The most devilish Pizza Tower course"
+caption_space = "Way beyond the Pizza Tower"
+caption_street = "The mean Pizza Tower streets"
+caption_freezer = "Frozen solid Pizza Tower"
+caption_industrial = "Mass-produced Pizza Tower"
+caption_sewer = "Pizza Tower smells like shit"
+caption_chateau = "Ye olde ghastly Pizza Tower"
+caption_kidsparty = "Shhh... Pizza Tower..."
+caption_war = "Nuclear apocalypse in the Pizza Tower"
+caption_halloween = "Halloween in the Pizza Tower"
+
 # ---------------
 # ROOM NAMES
 # ---------------
@@ -307,7 +394,6 @@ dresser_moneytitle = "Money Green"
 dresser_money = "Unlocked by having the maximum amount of\nmoney by World 2"
 dresser_bloodtitle = "Blood Red"
 dresser_blood = "Unlocked by killing 1000 enemies\nin a playthrough"
-
 dresser_tvtitle = "TV Purple"
 dresser_tv = "Unlocked by getting P rank in every level"
 dresser_darktitle = "Dark Cook"
@@ -338,6 +424,18 @@ dresser_wartitle = "War Camo"
 dresser_war = "Unlocked by beating WAR the first time\nyou play it"
 dresser_johntitle = "John Suit"
 dresser_john = "Unlocked by resurrecting John in less than 2h 15m"
+dresser_candytitle = "Candy Wrapper"
+dresser_candy = "Unlocked by getting 5 pumpkins"
+dresser_bloodstainedtitle = "Bloodstained"
+dresser_bloodstained = "Unlocked by getting 10 pumpkins"
+dresser_battitle = "Autumn"
+dresser_bat = "Unlocked by getting 15 pumpkins"
+dresser_pumpkintitle = "Pumpkin"
+dresser_pumpkin = "Unlocked by getting 20 pumpkins"
+dresser_furtitle = "Fur"
+dresser_fur = "Unlocked by getting 25 pumpkins"
+dresser_fleshtitle = "Eyes"
+dresser_flesh = "Unlocked by getting all pumpkins"
 achievement_peppermantitle = "The Critic"
 achievement_pepperman = "Defeat this worlds boss without getting hurt"
 achievement_vigilantetitle = "The Ugly"
@@ -368,6 +466,10 @@ achievement_sranks4 = "Get all S Ranks in this world"
 achievement_pranks4 = "Get all P Ranks in this world"
 achievement_sranks5 = "Get all S Ranks in this world"
 achievement_pranks5 = "Get all P Ranks in this world"
+achievement_halloween1title = "Pumpkin Munchkin"
+achievement_halloween1 = "Find all of the hidden pumpkins in the game"
+achievement_halloween2title = "Tricksy"
+achievement_halloween2 = "Get all of the pumpkins in Tricky Treat in one run"
 # ----- WORLD 1 ------
 achievement_hiddentitle = "????"
 achievement_entrance1title = "John Gutted"
@@ -459,7 +561,7 @@ achievement_sewer3title = "Penny Pincher"
 achievement_sewer3 = "Avoid getting grabbed by Mr Pinch\nduring the escape sequence of Oh Shit!"
 achievement_industrial1title = "Unflattening"
 achievement_industrial1 = "Remove the boxxed transformation from each priest\nat least once in Peppibot Factory"
-achievement_industrial2title = "Whoop This"
+achievement_industrial2title = "Whoop This!"
 achievement_industrial2 = "Survive the first secret of Peppibot Factory\nwithout getting hurt"
 achievement_industrial3title = "There Can Be Only One"
 achievement_industrial3 = "Destroy every Peppino robot in Peppibot Factory"

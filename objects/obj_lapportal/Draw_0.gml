@@ -1,4 +1,4 @@
-if (sprite_index != spr_idle)
+if (sprite_index != spr_idle && sprite_index != spr_outline)
 {
 	shader_set(shd_pal_swapper);
 	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
@@ -7,6 +7,8 @@ if (sprite_index != spr_idle)
 	pattern_reset();
 	shader_reset();
 }
+else if (sprite_index == spr_outline)
+	draw_sprite_ext(sprite_index, image_index, x, y + Wave(-2, 2, 1, 5), image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 else
 {
 	draw_self_safe();

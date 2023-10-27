@@ -30,6 +30,7 @@ mouse_xprevious = mouse_x;
 mouse_yprevious = mouse_y;
 start_sound = false;
 get_options(); // applies fullscreen
+aa_tex_size = shader_get_uniform(shd_aa, "texSize");
 normal_size_fix_x = 0;
 normal_size_fix_y = 0;
 app_scale = 1;

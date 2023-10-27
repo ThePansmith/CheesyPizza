@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "badland_9",
-  "creationCodeFile": "rooms/badland_9/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/badland_9/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
@@ -151,9 +151,6 @@
     {"name":"inst_EADD699E","path":"rooms/badland_9/badland_9.yy",},
     {"name":"inst_7F90E706","path":"rooms/badland_9/badland_9.yy",},
     {"name":"inst_F444557E","path":"rooms/badland_9/badland_9.yy",},
-    {"name":"inst_113E202F","path":"rooms/badland_9/badland_9.yy",},
-    {"name":"inst_47DCDC0B","path":"rooms/badland_9/badland_9.yy",},
-    {"name":"inst_1FC46D40","path":"rooms/badland_9/badland_9.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -302,9 +299,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_EADD699E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_miniufo","path":"objects/obj_miniufo/obj_miniufo.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":3744.0,"y":1824.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7F90E706","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_miniufo","path":"objects/obj_miniufo/obj_miniufo.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":3360.0,"y":1536.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_F444557E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_miniufo","path":"objects/obj_miniufo/obj_miniufo.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1472.0,"y":2080.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_113E202F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1408.0,"y":1152.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_47DCDC0B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2944.0,"y":704.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1FC46D40","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1120.0,"y":2112.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_2","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":89,"SerialiseWidth":141,"TileCompressedData":[
 -705,466,282,536871394,536871395,536871396,536871397,536871398,536871399,536871400,536871401,536871392,536871393,536871394,536871395,536871396,536871397,536871398,536871399,536871400,536871401,536871392,536871393,536871394,536871395,536871396,536871397,536871398,536871399,536871400,536871401,536871392,536871393,536871394,536871395,536871396,536871397,536871398,536871399,536871400,536871401,536871392,536871393,536871394,536871395,536871396,536871397,536871398,536871399,536871400,536871401,536871392,536871393,536871394,536871395,536871396,536871397,536871398,536871399,536871400,536871401,536871392,536871393,536871394,536871395,536871396,536871397,536871398,536871399,536871400,536871401,536871392,536871393,536871394,536871395,536871396,536871397,536871398,536871399,536871400,536871401,536871392,536871393,536871394,536871395,536871396,536871397,536871398,536871399,536871400,536871401,536871392,536871393,536871394,536871395,536871396,536871397,536871398,536871399,536871400,536871401,536871392,536871393,536871394,536871395,536871396,536871397,536871398,536871399,536871400,536871401,536871392,536871393,536871394,536871395,536871396,536871397,536871398,536871399,536871400,536871401,536871392,536871393,536871394,536871395,536871396,536871397,536871398,536871399,536871400,536871401,536871392,536871393,536871394,536871395,536871396,536871397,536871398,536871399,536871400,536871401,

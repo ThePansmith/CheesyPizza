@@ -1,5 +1,13 @@
 function scr_player_mach2()
 {
+	var maxmovespeed = 12;
+	var jumpspeed = -11;
+	var slopeaccel = 0.1;
+	var slopedeccel = 0.2;
+	var accel = 0.1;
+	var mach4accel = 0.4;
+	var machrollvsp = 10;
+	
 	if (windingAnim < 2000)
 		windingAnim++;
 	if (place_meeting(x, y + 1, obj_railparent))
@@ -19,7 +27,7 @@ function scr_player_mach2()
 	}
 	if (grounded && vsp > 0)
 		jumpstop = false;
-	if (input_buffer_jump > 0 && can_jump && sprite_index != spr_secondjump1 && sprite_index != spr_clownjump && !(move == 1 && xscale == -1) && !(move == -1 && xscale == 1))
+	if (input_buffer_jump > 0 && can_jump && sprite_index != spr_clownjump && !(move == 1 && xscale == -1) && !(move == -1 && xscale == 1))
 	{
 		input_buffer_jump = 0;
 		image_index = 0;
@@ -29,7 +37,7 @@ function scr_player_mach2()
 		create_particle(x, y, part.jumpdust, 0);
 		if (skateboarding)
 			sprite_index = spr_clownjump;
-		vsp = -11;
+		vsp = jumpspeed;
 		if character == "SN"
 		{
 			state = states.twirl;
@@ -85,18 +93,18 @@ function scr_player_mach2()
 	if (grounded)
 	{
 		if ((scr_slope() && hsp != 0) && movespeed > 8)
-			scr_player_addslopemomentum(0.1, 0.2);
-		if (movespeed < 12)
+			scr_player_addslopemomentum(slopeaccel, slopedeccel);
+		if (movespeed < maxmovespeed)
 		{
-			if (mach4mode == 0)
-				movespeed += 0.1;
+			if (mach4mode == false)
+				movespeed += accel;
 			else
-				movespeed += 0.2;
+				movespeed += mach4accel;
 			
 			if character == "N"
 				movespeed += 0.1;
 		}
-		if (abs(hsp) >= 12 && skateboarding == 0 && sprite_index != spr_suplexdash)
+		if (abs(hsp) >= maxmovespeed && skateboarding == 0 && sprite_index != spr_suplexdash)
 		{
 			machhitAnim = false;
 			state = states.mach3;
@@ -155,7 +163,7 @@ function scr_player_mach2()
 		create_particle(x, y, part.jumpdust, 0);
 		flash = false;
 		state = states.tumble;
-		vsp = 10;
+		vsp = machrollvsp;
 		image_index = 0;
 		if (!grounded)
 			sprite_index = spr_mach2jump;

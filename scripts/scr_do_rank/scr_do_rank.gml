@@ -9,12 +9,14 @@ function scr_is_p_rank()
 	if global.leveltosave == "snickchallenge"
 		return !global.combodropped && !string_starts_with(room_get_name(room), "medieval");
 	
-	if global.leveltosave != "exit" && !MOD.DeathMode
+	if (global.leveltosave != "exit" && global.leveltosave != "secretworld") && !MOD.DeathMode
 		return global.lap && global.secretfound >= 3 && global.treasure && !global.combodropped && enemykilled;
 	else if MOD.DeathMode
 		return global.secretfound >= 3 && global.treasure && !global.combodropped && enemykilled && global.shroomfollow && global.cheesefollow && global.tomatofollow && global.sausagefollow && global.pineapplefollow;
-	else
+	else if (global.leveltosave == "exit")
 		return !global.combodropped;
+	else
+		return !global.combodropped && global.prank_enemykilled;
 }
 function scr_do_rank(showtoppins = true, boss = false)
 {
@@ -115,6 +117,8 @@ function scr_do_rank(showtoppins = true, boss = false)
 				targetRoom = tower_entrancehall;
 				targetDoor = "HUB";
 			}
+			else if (global.leveltosave == "secretworld")
+				toppinvisible = false;
 			else if (room == tower_entrancehall)
 			{
 				with (obj_followcharacter)

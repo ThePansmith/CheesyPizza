@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "kidsparty_floor3_1",
-  "creationCodeFile": "rooms/kidsparty_floor3_1/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/kidsparty_floor3_1/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
@@ -185,11 +185,6 @@
     {"name":"inst_19A81D24","path":"rooms/kidsparty_floor3_1/kidsparty_floor3_1.yy",},
     {"name":"inst_9E5C8B9C","path":"rooms/kidsparty_floor3_1/kidsparty_floor3_1.yy",},
     {"name":"inst_130FF904","path":"rooms/kidsparty_floor3_1/kidsparty_floor3_1.yy",},
-    {"name":"inst_5988B631","path":"rooms/kidsparty_floor3_1/kidsparty_floor3_1.yy",},
-    {"name":"inst_38E0DBB9","path":"rooms/kidsparty_floor3_1/kidsparty_floor3_1.yy",},
-    {"name":"inst_72924657","path":"rooms/kidsparty_floor3_1/kidsparty_floor3_1.yy",},
-    {"name":"inst_47168E76","path":"rooms/kidsparty_floor3_1/kidsparty_floor3_1.yy",},
-    {"name":"inst_4E0D442F","path":"rooms/kidsparty_floor3_1/kidsparty_floor3_1.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -372,11 +367,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_19A81D24","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollect","path":"objects/obj_escapecollect/obj_escapecollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":448.0,"y":1888.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_9E5C8B9C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollect","path":"objects/obj_escapecollect/obj_escapecollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":384.0,"y":1856.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_130FF904","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollect","path":"objects/obj_escapecollect/obj_escapecollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":384.0,"y":1888.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5988B631","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":512.0,"y":1408.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_38E0DBB9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2624.0,"y":1792.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_72924657","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollectescape","path":"objects/obj_deathcollectescape/obj_deathcollectescape.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2496.0,"y":1408.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_47168E76","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4576.0,"y":512.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4E0D442F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cutoff","path":"objects/obj_cutoff/obj_cutoff.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":544.0,"y":1760.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":79,"SerialiseWidth":157,"TileCompressedData":[
 142,296,297,298,299,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,285,286,287,288,289,290,291,292,293,294,295,296,297,298,36,0,0,31,-15,18,142,131,132,133,134,120,121,122,123,124,125,126,
@@ -460,8 +450,8 @@
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Backgrounds_still1","animationFPS":0.35,"animationSpeedType":1,"colour":4294967295,"depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":{"name":"bg_kidsparty3","path":"sprites/bg_kidsparty3/bg_kidsparty3.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":true,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],
   "parent": {
-    "name": "Kid's Party",
-    "path": "folders/Rooms/Levels/Kid's Party.yy",
+    "name": "Kidsparty",
+    "path": "folders/Rooms/Levels/Kidsparty.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

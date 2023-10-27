@@ -1,5 +1,8 @@
 function scr_pausedraw()
 {
+	var ui_index = 0;
+	if (is_holiday(holiday.halloween))
+		ui_index = 1;
 	if (fade > 0)
 	{
 		draw_set_color(c_white);
@@ -39,7 +42,10 @@ function scr_pausedraw()
 				}
 				cursor_actualx = cx;
 				cursor_actualy = yy;
-				draw_sprite(spr_pizzaangel, cursor_index, cx + cursor_x, yy + cursor_y);
+				var iconspr = spr_pizzaangel;
+				if (is_holiday(holiday.halloween))
+					iconspr = spr_noisedevil;
+				draw_sprite(iconspr, cursor_index, cx + cursor_x, yy + cursor_y);
 				c = c_white;
 			}
 			if (b == "pause_restart" && global.leveltorestart == noone)
@@ -51,9 +57,9 @@ function scr_pausedraw()
 	}
 
 	draw_set_alpha(1);
-	draw_sprite_ext(spr_pause_border, 0, border1_x, border1_y, -1, 1, 0, c_white, 1);
-	draw_sprite_ext(spr_pause_border, 0, border2_x, border2_y, 1, 1, 0, c_white, 1);
-	draw_sprite_ext(spr_pause_vine, 0, SCREEN_WIDTH / 2, vine_y, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(spr_pause_border, ui_index, border1_x, border1_y, -1, 1, 0, c_white, 1);
+	draw_sprite_ext(spr_pause_border, ui_index, border2_x, border2_y, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(spr_pause_vine, ui_index, SCREEN_WIDTH / 2, vine_y, 1, 1, 0, c_white, 1);
 
 	var lvlsave = global.leveltosave;
 	if (fade > 0 && lvlsave != noone && lvlsave != "tutorial" && lvlsave != "exit" && room != boss_fakepep && room != boss_fakepephallway && room != boss_fakepepkey && room != boss_vigilante && room != boss_noise && room != boss_pepperman && room != boss_pizzaface && room != Endingroom && room != Johnresurrectionroom && room != Creditsroom)

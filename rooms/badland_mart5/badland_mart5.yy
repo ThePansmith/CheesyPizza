@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "badland_mart5",
-  "creationCodeFile": "rooms/badland_mart5/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/badland_mart5/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
@@ -45,7 +45,6 @@
     {"name":"inst_622474A6","path":"rooms/badland_mart5/badland_mart5.yy",},
     {"name":"inst_E7D8E21E","path":"rooms/badland_mart5/badland_mart5.yy",},
     {"name":"inst_7C9B5086","path":"rooms/badland_mart5/badland_mart5.yy",},
-    {"name":"inst_73962BD1","path":"rooms/badland_mart5/badland_mart5.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -91,7 +90,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_622474A6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_destroyable","path":"objects/obj_destroyable/obj_destroyable.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1568.0,"y":800.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_E7D8E21E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_destroyable","path":"objects/obj_destroyable/obj_destroyable.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1600.0,"y":800.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7C9B5086","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_destroyable","path":"objects/obj_destroyable/obj_destroyable.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1632.0,"y":800.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_73962BD1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1728.0,"y":384.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":42,"SerialiseWidth":119,"TileCompressedData":[
 -1122,33,46,26,27,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,52,53,54,268435483,268435482,-73,33,2,15,37,-42,0,2,268435493,268435492,-73,33,1,25,-44,0,1,31,-73,33,1,35,-44,0,1,41,-73,33,1,45,-44,0,1,11,-73,33,1,15,-10,0,23,61,62,62,63,64,62,63,64,62,63,64,65,1,2,3,4,2,3,4,2,3,4,5,-11,0,1,21,-73,33,
