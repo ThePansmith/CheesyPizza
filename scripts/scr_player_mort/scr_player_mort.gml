@@ -76,9 +76,9 @@ function scr_player_mort()
 }
 function mort_attack()
 {
-	if (input_buffer_slap > 0)
+	if scr_slapbuffercheck()
 	{
-		input_buffer_slap = 0;
+		scr_resetslapbuffer();
 		state = states.mortattack;
 		sprite_index = spr_player_mortattackfront;
 		image_index = 0;

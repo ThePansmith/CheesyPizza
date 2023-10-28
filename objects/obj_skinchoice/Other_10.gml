@@ -77,6 +77,12 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "Get it? It's funny because");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "drafted");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Finally, you can wear merch of dead people.");
+		add_palette(12, "candy", spr_peppattern10, "Candy Wrapper", "Mmmm... Diabetes");
+		add_palette(12, "bloodstained", spr_peppattern11, "Bloodstained", "Don't worry, it's just ketchup.");
+		add_palette(12, "bat", spr_peppattern12, "Autumn", "An abstract representation.");
+		add_palette(12, "pumpkin", spr_peppattern13, "Pumpkin", "The least fruity fruit out there.");
+		add_palette(12, "fur", spr_peppattern14, "Fur", "Not sure what this has to do with halloween.");
+		add_palette(12, "flesh", spr_peppattern15, "Eyes", "I can see for Fohkin MILES");
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Peppino says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Oh, fiddlesticks! What now?");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");

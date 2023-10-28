@@ -186,6 +186,7 @@ function load_moddedconfig()
 	global.roomnames = ini_read_real("Modded", "roomnames", false);
 	global.machsnd = ini_read_real("Modded", "machsnd", 0); // final, old
 	global.sugaryoverride = ini_read_real("Modded", "sugaryoverride", false);
+	global.enemyrot = ini_read_real("Modded", "enemyrot", false);
 	
 	// convert from PTT
 	if ini_key_exists("Modded", "pizzellesugaryoverride")

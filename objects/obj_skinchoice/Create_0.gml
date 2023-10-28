@@ -37,7 +37,7 @@ mixables = [];
 unlockables = [];
 
 if !global.sandbox
-	array_push(unlockables, "unfunny", "money", "sage", "blood", "tv", "dark", "shitty", "golden", "garish", "mooney", "funny", "itchy", "pizza", "stripes", "goldemanne", "bones", "pp", "war", "john");
+	array_push(unlockables, "unfunny", "money", "sage", "blood", "tv", "dark", "shitty", "golden", "garish", "mooney", "funny", "itchy", "pizza", "stripes", "goldemanne", "bones", "pp", "war", "john", "candy", "bloodstained", "bat", "pumpkin", "fur", "flesh");
 array_push(unlockables, "mario");
 
 function add_palette(palette, entry, texture = noone, name = "PALETTE", description = "(No Description)", mix_prefix)

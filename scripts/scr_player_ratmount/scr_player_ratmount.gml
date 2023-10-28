@@ -217,9 +217,9 @@ function scr_player_ratmount()
 		if (ratmount_movespeed < 12)
 			ratmount_movespeed = Approach(ratmount_movespeed, 12, 0.15);
 	}
-	if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick && gusdashpadbuffer == 0)
+	if (((scr_slapbuffercheck() && key_up) || key_shoot2) && brick && gusdashpadbuffer == 0)
 	{
-		input_buffer_slap = 0;
+		scr_resetslapbuffer();
 		ratmount_kickbrick();
 		if (state == states.ratmountskid)
 		{
@@ -227,11 +227,11 @@ function scr_player_ratmount()
 			hsp = movespeed;
 		}
 	}
-	if (input_buffer_slap > 0 && !key_up && gusdashpadbuffer == 0)
+	if (scr_slapbuffercheck() && !key_up && gusdashpadbuffer == 0)
 	{
 		particle_set_scale(part.jumpdust, xscale, 1);
 		create_particle(x, y, part.jumpdust, 0);
-		input_buffer_slap = 0;
+		scr_resetslapbuffer();
 		if (brick == 1)
 		{
 			with (instance_create(x, y, obj_brickcomeback))
