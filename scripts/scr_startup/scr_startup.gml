@@ -134,6 +134,7 @@ ds_map_set(global.font_map, "bigfont_en", global.bigfont);
 ds_map_set(global.font_map, "smallfont_en", global.smallfont);
 ds_map_set(global.font_map, "tutorialfont_en", global.tutorialfont);
 ds_map_set(global.font_map, "creditsfont_en", global.creditsfont);
+ds_map_set(global.font_map, "captionfont_en", 0);
 
 var key = ds_map_find_first(global.lang_map);
 for (var i = 0; i < ds_map_size(global.lang_map); i++)
@@ -145,6 +146,7 @@ for (var i = 0; i < ds_map_size(global.lang_map); i++)
 		ds_map_set(global.font_map, concat("creditsfont_", key), lang_get_custom_font("creditsfont", lang));
 		ds_map_set(global.font_map, concat("bigfont_", key), lang_get_custom_font("bigfont", lang));
 		ds_map_set(global.font_map, concat("smallfont_", key), lang_get_custom_font("smallfont", lang));
+		ds_map_set(global.font_map, concat("captionfont_", key), lang_get_custom_font("captionfont", lang));
 	}
 	key = ds_map_find_next(global.lang_map, key);
 }

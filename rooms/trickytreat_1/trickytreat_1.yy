@@ -23,6 +23,7 @@
     {"name":"inst_E1578B66","path":"rooms/trickytreat_1/trickytreat_1.yy",},
     {"name":"inst_760BF9DE","path":"rooms/trickytreat_1/trickytreat_1.yy",},
     {"name":"inst_FBCE6746","path":"rooms/trickytreat_1/trickytreat_1.yy",},
+    {"name":"inst_8F71E5CE","path":"rooms/trickytreat_1/trickytreat_1.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -43,6 +44,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_E1578B66","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_doorE","path":"objects/obj_doorE/obj_doorE.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":544.0,"y":608.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_760BF9DE","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_achievementviewer","path":"objects/obj_achievementviewer/obj_achievementviewer.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":704.0,"y":480.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_FBCE6746","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_achievementviewer","path":"objects/obj_achievementviewer/obj_achievementviewer.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":800.0,"y":480.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_8F71E5CE","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_tutorialbook","path":"objects/obj_tutorialbook/obj_tutorialbook.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":573.0,"y":490.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_9248F9","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":-90.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_pumpkinarrow1","path":"sprites/spr_pumpkinarrow1/spr_pumpkinarrow1.yy",},"x":944.0,"y":442.0,},

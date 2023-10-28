@@ -24,5 +24,7 @@ if (buffer <= 0)
 		buffer = 10;
 		if (x != p.x)
 			image_xscale = -sign(x - p.x);
+		if REMIX
+			sound_play_3d("event:/sfx/enemies/stomp", x, y);
 	}
 }
