@@ -25,8 +25,11 @@ function scr_cameradraw()
 	
 		if bo
 			cmb = 1;
-	
-		pizzascore_index = (pizzascore_index + (0.25 * cmb)) % pizzascore_number;
+		
+		if REMIX or global.heatmeter 
+			pizzascore_index = (pizzascore_index + (0.25 * cmb)) % pizzascore_number;
+		else
+			pizzascore_index = 0
 		if cmb <= 0
 		{
 			if floor(pizzascore_index) != 0

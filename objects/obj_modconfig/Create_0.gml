@@ -595,6 +595,20 @@ var opt = add_option("Slope Rotation", "sloperot", "Rotates the player when stan
 	draw_simuplayer();
 });
 
+
+
+#endregion
+#region ENEMY SPIN
+
+var opt = add_option("Enemy Spin", "enemyrot", "Makes dead enemies spin in the air.", function(val)
+{
+	var xx = 960 / 2.5 / 2, yy = 540 / 2.5 / 2;
+	draw_set_font(global.font_small);
+	draw_text(xx, yy, "loypoll please add details")
+});
+
+
+
 #endregion
 #region SHOW FPS
 
