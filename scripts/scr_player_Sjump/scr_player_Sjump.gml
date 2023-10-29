@@ -14,7 +14,6 @@ function scr_player_Sjump()
 	superjumped = true;
 	
 	var vigilante = character == "V" && substate != states.Sjump;
-	
 	if (sprite_index == spr_superjump)
 	{
 		if (steppybuffer > 0)
@@ -56,7 +55,7 @@ function scr_player_Sjump()
 	if (vigilante && image_index > 3)
 		vsp = -11;
 	
-	if character == "V" && !vigilante && image_index >= 11
+	if !vigilante && image_index >= 11 && sprite_index == spr_playerV_superjump
 		image_index = 5;
 	
 	if (sprite_index == spr_player_supersidejump)

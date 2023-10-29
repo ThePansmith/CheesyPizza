@@ -45,7 +45,7 @@ exception_unhandled_handler
 		
 		// show and log the crash
 	    show_debug_message(string(e));
-		show_message($"The game crashed!\n\n---\n\n{e.longMessage}\n\n---\n\nstacktrace: {e.stacktrace}");
+		show_message($"The game crashed!\n\n---\n\n{e.longMessage}\n---\n\nstacktrace: {e.stacktrace}");
 		
 		// save it to a file
 		var _f = file_text_open_write("crash_log.txt");

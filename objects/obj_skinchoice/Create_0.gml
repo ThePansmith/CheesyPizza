@@ -20,7 +20,7 @@ flashpal = [-1, 0];
 characters = [
 	["P", spr_player_idle, spr_peppalette, [1, 3]], // character, idle, palette sprite, [main color, mixing color]
 	["N", spr_playerN_idle, spr_noisepalette, [1, 4]],
-	["V", spr_playerV_idle, spr_vigipalette, [1, 6]],
+	["V", spr_playerV_idle, spr_vigipalette, [1, 5]],
 	["G", spr_player_ratmountidle, spr_peppalette, [1, 3]],
 	["SP", spr_playerSP_idle, spr_pizzypalette, [1, 3]],
 	["SN", spr_pizzano_idle, spr_pizzanopalette, [1, 5]],
@@ -38,7 +38,7 @@ unlockables = [];
 
 if !global.sandbox
 	array_push(unlockables, "unfunny", "money", "sage", "blood", "tv", "dark", "shitty", "golden", "garish", "mooney", "funny", "itchy", "pizza", "stripes", "goldemanne", "bones", "pp", "war", "john");
-array_push(unlockables, "mario");
+array_push(unlockables, "mario", "grinch");
 
 function add_palette(palette, entry, texture = noone, name = "PALETTE", description = "(No Description)", mix_prefix)
 {
@@ -179,6 +179,9 @@ postdraw = function(curve)
 
 draw_skin_palette = function(_x, _y, _color, _alpha)
 {
+	if _color == undefined
+		_color = c_white;
+	
 	vertex_build_quad(vertex_buffer, 
 		// RX: Where to draw the sprite on screen
 		_x, _y, sprite_get_width(spr_skinchoicepalette), sprite_get_height(spr_skinchoicepalette),
@@ -406,7 +409,7 @@ draw = function(curve)
 		var spr_yscale = (32 / sprite_get_height(cache[i].pattern));
 		
 		if cache[i].subimage == -1
-			cache[i].subimage = current_time / 600;
+			cache[i].subimage = current_time / 100;
 		
 		draw_sprite_ext(cache[i].pattern, cache[i].subimage, cache[i].x, cache[i].y, spr_xscale, spr_yscale, 0, c_white, 1);
 		draw_remove_mask();

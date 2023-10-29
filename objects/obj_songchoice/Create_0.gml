@@ -220,6 +220,7 @@ add_section("Sugary Spire", [
 #endregion
 #region PINOLINO
 
+/*
 add_section("Pinolino Adventure", [
 	["event:/soundtest/pto/entrancePN", "what the fuck is a gog - poopbucket"],
 	["event:/soundtest/pto/escapePN", "IT'S GARGIN' OUR! - poopbucket"],
@@ -227,6 +228,7 @@ add_section("Pinolino Adventure", [
 	["event:/soundtest/pto/lap3PN", "Pillar Gog's Revenge - poopbucket"],
 	["event:/soundtest/pto/lap5PN", "Weiner Blaster - Wiener Blaster 456"],
 ]);
+*/
 
 #endregion
 

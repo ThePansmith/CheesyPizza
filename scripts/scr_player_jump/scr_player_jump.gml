@@ -456,7 +456,7 @@ function state_player_jump()
 				if (movespeed < 6)
 					movespeed = 6;
 			}
-			if (key_chainsaw2 && !instance_exists(dynamite_inst))
+			if ((key_chainsaw2 or key_shoot2) && !instance_exists(dynamite_inst))
 			{
 				sprite_index = spr_playerV_dynamitethrow;
 				image_index = 0;
