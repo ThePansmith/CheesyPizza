@@ -1,1 +1,2 @@
-global.roommessage = "WE DON'T HAVE MUCH TIME";
+pal_swap_init_system(shd_pal_swapper);
+global.roommessage = "TARGET PRATICE";

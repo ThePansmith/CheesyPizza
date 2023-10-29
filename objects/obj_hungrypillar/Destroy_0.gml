@@ -30,10 +30,11 @@ if !in_saveroom()
 		create_baddiegibs(x, y);
 	}
 	
-	with instance_create(x, y, obj_sausageman_dead)
+	with (instance_create(x, y, obj_sausageman_dead))
 	{
-		sprite_index = other.deadspr;
-		if room == tower_finalhallway
+		var debris = id;
+		sprite_index = spr_hungrypillar_dead;
+		if (room == tower_finalhallway)
 			sprite_index = spr_protojohn;
 	}
 	sound_play_3d("event:/sfx/enemies/kill", x, y);

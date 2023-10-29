@@ -32,16 +32,19 @@ if (mins < 10)
 	mins = concat("0", mins);
 else
 	mins = concat(mins);
-var secs = floor(global.level_seconds);
+var secs = global.level_seconds;
 if (secs < 10)
-	secs = concat("0", secs);
+{
+	secs = string_format(secs, 1, 3);
+	secs = "0" + secs;
+}
 else
-	secs = concat(secs);
+	secs = string_format(secs, 2, 3);
 
 text = [
-	[false, concat(lang_get_value("rank_highscore"), global.collect)], 
-	[false, concat(lang_get_value("rank_time"), mins, ":", secs, ".", floor(frac(global.level_seconds) * 100))], 
-	[false, concat(lang_get_value("rank_damage"), global.player_damage)], 
+	[false, concat(lang_get_value("rank_highscore"), global.collect)],
+	[false, concat(lang_get_value("rank_time"), mins, ":", secs)],
+	[false, concat(lang_get_value("rank_damage"), global.player_damage)],
 	[false, concat(lang_get_value("rank_combo"), global.highest_combo)]
 ];
 if global.laps > 1

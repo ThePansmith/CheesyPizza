@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "boss_fakepep",
-  "creationCodeFile": "${project_dir}/rooms/boss_fakepep/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/boss_fakepep/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

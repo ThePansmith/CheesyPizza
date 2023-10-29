@@ -1,1 +1,2 @@
-global.roommessage = "THE FIRST INGREDIENT IS: YOU.";
+pal_swap_init_system(shd_pal_swapper);
+global.roommessage = "PIZZA TOWER WITH THE DEAD";

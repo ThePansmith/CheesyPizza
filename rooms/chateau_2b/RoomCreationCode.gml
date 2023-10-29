@@ -1,1 +1,2 @@
-global.roommessage = "WHAT LIES BEHIND?";
+pal_swap_init_system(shd_pal_swapper);
+global.roommessage = "EERILY SIMILAR";

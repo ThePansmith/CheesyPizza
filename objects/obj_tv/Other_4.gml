@@ -244,6 +244,10 @@ switch (room)
 	case boss_fakepep:
 		global.srank = 4;
 		break;
+	
+	case secret_entrance:
+		global.srank = 38000;
+		break;
 		
 	// pto
 	case strongcold_10:

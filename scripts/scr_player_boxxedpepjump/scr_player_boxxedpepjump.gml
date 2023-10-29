@@ -60,9 +60,9 @@ function scr_player_boxxedpepjump()
 	}
 	if (sprite_index == spr_boxxedpep_flap && floor(image_index) == (image_number - 1))
 		sprite_index = spr_boxxedpepair;
-	if (input_buffer_slap > 0)
+	if scr_slapbuffercheck()
 	{
-		input_buffer_slap = 0;
+		scr_resetslapbuffer();
 		state = states.boxxedpepspin;
 		sprite_index = spr_boxxedpep_spin;
 		image_index = 0;

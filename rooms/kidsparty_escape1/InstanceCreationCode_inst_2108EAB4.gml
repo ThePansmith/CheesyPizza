@@ -1,2 +1,2 @@
-content = noone;
+content = -4;
 monster = true;

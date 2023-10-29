@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "boss_pepperman",
-  "creationCodeFile": "${project_dir}/rooms/boss_pepperman/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/boss_pepperman/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

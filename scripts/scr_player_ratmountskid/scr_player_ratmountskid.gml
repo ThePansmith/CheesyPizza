@@ -35,19 +35,19 @@ function scr_player_ratmountskid()
 		vsp = -11;
 		jumpstop = false;
 	}
-	if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick)
+	if (((scr_slapbuffercheck()) || key_shoot2) && brick)
 	{
-		input_buffer_slap = 0;
+		scr_resetslapbuffer();
 		ratmount_kickbrick();
 		movespeed = -movespeed;
 		hsp = movespeed;
 		ratmount_movespeed = 8;
 	}
-	if (input_buffer_slap > 0 && !key_up)
+	if (scr_slapbuffercheck() && !key_up)
 	{
 		particle_set_scale(part.jumpdust, xscale, 1);
 		create_particle(x, y, part.jumpdust, 0);
-		input_buffer_slap = 0;
+		scr_resetslapbuffer();
 		if (brick == 1)
 		{
 			with (instance_create(x, y, obj_brickcomeback))

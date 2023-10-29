@@ -101,10 +101,10 @@ function scr_player_boxxedpep()
 			}
 		}
 	}
-	if (input_buffer_slap > 0)
+	if scr_slapbuffercheck()
 	{
 		GamepadSetVibration(0, 0.8, 0.8, 0.65);
-		input_buffer_slap = 0;
+		scr_resetslapbuffer()
 		state = states.boxxedpepspin;
 		sprite_index = spr_boxxedpep_spin;
 		boxxedspinbuffer = 25;

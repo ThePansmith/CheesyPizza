@@ -1,5 +1,13 @@
 function scr_player_mach3()
 {
+	var slopeaccel = 0.1;
+	var slopedeccel = 0.2;
+	var mach4movespeed = 20;
+	var mach3movespeed = 16;
+	var accel = 0.025;
+	var mach4accel = 0.1;
+	var jumpspeed = -11;
+	var machrollspeed = 10;
 	#region PEPPINO / VIGI
 	
 	if !jetpackcancel
@@ -16,16 +24,16 @@ function scr_player_mach3()
 		if (grounded)
 		{
 			if ((scr_slope() && hsp != 0) && movespeed > 10 && movespeed < 18)
-				scr_player_addslopemomentum(0.1, 0.2);
+				scr_player_addslopemomentum(slopeaccel, slopedeccel);
 		}
 		if (move == xscale && grounded)
 		{
-			if (movespeed < 20)
+			if (movespeed < mach4movespeed)
 			{
-				if (mach4mode == 0)
-					movespeed += 0.025;
+				if (mach4mode == false)
+					movespeed += accel;
 				else
-					movespeed += 0.1;
+					movespeed += mach4accel;
 				
 				if character == "N"
 					movespeed += 0.05;

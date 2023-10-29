@@ -12,6 +12,8 @@ if (!in_baddieroom() && (!elite || elitehit <= 0) && destroyable)
 			spr_palette = other.spr_palette;
 			paletteselect = other.paletteselect;
 			usepalette = other.usepalette;
+			if (!usepalette)
+				paletteselect = 0;
 			image_alpha = other.image_alpha;
 			if variable_instance_exists(other, "sugary")
 				sugary = other.sugary;

@@ -11,7 +11,7 @@ function scr_dotaunt()
 		pistolanim = noone;
 		flash = false;
 		notification_push(notifs.taunt, [room]);
-		if ((!key_up || !supercharged) && global.tauntcount < 10 && place_meeting(x, y, obj_exitgate) && (global.panic == true || instance_exists(obj_wartimer)) && global.combotime > 0 && global.leveltosave != "grinch")
+		if ((!key_up || !supercharged) && global.tauntcount < 10 && place_meeting(x, y, obj_exitgate) && (global.panic == true || instance_exists(obj_wartimer) || (instance_exists(obj_randomsecret) && obj_randomsecret.start)) && global.combotime > 0 && global.leveltosave != "grinch")
 		{
 			if REMIX
 				global.combotime = min(global.combotime + 10, 60);

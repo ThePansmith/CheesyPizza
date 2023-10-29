@@ -93,7 +93,6 @@
     {"name":"inst_2274E386","path":"rooms/medieval_6/medieval_6.yy",},
     {"name":"inst_A62751FE","path":"rooms/medieval_6/medieval_6.yy",},
     {"name":"inst_3BDBCF66","path":"rooms/medieval_6/medieval_6.yy",},
-    {"name":"inst_50CCD325","path":"rooms/medieval_6/medieval_6.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -184,7 +183,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2274E386","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_exitgustavo","path":"objects/obj_exitgustavo/obj_exitgustavo.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":613.0,"y":594.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_A62751FE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_platform","path":"objects/obj_platform/obj_platform.yy",},"properties":[],"rotation":0.0,"scaleX":4.0,"scaleY":1.0,"x":1888.0,"y":1408.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3BDBCF66","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_PTG","path":"objects/obj_PTG/obj_PTG.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1920.0,"y":1408.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_50CCD325","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1440.0,"y":352.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_Secret1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":60,"SerialiseWidth":71,"TileCompressedData":[
 -2761,0,8,11,60,61,62,63,64,65,66,-63,0,8,21,70,71,72,73,74,75,76,-63,0,8,31,80,81,82,83,84,85,86,-62,0,9,67,68,90,91,92,93,94,95,96,-62,0,9,77,78,70,71,72,73,74,75,76,-62,0,9,87,88,80,81,82,83,84,85,86,-63,0,

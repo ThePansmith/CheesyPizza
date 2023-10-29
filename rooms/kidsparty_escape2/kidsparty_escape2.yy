@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "kidsparty_escape2",
-  "creationCodeFile": "rooms/kidsparty_escape2/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/kidsparty_escape2/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
@@ -119,7 +119,6 @@
     {"name":"inst_1FF3F540","path":"rooms/kidsparty_escape2/kidsparty_escape2.yy",},
     {"name":"inst_94B663B8","path":"rooms/kidsparty_escape2/kidsparty_escape2.yy",},
     {"name":"inst_1969D121","path":"rooms/kidsparty_escape2/kidsparty_escape2.yy",},
-    {"name":"inst_415D7B23","path":"rooms/kidsparty_escape2/kidsparty_escape2.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -242,7 +241,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1FF3F540","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollect","path":"objects/obj_escapecollect/obj_escapecollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":352.0,"y":256.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_94B663B8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollect","path":"objects/obj_escapecollect/obj_escapecollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":384.0,"y":288.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1969D121","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollect","path":"objects/obj_escapecollect/obj_escapecollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":352.0,"y":320.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_415D7B23","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollectescape","path":"objects/obj_deathcollectescape/obj_deathcollectescape.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":928.0,"y":896.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":32,"SerialiseWidth":116,"TileCompressedData":[
 10,148,149,135,136,137,138,139,140,141,35,-4,0,112,16,244,245,246,247,248,249,250,251,252,253,254,240,241,242,243,244,245,246,247,248,249,250,251,252,253,69,70,241,242,243,244,245,246,247,248,249,250,251,252,253,254,240,69,70,243,244,245,246,247,248,249,250,251,252,253,254,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,240,241,242,243,244,245,246,247,248,249,250,251,24,25,254,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,
@@ -284,8 +282,8 @@
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Backgrounds_1","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":{"name":"spr_industrialcomplex","path":"sprites/spr_industrialcomplex/spr_industrialcomplex.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":true,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],
   "parent": {
-    "name": "Kid's Party",
-    "path": "folders/Rooms/Levels/Kid's Party.yy",
+    "name": "Kidsparty",
+    "path": "folders/Rooms/Levels/Kidsparty.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

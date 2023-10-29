@@ -20,39 +20,6 @@ save_servers = function()
 }
 uname_check = function(username)
 {
-	username = string_lower(username);
-	username = string_replace_all(username, " ", "");
-	
-	var u2 = username;
-	u2 = string_replace_all(u2, "0", "o");
-	u2 = string_replace_all(u2, "1", "i");
-	u2 = string_replace_all(u2, "!", "i");
-	u2 = string_replace_all(u2, "3", "e");
-	u2 = string_replace_all(u2, "4", "a");
-	u2 = string_replace_all(u2, "@", "a");
-	u2 = string_replace_all(u2, "5", "s");
-	u2 = string_replace_all(u2, "7", "t");
-	u2 = string_replace_all(u2, "8", "b");
-	u2 = string_replace_all(u2, "ph", "f");
-	u2 = string_replace_all(u2, "nn", "n");
-	u2 = string_replace_all(u2, "gg", "g");
-	
-	// weird people
-	if string_pos("denchick", u2) or string_pos("pissino", u2) or string_pos("repaint", u2)
-	or string_pos("luigio", u2) // sorry i dont like that guy
-	or string_pos("ptu", u2)
-		return true;
-	
-	/*
-		the most overused slurs for edgy kids.
-		... can I get cancelled for making a word filter?
-	*/
-	if string_pos("niga", u2) or string_pos("iger", u2) or string_pos("fag", u2) or string_pos("trani", u2)
-	or string_pos("hermafrodite", u2) or string_pos("shemale", u2) or string_pos("heshe", u2)
-	or ((string_pos("kill", u2) or string_pos("murder", u2)) && (string_pos("black", u2) or string_pos("trans", u2) or string_pos("jew", u2)))
-		return true;
-	
-	// get away with it
 	return false;
 }
 

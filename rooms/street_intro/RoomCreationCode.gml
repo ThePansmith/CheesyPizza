@@ -1,7 +1,9 @@
-global.roommessage = "THE STREETS OF PIZZA TOWER";
-global.gameframe_caption_text = "The mean Pizza Tower streets";
+pal_swap_init_system(shd_pal_swapper);
+global.roommessage = "PIZZA TOWER ISLAND";
+global.gameframe_caption_text = lang_get_value("caption_street");
 with (obj_secretbigblock)
 	particlespr = spr_streetdebris;
+
 if (!obj_secretmanager.init)
 {
 	obj_secretmanager.init = true;
@@ -13,11 +15,11 @@ if (!obj_secretmanager.init)
 		if (touchedtriggers >= 6)
 			secret_open_portal(0);
 	});
-	secret_add(noone, function()
+	secret_add(-4, function()
 	{
 		secret_open_portal(1);
 	});
-	secret_add(noone, function()
+	secret_add(-4, function()
 	{
 		if (secret_check_trigger(2))
 			secret_open_portal(2);

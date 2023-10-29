@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "kidsparty_floor3_3",
-  "creationCodeFile": "rooms/kidsparty_floor3_3/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/kidsparty_floor3_3/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
@@ -100,8 +100,6 @@
     {"name":"inst_4997B0DC","path":"rooms/kidsparty_floor3_3/kidsparty_floor3_3.yy",},
     {"name":"inst_CE4A2E44","path":"rooms/kidsparty_floor3_3/kidsparty_floor3_3.yy",},
     {"name":"inst_42FE9CBC","path":"rooms/kidsparty_floor3_3/kidsparty_floor3_3.yy",},
-    {"name":"inst_7D24E5A0","path":"rooms/kidsparty_floor3_3/kidsparty_floor3_3.yy",},
-    {"name":"inst_342D45FF","path":"rooms/kidsparty_floor3_3/kidsparty_floor3_3.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -199,8 +197,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4997B0DC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_patroller","path":"objects/obj_patroller/obj_patroller.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1371.0,"y":433.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_CE4A2E44","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_camerapatrol","path":"objects/obj_camerapatrol/obj_camerapatrol.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":2016.0,"y":448.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_42FE9CBC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_camerapatrol","path":"objects/obj_camerapatrol/obj_camerapatrol.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2016.0,"y":544.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7D24E5A0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1056.0,"y":672.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_342D45FF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cutoff","path":"objects/obj_cutoff/obj_cutoff.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":896.0,"y":1504.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_Secret1","depth":-200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":63,"SerialiseWidth":82,"TileCompressedData":[
 -230,0,-6,34,-76,0,-6,34,-76,0,-6,34,-76,0,-6,34,-76,0,-6,34,-76,0,-6,34,-77,0,4,7,10,11,65,-4439,0,],"TileDataFormat":1,},"tilesetId":{"name":"tile_storage","path":"tilesets/tile_storage/tile_storage.yy",},"userdefinedDepth":true,"visible":true,"x":0,"y":0,},
@@ -274,8 +270,8 @@
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Backgrounds_still1","animationFPS":0.35,"animationSpeedType":1,"colour":4294967295,"depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":{"name":"bg_kidsparty3","path":"sprites/bg_kidsparty3/bg_kidsparty3.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":true,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],
   "parent": {
-    "name": "Kid's Party",
-    "path": "folders/Rooms/Levels/Kid's Party.yy",
+    "name": "Kidsparty",
+    "path": "folders/Rooms/Levels/Kidsparty.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

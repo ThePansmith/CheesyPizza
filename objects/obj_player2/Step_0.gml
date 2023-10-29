@@ -1,20 +1,17 @@
-//if (room == rm_editor)
+if (room == rm_editor)
 {
-	x = -1000;
-	y = -1000;
 	visible = 0;
-	state = -1;
-	targetDoor = "";
 	exit;
 }
-/*
+visible = false;
+x = -10000;
+y = -10000;
 scr_getinput2();
-event_inherited();
 if (!global.coop)
 {
 	obj_player1.spotlight = true;
 	x = -1000;
-	y = 500;
+	y = -1000;
 	state = states.titlescreen;
 	if (instance_exists(obj_coopflag))
 		instance_destroy(obj_coopflag);
@@ -33,4 +30,3 @@ if (!visible && state == states.comingoutdoor)
 		coopdelay = 0;
 	}
 }
-*/

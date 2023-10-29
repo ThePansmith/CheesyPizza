@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "war_7",
-  "creationCodeFile": "rooms/war_7/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/war_7/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
@@ -150,8 +150,6 @@
     {"name":"inst_F90531DA","path":"rooms/war_7/war_7.yy",},
     {"name":"inst_8EB9AF42","path":"rooms/war_7/war_7.yy",},
     {"name":"inst_026C1DCA","path":"rooms/war_7/war_7.yy",},
-    {"name":"inst_2107F67F","path":"rooms/war_7/war_7.yy",},
-    {"name":"inst_7ECB6752","path":"rooms/war_7/war_7.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -299,8 +297,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_F90531DA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollect","path":"objects/obj_escapecollect/obj_escapecollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3360.0,"y":2336.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_8EB9AF42","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_secretportal","path":"objects/obj_secretportal/obj_secretportal.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2944.0,"y":1376.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_026C1DCA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_PTG","path":"objects/obj_PTG/obj_PTG.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1312.0,"y":1536.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2107F67F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1344.0,"y":576.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7ECB6752","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cutoff","path":"objects/obj_cutoff/obj_cutoff.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2720.0,"y":2304.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_Foreground1","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":86,"SerialiseWidth":131,"TileCompressedData":[
 -301,92,11,120,112,113,114,112,113,114,112,113,122,123,-120,92,2,130,131,-7,0,2,132,133,-90,92,2,3,4,-28,92,1,105,-9,0,1,81,-90,92,2,13,14,-28,92,1,85,-9,0,1,91,-120,92,1,95,-9,0,1,101,-100,92,1,78,-6,92,2,97,98,-10,92,2,104,105,-9,0,1,81,-81,92,40,114,112,113,114,112,113,114,112,113,114,112,113,114,112,113,114,112,113,114,112,113,114,112,113,114,112,113,114,112,113,114,112,113,114,112,113,114,112,114,115,-9,0,1,91,-81,92,-49,0,1,101,-81,92,

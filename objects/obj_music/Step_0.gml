@@ -172,6 +172,14 @@ with (obj_player)
 	if (state == states.gottreasure)
 		_found = true;
 }
+with (obj_pumpkin)
+{
+	if !trickytreat
+	{
+		if (distance_to_object(obj_player1) <= soundradius)
+			_found = true;
+	}
+}
 if (_found)
 	fmod_set_parameter("totem", 1, false);
 else

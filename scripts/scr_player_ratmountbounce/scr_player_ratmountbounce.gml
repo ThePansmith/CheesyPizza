@@ -35,16 +35,16 @@ function scr_player_ratmountbounce()
 			movespeed = Approach(movespeed, move * 8, 0.5);
 		else
 			movespeed = Approach(movespeed, 0, 0.5);
-		if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick)
+		if (((scr_slapbuffercheck() && key_up) || key_shoot2) && brick)
 		{
-			input_buffer_slap = 0;
+			scr_resetslapbuffer();
 			ratmount_kickbrick();
 		}
-		if (input_buffer_slap > 0 && !key_up)
+		if (scr_slapbuffercheck() && !key_up)
 		{
 			particle_set_scale(part.jumpdust, xscale, 1);
 			create_particle(x, y, part.jumpdust, 0);
-			input_buffer_slap = 0;
+			scr_resetslapbuffer();
 			if (brick == 1)
 			{
 				with (instance_create(x, y, obj_brickcomeback))

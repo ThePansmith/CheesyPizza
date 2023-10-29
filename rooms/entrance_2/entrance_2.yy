@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "entrance_2",
-  "creationCodeFile": "rooms/entrance_2/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/entrance_2/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
@@ -55,8 +55,6 @@
     {"name":"inst_4527660E","path":"rooms/entrance_2/entrance_2.yy",},
     {"name":"inst_1625EA9E","path":"rooms/entrance_2/entrance_2.yy",},
     {"name":"inst_DADAD487","path":"rooms/entrance_2/entrance_2.yy",},
-    {"name":"inst_1BCBC073","path":"rooms/entrance_2/entrance_2.yy",},
-    {"name":"inst_4F2C706E","path":"rooms/entrance_2/entrance_2.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -110,8 +108,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_C164F896","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_hallway","path":"objects/obj_hallway/obj_hallway.yy",},"properties":[],"rotation":0.0,"scaleX":3.0,"scaleY":1.5,"x":2656.0,"y":448.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4527660E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_doorA","path":"objects/obj_doorA/obj_doorA.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2656.0,"y":512.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_DADAD487","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_exitgustavo","path":"objects/obj_exitgustavo/obj_exitgustavo.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":1610.0,"y":498.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1BCBC073","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":816.0,"y":373.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4F2C706E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollectescape","path":"objects/obj_deathcollectescape/obj_deathcollectescape.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2016.0,"y":224.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_Secret1","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":21,"SerialiseWidth":82,"TileCompressedData":[
 -304,0,-7,127,-75,0,-7,127,2,147,105,-73,0,-7,127,2,147,106,-73,0,-7,127,2,147,106,-73,0,-7,127,2,147,106,-74,0,-7,147,1,106,-74,0,-7,125,1,126,-917,0,],"TileDataFormat":1,},"tilesetId":{"name":"tile_tower_tileset","path":"tilesets/tile_tower_tileset/tile_tower_tileset.yy",},"userdefinedDepth":true,"visible":true,"x":0,"y":0,},
@@ -120,7 +116,7 @@
 423,-81,0,1,423,-182,0,2,66,67,-185,0,],"TileDataFormat":1,},"tilesetId":{"name":"tile_entrancedeco","path":"tilesets/tile_entrancedeco/tile_entrancedeco.yy",},"userdefinedDepth":true,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":21,"SerialiseWidth":82,"TileCompressedData":[
 -250,127,-41,147,-13,127,-16,147,-12,127,2,147,105,-37,125,2,105,147,-13,127,2,147,105,-12,125,2,105,147,-12,127,2,147,106,-37,0,2,104,147,-13,127,2,147,106,-12,0,2,104,147,-12,127,2,147,106,-37,0,2,104,147,-13,127,2,147,106,-12,0,2,104,147,-12,127,2,147,106,-37,0,2,104,147,-13,127,2,147,
-106,-12,0,2,104,147,-12,127,2,147,106,-37,0,3,104,147,127,-13,147,1,106,-12,0,2,104,147,-12,127,2,147,106,-17,0,6,80,81,82,81,83,84,-3,85,16,86,80,81,82,81,82,81,82,83,0,0,104,147,127,147,105,-11,125,2,126,64,-5,65,1,66,-5,0,2,104,147,-12,127,2,147,106,-22,0,1,104,
+106,-12,0,2,104,147,-12,127,2,147,106,-37,0,3,104,147,127,-13,147,1,106,-12,0,2,104,147,-12,127,2,147,106,-17,0,6,80,81,82,81,83,84,-3,85,16,86,80,81,82,81,82,81,82,83,0,0,104,147,127,147,105,-11,125,2,126,64,-5,65,1,66,-5,0,2,104,147,-12,127,2,147,105,-22,0,1,104,
 -3,147,1,106,-7,0,8,60,0,0,104,147,127,147,106,-24,0,2,104,147,-12,127,2,147,106,-22,0,5,104,147,127,147,106,-7,0,8,60,0,0,104,147,127,147,106,-23,0,3,200,105,147,-8,127,-5,147,1,106,-22,0,5,104,147,127,147,106,-7,0,8,60,0,0,104,147,127,147,106,-22,0,3,200,105,105,-9,
 147,-5,125,1,126,-22,0,5,104,147,127,147,106,-7,0,4,60,0,0,104,-3,147,1,106,-22,0,1,124,-11,125,-28,0,5,104,147,127,147,106,-7,0,4,60,0,0,124,-3,125,6,126,0,0,10,11,12,-57,0,6,104,147,127,147,187,201,-6,0,1,60,-9,0,3,30,31,32,-4,0,1,84,-6,85,3,240,241,
 242,-43,0,7,104,147,127,147,105,187,201,-5,0,1,60,-9,0,3,50,51,52,-4,0,1,104,-5,147,4,105,260,261,262,-15,0,-28,85,6,105,147,127,147,147,105,-23,85,2,105,147,-3,127,-2,147,-3,105,-15,85,-30,147,-2,127,-27,147,-4,127,-19,147,-164,127,],"TileDataFormat":1,},"tilesetId":{"name":"tile_tower_tileset","path":"tilesets/tile_tower_tileset/tile_tower_tileset.yy",},"userdefinedDepth":true,"visible":true,"x":0,"y":0,},

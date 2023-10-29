@@ -46,7 +46,8 @@ if (object_index == obj_cheeseslime && snotty)
 	{
 		add_baddieroom();
 		instance_destroy();
-		instance_create(x, y, obj_snotty);
+		if (!global.panic)
+			instance_create(x, y, obj_snotty);
 	}
 	ini_close();
 }

@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "war_secret2",
-  "creationCodeFile": "rooms/war_secret2/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/war_secret2/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

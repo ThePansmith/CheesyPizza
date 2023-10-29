@@ -86,13 +86,13 @@ function scr_pizzano_twirl()
 	else if key_shoot2
 		scr_perform_move(moves.shootattack, states.mach2);
 	
-	if input_buffer_slap > 0 && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
+	if scr_slapbuffercheck() && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
 	{
 		if movespeed >= 12
 		{
 			if !key_up
 			{
-				input_buffer_slap = 0;
+				scr_resetslapbuffer()
 				state = states.Sjump;
 				
 				flash = true;
@@ -107,7 +107,7 @@ function scr_pizzano_twirl()
 			}
 			else
 			{
-				input_buffer_slap = 0;
+				scr_resetslapbuffer()
 				
 				flash = true;
 				image_index = 0;

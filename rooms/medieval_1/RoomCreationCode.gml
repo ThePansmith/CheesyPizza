@@ -1,4 +1,3 @@
+pal_swap_init_system(shd_pal_swapper);
 global.roommessage = "PIZZA TOWER IN YE OLDE TIME";
-global.gameframe_caption_text = "Ye olde Pizza Tower";
-if global.snickchallenge
-	global.gameframe_caption_text = "Porcupine flavored Pizza Tower";
+global.gameframe_caption_text = lang_get_value("caption_medieval");

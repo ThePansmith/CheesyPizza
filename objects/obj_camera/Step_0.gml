@@ -279,7 +279,7 @@ if instance_exists(target) && !lock && player.state != states.timesup && player.
 	*/
 	
 	var cam_x = camx, cam_y = camy;
-	if shake_mag != 0
+	if shake_mag != 0 && global.option_screenshake
 	{
 		cam_x += irandom_range(-shake_mag, shake_mag);
 		repeat 2 cam_y += irandom_range(-shake_mag, shake_mag);
@@ -332,7 +332,7 @@ if instance_exists(target) && !lock && player.state != states.timesup && player.
 else if REMIX && room != rank_room && room != timesuproom && room != rm_baby && !instance_exists(obj_bosscontroller)
 {
 	var cam_x = lockx, cam_y = locky;
-	if shake_mag != 0
+	if shake_mag != 0 && global.option_screenshake
 	{
 		cam_x += irandom_range(-shake_mag, shake_mag);
 		repeat 2
@@ -340,7 +340,7 @@ else if REMIX && room != rank_room && room != timesuproom && room != rm_baby && 
 	}
 	
 	// better panic shake
-	if global.panic && !instance_exists(obj_ghostcollectibles)
+	if global.panic && !instance_exists(obj_ghostcollectibles) && global.option_screenshake
 	{
 		cam_x += random_range(-1, 1);
 		repeat 2 cam_y += random_range(-1, 1);

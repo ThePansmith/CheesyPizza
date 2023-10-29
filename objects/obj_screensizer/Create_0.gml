@@ -22,6 +22,7 @@ global.gameframe_caption_font = fnt_caption;
 global.gameframe_caption_icon = spr_ico;
 global.gameframe_caption_icon_margin = 6;
 global.gameframe_border_width = 2;
+lang_init = false;
 captionalpha = 1;
 dirty = true;
 startbuffer = 10;
@@ -30,6 +31,7 @@ mouse_xprevious = mouse_x;
 mouse_yprevious = mouse_y;
 start_sound = false;
 get_options(); // applies fullscreen
+aa_tex_size = shader_get_uniform(shd_aa, "texSize");
 normal_size_fix_x = 0;
 normal_size_fix_y = 0;
 app_scale = 1;

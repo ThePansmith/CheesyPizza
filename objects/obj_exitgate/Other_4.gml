@@ -11,6 +11,7 @@ if in_baddieroom() && drop
 	dropstate = states.idle;
 	hand_y = -100;
 }
+random_secret = instance_exists(obj_randomsecret) && obj_randomsecret.start;
 if global.snickchallenge && room != snick_challengeend
 {
 	instance_destroy();
