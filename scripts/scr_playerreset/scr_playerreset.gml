@@ -96,7 +96,8 @@ function scr_playerreset(roomstart = false, restart = false)
 	instance_destroy(obj_pumpkincounter);
 	instance_destroy(obj_transfotip);
 	instance_destroy(obj_flushcount);
-	instance_destroy(obj_fadeout);
+	if !roomstart
+		instance_destroy(obj_fadeout);
 	instance_destroy(obj_comboend);
 	instance_destroy(obj_combotitle);
 	instance_destroy(obj_confettieffect);
@@ -447,6 +448,7 @@ function scr_playerreset(roomstart = false, restart = false)
 		noisebossscream = false;
 		scale_xs = 1;
 		scale_ys = 1;
+		secretportalID = noone;
 		
 		// pto
 		smoothx = 0;

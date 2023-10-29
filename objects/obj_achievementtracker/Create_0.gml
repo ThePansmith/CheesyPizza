@@ -340,8 +340,11 @@ for (var i = 0; i < array_length(pats); i++)
 	{
 		var type = data[0];
 		var arr = data[1];
-		if (type == 59 && arr[0] >= pattern[1])
+		if (type == notifs.pumpkin_collect && arr[0] >= pattern[1])
+		{
+			trace("PATTERN: ", pattern, " ARR: ", arr);
 			palette_unlock(name, pattern[0], 12, pattern[2]);
+		}
 	}, false, "Palettes", pat[0]);
 	if (!is_undefined(p) && !p.unlocked)
 		p.pattern = pat;

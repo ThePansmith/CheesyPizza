@@ -12,6 +12,9 @@ else if (m.menu_id == menus.audio)
 else if (m.menu_id == menus.game)
     j = 3;
 
+if safe_get(obj_modconfig, "visible")
+	j = 5;
+
 for (var i = 0; i < array_length(bg_alpha); i++)
 {
 	if (i == j)

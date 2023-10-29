@@ -41,10 +41,13 @@ function lang_get_value(entry)
 		n = ds_map_find_value(ds_map_find_value(global.lang_map, "en"), entry);
 	if is_undefined(n)
 	{
-		n = "";
+		n = entry;
+		
+		/*
 		instance_create_unique(0, 0, obj_langerror);
 		with (obj_langerror)
 			text = concat("Error: Could not find lang value \"", entry, "\"\nPlease restore your english.txt file");
+		*/
 	}
 	return n;
 }

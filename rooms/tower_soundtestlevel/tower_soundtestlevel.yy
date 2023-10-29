@@ -11,11 +11,11 @@
     {"name":"inst_143442E0","path":"rooms/tower_soundtestlevel/tower_soundtestlevel.yy",},
     {"name":"inst_A9E7B058","path":"rooms/tower_soundtestlevel/tower_soundtestlevel.yy",},
     {"name":"inst_2E9B2DC0","path":"rooms/tower_soundtestlevel/tower_soundtestlevel.yy",},
+    {"name":"inst_4068F590","path":"rooms/tower_soundtestlevel/tower_soundtestlevel.yy",},
+    {"name":"inst_C51C6308","path":"rooms/tower_soundtestlevel/tower_soundtestlevel.yy",},
     {"name":"inst_B24E9B38","path":"rooms/tower_soundtestlevel/tower_soundtestlevel.yy",},
     {"name":"inst_37F209A0","path":"rooms/tower_soundtestlevel/tower_soundtestlevel.yy",},
     {"name":"inst_BCB58728","path":"rooms/tower_soundtestlevel/tower_soundtestlevel.yy",},
-    {"name":"inst_4068F590","path":"rooms/tower_soundtestlevel/tower_soundtestlevel.yy",},
-    {"name":"inst_C51C6308","path":"rooms/tower_soundtestlevel/tower_soundtestlevel.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -32,8 +32,7 @@
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_BG","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":17,"SerialiseWidth":30,"TileCompressedData":[
 -2,0,1,134,-24,0,1,120,-4,0,1,144,-24,0,1,130,-4,0,1,154,-24,0,1,140,-29,0,1,120,-29,0,
-1,130,-29,0,1,140,-29,0,1,150,-154,0,3,230,231,232,-9,0,2,217,218,-8,0,3,176,177,178,-5,0,8,
-240,241,242,0,166,167,168,169,-4,0,2,227,228,-8,0,3,186,187,188,-93,0,],"TileDataFormat":1,},"tilesetId":{"name":"tileset_secret","path":"tilesets/tileset_secret/tileset_secret.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+1,130,-29,0,1,140,-29,0,1,150,-302,0,],"TileDataFormat":1,},"tilesetId":{"name":"tileset_secret","path":"tilesets/tileset_secret/tileset_secret.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_54312416","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_soundtest_tile_Level","path":"sprites/spr_soundtest_tile_Level/spr_soundtest_tile_Level.yy",},"x":0.0,"y":0.0,},
       ],"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},

@@ -7,7 +7,6 @@ if (!fadein)
 		start = true;
 		music = false;
 		alarm[0] = 180;
-		// it's hardcoded FUCK YOU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		if (title_music == "event:/music/secretworldtitle")
 			alarm[0] = 240;
 	}
@@ -18,7 +17,6 @@ else
 	if (fadealpha <= 0 && !music && title_music != noone)
 	{
 		music = true;
-		
 		if global.jukebox == noone
 			sound_play(title_music);
 	}

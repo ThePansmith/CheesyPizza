@@ -1,17 +1,18 @@
-event_inherited()
-sprite_index = spr_pumpkingate
-if !DEBUG 
+if (!is_holiday(holiday.halloween) || global.panic)
 {
-	if (!is_holiday(holiday.halloween) || quick_ini_read_real("", "halloween", "pumpkincount", 0) < 20 || global.panic)
-	{
-	    instance_destroy()
-	    if is_holiday(holiday.halloween)
-	    {
-	        with (instance_create(x, y, obj_doorblocked))
-	        {
-	            sprite_index = spr_pumpkingate2
-	            depth = other.depth
-	        }
-	    }
-	}
+	instance_destroy();
+	exit;
 }
+if quick_ini_read_real("", "halloween", "pumpkincount", 0) < 20 && !global.sandbox
+{
+	instance_destroy();
+	with (instance_create(x, y, obj_doorblocked))
+	{
+	    sprite_index = spr_pumpkingate2;
+	    depth = other.depth;
+	}
+	exit;
+}
+
+event_inherited();
+sprite_index = spr_pumpkingate;

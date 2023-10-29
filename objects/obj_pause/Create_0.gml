@@ -59,6 +59,10 @@ var exit_function = function()
 {
 	if (room == Endingroom || room == Creditsroom || room == Johnresurrectionroom)
 		exit;
+	
+	reset_modifier();
+	instance_activate_object(obj_levelLoader);
+	
 	pause_unpause_music();
 	stop_music();
 	scr_pause_stop_sounds();
@@ -72,7 +76,7 @@ var exit_function = function()
 	var arr = -4;
 	ds_list_copy(sl, sound_list);
 	ds_list_copy(il, instance_list);
-	if (global.leveltorestart != -4)
+	if (global.leveltorestart != -4) or ((global.is_hubworld or global.custom_hub_level == "") && instance_exists(obj_levelLoader))
 	{
 		hub = true;
 		arr = ["hubgroup"];
@@ -100,6 +104,19 @@ var exit_function = function()
 ds_map_set(pause_menu_map, "pause_exit", [3, exit_function]);
 ds_map_set(pause_menu_map, "pause_exit_title", [3, exit_function]);
 
+ds_map_set(pause_menu_map, "pause_jukebox", [4, function()
+{
+	array_delete(pause_menu, selected, 1);
+	selected = 0;
+	
+	fmod_event_instance_stop(global.jukebox.instance, true);
+	fmod_event_instance_release(global.jukebox.instance);
+	global.jukebox = noone;
+	
+	fmod_event_instance_play(pausemusicID);
+	fmod_event_instance_set_paused(pausemusicID, false);
+}]);
+
 cursor_index = 0;
 cursor_sprite_number = sprite_get_number(spr_angelpriest);
 cursor_sprite_height = sprite_get_height(spr_angelpriest);
@@ -116,11 +133,7 @@ secretalpha = 0;
 transfotext = -4;
 transfotext_size = 0;
 roomtorestart = -4;
-pausemusicIDss = fmod_event_create_instance("event:/modded/sugary/pause");
-if is_holiday(holiday.halloween)
-	pausemusicID = fmod_event_create_instance("event:/music/halloweenpause");
-else
-	pausemusicID = fmod_event_create_instance("event:/music/pause");
+pausemusicID = fmod_event_create_instance("event:/music/pause");
 savedsecretpause = false;
 savedmusicpause = false;
 savedpillarpause = false;

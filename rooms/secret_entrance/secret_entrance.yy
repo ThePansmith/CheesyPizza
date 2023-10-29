@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "secret_entrance",
-  "creationCodeFile": "${project_dir}/rooms/secret_entrance/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/secret_entrance/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

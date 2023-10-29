@@ -1,7 +1,5 @@
 scr_menu_getinput();
 index += 0.1
-key_jump = (key_jump || (scr_check_menu_key(vk_enter) && keyboard_check_pressed(vk_return)) || (scr_check_menu_key(vk_space) && keyboard_check_pressed(vk_space)))
-key_jump2 = (key_jump2 || (scr_check_menu_key(vk_enter) && keyboard_check(vk_return)) || (scr_check_menu_key(vk_space) && keyboard_check(vk_space)))
 switch state
 {
 	case states.titlescreen:
@@ -176,7 +174,7 @@ switch state
 				}
 
 			}
-			else if key_slap2
+			else if key_quit
 			{
 				state = states.ending
 				exitselect = 1
@@ -194,7 +192,7 @@ switch state
 				}
 
 			}
-			else if (key_taunt2 && global.game_started[currentselect])
+			else if (key_delete && global.game_started[currentselect])
 			{
 				deletebuffer = 0
 				state = states.bombdelete
@@ -212,7 +210,6 @@ switch state
 						sprite_index = spr_titlepep_right
 						break
 				}
-
 			}
 			break
 		}

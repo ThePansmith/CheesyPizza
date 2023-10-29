@@ -21,8 +21,8 @@
   },
   "spriteNoExport": false,
   "textureGroupId": {
-    "name": "freezergroup",
-    "path": "texturegroups/freezergroup",
+    "name": "levelstructuregroup",
+    "path": "texturegroups/levelstructuregroup",
   },
   "tile_count": 820,
   "tileAnimation": {

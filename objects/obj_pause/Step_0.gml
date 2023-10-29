@@ -1,5 +1,3 @@
-var curr_pause_music = SUGARY ? pausemusicIDss : pausemusicID;
-
 if (!pause && instance_exists(obj_player1) && (obj_player1.key_start or (!window_has_focus() && global.unfocus_pause)) && room != Mainmenu && room != Finalintro && room != hub_loadingscreen && room != Endingroom && room != Creditsroom && room != Johnresurrectionroom && room != Longintro && room != Realtitlescreen && room != rank_room)
 {
 	var _cutscenehandler = false;
@@ -45,15 +43,13 @@ if (!pause && instance_exists(obj_player1) && (obj_player1.key_start or (!window
 	// pause
 	if (obj_savesystem.state == 0 && !_cutscenehandler && (room != rank_room && room != Realtitlescreen && room != timesuproom && room != rm_baby) && !instance_exists(obj_jumpscare) && !instance_exists(obj_technicaldifficulty))
 	{
-		//destroy_sounds([pausemusicID]);
-		//pausemusicID = fmod_event_create_instance(SUGARY ? "event:/modded/sugary/pause" : "event:/music/pause");
-		
-		//refresh_options();
-		if global.jukebox != noone
-		{
-			array_push(pause_menu, "CLEAR JUKEBOX");
-			scr_pauseicon_add(spr_pauseicons, 4, -5);
-		}
+		destroy_sounds([pausemusicID]);
+		if SUGARY
+			pausemusicID = fmod_event_create_instance("event:/modded/sugary/pause");
+		else if is_holiday(holiday.halloween)
+			pausemusicID = fmod_event_create_instance("event:/music/halloweenpause");
+		else
+			pausemusicID = fmod_event_create_instance("event:/music/pause");
 		
 		selected = 0;
 		fadein = true;
@@ -64,12 +60,23 @@ if (!pause && instance_exists(obj_player1) && (obj_player1.key_start or (!window
 		if (global.leveltorestart != -4)
 		{
 			array_push(pause_menu, "pause_restart");
-			if (global.leveltorestart != tower_tutorial1 && global.leveltorestart != tower_finalhallway && global.leveltorestart != secret_entrance)
+			
+			var ach_allowed = [
+				"entrance", "medieval", "ruin", "dungeon",
+				"badland", "farm", "saloon", "graveyard",
+				"plage", "forest", "minigolf", "space",
+				"street", "sewer", "industrial", "freezer",
+				"kidsparty", "chateau", "war"
+			]
+			if array_contains(ach_allowed, global.leveltosave)
 				array_push(pause_menu, "pause_achievements");
 			array_push(pause_menu, "pause_exit");
 		}
 		else
 			array_push(pause_menu, "pause_exit_title");
+		
+		if global.jukebox != noone
+			array_push(pause_menu, "pause_jukebox");
 		
 		with (obj_music)
 		{
@@ -217,8 +224,8 @@ if (!pause && instance_exists(obj_player1) && (obj_player1.key_start or (!window
 		
 		if global.jukebox == noone
 		{
-			fmod_event_instance_play(curr_pause_music);
-			fmod_event_instance_set_paused(curr_pause_music, false);
+			fmod_event_instance_play(pausemusicID);
+			fmod_event_instance_set_paused(pausemusicID, false);
 		}
 	}
 }

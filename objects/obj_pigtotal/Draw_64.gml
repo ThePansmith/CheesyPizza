@@ -1,4 +1,4 @@
-if (is_bossroom() || instance_exists(obj_achievementviewer) || room == tower_soundtestlevel)
+if (is_bossroom() || instance_exists(obj_achievementviewer) || room == tower_soundtest || global.sandbox)
 	exit;
 if (!global.option_hud)
 	exit;

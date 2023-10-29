@@ -10,7 +10,7 @@ if variable_instance_exists(id, "target_x") && variable_instance_exists(id, "tar
 if sugary
 	exit;
 
-if sprite_index != spr_cheftaskdoor && sprite_index != spr_pepperdoor && sprite_index != spr_elevatordown1 && sprite_index != spr_elevatordown2 && sprite_index != spr_elevatordown3 && sprite_index != spr_elevatordown4
+if sprite_index != spr_pumpkingate && sprite_index != spr_cheftaskdoor && sprite_index != spr_pepperdoor && sprite_index != spr_elevatordown1 && sprite_index != spr_elevatordown2 && sprite_index != spr_elevatordown3 && sprite_index != spr_elevatordown4
 {
 	sprite_index = global.door_sprite;
 	image_index = global.door_index;

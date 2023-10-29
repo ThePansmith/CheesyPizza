@@ -1,3 +1,5 @@
+live_auto_call;
+
 if start
 {
 	var xscale = SCREEN_WIDTH / 960, yscale = SCREEN_HEIGHT / 540;

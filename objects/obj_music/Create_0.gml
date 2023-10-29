@@ -48,7 +48,7 @@ add_music(tower_finalhallway, "event:/music/finalescape", noone, 0)
 add_music(tower_finalhallwaytitlecard, "event:/music/pillarmusic", noone, 0)
 add_music(tower_pizzafacehall, "event:/music/w5/finalhallway", noone, 0)
 add_music(tower_outside, "event:/sfx/misc/windloop", noone, 0)
-add_music(tower_soundtestlevel, "event:/sfx/misc/pillarmusic", -4, 0)
+add_music(tower_soundtest, "event:/sfx/misc/pillarmusic", -4, 0)
 add_music(trickytreat_1, "event:/music/halloween2023", -4, 0, function(room, parameter)
 {
     if (room == trickytreat_1)

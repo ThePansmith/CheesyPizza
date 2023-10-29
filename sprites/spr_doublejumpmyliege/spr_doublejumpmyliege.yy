@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "medievalgroup",
-    "path": "texturegroups/medievalgroup",
+    "name": "levelstructuregroup",
+    "path": "texturegroups/levelstructuregroup",
   },
   "type": 0,
   "VTile": false,

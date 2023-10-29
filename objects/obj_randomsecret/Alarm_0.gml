@@ -21,11 +21,10 @@ if (((!instance_exists(obj_secretportalstart)) || obj_secretportalstart.drop) &&
                 sprite_index = spr_Timesup
                 image_index = 0
                 if isgustavo
-                    sprite_index = spr_player_ratmounttimesup
+                    sprite_index = spr_ratmount_timesup
                 visible = true
                 image_blend = c_white
                 stop_music()
-                fmod_event_one_shot("event:/music/timesup")
                 room = timesuproom
             }
             instance_destroy()

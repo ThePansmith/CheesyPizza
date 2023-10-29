@@ -78,7 +78,10 @@ if (floor(image_index) >= (image_number - 1))
 								condition = false;
 							
 							if condition // it wasn't set, we are probably in a secret
+							{
 								targetRoom = other.targetRoom;
+								set_lastroom();
+							}
 							else
 							{
 								targetRoom = lastroom;
@@ -88,7 +91,6 @@ if (floor(image_index) >= (image_number - 1))
 									secretportalID = lastroom_secretportalID;
 								}
 							}
-							set_lastroom();
 						}
 						if (instance_exists(obj_randomsecret) && !obj_randomsecret.selected)
 						{

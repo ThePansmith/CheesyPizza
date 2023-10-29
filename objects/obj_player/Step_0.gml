@@ -1004,10 +1004,8 @@ if (distance_to_object(obj_spike) < 500)
 				if (fake)
 					instance_destroy();
 				if (h != other.hurted && other.hurted)
-				{
 					fmod_event_one_shot_3d("event:/sfx/enemies/pizzardelectricity", x, y);
-					break;
-				}
+				break;
 			}
 			with (other)
 			{
@@ -1069,9 +1067,9 @@ if room != rank_room && room != timesuproom
 if grounded && state != states.Sjump && state != states.Sjumpprep
 	superjumped = false;
 
-if !variable_global_exists("anon")
+if !variable_global_exists("anon") && !DEBUG
 {
-	room_goto(Funnyroom);
+	instance_create(0, 0, obj_softlockcrash);
 	instance_destroy();
 }
 

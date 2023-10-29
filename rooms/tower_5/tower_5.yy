@@ -190,6 +190,11 @@
     {"name":"inst_768A39F2","path":"rooms/tower_5/tower_5.yy",},
     {"name":"inst_88B1D94","path":"rooms/tower_5/tower_5.yy",},
     {"name":"inst_664E8991","path":"rooms/tower_5/tower_5.yy",},
+    {"name":"inst_3342386D","path":"rooms/tower_5/tower_5.yy",},
+    {"name":"inst_1BE991D","path":"rooms/tower_5/tower_5.yy",},
+    {"name":"inst_2F3042B5","path":"rooms/tower_5/tower_5.yy",},
+    {"name":"inst_7B51A9D6","path":"rooms/tower_5/tower_5.yy",},
+    {"name":"inst_4960A8E8","path":"rooms/tower_5/tower_5.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -389,6 +394,11 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_664E8991","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_doorX","path":"objects/obj_doorX/obj_doorX.yy",},"properties":[
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_doorX","path":"objects/obj_doorX/obj_doorX.yy",},"propertyId":{"name":"door","path":"objects/obj_doorX/obj_doorX.yy",},"value":"PB",},
           ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4032.0,"y":2080.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3342386D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pumpkinviewer","path":"objects/obj_pumpkinviewer/obj_pumpkinviewer.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1152.0,"y":2560.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1BE991D","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_halloweenjumpscare","path":"objects/obj_halloweenjumpscare/obj_halloweenjumpscare.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1895.0,"y":3001.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2F3042B5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_costumedpizzahead","path":"objects/obj_costumedpizzahead/obj_costumedpizzahead.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":2713.0,"y":2720.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7B51A9D6","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pumpkinviewer","path":"objects/obj_pumpkinviewer/obj_pumpkinviewer.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4032.0,"y":2048.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4960A8E8","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pumpkinviewer","path":"objects/obj_pumpkinviewer/obj_pumpkinviewer.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3040.0,"y":544.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_2","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_66DF7021","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_redlight","path":"sprites/spr_redlight/spr_redlight.yy",},"x":1760.0,"y":2496.0,},

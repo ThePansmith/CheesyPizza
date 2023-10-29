@@ -87,16 +87,16 @@ if menu == 0
 	// go
 	else if state == 3
 	{
-		if !are_you_sure // impossible
-			room_goto(Funnyroom);
+		if !are_you_sure && !DEBUG // impossible
+			instance_create(0, 0, obj_softlockcrash);
 	
 		global.anon = array_create(5, true);
 		state = -1;
 		
 		room_goto(Realtitlescreen);
 	}
-	else if are_you_sure // impossible
-		room_goto(Funnyroom);
+	else if are_you_sure && !DEBUG // impossible
+		instance_create(0, 0, obj_softlockcrash);
 }
 else
 {
@@ -166,12 +166,15 @@ else
 	}
 }
 
+if DEBUG
+	exit;
+
 // drm
 if !is_array(global.anon)
-	room_goto(Funnyroom);
+	instance_create(0, 0, obj_softlockcrash);
 for(var i = 1; i < 5; i++)
 {
 	if global.anon[i - 1] != global.anon[i]
 	or (global.anon[i] != false && state != -1)
-		room_goto(Funnyroom);
+		instance_create(0, 0, obj_softlockcrash);
 }

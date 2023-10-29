@@ -28,28 +28,30 @@ else
 	else
 	{
 		var lastchar = ord(keyboard_lastchar);
+		input = keyboard_string;
 	
 		// cancel command
 		if lastchar == 127 or lastchar == 3
 		{
 			output += input + "^C";
-			input = "";
 			input_mode = 0;
 			DOS_instruct(3, DOS_initstate);
+			
+			keyboard_string = "";
+			keyboard_lastchar = "";
+			input = "";
 		}
-	
+		
 		// go
 		else if lastchar == 13
 		{
 			output += input;
 			DOS_command();
+			
+			keyboard_string = "";
+			keyboard_lastchar = "";
 			input = "";
 		}
-		
-		else
-			input = keyboard_string;
-		
-		keyboard_lastchar = "";
 	}
 }
 

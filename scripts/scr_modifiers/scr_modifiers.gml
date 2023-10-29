@@ -19,6 +19,7 @@ function reset_modifier()
 		DeathMode: false,
 		JohnGhost: false,
 		Spotlight: false,
+		CosmicClones: false,
 		
 		// Entrance
 		NoiseGutter: false,

@@ -14,7 +14,7 @@ if ((image_index == 1 && !sugary) or (sugary && sprite_index != spr_sugarygatecl
 		if (state == states.comingoutdoor && floor(image_index) == image_number - 2)
 		{
 			if MOD.Spotlight
-				global.combotime = 120;
+				global.combotime = 60;
 			
 			sound_play_3d(MIDWAY ? "event:/modded/sfx/gatecloseBN" : "event:/sfx/pep/groundpound", x, y);
 			GamepadSetVibration(0, 1, 1, 0.9);

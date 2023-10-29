@@ -197,6 +197,7 @@ pause_restart = "RESTART LEVEL"
 pause_exit = "EXIT LEVEL"
 pause_exit_title = "MAIN MENU"
 pause_achievements = "CHEF TASKS"
+pause_jukebox = "CLEAR JUKEBOX"
 
 achievements_level = "CURRENT LEVEL"
 
@@ -285,8 +286,7 @@ menu_controller_disconnected = "CONTROLLER DISCONNECTED\n\nPRESS START TO CONTIN
 menu_exit = "EXIT THE GAME?"
 menu_skip = "[c] Skip"
 menu_loading = "LOADING..."
-peppinohurt = "{s}You've hurt Peppino % times.../"
-gustavohurt = "{s}You've hurt Gustavo % times.../"
+hurt = "{s}You've hurt % % times.../"
 mrsticknotification = "{u}Come to Mr.Stick to rent a boss gate!/"
 mrmooneynotification = "{u}Will you help Mr.Mooney with a little charity?/"
 computer_text1 = "Toppins: % out of %\nSecrets: % out of %\nTreasure: % out of %"

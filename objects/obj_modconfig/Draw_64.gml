@@ -4,8 +4,11 @@ live_auto_call;
 draw_set_colour(c_white);
 draw_set_align();
 
-reset_blendmode();
-reset_shader_fix();
+if object_index != obj_levelsettings
+{
+	reset_blendmode();
+	reset_shader_fix();
+}
 
 var yy = 70 - scroll;
 //if array_last(options_pos) < SCREEN_HEIGHT / 3
@@ -184,12 +187,15 @@ if drawer
 					surface_set_target(global.modsurf);
 					draw_clear_alpha(c_black, 0);
 					
-					if layer_sequence_get_sequence(obj_modconfig.sequence).name == "seq_secretwall_on"
-						gpu_set_blendmode(bm_normal);
-					else
+					if object_index != obj_levelsettings
 					{
-						reset_shader_fix();
-						reset_blendmode();
+						if layer_sequence_get_sequence(obj_modconfig.sequence).name == "seq_secretwall_on"
+							gpu_set_blendmode(bm_normal);
+						else
+						{
+							reset_shader_fix();
+							reset_blendmode();
+						}
 					}
 				}
 			});
@@ -208,15 +214,21 @@ if drawer
 		}
 	}
 	
-	reset_blendmode();
-	reset_shader_fix();
+	if object_index != obj_levelsettings
+	{
+		reset_blendmode();
+		reset_shader_fix();
+	}
 	
 	if surface_exists(global.modsurf)
 	{
 		/* shadow */ draw_surface_ext(global.modsurf, 3 + xx - wd / 2, 3 + yy - ht / 2, 1, 1, 0, 0, 0.25);
 		
-		shader_set(shd_pal_swapper);
-		pal_swap_set(spr_peppalette, 1, false);
+		if object_index != obj_levelsettings
+		{
+			shader_set(shd_pal_swapper);
+			pal_swap_set(spr_peppalette, 1, false);
+		}
 		draw_surface(global.modsurf, xx - wd / 2, yy - ht / 2);
 	}
 }

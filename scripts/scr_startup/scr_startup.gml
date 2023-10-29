@@ -159,7 +159,7 @@ function load_moddedconfig()
 	global.gameplay = ini_read_real("Modded", "gameplay", true); // misc. improvements on or off?
 	global.experimental = ini_read_real("Modded", "experimental", DEBUG);
 	global.performance = ini_read_real("Modded", "performance", false);
-
+	
 	// gameplay settings
 	global.poundjump = ini_read_real("Modded", "poundjump", false);
 	global.attackstyle = ini_read_real("Modded", "attackstyle", 0); // grab, kungfu, shoulderbash
@@ -171,7 +171,8 @@ function load_moddedconfig()
 	global.swapgrab = ini_read_real("Modded", "swapgrab", false);
 	global.unfocus_pause = ini_read_real("Modded", "unfocus_pause", false);
 	global.border = ini_read_real("Modded", "border", -1); // -1 none, 0 space, 1 dynamic
-
+	global.holidayoverride = ini_read_real("Modded", "holidayoverride", -1); // -1 default, 0 none, 1 etc
+	
 	// visual settings
 	global.panicbg = ini_read_real("Modded", "panicbg", true);
 	global.panictilt = ini_read_real("Modded", "panictilt", false);

@@ -1,6 +1,6 @@
 global.longintro = true;
 if !variable_global_exists("anon")
-	room_goto(Funnyroom);
+	instance_create(0, 0, obj_softlockcrash);
 
 global.holiday = holiday.none;
 var date = date_current_datetime();

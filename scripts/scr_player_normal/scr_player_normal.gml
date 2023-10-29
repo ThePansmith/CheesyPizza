@@ -983,7 +983,7 @@ function state_snick_normal()
 			// bump on wall
 			else if (check_solid(x + movespeed, y) or scr_solid_slope(x + movespeed, y))
 			&& (!place_meeting(x + movespeed, y, obj_destructibles) or abs(movespeed) < 10)
-			&& (!place_meeting(x + movespeed, y, obj_ratblock) or abs(movespeed) < 12)
+			&& (!place_meeting(x + movespeed, y, obj_ratblock) or place_meeting(x + movespeed, y, obj_rattumble) or abs(movespeed) < 12)
 			&& (!place_meeting(x + movespeed, y, obj_metalblock) or abs(movespeed) < 16)
 			{
 				var _bump = ledge_bump(vsp >= 0 ? 32 : 22);

@@ -388,4 +388,4 @@ camera_set_view_angle(view_camera[0], angle + panicangle);
 
 // HANDLE DRM
 if YYC && global.anon[0] != true && global.anon[1] != true && global.anon[2] != true && global.anon[3] != true && global.anon[4] != true
-	room_goto(Funnyroom);
+	instance_create(0, 0, obj_softlockcrash);
