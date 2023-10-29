@@ -61,7 +61,7 @@ function scr_switch_get_menu_input()
 
 function scr_menu_getinput()
 {
-	if (!instance_exists(obj_player))
+	if !instance_exists(obj_player)
 		tdp_input_update(obj_inputAssigner.player_input_device[0]);
 	
 	key_up = tdp_input_get("menu_up").held || tdp_input_get("menu_upC").held;
@@ -84,9 +84,11 @@ function scr_menu_getinput()
 
 function scr_getinput(is_menu = false)
 {
-	// we're good.
 	if instance_exists(obj_replay) && obj_replay.playback && obj_replay.active
 		obj_replay.deserialize_input(obj_replay.latest_input);
+	
+	var _dvc = obj_inputAssigner.player_input_device[0];
+	tdp_input_update(_dvc);
 	
 	if (safe_get(obj_shell, "isOpen"))
 	or (global.in_menu && !is_menu)
@@ -95,8 +97,6 @@ function scr_getinput(is_menu = false)
 		exit;
 	}
 	
-	var _dvc = obj_inputAssigner.player_input_device[0];
-	tdp_input_update(_dvc);
 	var verticaldeadzone = global.input_controller_deadzone_vertical;
 	var horizontaldeadzone = global.input_controller_deadzone_horizontal;
 	var vertpress_dz = global.input_controller_deadzone_press;

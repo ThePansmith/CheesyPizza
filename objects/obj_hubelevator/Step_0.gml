@@ -1,3 +1,6 @@
+if buffer > 0
+	buffer--;
+
 if state == 1
 {
 	anim_t = Approach(anim_t, 1, 0.1);
@@ -6,7 +9,7 @@ if state == 1
 		state = 3;
 		close_menu();
 	}
-	else
+	else if buffer <= 0
 	{
 		open_menu();
 		scr_menu_getinput();
