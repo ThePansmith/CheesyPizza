@@ -2,7 +2,7 @@ live_auto_call;
 
 // get input
 if anim_con == 0
-	scr_getinput(true);
+	scr_menu_getinput();
 else
 	scr_init_input();
 
@@ -41,7 +41,7 @@ if arrowbufferV > 0
 	arrowbufferV--;
 
 // cancel
-if (key_slap or keyboard_check_pressed(vk_escape)) && anim_con == 0
+if key_back && anim_con == 0
 {
 	close_menu();
 	sound_play(sfx_back);

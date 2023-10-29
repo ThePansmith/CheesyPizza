@@ -2,6 +2,8 @@ live_auto_call;
 
 if !init
 	exit;
+
+scr_getinput(true);
 event_inherited();
 
 #region change palette
@@ -119,8 +121,8 @@ charshift[2] = lerp(charshift[2], 1, 0.25); // alpha
 // toggle noise pogo
 if characters[sel.char][0] == "N" && check_char("N") && global.experimental
 {
-	create_transformation_tip("{u}[T] Toggle Pogo/", "noisetype");
-	if key_taunt2
+	create_transformation_tip("{u}[x] Toggle Pogo/", "noisetype");
+	if key_delete2
 	{
 		sound_play(sfx_step);
 		noisetype = !noisetype;
@@ -130,6 +132,6 @@ if characters[sel.char][0] == "N" && check_char("N") && global.experimental
 if anim_t >= 1 && !shown_tip
 {
 	shown_tip = true;
-	with create_transformation_tip("{u}[L][R] Palettes [U][D] Characters/", "skintip")
+	with create_transformation_tip("{u}[l][r] Palettes [u][d] Characters/", "skintip")
 		alarm[1] = 60 * 3;
 }

@@ -56,7 +56,7 @@ or (sel.side == 1 && move_ver == -1)
 if anim_t >= 1 && !shown_tip
 {
 	shown_tip = true;
-	with create_transformation_tip("{u}[U][D][L][R] Switch between cosmetics/", "cosmetictip")
+	with create_transformation_tip("{u}[u][d][l][r] Switch between cosmetics/", "cosmetictip")
 		alarm[1] = 60 * 3;
 }
 

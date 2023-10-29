@@ -13,11 +13,10 @@ if buffer > 0
 }
 
 // get input
-scr_getinput();
-key_back = safe_get(obj_option, "key_back") or key_slap2;
+scr_menu_getinput();
 
 // save and go back
-if (key_back or keyboard_check_pressed(vk_escape)) && object_index != obj_levelsettings
+if key_back && object_index != obj_levelsettings
 {
 	ini_open_from_string(obj_savesystem.ini_str_options);
 	for(var i = 0; i < array_length(options_array); i++)

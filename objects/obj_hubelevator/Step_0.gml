@@ -9,7 +9,7 @@ if state == 1
 	else
 	{
 		open_menu();
-		scr_getinput(true);
+		scr_menu_getinput();
 		
 		var move = -key_up2 + key_down2;
 		if move == 0
@@ -29,7 +29,7 @@ if state == 1
 			state = 2;
 			close_menu();
 		}
-		else if key_slap2 or keyboard_check_pressed(vk_escape)
+		else if key_back
 		{
 			sound_play_centered(sfx_enemyprojectile);
 			state = 3;
