@@ -7,7 +7,7 @@ function calculate_panic_timer(_minutes = 5, _seconds = 30)
 {
 	return (((_minutes * 60) + _seconds) * 60) * 0.2;
 }
-function activate_panic(instapanic = false)
+function activate_panic(instapanic = false, debris = noone)
 {
 	if room == tower_finalhallway
 		global.leveltosave = "exit";

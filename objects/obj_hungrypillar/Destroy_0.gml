@@ -40,5 +40,5 @@ if !in_saveroom()
 	sound_play_3d("event:/sfx/enemies/kill", x, y);
 	add_saveroom();
 	
-	activate_panic();
+	activate_panic(false, debris);
 }
