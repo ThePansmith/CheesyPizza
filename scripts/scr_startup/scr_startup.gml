@@ -217,6 +217,18 @@ function load_moddedconfig()
 }
 load_moddedconfig();
 
+// index palettes
+function scr_indexpalettes()
+{
+	pal_swap_index_palette(spr_peppalette);
+	pal_swap_index_palette(spr_noisepalette);
+	pal_swap_index_palette(spr_vigipalette);
+	pal_swap_index_palette(spr_snickpalette);
+	pal_swap_index_palette(spr_pizzypalette);
+	pal_swap_index_palette(spr_pizzanopalette);
+	pal_swap_index_palette(spr_bopalette);
+}
+
 // gameframe
 ini_open("saveData.ini");
 global.gameframe_enabled = ini_read_real("Modded", "gameframe", true);
