@@ -17,11 +17,11 @@ function scr_player_freefallland()
 	hsp = 0;
 	
 	var jump = false;
-	if key_jump && REMIX
+	if key_jump && global.poundjump
 		jump = true;
 	else if (floor(image_index) == (image_number - 1))
 	{
-		if key_jump2 && REMIX
+		if key_jump2 && global.poundjump
 			jump = true;
 		else
 		{

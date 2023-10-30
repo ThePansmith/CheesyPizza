@@ -12,7 +12,7 @@ function scr_player_punch()
 		if (move != 0)
 		{
 			dir = move;
-			if REMIX && movespeed != 0
+			if global.uppercut && movespeed != 0
 			{
 				if move > 0
 					movespeed = Approach(movespeed, max(move * 4, movespeed), 0.6);
@@ -49,7 +49,7 @@ function scr_player_punch()
 		}
 		
 		// quick fall
-		if REMIX && key_down && vsp < 10
+		if global.uppercut && key_down && vsp < 10
 			vsp = 10;
 	}
 	

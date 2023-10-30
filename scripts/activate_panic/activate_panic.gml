@@ -66,7 +66,7 @@ function activate_panic(instapanic = false, debris = noone)
 			global.fill = 2040;
 			break;
 		case ruin_11:
-			global.fill = 2040;
+			global.fill = 2160;
 			break;
 		case dungeon_10:
 			global.fill = 2460;

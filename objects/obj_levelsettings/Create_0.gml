@@ -31,7 +31,8 @@ function add_modifier(name, variable, desc = "", drawfunc = noone)
 		name: name,
 		desc: desc,
 		opts: [["OFF", false], ["ON", true]],
-		drawfunc: drawfunc
+		drawfunc: drawfunc,
+		condition: noone
 	}
 	array_push(options_array, struct);
 	return struct;
@@ -67,11 +68,11 @@ add_section("Modifiers");
 var deathmode_allow = 
 [ 
 	"entryway", // Sugary
-	"entrance", "medieval", "ruin", "dungeon", // W1
-	"badland", "graveyard", "saloon", "farm", // W2
-	"plage", "space", "minigolf", "forest", // W3
-	"freezer", "street", "industrial", "sewer", // W4
-	"chateau", "kidsparty", //"war", // W5
+	"entrance", "medieval", //"ruin", "dungeon", // W1
+	//"badland", "graveyard", "saloon", "farm", // W2
+	//"plage", "space", "minigolf", "forest", // W3
+	//"freezer", "street", "industrial", "sewer", // W4
+	//"chateau", "kidsparty", //"war", // W5
 	"etb", "midway", // Extra
 ];
 if array_contains(deathmode_allow, level)// or DEBUG
@@ -120,7 +121,7 @@ add_modifier("Lights Out", "Spotlight", "The size of the spotlight is tied to yo
 	draw_sprite(spr_playerN_move, p.image, 384 / 2, 216 / 2);
 });
 
-add_modifier("Cosmic Clones", "CosmicClones", "");
+//add_modifier("Cosmic Clones", "CosmicClones", "");
 
 // Level specific
 if level == "grinch"

@@ -9,7 +9,7 @@ function pattern_set(color_array, sprite, subimg, xscale, yscale, pattern, patte
     pattern_set_sprite(sprite, subimg, xscale, yscale, sprite_get_xoffset(pattern) + pattern_xoffset, sprite_get_yoffset(pattern) + pattern_yoffset);
     pattern_set_color_array(color_array);
 	
-	shader_set_uniform_f(shader_multiplier, global.shader_mulitplier);
+	shader_set_uniform_f(shader_multiplier, 1);
 }
 function pattern_set_temp(color_array, sprite, subimg, xscale, yscale, pattern, pattern_subimage = global.Pattern_Index,  pattern_xoffset = 0, pattern_yoffset = 0)
 {
@@ -40,5 +40,5 @@ function pattern_set_temp(color_array, sprite, subimg, xscale, yscale, pattern, 
 	// Color Array
 	shader_set_uniform_f_array(global.Pattern_Color_Array, color_array);
 	
-	shader_set_uniform_f(shader_multiplier, global.shader_mulitplier);
+	shader_set_uniform_f(shader_multiplier, 1);
 }

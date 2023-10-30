@@ -11,13 +11,6 @@ switch os_type
 		break;
 }
 
-enum blockstyles
-{
-	final,
-	september,
-	old
-}
-
 // room order check
 if room_first != Loadiingroom or room_next(room_first) != Initroom
 {
@@ -152,6 +145,12 @@ for (var i = 0; i < ds_map_size(global.lang_map); i++)
 }
 
 // settings
+enum blockstyles
+{
+	final,
+	september,
+	old
+}
 function load_moddedconfig()
 {
 	ini_open("saveData.ini");
@@ -161,6 +160,7 @@ function load_moddedconfig()
 	global.performance = ini_read_real("Modded", "performance", false);
 	
 	// gameplay settings
+	global.uppercut = ini_read_real("Modded", "uppercut", true); // *buffed uppercut*
 	global.poundjump = ini_read_real("Modded", "poundjump", false);
 	global.attackstyle = ini_read_real("Modded", "attackstyle", 0); // grab, kungfu, shoulderbash
 	global.shootstyle = ini_read_real("Modded", "shootstyle", 0); // nothing, pistol, breakdance
@@ -189,7 +189,7 @@ function load_moddedconfig()
 	global.sugaryoverride = ini_read_real("Modded", "sugaryoverride", false);
 	global.enemyrot = ini_read_real("Modded", "enemyrot", false);
 	
-	// convert from PTT
+	// convert from islam
 	if ini_key_exists("Modded", "pizzellesugaryoverride")
 	{
 		global.sugaryoverride = ini_read_real("Modded", "pizzellesugaryoverride", false);
@@ -199,11 +199,11 @@ function load_moddedconfig()
 		ini_key_delete("Modded", "vigisuperjump");
 	}
 	
-	// taunt PTU players
+	// PTU
 	if ini_section_exists("ControlsKeysPTU")
 	{
-		show_message("PTU key config detected!\nYou disgust me.");
-		ini_section_delete("ControlsKeysPTU");
+		//show_message("PTU key config detected!\nYou disgust me.");
+		ini_section_delete("ControlsKeysPTU"); // REMOVES IT FROM CHEESED UP. NOT THE ORIGINAL FILE.
 	}
 	
 	// turn on performance mode
@@ -246,15 +246,10 @@ ini_close();
 global.goodmode = false; // makes everything a living nightmare
 global.sandbox = true;
 global.saveloaded = false;
-global.panicwavetime = 0; // RX: don't remove im gonna do something with this later
 
 global.secrettile_clip_distance = 150; // distance before we cut off tiles
 global.secrettile_fade_size = 0.85; // distance before we start to fade
 global.secrettile_fade_intensity = 32; // dropoff intensity
-
-global.colorblind_type = -1; // 0 - Protanopia, 1 - Deuteranopia, 2 - Tritanopia
-global.colorblind_intensity = 0.5;
-global.shader_mulitplier = 1.0;
 
 #macro heat_nerf 5 // divides the style gain by this
 #macro heat_lossdrop 0.1 // speed of global.style loss

@@ -1,6 +1,6 @@
 if object_index == obj_junk
 {
-	if REMIX
+	if !instance_exists(obj_levelLoader) or REMIX
 	{
 		instance_change(obj_junkNEW, false);
 		event_perform_object(obj_junkNEW, ev_create, 0);

@@ -30,7 +30,8 @@ function add_option(name, variable, desc = "", drawfunc = noone)
 		name: name,
 		desc: desc,
 		opts: [["OFF", false], ["ON", true]],
-		drawfunc: drawfunc
+		drawfunc: drawfunc,
+		condition: noone
 	}
 	array_push(options_array, struct);
 	return struct;
@@ -42,7 +43,8 @@ function add_button(name, desc = "", func = noone, drawfunc = noone)
 		name: name,
 		desc: desc,
 		func: func,
-		drawfunc: drawfunc
+		drawfunc: drawfunc,
+		condition: noone
 	}
 	array_push(options_array, struct);
 	return struct;
@@ -56,7 +58,8 @@ function add_slider(name, variable, range = [0, 1], desc = "", drawfunc = noone)
 		name: name,
 		desc: desc,
 		range: range,
-		drawfunc: drawfunc
+		drawfunc: drawfunc,
+		condition: noone
 	}
 	array_push(options_array, struct);
 	return struct;
@@ -76,6 +79,9 @@ global.modsurf = noone;
 // simuplayer
 reset_simuplayer = function()
 {
+	particles = [
+	
+	];
 	simuplayer = {
 		x: 960 / 2.5 / 2, y: 540 / 2.5 / 1.5, state: states.normal, hsp: 0, vsp: 0, sprite: spr_player_idle, image: 0, xscale: 1, timer: 0, move: 0, changed: false, angle: 0
 	}
@@ -83,6 +89,11 @@ reset_simuplayer = function()
 function draw_simuplayer()
 {
 	var p = simuplayer;
+	if p.y < -50
+	{
+		draw_sprite(spr_peppinoicon, 0, p.x, 25);
+		exit;
+	}
 	
 	shader_set(shd_pal_swapper);
 	pal_swap_set(spr_peppalette, 1, 0);
@@ -99,6 +110,25 @@ function draw_simuplayer()
 	
 	draw_sprite_ext(p.sprite, p.image, xo, yo, p.xscale, 1, p.angle, c_white, 1);
 	shader_reset();
+}
+function draw_particles()
+{
+	for(var i = 0; i < array_length(particles); i++)
+	{
+		var p = particles[i];
+		if p.img >= sprite_get_number(p.sprite) - 1
+		{
+			array_delete(particles, i, 1);
+			i--;
+			continue;
+		}
+		p.img += p.imgspeed;
+		draw_sprite(p.sprite, p.img, p.x, p.y);
+	}
+}
+function add_particle(sprite, imgspeed, x, y)
+{
+	array_push(particles, {sprite: sprite, imgspeed: imgspeed, img: 0, x: x, y: y});
 }
 reset_simuplayer();
 
@@ -383,6 +413,41 @@ opt.opts = [
 ];
 
 #endregion
+#region BUFFED UPPERCUT
+
+var opt = add_option("Buffed Uppercut", "uppercut", "Keeps your momentum when uppercutting, and you can press down to fall down faster.", function(val)
+{
+	var p = simuplayer;
+	if p.state == states.titlescreen
+	{
+		p.timer = 0;
+		p.state = states.normal;
+	}
+	p.move = 1;
+	
+	p.timer++;
+	if p.timer >= 20
+	{
+		p.timer = -50;
+		seq_afterimages_uppersnd();
+		
+		p.state = states.panicjump;
+		p.sprite = spr_player_breakdanceuppercut;
+		if val != 1
+			p.hsp = 2;
+		p.vsp = -12;
+		p.image = 0;
+	}
+	
+	draw_simuplayer();
+});
+
+#endregion
+#region POUND JUMP
+
+var opt = add_option("Groundpound Jump", "poundjump", "Hold or press jump when landing from a ground pound to jump higher.");
+
+#endregion
 #region HEAT METER
 
 var opt = add_option("Heat Meter", "heatmeter", "Rewards good gameplay with more points, but harder enemies!", function(val)
@@ -399,22 +464,33 @@ var opt = add_option("Heat Meter", "heatmeter", "Rewards good gameplay with more
 });
 
 #endregion
-
 #region HOLIDAY OVERRIDE
 
-if room == Mainmenu
+var opt = add_option("Holiday Override", "holidayoverride", "Overrides the current in-game holiday.", function(val)
 {
-	var opt = add_option("Holiday Override", "holidayoverride", "Overrides the current in-game holiday.", function(val)
+	var xx = 960 / 2.5 / 2, yy = 540 / 2.5 / 2;
+	
+	if val == -1
+		val = global.holiday;
+	
+	switch val
 	{
-		var xx = 960 / 2.5 / 2, yy = 540 / 2.5 / 2;
-		
-		draw_sprite(spr_player_petah, 0, xx, yy)
-	});
-	opt.opts = [
-		["OFF", -1],
-		["NONE", holiday.none],
-		["HALLOWEEN", holiday.halloween]
-	]
+		case holiday.none:
+			draw_sprite(spr_PTG, -1, xx + Wave(-3, 3, 2, 0), yy + 50);
+			break;
+		case holiday.halloween:
+			draw_sprite(spr_PTGhalloween, -1, xx + random_range(-2, 2), yy + 75 + random_range(-1, 1) - abs(sin(current_time / 1) * 50));
+			break;
+	}
+});
+opt.opts = [
+	["OFF", -1],
+	["NONE", holiday.none],
+	["HALLOWEEN", holiday.halloween]
+]
+opt.condition = function()
+{
+	return [room == Mainmenu, "Go back to the main menu\nto change this!"];
 }
 
 #endregion
@@ -614,19 +690,22 @@ var opt = add_option("Slope Rotation", "sloperot", "Rotates the player when stan
 	draw_simuplayer();
 });
 
-
-
 #endregion
 #region ENEMY SPIN
 
 var opt = add_option("Enemy Spin", "enemyrot", "Makes dead enemies spin in the air.", function(val)
 {
 	var xx = 960 / 2.5 / 2, yy = 540 / 2.5 / 2;
-	draw_set_font(global.font_small);
-	draw_text(xx, yy, "loypoll please add details")
+	
+	if ++simuplayer.timer >= 10
+	{
+		simuplayer.timer = 0;
+		add_particle(spr_cloudeffect, 0.5, xx + random_range(-50, 50), yy + random_range(-50, 50));
+	}
+	
+	draw_sprite_ext(spr_slimedead, 0, xx, yy, 1, 1, -current_time / 2 * val, c_white, 1);
+	draw_particles();
 });
-
-
 
 #endregion
 #region SHOW FPS
@@ -665,6 +744,7 @@ var opt = add_option("FPS Counter", "showfps", "Shows an FPS counter at the bott
 #endregion
 #region COLORBLIND
 
+/*
 var opt = add_option("Colorblind Mode", "colorblind_type", "Applies a fullscreen shader that hopefully helps colorblindness.", function(val)
 {
 	global.colorblind_type = val;
@@ -676,6 +756,7 @@ opt.opts = [
 	["DEUTERANOPIA", 1],
 	["TRITANOPIA", 2]
 ]
+*/
 
 #endregion
 #region SECRET STYLE
@@ -738,7 +819,7 @@ var opt = add_option("Hud Style", "hud", "Choose between the pre-April 2021 HUD 
 {
 	if val == 0
 	{
-		draw_sprite_ext(REMIX ? spr_tv_bgfinal_NEW : spr_tv_bgfinal, 1, 960 / 5, 540 / 5, 1, 1, 0, c_white, 1);
+		draw_sprite_ext(spr_tv_bgfinal, 1, 960 / 5, 540 / 5, 1, 1, 0, c_white, 1);
 		draw_sprite(spr_tv_idle, -1, 960 / 5, 540 / 5);
 	}
 	if val == 1

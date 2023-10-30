@@ -226,10 +226,10 @@ draw = function(curve)
 	draw_clear_alpha(c_white, 0);
 	
 	var pal = palettes[sel.pal];
+	var charx = SCREEN_WIDTH / 2 + sideoffset + charshift[0] * 75, chary = SCREEN_HEIGHT / 2 - 32 + charshift[1] * 75;
+	
 	if anim_con != 2 or obj_player1.visible
 	{
-		var charx = SCREEN_WIDTH / 2 + sideoffset + charshift[0] * 75, chary = SCREEN_HEIGHT / 2 - 32 + charshift[1] * 75;
-		
 		// special skins
 		if characters[sel.char][0] == "N"
 		{

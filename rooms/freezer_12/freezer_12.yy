@@ -67,6 +67,7 @@
     {"name":"inst_DD9F8CC1","path":"rooms/freezer_12/freezer_12.yy",},
     {"name":"inst_5142FA39","path":"rooms/freezer_12/freezer_12.yy",},
     {"name":"inst_E60678A1","path":"rooms/freezer_12/freezer_12.yy",},
+    {"name":"inst_73DF8767","path":"rooms/freezer_12/freezer_12.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -131,6 +132,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_DD9F8CC1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_iceblock_breakable","path":"objects/obj_iceblock_breakable/obj_iceblock_breakable.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":768.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5142FA39","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_iceblock_breakable","path":"objects/obj_iceblock_breakable/obj_iceblock_breakable.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":704.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_E60678A1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_exitgustavo","path":"objects/obj_exitgustavo/obj_exitgustavo.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":400.0,"y":658.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_73DF8767","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cutoff","path":"objects/obj_cutoff/obj_cutoff.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":544.0,"y":1568.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_2","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":55,"SerialiseWidth":40,"TileCompressedData":[
 -29,0,1,323,-61,0,3,164,165,166,-37,0,3,184,185,186,-20,0,3,164,165,166,-7,0,1,263,-6,0,3,204,205,206,-20,0,3,184,185,186,-7,0,

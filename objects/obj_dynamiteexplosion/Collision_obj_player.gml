@@ -5,6 +5,7 @@ with (other)
 		if (key_jump2)
 		{
 			vsp = -20;
+			/*
 			if hsp == 0
 			{
 				input_buffer_slap = 0;
@@ -17,7 +18,7 @@ with (other)
 				state = states.Sjump;
 				substate = states.Sjump;
 			}
-			else if (state == states.normal || state == states.jump)
+			else */if (state == states.normal || state == states.jump)
 			{
 				sprite_index = spr_playerV_superjump;
 				state = states.jump;
