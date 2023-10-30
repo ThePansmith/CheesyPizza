@@ -105,6 +105,8 @@
     {"name":"inst_CF7F04FF","path":"rooms/medieval_9b/medieval_9b.yy",},
     {"name":"inst_53228277","path":"rooms/medieval_9b/medieval_9b.yy",},
     {"name":"inst_D8D5F0EF","path":"rooms/medieval_9b/medieval_9b.yy",},
+    {"name":"inst_EA494D0","path":"rooms/medieval_9b/medieval_9b.yy",},
+    {"name":"inst_72016D7C","path":"rooms/medieval_9b/medieval_9b.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -207,6 +209,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_CF7F04FF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_doorB","path":"objects/obj_doorB/obj_doorB.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":928.0,"y":1120.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_53228277","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_destroyable3","path":"objects/obj_destroyable3/obj_destroyable3.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":640.0,"y":1088.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_D8D5F0EF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_exitgustavo","path":"objects/obj_exitgustavo/obj_exitgustavo.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":819.0,"y":690.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_EA494D0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1536.0,"y":672.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_72016D7C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollectescape","path":"objects/obj_deathcollectescape/obj_deathcollectescape.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":928.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[],"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_2","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":44,"SerialiseWidth":69,"TileCompressedData":[

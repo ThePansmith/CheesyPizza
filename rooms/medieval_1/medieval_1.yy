@@ -59,6 +59,7 @@
     {"name":"inst_A864F522","path":"rooms/medieval_1/medieval_1.yy",},
     {"name":"inst_3D17739A","path":"rooms/medieval_1/medieval_1.yy",},
     {"name":"inst_B2CBE102","path":"rooms/medieval_1/medieval_1.yy",},
+    {"name":"inst_45552A1E","path":"rooms/medieval_1/medieval_1.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -115,6 +116,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_A864F522","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_destroyable","path":"objects/obj_destroyable/obj_destroyable.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":192.0,"y":448.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3D17739A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_destroyable","path":"objects/obj_destroyable/obj_destroyable.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":448.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B2CBE102","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_destroyable","path":"objects/obj_destroyable/obj_destroyable.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":256.0,"y":448.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_45552A1E","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_snickchallengedoor","path":"objects/obj_snickchallengedoor/obj_snickchallengedoor.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":928.0,"y":480.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_3","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":44,"SerialiseWidth":60,"TileCompressedData":[
 -253,0,2,1,2,-58,0,2,21,22,-58,0,2,41,42,-92,0,8,85,86,87,88,89,90,91,92,-52,0,8,105,106,107,108,109,110,111,112,-52,0,8,125,126,127,128,129,130,131,132,-52,0,8,145,146,147,148,149,150,151,152,-52,

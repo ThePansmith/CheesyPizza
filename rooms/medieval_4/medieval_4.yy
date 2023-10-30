@@ -92,6 +92,9 @@
     {"name":"inst_A3B7F839","path":"rooms/medieval_4/medieval_4.yy",},
     {"name":"inst_376B76A1","path":"rooms/medieval_4/medieval_4.yy",},
     {"name":"inst_BC1EE419","path":"rooms/medieval_4/medieval_4.yy",},
+    {"name":"inst_432EEDA1","path":"rooms/medieval_4/medieval_4.yy",},
+    {"name":"inst_163851F5","path":"rooms/medieval_4/medieval_4.yy",},
+    {"name":"inst_20FCE1BF","path":"rooms/medieval_4/medieval_4.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -181,6 +184,9 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_A3B7F839","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cutoff","path":"objects/obj_cutoff/obj_cutoff.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1728.0,"y":672.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_376B76A1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cutoff","path":"objects/obj_cutoff/obj_cutoff.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":-1.0,"x":1728.0,"y":608.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_BC1EE419","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_exitgustavo","path":"objects/obj_exitgustavo/obj_exitgustavo.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":2916.0,"y":498.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_432EEDA1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollectescape","path":"objects/obj_deathcollectescape/obj_deathcollectescape.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":576.0,"y":640.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_163851F5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2496.0,"y":704.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_20FCE1BF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4288.0,"y":384.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_41AC75EC","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_medievalwindow","path":"sprites/spr_medievalwindow/spr_medievalwindow.yy",},"x":480.0,"y":352.0,},
