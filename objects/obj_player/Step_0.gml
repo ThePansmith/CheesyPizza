@@ -1005,19 +1005,20 @@ if (distance_to_object(obj_spike) < 500)
 					instance_destroy();
 				if (h != other.hurted && other.hurted)
 					fmod_event_one_shot_3d("event:/sfx/enemies/pizzardelectricity", x, y);
-				break;
 			}
-			with (other)
+			else
 			{
-				state = states.bump;
-				sprite_index = spr_bump;
-				image_index = 0;
-				hsp = -6 * xscale;
-				vsp = -4;
-				fmod_event_one_shot_3d("event:/sfx/knight/lose", x, y);
-				repeat (3)
-					create_debris(x, y, spr_wooddebris);
-				break;
+				with (other)
+				{
+					state = states.bump;
+					sprite_index = spr_bump;
+					image_index = 0;
+					hsp = -6 * xscale;
+					vsp = -4;
+					fmod_event_one_shot_3d("event:/sfx/knight/lose", x, y);
+					repeat (3)
+						create_debris(x, y, spr_wooddebris);
+				}
 			}
 		}
 	}
