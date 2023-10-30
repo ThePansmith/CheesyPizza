@@ -400,6 +400,25 @@ var opt = add_option("Heat Meter", "heatmeter", "Rewards good gameplay with more
 
 #endregion
 
+#region HOLIDAY OVERRIDE
+
+if room == Mainmenu
+{
+	var opt = add_option("Holiday Override", "holidayoverride", "Overrides the current in-game holiday.", function(val)
+	{
+		var xx = 960 / 2.5 / 2, yy = 540 / 2.5 / 2;
+		
+		draw_sprite(spr_player_petah, 0, xx, yy)
+	});
+	opt.opts = [
+		["OFF", -1],
+		["NONE", holiday.none],
+		["HALLOWEEN", holiday.halloween]
+	]
+}
+
+#endregion
+
 add_section("Input");
 #region SWAP GRAB
 
