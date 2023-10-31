@@ -13,7 +13,7 @@ with (obj_player)
 		{
 			secretportalID = noone;
 			if !instance_exists(obj_secretportalstart)
-			{	
+			{
 				x = other.x;
 				y = other.y;
 				roomstartx = x;
@@ -32,7 +32,11 @@ with (obj_player)
 				other.sprite_index = other.spr_close;
 				other.image_index = 0;
 				instance_destroy(other);
-				instance_create(x, y, obj_secretportalstart);
+				with instance_create(x, y, obj_secretportalstart)
+				{
+					active = true;
+					visible = true;
+				}
 			}
 		}
 	}

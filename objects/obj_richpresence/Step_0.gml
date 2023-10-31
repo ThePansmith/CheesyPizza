@@ -133,11 +133,12 @@ switch safe_get(global, "leveltosave")
 	case "street": state = "The Pig City"; break;
 	case "sewer": state = "Oh Shit!"; break;
 	case "industrial": state = "Peppibot Factory"; break;
-	case "freezer": state = "Refrigerator-Refrigerador-Freezerator"; break;
+	case "freezer": state = "R-R-F"; break;
 	case "chateau": state = "Pizzascare"; break;
 	case "kidsparty": state = "Don't Make A Sound"; break;
 	case "war": state = "WAR"; break;
 	case "exit": state = "CTOP"; break;
+	case "secretworld": state = "Secrets Of The World"; break;
 	
 	// pto
 	case "desert": state = "Old Desert"; break;
@@ -254,8 +255,15 @@ if state == ""
 			state = "Abandoned Tower";
 		if room == tower_baby
 			state = "Baby Room";
-		if room == tower_baby
+		if room == tower_freerun
 			state = "Freerunning";
+	}
+	
+	if string_starts_with(r, "trickytreat_")
+	{
+		state = "Tricky Treat";
+		if instance_exists(obj_pumpkincounter)
+			state += $" - {obj_pumpkincounter.counter} left";
 	}
 	
 	// cutscenes

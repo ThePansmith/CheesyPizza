@@ -28,9 +28,11 @@ function sh_level(args)
 			case "plage": targetRoom = plage_entrance; break;
 			case "street": targetRoom = street_intro; break;
 			case "exit": targetRoom = tower_finalhallway; break;
+			case "secretworld": targetRoom = secret_entrance; break;
+			
 			case "oldexit": targetRoom = exit_1; break;
 			case "strongcold": targetRoom = strongcold_10; break;
-		
+			
 			case "snickchallenge":
 				targetRoom = medieval_1;
 				activate_snickchallenge();
@@ -78,7 +80,7 @@ function meta_level()
 					return levels;
 				}
 				else
-					return ["entrance", "medieval", "ruin", "dungeon", "badland", "graveyard", "farm", "saloon", "plage", "forest", "space", "minigolf", "street", "sewer", "industrial", "freezer", "kidsparty", "chateau", "war", "exit",
+					return ["entrance", "medieval", "ruin", "dungeon", "badland", "graveyard", "farm", "saloon", "plage", "forest", "space", "minigolf", "street", "sewer", "industrial", "freezer", "kidsparty", "chateau", "war", "exit", "secretworld",
 				"oldexit", "beach", "mansion", "strongcold", "dragonlair", "etb", "ancient", "grinch", "snickchallenge", "midway",
 				"entryway", "steamy", "molasses", "sucrose"];
 			}

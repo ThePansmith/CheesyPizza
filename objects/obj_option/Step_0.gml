@@ -11,6 +11,8 @@ else if (m.menu_id == menus.audio)
     j = 1;
 else if (m.menu_id == menus.game)
     j = 3;
+else if m.menu_id == menus.inputdisplay
+	j = 4;
 
 if safe_get(obj_modconfig, "visible")
 	j = 5;
@@ -26,11 +28,10 @@ for (var i = 0; i < array_length(bg_alpha); i++)
 bg_x -= 1;
 bg_y -= 1;
 
-// rope yourself
-if (instance_exists(obj_keyconfig) || instance_exists(obj_screenconfirm) || instance_exists(obj_modconfig))
+if instance_exists(obj_keyconfig) or instance_exists(obj_screenconfirm) or safe_get(obj_modconfig, "visible")
 	exit;
-
 scr_menu_getinput();
+
 if (backbuffer > 0)
 {
 	backbuffer--;
@@ -154,15 +155,31 @@ if ((key_back || key_slap2 || keyboard_check_pressed(vk_escape)) && !instance_ex
 	}
 	else
 	{
-		for (i = 0; i < array_length(m.options); i++)
+		// look for back button
+		var emptyhanded = true;
+		for(var i = 0; i < array_length(m.options); i++)
 		{
-			b = m.options[i];
-			if (b.type == menutype.slide)
+			if m.options[i].name == "option_back"
 			{
-				if (b.sound != -4)
-					fmod_event_instance_stop(b.sound, true);
+				emptyhanded = false;
+				m.options[i].func();
+				break;
 			}
 		}
-		menu_goto(m.backmenu);
+		
+		// fallback, old method
+		if emptyhanded
+		{
+			for (i = 0; i < array_length(m.options); i++)
+			{
+				b = m.options[i];
+				if b.type == menutype.slide
+				{
+					if b.sound != noone
+						fmod_event_instance_stop(b.sound, true);
+				}
+			}
+			menu_goto(m.backmenu);
+		}
 	}
 }

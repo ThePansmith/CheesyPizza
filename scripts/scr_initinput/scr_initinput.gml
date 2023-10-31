@@ -14,6 +14,7 @@ function scr_initinput(open_savedata = true)
 	if open_savedata
 		ini_open("saveData.ini");
 	
+	// menu
 	tdp_input_add(new tdp_input_key("menu_reset_binds", [new tdp_input_action(tdp_type.keyboard, vk_f1)]));
     tdp_input_add(new tdp_input_key("menu_reset_bindsC", [new tdp_input_action(tdp_type.gamepad, gp_select)]));
     tdp_input_ini_read("menu_up", [tdp_action(tdp_type.keyboard, vk_up)]);
@@ -26,6 +27,7 @@ function scr_initinput(open_savedata = true)
     tdp_input_ini_read("menu_delete", [tdp_action(tdp_type.keyboard, ord("C"))]);
     tdp_input_ini_read("menu_quit", [tdp_action(tdp_type.keyboard, ord("X"))]);
 	
+	// menu (controller)
 	var _select = gp_face1;
     var _back = gp_face2;
     tdp_input_ini_read("menu_upC", [tdp_action(tdp_type.joystick, gp_axislv, -1), tdp_action(tdp_type.gamepad, gp_padu)]);
@@ -37,6 +39,8 @@ function scr_initinput(open_savedata = true)
     tdp_input_ini_read("menu_backC", [tdp_action(tdp_type.gamepad, _back)]);
     tdp_input_ini_read("menu_deleteC", [tdp_action(tdp_type.gamepad, gp_face4)]);
     tdp_input_ini_read("menu_quitC", [tdp_action(tdp_type.gamepad, gp_face3)]);
+	
+	// controls
     tdp_input_ini_read("player_up", [tdp_action(tdp_type.keyboard, vk_up)]);
     tdp_input_ini_read("player_right", [tdp_action(tdp_type.keyboard, vk_right)]);
     tdp_input_ini_read("player_left", [tdp_action(tdp_type.keyboard, vk_left)]);
@@ -49,6 +53,8 @@ function scr_initinput(open_savedata = true)
     tdp_input_ini_read("player_attack", [tdp_action(tdp_type.keyboard, vk_shift)]);
     tdp_input_ini_read("player_groundpound", []);
     tdp_input_ini_read("player_superjump", []);
+	
+	// controls (controller)
     tdp_input_ini_read("player_upC", [tdp_action(tdp_type.joystick, gp_axislv, -1), tdp_action(tdp_type.gamepad, gp_padu)]);
     tdp_input_ini_read("player_downC", [tdp_action(tdp_type.joystick, gp_axislv, 1), tdp_action(tdp_type.gamepad, gp_padd)]);
     tdp_input_ini_read("player_leftC", [tdp_action(tdp_type.joystick, gp_axislh, -1), tdp_action(tdp_type.gamepad, gp_padl)]);
@@ -57,7 +63,7 @@ function scr_initinput(open_savedata = true)
     tdp_input_ini_read("player_slapC", [tdp_action(tdp_type.gamepad, gp_face3)]);
     tdp_input_ini_read("player_tauntC", [tdp_action(tdp_type.gamepad, gp_face4)]);
     tdp_input_ini_read("player_shootC", [tdp_action(tdp_type.gamepad, gp_face2)]);
-	tdp_input_ini_read("player_chainsawC", [tdp_action(tdp_type.gamepad, gp_shoulderl)]);
+	tdp_input_ini_read("player_chainsawC", [tdp_action(tdp_type.gamepad, gp_shoulderl), tdp_action(tdp_type.gamepad, gp_shoulderlb)]);
     tdp_input_ini_read("player_attackC", [tdp_action(tdp_type.gamepad, gp_shoulderrb), tdp_action(tdp_type.gamepad, gp_shoulderr)]);
     tdp_input_ini_read("player_groundpoundC", []);
     tdp_input_ini_read("player_superjumpC", []);

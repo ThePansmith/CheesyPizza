@@ -3,8 +3,6 @@ live_auto_call;
 // get input
 if anim_con == 0
 	scr_menu_getinput();
-else
-	scr_init_input();
 
 // controls
 move_hor = key_left2 + key_right2;

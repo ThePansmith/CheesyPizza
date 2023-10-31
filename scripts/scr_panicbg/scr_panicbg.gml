@@ -67,7 +67,7 @@ function scr_panicbg_start()
 	if event_type == ev_draw && event_number == ev_draw_normal
 	{
 		// set up surface
-		if global.panic && global.panicbg && !safe_get(obj_pause, "pause") && !instance_exists(obj_ghostcollectibles)
+		if global.panic && global.panicbg && !safe_get(obj_pause, "pause")
 		{
 			if !surface_exists(global.panicbg_surface)
 				global.panicbg_surface = surface_create(CAMW, CAMH);
@@ -109,7 +109,7 @@ function scr_panicbg_draw()
 		}
 		
 		// panicbg shader
-		if global.panic && global.panicbg && !instance_exists(obj_ghostcollectibles)
+		if global.panic && global.panicbg
 		{
 			surface_reset_target();
 			

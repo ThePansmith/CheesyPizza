@@ -2,8 +2,6 @@ live_auto_call;
 
 if !init
 	exit;
-
-scr_getinput(true);
 event_inherited();
 
 #region MOVE
@@ -132,7 +130,7 @@ mixing = false;
 if array_length(mixables) > 1 && sel.side == 1 && palettes[sel.pal].texture != noone
 {
 	create_transformation_tip("{u}[M] Mix Palettes/", "palettemixing");
-	mixing = key_attack;
+	mixing = tdp_input_get("player_attack").held or tdp_input_get("player_attackC").held;
 }
 mixingfade = Approach(mixingfade, mixing, 0.3);
 

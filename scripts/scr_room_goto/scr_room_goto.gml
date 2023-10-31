@@ -11,8 +11,6 @@ function scr_room_goto(_room)
 	{
 		SUGARY = global.leveltosave == "entryway" or global.leveltosave == "steamy" or global.leveltosave == "molasses" or global.leveltosave == "sucrose" or _room == tower_sugary or string_starts_with(room_get_name(_room), "sugarytut");
 		MIDWAY = global.leveltosave == "midway";
-		with obj_player
-			lastroom = room;
 		
 		if MOD.OldLevels
 		{

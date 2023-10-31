@@ -94,6 +94,8 @@ if (floor(image_index) >= (image_number - 1))
 						}
 						if (instance_exists(obj_randomsecret) && !obj_randomsecret.selected)
 						{
+							secretportalID = noone;
+							
 							obj_randomsecret.selected = true;
 							var len = array_length(obj_randomsecret.levels);
 							if (len > 0)

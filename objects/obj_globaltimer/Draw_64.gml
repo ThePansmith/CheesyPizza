@@ -1,8 +1,5 @@
 if (!global.option_timer || room == Realtitlescreen || room == Longintro || room == Finalintro || room == Mainmenu || room == hub_loadingscreen || room == Creditsroom || room == Johnresurrectionroom || room == rank_room || instance_exists(obj_titlecard) || !global.option_hud || room == characterselect)
 	exit;
-if !global.option_hud
-	exit;
-	exit;
 if (instance_exists(obj_pause) && obj_pause.pause && !global.option_speedrun_timer)
 	exit;
 

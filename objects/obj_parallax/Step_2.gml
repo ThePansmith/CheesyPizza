@@ -1,5 +1,6 @@
 live_auto_call;
 var _cam_x = CAMX, _cam_y = CAMY;
+var panic = global.panic && global.panicbg && !room_is_secret(room);
 
 // update the layers
 var roombgs = room_get_bg_layers();
@@ -18,7 +19,7 @@ for(var i = 0; i < array_length(roombgs); i++)
 			parallax = [0, 0];
 	}
 	
-	if global.panic && global.panicbg && layer_get_depth(l.layer_id) > 0
+	if panic && layer_get_depth(l.layer_id) > 0
 	{
 		parallax[0] -= _cam_x;
 		parallax[1] -= _cam_y;
