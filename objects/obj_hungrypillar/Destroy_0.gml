@@ -33,7 +33,7 @@ if !in_saveroom()
 	with (instance_create(x, y, obj_sausageman_dead))
 	{
 		var debris = id;
-		sprite_index = spr_hungrypillar_dead;
+		sprite_index = other.deadspr;
 		if (room == tower_finalhallway)
 			sprite_index = spr_protojohn;
 	}
