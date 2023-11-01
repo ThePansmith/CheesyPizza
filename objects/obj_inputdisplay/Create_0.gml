@@ -139,12 +139,12 @@ draw_inputdisplay_key = function(xx, yy, keycode, width, height = width)
 			xo = -2;
 			break;
 		case "A": 
-			drawer = 9; 
+			drawer = 8; 
 			pressed = key_shoot;
 			yo = -6;
 			break;
 		case "V": 
-			drawer = 10; 
+			drawer = 9; 
 			pressed = key_chainsaw; 
 			yo = -5;
 			break;

@@ -8,4 +8,4 @@ titlecard_sprite = spr_titlecardsecret;
 titlecard_index = 0;
 title_music = "event:/music/secretworldtitle";
 group_arr = ["kidspartygroup"];
-msg = "Secrets Of The World";
+msg = "Secrets of The World";

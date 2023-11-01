@@ -85,6 +85,9 @@ add_section("Pizza Tower", [
 	["event:/soundtest/base/mayhem", "Pizza Mayhem Instrumental - MrSauceman"],
 	["event:/soundtest/base/mayhem2", "Pizza Mayhem - MrSauceman"],
 	["event:/soundtest/base/secretlockin", "Secret Lockin' - ClascyJitto"],
+	["event:/soundtest/base/spaceypumpkins", "Spacey Pumpkins - MrSauceman"],
+	["event:/soundtest/base/thebonerattler", "The Bone Rattler - MrSauceman"],
+	["event:/soundtest/base/therunner", "The Runner - MrSauceman"],
 	
 	"Secrets",
 	["event:/soundtest/base/secretentrance", "An Entrance Secret - ClascyJitto"],
