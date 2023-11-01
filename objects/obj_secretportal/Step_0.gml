@@ -38,6 +38,13 @@ if (floor(image_index) >= (image_number - 1))
 			image_index = image_number - 1;
 			if touched
 			{
+				if targetRoom == room
+				{
+					targetRoom = choose(entrance_secret3, entrance_secret4, entrance_secret5);
+					with instance_create(0, 0, obj_langerror)
+						text = $"{room_get_name(room)}: undefined secret";
+				}
+				
 				if death
 				{
 					with obj_camera

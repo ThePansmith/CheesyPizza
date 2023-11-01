@@ -92,8 +92,8 @@ function state_player_jump()
 				sound_play_3d("event:/modded/sfx/woosh", x, y);
 				sprite_index = spr_playerN_doublejump;
 				vsp = -9;
+				jumpAnim = true;
 			}
-			jumpAnim = false;
 			image_index = 0;
 			jumpstop = false;
 			doublejump = true;
