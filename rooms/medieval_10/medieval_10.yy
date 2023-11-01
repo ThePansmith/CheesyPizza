@@ -58,6 +58,8 @@
     {"name":"inst_313C34C6","path":"rooms/medieval_10/medieval_10.yy",},
     {"name":"inst_B6F0A24E","path":"rooms/medieval_10/medieval_10.yy",},
     {"name":"inst_4AA310B6","path":"rooms/medieval_10/medieval_10.yy",},
+    {"name":"inst_6782C381","path":"rooms/medieval_10/medieval_10.yy",},
+    {"name":"inst_45FBBB35","path":"rooms/medieval_10/medieval_10.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -113,6 +115,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_313C34C6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_siren","path":"objects/obj_siren/obj_siren.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1600.0,"y":256.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B6F0A24E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_siren","path":"objects/obj_siren/obj_siren.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1824.0,"y":256.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4AA310B6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_siren","path":"objects/obj_siren/obj_siren.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1088.0,"y":672.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6782C381","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_snickchallengedoor","path":"objects/obj_snickchallengedoor/obj_snickchallengedoor.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1038.0,"y":896.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_45FBBB35","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_doorA","path":"objects/obj_doorA/obj_doorA.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1070.0,"y":960.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_2","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":38,"SerialiseWidth":69,"TileCompressedData":[
 -35,0,2,221,222,-5,0,1,254,-40,0,1,258,-9,0,3,160,161,162,-12,0,1,202,-42,0,1,298,-6,0,7,160,161,162,0,180,181,182,-4,0,1,277,-57,0,3,180,181,182,-24,0,1,277,-64,0,1,202,-12,0,1,277,-3,0,1,202,-5,0,2,297,298,-36,
