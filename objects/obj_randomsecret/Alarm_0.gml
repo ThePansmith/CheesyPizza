@@ -1,7 +1,9 @@
 if (!start)
     exit;
+
 alarm[0] = 60
-if (((!instance_exists(obj_secretportalstart)) || obj_secretportalstart.drop) && ((!instance_exists(obj_secretportal)) || (!obj_secretportal.touched)))
+if (!instance_exists(obj_secretportalstart) || obj_secretportalstart.drop) 
+&& (!instance_exists(obj_secretportal) || !obj_secretportal.touched)
 {
     seconds--
     if (seconds < 0)

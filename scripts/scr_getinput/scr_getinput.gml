@@ -84,9 +84,6 @@ function scr_menu_getinput()
 
 function scr_getinput(is_menu = false)
 {
-	if instance_exists(obj_replay) && obj_replay.playback && obj_replay.active
-		obj_replay.deserialize_input(obj_replay.latest_input);
-	
 	var _dvc = obj_inputAssigner.player_input_device[0];
 	tdp_input_update(_dvc);
 	

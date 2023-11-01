@@ -1,4 +1,3 @@
-
 enum INIT_FLAGS
 {
 	// Use defaults for all initialization options.
@@ -23,7 +22,6 @@ enum LOAD_BANK_FLAGS
     DECOMPRESS_SAMPLES = 0x00000002,
     UNENCRYPTED        = 0x00000004,
 }
-
 enum PLAYBACK_STATE
 {
     PLAYING,
@@ -32,7 +30,6 @@ enum PLAYBACK_STATE
     STARTING,
     STOPPING,
 }
-
 enum STOPMODE
 {
 	ALLOWFADEOUT,

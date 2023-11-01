@@ -53,14 +53,12 @@ if os_type == os_windows // this is temp
 	if !file_exists(path_cheesypizzalib)
 	{
 		show_message($"{path_cheesypizzalib} not found!");
-		
 		game_end();
 		exit;
 	}
 	if test_dll_linkage() != 1
 	{
 		show_message("Dude what the fuck is wrong with you");
-	
 		game_end();
 		exit;
 	}
@@ -76,7 +74,7 @@ if !file_exists("data/cheese.jpg")
 
 // macros
 #macro REMIX global.gameplay
-#macro DEBUG (GM_build_type == "run")
+#macro DEBUG true//(GM_build_type == "run")
 #macro YYC code_is_compiled()
 
 #macro STRING_UNDEFINED "<undefined>"
@@ -255,26 +253,11 @@ global.secrettile_fade_intensity = 32; // dropoff intensity
 #macro heat_lossdrop 0.1 // speed of global.style loss
 #macro heat_timedrop 0.5 // speed of global.heattime countdown
 
-if os_type == os_windows
+if file_exists("dead")
 {
-	if file_exists("dead") || (os_type == os_windows && !pto_checkguid("8ff30401-c151-49e3-8636-a28a5b288d85"))
-	{
-		show_message("Guid fail!");
-		
-		game_end();
-		exit;
-	}
-	pto_cheesypizza_setHWND(window_handle()); // RX: Bring window to front
+	game_end();
+	exit;
 }
-
-
-//pto_cheesypizza_setHWND(window_handle()); // RX: Bring window to front
-
-// RX: only works if Gamemaker is your current active window, a bit disapointing really.
-//if !pto_console_create(512)
-//	trace("unable to create console window!");
-//else
-//	trace("opened new console window");
 
 // performance mode
 #macro shader_set_base shader_set
@@ -290,21 +273,3 @@ function shader_set_fix(shader)
 #macro CACHE_DIRECTORY $"{working_directory}cache"
 #macro PATTERN_DIRECTORY $"{working_directory}patterns/"
 #macro TEXTURE_PAGE_SIZE 4096
-
-if !directory_exists(PATTERN_DIRECTORY)
-	directory_create(PATTERN_DIRECTORY);
-
-var pattern_example_directory = $"{PATTERN_DIRECTORY}/Example/";
-/*
-if !directory_exists(pattern_example_directory)
-{
-	directory_create(pattern_example_directory);
-	
-	var file = file_text_open_write($"{pattern_example_directory}Pattern.json");
-	var examplepattern = new custom_pattern_json();
-	file_text_write_string(file, json_stringify(examplepattern, true));
-	delete examplepattern;
-	file_text_close(file);
-	sprite_save(spr_pattern_example, 0, $"{pattern_example_directory}0.png");
-}
-*/

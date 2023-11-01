@@ -91,7 +91,7 @@ if (state == states.walk && point_in_camera(x, y, view_camera[0]))
 	var p = false;
 	with (obj_player)
 	{
-		if (state == states.backbreaker && sprite_index == spr_taunt)
+		if (state == states.backbreaker && (sprite_index == spr_taunt or sprite_index == spr_ratmount_taunt))
 			p = true;
 	}
 	if (p)

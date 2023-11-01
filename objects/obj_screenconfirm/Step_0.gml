@@ -32,7 +32,7 @@ if key_jump
 			{
 				if file_exists("CheesyPizza.exe")
 				{
-					launch_external("CheesyPizza.exe");
+					launch_external($"\"{program_directory}CheesyPizza.exe\"");
 					alarm[1] = 5;
 				}
 				else
