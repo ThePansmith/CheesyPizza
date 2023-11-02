@@ -9,6 +9,8 @@
 
 if (live_enabled) 
 function live_room_loader_run_cc(l_ccRaw, l_ccPath) {
+	// live_room_loader_run_cc(ccRaw:string, ccPath:string)
+	/// @ignore
 	var l_ccError;
 	var l_ccProgram = live_gmlive_patcher_compile_ex(l_ccPath, l_ccRaw);
 	if (l_ccProgram == undefined) l_ccError = live_gmlive_patcher_error_text; else l_ccError = l_ccProgram.h_error_text;
@@ -22,11 +24,13 @@ function live_room_loader_run_cc(l_ccRaw, l_ccPath) {
 		}
 	}
 	if (l_ccProgram != undefined) l_ccProgram.h_destroy();
-	if (l_ccError != undefined) live_log(l_ccError, 2);
+	if (l_ccError != undefined) live_log_script(l_ccError, 2);
 }
 
 if (live_enabled) 
 function live_room_loader_init_physics(l_phs) {
+	// live_room_loader_init_physics(phs:live_yy_YyRoomPhySettings)
+	/// @ignore
 	if (l_phs == undefined) exit;
 	if (l_phs[?"PhysicsWorld"]) {
 		live_room_loader_use_physics = true;
@@ -37,11 +41,15 @@ function live_room_loader_init_physics(l_phs) {
 
 if (live_enabled) 
 function live_room_loader_anim_speed(l_val, l_type) {
+	// live_room_loader_anim_speed(val:number, type:string)->number
+	/// @ignore
 	if (l_type == "0") return l_val / room_speed; else return l_val;
 }
 
 if (live_enabled) 
 function live_room_loader_run_yy_inst_cc(l_inst, l_qinst) {
+	// live_room_loader_run_yy_inst_cc(inst:instance, qinst:live_yy_YyRoomInstance)
+	/// @ignore
 	with (l_inst) {
 		var l_rname = l_qinst[?"name"];
 		event_perform(14, 0);
@@ -55,6 +63,8 @@ function live_room_loader_run_yy_inst_cc(l_inst, l_qinst) {
 
 if (live_enabled) 
 function live_room_loader_add_layer(l_ql) {
+	// live_room_loader_add_layer(ql:live_yy_YyRoomLayer)
+	/// @ignore
 	var l_ql_depth = l_ql[?"depth"];
 	var l_ql_name = l_ql[?"name"];
 	var l_ql_sublayers = l_ql[?"layers"];
@@ -144,9 +154,9 @@ function live_room_loader_add_layer(l_ql) {
 				var l_rt = layer_tilemap_create(l_rl, live_room_loader_room_x + l_qt[?"x"], live_room_loader_room_y + l_qt[?"y"], l_tileset1, l_qtw, l_qth);
 				if (is_string(l_qtb64)) {
 					var l_qtbz = buffer_base64_decode(l_qtb64);
-					if (l_qtbz == -1) show_error("Couldn't decode base64-decoded data", true);
+					if (l_qtbz == -1) throw gml_std_haxe_Exception_thrown("Couldn't decode base64-decoded data");
 					var l_qtb = buffer_decompress(l_qtbz);
-					if (l_qtb == -1) show_error("Couldn't decompress ZLIB-compressed tile data", true);
+					if (l_qtb == -1) throw gml_std_haxe_Exception_thrown("Couldn't decompress ZLIB-compressed tile data");
 					var l_qti = 0;
 					var l_y = 0;
 					for (var l__g1 = l_qth; l_y < l__g1; l_y++) {
@@ -197,7 +207,7 @@ function live_room_loader_add_layer(l_ql) {
 				l_n = ds_list_size(l_instances);
 				var l_base = live_blank_object;
 				if (l_n != 0) {
-					if (!object_exists(l_base)) show_error("Please add a blank object and set live_blank_object to point at it in obj_gmlive's create event.", true);
+					if (!object_exists(l_base)) throw gml_std_haxe_Exception_thrown("Please add a blank object and set live_blank_object to point at it in obj_gmlive's create event.");
 				}
 				var l_lco = live_room_loader_object_cache;
 				l_i = l_n;
@@ -327,7 +337,7 @@ function live_room_loader_add_layer(l_ql) {
 							l_f = asset_get_index(l_s);
 							if (l_f != -1) fx_set_parameter(l_fx1, l_pp[?"name"], l_f);
 							break;
-						default: live_log("Unknown effect parameter type " + string(l_pp[?"type"]), 1);
+						default: live_log_script("Unknown effect parameter type " + string(l_pp[?"type"]), 1);
 					}
 				}
 				layer_set_fx(l_rl, l_fx1);
@@ -340,7 +350,9 @@ function live_room_loader_add_layer(l_ql) {
 
 if (live_enabled) 
 function live_room_loader_run_impl2(l_rm) {
-	live_log("Loading " + l_rm[?"name"] + "...", 0);
+	// live_room_loader_run_impl2(rm:live_yy_YyRoom)
+	/// @ignore
+	live_log_script("Loading " + l_rm[?"name"] + "...", 0);
 	ds_map_clear(live_room_loader_inst_map_gml);
 	ds_map_clear(live_room_loader_inst_map_yy);
 	if (live_room_loader_apply_settings) {
@@ -407,7 +419,7 @@ function live_room_loader_run_impl2(l_rm) {
 		var l_id = ds_list_find_value(l__g_list, l__g_index++);
 		var l_qinst = ds_map_find_value(live_room_loader_inst_map_yy, l_id);
 		if (l_qinst == undefined) {
-			live_log(l_id + " is in instanceCreationOrderIDs but no instance exists.", 1);
+			live_log_script(l_id + " is in instanceCreationOrderIDs but no instance exists.", 1);
 			continue;
 		}
 		live_room_loader_run_yy_inst_cc(ds_map_find_value(live_room_loader_inst_map_gml, l_id), l_qinst);
@@ -419,12 +431,14 @@ function live_room_loader_run_impl2(l_rm) {
 }
 
 function live_room_start() {
+	/// live_room_start()
+	/// @returns {void}
 	if (live_enabled) {
 		var l_rq = live_live_room;
-		if (!room_exists(l_rq)) show_error("No live room was specified.", true);
+		if (!room_exists(l_rq)) throw gml_std_haxe_Exception_thrown("No live room was specified.");
 		var l_rd = ds_map_find_value(live_live_room_data, l_rq);
 		if (l_rd == undefined) {
-			live_log("Warning: no live data had been received yet for " + room_get_name(l_rq) + ", transitioning to the regular version.", 1);
+			live_log_script(("Warning: no live data had been received yet for " + room_get_name(l_rq) + ", transitioning to the regular version."), 1);
 			room_goto(l_rq);
 			exit;
 		}

@@ -286,7 +286,7 @@ if instance_exists(target) && !lock && player.state != states.timesup && player.
 	}
 	
 	// better panic shake
-	if (REMIX && global.panic && !instance_exists(obj_ghostcollectibles)) or global.snickchallenge
+	if REMIX && PANIC && global.option_screenshake
 	{
 		cam_x += random_range(-1, 1);
 		repeat 2 cam_y += random_range(-1, 1);
@@ -340,7 +340,7 @@ else if REMIX && room != rank_room && room != timesuproom && room != rm_baby && 
 	}
 	
 	// better panic shake
-	if global.panic && !instance_exists(obj_ghostcollectibles) && global.option_screenshake
+	if PANIC && global.option_screenshake
 	{
 		cam_x += random_range(-1, 1);
 		repeat 2 cam_y += random_range(-1, 1);

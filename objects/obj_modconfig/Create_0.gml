@@ -141,7 +141,7 @@ tv_bg = {surf: noone, sprite: spr_gate_entranceBG, parallax: [0.65, 0.75, 0.85],
 
 color1 = shader_get_uniform(shd_mach3effect, "color1");
 color2 = shader_get_uniform(shd_mach3effect, "color2");
-var opt = add_option("Remix", "gameplay", "Adds a lot of extra quality of life improvements, and a few new moves too.", function(val)
+var opt = add_option("REMIX", "gameplay", "Adds extra quality of life improvements to a bunch of stuff.", function(val)
 {
 	if val == 1
 	{
@@ -234,7 +234,7 @@ var opt = add_option("Attack Style", "attackstyle", "Alternatives to the basic g
 opt.opts = [
 	["GRAB", 0],
 	["KUNG FU", 1],
-	["SHOULDERBASH", 2],
+	["SHOULDER BASH", 2],
 	["LUNGE", 3],
 ];
 
@@ -244,7 +244,6 @@ opt.opts = [
 var opt = add_option("Shoot Style", "shootstyle", "Extra attacks bound to the SHOOT button. Change it in the key config.", function(val)
 {
 	var p = simuplayer;
-	
 	if p.state == states.titlescreen
 	{
 		p.xscale = 1;

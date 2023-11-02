@@ -1,5 +1,5 @@
 if (use_static)
-	draw_sprite(spr_tvstatic, static_index, 0, 0);
+	draw_sprite_stretched(spr_tvstatic, static_index, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 else
 {
 	screen_clear(make_color_rgb(216, 104, 160));

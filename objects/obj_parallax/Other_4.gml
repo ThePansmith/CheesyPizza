@@ -1,11 +1,5 @@
 live_auto_call;
 
-/*
-if room_started
-	exit;
-room_started = true;
-*/
-
 // boss backgrounds ignore new system
 if instance_exists(obj_levelLoader)
 	exit;

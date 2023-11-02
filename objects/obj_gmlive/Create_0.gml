@@ -1,5 +1,5 @@
 // only include the extension if we're running from the IDE
-#macro live_enabled (GM_build_type == "run")
+#macro live_enabled true//(GM_build_type == "run")
 if !live_enabled
 {
 	instance_destroy();

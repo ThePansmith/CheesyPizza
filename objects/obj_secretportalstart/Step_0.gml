@@ -51,7 +51,7 @@ switch (sprite_index)
 						
 						var vars = variable_struct_get_names(other.override_vars);
 						for(var i = 0; i < array_length(vars); i++)
-							variable_instance_set(id, vars[i], other.override_vars[$vars[i]]);
+							variable_instance_set(id, vars[i], other.override_vars[$ vars[i]]);
 					}
 					else
 					{

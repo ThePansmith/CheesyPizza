@@ -8,10 +8,12 @@
 
 if (live_enabled) 
 function live_async_http_0(l_map) {
+	// live_async_http_0(map:live_GMLiveAsyncMap<any>)
+	/// @ignore
 	var l_i, l_n, l_s, l_list, l_names, l_srcMap;
 	live_is_ready = true;
 	live_request_guid = ds_map_find_value(l_map, "guid");
-	if (ds_map_find_value(l_map, "version") == undefined || ds_map_find_value(l_map, "version") < 106) show_error("Outdated GMLive server detected! Please update the included files from the extension.", true);
+	if (ds_map_find_value(l_map, "version") == undefined || ds_map_find_value(l_map, "version") < 106) throw gml_std_haxe_Exception_thrown("Outdated GMLive server detected! Please update the included files from the extension.");
 	l_list = ds_map_find_value(l_map, "shaders");
 	l_n = ds_list_size(l_list);
 	for (l_i = 0; l_i < l_n; l_i++) {
@@ -21,7 +23,7 @@ function live_async_http_0(l_map) {
 	for (var l__ = 0; l__ < 1; l__++) {
 		l_list = ds_map_find_value(l_map, "animCurves");
 		if (l_list == undefined) {
-			live_log("Server init response is missing an animCurves list. You may need to update the server.", 1);
+			live_log_script("Server init response is missing an animCurves list. You may need to update the server.", 1);
 			continue;
 		}
 		l_n = ds_list_size(l_list);
@@ -29,15 +31,6 @@ function live_async_http_0(l_map) {
 			l_s = ds_list_find_value(l_list, l_i);
 			gml_asset_add(l_s, asset_get_index(l_s));
 		}
-	}
-	l_list = ds_map_find_value(l_map, "scripts");
-	l_n = ds_list_size(l_list);
-	for (l_i = 0; l_i < l_n; l_i += 2) {
-		var l_scrName = ds_list_find_value(l_list, l_i);
-		var l_scrFunc = asset_get_index(l_scrName);
-		if (l_scrFunc == -1) l_scrFunc = asset_get_index(l_scrName);
-		gml_func_add(ds_list_find_value(l_list, l_i + 1), l_scrFunc);
-		gml_func_script_id.h_obj[$ l_scrName] = l_scrFunc;
 	}
 	l_list = ds_map_find_value(l_map, "globals");
 	l_n = ds_list_size(l_list);
@@ -56,30 +49,33 @@ function live_async_http_0(l_map) {
 		buffer_delete(l_buf);
 	} else live_live_globals = undefined;
 	l_srcMap = live_live_macros;
-	l_srcMap.h_clear();
+	tools__dictionary_dictionary_impl__clear(l_srcMap);
 	l_list = ds_map_find_value(l_map, "macros");
 	l_n = ds_list_size(l_list);
 	for (l_i = 0; l_i < l_n; l_i += 2) {
 		l_s = ds_list_find_value(l_list, l_i);
 		var l_s1 = "macro:" + l_s;
-		l_srcMap.h_obj[$ l_s] = new gml_source(l_s1, "#macro " + l_s + " " + gml_std_Std_stringify(ds_list_find_value(l_list, l_i + 1)), l_s1, true);
+		l_srcMap[$ l_s] = new gml_source(l_s1, "#macro " + l_s + " " + gml_std_Std_stringify(ds_list_find_value(l_list, l_i + 1)), l_s1, true);
 	}
 	l_srcMap = live_live_enums;
-	l_srcMap.h_clear();
+	tools__dictionary_dictionary_impl__clear(l_srcMap);
 	l_list = ds_map_find_value(l_map, "enums");
 	l_names = ds_map_find_value(l_map, "enumnames");
 	l_n = ds_list_size(l_list);
 	for (l_i = 0; l_i < l_n; l_i++) {
 		l_s = ds_list_find_value(l_list, l_i);
 		l_s = ds_list_find_value(l_names, l_i);
-		l_srcMap.h_obj[$ l_s] = new gml_source("enum " + l_s, ds_list_find_value(l_list, l_i), "enum " + l_s, true);
+		l_srcMap[$ l_s] = new gml_source("enum " + l_s, ds_list_find_value(l_list, l_i), "enum " + l_s, true);
 	}
-	live_log("Ready!", 0);
+	live_log_script("Ready!", 0);
 }
 
 if (live_enabled) 
 function live_async_http_1(l_map) {
+	// live_async_http_1(map:live_GMLiveAsyncMap<any>)
+	/// @ignore
 	var l_list = ds_map_find_value(l_map, "files");
+	var l_obj;
 	var l_n = ds_list_size(l_list);
 	var l_name;
 	var l_i = -1;
@@ -99,7 +95,7 @@ function live_async_http_1(l_map) {
 			l_name = ds_map_find_value(l_sup, "name");
 			var l_spr = asset_get_index(l_name);
 			if (l_spr == -1) {
-				live_log("Error: can't find sprite " + l_name + " for reload.", 2);
+				live_log_script("Error: can't find sprite " + l_name + " for reload.", 2);
 				continue;
 			}
 			var l_sx = ds_map_find_value(l_sup, "xorig");
@@ -111,14 +107,14 @@ function live_async_http_1(l_map) {
 			for (var l__g1 = ds_list_size(l_frames); l_i1 < l__g1; l_i1++) {
 				var l_tb = buffer_base64_decode(ds_list_find_value(l_frames, l_i1));
 				if (l_tb == -1) {
-					live_log("Error: couldn't decode base64 for " + l_name + ".", 2);
+					live_log_script("Error: couldn't decode base64 for " + l_name + ".", 2);
 					continue;
 				}
 				buffer_save(l_tb, l_tmp);
 				buffer_delete(l_tb);
 				var l_ts = sprite_add(l_tmp, 1, false, false, l_sx, l_sy);
 				if (l_ts == -1) {
-					live_log("Error: couldn't load image " + string(l_i1) + " for " + l_name + ".", 2);
+					live_log_script("Error: couldn't load image " + string(l_i1) + " for " + l_name + ".", 2);
 					continue;
 				}
 				if (l_i1 != 0) sprite_merge(l_out, l_ts); else l_out = l_ts;
@@ -126,8 +122,26 @@ function live_async_http_1(l_map) {
 			if (l_out != -1) {
 				sprite_assign(l_spr, l_out);
 				sprite_collision_mask(l_spr, ds_map_find_value(l_sup, "sepMasks"), ds_map_find_value(l_sup, "bboxMode"), ds_map_find_value(l_sup, "bboxLeft"), ds_map_find_value(l_sup, "bboxTop"), ds_map_find_value(l_sup, "bboxRight"), ds_map_find_value(l_sup, "bboxBottom"), ds_map_find_value(l_sup, "colKind"), ds_map_find_value(l_sup, "colTolerance"));
+				l_obj = ds_map_find_value(l_sup, "nineslice");
+				if (l_obj != undefined && l_obj != pointer_null) {
+					var l_nine = sprite_nineslice_create();
+					l_nine.enabled = true;
+					l_nine.left = ds_map_find_value(l_obj, "left");
+					l_nine.top = ds_map_find_value(l_obj, "top");
+					l_nine.right = ds_map_find_value(l_obj, "right");
+					l_nine.bottom = ds_map_find_value(l_obj, "bottom");
+					var l_tm = ds_map_find_value(l_obj, "tileMode");
+					var l__g2 = [];
+					var l_i2 = 0;
+					for (var l__g4 = ds_list_size(l_tm); l_i2 < l__g4; l_i2++) {
+						array_push(l__g2, ds_list_find_value(l_tm, l_i2));
+					}
+					l_nine.tileMode = l__g2;
+					sprite_set_nineslice(l_spr, l_nine);
+				}
 				sprite_delete(l_out);
-				live_log("Reloaded " + l_name + ".", 0);
+				live_log_script("Reloaded " + l_name + ".", 0);
+				live_sprite_updated(l_spr);
 			}
 			file_delete(l_tmp);
 		}
@@ -139,8 +153,10 @@ function live_async_http_1(l_map) {
 		while (++l_i < l_n) {
 			var l_sup = ds_list_find_value(l_list, l_i);
 			l_name = ds_map_find_value(l_sup, "name");
-			live_shader_updated(asset_get_index(l_name), ds_map_find_value(l_sup, "vertex"), ds_map_find_value(l_sup, "fragment"));
-			live_log("Reloaded " + l_name + ".", 0);
+			var l_sh = asset_get_index(l_name);
+			live_shader_updated(l_sh, ds_map_find_value(l_sup, "vertex"), ds_map_find_value(l_sup, "fragment"));
+			live_log_script("Reloaded " + l_name + ".", 0);
+			live_shader_updated(l_sh);
 		}
 	}
 	l_list = ds_map_find_value(l_map, "rooms");
@@ -162,7 +178,7 @@ function live_async_http_1(l_map) {
 			l_name = ds_map_find_value(l_pup, "name");
 			var l_pt = asset_get_index(l_name);
 			if (!path_exists(l_pt)) {
-				live_log("Couldn't find path '" + l_name + "'", 1);
+				live_log_script("Couldn't find path '" + l_name + "'", 1);
 				continue;
 			}
 			path_clear_points(l_pt);
@@ -175,6 +191,47 @@ function live_async_http_1(l_map) {
 				var l_point = ds_list_find_value(l__g_list, l__g_index++);
 				path_add_point(l_pt, ds_map_find_value(l_point, "x"), ds_map_find_value(l_point, "y"), ds_map_find_value(l_point, "speed"));
 			}
+			live_log_script("Reloaded " + l_name + ".", 0);
+			live_path_updated(l_pt);
+		}
+	}
+	l_list = ds_map_find_value(l_map, "animCurvesUpd");
+	if (l_list != undefined) {
+		var l_i = 0;
+		for (var l__g1 = ds_list_size(l_list); l_i < l__g1; l_i++) {
+			var l_acu = ds_list_find_value(l_list, l_i);
+			l_name = l_acu[?"name"];
+			var l_ac = asset_get_index(l_name);
+			if (!animcurve_exists(l_ac)) {
+				live_log_script("Couldn't find animcurve \"" + l_name + "\"", 1);
+				continue;
+			}
+			var l_acStruct = animcurve_get(l_ac);
+			var l_acuChannels = l_acu[?"channels"];
+			var l_acuType = l_acu[?"type"];
+			var l_acChannels = [];
+			var l_i1 = 0;
+			for (var l__g3 = ds_list_size(l_acuChannels); l_i1 < l__g3; l_i1++) {
+				var l_acuChannel = ds_list_find_value(l_acuChannels, l_i1);
+				var l_acChannel = animcurve_channel_new();
+				l_acChannel.name = l_acuChannel[?"name"];
+				l_acChannel.type = l_acuType;
+				var l_acuData = l_acuChannel[?"data"];
+				var l_acPoints = [];
+				var l_acuInd = 0;
+				var l__ = 0;
+				for (var l__g5 = (ds_list_size(l_acuData) >> 1); l__ < l__g5; l__++) {
+					var l_acPoint = animcurve_point_new();
+					l_acPoint.posx = ds_list_find_value(l_acuData, l_acuInd++);
+					l_acPoint.value = ds_list_find_value(l_acuData, l_acuInd++);
+					array_push(l_acPoints, l_acPoint);
+				}
+				l_acChannel.points = l_acPoints;
+				array_push(l_acChannels, l_acChannel);
+			}
+			l_acStruct.channels = l_acChannels;
+			live_log_script("Reloaded " + l_name + ".", 0);
+			live_animcurve_updated(l_ac);
 		}
 	}
 	l_list = ds_map_find_value(l_map, "incFilesUpd");
@@ -185,7 +242,7 @@ function live_async_http_1(l_map) {
 			l_name = ds_map_find_value(l_sub, "path");
 			var l_ip = ds_map_find_value(live_live_included_files, l_name);
 			if (l_ip == undefined) {
-				live_log("Couldn't find live included file \"" + l_name + "\"", 1);
+				live_log_script("Couldn't find live included file \"" + l_name + "\"", 1);
 				continue;
 			}
 			var l_b64 = ds_map_find_value(l_sub, "data");
@@ -209,7 +266,7 @@ function live_async_http_1(l_map) {
 					try {
 						l_val = json_parse(base64_decode(l_b64))
 					} catch (l__g2) {
-						live_log("Couldn't decode JSON for \"" + l_name + "\": " + gml_std_Std_stringify(gml_std_haxe_Exception_caught(l__g2).h_unwrap()), 1);
+						live_log_script(("Couldn't decode JSON for \"" + l_name + "\": " + gml_std_Std_stringify(gml_std_haxe_Exception_caught(l__g2).h_unwrap())), 1);
 						continue;
 					}
 					l_ip.func(l_val, l_name);
@@ -222,10 +279,15 @@ function live_async_http_1(l_map) {
 
 if (live_enabled) 
 function live_async_http_check(l_e) {
+	// live_async_http_check(e:live_GMLiveAsyncMap<any>)->bool
+	/// @ignore
 	return ds_map_find_value(l_e, "id") == live_request_id && ds_map_find_value(l_e, "status") <= 0;
 }
 
 function live_async_http(l_e) {
+	/// live_async_http(?e:live_GMLiveAsyncMap<any>)
+	/// @param {live_GMLiveAsyncMap<any>} ?e
+	/// @returns {void}
 	if (false) show_debug_message(argument[0]);
 	if (live_enabled) {
 		if (l_e == undefined) l_e = async_load;
@@ -238,7 +300,7 @@ function live_async_http(l_e) {
 			if (string_char_at(l_json1, 1) == "{" && string_char_at(l_json1, string_length(l_json1) - 1 + 1) == "]") l_json1 += "}";
 			l_map = json_decode(l_json1);
 			if (l_map == -1 || ds_map_exists(l_map, "default")) {
-				live_log("Invalid JSON response (" + gml_std_Std_stringify(string_length(l_json1) / 1000) + " KB)", 2);
+				live_log_script(("Invalid JSON response (" + gml_std_Std_stringify(string_length(l_json1) / 1000) + " KB)"), 2);
 				exit;
 			}
 		}

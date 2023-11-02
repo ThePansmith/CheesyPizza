@@ -67,7 +67,7 @@ function scr_panicbg_start()
 	if event_type == ev_draw && event_number == ev_draw_normal
 	{
 		// set up surface
-		if global.panic && global.panicbg && !safe_get(obj_pause, "pause")
+		if PANIC && global.panicbg && !safe_get(obj_pause, "pause")
 		{
 			if !surface_exists(global.panicbg_surface)
 				global.panicbg_surface = surface_create(CAMW, CAMH);
@@ -98,7 +98,7 @@ function scr_panicbg_draw()
 			shader_set_uniform_f(uTime, scr_current_time() / 1000);
 			
 			var xx = CAMX * 0.25, yy = CAMY * 0.25;
-			if global.panic && global.panicbg
+			if PANIC && global.panicbg
 			{
 				xx -= CAMX;
 				yy -= CAMY;
@@ -109,7 +109,7 @@ function scr_panicbg_draw()
 		}
 		
 		// panicbg shader
-		if global.panic && global.panicbg
+		if PANIC && global.panicbg
 		{
 			surface_reset_target();
 			
@@ -131,6 +131,6 @@ function scr_panicbg_end()
 	if live_call() return live_result;
 	
 	if event_type == ev_draw && event_number == ev_draw_normal
-	&& global.panic && global.panicbg && !safe_get(obj_pause, "pause")
+	&& PANIC && global.panicbg && !safe_get(obj_pause, "pause")
 		surface_reset_target();
 }

@@ -26,6 +26,8 @@ function mc_gml_action_discard() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_discard(l_h_d) {
+	// gml_action_discard(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_discard();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -41,6 +43,8 @@ function mc_gml_action_dup() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_dup(l_h_d) {
+	// gml_action_dup(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_dup();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -56,6 +60,8 @@ function mc_gml_action_dup2x() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_dup2x(l_h_d) {
+	// gml_action_dup2x(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_dup2x();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -71,6 +77,8 @@ function mc_gml_action_dup3x() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_dup3x(l_h_d) {
+	// gml_action_dup3x(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_dup3x();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -87,6 +95,8 @@ function mc_gml_action_dup_in() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_dup_in(l_h_d, l_h_z) {
+	// gml_action_dup_in(h_d:gml_pos, h_z:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_dup_in();
 	l_this.h_d = l_h_d;
 	l_this.h_z = l_h_z;
@@ -103,6 +113,8 @@ function mc_gml_action_undefined_hx() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_undefined_hx(l_h_d) {
+	// gml_action_undefined_hx(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_undefined_hx();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -119,6 +131,8 @@ function mc_gml_action_number() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_number(l_h_d, l_h_f) {
+	// gml_action_number(h_d:gml_pos, h_f:number)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_number();
 	l_this.h_d = l_h_d;
 	l_this.h_f = l_h_f;
@@ -136,6 +150,8 @@ function mc_gml_action_cstring() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_cstring(l_h_d, l_h_s) {
+	// gml_action_cstring(h_d:gml_pos, h_s:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_cstring();
 	l_this.h_d = l_h_d;
 	l_this.h_s = l_h_s;
@@ -153,6 +169,8 @@ function mc_gml_action_array_decl() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_array_decl(l_h_d, l_h_size) {
+	// gml_action_array_decl(h_d:gml_pos, h_size:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_array_decl();
 	l_this.h_d = l_h_d;
 	l_this.h_size = l_h_size;
@@ -170,6 +188,8 @@ function mc_gml_action_object_decl() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_object_decl(l_h_d, l_h_fields) {
+	// gml_action_object_decl(h_d:gml_pos, h_fields:array<any>)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_object_decl();
 	l_this.h_d = l_h_d;
 	l_this.h_fields = l_h_fields;
@@ -187,6 +207,8 @@ function mc_gml_action_const() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_const(l_h_d, l_h_v) {
+	// gml_action_const(h_d:gml_pos, h_v:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_const();
 	l_this.h_d = l_h_d;
 	l_this.h_v = l_h_v;
@@ -203,6 +225,8 @@ function mc_gml_action_self_hx() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_self_hx(l_h_d) {
+	// gml_action_self_hx(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_self_hx();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -218,6 +242,8 @@ function mc_gml_action_other_hx() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_other_hx(l_h_d) {
+	// gml_action_other_hx(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_other_hx();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -235,6 +261,8 @@ function mc_gml_action_local_hx() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_local_hx(l_h_d, l_h_i, l_h_name) {
+	// gml_action_local_hx(h_d:gml_pos, h_i:int, h_name:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_local_hx();
 	l_this.h_d = l_h_d;
 	l_this.h_i = l_h_i;
@@ -254,6 +282,8 @@ function mc_gml_action_local_set() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_local_set(l_h_d, l_h_i, l_h_name) {
+	// gml_action_local_set(h_d:gml_pos, h_i:int, h_name:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_local_set();
 	l_this.h_d = l_h_d;
 	l_this.h_i = l_h_i;
@@ -274,6 +304,8 @@ function mc_gml_action_local_aop() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_local_aop(l_h_d, l_h_o, l_h_i, l_h_name) {
+	// gml_action_local_aop(h_d:gml_pos, h_o:gml_op, h_i:int, h_name:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_local_aop();
 	l_this.h_d = l_h_d;
 	l_this.h_o = l_h_o;
@@ -293,6 +325,8 @@ function mc_gml_action_global_hx() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_global_hx(l_h_d, l_h_fd) {
+	// gml_action_global_hx(h_d:gml_pos, h_fd:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_global_hx();
 	l_this.h_d = l_h_d;
 	l_this.h_fd = l_h_fd;
@@ -310,6 +344,8 @@ function mc_gml_action_global_set() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_global_set(l_h_d, l_h_fd) {
+	// gml_action_global_set(h_d:gml_pos, h_fd:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_global_set();
 	l_this.h_d = l_h_d;
 	l_this.h_fd = l_h_fd;
@@ -328,6 +364,8 @@ function mc_gml_action_global_aop() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_global_aop(l_h_d, l_h_o, l_h_fd) {
+	// gml_action_global_aop(h_d:gml_pos, h_o:gml_op, h_fd:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_global_aop();
 	l_this.h_d = l_h_d;
 	l_this.h_o = l_h_o;
@@ -346,6 +384,8 @@ function mc_gml_action_field() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_field(l_h_d, l_h_fd) {
+	// gml_action_field(h_d:gml_pos, h_fd:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_field();
 	l_this.h_d = l_h_d;
 	l_this.h_fd = l_h_fd;
@@ -363,6 +403,8 @@ function mc_gml_action_field_set() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_field_set(l_h_d, l_h_fd) {
+	// gml_action_field_set(h_d:gml_pos, h_fd:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_field_set();
 	l_this.h_d = l_h_d;
 	l_this.h_fd = l_h_fd;
@@ -381,6 +423,8 @@ function mc_gml_action_field_aop() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_field_aop(l_h_d, l_h_o, l_h_fd) {
+	// gml_action_field_aop(h_d:gml_pos, h_o:gml_op, h_fd:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_field_aop();
 	l_this.h_d = l_h_d;
 	l_this.h_o = l_h_o;
@@ -401,6 +445,8 @@ function mc_gml_action_fast_field_aop() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_fast_field_aop(l_h_d, l_h_o, l_h_getter, l_h_setter) {
+	// gml_action_fast_field_aop(h_d:gml_pos, h_o:gml_op, h_getter:api_ApiFastFieldGetter, h_setter:api_ApiFastFieldSetter)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_fast_field_aop();
 	l_this.h_d = l_h_d;
 	l_this.h_o = l_h_o;
@@ -420,6 +466,8 @@ function mc_gml_action_self_field() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_self_field(l_h_d, l_h_fd) {
+	// gml_action_self_field(h_d:gml_pos, h_fd:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_self_field();
 	l_this.h_d = l_h_d;
 	l_this.h_fd = l_h_fd;
@@ -437,6 +485,8 @@ function mc_gml_action_self_field_set() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_self_field_set(l_h_d, l_h_fd) {
+	// gml_action_self_field_set(h_d:gml_pos, h_fd:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_self_field_set();
 	l_this.h_d = l_h_d;
 	l_this.h_fd = l_h_fd;
@@ -455,6 +505,8 @@ function mc_gml_action_self_field_aop() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_self_field_aop(l_h_d, l_h_o, l_h_fd) {
+	// gml_action_self_field_aop(h_d:gml_pos, h_o:gml_op, h_fd:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_self_field_aop();
 	l_this.h_d = l_h_d;
 	l_this.h_o = l_h_o;
@@ -473,6 +525,8 @@ function mc_gml_action_fast_self_field() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_fast_self_field(l_h_d, l_h_getter) {
+	// gml_action_fast_self_field(h_d:gml_pos, h_getter:api_ApiFastFieldGetter)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_fast_self_field();
 	l_this.h_d = l_h_d;
 	l_this.h_getter = l_h_getter;
@@ -490,6 +544,8 @@ function mc_gml_action_fast_self_field_set() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_fast_self_field_set(l_h_d, l_h_setter) {
+	// gml_action_fast_self_field_set(h_d:gml_pos, h_setter:api_ApiFastFieldSetter)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_fast_self_field_set();
 	l_this.h_d = l_h_d;
 	l_this.h_setter = l_h_setter;
@@ -509,6 +565,8 @@ function mc_gml_action_fast_self_field_aop() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_fast_self_field_aop(l_h_d, l_h_o, l_h_getter, l_h_setter) {
+	// gml_action_fast_self_field_aop(h_d:gml_pos, h_o:gml_op, h_getter:api_ApiFastFieldGetter, h_setter:api_ApiFastFieldSetter)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_fast_self_field_aop();
 	l_this.h_d = l_h_d;
 	l_this.h_o = l_h_o;
@@ -529,6 +587,8 @@ function mc_gml_action_local_field() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_local_field(l_h_d, l_h_localIndex, l_h_fd) {
+	// gml_action_local_field(h_d:gml_pos, h_localIndex:int, h_fd:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_local_field();
 	l_this.h_d = l_h_d;
 	l_this.h_localIndex = l_h_localIndex;
@@ -548,6 +608,8 @@ function mc_gml_action_local_field_set() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_local_field_set(l_h_d, l_h_localIndex, l_h_fd) {
+	// gml_action_local_field_set(h_d:gml_pos, h_localIndex:int, h_fd:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_local_field_set();
 	l_this.h_d = l_h_d;
 	l_this.h_localIndex = l_h_localIndex;
@@ -568,6 +630,8 @@ function mc_gml_action_local_field_aop() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_local_field_aop(l_h_d, l_h_localIndex, l_h_o, l_h_fd) {
+	// gml_action_local_field_aop(h_d:gml_pos, h_localIndex:int, h_o:gml_op, h_fd:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_local_field_aop();
 	l_this.h_d = l_h_d;
 	l_this.h_localIndex = l_h_localIndex;
@@ -588,6 +652,8 @@ function mc_gml_action_fast_local_field() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_fast_local_field(l_h_d, l_h_localIndex, l_h_getter) {
+	// gml_action_fast_local_field(h_d:gml_pos, h_localIndex:int, h_getter:api_ApiFastFieldGetter)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_fast_local_field();
 	l_this.h_d = l_h_d;
 	l_this.h_localIndex = l_h_localIndex;
@@ -607,6 +673,8 @@ function mc_gml_action_fast_local_field_set() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_fast_local_field_set(l_h_d, l_h_localIndex, l_h_setter) {
+	// gml_action_fast_local_field_set(h_d:gml_pos, h_localIndex:int, h_setter:api_ApiFastFieldSetter)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_fast_local_field_set();
 	l_this.h_d = l_h_d;
 	l_this.h_localIndex = l_h_localIndex;
@@ -628,6 +696,8 @@ function mc_gml_action_fast_local_field_aop() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_fast_local_field_aop(l_h_d, l_h_localIndex, l_h_o, l_h_getter, l_h_setter) {
+	// gml_action_fast_local_field_aop(h_d:gml_pos, h_localIndex:int, h_o:gml_op, h_getter:api_ApiFastFieldGetter, h_setter:api_ApiFastFieldSetter)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_fast_local_field_aop();
 	l_this.h_d = l_h_d;
 	l_this.h_localIndex = l_h_localIndex;
@@ -647,6 +717,8 @@ function mc_gml_action_index() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_index(l_h_d) {
+	// gml_action_index(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_index();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -662,6 +734,8 @@ function mc_gml_action_index_set() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_index_set(l_h_d) {
+	// gml_action_index_set(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_index_set();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -678,6 +752,8 @@ function mc_gml_action_index_aop() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_index_aop(l_h_d, l_h_o) {
+	// gml_action_index_aop(h_d:gml_pos, h_o:gml_op)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_index_aop();
 	l_this.h_d = l_h_d;
 	l_this.h_o = l_h_o;
@@ -694,6 +770,8 @@ function mc_gml_action_index2d() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_index2d(l_h_d) {
+	// gml_action_index2d(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_index2d();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -709,6 +787,8 @@ function mc_gml_action_index2d_set() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_index2d_set(l_h_d) {
+	// gml_action_index2d_set(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_index2d_set();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -725,6 +805,8 @@ function mc_gml_action_index2d_aop() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_index2d_aop(l_h_d, l_h_o) {
+	// gml_action_index2d_aop(h_d:gml_pos, h_o:gml_op)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_index2d_aop();
 	l_this.h_d = l_h_d;
 	l_this.h_o = l_h_o;
@@ -742,6 +824,8 @@ function mc_gml_action_env() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_env(l_h_d, l_h_f) {
+	// gml_action_env(h_d:gml_pos, h_f:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_env();
 	l_this.h_d = l_h_d;
 	l_this.h_f = l_h_f;
@@ -760,6 +844,8 @@ function mc_gml_action_env_set() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_env_set(l_h_d, l_h_f, l_h_ch) {
+	// gml_action_env_set(h_d:gml_pos, h_f:any, h_ch:gml_type_check)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_env_set();
 	l_this.h_d = l_h_d;
 	l_this.h_f = l_h_f;
@@ -779,6 +865,8 @@ function mc_gml_action_env_aop() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_env_aop(l_h_d, l_h_o, l_h_f) {
+	// gml_action_env_aop(h_d:gml_pos, h_o:gml_op, h_f:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_env_aop();
 	l_this.h_d = l_h_d;
 	l_this.h_o = l_h_o;
@@ -797,6 +885,8 @@ function mc_gml_action_env1d() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_env1d(l_h_d, l_h_f) {
+	// gml_action_env1d(h_d:gml_pos, h_f:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_env1d();
 	l_this.h_d = l_h_d;
 	l_this.h_f = l_h_f;
@@ -815,6 +905,8 @@ function mc_gml_action_env1d_set() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_env1d_set(l_h_d, l_h_f, l_h_ch) {
+	// gml_action_env1d_set(h_d:gml_pos, h_f:any, h_ch:gml_type_check)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_env1d_set();
 	l_this.h_d = l_h_d;
 	l_this.h_f = l_h_f;
@@ -834,6 +926,8 @@ function mc_gml_action_env1d_aop() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_env1d_aop(l_h_d, l_h_o, l_h_f) {
+	// gml_action_env1d_aop(h_d:gml_pos, h_o:gml_op, h_f:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_env1d_aop();
 	l_this.h_d = l_h_d;
 	l_this.h_o = l_h_o;
@@ -856,6 +950,8 @@ function mc_gml_action_ds_aop() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_ds_aop(l_h_d, l_h_o, l_h_argc, l_h_get, l_h_set, l_h_out) {
+	// gml_action_ds_aop(h_d:gml_pos, h_o:gml_op, h_argc:int, h_get:any, h_set:any, h_out:bool)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_ds_aop();
 	l_this.h_d = l_h_d;
 	l_this.h_o = l_h_o;
@@ -877,6 +973,8 @@ function mc_gml_action_arg_const() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_arg_const(l_h_d, l_h_i) {
+	// gml_action_arg_const(h_d:gml_pos, h_i:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_arg_const();
 	l_this.h_d = l_h_d;
 	l_this.h_i = l_h_i;
@@ -894,6 +992,8 @@ function mc_gml_action_arg_const_set() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_arg_const_set(l_h_d, l_h_i) {
+	// gml_action_arg_const_set(h_d:gml_pos, h_i:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_arg_const_set();
 	l_this.h_d = l_h_d;
 	l_this.h_i = l_h_i;
@@ -912,6 +1012,8 @@ function mc_gml_action_arg_const_aop() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_arg_const_aop(l_h_d, l_h_o, l_h_i) {
+	// gml_action_arg_const_aop(h_d:gml_pos, h_o:gml_op, h_i:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_arg_const_aop();
 	l_this.h_d = l_h_d;
 	l_this.h_o = l_h_o;
@@ -929,6 +1031,8 @@ function mc_gml_action_arg_index() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_arg_index(l_h_d) {
+	// gml_action_arg_index(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_arg_index();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -944,6 +1048,8 @@ function mc_gml_action_arg_index_set() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_arg_index_set(l_h_d) {
+	// gml_action_arg_index_set(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_arg_index_set();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -960,6 +1066,8 @@ function mc_gml_action_arg_index_aop() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_arg_index_aop(l_h_d, l_h_o) {
+	// gml_action_arg_index_aop(h_d:gml_pos, h_o:gml_op)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_arg_index_aop();
 	l_this.h_d = l_h_d;
 	l_this.h_o = l_h_o;
@@ -976,6 +1084,8 @@ function mc_gml_action_arg_count() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_arg_count(l_h_d) {
+	// gml_action_arg_count(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_arg_count();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -992,6 +1102,8 @@ function mc_gml_action_add_int() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_add_int(l_h_d, l_h_i) {
+	// gml_action_add_int(h_d:gml_pos, h_i:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_add_int();
 	l_this.h_d = l_h_d;
 	l_this.h_i = l_h_i;
@@ -1008,6 +1120,8 @@ function mc_gml_action_equ_op() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_equ_op(l_h_d) {
+	// gml_action_equ_op(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_equ_op();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -1023,6 +1137,8 @@ function mc_gml_action_neq_op() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_neq_op(l_h_d) {
+	// gml_action_neq_op(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_neq_op();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -1038,6 +1154,8 @@ function mc_gml_action_concat() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_concat(l_h_d) {
+	// gml_action_concat(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_concat();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -1054,6 +1172,8 @@ function mc_gml_action_bin_op() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_bin_op(l_h_d, l_h_o) {
+	// gml_action_bin_op(h_d:gml_pos, h_o:gml_op)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_bin_op();
 	l_this.h_d = l_h_d;
 	l_this.h_o = l_h_o;
@@ -1071,6 +1191,8 @@ function mc_gml_action_un_op() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_un_op(l_h_d, l_h_o) {
+	// gml_action_un_op(h_d:gml_pos, h_o:ast_GmlUnOp)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_un_op();
 	l_this.h_d = l_h_d;
 	l_this.h_o = l_h_o;
@@ -1088,6 +1210,8 @@ function mc_gml_action_in() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_in(l_h_d, l_h_not) {
+	// gml_action_in(h_d:gml_pos, h_not:bool)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_in();
 	l_this.h_d = l_h_d;
 	l_this.h_not = l_h_not;
@@ -1106,6 +1230,8 @@ function mc_gml_action_in_const() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_in_const(l_h_d, l_h_field, l_h_not) {
+	// gml_action_in_const(h_d:gml_pos, h_field:string, h_not:bool)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_in_const();
 	l_this.h_d = l_h_d;
 	l_this.h_field = l_h_field;
@@ -1125,6 +1251,8 @@ function mc_gml_action_call_script() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_script(l_h_d, l_h_script, l_h_argc) {
+	// gml_action_call_script(h_d:gml_pos, h_script:gml_script, h_argc:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_script();
 	l_this.h_d = l_h_d;
 	l_this.h_script = l_h_script;
@@ -1143,6 +1271,8 @@ function mc_gml_action_call_script_id() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_script_id(l_h_d, l_h_argc) {
+	// gml_action_call_script_id(h_d:gml_pos, h_argc:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_script_id();
 	l_this.h_d = l_h_d;
 	l_this.h_argc = l_h_argc;
@@ -1159,6 +1289,8 @@ function mc_gml_action_call_script_with_array() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_script_with_array(l_h_d) {
+	// gml_action_call_script_with_array(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_script_with_array();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -1180,6 +1312,8 @@ function mc_gml_action_call_func() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func(l_h_d, l_h_func, l_h_argc, l_h_args, l_h_rest, l_h_inst, l_h_out) {
+	// gml_action_call_func(h_d:gml_pos, h_func:any, h_argc:int, h_args:array<gml_type_check>, h_rest:gml_type_check, h_inst:data_GmlFuncFlags, h_out:bool)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1202,6 +1336,8 @@ function mc_gml_action_call_func0() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func0(l_h_d, l_h_func) {
+	// gml_action_call_func0(h_d:gml_pos, h_func:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func0();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1219,6 +1355,8 @@ function mc_gml_action_call_func0o() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func0o(l_h_d, l_h_func) {
+	// gml_action_call_func0o(h_d:gml_pos, h_func:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func0o();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1236,6 +1374,8 @@ function mc_gml_action_call_func1() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func1(l_h_d, l_h_func) {
+	// gml_action_call_func1(h_d:gml_pos, h_func:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func1();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1253,6 +1393,8 @@ function mc_gml_action_call_func1o() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func1o(l_h_d, l_h_func) {
+	// gml_action_call_func1o(h_d:gml_pos, h_func:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func1o();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1270,6 +1412,8 @@ function mc_gml_action_call_func2() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func2(l_h_d, l_h_func) {
+	// gml_action_call_func2(h_d:gml_pos, h_func:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func2();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1287,6 +1431,8 @@ function mc_gml_action_call_func2o() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func2o(l_h_d, l_h_func) {
+	// gml_action_call_func2o(h_d:gml_pos, h_func:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func2o();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1304,6 +1450,8 @@ function mc_gml_action_call_func3() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func3(l_h_d, l_h_func) {
+	// gml_action_call_func3(h_d:gml_pos, h_func:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func3();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1321,6 +1469,8 @@ function mc_gml_action_call_func3o() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func3o(l_h_d, l_h_func) {
+	// gml_action_call_func3o(h_d:gml_pos, h_func:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func3o();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1338,6 +1488,8 @@ function mc_gml_action_call_func4() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func4(l_h_d, l_h_func) {
+	// gml_action_call_func4(h_d:gml_pos, h_func:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func4();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1355,6 +1507,8 @@ function mc_gml_action_call_func4o() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func4o(l_h_d, l_h_func) {
+	// gml_action_call_func4o(h_d:gml_pos, h_func:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func4o();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1373,6 +1527,8 @@ function mc_gml_action_call_func_with_local0() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func_with_local0(l_h_d, l_h_func, l_h_local) {
+	// gml_action_call_func_with_local0(h_d:gml_pos, h_func:any, h_local:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func_with_local0();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1392,6 +1548,8 @@ function mc_gml_action_call_func_with_local0o() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func_with_local0o(l_h_d, l_h_func, l_h_local) {
+	// gml_action_call_func_with_local0o(h_d:gml_pos, h_func:any, h_local:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func_with_local0o();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1411,6 +1569,8 @@ function mc_gml_action_call_func_with_local1() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func_with_local1(l_h_d, l_h_func, l_h_local) {
+	// gml_action_call_func_with_local1(h_d:gml_pos, h_func:any, h_local:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func_with_local1();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1430,6 +1590,8 @@ function mc_gml_action_call_func_with_local1o() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func_with_local1o(l_h_d, l_h_func, l_h_local) {
+	// gml_action_call_func_with_local1o(h_d:gml_pos, h_func:any, h_local:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func_with_local1o();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1449,6 +1611,8 @@ function mc_gml_action_call_func_with_local2() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func_with_local2(l_h_d, l_h_func, l_h_local) {
+	// gml_action_call_func_with_local2(h_d:gml_pos, h_func:any, h_local:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func_with_local2();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1468,6 +1632,8 @@ function mc_gml_action_call_func_with_local2o() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func_with_local2o(l_h_d, l_h_func, l_h_local) {
+	// gml_action_call_func_with_local2o(h_d:gml_pos, h_func:any, h_local:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func_with_local2o();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1487,6 +1653,8 @@ function mc_gml_action_call_func_with_local3() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func_with_local3(l_h_d, l_h_func, l_h_local) {
+	// gml_action_call_func_with_local3(h_d:gml_pos, h_func:any, h_local:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func_with_local3();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1506,6 +1674,8 @@ function mc_gml_action_call_func_with_local3o() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func_with_local3o(l_h_d, l_h_func, l_h_local) {
+	// gml_action_call_func_with_local3o(h_d:gml_pos, h_func:any, h_local:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func_with_local3o();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1525,6 +1695,8 @@ function mc_gml_action_call_func_with_local4() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func_with_local4(l_h_d, l_h_func, l_h_local) {
+	// gml_action_call_func_with_local4(h_d:gml_pos, h_func:any, h_local:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func_with_local4();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1544,6 +1716,8 @@ function mc_gml_action_call_func_with_local4o() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_func_with_local4o(l_h_d, l_h_func, l_h_local) {
+	// gml_action_call_func_with_local4o(h_d:gml_pos, h_func:any, h_local:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_func_with_local4o();
 	l_this.h_d = l_h_d;
 	l_this.h_func = l_h_func;
@@ -1563,6 +1737,8 @@ function mc_gml_action_call_field() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_call_field(l_h_d, l_h_field, l_h_argc) {
+	// gml_action_call_field(h_d:gml_pos, h_field:string, h_argc:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_call_field();
 	l_this.h_d = l_h_d;
 	l_this.h_field = l_h_field;
@@ -1581,6 +1757,8 @@ function mc_gml_action_construct() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_construct(l_h_d, l_h_argc) {
+	// gml_action_construct(h_d:gml_pos, h_argc:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_construct();
 	l_this.h_d = l_h_d;
 	l_this.h_argc = l_h_argc;
@@ -1592,15 +1770,19 @@ if (live_enabled)
 function mc_gml_action_func_literal() : mc_gml_action() constructor {
 	/// @hint {gml_pos} :h_d
 	/// @hint {string} :h_name
-	static __enumParams__ = ["h_d", "h_name"];
+	/// @hint {bool} :h_unbound
+	static __enumParams__ = ["h_d", "h_name", "h_unbound"];
 	static __enumIndex__ = 89;
 }
 
 if (live_enabled) 
-function gml_action_func_literal(l_h_d, l_h_name) {
+function gml_action_func_literal(l_h_d, l_h_name, l_h_unbound) {
+	// gml_action_func_literal(h_d:gml_pos, h_name:string, h_unbound:bool)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_func_literal();
 	l_this.h_d = l_h_d;
 	l_this.h_name = l_h_name;
+	l_this.h_unbound = l_h_unbound;
 	return l_this
 }
 
@@ -1615,6 +1797,8 @@ function mc_gml_action_jump() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_jump(l_h_d, l_h_p) {
+	// gml_action_jump(h_d:gml_pos, h_p:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_jump();
 	l_this.h_d = l_h_d;
 	l_this.h_p = l_h_p;
@@ -1632,6 +1816,8 @@ function mc_gml_action_jump_if() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_jump_if(l_h_d, l_h_p) {
+	// gml_action_jump_if(h_d:gml_pos, h_p:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_jump_if();
 	l_this.h_d = l_h_d;
 	l_this.h_p = l_h_p;
@@ -1649,6 +1835,8 @@ function mc_gml_action_jump_unless() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_jump_unless(l_h_d, l_h_p) {
+	// gml_action_jump_unless(h_d:gml_pos, h_p:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_jump_unless();
 	l_this.h_d = l_h_d;
 	l_this.h_p = l_h_p;
@@ -1665,6 +1853,8 @@ function mc_gml_action_jump_placeholder() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_jump_placeholder(l_h_d) {
+	// gml_action_jump_placeholder(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_jump_placeholder();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -1681,6 +1871,8 @@ function mc_gml_action_bool_and() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_bool_and(l_h_d, l_h_p) {
+	// gml_action_bool_and(h_d:gml_pos, h_p:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_bool_and();
 	l_this.h_d = l_h_d;
 	l_this.h_p = l_h_p;
@@ -1698,6 +1890,8 @@ function mc_gml_action_bool_or() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_bool_or(l_h_d, l_h_p) {
+	// gml_action_bool_or(h_d:gml_pos, h_p:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_bool_or();
 	l_this.h_d = l_h_d;
 	l_this.h_p = l_h_p;
@@ -1715,6 +1909,8 @@ function mc_gml_action_null_co() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_null_co(l_h_d, l_h_p) {
+	// gml_action_null_co(h_d:gml_pos, h_p:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_null_co();
 	l_this.h_d = l_h_d;
 	l_this.h_p = l_h_p;
@@ -1733,6 +1929,8 @@ function mc_gml_action_switch_hx() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_switch_hx(l_h_d, l_h_jumptable, l_h_defaultPos) {
+	// gml_action_switch_hx(h_d:gml_pos, h_jumptable:vm_GmlValueMap<int>, h_defaultPos:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_switch_hx();
 	l_this.h_d = l_h_d;
 	l_this.h_jumptable = l_h_jumptable;
@@ -1751,6 +1949,8 @@ function mc_gml_action_switch_case() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_switch_case(l_h_d, l_h_p) {
+	// gml_action_switch_case(h_d:gml_pos, h_p:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_switch_case();
 	l_this.h_d = l_h_d;
 	l_this.h_p = l_h_p;
@@ -1768,6 +1968,8 @@ function mc_gml_action_repeat_jump() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_repeat_jump(l_h_d, l_h_p) {
+	// gml_action_repeat_jump(h_d:gml_pos, h_p:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_repeat_jump();
 	l_this.h_d = l_h_d;
 	l_this.h_p = l_h_p;
@@ -1785,6 +1987,8 @@ function mc_gml_action_repeat_pre() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_repeat_pre(l_h_d, l_h_p) {
+	// gml_action_repeat_pre(h_d:gml_pos, h_p:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_repeat_pre();
 	l_this.h_d = l_h_d;
 	l_this.h_p = l_h_p;
@@ -1801,6 +2005,8 @@ function mc_gml_action_with_pre() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_with_pre(l_h_d) {
+	// gml_action_with_pre(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_with_pre();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -1817,6 +2023,8 @@ function mc_gml_action_with_next() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_with_next(l_h_d, l_h_p) {
+	// gml_action_with_next(h_d:gml_pos, h_p:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_with_next();
 	l_this.h_d = l_h_d;
 	l_this.h_p = l_h_p;
@@ -1833,6 +2041,8 @@ function mc_gml_action_with_post() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_with_post(l_h_d) {
+	// gml_action_with_post(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_with_post();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -1849,6 +2059,8 @@ function mc_gml_action_break_hx() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_break_hx(l_h_d, l_h_lp) {
+	// gml_action_break_hx(h_d:gml_pos, h_lp:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_break_hx();
 	l_this.h_d = l_h_d;
 	l_this.h_lp = l_h_lp;
@@ -1866,6 +2078,8 @@ function mc_gml_action_continue_hx() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_continue_hx(l_h_d, l_h_lp) {
+	// gml_action_continue_hx(h_d:gml_pos, h_lp:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_continue_hx();
 	l_this.h_d = l_h_d;
 	l_this.h_lp = l_h_lp;
@@ -1882,6 +2096,8 @@ function mc_gml_action_return_hx() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_return_hx(l_h_d) {
+	// gml_action_return_hx(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_return_hx();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -1898,6 +2114,8 @@ function mc_gml_action_return_const() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_return_const(l_h_d, l_h_val) {
+	// gml_action_return_const(h_d:gml_pos, h_val:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_return_const();
 	l_this.h_d = l_h_d;
 	l_this.h_val = l_h_val;
@@ -1914,6 +2132,8 @@ function mc_gml_action_result() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_result(l_h_d) {
+	// gml_action_result(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_result();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -1930,6 +2150,8 @@ function mc_gml_action_try_hx() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_try_hx(l_h_d, l_h_hdl) {
+	// gml_action_try_hx(h_d:gml_pos, h_hdl:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_try_hx();
 	l_this.h_d = l_h_d;
 	l_this.h_hdl = l_h_hdl;
@@ -1947,6 +2169,8 @@ function mc_gml_action_catch_hx() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_catch_hx(l_h_d, l_h_v) {
+	// gml_action_catch_hx(h_d:gml_pos, h_v:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_catch_hx();
 	l_this.h_d = l_h_d;
 	l_this.h_v = l_h_v;
@@ -1964,6 +2188,8 @@ function mc_gml_action_finally_hx() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_finally_hx(l_h_d, l_h_p) {
+	// gml_action_finally_hx(h_d:gml_pos, h_p:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_finally_hx();
 	l_this.h_d = l_h_d;
 	l_this.h_p = l_h_p;
@@ -1980,6 +2206,8 @@ function mc_gml_action_throw_hx() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_throw_hx(l_h_d) {
+	// gml_action_throw_hx(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_throw_hx();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -1995,6 +2223,8 @@ function mc_gml_action_wait() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_wait(l_h_d) {
+	// gml_action_wait(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_wait();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -2011,6 +2241,8 @@ function mc_gml_action_fork() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_fork(l_h_d, l_h_out) {
+	// gml_action_fork(h_d:gml_pos, h_out:bool)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_fork();
 	l_this.h_d = l_h_d;
 	l_this.h_out = l_h_out;
@@ -2028,6 +2260,8 @@ function mc_gml_action_ensure_array_for_local() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_ensure_array_for_local(l_h_d, l_h_ind) {
+	// gml_action_ensure_array_for_local(h_d:gml_pos, h_ind:int)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_ensure_array_for_local();
 	l_this.h_d = l_h_d;
 	l_this.h_ind = l_h_ind;
@@ -2045,6 +2279,8 @@ function mc_gml_action_ensure_array_for_global() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_ensure_array_for_global(l_h_d, l_h_name) {
+	// gml_action_ensure_array_for_global(h_d:gml_pos, h_name:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_ensure_array_for_global();
 	l_this.h_d = l_h_d;
 	l_this.h_name = l_h_name;
@@ -2062,6 +2298,8 @@ function mc_gml_action_ensure_array_for_field() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_ensure_array_for_field(l_h_d, l_h_field) {
+	// gml_action_ensure_array_for_field(h_d:gml_pos, h_field:string)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_ensure_array_for_field();
 	l_this.h_d = l_h_d;
 	l_this.h_field = l_h_field;
@@ -2078,6 +2316,8 @@ function mc_gml_action_ensure_array_for_index() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_ensure_array_for_index(l_h_d) {
+	// gml_action_ensure_array_for_index(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_ensure_array_for_index();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -2093,6 +2333,8 @@ function mc_gml_action_ensure_array_for_index2d() : mc_gml_action() constructor 
 
 if (live_enabled) 
 function gml_action_ensure_array_for_index2d(l_h_d) {
+	// gml_action_ensure_array_for_index2d(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_ensure_array_for_index2d();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -2108,6 +2350,8 @@ function mc_gml_action_alarm() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_alarm(l_h_d) {
+	// gml_action_alarm(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_alarm();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -2123,6 +2367,8 @@ function mc_gml_action_alarm_set_hx() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_alarm_set_hx(l_h_d) {
+	// gml_action_alarm_set_hx(h_d:gml_pos)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_alarm_set_hx();
 	l_this.h_d = l_h_d;
 	return l_this
@@ -2139,6 +2385,8 @@ function mc_gml_action_alarm_aop() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_alarm_aop(l_h_d, l_h_op) {
+	// gml_action_alarm_aop(h_d:gml_pos, h_op:gml_op)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_alarm_aop();
 	l_this.h_d = l_h_d;
 	l_this.h_op = l_h_op;
@@ -2158,6 +2406,8 @@ function mc_gml_action_closure() : mc_gml_action() constructor {
 
 if (live_enabled) 
 function gml_action_closure(l_h_d, l_h_tag, l_h_ctx, l_h_fn) {
+	// gml_action_closure(h_d:gml_pos, h_tag:string, h_ctx:any, h_fn:any)->gml_action
+	/// @ignore
 	var l_this = new mc_gml_action_closure();
 	l_this.h_d = l_h_d;
 	l_this.h_tag = l_h_tag;

@@ -83,6 +83,7 @@ if !file_exists("data/cheese.jpg")
 #macro CAMW camera_get_view_width(view_camera[view_current])
 #macro CAMH camera_get_view_height(view_camera[view_current])
 #macro DATE_TIME_NOW $"{current_year}-{current_month}-{current_day}__{current_hour}-{current_minute}-{current_second}"
+#macro PANIC ((global.panic or global.snickchallenge) && (!instance_exists(obj_ghostcollectibles) or global.leveltosave == "sucrose"))
 
 // initialize
 scr_get_languages();

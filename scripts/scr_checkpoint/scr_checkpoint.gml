@@ -111,9 +111,9 @@ function load_checkpoint()
 				
 				default:
 					if string_starts_with(name[i], "p.")
-						variable_instance_set(obj_player1, string_replace(name[i], "p.", ""), c[$name[i]]);
+						variable_instance_set(obj_player1, string_replace(name[i], "p.", ""), c[$ name[i]]);
 					else
-						variable_global_set(name[i], c[$name[i]]);
+						variable_global_set(name[i], c[$ name[i]]);
 			}
 		}
 		ds_list_copy(global.baddieroom, c.baddieroom);

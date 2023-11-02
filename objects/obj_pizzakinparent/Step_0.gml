@@ -14,7 +14,7 @@ if (state != states.backbreaker)
 			sprite_index = (xprev != x) ? spr_run : spr_idle;
 			depth = -6;
 		}
-		if (global.panic && !instance_exists(obj_ghostcollectibles))
+		if PANIC
 		{
 			if sprite_index == spr_idle && spr_panic != noone
 				sprite_index = spr_panic;

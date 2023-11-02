@@ -8,6 +8,8 @@
 
 if (live_enabled) 
 function vm_group_call_call_value(l_th, l_act, l_v1, l_argArray, l_argOffset, l_n) {
+	// vm_group_call_call_value(th:gml_thread, act:gml_action, v:any, argArray:array<any>, argOffset:int, n:int)->gml_thread_proc_result
+	/// @ignore
 	if (is_method(l_v1)) {
 		if (vm_v2_gml_thread_group_call_gml23_call_self_other_soft(l_th, l_act, l_v1, l_argArray, l_argOffset, l_n)) {
 			l_th.h_result = vm_group_call_call_func_result;
@@ -26,6 +28,8 @@ function vm_group_call_call_value(l_th, l_act, l_v1, l_argArray, l_argOffset, l_
 
 if (live_enabled) 
 function vm_group_call_on_call_script(l_th, l_act, l_scope, l_st) {
+	// vm_group_call_on_call_script(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_scr = l_act.h_script;
 	var l_n = l_act.h_argc;
 	var l_arr = [];
@@ -42,6 +46,8 @@ function vm_group_call_on_call_script(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_call_on_call_script_id(l_th, l_act, l_scope, l_stack) {
+	// vm_group_call_on_call_script_id(th:gml_thread, act:gml_action, scope:gml_thread_scope, stack:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_n = l_act.h_argc;
 	var l_v1 = l_stack[l_stack[0] - l_n];
 	var l_argOffset = l_stack[0] - l_n + 1;
@@ -52,6 +58,8 @@ function vm_group_call_on_call_script_id(l_th, l_act, l_scope, l_stack) {
 
 if (live_enabled) 
 function vm_group_call_on_call_field(l_th, l_act, l_scope, l_stack) {
+	// vm_group_call_on_call_field(th:gml_thread, act:gml_action, scope:gml_thread_scope, stack:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_s = l_act.h_field;
 	var l_n = l_act.h_argc;
 	var l_ctx = l_stack[l_stack[0] - l_n];
@@ -78,36 +86,40 @@ function vm_group_call_on_call_field(l_th, l_act, l_scope, l_stack) {
 		if (method_get_self(l_val) == undefined) l_val = method(l_ctx, l_val);
 		var l_this1 = l_scope[6/* inst */];
 		var l_me = l_this1[l_this1[0]];
-		with (l_me) {
-			var l_tmp;
-			try {
-				var l_r = vm_group_call_call_value(l_th, l_act, l_val, l_stack, l_argOffset, l_n);
-				gml_stack_discard_multi(l_stack, l_n + 1);
-				l_tmp = l_r;
-			} catch (l__g) {
-				var l_x = gml_std_haxe_Exception_caught(l__g).h_unwrap();
-				gml_stack_discard_multi(l_stack, l_n + 1);
-				l_tmp = l_th.h_proc_error2(l_x, l_act);
-			}
-			return l_tmp;
+		with (l_me) if (gml_thread_allow_exceptions) {
+			var l_r = vm_group_call_call_value(l_th, l_act, l_val, l_stack, l_argOffset, l_n);
+			gml_stack_discard_multi(l_stack, l_n + 1);
+			return l_r;
+		} else try {
+			var l_r1 = vm_group_call_call_value(l_th, l_act, l_val, l_stack, l_argOffset, l_n);
+			gml_stack_discard_multi(l_stack, l_n + 1);
+			return l_r1;
+		} catch (l__g) {
+			var l_x = gml_std_haxe_Exception_caught(l__g).h_unwrap();
+			gml_stack_discard_multi(l_stack, l_n + 1);
+			return l_th.h_proc_error2(l_x, l_act);
 		}
 	}
-	var l_tmp;
-	try {
+	if (gml_thread_allow_exceptions) {
 		var l_r = vm_group_call_call_value(l_th, l_act, l_val, l_stack, l_argOffset, l_n);
 		gml_stack_discard_multi(l_stack, l_n + 1);
-		l_tmp = l_r;
+		return l_r;
+	} else try {
+		var l_r = vm_group_call_call_value(l_th, l_act, l_val, l_stack, l_argOffset, l_n);
+		gml_stack_discard_multi(l_stack, l_n + 1);
+		return l_r;
 	} catch (l__g) {
 		var l_x = gml_std_haxe_Exception_caught(l__g).h_unwrap();
 		gml_stack_discard_multi(l_stack, l_n + 1);
-		l_tmp = l_th.h_proc_error2(l_x, l_act);
+		return l_th.h_proc_error2(l_x, l_act);
 	}
-	return l_tmp;
 	return 0;
 }
 
 if (live_enabled) 
 function vm_group_call_on_construct(l_th, l_act, l_scope, l_stack) {
+	// vm_group_call_on_construct(th:gml_thread, act:gml_action, scope:gml_thread_scope, stack:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l__argc = l_act.h_argc;
 	var l_args1 = gml_stack_pop_multi(l_stack, l__argc + 1);
 	var l_v1 = l_args1[0];
@@ -128,21 +140,21 @@ function vm_group_call_on_construct(l_th, l_act, l_scope, l_stack) {
 				var l_args2 = l_args1;
 				var l_self1 = self;
 				var l_result;
-				while (true) {
+				do {
 					var l_ctx1 = l_ctx[$"live:context"];
 					var l_pg;
 					if (l_ctx1 != undefined) {
-						var l_livedata = live_live_map.h_obj[$ l_ctx1];
-						if (l_livedata == undefined) show_error("Trying to call a nonexistent GMLive program: " + l_ctx1, true);
+						var l_livedata = live_live_map[$ l_ctx1];
+						if (l_livedata == undefined) throw gml_std_haxe_Exception_thrown("Trying to call a nonexistent GMLive program: " + gml_std_Std_stringify(l_ctx1));
 						l_pg = l_livedata[0/* program */];
 						if (l_pg == undefined) {
-							live_log("Trying to call a broken GMLive program " + l_ctx1 + ", returning undefined", 2);
+							live_log_script("Trying to call a broken GMLive program " + gml_std_Std_stringify(l_ctx1) + ", returning undefined", 2);
 							l_result = undefined;
 							break;
 						}
 					} else {
 						l_pg = l_ctx[$"live:program"];
-						if (l_pg == undefined) show_error("It would appear that you've re-bound a GMLive function to a different scope. Please use live_method() rather than method() to do so.", true);
+						if (l_pg == undefined) throw gml_std_haxe_Exception_thrown("It would appear that you've re-bound a GMLive function to a different scope. Please use live_method() rather than method() to do so.");
 					}
 					live_custom_self = l_self1;
 					live_custom_other = other;
@@ -154,11 +166,10 @@ function vm_group_call_on_construct(l_th, l_act, l_scope, l_stack) {
 					if (l_th1.h_status == 3) {
 						l_result = l_th1.h_result;
 					} else if (l_th1.h_status == 4) {
-						live_log("Runtime error: " + l_th1.h_get_error(), 2);
+						live_log_script(("Runtime error: " + l_th1.h_get_error()), 2);
 						l_result = undefined;
 					} else l_result = undefined;
-					if (true) break;
-				}
+				} until (true);
 				l_th.h_result = self;
 			}
 			return 0;
@@ -173,6 +184,8 @@ function vm_group_call_on_construct(l_th, l_act, l_scope, l_stack) {
 
 if (live_enabled) 
 function vm_group_call_on_call_script_with_array(l_th, l_act, l_scope, l_stack) {
+	// vm_group_call_on_call_script_with_array(th:gml_thread, act:gml_action, scope:gml_thread_scope, stack:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_v1, l_arr;
 	var l_z = l_stack[0] - 1;
 	l_stack[@0] = (l_z - 1);
@@ -186,6 +199,8 @@ function vm_group_call_on_call_script_with_array(l_th, l_act, l_scope, l_stack) 
 
 if (live_enabled) 
 function vm_group_call_on_call_func(l_th, l_act, l_scope, l_stack) {
+	// vm_group_call_on_call_func(th:gml_thread, act:gml_action, scope:gml_thread_scope, stack:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l__func = l_act.h_func;
 	var l__argc = l_act.h_argc;
 	var l__inst = l_act.h_inst;
