@@ -145,6 +145,12 @@ if level == "exit"
 	add_section("Level");
 	add_modifier("Lappable", "Lappable", "Adds a lap portal to CTOP. Lap 2 will give you 2 extra minutes.", [seq_lappable_off, seq_lappable_on]);
 }
+if level == "secretworld"
+{
+	add_section("Level");
+	add_modifier("In Order", "Ordered", "Introduces every secret in proper level order, instead of being randomized.");
+	add_modifier("Extra Secrets", "SecretInclude", "Includes the Scrap Basement's secrets.\nCurrent version: " + GM_version + ", adds 5");
+}
 
 #endregion
 

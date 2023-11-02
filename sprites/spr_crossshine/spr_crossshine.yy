@@ -71,8 +71,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "chateaugroup",
-    "path": "texturegroups/chateaugroup",
+    "name": "smallgroup",
+    "path": "texturegroups/smallgroup",
   },
   "type": 0,
   "VTile": false,

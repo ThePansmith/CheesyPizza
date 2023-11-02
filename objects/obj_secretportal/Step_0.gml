@@ -84,7 +84,7 @@ if (floor(image_index) >= (image_number - 1))
 							if instance_exists(obj_levelLoader)
 								condition = false;
 							
-							if condition // it wasn't set, we are probably in a secret
+							if condition && !instance_exists(obj_randomsecret) // it wasn't set
 							{
 								targetRoom = other.targetRoom;
 								set_lastroom();
@@ -105,12 +105,17 @@ if (floor(image_index) >= (image_number - 1))
 							
 							obj_randomsecret.selected = true;
 							var len = array_length(obj_randomsecret.levels);
-							if (len > 0)
+							if len > 0
 							{
 								var num = irandom(len - 1);
+								if MOD.Ordered
+									num = 0;
+								
 								targetRoom = obj_randomsecret.levels[num];
 								array_delete(obj_randomsecret.levels, num, 1);
 							}
+							else
+								targetRoom = secret_entrance;
 						}
 					}
 					if (!secret && !soundtest && !instance_exists(obj_randomsecret))
