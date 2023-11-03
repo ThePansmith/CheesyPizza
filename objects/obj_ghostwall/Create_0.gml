@@ -1,3 +1,9 @@
+if check_char("V") or check_char("G")
+{
+	instance_destroy();
+	exit;
+}
+
 with (instance_create(x, y, obj_ghosttransparency))
 {
 	mask_index = other.sprite_index;
@@ -5,5 +11,3 @@ with (instance_create(x, y, obj_ghosttransparency))
 	image_xscale = other.image_xscale;
 }
 away = false;
-with obj_player1
-	if character == "V" or character == "G" instance_destroy(other);

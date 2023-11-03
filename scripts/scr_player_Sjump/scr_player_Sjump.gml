@@ -157,7 +157,7 @@ function scr_player_Sjump()
 		}
 	}
 	
-	if (character == "N" && noisetype == 1)
+	if (character == "N" && noisetype == 1 && sprite_index == spr_superjump)
 	{
 		if key_jump2
 		{

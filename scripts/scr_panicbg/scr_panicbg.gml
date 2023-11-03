@@ -119,7 +119,9 @@ function scr_panicbg_draw()
 			var time_id = shader_get_uniform(shd_panicbg, "time");
 			shader_set_uniform_f(time_id, scr_current_time() / 1000);
 			
+			reset_blendmode();
 			draw_surface(global.panicbg_surface, CAMX, CAMY);
+			gpu_set_blendmode(bm_normal);
 			
 			if !global.goodmode
 				shader_reset();

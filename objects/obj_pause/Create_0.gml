@@ -36,24 +36,21 @@ ds_map_set(pause_menu_map, "pause_restart", [2, function()
 {
 	if (room == Endingroom || room == tower_soundtest || room == tower_soundtestlevel || room == Creditsroom || room == Johnresurrectionroom)
 		exit;
-	if (!global.snickchallenge)
+	var rm = global.leveltorestart;
+	if (rm != -4 && rm != -1)
 	{
-		var rm = global.leveltorestart;
-		if (rm != -4 && rm != -1)
-		{
-			alarm[5] = 1;
-			roomtorestart = rm;
-			pause_unpause_music();
-			stop_music();
-			scr_pause_activate_objects();
-			scr_pause_stop_sounds();
-			instance_destroy(obj_option);
-			instance_destroy(obj_keyconfig);
-			pause = false;
-		}
-		else
-			fmod_event_one_shot("event:/sfx/ui/select");
+		alarm[5] = 1;
+		roomtorestart = rm;
+		pause_unpause_music();
+		stop_music();
+		scr_pause_activate_objects();
+		scr_pause_stop_sounds();
+		instance_destroy(obj_option);
+		instance_destroy(obj_keyconfig);
+		pause = false;
 	}
+	else
+		fmod_event_one_shot("event:/sfx/ui/select");
 }]);
 var exit_function = function()
 {

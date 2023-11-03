@@ -43,7 +43,7 @@ array_push(unlockables, "mario", "grinch");
 function add_palette(palette, entry, texture = noone, name = "PALETTE", description = "(No Description)", mix_prefix)
 {
 	// check if the palette was unlocked
-	if array_get_index(unlockables, entry) != -1
+	if array_get_index(unlockables, entry, 0, infinity) != -1
 	{
 		ini_open_from_string(obj_savesystem.ini_str_options);
 		if !ini_read_real("Palettes", entry, false)
@@ -272,6 +272,8 @@ draw = function(curve)
 	
 	if curv_prev < 1
 		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_WIDTH / (960 / 560)) * curv_prev);
+	draw_remove_bounds();
+	
 	draw_surface_ext(player_surface, charx - 256, chary - 256, 2, 2, 0, c_white, curve * charshift[2]);
 	
 	#endregion
@@ -328,13 +330,13 @@ draw = function(curve)
 			{
 				skin_tip -= 0.025;
 				draw_sprite_ext(spr_palettearrow, 0, SCREEN_WIDTH / 2 + Wave(180, 190, 1, 0), SCREEN_HEIGHT / 2, 1, 1, -90, c_white, skin_tip);
-				//draw_sprite_ext(spr_palettearrow, 0, SCREEN_WIDTH / 2 - Wave(180, 190, 1, 0), SCREEN_HEIGHT / 2, 1, 1, 90, c_white, skin_tip);
+				draw_sprite_ext(spr_palettearrow, 0, SCREEN_WIDTH / 2 - Wave(180, 190, 1, 0), SCREEN_HEIGHT / 2, 1, 1, 90, c_white, skin_tip);
 				
 				draw_set_font(global.smallfont);
 				draw_set_align(fa_center);
 				draw_set_alpha(skin_tip);
 				draw_text(SCREEN_WIDTH / 2 + Wave(180, 190, 1, 0), SCREEN_HEIGHT / 2 + 20, "PALETTES");
-				//draw_text(SCREEN_WIDTH / 2 - Wave(180, 190, 1, 0), SCREEN_HEIGHT / 2 + 20, "CUSTOMIZE");
+				draw_text(SCREEN_WIDTH / 2 - Wave(180, 190, 1, 0), SCREEN_HEIGHT / 2 + 20, "CUSTOMIZE");
 				draw_set_align();
 			}
 			break;
@@ -384,17 +386,12 @@ draw = function(curve)
 					draw_reset_flash();
 				}
 				else if fuck >= 0 // special palettes
-				{
-					//array_push(cache, { x: 408 + xdraw, y: 70 + ydraw, pattern: spr_skinchoicecustom, subimage: fuck});
 					draw_sprite_ext(spr_skinchoicecustom, fuck, 408 + xdraw, 70 + ydraw, 1, 1, 0, c_white, 1);
-				}
 				else if mixing or array[i].texture == noone // palettes
 					draw_skin_palette(408 + xdraw, 70 + ydraw, pal_swap_get_pal_color(palspr, array[i].palette, characters[sel.char][3][mixing]), draw_get_alpha());
-				else // patterns, cached and drawn later
+				else // patterns
 				{
-					draw_set_mask(408 + xdraw, 70 + ydraw, spr_skinchoicepalette, 0);
-					draw_sprite_stretched(array[i].texture, current_time / 120, 408 + xdraw, 70 + ydraw, 32, 32);
-					draw_reset_clip();
+					draw_sprite_stretched(array[i].texture, current_time / 120, 408 + xdraw + 1, 70 + ydraw + 1, 30, 30);
 					draw_sprite(spr_skinchoicepalette, 1, 408 + xdraw, 70 + ydraw);
 				}
 			}

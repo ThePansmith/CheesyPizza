@@ -15,6 +15,7 @@ if anim_con != 2 switch sel.side
 	
 		if move_hor != 0
 		{
+			/*
 			if move_hor == -1
 			{
 				sideoffset = 10;
@@ -22,6 +23,7 @@ if anim_con != 2 switch sel.side
 				fmod_event_instance_play(global.snd_golfjingle);
 				exit;
 			}
+			*/
 			
 			sel.side = move_hor == 1 ? 1 : 2;
 			sound_play(sfx_angelmove);

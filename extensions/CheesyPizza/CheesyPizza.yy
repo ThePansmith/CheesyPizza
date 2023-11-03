@@ -21,9 +21,6 @@
   "files": [
     {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_INVALID_BANK","hidden":false,"value":"-4",},
-        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PROP_DISPLAYNAME","hidden":false,"value":"\"displayName\"",},
-        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PROP_CATEGORY","hidden":false,"value":"\"category\"",},
-        {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PROP_AUTHOR","hidden":false,"value":"\"author\"",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_BEAT_CALLBACK","hidden":false,"value":"65535",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PLAYBACK_START_CALLBACK","hidden":false,"value":"65536",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PLAYBACK_END_CALLBACK","hidden":false,"value":"65537",},
@@ -163,6 +160,21 @@
             1,
             1,
           ],"documentation":"","externalName":"RegisterCallbacks","help":"Don't call this","hidden":true,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_soundtest_get_events","argCount":0,"args":[
+            2,
+          ],"documentation":"","externalName":"FMOD_Soundtest_GetEvents","help":"fmod_soundtest_get_events(bank_handle)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_soundtest_get_song_name","argCount":0,"args":[
+            2,
+          ],"documentation":"","externalName":"FMOD_Soundtest_SongName","help":"fmod_soundtest_get_song_name(index)","hidden":false,"kind":1,"returnType":1,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_soundtest_get_song_category","argCount":0,"args":[
+            2,
+          ],"documentation":"","externalName":"FMOD_Soundtest_SongCategory","help":"fmod_soundtest_get_song_category(index)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_soundtest_get_song_event","argCount":0,"args":[
+            2,
+          ],"documentation":"","externalName":"FMOD_Soundtest_SongEvent","help":"fmod_soundtest_get_song_event(index)","hidden":false,"kind":1,"returnType":1,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_soundtest_get_song_index","argCount":0,"args":[
+            2,
+          ],"documentation":"","externalName":"FMOD_Soundtest_SongIndex","help":"fmod_soundtest_get_song_index(index)","hidden":false,"kind":1,"returnType":2,},
       ],"init":"","kind":1,"order":[
         {"name":"launch_external","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"test_dll_linkage","path":"extensions/CheesyPizza/CheesyPizza.yy",},

@@ -10,7 +10,7 @@ function scr_ratblock_destroy()
 	{
 		if ((other.sprite_index == spr_rattumbleblock || other.sprite_index == spr_rattumbleblock_big) && sprite_index == spr_tumble && (place_meeting(x + 1, y, other) || place_meeting(x - 1, y, other)))
 			instance_destroy(other);
-		if (state != states.mort && state != states.bombgrab && (!scr_transformationcheck() || state == states.barrel || (character == "S" && abs(movespeed) > 12)) && (place_meeting(x + 1, y, other) || place_meeting(x - 1, y, other) || place_meeting(x, y + 1, other) || place_meeting(x, y - 1, other)))
+		if (state != states.mort && state != states.bombgrab && (!scr_transformationcheck() || state == states.barrel || (character == "S" && abs(movespeed) > 12) || state == states.ratmountbounce) && (place_meeting(x + 1, y, other) || place_meeting(x - 1, y, other) || place_meeting(x, y + 1, other) || place_meeting(x, y - 1, other)))
 		{
 			switch (state)
 			{
@@ -52,8 +52,11 @@ function scr_ratblock_destroy()
 						instance_destroy(other);
 					break;
 				case states.cottonroll:
-					if movespeed >= 8
+					if place_meeting(x, y + vsp + 1, other)
 						instance_destroy(other);
+					break;
+				case states.ratmountbounce:
+					
 					break;
 				case states.tumble:
 					if (other.sprite_index == spr_rattumbleblock || other.sprite_index == spr_rattumbleblock_big)
