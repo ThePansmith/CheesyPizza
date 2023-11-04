@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Level objects",
-    "path": "folders/Objects/CheesyPizza/Level objects.yy",
+    "name": "Collision",
+    "path": "folders/Objects/CheesyPizza/Collision.yy",
   },
   "parentObjectId": null,
   "persistent": false,

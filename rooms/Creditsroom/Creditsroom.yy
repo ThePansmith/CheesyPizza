@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "Creditsroom",
-  "creationCodeFile": "${project_dir}/rooms/Creditsroom/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/Creditsroom/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

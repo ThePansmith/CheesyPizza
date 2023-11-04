@@ -8,6 +8,7 @@ if (instance_number(object_index) > 1)
 		exit;
 	}
 }
+global.current_level = -4;
 palette_override_active = false; // still working on it
 palette_override_colors = array_create(64);
 
@@ -219,6 +220,9 @@ global.playerhit = 0;
 global.door_sprite = spr_door;
 global.door_index = 0;
 global.pistol = false;
+lastroom_soundtest = room;
+lastroom_secretportalID = -4;
+dropboost = false;
 
 global.snd_escaperumble = fmod_event_create_instance("event:/sfx/misc/escaperumble");
 global.snd_johndead = fmod_event_create_instance("event:/sfx/enemies/johndead");
@@ -392,6 +396,8 @@ parry_count = 0;
 parry_max = 8;
 is_firing = false;
 input_buffer_jump = 0;
+input_buffer_down = 0;
+input_buffer_mach = 0;
 input_buffer_jump_negative = 0;
 input_buffer_shoot = 0;
 input_buffer_secondjump = 8;

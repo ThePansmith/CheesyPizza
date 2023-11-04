@@ -1,4 +1,4 @@
-if (global.panic || instance_exists(obj_wartimer))
+if ((global.panic || instance_exists(obj_wartimer)) && sprite_index != spr_outline)
 {
 	image_alpha = 1;
 	if (sprite_index == spr_idle)
@@ -32,6 +32,9 @@ if (global.panic || instance_exists(obj_wartimer))
 					global.fill += calculate_panic_timer(2, 30);
 				if global.leveltosave == "sucrose" && !global.lap
 					global.fill += calculate_panic_timer(1, 30);
+				
+				if global.leveltosave == "sucrose" or global.leveltosave == "war"
+					global.stylelock = true;
 				
 				if MOD.DeathMode with obj_deathmode
 					time_fx += 30;

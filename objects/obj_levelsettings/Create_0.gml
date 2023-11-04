@@ -31,7 +31,8 @@ function add_modifier(name, variable, desc = "", drawfunc = noone)
 		name: name,
 		desc: desc,
 		opts: [["OFF", false], ["ON", true]],
-		drawfunc: drawfunc
+		drawfunc: drawfunc,
+		condition: noone
 	}
 	array_push(options_array, struct);
 	return struct;
@@ -67,12 +68,12 @@ add_section("Modifiers");
 var deathmode_allow = 
 [ 
 	"entryway", // Sugary
-	"entrance", "medieval", "ruin", "dungeon", // W1
-	"badland", "graveyard", "saloon", "farm", // W2
-	"plage", "space", "minigolf", "forest", // W3
-	"freezer", "street", "industrial", "sewer", // W4
-	"chateau", "kidsparty", "war", // W5
-	"etb", "midway", //Extra
+	"entrance", "medieval", //"ruin", "dungeon", // W1
+	//"badland", "graveyard", "saloon", "farm", // W2
+	//"plage", "space", "minigolf", "forest", // W3
+	//"freezer", "street", "industrial", "sewer", // W4
+	//"chateau", "kidsparty", //"war", // W5
+	"etb", "midway", // Extra
 ];
 if array_contains(deathmode_allow, level)// or DEBUG
 	add_modifier("Death Mode", "DeathMode", "Avoid Pizzaface within a very tight timer!", [seq_deathmode_off, seq_deathmode_on]);
@@ -85,7 +86,7 @@ if !boss && level != "tutorial"
 add_modifier("Hard Mode", "HardMode", "A placeholder entity will rain enemies upon you!", [seq_hardmode_off, seq_hardmode_on]);
 add_modifier("Mirrored", "Mirror", "Experience the horrors of graphics that weren't supposed to be flipped.", [seq_mirrored_off, seq_mirrored_on]);
 
-if !boss && level != "grinch" && level != "dragonlair" && level != "snickchallenge" && level != "tutorial"
+if !boss && level != "grinch" && level != "dragonlair" && level != "snickchallenge" && level != "tutorial" && level != "secretworld"
 {
 	var opt = add_modifier("Lap Hell", "Lap3", "A challenge awaits you on the third lap!", [seq_lap3_off, seq_lap3_on, seq_lap3_on]);
 	opt.opts = [
@@ -112,14 +113,15 @@ add_modifier("Lights Out", "Spotlight", "The size of the spotlight is tied to yo
 	draw_circle(384/2 + random_range(-1, 1), 216/2 + random_range(-1, 1), circle_size + 30, false);
 	
 	draw_set_alpha(1);
-	gpu_set_blendmode(bm_normal);
+	reset_blendmode();
+	reset_shader_fix();
 	
 	// player
 	var p = simuplayer;
 	draw_sprite(spr_playerN_move, p.image, 384 / 2, 216 / 2);
 });
 
-add_modifier("Cosmic Clone", "CosmicClone", "Similar to Fake Peppino from the GOLF Builds, this clone will copy your every move!");
+//add_modifier("Cosmic Clones", "CosmicClones", "");
 
 // Level specific
 if level == "grinch"
@@ -142,6 +144,12 @@ if level == "exit"
 {
 	add_section("Level");
 	add_modifier("Lappable", "Lappable", "Adds a lap portal to CTOP. Lap 2 will give you 2 extra minutes.", [seq_lappable_off, seq_lappable_on]);
+}
+if level == "secretworld"
+{
+	add_section("Level");
+	add_modifier("In Order", "Ordered", "Introduces every secret in proper level order, instead of being randomized.");
+	add_modifier("Extra Secrets", "SecretInclude", "Includes the Scrap Basement's secrets.\nCurrent version: " + GM_version + ", adds 5");
 }
 
 #endregion

@@ -1,5 +1,13 @@
 function state_player_jump()
 {
+	var maxmovespeed = 8;
+	var maxmovespeed2 = 6;
+	var turnmovespeed = 2;
+	var accel = 0.5;
+	var deccel = 0.1;
+	var jumpspeed = -11;
+	var machspeed = 6;
+	
 	landAnim = true;
 	if (!momemtum)
 		hsp = move * movespeed;
@@ -16,11 +24,11 @@ function state_player_jump()
 	if (dir != xscale)
 	{
 		dir = xscale;
-		movespeed = 2;
+		movespeed = turnmovespeed;
 		facehurt = false;
 	}
 	if (move != xscale)
-		movespeed = 2;
+		movespeed = turnmovespeed;
 	move = key_left + key_right;
 	if (movespeed == 0)
 		momemtum = false;
@@ -32,10 +40,10 @@ function state_player_jump()
 	if (move != 0)
 	{
 		xscale = move;
-		if (movespeed < 8)
-			movespeed += 0.5;
-		else if (floor(movespeed) == 8)
-			movespeed = 6;
+		if (movespeed < maxmovespeed)
+			movespeed += accel;
+		else if (floor(movespeed) == maxmovespeed)
+			movespeed = maxmovespeed2;
 		if (scr_solid(x + xscale, y) && move == xscale)
 			movespeed = 0;
 	}
@@ -84,8 +92,8 @@ function state_player_jump()
 				sound_play_3d("event:/modded/sfx/woosh", x, y);
 				sprite_index = spr_playerN_doublejump;
 				vsp = -9;
+				jumpAnim = true;
 			}
-			jumpAnim = false;
 			image_index = 0;
 			jumpstop = false;
 			doublejump = true;
@@ -456,7 +464,7 @@ function state_player_jump()
 				if (movespeed < 6)
 					movespeed = 6;
 			}
-			if (key_chainsaw2 && !instance_exists(dynamite_inst))
+			if ((key_chainsaw2 or key_shoot2) && !instance_exists(dynamite_inst))
 			{
 				sprite_index = spr_playerV_dynamitethrow;
 				image_index = 0;

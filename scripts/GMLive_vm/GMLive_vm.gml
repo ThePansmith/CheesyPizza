@@ -8,6 +8,8 @@
 
 if (live_enabled) 
 function vm_group_alarm_on_alarm(l_th, l_act, l_scope, l_st) {
+	// vm_group_alarm_on_alarm(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 1;
 	l_st[@0] = l_z;
 	l_st[@l_z] = l_st[l_z].alarm[l_st[l_z + 1]];
@@ -17,6 +19,8 @@ function vm_group_alarm_on_alarm(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_alarm_on_alarm_set(l_th, l_act, l_scope, l_st) {
+	// vm_group_alarm_on_alarm_set(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 2;
 	l_st[@0] = (l_z - 1);
 	l_st[l_z].alarm[l_st[l_z + 1]] = l_st[l_z + 2];
@@ -28,6 +32,8 @@ function vm_group_alarm_on_alarm_set(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_alarm_on_alarm_aop(l_th, l_act, l_scope, l_st) {
+	// vm_group_alarm_on_alarm_aop(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 2;
 	l_st[@0] = (l_z - 1);
 	var l_a = l_st[l_z];
@@ -47,6 +53,8 @@ function vm_group_alarm_on_alarm_aop(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_arg_on_arg_count(l_th, l_act, l_scope, l_st) {
+	// vm_group_arg_on_arg_count(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_st[0] + 1;
 	if (l_i >= array_length(l_st)) l_st[@array_length(l_st) * 2] = 0;
 	l_st[@l_i] = array_length(l_scope[3/* args */]);
@@ -56,6 +64,8 @@ function vm_group_arg_on_arg_count(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_arg_on_arg_const(l_th, l_act, l_scope, l_st) {
+	// vm_group_arg_on_arg_const(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_act.h_i;
 	var l_args1 = l_scope[3/* args */];
 	if (l_i >= 0 && l_i < array_length(l_args1)) {
@@ -69,6 +79,8 @@ function vm_group_arg_on_arg_const(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_arg_on_arg_const_set(l_th, l_act, l_scope, l_st) {
+	// vm_group_arg_on_arg_const_set(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_act.h_i;
 	var l_args1 = l_scope[3/* args */];
 	if (l_i >= 0 && l_i < array_length(l_args1)) {
@@ -83,6 +95,8 @@ function vm_group_arg_on_arg_const_set(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_arg_on_arg_const_aop(l_th, l_act, l_scope, l_st) {
+	// vm_group_arg_on_arg_const_aop(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_o = l_act.h_o;
 	var l_i = l_act.h_i;
 	var l_args1 = l_scope[3/* args */];
@@ -100,6 +114,8 @@ function vm_group_arg_on_arg_const_aop(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_arg_on_arg_index(l_th, l_act, l_scope, l_st) {
+	// vm_group_arg_on_arg_index(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0];
 	var l_k = l_st[l_z];
 	if (is_numeric(l_k)) {
@@ -112,6 +128,8 @@ function vm_group_arg_on_arg_index(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_arg_on_arg_index_set(l_th, l_act, l_scope, l_st) {
+	// vm_group_arg_on_arg_index_set(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_v, l_k;
 	var l_z = l_st[0] - 1;
 	l_st[@0] = (l_z - 1);
@@ -129,6 +147,8 @@ function vm_group_arg_on_arg_index_set(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_arg_on_arg_index_aop(l_th, l_act, l_scope, l_st) {
+	// vm_group_arg_on_arg_index_aop(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_o = l_act.h_o;
 	var l_v, l_k;
 	var l_z = l_st[0] - 1;
@@ -154,6 +174,8 @@ function vm_group_arg_on_arg_index_aop(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_array_on_index(l_th, l_act, l_scope, l_st) {
+	// vm_group_array_on_index(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 1;
 	l_st[@0] = l_z;
 	l_st[@l_z] = l_st[l_z][l_st[l_z + 1]];
@@ -163,6 +185,8 @@ function vm_group_array_on_index(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_array_on_index_set(l_th, l_act, l_scope, l_st) {
+	// vm_group_array_on_index_set(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 2;
 	l_st[@0] = (l_z - 1);
 	l_st[l_z][@l_st[l_z + 1]] = l_st[l_z + 2];
@@ -174,6 +198,8 @@ function vm_group_array_on_index_set(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_array_on_index_aop(l_th, l_act, l_scope, l_st) {
+	// vm_group_array_on_index_aop(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 2;
 	l_st[@0] = (l_z - 1);
 	var l_a = l_st[l_z];
@@ -188,6 +214,8 @@ function vm_group_array_on_index_aop(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_array_on_index2d(l_th, l_act, l_scope, l_st) {
+	// vm_group_array_on_index2d(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_a;
 	var l_z = l_st[0] - 2;
 	l_st[@0] = l_z;
@@ -200,6 +228,8 @@ function vm_group_array_on_index2d(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_array_on_index2d_set(l_th, l_act, l_scope, l_st) {
+	// vm_group_array_on_index2d_set(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_arr;
 	var l_z = l_st[0] - 3;
 	l_st[@0] = (l_z - 1);
@@ -214,6 +244,8 @@ function vm_group_array_on_index2d_set(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_array_on_index2d_aop(l_th, l_act, l_scope, l_st) {
+	// vm_group_array_on_index2d_aop(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 3;
 	l_st[@0] = (l_z - 1);
 	var l_a = l_st[l_z];
@@ -233,6 +265,8 @@ function vm_group_array_on_index2d_aop(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_ensure_plus_on_ensure_array_for_local(l_th, l_act, l_scope, l_st) {
+	// vm_group_ensure_plus_on_ensure_array_for_local(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_ind = l_act.h_ind;
 	var l_locals = l_scope[4/* locals */];
 	var l_val = l_locals[l_ind];
@@ -249,6 +283,8 @@ function vm_group_ensure_plus_on_ensure_array_for_local(l_th, l_act, l_scope, l_
 
 if (live_enabled) 
 function vm_group_ensure_plus_on_ensure_array_for_global(l_th, l_act, l_scope, l_st) {
+	// vm_group_ensure_plus_on_ensure_array_for_global(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_name = l_act.h_name;
 	var l_val = variable_global_get(l_name);
 	if (!is_array(l_val)) {
@@ -264,6 +300,8 @@ function vm_group_ensure_plus_on_ensure_array_for_global(l_th, l_act, l_scope, l
 
 if (live_enabled) 
 function vm_group_ensure_plus_on_ensure_array_for_field(l_th, l_act, l_scope, l_st) {
+	// vm_group_ensure_plus_on_ensure_array_for_field(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_name = l_act.h_field;
 	var l_z = l_st[0];
 	var l_obj = l_st[l_z];
@@ -278,6 +316,8 @@ function vm_group_ensure_plus_on_ensure_array_for_field(l_th, l_act, l_scope, l_
 
 if (live_enabled) 
 function vm_group_ensure_plus_on_ensure_array_for_index(l_th, l_act, l_scope, l_st) {
+	// vm_group_ensure_plus_on_ensure_array_for_index(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 1;
 	l_st[@0] = l_z;
 	var l_arr = l_st[l_z];
@@ -300,6 +340,8 @@ function vm_group_ensure_plus_on_ensure_array_for_index(l_th, l_act, l_scope, l_
 
 if (live_enabled) 
 function vm_group_ensure_plus_on_ensure_array_for_index2d(l_th, l_act, l_scope, l_st) {
+	// vm_group_ensure_plus_on_ensure_array_for_index2d(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 2;
 	l_st[@0] = l_z;
 	var l_arr = l_st[l_z];
@@ -340,6 +382,8 @@ function vm_group_ensure_plus_on_ensure_array_for_index2d(l_th, l_act, l_scope, 
 
 if (live_enabled) 
 function vm_group_env_on_env(l_th, l_act, l_scope, l_st) {
+	// vm_group_env_on_env(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_v = l_act.h_f(false, undefined);
 	var l_i = l_st[0] + 1;
 	if (l_i >= array_length(l_st)) l_st[@array_length(l_st) * 2] = 0;
@@ -350,6 +394,8 @@ function vm_group_env_on_env(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_env_on_env_set(l_th, l_act, l_scope, l_st) {
+	// vm_group_env_on_env_set(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_st[0];
 	var l_r = l_st[l_i];
 	l_st[@l_i] = 0;
@@ -360,6 +406,8 @@ function vm_group_env_on_env_set(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_env_on_env_aop(l_th, l_act, l_scope, l_st) {
+	// vm_group_env_on_env_aop(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_op = l_act.h_o;
 	var l_fn = l_act.h_f;
 	var l_ev = l_fn(false, undefined);
@@ -374,6 +422,8 @@ function vm_group_env_on_env_aop(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_env_on_env1d(l_th, l_act, l_scope, l_st) {
+	// vm_group_env_on_env1d(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_fn = l_act.h_f;
 	var l_z = l_st[0];
 	var l_i = l_st[l_z];
@@ -383,6 +433,8 @@ function vm_group_env_on_env1d(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_env_on_env1d_set(l_th, l_act, l_scope, l_st) {
+	// vm_group_env_on_env1d_set(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_fn = l_act.h_f;
 	var l_i, l_v;
 	var l_z = l_st[0] - 1;
@@ -397,6 +449,8 @@ function vm_group_env_on_env1d_set(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_env_on_env1d_aop(l_th, l_act, l_scope, l_st) {
+	// vm_group_env_on_env1d_aop(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_o = l_act.h_o;
 	var l_fn = l_act.h_f;
 	var l_i, l_v;
@@ -419,12 +473,16 @@ function vm_group_env_on_env1d_aop(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_fast_call_on_call_func0(l_th, l_act, l_scope, l_st) {
+	// vm_group_fast_call_on_call_func0(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	l_act.h_func();
 	return 0;
 }
 
 if (live_enabled) 
 function vm_group_fast_call_on_call_func0o(l_th, l_act, l_scope, l_st) {
+	// vm_group_fast_call_on_call_func0o(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_v = l_act.h_func();
 	var l_i = l_st[0] + 1;
 	if (l_i >= array_length(l_st)) l_st[@array_length(l_st) * 2] = 0;
@@ -435,6 +493,8 @@ function vm_group_fast_call_on_call_func0o(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_fast_call_on_call_func1(l_th, l_act, l_scope, l_st) {
+	// vm_group_fast_call_on_call_func1(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l__func = l_act.h_func;
 	var l_i = l_st[0];
 	var l_r = l_st[l_i];
@@ -446,6 +506,8 @@ function vm_group_fast_call_on_call_func1(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_fast_call_on_call_func1o(l_th, l_act, l_scope, l_st) {
+	// vm_group_fast_call_on_call_func1o(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0];
 	l_st[@l_z] = l_act.h_func(l_st[l_z]);
 	return 0;
@@ -453,6 +515,8 @@ function vm_group_fast_call_on_call_func1o(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_fast_call_on_call_func2(l_th, l_act, l_scope, l_st) {
+	// vm_group_fast_call_on_call_func2(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 1;
 	l_st[@0] = (l_z - 1);
 	l_act.h_func(l_st[l_z], l_st[l_z + 1]);
@@ -463,6 +527,8 @@ function vm_group_fast_call_on_call_func2(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_fast_call_on_call_func2o(l_th, l_act, l_scope, l_st) {
+	// vm_group_fast_call_on_call_func2o(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 1;
 	l_st[@0] = l_z;
 	l_st[@l_z] = l_act.h_func(l_st[l_z], l_st[l_z + 1]);
@@ -472,6 +538,8 @@ function vm_group_fast_call_on_call_func2o(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_fast_call_on_call_func3(l_th, l_act, l_scope, l_st) {
+	// vm_group_fast_call_on_call_func3(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 2;
 	l_st[@0] = (l_z - 1);
 	l_act.h_func(l_st[l_z], l_st[l_z + 1], l_st[l_z + 2]);
@@ -483,6 +551,8 @@ function vm_group_fast_call_on_call_func3(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_fast_call_on_call_func3o(l_th, l_act, l_scope, l_st) {
+	// vm_group_fast_call_on_call_func3o(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 2;
 	l_st[@0] = l_z;
 	l_st[@l_z] = l_act.h_func(l_st[l_z], l_st[l_z + 1], l_st[l_z + 2]);
@@ -493,6 +563,8 @@ function vm_group_fast_call_on_call_func3o(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_fast_call_on_call_func4(l_th, l_act, l_scope, l_st) {
+	// vm_group_fast_call_on_call_func4(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 3;
 	l_st[@0] = (l_z - 1);
 	l_act.h_func(l_st[l_z], l_st[l_z + 1], l_st[l_z + 2], l_st[l_z + 3]);
@@ -505,6 +577,8 @@ function vm_group_fast_call_on_call_func4(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_fast_call_on_call_func4o(l_th, l_act, l_scope, l_st) {
+	// vm_group_fast_call_on_call_func4o(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 3;
 	l_st[@0] = l_z;
 	l_st[@l_z] = l_act.h_func(l_st[l_z], l_st[l_z + 1], l_st[l_z + 2], l_st[l_z + 3]);
@@ -520,6 +594,8 @@ function vm_group_fast_call_on_call_func4o(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_field_dump_no_var(l_th, l_act, l_ctx, l_fd) {
+	// vm_group_field_dump_no_var(th:gml_thread, act:gml_action, ctx:data_GmlExtInstance, fd:string)->gml_thread_proc_result
+	/// @ignore
 	var l_post = " does not have a variable `" + l_fd + "`";
 	if (is_numeric(l_ctx)) {
 		if (object_exists(l_ctx)) {
@@ -537,6 +613,8 @@ function vm_group_field_dump_no_var(l_th, l_act, l_ctx, l_fd) {
 
 if (live_enabled) 
 function vm_group_field_on_field(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_field(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_s = l_act.h_fd;
 	var l_z = l_st[0];
 	var l_ctx = l_st[l_z];
@@ -562,6 +640,8 @@ function vm_group_field_on_field(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_field_on_field_set(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_field_set(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_varname = l_act.h_fd;
 	var l_z = l_st[0] - 1;
 	l_st[@0] = (l_z - 1);
@@ -595,6 +675,8 @@ function vm_group_field_on_field_set(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_field_on_fast_field_aop(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_fast_field_aop(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 1;
 	l_st[@0] = (l_z - 1);
 	var l_obj = l_st[l_z];
@@ -606,6 +688,8 @@ function vm_group_field_on_fast_field_aop(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_field_on_field_aop(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_field_aop(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_o = l_act.h_o;
 	var l_s = l_act.h_fd;
 	var l_z = l_st[0] - 1;
@@ -666,6 +750,8 @@ function vm_group_field_on_field_aop(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_field_on_self_field(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_self_field(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l__field = l_act.h_fd;
 	var l_this1 = l_scope[6/* inst */];
 	var l_obj = l_this1[l_this1[0]];
@@ -692,6 +778,8 @@ function vm_group_field_on_self_field(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_field_on_self_field_set(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_self_field_set(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l__field = l_act.h_fd;
 	var l_this1 = l_scope[6/* inst */];
 	l_this1[l_this1[0]][$ l__field] = gml_stack_pop(l_st);
@@ -700,6 +788,8 @@ function vm_group_field_on_self_field_set(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_field_on_self_field_aop(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_self_field_aop(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l__op = l_act.h_o;
 	var l__field = l_act.h_fd;
 	var l_this1 = l_scope[6/* inst */];
@@ -725,6 +815,8 @@ function vm_group_field_on_self_field_aop(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_field_on_fast_self_field(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_fast_self_field(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_this1 = l_scope[6/* inst */];
 	var l_v = l_act.h_getter(l_this1[l_this1[0]]);
 	var l_i = l_st[0] + 1;
@@ -736,6 +828,8 @@ function vm_group_field_on_fast_self_field(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_field_on_fast_self_field_set(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_fast_self_field_set(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l__setter = l_act.h_setter;
 	var l_this1 = l_scope[6/* inst */];
 	l__setter(l_this1[l_this1[0]], gml_stack_pop(l_st));
@@ -744,6 +838,8 @@ function vm_group_field_on_fast_self_field_set(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_field_on_fast_self_field_aop(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_fast_self_field_aop(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_this1 = l_scope[6/* inst */];
 	var l_obj = l_this1[l_this1[0]];
 	l_act.h_setter(l_obj, vm_group_op_funcs[l_act.h_o](l_act.h_getter(l_obj), gml_stack_pop(l_st)));
@@ -752,6 +848,8 @@ function vm_group_field_on_fast_self_field_aop(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_field_on_local_field(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_local_field(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_act.h_localIndex;
 	var l__field = l_act.h_fd;
 	var l_obj = l_scope[4/* locals */][l_i];
@@ -778,12 +876,16 @@ function vm_group_field_on_local_field(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_field_on_local_field_set(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_local_field_set(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	l_scope[4/* locals */][l_act.h_localIndex][$ l_act.h_fd] = gml_stack_pop(l_st);
 	return 0;
 }
 
 if (live_enabled) 
 function vm_group_field_on_local_field_aop(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_local_field_aop(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_act.h_localIndex;
 	var l__op = l_act.h_o;
 	var l__field = l_act.h_fd;
@@ -808,6 +910,8 @@ function vm_group_field_on_local_field_aop(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_field_on_fast_local_field(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_fast_local_field(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_v = l_act.h_getter(l_scope[4/* locals */][l_act.h_localIndex]);
 	var l_i = l_st[0] + 1;
 	if (l_i >= array_length(l_st)) l_st[@array_length(l_st) * 2] = 0;
@@ -818,12 +922,16 @@ function vm_group_field_on_fast_local_field(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_field_on_fast_local_field_set(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_fast_local_field_set(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	l_act.h_setter(l_scope[4/* locals */][l_act.h_localIndex], gml_stack_pop(l_st));
 	return 0;
 }
 
 if (live_enabled) 
 function vm_group_field_on_fast_local_field_aop(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_fast_local_field_aop(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_obj = l_scope[4/* locals */][l_act.h_localIndex];
 	l_act.h_setter(l_obj, vm_group_op_funcs[l_act.h_o](l_act.h_getter(l_obj), gml_stack_pop(l_st)));
 	return 0;
@@ -831,6 +939,8 @@ function vm_group_field_on_fast_local_field_aop(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_field_on_in(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_in(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_not = l_act.h_not;
 	var l_z = l_st[0] - 1;
 	l_st[@0] = l_z;
@@ -848,6 +958,8 @@ function vm_group_field_on_in(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_field_on_in_const(l_th, l_act, l_scope, l_st) {
+	// vm_group_field_on_in_const(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0];
 	l_st[@l_z] = l_act.h_not != variable_struct_exists(l_st[l_z], l_act.h_field);
 	return 0;
@@ -859,6 +971,8 @@ function vm_group_field_on_in_const(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_global_on_global(l_th, l_act, l_scope, l_st) {
+	// vm_group_global_on_global(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_s = l_act.h_fd;
 	if (variable_global_exists(l_s)) {
 		var l_v = variable_global_get(l_s);
@@ -872,6 +986,8 @@ function vm_group_global_on_global(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_global_on_global_set(l_th, l_act, l_scope, l_st) {
+	// vm_group_global_on_global_set(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_st[0];
 	var l_r = l_st[l_i];
 	l_st[@l_i] = 0;
@@ -882,6 +998,8 @@ function vm_group_global_on_global_set(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_global_on_global_aop(l_th, l_act, l_scope, l_st) {
+	// vm_group_global_on_global_aop(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_o = l_act.h_o;
 	var l_s = l_act.h_fd;
 	if (variable_global_exists(l_s)) {
@@ -900,12 +1018,16 @@ function vm_group_global_on_global_aop(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_jump_on_jump(l_th, l_act, l_scope, l_st) {
+	// vm_group_jump_on_jump(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	l_scope[@2/* offset */] = l_act.h_p;
 	return 2;
 }
 
 if (live_enabled) 
 function vm_group_jump_on_jump_if(l_th, l_act, l_scope, l_st) {
+	// vm_group_jump_on_jump_if(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_p = l_act.h_p;
 	var l_i = l_st[0];
 	var l_r = l_st[l_i];
@@ -920,6 +1042,8 @@ function vm_group_jump_on_jump_if(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_jump_on_jump_unless(l_th, l_act, l_scope, l_st) {
+	// vm_group_jump_on_jump_unless(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_p = l_act.h_p;
 	var l_i = l_st[0];
 	var l_r = l_st[l_i];
@@ -934,6 +1058,8 @@ function vm_group_jump_on_jump_unless(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_jump_on_bool_and(l_th, l_act, l_scope, l_st) {
+	// vm_group_jump_on_bool_and(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_p = l_act.h_p;
 	if (l_st[l_st[0]]) {
 		var l_i = l_st[0];
@@ -948,6 +1074,8 @@ function vm_group_jump_on_bool_and(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_jump_on_bool_or(l_th, l_act, l_scope, l_st) {
+	// vm_group_jump_on_bool_or(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_p = l_act.h_p;
 	if (l_st[l_st[0]]) {
 		l_scope[@2/* offset */] = l_p;
@@ -962,6 +1090,8 @@ function vm_group_jump_on_bool_or(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_jump_on_switch(l_th, l_act, l_scope, l_st) {
+	// vm_group_jump_on_switch(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_jt = l_act.h_jumptable;
 	var l_p = l_act.h_defaultPos;
 	var l_i = l_st[0];
@@ -992,6 +1122,8 @@ function vm_group_jump_on_switch(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_jump_on_switch_case(l_th, l_act, l_scope, l_st) {
+	// vm_group_jump_on_switch_case(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_p = l_act.h_p;
 	var l_i = l_st[0];
 	var l_r = l_st[l_i];
@@ -1007,6 +1139,8 @@ function vm_group_jump_on_switch_case(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_jump_on_null_co(l_th, l_act, l_scope, l_st) {
+	// vm_group_jump_on_null_co(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_p = l_act.h_p;
 	var l_val = l_st[l_st[0]];
 	if (l_val != undefined && l_val != pointer_null) {
@@ -1018,6 +1152,8 @@ function vm_group_jump_on_null_co(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_jump_on_repeat_pre(l_th, l_act, l_scope, l_st) {
+	// vm_group_jump_on_repeat_pre(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_p = l_act.h_p;
 	var l_val = l_st[l_st[0]];
 	if (is_numeric(l_val)) {
@@ -1034,6 +1170,8 @@ function vm_group_jump_on_repeat_pre(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_jump_on_repeat_jump(l_th, l_act, l_scope, l_st) {
+	// vm_group_jump_on_repeat_jump(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_p = l_act.h_p;
 	var l_f = l_st[l_st[0]] - 1;
 	l_st[@l_st[0]] = l_f;
@@ -1046,18 +1184,24 @@ function vm_group_jump_on_repeat_jump(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_jump_on_break(l_th, l_act, l_scope, l_st) {
+	// vm_group_jump_on_break(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	l_scope[@2/* offset */] = l_act.h_lp;
 	return 2;
 }
 
 if (live_enabled) 
 function vm_group_jump_on_continue(l_th, l_act, l_scope, l_st) {
+	// vm_group_jump_on_continue(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	l_scope[@2/* offset */] = l_act.h_lp;
 	return 2;
 }
 
 if (live_enabled) 
 function vm_group_jump_on_return(l_th, l_act, l_scope, l_st) {
+	// vm_group_jump_on_return(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_st[0];
 	var l_r = l_st[l_i];
 	l_st[@l_i] = 0;
@@ -1069,6 +1213,8 @@ function vm_group_jump_on_return(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_jump_on_return_const(l_th, l_act, l_scope, l_st) {
+	// vm_group_jump_on_return_const(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	l_th.h_result = l_act.h_val;
 	l_scope[@2/* offset */] = ds_list_size(l_scope[1/* actions */]);
 	return 2;
@@ -1080,6 +1226,8 @@ function vm_group_jump_on_return_const(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_literal_on_undefined(l_th, l_act, l_scope, l_st) {
+	// vm_group_literal_on_undefined(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_st[0] + 1;
 	if (l_i >= array_length(l_st)) l_st[@array_length(l_st) * 2] = 0;
 	l_st[@l_i] = undefined;
@@ -1089,6 +1237,8 @@ function vm_group_literal_on_undefined(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_literal_on_number(l_th, l_act, l_scope, l_st) {
+	// vm_group_literal_on_number(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_st[0] + 1;
 	if (l_i >= array_length(l_st)) l_st[@array_length(l_st) * 2] = 0;
 	l_st[@l_i] = l_act.h_f;
@@ -1098,6 +1248,8 @@ function vm_group_literal_on_number(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_literal_on_cstring(l_th, l_act, l_scope, l_st) {
+	// vm_group_literal_on_cstring(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_st[0] + 1;
 	if (l_i >= array_length(l_st)) l_st[@array_length(l_st) * 2] = 0;
 	l_st[@l_i] = l_act.h_s;
@@ -1107,6 +1259,8 @@ function vm_group_literal_on_cstring(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_literal_on_const(l_th, l_act, l_scope, l_st) {
+	// vm_group_literal_on_const(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_st[0] + 1;
 	if (l_i >= array_length(l_st)) l_st[@array_length(l_st) * 2] = 0;
 	l_st[@l_i] = l_act.h_v;
@@ -1116,6 +1270,8 @@ function vm_group_literal_on_const(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_literal_on_self(l_th, l_act, l_scope, l_st) {
+	// vm_group_literal_on_self(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_inst = l_scope[6/* inst */];
 	var l_i = l_st[0] + 1;
 	if (l_i >= array_length(l_st)) l_st[@array_length(l_st) * 2] = 0;
@@ -1126,6 +1282,8 @@ function vm_group_literal_on_self(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_literal_on_other(l_th, l_act, l_scope, l_st) {
+	// vm_group_literal_on_other(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_inst = l_scope[6/* inst */];
 	var l_i = l_st[0] + 1;
 	if (l_i >= array_length(l_st)) l_st[@array_length(l_st) * 2] = 0;
@@ -1136,6 +1294,8 @@ function vm_group_literal_on_other(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_literal_on_result(l_th, l_act, l_scope, l_st) {
+	// vm_group_literal_on_result(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_st[0] + 1;
 	if (l_i >= array_length(l_st)) l_st[@array_length(l_st) * 2] = 0;
 	l_st[@l_i] = l_th.h_result;
@@ -1145,6 +1305,8 @@ function vm_group_literal_on_result(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_literal_on_array_decl(l_th, l_act, l_scope, l_st) {
+	// vm_group_literal_on_array_decl(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_n = l_act.h_size;
 	var l_arr = [];
 	var l_k = l_st[0] - l_n;
@@ -1160,6 +1322,8 @@ function vm_group_literal_on_array_decl(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_literal_on_object_decl(l_th, l_act, l_scope, l_stack) {
+	// vm_group_literal_on_object_decl(th:gml_thread, act:gml_action, scope:gml_thread_scope, stack:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_fields = l_act.h_fields;
 	var l_obj = { }
 	var l_n = array_length(l_fields);
@@ -1185,6 +1349,8 @@ function vm_group_literal_on_object_decl(l_th, l_act, l_scope, l_stack) {
 
 if (live_enabled) 
 function vm_group_local_on_local(l_th, l_act, l_scope, l_st) {
+	// vm_group_local_on_local(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i1 = l_st[0] + 1;
 	if (l_i1 >= array_length(l_st)) l_st[@array_length(l_st) * 2] = 0;
 	l_st[@l_i1] = l_scope[4/* locals */][l_act.h_i];
@@ -1194,6 +1360,8 @@ function vm_group_local_on_local(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_local_on_local_set(l_th, l_act, l_scope, l_st) {
+	// vm_group_local_on_local_set(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i1 = l_st[0];
 	var l_r = l_st[l_i1];
 	l_st[@l_i1] = 0;
@@ -1204,6 +1372,8 @@ function vm_group_local_on_local_set(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_local_on_local_aop(l_th, l_act, l_scope, l_st) {
+	// vm_group_local_on_local_aop(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_op = l_act.h_o;
 	var l_i = l_act.h_i;
 	var l_locals = l_scope[4/* locals */];
@@ -1221,97 +1391,135 @@ function vm_group_local_on_local_aop(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_op_impl_unknown(l_a, l_b) {
-	show_error("No idea how to apply this operator", true);
+	// vm_group_op_impl_unknown(a:any, b:any)->any
+	/// @ignore
+	throw gml_std_haxe_Exception_thrown("No idea how to apply this operator");
 }
 
 if (live_enabled) 
 function vm_group_op_impl_add(l_a, l_b) {
+	// vm_group_op_impl_add(a:any, b:any)->any
+	/// @ignore
 	return l_a + l_b;
 }
 
 if (live_enabled) 
 function vm_group_op_impl_sub(l_a, l_b) {
+	// vm_group_op_impl_sub(a:any, b:any)->any
+	/// @ignore
 	return l_a - l_b;
 }
 
 if (live_enabled) 
 function vm_group_op_impl_mul(l_a, l_b) {
+	// vm_group_op_impl_mul(a:any, b:any)->any
+	/// @ignore
 	return l_a * l_b;
 }
 
 if (live_enabled) 
 function vm_group_op_impl_div1(l_a, l_b) {
+	// vm_group_op_impl_div1(a:any, b:any)->any
+	/// @ignore
 	if (l_b == 0 && is_int64(l_b) && is_int64(l_a)) gml_thread_error("Division by zero");
 	return l_a / l_b;
 }
 
 if (live_enabled) 
 function vm_group_op_impl_mod(l_a, l_b) {
+	// vm_group_op_impl_mod(a:any, b:any)->any
+	/// @ignore
 	return l_a % l_b;
 }
 
 if (live_enabled) 
 function vm_group_op_impl_idiv(l_a, l_b) {
+	// vm_group_op_impl_idiv(a:any, b:any)->any
+	/// @ignore
 	return (l_a div l_b);
 }
 
 if (live_enabled) 
 function vm_group_op_impl_and(l_a, l_b) {
+	// vm_group_op_impl_and(a:any, b:any)->any
+	/// @ignore
 	return (l_a & l_b);
 }
 
 if (live_enabled) 
 function vm_group_op_impl_or(l_a, l_b) {
+	// vm_group_op_impl_or(a:any, b:any)->any
+	/// @ignore
 	return (l_a | l_b);
 }
 
 if (live_enabled) 
 function vm_group_op_impl_xor(l_a, l_b) {
+	// vm_group_op_impl_xor(a:any, b:any)->any
+	/// @ignore
 	return (l_a ^ l_b);
 }
 
 if (live_enabled) 
 function vm_group_op_impl_shl(l_a, l_b) {
+	// vm_group_op_impl_shl(a:any, b:any)->any
+	/// @ignore
 	return (l_a << l_b);
 }
 
 if (live_enabled) 
 function vm_group_op_impl_shr(l_a, l_b) {
+	// vm_group_op_impl_shr(a:any, b:any)->any
+	/// @ignore
 	return (l_a >> l_b);
 }
 
 if (live_enabled) 
 function vm_group_op_impl_eq(l_a, l_b) {
+	// vm_group_op_impl_eq(a:any, b:any)->any
+	/// @ignore
 	return l_a == l_b;
 }
 
 if (live_enabled) 
 function vm_group_op_impl_ne(l_a, l_b) {
+	// vm_group_op_impl_ne(a:any, b:any)->any
+	/// @ignore
 	return l_a != l_b;
 }
 
 if (live_enabled) 
 function vm_group_op_impl_gt(l_a, l_b) {
+	// vm_group_op_impl_gt(a:any, b:any)->any
+	/// @ignore
 	return l_a > l_b;
 }
 
 if (live_enabled) 
 function vm_group_op_impl_ge(l_a, l_b) {
+	// vm_group_op_impl_ge(a:any, b:any)->any
+	/// @ignore
 	return l_a >= l_b;
 }
 
 if (live_enabled) 
 function vm_group_op_impl_lt(l_a, l_b) {
+	// vm_group_op_impl_lt(a:any, b:any)->any
+	/// @ignore
 	return l_a < l_b;
 }
 
 if (live_enabled) 
 function vm_group_op_impl_le(l_a, l_b) {
+	// vm_group_op_impl_le(a:any, b:any)->any
+	/// @ignore
 	return l_a <= l_b;
 }
 
 if (live_enabled) 
 function vm_group_op_impl() {
+	// vm_group_op_impl()->array<function<any;any;any>>
+	/// @ignore
 	var l_num = 112;
 	var l_fns = array_create(l_num, undefined);
 	var l_i = 0;
@@ -1340,6 +1548,8 @@ function vm_group_op_impl() {
 
 if (live_enabled) 
 function vm_group_op_on_bin_op(l_th, l_act, l_scope, l_st) {
+	// vm_group_op_on_bin_op(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 1;
 	l_st[@0] = l_z;
 	l_st[@l_z] = vm_group_op_funcs[l_act.h_o](l_st[l_z], l_st[l_z + 1]);
@@ -1349,6 +1559,8 @@ function vm_group_op_on_bin_op(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_op_on_un_op(l_th, l_act, l_scope, l_st) {
+	// vm_group_op_on_un_op(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0];
 	switch (l_act.h_o) {
 		case 2: l_st[@l_z] = ~l_st[l_z]; break;
@@ -1360,6 +1572,8 @@ function vm_group_op_on_un_op(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_op_on_equ_op(l_th, l_act, l_scope, l_st) {
+	// vm_group_op_on_equ_op(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 1;
 	l_st[@0] = l_z;
 	l_st[@l_z] = l_st[l_z] == l_st[l_z + 1];
@@ -1369,6 +1583,8 @@ function vm_group_op_on_equ_op(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_op_on_neq_op(l_th, l_act, l_scope, l_st) {
+	// vm_group_op_on_neq_op(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 1;
 	l_st[@0] = l_z;
 	l_st[@l_z] = l_st[l_z] != l_st[l_z + 1];
@@ -1378,6 +1594,8 @@ function vm_group_op_on_neq_op(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_op_on_add_int(l_th, l_act, l_scope, l_st) {
+	// vm_group_op_on_add_int(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0];
 	l_st[@l_z] = l_st[l_z] + l_act.h_i;
 	return 0;
@@ -1385,6 +1603,8 @@ function vm_group_op_on_add_int(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_op_on_concat(l_th, l_act, l_scope, l_st) {
+	// vm_group_op_on_concat(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_z = l_st[0] - 1;
 	l_st[@0] = l_z;
 	var l_v2 = l_st[l_z + 1];
@@ -1398,6 +1618,8 @@ function vm_group_op_on_concat(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_op_on_ds_aop(l_th, l_act, l_scope, l_st) {
+	// vm_group_op_on_ds_aop(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l__o = l_act.h_o;
 	var l_setterArgc = l_act.h_argc;
 	var l_getterFunc = l_act.h_get;
@@ -1423,6 +1645,8 @@ function vm_group_op_on_ds_aop(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_special_on_wait(l_th, l_act, l_scope, l_st) {
+	// vm_group_special_on_wait(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_t = gml_stack_pop(l_st);
 	l_th.h_status = 5;
 	l_th.h_wait_time = (is_numeric(l_t) ? l_t : 0);
@@ -1433,6 +1657,8 @@ function vm_group_special_on_wait(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_special_on_fork(l_th, l_act, l_scope, l_st) {
+	// vm_group_special_on_fork(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_out = l_act.h_out;
 	if (l_out) gml_stack_push(l_st, 1);
 	l_th.h_fork().h_exec();
@@ -1442,12 +1668,16 @@ function vm_group_special_on_fork(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_special_on_try(l_th, l_act, l_scope, l_st) {
+	// vm_group_special_on_try(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	l_scope[@8/* xhdl */] = new gml_link(l_act.h_hdl, l_scope[8/* xhdl */]);
 	return 0;
 }
 
 if (live_enabled) 
 function vm_group_special_on_catch(l_th, l_act, l_scope, l_st) {
+	// vm_group_special_on_catch(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	l_scope[@8/* xhdl */] = l_scope[8/* xhdl */].h_next;
 	l_scope[4/* locals */][@l_act.h_v] = l_th.h_error_text;
 	l_th.h_error_text = undefined;
@@ -1456,6 +1686,8 @@ function vm_group_special_on_catch(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_special_on_finally(l_th, l_act, l_scope, l_st) {
+	// vm_group_special_on_finally(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	l_scope[@8/* xhdl */] = l_scope[8/* xhdl */].h_next;
 	l_scope[@2/* offset */] = l_act.h_p;
 	return 2;
@@ -1463,6 +1695,8 @@ function vm_group_special_on_finally(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_special_on_throw(l_th, l_act, l_scope, l_st) {
+	// vm_group_special_on_throw(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	return l_th.h_proc_error2(gml_std_Std_stringify(gml_stack_pop(l_st)), l_act);
 	return 0;
 }
@@ -1473,6 +1707,8 @@ function vm_group_special_on_throw(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_stack_on_discard(l_th, l_act, l_scope, l_st) {
+	// vm_group_stack_on_discard(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_st[0];
 	l_st[@l_i] = 0;
 	l_st[@0] = (l_i - 1);
@@ -1481,6 +1717,8 @@ function vm_group_stack_on_discard(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_stack_on_dup(l_th, l_act, l_scope, l_st) {
+	// vm_group_stack_on_dup(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_st[0] + 1;
 	if (l_i >= array_length(l_st)) l_st[@array_length(l_st) * 2] = 0;
 	l_st[@l_i] = l_st[l_i - 1];
@@ -1490,6 +1728,8 @@ function vm_group_stack_on_dup(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_stack_on_dup2x(l_th, l_act, l_scope, l_st) {
+	// vm_group_stack_on_dup2x(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_st[0] + 2;
 	if (l_i >= array_length(l_st)) l_st[@array_length(l_st) * 2] = 0;
 	l_st[@l_i - 1] = l_st[l_i - 3];
@@ -1500,6 +1740,8 @@ function vm_group_stack_on_dup2x(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_stack_on_dup3x(l_th, l_act, l_scope, l_st) {
+	// vm_group_stack_on_dup3x(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_st[0] + 3;
 	if (l_i >= array_length(l_st)) l_st[@array_length(l_st) * 2] = 0;
 	l_st[@l_i - 2] = l_st[l_i - 5];
@@ -1511,6 +1753,8 @@ function vm_group_stack_on_dup3x(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_stack_on_dup_in(l_th, l_act, l_scope, l_st) {
+	// vm_group_stack_on_dup_in(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_st[0];
 	var l_v = l_st[l_i++];
 	l_st[@0] = l_i;
@@ -1529,6 +1773,8 @@ function vm_group_stack_on_dup_in(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_with_on_with_pre(l_th, l_act, l_scope, l_st) {
+	// vm_group_with_on_with_pre(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_i = l_st[0];
 	var l_val = l_st[l_i];
 	l_st[@l_i] = 0;
@@ -1540,7 +1786,8 @@ function vm_group_with_on_with_pre(l_th, l_act, l_scope, l_st) {
 			if (instance_exists(l_ctx)) {
 				l_arr = vm__gml_with_data_gml_with_data_impl__alloc(1);
 				l_arr[@0] = l_ctx;
-				if (!gml_std_haxe_enum_tools_getParameter(l_act, 0).h_src.h_version.h_int_self) with (l_ctx) {
+				var l__this = gml_std_haxe_enum_tools_getParameter(l_act, 0);
+				if (!l_scope[9/* program */].h_get_source(l__this[0/* src */]).h_version.h_int_self) with (l_ctx) {
 					l_arr[@0] = self;
 					break;
 				}
@@ -1579,6 +1826,8 @@ function vm_group_with_on_with_pre(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_with_on_with_next(l_th, l_act, l_scope, l_st) {
+	// vm_group_with_on_with_next(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_p = l_act.h_p;
 	var l_with1 = l_scope[7/* with */];
 	if (l_with1.h_index < l_with1.h_length) {
@@ -1593,6 +1842,8 @@ function vm_group_with_on_with_next(l_th, l_act, l_scope, l_st) {
 
 if (live_enabled) 
 function vm_group_with_on_with_post(l_th, l_act, l_scope, l_st) {
+	// vm_group_with_on_with_post(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	var l_with1 = l_scope[7/* with */];
 	if (l_with1 != undefined) {
 		var l_this1 = l_with1.h_data;

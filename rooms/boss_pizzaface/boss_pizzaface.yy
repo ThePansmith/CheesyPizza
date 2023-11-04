@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "boss_pizzaface",
-  "creationCodeFile": "${project_dir}/rooms/boss_pizzaface/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/boss_pizzaface/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

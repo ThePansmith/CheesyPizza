@@ -1,19 +1,3 @@
-// border outside the room
-if safe_get(obj_shell, "WC_oobcam") != true
-{
-	var camx = camera_get_view_x(view_camera[0]), camy = camera_get_view_y(view_camera[0]);
-	
-	draw_set_color(c_black);
-	//if camx < 0
-		draw_rectangle(0, min(camy, -50), min(camx, -50) - 1, max(camy + SCREEN_HEIGHT, room_height + 50), false);
-	//if camx > room_width - 960
-		draw_rectangle(room_width, min(camy, -50), max(camx + SCREEN_WIDTH, room_width + 50), max(camy + SCREEN_HEIGHT, room_height + 50), false);
-	//if camy < 0
-		draw_rectangle(0, 0, room_width, min(camy, -50) - 1, false);
-	//if camy > room_height - 540
-		draw_rectangle(0, room_height, room_width, max(camy + SCREEN_HEIGHT, room_height + 50), false);
-}
-
 draw_set_color(c_white);
 if (use_dark)
 {
@@ -143,8 +127,13 @@ with (obj_pizzagoblinbomb)
 
 with (obj_player1)
 {
-	if (visible && state != states.titlescreen && bbox_in_camera(view_camera[0], 32))
+	if (!other.hungrypillarflash && visible && state != states.titlescreen && bbox_in_camera(view_camera[0], 32))
 		draw_player();
+}
+for (i = 0; i < array_length(particles); i++)
+{
+	with (particles[i])
+		draw_sprite(sprite_index, image_index, x, y);
 }
 
 // this is a dumb hack but it works blame me (Radix) if it breaks
@@ -158,7 +147,7 @@ with obj_secrettile
 
 with obj_sausageman_dead
 {
-	if !gui && visible && bbox_in_camera(view_camera[0], 32)
+	if !gui && visible
 	{
 		var prev_depth = gpu_get_depth();
 		gpu_set_depth(depth);

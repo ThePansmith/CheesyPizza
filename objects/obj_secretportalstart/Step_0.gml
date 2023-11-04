@@ -1,5 +1,10 @@
 if !active
 	exit;
+if (room == tower_soundtestlevel && (obj_player1.state == states.backtohub || obj_player1.state == states.comingoutdoor || obj_player1.targetDoor == "A"))
+{
+	instance_destroy();
+	exit;
+}
 
 image_speed = 0.35;
 switch (sprite_index)
@@ -46,7 +51,7 @@ switch (sprite_index)
 						
 						var vars = variable_struct_get_names(other.override_vars);
 						for(var i = 0; i < array_length(vars); i++)
-							variable_instance_set(id, vars[i], other.override_vars[$vars[i]]);
+							variable_instance_set(id, vars[i], other.override_vars[$ vars[i]]);
 					}
 					else
 					{

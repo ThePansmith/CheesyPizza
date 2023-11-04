@@ -131,7 +131,7 @@ add_hat(HAT.dunce, spr_duncehat, "Dunce Hat", "Shame on you.");
 //add_hat(HAT.tower, spr_towerhat, "#1 Tower Enthusiast", "Finally, you can wear THE Pizza Tower!");
 add_hat(HAT.crown, spr_crownhat, "Golden Crown", "A relic left behind from the medieval times.");
 add_hat(HAT.uwunya, spr_catearshat, "Cat Ears", "mmmrp mrrow nya :3");
-add_hat(HAT.spooky, spr_spookyhat, "Spooky Bow", "AAAH!");
+//add_hat(HAT.spooky, spr_spookyhat, "Spooky Bow", "AAAH!");
 
 // pets
 add_pet(-1, spr_nocosmetic, "No Pet", "All alone...");

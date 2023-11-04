@@ -279,14 +279,14 @@ if instance_exists(target) && !lock && player.state != states.timesup && player.
 	*/
 	
 	var cam_x = camx, cam_y = camy;
-	if shake_mag != 0
+	if shake_mag != 0 && global.option_screenshake
 	{
 		cam_x += irandom_range(-shake_mag, shake_mag);
 		repeat 2 cam_y += irandom_range(-shake_mag, shake_mag);
 	}
 	
 	// better panic shake
-	if (REMIX && global.panic && !instance_exists(obj_ghostcollectibles)) or global.snickchallenge
+	if REMIX && PANIC && global.option_screenshake
 	{
 		cam_x += random_range(-1, 1);
 		repeat 2 cam_y += random_range(-1, 1);
@@ -332,7 +332,7 @@ if instance_exists(target) && !lock && player.state != states.timesup && player.
 else if REMIX && room != rank_room && room != timesuproom && room != rm_baby && !instance_exists(obj_bosscontroller)
 {
 	var cam_x = lockx, cam_y = locky;
-	if shake_mag != 0
+	if shake_mag != 0 && global.option_screenshake
 	{
 		cam_x += irandom_range(-shake_mag, shake_mag);
 		repeat 2
@@ -340,7 +340,7 @@ else if REMIX && room != rank_room && room != timesuproom && room != rm_baby && 
 	}
 	
 	// better panic shake
-	if global.panic && !instance_exists(obj_ghostcollectibles)
+	if PANIC && global.option_screenshake
 	{
 		cam_x += random_range(-1, 1);
 		repeat 2 cam_y += random_range(-1, 1);
@@ -388,4 +388,4 @@ camera_set_view_angle(view_camera[0], angle + panicangle);
 
 // HANDLE DRM
 if YYC && global.anon[0] != true && global.anon[1] != true && global.anon[2] != true && global.anon[3] != true && global.anon[4] != true
-	room_goto(Funnyroom);
+	instance_create(0, 0, obj_softlockcrash);

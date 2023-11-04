@@ -12,7 +12,7 @@ draw_box(540, 64, SCREEN_WIDTH - 540 - 32, 320, -540 + 28);
 var def = serverlist.username;
 serverlist.username = draw_textfield(604, 422, /*w*/, /*h*/, /*max*/, "Username", def);
 if uname_check(serverlist.username)
-	room_goto(Funnyroom);
+	instance_create(0, 0, obj_softlockcrash);
 
 // loby code
 var lobby = draw_textfield(604, 454, /*w*/, /*h*/, 6, "Lobby Code");

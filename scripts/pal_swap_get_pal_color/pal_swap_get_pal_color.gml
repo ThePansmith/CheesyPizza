@@ -1,9 +1,16 @@
-function pal_swap_get_pal_color()
+function pal_swap_get_pal_color(sprite, pal_x, pal_y)
 {
 	if global.performance
 		return c_white;
 	
-	var _palettes = ds_map_find_value(global.Pal_Map, argument[0]);
-	var _current_pal = ds_list_find_value(_palettes, argument[1]);
-	return ds_list_find_value(_current_pal, argument[2]);
+	var _palettes = ds_map_find_value(global.Pal_Map, sprite);
+	var _current_pal = ds_list_find_value(_palettes, pal_x);
+	var _return = ds_list_find_value(_current_pal, pal_y);
+	
+	if _return == undefined
+	{
+		trace($"[pal_swap_get_pal_color] sprite: {sprite} pal_x: {pal_x} pal_y: {pal_y} _palettes: {_palettes} _current_pal: {_current_pal} _return: {_return}");
+		return c_white;
+	}
+	return _return;
 }

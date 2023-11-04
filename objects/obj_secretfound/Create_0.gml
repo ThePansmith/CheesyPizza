@@ -1,3 +1,6 @@
+if instance_exists(obj_randomsecret)
+	exit;
+
 global.secretfound++;
 	
 var val = min(global.secretfound, 3);

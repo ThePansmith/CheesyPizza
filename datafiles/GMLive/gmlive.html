@@ -3,6 +3,7 @@
 <title>GMLive.gml cheat sheet</title>
 <meta name="viewport" content="width=device-width" />
 <meta name="livenode" content="#doc" />
+<meta property="theme-color" content="<section><header>FFF037</header><article></article></section>" />
 <meta property="og:type" content="article" />
 <meta property="og:locale" content="en_us" />
 <meta property="og:site_name" content="YellowAfterlife" />
@@ -42,6 +43,7 @@ body {
 	padding-left: 0;
 	margin: 0;
 }
+#doc blockquote { margin: 0.5em 0; padding: 0; }
 #doc article > ul, #doc article > ol {
 	padding-left: 20px;
 }
@@ -60,11 +62,14 @@ body {
 	padding-top: 1px;
 	padding-bottom: 1px;
 	cursor: pointer;
+	display: flex;
+	align-items: center;
 }
 #doc header a {
 	outline: none;
 	text-decoration: none;
 	color: #458;
+	word-break: break-word;
 }
 #doc header::before {
 	display: inline-block;
@@ -78,8 +83,7 @@ body {
 	border-radius: 50%;
 	margin-right: 4px;
 	vertical-align: middle;
-	position: relative;
-	top: -1px;
+	flex-shrink: 0;
 }
 #doc section.open > header::before {
 	content: "-";
@@ -115,7 +119,7 @@ body {
 	border-bottom: 1px solid #ccc;
 }
 
-#doc article, #doc ul {
+#doc article, #doc ul, #doc blockquote {
 	padding-left: 20px;
 	border-left: 2px solid #f3f3f3;
 }
@@ -166,15 +170,6 @@ body {
 #doc pre a {
 	text-decoration: none;
 }
-#doc pre a.uf {
-	background-color: #f7f0ff;
-}
-#doc pre a.kw {
-	background-color: #f0f7ff;
-}
-#doc pre a.sf, #doc pre a.sv {
-	background-color: #fff3f0;
-}
 #doc pre a:hover {
 	text-decoration: underline;
 }
@@ -223,7 +218,7 @@ body {
 pre.gmlmd .md { color: #7A81A9 } /* #define */
 pre.gmlmd .kw { color: #008; font-weight: bold } /* keyword */
 pre.gmlmd .co { color: #080 } /* comment */
-pre.gmlmd .nu { color: #00f } /* number */
+pre.gmlmd .nu { color: #F03232 } /* number */
 pre.gmlmd .nx { color: #00f } /* hex */
 pre.gmlmd .st { color: #00f } /* string */
 pre.gmlmd .ts { color: #00f } /* template string */
@@ -236,6 +231,16 @@ pre.gmlmd .uf { color: #808 } /* user func */
 pre.gmlmd .uv { color: #000 } /* user var */
 pre.gmlmd .lv { color: #648 } /* local var */
 pre.gmlmd .fd { color: #804 } /* field */
+
+pre.gmlmd a.uf {
+	background-color: #f7f0ff;
+}
+pre.gmlmd a.kw {
+	background-color: #f0f7ff;
+}
+pre.gmlmd a.sf, #doc pre a.sv {
+	background-color: #fff3f0;
+}
 
 #night:checked + .main pre.gmlmd .op { color: #CCCCCC }
 #night:checked + .main pre.gmlmd .co { color: #5B995B }
@@ -262,7 +267,10 @@ pre.gmlmd .fd { color: #804 } /* field */
 #night:checked + .main pre.gmlmd a.sv {
 	background-color: #422;
 }</style>
-<style type="text/css" id="night_css">#night { display: none }
+<style type="text/css" id="night_css">.main label[for="night"] {
+	cursor: pointer;
+}
+#night { display: none }
 #night:checked + .main {
 	background-color: #424242;
 }
@@ -364,7 +372,25 @@ Click on sections to expand/collapse them.<br>Quick display controls:
 &middot; <a href="javascript:void(0)" onclick="opt_all(); return false">Everything</a>
 &middot; <a href="javascript:void(0)"><label for="night">Toggle night mode</label></a><br/>
 </section><section id="doc">
-<!--<doc--><p><section><header id="use1"><a href="#use1" title="(permalink)">Using GMLive.gml in GMS1</a></header><article><section><header id="gms1-setup"><a href="#gms1-setup" title="(permalink)">Initial setup</a></header><article><p>
+<!--<doc--><p><p>
+
+<style>
+.main { background-color: #899FC6 }
+.page { box-shadow: 0 0 8px rgba(0, 0, 0, 0.3) }
+#night:checked + .main { background-color: #405070 }
+#night:checked + .main .page { background-color: #1A202D }
+</style>
+
+
+
+
+
+
+
+
+
+
+</p><section><header id="use1"><a href="#use1" title="(permalink)">Using GMLive.gml in GMS1</a></header><article><section><header id="gms1-setup"><a href="#gms1-setup" title="(permalink)">Initial setup</a></header><article><p>
 		Setting up is as following: </p><ul>
 			<li>	Make sure that you are running an up-to-date version of GameMaker: Studio.<br/>
 				You can find links to all versions at <a href="https://www.yoyogames.com/downloads/gm-studio/release-notes-studio.html">official website</a>.
@@ -644,34 +670,65 @@ Click on sections to expand/collapse them.<br>Quick display controls:
 	and have no overhead for repeated calls,
 	so you can set up the callbacks and make yourself a debug console/menu for picking resources
 	to live-reload, or even just add-remove a line of code in a "live" script/event.
-	</p><section><header id="sprite_set_live"><a href="#sprite_set_live" title="(permalink)">sprite_set_live(sprite, enable)</a></header><article><p>
-		Enables/disables live reloading for a specific sprite.
-		</p><p>
-		Does not work for Spine/SWF sprites (as they cannot be reloaded at runtime).
-		</p><p>
-		For example,
-		</p><pre class="gmlmd">
+	</p><section><header id="live_sprite_"><a href="#live_sprite_" title="(permalink)">Sprite functions</a></header><article><section><header id="sprite_set_live"><a href="#sprite_set_live" title="(permalink)">sprite_set_live(sprite, enable)</a></header><article><p>
+			Enables/disables live reloading for a specific sprite.
+			</p><p>
+			
+			Does not work for Spine/SWF sprites (as they cannot be reloaded at runtime)
+			and cannot do variable frame timings (since there are no functions for changing this)
+			</p><p>
+			For example,
+			</p><pre class="gmlmd">
 <a class="sf" href="#sprite_set_live">sprite_set_live</a><span class="op">(</span><span class="ri">spr_test</span><span class="op">,</span> <span class="sv">true</span><span class="op">)</span><span class="op">;</span>
 </pre><p>
-		While it might be tempting to call this for <i>all the sprites</i>, usually you should not,
-		as the server has to watch "live" sprites and their subimage files for changes,
-		and this can add up in disk access time on larger projects.
-	</p></article></section><section><header id="path_set_live"><a href="#path_set_live" title="(permalink)">path_set_live(path_ind, enable)</a></header><article><p>
-		Enables/disables live reloading for a specific path (the resource type).
-		</p><p>
-		For example,
-		
-		</p><pre class="gmlmd">
+			While it might be tempting to call this for <i>all the sprites</i>, usually you should not,
+			as the server has to watch "live" sprites and their subimage files for changes,
+			and this can add up in disk access time on larger projects.
+			</p><p>
+			Limitations: </p><ul>
+			<li>	Can't reload SWF sprites because there are no functions for doing so.
+			</li><li>	Can't reload Spine sprites because I don't know much about these.<br/>
+				(but you <i>might</i> be able to do so yourself using <a href="#file_set_live">file_set_live</a>).
+			</li><li>	Can't do variable frame timings and broadcast messages.
+				because there are no functions for setting them up.
+			</li></ul></article></section><section><header id="live_sprite_updated"><a href="#live_sprite_updated" title="(permalink)">live_sprite_updated:function(sprite)</a></header><article><p>
+			You can assign a function/script to this global variable and it will be called
+			whenever a sprite gets updated, like so:
+			</p><pre class="gmlmd">
+<a class="sv" href="#live_sprite_updated">live_sprite_updated</a> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="lv">spr</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="sf">show_debug_message</span><span class="op">(</span><span class="st">"Reloaded "</span> <span class="op">+</span> <span class="sf">sprite_get_name</span><span class="op">(</span><span class="lv">spr</span><span class="op">)</span><span class="op">)</span><span class="op">;</span>
+    <span class="co">// any extra logic</span>
+<span class="cb">}</span>
+</pre></article></section></article></section><section><header id="live_path_"><a href="#live_path_" title="(permalink)">Path functions</a></header><article><section><header id="path_set_live"><a href="#path_set_live" title="(permalink)">path_set_live(path_ind, enable)</a></header><article><p>
+			Enables/disables live reloading for a specific path (the resource type).
+			</p><p>
+			For example,
+			
+			</p><pre class="gmlmd">
 <a class="sf" href="#path_set_live">path_set_live</a><span class="op">(</span><span class="ri">pt_test</span><span class="op">,</span> <span class="sv">true</span><span class="op">)</span><span class="op">;</span>
 </pre><p>
-		Note that GameMaker stores path positions as a number in 0..1 range so making a path
-		shorter/longer will cause instances following it to jump around as they readjust.
-	</p></article></section><section><header id="file_set_live"><a href="#file_set_live" title="(permalink)">file_set_live(path, ?callback, ?kind)</a></header><article><p>
+			Note that GameMaker stores path positions as a number in 0..1 range so making a path
+			shorter/longer will cause instances following it to jump around as they readjust.
+		</p></article></section><section><header id="live_path_updated"><a href="#live_path_updated" title="(permalink)">live_path_updated:function(path)</a></header><article><p>
+			Like <a href="#live_sprite_updated">live_sprite_updated</a>, but for paths.
+		</p></article></section></article></section><section><header id="live_animcurve_"><a href="#live_animcurve_" title="(permalink)">Animation curve functions</a></header><article><section><header id="animcurve_set_live"><a href="#animcurve_set_live" title="(permalink)">animcurve_set_live(animcurve_ind, enable, precision)</a></header><article><p>
+			Enables/disables live reloading for a specific animation curve.
+			</p><p>
+			For example,
+			
+			</p><pre class="gmlmd">
+<a class="sf" href="#animcurve_set_live">animcurve_set_live</a><span class="op">(</span><span class="ri">ac_test</span><span class="op">,</span> <span class="sv">true</span><span class="op">)</span><span class="op">;</span>
+</pre></article></section><section><header id="live_path_updated"><a href="#live_path_updated" title="(permalink)">live_path_updated:function(path)</a></header><article><p>
+			Like <a href="#live_sprite_updated">live_sprite_updated</a>, but for animation curves.
+		</p></article></section></article></section><section><header id="file_set_live"><a href="#file_set_live" title="(permalink)">file_set_live(path, ?callback, ?kind)</a></header><article><p>
 		Enables/disables live reloading for a specific included file.
 		</p><p>
 		This can be used for live-updating game data, localization, or anything else.
 		</p><p>
-		<code>path</code> is a <i>relative</i> path to the file (e.g. <code>some.txt</code>, or <code>GMLive/gmlive.html</code>).
+		<code>path</code> is a <i>relative</i> path to the file (e.g. <code>some.txt</code>, or <code>GMLive/gmlive.html</code>).<br/>
+		You may go out of the included file directory using <code>../</code> to read other files
+		inside the project directory (e.g. <code>../notes/mynote/mynote.txt</code>), but not files outside
+		of the project directory.
 		</p><p>
 		<code>callback</code> is a function/script that will be called whenever the file changes.<br/>
 		The function's first argument will be the new contents (more on this later)

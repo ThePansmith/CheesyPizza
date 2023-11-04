@@ -3,12 +3,13 @@ with (obj_player)
 
 if (scene >= 0)
 {
-	if (!showtext && (keyboard_check_pressed(vk_anykey) or scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != noone))
+	scr_menu_getinput();
+	if (!showtext && (key_jump || key_start))
 	{
 		showtext = true;
 		alarm[0] = 120;
 	}
-	else if (showtext && (keyboard_check_pressed(global.key_slap) or gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], global.key_slapC)))
+	else if (showtext && (key_jump || key_start))
 	{
 		video_pause();
 		video_close();

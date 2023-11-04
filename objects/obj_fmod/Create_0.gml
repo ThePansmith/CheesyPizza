@@ -1,26 +1,22 @@
 /// @description load banks / define sounds.
 fmod_init(32);
-
 fmod_set_num_listeners(1);
 
-
-
-banks = 
-[
-	{ // 0
-		eventPath : "data/sound/Master.strings.bank",
+banks = [
+	{
+		eventPath : "data\\sound\\Master.strings.bank",
 		handle : FMOD_INVALID_BANK
 	},
-	{ // 1
-		eventPath : "data/sound/Master.bank",
+	{
+		eventPath : "data\\sound\\Master.bank",
 		handle : FMOD_INVALID_BANK
 	},
-	{ // 2
-		eventPath : "data/sound/music.bank",
+	{
+		eventPath : "data\\sound\\music.bank",
 		handle : FMOD_INVALID_BANK
 	},
-	{ // 3
-		eventPath : "data/sound/sfx.bank",
+	{
+		eventPath : "data\\sound\\sfx.bank",
 		handle : FMOD_INVALID_BANK
 	}
 ]
@@ -30,34 +26,23 @@ banks =
 #macro FMOD_BANK_MUSIC obj_fmod.banks[2].handle
 #macro FMOD_BANK_SFX obj_fmod.banks[3].handle
 
-
 trace("Loading FMOD Banks...");
 for (var i = 0; i < array_length(banks); i++)
 {
-	var b = working_directory + banks[i].eventPath;
-	trace($"Attemping to load: \"{b}\"");
-	banks[i].handle = fmod_bank_load(b, LOAD_BANK_FLAGS.NORMAL);
+	var b = banks[i].eventPath;
+	banks[i].handle = fmod_bank_load(b);
 	
-	if (banks[i].handle == FMOD_INVALID_BANK)
+	if banks[i].handle == FMOD_INVALID_BANK
 		trace("Could not load bank: ", b);
-	else if (!fmod_bank_load_sample_data(banks[i].handle))
+	else if !fmod_bank_load_sample_data(banks[i].handle)
 		trace("Could not load sample data: ", b);
 	else
 		trace($"Loaded Bank: \"{b}\" with id: {banks[i].handle}");
 }
 
-
 global.sound_map = ds_map_create();
 global.steam_api = false;
 global.screenshotcount = 0;
-
-sound_cache = ds_map_create();
-instance_cache = ds_list_create();
-
-handle_count = 0;
-handle_free_count = 0;
-handle_used_count = 0;
-voice_count = 0;
 
 #region macros
 

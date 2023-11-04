@@ -1,1 +1,2 @@
-//global.roommessage = "MORE PLACEHOLDER";
+pal_swap_init_system(shd_pal_swapper);
+global.roommessage = "MORE PLACEHOLDER";

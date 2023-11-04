@@ -13,11 +13,10 @@ if buffer > 0
 }
 
 // get input
-scr_getinput();
-key_back = safe_get(obj_option, "key_back") or key_slap2;
+scr_menu_getinput();
 
 // save and go back
-if (key_back or keyboard_check_pressed(vk_escape)) && object_index != obj_levelsettings
+if key_back && object_index != obj_levelsettings
 {
 	ini_open_from_string(obj_savesystem.ini_str_options);
 	for(var i = 0; i < array_length(options_array); i++)
@@ -107,58 +106,70 @@ while options_array[sel].type == modconfig.section
 }
 
 // change values
-var opt = options_array[sel];
-if opt.type == modconfig.slider
+var opt = options_array[sel], locked = false;
+if opt.type != modconfig.section && is_callable(opt.condition)
+	locked = !opt.condition()[0];
+
+if !locked
 {
-	var move2 = key_left + key_right;
-	if move2 != 0
+	if opt.type == modconfig.slider
 	{
-		image_index = 8;
-		xo = 10;
+		var move2 = key_left + key_right;
+		if move2 != 0
+		{
+			image_index = 8;
+			xo = 10;
 		
-		opt.value = clamp(opt.value + move2 * (((key_attack * 2) + 1) / 100), 0, 1);
+			opt.value = clamp(opt.value + move2 * (((key_attack * 2) + 1) / 100), 0, 1);
+		}
+	}
+	else
+	{
+		var move2 = key_left2 + key_right2;
+		if move2 != 0
+		{
+			image_index = 8;
+			xo = 10;
+		
+			if opt.type != modconfig.button
+			{
+				simuplayer.changed = true;
+	
+				var valueold = opt.value;
+				opt.value = clamp(opt.value + move2, 0, array_length(opt.opts) - 1);
+	
+				if valueold != opt.value
+					sound_play(sfx_step);
+			}
+	
+			if layer_exists(sequence_layer)
+				layer_destroy(sequence_layer);
+		}
+		if key_jump
+		{
+			image_index = 8;
+			xo = 10;
+	
+			sound_play(sfx_select);
+	
+			if opt.type != modconfig.button
+				opt.value = wrap(opt.value + 1, 0, array_length(opt.opts) - 1);
+			else
+			{
+				if is_callable(opt.func)
+					opt.func();
+			}
+	
+			if layer_exists(sequence_layer)
+				layer_destroy(sequence_layer);
+		}
 	}
 }
-else
+else if key_jump
 {
-	var move2 = key_left2 + key_right2;
-	if move2 != 0
-	{
-		image_index = 8;
-		xo = 10;
-		
-		if opt.type != modconfig.button
-		{
-			simuplayer.changed = true;
-	
-			var valueold = opt.value;
-			opt.value = clamp(opt.value + move2, 0, array_length(opt.opts) - 1);
-	
-			if valueold != opt.value
-				sound_play(sfx_step);
-		}
-	
-		if layer_exists(sequence_layer)
-			layer_destroy(sequence_layer);
-	}
-	if key_jump
-	{
-		image_index = 8;
-		xo = 10;
-	
-		sound_play(sfx_select);
-	
-		if opt.type != modconfig.button
-			opt.value = wrap(opt.value + 1, 0, array_length(opt.opts) - 1);
-		else
-		{
-			if is_callable(opt.func)
-				opt.func();
-		}
-	
-		if layer_exists(sequence_layer)
-			layer_destroy(sequence_layer);
-	}
+	image_index = 8;
+	xo = 10;
+	sound_play("event:/sfx/misc/golfjingle");
 }
 
 // figure out scroll

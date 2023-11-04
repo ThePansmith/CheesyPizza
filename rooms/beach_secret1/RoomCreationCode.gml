@@ -1,1 +1,2 @@
-//global.roommessage = "BARREL OF BALLOONS";
+pal_swap_init_system(shd_pal_swapper);
+global.roommessage = "BARREL OF BALLOONS";

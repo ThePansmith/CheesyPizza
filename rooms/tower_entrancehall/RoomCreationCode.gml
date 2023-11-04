@@ -11,7 +11,7 @@ with (obj_player1)
 		backtohubstartx = obj_doorC.x + 32;
 		backtohubstarty = obj_doorC.y - 14;
 		x = backtohubstartx;
-		y = backtohubstarty - (obj_screensizer.actual_height * 2);
+		y = backtohubstarty - (SCREEN_HEIGHT * 2);
 		state = states.backtohub;
 		sprite_index = spr_slipbanan1;
 		image_index = 10;

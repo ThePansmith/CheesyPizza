@@ -9,9 +9,11 @@
 
 if (live_enabled) 
 function gml_thread(l_program, l_actions, l_args1, l_locals, l_self1, l_other1, l_offset) constructor {
+	// gml_thread(program:gml_program, actions:gml_action_list, args:array<any>, locals:array<any>, ?self:any, ?other:any, offset:int = 0)
+	/// @ignore
 	static h_result = undefined; /// @is {any}
 	static h_status = undefined; /// @is {gml_thread_status}
-	static h_callback = undefined; /// @is {function<gml_thread; void>}
+	static h_callback = undefined; /// @is {function<gml_thread;void>}
 	static h_scope = undefined; /// @is {gml_thread_scope}
 	static h_wait_time = undefined; /// @is {number}
 	static h_time_tag = undefined; /// @is {vm_GmlThreadTimeTag}
@@ -21,7 +23,7 @@ function gml_thread(l_program, l_actions, l_args1, l_locals, l_self1, l_other1, 
 		return self.h_error_text;
 	}
 	static h_get_error_ptr = function() {
-		if (self.h_error_pos != undefined) return self.h_error_pos.h_to_string(); else return "?";
+		if (self.h_error_pos != undefined) return gml_pos_to_string(self.h_error_pos, self.h_scope[9/* program */]); else return "?";
 	}
 	static h_get_callstack = function() {
 		var l_q = self.h_scope;
@@ -33,7 +35,7 @@ function gml_thread(l_program, l_actions, l_args1, l_locals, l_self1, l_other1, 
 		var l_i = 0;
 		for (var l__g1 = l_n; l_i < l__g1; l_i++) {
 			var l_p = l_q[2/* offset */] - 1;
-			l_arr[@l_i] = gml_std_haxe_enum_tools_getParameter(ds_list_find_value(l_q[1/* actions */], (l_p > 0 ? l_p - 1 : 0)), 0).h_to_string();
+			l_arr[@l_i] = gml_pos_to_string(gml_std_haxe_enum_tools_getParameter(ds_list_find_value(l_q[1/* actions */], (l_p > 0 ? l_p - 1 : 0)), 0), self.h_scope[9/* program */]);
 			l_q = l_q[10/* next */];
 		}
 		return l_arr;
@@ -43,23 +45,25 @@ function gml_thread(l_program, l_actions, l_args1, l_locals, l_self1, l_other1, 
 		if (is_struct(l_e) && variable_struct_exists(l_e, "stacktrace")) {
 			l_text = (variable_struct_exists(l_e, "message") ? string(l_e.message) : "(error without a message?)");
 			var l_st = l_e.stacktrace;
-			var l_i = 0;
-			for (var l__g1 = array_length(l_st); l_i < l__g1; l_i++) {
-				var l_js = l_st[l_i];
-				if (is_string(l_js)) {
-					if (gml_std_StringTools_startsWith(l_js, "gml_Script_vm_group_")) {
-						l_text += "\n called from vm:" + gml_std_string_substring(l_js, string_length("gml_Script_vm_group_"));
-					} else if (gml_std_StringTools_startsWith(l_js, "gml_Script_") || gml_std_StringTools_startsWith(l_js, "gml_Object_")) {
-						l_text += "\n called from game:" + gml_std_string_substring(l_js, string_length("gml_Script_"));
-					} else l_text += "\n called from " + l_js;
-				} else l_text += "\n called from " + string(l_js);
+			if (gml_thread_verbose_stack_traces) {
+				var l_i = 0;
+				for (var l__g1 = array_length(l_st); l_i < l__g1; l_i++) {
+					var l_js = l_st[l_i];
+					if (is_string(l_js)) {
+						if (gml_std_StringTools_startsWith(l_js, "gml_Script_vm_group_")) {
+							l_text += "\n called from vm:" + gml_std_string_substring(l_js, string_length("gml_Script_vm_group_"));
+						} else if (gml_std_StringTools_startsWith(l_js, "gml_Script_") || gml_std_StringTools_startsWith(l_js, "gml_Object_")) {
+							l_text += "\n called from " + gml_std_string_substring(l_js, string_length("gml_Script_"));
+						} else l_text += "\n called from " + l_js;
+					} else l_text += "\n called from " + string(l_js);
+				}
 			}
 		} else l_text = gml_std_Std_stringify(l_e);
-		var l_s = "[error] " + l_text + "\n called from " + l_pos.h_to_string();
+		var l_s = "[error] " + l_text + "\n called from " + gml_pos_to_string(l_pos, self.h_scope[9/* program */]);
 		var l_q = self.h_scope;
 		if (l_q != undefined) for (l_q = self.h_scope[10/* next */]; l_q != undefined; l_q = l_q[10/* next */]) {
 			var l_p = l_q[2/* offset */];
-			l_s += "\n called from " + gml_std_haxe_enum_tools_getParameter(ds_list_find_value(l_q[1/* actions */], (l_p > 0 ? l_p - 1 : 0)), 0).h_to_string();
+			l_s += "\n called from " + gml_pos_to_string(gml_std_haxe_enum_tools_getParameter(ds_list_find_value(l_q[1/* actions */], (l_p > 0 ? l_p - 1 : 0)), 0), self.h_scope[9/* program */]);
 		}
 		return l_s;
 	}
@@ -89,6 +93,7 @@ function gml_thread(l_program, l_actions, l_args1, l_locals, l_self1, l_other1, 
 		l_actions = l_scope[1/* actions */];
 		l_len = ds_list_size(l_actions);
 		l_stack = l_scope[5/* stack */];
+		var l_allowExceptions = gml_thread_allow_exceptions;
 		var l__callback;
 		self.h_status = 1;
 		while (true) {
@@ -96,13 +101,25 @@ function gml_thread(l_program, l_actions, l_args1, l_locals, l_self1, l_other1, 
 			var l_act = undefined;
 			var l_loop = true;
 			for (var l_pos = l_scope[2/* offset */]; l_pos < l_len && l_loop; l_pos = l_scope[2/* offset */]) {
-				try {
+				if (l_allowExceptions) {
 					l_act = ds_list_find_value(l_actions, l_pos);
 					l_scope[@2/* offset */] = l_pos + 1;
 					var l_ar = l_act.__func__(l__gthis, l_act, l_scope, l_stack);
 					if (l__gthis.h_status >= 4) {
 						l_loop = false;
 					} else if (l_ar == 3) {
+						l_scope = l__gthis.h_scope;
+						l_actions = l_scope[1/* actions */];
+						l_len = ds_list_size(l_actions);
+						l_stack = l_scope[5/* stack */];
+					}
+				} else try {
+					l_act = ds_list_find_value(l_actions, l_pos);
+					l_scope[@2/* offset */] = l_pos + 1;
+					var l_ar1 = l_act.__func__(l__gthis, l_act, l_scope, l_stack);
+					if (l__gthis.h_status >= 4) {
+						l_loop = false;
+					} else if (l_ar1 == 3) {
 						l_scope = l__gthis.h_scope;
 						l_actions = l_scope[1/* actions */];
 						l_len = ds_list_size(l_actions);
@@ -193,6 +210,8 @@ function gml_thread(l_program, l_actions, l_args1, l_locals, l_self1, l_other1, 
 
 if (live_enabled) 
 function gml_thread_error(l_text) {
+	// gml_thread_error(text:string)->any
+	/// @ignore
 	show_error(l_text, true);
 	return undefined;
 }

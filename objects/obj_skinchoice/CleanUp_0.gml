@@ -1,3 +1,4 @@
+live_auto_call;
 event_inherited();
 with obj_player1
 	visible = true;

@@ -1,5 +1,5 @@
 // only include the extension if we're running from the IDE
-#macro live_enabled (GM_build_type == "run")
+#macro live_enabled true//(GM_build_type == "run")
 if !live_enabled
 {
 	instance_destroy();
@@ -16,7 +16,7 @@ if asset_get_index("live_init") == -1
 
 // change the IP/port here if gmlive-server isn't running on the same device as the game
 // (e.g. when running on mobile platforms):
-//live_init(1, "http://localhost:5100", "");
+live_init(1, "http://localhost:5100", "");
 
 live_blank_object = obj_blank;
 live_blank_room = rm_blank;

@@ -10,6 +10,7 @@ with (other)
 			x = other.x;
 		}
 		global.startgate = true;
+		global.collect = 0;
 		global.leveltosave = other.level;
 		global.leveltorestart = other.targetRoom;
 		global.levelattempts = 0;

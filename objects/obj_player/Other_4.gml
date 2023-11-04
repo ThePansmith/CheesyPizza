@@ -6,11 +6,14 @@ with (obj_secretportal)
 {
 	if (secret)
 	{
-		if !instance_exists(obj_ghostcollectibles)
+		if (room != tower_soundtest && !instance_exists(obj_ghostcollectibles))
 		{
-			if room != tower_soundtest
-				instance_create(0, 0, obj_secretfound);
-			instance_create(0, 0, obj_ghostcollectibles);
+			if !instance_exists(obj_ghostcollectibles)
+			{
+				if (!instance_exists(obj_randomsecret))
+					instance_create(0, 0, obj_secretfound);
+				instance_create(0, 0, obj_ghostcollectibles);
+			}
 		}
 	}
 }

@@ -8,20 +8,24 @@
 
 if (live_enabled) 
 function vm_v2_gml_thread_v2_handlers_init_set(l_funcs, l_map, l_name, l_fn) {
-	var l_id = l_map.h_obj[$ l_name];
-	if (l_id != undefined) l_funcs[@l_id] = l_fn; else show_error("Can't find " + l_name, true);
+	// vm_v2_gml_thread_v2_handlers_init_set(funcs:array<vm_v2_GmlThreadProc>, map:tools_Dictionary<int>, name:string, fn:vm_v2_GmlThreadProc)
+	/// @ignore
+	var l_id = l_map[$ l_name];
+	if (l_id != undefined) l_funcs[@l_id] = l_fn; else throw gml_std_haxe_Exception_thrown("Can't find " + l_name);
 }
 
 if (live_enabled) 
 function vm_v2_gml_thread_v2_handlers_init() {
+	// vm_v2_gml_thread_v2_handlers_init()->array<vm_v2_GmlThreadProc>
+	/// @ignore
 	var l_names = gml_std_Type_getEnumConstructs(mt_gml_action);
-	var l_map = new haxe_ds_string_map();
+	var l_map = { }
 	var l_funcs = array_create(array_length(l_names), undefined);
 	var l_i = 0;
 	for (var l__g1 = array_length(l_names); l_i < l__g1; l_i++) {
 		var l_name = l_names[l_i];
 		if (gml_std_StringTools_endsWith(l_name, "_hx")) l_name = gml_std_string_substring(l_name, 0, string_length(l_name) - 3);
-		l_map.h_obj[$ l_name] = l_i;
+		l_map[$ l_name] = l_i;
 		l_funcs[@l_i] = vm_v2_gml_thread_v2_on_unknown;
 	}
 	vm_v2_gml_thread_v2_handlers_init_set(l_funcs, l_map, "discard", vm_group_stack_on_discard);
@@ -151,11 +155,15 @@ function vm_v2_gml_thread_v2_handlers_init() {
 
 if (live_enabled) 
 function vm_v2_gml_thread_v2_ready() {
+	// vm_v2_gml_thread_v2_ready()
+	/// @ignore
 	vm_v2_gml_thread_v2_handlers = vm_v2_gml_thread_v2_handlers_init();
 }
 
 if (live_enabled) 
 function vm_v2_gml_thread_v2_on_unknown(l_th, l_act, l_scope, l_st) {
+	// vm_v2_gml_thread_v2_on_unknown(th:gml_thread, act:gml_action, scope:gml_thread_scope, st:gml_stack<any>)->gml_thread_proc_result
+	/// @ignore
 	l_th.h_proc_error("Can't execute " + gml_std_Type_enumConstructor(l_act), l_act);
 	return 1;
 }

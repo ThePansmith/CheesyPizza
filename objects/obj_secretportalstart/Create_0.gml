@@ -34,7 +34,8 @@ if MIDWAY
 }
 
 // If we aren't coming or going from a secret, we don't need to exist.
-if death or (!room_is_secret(obj_player1.lastroom) && !room_is_secret(room) && !instance_exists(obj_ghostcollectibles) && !instance_exists(obj_levelLoader))
+if (death or (!room_is_secret(obj_player1.lastroom) && !room_is_secret(room) && !instance_exists(obj_ghostcollectibles) && !instance_exists(obj_levelLoader))
+or obj_player1.state != states.secretenter)
 {
 	active = false;
 	visible = false;
@@ -46,9 +47,11 @@ if sugary
 	with obj_player1
 	{
 		image_blend_func = noone;
+		
+		// todo
 	}
 }
 
 // unload soundtest room
-if obj_player1.lastroom == tower_soundtest
+if obj_player1.lastroom == tower_soundtest or obj_player1.lastroom == tower_soundtestlevel
 	texturegroup_free("soundtestgroup");

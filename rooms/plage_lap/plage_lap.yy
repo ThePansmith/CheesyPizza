@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "plage_lap",
-  "creationCodeFile": "rooms/plage_lap/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/plage_lap/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

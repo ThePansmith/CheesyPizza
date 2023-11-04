@@ -48,6 +48,15 @@ add_music(tower_finalhallway, "event:/music/finalescape", noone, 0)
 add_music(tower_finalhallwaytitlecard, "event:/music/pillarmusic", noone, 0)
 add_music(tower_pizzafacehall, "event:/music/w5/finalhallway", noone, 0)
 add_music(tower_outside, "event:/sfx/misc/windloop", noone, 0)
+add_music(tower_soundtest, "event:/sfx/misc/pillarmusic", -4, 0)
+add_music(trickytreat_1, "event:/music/halloween2023", -4, 0, function(room, parameter)
+{
+    if (room == trickytreat_1)
+        fmod_event_instance_set_parameter(parameter, "state", 0, 1)
+    else
+        fmod_event_instance_set_parameter(parameter, "state", 1, 1)
+})
+add_music(secret_entrance, "event:/music/secretworld", -4, 0)
 add_music(tower_baby, "event:/modded/baby", noone, 0)
 add_music(tower_1up, "event:/music/pillarmusic", noone, 0)
 add_music(tower_2up, "event:/music/pillarmusic", noone, 0)
@@ -270,12 +279,14 @@ add_music(tower_freerun, "event:/music/hub", "event:/music/pillarmusic", 0, hub_
 add_music(tower_hubroomE, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_sage, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_sugary, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
+add_music(tutorialV_1, "event:/music/tutorial", "event:/music/pillarmusic", 0)
 
 add_music(characterselect, "event:/modded/characterselect", noone, 0)
 add_music(midway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);
 
 #endregion
 #region SUGARY
+
 add_music(sugarytut_1, "event:/modded/sugary/tutorial", noone, 0);
 
 add_music(entryway_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0, entrance_func);

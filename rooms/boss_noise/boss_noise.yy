@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "boss_noise",
-  "creationCodeFile": "${project_dir}/rooms/boss_noise/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/boss_noise/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

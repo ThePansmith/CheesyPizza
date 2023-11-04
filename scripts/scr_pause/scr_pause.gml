@@ -84,9 +84,9 @@ function scr_delete_pause_image()
 	if sprite_exists(screensprite2)
 		sprite_delete(screensprite2);
 }
-function scr_pauseicon_add(sprite, index, xoffset = 0, yoffset = 0, array = pause_icons)
+function scr_pauseicon_add(sprite, index, xoffset = 0, yoffset = 0)
 {
-	array_push(array, 
+	array_push(pause_icons, 
 	{
 		sprite_index: sprite,
 		image_index: index,
@@ -166,6 +166,7 @@ function scr_pause_deactivate_objects(pause_sounds = true)
 	instance_activate_object(obj_richpresence);
 	instance_activate_object(obj_inputdisplay);
 	instance_activate_object(obj_gmlive);
+	instance_activate_object(obj_globaltimer);
 }
 function pause_spawn_priests()
 {
@@ -180,6 +181,8 @@ function pause_spawn_priests()
 		image_alpha: 0,
 		sprite_index: choose(spr_angelpriest, spr_angelpriest2, spr_angelpriest3)
 	};
+	if (is_holiday(holiday.halloween))
+		p.sprite_index = choose(spr_pepbat_move, spr_ghostshroom, spr_ghoul_idle);
 	var q = irandom(100);
 	if (q >= 50)
 		p.x = irandom_range(SCREEN_WIDTH * 0.78, SCREEN_WIDTH * 0.65);
@@ -206,7 +209,7 @@ function pause_unpause_music()
 				fmod_event_instance_set_paused(custom_music[i].instance, custom_music[i].paused);
 		}
 	}
-	fmod_event_instance_stop(SUGARY ? obj_pause.pausemusicIDss : obj_pause.pausemusicID, true);
+	fmod_event_instance_stop(obj_pause.pausemusicID, true);
 }
 function pause_update_priests()
 {

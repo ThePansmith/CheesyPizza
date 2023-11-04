@@ -170,7 +170,7 @@ function state_player_normal()
 						sprite_index = spr_breakdance;
 					else if (global.fill <= 0 && !instance_exists(obj_ghostcollectibles))
 						sprite_index = spr_hurtidle;
-					else if (global.panic && !instance_exists(obj_ghostcollectibles) && global.fill <= global.maxwave)
+					else if (PANIC && global.fill <= global.maxwave)
 						sprite_index = spr_panic;
 					else if (global.heatmeter && global.stylethreshold == 2)
 						sprite_index = spr_3hpidle;
@@ -983,7 +983,7 @@ function state_snick_normal()
 			// bump on wall
 			else if (check_solid(x + movespeed, y) or scr_solid_slope(x + movespeed, y))
 			&& (!place_meeting(x + movespeed, y, obj_destructibles) or abs(movespeed) < 10)
-			&& (!place_meeting(x + movespeed, y, obj_ratblock) or abs(movespeed) < 12)
+			&& (!place_meeting(x + movespeed, y, obj_ratblock) or place_meeting(x + movespeed, y, obj_rattumble) or abs(movespeed) < 12)
 			&& (!place_meeting(x + movespeed, y, obj_metalblock) or abs(movespeed) < 16)
 			{
 				var _bump = ledge_bump(vsp >= 0 ? 32 : 22);

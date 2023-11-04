@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "war_10",
-  "creationCodeFile": "rooms/war_10/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/war_10/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
@@ -91,7 +91,6 @@
     {"name":"inst_60131493","path":"rooms/war_10/war_10.yy",},
     {"name":"inst_F4C7810B","path":"rooms/war_10/war_10.yy",},
     {"name":"inst_797AFF83","path":"rooms/war_10/war_10.yy",},
-    {"name":"inst_32CAF5E","path":"rooms/war_10/war_10.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -180,7 +179,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_60131493","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollect","path":"objects/obj_escapecollect/obj_escapecollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2784.0,"y":512.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_F4C7810B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollect","path":"objects/obj_escapecollect/obj_escapecollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2816.0,"y":544.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_797AFF83","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_nuketerminal","path":"objects/obj_nuketerminal/obj_nuketerminal.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1120.0,"y":384.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_32CAF5E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_deathcollect","path":"objects/obj_deathcollect/obj_deathcollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":5376.0,"y":256.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_Foreground2","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":49,"SerialiseWidth":222,"TileCompressedData":[
 -2897,0,10,60,61,62,64,62,63,64,62,63,64,-212,0,10,70,71,72,74,72,73,74,72,73,74,-201,0,14,62,63,64,62,63,64,62,63,64,62,63,142,143,82,-208,0,13,72,73,74,72,73,74,72,73,74,72,73,152,153,-7313,0,],"TileDataFormat":1,},"tilesetId":{"name":"tile_waroutside","path":"tilesets/tile_waroutside/tile_waroutside.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},

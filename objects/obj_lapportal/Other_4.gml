@@ -3,7 +3,7 @@ if array_contains(levels, global.leveltosave) && !global.sandbox
 {
 	ini_open_from_string(obj_savesystem.ini_str);
 	if ini_read_real("Highscore", global.leveltosave, 0) == 0 && !ini_read_real("Tutorial", "lapunlocked", false)
-		instance_destroy();
+		sprite_index = spr_outline;
 	ini_close();
 }
 if !MOD.Lap3 && MOD.DeathMode

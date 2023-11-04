@@ -3,6 +3,7 @@ playerid = noone;
 
 spr_idle = spr_pizzaportal;
 spr_enter = spr_pizzaportalend;
+spr_outline = spr_pizzaportal_outline
 
 sugary = SUGARY;
 if sugary

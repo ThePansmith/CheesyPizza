@@ -1,7 +1,11 @@
+if (!global.option_hud)
+	exit;
+	
 var draw_state = draw_save_state();
 
 reset_shader_fix();
 reset_blendmode();
+
 
 draw_set_font(lang_get_font("creditsfont"));
 draw_set_halign(fa_left);
@@ -10,8 +14,7 @@ draw_set_alpha(fade);
 draw_set_color(c_white);
 var xx = SCREEN_WIDTH / 2;
 var yy = SCREEN_HEIGHT - 50;
-if ((global.panic or global.snickchallenge) && !instance_exists(obj_ghostcollectibles))
-or MOD.DeathMode
+if PANIC or MOD.DeathMode
 	yy -= 60;
 var s = text_size;
 xx -= (s[0] / 2);

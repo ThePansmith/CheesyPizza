@@ -1,7 +1,5 @@
-scr_getinput()
+scr_menu_getinput();
 index += 0.1
-key_jump = (key_jump || (scr_check_menu_key(vk_enter) && keyboard_check_pressed(vk_return)) || (scr_check_menu_key(vk_space) && keyboard_check_pressed(vk_space)))
-key_jump2 = (key_jump2 || (scr_check_menu_key(vk_enter) && keyboard_check(vk_return)) || (scr_check_menu_key(vk_space) && keyboard_check(vk_space)))
 switch state
 {
 	case states.titlescreen:
@@ -60,7 +58,7 @@ switch state
 		break
 	
 	case states.normal:
-		if (key_start && (!instance_exists(obj_option)))
+		if (key_start && optionbuffer <= 0 && !instance_exists(obj_option))
 		{
 			with (instance_create(0, 0, obj_option))
 				backbuffer = 2
@@ -176,9 +174,9 @@ switch state
 				}
 
 			}
-			else if key_slap2
+			else if key_quit
 			{
-				state = states.finale
+				state = states.ending
 				exitselect = 1
 				switch currentselect
 				{
@@ -194,7 +192,7 @@ switch state
 				}
 
 			}
-			else if (key_taunt2 && global.game_started[currentselect])
+			else if (key_delete && global.game_started[currentselect])
 			{
 				deletebuffer = 0
 				state = states.bombdelete
@@ -212,7 +210,6 @@ switch state
 						sprite_index = spr_titlepep_right
 						break
 				}
-
 			}
 			break
 		}
@@ -228,7 +225,7 @@ switch state
 		{
 			if (deleteselect == 0)
 			{
-				var f = concat("saves/saveData", (currentselect + 1), ".ini")
+				var f = concat(get_save_folder(), "/saveData", (currentselect + 1), ".ini")
 				if file_exists(f)
 					file_delete(f)
 				if (currentselect == 0)
@@ -260,7 +257,7 @@ switch state
 		}
 		break
 	
-	case states.finale:
+	case states.ending:
 		exitselect += (key_left2 + key_right2)
 		exitselect = clamp(exitselect, 0, 1)
 		if key_jump
@@ -273,6 +270,15 @@ switch state
 		break
 }
 
+if (state == states.bombdelete && deletebuffer > 0)
+{
+	if (!fmod_event_instance_is_playing(bombsnd))
+		fmod_event_instance_play(bombsnd);
+}
+else
+	fmod_event_instance_stop(bombsnd, false);
+if (optionbuffer > 0)
+	optionbuffer--;
 if (state != states.titlescreen && state != states.transition)
 	extrauialpha = Approach(extrauialpha, 1, 0.1)
 if (currentselect == 0)

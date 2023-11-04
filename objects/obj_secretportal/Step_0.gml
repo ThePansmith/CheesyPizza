@@ -38,6 +38,13 @@ if (floor(image_index) >= (image_number - 1))
 			image_index = image_number - 1;
 			if touched
 			{
+				if targetRoom == room && !secret
+				{
+					targetRoom = choose(entrance_secret3, entrance_secret4, entrance_secret5);
+					with instance_create(0, 0, obj_langerror)
+						text = $"{room_get_name(room)}: undefined secret";
+				}
+				
 				if death
 				{
 					with obj_camera
@@ -60,6 +67,11 @@ if (floor(image_index) >= (image_number - 1))
 					{
 						lastTargetDoor = targetDoor;
 						targetDoor = "S";
+						if (other.soundtest)
+						{
+							lastroom_soundtest = room;
+							lastroom_secretportalID = other.id;
+						}
 						if !other.secret
 						{
 							set_lastroom();
@@ -72,14 +84,41 @@ if (floor(image_index) >= (image_number - 1))
 							if instance_exists(obj_levelLoader)
 								condition = false;
 							
-							if condition // it wasn't set, we are probably in a secret
+							if condition && !instance_exists(obj_randomsecret) // it wasn't set
+							{
 								targetRoom = other.targetRoom;
+								set_lastroom();
+							}
 							else
+							{
 								targetRoom = lastroom;
-							set_lastroom();
+								if (room == tower_soundtest || room == tower_soundtestlevel)
+								{
+									targetRoom = lastroom_soundtest;
+									secretportalID = lastroom_secretportalID;
+								}
+							}
+						}
+						if (instance_exists(obj_randomsecret) && !obj_randomsecret.selected)
+						{
+							secretportalID = noone;
+							
+							obj_randomsecret.selected = true;
+							var len = array_length(obj_randomsecret.levels);
+							if len > 0
+							{
+								var num = irandom(len - 1);
+								if MOD.Ordered
+									num = 0;
+								
+								targetRoom = obj_randomsecret.levels[num];
+								array_delete(obj_randomsecret.levels, num, 1);
+							}
+							else
+								targetRoom = secret_entrance;
 						}
 					}
-					if !secret && !soundtest
+					if (!secret && !soundtest && !instance_exists(obj_randomsecret))
 						add_saveroom();
 					
 					instance_create(x, y, obj_fadeout);

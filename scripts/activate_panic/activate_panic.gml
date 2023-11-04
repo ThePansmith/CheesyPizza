@@ -7,7 +7,7 @@ function calculate_panic_timer(_minutes = 5, _seconds = 30)
 {
 	return (((_minutes * 60) + _seconds) * 60) * 0.2;
 }
-function activate_panic(instapanic = false)
+function activate_panic(instapanic = false, debris = noone)
 {
 	if room == tower_finalhallway
 		global.leveltosave = "exit";
@@ -34,8 +34,8 @@ function activate_panic(instapanic = false)
 	{
 		fmod_event_instance_play(global.snd_escaperumble);
 		fmod_event_instance_play(global.snd_johndead);
-		
-		instance_create_unique(0, 0, obj_hungrypillarflash);
+		with instance_create_unique(0, 0, obj_hungrypillarflash)
+			debrisid = debris;
 		instance_create(0, 0, obj_itspizzatime);
 		
 		with obj_camera
@@ -66,7 +66,7 @@ function activate_panic(instapanic = false)
 			global.fill = 2040;
 			break;
 		case ruin_11:
-			global.fill = 2040;
+			global.fill = 2160;
 			break;
 		case dungeon_10:
 			global.fill = 2460;

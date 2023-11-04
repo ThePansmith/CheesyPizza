@@ -204,8 +204,7 @@ function scr_tvdraw()
 			
 			surface_reset_target();
 			
-			if (global.panic or global.snickchallenge)
-			&& global.panicbg && !instance_exists(obj_ghostcollectibles)
+			if PANIC && global.panicbg
 			{
 				shader_set(shd_panicbg);
 				var panic_id = shader_get_uniform(shd_panicbg, "panic");
@@ -326,7 +325,7 @@ function scr_tvdraw()
 			var barfill = spr_timer_barfill;
 			var timerspr = timer_tower && !MOD.Lap3 ? spr_timer_tower : pizzaface_sprite;
 			johnface_sprite = spr_timer_johnface;
-		
+			
 			if bolevel
 			{
 				bar = spr_timer_barBN;

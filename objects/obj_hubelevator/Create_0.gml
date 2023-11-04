@@ -52,3 +52,4 @@ add_floor(0, tower_extra, "G");
 add_floor(6, tower_sugary, "A", ["sugarygroup"]);
 
 offload_arr = noone;
+buffer = 0;

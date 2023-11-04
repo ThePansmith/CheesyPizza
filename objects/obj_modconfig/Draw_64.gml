@@ -4,8 +4,11 @@ live_auto_call;
 draw_set_colour(c_white);
 draw_set_align();
 
-reset_blendmode();
-reset_shader_fix();
+if object_index != obj_levelsettings
+{
+	reset_blendmode();
+	reset_shader_fix();
+}
 
 var yy = 70 - scroll;
 //if array_last(options_pos) < SCREEN_HEIGHT / 3
@@ -13,7 +16,9 @@ var yy = 70 - scroll;
 
 for(var i = 0; i < array_length(options_array); i++)
 {
-	var opt = options_array[i];
+	var opt = options_array[i], locked = false;
+	if opt.type != modconfig.section && is_callable(opt.condition)
+		locked = !opt.condition()[0];
 	
 	switch opt.type
 	{
@@ -23,12 +28,12 @@ for(var i = 0; i < array_length(options_array); i++)
 			draw_set_font(global.font_small);
 			if sel == i
 			{
-				draw_set_colour(c_white);
+				draw_set_colour(locked ? c_gray : c_white);
 				draw_sprite_ext(spr_cursor, -1, 2 + 40 + xo, 2 + yy + 8 + yo, 1, 1, 0, c_black, 0.25);
 				draw_sprite(spr_cursor, -1, 40 + xo, yy + 8 + yo);
 			}
 			else
-				draw_set_colour(c_ltgray);
+				draw_set_colour(locked ? c_gray : c_ltgray);
 			
 			draw_text_color(2 + 80, 2 + yy, opt.name, 0, 0, 0, 0, 0.25);
 			draw_text(80, yy, opt.name);
@@ -48,7 +53,7 @@ for(var i = 0; i < array_length(options_array); i++)
 				draw_text_transformed_color(2 + 350, 2 + yy, str, scale, 1, 0, 0, 0, 0, 0, 0.25);
 				draw_text_transformed(350, yy, str, scale, 1, 0);
 				
-				if sel == i && opt.type != modconfig.slider
+				if sel == i && opt.type != modconfig.slider && !locked
 				{
 					if opt.value > 0
 						draw_text(350 - string_width(str) / 2 - Wave(16, 24, 2, 0), yy, "<");
@@ -80,7 +85,6 @@ draw_set_colour(c_white);
 var opt = options_array[sel];
 
 var right_x = SCREEN_WIDTH - 260;
-
 draw_set_font(global.bigfont);
 draw_set_align(fa_center);
 draw_set_alpha(alpha);
@@ -130,7 +134,29 @@ if drawer
 	draw_set_alpha(1);
 		
 	// DRAW IT
-	if is_callable(opt.drawfunc)
+	var condition = [true];
+	if opt.type != modconfig.section && is_callable(opt.condition)
+		condition = opt.condition();
+	
+	if !condition[0]
+	{
+		if !surface_exists(global.modsurf)
+			global.modsurf = surface_create(wd, ht);
+		
+		surface_set_target(global.modsurf);
+		draw_clear_alpha(c_black, 0.5);
+		
+		draw_set_font(global.font_small);
+		draw_set_align(fa_center, fa_middle);
+		draw_text(960 / 2.5 / 2, 540 / 2.5 / 2, condition[1]);
+		
+		// white border
+		draw_set_colour(c_white);
+		draw_roundrect(0, 0, wd - 2, ht - 2, true);
+			
+		surface_reset_target();
+	}
+	else if is_callable(opt.drawfunc)
 	{
 		if !surface_exists(global.modsurf)
 			global.modsurf = surface_create(wd, ht);
@@ -184,12 +210,15 @@ if drawer
 					surface_set_target(global.modsurf);
 					draw_clear_alpha(c_black, 0);
 					
-					if layer_sequence_get_sequence(obj_modconfig.sequence).name == "seq_secretwall_on"
-						gpu_set_blendmode(bm_normal);
-					else
+					if object_index != obj_levelsettings
 					{
-						reset_shader_fix();
-						reset_blendmode();
+						if layer_sequence_get_sequence(obj_modconfig.sequence).name == "seq_secretwall_on"
+							gpu_set_blendmode(bm_normal);
+						else
+						{
+							reset_shader_fix();
+							reset_blendmode();
+						}
 					}
 				}
 			});
@@ -208,15 +237,21 @@ if drawer
 		}
 	}
 	
-	reset_blendmode();
-	reset_shader_fix();
+	if object_index != obj_levelsettings
+	{
+		reset_blendmode();
+		reset_shader_fix();
+	}
 	
 	if surface_exists(global.modsurf)
 	{
 		/* shadow */ draw_surface_ext(global.modsurf, 3 + xx - wd / 2, 3 + yy - ht / 2, 1, 1, 0, 0, 0.25);
 		
-		shader_set(shd_pal_swapper);
-		pal_swap_set(spr_peppalette, 1, false);
+		if object_index != obj_levelsettings
+		{
+			shader_set(shd_pal_swapper);
+			pal_swap_set(spr_peppalette, 1, false);
+		}
 		draw_surface(global.modsurf, xx - wd / 2, yy - ht / 2);
 	}
 }

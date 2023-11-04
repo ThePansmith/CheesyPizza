@@ -7,7 +7,7 @@ sound_play(mu_dungeondepth);
 // delete anything that might help you escape
 with all
 {
-	if object_index != obj_screensizer && object_index != obj_gmlive
+	if object_index != obj_screensizer && object_index != obj_gmlive && object_index != obj_fmod && object_index != obj_softlockcrash
 	&& (object_index != obj_shell or !DEBUG)
 		instance_destroy(id, false);
 }

@@ -43,8 +43,8 @@ y = lerp(y, playerid.y + yoffset / 2, smooth_buffer > 0 ? 1 : 0.25);
 image_xscale = xscale * playerid.scale_xs;
 image_yscale = playerid.yscale * playerid.scale_ys;
 
-if instance_exists(obj_rank) or instance_exists(obj_timesup) or (instance_exists(obj_lapportal) && obj_lapportal.sprite_index == obj_lapportal.spr_enter) or (instance_exists(obj_lapportal) && obj_lapportal.sprite_index == obj_lapportal.spr_enter)
+if instance_exists(obj_rank) or instance_exists(obj_timesup) or room == Mainmenu or (instance_exists(obj_lapportal) && obj_lapportal.sprite_index == obj_lapportal.spr_enter) or (instance_exists(obj_lapportal) && obj_lapportal.sprite_index == obj_lapportal.spr_enter)
 or (instance_exists(obj_lapportalentrance) && obj_lapportalentrance.sprite_index == obj_lapportalentrance.spr_spit)
 	visible = false;
 else
-	visible = true;
+	visible = playerid.visible;

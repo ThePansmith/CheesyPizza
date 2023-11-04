@@ -92,9 +92,12 @@ function scr_playerreset(roomstart = false, restart = false)
 	camera_set_view_size(view_camera[0], SCREEN_WIDTH, SCREEN_HEIGHT);
 	
 	instance_destroy(obj_frontcanongoblin);
+	instance_destroy(obj_pumpkineffect);
+	instance_destroy(obj_pumpkincounter);
 	instance_destroy(obj_transfotip);
 	instance_destroy(obj_flushcount);
-	instance_destroy(obj_fadeout);
+	if !roomstart
+		instance_destroy(obj_fadeout);
 	instance_destroy(obj_comboend);
 	instance_destroy(obj_combotitle);
 	instance_destroy(obj_confettieffect);
@@ -119,6 +122,7 @@ function scr_playerreset(roomstart = false, restart = false)
 	
 	if (!global.levelreset)
 	{
+		instance_destroy(obj_randomsecret);
 		instance_destroy(obj_deliverytimer);
 		instance_destroy(obj_wartimer);
 		with (obj_cutscene_handler)
@@ -141,6 +145,7 @@ function scr_playerreset(roomstart = false, restart = false)
 			bubblespr = noone;
 			promptx = promptxstart;
 			tv_bg_index = 0;
+			expressionsprite = -4;
 			
 			sprite_index = spr_tv_off;
 			tvsprite = spr_tv_idle;
@@ -443,6 +448,7 @@ function scr_playerreset(roomstart = false, restart = false)
 		noisebossscream = false;
 		scale_xs = 1;
 		scale_ys = 1;
+		secretportalID = noone;
 		
 		// pto
 		smoothx = 0;

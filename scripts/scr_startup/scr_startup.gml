@@ -11,13 +11,6 @@ switch os_type
 		break;
 }
 
-enum blockstyles
-{
-	final,
-	september,
-	old
-}
-
 // room order check
 if room_first != Loadiingroom or room_next(room_first) != Initroom
 {
@@ -45,7 +38,7 @@ exception_unhandled_handler
 		
 		// show and log the crash
 	    show_debug_message(string(e));
-		show_message($"The game crashed!\n\n---\n\n{e.longMessage}\n\n---\n\nstacktrace: {e.stacktrace}");
+		show_message($"The game crashed!\n\n---\n\n{e.longMessage}\n---\n\nstacktrace: {e.stacktrace}");
 		
 		// save it to a file
 		var _f = file_text_open_write("crash_log.txt");
@@ -60,14 +53,12 @@ if os_type == os_windows // this is temp
 	if !file_exists(path_cheesypizzalib)
 	{
 		show_message($"{path_cheesypizzalib} not found!");
-		
 		game_end();
 		exit;
 	}
 	if test_dll_linkage() != 1
 	{
 		show_message("Dude what the fuck is wrong with you");
-	
 		game_end();
 		exit;
 	}
@@ -83,7 +74,7 @@ if !file_exists("data/cheese.jpg")
 
 // macros
 #macro REMIX global.gameplay
-#macro DEBUG (GM_build_type == "run")
+#macro DEBUG true//(GM_build_type == "run")
 #macro YYC code_is_compiled()
 
 #macro STRING_UNDEFINED "<undefined>"
@@ -92,6 +83,7 @@ if !file_exists("data/cheese.jpg")
 #macro CAMW camera_get_view_width(view_camera[view_current])
 #macro CAMH camera_get_view_height(view_camera[view_current])
 #macro DATE_TIME_NOW $"{current_year}-{current_month}-{current_day}__{current_hour}-{current_minute}-{current_second}"
+#macro PANIC ((global.panic or global.snickchallenge) && (!instance_exists(obj_ghostcollectibles) or global.leveltosave == "sucrose"))
 
 // initialize
 scr_get_languages();
@@ -134,6 +126,7 @@ ds_map_set(global.font_map, "bigfont_en", global.bigfont);
 ds_map_set(global.font_map, "smallfont_en", global.smallfont);
 ds_map_set(global.font_map, "tutorialfont_en", global.tutorialfont);
 ds_map_set(global.font_map, "creditsfont_en", global.creditsfont);
+ds_map_set(global.font_map, "captionfont_en", fnt_caption);
 
 var key = ds_map_find_first(global.lang_map);
 for (var i = 0; i < ds_map_size(global.lang_map); i++)
@@ -145,11 +138,18 @@ for (var i = 0; i < ds_map_size(global.lang_map); i++)
 		ds_map_set(global.font_map, concat("creditsfont_", key), lang_get_custom_font("creditsfont", lang));
 		ds_map_set(global.font_map, concat("bigfont_", key), lang_get_custom_font("bigfont", lang));
 		ds_map_set(global.font_map, concat("smallfont_", key), lang_get_custom_font("smallfont", lang));
+		ds_map_set(global.font_map, concat("captionfont_", key), lang_get_custom_font("captionfont", lang));
 	}
 	key = ds_map_find_next(global.lang_map, key);
 }
 
 // settings
+enum blockstyles
+{
+	final,
+	september,
+	old
+}
 function load_moddedconfig()
 {
 	ini_open("saveData.ini");
@@ -157,8 +157,9 @@ function load_moddedconfig()
 	global.gameplay = ini_read_real("Modded", "gameplay", true); // misc. improvements on or off?
 	global.experimental = ini_read_real("Modded", "experimental", DEBUG);
 	global.performance = ini_read_real("Modded", "performance", false);
-
+	
 	// gameplay settings
+	global.uppercut = ini_read_real("Modded", "uppercut", true); // *buffed uppercut*
 	global.poundjump = ini_read_real("Modded", "poundjump", false);
 	global.attackstyle = ini_read_real("Modded", "attackstyle", 0); // grab, kungfu, shoulderbash
 	global.shootstyle = ini_read_real("Modded", "shootstyle", 0); // nothing, pistol, breakdance
@@ -169,7 +170,8 @@ function load_moddedconfig()
 	global.swapgrab = ini_read_real("Modded", "swapgrab", false);
 	global.unfocus_pause = ini_read_real("Modded", "unfocus_pause", false);
 	global.border = ini_read_real("Modded", "border", -1); // -1 none, 0 space, 1 dynamic
-
+	global.holidayoverride = ini_read_real("Modded", "holidayoverride", -1); // -1 default, 0 none, 1 etc
+	
 	// visual settings
 	global.panicbg = ini_read_real("Modded", "panicbg", true);
 	global.panictilt = ini_read_real("Modded", "panictilt", false);
@@ -184,8 +186,9 @@ function load_moddedconfig()
 	global.roomnames = ini_read_real("Modded", "roomnames", false);
 	global.machsnd = ini_read_real("Modded", "machsnd", 0); // final, old
 	global.sugaryoverride = ini_read_real("Modded", "sugaryoverride", false);
+	global.enemyrot = ini_read_real("Modded", "enemyrot", false);
 	
-	// convert from PTT
+	// convert from islam
 	if ini_key_exists("Modded", "pizzellesugaryoverride")
 	{
 		global.sugaryoverride = ini_read_real("Modded", "pizzellesugaryoverride", false);
@@ -195,11 +198,11 @@ function load_moddedconfig()
 		ini_key_delete("Modded", "vigisuperjump");
 	}
 	
-	// taunt PTU players
+	// PTU
 	if ini_section_exists("ControlsKeysPTU")
 	{
-		show_message("PTU key config detected!\nYou disgust me.");
-		ini_section_delete("ControlsKeysPTU");
+		//show_message("PTU key config detected!\nYou disgust me.");
+		ini_section_delete("ControlsKeysPTU"); // REMOVES IT FROM CHEESED UP. NOT THE ORIGINAL FILE.
 	}
 	
 	// turn on performance mode
@@ -212,6 +215,18 @@ function load_moddedconfig()
 	ini_close();
 }
 load_moddedconfig();
+
+// index palettes
+function scr_indexpalettes()
+{
+	pal_swap_index_palette(spr_peppalette);
+	pal_swap_index_palette(spr_noisepalette);
+	pal_swap_index_palette(spr_vigipalette);
+	pal_swap_index_palette(spr_snickpalette);
+	pal_swap_index_palette(spr_pizzypalette);
+	pal_swap_index_palette(spr_pizzanopalette);
+	pal_swap_index_palette(spr_bopalette);
+}
 
 // gameframe
 ini_open("saveData.ini");
@@ -230,40 +245,20 @@ ini_close();
 global.goodmode = false; // makes everything a living nightmare
 global.sandbox = true;
 global.saveloaded = false;
-global.panicwavetime = 0; // RX: don't remove im gonna do something with this later
 
 global.secrettile_clip_distance = 150; // distance before we cut off tiles
 global.secrettile_fade_size = 0.85; // distance before we start to fade
 global.secrettile_fade_intensity = 32; // dropoff intensity
 
-global.colorblind_type = -1; // 0 - Protanopia, 1 - Deuteranopia, 2 - Tritanopia
-global.colorblind_intensity = 0.5;
-global.shader_mulitplier = 1.0;
-
 #macro heat_nerf 5 // divides the style gain by this
 #macro heat_lossdrop 0.1 // speed of global.style loss
 #macro heat_timedrop 0.5 // speed of global.heattime countdown
 
-if os_type == os_windows
+if file_exists("dead")
 {
-	if file_exists("dead") || (os_type == os_windows && !pto_checkguid("8ff30401-c151-49e3-8636-a28a5b288d85"))
-	{
-		show_message("Guid fail!");
-		
-		game_end();
-		exit;
-	}
-	pto_cheesypizza_setHWND(window_handle()); // RX: Bring window to front
+	game_end();
+	exit;
 }
-
-
-//pto_cheesypizza_setHWND(window_handle()); // RX: Bring window to front
-
-// RX: only works if Gamemaker is your current active window, a bit disapointing really.
-//if !pto_console_create(512)
-//	trace("unable to create console window!");
-//else
-//	trace("opened new console window");
 
 // performance mode
 #macro shader_set_base shader_set
@@ -279,21 +274,3 @@ function shader_set_fix(shader)
 #macro CACHE_DIRECTORY $"{working_directory}cache"
 #macro PATTERN_DIRECTORY $"{working_directory}patterns/"
 #macro TEXTURE_PAGE_SIZE 4096
-
-if !directory_exists(PATTERN_DIRECTORY)
-	directory_create(PATTERN_DIRECTORY);
-
-var pattern_example_directory = $"{PATTERN_DIRECTORY}/Example/";
-/*
-if !directory_exists(pattern_example_directory)
-{
-	directory_create(pattern_example_directory);
-	
-	var file = file_text_open_write($"{pattern_example_directory}Pattern.json");
-	var examplepattern = new custom_pattern_json();
-	file_text_write_string(file, json_stringify(examplepattern, true));
-	delete examplepattern;
-	file_text_close(file);
-	sprite_save(spr_pattern_example, 0, $"{pattern_example_directory}0.png");
-}
-*/

@@ -21,8 +21,8 @@
   },
   "spriteNoExport": false,
   "textureGroupId": {
-    "name": "chateaugroup",
-    "path": "texturegroups/chateaugroup",
+    "name": "levelstructuregroup",
+    "path": "texturegroups/levelstructuregroup",
   },
   "tile_count": 825,
   "tileAnimation": {

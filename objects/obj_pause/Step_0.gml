@@ -1,5 +1,3 @@
-var curr_pause_music = SUGARY ? pausemusicIDss : pausemusicID;
-
 if (!pause && instance_exists(obj_player1) && (obj_player1.key_start or (!window_has_focus() && global.unfocus_pause)) && room != Mainmenu && room != Finalintro && room != hub_loadingscreen && room != Endingroom && room != Creditsroom && room != Johnresurrectionroom && room != Longintro && room != Realtitlescreen && room != rank_room)
 {
 	var _cutscenehandler = false;
@@ -45,20 +43,41 @@ if (!pause && instance_exists(obj_player1) && (obj_player1.key_start or (!window
 	// pause
 	if (obj_savesystem.state == 0 && !_cutscenehandler && (room != rank_room && room != Realtitlescreen && room != timesuproom && room != rm_baby) && !instance_exists(obj_jumpscare) && !instance_exists(obj_technicaldifficulty))
 	{
-		//destroy_sounds([pausemusicID]);
-		//pausemusicID = fmod_event_create_instance(SUGARY ? "event:/modded/sugary/pause" : "event:/music/pause");
-		
-		refresh_options();
-		if global.jukebox != noone
-		{
-			array_push(pause_menu, "CLEAR JUKEBOX");
-			scr_pauseicon_add(spr_pauseicons, 4, -5);
-		}
+		destroy_sounds([pausemusicID]);
+		if SUGARY
+			pausemusicID = fmod_event_create_instance("event:/modded/sugary/pause");
+		else if is_holiday(holiday.halloween)
+			pausemusicID = fmod_event_create_instance("event:/music/halloweenpause");
+		else
+			pausemusicID = fmod_event_create_instance("event:/music/pause");
 		
 		selected = 0;
 		fadein = true;
 		pause = true;
 		fade = 0;
+		
+		pause_menu = ["pause_resume", "pause_options"];
+		if (global.leveltorestart != -4)
+		{
+			array_push(pause_menu, "pause_restart");
+			
+			var ach_allowed = [
+				"entrance", "medieval", "ruin", "dungeon",
+				"badland", "farm", "saloon", "graveyard",
+				"plage", "forest", "minigolf", "space",
+				"street", "sewer", "industrial", "freezer",
+				"kidsparty", "chateau", "war"
+			]
+			if array_contains(ach_allowed, global.leveltosave)
+				array_push(pause_menu, "pause_achievements");
+			array_push(pause_menu, "pause_exit");
+		}
+		else
+			array_push(pause_menu, "pause_exit_title");
+		
+		if global.jukebox != noone
+			array_push(pause_menu, "pause_jukebox");
+		
 		with (obj_music)
 		{
 			if global.jukebox != noone
@@ -205,8 +224,8 @@ if (!pause && instance_exists(obj_player1) && (obj_player1.key_start or (!window
 		
 		if global.jukebox == noone
 		{
-			fmod_event_instance_play(curr_pause_music);
-			fmod_event_instance_set_paused(curr_pause_music, false);
+			fmod_event_instance_play(pausemusicID);
+			fmod_event_instance_set_paused(pausemusicID, false);
 		}
 	}
 }
@@ -223,6 +242,13 @@ border2_xstart = SCREEN_WIDTH;
 border2_ystart = SCREEN_HEIGHT;
 border2_xend = SCREEN_WIDTH + 96;
 border2_yend = SCREEN_HEIGHT + 100;
+if (is_holiday(holiday.halloween))
+{
+	border1_xend = -128;
+	border1_yend = SCREEN_HEIGHT + 150;
+	border2_xend = SCREEN_WIDTH + 128;
+	border2_yend = SCREEN_HEIGHT + 150;
+}
 vine_ystart = 0;
 vine_yend = -117;
 if (!start)
@@ -235,7 +261,7 @@ if (!start)
 	vine_y = vine_yend;
 }
 
-var a = window_buffer-- > 0 ? 1 : 0.1;
+var a = 0.1;
 if (!instance_exists(obj_loadingscreen))
 {
 	if (fadein)
@@ -264,155 +290,46 @@ if (!instance_exists(obj_loadingscreen))
 
 cursor_index += 0.35;
 pause_update_priests();
-if (pause && !instance_exists(obj_option) && alarm[3] == -1)
+if (pause && !instance_exists(obj_option) && !instance_exists(obj_achievement_pause) && alarm[3] == -1)
 {
-	scr_getinput();
+	scr_menu_getinput();
 	var _dvc = obj_inputAssigner.player_input_device[0];
-    if (key_jump && _dvc >= 0 && gamepad_button_check_pressed(_dvc, global.key_jumpC) && global.key_jumpC == gp_face2)
-        key_jump = false;
-    key_jump = (key_jump || (global.key_start != vk_return && keyboard_check_pressed(vk_return)) || (global.key_start != vk_space && keyboard_check_pressed(vk_space)) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face1));
-	key_back = (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_return) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face2) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_start));
-	
-	if safe_get(obj_shell, "isOpen")
-	{
-		key_jump = false;
-		key_back = false;
-	}
-	
+	key_back = key_back || key_start;
 	if (backbuffer > 0)
 	{
 		backbuffer--;
 		key_back = false;
 	}
 	moveselect = -key_up2 + key_down2;
+	var prevselect = selected;
 	selected += moveselect;
-	if (moveselect != 0 && selected >= 0 && selected <= array_length(pause_menu) - 1)
+	if (selected >= array_length(pause_menu))
+		selected = 0;
+	else if (selected < 0)
+		selected = array_length(pause_menu) - 1;
+	if (prevselect != selected)
 	{
 		sound_play(SUGARY ? sfx_step : "event:/sfx/ui/angelmove");
 		update_cursor = true;
 	}
-	selected = clamp(selected, 0, array_length(pause_menu) - 1);
 	if (key_back)
 	{
 		selected = 0;
 		key_jump = true;
 	}
 	if (key_jump)
-	{
-		switch (selected)
-		{
-			case 0:
-				scr_pause_activate_objects();
-				pause_unpause_music();
-				instance_destroy(obj_option);
-                instance_destroy(obj_keyconfig);
-				break;
-			
-			case 2:
-				if (room == Endingroom || room == tower_soundtest || room == Creditsroom || room == Johnresurrectionroom)
-					break;
-				else
-				{
-					var rm = global.leveltorestart;
-					if rm != noone && rm != -1
-					{
-						alarm[5] = 1;
-						roomtorestart = rm;
-						pause_unpause_music();
-						stop_music();
-						scr_pause_activate_objects();
-						scr_pause_stop_sounds();
-						instance_destroy(obj_option);
-						instance_destroy(obj_keyconfig);
-						pause = false;
-					}
-					else
-						sound_play("event:/sfx/ui/select");
-					break;
-				}
-			
-			case 1:
-				sound_play("event:/sfx/ui/select");
-				with (instance_create(x, y, obj_option))
-					depth = other.depth - 1;
-				break;
-			
-			case 4: // clear jukebox
-				refresh_options();
-				selected = 0;
-				
-				fmod_event_instance_stop(global.jukebox.instance, true);
-				fmod_event_instance_release(global.jukebox.instance);
-				global.jukebox = noone;
-				
-				fmod_event_instance_play(curr_pause_music);
-				fmod_event_instance_set_paused(curr_pause_music, false);
-				break;
-			
-			case 3:
-				if (room == Endingroom || room == Creditsroom || room == Johnresurrectionroom)
-					break;
-				else
-				{
-					reset_modifier();
-					
-					instance_activate_object(obj_levelLoader);
-					pause_unpause_music();
-					stop_music();
-					scr_pause_stop_sounds();
-					instance_destroy(obj_option);
-					instance_destroy(obj_keyconfig);
-					fmod_event_instance_stop(global.snd_bossbeaten, true);
-					fmod_event_instance_stop(curr_pause_music, true);
-					obj_music.music = noone;
-					
-					var arr = noone;
-					if (room == hub_room1 || room == Finalintro || room == characterselect || room == cowboytask || room == Titlescreen || room == Mainmenu || room == Scootertransition || room == rm_levelselect || (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic))
-					or ((global.is_hubworld or global.custom_hub_level == "") && instance_exists(obj_levelLoader))
-					{
-						if global.startgate
-						{
-							hub = 1;
-							arr = ["hubgroup"];
-							global.startgate = false;
-						}
-						else
-						{
-							hub = 0;
-							arr = ["menugroup"];
-						}
-					}
-					else
-					{
-						global.startgate = false;
-						hub = 1;
-						arr = ["hubgroup"];
-					}
-					alarm[3] = 1;
-					with textures_offload(arr)
-					{
-						ds_list_clear(sound_list);
-						ds_list_clear(instance_list);
-						ds_list_copy(sound_list, other.sound_list);
-						ds_list_copy(instance_list, other.instance_list);
-						ds_list_add(instance_list, other.id);
-					}
-					instance_deactivate_object(id);
-					break;
-				}
-		}
-	}
+		array_get(ds_map_find_value(pause_menu_map, array_get(pause_menu, selected)), 1)();
 }
 if keyboard_check_pressed(vk_f12) && sprite_exists(screensprite)
 {
 	sprite_save(screensprite, 0, $"screenshots/{DATE_TIME_NOW}.png");
 	if !window_get_fullscreen() && os_type == os_windows
-		launch_external("explorer.exe", $"\"{game_save_id}screenshots\\\"");
+		launch_external($"\"{game_save_id}screenshots\\\"");
 	
 	with create_transformation_tip("{u}Screenshot taken!/")
 		depth = other.depth - 1;
 }
 if (pause)
-	scr_pauseicons_update(selected);
+	scr_pauseicons_update(array_get(ds_map_find_value(pause_menu_map, array_get(pause_menu, selected)), 0));
 else
 	scr_pauseicons_update(-1);

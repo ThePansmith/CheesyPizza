@@ -77,6 +77,13 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "Get it? It's funny because");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "drafted");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Finally, you can wear merch of dead people.");
+		add_palette(12, "candy", spr_peppattern10, "Candy Wrapper", "Mmmm... diabetes.");
+		add_palette(12, "bloodstained", spr_peppattern11, "Bloodstained", "Don't worry, it's just ketchup.");
+		add_palette(12, "bat", spr_peppattern12, "Autumn", "An abstract representation.");
+		add_palette(12, "pumpkin", spr_peppattern13, "Pumpkin", "The least fruity fruit out there.");
+		add_palette(12, "fur", spr_peppattern14, "Fur", "Furries do scare me.");
+		add_palette(12, "flesh", spr_peppattern15, "Eyes", "I can see for fohkin MILES.");
+		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Peppino says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Oh, fiddlesticks! What now?");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
@@ -101,7 +108,7 @@ switch character
 		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
+		//add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
 		add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
@@ -179,6 +186,13 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "Look, the rat's clearly laughing.");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "The mad man handles a rocket launcher in WAR.");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Finally, you can wear merch of dead people.");
+		add_palette(12, "candy", spr_peppattern10, "Candy Wrapper", "Mmmm... diabetes.");
+		add_palette(12, "bloodstained", spr_peppattern11, "Bloodstained", "Don't worry, it's just ketchup.");
+		add_palette(12, "bat", spr_peppattern12, "Autumn", "An abstract representation.");
+		add_palette(12, "pumpkin", spr_peppattern13, "Pumpkin", "The least fruity fruit out there.");
+		add_palette(12, "fur", spr_peppattern14, "Fur", "Furries do scare me.");
+		add_palette(12, "flesh", spr_peppattern15, "Eyes", "I can see for fohkin MILES.");
+		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Gustavo and Brick say Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", " ");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
@@ -251,6 +265,13 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "I'm trying really hard to laugh.");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "Every war had a distraction clown.");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Genuinely, the concept of this is morbid.");
+		add_palette(12, "candy", spr_peppattern10, "Candy Wrapper", "Mmmm... diabetes.");
+		add_palette(12, "bloodstained", spr_peppattern11, "Bloodstained", "Don't worry, it's just ketchup.");
+		add_palette(12, "bat", spr_peppattern12, "Autumn", "An abstract representation.");
+		add_palette(12, "pumpkin", spr_peppattern13, "Pumpkin", "The least fruity fruit out there.");
+		add_palette(12, "fur", spr_peppattern14, "Fur", "Furries do scare me.");
+		add_palette(12, "flesh", spr_peppattern15, "Eyes", "I can see for fohkin MILES.");
+		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "The Noise says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
@@ -275,7 +296,7 @@ switch character
 		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
+		//add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
 		add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
@@ -289,51 +310,58 @@ switch character
 	
 	case "V":
 		add_palette(0, "", noone, "Vigilante", "Outlaws beware...", "");
-		add_palette(1, "", noone, "Halloween", "Trick or treat... this is a threat.", "SCARY");
-		add_palette(2, "", noone, "MM8BDM", "A very exciting night.", "DEATHMATCH");
-		add_palette(3, "", noone, "Chocolante", "It's still cheese, trust me.", "CHOCOLATE");
+		add_palette(1, "", noone, "Halloween", "Trick or treat... this is a threat.", "SEPIA");
+		add_palette(2, "", noone, "MM8BDM", "A very exciting night.", "BLUE");
+		add_palette(3, "", noone, "Chocolante", "It's still cheese, trust me.", "CHOCO");
 		add_palette(4, "", noone, "Gutted", "A hungry slime.", "GUTTED");
 		add_palette(5, "", noone, "Golden", "Something, something, carrots.", "GOLDEN");
-		add_palette(6, "", noone, "Cheddar", "Cheddar cheese is a relatively hard, off-white (or orange if colourings such as annatto are added), sometimes sharp-tasting, natural cheese. Originating in the English village of Cheddar in Somerset, cheeses of this style are now produced beyond the region and in several countries around the world.", "CHEDDAR");
-		add_palette(7, "", noone, "Sepia", "Wildstyle pistolero.", "SEPIA");
-		add_palette(8, "", noone, "Familiar Porcupine", "It's NOT him. Never trust purple cheese.", "PURPLE");
-		add_palette(9, "", noone, "Emerald", "Hmm.", "EMERALD");
-		add_palette(10, "", noone, "Holiday", "Merry Cheesemas!", "HOLIDAY");
-		add_palette(11, "", noone, "Cheese Man", "A gag of the Johnson subject.", "TANKMAN");
-		add_palette(13, "", noone, "Vigilatte", "Chocolate milk. Hey, didn't we see this before?", "MILKY");
-		add_palette(14, "", noone, "Bloodsauce", "Who the hell dipped my cheese in ketchup?!", "BLOODY");
-		add_palette(15, "", noone, "Vigilatex", "What the fuck", "DARK");
+		add_palette(6, "", noone, "Cheddar", "Cheddar cheese is a relatively hard, off-white (or orange if colourings such as annatto are added), sometimes sharp-tasting, natural cheese. Originating in the English village of Cheddar in Somerset, cheeses of this style are now produced beyond the region and in several countries around the world.");
+		add_palette(7, "", noone, "Sepia", "Wildstyle pistolero.", "OLD");
+		add_palette(8, "", noone, "Familiar Porcupine", "It's NOT him. Never trust purple cheese.");
+		add_palette(9, "", noone, "Emerald", "Hmm.", "PURPLE");
+		add_palette(10, "", noone, "Holiday", "Merry Cheesemas!");
+		add_palette(11, "", noone, "Cheese Man", "A gag of the Johnson subject.", "BLACK");
+		add_palette(13, "", noone, "Vigilatte", "Chocolate milk. Hey, didn't we see this before?");
+		add_palette(14, "", noone, "Bloodsauce", "Who the hell dipped my cheese in ketchup?!");
+		add_palette(15, "", noone, "Vigilatex", "What the fuck", "GRAY");
 		add_palette(16, "", noone, "Morshu", "It's yours, my friend.", "MORSHU");
 		add_palette(17, "", noone, "Snotty", "Snotty Approved", "SNOTTY");
-		add_palette(18, "", noone, "Vigirat", "That cheese-loving outlaw.", "RAT");
+		add_palette(18, "", noone, "Vigirat", "That cheese-loving outlaw.", "PINK");
 		add_palette(19, "", noone, "Satan's Choice", "As seen on TV.", "DEVILISH");
-		add_palette(20, "", noone, "Gas Station Weed", "That's the good shit.", "WEED");
+		add_palette(20, "", noone, "Gas Station Weed", "That's the good shit.");
 		//add_palette(21, "", noone, "Platinum Pardner", "Lookin' just as fancy as a silver dollar.", "PLATINUM");
 		//add_palette(22, "", noone, "Country Blues", "The perfect soundtrack for your taste buds.", "MOLDY");
-		add_palette(23, "", noone, "Nubert", "Everybody loves him.", "NUBERT");
+		add_palette(23, "", noone, "Nubert", "Everybody loves him.");
 		//add_palette(24, "", noone, "Big Iron", "Walk softly and carry a big gun.", "IRON");
-		add_palette(25, "", noone, "Digital Cheese", "Just one little byte...", "DIGITAL");
+		add_palette(25, "", noone, "Digital Cheese", "Just one little byte...");
 		//add_palette(26, "", noone, "Hell Raisin", "Pruned to perfection.", "RAISIN");
 		//add_palette(27, "", noone, "Game Genie", "Winners don't use cheats!", "CHEATER");
 		//add_palette(28, "", noone, "Sticky Jumper", "Aye, that's the way ye do it.", "STICKY");
-		add_palette(29, "", noone, "Fruit Punch", "WHY IS THE FRUIT FIGHTING ME.", "FRUITY");
-		add_palette(30, "", noone, "8-Bit Bandit", "Get your head in the game!", "8-BIT");
-		add_palette(31, "", noone, "Virtual Boy", "A \"timeless\" \"classic\".", "VB");
-		add_palette(32, "", noone, "Downwell", "Falling with style.", "DOWNWELL");
-		add_palette(33, "", noone, "Lightner", "Ralsei cast PACIFY!", "LIGHTNER");
-		add_palette(34, "", noone, "Ectoplasm", "Who you gonna call?", "ECTOPLASM");
+		add_palette(29, "", noone, "Fruit Punch", "WHY IS THE FRUIT FIGHTING ME.");
+		add_palette(30, "", noone, "8-Bit Bandit", "Get your head in the game!");
+		add_palette(31, "", noone, "Virtual Boy", "A \"timeless\" \"classic\".");
+		add_palette(32, "", noone, "Downwell", "Falling with style.");
+		add_palette(33, "", noone, "Lightner", "Ralsei cast PACIFY!");
+		add_palette(34, "", noone, "Ectoplasm", "Who you gonna call?");
 		add_palette(35, "", noone, "Gum", "Give me a drink, bartender.", "GUM");
 		
 		// Patterns
-		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "Take that off, you look stupid.");
+		add_palette(12, "funny", spr_peppattern1, "Funny Polka", "Take that off, you look like a clown.");
 		add_palette(12, "itchy", spr_peppattern2, "Itchy Sweater", "That's not a fucking sweater.");
 		add_palette(12, "pizza", spr_peppattern3, "Pizza Man", "It's a tumor now.");
 		add_palette(12, "stripes", spr_peppattern4, "Bowling Stripes", "Rat infestation? Dynamite.");
 		add_palette(12, "goldemanne", spr_peppattern5, "Goldemanne", "All enemies turn golden too, right? Please.");
 		add_palette(12, "bones", spr_peppattern6, "Bad Bones", "Cheesy reference goes here.");
-		add_palette(12, "pp", spr_peppattern7, "PP Hat", "Who's been drawing ºººº");
-		add_palette(12, "war", spr_peppattern8, "War Camo", "You're... halfway there.");
-		add_palette(12, "john", spr_peppattern9, "John Hat", "The dead people merch market keeps expanding.");
+		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "Who's been drawing ºººº");
+		add_palette(12, "war", spr_peppattern8, "War Camo", "... Perfect.");
+		add_palette(12, "john", spr_peppattern9, "John Suit", "Walking around IN a corpse!");
+		add_palette(12, "candy", spr_peppattern10, "Candy Wrapper", "Mmmm... diabetes.");
+		add_palette(12, "bloodstained", spr_peppattern11, "Bloodstained", "Don't worry, it's just ketchup.");
+		add_palette(12, "bat", spr_peppattern12, "Autumn", "An abstract representation.");
+		add_palette(12, "pumpkin", spr_peppattern13, "Pumpkin", "The least fruity fruit out there.");
+		add_palette(12, "fur", spr_peppattern14, "Fur", "Furries do scare me.");
+		add_palette(12, "flesh", spr_peppattern15, "Eyes", "I can see for fohkin MILES.");
+		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "The Vigilante says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "You can find them online, don't worry.");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
@@ -358,7 +386,7 @@ switch character
 		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
+		//add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
 		add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
@@ -400,6 +428,13 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "Get it? It's funny because");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "drafted");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Finally, you can wear merch of dead people.");
+		add_palette(12, "candy", spr_peppattern10, "Candy Wrapper", "Mmmm... diabetes.");
+		add_palette(12, "bloodstained", spr_peppattern11, "Bloodstained", "Don't worry, it's just ketchup.");
+		add_palette(12, "bat", spr_peppattern12, "Autumn", "An abstract representation.");
+		add_palette(12, "pumpkin", spr_peppattern13, "Pumpkin", "The least fruity fruit out there.");
+		add_palette(12, "fur", spr_peppattern14, "Fur", "Furries do scare me.");
+		add_palette(12, "flesh", spr_peppattern15, "Eyes", "I can see for fohkin MILES.");
+		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Snick says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Oh, fiddlesticks! What now?");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
@@ -424,7 +459,7 @@ switch character
 		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
+		//add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
 		add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
@@ -480,7 +515,14 @@ switch character
 		add_palette(12, "bones", spr_peppattern6, "Bad Bones", "(Violin riff)");
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "Lol! XD! Lmfao. That's so");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "drafted");
-		add_palette(12, "john", spr_peppattern9, "John Suit", "Use the next palette instead.");
+		add_palette(12, "john", spr_peppattern9, "John Suit", "John Who?");
+		add_palette(12, "candy", spr_peppattern10, "Candy Wrapper", "Mmmm... diabetes.");
+		add_palette(12, "bloodstained", spr_peppattern11, "Bloodstained", "Don't worry, it's just ketchup.");
+		add_palette(12, "bat", spr_peppattern12, "Autumn", "An abstract representation.");
+		add_palette(12, "pumpkin", spr_peppattern13, "Pumpkin", "The least fruity fruit out there.");
+		add_palette(12, "fur", spr_peppattern14, "Fur", "Furries do scare me.");
+		add_palette(12, "flesh", spr_peppattern15, "Eyes", "Use the next palette instead.");
+		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Correct.");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Use the previous palette instead.");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
@@ -504,7 +546,7 @@ switch character
 		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
+		//add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
 	    add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
         add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
@@ -564,6 +606,13 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "I'm trying really hard to laugh.");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "Every war has a distraction clown.");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Genuinely, the concept of this is morbid.");
+		add_palette(12, "candy", spr_peppattern10, "Candy Wrapper", "Mmmm... diabetes.");
+		add_palette(12, "bloodstained", spr_peppattern11, "Bloodstained", "Don't worry, it's just ketchup.");
+		add_palette(12, "bat", spr_peppattern12, "Autumn", "An abstract representation.");
+		add_palette(12, "pumpkin", spr_peppattern13, "Pumpkin", "The least fruity fruit out there.");
+		add_palette(12, "fur", spr_peppattern14, "Fur", "Furries do scare me.");
+		add_palette(12, "flesh", spr_peppattern15, "Eyes", "I can see for fohkin MILES.");
+		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Bo Noise says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
@@ -587,7 +636,7 @@ switch character
 		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
+		//add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
         add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
@@ -667,6 +716,13 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "pinolino's pizz");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "NEW");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "What the fuck is a gog?");
+		add_palette(12, "candy", spr_peppattern10, "Candy Wrapper", "Mmmm... diabetes.");
+		add_palette(12, "bloodstained", spr_peppattern11, "Bloodstained", "Don't worry, it's just ketchup.");
+		add_palette(12, "bat", spr_peppattern12, "Autumn", "An abstract representation.");
+		add_palette(12, "pumpkin", spr_peppattern13, "Pumpkin", "The least fruity fruit out there.");
+		add_palette(12, "fur", spr_peppattern14, "Fur", "Furries do scare me.");
+		add_palette(12, "flesh", spr_peppattern15, "Eyes", "I can see for fohkin MILES.");
+		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Trans Rizz");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "I know you like d");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "w");
@@ -690,7 +746,7 @@ switch character
 		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "owie owie");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "get");
 		add_palette(12, "", spr_pattern_evil, "Evil", "I am");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "ooooooo");
+		//add_palette(12, "", spr_pattern_spooky, "Spooky", "ooooooo");
 		add_palette(12, "", spr_pattern_gba, "Advance", "wario");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "seg");
 		add_palette(12, "", spr_pattern_windows, "Windows", "failure");
@@ -731,6 +787,13 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "laugh-track.mp3");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "An excellent human shield.");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Something's up...");
+		add_palette(12, "candy", spr_peppattern10, "Candy Wrapper", "Mmmm... diabetes.");
+		add_palette(12, "bloodstained", spr_peppattern11, "Bloodstained", "Don't worry, it's just ketchup.");
+		add_palette(12, "bat", spr_peppattern12, "Autumn", "An abstract representation.");
+		add_palette(12, "pumpkin", spr_peppattern13, "Pumpkin", "The least fruity fruit out there.");
+		add_palette(12, "fur", spr_peppattern14, "Fur", "Furries do scare me.");
+		add_palette(12, "flesh", spr_peppattern15, "Eyes", "I can see for fohkin MILES.");
+		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Pizzano says Trans rights, and Trans wrongs!\nYou should rob a bank!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
@@ -754,7 +817,7 @@ switch character
 		//add_palette(12, "", spr_pattern_paintballed, "Paintballed", "Did you forget the paintball mask?");
 		add_palette(12, "", spr_pattern_boykisser, "Boykisser", "We've come full circle.");
 		add_palette(12, "", spr_pattern_evil, "Evil", "You know what you did...");
-		add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
+		//add_palette(12, "", spr_pattern_spooky, "Spooky", "It's not a scare unless they say \"fuck you\" right after.");
 		add_palette(12, "", spr_pattern_gba, "Advance", "Look guys, look!");
 		add_palette(12, "", spr_pattern_genesis, "Genesis", "A porcupine's best friend.");
         add_palette(12, "", spr_pattern_windows, "Windows", "Windows Vista\nCan't Even Play Solitaire");
@@ -790,8 +853,6 @@ if global.performance
 }
 else
 {
-	pal_swap_index_palette(characters[sel.char][2]);
-	
 	var pchar = obj_player1.character;
 	if pchar == "P" && obj_player1.isgustavo
 		pchar = "G";

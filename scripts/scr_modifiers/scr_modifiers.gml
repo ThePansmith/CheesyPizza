@@ -19,6 +19,7 @@ function reset_modifier()
 		DeathMode: false,
 		JohnGhost: false,
 		Spotlight: false,
+		CosmicClones: false,
 		
 		// Entrance
 		NoiseGutter: false,
@@ -32,7 +33,11 @@ function reset_modifier()
 		// Grinch - Remove restart cube
 		// GOLF - Remove pizzaball blocks
 		// Snick Challenge - Remove snick
-		EasyMode: false
+		EasyMode: false,
+		
+		// Secrets Of The World
+		Ordered: false,
+		SecretInclude: 0, // 0 = Vanilla, 1 = Cheesed Up
 	}
 }
 reset_modifier();

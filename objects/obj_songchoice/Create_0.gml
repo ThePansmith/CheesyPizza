@@ -25,210 +25,52 @@ add_section = function(name, songs)
 	return struct;
 }
 
-#region Base
+// get events from FMOD
+var pizzatower = [];
+var sugaryspire = [];
+var cheesedup = [];
+var custom = [];
 
-var audio = fmod_get_soundtest_events();
-trace($"Found: {array_length(audio)} soundtest compatible events.");
+var events = fmod_soundtest_get_events(FMOD_BANK_MUSIC);
+trace("Events: ", events);
 
-add_section("Pizza Tower", [
-	["event:/soundtest/base/intro", "Time For A Smackdown - MrSauceman"],
-	["event:/soundtest/base/pizzadeluxe", "Pizza Deluxe - PostElvis"],
-	["event:/soundtest/base/funiculi", "funiculi funicula - ClascyJitto"],
-	["event:/soundtest/base/pizzatime", "It's Pizza Time! - MrSauceman"],
-	["event:/soundtest/base/lap", "The Death That I Deservioli - MrSauceman"],
-	["event:/soundtest/base/mondays", "Mondays - MrSauceman"],
-	["event:/soundtest/base/unearthly", "Unearthly Blues - MrSauceman"],
-	["event:/soundtest/base/hotspaghetti", "Hot Spaghetti - MrSauceman"],
-	["event:/soundtest/base/coldspaghetti", "Cold Spaghetti - MrSauceman"],
-	["event:/soundtest/base/theatrical", "Theatrical Shenanigans - MrSauceman"],
-	["event:/soundtest/base/putonashow", "Put On A Show!! - ClascyJitto"],
-	["event:/soundtest/base/dungeon", "Dungeon Freakshow - ClascyJitto"],
-	["event:/soundtest/base/pepperman", "Pepperman Strikes! - MrSauceman"],
-	["event:/soundtest/base/tuesdays", "Tuesdays - MrSauceman"],
-	["event:/soundtest/base/oregano", "Oregano Desert - ClascyJitto"],
-	["event:/soundtest/base/ufo", "Oregano UFO - ClascyJitto"],
-	["event:/soundtest/base/tombstone", "Tombstone Arizona - MrSauceman"],
-	["event:/soundtest/base/mort", "Mort's Farm - ClascyJitto"],
-	["event:/soundtest/base/kidsmenu", "What's On The Kid's Menu? - ClascyJitto"],
-	["event:/soundtest/base/yeehaw", "Yeehaw Deliveryboy - ClascyJitto"],
-	["event:/soundtest/base/vigilante", "Calzonification - MrSauceman"],
-	["event:/soundtest/base/wednesdays", "Wednesdays - ClascyJitto"],
-	["event:/soundtest/base/tropical", "Tropical Crust - MrSauceman"],
-	["event:/soundtest/base/forest1", "mmm yess put the tree on my pizza - ClascyJitto"],
-	["event:/soundtest/base/gustavo", "gustavo - ClascyJitto"],
-	["event:/soundtest/base/forest2", "Wudpecker - ClascyJitto"],
-	["event:/soundtest/base/goodeatin", "Good Eatin' - ClascyJitto"],
-	["event:/soundtest/base/extraterrestial", "Extraterrestial Wahwahs - MrSauceman"],
-	["event:/soundtest/base/noise", "Pumpin' Hot Stuff - MrSauceman"],
-	["event:/soundtest/base/thursdays", "Thursdays - ClascyJitto"],
-	["event:/soundtest/base/tubular", "Tubular Trash Zone - MrSauceman"],
-	["event:/soundtest/base/engineer", "Pizza Engineer - MrSauceman"],
-	["event:/soundtest/base/saucemachine", "Peppino's Sauce Machine - MrSauceman"],
-	["event:/soundtest/base/bitethecrust", "Bite The Crust - MrSauceman"],
-	["event:/soundtest/base/wayoftheitalian", "Way of the Pig - MrSauceman"],
-	["event:/soundtest/base/preheat", "dont preheat your oven - ClascyJitto"],
-	["event:/soundtest/base/celsius", "Celsius Troubles - ClascyJitto"],
-	["event:/soundtest/base/plains", "On the Rocks - MrSauceman"],
-	["event:/soundtest/base/fakepep", "Pizza Time Never Ends!! - ClascyJitto"],
-	["event:/soundtest/base/fridays", "Fridays - MrSauceman"],
-	["event:/soundtest/base/chateau", "There's A Bone In My Spaghetti! - MrSauceman"],
-	["event:/soundtest/base/tunnely", "Tunnely Shimbers - MrSauceman"],
-	["event:/soundtest/base/thousand", "Thousand March - MrSauceman"],
-	["event:/soundtest/base/unexpectancy1", "Unexpectancy, Part 1 - MrSauceman"],
-	["event:/soundtest/base/unexpectancy2", "Unexpectancy, Part 2 - MrSauceman"],
-	["event:/soundtest/base/unexpectancy3", "Unexpectancy, Part 3 - MrSauceman"],
-	["event:/soundtest/base/bye", "Bye Bye There! - MrSauceman"],
-	["event:/soundtest/base/hip", "Hip To Be Italian - MrSauceman"],
-	["event:/soundtest/base/notime", "Receding Hairline Celebration Party - MrSauceman"],
-	["event:/soundtest/base/meatphobia", "Meatphobia - MrSauceman"],
-	["event:/soundtest/base/pause", "space - ClascyJitto"],
-	["event:/soundtest/base/mayhem", "Pizza Mayhem Instrumental - MrSauceman"],
-	["event:/soundtest/base/mayhem2", "Pizza Mayhem - MrSauceman"],
+for(var i = 0; i < events; i++)
+{
+	var category = fmod_soundtest_get_song_category(i);
+	var arr = [fmod_soundtest_get_song_event(i), fmod_soundtest_get_song_name(i)];
 	
-	"Secrets",
-	["event:/soundtest/base/secretentrance", "An Entrance Secret - ClascyJitto"],
-	["event:/soundtest/base/secretpizzascape", "hmmm look what u done did you found a secret :) - ClascyJitto"],
-	["event:/soundtest/base/secretruin", "A Secret Under The Debris - ClascyJitto"],
-	["event:/soundtest/base/secretdungeon", "A Hidden Pepperoni In The Cage - ClascyJitto"],
-	["event:/soundtest/base/secretdesert", "A Grain of Bread in a Grain of Sand - ClascyJitto"],
-	["event:/soundtest/base/secretgraveyard", "An Undead Secret - ClascyJitto"],
-	["event:/soundtest/base/secretsaloon", "A Secret in My Boot - ClascyJitto"],
-	["event:/soundtest/base/secretfarm", "A Secret in the Chicken - ClascyJitto"],
-	["event:/soundtest/base/secretbeach", "A Secret In The Sands - ClascyJitto"],
-	["event:/soundtest/base/secretforest", "Everybody Wants To Be A Secret - ClascyJitto"],
-	["event:/soundtest/base/secretspace", "An Interstellar Secret - ClascyJitto"],
-	["event:/soundtest/base/secretgolf", "A Secret Hole In One - ClascyJitto"],
-	["event:/soundtest/base/secretstreet", "A Secret In These Streets - ClascyJitto"],
-	["event:/soundtest/base/secretsewer", "A Fecal Secret - ClascyJitto"],
-	["event:/soundtest/base/secretfactory", "An Industry Secret - ClascyJitto"],
-	["event:/soundtest/base/secretfreezer", "A Frozen Secret - ClascyJitto"],
-	["event:/soundtest/base/secretkidsparty", "A Secret You Don't Want To Find - ClascyJitto"],
-	["event:/soundtest/base/secretwar", "My Secret War Crimes - ClascyJitto"],
-]);
+	var split = fmod_soundtest_get_song_index(i);
+	if split >= 0
+	{
+		switch category
+		{
+			case 0: pizzatower[split] = arr; break;
+			case 1: cheesedup[split] = arr; break;
+			case 2: sugaryspire[split] = arr; break;
+			case 3: custom[split] = arr; break;
+		}
+	}
+	else switch category
+	{
+		case 0: array_push(pizzatower, arr); break;
+		case 1: array_push(cheesedup, arr); break;
+		case 2: array_push(sugaryspire, arr); break;
+		case 3: array_push(custom, arr); break;
+	}
+}
 
-#endregion
-#region Modded
+if array_length(pizzatower) > 0
+	add_section("Pizza Tower", pizzatower);
+if array_length(cheesedup) > 0
+	add_section("Cheesed Up", cheesedup);
+if array_length(sugaryspire) > 0
+	add_section("Sugary Spire", sugaryspire);
+if array_length(custom) > 0
+	add_section("Custom", custom);
 
-add_section("Cheesed Up", [
-	["event:/soundtest/pto/moveitboy", "Move It, Boy - MrSauceman"],
-	["event:/soundtest/pto/saturdays", "Saturdays - loypoll"],
-	["event:/soundtest/pto/quintessence", "Quintessence - ClascyJitto"],
-	["event:/soundtest/pto/strongcold", "Teeth Dust In The Strongcold - ClascyJitto"],
-	["event:/soundtest/pto/mansion", "Ground Bound - MrSauceman"],
-	["event:/soundtest/pto/snickchallenge", "Spooky Apartment Escape - ClascyJitto"],
-	["event:/soundtest/pto/dragonlair", "Tarragon Pizza - ClascyJitto"],
-	["event:/soundtest/pto/funiculario", "Funiculario - Dim Widdy"],
-	["event:/soundtest/pto/oldruin", "One Pizza At A Time - MrSauceman"],
-	["event:/soundtest/pto/grinch", "Grinch's Ultimatum - pilotredsun"],
-	["event:/soundtest/pto/noiseanthem", "The Noise's Jam-Packed Radical Anthem - MrSauceman"],
-	["event:/soundtest/pto/distasteful", "Distasteful Anchovi - ClascyJitto"],
-	["event:/soundtest/pto/pestoanchovi", "Pesto Anchovi - ClascyJitto"],
-	["event:/soundtest/pto/forafewtoppings", "For A Few Toppings More - MrSauceman"],
-	["event:/soundtest/pto/5minutes", "06 Minutes Til' Boom! - [c]ness"],
-	["event:/soundtest/pto/leaningnightmare", "Leaning Nightmare - ClascyJitto"],
-	["event:/soundtest/pto/midway", "bad to the bo - Jessie Productions"],
-	["event:/soundtest/pto/escapeBN", "bo noise escape theme 1 - Jessie Productions"],
-	["event:/soundtest/pto/lapBN", "Noise Rap - vir"],
-	["event:/soundtest/pto/lap3", "Pillar John's Revenge - Vozaxhi"],
-	["event:/soundtest/pto/deathmode", "Revenge of the Killer Pizza - The Consul"],
-	
-	"Secrets",
-	["event:/soundtest/pto/secretnoise", "A Jam-Packed Secret - loypoll"],
-	
-	["event:/soundtest/pto/secretentranceSP", "there's a secret in my breakfast? - RodMod"],
-	["event:/soundtest/pto/secretentranceBN", "how bo unlock the secret - Jessie Productions"],
-	["event:/soundtest/pto/secretpizzascapeSP", "A Medieval Secret (Sugary) - RodMod"],
-	["event:/soundtest/pto/secretpizzascapeBN", "A Medieval Secret (Bo) - Jessie Productions"],
-	["event:/soundtest/pto/secretruinSP", "A Secret Under The Debris (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretruinBN", "A Secret Under The Debris (Bo) - loypoll"],
-	["event:/soundtest/pto/secretdungeonSP", "A Hidden Pepperoni In The Cage (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretdungeonBN", "A Hidden Pepperoni In The Cage (Bo) - loypoll"],
-	["event:/soundtest/pto/secretdesertSP", "A Grain of Bread in a Grain of Sand (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretdesertBN", "A Grain of Bread in a Grain of Sand (Bo) - loypoll"],
-	["event:/soundtest/pto/secretgraveyardSP", "An Undead Secret (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretgraveyardBN", "An Undead Secret (Bo) - loypoll"],
-	["event:/soundtest/pto/secretsaloonSP", "A Secret in My Boot (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretsaloonBN", "A Secret in My Boot (Bo) - loypoll"],
-	["event:/soundtest/pto/secretfarmSP", "A Secret in the Chicken (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretfarmBN", "A Secret in the Chicken (Bo) - loypoll"],
-	["event:/soundtest/pto/secretbeachSP", "A Secret In The Sands (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretbeachBN", "A Secret In The Sands (Bo) - loypoll"],
-	["event:/soundtest/pto/secretforest", "Everybody Wanna Be A Secret - loypoll"],
-	["event:/soundtest/pto/secretforestSP", "Everybody Wanna Be A Secret (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretforestBN", "Everybody Wanna Be A Secret (Bo) - loypoll"],
-	["event:/soundtest/pto/secretspaceSP", "An Interstellar Secret (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretspaceBN", "An Interstellar Secret (Bo) - loypoll"],
-	["event:/soundtest/pto/secretgolfSP", "A Secret Hole In One (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretgolfBN", "A Secret Hole In One (Bo) - loypoll"],
-	["event:/soundtest/pto/secretstreet", "A Secret In These Streets - loypoll"],
-	["event:/soundtest/pto/secretstreetSP", "A Secret In These Streets (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretstreetBN", "A Secret In These Streets (Bo) - loypoll"],
-	["event:/soundtest/pto/secretsewer", "A Fecal Secret - loypoll"],
-	["event:/soundtest/pto/secretsewerSP", "A Fecal Secret (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretsewerBN", "A Fecal Secret (Bo) - loypoll"],
-	["event:/soundtest/pto/secretfactorySP", "An Industry Secret (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretfactoryBN", "An Industry Secret (Bo) - loypoll"],
-	["event:/soundtest/pto/secretfreezerSP", "A Frozen Secret (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretfreezerBN", "A Frozen Secret (Bo) - loypoll"],
-	["event:/soundtest/pto/secretkidspartySP", "A Secret You Don't Want To Find (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretkidspartyBN", "A Secret You Don't Want To Find (Bo) - loypoll"],
-	["event:/soundtest/pto/secretwar", "My Secret War Crimes - loypoll"],
-	["event:/soundtest/pto/secretwarSP", "My Secret War Crimes (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretwarBN", "My Secret War Crimes (Bo) - loypoll"],
-	
-	["event:/soundtest/pto/secretstrongcold", "Secrets of The Saintes - [c]ness"],
-	["event:/soundtest/pto/secretstrongcoldSP", "Secrets of The Saintes (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretstrongcoldBN", "Secrets of The Saintes (Bo) - loypoll"],
-	["event:/soundtest/pto/secretchateau", "A Secret In My Spaghetti - loypoll"],
-	["event:/soundtest/pto/secretchateauSP", "A Secret In My Spaghetti (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretchateauBN", "A Secret In My Spaghetti (Bo) - loypoll"],
-	["event:/soundtest/pto/secretmansion", "A Pepperoni Secret - loypoll"],
-	["event:/soundtest/pto/secretmansionSP", "A Pepperoni Secret (Sugary) - loypoll"],
-	["event:/soundtest/pto/secretmansionBN", "A Pepperoni Secret (Bo) - loypoll"],
-]);
-
-#endregion
-#region SUGARY
-
-add_section("Sugary Spire", [
-	["event:/soundtest/sugary/hub", "Welcome Back! - 101Undertale"],
-	["event:/soundtest/sugary/crunchy", "Down-To-Noise - RodMod"],
-	["event:/soundtest/sugary/entranceSN", "Pizzano's Obligatory Orchestral Play - PaperKitty"],
-	["event:/soundtest/sugary/glucose", "Glucose Getaway - RodMod"],
-	["event:/soundtest/sugary/escapeSN", "Blue Licorice - PaperKitty"],
-	["event:/soundtest/sugary/lap2", "Sweet Release of Death - RodMod"],
-	["event:/soundtest/sugary/cottontown", "Steamy Cotton Candy - RodMod"],
-	["event:/soundtest/sugary/clock", "Around The Gateau's Gears - RodMod"],
-	["event:/soundtest/sugary/lostchocolate", "Lost Chocolate - RodMod, Jessie Productions"],
-	["event:/soundtest/sugary/foundchocolate", "Found Chocolate - Jessie Productions"],
-	["event:/soundtest/sugary/sucrose", "Sugarcube Hailstorm - PaperKitty"],
-	["event:/soundtest/sugary/pause", "Paused - "],
-	
-	"Secrets",
-	["event:/soundtest/sugary/secretentranceSN", "Lol Funny - loypoll"],
-	["event:/soundtest/sugary/secretcotton", "A Steamy Surprise - loypoll"],
-	["event:/soundtest/sugary/secretcottonSP", "A Steamy Surprise\n(Sugary) - RodMod"],
-	["event:/soundtest/sugary/secretcottonBN", "A Steamy Surprise\n(Bo) - loypoll"],
-	["event:/soundtest/sugary/secretswamp", "man's lost secret. - loypoll"],
-	["event:/soundtest/sugary/secretswampSP", "man's lost secret.\n(Sugary) - RodMod"],
-	["event:/soundtest/sugary/secretswampBN", "man's lost secret.\n(Bo) - loypoll"],
-	["event:/soundtest/sugary/secretsucrose", "Sucrose Secret - loypoll"],
-	["event:/soundtest/sugary/secretsucroseSP", "Sucrose Secret\n(Sugary) - RodMod"],
-	["event:/soundtest/sugary/secretsucroseBN", "Sucrose Secret\n(Bo) - loypoll"],
-]);
-
-#endregion
-#region PINOLINO
-
-add_section("Pinolino Adventure", [
-	["event:/soundtest/pto/entrancePN", "what the fuck is a gog - poopbucket"],
-	["event:/soundtest/pto/escapePN", "IT'S GARGIN' OUR! - poopbucket"],
-	["event:/soundtest/pto/lapPN", "the garg has just gergediogli - poopbucket"],
-	["event:/soundtest/pto/lap3PN", "Pillar Gog's Revenge - poopbucket"],
-	["event:/soundtest/pto/lap5PN", "Weiner Blaster - Wiener Blaster 456"],
-]);
-
-#endregion
+// failsafe
+if array_length(sections) == 0
+	add_section("Failsafe", [["event:/music/pizzatime", "It's Pizza Time - MrSauceman"]]);
 
 scroll = -50;
 textx = 0;

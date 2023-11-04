@@ -1,4 +1,4 @@
-depth = 150;
+depth = 350;
 disx = 100;
 offset_x = 15;
 timer = 0;

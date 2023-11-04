@@ -1,1 +1,2 @@
-//global.roommessage = "BARRELING THROUGH";
+pal_swap_init_system(shd_pal_swapper);
+global.roommessage = "BARRELING THROUGH";

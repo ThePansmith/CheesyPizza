@@ -17,19 +17,19 @@ sel = {
 };
 flashpal = [-1, 0];
 
+// make sure to add the palettes to scr_indexpalettes() in scr_startup!
 characters = [
 	["P", spr_player_idle, spr_peppalette, [1, 3]], // character, idle, palette sprite, [main color, mixing color]
 	["N", spr_playerN_idle, spr_noisepalette, [1, 4]],
-	["V", spr_playerV_idle, spr_vigipalette, [1, 6]],
+	["V", spr_playerV_idle, spr_vigipalette, [1, 5]],
 	["G", spr_player_ratmountidle, spr_peppalette, [1, 3]],
+	["S", spr_snick_idle, spr_snickpalette, [1, 4]],
 	["SP", spr_playerSP_idle, spr_pizzypalette, [1, 3]],
 	["SN", spr_pizzano_idle, spr_pizzanopalette, [1, 5]],
+	["BN", spr_playerBN_idle, spr_bopalette, [1, 5]]
 	
 	//["PN", spr_playerPN_idle, spr_peppalette, [1, 3]],
-	["BN", spr_playerBN_idle, spr_bopalette, [1, 5]],
 ];
-if global.experimental
-	array_push(characters, ["S", spr_snick_idle, spr_snickpalette, [1, 4]]);
 
 // set in user event 0
 palettes = [];
@@ -37,13 +37,13 @@ mixables = [];
 unlockables = [];
 
 if !global.sandbox
-	array_push(unlockables, "unfunny", "money", "sage", "blood", "tv", "dark", "shitty", "golden", "garish", "mooney", "funny", "itchy", "pizza", "stripes", "goldemanne", "bones", "pp", "war", "john");
-array_push(unlockables, "mario");
+	array_push(unlockables, "unfunny", "money", "sage", "blood", "tv", "dark", "shitty", "golden", "garish", "mooney", "funny", "itchy", "pizza", "stripes", "goldemanne", "bones", "pp", "war", "john", "candy", "bloodstained", "bat", "pumpkin", "fur", "flesh");
+array_push(unlockables, "mario", "grinch");
 
 function add_palette(palette, entry, texture = noone, name = "PALETTE", description = "(No Description)", mix_prefix)
 {
 	// check if the palette was unlocked
-	if array_get_index(unlockables, entry) != -1
+	if array_get_index(unlockables, entry, 0, infinity) != -1
 	{
 		ini_open_from_string(obj_savesystem.ini_str_options);
 		if !ini_read_real("Palettes", entry, false)
@@ -161,7 +161,7 @@ postdraw = function(curve)
 		var curve2 = animcurve_channel_evaluate(jumpcurve, 1 - anim_t);
 		
 		var pal = palettes[sel.pal];
-		var charx = SCREEN_WIDTH / 5 + charshift[0] * 100, chary = SCREEN_HEIGHT / 2 - 16 + charshift[1] * 100, scale = clamp(lerp(1, 2, curve), 1, 2);
+		var charx = SCREEN_WIDTH / 2 + sideoffset + charshift[0] * 75, chary = SCREEN_HEIGHT / 2 - 32 + charshift[1] * 75, scale = clamp(lerp(1, 2, curve), 1, 2);
 		
 		charx = lerp(charx, obj_player1.x - camera_get_view_x(view_camera[0]), 1 - anim_t);
 		chary = lerp(chary, obj_player1.y - camera_get_view_y(view_camera[0]), curve2);
@@ -179,28 +179,12 @@ postdraw = function(curve)
 
 draw_skin_palette = function(_x, _y, _color, _alpha)
 {
+	if _color == undefined
+		_color = c_white;
+	
 	vertex_build_quad(vertex_buffer, 
 		// RX: Where to draw the sprite on screen
 		_x, _y, sprite_get_width(spr_skinchoicepalette), sprite_get_height(spr_skinchoicepalette),
-		_color, _alpha,
-		//RX: where to get the texture on the sheet
-		uv_info.left, uv_info.top, (uv_info.right - uv_info.left), (uv_info.bottom - uv_info.top)
-	);
-}
-draw_skin_pattern = function(_x, _y, _color, _alpha, _sprite, _subimage)
-{
-	var uvs = sprite_get_uvs(_sprite, _subimage);
-	var uv_info = {
-		left : uvs[0],
-		top : uvs[1],
-		right : uvs[2],
-		bottom : uvs[3],
-		left_trim : uvs[4],
-		top_trim : uvs[5]
-	}
-	vertex_build_quad(vertex_buffer, 
-		// RX: Where to draw the sprite on screen
-		_x, _y, sprite_get_width(_sprite), sprite_get_height(_sprite),
 		_color, _alpha,
 		//RX: where to get the texture on the sheet
 		uv_info.left, uv_info.top, (uv_info.right - uv_info.left), (uv_info.bottom - uv_info.top)
@@ -218,17 +202,34 @@ draw = function(curve)
 		curve = 1; // actual animated curve
 		curve2 = 1; // the timer
 	}
-	if curv_prev < 1
-		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_WIDTH / (960 / 560)) * curv_prev, true);
+	
+	switch sel.side
+	{
+		case 0:
+			sideoffset = lerp(sideoffset, 0, 0.25);
+			break;
+		case 1:
+			sideoffset = lerp(sideoffset, -280, 0.25);
+			break;
+		case 2:
+			sideoffset = lerp(sideoffset, 280, 0.25);
+			break;
+	}
 	
 	#endregion
 	#region Character
 	
+	if !surface_exists(player_surface)
+		player_surface = surface_create(256, 256);
+	
+	surface_set_target(player_surface);
+	draw_clear_alpha(c_white, 0);
+	
 	var pal = palettes[sel.pal];
+	var charx = SCREEN_WIDTH / 2 + sideoffset + charshift[0] * 75, chary = SCREEN_HEIGHT / 2 - 32 + charshift[1] * 75;
+	
 	if anim_con != 2 or obj_player1.visible
 	{
-		var charx = SCREEN_WIDTH / 5 + charshift[0] * 75, chary = SCREEN_HEIGHT / 2 - 16 + charshift[1] * 75;
-		
 		// special skins
 		if characters[sel.char][0] == "N"
 		{
@@ -258,29 +259,22 @@ draw = function(curve)
 			if check_skin(SKIN.pn_homer, "PN", pal.palette)
 				characters[sel.char][1] = spr_playerPN_homer;
 		}
-
-		if !surface_exists(player_surface)
-			player_surface = surface_create(256, 256);
-			
-		shader_reset();
-		
-		surface_set_target(player_surface);
-		draw_clear_alpha(c_white, 0);
 		
 		shader_set(shd_pal_swapper);
 		if pal.texture != noone
 			pattern_set(global.Base_Pattern_Color, characters[sel.char][1], -1, 2, 2, pal.texture);	
 		pal_swap_set(characters[sel.char][2], sel.mix > 0 ? mixables[sel.mix].palette : pal.palette, false);
 		draw_sprite(characters[sel.char][1], -1, 128, 128);
+		pal_swap_reset();
 		pattern_reset();
-		
-		surface_reset_target();
-		shader_reset();
-		
-		if curv_prev < 1
-			draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_WIDTH / (960 / 560)) * curv_prev, true);
-		draw_surface_ext(player_surface, charx - 256, chary - 256, 2, 2, 0, c_white, curve * charshift[2]);
 	}
+	surface_reset_target();
+	
+	if curv_prev < 1
+		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_WIDTH / (960 / 560)) * curv_prev);
+	draw_remove_bounds();
+	
+	draw_surface_ext(player_surface, charx - 256, chary - 256, 2, 2, 0, c_white, curve * charshift[2]);
 	
 	#endregion
 	#region Text
@@ -302,14 +296,14 @@ draw = function(curve)
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	
-	var xx = SCREEN_WIDTH / 1.5 - string_width(name) / 2;
+	var xx = (SCREEN_WIDTH / 2) - string_width(name) / 2;
 	for(var i = 1; i <= string_length(name); i++)
 	{
 		var char = string_char_at(name, i);
 		
-		var yy = (SCREEN_HEIGHT * (360/560));
+		var yy = 400;
 		if curve2 != 1 // letters jump up
-			yy = lerp(SCREEN_HEIGHT, (SCREEN_HEIGHT * (360/560)), min(animcurve_channel_evaluate(outback, curve2 + ((i % 3) * 0.075))));
+			yy = lerp(SCREEN_HEIGHT, yy, min(animcurve_channel_evaluate(outback, curve2 + ((i % 3) * 0.075))));
 		
 		var d = (i % 2 == 0) ? -1 : 1;
 		var _dir = floor(Wave(-1, 1, 0.1, 0));
@@ -322,100 +316,99 @@ draw = function(curve)
 	draw_set_halign(fa_center);
 	draw_set_alpha(curve);
 	draw_set_font(global.font_small);
-	draw_text_ext(SCREEN_WIDTH / 1.5, (SCREEN_HEIGHT * (400/560)), desc, 16, 600);
+	draw_text_ext(SCREEN_WIDTH / 2, 440, desc, 16, 600);
 	draw_set_alpha(1);
-	shader_reset();
 	
 	#endregion
 	#region Palettes
-
-	var palspr = characters[sel.char][2];
-	var xx = 0, yy = 0;
-	var array = !mixing ? palettes : mixables;
-	vertex_begin(vertex_buffer, vertex_format);
 	
-	var cache = []; // RX: Loy yell at me if forget to remove this variable
-	for(var i = 0; i < array_length(array); i++)
+	var palettecurve = sideoffset / -280;
+	switch sel.side
 	{
-		var xdraw = xx;
-		var ydraw = yy;
-		
-		// move hand, and shake current selection
-		if sel.side == 1 && ((!mixing && sel.pal == i) or (mixing && sel.mix == i)) && anim_con != 2
-		{
-			handx = lerp(handx, 8 + 408 + xx, 0.25);
-			handy = lerp(handy, 70 + yy, 0.25);
-			
-			xdraw += random_range(-0.7, 0.7);
-			ydraw += random_range(-0.7, 0.7);
-		}
-		
-		// special skins
-		var fuck = -1;
-		for(var j = 0; j < SKIN.enum_size; j++)
-		{
-			if check_skin(j, characters[sel.char][0], array[i].palette)
+		case 0:
+			if skin_tip > 0
 			{
-				fuck = j;
-				break;
+				skin_tip -= 0.025;
+				draw_sprite_ext(spr_palettearrow, 0, SCREEN_WIDTH / 2 + Wave(180, 190, 1, 0), SCREEN_HEIGHT / 2, 1, 1, -90, c_white, skin_tip);
+				draw_sprite_ext(spr_palettearrow, 0, SCREEN_WIDTH / 2 - Wave(180, 190, 1, 0), SCREEN_HEIGHT / 2, 1, 1, 90, c_white, skin_tip);
+				
+				draw_set_font(global.smallfont);
+				draw_set_align(fa_center);
+				draw_set_alpha(skin_tip);
+				draw_text(SCREEN_WIDTH / 2 + Wave(180, 190, 1, 0), SCREEN_HEIGHT / 2 + 20, "PALETTES");
+				draw_text(SCREEN_WIDTH / 2 - Wave(180, 190, 1, 0), SCREEN_HEIGHT / 2 + 20, "CUSTOMIZE");
+				draw_set_align();
 			}
-		}
+			break;
 		
-		// draw it
-		if flashpal[0] != i
-			draw_skin_palette(2 + 408 + xdraw, 2 + 70 + ydraw, c_black, 0.25);
+		case 1:
+			skin_tip = 0;
+			var palspr = characters[sel.char][2];
+			var xx = lerp(280 / 3, 0, palettecurve), yy = 0;
+			var array = !mixing ? palettes : mixables;
 		
-		if flashpal[0] == i // flashing palette. it only draws this once at a time do NOT FRET
-		{
-			draw_set_flash();
-			draw_sprite_ext(spr_skinchoicepalette, 0, 408 + xdraw, 70 + ydraw, 1, 1, 0, c_white, 1);
-			draw_reset_flash();
-		}
-		else if fuck >= 0 // special palettes
-			array_push(cache, { x: 408 + xdraw, y: 70 + ydraw, pattern: spr_skinchoicecustom, subimage: fuck});
-		else if mixing or array[i].texture == noone // palettes
-			draw_skin_palette(408 + xdraw, 70 + ydraw, pal_swap_get_pal_color(palspr, array[i].palette, characters[sel.char][3][mixing]), 1);
-		else // patterns, cached and drawn later
-			array_push(cache, { x: 408 + xdraw, y: 70 + ydraw, pattern: array[i].texture, subimage: -1});
+			vertex_begin(vertex_buffer, vertex_format);
+			draw_set_alpha(palettecurve);
 		
-		// position next palette
-		xx += 36;
-		if i % 13 == 12
-		{
-			yy += 36;
-			xx = 0;
-		}
-	}
-	vertex_end(vertex_buffer);
-	
-	shader_reset();
-	if curv_prev < 1
-		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_WIDTH / (960 / 560)) * curv_prev);
+			for(var i = 0; i < array_length(array); i++)
+			{
+				var xdraw = xx + (i % 13) * 36, ydraw = yy + floor(i / 13) * 36;
+				
+				// move hand, and shake current selection
+				if ((!mixing && sel.pal == i) or (mixing && sel.mix == i)) && anim_con != 2
+				{
+					handx = lerp(handx, 8 + 408 + xdraw, 0.35);
+					handy = lerp(handy, 70 + ydraw, 0.35);
+				
+					xdraw += random_range(-0.7, 0.7);
+					ydraw += random_range(-0.7, 0.7);
+				}
+				
+				// special skins
+				var fuck = -1;
+				for(var j = 0; j < SKIN.enum_size; j++)
+				{
+					if check_skin(j, characters[sel.char][0], array[i].palette)
+					{
+						fuck = j;
+						break;
+					}
+				}
+				
+				// draw it
+				if flashpal[0] != i
+					draw_sprite_ext(spr_skinchoicepalette, 0, 2 + 408 + xdraw, 2 + 70 + ydraw, 1, 1, 0, c_black, 0.25);
+				
+				if flashpal[0] == i // flashing palette. it only draws this once at a time do NOT FRET
+				{
+					draw_set_flash();
+					draw_sprite_ext(spr_skinchoicepalette, 0, 408 + xdraw, 70 + ydraw, 1, 1, 0, c_white, 1);
+					draw_reset_flash();
+				}
+				else if fuck >= 0 // special palettes
+					draw_sprite_ext(spr_skinchoicecustom, fuck, 408 + xdraw, 70 + ydraw, 1, 1, 0, c_white, 1);
+				else if mixing or array[i].texture == noone // palettes
+					draw_skin_palette(408 + xdraw, 70 + ydraw, pal_swap_get_pal_color(palspr, array[i].palette, characters[sel.char][3][mixing]), draw_get_alpha());
+				else // patterns
+				{
+					draw_sprite_stretched(array[i].texture, current_time / 120, 408 + xdraw + 1, 70 + ydraw + 1, 30, 30);
+					draw_sprite(spr_skinchoicepalette, 1, 408 + xdraw, 70 + ydraw);
+				}
+			}
+			vertex_end(vertex_buffer);
+			vertex_submit(vertex_buffer, pr_trianglelist, tex);
+			break;
 		
-	vertex_submit(vertex_buffer, pr_trianglelist, tex);
-	
-	shader_reset();
-	if curv_prev < 1
-		draw_set_spotlight(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, (SCREEN_WIDTH / (960 / 560)) * curv_prev);
-	
-	// RX: not really a better way to do this without rewriting the entire thing
-	for (var i = 0; i < array_length(cache); i++)
-	{
-		draw_set_mask(cache[i].x, cache[i].y, spr_skinchoicepalette);
-		var spr_xscale = (32 / sprite_get_width(cache[i].pattern));
-		var spr_yscale = (32 / sprite_get_height(cache[i].pattern));
-		
-		if cache[i].subimage == -1
-			cache[i].subimage = current_time / 600;
-		
-		draw_sprite_ext(cache[i].pattern, cache[i].subimage, cache[i].x, cache[i].y, spr_xscale, spr_yscale, 0, c_white, 1);
-		draw_remove_mask();
+		case 2:
+			skin_tip = 0;
+			break;
 	}
 	
 	#endregion
 	#region Hand
 	
-	draw_sprite_ext(spr_skinchoicehand, 0, handx, handy + sin(current_time / 1000) * 4, 2, 2, 0, c_white, 1);
+	if handy > 0
+		draw_sprite_ext(spr_skinchoicehand, 0, handx, handy + sin(current_time / 1000) * 4, 2, 2, 0, c_white, 1);
 	draw_set_align();
 	shader_reset();
 	
@@ -423,3 +416,5 @@ draw = function(curve)
 }
 handx = SCREEN_WIDTH / 2;
 handy = -50;
+sideoffset = 0;
+skin_tip = 5;

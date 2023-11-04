@@ -1,5 +1,7 @@
 function scr_pausedraw_ss()
 {
+	if live_call() return live_result;
+	
 	if fade > 0
 	{
 		draw_set_color(c_white);
@@ -68,7 +70,8 @@ function scr_pausedraw_ss()
 				case "pause_options": str = "OPTIONS"; break;
 				case "pause_restart": str = "RETRY"; break;
 				case "pause_exit": str = "EXIT\n  STAGE"; break;
-				case "CLEAR JUKEBOX": str = "CLEAR\n JUKEBOX"; break;
+				case "pause_exit_title": str = "EXIT\n  STAGE"; break;
+				case "pause_jukebox": str = "CLEAR\n JUKEBOX"; break;
 				default: str = string_upper(str); break;
 			}
 			

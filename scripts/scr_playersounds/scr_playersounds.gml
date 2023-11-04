@@ -223,7 +223,7 @@ function scr_playersounds()
 		}
 		hamkuffID = noone;
 	}
-	if ((state == states.ratmount || state == states.ratmountjump) && ratmount_movespeed >= 12 && (sprite_index == spr_ratmount_attack || sprite_index == spr_ratmount_mach3 || sprite_index == spr_ratmount_dashjump || sprite_index == spr_lonegustavodash || sprite_index == spr_lonegustavomach3 || sprite_index == spr_lonegustavodashjump))
+	if ((state == states.ratmount || state == states.ratmountjump) && (sprite_index == spr_player_ratmountattack || sprite_index == spr_player_ratmountmach3 || sprite_index == spr_player_ratmountdashjump || sprite_index == spr_lonegustavo_dash || sprite_index == spr_lonegustavo_mach3 || sprite_index == spr_lonegustavo_dashjump))
 	{
 		if (!fmod_event_instance_is_playing(ratmountmachsnd))
 			fmod_event_instance_play(ratmountmachsnd);

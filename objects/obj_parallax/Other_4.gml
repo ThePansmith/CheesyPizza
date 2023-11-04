@@ -1,11 +1,5 @@
 live_auto_call;
 
-/*
-if room_started
-	exit;
-room_started = true;
-*/
-
 // boss backgrounds ignore new system
 if instance_exists(obj_levelLoader)
 	exit;
@@ -221,7 +215,7 @@ layer_vspeed("Backgrounds_stillZH2", 0);
 portal_offset = {x: 0, y: 0};
 
 // generic background handler
-if !instance_exists(obj_wartimer)
+if !instance_exists(obj_wartimer) && !room_is_secret(room)
 	scr_panicbg_init();
 
 // pizzelle's secrets

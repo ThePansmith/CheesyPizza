@@ -94,10 +94,10 @@ function scr_player_firemouth()
 				else if (movespeed < 8)
 					movespeed += 0.5;
 			}
-			if (!doublejump && input_buffer_slap > 0)
+			if (!doublejump && scr_slapbuffercheck())
 			{
 				GamepadSetVibration(0, 1, 1, 0.8);
-				input_buffer_slap = 0;
+				scr_resetslapbuffer();
 				doublejump = true;
 				repeat (5)
 					instance_create(x, y, obj_firemouthflame);

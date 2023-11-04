@@ -14,7 +14,7 @@ if ((image_index == 1 && !sugary) or (sugary && sprite_index != spr_sugarygatecl
 		if (state == states.comingoutdoor && floor(image_index) == image_number - 2)
 		{
 			if MOD.Spotlight
-				global.combotime = 120;
+				global.combotime = 60;
 			
 			sound_play_3d(MIDWAY ? "event:/modded/sfx/gatecloseBN" : "event:/sfx/pep/groundpound", x, y);
 			GamepadSetVibration(0, 1, 1, 0.9);
@@ -46,7 +46,7 @@ or global.modifier_failed or (global.leveltosave == "dragonlair" && !global.gian
 // exit
 with (other)
 {
-	if (grounded && (x > (other.x - 160) && x < (other.x + 160)) && key_up && (state == states.ratmount || state == states.normal || (state == states.Sjumpprep && !other.sugary) || state == states.mach1 || state == states.mach2 || state == states.mach3) && (global.panic || global.snickchallenge || room == war_13) && room != sucrose_1 && room != tower_finalhallway)
+	if (grounded && (x > (other.x - 160) && x < (other.x + 160)) && key_up && (state == states.ratmount || state == states.normal || (state == states.Sjumpprep && !other.sugary) || state == states.mach1 || state == states.mach2 || state == states.mach3) && (global.panic || global.snickchallenge || room == war_13 || other.random_secret) && room != sucrose_1 && room != tower_finalhallway)
 	{
 		global.noisejetpack = false;
 		global.startgate = false;

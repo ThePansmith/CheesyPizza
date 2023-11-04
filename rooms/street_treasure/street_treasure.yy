@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "street_treasure",
-  "creationCodeFile": "rooms/street_treasure/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/street_treasure/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

@@ -1,6 +1,6 @@
 var player = obj_player1;
 
-visible = (room == rank_room || room == timesuproom) ? false : player.visible;
+visible = (room == rank_room || room == timesuproom || room == Mainmenu) ? false : player.visible;
 if player.state == states.pizzathrow
 	visible = false;
 

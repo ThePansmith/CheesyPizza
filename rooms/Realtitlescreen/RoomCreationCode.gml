@@ -1,7 +1,7 @@
 global.coop = false;
 global.currentsavefile = 9;
 var achievement_arr = ["sranks1", "sranks2", "sranks3", "sranks4", "sranks5"];
-var data_arr = ["saves/saveData1.ini", "saves/saveData2.ini", "saves/saveData3.ini"];
+var data_arr = [get_save_folder() + "/saveData1.ini", get_save_folder() + "/saveData2.ini", get_save_folder() + "/saveData3.ini"];
 global.stickreq[0] = 100;
 global.stickreq[1] = 150;
 global.stickreq[2] = 200;
@@ -18,7 +18,7 @@ for (var i = 0; i < array_length(data_arr); i++)
 		global.percentage_2 = ini_read_real("Game", "percent", 0);
 	else if (i == 2)
 		global.percentage_3 = ini_read_real("Game", "percent", 0);
-	global.game_started[i] = ini_read_real("Tutorial", "finished", false) or ini_read_real("Game", "sandbox", true);
+	global.game_started[i] = ini_read_real("Tutorial", "finished", false) or ini_read_real("Game", "sandbox", false);
 	global.game_judgement[i] = ini_read_string("Game", "finalrank", "none");
 	global.game_john[i] = ini_read_real("Game", "john", false);
 	global.game_snotty[i] = ini_read_real("Game", "finalsnotty", false);

@@ -1,8 +1,12 @@
+live_auto_call;
+
 if start
 {
-	draw_clear(0);
-	draw_sprite(info.bginfo[0], 0, bgX, bgY);
-	draw_sprite(info.titleinfo[0], 0, titleX, titleY);
+	var xscale = SCREEN_WIDTH / 960, yscale = SCREEN_HEIGHT / 540;
+	
+	draw_clear(c_black);
+	draw_sprite_ext(info.bginfo[0], 0, bgX * xscale, bgY * yscale, xscale, yscale, 0, c_white, 1);
+	draw_sprite_ext(info.titleinfo[0], 0, titleX * xscale, titleY * yscale, xscale, yscale, 0, c_white, 1);
 }
 
 draw_set_color(c_black);

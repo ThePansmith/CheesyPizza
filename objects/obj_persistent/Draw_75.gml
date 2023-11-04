@@ -40,7 +40,7 @@ if keyboard_check_pressed(vk_f11) && DEBUG
 	{
 		gif_save(gif_image, $"screenshots/{DATE_TIME_NOW}.gif");
 		if !window_get_fullscreen() && os_type == os_windows
-			launch_external("explorer.exe", $"\"{game_save_id}screenshots\\\"");
+			launch_external($"\"{game_save_id}screenshots\\\"");
 	}
 }
 if gif_record

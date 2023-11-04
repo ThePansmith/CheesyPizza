@@ -28,7 +28,6 @@
     {"name":"inst_1DD2DF9E","path":"rooms/tower_pizzaboy/tower_pizzaboy.yy",},
     {"name":"inst_51BEF92A","path":"rooms/tower_pizzaboy/tower_pizzaboy.yy",},
     {"name":"inst_7A1E43BD","path":"rooms/tower_pizzaboy/tower_pizzaboy.yy",},
-    {"name":"inst_351422CE","path":"rooms/tower_pizzaboy/tower_pizzaboy.yy",},
     {"name":"inst_1017C54","path":"rooms/tower_pizzaboy/tower_pizzaboy.yy",},
     {"name":"inst_67340EB5","path":"rooms/tower_pizzaboy/tower_pizzaboy.yy",},
     {"name":"inst_6342B14","path":"rooms/tower_pizzaboy/tower_pizzaboy.yy",},
@@ -66,7 +65,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1DD2DF9E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_platform","path":"objects/obj_platform/obj_platform.yy",},"properties":[],"rotation":0.0,"scaleX":5.0,"scaleY":1.0,"x":1600.0,"y":1696.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_51BEF92A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":26.0,"scaleY":4.0,"x":992.0,"y":2016.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7A1E43BD","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_slope","path":"objects/obj_slope/obj_slope.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":1696.0,"y":1952.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_351422CE","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_startgate","path":"objects/obj_startgate/obj_startgate.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1408.0,"y":1872.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1017C54","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":3.0,"scaleY":117.0,"x":-352.0,"y":-2144.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_67340EB5","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":11.0,"scaleY":6.0,"x":1248.0,"y":1536.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6342B14","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_gpb","path":"objects/obj_gpb/obj_gpb.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4416.0,"y":1644.0,},
@@ -77,8 +75,8 @@
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Backgrounds_1","animationFPS":15.0,"animationSpeedType":0,"colour":4286545791,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],
   "parent": {
-    "name": "Secrets",
-    "path": "folders/Rooms/Tower/Secrets.yy",
+    "name": "Tower",
+    "path": "folders/Rooms/CheesyPizza/Tower.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

@@ -183,7 +183,7 @@ function scr_tvdraw_old()
 	*/
 	
 	// timer
-	if (global.panic or global.snickchallenge) && !instance_exists(obj_ghostcollectibles) && !MOD.DeathMode
+	if PANIC && !MOD.DeathMode
 	{
 		var minutes = 0;
 		for (var seconds = ceil(global.fill / 12); seconds > 59; seconds -= 60)

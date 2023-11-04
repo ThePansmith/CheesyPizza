@@ -56,7 +56,7 @@ else switch state
 {
 	case states.normal:
 		idlespr = spr_tv_idle;
-		if (global.panic or global.snickchallenge) && !instance_exists(obj_ghostcollectibles)
+		if PANIC
 			idlespr = spr_tv_exprpanic;
 		else if (global.combo >= 3 && global.stylethreshold < 3 && !obj_player.isgustavo)
 			idlespr = spr_tv_exprcombo;
