@@ -148,13 +148,13 @@ function scr_enemy_rage()
 			break;
 		case obj_ancho:
 			hsp = 0;
-			if (sprite_index == spr_ancho_rage1)
+			if (sprite_index == spr_rage1)
 				vsp = 0;
-			if (sprite_index == spr_ancho_rage2)
+			if (sprite_index == spr_rage2)
 				vsp = 10;
-			if (floor(image_index) == (image_number - 1) && sprite_index == spr_ancho_rage1)
-				sprite_index = spr_ancho_rage2;
-			if (grounded && sprite_index == spr_ancho_rage2)
+			if (floor(image_index) == (image_number - 1) && sprite_index == spr_rage1)
+				sprite_index = spr_rage2;
+			if (grounded && sprite_index == spr_rage2)
 			{
 				sound_play_3d("event:/sfx/pep/groundpound", x, y);
 				with (obj_camera)
@@ -163,9 +163,9 @@ function scr_enemy_rage()
 					shake_mag_acc = 30 / room_speed;
 				}
 				image_index = 0;
-				sprite_index = spr_ancho_rage3;
+				sprite_index = spr_rage3;
 			}
-			if (floor(image_index) == (image_number - 1) && sprite_index == spr_ancho_rage3)
+			if (floor(image_index) == (image_number - 1) && sprite_index == spr_rage3)
 			{
 				state = states.walk;
 				sprite_index = spr_ancho;
