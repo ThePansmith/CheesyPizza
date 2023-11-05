@@ -6506,6 +6506,7 @@
     {"id":{"name":"spr_redlight","path":"sprites/spr_redlight/spr_redlight.yy",},},
     {"id":{"name":"spr_pizzacutterthwomp","path":"sprites/spr_pizzacutterthwomp/spr_pizzacutterthwomp.yy",},},
     {"id":{"name":"spr_knightpizzy_charge","path":"sprites/spr_knightpizzy_charge/spr_knightpizzy_charge.yy",},},
+    {"id":{"name":"ancient_secret7","path":"rooms/ancient_secret7/ancient_secret7.yy",},},
     {"id":{"name":"spr_playerN_machslideboostfall","path":"sprites/spr_playerN_machslideboostfall/spr_playerN_machslideboostfall.yy",},},
     {"id":{"name":"spr_lightlamp","path":"sprites/spr_lightlamp/spr_lightlamp.yy",},},
     {"id":{"name":"spr_glassblock","path":"sprites/spr_glassblock/spr_glassblock.yy",},},
@@ -11402,6 +11403,7 @@
     {"roomId":{"name":"boss_pizzaface","path":"rooms/boss_pizzaface/boss_pizzaface.yy",},},
     {"roomId":{"name":"boss_pizzafacehub","path":"rooms/boss_pizzafacehub/boss_pizzafacehub.yy",},},
     {"roomId":{"name":"boss_vigilante","path":"rooms/boss_vigilante/boss_vigilante.yy",},},
+    {"roomId":{"name":"ancient_secret7","path":"rooms/ancient_secret7/ancient_secret7.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [
