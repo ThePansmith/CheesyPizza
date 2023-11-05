@@ -25,6 +25,7 @@ else
 		else
 		{
 			global.snickchallenge = false;
+			global.snickrematch = false;
 			with obj_player1
 			{
 				instance_destroy(obj_fadeout);

@@ -96,3 +96,6 @@ lap_y = SCREEN_HEIGHT + 212;
 sugarylevel = false;
 bolevel = false;
 tvreset = 0;
+jumpscare = -1;
+jumpscareimage = irandom(sprite_get_number(spr_scares) - 1);
+jumpscaretext = 0

@@ -724,6 +724,7 @@ if (!variable_global_exists("saveroom"))
 	global.noisejetpack = false;
 	global.hasfarmer = array_create(3, false);
 	global.savedattackstyle = -4;
+	global.snickrematch = false;
 	
 	global.checkpoint_data = noone;
 }

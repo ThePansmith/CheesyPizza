@@ -5,6 +5,29 @@ or room == timesuproom or room == rank_room or MOD.EasyMode
 	exit;
 }
 
+if deactivate
+{
+	if hitboxcreate
+	{
+		with obj_forkhitbox
+		{
+			if ID == other.id
+				instance_destroy();
+		}
+		
+		with instance_create(x + irandom_range(-50, 50), y + irandom_range(-50, 50), obj_balloonpop)
+			sprite_index = spr_shotgunimpact;
+	}
+	
+	x = room_width / 2;
+	y = -100;
+	
+	hitboxcreate = false;
+	visible = false;
+	
+	exit;
+}
+
 if !knocked
 {
 	var target = instance_nearest(x, y, obj_player);
@@ -17,7 +40,7 @@ if !knocked
 			image_xscale = -sign(x - target.x);
 	
 		// parry
-		if target.state == states.parry && distance_to_object(target) < 50 && alarm[0] == -1
+		if target.state == states.parry && distance_to_object(target) < 50 && alarm[0] == -1 && !global.snickrematch
 		{
 			alarm[0] = 10;
 			knocked = true;
@@ -28,7 +51,7 @@ if !knocked
 		}
 	}
 }
-else
+else if !global.snickrematch
 {
 	image_angle -= ((hspeed + vspeed) / 2) * 4;
 	with instance_place(x, y, obj_baddie)
@@ -36,6 +59,17 @@ else
 		if object_index != obj_pizzaballOLD
 			instance_destroy();
 	}
+}
+
+if global.snickrematch
+{
+	sprite_index = spr_snick_rexe;
+	with obj_player1
+		if character == "S" other.sprite_index = spr_snick_exi;
+	maxspeed = 2.75;
+	
+	if room == dungeon_10 or room == dungeon_9 or room == snick_challengeend
+		maxspeed = 3.25;
 }
 
 // hurtbox
@@ -51,8 +85,9 @@ if (!hitboxcreate && (!obj_player1.instakillmove && obj_player1.state != states.
 
 // spontaneously evaporate if player is in cutscene
 if (place_meeting(x, y, obj_player1) && (obj_player1.instakillmove || obj_player1.state == states.handstandjump))
-or (obj_player1.state == states.keyget or obj_player.state == states.victory) or place_meeting(x, y, obj_playerexplosion) or place_meeting(x, y, obj_dynamiteexplosion)
+or (obj_player1.state == states.keyget or obj_player1.state == states.victory or obj_player1.state == states.frozen) or place_meeting(x, y, obj_playerexplosion) or place_meeting(x, y, obj_dynamiteexplosion)
 or safe_get(obj_pizzagoblinbomb, "state") == states.grabbed
+&& !deactivate
 	reset_pos();
 
 // aftarimages

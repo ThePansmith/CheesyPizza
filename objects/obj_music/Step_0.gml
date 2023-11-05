@@ -72,7 +72,12 @@ if !safe_get(obj_pause, "pause") && instance_exists(obj_player1)
 			destroy_sounds([panicmusicID]);
 			
 			if global.snickchallenge
-				panicmusicID = fmod_event_create_instance("event:/modded/level/snickchallenge");
+			{
+				if global.snickrematch 
+					panicmusicID = fmod_event_create_instance("event:/modded/level/snickrematch");
+				else
+					panicmusicID = fmod_event_create_instance("event:/modded/level/snickchallenge");
+			}
 			else if MOD.DeathMode
 				panicmusicID = fmod_event_create_instance("event:/modded/deathmode");
 			else
