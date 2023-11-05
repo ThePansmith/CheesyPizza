@@ -824,6 +824,7 @@ function scr_characterspr()
 		spr_kungfuair3transition = spr_player_kungfuair3transition;
 		spr_poundcancel1 = spr_playerV_poundcancel1;
 		spr_poundcancel2 = spr_playerV_poundcancel2;
+		spr_grind = spr_playerV_grind
 		spr_palette = spr_vigipalette;
 		paletteselect = 0;
 	}

@@ -121,6 +121,8 @@ with (ID)
 				instance_destroy(other);
 			break;
 		case obj_snickexe:
+		case obj_snickexf:
+		case obj_snickexg:
 			if (obj_player1.instakillmove or obj_player1.state == states.handstandjump or obj_player1.state == states.punch)
 			{
 				instance_destroy(other);

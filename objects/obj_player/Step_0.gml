@@ -257,6 +257,7 @@ switch (state)
 	case states.rupertstick: scr_player_rupertstick(); break;
 	// pto
 	case states.debugfly: scr_player_debugstate(); break;
+	case states.frozen: scr_player_frozen(); break;
 }
 
 if (state != states.chainsaw)

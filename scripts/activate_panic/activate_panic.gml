@@ -194,10 +194,21 @@ function activate_snickchallenge()
 		global.maxwave = global.fill;
 			
 		global.snickchallenge = true;
+		if (MOD.Snickrematch)
+			global.snickrematch = true;
+		else
+			global.snickrematch = false;
 		global.collect = 10000;
 			
 		with obj_camera
 			alarm[1] = 60;
 	}
 	instance_create_unique(room_width / 2, -50, obj_snickexe);
+	if room == ruin_1 && global.snickrematch && global.snickchallenge
+		instance_create_unique(room_width / 2, -50, obj_snickexf);
+	if room == dungeon_1 && global.snickrematch && global.snickchallenge
+	{
+		instance_create_unique(room_width / 2, -50, obj_snickexg);
+		instance_create_unique(room_width / 2, -50, obj_snickexh);
+	}
 }

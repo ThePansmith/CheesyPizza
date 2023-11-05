@@ -1,6 +1,6 @@
 maxspeed = 2;
 hitboxcreate = false;
-image_speed = 0;
+image_speed = 0.35;
 depth = -5;
 
 reset_pos = function(particle = true)
@@ -9,6 +9,12 @@ reset_pos = function(particle = true)
 	{
 		with instance_create(x + irandom_range(-50, 50), y + irandom_range(-50, 50), obj_balloonpop)
 			sprite_index = spr_shotgunimpact;
+	}
+	
+	if global.snickrematch
+	{
+		deactivate = true;
+		alarm[1] = room_speed * 5;
 	}
 	
 	knocked = false;
@@ -33,6 +39,7 @@ knocked = false;
 enemybird = false;
 enemybirdi = 0;
 after = 0;
+deactivate = false;
 
 if SUGARY
 	sprite_index = spr_yogurtexe;

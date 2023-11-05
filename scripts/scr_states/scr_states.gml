@@ -321,6 +321,7 @@ enum states
 	
 	// pto
 	debugfly,
+	frozen,
 }
 
 #endregion

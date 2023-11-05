@@ -18,6 +18,9 @@ global.combo = 0;
 global.comboscore = 0;
 instance_destroy(obj_comboend);
 instance_destroy(obj_snickexe);
+instance_destroy(obj_snickexf);
+instance_destroy(obj_snickexg);
+instance_destroy(obj_snickexh);
 if REMIX
 	instance_destroy(obj_lap2visual);
 

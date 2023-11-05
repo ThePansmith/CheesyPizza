@@ -251,6 +251,15 @@ function scr_playerreset(roomstart = false, restart = false)
 		if (instance_exists(obj_snickexe))
 			instance_destroy(obj_snickexe);
 		
+		if (instance_exists(obj_snickexf))
+			instance_destroy(obj_snickexf);
+		
+		if (instance_exists(obj_snickexg))
+			instance_destroy(obj_snickexg);
+		
+		if (instance_exists(obj_snickexh))
+			instance_destroy(obj_snickexh);
+		
 		with (obj_pizzaface)
 			destroy_sounds([snd])
 		instance_destroy(obj_pizzaface, false)
