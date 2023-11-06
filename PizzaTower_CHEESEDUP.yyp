@@ -3223,6 +3223,7 @@
     {"id":{"name":"spr_badmarsh_ragestart","path":"sprites/spr_badmarsh_ragestart/spr_badmarsh_ragestart.yy",},},
     {"id":{"name":"scr_pepperman","path":"scripts/scr_pepperman/scr_pepperman.yy",},},
     {"id":{"name":"scr_player_pummel","path":"scripts/scr_player_pummel/scr_player_pummel.yy",},},
+    {"id":{"name":"obj_peppermanprop","path":"objects/obj_peppermanprop/obj_peppermanprop.yy",},},
     {"id":{"name":"scr_fakepepboss","path":"scripts/scr_fakepepboss/scr_fakepepboss.yy",},},
     {"id":{"name":"scr_player_barreljump","path":"scripts/scr_player_barreljump/scr_player_barreljump.yy",},},
     {"id":{"name":"scr_player_animatronic","path":"scripts/scr_player_animatronic/scr_player_animatronic.yy",},},
