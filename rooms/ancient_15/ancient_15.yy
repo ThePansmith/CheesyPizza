@@ -97,6 +97,7 @@
     {"name":"inst_56C0F6C8","path":"rooms/ancient_15/ancient_15.yy",},
     {"name":"inst_4A014017","path":"rooms/ancient_15/ancient_15.yy",},
     {"name":"inst_19A670","path":"rooms/ancient_15/ancient_15.yy",},
+    {"name":"inst_5E4C4351","path":"rooms/ancient_15/ancient_15.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -193,6 +194,7 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_baddie","path":"objects/obj_baddie/obj_baddie.yy",},"propertyId":{"name":"escape","path":"objects/obj_baddie/obj_baddie.yy",},"value":"True",},
           ],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":608.0,"y":2080.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_19A670","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_minipillar","path":"objects/obj_minipillar/obj_minipillar.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":3.0,"x":64.0,"y":2048.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5E4C4351","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_minipillar","path":"objects/obj_minipillar/obj_minipillar.yy",},"properties":[],"rotation":0.0,"scaleX":8.0,"scaleY":1.0,"x":672.0,"y":0.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_2","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":79,"SerialiseWidth":30,"TileCompressedData":[
 3,127,147,105,-17,125,1,126,-8,-2147483648,4,104,127,147,106,-26,-2147483648,4,104,127,147,106,-26,-2147483648,4,104,127,147,106,-26,

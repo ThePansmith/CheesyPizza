@@ -6,6 +6,8 @@ function scr_is_p_rank()
 		return !global.combodropped && enemykilled;
 	if global.leveltosave == "etb"
 		return !global.combodropped && global.secretfound >= 2 && (global.lap or MOD.DeathMode);
+	if global.leveltosave == "ancient"
+		return !global.combodropped && global.secretfound >= 2 && (global.lap or MOD.DeathMode);
 	if global.leveltosave == "snickchallenge"
 		return !global.combodropped && !string_starts_with(room_get_name(room), "medieval");
 	

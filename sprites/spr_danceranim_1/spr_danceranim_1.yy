@@ -26,7 +26,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ee7e20b3-a22f-4c70-8889-ab2e4f5c80b5","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 9,
   "parent": {
     "name": "Dancers",
     "path": "folders/Sprites/CheesyPizza/Sonas/Dancers.yy",
@@ -66,7 +66,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 50,
-    "yorigin": 50,
+    "yorigin": 55,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

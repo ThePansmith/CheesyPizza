@@ -58,7 +58,6 @@
     {"name":"inst_5438F99A","path":"rooms/ancient_7/ancient_7.yy",},
     {"name":"inst_4EB6CB0","path":"rooms/ancient_7/ancient_7.yy",},
     {"name":"inst_4F8D5094","path":"rooms/ancient_7/ancient_7.yy",},
-    {"name":"inst_461265CA","path":"rooms/ancient_7/ancient_7.yy",},
     {"name":"inst_62886115","path":"rooms/ancient_7/ancient_7.yy",},
     {"name":"inst_766F158","path":"rooms/ancient_7/ancient_7.yy",},
     {"name":"inst_3F28824D","path":"rooms/ancient_7/ancient_7.yy",},
@@ -117,7 +116,6 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5438F99A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_secretbigblock","path":"objects/obj_secretbigblock/obj_secretbigblock.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1440.0,"y":384.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4EB6CB0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_secretbigblock","path":"objects/obj_secretbigblock/obj_secretbigblock.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1440.0,"y":256.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4F8D5094","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pizzaboxunopen","path":"objects/obj_pizzaboxunopen/obj_pizzaboxunopen.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1248.0,"y":416.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_461265CA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollectbig","path":"objects/obj_escapecollectbig/obj_escapecollectbig.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":288.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_62886115","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_coolpineapple","path":"objects/obj_coolpineapple/obj_coolpineapple.yy",},"properties":[
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_baddie","path":"objects/obj_baddie/obj_baddie.yy",},"propertyId":{"name":"escape","path":"objects/obj_baddie/obj_baddie.yy",},"value":"True",},
           ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":448.0,"y":128.0,},

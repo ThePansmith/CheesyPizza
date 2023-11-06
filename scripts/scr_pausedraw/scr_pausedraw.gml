@@ -78,6 +78,8 @@ function scr_pausedraw()
 			var count = 3;
 			if lvlsave == "etb"
 				count = 2;
+			if lvlsave == "ancient"
+				count = 2;
 	
 			draw_text(SCREEN_WIDTH - 132 - 60, SCREEN_HEIGHT - 124 - 8, concat(secretcount, "/", count));
 			draw_set_alpha(1);
