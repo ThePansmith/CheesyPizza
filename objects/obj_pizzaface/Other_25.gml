@@ -27,6 +27,9 @@ if global.laps >= 2
 	    maxspeed = 6;
 	if room == forest_lap
 	    maxspeed = 7;
+	// extra
+	if room == ancient_13
+	    maxspeed = 5;
 	
 	if maxspeed < 8
 		sprite_index = spr_haywire;
