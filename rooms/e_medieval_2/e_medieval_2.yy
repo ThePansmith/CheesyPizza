@@ -125,6 +125,7 @@
     {"name":"inst_7971574A","path":"rooms/e_medieval_2/e_medieval_2.yy",},
     {"name":"inst_3370DE1","path":"rooms/e_medieval_2/e_medieval_2.yy",},
     {"name":"inst_7FDB28C8","path":"rooms/e_medieval_2/e_medieval_2.yy",},
+    {"name":"inst_50FF4457","path":"rooms/e_medieval_2/e_medieval_2.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -247,6 +248,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7971574A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_destroyable","path":"objects/obj_destroyable/obj_destroyable.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1344.0,"y":1184.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3370DE1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_destroyable","path":"objects/obj_destroyable/obj_destroyable.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1344.0,"y":1216.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7FDB28C8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_destroyable","path":"objects/obj_destroyable/obj_destroyable.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1312.0,"y":1216.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_50FF4457","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_exitgustavo","path":"objects/obj_exitgustavo/obj_exitgustavo.yy",},"properties":[],"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":3168.0,"y":1010.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":63,"SerialiseWidth":157,"TileCompressedData":[
 -2078,64,3,210,211,212,-144,64,2,240,241,-8,64,3,225,226,227,-124,64,3,210,211,212,-12,64,1,244,-4,64,2,255,256,-79,64,2,242,243,-54,64,3,225,226,227,-12,64,1,259,-85,64,2,257,258,-148,64,2,240,241,-14,64,1,244,-39,64,40,8,9,94,95,94,95,94,95,94,95,11,94,9,95,94,95,94,95,94,95,94,95,94,95,94,95,94,95,94,95,94,95,94,95,94,95,94,95,11,12,-28,64,3,210,211,212,-30,64,2,255,256,-14,64,1,259,-39,64,40,23,24,109,110,109,110,109,110,109,110,26,43,24,110,109,110,109,110,109,110,109,110,109,110,109,110,109,110,109,110,109,110,109,110,109,
