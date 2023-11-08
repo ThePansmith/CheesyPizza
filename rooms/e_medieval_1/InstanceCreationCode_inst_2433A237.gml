@@ -1,1 +1,1 @@
-content = obj_pizzakinshroom;
+content = obj_pizzakinpineapple;

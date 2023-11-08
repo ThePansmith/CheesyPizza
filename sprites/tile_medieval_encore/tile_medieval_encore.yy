@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "tile_medieval_encore",
-  "bbox_bottom": 575,
+  "bbox_bottom": 1247,
   "bbox_left": 0,
-  "bbox_right": 319,
+  "bbox_right": 479,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b1f09fc1-a52c-477a-a607-60cab2caefa8",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"baa886db-a110-4d66-9d71-12fbafe34f1e",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 600,
+  "height": 1248,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"bc8e3dc9-b1ed-43d2-a0a3-b86d3ace1d6e","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"bffeacc6-fe01-4069-a967-f47138e904c4","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b1f09fc1-a52c-477a-a607-60cab2caefa8","path":"sprites/tile_medieval_encore/tile_medieval_encore.yy",},},},"Disabled":false,"id":"8b9a760d-46ab-495f-9a5a-98e9c2351e61","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"baa886db-a110-4d66-9d71-12fbafe34f1e","path":"sprites/tile_medieval_encore/tile_medieval_encore.yy",},},},"Disabled":false,"id":"95c3a785-f342-4ac0-9acc-cc4b1e9ca99b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 320,
+  "width": 480,
 }

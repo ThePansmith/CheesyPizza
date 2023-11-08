@@ -411,7 +411,6 @@ add_music(desert_1, "event:/music/w2/desert", "event:/music/w2/desertsecret", 0,
 #endregion
 #region ENCORE
 
-/*
 add_music(e_medieval_1, "event:/modded/encore/w1/medieval", "event:/music/w1/medievalsecret", 0, function(room, event, event_secret)
 {
 	var s = -1;
@@ -451,6 +450,5 @@ add_music(e_molasses_1, "event:/modded/encore/sugary/swamp", "event:/modded/suga
 	if s != -1
 		fmod_event_instance_set_parameter(event, "state", s, false);
 });
-*/
 
 #endregion
