@@ -34,3 +34,26 @@ grabbedby = 0;
 stuntouchbuffer = 0;
 spr_palette = spr_ancho_palette;
 usepalette = true;
+spr_chargestart = spr_ancho_chargestart
+spr_charge = spr_ancho_charge
+spr_rage1 = spr_ancho_rage1
+spr_rage2 = spr_ancho_rage2
+spr_rage3 = spr_ancho_rage3
+
+if global.snickrematch
+{
+	idlespr = spr_ancho_re
+	stunfallspr = spr_anchobounce_re
+	walkspr = spr_ancho_re
+	grabbedspr = spr_ancho_grabbed_re
+	scaredspr = spr_anchobounce_re
+	spr_dead = spr_anchodead_re
+	
+	spr_rage1 = spr_ancho_rage1_re
+	spr_rage2 = spr_ancho_rage2_re
+	spr_rage3 = spr_ancho_rage3_re
+	
+	spr_chargestart = spr_ancho_chargestart_re
+	spr_charge = spr_ancho_charge_re
+	sprite_index = walkspr;
+}

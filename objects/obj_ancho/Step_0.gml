@@ -61,7 +61,7 @@ if (state != states.grabbed)
 	depth = 0;
 if (state != states.charge)
 	scr_scareenemy();
-if (sprite_index == spr_ancho_chargestart && floor(image_index) == (image_number - 1))
+if (sprite_index == spr_chargestart && floor(image_index) == (image_number - 1))
 {
 	if (hitboxcreate == 0 && state == states.charge)
 	{
@@ -69,7 +69,7 @@ if (sprite_index == spr_ancho_chargestart && floor(image_index) == (image_number
 		with (instance_create(x, y, obj_forkhitbox))
 			ID = other.id;
 	}
-	sprite_index = spr_ancho_charge;
+	sprite_index = spr_charge;
 	movespeed = 10;
 }
 var player = instance_nearest(x, y, obj_player);
@@ -80,7 +80,7 @@ if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y
 	if (state != states.rage && ragebuffer == 0 && (elite or global.stylethreshold >= 3) && (state == states.walk || state == states.charge))
 	{
 		state = states.rage;
-		sprite_index = spr_ancho_rage1;
+		sprite_index = spr_rage1;
 		if (x != player.x)
 			image_xscale = -sign(x - player.x);
 		ragebuffer = 100;
@@ -105,7 +105,7 @@ if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y
 			image_index = 0;
 			image_xscale = -sign(x - obj_player.x);
 			state = states.charge;
-			sprite_index = spr_ancho_chargestart;
+			sprite_index = spr_chargestart;
 		}
 	}
 }
