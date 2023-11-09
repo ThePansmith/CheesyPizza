@@ -90,6 +90,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Dragon's Lair","folderPath":"folders/Rooms/CheesyPizza/Dragon's Lair.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Early Test Build","folderPath":"folders/Rooms/CheesyPizza/Early Test Build.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Encore","folderPath":"folders/Rooms/CheesyPizza/Encore.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Entrance","folderPath":"folders/Rooms/CheesyPizza/Encore/Entrance.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Entryway","folderPath":"folders/Rooms/CheesyPizza/Encore/Entryway.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Medieval","folderPath":"folders/Rooms/CheesyPizza/Encore/Medieval.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Molasses","folderPath":"folders/Rooms/CheesyPizza/Encore/Molasses.yy",},
@@ -627,7 +628,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sugary Spire","folderPath":"folders/Tile Sets/Sugary Spire.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Entrance","folderPath":"folders/Rooms/CheesyPizza/Encore/Entrance.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles",},
