@@ -90,6 +90,9 @@ if MOD.SecretInclude
 		
 		etb_secret1,
 		etb_secret2,
+		
+		ancient_secret3,
+		ancient_secret7,
 	);
 }
 

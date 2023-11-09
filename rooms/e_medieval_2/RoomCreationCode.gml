@@ -1,1 +1,1 @@
-global.showcollisions = 1;
+global.roommessage = "OPPOSITE DAY";

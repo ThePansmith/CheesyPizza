@@ -131,6 +131,9 @@ function activate_panic(instapanic = false, debris = noone)
 		case etb_8:
 			global.fill = 2148;
 			break;
+		case ancient_20:
+			global.fill = 1860;
+			break;
 		
 		// sugary
 		case entryway_11:

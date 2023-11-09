@@ -1,2 +1,0 @@
-cigar = true;
-escape = true

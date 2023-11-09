@@ -1,1 +1,0 @@
-targetRoom = ancient_8;

@@ -1,5 +1,5 @@
 level = "ancienttower";
-msg = "Ancient Tower WIP";
+msg = "Ancient Tower";
 door_index = 0;
 targetRoom = ancient_1;
 group_arr = ["etbgroup"];

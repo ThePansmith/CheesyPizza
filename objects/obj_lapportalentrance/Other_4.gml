@@ -126,6 +126,9 @@ with (obj_player)
 								minutes = 1;
 								seconds = 30;
 								break;
+							case "ancient":
+								seconds = 60;
+								break;
 						}
 					}
 					break;

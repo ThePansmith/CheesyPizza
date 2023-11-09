@@ -1,2 +1,3 @@
-content = obj_pizzagoblin
+content = obj_pizzagoblinbomb;
+countdown = 130;
 
