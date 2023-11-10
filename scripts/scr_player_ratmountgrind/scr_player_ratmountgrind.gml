@@ -20,6 +20,9 @@ function scr_player_ratmountgrind()
 		with (instance_place(x, y, obj_grindrail))
 			other.y = y;
 	}
+	if place_meeting(x, y, obj_grindrail) && place_meeting(x, y - 2, obj_grindrailslope)
+		y -= 2;
+	
 	/* if (move != 0)
 	{
 		var inst = instance_place(x + hsp, y - 32, obj_grindrailslope);
