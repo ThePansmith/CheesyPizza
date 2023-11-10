@@ -146,7 +146,7 @@ function scr_player_ratmountjump()
 		sprite_index = spr_lonegustavopunch;
 	}
 	var bounce = true;
-	if (input_buffer_jump > 0 && can_jump && gusdashpadbuffer == 0 && !place_meeting(x, y + 5, obj_grindrail)))
+	if (input_buffer_jump > 0 && can_jump && gusdashpadbuffer == 0 && !place_meeting(x, y + 5, obj_grindrail))
 	{
 		bounce = false;
 		input_buffer_jump = 0;
