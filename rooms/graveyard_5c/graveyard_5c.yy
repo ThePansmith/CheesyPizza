@@ -248,6 +248,7 @@
     {"name":"inst_E91C9E49","path":"rooms/graveyard_5c/graveyard_5c.yy",},
     {"name":"inst_6EC00CB1","path":"rooms/graveyard_5c/graveyard_5c.yy",},
     {"name":"inst_E2737A39","path":"rooms/graveyard_5c/graveyard_5c.yy",},
+    {"name":"inst_DA0EF65","path":"rooms/graveyard_5c/graveyard_5c.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -493,6 +494,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_E91C9E49","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollect","path":"objects/obj_escapecollect/obj_escapecollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":6400.0,"y":256.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6EC00CB1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_PTG","path":"objects/obj_PTG/obj_PTG.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3584.0,"y":1408.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_E2737A39","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_pumpkin","path":"objects/obj_pumpkin/obj_pumpkin.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1984.0,"y":1792.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_DA0EF65","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cutoff","path":"objects/obj_cutoff/obj_cutoff.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4032.0,"y":1952.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_Secret1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":75,"SerialiseWidth":222,"TileCompressedData":[
 -9243,0,-21,73,-201,0,-21,73,-200,0,1,51,-21,73,-200,0,1,68,-21,73,-200,0,1,85,-21,73,-200,0,1,66,-22,73,-217,0,-5,73,-207,0,-15,73,-207,0,-15,73,-207,0,-15,73,-190,0,-2,74,-30,73,-190,0,-2,74,-30,73,-190,0,2,108,15,-30,73,-190,0,2,125,85,-30,73,-190,0,2,48,49,-30,73,-190,0,2,65,66,-30,73,-194,0,-25,73,-197,0,-15,73,-3624,0,],"TileDataFormat":1,},"tilesetId":{"name":"tile_graveyardmine","path":"tilesets/tile_graveyardmine/tile_graveyardmine.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},

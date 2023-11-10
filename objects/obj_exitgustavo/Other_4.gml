@@ -18,6 +18,7 @@ if stick
 		// sugary polka
 		spr_fall = spr_polka_fall;
 		spr_idle = spr_polka_exit;
+		spr_taunt = spr_polka_taunt;
 	}
 	else
 	{
@@ -32,4 +33,6 @@ else if sugary
 	// sugary rosette
 	spr_fall = spr_rosette_fall;
 	spr_idle = spr_rosette_exit;
+	spr_taunt = spr_rosette_cheer;
+	spr_dull = spr_rosette_dull;
 }

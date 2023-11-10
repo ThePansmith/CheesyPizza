@@ -368,6 +368,7 @@ else switch state
 // PTO - set tv sprite
 if targetspr != -1 && targetspr_old != targetspr && global.hud == 0 && visible
 {
+	var sugarychar = check_sugarychar();
 	targetspr_old = targetspr;
 	
 	var char = obj_player1.character;
@@ -383,12 +384,12 @@ if targetspr != -1 && targetspr_old != targetspr && global.hud == 0 && visible
 		sprite_index = charspr;
 	else
 	{
-		var charspr_new = asset_get_index(sprite_get_name(targetspr) + "_NEW");
+		var charspr_new = asset_get_index(sprite_get_name(targetspr) + (sugarychar ? "SP" : "_NEW"));
 		if charspr_new > -1
 			sprite_index = charspr_new;
 		else
 		{
-			if check_sugarychar()
+			if sugarychar
 				sprite_index = spr_tv_failsafeSP;
 			else
 				sprite_index = targetspr;
@@ -404,10 +405,11 @@ else
 
 // hide tv
 var change_pos = false;
-if (obj_player.x > (room_width - 224) && obj_player.y < 187)
+if ((!MOD.Mirror && obj_player.x > room_width - 224) or (MOD.Mirror && obj_player.x < 224)) && obj_player.y < 187
 	change_pos = true;
-if (bubblespr != noone && obj_player.x > 316 && obj_player.y < 101)
-	change_pos = true;
+
+//if (bubblespr != noone && obj_player.x > 316 && obj_player.y < 101)
+//	change_pos = true;
 
 var spd = 15;
 if (change_pos)

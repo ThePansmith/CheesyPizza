@@ -114,6 +114,7 @@
     {"name":"inst_7295D1E6","path":"rooms/space_8/space_8.yy",},
     {"name":"inst_F7584F6E","path":"rooms/space_8/space_8.yy",},
     {"name":"inst_7C0CBDD6","path":"rooms/space_8/space_8.yy",},
+    {"name":"inst_546DA008","path":"rooms/space_8/space_8.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -225,6 +226,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7295D1E6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_olivebubbledeco","path":"objects/obj_olivebubbledeco/obj_olivebubbledeco.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2784.0,"y":800.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_F7584F6E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_olivebubbledeco","path":"objects/obj_olivebubbledeco/obj_olivebubbledeco.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1664.0,"y":1696.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7C0CBDD6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_planetparticle","path":"objects/obj_planetparticle/obj_planetparticle.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":736.0,"y":1664.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_546DA008","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cutoff","path":"objects/obj_cutoff/obj_cutoff.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3680.0,"y":480.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_218637C5","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_rocketplatformR","path":"sprites/spr_rocketplatformR/spr_rocketplatformR.yy",},"x":2080.0,"y":928.0,},

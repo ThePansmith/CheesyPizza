@@ -24,7 +24,7 @@ if global.goodmode
 	
 	with all
 	{
-		if visible && object_index != obj_solid && object_index != obj_hallway
+		if visible && object_index != obj_solid && object_index != obj_hallway && (!persistent or object_index == obj_player1)
 		{
 			if irandom(100 / multiplier) == 0
 			if object_index != obj_player1

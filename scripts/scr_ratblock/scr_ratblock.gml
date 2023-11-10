@@ -56,7 +56,8 @@ function scr_ratblock_destroy()
 						instance_destroy(other);
 					break;
 				case states.ratmountbounce:
-					
+					if place_meeting(x, y + vsp + 1, other)
+						instance_destroy(other);
 					break;
 				case states.tumble:
 					if (other.sprite_index == spr_rattumbleblock || other.sprite_index == spr_rattumbleblock_big)

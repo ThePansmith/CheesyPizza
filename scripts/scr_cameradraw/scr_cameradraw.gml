@@ -1,19 +1,21 @@
 function scr_cameradraw()
 {
-	var sugary = check_sugarychar();
-	var bo = (obj_player1.character == "BN");
-	var pino = (obj_player1.character == "PN");
+	var player = obj_player1;
+	
+	var sugary = (player.character == "SP");
+	var bo = (player.character == "BN");
+	var pino = (player.character == "PN");
 	
 	if global.kungfu
 		draw_sprite(spr_pizzahealthbar, 8 - global.hp, 190, 70);
 	
-	if (obj_player.state != states.dead)
+	if (player.state != states.dead)
 	{
-		if (obj_player.x < 250 && obj_player.y < 169)
+		if ((MOD.Mirror && player.x > SCREEN_WIDTH - 250) or (!MOD.Mirror && player.x < 250)) && player.y < 169
 			hud_posY = Approach(hud_posY, -300, 15);
 		else
 			hud_posY = Approach(hud_posY, 0, 15);
-	
+		
 		var cmb = 0;
 		if (global.combo >= 50)
 			cmb = 2;
@@ -42,7 +44,7 @@ function scr_cameradraw()
 		var heatmeter = spr_heatmeter;
 		var heatpal = spr_heatmeter_palette;
 	
-		switch obj_player1.character
+		switch player.character
 		{
 			case "SP":
 				heatfill = spr_heatmeter_fillSP;
@@ -203,7 +205,7 @@ function scr_cameradraw()
 		reset_shader_fix();
 	
 		// bullets
-		var showbullet = obj_player1.character != "V" && obj_player1.character != "S" && !obj_player1.isgustavo;
+		var showbullet = player.character != "V" && player.character != "S" && !player.isgustavo;
 		if global.shootstyle == 1 && showbullet
 		{
 			bulletimage += 0.35;
@@ -211,10 +213,10 @@ function scr_cameradraw()
 			var bx = hud_xx - 63, by = hud_yy - 16, bpad = 42;
 		    var bspr = spr_peppinobullet_collectible;
 		
-			if global.doublegrab == 3 && obj_player1.character != "SN"
+			if global.doublegrab == 3 && player.character != "SN"
 				bpad = 25;
 			
-		    if obj_player1.character == "N"
+		    if player.character == "N"
 		    {
 		        bx = hud_xx - 69;
 		        by = hud_yy + 45;
@@ -247,7 +249,7 @@ function scr_cameradraw()
 		}
 	
 		// chainsaw
-		if global.doublegrab == 3 && showbullet && obj_player1.character != "SN"
+		if global.doublegrab == 3 && showbullet && player.character != "SN"
 		{
 			var bx = hud_xx - 63, by = hud_yy + 60, bpad = 25;
 		    var bspr = spr_fuelHUD;
@@ -289,7 +291,7 @@ function scr_cameradraw()
 		draw_set_font(lang_get_font("bigfont"));
 		draw_set_halign(fa_center);
 		draw_set_color(c_white);
-		if (obj_player1.character == "V")
+		if (player.character == "V")
 			draw_text(200 + healthshake, 125 + healthshake, global.playerhealth);
 	}
 }

@@ -50,6 +50,7 @@
     {"name":"inst_A7B17FD2","path":"rooms/trickytreat_4b/trickytreat_4b.yy",},
     {"name":"inst_3B65ED5A","path":"rooms/trickytreat_4b/trickytreat_4b.yy",},
     {"name":"inst_B0186BC2","path":"rooms/trickytreat_4b/trickytreat_4b.yy",},
+    {"name":"inst_3180DF1E","path":"rooms/trickytreat_4b/trickytreat_4b.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -98,6 +99,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_A7B17FD2","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_secretbigblock","path":"objects/obj_secretbigblock/obj_secretbigblock.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1408.0,"y":2048.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3B65ED5A","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_secretbigblock","path":"objects/obj_secretbigblock/obj_secretbigblock.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1472.0,"y":2048.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B0186BC2","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_secretbigblock","path":"objects/obj_secretbigblock/obj_secretbigblock.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1536.0,"y":2048.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3180DF1E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cutoff","path":"objects/obj_cutoff/obj_cutoff.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1184.0,"y":1888.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_48792FA0","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"spriteId":{"name":"spr_pumpkinslope","path":"sprites/spr_pumpkinslope/spr_pumpkinslope.yy",},"x":3872.0,"y":1760.0,},

@@ -21,6 +21,7 @@ switch (state)
 			sprite_index = spr_fall;
 		}
 		break;
+	
 	case states.fall:
 		y += vsp;
 		if (vsp < 20)
@@ -72,8 +73,32 @@ switch (state)
 			state = states.normal;
 		}
 		break;
+	
+	case states.normal:
+		if sprite_index != spr_taunt or !sprite_exists(spr_taunt)
+		{
+			if obj_player1.sprite_index == obj_player1.spr_taunt && sprite_exists(spr_taunt)
+			{
+				sprite_index = spr_taunt;
+				image_index = random(image_number);
+				
+				with instance_create(x, y, obj_cloudeffect)
+	            {
+	                sprite_index = spr_taunteffect;
+	                depth = other.depth + 1;
+	            }
+			}
+			else if sprite_exists(spr_dull)
+			{
+		        if --dulltimer <= 0
+		            sprite_index = spr_dull;
+			}
+		}
+		else if obj_player1.sprite_index != obj_player1.spr_taunt
+		{
+			sprite_index = spr_idle;
+			image_index = 0;
+		}
+		break;
 }
-if (state == states.titlescreen)
-	visible = false;
-else
-	visible = true;
+visible = state != states.titlescreen;

@@ -237,8 +237,7 @@ if _move && image_alpha >= 1
 		            instance_destroy(obj_fadeout)
 		            targetDoor = "A"
 		            state = states.timesup
-					stop_music()
-		            sound_stop_all(true)
+		            fmod_event_instance_set_paused_all(true);
 					scr_room_goto(rm_baby)
 		        }
 		        instance_destroy(id, !REMIX);

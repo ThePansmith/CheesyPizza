@@ -17,13 +17,11 @@ with other
 	while (inside_slope(obj_grindrailslope))
 		y--;
 	
-
 	if !isgustavo
 	{
 		if movespeed < 10
 			movespeed = 10;
-		movespeed = clamp(movespeed, 0, 10);
-		state = states.grind;	
+		state = states.grind;
 	}
 	else
 	{

@@ -1,6 +1,6 @@
 add_saveroom();
 global.gerome = true;
-sound_play_3d("event:/sfx/voice/geromegot", x, y);
+sound_play_3d(SUGARY ? "event:/modded/sfx/collecttoppinSP" : "event:/sfx/voice/geromegot", x, y);
 global.combotime = 60;
 instance_create(x, y, obj_geromefollow);
 instance_create(x, y, obj_baddietaunteffect);

@@ -46,7 +46,6 @@ global.smallnumber_color1 = make_colour_rgb(255, 255, 255);
 global.smallnumber_color2 = make_colour_rgb(248, 0, 0);
 global.optimize = 0;
 global.autotile = true;
-global.smallnumber_fnt = font_add_sprite_ext(spr_smallnumber, "1234567890-+", true, 0);
 global.pigreduction = 0;
 global.pigtotal = 0;
 global.levelcomplete = false;

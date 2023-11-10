@@ -7,7 +7,7 @@ if fadeout
 		instance_destroy();
 }
 
-draw_set_font(global.smallnumber_fnt);
+draw_set_font(SUGARY ? global.smallfont_ss : global.smallnumber_fnt);
 draw_set_halign(fa_center);
 var c = negative ? global.smallnumber_color2 : global.smallnumber_color1;
 draw_set_color(c);

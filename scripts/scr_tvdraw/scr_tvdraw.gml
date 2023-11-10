@@ -1,5 +1,7 @@
 function scr_tvdraw()
 {
+	if live_call() return live_result;
+	
 	static timer_ind = 0;
 	static seconds_prev = "";
 	
@@ -128,10 +130,7 @@ function scr_tvdraw()
 
 		draw_reset_clip();
 		draw_set_mask(_cx - 50, _cy - 91, spr_tv_combometercutSP);
-		//draw_sprite(spr_tv_combometercutSP, 0, _cx, _cy);
-		gpu_set_depth(depth - 100);
 		draw_sprite(spr_tv_combometergooSP, propeller_index, xx, yy);
-				//draw_sprite(spr_tv_combometercutSP, 0, _cx, _cy);
 		draw_reset_clip();
 		
 		draw_sprite(spr_tv_combobubbleSP, -1, _cx, _cy);

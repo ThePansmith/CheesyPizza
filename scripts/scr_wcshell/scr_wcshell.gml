@@ -287,15 +287,24 @@ function scr_wc_step()
 	
 	if isOpen
 	{
-		if (keyboard_check(vk_control) && keyboard_check_pressed(ord("V")))
+		if keyboard_check(vk_control)
 		{
-			if clipboard_has_text()
+			if keyboard_check_pressed(ord("V"))
 			{
-				consoleString += clipboard_get_text();
-				cursorPos += string_length(clipboard_get_text())	
+				if clipboard_has_text()
+				{
+					consoleString += clipboard_get_text();
+					cursorPos += string_length(clipboard_get_text());
+				}
+				else
+					trace("SHELL: Unable to copy text from clipboard, because clipboard has no text.");
 			}
-			else
-				trace("SHELL: Unable to copy text from clipboard, because clipboard has no text.");
+			if keyboard_check_pressed(ord("C"))
+			{
+				clipboard_set_text(consoleString);
+				consoleString = "";
+				cursorPos = 0;
+			}
 		}
 		
 		/*

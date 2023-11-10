@@ -3,7 +3,8 @@
 function sound_stop_all(force = true)
 {
 	audio_stop_all();
-	fmod_event_instance_stop_all();
+	stop_music();
+	// TODO
 }
 
 /// @func sound_create_instance(event)

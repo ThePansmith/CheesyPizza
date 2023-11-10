@@ -10,23 +10,21 @@
 /// @returns	{bool}
 function draw_set_mask(_x, _y, _clip_sprite, _clip_sprite_subimage = 0, _alpha_fix = false, _simple = false, _inverse = false)
 {
-	static u_clip_sprite_texture = !shaders_are_supported ? -1 : shader_get_sampler_index(shd_masterclip, "u_clip_sprite_texture");
-	static u_clip_sprite_uvs = !shaders_are_supported ? -1 : shader_get_uniform(shd_masterclip, "u_clip_sprite_uvs");
-	static u_clip_sprite_size = !shaders_are_supported ? -1 : shader_get_uniform(shd_masterclip, "u_clip_sprite_size");
-	static u_clip_sprite_texelsize = !shaders_are_supported ? -1 : shader_get_uniform(shd_masterclip, "u_clip_sprite_texelsize");
-	static u_clip_sprite_worldposition = !shaders_are_supported ? -1 : shader_get_uniform(shd_masterclip, "u_clip_sprite_worldposition");
-	static u_clip_sprite_trimmed = !shaders_are_supported ? -1 : shader_get_uniform(shd_masterclip, "u_clip_sprite_trimmed");
-	static u_alphafix = !shaders_are_supported ? -1 : shader_get_uniform(shd_masterclip, "u_mask_alphafix");
-	static u_inverse = !shaders_are_supported ? -1 : shader_get_uniform(shd_masterclip, "u_mask_inverse");
+	static u_clip_sprite_texture = !shaders_are_supported() ? -1 : shader_get_sampler_index(shd_masterclip, "u_clip_sprite_texture");
+	static u_clip_sprite_uvs = !shaders_are_supported() ? -1 : shader_get_uniform(shd_masterclip, "u_clip_sprite_uvs");
+	static u_clip_sprite_size = !shaders_are_supported() ? -1 : shader_get_uniform(shd_masterclip, "u_clip_sprite_size");
+	static u_clip_sprite_texelsize = !shaders_are_supported() ? -1 : shader_get_uniform(shd_masterclip, "u_clip_sprite_texelsize");
+	static u_clip_sprite_worldposition = !shaders_are_supported() ? -1 : shader_get_uniform(shd_masterclip, "u_clip_sprite_worldposition");
+	static u_clip_sprite_trimmed = !shaders_are_supported() ? -1 : shader_get_uniform(shd_masterclip, "u_clip_sprite_trimmed");
+	static u_alphafix = !shaders_are_supported() ? -1 : shader_get_uniform(shd_masterclip, "u_mask_alphafix");
+	static u_inverse = !shaders_are_supported() ? -1 : shader_get_uniform(shd_masterclip, "u_mask_inverse");
 	
 	if global.performance
 		return false;
 	
-	if (shader_current() != shd_masterclip && shader_current() != shd_masterclip_basic)
-	{
-		var shader = _simple ? shd_masterclip_basic : shd_masterclip;
-		shader_set(shader);
-	}
+	var shader = _simple ? shd_masterclip_basic : shd_masterclip;
+	shader_set(shader);
+	
 	shader = shader_current();
 	
 	var clip_sprite_texture = sprite_get_texture(_clip_sprite, _clip_sprite_subimage);
