@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "medieval_pizzamart",
-  "creationCodeFile": "${project_dir}/rooms/medieval_pizzamart/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/medieval_pizzamart/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
