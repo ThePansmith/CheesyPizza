@@ -4037,6 +4037,7 @@
     {"id":{"name":"spr_coolpinea_grabbed","path":"sprites/spr_coolpinea_grabbed/spr_coolpinea_grabbed.yy",},},
     {"id":{"name":"spr_fakepeppino_stagger","path":"sprites/spr_fakepeppino_stagger/spr_fakepeppino_stagger.yy",},},
     {"id":{"name":"spr_coolpinea_taunt","path":"sprites/spr_coolpinea_taunt/spr_coolpinea_taunt.yy",},},
+    {"id":{"name":"e_medieval_8","path":"rooms/e_medieval_8/e_medieval_8.yy",},},
     {"id":{"name":"spr_gusbricknotscaredL","path":"sprites/spr_gusbricknotscaredL/spr_gusbricknotscaredL.yy",},},
     {"id":{"name":"spr_computerbubble","path":"sprites/spr_computerbubble/spr_computerbubble.yy",},},
     {"id":{"name":"spr_pizzasona34","path":"sprites/spr_pizzasona34/spr_pizzasona34.yy",},},
@@ -11435,6 +11436,7 @@
     {"roomId":{"name":"e_entrance_2","path":"rooms/e_entrance_2/e_entrance_2.yy",},},
     {"roomId":{"name":"e_medieval_6","path":"rooms/e_medieval_6/e_medieval_6.yy",},},
     {"roomId":{"name":"e_medieval_7","path":"rooms/e_medieval_7/e_medieval_7.yy",},},
+    {"roomId":{"name":"e_medieval_8","path":"rooms/e_medieval_8/e_medieval_8.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [
