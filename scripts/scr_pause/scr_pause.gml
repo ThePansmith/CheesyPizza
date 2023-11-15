@@ -143,7 +143,6 @@ function scr_pause_deactivate_objects(pause_sounds = true)
 		sound_pause_all(true, global.jukebox == noone ? -1 : global.jukebox.instance);
 		if global.jukebox != noone
 			fmod_set_parameter("musicmuffle", true, true);
-		
 	}
 	
 	ds_list_clear(instance_list);
@@ -167,6 +166,7 @@ function scr_pause_deactivate_objects(pause_sounds = true)
 	instance_activate_object(obj_inputdisplay);
 	instance_activate_object(obj_gmlive);
 	instance_activate_object(obj_globaltimer);
+	instance_activate_object(obj_onlineclient);
 }
 function pause_spawn_priests()
 {

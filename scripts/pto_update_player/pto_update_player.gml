@@ -19,7 +19,7 @@ function pto_update()
 	//if chat_open dbusy = 2;
 	if global.in_menu dbusy = 3;
 	
-	if busy != dbusy or timeout >= room_speed * 5
+	if busy != dbusy or timeout >= room_speed * 3
 	{
 		busy = dbusy;
 		timeout = 0;
@@ -123,7 +123,7 @@ function pto_update_player()
 	packeter.Write(buffer_f32, image_index);
 	packeter.Write(buffer_u16, state);
 	packeter.Write(buffer_bool, xscale >= 0 ? 1 : 0);
-	packeter.Write(buffer_text, spr);
+	packeter.Write(buffer_string, spr);
 	packeter.Send();
 	
 	pto_update.timeout = 0;

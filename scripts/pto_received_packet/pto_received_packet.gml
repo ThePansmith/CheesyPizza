@@ -76,18 +76,18 @@ function pto_received_packet(msgid, buffer)
 			var image = buffer_read(buffer, buffer_f32);
 			var state = buffer_read(buffer, buffer_u16);
 			var xscale = buffer_read(buffer, buffer_bool);
-			var spr = buffer_read(buffer, buffer_text);
+			var spr = buffer_read(buffer, buffer_string);
 			var spr_palette = spr_peppalette;
 			
 			// sprite
-			if spr == chr(0)
+			if spr == chr(0) or spr == ""
 				spr = -1;
 			else
 			{
 				switch string_copy(spr, 1, 2)
 				{
-					case "P_": spr = string_replace(spr, "P_", "spr_player_"); break;
-				
+					case "P_": case "ra": spr = string_replace(spr, "P_", "spr_player_"); break;
+					
 					case "N_": spr_palette = spr_noisepalette; spr = "spr_player" + spr; break;
 					case "V_": spr_palette = spr_vigipalette; spr = "spr_player" + spr; break;
 					case "SP": spr_palette = spr_pizzypalette; spr = "spr_player" + spr; break;
