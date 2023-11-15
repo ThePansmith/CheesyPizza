@@ -283,7 +283,7 @@ function scr_wc_create()
 function scr_wc_step()
 {
 	depth = -16000;
-	WC_debug = DEBUG or (global.experimental && instance_exists(obj_persistent) && !instance_exists(obj_disclaimer) && !obj_persistent.shell_force_off);
+	WC_debug = DEBUG or (global.experimental && instance_exists(obj_persistent) && !instance_exists(obj_disclaimer) && !obj_persistent.shell_force_off && safe_get(obj_onlineclient, state) != SocketState.Connected);
 	
 	if isOpen
 	{
