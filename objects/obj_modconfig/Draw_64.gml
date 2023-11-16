@@ -6,6 +6,7 @@ draw_set_align();
 
 if object_index != obj_levelsettings
 	toggle_alphafix(true);
+reset_blendmode();
 
 var yy = 70 - scroll;
 //if array_last(options_pos) < SCREEN_HEIGHT / 3

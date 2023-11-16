@@ -24,9 +24,13 @@ if start
 		draw_sprite_ext(title_sprite, title_index, 32 * xscale + irandom_range(-1, 1), irandom_range(-1, 1), xscale, yscale, 0, c_white, 1);
 }
 
+toggle_alphafix(true);
+
 if !instance_exists(obj_fadeout)
 	draw_set_alpha(fadealpha);
 else
 	draw_set_alpha(obj_fadeout.fadealpha);
 draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
 draw_set_alpha(1);
+
+toggle_alphafix(false);

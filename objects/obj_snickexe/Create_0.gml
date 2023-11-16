@@ -11,10 +11,10 @@ reset_pos = function(particle = true)
 			sprite_index = spr_shotgunimpact;
 	}
 	
-	if global.snickrematch
+	if global.snickrematch && event_type != ev_other
 	{
 		deactivate = true;
-		alarm[1] = room_speed * 5;
+		alarm[1] = room_speed * 3;
 	}
 	
 	knocked = false;
@@ -26,7 +26,7 @@ reset_pos = function(particle = true)
 	hitboxcreate = false;
 	maxspeed = 2;
 	
-	if global.lapmode == lapmode.laphell
+	if global.lapmode == lapmode.laphell && global.laps >= 2
 		maxspeed = 4;
 	
 	if room == ruin_4 or room == ruin_7
@@ -43,3 +43,4 @@ deactivate = false;
 
 if SUGARY
 	sprite_index = spr_yogurtexe;
+create_transformation_tip("{s}Snick is coming.../");

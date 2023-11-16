@@ -12,6 +12,12 @@ or ((global.snickchallenge or MOD.DeathMode) && !instance_exists(obj_titlecard))
 if !fucker
 {
 	var mu = ds_map_find_value(music_map, room);
+	if mu == undefined && cached_music != undefined
+	{
+		mu = cached_music;
+		cached_music = undefined;
+	}
+	
 	if !is_undefined(mu)
 	{
 		var prevmusic = music;
@@ -42,7 +48,7 @@ if !fucker
 		fmod_event_instance_play(pillarmusicID);
 		fmod_set_parameter("pillarfade", 0, true);
 	}
-	else // RADIX TODO: Add an "fmod_event_instance_exists"
+	else
 		fmod_event_instance_stop(pillarmusicID, true);
 	
 	if music != noone

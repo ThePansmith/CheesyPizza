@@ -987,8 +987,9 @@ scr_collide_destructibles();
 with (obj_ratblock)
 	scr_ratblock_destroy();
 
-if (state != states.comingoutdoor)
+if (state != states.comingoutdoor && state != states.frozen)
 	image_blend = c_white;
+
 prevstate = state;
 prevsprite = sprite_index;
 if (distance_to_object(obj_spike) < 500)

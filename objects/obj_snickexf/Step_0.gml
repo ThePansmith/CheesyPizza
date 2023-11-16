@@ -6,6 +6,18 @@ if !(global.snickrematch && global.snickchallenge)
 
 if deactivate
 {
+	if hitboxcreate
+	{
+		with obj_forkhitbox
+		{
+			if ID == other.id
+				instance_destroy();
+		}
+		
+		with instance_create(x + irandom_range(-50, 50), y + irandom_range(-50, 50), obj_balloonpop)
+			sprite_index = spr_shotgunimpact;
+	}
+	
 	x = room_width / 2;
 	y = -100;
 	
@@ -48,21 +60,23 @@ else
 	}
 }
 
-if !hitboxcreate && (!obj_player.instakillmove && obj_player1.state != states.handstandjump)
+// hurtbox
+if (!hitboxcreate && (!obj_player1.instakillmove && obj_player1.state != states.handstandjump && obj_player.state != states.punch))
 {
-	hitboxcreate = true
-	with instance_create(x, y, obj_forkhitbox)
+	hitboxcreate = true;
+	with (instance_create(x, y, obj_forkhitbox))
 	{
-		sprite_index = other.sprite_index
-		ID = other.id
+		sprite_index = other.sprite_index;
+		ID = other.id;
 	}
 }
 
-if obj_player1.state == states.keyget or obj_player1.state == states.victory
-{
-	deactivate = true;
-	alarm[1] = room_speed * 5;
-}
+// spontaneously evaporate if player is in cutscene
+if (place_meeting(x, y, obj_player1) && (obj_player1.instakillmove || obj_player1.state == states.handstandjump || obj_player1.state == states.punch))
+or (obj_player1.state == states.keyget or obj_player1.state == states.victory or obj_player1.state == states.frozen) or place_meeting(x, y, obj_playerexplosion) or place_meeting(x, y, obj_dynamiteexplosion)
+or safe_get(obj_pizzagoblinbomb, "state") == states.grabbed
+&& !deactivate
+	reset_pos();
 
 if room == ruin_11 or room == ruin_4 or room == medieval_pizzamart or room == ruin_pizzamart or room == dungeon_pizzamart
 {
@@ -77,7 +91,7 @@ else if !point_in_rectangle(x, y, CAMX - 50, CAMY - 50, CAMX + CAMW + 50, CAMY +
 	if target
 	{
 		y = target.y;
-		x = clamp(target.x + 900 * -target.xscale, CAMX, CAMX + CAMW);
+		x = clamp(target.x + 700 * -target.xscale, CAMX, CAMX + CAMW);
 	}
 	
 	repeat 6 with instance_create(x + random_range(-100, 100), y + random_range(-100, 100), obj_balloonpop)

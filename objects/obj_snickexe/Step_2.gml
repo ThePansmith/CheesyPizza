@@ -8,4 +8,3 @@ if snick
 	while place_meeting(x, y, snick)
 		x += dir;
 }
-

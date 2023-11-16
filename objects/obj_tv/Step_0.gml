@@ -412,7 +412,7 @@ if ((!MOD.Mirror && obj_player.x > room_width - 224) or (MOD.Mirror && obj_playe
 //	change_pos = true;
 
 var spd = 15;
-if (change_pos)
+if (change_pos or manualhide)
 	hud_posY = Approach(hud_posY, -300, spd);
 else
 	hud_posY = Approach(hud_posY, 0, spd);

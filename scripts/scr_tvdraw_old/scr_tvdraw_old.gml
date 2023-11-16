@@ -19,7 +19,8 @@ function scr_tvdraw_old()
 	#region SPRITE
 	
 	alpha = 1;
-	if instance_exists(obj_player1) && obj_player1.y < camera_get_view_y(view_camera[0]) + 200 && obj_player1.x > camera_get_view_x(view_camera[0]) + SCREEN_WIDTH - 200
+	if (instance_exists(obj_player1) && obj_player1.y < camera_get_view_y(view_camera[0]) + 200 && obj_player1.x > camera_get_view_x(view_camera[0]) + SCREEN_WIDTH - 200)
+	or obj_camera.manualhide
 		alpha = 0.5;
 	
 	if instance_exists(obj_itspizzatime)

@@ -5,6 +5,7 @@ if !init
 
 draw_set_align();
 draw_set_colour(c_white);
+shader_reset();
 gpu_set_blendmode(bm_normal);
 
 // animation

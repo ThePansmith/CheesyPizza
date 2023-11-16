@@ -11,3 +11,8 @@ xcam = 960;
 ycam = 540;
 lockcam = false;
 appeared = false;
+
+call_later(1, time_source_units_seconds, function()
+{
+	create_transformation_tip("{s}Snuck is coming.../");
+});

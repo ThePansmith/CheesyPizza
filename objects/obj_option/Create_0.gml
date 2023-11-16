@@ -608,6 +608,10 @@ add_option_press(lapping_menu, 0, "option_back", function()
 // lapping mode
 var o = add_option_multiple(lapping_menu, 1, "LAPPING MODE", [create_option_value("NORMAL", 0, false), create_option_value("INFINITE", 1, false), create_option_value("LAP HELL", 2, false)], function(val)
 {
+	ini_open_from_string(obj_savesystem.ini_str_options);
+	ini_write_real("Modded", "lapmode", val);
+	obj_savesystem.ini_str_options = ini_close();
+	
 	global.lapmode = val;
 	set_tooltip(val);
 });
@@ -626,6 +630,10 @@ o.set_tooltip(o.value);
 // parry pizzaface
 var o = add_option_toggle(lapping_menu, 2, "PARRY PIZZAFACE", function(val)
 {
+	ini_open_from_string(obj_savesystem.ini_str_options);
+	ini_write_real("Modded", "parrypizzaface", val);
+	obj_savesystem.ini_str_options = ini_close();
+	
 	global.parrypizzaface = val;
 });
 o.value = global.parrypizzaface;
@@ -635,6 +643,11 @@ var o = add_option_multiple(lapping_menu, 3, "CHECKPOINTS", [create_option_value
 {
 	global.lap3checkpoint = val % 2;
 	global.lap4checkpoint = val > 1;
+	
+	ini_open_from_string(obj_savesystem.ini_str_options);
+	ini_write_real("Modded", "lap3checkpoint", global.lap3checkpoint);
+	ini_write_real("Modded", "lap4checkpoint", global.lap4checkpoint);
+	obj_savesystem.ini_str_options = ini_close();
 	
 	tooltip = "Only in Lap Hell.";
 	if val == 3

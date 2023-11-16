@@ -21,6 +21,7 @@ global.jukebox = noone;
 custom_music = [];
 current_custom = noone;
 waiting = false;
+cached_music = undefined;
 
 #region PIZZA TOWER
 

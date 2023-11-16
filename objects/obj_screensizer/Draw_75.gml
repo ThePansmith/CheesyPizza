@@ -1,4 +1,22 @@
 live_auto_call;
+
+with obj_tv
+{
+	// snick rematch jumpscare
+	if jumpscare > -1
+	{
+		jumpscare--;
+	
+		if irandom(2) == 0
+			jumpscareimage = irandom(sprite_get_number(spr_scares) - 1);
+	
+		if jumpscare <= 5
+			draw_sprite(spr_scares_txt, jumpscaretext, 0, 0);
+		else
+			draw_sprite(spr_scares, jumpscareimage, 0, 0);
+	}
+}
+
 global.Pattern_Texture_Indexed = -4;
 
 surface_reset_target();

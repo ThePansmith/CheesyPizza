@@ -40,7 +40,7 @@ if !knocked
 			image_xscale = -sign(x - target.x);
 	
 		// parry
-		if target.state == states.parry && distance_to_object(target) < 50 && alarm[0] == -1 && !global.snickrematch
+		if target.state == states.parry && distance_to_object(target) < 50 && alarm[0] == -1
 		{
 			alarm[0] = 10;
 			knocked = true;
@@ -51,7 +51,7 @@ if !knocked
 		}
 	}
 }
-else if !global.snickrematch
+else 
 {
 	image_angle -= ((hspeed + vspeed) / 2) * 4;
 	with instance_place(x, y, obj_baddie)
@@ -84,7 +84,7 @@ if (!hitboxcreate && (!obj_player1.instakillmove && obj_player1.state != states.
 }
 
 // spontaneously evaporate if player is in cutscene
-if (place_meeting(x, y, obj_player1) && (obj_player1.instakillmove || obj_player1.state == states.handstandjump))
+if (place_meeting(x, y, obj_player1) && (obj_player1.instakillmove || obj_player1.state == states.handstandjump || obj_player1.state == states.punch))
 or (obj_player1.state == states.keyget or obj_player1.state == states.victory or obj_player1.state == states.frozen) or place_meeting(x, y, obj_playerexplosion) or place_meeting(x, y, obj_dynamiteexplosion)
 or safe_get(obj_pizzagoblinbomb, "state") == states.grabbed
 && !deactivate

@@ -13,9 +13,10 @@ function scr_player_frozen()
 		
 		scr_hurtplayer(id);
 		sound_play_3d("event:/sfx/pep/hurt", x, y);
+		sound_play("event:/sfx/enemies/enemyscream", x, y);
 		
-		repeat 10
-			sound_play_3d("event:/sfx/pep/screamboss", x, y);
+		repeat 3
+			sound_play_3d("event:/modded/sfx/screamboss", x, y);
 		with obj_tv
 		{
 			jumpscare = room_speed / 2

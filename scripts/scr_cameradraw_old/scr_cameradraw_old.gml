@@ -301,6 +301,7 @@ function scr_cameradraw_old()
 		
 		// fade
 		if (player.y < camera_get_view_y(view_camera[0]) + 200 && player.x < camera_get_view_x(view_camera[0]) + 200)
+		or obj_tv.manualhide
 			alpha = 0.5;
 		else
 			alpha = 1;

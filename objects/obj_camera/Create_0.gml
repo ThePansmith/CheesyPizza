@@ -80,3 +80,4 @@ angle = 0;
 panicangle = 0;
 camzoom = 1;
 panspeed = 32;
+manualhide = false;

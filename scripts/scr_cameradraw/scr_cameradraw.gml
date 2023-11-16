@@ -11,7 +11,8 @@ function scr_cameradraw()
 	
 	if (player.state != states.dead)
 	{
-		if ((MOD.Mirror && player.x > SCREEN_WIDTH - 250) or (!MOD.Mirror && player.x < 250)) && player.y < 169
+		if (((MOD.Mirror && player.x > SCREEN_WIDTH - 250) or (!MOD.Mirror && player.x < 250)) && player.y < 169)
+		or manualhide
 			hud_posY = Approach(hud_posY, -300, 15);
 		else
 			hud_posY = Approach(hud_posY, 0, 15);

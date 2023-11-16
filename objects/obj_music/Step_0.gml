@@ -6,6 +6,10 @@ if global.jukebox != noone
 		fmod_event_instance_release(music.event, true);
 	}
 	music = noone;
+	
+	var mu = ds_map_find_value(music_map, room);
+	if mu != undefined or room == street_intro
+		cached_music = mu;
 	exit;
 }
 if waiting && !safe_get(obj_pause, "pause")
