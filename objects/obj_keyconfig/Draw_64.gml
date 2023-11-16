@@ -1,6 +1,3 @@
-reset_blendmode()
-reset_shader_fix()
-
 draw_set_font(lang_get_font("bigfont"));
 draw_set_alpha(1);
 draw_set_halign(0);

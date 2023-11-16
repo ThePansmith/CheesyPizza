@@ -1,8 +1,11 @@
 function scr_pausedraw()
 {
+	if live_call() return live_result;
+	
 	var ui_index = 0;
 	if (is_holiday(holiday.halloween))
 		ui_index = 1;
+	
 	if (fade > 0)
 	{
 		draw_set_color(c_white);
@@ -29,7 +32,7 @@ function scr_pausedraw()
 			var iconspr = spr_pizzaangel;
 			if (is_holiday(holiday.halloween))
 				iconspr = spr_noisedevil;
-		
+			
 			for (var i = 0; i < len; i++)
 			{
 				var b = pause_menu[i];

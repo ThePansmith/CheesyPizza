@@ -144,12 +144,6 @@ for (var i = 0; i < ds_map_size(global.lang_map); i++)
 }
 
 // settings
-enum blockstyles
-{
-	final,
-	september,
-	old
-}
 function load_moddedconfig()
 {
 	ini_open("saveData.ini");
@@ -173,6 +167,13 @@ function load_moddedconfig()
 	global.holidayoverride = ini_read_real("Modded", "holidayoverride", -1); // -1 default, 0 none, 1 etc
 	
 	// visual settings
+	enum blockstyles
+	{
+		final,
+		september,
+		old
+	}
+	
 	global.panicbg = ini_read_real("Modded", "panicbg", true);
 	global.panictilt = ini_read_real("Modded", "panictilt", false);
 	global.sloperot = ini_read_real("Modded", "sloperot", false);
@@ -187,6 +188,18 @@ function load_moddedconfig()
 	global.machsnd = ini_read_real("Modded", "machsnd", 0); // final, old
 	global.sugaryoverride = ini_read_real("Modded", "sugaryoverride", false);
 	global.enemyrot = ini_read_real("Modded", "enemyrot", false);
+	
+	// lapping
+	enum lapmode
+	{
+		normal,
+		infinite,
+		laphell
+	}
+	global.lapmode = ini_read_real("Modded", "lapmode", lapmode.infinite); // normal, infinite, laphell
+	global.parrypizzaface = ini_read_real("Modded", "parrypizzaface", true);
+	global.lap3checkpoint = ini_read_real("Modded", "lap3checkpoint", true);
+	global.lap4checkpoint = ini_read_real("Modded", "lap4checkpoint", true);
 	
 	// convert from islam
 	if ini_key_exists("Modded", "pizzellesugaryoverride")

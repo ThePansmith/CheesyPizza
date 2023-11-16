@@ -174,7 +174,7 @@ switch state
 				}
 
 			}
-			else if key_quit
+			else if key_quit && optionbuffer <= 0
 			{
 				state = states.ending
 				exitselect = 1

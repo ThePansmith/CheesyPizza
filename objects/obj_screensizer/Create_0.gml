@@ -56,3 +56,9 @@ alarm[1] = 1;
 application_surface_draw_enable(false);
 display_set_gui_size(CAMERA_WIDTH, CAMERA_HEIGHT);
 screen_apply_size();
+
+// resolution dependent mouse values
+mx = 0;
+my = 0;
+mxgui = 0;
+mygui = 0;

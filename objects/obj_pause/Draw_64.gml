@@ -1,10 +1,10 @@
+live_auto_call;
 if instance_exists(obj_keyconfig)
 	exit;
 
-reset_blendmode();
-reset_shader_fix();
-
+toggle_alphafix(true);
 if SUGARY
 	scr_pausedraw_ss();
 else
 	scr_pausedraw();
+toggle_alphafix(false);

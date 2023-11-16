@@ -15,7 +15,6 @@ function reset_modifier()
 		NoToppings: false,
 		HardMode: false,
 		Mirror: false,
-		Lap3: false,
 		DeathMode: false,
 		JohnGhost: false,
 		Spotlight: false,

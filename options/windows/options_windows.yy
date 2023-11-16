@@ -23,7 +23,7 @@
   "option_windows_product_info": "Pizza Tower: Cheesed Up",
   "option_windows_resize_window": true,
   "option_windows_save_location": 1,
-  "option_windows_scale": 0,
+  "option_windows_scale": 1,
   "option_windows_sleep_margin": 10,
   "option_windows_splash_screen": "splash/splash.png",
   "option_windows_start_fullscreen": false,

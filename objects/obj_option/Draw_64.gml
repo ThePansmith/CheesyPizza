@@ -1,5 +1,6 @@
-reset_blendmode();
-reset_shader_fix();
+live_auto_call;
+
+toggle_alphafix(true);
 
 draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
 if SUGARY
@@ -16,7 +17,10 @@ if room != Mainmenu
 		event_perform(ev_draw, ev_gui);
 }
 if instance_exists(obj_keyconfig) or instance_exists(obj_screenconfirm) or safe_get(obj_modconfig, "visible")
+{
+	tooltip_alpha = 0;
 	exit;
+}
 
 draw_set_font(lang_get_font("bigfont"));
 draw_set_halign(fa_center);
@@ -115,10 +119,38 @@ switch (m.anchor)
 		}
 		break;
 }
+
+var curr = options[_os];
+if curr.tooltip != ""
+{
+	tooltip_alpha = Approach(tooltip_alpha, 1, 0.15);
+	tooltip = curr.tooltip;
+}
+else
+	tooltip_alpha = Approach(tooltip_alpha, 0, 0.05);
+
+if tooltip_alpha > 0
+{
+	draw_set_font(global.font_small);
+	draw_set_align(fa_center, fa_middle);
+	
+	var xx = SCREEN_WIDTH / 2, yy = SCREEN_HEIGHT * 0.86, wd = string_width(tooltip) + 32, ht = string_height(tooltip) + 16;
+	
+	draw_set_alpha(tooltip_alpha / 2);
+	draw_set_colour(c_black);
+	draw_roundrect(xx - wd / 2 - 1, yy - ht / 2 - 1, xx + wd / 2, yy + ht / 2 - 2, false);
+	
+	draw_set_alpha(tooltip_alpha);
+	draw_set_colour(c_white);
+	draw_text_colour(xx + 2, yy + 2, tooltip, 0, 0, 0, 0, tooltip_alpha * 0.35);
+	draw_text(xx, yy, tooltip);
+	
+	draw_set_align();
+}
+
 if (room != Mainmenu)
 {
 	with (obj_transfotip)
 		event_perform(ev_draw, ev_gui);
 }
-gpu_set_blendmode(bm_normal);
-shader_reset();
+toggle_alphafix(false);

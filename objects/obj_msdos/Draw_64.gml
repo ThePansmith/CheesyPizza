@@ -1,7 +1,9 @@
 live_auto_call;
 
+/*
 reset_blendmode();
 reset_shader_fix();
+*/
 
 if con != 0
 {

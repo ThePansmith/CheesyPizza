@@ -1,5 +1,8 @@
 function scr_draw_screen(x, y, xscale, yscale, alpha = 1, gui = false)
 {
+	x = floor(x);
+	y = floor(y);
+	
 	// sugary spire greyscale
 	with obj_camera
 	{

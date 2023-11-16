@@ -18,7 +18,7 @@ if ((global.panic || instance_exists(obj_wartimer)) && sprite_index != spr_outli
 				other.playerid = id;
 				
 				var collect = 3000;
-				if MOD.Lap3
+				if global.lapmode == lapmode.laphell
 				{
 					if global.laps == 1
 						collect = 6000;

@@ -128,7 +128,7 @@ if !safe_get(obj_pause, "pause") && instance_exists(obj_player1)
 		}
 		else if global.leveltosave == "exit" && is_struct(music)
 		{
-			if MOD.Lap3 && global.laps >= 2
+			if global.lapmode == lapmode.laphell && global.laps >= 2
 				fmod_event_instance_set_parameter(music.event, "state", 20, true);
 			else if global.lap
 				fmod_event_instance_set_parameter(music.event, "state", 2, true);
@@ -142,7 +142,7 @@ if !safe_get(obj_pause, "pause") && instance_exists(obj_player1)
 			}
 			else
 			{
-				if MOD.Lap3 && global.laps >= 2 // pillar john's revenge
+				if global.lapmode == lapmode.laphell && global.laps >= 2 // pillar john's revenge
 					fmod_event_instance_set_parameter(panicmusicID, "state", 20, true);
 				else if global.laps >= 4 // blue licorice
 					fmod_event_instance_set_parameter(panicmusicID, "state", 3, true);

@@ -39,7 +39,7 @@ if !treasure
 {
 	if image_alpha >= 1
 	{
-		if MOD.DeathMode && !(MOD.Lap3 && global.laps >= 2) && !global.modifier_failed
+		if MOD.DeathMode && !(global.lapmode == lapmode.laphell && global.laps >= 2) && !global.modifier_failed
 		{
 			var has_time = instance_exists(obj_deathmode) && obj_deathmode.time > 0;
 			if sprite_index == spr_todocile or sprite_index == spr_toangry
@@ -194,7 +194,7 @@ if flash && alarm[2] <= 0
 if _move && image_alpha >= 1
 {
 	var _parry = instance_place(x, y, obj_parryhitbox);
-	if _parry && !_parry.collisioned && (!MOD.DeathMode or (MOD.Lap3 == 1 && global.laps >= 2)) && MOD.Lap3 != 2 && (REMIX or global.laps > 1) && !global.modifier_failed
+	if _parry && !_parry.collisioned && (!MOD.DeathMode or (global.lapmode == lapmode.laphell && global.laps >= 2)) && global.parrypizzaface && !global.modifier_failed
 	{
 		if playerid.x != x
 			playerid.xscale = sign(x - playerid.x);

@@ -4,7 +4,6 @@ if instance_exists(obj_option) && obj_option.menus[obj_option.menu].menu_id != m
 if global.inputdisplay && keyalpha > 0
 {
 	var prev_state = draw_save_state();
-	
 	scr_getinput(true);
 	
 	var _camx = CAMX;
@@ -31,26 +30,17 @@ if global.inputdisplay && keyalpha > 0
 		&& py >= top - 50 && py <= bottom + 25
 			image_alpha = min(keyalpha, 0.5);
 	}
-
-	gpu_set_blendmode(bm_normal);
+	
 	// draw it
-	var xx = 0, yy = 0;
-	for(var i = 0; i < array_length(inputkeys); i++)
-	{
-		var k = inputkeys[i];
-		
-		xx = k.x * keysize + k.x * keysep;
-		yy = k.y * keysize + k.y * keysep;
-		draw_inputdisplay_key(xx, yy, k.key, k.keyw * keysize + (k.keyw - 1) * keysep, k.keyh * keysize + (k.keyh - 1) * keysep);
-	}
+	gpu_set_blendmode(bm_normal);
+	draw_inputdisplay(0, 0);
 	surface_reset_target();
-
 	
 	// draw result
 	draw_surface_ext(surf, x, y, 1, 1, 0, c_white, image_alpha);
 	
 	// customize
-	var mx = device_mouse_x_to_gui(0), my = device_mouse_y_to_gui(0);
+	var mx = mouse_x_gui, my = mouse_y_gui;
 	if mx >= left && mx <= right && my >= top && my <= bottom
 	{
 		if mouse_check_button_pressed(mb_left) && !drag

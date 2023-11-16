@@ -1,5 +1,5 @@
 /// @description time gain
-if (instance_exists(obj_pizzaface) or global.laps < 2) or MOD.Lap3
+if (instance_exists(obj_pizzaface) or global.laps < 2) or global.lapmode == lapmode.laphell
 	exit;
 
 if !instance_exists(obj_wartimer)

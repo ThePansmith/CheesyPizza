@@ -2,8 +2,10 @@ draw_set_font(global.creditsfont);
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 
+/*
 reset_blendmode();
 reset_shader_fix();
+*/
 
 for (var i = 0; i < array_length(credits_arr); i++)
 {

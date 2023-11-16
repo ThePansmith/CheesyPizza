@@ -94,7 +94,7 @@ else if !instance_exists(obj_levelLoader)
 		array_push(stack, "Pacifist");
 	if MOD.Spotlight
 		array_push(stack, "Lights Out");
-	if MOD.Lap3
+	if global.lapmode == lapmode.laphell
 		array_push(stack, "Lap Hell");
 	if MOD.DeathMode
 		array_push(stack, "Death Mode");

@@ -24,15 +24,13 @@ if menu == 1
 
 #endregion
 
-reset_shader_fix();
-reset_blendmode();
-
 // fader
 draw_set_alpha(fadealpha);
 draw_set_colour(c_black);
 
+toggle_alphafix(true);
+
 draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false);
 draw_set_alpha(1);
 
-shader_reset();
-gpu_set_blendmode(bm_normal);
+toggle_alphafix(false);

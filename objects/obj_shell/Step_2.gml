@@ -258,7 +258,7 @@ if (!isOpen) {
 		var y1 = autocompleteOriginY;
 		var x2 = x1 + autocompleteMaxWidth + font_get_size(consoleFont) + (autocompletePadding * 2) - scrollbarWidth;
 		var y2 = y1 + (string_height(prompt) * min(array_length(filteredSuggestions), autocompleteMaxLines)) + autocompletePadding;
-		if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), x1, y1, x2, y2)) {
+		if (point_in_rectangle(mouse_x_gui, device_mouse_y_to_gui(0), x1, y1, x2, y2)) {
 			if (mouse_wheel_down()) {
 				autocompleteScrollPosition++;
 				autocompleteScrollPosition = clamp(array_length(filteredSuggestions) - autocompleteMaxLines, 0, autocompleteScrollPosition);
@@ -267,7 +267,7 @@ if (!isOpen) {
 				autocompleteScrollPosition--;
 				autocompleteScrollPosition = max(autocompleteScrollPosition, 0);
 			}
-		} else if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), shellOriginX, shellOriginY, shellOriginX + width, shellOriginY + height)) {
+		} else if (point_in_rectangle(mouse_x_gui, device_mouse_y_to_gui(0), shellOriginX, shellOriginY, shellOriginX + width, shellOriginY + height)) {
 			if (mouse_wheel_down()) {
 				targetScrollPosition = targetScrollPosition + scrollSpeed;
 			}
@@ -276,7 +276,7 @@ if (!isOpen) {
 			}
 		}
 	} else {
-		if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), shellOriginX, shellOriginY, shellOriginX + width, shellOriginY + height)) {
+		if (point_in_rectangle(mouse_x_gui, device_mouse_y_to_gui(0), shellOriginX, shellOriginY, shellOriginX + width, shellOriginY + height)) {
 			if (mouse_wheel_down()) {
 				targetScrollPosition = targetScrollPosition + scrollSpeed;
 			}
@@ -314,7 +314,7 @@ if (!is_undefined(activeMouseArgType)) {
 	} else if (activeMouseArgType == mouseArgumentType.worldY) {
 		activeMouseArgValue = mouse_y;
 	} else if (activeMouseArgType == mouseArgumentType.guiX) {
-		activeMouseArgValue = device_mouse_x_to_gui(0);
+		activeMouseArgValue = mouse_x_gui;
 	} else if (activeMouseArgType == mouseArgumentType.guiY) {
 		activeMouseArgValue = device_mouse_y_to_gui(0);
 	} else if (activeMouseArgType == mouseArgumentType.instanceId) {

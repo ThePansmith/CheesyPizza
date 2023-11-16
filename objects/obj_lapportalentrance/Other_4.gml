@@ -16,10 +16,7 @@ with (obj_player)
 			y = other.y;
 		}
 		
-		if MOD.Lap3 == 1 && global.laps == 2 && !(is_struct(global.checkpoint_data) && global.checkpoint_data.loaded)
-			set_checkpoint();
-		
-		if MOD.Lap3
+		if global.lapmode == lapmode.laphell
 		{
 			switch global.laps
 			{
@@ -30,17 +27,26 @@ with (obj_player)
 						instance_create(obj_player1.x, obj_player1.y, obj_pizzaface);
 						scr_pizzaface_laugh();
 					}
+					
+					if global.lap3checkpoint && !(is_struct(global.checkpoint_data) && global.checkpoint_data.loaded)
+						set_checkpoint();
+					if global.lap4checkpoint && is_struct(global.checkpoint_data)
+						global.checkpoint_data.loaded = 0;
 					break;
 				
 				case 3:
 					instance_create_unique(0, 0, obj_snickexe);
-					with obj_wartimer
+					
+					if !(is_struct(global.checkpoint_data) && global.checkpoint_data.loaded)
 					{
-						addseconds = 60 * 2 + 30; // 2:30
-						alarm[0] = -1;
-						alarm[2] = 1;
+						with obj_wartimer
+						{
+							addseconds = 60 * 2 + 30; // 2:30
+							alarm[0] = -1;
+							alarm[2] = 1;
+						}
 					}
-							
+					
 					with instance_create_unique(0, 0, obj_wartimer)
 					{
 						switch global.leveltosave
@@ -131,6 +137,9 @@ with (obj_player)
 								break;
 						}
 					}
+					
+					if global.lap4checkpoint && !(is_struct(global.checkpoint_data) && global.checkpoint_data.loaded)
+						set_checkpoint();
 					break;
 			}
 		}

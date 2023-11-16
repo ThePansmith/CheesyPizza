@@ -86,6 +86,7 @@ if !boss && level != "tutorial"
 add_modifier("Hard Mode", "HardMode", "A placeholder entity will rain enemies upon you!", [seq_hardmode_off, seq_hardmode_on]);
 add_modifier("Mirrored", "Mirror", "Experience the horrors of graphics that weren't supposed to be flipped.", [seq_mirrored_off, seq_mirrored_on]);
 
+/*
 if !boss && level != "grinch" && level != "dragonlair" && level != "snickchallenge" && level != "tutorial" && level != "secretworld"
 {
 	var opt = add_modifier("Lap Hell", "Lap3", "A challenge awaits you on the third lap!", [seq_lap3_off, seq_lap3_on, seq_lap3_on]);
@@ -95,6 +96,7 @@ if !boss && level != "grinch" && level != "dragonlair" && level != "snickchallen
 		["HARD", 2] // No parrying pizzaface, restart the whole level if failed
 	]
 }
+*/
 
 add_modifier("John Ghost", "JohnGhost", "Once you pass the first room, the John ghost from Wasteyard will spawn everywhere!");
 
@@ -102,7 +104,7 @@ circle_size = 250;
 add_modifier("Lights Out", "Spotlight", "The size of the spotlight is tied to your combo time. Grab collectibles and kill enemies to reset it.", function(val)
 {
 	// draw circle first to crop out
-	shader_reset();
+	toggle_alphafix(false);
 	
 	draw_clear(c_black);
 	circle_size = lerp(circle_size, val ? 70 : 250, 0.25);
@@ -113,8 +115,7 @@ add_modifier("Lights Out", "Spotlight", "The size of the spotlight is tied to yo
 	draw_circle(384/2 + random_range(-1, 1), 216/2 + random_range(-1, 1), circle_size + 30, false);
 	
 	draw_set_alpha(1);
-	reset_blendmode();
-	reset_shader_fix();
+	toggle_alphafix(true);
 	
 	// player
 	var p = simuplayer;

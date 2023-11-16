@@ -9,17 +9,20 @@ enum menutype
 // functions
 function menu_goto(menu_id)
 {
-	menu = 0;
-	for (var i = 0; i < array_length(menus); i++)
+	with obj_option
 	{
-		var b = menus[i];
-		if b.menu_id == menu_id
+		menu = 0;
+		for (var i = 0; i < array_length(menus); i++)
 		{
-			menu = i;
-			break;
+			var b = menus[i];
+			if b.menu_id == menu_id
+			{
+				menu = i;
+				break;
+			}
 		}
+		optionselected = 0;
 	}
-	optionselected = 0;
 }
 function create_menu_fixed(_menuid, _anchor, _xpad, _ypad, _backmenu = menus.options)
 {
@@ -34,16 +37,17 @@ function create_menu_fixed(_menuid, _anchor, _xpad, _ypad, _backmenu = menus.opt
 		options: []
 	};
 }
-function add_option_press(_menu, _optionid, _name, _func)
+function add_option_press(_menu, _optionid, _name, _func = noone)
 {
 	var b = 
 	{
 		option_id: _optionid,
 		type: menutype.press,
-		func: _func,
 		name: _name,
-		localization: true
+		localization: true,
+		tooltip: ""
 	};
+	b.func = live_method(b, _func); // makes the scope of the function the struct, not obj_option.
 	array_push(_menu.options, b);
 	return b;
 }
@@ -55,8 +59,9 @@ function add_option_toggle(_menu, _optionid, _name, _onchanged = noone)
 		type: menutype.toggle,
 		value: false,
 		name: _name,
-		on_changed: _onchanged
+		tooltip: ""
 	};
+	b.on_changed = live_method(b, _onchanged);
 	array_push(_menu.options, b);
 	return b;
 }
@@ -69,8 +74,9 @@ function add_option_multiple(_menu, _optionid, _name, _values, _onchanged = noon
 		values: _values,
 		value: 0,
 		name: _name,
-		on_changed: _onchanged
+		tooltip: ""
 	};
+	b.on_changed = live_method(b, _onchanged);
 	array_push(_menu.options, b);
 	return b;
 }
@@ -92,12 +98,13 @@ function add_option_slide(_menu, _optionid, _name, _onmove = noone, _onchanged =
 		value: 100,
 		moved: false,
 		name: _name,
-		on_changed: _onchanged,
 		on_move: _onmove,
 		slidecount: 0,
 		moving: false,
-		sound: noone
+		sound: noone,
+		tooltip: ""
 	};
+	b.on_changed = live_method(b, _onchanged);
 	if _sound != noone
 		b.sound = fmod_event_create_instance(_sound);
 	array_push(_menu.options, b);

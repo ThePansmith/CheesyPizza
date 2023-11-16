@@ -1,121 +1,179 @@
-/// @description simuplayer
 live_auto_call;
 
-var p = simuplayer;
-p.x += p.hsp;
-p.y += p.vsp;
-
-if p.vsp < 20
-	p.vsp += 0.5;
-
-var groundlevel = 540 / 2.5 / 1.5;
-if p.y >= groundlevel
+// subsection
+if !visible
 {
-	p.y = groundlevel;
-	p.vsp = 0;
+	buffer = 5;
+	exit;
+}
+if buffer > 0
+{
+	buffer--;
+	exit;
 }
 
-var width = 960 / 2.5;
-p.x = wrap(p.x, 0, width);
+// get input
+scr_menu_getinput();
 
-with p
+// save and go back
+if key_back && object_index != obj_levelsettings
 {
-	switch state
+	ini_open_from_string(obj_savesystem.ini_str_options);
+	for(var i = 0; i < array_length(options_array); i++)
 	{
-		case states.titlescreen:
-			image += 0.35;
-			break;
-		
-		case states.normal:
-			image += lerp(0.35, 0.6, abs(hsp) / 6);
-			if move != 0
-			{
-				if xscale != move
-					hsp = move;
-				xscale = move;
-				hsp = Approach(hsp, 6 * move, 0.5);
-			}
+		var opt = options_array[i];
+		if opt.type == modconfig.option
+		{
+			var value = opt.opts[opt.value][1];
+			variable_global_set(opt.vari, value);
+			
+			if is_real(value)
+				ini_write_real("Modded", opt.vari, value);
 			else
-				hsp = 0;
-			
-			if sprite != spr_player_pistolidle
+				ini_write_string("Modded", opt.vari, value);
+		}
+		if opt.type == modconfig.slider
+		{
+			var value = (opt.range[0] + (opt.range[1] - opt.range[0]) * opt.value);
+			variable_global_set(opt.vari, value);
+			ini_write_real("Modded", opt.vari, value);
+		}
+	}
+	ini_write_string("Modded", "inputdisplay", global.inputdisplay);
+	obj_savesystem.ini_str_options = ini_close();
+	
+	gamesave_async_save_options();
+	if instance_exists(obj_option)
+		obj_option.backbuffer = 2;
+	with create_transformation_tip("{u}Settings saved!/")
+	{
+		depth = -700;
+		alarm[1] = 100;
+	}
+	sound_play(sfx_back);
+	instance_destroy();
+}
+
+// move
+var move = key_down2 - key_up2;
+if move_buffer == 0
+{
+	move = key_down - key_up;
+	move_buffer = 5;
+}
+else if move != 0 && move_buffer == -1
+	move_buffer = 20;
+
+if key_down - key_up != 0
+{
+	if move_buffer > 0
+		move_buffer--;
+}
+else
+	move_buffer = -1;
+
+if move != 0
+{
+	sound_play(sfx_step);
+	sound_stop(machsnd, true);
+	
+	simuplayer.state = states.titlescreen;
+	simuplayer.changed = true;
+	simuplayer.angle = 0;
+	
+	sel += move;
+	if sel >= array_length(options_array)
+		sel = 0;
+	if sel < 0
+		sel = array_length(options_array) - 1;
+	
+	yo = 10 * -move;
+	
+	if layer_exists(sequence_layer)
+		layer_destroy(sequence_layer);
+}
+
+xo = lerp(xo, 0, 0.25);
+yo = lerp(yo, 0, 0.25);
+alpha = lerp(alpha, 1, 0.25);
+
+// figure section
+while options_array[sel].type == modconfig.section
+{
+	sel += move;
+	if sel < 0
+		sel = array_length(options_array) - 1;
+}
+
+// change values
+var opt = options_array[sel], locked = false;
+if opt.type != modconfig.section && is_callable(opt.condition)
+	locked = !opt.condition()[0];
+
+if !locked
+{
+	if opt.type == modconfig.slider
+	{
+		var move2 = key_left + key_right;
+		if move2 != 0
+		{
+			image_index = 8;
+			xo = 10;
+		
+			opt.value = clamp(opt.value + move2 * (((key_attack * 2) + 1) / 100), 0, 1);
+		}
+	}
+	else
+	{
+		var move2 = key_left2 + key_right2;
+		if move2 != 0
+		{
+			image_index = 8;
+			xo = 10;
+		
+			if opt.type != modconfig.button
 			{
-				if y < groundlevel
-					sprite = spr_player_fall;
-				else if hsp == 0
-					sprite = spr_player_idle;
-				else
-					sprite = spr_player_move;
+				simuplayer.changed = true;
+	
+				var valueold = opt.value;
+				opt.value = clamp(opt.value + move2, 0, array_length(opt.opts) - 1);
+	
+				if valueold != opt.value
+					sound_play(sfx_step);
 			}
-			break;
-		
-		case states.panicjump:
-			image += 0.35;
-			if y >= groundlevel
-				state = states.normal;
-			break;
-		
-		case states.punch:
-			image += 0.35;
-			
-			if sprite == spr_player_breakdancestart
-				hsp = Approach(hsp, 0, 0.15);
+	
+			if layer_exists(sequence_layer)
+				layer_destroy(sequence_layer);
+		}
+		if key_jump
+		{
+			image_index = 8;
+			xo = 10;
+	
+			sound_play(sfx_select);
+	
+			if opt.type != modconfig.button
+				opt.value = wrap(opt.value + 1, 0, array_length(opt.opts) - 1);
 			else
-				hsp = Approach(hsp, xscale * 12, 0.2);
-			
-			if image > sprite_get_number(sprite) - 1
 			{
-				state = states.normal;
-				sprite = spr_player_idle;
-				move = 0;
+				if is_callable(opt.func)
+					opt.func();
 			}
-			break;
-		
-		case states.handstandjump:
-			image += 0.35;
-			
-			hsp = Approach(hsp, xscale * 10.4, 0.5);
-			if image > sprite_get_number(sprite) - 1
-			{
-				state = states.normal;
-				sprite = spr_player_idle;
-				move = 0;
-			}
-			break;
-		
-		case states.pistol:
-			image += 0.35;
-			if image > sprite_get_number(sprite) - 1
-			{
-				state = states.normal;
-				sprite = spr_player_pistolidle;
-			}
-			break;
-		
-		case states.faceplant:
-			image += 0.5;
-			if image > sprite_get_number(sprite) - 1
-			{
-				state = states.normal;
-				sprite = spr_player_idle;
-				move = 0;
-			}
-			break;
-		
-		case states.chainsawbump:
-			image += 0.4;
-			if image > sprite_get_number(sprite) - 1
-			{
-				state = states.normal;
-				sprite = spr_player_idle;
-				move = 0;
-				hsp = 0;
-				if other.bullets == 0
-					changed = true;
-			}
-			break;
-		
-		case states.actor:
-			break;
+	
+			if layer_exists(sequence_layer)
+				layer_destroy(sequence_layer);
+		}
 	}
 }
+else if key_jump
+{
+	image_index = 8;
+	xo = 10;
+	sound_play("event:/sfx/misc/golfjingle");
+}
+
+// figure out scroll
+scroll = lerp(scroll, max(options_pos[sel] - SCREEN_HEIGHT / 2, 0), 0.2);
+
+// 
+event_user(0);

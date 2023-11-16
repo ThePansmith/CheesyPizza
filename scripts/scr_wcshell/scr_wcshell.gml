@@ -153,7 +153,7 @@ function scr_wc_create()
 	
 	function WCscr_overconsole()
 	{
-		var mx = device_mouse_x_to_gui(0), my = device_mouse_y_to_gui(0);
+		var mx = mouse_x_gui, my = mouse_y_gui;
 		return (isOpen && mx >= shellOriginX && my >= shellOriginY && mx < shellOriginX + width && my < shellOriginY + height)
 		or gameframe_drag_flags != 0;
 	}
@@ -439,7 +439,7 @@ function scr_wc_step()
 	#endregion
 	#region focus on a window
 	
-	var mousex = device_mouse_x_to_gui(0), mousey = device_mouse_y_to_gui(0);
+	var mousex = mouse_x_gui, mousey = mouse_y_gui;
 	if mouse_check_button_pressed(mb_left)
 	{
 		WC_win_focus = -1;
@@ -836,7 +836,7 @@ function scr_wc_drawgui()
 	draw_set_font(consoleFont);
 	
 	// vars
-	var mousex = device_mouse_x_to_gui(0), mousey = device_mouse_y_to_gui(0);
+	var mousex = mouse_x_gui, mousey = mouse_y_gui;
 	var wincol = c_black, txtcol = c_white;
 	var guiwidth = display_get_gui_width(), guiheight = display_get_gui_height();
 	

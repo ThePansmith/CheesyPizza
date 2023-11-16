@@ -1,8 +1,10 @@
+live_auto_call;
+
 var ww = window_get_width();
 var wh = window_get_height();
 var cr = cr_beam;
 
-if (device_mouse_x_to_gui(0) != mouse_xprevious || device_mouse_y_to_gui(0) != mouse_yprevious) && global.gameframe_enabled
+if (mouse_x_gui != mouse_xprevious || mouse_y_gui != mouse_yprevious) && global.gameframe_enabled
 {
 	if gameframe_mouse_in_window()
 	{
@@ -10,8 +12,8 @@ if (device_mouse_x_to_gui(0) != mouse_xprevious || device_mouse_y_to_gui(0) != m
 			cr = cr_default;
 	
 		disappearbuffer = 100;
-		mouse_xprevious = device_mouse_x_to_gui(0);
-		mouse_yprevious = device_mouse_y_to_gui(0);
+		mouse_xprevious = mouse_x_gui;
+		mouse_yprevious = mouse_y_gui;
 	}
 }
 
@@ -76,7 +78,6 @@ if window_has_focus() && (dirty || window_width_current != ww || window_height_c
 	{
 		camera_set_view_size(view_camera[0], CAMERA_WIDTH * camzoom, CAMERA_HEIGHT * camzoom);
 		app_scale = min(ww / CAMERA_WIDTH, wh / CAMERA_HEIGHT);
-		trace(app_scale);
 		
 		SCREEN_WIDTH = CAMERA_WIDTH;
 		SCREEN_HEIGHT = CAMERA_HEIGHT;
@@ -89,6 +90,13 @@ if window_has_focus() && (dirty || window_width_current != ww || window_height_c
 	}
 	else if global.option_scale_mode == 1
 	{
+		if (ww < 960 or wh < 540) && !(global.gameframe_enabled ? gameframe_get_fullscreen() : window_get_fullscreen())
+		{
+			ww = max(ww, 960);
+			wh = max(wh, 540);
+			window_set_size(ww, wh);
+		}
+		
 		camera_set_view_size(view_camera[0], CAMERA_WIDTH * camzoom, CAMERA_HEIGHT * camzoom);
 		app_scale = min(ww div CAMERA_WIDTH, wh div CAMERA_HEIGHT);
 		
@@ -123,3 +131,24 @@ if window_has_focus() && (dirty || window_width_current != ww || window_height_c
 	normal_size_fix_x = (SCREEN_WIDTH - 960) / 2;
 	normal_size_fix_y = (SCREEN_HEIGHT - 540) / 2;
 }
+
+// mouse position
+switch global.option_scale_mode
+{
+	default:
+		var wd = 960 * app_scale, drawx = (savedwidth - wd) / 2;
+		mxgui = (device_mouse_x_to_gui(0) * (savedwidth / wd)) - drawx / app_scale;
+		
+		var ht = 540 * app_scale, drawy = (savedheight - ht) / 2;
+		mygui = (device_mouse_y_to_gui(0) * (savedheight / ht)) - drawy / app_scale;
+		break;
+	
+	case 2:
+		mxgui = device_mouse_x_to_gui(0);
+		mygui = device_mouse_y_to_gui(0);
+		break;
+}
+mx = mxgui + CAMX;
+my = mygui + CAMY;
+if MOD.Mirror
+	mx = 960 - mxgui + CAMX;

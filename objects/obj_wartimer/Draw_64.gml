@@ -1,9 +1,14 @@
+live_auto_call;
+
 var sugary = SUGARY;
 if sugary
 {
 	var xx = SCREEN_WIDTH / 2 + 32, yy = timer_y - 50;
+	
+	/*
 	reset_shader_fix();
 	reset_blendmode();
+	*/
 	
 	var _tmr_spr = addseconds > 0 ? spr_sucrosetimer_gain : spr_sucrosetimer;
 	draw_sprite(_tmr_spr, 1, xx, yy);

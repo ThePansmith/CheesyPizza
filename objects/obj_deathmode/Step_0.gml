@@ -2,7 +2,7 @@ live_auto_call;
 
 if !MOD.DeathMode
 	active = false;
-if !active or room == rank_room or room == timesuproom or (global.laps >= 2 && MOD.Lap3)
+if !active or room == rank_room or room == timesuproom or (global.laps >= 2 && global.lapmode == lapmode.laphell)
 	exit;
 
 var stop = false;

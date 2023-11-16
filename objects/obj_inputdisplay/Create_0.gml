@@ -175,7 +175,6 @@ draw_inputdisplay_key = function(xx, yy, keycode, width, height = width)
 			break;
 	}
 	
-
 	// square
 	draw_set_colour(pressed ? pressedcol : c_ltgray);
 	draw_roundrect(xx, yy, xx + width - 1, yy + height - 1, false);
@@ -213,6 +212,16 @@ draw_inputdisplay_key = function(xx, yy, keycode, width, height = width)
 		draw_sprite_ext(spr_controlicons, drawer, xo + floor(xx + width / 2), yo + floor(yy + height / 2), siz, siz, 0, c_white, 1);
 		gpu_set_blendmode(bm_normal);
 		
+	}
+}
+draw_inputdisplay = function(xdraw, ydraw)
+{
+	for(var i = 0; i < array_length(inputkeys); i++)
+	{
+		var k = inputkeys[i];
+		var xx = k.x * keysize + k.x * keysep;
+		var yy = k.y * keysize + k.y * keysep;
+		draw_inputdisplay_key(xdraw + xx, ydraw + yy, k.key, k.keyw * keysize + (k.keyw - 1) * keysep, k.keyh * keysize + (k.keyh - 1) * keysep);
 	}
 }
 

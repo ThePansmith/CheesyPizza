@@ -1,3 +1,4 @@
+live_auto_call;
 global.Pattern_Texture_Indexed = -4;
 
 surface_reset_target();
@@ -25,14 +26,15 @@ if (frac(app_scale) > 0 && global.option_texfilter)
 }
 
 // draw it
-if global.option_scale_mode == 0
-	draw_surface(gui_surf, 0, 0);
-else
+reset_blendmode();
+if global.option_scale_mode != 2
 {
 	var _w = display_get_gui_width() * app_scale;
 	var _h = display_get_gui_height() * app_scale;
-	draw_surface_ext(gui_surf, window_to_gui_x((window_get_width() / 2) - (_w / 2)), window_to_gui_y((window_get_height() / 2) - (_h / 2)), window_to_gui_xscale(app_scale), window_to_gui_yscale(app_scale), 0, c_white, 1);
+	draw_surface_ext(gui_surf, floor(window_to_gui_x((window_get_width() / 2) - (_w / 2))), floor(window_to_gui_y((window_get_height() / 2) - (_h / 2))), window_to_gui_xscale(app_scale), window_to_gui_yscale(app_scale), 0, c_white, 1);
 }
+else
+	draw_surface(gui_surf, 0, 0);
 
 gpu_set_blendmode(bm_normal);
 gpu_set_texfilter(false);
@@ -42,3 +44,5 @@ if (lang_init)
 	gameframe_caption_font = lang_get_font("captionfont");
 if window_has_focus() && global.gameframe_enabled
 	gameframe_draw();
+
+//draw_sprite(spr_player_idle, 0, mx - camera_get_view_x(view_camera[0]), my - camera_get_view_y(view_camera[0]));

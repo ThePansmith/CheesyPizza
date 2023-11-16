@@ -1,3 +1,4 @@
+live_auto_call;
 if app_scale <= 0
     exit;
 

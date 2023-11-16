@@ -1,7 +1,7 @@
 live_auto_call;
 
 var _cam_x = CAMX, _cam_y = CAMY;
-var panic = PANIC && global.panicbg;
+var panic = PANIC && global.panicbg && !instance_exists(obj_wartimer);
 
 function layer_get_parallax(lay)
 {

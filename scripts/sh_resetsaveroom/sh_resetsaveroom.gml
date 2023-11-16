@@ -2,6 +2,8 @@ function sh_resetsaveroom()
 {
 	if !WC_debug
 		return "You do not have permission to use this command";
+	if !instance_exists(obj_player1)
+		return "Player is not in room";
 	
 	if variable_global_exists("saveroom") && ds_exists(global.saveroom, ds_type_list)
 		ds_list_clear(global.saveroom);

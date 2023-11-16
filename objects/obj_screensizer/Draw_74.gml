@@ -1,3 +1,4 @@
+live_auto_call;
 global.Pattern_Texture_Indexed = noone;
 
 #macro GUI_WIDTH display_get_gui_width()
@@ -14,5 +15,8 @@ else if surface_get_width(gui_surf) != GUI_WIDTH || surface_get_height(gui_surf)
 
 surface_set_target(gui_surf);
 draw_clear_alpha(c_black, 0);
-//reset_blendmode();
-//reset_shader_fix();
+
+/*
+reset_blendmode();
+reset_shader_fix();
+*/

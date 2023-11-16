@@ -39,23 +39,17 @@ if image_angle != 0
 	y2 = clamp(point_b[1], bbox_top, bbox_bottom);
 	
 	x3 = clamp(point_c[0], bbox_left, bbox_right);
-	y3 = clamp(point_c[1], bbox_top, bbox_bottom);
-	
+	y3 = clamp(point_c[1], bbox_top, bbox_bottom)
 }
-
-
 
 draw_set_color(c_gray);
 draw_set_alpha(163 / 255);
 draw_triangle(x1, y1, x2, y2, x3, y3, false);
 
 draw_set_color(c_white);
-
-
 draw_rectangle_color(bbox_left, bbox_top, bbox_right, bbox_bottom, c_white, c_white, c_white, c_white, true);
 
 draw_set_color(c_blue);
-
 var slope_points = object_get_slope_line(id);
 draw_line(slope_points[0], slope_points[1], slope_points[2], slope_points[3]);
 draw_set_alpha(1);

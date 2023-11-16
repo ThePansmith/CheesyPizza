@@ -4,8 +4,8 @@ function scr_editor_camera_init()
 	view_h = 540;
 	cx = 0;
 	cy = 0;
-	mouse_xprevious = device_mouse_x_to_gui(0);
-	mouse_yprevious = device_mouse_y_to_gui(0);
+	mouse_xprevious = mouse_x_gui;
+	mouse_yprevious = mouse_y_gui;
 	camera_speed = 10;
 	drag_speed = 0.6;
 	zoom = 1;
@@ -14,8 +14,8 @@ function scr_editor_camera_update()
 {
 	cx = camera_get_view_x(view_camera[0]);
 	cy = camera_get_view_y(view_camera[0]);
-	var mx = device_mouse_x_to_gui(0);
-	var my = device_mouse_y_to_gui(0);
+	var mx = mouse_x_gui;
+	var my = mouse_y_gui;
 	if (key_mbmiddle)
 	{
 		cx += ((mouse_xprevious - mx) * (zoom * drag_speed));

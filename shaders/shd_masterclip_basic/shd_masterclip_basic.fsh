@@ -42,8 +42,8 @@ bool mask_clip_bound_check()
 	vec2 trimmed_pos = u_clip_sprite_worldposition + u_clip_sprite_trimmed.xy;
 	vec2 trimmed_size = u_clip_sprite_size * u_clip_sprite_trimmed.zw;
 	bool inside_bounds = ((v_vPosition.x >= (trimmed_pos.x) && v_vPosition.x <= (trimmed_pos.x + trimmed_size.x)) && (v_vPosition.y >= (trimmed_pos.y) && v_vPosition.y <= (trimmed_pos.y + trimmed_size.y)));
-		
-	if (u_rect_inverse > 0.5)
+	
+	if (u_mask_inverse > 0.5)
 		return !inside_bounds;
 	else
 		return inside_bounds;
@@ -52,7 +52,6 @@ bool mask_clip_bound_check()
 vec4 mask_clip(vec4 color)
 {
 	vec4 game_out_color = color;
-		
 	
 	// RX: are we inside the clip region?
 	//if	(

@@ -1,10 +1,13 @@
+live_auto_call;
 if (instance_exists(obj_pizzafaceboss_p3intro) || instance_exists(obj_blackoutline))
 	exit;
 if (image_alpha <= 0)
 	exit;
 
+/*
 reset_blendmode();
 reset_shader_fix();
+*/
 
 switch (state)
 {

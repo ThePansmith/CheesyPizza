@@ -25,6 +25,9 @@ live_rooms = false;
 
 #region CONSTANTS (BECAUSE GMLIVE SUCKS)
 
+for (var i = 0; sequence_exists(i); i++)
+	gml_asset_add(sequence_get(i).name, i);
+
 // File Attribute Constant
 live_constant_add("fa_none", fa_none);
 live_constant_add("fa_readonly", fa_readonly);

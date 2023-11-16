@@ -96,6 +96,7 @@ if (!instance_exists(obj_randomsecret))
 		if fucker
 		{
 			fmod_event_instance_set_timeline_pos(panicmusicID, savedpanicpos);
+			savedpanicpos = 0;
 			fmod_event_instance_set_paused(panicmusicID, false);
 			trace("Resuming panic music: room_start");
 		}

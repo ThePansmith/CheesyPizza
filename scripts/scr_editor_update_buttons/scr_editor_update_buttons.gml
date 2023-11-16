@@ -3,7 +3,7 @@ function scr_editor_update_buttons()
 	button = noone;
 	with (obj_button)
 	{
-		if (position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), self))
+		if (position_meeting(mouse_x_gui, mouse_y_gui, self))
 		{
 			other.button = id;
 			hovered = true;

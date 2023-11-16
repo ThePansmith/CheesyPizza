@@ -3,6 +3,26 @@
 #macro CAMERA_WIDTH obj_screensizer.ideal_width
 #macro CAMERA_HEIGHT obj_screensizer.ideal_height
 
+// mouse functions
+#macro mouse_x mouse_x_hook()
+#macro mouse_y mouse_y_hook()
+#macro mouse_x_gui device_mouse_x_to_gui_hook(0)
+#macro mouse_y_gui device_mouse_y_to_gui_hook(0)
+
+function mouse_x_hook() {
+	return variable_instance_get(obj_screensizer, "mx") ?? device_mouse_x(0);
+}
+function mouse_y_hook() {
+	return variable_instance_get(obj_screensizer, "my") ?? device_mouse_y(0);
+}
+function device_mouse_x_to_gui_hook(device) {
+	return variable_instance_get(obj_screensizer, "mxgui") ?? device_mouse_x_to_gui(device);
+}
+function device_mouse_y_to_gui_hook(device) {
+	return variable_instance_get(obj_screensizer, "mygui") ?? device_mouse_y_to_gui(device);
+}
+
+// screensizer
 function screen_apply_size_delayed()
 {
     with obj_screensizer
@@ -108,6 +128,8 @@ function reset_gui_target()
 }
 function reset_blendmode()
 {
+	if live_call() return live_result;
+	
 	if global.performance
 		gpu_set_blendmode(bm_normal);
 	else
@@ -115,6 +137,8 @@ function reset_blendmode()
 }
 function reset_shader_fix()
 {
+	if live_call() return live_result;
+	
 	if global.performance
 		exit;
 	
@@ -123,6 +147,19 @@ function reset_shader_fix()
 	else if shader_current() != -1
 		shader_reset();
 	shader_set(shd_alphafix);
+}
+function toggle_alphafix(toggle)
+{
+	if toggle
+	{
+		reset_blendmode();
+		reset_shader_fix();
+	}
+	else
+	{
+		gpu_set_blendmode(bm_normal);
+		shader_reset();
+	}
 }
 function window_to_gui_x(x)
 {

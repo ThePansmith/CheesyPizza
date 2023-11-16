@@ -155,9 +155,6 @@ var opt = add_option("REMIX", "gameplay", "Adds extra quality of life improvemen
 		// draw it
 		surface_set_target(tv_bg.surf);
 			
-		reset_blendmode();
-		reset_shader_fix();
-			
 		for(var i = 0; i < sprite_get_number(tv_bg.sprite); i++)
 			draw_sprite_tiled(tv_bg.sprite, i, 278 / 2 + tv_bg.x * max(lerp(-1, 1, tv_bg.parallax[i]), 0), 268);
 		
@@ -463,12 +460,82 @@ var opt = add_option("Heat Meter", "heatmeter", "Rewards good gameplay with more
 });
 
 #endregion
+#region LAPPING
+
+lap = 2;
+lapshake = 0;
+
+var opt = add_button("Lapping", "Modify lapping to your heart's content.", function()
+{
+	visible = false;
+	with obj_option
+		menu_goto(menus.lapping);
+},
+function()
+{
+	lapshake = Approach(lapshake, 0, 0.35);
+	if lap < 999
+	{
+		if ++simuplayer.timer >= 30
+		{
+			simuplayer.timer = 0;
+			lap++;
+			lapshake = 3;
+		}
+	}
+	
+	var xx = 960 / 2.5 / 2, yy = 540 / 2.5 / 2;
+	yy -= 152 / 2;
+	
+	draw_sprite(spr_lap2, 1, xx, yy);
+	
+	var lap_text = string(lap);
+	var wd = sprite_get_width(spr_lapfontbig) * string_length(lap_text);
+	
+	shader_reset();
+	
+	// numbers!
+	gpu_set_zwriteenable(true);
+	gpu_set_ztestenable(true);
+	gpu_set_alphatestenable(true);
+	
+	for(var i = 1; i <= string_length(lap_text); i++)
+	{
+		var lx = xx - 8 + 39 * i - ((wd - 64) / 3) + random_range(-lapshake, lapshake);
+		var ly = yy + 8 + random_range(-lapshake, lapshake);
+		var letter = ord(string_char_at(lap_text, i)) - ord("0");
+		
+		gpu_set_depth(-1);
+		gpu_set_blendmode(bm_normal);
+		draw_sprite(spr_lapfontbig, letter, lx, ly);
+		
+		gpu_set_depth(0);
+		gpu_set_blendmode_ext(bm_dest_color, bm_zero);
+		draw_sprite(spr_lapfontbig, letter + 10, lx, ly);
+	}
+	gpu_set_zwriteenable(false);
+	gpu_set_ztestenable(false);
+	
+	// the thingy
+	gpu_set_blendmode(bm_normal);
+	draw_sprite(spr_lap2, 2, xx - ((wd - 64) / 3), yy);
+	gpu_set_blendmode_ext(bm_dest_color, bm_zero);
+	draw_sprite(spr_lap2, 3, xx - ((wd - 64) / 3), yy);
+	gpu_set_blendmode(bm_normal);
+	
+	gpu_set_alphatestenable(false);
+});
+opt.condition = function()
+{
+	return [!global.lap, "Can't change this while lapping."];
+}
+
+#endregion
 #region HOLIDAY OVERRIDE
 
 var opt = add_option("Holiday Override", "holidayoverride", "Overrides the current in-game holiday.", function(val)
 {
 	var xx = 960 / 2.5 / 2, yy = 540 / 2.5 / 2;
-	
 	if val == -1
 		val = global.holiday;
 	
@@ -596,6 +663,15 @@ add_button("Input Display", "An in-game input display. You can drag it around wi
 	visible = false;
 	with obj_option
 		menu_goto(menus.inputdisplay);
+},
+function()
+{
+	var xx = 960 / 2.5 / 2, yy = 540 / 2.5 / 2;
+	with obj_inputdisplay
+	{
+		scr_init_input();
+		draw_inputdisplay(xx - maxx / 2, yy - maxy / 2);
+	}
 });
 
 #endregion

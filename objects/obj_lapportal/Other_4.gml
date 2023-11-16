@@ -6,9 +6,11 @@ if array_contains(levels, global.leveltosave) && !global.sandbox
 		sprite_index = spr_outline;
 	ini_close();
 }
-if !MOD.Lap3 && MOD.DeathMode
+if global.lapmode != lapmode.laphell && MOD.DeathMode
 	instance_destroy();
-if MOD.Lap3 && global.laps >= 3
+if global.lapmode == lapmode.laphell && global.laps >= 3
+	instance_destroy();
+if global.lapmode == lapmode.normal && global.lap
 	instance_destroy();
 if global.snickchallenge
 	instance_destroy();

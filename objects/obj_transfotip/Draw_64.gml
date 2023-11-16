@@ -1,11 +1,8 @@
+live_auto_call;
 if (!global.option_hud)
 	exit;
-	
-var draw_state = draw_save_state();
 
-reset_shader_fix();
-reset_blendmode();
-
+toggle_alphafix(true);
 
 draw_set_font(lang_get_font("creditsfont"));
 draw_set_halign(fa_left);
@@ -24,4 +21,4 @@ yy = floor(yy);
 scr_draw_text_arr(xx, yy, text_arr, c_white, fade);
 draw_set_alpha(1);
 
-draw_restore_state(draw_state);
+toggle_alphafix(false);

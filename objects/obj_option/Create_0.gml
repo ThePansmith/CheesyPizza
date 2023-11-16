@@ -1,3 +1,5 @@
+live_auto_call;
+
 enum menus
 {
 	options, // categories.
@@ -14,7 +16,8 @@ enum menus
 	unused_3, // 11, related to controls.
 	
 	// pto
-	inputdisplay
+	inputdisplay,
+	lapping
 }
 enum anchor
 {
@@ -34,6 +37,9 @@ lastmenu = 0;
 menu = 0;
 optionselected = 0;
 backbuffer = 0;
+
+tooltip = "";
+tooltip_alpha = 0;
 
 pause_icons = array_create(0);
 scr_pauseicon_add(spr_pauseicons, 4);
@@ -181,46 +187,6 @@ add_option_toggle(video_menu, 5, "option_hud", function(val)
 	global.option_hud = val;
 }).value = global.option_hud;
 
-var sca = [
-	create_option_value("FIT", 0, false),
-	create_option_value("PIXEL PERFECT", 1, false)
-];
-if global.experimental
-	array_push(sca, create_option_value("ULTRAWIDE (BUGGY)", 2, false));
-
-add_option_multiple(video_menu, 2, "SCALE MODE", sca, function(val)
-{
-	ini_open_from_string(obj_savesystem.ini_str_options);
-	ini_write_real("Option", "scale_mode", val);
-	obj_savesystem.ini_str_options = ini_close();
-	global.option_scale_mode = val;
-	screen_apply_size();
-}).value = min(global.option_scale_mode, array_length(sca) - 1);
-
-add_option_toggle(video_menu, 6, "GAMEFRAME", function(val)
-{
-	if val != global.gameframe_enabled
-	{
-		with instance_create(0, 0, obj_screenconfirm)
-	    {
-	        savedoption = global.gameframe_enabled;
-	        section = "Modded";
-	        key = "gameframe";
-	        varname = "gameframe";
-	        depth = obj_option.depth - 1;
-		
-			restart = true;
-			saveto = val;
-	    }
-	}
-	else
-	{
-		ini_open_from_string(obj_savesystem.ini_str_options);
-	    ini_write_real("Modded", "gameframe", val);
-	    obj_savesystem.ini_str_options = ini_close();
-	}
-}).value = global.gameframe_enabled;
-
 array_push(menus, video_menu);
 
 #endregion
@@ -246,6 +212,51 @@ if global.gameframe_enabled
 		screen_apply_size_delayed();
 	});
 }
+
+var sca = [
+	create_option_value("FIT", 0, false),
+	create_option_value("PIXEL PERFECT", 1, false)
+];
+if global.experimental
+	array_push(sca, create_option_value("ULTRAWIDE", 2, false));
+
+add_option_multiple(window_menu, 4, "SCALING", sca, function(val)
+{
+	ini_open_from_string(obj_savesystem.ini_str_options);
+	ini_write_real("Option", "scale_mode", val);
+	obj_savesystem.ini_str_options = ini_close();
+	global.option_scale_mode = val;
+	screen_apply_size();
+	
+	if val == 2
+		tooltip = "Very buggy!";
+	else
+		tooltip = "";
+}).value = min(global.option_scale_mode, array_length(sca) - 1);
+
+add_option_toggle(window_menu, 5, "GAMEFRAME", function(val)
+{
+	if val != global.gameframe_enabled
+	{
+		with instance_create(0, 0, obj_screenconfirm)
+	    {
+	        savedoption = global.gameframe_enabled;
+	        section = "Modded";
+	        key = "gameframe";
+	        varname = "gameframe";
+	        depth = obj_option.depth - 1;
+		
+			restart = true;
+			saveto = val;
+	    }
+	}
+	else
+	{
+		ini_open_from_string(obj_savesystem.ini_str_options);
+	    ini_write_real("Modded", "gameframe", val);
+	    obj_savesystem.ini_str_options = ini_close();
+	}
+}).value = global.gameframe_enabled;
 
 array_push(menus, window_menu);
 
@@ -582,5 +593,56 @@ if instance_exists(obj_inputdisplay)
 }
 
 array_push(menus, inputdisplay_menu);
+
+#endregion
+#region lapping menu
+
+var lapping_menu = create_menu_fixed(menus.lapping, anchor.left, 150, 40, menus.options);
+add_option_press(lapping_menu, 0, "option_back", function()
+{
+	with obj_modconfig
+		visible = true;
+	menu_goto(menus.options);
+});
+
+// lapping mode
+var o = add_option_multiple(lapping_menu, 1, "LAPPING MODE", [create_option_value("NORMAL", 0, false), create_option_value("INFINITE", 1, false), create_option_value("LAP HELL", 2, false)], function(val)
+{
+	global.lapmode = val;
+	set_tooltip(val);
+});
+o.value = global.lapmode;
+o.set_tooltip = live_method(o, function(val)
+{
+	switch val
+	{
+		case 0: tooltip = "Base game lapping."; break;
+		case 1: tooltip = "Clocks and bells start giving you time after the third lap."; break;
+		case 2: tooltip = "A challenge awaits you on the third lap!"; break;
+	}
+});
+o.set_tooltip(o.value);
+
+// parry pizzaface
+var o = add_option_toggle(lapping_menu, 2, "PARRY PIZZAFACE", function(val)
+{
+	global.parrypizzaface = val;
+});
+o.value = global.parrypizzaface;
+
+// checkpoints
+var o = add_option_multiple(lapping_menu, 3, "CHECKPOINTS", [create_option_value("OFF", 0, false), create_option_value("LAP 3", 1, false), create_option_value("LAP 4", 2, false), create_option_value("BOTH", 3, false)], function(val)
+{
+	global.lap3checkpoint = val % 2;
+	global.lap4checkpoint = val > 1;
+	
+	tooltip = "Only in Lap Hell.";
+	if val == 3
+		tooltip += "\n(Both Lap 3 and 4)";
+});
+o.value = global.lap3checkpoint + (global.lap4checkpoint * 2);
+o.tooltip = "Only in Lap Hell.";
+
+array_push(menus, lapping_menu);
 
 #endregion

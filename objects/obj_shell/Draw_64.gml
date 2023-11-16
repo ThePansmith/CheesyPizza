@@ -1,3 +1,10 @@
+live_auto_call;
+
+/*
+reset_shader_fix();
+reset_blendmode();
+*/
+
 scr_wc_drawgui();
 draw_set_align();
 
@@ -225,11 +232,11 @@ if (isOpen) {
 					
 					var y1Col = y1 + (entry * emHeight);
 					var y2Col = y1 + (entry * emHeight) + emHeight - 1 + autocompletePadding;
-					if (point_in_rectangle(device_mouse_x_to_gui(0) - 1, device_mouse_y_to_gui(0) - 1, x1, y1Col, x2, y2Col)) {
-						if (device_mouse_x_to_gui(0) != mousePreviousX or device_mouse_y_to_gui(0) != mousePreviousY) {
+					if (point_in_rectangle(mouse_x_gui - 1, mouse_y_gui - 1, x1, y1Col, x2, y2Col)) {
+						if (mouse_x_gui != mousePreviousX or mouse_y_gui != mousePreviousY) {
 							suggestionIndex = i;
-							mousePreviousX = device_mouse_x_to_gui(0);
-							mousePreviousY = device_mouse_y_to_gui(0);
+							mousePreviousX = mouse_x_gui;
+							mousePreviousY = mouse_y_gui;
 						}
 						if (mouse_check_button_pressed(mb_left)) {
 							if (suggestionIndex == i) {

@@ -1,3 +1,5 @@
+live_auto_call;
+
 var j = 0;
 var m = menus[menu];
 
@@ -13,6 +15,8 @@ else if (m.menu_id == menus.game)
     j = 3;
 else if m.menu_id == menus.inputdisplay
 	j = 4;
+else if m.menu_id == menus.lapping
+	j = 3;
 
 if safe_get(obj_modconfig, "visible")
 	j = 5;
@@ -60,32 +64,41 @@ switch (option.type)
 	case menutype.press:
 		if (key_jump && option.func != -4)
 		{
-			fmod_event_one_shot("event:/sfx/ui/select");
-			option.func();
+			with option
+			{
+				fmod_event_one_shot("event:/sfx/ui/select");
+				func();
+			}
 		}
 		break;
 	
 	case menutype.toggle:
 		if (key_jump || -key_left2 || key_right2)
 		{
-			fmod_event_one_shot("event:/sfx/ui/select");
-			option.value = !option.value;
-			if (option.on_changed != -4)
-				option.on_changed(option.value);
+			with option
+			{
+				fmod_event_one_shot("event:/sfx/ui/select");
+				value = !value;
+				if (on_changed != -4)
+					on_changed(value);
+			}
 		}
 		break;
 	
 	case menutype.multiple:
 		if (move2 != 0)
 		{
-			fmod_event_one_shot("event:/sfx/ui/step");
-			option.value += move2;
-			if (option.value > array_length(option.values) - 1)
-				option.value = 0;
-			if (option.value < 0)
-				option.value = array_length(option.values) - 1;
-			if (option.on_changed != -4)
-				option.on_changed(option.values[option.value].value);
+			with option
+			{
+				fmod_event_one_shot("event:/sfx/ui/step");
+				value += move2;
+				if (value > array_length(values) - 1)
+					value = 0;
+				if (value < 0)
+					value = array_length(values) - 1;
+				if (on_changed != -4)
+					on_changed(values[value].value);
+			}
 		}
 		break;
 	
@@ -114,13 +127,21 @@ for (i = 0; i < array_length(m.options); i++)
 	{
 		if (b.moved && (move2 == 0 || optionselected != i))
 		{
-			b.moved = false;
-			b.moving = false;
-			if (b.on_changed != -4)
-				b.on_changed(b.value);
+			with b
+			{
+				moved = false;
+				moving = false;
+				if (on_changed != -4)
+					on_changed(value);
+			}
 		}
+		
 		if (b.on_move != -4 && b.moving)
-			b.on_move(b.value);
+		{
+			with b
+				on_move(value);
+		}
+		
 		if (b.sound != -4)
 		{
 			if (b.moving)
@@ -159,12 +180,16 @@ if ((key_back || key_slap2 || keyboard_check_pressed(vk_escape)) && !instance_ex
 		var emptyhanded = true;
 		for(var i = 0; i < array_length(m.options); i++)
 		{
-			if m.options[i].name == "option_back"
+			with m.options[i]
 			{
-				emptyhanded = false;
-				m.options[i].func();
-				break;
+				if name == "option_back" && is_callable(func)
+				{
+					emptyhanded = false;
+					func();
+				}
 			}
+			if !emptyhanded
+				break;
 		}
 		
 		// fallback, old method

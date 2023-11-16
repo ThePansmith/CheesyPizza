@@ -127,7 +127,7 @@ function scr_tvdraw()
 	
 		var xx = (_cx - 50) + (-3 + 50);
 		var yy = (_cy - 91) + (_hy + 100);
-
+		
 		draw_reset_clip();
 		draw_set_mask(_cx - 50, _cy - 91, spr_tv_combometercutSP);
 		draw_sprite(spr_tv_combometergooSP, propeller_index, xx, yy);
@@ -191,9 +191,6 @@ function scr_tvdraw()
 			// draw it
 			surface_set_target(tv_bg.surf);
 			
-			reset_blendmode();
-			reset_shader_fix();
-			
 			for(var i = 0; i < sprite_get_number(bgindex); i++)
 				draw_sprite_tiled(bgindex, i, 278 / 2 + tv_bg.x * max(lerp(-1, 1, tv_bg.parallax[i]), 0), 268);
 			
@@ -240,7 +237,7 @@ function scr_tvdraw()
 		}
 		pattern_reset();
 		reset_shader_fix();
-	
+		
 		// static
 		if (state == states.tv_whitenoise)
 		{
@@ -322,7 +319,7 @@ function scr_tvdraw()
 		{
 			var bar = spr_timer_bar;
 			var barfill = spr_timer_barfill;
-			var timerspr = timer_tower && !MOD.Lap3 ? spr_timer_tower : pizzaface_sprite;
+			var timerspr = timer_tower && global.lapmode != lapmode.laphell ? spr_timer_tower : pizzaface_sprite;
 			johnface_sprite = spr_timer_johnface;
 			
 			if bolevel
@@ -371,8 +368,6 @@ function scr_tvdraw()
 		}
 		else if global.leveltosave == "sucrose"
 		{
-
-			
 			// sucrose snowstorm
 			if pizzaface_sprite == spr_timer_pizzaface1
 				draw_sprite(spr_sucrosetimer_coneball_idle, pizzaface_index, SCREEN_WIDTH / 2, timer_y + 25);

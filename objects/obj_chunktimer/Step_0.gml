@@ -1,5 +1,5 @@
 if ((!global.panic && !global.snickchallenge) or global.tutorial_room or MOD.DeathMode)
-&& !(MOD.Lap3 && global.laps >= 2)
+&& !(global.lapmode == lapmode.laphell && global.laps >= 2)
 	exit;
 if room == timesuproom
 	exit;
@@ -17,7 +17,7 @@ else
 		var s = string_letters(room_get_name(room));
 		var tower = string_copy(s, 1, 5) == "tower";
 		
-		if (!tower or MOD.Lap3) && !global.snickchallenge
+		if (!tower or global.lapmode == lapmode.laphell) && !global.snickchallenge
 		{
 			instance_create(obj_player1.x, obj_player1.y, obj_pizzaface);
 			scr_pizzaface_laugh();

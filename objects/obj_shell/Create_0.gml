@@ -29,7 +29,7 @@ autocompleteMaxWidth = 0;
 autocompleteScrollPosition = 0;
 autocompleteOriginX = 0;
 autocompleteOriginY = 0;
-mousePreviousX = device_mouse_x_to_gui(0);
+mousePreviousX = mouse_x_gui;
 mousePreviousY = device_mouse_y_to_gui(0);
 
 shellPropertiesHash = "";
