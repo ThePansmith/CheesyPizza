@@ -5,7 +5,7 @@ if !(global.snickrematch && global.snickchallenge)
 }
 
 event_inherited();
-if deactivated
+if deactivate
 	instance_destroy(obj_snickexgquill);
 
 if room == dungeon_pizzamart

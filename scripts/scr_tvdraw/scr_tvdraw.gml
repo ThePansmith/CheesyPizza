@@ -170,7 +170,7 @@ function scr_tvdraw()
 				draw_reset_flash();
 			}
 		}
-		else if REMIX
+		else if REMIX && sprite_exists(tv_bg.sprite)
 		{
 			// secrets
 			var bgindex = tv_bg.sprite, bgcol = c_white;

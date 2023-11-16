@@ -73,7 +73,7 @@ var exit_function = function()
 	var arr = -4;
 	ds_list_copy(sl, sound_list);
 	ds_list_copy(il, instance_list);
-	if (global.leveltorestart != -4) or ((global.is_hubworld or global.custom_hub_level == "") && instance_exists(obj_levelLoader))
+	if (global.leveltorestart != -4)
 	{
 		hub = true;
 		arr = ["hubgroup"];

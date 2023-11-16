@@ -268,5 +268,7 @@ if (isOpen) {
 		draw_set_font(-1);
 	surface_reset_target();
 	
+	toggle_alphafix(true);
 	draw_surface(shellSurface, 0, 0);
+	toggle_alphafix(false);
 }
