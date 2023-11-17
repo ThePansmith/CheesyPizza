@@ -13,7 +13,7 @@ if (room == rank_room)
 	instance_destroy();
 
 // lap 3
-if global.laps >= 2
+if global.laps >= 2 && global.chasekind == 2
 {
 	// from "LAP HELL - Hotfix n' Ready" by TheCyVap
 	maxspeed = 8;

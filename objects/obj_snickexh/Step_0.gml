@@ -1,9 +1,3 @@
-if !(global.snickrematch && global.snickchallenge)
-{
-	instance_destroy();
-	exit;
-}
-
 if deactivate
 {
 	x = room_width / 2;
@@ -128,8 +122,8 @@ else
 					yy = 540 - 100;
 				}
 			
-				xcam = median(xcam - maxspeed, xx + random_range(-2, 2), xcam + maxspeed);
-				ycam = median(ycam - maxspeed, yy + random_range(-2, 2), ycam + maxspeed);
+				xcam = Approach(xcam, xx + random_range(-2, 2), maxspeed);
+				ycam = Approach(ycam, yy + random_range(-2, 2), maxspeed);
 			
 				lockcam = true;
 				gotoplayer--;
@@ -144,15 +138,19 @@ else
 				appeared = true;
 				lockcam = true;
 			
-				if sprite_index != spr_snick_exhattack
+				if sprite_index != spr_snick_exhattack && sprite_index != spr_snick_exhattackstart
+				{
+					image_index = 0;
 					sprite_index = spr_snick_exhattackstart;
+					create_heatattack_afterimage(x, y, sprite_index, 10, 1);
+				}
 				if sprite_index == spr_snick_exhattackstart && image_index >= 13
 				{
 					appear = 3;
 					lockcam = false;
 				
-					xcam += CAMX
-					ycam += CAMY
+					xcam += CAMX;
+					ycam += CAMY;
 				}
 			}
 			if appear == 3
@@ -197,12 +195,10 @@ else
 							state = states.frozen;
 						}
 					}
-					
-					repeat 6 with instance_create(x + random_range(-100,100), y + random_range(-100,100), obj_balloonpop)
-						sprite_index = spr_shotgunimpact
+					create_particle(x, y, part.genericpoofeffect);
 					
 					appear = 0;
-					appeartimer = room_speed * (10 + random(5));
+					appeartimer = room_speed * (8 + random(5));
 					gotoplayer = room_speed * 5;
 				}
 				with obj_parryhitbox

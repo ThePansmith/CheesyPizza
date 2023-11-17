@@ -37,8 +37,10 @@ with (obj_player)
 				case 3:
 					instance_create_unique(0, 0, obj_snickexe);
 					
+					/*
 					if !(is_struct(global.checkpoint_data) && global.checkpoint_data.loaded)
 					{
+						// if a war timer already exists
 						with obj_wartimer
 						{
 							addseconds = 60 * 2 + 30; // 2:30
@@ -46,6 +48,7 @@ with (obj_player)
 							alarm[2] = 1;
 						}
 					}
+					*/
 					
 					with instance_create_unique(0, 0, obj_wartimer)
 					{

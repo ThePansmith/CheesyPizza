@@ -1,9 +1,3 @@
-if !(global.snickrematch && global.snickchallenge)
-{
-	instance_destroy(id, false)
-	exit
-}
-
 if deactivate
 {
 	if hitboxcreate
@@ -13,9 +7,6 @@ if deactivate
 			if ID == other.id
 				instance_destroy();
 		}
-		
-		with instance_create(x + irandom_range(-50, 50), y + irandom_range(-50, 50), obj_balloonpop)
-			sprite_index = spr_shotgunimpact;
 	}
 	
 	x = room_width / 2;
@@ -61,7 +52,7 @@ else
 }
 
 // hurtbox
-if (!hitboxcreate && (!obj_player1.instakillmove && obj_player1.state != states.handstandjump && obj_player.state != states.punch))
+if (!hitboxcreate)
 {
 	hitboxcreate = true;
 	with (instance_create(x, y, obj_forkhitbox))
@@ -72,10 +63,8 @@ if (!hitboxcreate && (!obj_player1.instakillmove && obj_player1.state != states.
 }
 
 // spontaneously evaporate if player is in cutscene
-if (place_meeting(x, y, obj_player1) && (obj_player1.instakillmove || obj_player1.state == states.handstandjump || obj_player1.state == states.punch))
-or (obj_player1.state == states.keyget or obj_player1.state == states.victory or obj_player1.state == states.frozen) or place_meeting(x, y, obj_playerexplosion) or place_meeting(x, y, obj_dynamiteexplosion)
-or safe_get(obj_pizzagoblinbomb, "state") == states.grabbed
-&& !deactivate
+if (obj_player1.state == states.keyget or obj_player1.state == states.victory or obj_player1.state == states.frozen
+or safe_get(obj_pizzagoblinbomb, "state") == states.grabbed) && !deactivate
 	reset_pos();
 
 if room == ruin_11 or room == ruin_4 or room == medieval_pizzamart or room == ruin_pizzamart or room == dungeon_pizzamart
@@ -94,9 +83,7 @@ else if !point_in_rectangle(x, y, CAMX - 50, CAMY - 50, CAMX + CAMW + 50, CAMY +
 		x = clamp(target.x + 700 * -target.xscale, CAMX, CAMX + CAMW);
 	}
 	
-	repeat 6 with instance_create(x + random_range(-100, 100), y + random_range(-100, 100), obj_balloonpop)
-		sprite_index = spr_shotgunimpact;
-	
+	create_particle(x, y, part.genericpoofeffect);
 	cantp = room_speed * 3;
 }
 

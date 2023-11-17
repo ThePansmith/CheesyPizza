@@ -10,6 +10,24 @@ t = 0;
 buffer = 0;
 sequence_layer = -1;
 move_buffer = -1;
+control_mouse = false;
+scrolltarget = 0;
+
+select = function(sel)
+{
+	self.sel = sel;
+	
+	if sel != -1
+		sound_play(sfx_step);
+	sound_stop(machsnd, true);
+	
+	simuplayer.state = states.titlescreen;
+	simuplayer.changed = true;
+	simuplayer.angle = 0;
+		
+	if layer_exists(sequence_layer)
+		layer_destroy(sequence_layer);
+}
 
 enum modconfig
 {

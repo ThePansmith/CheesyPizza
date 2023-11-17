@@ -597,7 +597,7 @@ array_push(menus, inputdisplay_menu);
 #endregion
 #region lapping menu
 
-var lapping_menu = create_menu_fixed(menus.lapping, anchor.left, 150, 40, menus.options);
+var lapping_menu = create_menu_fixed(menus.lapping, anchor.left, 120, 40, menus.options);
 add_option_press(lapping_menu, 0, "option_back", function()
 {
 	with obj_modconfig
@@ -655,6 +655,28 @@ var o = add_option_multiple(lapping_menu, 3, "CHECKPOINTS", [create_option_value
 });
 o.value = global.lap3checkpoint + (global.lap4checkpoint * 2);
 o.tooltip = "Only in Lap Hell.";
+
+// chase mode
+var o = add_option_multiple(lapping_menu, 4, "LEVEL CHANGES", [create_option_value("OFF", 0, false), create_option_value("LAP BLOCKS", 1, false), create_option_value("SLOW DOWN", 2, false)], function(val)
+{
+	ini_open_from_string(obj_savesystem.ini_str_options);
+	ini_write_real("Modded", "chasekind", val);
+	obj_savesystem.ini_str_options = ini_close();
+	
+	global.chasekind = val;
+	set_tooltip(val);
+});
+o.value = global.chasekind;
+o.set_tooltip = live_method(o, function(val)
+{
+	switch val
+	{
+		case 0: tooltip = "Good luck."; break;
+		case 1: tooltip = "Changes the layout on certain rooms after Lap 3, like ELM."; break;
+		case 2: tooltip = "Slows down Pizzaface on certain rooms after Lap 3, like Lap Hell."; break;
+	}
+});
+o.set_tooltip(o.value);
 
 array_push(menus, lapping_menu);
 

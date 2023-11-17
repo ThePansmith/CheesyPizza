@@ -121,13 +121,14 @@ switch (m.anchor)
 }
 
 var curr = options[_os];
-if curr.tooltip != ""
+if tooltip != curr.tooltip
 {
-	tooltip_alpha = Approach(tooltip_alpha, 1, 0.15);
-	tooltip = curr.tooltip;
+	tooltip_alpha = Approach(tooltip_alpha, 0, curr.tooltip == "" ? 0.25 : 1);
+	if tooltip_alpha == 0
+		tooltip = curr.tooltip;
 }
-else
-	tooltip_alpha = Approach(tooltip_alpha, 0, 0.05);
+else if tooltip != ""
+	tooltip_alpha = Approach(tooltip_alpha, 1, 0.25);
 
 if tooltip_alpha > 0
 {

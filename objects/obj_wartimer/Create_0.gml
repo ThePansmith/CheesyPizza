@@ -8,3 +8,5 @@ timer_y = SCREEN_HEIGHT + sprite_get_height(spr_wartimer);
 timer_index = 0;
 lapflag_index = 0;
 lap_y = SCREEN_HEIGHT;
+
+lap4rooms = ds_list_create();

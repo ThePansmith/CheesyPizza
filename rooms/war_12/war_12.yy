@@ -145,6 +145,7 @@
     {"name":"inst_2347C899","path":"rooms/war_12/war_12.yy",},
     {"name":"inst_B8FB4601","path":"rooms/war_12/war_12.yy",},
     {"name":"inst_3CAEB479","path":"rooms/war_12/war_12.yy",},
+    {"name":"inst_4F548FB1","path":"rooms/war_12/war_12.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -287,6 +288,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2347C899","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_secretportal","path":"objects/obj_secretportal/obj_secretportal.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3520.0,"y":1120.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B8FB4601","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_soldier","path":"objects/obj_soldier/obj_soldier.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4107.0,"y":1171.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_3CAEB479","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_shotgunblock","path":"objects/obj_shotgunblock/obj_shotgunblock.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":5056.0,"y":1056.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4F548FB1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_lapblock","path":"objects/obj_lapblock/obj_lapblock.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":2.0,"x":4352.0,"y":1152.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_79672DAD","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_wartvdude","path":"sprites/spr_wartvdude/spr_wartvdude.yy",},"x":4512.0,"y":1536.0,},

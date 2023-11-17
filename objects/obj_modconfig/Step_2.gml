@@ -16,7 +16,7 @@ if buffer > 0
 scr_menu_getinput();
 
 // save and go back
-if key_back && object_index != obj_levelsettings
+if (key_back or (sel == -1 && mouse_check_button_pressed(mb_right))) && object_index != obj_levelsettings
 {
 	ini_open_from_string(obj_savesystem.ini_str_options);
 	for(var i = 0; i < array_length(options_array); i++)
@@ -74,12 +74,8 @@ else
 
 if move != 0
 {
-	sound_play(sfx_step);
-	sound_stop(machsnd, true);
-	
-	simuplayer.state = states.titlescreen;
-	simuplayer.changed = true;
-	simuplayer.angle = 0;
+	control_mouse = false;
+	sel = max(sel, 0);
 	
 	sel += move;
 	if sel >= array_length(options_array)
@@ -88,92 +84,115 @@ if move != 0
 		sel = array_length(options_array) - 1;
 	
 	yo = 10 * -move;
-	
-	if layer_exists(sequence_layer)
-		layer_destroy(sequence_layer);
+	select(sel);
 }
 
 xo = lerp(xo, 0, 0.25);
 yo = lerp(yo, 0, 0.25);
 alpha = lerp(alpha, 1, 0.25);
 
-// figure section
-while options_array[sel].type == modconfig.section
+if sel != -1
 {
-	sel += move;
-	if sel < 0
-		sel = array_length(options_array) - 1;
-}
-
-// change values
-var opt = options_array[sel], locked = false;
-if opt.type != modconfig.section && is_callable(opt.condition)
-	locked = !opt.condition()[0];
-
-if !locked
-{
-	if opt.type == modconfig.slider
+	// figure section
+	while options_array[sel].type == modconfig.section
 	{
-		var move2 = key_left + key_right;
-		if move2 != 0
+		sel += move;
+		if sel < 0
+			sel = array_length(options_array) - 1;
+	}
+	
+	// change values
+	var opt = options_array[sel], locked = false;
+	if opt.type != modconfig.section && is_callable(opt.condition)
+		locked = !opt.condition()[0];
+
+	if !locked
+	{
+		if opt.type == modconfig.slider
 		{
-			image_index = 8;
-			xo = 10;
+			var move2 = key_left + key_right;
+			if move2 != 0
+			{
+				image_index = 8;
+				xo = 10;
 		
-			opt.value = clamp(opt.value + move2 * (((key_attack * 2) + 1) / 100), 0, 1);
+				opt.value = clamp(opt.value + move2 * (((key_attack * 2) + 1) / 100), 0, 1);
+			}
+		}
+		else
+		{
+			var move2 = key_left2 + key_right2;
+			if control_mouse && mouse_check_button_pressed(mb_right)
+				move2 = -1;
+			
+			if move2 != 0
+			{
+				image_index = 8;
+				xo = 10;
+		
+				if opt.type != modconfig.button
+				{
+					simuplayer.changed = true;
+	
+					var valueold = opt.value;
+					opt.value = clamp(opt.value + move2, 0, array_length(opt.opts) - 1);
+	
+					if valueold != opt.value
+						sound_play(sfx_step);
+				}
+	
+				if layer_exists(sequence_layer)
+					layer_destroy(sequence_layer);
+			}
+			if key_jump or (control_mouse && mouse_check_button_pressed(mb_left))
+			{
+				image_index = 8;
+				xo = 10;
+	
+				sound_play(sfx_select);
+	
+				if opt.type != modconfig.button
+					opt.value = wrap(opt.value + 1, 0, array_length(opt.opts) - 1);
+				else
+				{
+					if is_callable(opt.func)
+						opt.func();
+				}
+	
+				if layer_exists(sequence_layer)
+					layer_destroy(sequence_layer);
+			}
 		}
 	}
-	else
+	else if key_jump
 	{
-		var move2 = key_left2 + key_right2;
-		if move2 != 0
-		{
-			image_index = 8;
-			xo = 10;
-		
-			if opt.type != modconfig.button
-			{
-				simuplayer.changed = true;
-	
-				var valueold = opt.value;
-				opt.value = clamp(opt.value + move2, 0, array_length(opt.opts) - 1);
-	
-				if valueold != opt.value
-					sound_play(sfx_step);
-			}
-	
-			if layer_exists(sequence_layer)
-				layer_destroy(sequence_layer);
-		}
-		if key_jump
-		{
-			image_index = 8;
-			xo = 10;
-	
-			sound_play(sfx_select);
-	
-			if opt.type != modconfig.button
-				opt.value = wrap(opt.value + 1, 0, array_length(opt.opts) - 1);
-			else
-			{
-				if is_callable(opt.func)
-					opt.func();
-			}
-	
-			if layer_exists(sequence_layer)
-				layer_destroy(sequence_layer);
-		}
+		image_index = 8;
+		xo = 10;
+		sound_play("event:/sfx/misc/golfjingle");
 	}
-}
-else if key_jump
-{
-	image_index = 8;
-	xo = 10;
-	sound_play("event:/sfx/misc/golfjingle");
 }
 
 // figure out scroll
-scroll = lerp(scroll, max(options_pos[sel] - SCREEN_HEIGHT / 2, 0), 0.2);
+if control_mouse
+{
+	if mouse_wheel_down()
+		scrolltarget += 40;
+	if mouse_wheel_up()
+		scrolltarget -= 40;
+	scrolltarget = clamp(scrolltarget, 0, array_last(options_pos) - SCREEN_HEIGHT / 2);
+}
+else
+{
+	scrolltarget = max(options_pos[sel] - SCREEN_HEIGHT / 2, 0);
+	sel = max(sel, 0);
+	
+	if mouse_check_button(mb_left)
+	{
+		control_mouse = true;
+		sel = -1;
+	}
+}
+scroll = lerp(scroll, scrolltarget, 0.2);
 
 // 
 event_user(0);

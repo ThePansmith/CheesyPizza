@@ -545,6 +545,7 @@ pizzashield = false;
 pizzashieldid = obj_null;
 pizzapepper = 0;
 loco[0] = obj_richpresence;
+
 transformation[0] = states.bombpep; // these are states
 transformation[1] = states.knightpep;
 transformation[2] = states.knightpepslopes;

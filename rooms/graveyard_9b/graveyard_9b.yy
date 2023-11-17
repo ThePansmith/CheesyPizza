@@ -139,6 +139,7 @@
     {"name":"inst_2D8257C2","path":"rooms/graveyard_9b/graveyard_9b.yy",},
     {"name":"inst_B235C53A","path":"rooms/graveyard_9b/graveyard_9b.yy",},
     {"name":"inst_5F1AF5A4","path":"rooms/graveyard_9b/graveyard_9b.yy",},
+    {"name":"inst_F400118","path":"rooms/graveyard_9b/graveyard_9b.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -275,6 +276,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2D8257C2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollect","path":"objects/obj_escapecollect/obj_escapecollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1184.0,"y":1280.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_B235C53A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_escapecollect","path":"objects/obj_escapecollect/obj_escapecollect.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1184.0,"y":1312.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5F1AF5A4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cutoff","path":"objects/obj_cutoff/obj_cutoff.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2080.0,"y":1728.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_F400118","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_lapblock","path":"objects/obj_lapblock/obj_lapblock.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":4.0,"x":672.0,"y":1856.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_2","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":82,"SerialiseWidth":119,"TileCompressedData":[
 -1277,0,3,62,63,64,-109,0,2,211,212,-5,0,3,87,88,89,-10,0,2,209,210,-97,0,2,236,237,-5,0,3,112,113,114,-10,0,2,234,235,-112,0,2,486,487,-117,0,2,511,512,-213,0,4,440,441,442,443,-8,0,2,411,412,-105,0,4,465,466,467,468,-8,0,2,436,437,-19,0,2,486,487,-84,0,4,490,491,492,493,-8,0,2,461,462,-19,0,2,511,512,-71,0,2,411,412,-6,0,3,109,110,111,-10,0,7,438,439,0,0,470,471,472,-91,0,2,436,

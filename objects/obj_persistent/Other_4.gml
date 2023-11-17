@@ -15,6 +15,8 @@ if instance_exists(obj_parallax)
 	if global.panic && room != custom_lvl_room
 	    event_user(1);
 }
+else
+	exit;
 
 // ctop lapping
 if MOD.Lappable
@@ -49,6 +51,7 @@ if MOD.Lappable or (safe_get(global, "leveltosave") == "sucrose" && !room_is_sec
 	}
 }
 
+// john ghost
 if MOD.JohnGhost
 {
 	if !instance_exists(obj_exitgate) && !instance_exists(obj_hungrypillar) && !instance_exists(obj_lapportal)
@@ -71,3 +74,55 @@ if MOD.JohnGhost
 		});
 	}
 }
+
+// lap 3 blocks
+if (instance_exists(obj_pizzaface) or global.lapmode == lapmode.laphell)
+&& global.laps >= 2 && global.chasekind == 1
+{
+	with obj_reverselapblock
+	{
+		with instance_place(x, y, obj_platform)
+			instance_destroy();
+		with instance_place(x, y, obj_solid)
+			instance_destroy();
+	}
+	if room == graveyard_9b with obj_ghostwall
+		instance_destroy();
+	
+	var tiles = room_get_tile_layers();
+	for(var i = 0; i < array_length(tiles); i++)
+	{
+		var thislayer = tiles[i].layer_id;
+		var lap3layer = layer_get_id(tiles[i].layer_name + "_Egg");
+		
+		if lap3layer != -1
+		{
+			layer_set_visible(lap3layer, true);
+			layer_destroy(thislayer);
+			
+			with obj_secretblock
+			{
+				if targettiles == tiles[i].layer_name
+					targettiles += "_Egg";
+				else if is_array(targettiles)
+					array_push(targettiles, tiles[i].layer_name + "_Egg");
+			}
+			with obj_secretbigblock
+			{
+				if targettiles == tiles[i].layer_name
+					targettiles += "_Egg";
+				else if is_array(targettiles)
+					array_push(targettiles, tiles[i].layer_name + "_Egg");
+			}
+			with obj_secretmetalblock
+			{
+				if targettiles == tiles[i].layer_name
+					targettiles += "_Egg";
+				else if is_array(targettiles)
+					array_push(targettiles, tiles[i].layer_name + "_Egg");
+			}
+		}
+	}
+}
+else
+	instance_destroy(obj_lapblock);

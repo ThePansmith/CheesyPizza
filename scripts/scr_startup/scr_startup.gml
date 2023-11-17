@@ -200,6 +200,7 @@ function load_moddedconfig()
 	global.parrypizzaface = ini_read_real("Modded", "parrypizzaface", true);
 	global.lap3checkpoint = ini_read_real("Modded", "lap3checkpoint", true);
 	global.lap4checkpoint = ini_read_real("Modded", "lap4checkpoint", true);
+	global.chasekind = ini_read_real("Modded", "chasekind", 1); // none, place blocks, slow down
 	
 	// convert from islam
 	if ini_key_exists("Modded", "pizzellesugaryoverride")

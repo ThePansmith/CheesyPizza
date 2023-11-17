@@ -1,10 +1,3 @@
-if (!global.snickchallenge && (global.laps < 2 or global.lapmode != lapmode.laphell))
-or room == timesuproom or room == rank_room or MOD.EasyMode
-{
-	instance_destroy();
-	exit;
-}
-
 if deactivate
 {
 	if hitboxcreate
@@ -14,9 +7,6 @@ if deactivate
 			if ID == other.id
 				instance_destroy();
 		}
-		
-		with instance_create(x + irandom_range(-50, 50), y + irandom_range(-50, 50), obj_balloonpop)
-			sprite_index = spr_shotgunimpact;
 	}
 	
 	x = room_width / 2;
@@ -34,8 +24,12 @@ if !knocked
 	if target
 	{
 		// follow player
-		x = Approach(x, target.x, maxspeed);
-		y = Approach(y, target.y, maxspeed);
+		var spd = maxspeed;
+		if bbox_in_camera(view_camera[0], 50)
+			spd *= 1.25;
+		
+		x = Approach(x, target.x, spd);
+		y = Approach(y, target.y, spd);
 		if x != target.x
 			image_xscale = -sign(x - target.x);
 	

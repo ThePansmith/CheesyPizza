@@ -12,6 +12,7 @@ var yy = 70 - scroll;
 //if array_last(options_pos) < SCREEN_HEIGHT / 3
 //	yy = round(max((SCREEN_HEIGHT / 2) - array_last(options_pos) / 2, 70) - scroll);
 
+var temp_sel = -1;
 for(var i = 0; i < array_length(options_array); i++)
 {
 	var opt = options_array[i], locked = false;
@@ -22,8 +23,16 @@ for(var i = 0; i < array_length(options_array); i++)
 	{
 		default:
 			draw_set_align();
-			
 			draw_set_font(global.font_small);
+			
+			if point_in_rectangle(mouse_x_gui, mouse_y_gui, 80, yy, 80 + 380, yy + 18)
+			&& control_mouse
+			{
+				if self.sel != i
+					select(i);
+				temp_sel = i;
+			}
+			
 			if sel == i
 			{
 				draw_set_colour(locked ? c_gray : c_white);
@@ -80,8 +89,15 @@ for(var i = 0; i < array_length(options_array); i++)
 
 // current option
 draw_set_colour(c_white);
-var opt = options_array[sel];
+if temp_sel == -1 && control_mouse && self.sel != -1
+	select(-1);
+if sel == -1
+{
+	toggle_alphafix(false);
+	exit;
+}
 
+var opt = options_array[sel];
 var right_x = SCREEN_WIDTH - 260;
 draw_set_font(global.bigfont);
 draw_set_align(fa_center);

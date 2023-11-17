@@ -4,7 +4,7 @@ with other
 		scr_hurtplayer(object_index);
 	else if scr_transformationcheck()
 	{
-		if instance_exists(other.baddieID) && sprite_index != spr_tumbleend && state != states.tumble && state != states.knightpep && state != states.knightpepslopes && state != states.parry
+		if instance_exists(other.baddieID) && sprite_index != spr_tumbleend && state != states.tumble && state != states.knightpep && state != states.knightpepslopes && (state != states.knightpepbump or !REMIX) && state != states.parry
 		{
 			scr_losepoints();
 			state = states.tumble;

@@ -1,9 +1,3 @@
-if !(global.snickrematch && global.snickchallenge)
-{
-	instance_destroy(id, false);
-	exit;
-}
-
 event_inherited();
 if deactivate
 	instance_destroy(obj_snickexgquill);

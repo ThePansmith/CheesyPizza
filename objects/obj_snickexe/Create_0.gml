@@ -5,16 +5,13 @@ depth = -5;
 
 reset_pos = function(particle = true)
 {
-	if y > -50 && y < room_height + 50 repeat 6
-	{
-		with instance_create(x + irandom_range(-50, 50), y + irandom_range(-50, 50), obj_balloonpop)
-			sprite_index = spr_shotgunimpact;
-	}
+	if y > -50 && y < room_height + 50 && particle
+		create_particle(x, y, part.genericpoofeffect);
 	
-	if global.snickrematch && event_type != ev_other
+	if global.snickrematch && event_type != ev_other && object_index != obj_snickexe
 	{
 		deactivate = true;
-		alarm[1] = room_speed * 3;
+		alarm[1] = room_speed * 5;
 	}
 	
 	knocked = false;

@@ -16,7 +16,13 @@ else
 	{
 		if !global.lap
 			draw_sprite(spr_lap2warning, 1, x, y + Wave(-5, 5, 0.5, 5));
-		else if global.lapmode == lapmode.laphell && global.laps == 1
-			draw_sprite(spr_lap3warning, 1, x, y + Wave(-5, 5, 0.5, 5));
+		else if global.lapmode == lapmode.laphell
+		{
+			var spr_lap3warning = spr_ough_im_getting_egg_like;
+			if global.laps == 1
+				draw_sprite(spr_lap3warning, check_char("N") ? 1 : 0, x, y + Wave(-5, 5, 0.5, 5));
+			if global.laps == 2
+				draw_sprite(spr_lap3warning, 2, x, y + Wave(-5, 5, 0.5, 5));
+		}
 	}
 }

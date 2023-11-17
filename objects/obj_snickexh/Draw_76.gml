@@ -1,7 +1,7 @@
 if lockcam
 {
-	x = camera_get_view_x(view_camera[0]) + xcam;
-	y = camera_get_view_y(view_camera[0]) + ycam;
+	x = CAMX + xcam;
+	y = CAMY + ycam;
 }
 else
 {
