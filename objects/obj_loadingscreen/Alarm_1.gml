@@ -6,10 +6,8 @@ if len > 0
 	{
 		texture_prefetch(tex);
 		trace("Loading texture: ", tex);
-		alarm[1] = 1;
 	}
-	else
-		event_perform(ev_alarm, 1);
+	alarm[1] = 1;
 }
 else if cyop_tower != ""
 {

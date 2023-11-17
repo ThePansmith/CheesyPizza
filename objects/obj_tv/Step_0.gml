@@ -378,14 +378,14 @@ if targetspr != -1 && targetspr_old != targetspr && global.hud == 0 && visible
 		var charspr_new = asset_get_index(sprite_get_name(targetspr) + char + "_NEW");
 	}
 	
-	if char != "P" && charspr_new > -1
+	if char != "P" && charspr_new > -1 && REMIX
 		sprite_index = charspr_new;
 	else if char != "P" && charspr > -1
 		sprite_index = charspr;
 	else
 	{
 		var charspr_new = asset_get_index(sprite_get_name(targetspr) + (sugarychar ? "SP" : "_NEW"));
-		if charspr_new > -1
+		if charspr_new > -1 && REMIX
 			sprite_index = charspr_new;
 		else
 		{

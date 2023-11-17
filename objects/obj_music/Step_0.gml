@@ -68,7 +68,9 @@ if prevpillar_on_camera != pillar_on_camera
 
 if !safe_get(obj_pause, "pause") && instance_exists(obj_player1)
 {
-	if (global.panic && global.leveltosave != "dragonlair" && global.leveltosave != "grinch" && global.leveltosave != "sucrose")
+	if instance_exists(obj_levelLoader) && secret
+		cyop_music();
+	else if (global.panic && global.leveltosave != "dragonlair" && global.leveltosave != "grinch" && global.leveltosave != "sucrose")
 	or ((global.snickchallenge or MOD.DeathMode) && !instance_exists(obj_titlecard))
 	{
 		if !panicstart

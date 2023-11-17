@@ -26,7 +26,7 @@ else
 	if buffer <= 0 && global.leveltorestart != noone && global.leveltorestart != -1 && (REMIX or checkpoint)
 	{
 		if !instance_exists(obj_transfotip)
-			create_transformation_tip(checkpoint ? "{u}[T] Load Checkpoint" : "{u}[T] Restart Level/", noone, true);
+			create_transformation_tip(checkpoint ? "{u}[T] Load Checkpoint/" : "{u}[T] Restart Level/", noone, true);
 		if obj_player1.key_taunt2
 		{
 			fmod_event_instance_stop(snd, true);
