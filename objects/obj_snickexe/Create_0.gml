@@ -40,4 +40,4 @@ deactivate = false;
 
 if SUGARY
 	sprite_index = spr_yogurtexe;
-create_transformation_tip("{s}Snick is coming.../");
+create_transformation_tip(SUGARY ? "{s}Yogurt is coming.../" : "{s}Snick is coming.../");
