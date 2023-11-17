@@ -1,5 +1,3 @@
-if instance_exists(obj_levelLoader)
-	exit;
 if global.jukebox != noone
 	exit;
 if MOD.DeathMode

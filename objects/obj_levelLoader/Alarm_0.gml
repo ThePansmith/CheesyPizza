@@ -280,3 +280,4 @@ with obj_player
 	event_perform(ev_other, ev_room_start);
 with all
 	event_perform(ev_other, ev_room_start);
+scr_panicbg_init();

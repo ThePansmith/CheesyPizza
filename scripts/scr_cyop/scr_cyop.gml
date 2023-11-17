@@ -1553,7 +1553,7 @@ function cyop_room_goto(str)
 		}
 		if f == undefined
 		{
-			show_message("CYOP level unloaded before it could load into a room");
+			room_goto(str);
 			exit;
 		}
 		else
