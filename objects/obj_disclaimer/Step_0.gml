@@ -81,7 +81,10 @@ if menu == 0
 				state = 3;
 		}
 		else
+		{
+			fade_alpha = 2;
 			state = 3;
+		}
 	}
 	
 	// go

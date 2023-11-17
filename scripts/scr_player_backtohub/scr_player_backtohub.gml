@@ -40,6 +40,12 @@ function scr_player_backtohub()
 			image_index = 0;
 			vsp = 0;
 			backtohubbuffer = 25;
+			
+			if REMIX
+			{
+				sound_play_3d("event:/sfx/pep/step", x, y);
+				create_particle(x, y, part.landcloud, 0);
+			}
 		}
 	}
 	else if (sprite_index == spr_slipbanan2 && floor(image_index) == (image_number - 1))

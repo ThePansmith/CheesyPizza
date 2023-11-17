@@ -43,8 +43,8 @@ function warbg_generic(begin_script, end_script, layer_map = noone)
 	var lays = layer_get_all();
 	for (var i = 0; i < array_length(lays); i++)
 	{
-		var _id = lays[i];
-		if (layer_background_get_id(_id) >= 0)
+		var _id = lays[i], _bg = layer_background_get_id(_id);
+		if (_bg >= 0)
 		{
 			var _found = false;
 			for (var j = 0; j < array_length(arr); j++)
@@ -54,20 +54,20 @@ function warbg_generic(begin_script, end_script, layer_map = noone)
 			}
 			if (layer_map != noone && is_undefined(ds_map_find_value(layer_map, layer_get_name(_id))))
 				_found = false;
-			if (!_found)
+			if (!_found && layer_background_get_sprite(_bg) != bg_etbbrick)
 			{
-				trace("Adding script to Background: ", layer_get_name(_id));
+				//trace("Adding script to Background: ", layer_get_name(_id));
 				layer_script_begin(_id, begin_script);
 				layer_script_end(_id, end_script);
 			}
-			else
-				trace("Excluding scripts to Background: ", layer_get_name(_id));
+			//else
+			//	trace("Excluding scripts to Background: ", layer_get_name(_id));
 		}
 	}
 }
 function warbg_init()
 {
-	if room != rank_room
+	if room != rank_room && (!PANIC or !global.panicbg)
 		warbg_generic(warbg_start, warbg_end);
 }
 function warbg_stop()

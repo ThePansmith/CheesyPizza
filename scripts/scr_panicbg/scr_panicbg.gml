@@ -40,7 +40,7 @@ function scr_panicbg_generic()
 	for(var i = 0; i < array_length(backs); i++)
 	{
 		lay = backs[i].layer_id;
-		if layer_get_depth(lay) > 0
+		if layer_get_depth(lay) > 0 && backs[i].bg_sprite != bg_etbbrick
 		{
 			layer_script_begin(lay, scr_panicbg_start);
 			layer_script_end(lay, scr_panicbg_end);
@@ -64,7 +64,7 @@ function scr_panicbg_start()
 {
 	if live_call() return live_result;
 	
-	if event_type == ev_draw && event_number == ev_draw_normal
+	if event_type == ev_draw && event_number == 0
 	{
 		// set up surface
 		if PANIC && global.panicbg && !safe_get(obj_pause, "pause")
@@ -74,6 +74,9 @@ function scr_panicbg_start()
 			else if surface_get_width(global.panicbg_surface) != CAMW or surface_get_height(global.panicbg_surface) != CAMH
 				surface_resize(global.panicbg_surface, CAMW, CAMH);
 			surface_set_target(global.panicbg_surface);
+			
+			if instance_exists(obj_wartimer)
+				warbg_start();
 		}
 		else if surface_exists(global.panicbg_surface)
 			surface_free(global.panicbg_surface);
@@ -84,7 +87,7 @@ function scr_panicbg_draw()
 {
 	if live_call() return live_result;
 	
-	if event_type == ev_draw && event_number == ev_draw_normal && !safe_get(obj_pause, "pause")
+	if event_type == ev_draw && event_number == 0 && !safe_get(obj_pause, "pause")
 	{
 		// chunk bg
 		with obj_backgroundreplace
@@ -132,7 +135,11 @@ function scr_panicbg_end()
 {
 	if live_call() return live_result;
 	
-	if event_type == ev_draw && event_number == ev_draw_normal
+	if event_type == ev_draw && event_number == 0
 	&& PANIC && global.panicbg && !safe_get(obj_pause, "pause")
+	{
 		surface_reset_target();
+		if instance_exists(obj_wartimer)
+			shader_reset();
+	}
 }

@@ -597,7 +597,7 @@ array_push(menus, inputdisplay_menu);
 #endregion
 #region lapping menu
 
-var lapping_menu = create_menu_fixed(menus.lapping, anchor.left, 120, 40, menus.options);
+var lapping_menu = create_menu_fixed(menus.lapping, anchor.left, SUGARY ? 100 : 120, 40, menus.options);
 add_option_press(lapping_menu, 0, "option_back", function()
 {
 	with obj_modconfig
@@ -628,7 +628,7 @@ o.set_tooltip = live_method(o, function(val)
 o.set_tooltip(o.value);
 
 // parry pizzaface
-var o = add_option_toggle(lapping_menu, 2, "PARRY PIZZAFACE", function(val)
+var o = add_option_toggle(lapping_menu, 2, SUGARY ? "PARRY CONEBALL" : "PARRY PIZZAFACE", function(val)
 {
 	ini_open_from_string(obj_savesystem.ini_str_options);
 	ini_write_real("Modded", "parrypizzaface", val);
@@ -673,7 +673,7 @@ o.set_tooltip = live_method(o, function(val)
 	{
 		case 0: tooltip = "Good luck."; break;
 		case 1: tooltip = "Changes the layout on certain rooms after Lap 3, like ELM."; break;
-		case 2: tooltip = "Slows down Pizzaface on certain rooms after Lap 3, like Lap Hell."; break;
+		case 2: tooltip = "Slows down " + (SUGARY ? "Coneball" : "Pizzaface") + " on certain rooms after Lap 3, like Lap Hell."; break;
 	}
 });
 o.set_tooltip(o.value);

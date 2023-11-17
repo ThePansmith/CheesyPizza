@@ -4,11 +4,7 @@ var sugary = SUGARY;
 if sugary
 {
 	var xx = SCREEN_WIDTH / 2 + 32, yy = timer_y - 50;
-	
-	/*
-	reset_shader_fix();
-	reset_blendmode();
-	*/
+	toggle_alphafix(true);
 	
 	var _tmr_spr = addseconds > 0 ? spr_sucrosetimer_gain : spr_sucrosetimer;
 	draw_sprite(_tmr_spr, 1, xx, yy);
@@ -36,8 +32,7 @@ if sugary
 	draw_sprite_ext(spr_sucrosetimer_font, ord(string_char_at(_seconds, 1)) - ord("0"), secx, minsy, 1, 1, 0, c_blue, alpha);
 	draw_sprite_ext(spr_sucrosetimer_font, ord(string_char_at(_seconds, 2)) - ord("0"), secx + 28, minsy, 1, 1, 0, c_blue, alpha);
 	
-	gpu_set_blendmode(bm_normal);
-	shader_reset();
+	toggle_alphafix(false);
 }
 else
 {

@@ -183,7 +183,7 @@ if (!isOpen) {
 			/*if (isAutocompleteOpen) {
 				self._confirm_current_suggestion();
 			} else */{
-				var args = self._input_string_split(consoleString);
+				var args = self._input_string_split(string_trim(consoleString));
 				if (array_length(args) > 0) {
 					var metadata = functionData[$ args[0]];
 					if (!is_undefined(metadata)) {

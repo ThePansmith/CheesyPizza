@@ -22,7 +22,7 @@ if instance_exists(obj_keyconfig) or instance_exists(obj_screenconfirm) or safe_
 	exit;
 }
 
-draw_set_font(lang_get_font("bigfont"));
+draw_set_font(SUGARY ? global.bigfont_ss : lang_get_font("bigfont"));
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(c_white);
@@ -132,7 +132,7 @@ else if tooltip != ""
 
 if tooltip_alpha > 0
 {
-	draw_set_font(global.font_small);
+	draw_set_font(SUGARY ? global.smallfont_ss : global.font_small);
 	draw_set_align(fa_center, fa_middle);
 	
 	var xx = SCREEN_WIDTH / 2, yy = SCREEN_HEIGHT * 0.86, wd = string_width(tooltip) + 32, ht = string_height(tooltip) + 16;
@@ -144,7 +144,7 @@ if tooltip_alpha > 0
 	draw_set_alpha(tooltip_alpha);
 	draw_set_colour(c_white);
 	draw_text_colour(xx + 2, yy + 2, tooltip, 0, 0, 0, 0, tooltip_alpha * 0.35);
-	draw_text(xx, yy, tooltip);
+	draw_text(xx, yy, SUGARY ? string_upper(tooltip) : tooltip);
 	
 	draw_set_align();
 }

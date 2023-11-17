@@ -1,7 +1,7 @@
 if ((!global.panic && !global.snickchallenge) or global.tutorial_room or MOD.DeathMode)
 && !(global.lapmode == lapmode.laphell && global.laps >= 2)
 	exit;
-if room == timesuproom
+if room == timesuproom or room == rank_room or instance_exists(obj_endlevelfade)
 	exit;
 
 if global.fill > 0
