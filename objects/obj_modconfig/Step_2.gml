@@ -189,7 +189,7 @@ else
 	if mouse_check_button(mb_left)
 	{
 		control_mouse = true;
-		sel = -1;
+		select(-1);
 	}
 }
 scroll = lerp(scroll, scrolltarget, 0.2);

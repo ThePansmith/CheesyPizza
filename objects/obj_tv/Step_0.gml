@@ -445,7 +445,8 @@ if ((global.panic or global.snickchallenge) && global.fill > 0 && !instance_exis
 	else
 		pizzaface_sprite = spr_timer_pizzaface1;
 	
-	if !instance_exists(obj_ghostcollectibles) && !instance_exists(obj_wartimer)
+	if (!instance_exists(obj_ghostcollectibles) && !instance_exists(obj_wartimer))
+	or global.leveltosave == "sucrose"
 		timer_y = Approach(timer_y, timer_ystart, 1);
 	else
 		timer_y = Approach(timer_y, timer_ystart + 212, 4);

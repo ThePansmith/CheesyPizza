@@ -87,7 +87,7 @@ function scr_pausedraw_ss()
 			}
 			
 			draw_set_colour(selected == i ? c_white : unselected_color);
-			draw_text_ext(_x + 155 - string_width(str) / 2, _y + 70, str, 38, 960);
+			draw_text_ext(floor(_x + 155 - string_width(str) / 2), floor(_y) + 70, str, 38, 960);
 		}
 	}
 	draw_set_align();

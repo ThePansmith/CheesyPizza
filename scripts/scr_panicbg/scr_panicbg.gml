@@ -74,12 +74,12 @@ function scr_panicbg_start()
 			else if surface_get_width(global.panicbg_surface) != CAMW or surface_get_height(global.panicbg_surface) != CAMH
 				surface_resize(global.panicbg_surface, CAMW, CAMH);
 			surface_set_target(global.panicbg_surface);
-			
-			if instance_exists(obj_wartimer)
-				warbg_start();
 		}
 		else if surface_exists(global.panicbg_surface)
 			surface_free(global.panicbg_surface);
+		
+		if instance_exists(obj_wartimer)
+			warbg_start();
 	}
 }
 
@@ -92,6 +92,9 @@ function scr_panicbg_draw()
 		// chunk bg
 		with obj_backgroundreplace
 			event_user(0);
+		
+		if instance_exists(obj_wartimer)
+			warbg_end();
 		
 		// grinch bg
 		if string_starts_with(room_get_name(room), "grinch_") && room != grinch_10
@@ -137,9 +140,8 @@ function scr_panicbg_end()
 	
 	if event_type == ev_draw && event_number == 0
 	&& PANIC && global.panicbg && !safe_get(obj_pause, "pause")
-	{
 		surface_reset_target();
-		if instance_exists(obj_wartimer)
-			shader_reset();
-	}
+	
+	if instance_exists(obj_wartimer)
+		warbg_end();
 }

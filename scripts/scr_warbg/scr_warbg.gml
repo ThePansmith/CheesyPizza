@@ -67,8 +67,10 @@ function warbg_generic(begin_script, end_script, layer_map = noone)
 }
 function warbg_init()
 {
-	if room != rank_room && (!PANIC or !global.panicbg)
+	/*
+	if room != rank_room
 		warbg_generic(warbg_start, warbg_end);
+	*/
 }
 function warbg_stop()
 {

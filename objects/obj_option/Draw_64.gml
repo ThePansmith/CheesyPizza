@@ -34,6 +34,9 @@ var len = array_length(options);
 var size = (string_height("A") * len) + (len * m.ypad);
 var xx = SCREEN_WIDTH / 2;
 var yy = (SCREEN_HEIGHT / 2) - (size / 4);
+var xpad = m.xpad;
+if SUGARY
+	xpad -= 32;
 
 switch (m.anchor)
 {
@@ -50,7 +53,7 @@ switch (m.anchor)
 				c = c_white;
 			var t = lang_get_value(o.name);
 			draw_text_color(xx, yy + (m.ypad * i), t, c, c, c, c, a);
-			if (menu == menus.options)
+			if (menu == menus.options && !SUGARY)
 				scr_pauseicon_draw(i, xx + (string_width(t) / 2) + 50, yy + (m.ypad * i));
 		}
 		break;
@@ -58,7 +61,8 @@ switch (m.anchor)
 	case anchor.left:
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_top);
-		xx = m.xpad;
+		
+		xx = xpad;
 		c = c_white;
 		a = 1;
 		
@@ -78,20 +82,26 @@ switch (m.anchor)
 				if is_undefined(txt)
 					txt = o.name;
 			}
-            draw_text_color(xx, yy + (m.ypad * i), txt, c, c, c, c, a);
+			if SUGARY && o.name == "option_back"
+			{
+				draw_set_align(fa_center);
+				draw_text_color(150, yy - 50, txt, c, c, c, c, a);
+			}
+			else
+				draw_text_color(xx, yy + (m.ypad * i), txt, c, c, c, c, a);
 			
 			draw_set_halign(fa_right);
 			switch (o.type)
 			{
 				case menutype.toggle:
-					draw_text_color(SCREEN_WIDTH - m.xpad, yy + (m.ypad * i), o.value ? lang_get_value("option_on") : lang_get_value("option_off"), c, c, c, c, a);
+					draw_text_color(SCREEN_WIDTH - xpad, yy + (m.ypad * i), o.value ? lang_get_value("option_on") : lang_get_value("option_off"), c, c, c, c, a);
 					break;
 				
 				case menutype.slide:
 					var w = 200;
 					var h = 5;
 					var aw = w * (o.value / 100);
-					var x1 = SCREEN_WIDTH - m.xpad - w;
+					var x1 = SCREEN_WIDTH - xpad - w;
 					var y1 = yy + (m.ypad * i);
 					var x2 = x1 + aw;
 					var y2 = y1 + h;
@@ -113,7 +123,7 @@ switch (m.anchor)
 					var n = select.name;
 					if (select.localization)
 						n = lang_get_value(select.name);
-					draw_text_color(SCREEN_WIDTH - m.xpad, yy + (m.ypad * i), n, c, c, c, c, a);
+					draw_text_color(SCREEN_WIDTH - xpad, yy + (m.ypad * i), n, c, c, c, c, a);
 					break;
 			}
 		}
@@ -132,10 +142,11 @@ else if tooltip != ""
 
 if tooltip_alpha > 0
 {
-	draw_set_font(SUGARY ? global.smallfont_ss : global.font_small);
+	draw_set_font(global.font_small);
 	draw_set_align(fa_center, fa_middle);
 	
-	var xx = SCREEN_WIDTH / 2, yy = SCREEN_HEIGHT * 0.86, wd = string_width(tooltip) + 32, ht = string_height(tooltip) + 16;
+	var str = tooltip;
+	var xx = SCREEN_WIDTH / 2, yy = SCREEN_HEIGHT * 0.86, wd = string_width(str) + 32, ht = string_height(str) + 16;
 	
 	draw_set_alpha(tooltip_alpha / 2);
 	draw_set_colour(c_black);
@@ -144,7 +155,7 @@ if tooltip_alpha > 0
 	draw_set_alpha(tooltip_alpha);
 	draw_set_colour(c_white);
 	draw_text_colour(xx + 2, yy + 2, tooltip, 0, 0, 0, 0, tooltip_alpha * 0.35);
-	draw_text(xx, yy, SUGARY ? string_upper(tooltip) : tooltip);
+	draw_text(xx, yy, str);
 	
 	draw_set_align();
 }

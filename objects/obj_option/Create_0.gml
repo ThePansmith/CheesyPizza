@@ -40,6 +40,7 @@ backbuffer = 0;
 
 tooltip = "";
 tooltip_alpha = 0;
+scroll = 0;
 
 pause_icons = array_create(0);
 scr_pauseicon_add(spr_pauseicons, 4);
@@ -597,7 +598,7 @@ array_push(menus, inputdisplay_menu);
 #endregion
 #region lapping menu
 
-var lapping_menu = create_menu_fixed(menus.lapping, anchor.left, SUGARY ? 100 : 120, 40, menus.options);
+var lapping_menu = create_menu_fixed(menus.lapping, anchor.left, 120, 40, menus.options);
 add_option_press(lapping_menu, 0, "option_back", function()
 {
 	with obj_modconfig

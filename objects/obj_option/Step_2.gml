@@ -127,10 +127,11 @@ for (i = 0; i < array_length(m.options); i++)
 	{
 		if (b.moved && (move2 == 0 || optionselected != i))
 		{
+			b.moved = false;
+			b.moving = false;
+			
 			with b
 			{
-				moved = false;
-				moving = false;
 				if (on_changed != -4)
 					on_changed(value);
 			}
