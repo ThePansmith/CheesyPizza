@@ -169,7 +169,6 @@ add_option_toggle(video_menu, 3, "option_vsync", function(val)
     obj_savesystem.ini_str_options = ini_close();
     global.option_vsync = val;
     screen_apply_vsync();
-	tooltip = "Syncs the game's framerate to the refresh rate of your monitor.";
 }).value = global.option_vsync;
 
 add_option_toggle(video_menu, 4, "option_texfilter", function(val)
