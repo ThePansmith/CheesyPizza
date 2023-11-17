@@ -1228,6 +1228,20 @@ function cyop_asset(str)
 }
 function cyop_load(ini)
 {
+	with obj_player
+	{
+		state = states.door;
+		sprite_index = spr_lookdoor;
+		image_index = image_number - 1;
+	}
+	with textures_offload([])
+	{
+		cyop_tower = ini;
+		scr_pause_activate_objects(false);
+	}
+}
+function cyop_load_internal(ini)
+{
 	// load ini
 	ini_open(ini);
 	var type = ini_read_real("properties", "type", 0); // 0 - tower, 1 - level
@@ -1345,9 +1359,17 @@ function cyop_load(ini)
 	else
 		global.custom_hub_level = "";
 	
-	return cyop_load_level(targetLevel);
+	return cyop_load_level_internal(targetLevel);
 }
 function cyop_load_level(ini)
+{
+	with textures_offload([])
+	{
+		cyop_level = ini;
+		scr_pause_activate_objects(false);
+	}
+}
+function cyop_load_level_internal(ini)
 {
 	// load ini
 	ini_open(ini);
@@ -1509,11 +1531,33 @@ function cyop_resolvevalue(value, varname)
 }
 function cyop_room_goto(str)
 {
-	var r = ds_map_find_value(global.room_map, str);
-	if is_undefined(r)
+	if is_string(str)
 	{
-		show_message("Custom room " + str + " doesn't exist");
-		exit;
+		var r = ds_map_find_value(global.room_map, str);
+		if is_undefined(r)
+		{
+			show_message("Custom room " + str + " doesn't exist");
+			exit;
+		}
+	}
+	else
+	{
+		// please, avoid this.
+		var f = ds_map_find_first(global.room_map);
+		while f != undefined
+		{
+			var r = global.room_map[? f];
+			if global.custom_rooms[r][0] == str
+				break;
+			f = ds_map_find_next(global.room_map, f);
+		}
+		if f == undefined
+		{
+			show_message("CYOP level unloaded before it could load into a room");
+			exit;
+		}
+		else
+			str = f;
 	}
 	
 	room_goto(global.custom_rooms[r][0]);

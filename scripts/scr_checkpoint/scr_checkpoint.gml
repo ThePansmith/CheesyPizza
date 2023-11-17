@@ -5,9 +5,13 @@ function set_checkpoint()
 	
 	create_transformation_tip("{u}Checkpoint Set!/");
 	
+	var r = room;
+	if instance_exists(obj_levelLoader)
+		r = obj_levelLoader.room_name;
+	
 	// base
 	global.checkpoint_data = {
-		room: room,
+		room: r,
 		baddieroom: ds_list_create(),
 		saveroom: ds_list_create(),
 		escaperoom: ds_list_create(),
@@ -127,8 +131,7 @@ function load_checkpoint()
 		global.levelattempts++;
 		obj_music.music = noone;
 		
-		with instance_create(0, 0, obj_fadeout)
-			obj_player1.targetRoom = c.room;
+		scr_room_goto(c.room);
 		
 		if global.shroomfollow instance_create(obj_player1.x, obj_player1.y, obj_pizzakinshroom);
 		if global.cheesefollow instance_create(obj_player1.x, obj_player1.y, obj_pizzakincheese);

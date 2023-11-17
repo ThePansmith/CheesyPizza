@@ -4,33 +4,6 @@
 */
 
 // setup
-/*
-function scr_panicbg_generic(begin_script, end_script)
-{
-	var begin_id = -1, end_id = -1;
-	
-	// finds start and end layers
-	var backs = room_get_bg_layers();
-	for(var i = 0; i < array_length(backs); i++)
-	{
-		var lay = backs[i].layer_id;
-		if layer_get_depth(lay) > 0
-		{
-			if begin_id == -1
-				begin_id = lay;
-			end_id = lay;
-		}
-	}
-	
-	// first layer starts the script, last layer ends it
-	if begin_id != -1
-	{
-		layer_script_begin(begin_id, begin_script);
-		layer_script_end(end_id, end_script);
-	}
-}
-*/
-
 function scr_panicbg_generic()
 {
 	// finds start and end layers

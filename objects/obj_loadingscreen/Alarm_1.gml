@@ -11,5 +11,17 @@ if len > 0
 	else
 		event_perform(ev_alarm, 1);
 }
+else if cyop_tower != ""
+{
+	cyop_load_internal(cyop_tower);
+	cyop_tower = "";
+	alarm[1] = 1;
+}
+else if cyop_level != ""
+{
+	cyop_load_level_internal(cyop_level);
+	cyop_level = "";
+	alarm[1] = 1;
+}
 else
 	instance_destroy();

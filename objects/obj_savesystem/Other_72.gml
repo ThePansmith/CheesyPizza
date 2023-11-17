@@ -66,8 +66,8 @@ switch (state)
 			}
 			ini_str = ini_close();
 			buffer_delete(loadbuff);
-			trace("inistr: ", ini_str);
-			trace("buffstring: ", buffstring);
+			//trace("inistr: ", ini_str);
+			//trace("buffstring: ", buffstring);
 			state = 0;
 		}
 		break;

@@ -11,3 +11,6 @@ fade = 0;
 sound_list = ds_list_create();
 instance_list = ds_list_create();
 scr_pause_deactivate_objects(false);
+
+cyop_tower = "";
+cyop_level = "";

@@ -86,7 +86,14 @@ if (instance_exists(obj_pizzaface) or global.lapmode == lapmode.laphell)
 		with instance_place(x, y, obj_solid)
 			instance_destroy();
 	}
+	with obj_lapblock
+	{
+		with instance_place(x, y, obj_teleporter)
+			instance_destroy();
+	}
 	if room == graveyard_9b with obj_ghostwall
+		instance_destroy();
+	if room == space_11 with obj_antigrav
 		instance_destroy();
 	
 	var tiles = room_get_tile_layers();

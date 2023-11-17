@@ -1,6 +1,6 @@
 if !in_saveroom()
 {
-	trace("adding to save room!");
+	//trace("adding to save room!");
 	repeat (8 * max(abs(image_xscale), abs(image_yscale)))
 	{
 		with (create_debris(x + random_range(0, sprite_width), y + random_range(0, sprite_height), particlespr))

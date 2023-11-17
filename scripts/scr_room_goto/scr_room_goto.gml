@@ -1,11 +1,11 @@
 function scr_room_goto(_room)
 {
-	if is_string(_room)
+	if instance_exists(obj_levelLoader)
 	{
-		if !instance_exists(obj_levelLoader)
-			throw "What the fuck happened";
-		else
-			cyop_room_goto(_room);
+		SUGARY = false;
+		MIDWAY = false;
+		
+		cyop_room_goto(_room);
 	}
 	else
 	{
