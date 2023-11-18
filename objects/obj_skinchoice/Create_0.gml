@@ -60,8 +60,7 @@ function add_palette(palette, entry, texture = noone, name = "PALETTE", descript
 		texture: texture,
 		name: name,
 		description: description,
-		color: pal_swap_get_pal_color(characters[sel.char][2], palette, characters[sel.char][3][0]),
-		mixcolor: pal_swap_get_pal_color(characters[sel.char][2], palette, characters[sel.char][3][1]),
+		color: pal_swap_get_pal_color(characters[sel.char][2], palette, characters[sel.char][3][0])
 	});
 	
 	if !is_undefined(mix_prefix)
@@ -72,7 +71,8 @@ function add_palette(palette, entry, texture = noone, name = "PALETTE", descript
 		array_push(mixables, {
 			palette: palette,
 			prefix: mix_prefix,
-			name: name
+			name: name,
+			color: pal_swap_get_pal_color(characters[sel.char][2], palette, characters[sel.char][3][1])
 		});
 	}
 }
@@ -390,7 +390,7 @@ draw = function(curve)
 				else if fuck >= 0 // special palettes
 					draw_sprite_ext(spr_skinchoicecustom, fuck, 408 + xdraw, 70 + ydraw, 1, 1, 0, c_white, 1);
 				else if mixing or array[i].texture == noone // palettes
-					draw_skin_palette(408 + xdraw, 70 + ydraw, mixing ? array[i].mixcolor : array[i].color, draw_get_alpha());
+					draw_skin_palette(408 + xdraw, 70 + ydraw, array[i].color, draw_get_alpha());
 				else // patterns
 				{
 					draw_sprite_stretched(array[i].texture, current_time / 120, 408 + xdraw + 1, 70 + ydraw + 1, 30, 30);
