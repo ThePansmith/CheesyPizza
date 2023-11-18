@@ -14,22 +14,14 @@ toppin = array_create(5, 0);
 scr_hub_bg_init();
 scr_create_uparrowhitbox();
 
-info = noone; // SET IF YOU WANT A SUGARY TITLECARD.
-//titlecard_sprite = spr_titlecards;
-//titlecard_index = 0;
-//title_sprite = spr_titlecards_title;
-//title_index = 0;
-//title_music = "event:/music/w1/entrancetitle";
-show_titlecard = true;
-allow_modifier = true;
-
 transfotip = noone;
-
-door_index = -1;
-
 levelName = ""; // FOR USE IN CYOP.
 
+if level == "none" or level == "noone" or level == ""
+	level = noone;
+
 // sugary startgate
+info = noone;
 confecti_sprs[0] = { sprite: spr_marshmellow_taunt, image: choose(0, 1) };
 confecti_sprs[1] = { sprite: spr_chocolate_taunt, image: choose(0, 1) };
 confecti_sprs[2] = { sprite: spr_crack_taunt, image: choose(0, 1) };

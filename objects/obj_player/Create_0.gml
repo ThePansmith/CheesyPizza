@@ -794,3 +794,6 @@ superjumped = false;
 image_blend_func = noone;
 substate = states.normal;
 drillspeed = 0;
+cyop_backtohubroom = noone;
+cyop_backtohubx = 0;
+cyop_backtohuby = 0;

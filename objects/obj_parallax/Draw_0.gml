@@ -1,13 +1,13 @@
 live_auto_call;
 
-if safe_get(obj_shell, "WC_oobcam") != true
+if safe_get(obj_shell, "WC_oobcam") != true && room != editor_entrance
 {
 	var camx = camera_get_view_x(view_camera[0]), camy = camera_get_view_y(view_camera[0]);
 	
 	draw_reset_clip();
 	draw_set_bounds(1, 1, room_width - 1, room_height - 1, false, false, true);
 	draw_set_colour(c_black);
-	draw_rectangle(camx, camy, max(room_width, SCREEN_WIDTH) + 32, max(room_height, SCREEN_HEIGHT) + 32, false);
+	draw_rectangle(camx, camy, max(room_width, camx + SCREEN_WIDTH) + 32, max(room_height, camy + SCREEN_HEIGHT) + 32, false);
 	draw_reset_clip();
 	
 	/*

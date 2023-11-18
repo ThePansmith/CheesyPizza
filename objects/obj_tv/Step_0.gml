@@ -6,7 +6,8 @@ timer_ystart = SCREEN_HEIGHT + timer_yplus;
 
 if (global.combotime > 0 && global.combo > 0)
 	visualcombo = global.combo;
-if (room == Realtitlescreen or room == Longintro or room == Mainmenu or room == rank_room or room == rm_levelselect or room == timesuproom or room == rm_baby or room == tower_baby or room == boss_room1 or room == characterselect or room == tower_extra or room == hub_loadingscreen or (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic) or string_starts_with(room_get_name(room), "PP_room"))
+if (room == Realtitlescreen or room == Longintro or room == Mainmenu or room == rank_room or room == rm_levelselect or room == timesuproom or room == rm_baby or room == tower_baby or room == boss_room1 or room == characterselect or room == tower_extra or room == hub_loadingscreen or (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic)
+or string_starts_with(room_get_name(room), "PP_room") or room == editor_entrance)
 {
 	visible = false;
 	targetspr = spr_tv_off;

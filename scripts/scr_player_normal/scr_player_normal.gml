@@ -33,10 +33,15 @@ function state_player_normal()
 		idlespr = spr_player_pistolidle;
 		movespr = spr_player_pistolwalk;
 	}
-	if (safe_get(obj_soundtest, "play") or global.jukebox != noone)
+	if (safe_get(obj_soundtest, "play") or global.jukebox != noone or global.leveltosave == "dance")
 	{
 		idlespr = spr_pepdance;
 		movespr = spr_pepdance;
+		if character == "SP"
+		{
+			idlespr = spr_playerSP_danceidle;
+			movespr = spr_playerSP_dancewalk;
+		}
 		idle = 0;
 	}
 	var breakdance_max = 10;
@@ -1048,6 +1053,8 @@ function state_snick_normal()
 }
 function scr_player_normal()
 {
+	if live_call() return live_result;
+	
 	if character == "S"
 		state_snick_normal();
 	else if (character != "M")

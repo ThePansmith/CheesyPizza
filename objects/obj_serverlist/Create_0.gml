@@ -125,29 +125,6 @@ draw_box = function(x, y, w, h, txo = 0, tyo = 0)
 	scr_draw_granny_texture(xx, yy, w / 96, h / 96, bgscroll, bgscroll, bg_serverlist, spr_tutorialbubble, txo, tyo);
 	draw_sprite_ext(spr_tutorialbubble, 1, xx, yy, w / 96, h / 96, 0, c_white, 1);
 }
-drawbutton = function(x, y, w, h = 72, hoverable = true, mxo = 0, myo = 0, text = "")
-{
-	var state = 0;
-	if hoverable && point_in_rectangle(cursor.x + mxo, cursor.y + myo, x, y, x + w, y + h)
-	{
-		if mouse_check_button_released(mb_left) or cursor.leftclick
-			state = 2;
-		else
-			state = 1;
-	}
-	
-	draw_sprite_stretched(spr_button, state != 0, x, y, w, h);
-	if text != ""
-	{
-		draw_set_font(global.creditsfont);
-		draw_set_colour(c_white);
-		draw_set_align(fa_center);
-		draw_text(lerp(x, x + w, 0.5), y + 20, text);
-		draw_set_align();
-	}
-	
-	return state;
-}
 draw_textfield = function(x, y, w = 254, h = 30, maximum = 32, placeholder = "", def = "")
 {
 	// setup the textbox

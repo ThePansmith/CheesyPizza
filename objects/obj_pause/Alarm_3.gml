@@ -2,18 +2,36 @@ pause = false;
 scr_pause_stop_sounds();
 scr_pause_activate_objects();
 
-var rm = room;
-if !hub
+if room == editor_entrance
 {
-	instance_destroy(obj_levelLoader);
-		
+	with obj_player
+		cyop_backtohubroom = noone;
+}
+if instance_exists(obj_levelLoader)
+{
+	with obj_tv
+		tv_bg.sprite = spr_gate_cyopBG;
+}
+
+var rm = room;
+if !hub or (instance_exists(obj_levelLoader) && !is_string(obj_player1.backtohubroom))
+{
 	pause = false;
-	obj_player1.targetRoom = Realtitlescreen;
-	scr_room_goto(Realtitlescreen);
-	with (obj_player1)
+	if instance_exists(obj_levelLoader)
 	{
-		character = "P";
-		scr_characterspr();
+		instance_destroy(obj_levelLoader);
+		obj_player1.targetRoom = editor_entrance;
+		scr_room_goto(editor_entrance);
+	}
+	else
+	{
+		obj_player1.targetRoom = Realtitlescreen;
+		scr_room_goto(Realtitlescreen);
+		with (obj_player1)
+		{
+			character = "P";
+			scr_characterspr();
+		}
 	}
 	global.leveltosave = noone;
 	global.leveltorestart = noone;
@@ -28,12 +46,12 @@ if !hub
 }
 else
 {
-	if instance_exists(obj_levelLoader)
+	if instance_exists(obj_levelLoader) && is_string(obj_player1.backtohubroom)
 	{
 		with instance_create(0, 0, obj_backtohub_fadeout)
 			fadealpha = 0.9;
 		global.levelreset = true;
-		cyop_load_level(global.custom_hub_level);
+		cyop_load_level_internal(global.custom_hub_level);
 	}
 	else
 	{

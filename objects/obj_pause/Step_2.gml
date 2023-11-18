@@ -73,7 +73,7 @@ if (!pause && instance_exists(obj_player1) && (obj_player1.key_start or (!window
 			array_push(pause_menu, "pause_exit");
 		}
 		else
-			array_push(pause_menu, "pause_exit_title");
+			array_push(pause_menu, room == editor_entrance ? "pause_exit" : "pause_exit_title");
 		
 		if global.jukebox != noone
 			array_push(pause_menu, "pause_jukebox");

@@ -50,15 +50,13 @@ if (fadealpha > f)
 	}
 	else
 	{
+		event_perform(ev_alarm, 0);
 		if (q && offload_arr != noone)
 		{
+			trace($"[obj_fadeout] Flushing textures: {offload_arr}");
 			for (var i = 0; i < array_length(offload_arr); i++)
-			{
 				texture_flush(offload_arr[i]);
-				trace("Flushing texture: ", offload_arr[i]);
-			}
 		}
-		event_perform(ev_alarm, 0);
 	}
 }
 if (fadein == 0)

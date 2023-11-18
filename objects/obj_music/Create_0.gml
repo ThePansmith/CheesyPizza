@@ -274,6 +274,7 @@ add_music(war_lap, "event:/music/w5/war", "event:/music/w5/warsecret", 0)
 #endregion
 #region PTO
 
+add_music(editor_entrance, "event:/music/pause", "event:/music/pillarmusic", 0)
 add_music(tower_extra, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_extra2, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
 add_music(tower_freerun, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)

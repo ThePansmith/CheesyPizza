@@ -1176,6 +1176,7 @@ global.is_hubworld = false;
 
 function cyop_cleanup()
 {
+	global.is_hubworld = false;
 	global.custom_level_name = noone;
 	cyop_freemusic();
 	
@@ -1250,7 +1251,9 @@ function cyop_load_internal(ini)
 	ini_close();
 	
 	// target level
-	global.custom_path = filename_path(ini);
+	global.custom_path = filename_dir(ini);
+	gamesave_async_load();
+	
 	var targetLevel = concat(global.custom_path, "/levels/", mainlevel, "/level.ini");
 	if !file_exists(targetLevel)
 		return "This tower has no Main Level.";
@@ -1277,7 +1280,7 @@ function cyop_load_internal(ini)
 					{
 						var filename = string_replace(file, ext, "");
 						var filepath = concat(folder, "/", file);
-					
+						
 						// properties
 						ini_open(concat(folder, "/", filename, ".ini"));
 						var images = ini_read_real("properties", "images", 0);
@@ -1289,9 +1292,12 @@ function cyop_load_internal(ini)
 					
 						var tileset_size = ini_read_real("tileset", "size", 0);
 						ini_close();
-					
+						
 						// add sprite
 						var spr = sprite_add(filepath, images == -1 ? 1 : images, 0, 0, 0, 0); // temporary
+						if !sprite_exists(spr)
+							continue;
+						
 						if images == 0 && image_width != 0
 							images = floor(sprite_get_width(spr) / image_width);
 						if centered
@@ -1350,8 +1356,8 @@ function cyop_load_internal(ini)
 	}
 	
 	// load sprites and audio
-	recursive_func(concat(filename_path(ini), "/sprites"), "");
-	recursive_func(concat(filename_path(ini), "/audio"), "");
+	recursive_func(concat(filename_path(ini), "sprites"), "");
+	recursive_func(concat(filename_path(ini), "audio"), "");
 	
 	// load into the main level
 	if type == 0
@@ -1383,7 +1389,7 @@ function cyop_load_level_internal(ini)
 	ini_close();
 	
 	// rooms folder
-	var rooms_path = concat(filename_path(ini), "/rooms");
+	var rooms_path = concat(filename_path(ini), "rooms");
 	if !directory_exists(rooms_path)
 		return "Rooms folder doesn't exist";
 	
@@ -1438,7 +1444,6 @@ function cyop_load_level_internal(ini)
 		
 		// clean
 		ds_map_clear(global.room_map);
-		layer_reset_target_room();
 		
 		return "Error loading rooms";
 	}
@@ -1448,7 +1453,7 @@ function cyop_load_level_internal(ini)
 		global.leveltorestart = noone;
 	else
 		global.leveltorestart = "main";
-	global.leveltosave = "custom";
+	global.leveltosave = string_lower(filename_name(filename_dir(ini)));
 	
 	var reset = global.levelreset;
 	global.levelreset = false;
@@ -1470,9 +1475,12 @@ function cyop_load_level_internal(ini)
 		targetRoom = "main";
 	}
 	
-	titlecardSprite = cyop_resolvevalue(titlecardSprite, "sprite_index");
-	titleSprite = cyop_resolvevalue(titleSprite, "sprite_index");
-	titleSong = cyop_resolvevalue(titleSong, "sound");
+	if titlecardSprite != "no titlecard"
+	{
+		titlecardSprite = cyop_resolvevalue(titlecardSprite, "sprite_index");
+		titleSprite = cyop_resolvevalue(titleSprite, "sprite_index");
+		titleSong = cyop_resolvevalue(titleSong, "sound");
+	}
 	
 	if !is_string(titlecardSprite) && titlecardSprite != spr_null && !global.is_hubworld
 	{
@@ -1490,7 +1498,7 @@ function cyop_load_level_internal(ini)
 }
 function cyop_resolvevalue(value, varname)
 {
-	if varname == "content"
+	if varname == "content" or varname == "objectlist"
 	{
 		var return_value = cyop_asset(value);
 		if object_exists(return_value)

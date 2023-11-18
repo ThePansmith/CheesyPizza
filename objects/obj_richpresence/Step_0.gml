@@ -94,7 +94,7 @@ else if !instance_exists(obj_levelLoader)
 		array_push(stack, "Pacifist");
 	if MOD.Spotlight
 		array_push(stack, "Lights Out");
-	if global.lapmode == lapmode.laphell
+	if global.lapmode == lapmode.laphell && global.laps >= 2
 		array_push(stack, "Lap Hell");
 	if MOD.DeathMode
 		array_push(stack, "Death Mode");
@@ -288,6 +288,8 @@ if state == ""
 		state = "Server Menu";
 		details = "";
 	}
+	if room == editor_entrance
+		state = "Custom Towers";
 	
 	// bosses
 	if room == boss_pepperman
@@ -301,7 +303,7 @@ if state == ""
 	if room == boss_pizzaface or room == boss_pizzafacefinale
 		state = "Pizzaface";
 	if room == boss_pizzafacehub
-		state = "Top of The Pizza Tower"
+		state = "Top of the Pizza Tower"
 }
 if room == rank_room
 	state = "Ranking";

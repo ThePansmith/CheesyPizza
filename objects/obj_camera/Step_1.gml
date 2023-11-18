@@ -31,6 +31,7 @@ with obj_cameraRegion
 		
 		targetzoom = zoom;
 		targetangle = -image_angle;
+		other.panspeed = panspeed;
 	}
 }
 
@@ -39,6 +40,7 @@ if smooth_buffer == 0
 	limitcam = targetcam;
 	camzoom = targetzoom;
 	angle = targetangle;
+	panspeed = 32;
 }
 else
 {
@@ -62,10 +64,6 @@ else
 	limitcam[1] = Approach(limitcam[1], targetcam[1], panspeed);
 	limitcam[2] = Approach(limitcam[2], targetcam[2], panspeed);
 	limitcam[3] = Approach(limitcam[3], targetcam[3], panspeed);
-	
-	if limitcam[0] == targetcam[0] && limitcam[1] == targetcam[1]
-	&& limitcam[2] == targetcam[2] && limitcam[3] == targetcam[3]
-		panspeed = 32;
 	
 	camzoom = lerp(camzoom, targetzoom, 0.25);
 	angle = lerp(angle, targetangle, 0.25);

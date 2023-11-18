@@ -38,6 +38,9 @@ enemybirdi = 0;
 after = 0;
 deactivate = false;
 
-if SUGARY
-	sprite_index = spr_yogurtexe;
-create_transformation_tip(SUGARY ? "{s}Yogurt is coming.../" : "{s}Snick is coming.../");
+if object_index == obj_snickexe
+{
+	if SUGARY
+		sprite_index = spr_yogurtexe;
+	create_transformation_tip(SUGARY ? "{s}Yogurt is coming.../" : "{s}Snick is coming.../");
+}

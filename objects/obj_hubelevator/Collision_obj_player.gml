@@ -9,7 +9,7 @@ if state == 0
 				if room == other.hub_array[i][1]
 				{
 					other.sel = i;
-					other.offload_arr = other.hub_array[i][3]
+					other.offload_arr = other.hub_array[i][3];
 					break;
 				}
 			}

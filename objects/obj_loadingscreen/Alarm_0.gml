@@ -7,11 +7,9 @@ for (var i = 0; i < array_length(group_arr); i++)
 }
 if (offload_arr != noone)
 {
+	trace($"[obj_loadingscreen] Flushing textures: {offload_arr}");
 	for (var i = 0; i < array_length(offload_arr); i++)
-	{
 		texture_flush(offload_arr[i]);
-		trace($"[obj_loadingscreen] Flushing texture: {offload_arr[i]}");
-	}
 }
 global.offload_tex = array_create(0);
 array_copy(global.offload_tex, 0, tex_arr, 0, array_length(tex_arr));

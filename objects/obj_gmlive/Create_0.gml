@@ -93,4 +93,8 @@ live_function_add("fmod_event_get_length(inst)", function(inst) {
     return fmod_event_get_length(inst);
 });
 
+live_function_add("launch_external(str)", function(str) {
+    return launch_external(str);
+});
+
 #endregion

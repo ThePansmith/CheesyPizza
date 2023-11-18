@@ -68,10 +68,10 @@ function meta_level()
 				{
 					var levels = [];
 					
-					var file = file_find_first(concat(global.custom_path, "levels/*"), fa_directory);
+					var file = file_find_first(concat(global.custom_path, "/levels/*"), fa_directory);
 					while file != ""
 					{
-						if directory_exists(concat(global.custom_path, "levels/", file))
+						if directory_exists(concat(global.custom_path, "/levels/", file))
 							array_push(levels, file);
 						file = file_find_next();
 					}

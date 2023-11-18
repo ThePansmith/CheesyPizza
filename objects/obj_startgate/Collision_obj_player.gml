@@ -26,7 +26,13 @@ with (other)
 		exit;
 	}
 }
-if floor(other.image_index) == other.image_number - 1 && other.state == states.victory
+
+if other.key_taunt2 && other.state == states.victory && allow_modifier
+{
+	other.state = states.actor;
+	instance_create_depth(0, 0, 0, obj_levelsettings, {level: level, levelname: msg})
+}
+else if (floor(other.image_index) == other.image_number - 1 or other.key_taunt2) && other.state == states.victory
 {
 	with other
 	{
@@ -89,11 +95,6 @@ if floor(other.image_index) == other.image_number - 1 && other.state == states.v
 				restarttimer = true;
 		}
 	}
-}
-else if other.key_taunt2 && other.state == states.victory && allow_modifier
-{
-	other.state = states.actor;
-	instance_create_depth(0, 0, 0, obj_levelsettings, {level: level, levelname: msg})
 }
 
 // level name at the bottom of the screen
