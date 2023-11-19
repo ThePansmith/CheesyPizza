@@ -5668,6 +5668,7 @@
     {"id":{"name":"spr_poweringupeffect","path":"sprites/spr_poweringupeffect/spr_poweringupeffect.yy",},},
     {"id":{"name":"scr_saveroom","path":"scripts/scr_saveroom/scr_saveroom.yy",},},
     {"id":{"name":"spr_playerN_lookdoor","path":"sprites/spr_playerN_lookdoor/spr_playerN_lookdoor.yy",},},
+    {"id":{"name":"find_files_recursive","path":"scripts/find_files_recursive/find_files_recursive.yy",},},
     {"id":{"name":"spr_playerN_ladderdown","path":"sprites/spr_playerN_ladderdown/spr_playerN_ladderdown.yy",},},
     {"id":{"name":"spr_minigolfprops","path":"sprites/spr_minigolfprops/spr_minigolfprops.yy",},},
     {"id":{"name":"spr_playerN_jump","path":"sprites/spr_playerN_jump/spr_playerN_jump.yy",},},

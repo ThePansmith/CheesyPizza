@@ -12,7 +12,9 @@ function sh_level(args)
 	var level = args[1], targetRoom = -1;
 	if instance_exists(obj_levelLoader)
 	{
+		level = WCscr_allargs(args, 1);
 		var targetLevel = concat(global.custom_path, "/levels/", level, "/level.ini");
+		
 		if !file_exists(targetLevel)
 			return $"{level} level doesn't exist";
 		else

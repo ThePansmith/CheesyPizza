@@ -86,7 +86,7 @@ bgscroll = 0;
 listscroll = 0;
 listscroll_true = 0;
 
-textboxes = ds_map_create();
+pto_textbox_init();
 
 cursor = 
 {

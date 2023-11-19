@@ -14,7 +14,7 @@
   "classname": "",
   "ConfigValues": {},
   "copyToTargets": 64,
-  "date": "2023-07-04T21:56:06.5718393+03:00",
+  "date": "2023-07-04T20:56:06.5718393+02:00",
   "description": "",
   "exportToGame": true,
   "extensionVersion": "1.0.0",
@@ -175,6 +175,13 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"fmod_soundtest_get_song_index","argCount":0,"args":[
             2,
           ],"documentation":"","externalName":"FMOD_Soundtest_SongIndex","help":"fmod_soundtest_get_song_index(index)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"folder_destroy","argCount":0,"args":[
+            1,
+          ],"documentation":"","externalName":"folderDestroy","help":"folder_destroy(path)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"folder_move","argCount":0,"args":[
+            1,
+            1,
+          ],"documentation":"","externalName":"folderMove","help":"folder_move(source, dest)","hidden":false,"kind":1,"returnType":2,},
       ],"init":"","kind":1,"order":[
         {"name":"launch_external","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"test_dll_linkage","path":"extensions/CheesyPizza/CheesyPizza.yy",},

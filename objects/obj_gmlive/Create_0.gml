@@ -96,5 +96,11 @@ live_function_add("fmod_event_get_length(inst)", function(inst) {
 live_function_add("launch_external(str)", function(str) {
     return launch_external(str);
 });
+live_function_add("folder_destroy(path)", function(path) {
+    return folder_destroy(path);
+});
+live_function_add("folder_move(source, dest)", function(source, dest) {
+    return folder_move(source, dest);
+});
 
 #endregion
