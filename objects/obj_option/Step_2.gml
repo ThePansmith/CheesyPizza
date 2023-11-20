@@ -147,11 +147,17 @@ for (i = 0; i < array_length(m.options); i++)
 		{
 			if (b.moving)
 			{
-				if (!fmod_event_instance_is_playing(b.sound))
+				if !struct_get(b, "playing_sound") // dont do the obvious or it will crash
+				{
 					fmod_event_instance_play(b.sound);
+					b.playing_sound = true;
+				}
 			}
 			else
+			{
 				fmod_event_instance_stop(b.sound, true);
+				b.playing_sound = false;
+			}
 		}
 	}
 }

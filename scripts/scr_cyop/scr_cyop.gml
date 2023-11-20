@@ -1171,13 +1171,15 @@ global.asset_cache = -1; // ds_map
 global.custom_fill = 4000;
 global.custom_path = "";
 global.custom_hub_level = "";
-global.custom_level_name = noone;
+global.custom_level_name = "";
+global.custom_tower_name = "";
 global.is_hubworld = false;
 
 function cyop_cleanup()
 {
 	global.is_hubworld = false;
-	global.custom_level_name = noone;
+	global.custom_level_name = "";
+	global.custom_tower_name = "";
 	cyop_freemusic();
 	
 	// sprites
@@ -1246,13 +1248,18 @@ function cyop_load_internal(ini)
 	// load ini
 	ini_open(ini);
 	var type = ini_read_real("properties", "type", 0); // 0 - tower, 1 - level
-	var name = ini_read_string("properties", "name", "");
+	global.custom_tower_name = ini_read_string("properties", "name", "");
 	var mainlevel = ini_read_string("properties", "mainlevel", "");
 	ini_close();
 	
 	// target level
 	global.custom_path = filename_dir(ini);
+	with obj_levelLoader
+		gamestart = true;
+	
+	do {} until obj_savesystem.state == 0 && !obj_savesystem.dirty; // wait? idk if this works
 	gamesave_async_load();
+	trace("Switched savefiles: ", get_savefile_ini());
 	
 	var targetLevel = concat(global.custom_path, "/levels/", mainlevel, "/level.ini");
 	if !file_exists(targetLevel)
@@ -1298,7 +1305,7 @@ function cyop_load_internal(ini)
 						if !sprite_exists(spr)
 							continue;
 						
-						if images == 0 && image_width != 0
+						if image_width != 0
 							images = floor(sprite_get_width(spr) / image_width);
 						if centered
 						{
@@ -1517,7 +1524,7 @@ function cyop_resolvevalue(value, varname)
 			if !is_undefined(return_value)
 				return return_value;
 			else
-				return spr_null;
+				return spr_blanksprite;
 		}
 	}
 	if varname == "sound" or varname == "title_music"

@@ -1,6 +1,8 @@
 /// @description camera regions
 // from pto i mean sugary spire of course
 
+live_auto_call;
+
 if room == Mainmenu or room == rank_room or room == timesuproom
 {
 	limitcam = [0, 0, room_width, room_height];
@@ -45,20 +47,20 @@ if smooth_buffer == 0
 else
 {
 	// LEFT
-	if limitcam[0] < targetcam[0] && camx > limitcam[0]
-		limitcam[0] = camx;
+	if limitcam[0] < targetcam[0]
+		limitcam[0] = min(camx, targetcam[0]);
 	
 	// TOP
-	if limitcam[1] < targetcam[1] && camy > limitcam[1]
-		limitcam[1] = camy;
+	if limitcam[1] < targetcam[1]
+		limitcam[1] = min(camy, targetcam[1]);
 	
 	// RIGHT
-	if limitcam[2] > targetcam[2] && camx + camw < limitcam[2]
-		limitcam[2] = camx + camw;
+	if limitcam[2] > targetcam[2]
+		limitcam[2] = max(camx + camw, targetcam[2]);
 	
 	// BOTTOM
-	if limitcam[3] > targetcam[3] && camy + camh < limitcam[3]
-		limitcam[3] = camy + camh;
+	if limitcam[3] > targetcam[3]
+		limitcam[3] = max(camy + camh, targetcam[3]);
 	
 	limitcam[0] = Approach(limitcam[0], targetcam[0], panspeed);
 	limitcam[1] = Approach(limitcam[1], targetcam[1], panspeed);

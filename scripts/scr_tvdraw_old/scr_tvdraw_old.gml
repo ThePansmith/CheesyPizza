@@ -1,8 +1,12 @@
 function scr_tvdraw_old()
 {
+	if live_call() return live_result;
+	
 	var panicy = 600 + (string_height(message) - 16);
 	var tvx = SCREEN_WIDTH - 128 + irandom_range(-obj_camera.collect_shake, obj_camera.collect_shake);
 	var tvy = 74 + irandom_range(-obj_camera.collect_shake, obj_camera.collect_shake);
+	
+	static comboprev = 0;
 	
 	if tvreset != global.hud
 	{
@@ -102,20 +106,24 @@ function scr_tvdraw_old()
 	}
 	
 	// combo
-	else if global.combo != 0 && global.combotime != 0
-	&& (tvsprite == spr_tvdefault or tvsprite == spr_tvcombo or tvsprite == spr_tvescape)
+	else if global.combo != comboprev && (tvsprite == spr_tvdefault or tvsprite == spr_tvcombo or tvsprite == spr_tvescape)
 	{
-		tvsprite = spr_tvcombo
-		imageindexstore = global.combo - 1;
-	}
-	
-	// good job combo
-	else if global.combotime <= 0 && tvsprite == spr_tvcombo
-	{
-		tvsprite = spr_tvcomboresult;
-		image_speed = 0;
-		image_index = min(imageindexstore, 3);
-		alarm[0] = 50
+		if global.combo == 0
+		{
+			tvsprite = spr_tvcomboresult;
+			image_speed = 0;
+			image_index = min(comboprev, 3);
+			alarm[0] = 50;
+		}
+		else
+		{
+			tvsprite = spr_tvcombo;
+			imageindexstore = global.combo - 1;
+			
+			if REMIX
+				alarm[0] = 60;
+		}
+		comboprev = global.combo;
 	}
 	
 	if instance_exists(obj_player1) && obj_player1.state == states.keyget
@@ -133,14 +141,14 @@ function scr_tvdraw_old()
 	
 	if sugary
 	{
-		sprite = global.combotime > 0 ? spr_tvcombo_ss : spr_tvdefault_ss;
-		
 		var asset = asset_get_index(sprite_get_name(tvsprite) + "_ss");
 		if sprite_exists(asset)
 			sprite = asset;
+		else
+			sprite = spr_tvdefault_ss;
 	}
 	
-	if global.combotime > 0 && (tvsprite == spr_tvcombo or sprite == spr_tvcombo_ss)
+	if global.combo > 0 && global.combotime > 0 && (tvsprite == spr_tvcombo or tvsprite == spr_tvdefault)
 	{
 		// combo tv
 		if REMIX
@@ -151,21 +159,18 @@ function scr_tvdraw_old()
 		else
 			draw_sprite_ext(sprite, imageindexstore % 5, tvx, tvy, 1, 1, 0, c_white, alpha);
 		
-		if sugary // propeller
+		// propeller
+		if sugary
 			draw_sprite_ext(spr_tvempty_ss, -1, tvx, tvy, 1, 1, 0, c_white, alpha);
-		
-		draw_set_align(fa_center);
-		draw_text(tvx + 20, tvy + 1, string(global.combo));
 	}
-	else if room != Realtitlescreen
-	{
-		draw_set_align(fa_center);
-		
-		// tv
+	else
 		draw_sprite_ext(sprite, -1, tvx, tvy, 1, 1, 0, c_white, alpha);
-		if tvsprite == spr_tvdefault
-			draw_text(tvx - 4, tvy - 14, string(global.collect));
-	}
+	
+	draw_set_align(fa_center);
+	if tvsprite == spr_tvcombo
+		draw_text(tvx + 20, tvy + 1, string(global.combo));
+	if tvsprite == spr_tvdefault
+		draw_text(tvx - 4, tvy - 14, string(global.collect));
 	draw_set_alpha(1);
 	
 	// Text Event

@@ -20,6 +20,8 @@ function scr_savescore(level)
 	
 	if global.saveloaded
 	{
+		trace("[scr_savescore] Saving to: ", get_savefile_ini());
+		
 		ini_open_from_string(obj_savesystem.ini_str);
 		if MOD.DeathMode
 			level += "-death";

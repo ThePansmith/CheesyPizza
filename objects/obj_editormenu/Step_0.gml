@@ -1,6 +1,11 @@
 live_auto_call;
 
-if keyboard_check_pressed(ord("R"))
+if state == 0
+{
+	with obj_player
+		state = states.titlescreen;
+}
+if keyboard_check_pressed(ord("R")) && DEBUG
 	room_restart();
 
 // control
@@ -34,7 +39,9 @@ switch menu
 		var curr = towers[sel.y];
 		if state == 0
 		{
-			controls.text = "[J] Play [G] Delete";
+			controls.text = "[G] Delete";
+			if !curr.corrupt
+				controls.text = "[J] Play " + controls.text;
 			if curr.type != 0
 				controls.text += " [T] Modifiers";
 			controls.text += "/";
@@ -47,6 +54,17 @@ switch menu
 				sel.y = wrap(sel.y, 0, array_length(array) - 1);
 	
 				sound_play(sfx_step);
+			}
+			if moveX != 0
+			{
+				textscroll = 0;
+				
+				var prev = sel.y;
+				sel.y += moveX * min(floor(array_length(array) / 2), 10);
+				sel.y = clamp(sel.y, 0, array_length(array) - 1);
+				
+				if sel.y != prev
+					sound_play(sfx_step);
 			}
 	
 			// camera
@@ -63,19 +81,33 @@ switch menu
 			if key_jump
 			{
 				if !file_exists(curr.file)
-					break;
-		
-				stop_music();
-				sound_play(sfx_collectpizza);
-				state = 1;
+					curr.corrupt = true;
+				
+				if curr.corrupt
+				{
+					
+				}
+				else
+				{
+					stop_music();
+					sound_play(sfx_collectpizza);
+					state = 1;
+				}
 			}
 			if key_taunt2
 			{
 				if !file_exists(curr.file)
-					break;
-		
-				stop_music();
-				state = 3;
+					curr.corrupt = true;
+				
+				if curr.corrupt
+				{
+					
+				}
+				else
+				{
+					stop_music();
+					state = 3;
+				}
 			}
 			if key_slap2
 			{

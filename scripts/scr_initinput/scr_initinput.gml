@@ -7,6 +7,8 @@ function ini_read_input(section, key, def)
 }
 function scr_initinput(open_savedata = true)
 {
+	trace("tdp_input_init");
+	
 	tdp_input_init();
 	global.spr_gamepadbuttons = spr_gamepadbuttons_style1;
 	global.spr_joystick = spr_joystick_style1;

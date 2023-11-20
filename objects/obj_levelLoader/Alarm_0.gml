@@ -36,7 +36,7 @@ for(var i = 0; i < array_length(_room.instances); i++)
 	}
 	
 	// add instance
-	var inst = instance_create_depth(inst_data.variables.x - prop.roomX, inst_data.variables.y - prop.roomY, -inst_data.layer, asset);
+	var inst = instance_create_depth(floor(inst_data.variables.x - prop.roomX), floor(inst_data.variables.y - prop.roomY), -inst_data.layer, asset);
 	if instance_exists(inst) // sometimes it fucking doesn't
 	{
 		variable_instance_set(inst, "targetRoom", "main");
@@ -188,16 +188,22 @@ for(var i = 0; i < array_length(tile_layers); i++)
 				tilesize = custom[1];
 			}
 			else
-				sprite = spr_null;
+				sprite = spr_blanksprite;
 		}
 		
-		var tile = new cyop_tile(real(xx) - _room.properties.roomX, real(yy) - _room.properties.roomY, tile_data.coord[0], tile_data.coord[1], sprite, 0, tilesize, tilesize);
+		var coordx = tile_data.coord[0];
+		var coordy = tile_data.coord[1];
+		if coordx * tilesize >= sprite_get_width(sprite)
+		or coordy * tilesize >= sprite_get_height(sprite)
+			continue;
+		
+		var tile = new cyop_tile(real(xx) - _room.properties.roomX, real(yy) - _room.properties.roomY, coordx, coordy, sprite, 0, tilesize, tilesize);
 		array_push(tiles_array, tile);
 	}
 	
-	var depp = 100 + layer_num;
+	var depp = 90 + layer_num;
 	if layer_num < 0
-		depp = -100 + layer_num;
+		depp = -90 + layer_num;
 	tilelayer.Build(tiles_array, depp);
 	
 	var inst = instance_create_depth(0, 0, depp, obj_cyop_tilelayer, {tilelayer: tilelayer, secrettile: layer_num <= -5});

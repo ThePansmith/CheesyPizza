@@ -3,6 +3,8 @@ live_auto_call;
 if instance_exists(obj_loadingscreen)
 	exit;
 
+camera_set_view_pos(view_camera[0], -floor(SCREEN_WIDTH / 2 - 960 / 2), -floor(SCREEN_HEIGHT / 2 - 540 / 2))
+
 // restart the disclaimer if you turn on your internet
 //if !net && net != os_is_network_connected(true)
 //	room_restart();
@@ -11,10 +13,10 @@ if DEBUG && keyboard_check_pressed(ord("R"))
 	room_restart();
 
 // animation
-if state == 1 or (menu > 0 && state == 2)
+if state == 1 or (menu == 1 && state == 2)
 {
 	if t == 0
-		sound_play("event:/modded/sfx/diagopen");
+		fmod_event_one_shot("event:/modded/sfx/diagopen");
 	
 	t = Approach(t, 1, 0.075);
 	size = animcurve_channel_evaluate(outback, t);
@@ -101,7 +103,7 @@ if menu == 0
 	else if are_you_sure && !DEBUG // impossible
 		instance_create(0, 0, obj_softlockcrash);
 }
-else
+else if menu == 1
 {
 	if state == 3
 	{
@@ -167,6 +169,12 @@ else
 		pizzashift[0] = lerp(pizzashift[0], 0, 0.25);
 		pizzashift[1] = lerp(pizzashift[1], 0, 0.25);
 	}
+}
+else if menu == 2
+{
+	fade_alpha = Approach(fade_alpha, 0, 0.1);
+	
+	
 }
 
 if DEBUG

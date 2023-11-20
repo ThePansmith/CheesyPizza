@@ -4,7 +4,7 @@ draw_sprite_ext(spr_blackbars, 0, cx, cy, SCREEN_WIDTH / 64, SCREEN_HEIGHT / 64,
 var index = 0;
 if (is_holiday(holiday.halloween))
 	index = 1;
-draw_sprite(spr_mainmenu_bg, index, obj_screensizer.normal_size_fix_x, 0);
+draw_sprite(spr_mainmenu_bg, index, 0, 0);
 with (obj_menutv2)
 	draw_self();
 shader_set(shd_pal_swapper);

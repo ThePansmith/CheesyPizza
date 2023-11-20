@@ -9,8 +9,11 @@ if (fadealpha > f)
 		q = true;
 		with (obj_camera)
 			lock = false;
-		if (gamestart)
+		if (gamestart or (instance_exists(obj_levelLoader) && obj_levelLoader.gamestart))
 		{
+			with obj_levelLoader
+				gamestart = false;
+			
 			ini_open_from_string(obj_savesystem.ini_str);
 			global.file_minutes = ini_read_real("Game", "minutes", 0);
 			global.file_seconds = ini_read_real("Game", "seconds", 0);

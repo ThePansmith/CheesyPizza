@@ -43,7 +43,7 @@ switch menu
 				draw_set_alpha(fader);
 			}
 			if this.type == 0
-				draw_sprite_ext(spr_towericon, 0, xx - 42, yy, 1, 1, 0, sel.y == i ? c_white : c_dkgray, draw_get_alpha());
+				draw_sprite_ext(spr_towericon, 0, xx - 42, yy, 1, 1, 0, sel.y == i ? c_white : c_gray, draw_get_alpha());
 	
 			draw_set_bounds(xx, yy, xx + wd, yy + 32);
 			draw_text(drawx, yy, str);
@@ -74,11 +74,11 @@ switch menu
 			var yy = 0;
 	
 			// browse
-			draw_set_font(global.font_small);
+			draw_set_font(global.creditsfont);
 			draw_set_align(fa_right);
 			draw_set_color(c_white);
-		
-			if text_button(SCREEN_WIDTH - 16, 16 + (yy++ * 32), $"Browse towers") == 2
+			
+			if text_button(SCREEN_WIDTH - 16, 16, $"Browse towers") == 2
 			{
 				page = 1;
 				fetch_remote_towers(page);
@@ -86,6 +86,8 @@ switch menu
 				sel.x = 0;
 				sel.y = 0;
 			}
+			yy += 1.5;
+			draw_set_font(global.font_small);
 			
 			// open levels folder
 			if has_pizzatower && directory_exists(towers_folder)
@@ -94,8 +96,33 @@ switch menu
 				draw_set_align(fa_right);
 				draw_set_color(c_white);
 		
-				if text_button(SCREEN_WIDTH - 16, 16 + (yy++ * 32), $"Open towers folder") == 2
+				if text_button(SCREEN_WIDTH - 16, 16 + (yy++ * 26), $"Open folder") == 2
 					launch_external("explorer.exe " + towers_folder);
+			}
+			
+			draw_set_font(global.font_small);
+			draw_set_align(fa_right);
+			draw_set_color(c_white);
+		
+			if text_button(SCREEN_WIDTH - 16, 16 + (yy++ * 26), $"Pick file...") == 2
+			{
+				var load = get_open_filename_ext("CYOP Tower (*.tower.ini)|*.tower.ini|INI file (*.ini)|*.ini", "", environment_get_variable("APPDATA") + "\\PizzaTower_GM2\\towers\\", "Select a custom level");
+				if load != ""
+				{
+					state = 2;
+					with instance_create(0, 0, obj_levelLoader)
+					{
+						var result = cyop_load(load);
+						if is_string(result)
+						{
+							show_message(result);
+							instance_destroy();
+							other.state = 0;
+						}
+						else
+							loaded = true;
+					}
+				}
 			}
 			
 			// level filename
@@ -105,7 +132,7 @@ switch menu
 				draw_set_font(global.font_small);
 				draw_set_align(fa_right);
 				draw_set_color(c_gray);
-				draw_text(SCREEN_WIDTH - 16, 16 + (yy++ * 32), $"{filename_name(level.file)}");
+				draw_text(SCREEN_WIDTH - 16, 16 + (yy++ * 26), $"{filename_name(level.file)}");
 				draw_set_align();
 			}
 			else
@@ -160,7 +187,7 @@ switch menu
 				var sprw = 530 * scale, sprh = 298 * scale;
 				
 				var hovering = point_in_rectangle(mouse_x_gui, mouse_y_gui, xx, yy - scroll, xx + sprw, yy + 180 - scroll);
-				if hovering && state == 1
+				if hovering
 				{
 					draw_rectangle_color(xx - 4, yy - 4 - scroll, xx + sprw + 4, yy + 180 + 4 - scroll, c_aqua, c_aqua, c_aqua, c_aqua, true);
 					if mouse_check_button_pressed(mb_left)
@@ -262,17 +289,66 @@ switch menu
 				var col1 = hovering * #111122 + #5000b8;
 				var col2 = hovering * #111122 + #1070d0;
 				
-				if hovering && state == 1
+				var download = downloads[sel.y];
+				if hovering
 				{
 					temp_sel = 0;
-					if mouse_check_button_pressed(mb_left) && !this.downloaded
-						fetch_tower_download(sel.y);
+					if mouse_check_button_pressed(mb_left) && download == noone
+					{
+						if this.downloaded
+						{
+							// find index
+							for(var i = 0; i < array_length(towers); i++)
+							{
+								var curr = towers[i];
+								if filename_name(filename_dir(curr.file)) == this.modid
+								{
+									if !file_exists(curr.file)
+										curr.corrupt = true;
+									
+									if curr.corrupt
+									{
+					
+									}
+									else
+									{
+										sel.y = i;
+										
+										stop_music();
+										sound_play(sfx_collectpizza);
+										
+										menu = 0;
+										state = 1;
+									}
+									break;
+								}
+							}
+						}
+						else
+							fetch_tower_download(sel.y);
+					}
 				}
 				
-				draw_rectangle_color(center - 100, yy, center + 100, yy + 42, col1, col2, col2, col1, state != 1 or this.downloaded);
+				if download != noone && download.progress > 0
+					draw_rectangle_color(center - 100, yy, center - 100 + download.progress * 200, yy + 42, c_green, c_lime, c_lime, c_green, false);
+				draw_rectangle_color(center - 100, yy, center + 100, yy + 42, col1, col2, col2, col1, download != noone);
+				
 				if state != 1
 					draw_sprite_ext(spr_loading, 0, center, yy + 21, 1, 1, current_time / 2, c_white, 1);
-				draw_text(center, floor(yy) + 14, this.downloaded ? "Downloaded!" : (state == 3 ? "Downloading..." : "Download"));
+				
+				var str = "Download";
+				if this.downloaded
+					str = "Play";
+				if download != noone
+				{
+					if download.state == 0
+						str = "Finding...";
+					if download.state == 1
+						str = "Downloading...";
+					if download.state == 2
+						str = "Extracting...";
+				}
+				draw_text(center, floor(yy) + 14, str);
 				
 				yy += 64;
 				
@@ -285,21 +361,16 @@ switch menu
 			
 			// close button
 			draw_set_align(fa_center);
-			if state == 1
+			if state == 1 && download_count == 0
 			{
 				if text_button(center, SCREEN_HEIGHT - 20 - 30, "Close") == 2
 				{
-					if download_file != noone
-					{
-						download_file = noone;
-						refresh_list();
-					}
-					
 					sel.y = 0;
 					image_cleanup();
 					remote_towers = [];
 					menu = 0;
 					state = 0;
+					filter = 0;
 					exit;
 				}
 			}
@@ -310,7 +381,7 @@ switch menu
 			var yy = SCREEN_HEIGHT - 20 - 50;
 			if text_button(center, yy, $"Page: {page}") == 2
 			{
-				if state == 1
+				if state == 1 && download_count == 0
 				{
 					var pag = get_integer("Go to page:", page);
 					if pag != undefined && pag != page && pag >= 1
@@ -321,7 +392,7 @@ switch menu
 				}
 			}
 			
-			if array_length(remote_towers) > 0 && state == 1
+			if array_length(remote_towers) > 0 && download_count == 0
 			{
 				if page != 1
 				{
@@ -347,42 +418,52 @@ switch menu
 			
 			if sel.y == -1
 			{
-				yy = 70;
-				if text_button(center - 80, yy, "Views") == 2
+				if download_count == 0
 				{
-					if filter == gb_filter.MostViewed
-						filter = 0;
-					else
-						filter = gb_filter.MostViewed;
+					yy = 70;
 					
-					page = 1;
-					fetch_remote_towers(page);
-				}
-				if text_button(center, yy, "Downloads") == 2
-				{
-					if filter == gb_filter.MostDownloaded
-						filter = 0;
-					else
-						filter = gb_filter.MostDownloaded;
+					var selected = filter == gb_filter.MostViewed;
+					if text_button(center - 80, yy, "Views", selected ? col1 : c_white, selected ? c_red : c_aqua) == 2
+					{
+						if filter == gb_filter.MostViewed
+							filter = 0;
+						else
+							filter = gb_filter.MostViewed;
 					
-					page = 1;
-					fetch_remote_towers(page);
-				}
-				if text_button(center + 80, yy, "Likes") == 2
-				{
-					if filter == gb_filter.MostLiked
-						filter = 0;
-					else
-						filter = gb_filter.MostLiked;
+						page = 1;
+						fetch_remote_towers(page);
+					}
 					
-					page = 1;
-					fetch_remote_towers(page);
+					var selected = filter == gb_filter.MostDownloaded;
+					if text_button(center, yy, "Downloads", selected ? col1 : c_white, selected ? c_red : c_aqua) == 2
+					{
+						if filter == gb_filter.MostDownloaded
+							filter = 0;
+						else
+							filter = gb_filter.MostDownloaded;
+					
+						page = 1;
+						fetch_remote_towers(page);
+					}
+					
+					var selected = filter == gb_filter.MostLiked;
+					if text_button(center + 80, yy, "Likes", selected ? col1 : c_white, selected ? c_red : c_aqua) == 2
+					{
+						if filter == gb_filter.MostLiked
+							filter = 0;
+						else
+							filter = gb_filter.MostLiked;
+					
+						page = 1;
+						fetch_remote_towers(page);
+					}
+				
+					draw_set_color(c_gray);
+					draw_text(center, yy - 20, "Sort by");
 				}
 				
-				draw_set_color(c_gray);
-				draw_text(center, yy - 20, "Sort by");
-				
-				draw_text(center, SCREEN_HEIGHT / 2 - 32, "Select a level with your mouse!");
+				draw_set_color(c_white);
+				draw_text(center, SCREEN_HEIGHT / 2 - 16, download_count > 0 ? ($"Downloading {download_count} level" + (download_count == 1 ? "" : "s")) : "Select a level with your mouse!");
 			}
 		}
 		break;

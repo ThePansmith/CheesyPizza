@@ -109,7 +109,7 @@ function tdp_input_deserialize(argument0, argument1)
 			array_push(in.actions, new tdp_input_action(type, value));
 	}
 	tdp_input_add(in);
-	show_debug_message(in);
+	//show_debug_message(in);
 }
 function tdp_get_icons(argument0)
 {

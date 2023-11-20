@@ -1,13 +1,81 @@
 live_auto_call;
 
-if menu != 1 or state == 1
+if menu != 1
 	exit;
+
+// downloads
+if array_length(remote_towers) > 0
+{
+	for(var i = 0; i < array_length(downloads); i++)
+	{
+		var this = downloads[i], tower = remote_towers[i];
+		if downloads[i] == noone
+			continue;
+		if async_load[? "id"] != this.request
+			continue;
+	
+		// got download list
+		if this.state == 0
+		{
+			var data = json_parse(async_load[? "result"]);
+			array_sort(data, function(elm1, elm2)
+			{
+				// latest uploads first
+				return elm1._tsDateAdded < elm2._tsDateAdded && string_ends_with(elm1._sFile, ".zip");
+			});
+			
+			this.file = data[0];
+			//show_message(this.file._sFile);
+			
+			if !string_ends_with(this.file._sFile, ".zip")
+			{
+				message_show($"This mod is not a CYOP tower!");
+				
+				downloads[i] = noone;
+				download_count--;
+				break;
+			}
+			
+			this.file.path = $"{towers_folder}\\temp_{tower.modid}\\download.zip";
+			this.request = http_get_file(this.file._sDownloadUrl, this.file.path);
+			this.state = 1;
+		}
+		
+		// download progress
+		else if this.state == 1
+		{
+			if async_load[? "status"] == 0
+			{
+				// finished downloading
+				this.file.path = async_load[? "result"];
+				this.request = zip_unzip_async(this.file.path, filename_dir(this.file.path));
+				this.state = 2;
+				
+				this.progress = 1;
+			}
+			else if async_load[? "status"] == 1
+			{
+				this.progress = async_load[? "sizeDownloaded"] / async_load[? "contentLength"];
+				trace("Download: ", this.progress * 100, "%");
+			}
+			else
+			{
+				message_show("Could not download tower.");
+				
+				downloads[i] = noone;
+				download_count--;
+			}
+		}
+		exit;
+	}
+}
+
+// listing
 if async_load[? "status"] != 0
 	exit;
 if async_load[? "id"] != request
 	exit;
 
-// listing
 if state == 0
 {
 	sel.y = -1;
@@ -64,85 +132,4 @@ if state == 0
 
 	// done
 	state = 1;
-}
-
-// got download list
-if state == 2
-{
-	var this = remote_towers[download_index];
-	var data = json_parse(async_load[? "result"]);
-	array_sort(data, function(elm1, elm2)
-	{
-		// latest uploads first
-		return elm1._tsDateAdded >= elm2._tsDateAdded && string_ends_with(elm1._sFile, ".zip");
-	});
-	
-	download_file = data[0];
-	if !string_ends_with(download_file._sFile, ".zip")
-	{
-		state = 1;
-		exit;
-	}
-	
-	download_file.path = $"{towers_folder}\\temp{this.modid}\\{this.modid}.zip";
-	request = http_get_file(download_file._sDownloadUrl, download_file.path);
-	state = 3;
-	exit;
-}
-
-// download progress
-if state == 3
-{
-	if async_load[? "status"] == 0
-	{
-		// finished downloading
-		var zipfile = async_load[? "result"];
-		var this = remote_towers[download_index];
-		var target = $"{towers_folder}\\temp{this.modid}";
-		
-		var unzip = zip_unzip(zipfile, target);
-		file_delete(zipfile);
-		
-		if unzip <= 0
-		{
-			state = 1;
-			show_message("Failed extracting ZIP");
-			exit;
-		}
-		
-		// attempt to find
-		_found = "";
-		find_files_recursive(target, function(file)
-		{
-			_found = file;
-			return true;
-		}, ".tower.ini");
-		
-		if _found == ""
-		{
-			state = 1;
-			show_message("Download does not contain a level");
-			folder_destroy(target); // using dll, deletes all files too
-		}
-		else
-		{
-			var finaltarget = towers_folder + $"\\{this.modid}";
-			folder_destroy(finaltarget);
-			if folder_move(filename_dir(_found), finaltarget) == 0
-				show_message("Couldn't move directory");
-			folder_destroy(target);
-			this.downloaded = true;
-			state = 1;
-		}
-	}
-	else if async_load[? "status"] == 1
-	{
-		download_progress = async_load[? "sizeDownloaded"] / async_load[? "contentLength"];
-		trace(download_progress);
-	}
-	else
-	{
-		state = 1;
-		show_message("Failed downloading");
-	}
 }

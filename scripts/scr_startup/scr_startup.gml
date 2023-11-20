@@ -71,8 +71,8 @@ if !file_exists("data/cheese.jpg")
 	exit;
 }
 
-
 // macros
+#macro PLAYTEST true
 #macro REMIX global.gameplay
 #macro DEBUG true//(GM_build_type == "run")
 #macro YYC code_is_compiled()

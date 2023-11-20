@@ -1,9 +1,16 @@
+live_auto_call;
+
 state = 0;
 are_you_sure = false;
 fade_alpha = 1;
 
 // menus
-scr_initinput();
+if !variable_global_exists("input_list")
+	scr_initinput();
+
+count = 0;
+pto_textbox_init();
+
 image_speed = 0.35;
 menu = 0;
 sel = 0;
@@ -28,11 +35,19 @@ str = "This is an anti-leaking measure.\n\nPlease connect to the internet to con
 
 if true//DEBUG
 {
-	net = true;
-	state = 2;
-	are_you_sure = true;
-	
-	//state = 3; // skip firstboot sequence
+	if PLAYTEST
+	{
+		menu = 2;
+		state = 1;
+		
+		str = "This is a playtester build. You'll have to use a password.\nAsk loypoll for it.";
+	}
+	else
+	{
+		net = true;
+		state = 2;
+		are_you_sure = true;
+	}
 }
 else
 {
@@ -46,6 +61,5 @@ else
 	{
 		t = -.5;
 		state = 1;
-		sound_play("event:/modded/sfx/diagopen");
 	}
 }

@@ -30,7 +30,7 @@ function scr_cameradraw_old()
 					hudface = spr_pepinoHUDknight
 				else if player.sprite_index == spr_bombpep_end
 					hudface = spr_pepinoHUDbombend
-				else if instance_exists(obj_itspizzatime) or player.sprite_index == spr_bombpep_intro or player.sprite_index == spr_bombpep_runabouttoexplode or player.sprite_index == spr_bombpep_run or player.sprite_index == spr_player_fireass
+				else if instance_exists(obj_itspizzatime) or player.sprite_index == spr_bombpep_intro or player.sprite_index == spr_bombpep_runabouttoexplode or player.sprite_index == spr_bombpep_run or player.sprite_index == spr_player_fireass or player.state == states.bombgrab
 					hudface = spr_pepinoHUDscream
 				else if _state == states.Sjumpland or (_state = states.freefallland && shake_mag > 0)  
 					hudface = spr_pepinoHUDstun
@@ -180,7 +180,7 @@ function scr_cameradraw_old()
 					hudface = spr_pinolinoHUDknight
 				else if player.sprite_index == spr_bombpepend
 					hudface = spr_pinolinoHUDbombend
-				else */if instance_exists(obj_itspizzatime) or player.sprite_index == player.spr_bombpepintro or player.sprite_index == player.spr_bombpeprunabouttoexplode or player.sprite_index == player.spr_bombpeprun or player.sprite_index == player.spr_fireass
+				else */if instance_exists(obj_itspizzatime) or player.sprite_index == player.spr_bombpepintro or player.sprite_index == player.spr_bombpeprunabouttoexplode or player.sprite_index == player.spr_bombpeprun or player.sprite_index == player.spr_fireass or player.state == states.bombgrab
 					hudface = spr_pinolinoHUDscream
 				//else if _state == states.Sjumpland or (_state = states.freefallland && shake_mag > 0)  
 				//	hudface = spr_pinolinoHUDstun

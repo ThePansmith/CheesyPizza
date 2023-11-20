@@ -9,7 +9,7 @@ for (var i = 0; i < array_length(tilelayer.tiles); i++)
 	var tile = tilelayer.tiles[i];
 	with obj_player
 	{
-		if point_in_rectangle(x, y, tile.x, tile.y, tile.x + tile.size_x, tile.y + tile.size_y)
+		if point_in_rectangle(x, y, tile.x, tile.y, tile.x + 32, tile.y + 32)
 		{
 			other.player = id;
 			break;
@@ -65,11 +65,11 @@ if (player && player.state != states.chainsaw && player.state != states.backtohu
 	
 	
 	//depth = max(-8, desireddepth);
-	image_alpha = Approach(image_alpha, 0, 0.05);
+	image_alpha = Approach(image_alpha, 0, 0.1);
 }
 else if !(player && player.state == states.chainsaw)
 {
 	//depth = desireddepth;
-	image_alpha = Approach(image_alpha, 1, 0.05);
+	image_alpha = Approach(image_alpha, 1, 0.1);
 }
 active = false;

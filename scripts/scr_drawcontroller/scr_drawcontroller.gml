@@ -218,12 +218,14 @@ function draw_player()
 		}
 		pal_swap_set(spr, ps % sprite_get_width(spr), false);
 	}
-	draw_sprite_ext(player_sprite(), image_index, xx, yy, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+	
+	var spr = player_sprite();
+	draw_sprite_ext(spr, image_index, xx, yy, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
 	
 	if (global.noisejetpack)
 	{
 		pal_swap_set(spr_peppalette, 2, false);
-		draw_sprite_ext(sprite_index, image_index, xx, yy, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+		draw_sprite_ext(spr, image_index, xx, yy, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
 	}
 	draw_superslam_enemy();
 	if (global.pistol)

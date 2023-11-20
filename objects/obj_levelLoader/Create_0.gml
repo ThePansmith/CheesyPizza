@@ -18,3 +18,4 @@ global.asset_cache = ds_map_create();
 global.cyop_broken_tiles = [ ];
 
 loaded = false;
+gamestart = false;

@@ -5,13 +5,18 @@ with obj_player
 {
 	if cyop_backtohubroom == noone
 	{
+		if is_string(backtohubroom)
+			backtohubroom = tower_entrancehall;
+		
 		cyop_backtohubroom = backtohubroom;
 		cyop_backtohubx = backtohubstartx;
 		cyop_backtohuby = backtohubstarty;
 	}
 	else
 	{
+		do {} until obj_savesystem.state == 0 && !obj_savesystem.dirty; // wait? idk if this works
 		gamesave_async_load();
+		trace("Switched savefiles: ", get_savefile_ini());
 		
 		backtohubroom = cyop_backtohubroom;
 		backtohubstartx = cyop_backtohubx;
@@ -27,23 +32,55 @@ towers = [];
 root_folder = environment_get_variable("APPDATA") + "\\PizzaTower_GM2";
 towers_folder = root_folder + "\\towers";
 
+add_tower = function(ini, fresh = false)
+{
+	ini_open(ini);
+	
+	var type = ini_read_real("properties", "type", 0);
+	var mainlevel = ini_read_string("properties", "mainlevel", "");
+	var name = ini_read_string("properties", "name", type ? "Unnamed Level" : "Unnamed Tower");
+	
+	var struct = {
+		type: type, name: name, file: ini,
+		collect: 0, secrets: 0, treasure: false, rank: "", toppin: [0, 0, 0, 0, 0],
+		corrupt: false, fresh: fresh
+	};
+	
+	if !file_exists($"{filename_dir(ini)}\\levels\\{mainlevel}\\level.ini")
+		struct.corrupt = true;
+	if !(type == 0 or type == 1)
+		struct.corrupt = true;
+	
+	ini_close();
+	
+	// read savefile for single levels
+	if type == 1
+	{
+		ini_open($"{get_save_folder()}\\custom{global.currentsavefile}\\{filename_name(filename_dir(ini))}.ini");
+		struct.collect = ini_read_real("Highscore", mainlevel, 0);
+		struct.treasure = ini_read_real("Treasure", mainlevel, false);
+		struct.toppin = [
+			ini_read_real("Toppin", mainlevel + "1", false),
+			ini_read_real("Toppin", mainlevel + "2", false),
+			ini_read_real("Toppin", mainlevel + "3", false),
+			ini_read_real("Toppin", mainlevel + "4", false),
+			ini_read_real("Toppin", mainlevel + "5", false)
+		];
+		struct.secrets = ini_read_real("Secret", mainlevel, 0);
+		struct.rank = ini_read_string("Ranks", mainlevel, "");
+		ini_close();
+	}
+	
+	// add to towers
+	array_push(towers, struct);
+}
 refresh_list = function()
 {
 	towers = [];
 	has_pizzatower = find_files_recursive(towers_folder, function(file)
 	{
-		ini_open(file);
-	
-		var type = ini_read_real("properties", "type", 0);
-		if type == 0 or type == 1
-		{
-			var name = ini_read_string("properties", "name", type ? "Unnamed Level" : "Unnamed Tower");
-			var struct = {type: type, name: name, file: file};
-			array_push(towers, struct);
-		}
-	
-		ini_close();
-		return true; // stop recursion on this folder
+		add_tower(file);
+		return true;
 	}, ".tower.ini");
 }
 refresh_list();
@@ -91,20 +128,28 @@ last_page = false;
 request = noone;
 scroll = 0;
 
-download_index = 0;
-download_progress = 0;
-download_file = noone;
+downloads = [];
+download_count = 0;
 
 fetch_remote_towers = function(page = 1)
 {
+	if download_count > 0
+	{
+		message_show("There are pending downloads!");
+		exit;
+	}
+	
 	scroll = 0;
 	image_cleanup();
+	
+	var count = 18;
 	remote_towers = [];
+	downloads = array_create(count, noone);
 	
 	menu = 1;
 	state = 0;
 	
-	var url = "https://gamebanana.com/apiv11/Mod/Index?_nPerpage=20&_aFilters[Generic_Category]=22962";
+	var url = $"https://gamebanana.com/apiv11/Mod/Index?_nPerpage={count}&_aFilters[Generic_Category]=22962";
 	url += $"&_nPage={page}";
 	
 	switch filter
@@ -130,16 +175,19 @@ fetch_tower_image = function(index)
 }
 fetch_tower_download = function(index)
 {
-	if state != 1
-		exit;
-	
-	download_index = index;
-	state = 2;
-	
-	var this = remote_towers[index];
-	var url = $"https://gamebanana.com/apiv11/Mod/{this.modid}/Files";
-	
-	request = http_get(url);
+	if downloads[index] == noone
+	{
+		var this = remote_towers[index];
+		var url = $"https://gamebanana.com/apiv11/Mod/{this.modid}/Files";
+		
+		download_count++;
+		downloads[index] = {
+			state: 0,
+			request: http_get(url),
+			file: noone,
+			progress: 0
+		}
+	}
 }
 image_cleanup = function()
 {

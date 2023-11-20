@@ -38,7 +38,10 @@ function sh_room(args)
 		door = args[2];
 	
 	with obj_player1
+	{
 		targetDoor = string_upper(door);
+		set_lastroom();
+	}
 	
 	scr_room_goto(roomgoto);
 	sound_play(sfx_door);

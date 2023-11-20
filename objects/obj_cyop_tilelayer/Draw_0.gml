@@ -85,7 +85,7 @@ else
 				temp_array[index++] = -1;
 			}
 			shader_set_uniform_f_array(secret_block_info, temp_array);
-			shader_set_uniform_f(tile_size, tilelayer.tilesize_x, tilelayer.tilesize_y);
+			shader_set_uniform_f(tile_size, 32, 32);
 		}
 	}
 }

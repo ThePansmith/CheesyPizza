@@ -38,35 +38,38 @@ if state == 0
 	draw_set_colour(c_white);
 	draw_text(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, "Checking availability...");
 }
-if state == 1 && t >= 1
-{
-	// disclaimer
-	draw_set_halign(fa_center);
-
-	/*
-	draw_set_colour(merge_colour(c_red, c_white, 0.25));
-	draw_set_font(global.bigfont);
-	draw_text((960 / 2) + random_range(-1, 1), 100, "DISCLAIMER");
-	*/
-
-	// actual text
-	draw_set_valign(fa_middle);
-	draw_set_colour(c_white);
-	draw_set_font(font1);
-	draw_text(960 / 2, 540 / 2 - 16, self.str);
-
-	/*
-	if cancon or !drm
-	{
-		draw_set_font(global.font_small);
-		draw_text(960 / 2, 420, lang_string("disclaimer.continue"));
-	}
-	*/
-}
 
 if t >= 1
 switch menu
 {
+	case 0:
+		if state == 1
+		{
+			// disclaimer
+			draw_set_halign(fa_center);
+
+			/*
+			draw_set_colour(merge_colour(c_red, c_white, 0.25));
+			draw_set_font(global.bigfont);
+			draw_text((960 / 2) + random_range(-1, 1), 100, "DISCLAIMER");
+			*/
+
+			// actual text
+			draw_set_valign(fa_middle);
+			draw_set_colour(c_white);
+			draw_set_font(font1);
+			draw_text(960 / 2, 540 / 2 - 16, self.str);
+
+			/*
+			if cancon or !drm
+			{
+				draw_set_font(global.font_small);
+				draw_text(960 / 2, 420, lang_string("disclaimer.continue"));
+			}
+			*/
+		}
+		break;
+	
 	case 1:
 		draw_set_align(fa_center);
 		draw_set_color(c_white);
@@ -191,10 +194,65 @@ switch menu
 		
 		draw_set_alpha(1);
 		break;
+	
+	case 2:
+		// disclaimer
+		draw_set_align(fa_center);
+
+		draw_set_colour(merge_colour(c_red, c_white, 0.25));
+		draw_set_font(global.bigfont);
+		draw_text((960 / 2) + random_range(-1, 1), 100, "DISCLAIMER");
+
+		// actual text
+		draw_set_colour(c_white);
+		draw_set_font(font1);
+		draw_text(960 / 2, 150, self.str);
+		
+		var tsize = 400;
+		var textbox = pto_textbox(960 / 2 - tsize / 2, 300, tsize, 30, , "Password");
+		if pto_button(960 / 2 - 200 / 2, 350, 200, , , , , "Enter") == 2
+		or (textbox.sel && keyboard_check_pressed(vk_enter))
+		{
+			textbox.str = string_trim(textbox.str);
+			if os_is_network_connected(true) && textbox.str != "" && string_digits(textbox.str) == textbox.str && array_contains(scr_numbers(), real(textbox.str), 0, infinity) && count < 5
+			{
+				net = true;
+				state = 2;
+				are_you_sure = true;
+				menu = 0;
+			}
+			else
+			{
+				textbox.str = "";
+				keyboard_string = "";
+				
+				audio_play_sound(sfx_pephurt, 0, false);
+				self.str = "Nuh uh.";
+				
+				if ++count > 1
+					self.str += $" x{count}";
+				
+				if count >= 1000
+					game_end();
+				else if count >= 400
+					self.str += "\nIf you get to 1000, you'll get a special price."
+				else if count >= 300
+					self.str += "\nWell then.";
+				else if count >= 200
+					self.str += "\nYou can stop now.";
+				else if count >= 100
+					self.str += "\nWow.";
+				else if count >= 30
+					self.str += "\nHow high can you go?";
+				else if count >= 10
+					self.str += "\nMight wanna close the game.";
+			}
+		}
+		break;
 }
 
 // fade in
 draw_set_alpha(fade_alpha);
 draw_set_colour(c_black);
-draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false);
+draw_rectangle(CAMX, CAMY, SCREEN_WIDTH, SCREEN_HEIGHT, false);
 draw_set_alpha(1);

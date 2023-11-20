@@ -113,7 +113,13 @@ else if !instance_exists(obj_levelLoader)
 	}
 }
 else
+{
 	details = "Playing CYOP";
+	if global.custom_level_name != "Level Name" && global.custom_level_name != ""
+		state = string(global.custom_level_name);
+	else
+		state = string(global.custom_tower_name);
+}
 
 // level
 switch safe_get(global, "leveltosave")
@@ -172,8 +178,6 @@ switch safe_get(global, "leveltosave")
 	case "mountain": state = "Mt. Fudgetop"; break;
 	case "sucrose": state = "Sucrose Snowstorm"; break;
 }
-if global.custom_level_name != noone
-	state = string(global.custom_level_name);
 
 // add rank and score
 if state != "" && !instance_exists(obj_startgate)
