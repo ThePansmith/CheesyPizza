@@ -8208,6 +8208,7 @@
     {"id":{"name":"spr_playerN_boxxedfall","path":"sprites/spr_playerN_boxxedfall/spr_playerN_boxxedfall.yy",},},
     {"id":{"name":"spr_playerV_mach3","path":"sprites/spr_playerV_mach3/spr_playerV_mach3.yy",},},
     {"id":{"name":"spr_snick_superjumpland","path":"sprites/spr_snick_superjumpland/spr_snick_superjumpland.yy",},},
+    {"id":{"name":"scr_numbers","path":"scripts/scr_numbers/scr_numbers.yy",},},
     {"id":{"name":"spr_playerV_winding","path":"sprites/spr_playerV_winding/spr_playerV_winding.yy",},},
     {"id":{"name":"spr_mrpinch_hand3","path":"sprites/spr_mrpinch_hand3/spr_mrpinch_hand3.yy",},},
     {"id":{"name":"spr_playerV_panic","path":"sprites/spr_playerV_panic/spr_playerV_panic.yy",},},
