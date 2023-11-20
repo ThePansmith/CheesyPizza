@@ -5642,7 +5642,6 @@
     {"id":{"name":"spr_streetdebris","path":"sprites/spr_streetdebris/spr_streetdebris.yy",},},
     {"id":{"name":"bg_kidsparty3","path":"sprites/bg_kidsparty3/bg_kidsparty3.yy",},},
     {"id":{"name":"spr_playerN_idle","path":"sprites/spr_playerN_idle/spr_playerN_idle.yy",},},
-    {"id":{"name":"scr_numbers","path":"scripts/scr_numbers/scr_numbers.yy",},},
     {"id":{"name":"tile_dungeonOLD","path":"sprites/tile_dungeonOLD/tile_dungeonOLD.yy",},},
     {"id":{"name":"spr_ham","path":"sprites/spr_ham/spr_ham.yy",},},
     {"id":{"name":"spr_playerN_machslideboost","path":"sprites/spr_playerN_machslideboost/spr_playerN_machslideboost.yy",},},
