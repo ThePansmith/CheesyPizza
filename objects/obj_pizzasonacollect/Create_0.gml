@@ -13,6 +13,6 @@ var r = -1;
 while (r == -1 or r == 8)
 	r = irandom_range(1, 55);
 
-idlespr = asset_get_index(concat("spr_pizzasona", r));
-throwspr = asset_get_index(concat("spr_pizzasona", r, "throw"));
-transitionspr = asset_get_index(concat("spr_pizzasona", r, "trans"));
+idlespr = SPRITES[? concat("spr_pizzasona", r)];
+throwspr = SPRITES[? concat("spr_pizzasona", r, "throw")];
+transitionspr = SPRITES[? concat("spr_pizzasona", r, "trans")];

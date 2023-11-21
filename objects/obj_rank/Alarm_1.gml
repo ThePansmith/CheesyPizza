@@ -14,7 +14,7 @@ if (global.is_hubworld or global.custom_hub_level == "")
 	instance_destroy(obj_levelLoader);
 }
 else if instance_exists(obj_levelLoader)
-	cyop_load_level(global.custom_hub_level);
+	cyop_load_level_internal(global.custom_hub_level);
 
 with (obj_player1)
 {

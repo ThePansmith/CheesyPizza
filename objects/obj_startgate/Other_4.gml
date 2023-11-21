@@ -71,6 +71,9 @@ if (object_index != obj_bossdoor && sprite_index != spr_snickchallengecomputer)
 	}
 }
 
+if levelName != ""
+	level = levelName;
+
 if level == noone
 {
 	highscore = 0;
@@ -161,5 +164,4 @@ for (var i = 0; i < array_length(group_arr); i++)
 	var textures = texturegroup_get_textures(group_arr[i]);
 	for (var j = 0; j < array_length(textures); j++)
 		texture_flush(textures[j]);
-	
 }

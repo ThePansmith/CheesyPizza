@@ -41,7 +41,7 @@ if (lvl != "pepperman" && lvl != "vigilante" && lvl != "pizzaface" && lvl != "fa
     else if (lvl == "minigolf")
         sprite = spr_achievement_golf;
     else
-        sprite = asset_get_index("spr_achievement_" + lvl);
+        sprite = SPRITES[? "spr_achievement_" + lvl];
 	
     for (var i = 0; i < sprite_get_number(sprite) / 2; i++)
     {

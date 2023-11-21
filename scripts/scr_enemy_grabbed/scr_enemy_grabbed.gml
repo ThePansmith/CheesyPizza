@@ -2,7 +2,7 @@ function scr_enemy_grabbed()
 {
 	if (!pepperman_grab)
 	{
-		var _obj_player = asset_get_index(concat("obj_player", grabbedby));
+		var _obj_player = obj_player1;
 		image_xscale = -_obj_player.xscale;
 		stunned = 200;
 		

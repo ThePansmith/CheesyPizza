@@ -372,30 +372,18 @@ if targetspr != -1 && targetspr_old != targetspr && global.hud == 0 && visible
 	var sugarychar = check_sugarychar();
 	targetspr_old = targetspr;
 	
-	var char = obj_player1.character;
+	var char = obj_player1.character, charspr = targetspr;
 	if char != "P"
-	{
-		var charspr = asset_get_index(sprite_get_name(targetspr) + char);
-		var charspr_new = asset_get_index(sprite_get_name(targetspr) + char + "_NEW");
-	}
+		charspr = SPRITES[? sprite_get_name(targetspr) + char] ?? (sugarychar ? spr_tv_failsafeSP : targetspr);
 	
-	if char != "P" && charspr_new > -1 && REMIX
-		sprite_index = charspr_new;
-	else if char != "P" && charspr > -1
-		sprite_index = charspr;
-	else
+	if REMIX
 	{
-		var charspr_new = asset_get_index(sprite_get_name(targetspr) + (sugarychar ? "SP" : "_NEW"));
-		if charspr_new > -1 && REMIX
-			sprite_index = charspr_new;
-		else
-		{
-			if sugarychar
-				sprite_index = spr_tv_failsafeSP;
-			else
-				sprite_index = targetspr;
-		}
+		if char == "P"
+			char = "";
+		sprite_index = SPRITES[? sprite_get_name(targetspr) + char + "_NEW"] ?? charspr;
 	}
+	else
+		sprite_index = charspr;
 }
 
 // transition timer

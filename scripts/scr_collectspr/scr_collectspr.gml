@@ -11,7 +11,7 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 				default:
 					spr = choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect);
 					if global.blockstyle == blockstyles.old
-						spr = asset_get_index(sprite_get_name(spr) + "_old");
+						spr = SPRITES[? sprite_get_name(spr) + "_old"];
 					break;
 				
 				case "N":
@@ -21,7 +21,7 @@ function scr_collectspr(obj = object_index, player = obj_player1, set = true)
 				case "SP":
 					spr = choose(spr_collect1SP, spr_collect2SP, spr_collect3SP, spr_collect4SP, spr_collect5SP);
 					if global.blockstyle == blockstyles.old
-						spr = asset_get_index(sprite_get_name(spr) + "_old");
+						spr = SPRITES[? sprite_get_name(spr) + "_old"];
 					
 					spr_palette = spr_collectSP_palette;
 					paletteselect = choose(1, 2, 3, 4, 5);

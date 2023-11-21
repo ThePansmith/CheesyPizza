@@ -10,8 +10,8 @@ if SUGARY
 		    // backgrounds
 		    if layer_get_element_type(layers_e[j]) == layerelementtype_background
 		    {
-		        var bgspr = asset_get_index(sprite_get_name(layer_background_get_sprite(layers_e[j])) + "escape");
-		        if sprite_exists(bgspr)
+		        var bgspr = SPRITES[? sprite_get_name(layer_background_get_sprite(layers_e[j])) + "escape"];
+		        if bgspr != undefined
 		            layer_background_change(layers_e[j], bgspr);
 		    }
 		    break;

@@ -21,10 +21,7 @@ if currentselect != -1
 	{
 		pal = global.game_palette[currentselect];
 		tex = global.game_palettetexture[currentselect];
-	
-		spr = asset_get_index(sprite_get_name(spr) + char);
-		if !sprite_exists(spr)
-			spr = sprite_index;
+		spr = SPRITES[? sprite_get_name(spr) + char] ?? sprite_index;
 	}
 }
 if (tex != noone)

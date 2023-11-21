@@ -1190,14 +1190,6 @@ function cyop_cleanup()
 		i = ds_map_find_next(global.custom_sprites, i);
 	}
 	ds_map_clear(global.custom_sprites);
-	
-	// tiles
-	var i = ds_map_find_first(global.custom_tiles);
-	while !is_undefined(i)
-	{
-		sprite_delete(global.custom_tiles[?i][0]);
-		i = ds_map_find_next(global.custom_tiles, i);
-	}
 	ds_map_clear(global.custom_tiles);
 	
 	// audio
@@ -1216,6 +1208,7 @@ function cyop_cleanup()
 		instance_destroy();
 	ds_map_clear(global.room_map);
 	ds_map_clear(global.asset_cache);
+	ds_map_clear(global.cyop_broken_tiles);
 }
 function cyop_asset(str)
 {
@@ -1315,12 +1308,12 @@ function cyop_load_internal(ini)
 							y_offset += sprite_get_height(spr) / 2;
 						}
 						sprite_replace(spr, filepath, images == -1 ? 1 : images, 0, 0, x_offset, y_offset);
+						sprite_set_speed(spr, 1, spritespeed_framespergameframe);
 						
-						// add to map
+						// add to map(s)
+						ds_map_add(global.custom_sprites, prefix + filename, spr);
 						if tileset_size > 0
 							ds_map_add(global.custom_tiles, prefix + filename, [spr, tileset_size]);
-						else
-							ds_map_add(global.custom_sprites, prefix + filename, spr);
 					}
 					
 					#endregion
@@ -1402,11 +1395,11 @@ function cyop_load_level_internal(ini)
 	try
 	{
 		ds_map_clear(global.room_map);
-		var r = 0, version_warned = false;
+		var version_warned = false;
 		
 		// loop through jsons
 		var room_file = file_find_first(concat(rooms_path, "/*.json"), fa_none);
-		while room_file != ""
+		for(var r = 0; room_file != ""; r++)
 		{
 			// read file
 			var reader = file_text_open_read(concat(rooms_path, "/", room_file));
@@ -1441,7 +1434,6 @@ function cyop_load_level_internal(ini)
 			room_set_camera(_room, 0, view_camera[0]);
 			
 			room_file = file_find_next();
-			r++;
 		}
 	}
 	catch(e)
@@ -1514,12 +1506,12 @@ function cyop_resolvevalue(value, varname)
 	}
 	if string_pos("spr", varname) > 0
 	{
-		var return_value = cyop_asset(value);
-		if sprite_exists(return_value)
+		var return_value = SPRITES[? value];
+		if return_value != undefined
 			return return_value;
 		else
 		{
-			return_value = ds_map_find_value(global.custom_sprites, value);
+			return_value = global.custom_sprites[? value];
 			if !is_undefined(return_value)
 				return return_value;
 			else

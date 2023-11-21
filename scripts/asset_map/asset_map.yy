@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "cyop_tile",
+  "name": "asset_map",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Tilemap",
-    "path": "folders/Scripts/CheesyPizza/Level Editor/Tilemap.yy",
+    "name": "CheesyPizza",
+    "path": "folders/Scripts/CheesyPizza.yy",
   },
 }

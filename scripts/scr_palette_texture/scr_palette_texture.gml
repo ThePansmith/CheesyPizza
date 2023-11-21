@@ -49,11 +49,11 @@ function scr_get_texture_palette(texture)
 			if (_arr[i][0] == texture)
 				return _arr[i][1];
 		}
-		if asset_get_type(texture) == asset_sprite
-			return asset_get_index(texture);
+		return SPRITES[? texture] ?? noone;
 	}
 	return noone;
 }
+
 /// @desc	Apply a palette texture (a pattern) to a given sprite and draw it
 function scr_palette_texture(sprite, subimg, x, y, xscale, yscale, rot = 0, col = c_white, alpha = 1, gui = 0, texture = noone)
 {

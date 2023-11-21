@@ -110,7 +110,7 @@ function pto_received_packet(msgid, buffer)
 					case "bx": spr = string_replace(spr, "bx", "spr_boxxedpep_"); break;
 					case "ch": spr = string_replace(spr, "ch", "spr_cheesepep_"); break;
 				}
-				spr = asset_get_index(spr);
+				spr = SPRITES[? spr];
 			}
 			
 			// figure out player
@@ -173,9 +173,9 @@ function pto_received_packet(msgid, buffer)
 						paletteselect = buffer_read(buffer, buffer_u8);
 						pattern = buffer_read(buffer, buffer_text);
 						if string_digits(pattern) == pattern
-							pattern = asset_get_index("spr_peppattern" + pattern);
+							pattern = SPRITES[? "spr_peppattern" + pattern];
 						else
-							pattern = asset_get_index("spr_pattern_" + pattern);
+							pattern = SPRITES[? "spr_pattern_" + pattern];
 						break;
 						
 					case Var.Panic:

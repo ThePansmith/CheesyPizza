@@ -15,7 +15,7 @@ global.custom_tiles = ds_map_create();
 global.custom_audio = ds_map_create();
 global.room_map = ds_map_create();
 global.asset_cache = ds_map_create();
-global.cyop_broken_tiles = [ ];
+global.cyop_broken_tiles = ds_map_create();
 
 loaded = false;
 gamestart = false;

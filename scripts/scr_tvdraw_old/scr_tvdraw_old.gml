@@ -140,13 +140,7 @@ function scr_tvdraw_old()
 	var sprite = tvsprite;
 	
 	if sugary
-	{
-		var asset = asset_get_index(sprite_get_name(tvsprite) + "_ss");
-		if sprite_exists(asset)
-			sprite = asset;
-		else
-			sprite = spr_tvdefault_ss;
-	}
+		sprite = SPRITES[? sprite_get_name(tvsprite) + "_ss"] ?? spr_tvdefault_ss;
 	
 	if global.combo > 0 && global.combotime > 0 && (tvsprite == spr_tvcombo or tvsprite == spr_tvdefault)
 	{

@@ -1,7 +1,7 @@
 if global.hardmode && safe_get(obj_camera, "visible")
 {
-	var spr = asset_get_index("spr_heatmeter" + string(global.heatmeter_threshold + 1));
-	if sprite_exists(spr)
+	var spr = SPRITES[? "spr_heatmeter" + string(global.heatmeter_threshold + 1)];
+	if spr != undefined
 	{
 		var xx = 480, yy = 76;
 		var _perc = (global.heatmeter_count / global.heatmeter_threshold_count) - global.heatmeter_threshold;

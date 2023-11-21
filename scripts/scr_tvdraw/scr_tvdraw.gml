@@ -241,11 +241,11 @@ function scr_tvdraw()
 		// static
 		if (state == states.tv_whitenoise)
 		{
-			var charspr = asset_get_index("spr_tv_whitenoise" + chara);
 			if sugary
-				charspr = spr_tv_whitenoiseSP;
-			
-			draw_sprite(charspr > -1 ? charspr : spr_tv_whitenoise, tv_trans, tv_x + collect_x, tv_y + collect_y + hud_posY);
+				var charspr = spr_tv_whitenoiseSP;
+			else
+				var charspr = SPRITES[? "spr_tv_whitenoise" + chara];
+			draw_sprite(charspr ?? spr_tv_whitenoise, tv_trans, tv_x + collect_x, tv_y + collect_y + hud_posY);
 		}
 		
 		// propeller

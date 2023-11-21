@@ -26,6 +26,7 @@ exception_unhandled_handler
 	function(e)
 	{
 		// force stop all sound
+		audio_stop_all();
 		with obj_fmod
 		{
 			fmod_event_instance_set_paused_all(true);
@@ -72,9 +73,9 @@ if !file_exists("data/cheese.jpg")
 }
 
 // macros
-#macro PLAYTEST (GM_build_type != "run")
 #macro REMIX global.gameplay
 #macro DEBUG (GM_build_type == "run")
+#macro PLAYTEST code_is_compiled()
 #macro YYC code_is_compiled()
 
 #macro STRING_UNDEFINED "<undefined>"

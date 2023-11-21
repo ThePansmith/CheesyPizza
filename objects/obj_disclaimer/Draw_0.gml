@@ -195,7 +195,6 @@ switch menu
 		draw_set_alpha(1);
 		break;
 	
-	/*
 	case 2:
 		// disclaimer
 		draw_set_align(fa_center);
@@ -215,8 +214,10 @@ switch menu
 		or (textbox.sel && keyboard_check_pressed(vk_enter))
 		{
 			textbox.str = string_trim(textbox.str);
-			if os_is_network_connected(true) && textbox.str != "" && string_digits(textbox.str) == textbox.str && array_contains(scr_numbers(), real(textbox.str), 0, infinity) && count < 5
+			if os_is_network_connected(true) && textbox.str != "" && string_digits(textbox.str) == textbox.str && array_contains(NUMBERS, real(textbox.str), 0, infinity) && count < 5
 			{
+				NUMBERS = [];
+				
 				net = true;
 				state = 2;
 				are_you_sure = true;
@@ -250,7 +251,6 @@ switch menu
 			}
 		}
 		break;
-	*/
 }
 
 // fade in

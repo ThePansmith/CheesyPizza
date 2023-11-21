@@ -1,9 +1,18 @@
 function scr_destroy_tiles(_size, _layer, _spread = 0)
 {
-	var lay_id = layer_get_id(_layer);
-	if (lay_id != -1)
+	var customlevel = instance_exists(obj_levelLoader);
+	if customlevel
+		var lay_id = -1;
+	else
+		var lay_id = layer_get_id(_layer);
+	
+	if (lay_id != -1 or customlevel)
 	{
-		var map_id = layer_tilemap_get_id(lay_id);
+		if customlevel
+			var map_id = -1;
+		else
+			var map_id = layer_tilemap_get_id(lay_id);
+		
 		var w = abs(sprite_width) / _size;
 		var h = abs(sprite_height) / _size;
 		var ix = sign(image_xscale);
@@ -16,24 +25,13 @@ function scr_destroy_tiles(_size, _layer, _spread = 0)
 				scr_destroy_tile(x + (xx * _size * ix), y + (yy * _size * iy), map_id);
 		}
 	}
-	else if instance_exists(obj_levelLoader)
-	{
-		var w = abs(sprite_width) / _size;
-		var h = abs(sprite_height) / _size;
-		var ix = sign(image_xscale);
-		var iy = sign(image_yscale);
-		if (ix < 0)
-			w++;
-		for (var yy = 0 - _spread; yy < (h + _spread); yy++)
-		{
-			for (var xx = 0 - _spread; xx < (w + _spread); xx++)
-				scr_destroy_tile(x + (xx * _size * ix), y + (yy * _size * iy), -1);
-		}
-	}
 }
 function scr_destroy_tile_arr(_size, _array, _spread = 0)
 {
-	for (var i = 0; i < array_length(_array); i++)
+	var customlevel = instance_exists(obj_levelLoader);
+	if customlevel
+		scr_destroy_tiles(_size, -1, 0);
+	else for (var i = 0; i < array_length(_array); i++)
 		scr_destroy_tiles(_size, _array[i], _spread);
 }
 function scr_destroy_tile(x, y, tilemap)
@@ -46,12 +44,15 @@ function scr_destroy_tile(x, y, tilemap)
 	}
 	else if instance_exists(obj_levelLoader) 
 	{
-		for (var i = 0; i < array_length(global.cyop_broken_tiles); i += 2)
+		var xx = floor(x / 32) * 32;
+		var yy = floor(y / 32) * 32;
+		
+		ds_map_set(global.cyop_broken_tiles, $"{xx}_{yy}", 1);
+		with obj_cyop_tilelayer
 		{
-			if (global.cyop_broken_tiles[i] == x && global.cyop_broken_tiles[i + 1] == y)
-				return;
+			if !secrettile
+				tilelayer.dirty = true;
 		}
-		array_push(global.cyop_broken_tiles, x, y);
 	}
 }
 function scr_solid_line(instance)
