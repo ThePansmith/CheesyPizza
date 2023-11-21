@@ -306,7 +306,7 @@ switch menu
 				// image
 				gpu_set_tex_filter(true);
 				if sprite_exists(this.image)
-					draw_sprite_stretched(this.image, 0, xx, yy, sprw, sprh, 0, c_white, 1);
+					draw_sprite_stretched_ext(this.image, 0, xx, yy, sprw, sprh, c_white, 1);
 				gpu_set_tex_filter(false);
 				
 				yy += sprh;

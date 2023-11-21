@@ -195,6 +195,7 @@ switch menu
 		draw_set_alpha(1);
 		break;
 	
+	/*
 	case 2:
 		// disclaimer
 		draw_set_align(fa_center);
@@ -249,6 +250,7 @@ switch menu
 			}
 		}
 		break;
+	*/
 }
 
 // fade in
