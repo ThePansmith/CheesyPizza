@@ -2,6 +2,11 @@ live_auto_call;
 
 if menu != 1
 	exit;
+done_download = function(i)
+{
+	downloads[i] = noone;
+	download_count--;
+}
 
 // downloads
 if array_length(remote_towers) > 0
@@ -18,6 +23,13 @@ if array_length(remote_towers) > 0
 		if this.state == 0
 		{
 			var data = json_parse(async_load[? "result"]);
+			if !is_array(data) or array_length(data) == 0
+			{
+				message_show("Gamebanana messed up! Try again!");
+				done_download(i);
+				exit;
+			}
+			
 			array_sort(data, function(elm1, elm2)
 			{
 				// latest uploads first
@@ -25,15 +37,16 @@ if array_length(remote_towers) > 0
 			});
 			
 			this.file = data[0];
-			//show_message(this.file._sFile);
+			show_message(this.file);
 			
 			if !string_ends_with(this.file._sFile, ".zip")
 			{
-				message_show($"This mod is not a CYOP tower!");
-				
-				downloads[i] = noone;
-				download_count--;
-				break;
+				if string_ends_with(this.file._sFile, ".rar")
+					message_show($"Can't extract .rar mods!");
+				else
+					message_show($"Unknown format {filename_ext(this.file._sFile)}!");
+				done_download(i);
+				exit;
 			}
 			
 			this.file.path = $"{towers_folder}\\temp_{tower.modid}\\download.zip";
@@ -48,10 +61,46 @@ if array_length(remote_towers) > 0
 			{
 				// finished downloading
 				this.file.path = async_load[? "result"];
-				this.request = zip_unzip_async(this.file.path, filename_dir(this.file.path));
+				this.request = zip_unzip(this.file.path, filename_dir(this.file.path));
 				this.state = 2;
-				
 				this.progress = 1;
+				
+				// moved from async, because gamemaker was bugging
+				file_delete(this.file.path);
+				if this.request < 0
+				{
+					message_show($"Failed to extract a ZIP!");
+					done_download(i);
+					exit;
+				}
+	
+				// attempt to find
+				var target = filename_dir(this.file.path);
+	
+				_found = "";
+				find_files_recursive(target, function(file)
+				{
+					_found = file;
+					return true;
+				}, ".tower.ini");
+	
+				if _found == ""
+					message_show($"This mod is not a CYOP tower!");
+				else
+				{
+					var finaltarget = towers_folder + $"\\{tower.modid}";
+					folder_destroy(finaltarget);
+		
+					if folder_move(filename_dir(_found), finaltarget) == 0
+						message_show("Couldn't move directory?");
+		
+					tower.downloaded = true;
+					sound_play("event:/modded/sfx/downloaded");
+		
+					add_tower($"{finaltarget}\\{filename_name(_found)}", true);
+				}
+				folder_destroy(target); // using dll, deletes all files too
+				done_download(i);
 			}
 			else if async_load[? "status"] == 1
 			{
@@ -61,9 +110,7 @@ if array_length(remote_towers) > 0
 			else
 			{
 				message_show("Could not download tower.");
-				
-				downloads[i] = noone;
-				download_count--;
+				done_download(i);
 			}
 		}
 		exit;
@@ -104,8 +151,14 @@ if state == 0
 		var name = this._sName;
 		name = string_replace(name, "(cyop)", "");
 		name = string_replace(name, "(CYOP)", "");
+		name = string_replace(name, "(Cyop)", "");
 		name = string_replace(name, "[CYOP]", "");
 		name = string_replace(name, "(CYOP Level)", "");
+		name = string_replace(name, "(CYOP level)", "");
+		name = string_replace(name, "(CYOP Tower)", "");
+		name = string_replace(name, "(CYOP tower)", "");
+		name = string_replace(name, "CYOP, ", "");
+		name = string_replace(name, "CYOP: ", "");
 		name = string_trim(name);
 		
 		var downloaded = false;

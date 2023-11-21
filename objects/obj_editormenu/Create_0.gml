@@ -1,7 +1,15 @@
 live_auto_call;
 
+spawned_in = false;
+if room != editor_entrance
+{
+	spawned_in = true;
+	instance_destroy(id, false);
+	exit;
+}
+
 // prep
-with obj_player
+with obj_player1
 {
 	if cyop_backtohubroom == noone
 	{
@@ -14,7 +22,6 @@ with obj_player
 	}
 	else
 	{
-		do {} until obj_savesystem.state == 0 && !obj_savesystem.dirty; // wait? idk if this works
 		gamesave_async_load();
 		trace("Switched savefiles: ", get_savefile_ini());
 		
@@ -175,6 +182,9 @@ fetch_tower_image = function(index)
 }
 fetch_tower_download = function(index)
 {
+	if menu != 1
+		exit;
+	
 	if downloads[index] == noone
 	{
 		var this = remote_towers[index];

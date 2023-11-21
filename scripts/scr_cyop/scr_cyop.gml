@@ -1257,7 +1257,6 @@ function cyop_load_internal(ini)
 	with obj_levelLoader
 		gamestart = true;
 	
-	do {} until obj_savesystem.state == 0 && !obj_savesystem.dirty; // wait? idk if this works
 	gamesave_async_load();
 	trace("Switched savefiles: ", get_savefile_ini());
 	

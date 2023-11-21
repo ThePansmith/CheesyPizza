@@ -22,7 +22,7 @@ function draw_set_bounds(_left, _top, _right, _bottom, _alpha_fix = false, _simp
 	var clip_bounds_pos = shader_get_uniform(shader, "u_clip_bounds");
 	var alphafix_pos = shader_get_uniform(shader, "u_rect_alphafix");
 	var inverse_pos = shader_get_uniform(shader, "u_rect_inverse");
-		
+	
 	shader_set_uniform_f(shader_get_uniform(shader, "u_dorectclip"), 1.0);
 	shader_set_uniform_f(clip_bounds_pos, _left, _top, _right, _bottom);
 	shader_set_uniform_f(alphafix_pos, _alpha_fix ? 1.0 : 0.0);

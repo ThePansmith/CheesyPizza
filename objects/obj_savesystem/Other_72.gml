@@ -69,6 +69,7 @@ switch (state)
 			//trace("inistr: ", ini_str);
 			//trace("buffstring: ", buffstring);
 			state = 0;
+			global.saveloaded = true;
 		}
 		break;
 }

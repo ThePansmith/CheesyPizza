@@ -72,9 +72,9 @@ if !file_exists("data/cheese.jpg")
 }
 
 // macros
-#macro PLAYTEST true
+#macro PLAYTEST (GM_build_type != "run")
 #macro REMIX global.gameplay
-#macro DEBUG true//(GM_build_type == "run")
+#macro DEBUG (GM_build_type == "run")
 #macro YYC code_is_compiled()
 
 #macro STRING_UNDEFINED "<undefined>"

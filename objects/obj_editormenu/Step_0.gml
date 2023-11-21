@@ -72,7 +72,7 @@ switch menu
 				smooth_buffer--;
 	
 			var camx = 0;
-			var camy = max(sel.y * 32 - 260, -120);
+			var camy = max(sel.y * 36 - 260, -120);
 	
 			cam.x = lerp(camx, cam.x, (smooth_buffer == 0) * 0.75);
 			cam.y = lerp(camy, cam.y, (smooth_buffer == 0) * 0.75);

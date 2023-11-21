@@ -1,7 +1,4 @@
-function get_buffer_group_name()
-{
-	return "saves";
-}
+#macro buffer_group_name "saves"
 function get_save_folder()
 {
 	return "saves";
@@ -88,8 +85,9 @@ function gamesave_async_load()
 	{
 		if (state == 0)
 		{
+			global.saveloaded = false;
 			loadbuff = buffer_create(1, 1, 1); // gets deleted later
-			buffer_async_group_begin(get_buffer_group_name());
+			buffer_async_group_begin(buffer_group_name);
 			buffer_load_async(loadbuff, get_savefile_ini(), 0, -1);
 			loadid = buffer_async_group_end();
 			state = 2;

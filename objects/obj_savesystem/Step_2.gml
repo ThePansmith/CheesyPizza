@@ -2,28 +2,31 @@ if (state == 0)
 {
 	if (dirty)
 	{
-		if (savegame && global.saveloaded)
+		if (savegame)
 		{
-			savegame = false;
-			state = 1;
-			with (obj_achievementtracker)
+			if global.saveloaded
 			{
-				achievement_save_variables(achievements_update);
-				achievement_save_variables(achievements_notify);
+				savegame = false;
+				state = 1;
+				with (obj_achievementtracker)
+				{
+					achievement_save_variables(achievements_update);
+					achievement_save_variables(achievements_notify);
+				}
+				showicon = true;
+				icon_alpha = 3;
+				buffer_async_group_begin(buffer_group_name);
+				savebuff = buffer_create(1, 1, 1);
+				ini_open_from_string(ini_str);
+				ini_write_real("Game", "percent", get_percentage());
+				ini_write_real("Game", "minutes", global.file_minutes);
+				ini_write_real("Game", "seconds", global.file_seconds);
+				ini_write_real("Game", "sandbox", global.sandbox);
+				var closestring = ini_close();
+				buffer_write(savebuff, 11, closestring);
+				buffer_save_async(savebuff, get_savefile_ini(), 0, buffer_get_size(savebuff));
+				saveid = buffer_async_group_end();
 			}
-			showicon = true;
-			icon_alpha = 3;
-			buffer_async_group_begin(get_buffer_group_name());
-			savebuff = buffer_create(1, 1, 1);
-			ini_open_from_string(ini_str);
-			ini_write_real("Game", "percent", get_percentage());
-			ini_write_real("Game", "minutes", global.file_minutes);
-			ini_write_real("Game", "seconds", global.file_seconds);
-			ini_write_real("Game", "sandbox", global.sandbox);
-			var closestring = ini_close();
-			buffer_write(savebuff, 11, closestring);
-			buffer_save_async(savebuff, get_savefile_ini(), 0, buffer_get_size(savebuff));
-			saveid = buffer_async_group_end();
 		}
 		else if (saveoptions)
 		{

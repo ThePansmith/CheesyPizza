@@ -11,7 +11,7 @@ switch menu
 		var array = towers;
 		for(var i = 0; i < array_length(array); i++)
 		{
-			var xx = 100 - cam.x + random_range(-shake, shake), yy = i * 32 - cam.y + random_range(-shake, shake);
+			var xx = 100 - cam.x + random_range(-shake, shake), yy = i * 36 - cam.y + random_range(-shake, shake);
 			if fader <= 0 && sel.y != i
 				continue;
 			if yy < -32
@@ -44,11 +44,18 @@ switch menu
 			}
 			if this.type == 0
 				draw_sprite_ext(spr_towericon, 0, xx - 42, yy, 1, 1, 0, sel.y == i ? c_white : c_gray, draw_get_alpha());
-	
+			
 			draw_set_bounds(xx, yy, xx + wd, yy + 32);
 			draw_text(drawx, yy, str);
 			draw_reset_clip();
 			draw_set_alpha(1);
+			
+			if (this.corrupt or this.fresh) && state == 0
+			{
+				draw_set_colour(this.corrupt ? c_red : c_yellow);
+				draw_set_align(fa_center, fa_middle);
+				draw_text((xx - 72 + 8) + (this.type == 1 ? 40 : 0), yy + min(sin(current_time / 200) * 15 + 5, 0) + 20, "!");
+			}
 		}
 
 		// control help
@@ -61,6 +68,7 @@ switch menu
 		}
 		if controls.compiled != noone
 		{
+			draw_set_font(global.creditsfont);
 			draw_set_colour(c_black);
 			draw_set_alpha(0.5);
 			draw_rectangle(0, SCREEN_HEIGHT - 32 - 8 - 8, SCREEN_WIDTH, SCREEN_HEIGHT, false);
@@ -172,11 +180,14 @@ switch menu
 			var xxstart = 36, yystart = 32;
 			var xx = xxstart, yy = yystart;
 			
-			draw_set_bounds(16 + 1, 16 + 1, SCREEN_WIDTH - 16, SCREEN_HEIGHT - 16);
+			var boundleft = 16 + 1, boundtop = 16 + 1, boundright = SCREEN_WIDTH - 16, boundbottom = SCREEN_HEIGHT - 16;
+			draw_set_bounds(boundleft, boundtop, boundright, boundbottom);
 			
+			/*
 			var temp_sel = sel.y;
 			if mouse_check_button_pressed(mb_left)
 				temp_sel = -1;
+			*/
 			
 			var col1 = merge_color(#5000b8, c_white, 0.5);
 			var col2 = merge_color(#1070d0, c_white, 0.5);
@@ -186,41 +197,58 @@ switch menu
 				var scale = 0.3;
 				var sprw = 530 * scale, sprh = 298 * scale;
 				
-				var hovering = point_in_rectangle(mouse_x_gui, mouse_y_gui, xx, yy - scroll, xx + sprw, yy + 180 - scroll);
-				if hovering
+				if !(yy - scroll + 200 < boundtop or yy - scroll >= boundbottom)
 				{
-					draw_rectangle_color(xx - 4, yy - 4 - scroll, xx + sprw + 4, yy + 180 + 4 - scroll, c_aqua, c_aqua, c_aqua, c_aqua, true);
-					if mouse_check_button_pressed(mb_left)
+					var hovering = point_in_rectangle(mouse_x_gui, mouse_y_gui, xx, yy - scroll, xx + sprw, yy + 180 - scroll);
+					if hovering
 					{
-						if sel.y == i
-							sel.y = -1;
-						else
-							sel.y = i;
-						temp_sel = sel.y;
+						draw_set_bounds(boundleft, boundtop, boundright, boundbottom);
+						draw_rectangle_color(xx - 4, yy - 4 - scroll, xx + sprw + 4, yy + 180 + 4 - scroll, c_aqua, c_aqua, c_aqua, c_aqua, true);
+						if mouse_check_button_pressed(mb_left)
+						{
+							if sel.y == i
+								sel.y = -1;
+							else
+								sel.y = i;
+						}
+						//temp_sel = sel.y;
 					}
+				
+					draw_set_bounds(xx, max(yy - scroll, boundtop), xx + 160, min(yy + 200 - scroll, boundbottom));
+					draw_set_colour(c_white);
+					if sel.y > -1 && sel.y != i
+						draw_set_colour(#555555);
+				
+					draw_rectangle_color(xx, yy - scroll, xx + sprw - 1, yy + sprh - 1 - scroll, 0, 0, 0, 0, false);
+					draw_sprite_ext(spr_loading, 0, xx + sprw / 2, yy + sprh / 2 - scroll, 0.5, 0.5, current_time, c_white, 1);
+				
+					gpu_set_tex_filter(true);
+					if sprite_exists(this.image)
+						draw_sprite_stretched_ext(this.image, 0, xx, yy - scroll, sprw, sprh, draw_get_colour(), 1);
+					gpu_set_tex_filter(false);
+				
+					// stats
+					draw_set_font(global.smallfont);
+					draw_sprite_ext(spr_browsericons, 1, xx, yy + 96 - scroll + 64, 1, 1, 0, draw_get_colour(), 1);
+				
+					var viewsstr = this.views;
+					if this.views > 1000
+						viewsstr = string_replace(string_format(this.views / 1000, 1, 1), ".0", "") + "K";
+				
+					draw_text(xx + 16, yy + 96 - scroll + 64, viewsstr);
+				
+					// text
+					draw_set_font(global.font_small);
+				
+					var str = this.name;
+					if string_length(str) > 50
+						str = string_copy(str, 1, 50) + "...";
+				
+					if this.downloaded
+						draw_text_ext_color(xx, yy + 96 - scroll, str, 16, 170, col1, col2, col2, col1, sel.y != -1 && sel.y != i ? 0.25 : 1);
+					else
+						draw_text_ext(xx, yy + 96 - scroll, str, 16, 170);
 				}
-				
-				draw_set_colour(c_white);
-				if sel.y > -1 && sel.y != i
-					draw_set_colour(#555555);
-				
-				draw_rectangle_color(xx, yy - scroll, xx + sprw - 1, yy + sprh - 1 - scroll, 0, 0, 0, 0, false);
-				draw_sprite_ext(spr_loading, 0, xx + sprw / 2, yy + sprh / 2 - scroll, 0.5, 0.5, current_time, c_white, 1);
-				
-				if sprite_exists(this.image)
-					draw_sprite_stretched_ext(this.image, 0, xx, yy - scroll, sprw, sprh, draw_get_colour(), 1);
-				
-				// text
-				draw_set_font(global.font_small);
-				
-				var str = this.name;
-				if string_length(str) > 40
-					str = string_copy(str, 1, 40) + "...";
-				
-				if this.downloaded
-					draw_text_ext_color(xx, yy + 96 - scroll, str, 16, 170, col1, col2, col2, col1, sel.y != -1 && sel.y != i ? 0.25 : 1);
-				else
-					draw_text_ext(xx, yy + 96 - scroll, str, 16, 170);
 				
 				xx += 180;
 				if i % 3 == 2 && i != array_length(remote_towers) - 1
@@ -229,6 +257,7 @@ switch menu
 					yy += 200;
 				}
 			}
+			draw_reset_clip();
 			
 			// scroll
 			if yy > SCREEN_HEIGHT
@@ -268,31 +297,35 @@ switch menu
 			if sel.y > -1
 			{
 				var this = remote_towers[sel.y];
+				var scale = 0.65;
+				var sprw = 530 * scale, sprh = 298 * scale;
 				
 				draw_set_colour(c_white);
 				draw_set_align(fa_center);
 				
 				// image
+				gpu_set_tex_filter(true);
 				if sprite_exists(this.image)
-					draw_sprite_ext(this.image, 0, xx, yy, 0.65, 0.65, 0, c_white, 1);
+					draw_sprite_stretched(this.image, 0, xx, yy, sprw, sprh, 0, c_white, 1);
+				gpu_set_tex_filter(false);
 				
-				yy += sprite_get_height(this.image) * 0.65;
+				yy += sprh;
 				yy += 16;
 				
 				// name
-				draw_text_ext(center, yy, this.name, 16, xx * 0.65);
-				yy += string_height_ext(this.name, 16, xx * 0.65);
+				draw_text_ext(center, yy, this.name, 16, xx * scale);
+				yy += string_height_ext(this.name, 16, xx * scale);
 				yy += 16;
 				
 				// download
 				var hovering = point_in_rectangle(mouse_x_gui, mouse_y_gui, center - 100, yy, center + 100, yy + 42);
-				var col1 = hovering * #111122 + #5000b8;
-				var col2 = hovering * #111122 + #1070d0;
+				var col1 = hovering * #222222 + #5000b8;
+				var col2 = hovering * #222222 + #1070d0;
 				
 				var download = downloads[sel.y];
 				if hovering
 				{
-					temp_sel = 0;
+					//temp_sel = 0;
 					if mouse_check_button_pressed(mb_left) && download == noone
 					{
 						if this.downloaded
@@ -308,7 +341,7 @@ switch menu
 									
 									if curr.corrupt
 									{
-					
+										
 									}
 									else
 									{
@@ -371,6 +404,7 @@ switch menu
 					menu = 0;
 					state = 0;
 					filter = 0;
+					
 					exit;
 				}
 			}
@@ -413,8 +447,8 @@ switch menu
 					}
 				}
 			}
-			if temp_sel == -1 && state == 1
-				sel.y = -1;
+			//if temp_sel == -1 && state == 1
+			//	sel.y = -1;
 			
 			if sel.y == -1
 			{

@@ -1,6 +1,10 @@
 /// @description zip extraction
 live_auto_call;
 
+/*
+if menu != 1
+	exit;
+
 for(var i = 0; i < array_length(downloads); i++)
 {
 	var this = downloads[i], tower = remote_towers[i];
@@ -50,3 +54,4 @@ for(var i = 0; i < array_length(downloads); i++)
 	download_count--;
 	break;
 }
+*/

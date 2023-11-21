@@ -45,8 +45,6 @@ if (room == hub_loadingscreen && state != 2)
 				targetDoor = "A";
 				state = states.titlescreen;
 			}
-			
-			global.saveloaded = true;
 		}
 		with (instance_create(x, y, obj_fadeout))
 		{
