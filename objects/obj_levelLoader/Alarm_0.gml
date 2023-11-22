@@ -1,7 +1,7 @@
 /// @description create layers
 
 live_auto_call;
-ds_map_clear(global.cyop_broken_tiles);
+ds_list_clear(global.cyop_broken_tiles);
 
 // clean up
 with obj_persistent
@@ -21,17 +21,45 @@ try
 		var inst_data = _room.instances[i];
 		if inst_data.deleted
 			continue;
-	
+		
+		if inst_data.object >= array_length(objects)
+		{
+			audio_stop_all();
+			audio_play_sound(sfx_pephurt, 0, false);
+			show_message($"This tower is incompatible, because it was made using a mod that adds extra objects.\n\nSuggest fixing this in a forum post or something.\n\nName: {global.custom_tower_name}\nID: {filename_name(global.custom_path)}");
+			with obj_pause
+			{
+				hub = false;
+				event_perform(ev_alarm, 3);
+			}
+			exit;
+		}
+		
 		var asset_name = objects[inst_data.object], asset = noone;
 		switch asset_name
 		{
 			case "obj_teleporter_receptor": asset = obj_teleporter; break;
 			case "obj_pizzasona_spawn": asset = obj_bigcollect; break;
 			default:
-				var asset = OBJECTS[? asset_name];
+				if is_string(asset_name)
+					var asset = OBJECTS[? asset_name];
+				else
+					var asset = undefined;
+				
 				if asset == undefined
 				{
 					trace("levelLoader - ", asset_name, " does not exist");
+					
+					audio_stop_all();
+					audio_play_sound(sfx_pephurt, 0, false);
+					show_message($"This tower is incompatible, because it probably uses one of those CYOP fixed objects mods.\n\nSuggest fixing this in a forum post or something.\n\nName: {global.custom_tower_name}\nID: {filename_name(global.custom_path)}");
+					with obj_pause
+					{
+						hub = false;
+						event_perform(ev_alarm, 3);
+					}
+					exit;
+					
 					continue;
 				}
 		}

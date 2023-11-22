@@ -1090,7 +1090,7 @@ function cyop_objectlist()
 		"obj_evilbanana",
 		"obj_icicle",
 		"obj_ham",
-		"obj_bosscontrollerOLD",
+		noone, //"obj_bosscontrollerOLD",
 		"obj_pauseOLD",
 		"obj_gustavo_war",
 		"obj_enguardehitbox",
@@ -1208,7 +1208,7 @@ function cyop_cleanup()
 		instance_destroy();
 	ds_map_clear(global.room_map);
 	ds_map_clear(global.asset_cache);
-	ds_map_clear(global.cyop_broken_tiles);
+	ds_list_clear(global.cyop_broken_tiles);
 }
 function cyop_asset(str)
 {

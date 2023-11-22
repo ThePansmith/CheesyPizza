@@ -47,7 +47,7 @@ function scr_destroy_tile(x, y, tilemap)
 		var xx = floor(x / 32) * 32;
 		var yy = floor(y / 32) * 32;
 		
-		ds_map_set(global.cyop_broken_tiles, $"{xx}_{yy}", 1);
+		ds_list_add(global.cyop_broken_tiles, $"{xx}_{yy}");
 		with obj_cyop_tilelayer
 		{
 			if !secrettile

@@ -96,7 +96,7 @@ function cyop_tilelayer(_x, _y, _tilelayer, _depth, _secret) constructor
 			
 			var f = method({tex_it: tex_it, tex_w: tex_w, tex_h: tex_h, depth: depth, vertex_buffers: vertex_buffers}, function(tile, tile_it)
 			{
-				if ds_map_exists(global.cyop_broken_tiles, $"{tile.x}_{tile.y}")
+				if ds_list_find_index(global.cyop_broken_tiles, $"{tile.x}_{tile.y}") != -1
 					exit;
 				
 	            var uvs = sprite_get_uvs(tile.tileset, 0);

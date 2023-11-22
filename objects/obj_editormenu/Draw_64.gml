@@ -157,17 +157,24 @@ switch menu
 		// 1 - loaded
 		// 2 - downloading level
 		
-		draw_set_colour(c_black);
-		draw_set_alpha(0.9);
-		draw_roundrect(16 - 1, 16 - 1, SCREEN_WIDTH - 16 - 1, SCREEN_HEIGHT - 16 - 1, false);
-		draw_set_alpha(1);
-		draw_set_colour(c_white);
+		if state != 2
+		{
+			draw_set_colour(c_black);
+			draw_set_alpha(0.9);
+			draw_roundrect(16 - 1, 16 - 1, SCREEN_WIDTH - 16 - 1, SCREEN_HEIGHT - 16 - 1, false);
+			draw_set_alpha(1);
+			draw_set_colour(c_white);
 		
-		draw_set_font(global.font_small);
-		var center = 582 + (530 * 0.65 / 2);
+			draw_set_font(global.font_small);
+			var center = 582 + (530 * 0.65 / 2);
+		
+			var boundleft = 16 + 1, boundtop = 16 + 1, boundright = SCREEN_WIDTH - 16, boundbottom = SCREEN_HEIGHT - 16;
+			draw_set_bounds(boundleft, boundtop, boundright, boundbottom);
+		}
 		
 		if state == 0
 		{
+			// loading list...
 			image_angle += 5;
 			draw_sprite_ext(spr_loading, 0, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 1, 1, image_angle, c_white, 1);
 			
@@ -175,13 +182,31 @@ switch menu
 			draw_text(center, SCREEN_HEIGHT - 20 - 50, $"Page: {page}");
 			exit;
 		}
+		else if state == 2
+		{
+			// preview image
+			var this = remote_towers[sel.y];
+			var scrw = SCREEN_WIDTH;
+			var scrh = SCREEN_HEIGHT;
+			var width = sprite_get_width(this.image);
+			var height = sprite_get_height(this.image);
+			var scale = min(scrw / height, scrh / width);
+			
+			var xx = scrw / 2 - (width / 2 * scale);
+			var yy = scrh / 2 - (height / 2 * scale);
+			
+			gpu_set_tex_filter(true);
+			draw_sprite_ext(this.image, 0, xx, yy, scale, scale, 0, c_white, 1);
+			gpu_set_tex_filter(false);
+			
+			if mouse_check_button_pressed(mb_left)
+				state = 1;
+		}
 		else
 		{
+			// list
 			var xxstart = 36, yystart = 32;
 			var xx = xxstart, yy = yystart;
-			
-			var boundleft = 16 + 1, boundtop = 16 + 1, boundright = SCREEN_WIDTH - 16, boundbottom = SCREEN_HEIGHT - 16;
-			draw_set_bounds(boundleft, boundtop, boundright, boundbottom);
 			
 			/*
 			var temp_sel = sel.y;
@@ -221,23 +246,38 @@ switch menu
 				
 					draw_rectangle_color(xx, yy - scroll, xx + sprw - 1, yy + sprh - 1 - scroll, 0, 0, 0, 0, false);
 					draw_sprite_ext(spr_loading, 0, xx + sprw / 2, yy + sprh / 2 - scroll, 0.5, 0.5, current_time, c_white, 1);
-				
+					
 					gpu_set_tex_filter(true);
 					if sprite_exists(this.image)
-						draw_sprite_stretched_ext(this.image, 0, xx, yy - scroll, sprw, sprh, draw_get_colour(), 1);
+					{
+						var actual_w = sprite_get_width(this.image) * scale;
+						var actual_h = sprite_get_height(this.image) * scale;
+						
+						scale = min(sprw / actual_w, sprh / actual_h);
+						actual_w *= scale;
+						actual_h *= scale;
+						
+						draw_sprite_stretched_ext(this.image, 0, xx + (sprw / 2) - (actual_w / 2), yy - scroll + (sprh / 2) - (actual_h / 2), actual_w, actual_h, draw_get_colour(), 1);
+					}
 					gpu_set_tex_filter(false);
 				
 					// stats
 					draw_set_font(global.smallfont);
-					draw_sprite_ext(spr_browsericons, 1, xx, yy + 96 - scroll + 64, 1, 1, 0, draw_get_colour(), 1);
-				
+					draw_set_alpha(0.5);
+					
+					draw_sprite_ext(spr_browsericons, 1, xx, yy + 100 - scroll + 64, 1, 1, 0, draw_get_colour(), 0.5);
+					
 					var viewsstr = this.views;
 					if this.views > 1000
 						viewsstr = string_replace(string_format(this.views / 1000, 1, 1), ".0", "") + "K";
-				
-					draw_text(xx + 16, yy + 96 - scroll + 64, viewsstr);
-				
+					
+					draw_text(xx + 16, yy + 100 - scroll + 64, viewsstr);
+					
+					draw_sprite_ext(spr_browsericons, 2, xx + 32 + string_width(viewsstr), yy + 100 - scroll + 64, 1, 1, 0, draw_get_colour(), 0.5);
+					draw_text(xx + 16 + 32 + string_width(viewsstr), yy + 100 - scroll + 64, this.posts);
+					
 					// text
+					draw_set_alpha(1);
 					draw_set_font(global.font_small);
 				
 					var str = this.name;
@@ -306,10 +346,22 @@ switch menu
 				// image
 				gpu_set_tex_filter(true);
 				if sprite_exists(this.image)
-					draw_sprite_stretched_ext(this.image, 0, xx, yy, sprw, sprh, c_white, 1);
+				{
+					scale *= min(530 / sprite_get_width(this.image), 298 / sprite_get_height(this.image));
+					draw_sprite_ext(this.image, 0, xx + (530 * 0.65 / 2) - sprite_get_width(this.image) * scale / 2, yy, scale, scale, 0, c_white, 1);
+					
+					if point_in_rectangle(mouse_x_gui, mouse_y_gui, xx, yy, xx + sprw, yy + sprh)
+					{
+						if mouse_check_button_pressed(mb_left)
+						{
+							state = 2;
+							exit;
+						}
+					}
+				}
 				gpu_set_tex_filter(false);
 				
-				yy += sprh;
+				yy += sprite_get_height(this.image) * scale;
 				yy += 16;
 				
 				// name
@@ -326,7 +378,7 @@ switch menu
 				if hovering
 				{
 					//temp_sel = 0;
-					if mouse_check_button_pressed(mb_left) && download == noone
+					if mouse_check_button_pressed(mb_left) && download == noone && !this.corrupt
 					{
 						if this.downloaded
 						{
@@ -364,7 +416,7 @@ switch menu
 				
 				if download != noone && download.progress > 0
 					draw_rectangle_color(center - 100, yy, center - 100 + download.progress * 200, yy + 42, c_green, c_lime, c_lime, c_green, false);
-				draw_rectangle_color(center - 100, yy, center + 100, yy + 42, col1, col2, col2, col1, download != noone);
+				draw_rectangle_color(center - 100, yy, center + 100, yy + 42, col1, col2, col2, col1, download != noone or this.corrupt);
 				
 				if state != 1
 					draw_sprite_ext(spr_loading, 0, center, yy + 21, 1, 1, current_time / 2, c_white, 1);
@@ -372,6 +424,8 @@ switch menu
 				var str = "Download";
 				if this.downloaded
 					str = "Play";
+				if this.corrupt
+					str = "(Not a tower)";
 				if download != noone
 				{
 					if download.state == 0
@@ -388,6 +442,8 @@ switch menu
 				// counts
 				draw_set_colour(c_gray);
 				draw_text(xx + (530 * 0.65 / 2), yy, $"Views: {this.views}\nLikes: {this.likes} - Posts: {this.posts}");
+				if text_button(xx + (530 * 0.65 / 2), yy + 42, "Open on browser") == 2
+					url_open(this.url);
 			}
 			
 			draw_reset_clip();
