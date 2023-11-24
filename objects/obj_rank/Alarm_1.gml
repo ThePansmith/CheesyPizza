@@ -7,20 +7,23 @@ global.leveltosave = noone;
 global.level_minutes = 0;
 global.level_seconds = 0;
 
-if (global.is_hubworld or global.custom_hub_level == "")
+var _r = obj_player1.backtohubroom;
+if instance_exists(obj_levelLoader)
 {
-	with obj_player1
-		backtohubroom = editor_entrance;
-	instance_destroy(obj_levelLoader);
+	if (global.is_hubworld or global.custom_hub_level == "")
+	{
+		_r = editor_entrance;
+		instance_destroy(obj_levelLoader);
+	}
+	else
+		cyop_load_level_internal(global.custom_hub_level);
 }
-else if instance_exists(obj_levelLoader)
-	cyop_load_level_internal(global.custom_hub_level);
 
 with (obj_player1)
 {
 	targetDoor = "HUB";
-	targetRoom = backtohubroom;
-	scr_room_goto(backtohubroom);
+	targetRoom = _r;
+	scr_room_goto(_r);
 	x = backtohubstartx;
 	y = backtohubstarty;
 	state = states.comingoutdoor;

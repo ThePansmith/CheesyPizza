@@ -1,10 +1,5 @@
 live_auto_call;
 
-/*
-reset_blendmode();
-reset_shader_fix();
-*/
-
 if con != 0
 {
 	// pto pause background
@@ -68,6 +63,8 @@ if con == 1
 	if fade <= 0
 		con = 2;
 }
+
+toggle_alphafix(true);
 if con < 2
 {
 	draw_set_colour(c_black);
@@ -75,3 +72,4 @@ if con < 2
 	draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false);
 	draw_set_alpha(1);
 }
+toggle_alphafix(false);

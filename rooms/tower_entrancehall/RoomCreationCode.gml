@@ -20,6 +20,7 @@ with (obj_player1)
 if global.panic
 	global.roommessage = "FAREWELL";
 
+/*
 var tutx = obj_startgate.x;
 for(var i = 1; i < 30; i++)
 {
@@ -32,3 +33,4 @@ for(var i = 1; i < 30; i++)
 		show_titlecard: false
 	});
 }
+*/

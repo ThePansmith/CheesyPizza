@@ -654,7 +654,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.108",
+    "IDEVersion": "2023.1100.0.444",
   },
   "resources": [
     {"id":{"name":"obj_bossdoor","path":"objects/obj_bossdoor/obj_bossdoor.yy",},},
@@ -10045,6 +10045,7 @@
     {"id":{"name":"spr_playerPN_idledance","path":"sprites/spr_playerPN_idledance/spr_playerPN_idledance.yy",},},
     {"id":{"name":"spr_playerPN_idlefrown","path":"sprites/spr_playerPN_idlefrown/spr_playerPN_idlefrown.yy",},},
     {"id":{"name":"spr_tvclap","path":"sprites/spr_tvclap/spr_tvclap.yy",},},
+    {"id":{"name":"obj_cyop_assetloader","path":"objects/obj_cyop_assetloader/obj_cyop_assetloader.yy",},},
     {"id":{"name":"spr_playerPN_ghostdashdownright","path":"sprites/spr_playerPN_ghostdashdownright/spr_playerPN_ghostdashdownright.yy",},},
     {"id":{"name":"spr_playerPN_stomp","path":"sprites/spr_playerPN_stomp/spr_playerPN_stomp.yy",},},
     {"id":{"name":"spr_playerPN_stompprep","path":"sprites/spr_playerPN_stompprep/spr_playerPN_stompprep.yy",},},

@@ -18,7 +18,7 @@ defaultkeys = function()
 	keyalpha = 0.6;
 	
 	pos[0] = keysep;
-	pos[1] = (540 - keysize * 3) - keysep * 3;
+	pos[1] = (SCREEN_HEIGHT - keysize * 3) - keysep * 3;
 	
 	pressedcol = merge_colour(c_blue, c_aqua, 0.75);
 	resizekeys();

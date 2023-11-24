@@ -95,6 +95,8 @@ if (instance_exists(obj_pizzaface) or global.lapmode == lapmode.laphell)
 		instance_destroy();
 	if room == space_11 with obj_antigrav
 		instance_destroy();
+	if room == industrial_2 with obj_destructibleplatform
+		instance_destroy();
 	
 	var tiles = room_get_tile_layers();
 	for(var i = 0; i < array_length(tiles); i++)

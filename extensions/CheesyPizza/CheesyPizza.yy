@@ -19,7 +19,7 @@
   "exportToGame": true,
   "extensionVersion": "1.0.0",
   "files": [
-    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[
+    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"CheesyPizza.dll","constants":[
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_INVALID_BANK","hidden":false,"value":"-4",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_BEAT_CALLBACK","hidden":false,"value":"65535",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"FMOD_PLAYBACK_START_CALLBACK","hidden":false,"value":"65536",},
@@ -182,6 +182,12 @@
             1,
             1,
           ],"documentation":"","externalName":"folderMove","help":"folder_move(source, dest)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"image_get_width","argCount":0,"args":[
+            1,
+          ],"documentation":"","externalName":"imageWidth","help":"image_get_width(filename)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"image_get_height","argCount":0,"args":[
+            1,
+          ],"documentation":"","externalName":"imageHeight","help":"image_get_height(filename)","hidden":false,"kind":1,"returnType":2,},
       ],"init":"","kind":1,"order":[
         {"name":"launch_external","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"test_dll_linkage","path":"extensions/CheesyPizza/CheesyPizza.yy",},

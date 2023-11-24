@@ -1,4 +1,5 @@
 live_auto_call;
+manualhide = false;
 
 // tower escape
 var r = string_letters(room_get_name(room));

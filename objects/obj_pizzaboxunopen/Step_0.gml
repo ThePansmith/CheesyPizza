@@ -43,8 +43,8 @@ if place_meeting(x, y, obj_player) && sprite_index != spr_pizzaboxopen
 		}
 		global.wave = 0;
 		global.maxwave = ((global.minutes * 60) + global.seconds) * 60;
-		if (global.panicbg)
-			scr_panicbg_init();
+		//if (global.panicbg)
+		//	scr_panicbg_init();
 	}
 	if object_is_ancestor(content, obj_pizzakinparent)
 	{

@@ -110,10 +110,15 @@ function scr_tvdraw_old()
 	{
 		if global.combo == 0
 		{
-			tvsprite = spr_tvcomboresult;
-			image_speed = 0;
-			image_index = min(comboprev, 3);
-			alarm[0] = 50;
+			if obj_player1.state == states.comingoutdoor
+				event_perform(ev_alarm, 0);
+			else
+			{
+				tvsprite = spr_tvcomboresult;
+				image_speed = 0;
+				image_index = min(comboprev, 3);
+				alarm[0] = 50;
+			}
 		}
 		else
 		{
@@ -121,7 +126,7 @@ function scr_tvdraw_old()
 			imageindexstore = global.combo - 1;
 			
 			if REMIX
-				alarm[0] = 60;
+				alarm[0] = 80;
 		}
 		comboprev = global.combo;
 	}
@@ -137,21 +142,21 @@ function scr_tvdraw_old()
 	#region DRAW
 	
 	var sugary = check_char("SP") or check_char("SN");
-	var sprite = tvsprite;
+	var sprite = tvsprite, def = spr_tvdefault, combo = spr_tvcombo;
 	
 	if sugary
-		sprite = SPRITES[? sprite_get_name(tvsprite) + "_ss"] ?? spr_tvdefault_ss;
+	{
+		var def = spr_tvdefault_ss, combo = spr_tvcombo_ss;
+		sprite = SPRITES[? sprite_get_name(tvsprite) + "_ss"] ?? def;
+	}
 	
 	if global.combo > 0 && global.combotime > 0 && (tvsprite == spr_tvcombo or tvsprite == spr_tvdefault)
 	{
 		// combo tv
-		if REMIX
-		{
-			draw_sprite_ext(sugary ? spr_tvcomboclear_ss : spr_tvcomboclear, 0, tvx, tvy, 1, 1, 0, c_white, alpha);
-			draw_sprite_part_ext(sprite, imageindexstore % 5, 0, 0, 16 + (global.combotime / 60) * 148, 177, tvx - sprite_get_xoffset(sprite), tvy - sprite_get_yoffset(sprite), 1, 1, c_white, alpha);
-		}
-		else
-			draw_sprite_ext(sprite, imageindexstore % 5, tvx, tvy, 1, 1, 0, c_white, alpha);
+		var wd = 16 + (global.combotime / 60) * sprite_get_width(sprite);
+			
+		draw_sprite_part_ext(def, -1, wd, 0, sprite_get_width(sprite), sprite_get_height(sprite), tvx + wd - sprite_get_xoffset(sprite), tvy - sprite_get_yoffset(sprite), 1, 1, c_white, alpha);
+		draw_sprite_part_ext(combo, global.combo - 1, 0, 0, wd, sprite_get_height(sprite), tvx - sprite_get_xoffset(sprite), tvy - sprite_get_yoffset(sprite), 1, 1, c_white, alpha);
 		
 		// propeller
 		if sugary
@@ -162,7 +167,10 @@ function scr_tvdraw_old()
 	
 	draw_set_align(fa_center);
 	if tvsprite == spr_tvcombo
+	{
+		draw_sprite_ext(sugary ? spr_tvcomboclear_ss : spr_tvcomboclear, 0, tvx, tvy, 1, 1, 0, c_white, alpha);
 		draw_text(tvx + 20, tvy + 1, string(global.combo));
+	}
 	if tvsprite == spr_tvdefault
 		draw_text(tvx - 4, tvy - 14, string(global.collect));
 	draw_set_alpha(1);

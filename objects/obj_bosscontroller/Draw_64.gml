@@ -4,11 +4,7 @@ if (instance_exists(obj_pizzafaceboss_p3intro) || instance_exists(obj_blackoutli
 if (image_alpha <= 0)
 	exit;
 
-/*
-reset_blendmode();
-reset_shader_fix();
-*/
-
+toggle_alphafix(true);
 switch (state)
 {
 	case states.arenaintro:
@@ -146,6 +142,4 @@ switch (state)
 		pattern_reset();
 		break;
 }
-
-gpu_set_blendmode(bm_normal);
-shader_reset();
+toggle_alphafix(false);

@@ -103,6 +103,7 @@ if (!instance_exists(obj_randomsecret))
 			savedpanicpos = 0;
 			fmod_event_instance_set_paused(panicmusicID, false);
 			trace("Resuming panic music: room_start");
+			cyop_freemusic();
 		}
 	}
 }

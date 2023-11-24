@@ -11,6 +11,7 @@ if (fadein)
 			pos_player = false;
 			obj_player1.targetRoom = obj_player1.backtohubroom;
 			obj_player2.targetRoom = obj_player1.backtohubroom;
+			obj_player1.state = states.backtohub;
 			scr_room_goto(obj_player1.backtohubroom);
 		}
 	}

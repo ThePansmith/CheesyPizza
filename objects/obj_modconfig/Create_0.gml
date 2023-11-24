@@ -1040,7 +1040,7 @@ var opt = add_option("Mach Sound", "machsnd", "Choose between the normal version
 				p.timer = 0;
 				p.image = 0;
 				
-				sound_play_centered("event:/sfx/pep/break", x, y);
+				sound_play_centered(sfx_break);
 			}
 			break;
 		

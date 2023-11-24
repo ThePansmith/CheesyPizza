@@ -5,6 +5,8 @@ ver = string_copy(ver, 3, string_length(ver));
 
 if string_starts_with(GM_version, "0.")
 	ver = "B" + ver;
+else if string_starts_with(GM_version, "2.")
+	ver = "P" + ver;
 else
 	ver = "V" + ver;
 

@@ -5,10 +5,13 @@ if start
 {
 	var xscale = SCREEN_WIDTH / 960, yscale = SCREEN_HEIGHT / 540;
 	
-	shader_set(shd_pal_swapper);
-	pal_swap_set(spr_peppalette, REMIX && check_char("P") ? obj_player1.paletteselect : 1);
-	if REMIX
-		pattern_set_temp(global.Base_Pattern_Color, titlecard_sprite, titlecard_index, 1, 1, global.palettetexture);
+	if !instance_exists(obj_levelLoader)
+	{
+		shader_set(shd_pal_swapper);
+		pal_swap_set(spr_peppalette, REMIX && check_char("P") ? obj_player1.paletteselect : 1);
+		if REMIX
+			pattern_set_temp(global.Base_Pattern_Color, titlecard_sprite, titlecard_index, 1, 1, global.palettetexture);
+	}
 	
 	if MOD.Mirror
 		draw_sprite_ext(titlecard_sprite, titlecard_index, SCREEN_WIDTH, 0, -xscale, yscale, 0, c_white, 1);

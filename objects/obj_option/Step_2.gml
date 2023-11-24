@@ -62,13 +62,10 @@ var move2 = key_left2 + key_right2;
 switch (option.type)
 {
 	case menutype.press:
-		if (key_jump && option.func != -4)
+		if (key_jump && is_callable(option.func))
 		{
-			with option
-			{
-				fmod_event_one_shot("event:/sfx/ui/select");
-				func();
-			}
+			fmod_event_one_shot("event:/sfx/ui/select");
+			option.func();
 		}
 		break;
 	
@@ -79,7 +76,7 @@ switch (option.type)
 			{
 				fmod_event_one_shot("event:/sfx/ui/select");
 				value = !value;
-				if (on_changed != -4)
+				if is_callable(on_changed)
 					on_changed(value);
 			}
 		}
@@ -96,7 +93,7 @@ switch (option.type)
 					value = 0;
 				if (value < 0)
 					value = array_length(values) - 1;
-				if (on_changed != -4)
+				if (is_callable(on_changed))
 					on_changed(values[value].value);
 			}
 		}
@@ -130,18 +127,12 @@ for (i = 0; i < array_length(m.options); i++)
 			b.moved = false;
 			b.moving = false;
 			
-			with b
-			{
-				if (on_changed != -4)
-					on_changed(value);
-			}
+			if (is_callable(b.on_changed))
+				b.on_changed(b.value);
 		}
 		
-		if (b.on_move != -4 && b.moving)
-		{
-			with b
-				on_move(value);
-		}
+		if (is_callable(b.on_move) && b.moving)
+			b.on_move(b.value);
 		
 		if (b.sound != -4)
 		{

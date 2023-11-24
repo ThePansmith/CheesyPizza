@@ -26,6 +26,7 @@ else
 {
 	captionalpha = Approach(captionalpha, 0, 0.1);
 	if window_get_cursor() != -1 && window_has_focus() && room != Mainmenu && !safe_get(obj_shell, "WC_drag_toggle")
+	&& room != editor_entrance && room != Initroom
 		cr = cr_none;
 }
 

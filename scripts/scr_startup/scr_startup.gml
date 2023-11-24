@@ -79,10 +79,10 @@ if !file_exists("data/cheese.jpg")
 #macro YYC code_is_compiled()
 
 #macro STRING_UNDEFINED "<undefined>"
-#macro CAMX camera_get_view_x(view_camera[view_current])
-#macro CAMY camera_get_view_y(view_camera[view_current])
-#macro CAMW camera_get_view_width(view_camera[view_current])
-#macro CAMH camera_get_view_height(view_camera[view_current])
+#macro CAMX camera_get_view_x(view_camera[0])
+#macro CAMY camera_get_view_y(view_camera[0])
+#macro CAMW camera_get_view_width(view_camera[0])
+#macro CAMH camera_get_view_height(view_camera[0])
 #macro DATE_TIME_NOW $"{current_year}-{current_month}-{current_day}__{current_hour}-{current_minute}-{current_second}"
 #macro PANIC ((global.panic or global.snickchallenge) && (!instance_exists(obj_ghostcollectibles) or global.leveltosave == "sucrose"))
 

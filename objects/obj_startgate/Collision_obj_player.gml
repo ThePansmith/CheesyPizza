@@ -27,7 +27,7 @@ with (other)
 	}
 }
 
-if other.key_taunt2 && other.state == states.victory && allow_modifier
+if other.key_taunt2 && other.state == states.victory && !instance_exists(obj_levelsettings) && allow_modifier
 {
 	other.state = states.actor;
 	instance_create_depth(0, 0, 0, obj_levelsettings, {level: level, levelname: msg})

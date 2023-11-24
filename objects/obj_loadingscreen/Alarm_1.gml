@@ -22,4 +22,11 @@ else if cyop_level != ""
 	alarm[1] = 1;
 }
 else
+{
+	if instance_exists(obj_cyop_assetloader) && obj_cyop_assetloader.wait()
+	{
+		alarm[1] = 1;
+		exit;
+	}
 	instance_destroy();
+}

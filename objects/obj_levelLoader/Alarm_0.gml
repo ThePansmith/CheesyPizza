@@ -35,20 +35,15 @@ try
 			exit;
 		}
 		
-		var asset_name = objects[inst_data.object], asset = noone;
-		switch asset_name
+		var asset_name = objects[inst_data.object], asset = asset_name;
+		switch asset
 		{
 			case "obj_teleporter_receptor": asset = obj_teleporter; break;
 			case "obj_pizzasona_spawn": asset = obj_bigcollect; break;
 			default:
-				if is_string(asset_name)
-					var asset = OBJECTS[? asset_name];
-				else
-					var asset = undefined;
-				
-				if asset == undefined
+				if is_string(asset)
 				{
-					trace("levelLoader - ", asset_name, " does not exist");
+					trace("levelLoader - ", asset_name, " disallowed");
 					
 					audio_stop_all();
 					audio_play_sound(sfx_pephurt, 0, false);
@@ -59,8 +54,6 @@ try
 						event_perform(ev_alarm, 3);
 					}
 					exit;
-					
-					continue;
 				}
 		}
 		
@@ -71,14 +64,14 @@ try
 			variable_instance_set(inst, "targetRoom", "main");
 			switch asset_name
 			{
-				case "obj_teleporter":
+				case obj_teleporter:
 					inst.start = true;
 					break;
-			
+				
 				case "obj_pizzasona_spawn":
 					if in_saveroom(inst)
 						break;
-				
+					
 					inst.visible = false;
 					inst.value = 150;
 				
@@ -154,7 +147,7 @@ try
 		layer_vspeed(lay, bg_data.vspeed);
 		layer_x(lay, bg_data.x);
 		layer_y(lay, bg_data.y);
-	
+		
 		with obj_persistent
 		{
 			array_push(room_bgs, {

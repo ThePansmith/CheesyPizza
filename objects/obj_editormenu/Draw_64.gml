@@ -22,7 +22,7 @@ switch menu
 			draw_set_font(global.creditsfont);
 			draw_set_align(fa_left);
 			
-			var this = array[i], str = this.name, wd = 32 * 17;
+			var this = array[i], str = this.name, wd = 32 * 16;
 			var drawx = xx;
 			
 			if sel.y == i
@@ -133,10 +133,11 @@ switch menu
 				}
 			}
 			
-			// level filename
 			if array_length(towers) > 0
 			{
 				var level = towers[sel.y];
+				
+				// level filename
 				draw_set_font(global.font_small);
 				draw_set_align(fa_right);
 				draw_set_color(c_gray);

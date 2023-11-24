@@ -12,3 +12,4 @@ camzoom = 1;
 angle = 0;
 lag = -1;
 lagpos = undefined;
+manualhide = false;

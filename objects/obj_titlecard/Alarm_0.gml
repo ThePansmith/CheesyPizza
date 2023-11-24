@@ -8,7 +8,10 @@ with (instance_create(x, y, obj_fadeout))
 	if (room == tower_finalhallwaytitlecard)
 		finalhallway = true;
 }
-if (group_arr != noone)
+
+with obj_cyop_assetloader
+	wait();
+if (group_arr != noone or instance_exists(obj_cyop_assetloader))
 {
 	with (instance_create(x, y, obj_loadingscreen))
 	{

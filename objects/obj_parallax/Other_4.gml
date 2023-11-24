@@ -215,7 +215,7 @@ layer_vspeed("Backgrounds_stillZH2", 0);
 portal_offset = {x: 0, y: 0};
 
 // generic background handler
-if (!room_is_secret(room) or global.leveltosave == "sucrose")
+if (!room_is_secret(room) or instance_exists(obj_wartimer) or global.leveltosave == "sucrose")
 && !instance_exists(obj_levelLoader)
 	scr_panicbg_init();
 

@@ -13,9 +13,6 @@ with obj_player1
 {
 	if cyop_backtohubroom == noone
 	{
-		if is_string(backtohubroom)
-			backtohubroom = tower_entrancehall;
-		
 		cyop_backtohubroom = backtohubroom;
 		cyop_backtohubx = backtohubstartx;
 		cyop_backtohuby = backtohubstarty;
@@ -29,6 +26,8 @@ with obj_player1
 		backtohubstartx = cyop_backtohubx;
 		backtohubstarty = cyop_backtohuby;
 	}
+	if is_string(backtohubroom) or backtohubroom == editor_entrance
+		backtohubroom = tower_extra2;
 	state = states.titlescreen;
 }
 global.leveltorestart = noone;

@@ -5,5 +5,5 @@ function instance_create(x, y, obj, var_struct = {})
 	/// @param y The y position the object will be created at.
 	/// @param obj The object to create an instance of.
 	var myDepth = object_get_depth( obj );
-	return instance_create_depth( x, y, myDepth, obj, var_struct );
+	return instance_create_depth( x, y, myDepth ?? 0, obj, var_struct );
 }
