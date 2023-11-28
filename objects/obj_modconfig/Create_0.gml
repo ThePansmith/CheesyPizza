@@ -113,9 +113,7 @@ function draw_simuplayer()
 		exit;
 	}
 	
-	shader_set(shd_pal_swapper);
-	pal_swap_set(spr_peppalette, 1, 0);
-	
+	shader_reset();
 	var width = 960 / 2.5;
 	
 	var xo = p.x - lengthdir_x(28, p.angle - 90);
@@ -127,7 +125,6 @@ function draw_simuplayer()
 		draw_sprite_ext(p.sprite, p.image, xo - width, yo, p.xscale, 1, p.angle, c_white, 1);
 	
 	draw_sprite_ext(p.sprite, p.image, xo, yo, p.xscale, 1, p.angle, c_white, 1);
-	shader_reset();
 }
 function draw_particles()
 {
@@ -487,7 +484,7 @@ var opt = add_button("Lapping", "Modify lapping to your heart's content.", funct
 {
 	visible = false;
 	with obj_option
-		menu_goto(menus.lapping);
+		menu_goto(MENUS.lapping);
 },
 function()
 {
@@ -680,7 +677,7 @@ add_button("Input Display", "An in-game input display. You can drag it around wi
 {
 	visible = false;
 	with obj_option
-		menu_goto(menus.inputdisplay);
+		menu_goto(MENUS.inputdisplay);
 },
 function()
 {

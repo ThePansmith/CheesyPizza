@@ -1,13 +1,7 @@
 mach3destroy = false;
-platformid = noone;
-hsp_carry = 0;
-vsp_carry = 0;
+init_collision();
 thrown = false;
 depth = obj_drawcontroller.depth + 1;
-hsp = 0;
-vsp = 0;
-grav = 0.5;
-grounded = false;
 movespeed = 0;
 state = states.normal;
 team = 1;

@@ -141,6 +141,7 @@ if state == 0
 		var this = data._aRecords[i];
 		if this._idRow == 450677 // Working Boss Controller for Cyop
 		or this._idRow == 470390 // cyop custom FMOD events
+		or this._idRow == 448568 // Lap Heck Mod for CYOP
 			continue;
 		
 		var likes = 0, posts = 0, views = 0;
@@ -152,16 +153,19 @@ if state == 0
 			views = this._nViewCount;
 		
 		var name = this._sName;
-		name = string_replace(name, "(cyop)", "");
-		name = string_replace(name, "(CYOP)", "");
-		name = string_replace(name, "(Cyop)", "");
-		name = string_replace(name, "[CYOP]", "");
-		name = string_replace(name, "(CYOP Level)", "");
-		name = string_replace(name, "(CYOP level)", "");
-		name = string_replace(name, "(CYOP Tower)", "");
-		name = string_replace(name, "(CYOP tower)", "");
-		name = string_replace(name, "CYOP, ", "");
-		name = string_replace(name, "CYOP: ", "");
+		if string_pos("cyop", string_lower(name)) != 0
+		{
+			name = string_replace(name, "(cyop)", "");
+			name = string_replace(name, "(CYOP)", "");
+			name = string_replace(name, "(Cyop)", "");
+			name = string_replace(name, "[CYOP]", "");
+			name = string_replace(name, "(CYOP Level)", "");
+			name = string_replace(name, "(CYOP level)", "");
+			name = string_replace(name, "(CYOP Tower)", "");
+			name = string_replace(name, "(CYOP tower)", "");
+			name = string_replace(name, "CYOP, ", "");
+			name = string_replace(name, "CYOP: ", "");
+		}
 		name = string_trim(name);
 		
 		var downloaded = false;

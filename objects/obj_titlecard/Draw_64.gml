@@ -1,5 +1,7 @@
 live_auto_call;
 
+toggle_alphafix(true);
+
 draw_set_alpha(1);
 if start
 {
@@ -26,8 +28,6 @@ if start
 	else
 		draw_sprite_ext(title_sprite, title_index, 32 * xscale + irandom_range(-1, 1), irandom_range(-1, 1), xscale, yscale, 0, c_white, 1);
 }
-
-toggle_alphafix(true);
 
 if !instance_exists(obj_fadeout)
 	draw_set_alpha(fadealpha);

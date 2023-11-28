@@ -195,6 +195,8 @@ function player_init_sounds()
 	spindashsnd = fmod_event_create_instance("event:/modded/sfx/snick/spindashrev");
 }
 
+init_collision();
+
 global.throwarc = 1;
 global.hidetiles = false;
 global.leveltosave = noone;
@@ -301,14 +303,8 @@ icemomentum = false;
 savedicedir = 1;
 isgustavo = false;
 jumped = true;
-grav = 0.5;
-hsp = 0;
-vsp = 0;
-vsp_carry = 0;
-hsp_carry = 0;
 rocketvsp = 0;
 sticking = false;
-platformid = noone;
 xscale = 1;
 yscale = 1;
 facehurt = false;
@@ -423,7 +419,6 @@ idle = 0;
 attacking = false;
 slamming = false;
 superslam = 0;
-grounded = true;
 grinding = false;
 machpunchAnim = false;
 punch = false;
@@ -797,3 +792,6 @@ drillspeed = 0;
 cyop_backtohubroom = noone;
 cyop_backtohubx = 0;
 cyop_backtohuby = 0;
+gravityjump = false;
+gravityangle = 0;
+ceilingrun = false;

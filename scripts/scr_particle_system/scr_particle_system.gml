@@ -1,3 +1,5 @@
+global.part_scale = array_create(part.enum_length, [1, 1]);
+
 function declare_particle(part, sprite, anim_speed, depth)
 {
 	ds_map_set(global.part_map, part, part_type_create());
@@ -10,9 +12,9 @@ function declare_particle(part, sprite, anim_speed, depth)
 	part_type_life(p, spd, spd);
 	return p;
 }
-function particle_set_scale(part, xscale, yscale)
+function particle_set_scale(particle, xscale, yscale)
 {
-	part_type_scale(ds_map_find_value(global.part_map, part), xscale, yscale);
+	global.part_scale[particle] = [xscale, yscale];
 }
 function create_debris(_x, _y, _sprite, _animated = false)
 {
@@ -77,8 +79,20 @@ function create_collect(_x, _y, _sprite, _value = 0, _palspr = noone, _palsel = 
 }
 function create_particle(x, y, particle, spread = 0)
 {
+	var part = ds_map_find_value(global.part_map, particle);
 	if spread == undefined
 		spread = 0;
+	
+	var fuck = global.part_scale[particle][1];
+	if object_is_ancestor(object_index, obj_player)
+	{
+		if flip < 0
+		{
+			global.part_scale[particle][1] = yscale;
+			y = self.y - (y - self.y);
+		}
+	}
+	part_type_scale(part, global.part_scale[particle][0], global.part_scale[particle][1]);
 	
 	var _depth = ds_map_find_value(global.part_depth, particle);
 	if is_undefined(_depth)
@@ -86,5 +100,7 @@ function create_particle(x, y, particle, spread = 0)
 	
 	part_system_depth(global.particle_system, _depth);
 	part_emitter_region(global.particle_system, global.part_emitter, x - spread, x + spread, y - spread, y + spread, 0, 0);
-	part_emitter_burst(global.particle_system, global.part_emitter, ds_map_find_value(global.part_map, particle), 1);
+	part_emitter_burst(global.particle_system, global.part_emitter, part, 1);
+	
+	global.part_scale[particle][1] = fuck;
 }

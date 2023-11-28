@@ -37,7 +37,10 @@ switch menu
 {
 	case 0:
 		if array_length(towers) == 0
+		{
+			controls.text = "";
 			break;
+		}
 		
 		var curr = towers[sel.y];
 		if state == 0
@@ -72,20 +75,14 @@ switch menu
 			// fuck
 			controls.text = "[G] Delete";
 			if !curr.corrupt
-				controls.text = "[J] Play " + controls.text;
+				controls.text = concat("[J] Play ", controls.text);
 			if curr.type != 0
-				controls.text += " [T] Modifiers";
+				controls.text = concat(controls.text, " [T] Modifiers");
 			controls.text += "/";
 			
 			// camera
 			if smooth_buffer > 0
 				smooth_buffer--;
-	
-			var camx = 0;
-			var camy = max(sel.y * 36 - 260, -120);
-	
-			cam.x = lerp(camx, cam.x, (smooth_buffer == 0) * 0.75);
-			cam.y = lerp(camy, cam.y, (smooth_buffer == 0) * 0.75);
 			
 			// level score
 			if changed
@@ -255,10 +252,22 @@ switch menu
 				
 				refresh_list();
 				while sel.y >= array_length(towers)
-					sel.y --;
+				{
+					if --sel.y <= 0
+					{
+						sel.y = 0;
+						break;
+					}
+				}
 				shake = 3;
 			}
 		}
+		
+		var camx = 0;
+		var camy = max(sel.y * 36 - 260, -120);
+	
+		cam.x = lerp(camx, cam.x, (smooth_buffer == 0) * 0.75);
+		cam.y = lerp(camy, cam.y, (smooth_buffer == 0) * 0.75);
 		break;
 	
 	case 1:

@@ -41,8 +41,11 @@ function scr_player_mach3()
 		}
 		mach2 = 100;
 		momemtum = true;
+		
 		move = key_right + key_left;
-		move2 = key_right2 + key_left2;
+		if ceilingrun && move != 0
+			move = xscale;
+		
 		if (fightball == 1 && global.coop == 1)
 		{
 			if (object_index == obj_player1)

@@ -83,7 +83,7 @@ function load_checkpoint()
 		
 		// restore
 		var name = struct_get_names(c);
-		for(var i = 0; i < array_length(name); i++)
+		for(var i = 0, n = array_length(name); i < n; ++i)
 		{
 			switch name[i]
 			{

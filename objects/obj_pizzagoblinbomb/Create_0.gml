@@ -1,6 +1,4 @@
-hsp = 0;
-vsp = 0;
-grav = 0.5;
+init_collision();
 countdown = 125;
 image_speed = 0.35;
 drop = true;
@@ -8,9 +6,6 @@ grounded = false;
 state = states.normal;
 playerid = noone;
 pizzagoblin = false;
-platformid = noone;
-hsp_carry = 0;
-vsp_carry = 0;
 kickbuffer = 0;
 movespeed = 0;
 defused = false;

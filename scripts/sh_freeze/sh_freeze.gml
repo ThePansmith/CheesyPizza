@@ -11,7 +11,7 @@ function sh_freeze(args)
 	{
 		var inst = WCscr_findobj(args[1]);
 		if !instance_exists(inst[0])
-			return "The instance of " + args[1] + " does not exist";
+			return $"The instance of {args[1]} does not exist";
 		inst = inst[0];
 		
 		if array_contains(asset_get_tags(inst.object_index, asset_object), "protected")
@@ -29,7 +29,7 @@ function sh_freeze(args)
 		else with inst
 			res = other.WCscr_freezevar(self, variable);
 		
-		return (res ? "Frozen " : "Unfrozen ") + args[1] + "." + args[2];
+		return $"{(res ? "Frozen" : "Unfrozen")} {args[1]}.{args[2]}";
 	}
 	else
 		return args[1] + "." + args[2] + " doesn't exist";
@@ -54,7 +54,7 @@ function meta_freeze()
 					for(var j = 0; j < instance_number(obj); j++)
 					{
 						if instance_find(obj, j).id == inst.id
-							array_push(obj_array, object_get_name(obj) + ":" + string(j));
+							array_push(obj_array, concat(object_get_name(obj), ":", j));
 					}
 				}
 				array_sort(obj_array, true);

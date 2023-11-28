@@ -2,8 +2,12 @@ function scr_solid_player(_x, _y)
 {
 	var old_x = x;
 	var old_y = y;
+	
 	x = _x;
 	y = _y;
+	
+	if flip < 0
+		y = old_y - (_y - old_y);
 	
 	// walls
 	ds_list_clear(global.instancelist);
@@ -58,9 +62,7 @@ function scr_solid_player(_x, _y)
 				if (!place_meeting(x, old_y, b) && place_meeting(x, y, b))
 				{
 	                if (b.object_index == obj_cottonplatform_tiled)
-                    {
                         _collided = (state == states.cotton || state == states.cottonroll);
-                    }
 					else
 						_collided = true;
 				}
@@ -120,7 +122,6 @@ function scr_solid_player(_x, _y)
 		y = old_y;
 		return true;
 	}
-	
 	
 	// grindrail slopes
 	if (state == states.grind && check_slope_player(obj_grindrailslope))
@@ -183,7 +184,6 @@ function check_concave_slope_player(concave_slope_object)
 	}
 	return false;
 }
-
 
 function point_in_ellipse(_px, _py, _x, _y, _x_axis, _y_axis)
 {

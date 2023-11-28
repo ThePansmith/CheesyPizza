@@ -1,3 +1,5 @@
+init_collision();
+
 hsp = 0;
 vsp = 0;
 grav = 0.5;
@@ -7,9 +9,6 @@ sprite_index = spr_juicepuddleair;
 mask_index = spr_juicepuddledone;
 draw_angle = 0;
 vsp = 0.2;
-platformid = noone;
-hsp_carry = 0;
-vsp_carry = 0;
 
 spr_palette = spr_googlyjuice_palette;
 switch global.leveltorestart

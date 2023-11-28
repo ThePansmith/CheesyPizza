@@ -1,5 +1,6 @@
 function log_source(reason = "")
 {
+	/*
 	try
 	{
 		var current_event = "Unknown", current_number = event_number;
@@ -24,4 +25,6 @@ function log_source(reason = "")
 	{
 		trace($"[YOU FUCKED UP!] reason: {reason} stacktrace: {e.stacktrace}");
 	}
+	*/
+	trace($"[Stacktrace] {debug_get_callstack()}");
 }

@@ -185,8 +185,8 @@ function scr_cameradraw()
 		{
 			if lastcollect != sc
 			{
-				color_array = array_create(num, 0);
-				for (i = 0; i < array_length(color_array); i++)
+				color_array = array_create(num);
+				for (i = 0; i < num; i++)
 					color_array[i] = choose(irandom(3));
 				lastcollect = sc;
 			}

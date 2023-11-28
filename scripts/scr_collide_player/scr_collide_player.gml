@@ -1,21 +1,30 @@
 function scr_collide_player()
 {
+	if live_call() return live_result;
+	
 	grounded = false;
 	grinding = false;
 	collision_flags = 0;
 	
 	// vertical movement
-	var vsp_final = vsp + vsp_carry;
+	if image_yscale != flip
+	{
+		image_yscale = flip;
+		while scr_solid(x, y)
+			y -= flip;
+	}
+	
+	var vsp_final = (vsp + vsp_carry) * flip;
 	vsp_carry = 0;
 	
 	var target_y = round(y + vsp_final);
-	var bbox_size_y = bbox_bottom - bbox_top;
+	var bbox_size_y = abs(bbox_bottom - bbox_top);
 	var t = abs(target_y - y) / bbox_size_y;
 	var sv = sign(vsp_final);
 	
 	for (var i = 0; i < t; i++)
 	{
-		if (!scr_solid_player(x, y + (bbox_size_y * sv)))
+		if (!scr_solid_player(x, y + (bbox_size_y * sv) * flip))
 		{
 			y += (bbox_size_y * sv);
 			if ((vsp_final > 0 && y >= target_y) || (vsp_final < 0 && y <= target_y))
@@ -27,7 +36,7 @@ function scr_collide_player()
 		}
 		repeat (abs(target_y - y))
 		{
-			if (!scr_solid_player(x, y + sv))
+			if (!scr_solid_player(x, y + sv * flip))
 				y += sv;
 			else
 			{
@@ -43,12 +52,11 @@ function scr_collide_player()
 	hsp_carry = 0;
 	
 	var target_x = round(x + hsp_final);
-	var bbox_size_x = bbox_right - bbox_left;
+	var bbox_size_x = abs(bbox_right - bbox_left);
 	var t = abs(target_x - x) / bbox_size_x;
 	var sh = sign(hsp_final);
 	
 	var down = scr_solid_player(x, y + 1);
-	
 	for (i = 0; i < t; i++)
 	{
 		if (!scr_solid_player(x + (bbox_size_x * sh), y) && down == scr_solid_player(x + (bbox_size_x * sh), y + 1) && !check_slope(x + (bbox_size_x * sh), y) && !check_slope(x, y) && !check_slope(x + (bbox_size_x * sh), y + 1))
@@ -63,14 +71,15 @@ function scr_collide_player()
 		}
 		repeat (abs(target_x - x))
 		{
+			// slopes
 			for (var k = 1; k <= 4; k++)
 			{
 				if (scr_solid_player(x + sh, y) && !scr_solid_player(x + sh, y - k))
-					y -= k;
+					y -= k * flip;
 				if (state != states.ghost && state != states.rocket)
 				{
 					if (!scr_solid_player(x + sh, y) && !scr_solid_player(x + sh, y + 1) && scr_solid_player(x + sh, y + (k + 1)))
-						y += k;
+						y += k * flip;
 				}
 			}
 			if (!scr_solid_player(x + sh, y))
@@ -84,7 +93,7 @@ function scr_collide_player()
 	}
 	
 	// gravity
-	if (vsp < 20)
+	if vsp < 20
 		vsp += grav;
 	
 	// moving platforms
@@ -131,23 +140,24 @@ function scr_collide_player()
 	// on ground check
 	grounded |= scr_solid_player(x, y + 1);
 	
-	var plat = instance_place(x, y + 1, obj_platform);
+	var plat = instance_place(x, y + flip, obj_platform);
 	if plat
 	{
-		if plat.image_yscale < 0 or (plat.object_index == obj_cottonplatform_tiled && state != states.cotton && state != states.cottonroll)
+		if sign(plat.image_yscale) != flip or (plat.object_index == obj_cottonplatform_tiled && state != states.cotton && state != states.cottonroll)
 			plat = noone;
 	}
 	
 	grounded |= ((vsp >= 0 or !REMIX) && !place_meeting(x, y, obj_platform) && plat != noone);
-	grinding = !place_meeting(x, y, obj_grindrail) && place_meeting(x, y + 1, obj_grindrail);
+	grinding = !place_meeting(x, y, obj_grindrail) && place_meeting(x, y + flip, obj_grindrail);
+	
 	grounded |= grinding;
-	if (platformid != noone || (place_meeting(x, y + 1, obj_movingplatform) && !place_meeting(x, y - 3, obj_movingplatform)) || place_meeting(x, y + 8, obj_movingplatform && !place_meeting(x, y + 6, obj_movingplatform)))
+	if platformid != noone || (place_meeting(x, y + flip, obj_movingplatform) && !place_meeting(x, y - 3 * flip, obj_movingplatform))
 		grounded = true;
-	if (grounded && platformid == noone)
+	if grounded && platformid == noone
 		y = floor(y);
 	
 	// snap on top of sloped platforms
-	if grounded && vsp >= 0
+	if grounded && vsp >= 0 && flip > 0
 	{
 		while (inside_slope(obj_slope_platform) || check_concave_slope_player(obj_concaveslope))
 			y--;

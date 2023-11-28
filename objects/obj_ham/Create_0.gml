@@ -12,6 +12,3 @@ image_speed = 0;
 mask_index = spr_player_mask;
 depth = -5;
 unpickable = false;
-platformid = noone;
-hsp_carry = 0;
-vsp_carry = 0;

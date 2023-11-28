@@ -91,17 +91,15 @@ resizekeys = function()
 	maxx = 0;
 	maxy = 0;
 	
-	for(var i = 0; i < array_length(inputkeys); i++)
+	for(var i = 0, n = array_length(inputkeys); i < n; ++i)
 	{
 		var k = inputkeys[i];
 		
 		var ughx = (k.x + k.keyw) * keysize + (k.x + k.keyw - 1) * keysep;
 		var ughy = (k.y + k.keyh) * keysize + (k.y + k.keyh - 1) * keysep;
 		
-		if maxx < ughx
-			maxx = ughx;
-		if maxy < ughy
-			maxy = ughy;
+		maxx = max(maxx, ughx);
+		maxy = max(maxy, ughy);
 	}
 	
 	maxx++;
@@ -216,7 +214,7 @@ draw_inputdisplay_key = function(xx, yy, keycode, width, height = width)
 }
 draw_inputdisplay = function(xdraw, ydraw)
 {
-	for(var i = 0; i < array_length(inputkeys); i++)
+	for(var i = 0, n = array_length(inputkeys); i < n; ++i)
 	{
 		var k = inputkeys[i];
 		var xx = k.x * keysize + k.x * keysep;

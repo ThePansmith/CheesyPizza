@@ -1352,6 +1352,7 @@ function cyop_load_internal(ini)
 				}
 				file = file_find_next();
 			}
+			file_find_close();
 			
 			// look through subfolders
 			while array_length(recursion) > 0
@@ -1448,6 +1449,7 @@ function cyop_load_level_internal(ini)
 			
 			room_file = file_find_next();
 		}
+		file_find_close();
 	}
 	catch(e)
 	{
@@ -1455,6 +1457,7 @@ function cyop_load_level_internal(ini)
 		
 		// clean
 		ds_map_clear(global.room_map);
+		file_find_close();
 		
 		return "Error loading rooms";
 	}
@@ -1591,7 +1594,7 @@ function cyop_room_goto(str)
 		var r = ds_map_find_value(global.room_map, str);
 		if is_undefined(r)
 		{
-			show_message("Custom room " + str + " doesn't exist");
+			show_message($"Custom room {str} doesn't exist");
 			exit;
 		}
 	}

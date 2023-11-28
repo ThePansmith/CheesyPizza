@@ -28,6 +28,7 @@ function find_files_recursive(folder, func, ext = "")
 				}
 				file = file_find_next();
 			}
+			file_find_close();
 			
 			// look through subfolders
 			while array_length(recursion) > 0

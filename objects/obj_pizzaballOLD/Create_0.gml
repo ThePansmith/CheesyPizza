@@ -1,11 +1,6 @@
-grav = 0.5;
-hsp = 0;
-vsp = 0;
+init_collision();
 movespeed = 0;
 slopespeed = 0;
-platformid = noone;
-hsp_carry = 0;
-vsp_carry = 0;
 chair = true;
 player = obj_player1;
 state = states.normal;

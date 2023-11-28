@@ -1,4 +1,5 @@
 //draw_sprite_stretched_ext(spr_splashscreen, 0, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, c_white, image_alpha);
+
 var p = tex_max - array_length(tex_list);
 var t = (p / tex_max) * 100;
 var tt = p / tex_max;

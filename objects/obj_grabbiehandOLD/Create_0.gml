@@ -1,11 +1,6 @@
 image_speed = 0.35;
-vsp = 0;
-hsp = 0;
+init_collision();
 grav = 0;
-grounded = false;
-platformid = noone;
-hsp_carry = 0;
-vsp_carry = 0;
 dropspotx = 0;
 dropspoty = 0;
 grab_xstart = x;

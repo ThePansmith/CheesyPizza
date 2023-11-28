@@ -1,7 +1,5 @@
-hsp = 0;
+init_collision();
 vsp = -10;
-grav = 0.5;
-grounded = false;
 movespeed = 6;
 image_speed = 0.35;
 countdown = 120;
@@ -10,6 +8,3 @@ playercollision = true;
 obj_explosion = obj_dynamiteexplosion;
 kick = false;
 mask_index = spr_player_mask;
-platformid = noone;
-hsp_carry = 0;
-vsp_carry = 0;

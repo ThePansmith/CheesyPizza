@@ -172,10 +172,12 @@ function scr_tvdraw()
 		}
 		else if REMIX && sprite_exists(tv_bg.sprite)
 		{
+			toggle_alphafix(true);
+			
 			// secrets
 			var bgindex = tv_bg.sprite, bgcol = c_white;
 			if instance_exists(obj_ghostcollectibles)
-				bgindex = sugary ? bg_secret_ss : bg_secret;
+				bgindex = sugary ? bg_secret_ss : spr_gate_secretBG;
 			if obj_player1.state == states.secretenter && instance_exists(obj_fadeout)
 				bgcol = merge_color(c_white, c_black, clamp(obj_fadeout.fadealpha, 0, 1));
 			
@@ -210,6 +212,8 @@ function scr_tvdraw()
 			}
 			draw_surface_ext(tv_bg.surf, tv_x + collect_x - 278 / 2, tv_y + collect_y + hud_posY - 268 + tv_bg.y, 1, 1, 0, bgcol, alpha);
 			shader_reset();
+			
+			toggle_alphafix(false);
 		}
 		else
 		{

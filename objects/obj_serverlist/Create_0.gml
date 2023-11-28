@@ -130,7 +130,7 @@ draw_textfield = function(x, y, w = 254, h = 30, maximum = 32, placeholder = "",
 	// setup the textbox
 	var x2 = x + w, y2 = y + h;
 	
-	var varprefix = "textfield" + string(x * y);
+	var varprefix = $"textfield{x * y}";
 	var struct = ds_map_find_value(textboxes, varprefix);
 	if struct == undefined
 	{

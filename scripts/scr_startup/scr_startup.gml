@@ -1,6 +1,9 @@
+// compile time optimizations
 gml_pragma("forceinline");
-var path_cheesypizzalib = "CheesyPizza";
+surface_depth_disable(true); // disable the depth buffer.
 
+// dll path
+var path_cheesypizzalib = "CheesyPizza";
 switch os_type
 {
 	case os_windows:

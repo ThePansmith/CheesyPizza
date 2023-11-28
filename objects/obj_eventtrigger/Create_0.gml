@@ -12,7 +12,7 @@ default_condition = function()
 // Output
 default_output = function() 
 {		
-	show_debug_message("Event Trigger:" + string(id) + " - Has missing Output")
+	show_debug_message($"Event Trigger: {id} - Has missing Output")
 }
 
 // Config

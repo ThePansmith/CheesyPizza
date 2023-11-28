@@ -25,7 +25,7 @@ switch async_load[? "event_type"]
 				516337795372154910, // Zerokizo			- PTT.
 				827041050555187210, // Jared			- 
 				463132674995781637, // SpectralScrubs	- 
-				817309415781957700, // jeof				- 
+				//817309415781957700, // jeof				- 
 				736034094093303888, // MrUnown			- "Spread the word"
 				724447494372851783, // khaliliscre		- 
 				1137046644790153327 // alex				- 

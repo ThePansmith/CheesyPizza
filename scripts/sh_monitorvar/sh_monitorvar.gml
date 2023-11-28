@@ -13,9 +13,9 @@ function sh_monitorvar(args)
 	{
 		var inst = WCscr_findobj(args[1]);
 		if object_exists(inst[0]) && !inst[1]
-			return "Must specify instance index. Example: " + object_get_name(inst[0]) + ":0";
+			return $"Must specify instance index. Example: {object_get_name(inst[0])}:0";
 		if !instance_exists(inst[0])
-			return "The instance of " + args[1] + " does not exist";
+			return $"The instance of {args[1]} does not exist";
 		inst = inst[0];
 	}
 	
@@ -28,11 +28,12 @@ function sh_monitorvar(args)
 		if variable_instance_exists(inst, args[i])
 			array_push(variables, args[i]);
 		else
-			return args[1] + "." + args[i] + " doesn't exist";
+			return $"{args[1]}.{args[i]} doesn't exist";
 	}
 	
 	// create window
-	var title = "Monitoring " + args[1];
+	var title = $"Monitoring {args[1]}";
+	
 	draw_set_font(consoleFont);
 	var w = string_width(title) + 12;
 	
@@ -55,7 +56,7 @@ function sh_monitorvar(args)
 				{
 					if i != 0
 						txt += "\n";
-					txt += _var[i] + " : " + string(variable_instance_get(_inst, _var[i]));
+					txt += $"{_var[i]} : {variable_instance_get(_inst, _var[i])}";
 				}
 			}
 			
@@ -92,7 +93,7 @@ function meta_monitorvar()
 					for(var j = 0; j < instance_number(obj); j++)
 					{
 						if instance_find(obj, j).id == inst.id
-							array_push(obj_array, object_get_name(obj) + ":" + string(j));
+							array_push(obj_array, $"{object_get_name(obj)}:{j}");
 					}
 				}
 				array_sort(obj_array, true);

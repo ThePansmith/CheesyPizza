@@ -2,7 +2,7 @@ with (other)
 {
 	if (state == states.debugstate)
 		exit;
-	if (state == states.backtohub)
+	if (state == states.backtohub or instance_exists(obj_backtohub_fadeout))
 		exit;
 	if (instance_exists(obj_jumpscare))
 		exit;

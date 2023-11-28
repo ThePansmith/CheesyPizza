@@ -10,7 +10,7 @@ function scr_panicbg_generic()
 	var lay = noone, lay_last = noone;
 	var backs = room_get_bg_layers();
 	
-	for(var i = 0; i < array_length(backs); i++)
+	for(var i = 0, n = array_length(backs); i < n; ++i)
 	{
 		lay = backs[i].layer_id;
 		if layer_get_depth(lay) > 0 && backs[i].bg_sprite != bg_etbbrick

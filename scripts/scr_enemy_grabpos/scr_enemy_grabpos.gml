@@ -227,6 +227,8 @@ function scr_enemy_grabpos(_obj_player)
 		if object_index == obj_sucroseiceblock
 			y -= 32;
 	}
+	if p.flip < 0
+		y = p.y - (y - p.y);
 	
 	#endregion
 }

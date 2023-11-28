@@ -6,10 +6,4 @@ if REMIX
 
 image_speed = 0.35;
 state = states.normal;
-hsp = 0;
-vsp = 0;
-hsp_carry = 0;
-vsp_carry = 0;
-grav = 0.5;
-grounded = false;
-platformid = noone;
+init_collision();

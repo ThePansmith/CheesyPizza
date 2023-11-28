@@ -13,7 +13,7 @@ var yy = 70 - scroll;
 //	yy = round(max((SCREEN_HEIGHT / 2) - array_last(options_pos) / 2, 70) - scroll);
 
 var temp_sel = -1;
-for(var i = 0; i < array_length(options_array); i++)
+for(var i = 0, n = array_length(options_array); i < n; ++i)
 {
 	var opt = options_array[i], locked = false;
 	if opt.type != modconfig.section && is_callable(opt.condition)
@@ -227,7 +227,7 @@ if drawer
 					if object_index != obj_levelsettings
 					{
 						if layer_sequence_get_sequence(obj_modconfig.sequence).name == "seq_secretwall_on"
-							toggle_alphafix(false);
+							gpu_set_blendmode(bm_normal);
 						else
 							toggle_alphafix(true);
 					}
@@ -249,9 +249,7 @@ if drawer
 	}
 	
 	if object_index != obj_levelsettings
-	{
 		toggle_alphafix(true);
-	}
 	
 	if surface_exists(global.modsurf)
 	{

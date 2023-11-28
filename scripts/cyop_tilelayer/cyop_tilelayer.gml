@@ -59,44 +59,61 @@ function cyop_tilelayer(_x, _y, _tilelayer, _depth, _secret) constructor
 					exit;
 				}
 			}
-			array_push(tiles, this);
+			if secrettile
+				array_push(tiles, this);
 			
-			// sort by texture
-			var tile_texture = sprite_get_texture(this.tileset, 0);
+			var texture = sprite_get_texture(this.tileset, 0);
+			var chunk_x = floor(this.x / 960), chunk_y = floor(this.y / 540);
+			var chunk_name = concat(chunk_x, "_", chunk_y);
 			
-			var existing_array = sorted_map[?tile_texture];
-			if existing_array != undefined
-				array_push(existing_array, this);
-			else
+			// Get chunk the texture is in
+			var chunk = chunks[? chunk_name];
+			if chunk == undefined
 			{
-				var len = ds_map_size(sorted_map);
-				ds_map_set(sorted_map, tile_texture, [ this ]);
-				
-				vertex_buffers[len] = vertex_create_buffer();
-				textures[len] = tile_texture;
+				chunk = new Chunk(chunk_x * 960, chunk_y * 540);
+				ds_map_set(chunks, chunk_name, chunk);
+				array_push(chunk_array, chunk_name);
 			}
+			
+			// Sort by texture
+			var tilemap = chunk.tilemaps[? texture];
+			if tilemap == undefined
+			{
+				tilemap = new Tilemap(texture);
+				ds_map_set(chunk.tilemaps, texture, tilemap);
+				array_push(chunk.tilemap_array, texture);
+			}
+			
+			// Add to tilemap
+			array_push(tilemap.tiles, this);
 		};
 		
 		var tiles = variable_struct_get_names(tilelayer);
 		array_foreach(tiles, f, 0, infinity);
 	}
 	
-	/// @desc	Build the vertex array from the array
-	Build = function()
+	Build_Chunk = function(chunk)
 	{
-		if live_call() return live_result;
-		
-		// RX: Build each vertex buffer
-		var f = function(texture, tex_it)
+		// Each tilemap (usually just one)
+		for(var i = 0, n = array_length(chunk.tilemap_array); i < n; ++i)
 		{
-			var tex_w = texture_get_texel_width(texture);
-			var tex_h = texture_get_texel_height(texture);
+			var tilemap = chunk.tilemaps[? chunk.tilemap_array[i]];
 			
-			vertex_begin(vertex_buffers[tex_it], vertex_format);
+			// Which buffer
+			if tilemap.vertex_buffer != noone
+				vertex_delete_buffer(tilemap.vertex_buffer);
+			tilemap.vertex_buffer = vertex_create_buffer();
 			
-			var f = method({tex_it: tex_it, tex_w: tex_w, tex_h: tex_h, depth: depth, vertex_buffers: vertex_buffers}, function(tile, tile_it)
+			// Setup
+			var texture = tilemap.texture;
+			var buffer = tilemap.vertex_buffer;
+			
+			// Each tile in the tilemap
+			vertex_begin(buffer, vertex_format);
+			
+			var f = method({tex_w: texture_get_texel_width(texture), tex_h: texture_get_texel_height(texture), buffer: buffer, depth: depth}, function(tile, i)
 			{
-				if ds_list_find_index(global.cyop_broken_tiles, $"{tile.x}_{tile.y}") != -1
+				if ds_list_find_index(global.cyop_broken_tiles, $"{tile.x}_{tile.y}") > -1
 					exit;
 				
 	            var uvs = sprite_get_uvs(tile.tileset, 0);
@@ -112,78 +129,99 @@ function cyop_tilelayer(_x, _y, _tilelayer, _depth, _secret) constructor
 	            var tile_tex_pos_x = ((tile.coord[0] - (tile_trim_x / tile.size)) * tile_tex_size_x) + uv_left;
 	            var tile_tex_pos_y = ((tile.coord[1] - (tile_trim_y / tile.size)) * tile_tex_size_y) + uv_top;
 				
-	            vertex_build_quad3D(vertex_buffers[tex_it], 
+	            vertex_build_quad3D(buffer, 
 	                tile.x, tile.y, depth, 32, 32, // Pos and Size
 	                c_white, 1, // Color and Opacity
 	                tile_tex_pos_x, tile_tex_pos_y, tile_tex_size_x, tile_tex_size_y
 				);
 			});
-			array_foreach(sorted_map[?texture], f, 0, infinity);
+			array_foreach(tilemap.tiles, f, 0, infinity);
 			
-			vertex_end(vertex_buffers[tex_it]);
-			//vertex_freeze(vertex_buffers[tex_it]); // RX: Make it readonly
-		};
-		array_foreach(textures, f, 0, infinity);
+			vertex_end(buffer);
+		}
 	}
 	
-	/// @desc	Draws the tilemap
 	Draw = function()
 	{
-		if live_call() return live_result;
-		
-		// rebuild
-		if dirty
+		var f = function(key, i)
 		{
-			for(var i = 0; i < array_length(vertex_buffers); i++)
-			{
-				vertex_delete_buffer(vertex_buffers[i]);
-				vertex_buffers[i] = vertex_create_buffer();
-			}
+			var chunk = chunks[? key];
+			if !rectangle_in_rectangle(chunk.x, chunk.y, chunk.x + 960, chunk.y + 540, CAMX, CAMY, CAMX + CAMW, CAMY + CAMH)
+				exit;
 			
-			Build();
-			dirty = false;
+			if chunk.dirty
+			{
+				Build_Chunk(chunk);
+				chunk.dirty = false;
+			}
+			chunk.Draw();
 		}
-		
-		// draw
-		var f = function(tex, i) {
-			vertex_submit(vertex_buffers[i], pr_trianglelist, tex);
-		}
-		array_foreach(textures, f, 0, infinity);
-		
-		/*
-		for(var i = 0; i < array_length(tiles); i++)
-		{
-			var t = tiles[i];
-			draw_set_color(c_red);
-			draw_text(t.x + mouse_x, t.y + mouse_y, t.coord);
-		}
-		*/
+		array_foreach(chunk_array, f, 0, infinity);
 	}
 	
-	/// @desc	Disposes of all unmanaged resources
 	Dispose = function()
 	{
-		if live_call() return live_result;
+		var f = function(key, i) {
+			chunks[? key].Dispose();
+		}
+		array_foreach(chunk_array, f, 0, infinity);
 		
-		for (var i = 0; i < array_length(vertex_buffers); i++)
-			vertex_delete_buffer(vertex_buffers[i]);
-		
+		ds_map_destroy(chunks);
 		vertex_format_delete(vertex_format);
-		ds_map_destroy(sorted_map);
 	}
 	
-	// set up
-	sorted_map = ds_map_create();
-	vertex_format = cyop_tilemap_create_vertex_format();
-	vertex_buffers = [];
-	textures = [];
-	tiles = [];
-	dirty = false;
+	// Types
+	Tilemap = function(_texture) constructor
+	{
+		texture			=	_texture;
+		vertex_buffer	=	noone;
+		tiles			=	[];
+		
+		Dispose = function()
+		{
+			if vertex_buffer != noone
+				vertex_delete_buffer(vertex_buffer);
+		}
+	}
+	Chunk = function(_x, _y) constructor
+	{
+		tilemaps		=	ds_map_create();
+		tilemap_array	=	[];
+		dirty			=	true;
+		x				=	_x;
+		y				=	_y;
+		
+		Draw = function()
+		{
+			var f = function(tilemap, i) {
+				vertex_submit(tilemaps[? tilemap].vertex_buffer, pr_trianglelist, tilemaps[? tilemap].texture);
+			}
+			array_foreach(tilemap_array, f, 0, infinity);
+		}
+		Dispose = function()
+		{
+			var f = function(key, i) {
+				tilemaps[? key].Dispose();
+			}
+			array_foreach(tilemap_array, f, 0, infinity);
+			
+			ds_map_destroy(tilemaps);
+		}
+	}
 	
-	x = _x;
-	y = _y;
-	tilelayer = _tilelayer;
-	depth = _depth;
+	// Setup
+	chunks			=	ds_map_create();
+	chunk_array		=	[];
+	vertex_format	=	cyop_tilemap_create_vertex_format();
+	tiles			=	[];					// for secret tiles
 	
+	// Properties
+	x				=	_x;					// X room offset
+	y				=	_y;					// Y room offset
+	tilelayer		=	_tilelayer;
+	depth			=	_depth;
+	secrettile		=	_secret;
+	
+	// adds to sorted_map, vertx_buffers
 	Prepare(tilelayer);
 }

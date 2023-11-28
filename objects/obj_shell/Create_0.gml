@@ -432,6 +432,7 @@ function _load_history() {
 		output = tempData.output;
 		historyPos = array_length(history);
 	}
+	file_find_close();
 }
 
 /// @function _input_string_split(_input)

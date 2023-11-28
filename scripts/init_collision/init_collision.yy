@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "mdl_Load_OBJ_Model_File",
+  "name": "init_collision",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "3D",
-    "path": "folders/Scripts/CheesyPizza/3D.yy",
+    "name": "Utility",
+    "path": "folders/Scripts/CheesyPizza/Utility.yy",
   },
 }

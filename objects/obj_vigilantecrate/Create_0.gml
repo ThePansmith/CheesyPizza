@@ -1,11 +1,5 @@
-hsp = 0;
-vsp = 0;
-grav = 0.5;
-hsp_carry = 0;
-vsp_carry = 0;
-grounded = false;
+init_collision();
 cow = true;
-platformid = noone;
 state = 0; // not an enum
 alarm[0] = 50;
 alertmax = 5;

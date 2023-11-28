@@ -77,6 +77,7 @@
     {"name":"inst_2C980F02","path":"rooms/dungeon_secret4_OLD/dungeon_secret4_OLD.yy",},
     {"name":"inst_A04B7D7A","path":"rooms/dungeon_secret4_OLD/dungeon_secret4_OLD.yy",},
     {"name":"inst_25FEEBE2","path":"rooms/dungeon_secret4_OLD/dungeon_secret4_OLD.yy",},
+    {"name":"inst_7E9EC9AF","path":"rooms/dungeon_secret4_OLD/dungeon_secret4_OLD.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -151,6 +152,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2C980F02","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_destroyable","path":"objects/obj_destroyable/obj_destroyable.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":832.0,"y":64.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_A04B7D7A","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_hallway","path":"objects/obj_hallway/obj_hallway.yy",},"properties":[],"rotation":0.0,"scaleX":-2.0,"scaleY":0.5,"x":-32.0,"y":384.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_25FEEBE2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_doorB","path":"objects/obj_doorB/obj_doorB.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-64.0,"y":384.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7E9EC9AF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_secretfound","path":"objects/obj_secretfound/obj_secretfound.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":-32.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":17,"SerialiseWidth":50,"TileCompressedData":[
 -8,59,2,49,77,-34,78,2,79,49,-12,59,2,49,56,-34,0,2,89,49,-12,59,2,49,56,-34,0,2,89,49,-12,59,4,49,56,0,0,-10,47,1,44,-6,45,1,46,-9,47,2,44,46,

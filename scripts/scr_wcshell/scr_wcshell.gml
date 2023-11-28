@@ -1,6 +1,6 @@
 function WCscr_altname(name, alt)
 {
-	variable_global_set("sh_" + alt, variable_global_get("sh_" + name));
+	variable_global_set($"sh_{alt}", variable_global_get($"sh_{name}"));
 	array_push(allFunctions, alt);
 	
 	var metadata = functionData[$ name];
@@ -379,11 +379,11 @@ function scr_wc_step()
 							if variable != ""
 							{
 								if variable_global_exists(variable)
-									var value = get_string("Overwriting existing value in global." + variable + " to...", string(variable_global_get(variable)));
+									var value = get_string($"Overwriting existing value in global.{variable} to...", string(variable_global_get(variable)));
 								else
-									var value = get_string("Creating new variable global." + variable + " with value...", "");
-							
-								consoleString = "var global " + variable + " " + value;
+									var value = get_string($"Creating new variable global.{variable} with value...", "");
+								
+								consoleString = $"var global {variable} {value}";
 								_execute_script(_input_string_split(consoleString), true);
 								consoleString = "";
 							}
@@ -400,11 +400,11 @@ function scr_wc_step()
 							{
 								if string_char_at(metadata.arguments[i], 1) != "<"
 								{
-									var getstring = get_string("Write value for argument:\n" + metadata.arguments[i], "");
+									var getstring = get_string($"Write value for argument:\n{metadata.arguments[i]}", "");
 									if getstring == ""
 										break;
-								
-									val += " \"" + getstring + "\"";
+									
+									val += $" \"{getstring}\"";
 								}
 							}
 						}
@@ -615,17 +615,17 @@ function scr_wc_step()
 						break;
 					
 					case WC_select_modes.variable:
-						var variable = get_string("Selected " + object_get_name(WC_select_inst.object_index) + "\nInput variable name here", "");
+						var variable = get_string($"Selected {object_get_name(WC_select_inst.object_index)}\nInput variable name here", "");
 						if variable == ""
 							WC_select_mode = -1;
 						else
 						{
 							if variable_instance_exists(WC_select_inst, variable)
-								var value = get_string("Overwriting existing value in " + variable + " to...", string(variable_instance_get(WC_select_inst, variable)));
+								var value = get_string($"Overwriting existing value in {variable} to...", string(variable_instance_get(WC_select_inst, variable)));
 							else
-								var value = get_string("Creating new variable " + variable + " with value...", "");
+								var value = get_string($"Creating new variable {variable} with value...", "");
 							
-							consoleString = "var " + string_replace(WC_select_inst.id, "ref instance ", "") + " " + variable + " " + value;
+							consoleString = $"var {string_replace(WC_select_inst.id, "ref instance ", "")} {variable} {value}";
 							_execute_script(_input_string_split(consoleString), true);
 							consoleString = "";
 						}
@@ -848,34 +848,34 @@ function scr_wc_drawgui()
 		draw_set_align();
 		draw_set_colour(c_white);
 		
-		draw_text_outline(4, global.gameframe_enabled ? 24 : 4, "room: " + room_get_name(room) + " (" + string(room) + ")" +
-		"\nfps: " + string(fps) + " instances: " + string(instance_number(all)));
+		draw_text_outline(4, global.gameframe_enabled ? 24 : 4, $"room: {room_get_name(room)} ({room})" +
+		$"\nfps: {fps} instances: {instance_count}");
 		
 		if instance_exists(WC_debugview_target) or WC_debugview_target == global
 		{
 			if WC_debugview_target != global
 			{
-				var str = "\n\n\nSelected " + object_get_name(WC_debugview_target.object_index) + " (id: " + string(WC_debugview_target.id) + ")";
-				str += "\nx: " + string(WC_debugview_target.x);
-				str += "\ny: " + string(WC_debugview_target.y);
+				var str = $"\n\n\nSelected {object_get_name(WC_debugview_target.object_index)} (id: {WC_debugview_target.id})";
+				str += $"\nx: {WC_debugview_target.x}";
+				str += $"\ny: {WC_debugview_target.y}";
 				
 				if WC_debugview_target.sprite_index == -1
 					str += "\nsprite_index: none";
 				else
-					str += "\nsprite_index: " + sprite_get_name(WC_debugview_target.sprite_index) + " (" + string(WC_debugview_target.sprite_index) + ")";
-				str += "\nimage_index: " + string(WC_debugview_target.image_index);
-				str += "\nimage_xscale: " + string(WC_debugview_target.image_xscale);
-				str += "\nimage_yscale: " + string(WC_debugview_target.image_yscale);
+					str += $"\nsprite_index: {sprite_get_name(WC_debugview_target.sprite_index)} ({WC_debugview_target.sprite_index})";
+				str += $"\nimage_index: {WC_debugview_target.image_index}";
+				str += $"\nimage_xscale: {WC_debugview_target.image_xscale}";
+				str += $"\nimage_yscale: {WC_debugview_target.image_yscale}";
 				
 				if WC_debugview_target.mask_index == -1
 					str += "\nmask_index: none";
 				else
-					str += "\nmask_index: " + sprite_get_name(WC_debugview_target.mask_index) + " (" + string(WC_debugview_target.mask_index) + ")";
+					str += $"\nmask_index: {sprite_get_name(WC_debugview_target.mask_index)} ({WC_debugview_target.mask_index})";
 				
 				for (var c = 0; c <= 11; c++)
 				{
 					if WC_debugview_target.alarm[c] > -1
-						str += "\nalarm[" + string(c) + "]: " + string(WC_debugview_target.alarm[c]);
+						str += $"\nalarm[{c}]: {WC_debugview_target.alarm[c]}";
 				}
 				
 				draw_text_outline(4, 24, str);
@@ -899,7 +899,7 @@ function scr_wc_drawgui()
 					var todraw = string_replace_all(string(getvar), "\n", "\\n");
 					
 					if b <= 32 + WC_debugview_scroll
-						draw_text_outline(956, ((b - WC_debugview_scroll) * 16) + 4, objvars[b] + ": " + todraw);
+						draw_text_outline(956, ((b - WC_debugview_scroll) * 16) + 4, concat(objvars[b], ": ", todraw));
 				}
 				
 				if keyboard_check_pressed(vk_pageup)
@@ -1040,10 +1040,12 @@ function scr_wc_drawgui()
 		var dragtext = "Dragging ";
 		if mouse_check_button(mb_middle) && keyboard_check(vk_control)
 			dragtext = "Duplicating ";
-		var postext = "x" + string(WC_drag_inst.x) + " y" + string(WC_drag_inst.y);
+		
+		var postext = $"x{WC_drag_inst.x} y{WC_drag_inst.y}";
 		if WC_drag_alt
-			postext += "  >  x" + string(floor((mouse_x - other.WC_drag_offset[0]) / other.WC_drag_grid[0]) * other.WC_drag_grid[0]) + " y" + string(floor((mouse_y - other.WC_drag_offset[1]) / other.WC_drag_grid[1]) * other.WC_drag_grid[1]);
-		draw_text_outline(guiwidth / 2, 0, dragtext + object_get_name(WC_drag_inst.object_index) + "\n" + postext);
+			postext += $"  >  x{floor((mouse_x - other.WC_drag_offset[0]) / other.WC_drag_grid[0]) * other.WC_drag_grid[0]} y{floor((mouse_y - other.WC_drag_offset[1]) / other.WC_drag_grid[1]) * other.WC_drag_grid[1]}";
+		
+		draw_text_outline(guiwidth / 2, 0, concat(dragtext, object_get_name(WC_drag_inst.object_index), "\n", postext));
 	}
 	
 	#endregion

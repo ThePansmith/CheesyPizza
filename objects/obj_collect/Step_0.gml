@@ -20,6 +20,10 @@ if (abs(distance_to_object(obj_player1)) < 25 && !place_meeting(x, y, obj_destru
 }
 if (gotowardsplayer && !(MOD.NoToppings))
 {
-	move_towards_point(obj_player.x, obj_player.y, movespeed);
+	var yy = obj_player1.y;
+	if obj_player1.flip < 0
+		yy -= 10;
+	
+	move_towards_point(obj_player1.x, yy, movespeed);
 	movespeed++;
 }

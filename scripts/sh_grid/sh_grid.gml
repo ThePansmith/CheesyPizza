@@ -18,7 +18,7 @@ function sh_grid(args)
 			return "Y parameter must be a number";
 		
 		WC_drag_grid = [xx, yy];
-		return "Set dragging grid to " + string(xx) + "x" + string(yy);
+		return $"Set dragging grid to {xx}x{yy}";
 	}
 	else
 	{

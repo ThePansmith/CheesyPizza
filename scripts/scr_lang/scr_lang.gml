@@ -2,21 +2,27 @@ function scr_get_languages()
 {
 	global.lang_map = ds_map_create();
 	global.lang = "en";
+	
 	var arr = [];
 	for (var file = file_find_first("data/lang/*.txt", 0); file != ""; file = file_find_next())
 		array_push(arr, file);
 	file_find_close();
+	
 	for (var i = 0; i < array_length(arr); i++)
 	{
-		var fo = file_text_open_read("data/lang/" + arr[i]);
-		var str = "";
+		var fo = file_text_open_read(concat("data/lang/", arr[i]));
+		
+		var str = buffer_create(64, buffer_grow, 1);
 		while !file_text_eof(fo)
 		{
-			str += file_text_readln(fo);
-			str += "\n";
+			buffer_write(str, buffer_text, file_text_readln(fo));
+			buffer_write(str, buffer_text, "\n");
 		}
 		file_text_close(fo);
-		lang_parse(str);
+		
+		buffer_seek(str, buffer_seek_start, 0);
+		lang_parse(buffer_read(str, buffer_string));
+		buffer_delete(str);
 	}
 	global.credits_arr = scr_lang_get_credits();
 }

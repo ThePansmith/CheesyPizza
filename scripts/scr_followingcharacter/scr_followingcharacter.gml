@@ -11,13 +11,7 @@ function following_character_init()
 	spaceaccel = 0.2;
 	lastplayerposx = obj_player1.x;
 	lastplayerposy = obj_player1.y;
-	hsp = 0;
-	vsp = 0;
-	hsp_carry = 0;
-	vsp_carry = 0;
-	platformid = noone;
-	grav = 0.5;
-	grounded = false;
+	init_collision();
 	use_collision = false;
 	interp = 0.05;
 	lock = false;

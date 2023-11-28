@@ -287,7 +287,7 @@ function DOS_command(IN = input)
 					output += "\n";
 				}
 				else
-					output += "ECHO is " + (echo ? "on" : "off") + "\n";
+					output += $"ECHO is {(echo ? "on" : "off")}\n";
 				DOS_instruct(3, DOS_initstate2);
 				break;
 			
@@ -393,9 +393,9 @@ function DOS_directory(name)
 function DOS_adddir(file, dir)
 {
 	if string_ends_with(dir.ROOTNAME, "\\")
-		file.ROOTNAME = dir.ROOTNAME + file.ROOTNAME;
+		file.ROOTNAME = concat(dir.ROOTNAME, file.ROOTNAME);
 	else
-		file.ROOTNAME = dir.ROOTNAME + "\\" + file.ROOTNAME;
+		file.ROOTNAME = concat(dir.ROOTNAME, "\\", file.ROOTNAME);
 	file.DIR = dir;
 	array_push(dir.CONTENT, file);
 }

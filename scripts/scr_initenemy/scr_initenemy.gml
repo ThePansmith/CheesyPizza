@@ -1,5 +1,7 @@
 function scr_initenemy()
 {
+	init_collision();
+	
 	ID = id;
 	chargesnd = fmod_event_create_instance("event:/sfx/enemies/charge");
 	pizzaheadKO = noone;
@@ -12,16 +14,10 @@ function scr_initenemy()
 	steppy = false;
 	santaID = noone;
 	rattime = 0;
-	platformid = noone;
 	usepalette = false;
 	blur_effect = 0;
-	hsp_carry = 0;
-	vsp_carry = 0;
 	xscale = 1;
 	yscale = 1;
-	grav = 0.5;
-	hsp = 0;
-	vsp = 0;
 	stunned = 0;
 	roaming = true;
 	flying = false;
@@ -94,9 +90,6 @@ function scr_initenemy()
 	angle = image_angle;
 	is_controllable = false;
 	possess_movespeed = 0;
-	grav = 0.5;
-	hsp = 0;
-	vsp = 0;
 	state = states.walk;
 	stunned = 0;
 	alarm[0] = 150;

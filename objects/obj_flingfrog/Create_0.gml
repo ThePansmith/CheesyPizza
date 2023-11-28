@@ -1,3 +1,5 @@
+init_collision();
+
 depth = 4;
 image_speed = 0.35;
 grabbedPlayer = noone;
@@ -11,7 +13,3 @@ farBuffer = 0;
 mask_index = spr_player_mask
 candyindex = 0;
 isReady = 0;
-
-platformid = noone;
-hsp_carry = 0;
-vsp_carry = 0;

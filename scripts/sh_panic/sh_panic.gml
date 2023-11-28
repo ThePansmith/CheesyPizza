@@ -11,7 +11,7 @@ function sh_panic(args)
 		else if args[1] == "false" or args[1] == "0"
 			togglepanic = false;
 		else
-			return "Invalid argument: " + args[1];
+			return $"Invalid argument: {args[1]}";
 	}
 	
 	var minutes = undefined, seconds = undefined;
@@ -20,14 +20,14 @@ function sh_panic(args)
 		if string_is_number(args[2])
 			minutes = real(args[2]);
 		else
-			return "Minutes parameter should be a valid number"
+			return "Minutes parameter should be a valid number";
 	}
 	if array_length(args) > 3
 	{
 		if string_is_number(args[3])
 			seconds = real(args[3]);
 		else
-			return "Seconds parameter should be a valid number"
+			return "Seconds parameter should be a valid number";
 	}
 	
 	if togglepanic

@@ -1,6 +1,4 @@
-platformid = noone;
-hsp_carry = 0;
-vsp_carry = 0;
+init_collision();
 
 hsp = 0
 vsp = -4

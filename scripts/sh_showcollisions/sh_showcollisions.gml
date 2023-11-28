@@ -8,7 +8,7 @@ function sh_showcollisions(args)
 		else if args[1] == "false" or args[1] == "0"
 			togglepanic = false;
 		else
-			return "Invalid argument: " + args[1];
+			return $"Invalid argument: {args[1]}";
 	}
 	WC_showinvisible = 0;
 	WC_showcollisions = togglepanic;

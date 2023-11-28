@@ -8,8 +8,8 @@ function sh_speed(args)
 	var spd = args[1];
 	if string_is_number(spd)
 	{
-		room_speed = real(spd);
-		return "Set room speed to " + string(room_speed);
+		game_set_speed(real(spd), gamespeed_fps);
+		return $"Set room speed to {game_get_speed(gamespeed_fps)}";
 	}
 	else
 		return "Speed parameter must be a number";

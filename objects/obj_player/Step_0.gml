@@ -63,6 +63,32 @@ if (scr_solid(x, y + 1))
 if (check_slope(x, y + 1))
 	collision_flags |= colflag.sloped;
 
+// ceiling running
+if ((state != states.mach2 && state != states.mach3) or !grounded) && state != states.climbwall && state != states.chainsaw && state != states.backbreaker
+	ceilingrun = false;
+
+if MOD.GravityJump
+{
+	if key_jump && state != states.Sjump && !cutscene
+	{
+		gravityjump = !gravityjump;
+		grounded = false;
+		input_buffer_jump = 0;
+		key_jump = false;
+		can_jump = false;
+	}
+	
+	if gravityangle % 180 != 0
+		vsp = Approach(vsp, 0, 1);
+	gravityangle = Approach(gravityangle, gravityjump ? 180 : 0, 15);
+}
+else
+{
+	gravityjump = false;
+	gravityangle = 0;
+}
+flip = (ceilingrun xor gravityjump) ? -1 : 1;
+
 // state machine
 if character == "S" && !isgustavo
 	mask_index = spr_crouchmask;
@@ -256,9 +282,17 @@ switch (state)
 	case states.rupertslide: scr_player_rupertslide(); break;
 	case states.rupertjump: scr_player_rupertjump(); break;
 	case states.rupertstick: scr_player_rupertstick(); break;
+	
 	// pto
 	case states.debugfly: scr_player_debugstate(); break;
 	case states.frozen: scr_player_frozen(); break;
+}
+
+if ceilingrun && vsp < 0
+{
+	ceilingrun = false;
+	flip = gravityjump;
+	vsp *= -1;
 }
 
 if (state != states.chainsaw)
@@ -515,8 +549,8 @@ if (shoot_buffer > 0)
 	shoot_buffer--;
 if (cheesepep_buffer > 0)
 	cheesepep_buffer--;
-if (state != states.cheesepepstickside)
-	yscale = 1;
+//if (state != states.cheesepepstickside)
+//	yscale = flip;
 if (invhurt_buffer > 0)
 	invhurt_buffer--;
 if (state == states.hurt)
@@ -895,6 +929,7 @@ if do_macheffect
 		{
 			playerid = other.object_index;
 			image_xscale = other.xscale;
+			image_yscale = other.yscale;
 		}
 	}
 }
@@ -909,6 +944,7 @@ if (toomuchalarm1 > 0)
 		{
 			playerid = other.object_index;
 			image_xscale = other.xscale;
+			image_yscale = other.yscale;
 		}
 		toomuchalarm1 = 6;
 	}

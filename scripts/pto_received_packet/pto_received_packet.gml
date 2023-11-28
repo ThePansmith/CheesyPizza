@@ -173,9 +173,9 @@ function pto_received_packet(msgid, buffer)
 						paletteselect = buffer_read(buffer, buffer_u8);
 						pattern = buffer_read(buffer, buffer_text);
 						if string_digits(pattern) == pattern
-							pattern = SPRITES[? "spr_peppattern" + pattern];
+							pattern = SPRITES[? $"spr_peppattern{pattern}"];
 						else
-							pattern = SPRITES[? "spr_pattern_" + pattern];
+							pattern = SPRITES[? $"spr_pattern_{pattern}"];
 						break;
 						
 					case Var.Panic:

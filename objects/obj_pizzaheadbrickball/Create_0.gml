@@ -1,10 +1,5 @@
 image_speed = 0.35;
-hsp = 0;
-vsp = 0;
-hsp_carry = 0;
-vsp_carry = 0;
-platformid = noone;
-grav = 0.5;
+init_collision();
 movespeed = 0;
 blur_effect = 0;
 jumpspeed = 8;

@@ -1,6 +1,5 @@
 function scr_resetslapbuffer()
 {
-	// kill yourself
 	input_buffer_slap = 0;
 	input_buffer_grab = 0;
 }

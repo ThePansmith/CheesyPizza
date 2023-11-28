@@ -6,18 +6,12 @@ else
 	sprite_index = choose(spr_gerome_idle1, spr_gerome_idle2, spr_gerome_idle3);
 image_xscale = 1;
 grabbed = false;
-hsp = 0;
-vsp = 0;
-grav = 0.5;
+init_collision();
 flash = true;
 unpickable = false;
 hp = 0;
-grounded = true;
 state = 0; // not an enum
 playerid = obj_player1;
 mask_index = spr_player_mask;
 depth = -5;
-platformid = noone;
-hsp_carry = 0;
-vsp_carry = 0;
 thrown = false;

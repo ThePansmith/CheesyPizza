@@ -1,8 +1,2 @@
-hsp = 0;
-vsp = 0;
-hsp_carry = 0;
-vsp_carry = 0;
-grounded = false;
-platformid = noone;
-grav = 0.5;
+init_collision();
 image_speed = 0.35;

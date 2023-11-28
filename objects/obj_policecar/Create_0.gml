@@ -1,12 +1,6 @@
-hsp = 0;
-vsp = 0;
+init_collision();
 movespeed = 7;
-grav = 0.5;
-platformid = noone;
-hsp_carry = 0;
-vsp_carry = 0;
 depth = -8;
-grounded = false;
 jumpspeed = 11;
 state = states.chase;
 rubberband = false;

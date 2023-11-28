@@ -18,10 +18,14 @@ function reset_modifier()
 		DeathMode: false,
 		JohnGhost: false,
 		Spotlight: false,
-		CosmicClones: false,
+		//CosmicClones: false,
+		EscapeInvert: false,
+		PurpleBlockLand: false,
+		FromTheTop: false,
+		GravityJump: false,
 		
 		// Entrance
-		NoiseGutter: false,
+		//NoiseGutter: false,
 		
 		// CTOP
 		Lappable: false,

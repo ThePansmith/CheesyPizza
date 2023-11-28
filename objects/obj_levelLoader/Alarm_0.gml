@@ -16,7 +16,7 @@ try
 	var _room = global.custom_rooms[room_ind][1];
 	
 	var prop = _room.properties;
-	for(var i = 0; i < array_length(_room.instances); i++)
+	for(var i = 0, n = array_length(_room.instances); i < n; ++i)
 	{
 		var inst_data = _room.instances[i];
 		if inst_data.deleted
@@ -129,7 +129,7 @@ try
 
 	// backgrounds
 	var backgrounds = variable_struct_get_names(_room.backgrounds);
-	for(var i = 0; i < array_length(backgrounds); i++)
+	for(var i = 0, n = array_length(backgrounds); i < n; ++i)
 	{
 		var bg_data = _room.backgrounds[$ backgrounds[i]];
 	
@@ -181,7 +181,6 @@ try
 		
 		var secret = layer_num <= -5;
 		var tilelayer = new cyop_tilelayer(-room_x, -room_y, tilelayer_data, depp, secret);
-		tilelayer.Build();
 		
 		// saveroom
 		var inst = instance_create_depth(0, 0, depp, obj_cyop_tilelayer, {tilelayer: tilelayer, secrettile: secret});

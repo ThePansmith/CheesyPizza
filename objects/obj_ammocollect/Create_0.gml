@@ -1,9 +1,4 @@
-hsp = 0;
+init_collision();
 vsp = -8;
-grav = 0.5;
-grounded = false;
 flash = true;
 alarm[1] = 5;
-platformid = noone;
-hsp_carry = 0;
-vsp_carry = 0;

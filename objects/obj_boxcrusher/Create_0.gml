@@ -1,9 +1,4 @@
 image_speed = 0.35;
-vsp = 0;
-hsp = 0;
+init_collision();
 grav = 0;
-grounded = false;
-platformid = noone;
-vsp_carry = 0;
-hsp_carry = 0;
 gobackup = false;

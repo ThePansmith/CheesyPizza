@@ -167,7 +167,7 @@ function scr_getinput(is_menu = false)
 				dz = global.gamepad_deadzone_crouch;
 			}
 			
-			for (var i = 0; i < array_length(in.actions); i++)
+			for (var i = 0, n = array_length(in.actions); i < n; ++i)
 			{
 				var b = in.actions[i];
 				with (b)
@@ -205,7 +205,7 @@ function scr_getinput(is_menu = false)
 function scr_get_move_axis(input_str)
 {
 	var in = tdp_input_get(input_str);
-	for (var i = 0; i < array_length(in.actions); i++)
+	for (var i = 0, n = array_length(in.actions); i < n; ++i)
 	{
 		var b = in.actions[i];
 		with (b)

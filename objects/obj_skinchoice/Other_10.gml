@@ -86,6 +86,7 @@ switch character
 		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Peppino says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Oh, fiddlesticks! What now?");
+		add_palette(12, "", spr_pattern_supreme, "Supreme", "He got that drip.");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -195,6 +196,7 @@ switch character
 		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Gustavo and Brick say Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", " ");
+		add_palette(12, "", spr_pattern_supreme, "Supreme", "He got that drip.");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -274,6 +276,7 @@ switch character
 		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "The Noise says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
+		add_palette(12, "", spr_pattern_supreme, "Supreme", "He got that drip.");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -364,6 +367,7 @@ switch character
 		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "The Vigilante says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "You can find them online, don't worry.");
+		add_palette(12, "", spr_pattern_supreme, "Supreme", "He got that drip.");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -437,6 +441,7 @@ switch character
 		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Snick says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Oh, fiddlesticks! What now?");
+		add_palette(12, "", spr_pattern_supreme, "Supreme", "He got that drip.");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -525,6 +530,7 @@ switch character
 		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Correct.");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Use the previous palette instead.");
+		add_palette(12, "", spr_pattern_supreme, "Supreme", "They got that drip.");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -615,6 +621,7 @@ switch character
 		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Bo Noise says Trans Rights!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
+		add_palette(12, "", spr_pattern_supreme, "Supreme", "It got that drip.");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that sugar rush.");
@@ -725,6 +732,7 @@ switch character
 		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Trans Rizz");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "I know you like d");
+		add_palette(12, "", spr_pattern_supreme, "Supreme", "God is deader");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "w");
 		//add_palette(12, "", spr_pattern_giygas, "Giygas", "sccary ramen!");
 		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "IM FEELING SUGGARY!");
@@ -796,6 +804,7 @@ switch character
 		
 		add_palette(12, "", spr_pattern_trans, "Trans Flag", "Pizzano says Trans rights, and Trans wrongs!\nYou should rob a bank!");
 		add_palette(12, "", spr_pattern_missing, "Missing Texture", "Well, it's still playable.");
+		add_palette(12, "", spr_pattern_supreme, "Supreme", "He got that drip.");
 		//add_palette(12, "", spr_pattern_dogma, "Dogma", "Feel the static cling.");
 		//add_palette(12, "", spr_pattern_giygas, "Giygas", "Quirky Earthbound-inspired RPG!");
 		//add_palette(12, "", spr_pattern_neoncandy, "Neon Candy", "Get that blue licorice.");

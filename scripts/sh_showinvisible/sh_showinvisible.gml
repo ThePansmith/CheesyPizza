@@ -19,7 +19,7 @@ function sh_showinvisible(args)
 		WC_showinvisible = !min(WC_showinvisible, 1);
 		WC_showcollisions = false;
 		toggle_collisions(false);
-		return "Showing invisible objects " + (WC_showinvisible ? "ON" : "OFF");
+		return $"Showing invisible objects {(WC_showinvisible ? "ON" : "OFF")}";
 	}
 }
 function meta_showinvisible()

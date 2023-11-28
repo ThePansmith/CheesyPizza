@@ -1,10 +1,4 @@
 image_speed = 0.35;
 depth = 10;
 use_collision = false;
-hsp = 0;
-vsp = 0;
-hsp_carry = 0;
-vsp_carry = 0;
-platformid = noone;
-grounded = false;
-grav = 0.5;
+init_collision();

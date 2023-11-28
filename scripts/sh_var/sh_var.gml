@@ -34,7 +34,7 @@ function sh_var(args)
 			return obj;
 	}
 	if target == noone // target non existent
-		return "Instance " + pretarget + " doesn't exist";
+		return $"Instance {pretarget} doesn't exist";
 	if target != global && instance_exists(target) && array_contains(asset_get_tags(target.object_index, asset_object), "protected")
 		return "Can't modify protected object";
 	
@@ -63,9 +63,9 @@ function sh_var(args)
 					continue;
 				}
 				else if arraydet == 2
-					return "Malformed array index for \"" + variable + "\"";
+					return $"Malformed array index for \"{variable}\"";
 			}
-				
+			
 			if arraydet == 1
 			{
 				if charat == "]"
@@ -74,7 +74,7 @@ function sh_var(args)
 					if string_digits(arrind_find) == arrind_find
 						array_push(arrind, real(arrind_find));
 					else
-						return "The given array index for \"" + variable + "\" is not a valid number";
+						return $"The given array index for \"{variable}\" is not a valid number";
 				}
 				else
 					arrind_find += charat;
@@ -160,24 +160,24 @@ function sh_var(args)
 	
 	// log
 	if is_string(setval)
-		setval = "string \"" + string(setval) + "\"";
+		setval = $"string \"{setval}\"";
 	if arrind != -1
 	{
 		variable = string(variable);
 		for(i = 0; i < array_length(arrind); i++)
-			variable += "[" + string(arrind[i]) + "]";
+			variable += $"[{arrind[i]}]";
 	}
-		
+	
 	if target != global
 	{
-		obj = (target_one ? "object " : "objects ") + string(pretarget);
+		obj = concat((target_one ? "object " : "objects "), pretarget);
 		if target == all
 			obj = "all objects";
 		
-		return (var_exists ? "Set " : "Set new variable ") + string(variable) + " to " + string(setval) + " in " + obj;
+		return concat((var_exists ? "Set " : "Set new variable "), variable, " to ", setval, " in ", obj);
 	}
 	else
-		return (var_exists ? "Set " : "Set new global variable ") + "global." + string(variable) + " to " + string(setval);
+		return concat((var_exists ? "Set " : "Set new global variable "), "global.", variable, " to ", setval);
 }
 function meta_var()
 {
@@ -199,7 +199,7 @@ function meta_var()
 					for(var j = 0; j < instance_number(obj); j++)
 					{
 						if instance_find(obj, j).id == inst.id
-							array_push(obj_array, object_get_name(obj) + ":" + string(j));
+							array_push(obj_array, $"{object_get_name(obj)}:{j}");
 					}
 				}
 				array_sort(obj_array, true);

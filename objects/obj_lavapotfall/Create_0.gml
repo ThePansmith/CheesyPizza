@@ -1,7 +1,2 @@
-hsp = 0;
-vsp = 0;
-hsp_carry = 0;
-vsp_carry = 0;
-platformid = noone;
+init_collision();
 grav = 0.25;
-grounded = false;

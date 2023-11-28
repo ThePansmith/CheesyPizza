@@ -34,7 +34,7 @@ function sh_destroy(args)
 	
 	// protect
 	if target == noone // target non existent
-		return "Instance " + pretarget + " doesn't exist";
+		return $"Instance {pretarget} doesn't exist";
 	if target == all // what
 		return "Not a good idea";
 	if instance_exists(target) && array_contains(asset_get_tags(target.object_index, asset_object), "protected")
@@ -68,7 +68,7 @@ function meta_destroy()
 					for(var j = 0; j < instance_number(obj); j++)
 					{
 						if instance_find(obj, j).id == inst.id
-							array_push(obj_array, object_get_name(obj) + ":" + string(j));
+							array_push(obj_array, concat(object_get_name(obj), ":", j));
 					}
 				}
 				array_sort(obj_array, true);

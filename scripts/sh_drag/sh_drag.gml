@@ -5,9 +5,9 @@ function sh_drag()
 	
 	WC_drag_toggle = !WC_drag_toggle;
 	if !isOpen
-		create_transformation_tip("{s}Dragging " + (WC_drag_toggle ? "ON" : "OFF") + "/");
+		create_transformation_tip(concat("{s}Dragging ", WC_drag_toggle ? "ON" : "OFF", "/"));
 	else
-		return "Dragging objects " + (WC_drag_toggle ? "ON" : "OFF");
+		return concat("Dragging objects ", WC_drag_toggle ? "ON" : "OFF");
 }
 function meta_drag()
 {

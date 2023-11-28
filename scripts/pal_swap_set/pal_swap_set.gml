@@ -1,7 +1,6 @@
-function pal_swap_set(_pal_sprite, _pal_index)
+function pal_swap_set(_pal_sprite, _pal_index, _surface = false)
 {
 	static shader_multiplier = shader_get_uniform(shd_pal_swapper, "shader_multiplier");
-	var _surface = false;
 	if (!_surface)
 	{
 		var tex = sprite_get_texture(_pal_sprite, 0);

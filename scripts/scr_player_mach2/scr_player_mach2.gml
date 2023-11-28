@@ -17,8 +17,11 @@ function scr_player_mach2()
 		raildir = _railinst.dir;
 	}
 	hsp = (xscale * movespeed) + (railmovespeed * raildir);
-	move2 = key_right2 + key_left2;
 	move = key_right + key_left;
+	
+	if ceilingrun && move != 0
+		move = xscale;
+	
 	crouchslideAnim = true;
 	if (!key_jump2 && jumpstop == 0 && vsp < 0.5)
 	{
@@ -27,7 +30,7 @@ function scr_player_mach2()
 	}
 	if (grounded && vsp > 0)
 		jumpstop = false;
-	if (input_buffer_jump > 0 && can_jump && sprite_index != spr_clownjump && !(move == 1 && xscale == -1) && !(move == -1 && xscale == 1))
+	if (input_buffer_jump > 0 && can_jump && sprite_index != spr_clownjump && !((move == 1 && xscale == -1) or (move == -1 && xscale == 1)))
 	{
 		input_buffer_jump = 0;
 		image_index = 0;
@@ -45,6 +48,7 @@ function scr_player_mach2()
 			vsp = -12;
 		}
 	}
+	
 	var mortjump = false;
 	if (key_jump && global.mort == 1 && sprite_index != spr_mortdoublejump && !grounded && !skateboarding)
 	{

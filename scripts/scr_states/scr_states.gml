@@ -611,7 +611,7 @@ states = {
 	noiseballooncrash : 286,
 	swinging : 287,
 	stomp : 288,
-	finale : 289,
+	ending : 289,
 	backtohub : 290,
 	johnghost : 291,
 	spaceshuttle : 292,
@@ -622,21 +622,26 @@ states = {
 	teleport : 297,
 	KO : 298,
 	camera_followtarget : 299,
+	UNKNOWN_1 : 300, // 300
+	UNKNOWN_2 : 301, // 301
+	UNKNOWN_3 : 302, // 302
+	UNKNOWN_4 : 303, // 303, used by obj_stickhat
 	
 	// sugary
-	cotton : 300,
-	cottondrill : 301,
-	cottonroll : 302,
-	fling : 303,
-	twirl : 304,
-	frothstuck : 305,
-	rupertnormal : 307,
-	rupertslide : 308,
-	rupertjump : 309,
-	rupertstick : 310,
+	cotton : 304,
+	cottondrill : 305,
+	cottonroll : 306,
+	fling : 307,
+	twirl : 308,
+	frothstuck : 309,
+	rupertnormal : 310,
+	rupertslide : 311,
+	rupertjump : 312,
+	rupertstick : 313,
 	
 	// pto
-	debugfly : 311
+	debugfly : 314,
+	frozen : 315,
 }
 
 #endregion

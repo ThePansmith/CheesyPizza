@@ -53,7 +53,9 @@ function scr_dotaunt()
 			else
 			{
 				scr_create_parryhitbox();
-				if character == "SP"
+				if global.Pattern_Texture == spr_pattern_supreme
+					sound_play_3d("event:/modded/sfx/instinct", x, y);
+				else if character == "SP"
 					sound_play_3d("event:/modded/sfx/pizzytaunt", x, y);
 				else if character == "SN"
 					sound_play_3d("event:/modded/sfx/pizzanotaunt", x, y);

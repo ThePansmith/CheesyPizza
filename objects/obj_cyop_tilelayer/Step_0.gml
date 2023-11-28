@@ -1,21 +1,24 @@
+if tilelayer == noone
+	exit;
 if !secrettile
 	exit;
+
 if buffer > 0
 	buffer--;
 
 player = noone;
-for (var i = 0; i < array_length(tilelayer.tiles); i++)
+var f = method(self, function(tile, i)
 {
-	var tile = tilelayer.tiles[i];
 	with obj_player
 	{
-		if point_in_rectangle(x, y, tile.x, tile.y, tile.x + 32, tile.y + 32)
+		if rectangle_in_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, tile.x, tile.y, tile.x + 31, tile.y + 31)
 		{
 			other.player = id;
 			break;
 		}
 	}
-}
+});
+array_foreach(tilelayer.tiles, f, 0, infinity);
 
 if (player && player.state != states.chainsaw && player.state != states.backtohub) or active
 {
@@ -27,6 +30,7 @@ if (player && player.state != states.chainsaw && player.state != states.backtohu
 		revealed = true;
 		add_saveroom();
 		
+		/*
 		if REMIX && buffer <= 0
 		{
 			sound_stop(sfx_collectpizza);
@@ -34,36 +38,8 @@ if (player && player.state != states.chainsaw && player.state != states.backtohu
 				fmod_event_instance_set_parameter(global.snd_secretwall, "state", character == "SP", false);
 			fmod_event_instance_play(global.snd_secretwall);
 		}
+		*/
 	}
-	
-	/*
-	with obj_secrettile
-	{
-		if distance_to_object(other) <= 1
-		{
-			var found = false;
-			with obj_secrettile
-			{
-				if player
-					found = true;
-			}
-			if found
-			{
-				if !revealed
-				{
-					if other.buffer > 0
-						image_alpha = 0;
-				
-					revealed = true;
-					add_saveroom();
-				}
-				active = true;
-			}
-		}
-	}
-	*/
-	
-	
 	//depth = max(-8, desireddepth);
 	image_alpha = Approach(image_alpha, 0, 0.1);
 }

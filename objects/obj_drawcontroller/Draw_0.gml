@@ -130,28 +130,20 @@ with (obj_player1)
 	if (!other.hungrypillarflash && visible && state != states.titlescreen && bbox_in_camera(view_camera[0], 32))
 		draw_player();
 }
+pal_swap_reset();
+
+// very simple particles
 for (i = 0; i < array_length(particles); i++)
 {
 	with (particles[i])
 		draw_sprite(sprite_index, image_index, x, y);
 }
 
-// this is a dumb hack but it works blame me (Radix) if it breaks
-with obj_secrettile
-{
-	var prev_depth = gpu_get_depth();
-	gpu_set_depth(depth);
-	draw_secrettiles(id);
-	gpu_set_depth(prev_depth);
-}
-
+// dead enemies
 with obj_sausageman_dead
 {
 	if !gui && visible
 	{
-		var prev_depth = gpu_get_depth();
-		gpu_set_depth(depth);
-		
 		var b = get_dark(image_blend, other.use_dark);
 		if other.use_dark && SUGARY
 		{
@@ -163,21 +155,20 @@ with obj_sausageman_dead
 		{
 			if sprite_exists(spr_palette)
 			{
+				shader_set(shd_pal_swapper);
 				if oldpalettetexture != noone
-					pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, oldpalettetexture);
+					pattern_set_temp(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, oldpalettetexture);
 				pal_swap_set(spr_palette, paletteselect, false);
 			}
-			else
-				pal_swap_set(spr_peppalette, 0, false);
 			draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, b, image_alpha);
 			if oldpalettetexture != noone
 	            pattern_reset();
+			pal_swap_reset();
 		}
-		gpu_set_depth(prev_depth);
 	}
 }
-pal_swap_reset();
 
+// flashing
 draw_set_flash();
 with (obj_player1)
 {
@@ -197,5 +188,9 @@ with obj_lampost
 with obj_boxofpizza
 {
 	if bo
+	{
 		draw_sprite_ext(sprite_index, 1, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+		with obj_secrettile
+			desireddepth = -8;
+	}
 }

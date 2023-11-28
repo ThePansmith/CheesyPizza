@@ -1,9 +1,4 @@
-hsp = 0;
-vsp = 0;
-hsp_carry = 0;
-vsp_carry = 0;
-grav = 0.5;
-platformid = noone;
+init_collision();
 steppy = false;
 depth = -4;
 snd = fmod_event_create_instance("event:/sfx/hub/gusrun");

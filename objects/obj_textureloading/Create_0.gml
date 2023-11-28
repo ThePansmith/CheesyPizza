@@ -11,7 +11,7 @@ for (var i = 0; i < array_length(group_arr); i++)
 	for (var j = 0; j < array_length(_tex_array); j++)
 		array_push(tex_list, [_tex_array[j], group_arr[i]]);
 }
-tex_max = array_length(tex_list);
+tex_max = array_length(tex_list); // used in draw
 alarm[0] = 60;
 
 text = "";

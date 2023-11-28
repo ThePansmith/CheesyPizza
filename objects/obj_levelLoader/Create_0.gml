@@ -19,3 +19,6 @@ global.cyop_broken_tiles = ds_list_create();
 
 loaded = false;
 gamestart = false;
+tile_surface = noone;
+cam_x = -1;
+cam_y = -1;

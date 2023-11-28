@@ -78,8 +78,11 @@ var deathmode_allow =
 if array_contains(deathmode_allow, level)// or DEBUG
 	add_modifier("Death Mode", "DeathMode", "Avoid Pizzaface within a very tight timer!", [seq_deathmode_off, seq_deathmode_on]);
 
+if level == "medieval" or level == "ruin" or level == "dungeon"
+	add_modifier("Blueprint", "OldLevels", "Uses old level design from the April 2021 build.", [seq_oldlevels_off, seq_oldlevels_on]);
+
 if !boss && level != "tutorial" && global.experimental
-	add_modifier("No Toppings", "NoToppings", "Summons Pizzaface when collecting a topping.\nCurrently impossible, so it's part of EXPERIMENTAL.", [seq_notoppings_off, seq_notoppings_on]);
+	add_modifier("No Toppings", "NoToppings", "Summons Pizzaface when collecting a topping.", [seq_notoppings_off, seq_notoppings_on]);
 if !boss && level != "tutorial"
 	add_modifier("Pacifist", "Pacifist", "Avoid murdering anyone while going through the stage. The escape time will be extended.", [seq_pacifist_off, seq_pacifist_on]);
 
@@ -122,7 +125,10 @@ add_modifier("Lights Out", "Spotlight", "The size of the spotlight is tied to yo
 	draw_sprite(spr_playerN_move, p.image, 384 / 2, 216 / 2);
 });
 
-//add_modifier("Cosmic Clones", "CosmicClones", "");
+add_modifier("Anti-Panic", "EscapeInvert", "Escape enemies and John blocks are flipped!");
+add_modifier("Block Land", "PurpleBlockLand", "Removes every asset from a level, leaving only collision visible.");
+add_modifier("From The Top", "FromTheTop", "John and the exit gate are swapped.");
+add_modifier("VVVVVV", "GravityJump", "Flip gravity with the jump button.");
 
 // Level specific
 if level == "grinch"
@@ -140,7 +146,9 @@ if level == "snickchallenge"
 	add_section("Level");
 	add_modifier("Old Levels", "OldLevels", "A more accurate Snick's Challenge, using level design closer to the SAGE 2019 demo.", [seq_oldlevels_off, seq_oldlevels_on]);
 	add_modifier("No Snick", "EasyMode", "More of a World 1 timed challenge without that bastard following you around.");
-	add_modifier("Snick Rematch", "Snickrematch", "yeah");
+	
+	if DEBUG
+		add_modifier("Snick Rematch", "Snickrematch", "yeah");
 }
 if level == "exit"
 {
@@ -151,7 +159,7 @@ if level == "secretworld"
 {
 	add_section("Level");
 	add_modifier("In Order", "Ordered", "Introduces every secret in proper level order, instead of being randomized.");
-	add_modifier("Extra Secrets", "SecretInclude", "Includes the Scrap Basement's secrets.\nCurrent version: " + GM_version + ", adds 7");
+	add_modifier("Extra Secrets", "SecretInclude", $"Includes the Scrap Basement's secrets.\nCurrent version: {GM_version}, adds 7");
 }
 
 #endregion

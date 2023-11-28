@@ -36,6 +36,8 @@ function camera_set_zoom(target_zoom)
 }
 function try_solid(xoffset, yoffset, object, iterations)
 {
+	if live_call(xoffset, yoffset, object, iterations) return live_result;
+	
 	var old_x = x;
 	var old_y = y;
 	var n = -1;
@@ -81,14 +83,18 @@ function ledge_bump_vertical()
 }
 function ledge_bump(iterations)
 {
+	if live_call(iterations) return live_result;
+	
 	var old_x = x;
 	var old_y = y;
 	x += (xscale * 4);
-	var ty = try_solid(0, -1, obj_solid, iterations);
+	
+	var ty = try_solid(0, -flip, obj_solid, iterations);
 	x = old_x;
+	
 	if (ty != -1)
 	{
-		y -= ty;
+		y -= ty * flip;
 		x += xscale;
 		if (scr_solid(x, y))
 		{
@@ -127,7 +133,7 @@ function trace()
 {
 	if !DEBUG
 		exit;
-		
+	
 	var _string = "";
 	for (var i = 0; i < argument_count; i++)
 		_string += string(argument[i]);
@@ -135,10 +141,15 @@ function trace()
 }
 function concat()
 {
-	var _string = "";
-	for (var i = 0; i < argument_count; i++)
-		_string += string(argument[i]);
-	return _string;
+	var _string = buffer_create(64, buffer_grow, 1);
+	for (var i = 0; i < argument_count; ++i)
+		buffer_write(_string, buffer_text, string(argument[i]));
+	
+	buffer_seek(_string, buffer_seek_start, 0);
+	var s = buffer_read(_string, buffer_string);
+	
+	buffer_delete(_string);
+	return s;
 }
 function embed_value_string(str, array)
 {
@@ -152,14 +163,11 @@ function embed_value_string(str, array)
 }
 function ds_list_add_unique(list)
 {
-	if (argument_count > 1)
+	for (var i = 1; i < argument_count; i++)
 	{
-		for (var i = 1; i < argument_count; i++)
-		{
-			var b = argument[i];
-			if (ds_list_find_index(list, b) == -1)
-				ds_list_add(list, b);
-		}
+		var b = argument[i];
+		if (ds_list_find_index(list, b) == -1)
+			ds_list_add(list, b);
 	}
 }
 function point_in_camera(x, y, cam = -1)
@@ -233,4 +241,20 @@ function draw_set_align(halign = fa_left, valign = fa_top)
 {
 	draw_set_halign(halign);
 	draw_set_valign(valign);
+}
+function array_unfold(array, delim = ", ")
+{
+	var _string = buffer_create(64, buffer_grow, 1);
+	for (var i = 0, n = array_length(array); i < n; ++i)
+	{
+		buffer_write(_string, buffer_text, string(array[i]));
+		if i < n - 1
+			buffer_write(_string, buffer_text, delim);
+	}
+	
+	buffer_seek(_string, buffer_seek_start, 0);
+	var s = buffer_read(_string, buffer_string);
+	
+	buffer_delete(_string);
+	return s;
 }

@@ -77,6 +77,7 @@ function meta_level()
 							array_push(levels, file);
 						file = file_find_next();
 					}
+					file_find_close();
 					
 					array_push(levels, "tower");
 					return levels;

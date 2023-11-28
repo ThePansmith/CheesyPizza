@@ -1,11 +1,5 @@
 image_speed = 0.35;
-hsp = 0;
-vsp = 0;
-hsp_carry = 0;
-vsp_carry = 0;
-platformid = noone;
-grounded = false;
-grav = 0.5;
+init_collision();
 state = states.normal;
 stunned = 0;
 turnspeed = 0.5;

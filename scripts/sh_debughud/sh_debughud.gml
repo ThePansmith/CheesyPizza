@@ -14,9 +14,9 @@ function sh_debughud(args)
 		{
 			var inst = WCscr_findobj(args[1]);
 			if object_exists(inst[0]) && !inst[1]
-				return "Must specify instance index. Example: " + object_get_name(inst[0]) + ":0";
+				return $"Must specify instance index. Example: {object_get_name(inst[0])}:0";
 			if !instance_exists(inst[0])
-				return "The instance of " + args[1] + " does not exist";
+				return $"The instance of {args[1]} does not exist";
 			inst = inst[0];
 		}
 	}
@@ -58,10 +58,10 @@ function meta_debughud()
 						continue;
 					var obj = inst.object_index;
 					
-					for(var j = 0; j < instance_number(obj); j++)
+					for(var j = 0; j < instance_number(obj); ++j)
 					{
 						if instance_find(obj, j).id == inst.id
-							array_push(obj_array, object_get_name(obj) + ":" + string(j));
+							array_push(obj_array, concat(object_get_name(obj), ":", j));
 					}
 				}
 				array_sort(obj_array, true);

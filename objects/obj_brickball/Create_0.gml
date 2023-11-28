@@ -1,16 +1,10 @@
 notification_push(notifs.brickball, [room]);
 image_speed = 0.5;
-hsp = 0;
-vsp = 0;
-grav = 0.5;
+init_collision();
 xoffset = 0;
 movespeed = 0;
-grounded = false;
 bounce = true;
 blur_effect = 2;
-vsp_carry = 0;
-hsp_carry = 0;
-platformid = noone;
 paletteselect = 0;
 spr_palette = noone;
 alarm[0] = 200;

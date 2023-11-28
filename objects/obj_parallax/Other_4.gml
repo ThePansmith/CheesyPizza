@@ -220,7 +220,8 @@ if (!room_is_secret(room) or instance_exists(obj_wartimer) or global.leveltosave
 	scr_panicbg_init();
 
 // pizzelle's secrets
-if room_is_secret(room) && global.sugaryoverride
+if global.sugaryoverride
+&& (room_is_secret(room) or room == secret_entrance)
 {
 	var target_tiles = -1;
 	if check_sugarychar()

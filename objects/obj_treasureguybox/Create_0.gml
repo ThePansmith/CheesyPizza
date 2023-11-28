@@ -1,10 +1,5 @@
 current_arr = 0;
 count = 8;
 collectcount = 3;
-hsp = 0;
-vsp = 0;
-grav = 0.5;
+init_collision();
 depth = 11;
-platformid = noone;
-hsp_carry = 0;
-vsp_carry = 0;

@@ -1,5 +1,7 @@
 function scr_player_climbwall()
 {
+	if live_call() return live_result;
+	
 	switch (character)
 	{
 		default:
@@ -111,9 +113,9 @@ function scr_player_climbwall()
 					{
 						for(var i = 0; i < 32; i++)
 						{
-							if scr_solid(x + xscale, y + i + 1)
+							if scr_solid(x + xscale, y + i)
 							{
-								y += i;
+								y += (i - 1) * flip;
 								break;
 							}
 						}
@@ -173,7 +175,41 @@ function scr_player_climbwall()
 				jumpstop = false;
 				walljumpbuffer = 4;
 			}
-			if (state != states.mach2 && verticalbuffer <= 0 && check_solid(x, y - 1) && scr_solid(x + xscale, y) && !place_meeting(x, y - 1, obj_verticalhallway) && !place_meeting(x, y - 1, obj_destructibles) && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)) && !check_slope(x - sign(hsp), y))
+			
+			// ceiling run
+			var slope_prev = instance_place(x, y - flip, obj_slope);
+			image_yscale *= -1;
+			var slope = instance_place(x, y - flip, obj_slope);
+			
+			if !slope_prev && slope && key_attack && walljumpbuffer <= 0
+			{
+				while place_meeting(x, y, slope)
+					y -= image_yscale;
+				
+				walljumpbuffer = 16;
+				ceilingrun = !ceilingrun;
+				flip = -flip;
+				xscale = -sign(slope.image_xscale);
+				grounded = true;
+				vsp = 0;
+				
+				movespeed = max(round(wallspeed * 0.8), 6);
+				if movespeed < 12
+				{
+					state = states.mach2;
+					sprite_index = spr_mach;
+				}
+				else
+				{
+					state = states.mach3;
+					sprite_index = spr_mach4;
+				}
+				exit;
+			}
+			image_yscale *= -1;
+			
+			if (state != states.mach2 && verticalbuffer <= 0 && scr_solid(x, y - 1) && scr_solid(x + xscale, y) && !place_meeting(x, y - 1, obj_verticalhallway) && !place_meeting(x, y - 1, obj_destructibles) && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)) && !check_slope(x - sign(hsp), y))
+			or (slope_prev && slope)
 			{
 				//trace("climbwall hit head");
 				if (!skateboarding)
@@ -301,9 +337,9 @@ function scr_player_climbwall()
 					{
 						for(var i = 0; i < 32; i++)
 						{
-							if scr_solid(x + xscale, y + i + 1)
+							if scr_solid(x + xscale, y + i)
 							{
-								y += i;
+								y += (i - 1) * flip;
 								break;
 							}
 						}

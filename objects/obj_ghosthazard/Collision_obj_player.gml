@@ -14,15 +14,18 @@ with (other)
 		ghostpepper = 0;
 		ghosttimer = 0;
 		sprite_index = spr_ghostidle;
+		
+		var xscale = REMIX ? self.xscale : image_xscale;
 		with (instance_create(x, y, obj_sausageman_dead))
 		{
-			hsp = other.image_xscale * 3;
-			image_xscale = -other.image_xscale;
+			hsp = xscale * 3;
+			image_xscale = -xscale;
 			sprite_index = other.spr_dead;
 			spr_palette = other.spr_palette;
 			paletteselect = other.paletteselect;
 			oldpalettetexture = global.palettetexture;
 		}
+		
 		other.debris = false;
 	}
 }

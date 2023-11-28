@@ -1,4 +1,4 @@
-if instance_exists(obj_randomsecret)
+if in_saveroom() or instance_exists(obj_randomsecret) or global.snickchallenge
 	exit;
 
 global.secretfound++;
@@ -14,3 +14,4 @@ txt = embed_value_string(txt, [val, count]);
 create_transformation_tip(txt);
 
 fmod_event_one_shot("event:/sfx/misc/secretfound");
+add_saveroom();

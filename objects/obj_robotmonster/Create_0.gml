@@ -1,10 +1,4 @@
-hsp = 0;
-vsp = 0;
-hsp_carry = 0;
-vsp_carry = 0;
-platformid = noone;
-grav = 0.5;
-grounded = false;
+init_collision();
 movespeed = 8;
 step_sound = false;
 event_inherited();

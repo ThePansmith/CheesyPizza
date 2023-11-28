@@ -18,8 +18,8 @@ if SUGARY && distance_to_object(obj_player) < 50
 	draw_set_align(fa_center);
 	draw_set_color(c_white);
 	
-	draw_text(x, (yy - 252), string(highscore) + " POINTS - " + string(laps) + " LAPS")
-	draw_text(x, (yy - 278), string(secret_count) + " OF 3 SECRETS")
+	draw_text(x, (yy - 252), concat(highscore, " POINTS - ", laps, " LAPS"))
+	draw_text(x, (yy - 278), concat(secret_count, " OF 3 SECRETS"))
 	
 	// confecti
 	for (var i = 0; i < 5; ++i) 

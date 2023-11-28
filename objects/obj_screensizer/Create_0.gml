@@ -16,6 +16,11 @@ if global.gameframe_enabled
 	global.__ggpo_string_buffer = undefined;
 	gameframe_init_native();
 	gameframe_init();
+	
+	call_later(15, time_source_units_frames, function()
+	{
+		trace("[window_show] ", window_show(window_handle()));
+	}, false);
 }
 
 global.gameframe_caption_font = fnt_caption;

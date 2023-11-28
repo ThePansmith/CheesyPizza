@@ -88,7 +88,7 @@ if instance_exists(obj_player1)
 			pchar = "G";
 	}
 	
-	for(var i = 0; i < array_length(characters); i++)
+	for(var i = 0, n = array_length(characters); i < n; ++i)
 	{
 		if pchar == characters[i][0]
 			sel.char = i;
@@ -285,7 +285,7 @@ draw = function(curve)
 	if sel.mix > 0
 	{
 		name = string_upper(mixables[sel.mix].prefix + pal.name);
-		desc = mixables[sel.mix].name + " + " + pal.name;
+		desc = concat(mixables[sel.mix].name, " + ", pal.name);
 		
 		if name == "BURNT TRANS FLAG"
 		{
@@ -352,7 +352,7 @@ draw = function(curve)
 			vertex_begin(vertex_buffer, vertex_format);
 			draw_set_alpha(palettecurve);
 		
-			for(var i = 0; i < array_length(array); i++)
+			for(var i = 0, n = array_length(array); i < n; ++i)
 			{
 				var xdraw = xx + (i % 13) * 36, ydraw = yy + floor(i / 13) * 36;
 				

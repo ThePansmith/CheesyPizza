@@ -5,17 +5,17 @@ var m = menus[menu];
 
 if instance_exists(obj_keyconfig)
 	j = 4;
-if (m.menu_id >= menus.controls && m.menu_id <= menus.unused_3)
+if (m.menu_id >= MENUS.controls && m.menu_id <= MENUS.unused_3)
     j = 4;
-else if (m.menu_id >= menus.video && m.menu_id <= menus.unused_1)
+else if (m.menu_id >= MENUS.video && m.menu_id <= MENUS.unused_1)
     j = 2;
-else if (m.menu_id == menus.audio)
+else if (m.menu_id == MENUS.audio)
     j = 1;
-else if (m.menu_id == menus.game)
+else if (m.menu_id == MENUS.game)
     j = 3;
-else if m.menu_id == menus.inputdisplay
+else if m.menu_id == MENUS.inputdisplay
 	j = 4;
-else if m.menu_id == menus.lapping
+else if m.menu_id == MENUS.lapping
 	j = 3;
 
 if safe_get(obj_modconfig, "visible")
@@ -153,7 +153,7 @@ for (i = 0; i < array_length(m.options); i++)
 	}
 }
 
-if (menu == menus.options)
+if (menu == MENUS.main)
 	scr_pauseicons_update(optionselected);
 else
 	scr_pauseicons_update(-1);
@@ -164,7 +164,7 @@ if (slidebuffer > 0)
 if ((key_back || key_slap2 || keyboard_check_pressed(vk_escape)) && !instance_exists(obj_keyconfig) && !instance_exists(obj_audioconfig))
 {
 	fmod_event_one_shot("event:/sfx/ui/back");
-	if (menu == menus.options)
+	if (menu == MENUS.main)
 	{
 		if (instance_exists(obj_mainmenuselect))
 			obj_mainmenuselect.selected = false;

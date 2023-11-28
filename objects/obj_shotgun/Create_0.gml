@@ -1,11 +1,5 @@
 image_speed = 0.35;
-hsp = 0;
-vsp = 0;
-grav = 0.5;
-grounded = false;
-platformid = noone;
-hsp_carry = 0;
-vsp_carry = 0;
+init_collision();
 grabindex = 0;
 
 if check_char("V") or obj_player1.isgustavo

@@ -94,8 +94,13 @@ function create_heatattack_afterimage(_x, _y, _sprite, _image_index, _xscale)
 }
 function create_firemouth_afterimage(_x, _y, _sprite, _image_index, _xscale)
 {
-	if object_index == obj_player1 && _sprite == sprite_index
-		_sprite = player_sprite();
+	var _yscale = 1;
+	if object_index == obj_player1
+	{
+		if _sprite == sprite_index
+			_sprite = player_sprite();
+		_yscale = yscale;
+	}	
 	
 	var b = create_afterimage(_x, _y, _sprite, _image_index);
 	with (b)
@@ -107,6 +112,7 @@ function create_firemouth_afterimage(_x, _y, _sprite, _image_index, _xscale)
 		alarm[1] = -1;
 		alarm[2] = -1;
 		image_xscale = _xscale;
+		image_yscale = _yscale;
 		image_blend = make_color_rgb(248, 112, 24);
 		alpha = 0.8;
 		basealpha = 1;
@@ -118,8 +124,13 @@ function create_firemouth_afterimage(_x, _y, _sprite, _image_index, _xscale)
 }
 function create_blue_afterimage(_x, _y, _sprite, _image_index, _xscale)
 {
-	if object_index == obj_player1 && _sprite == sprite_index
-		_sprite = player_sprite();
+	var _yscale = 1;
+	if object_index == obj_player1
+	{
+		if _sprite == sprite_index
+			_sprite = player_sprite();
+		_yscale = yscale;
+	}
 	
 	if global.afterimage == 1
 	{
@@ -133,6 +144,7 @@ function create_blue_afterimage(_x, _y, _sprite, _image_index, _xscale)
 			alarm[1] = -1;
 			alarm[2] = -1;
 			image_xscale = _xscale;
+			image_yscale = _yscale;
 			image_blend = global.blueimg_color;
 			alpha = 0.8;
 			basealpha = 1;
@@ -146,7 +158,10 @@ function create_blue_afterimage(_x, _y, _sprite, _image_index, _xscale)
 	{
 		var b = create_mach3effect(_x, _y, _sprite, _image_index, true);
 		with b
+		{
 			image_xscale = _xscale;
+			image_yscale = _yscale;
+		}
 		return b;
 	}
 }
@@ -159,8 +174,13 @@ function create_red_afterimage(_x, _y, _sprite, _image_index, _xscale)
 }
 function create_blur_afterimage(_x, _y, _sprite, _image_index, _xscale)
 {
-	if object_index == obj_player1 && _sprite == sprite_index
-		_sprite = player_sprite();
+	var _yscale = 1;
+	if object_index == obj_player1
+	{
+		if _sprite == sprite_index
+			_sprite = player_sprite();
+		_yscale = yscale;
+	}
 	
 	var b = create_afterimage(_x, _y, _sprite, _image_index);
 	with (b)
@@ -173,6 +193,7 @@ function create_blur_afterimage(_x, _y, _sprite, _image_index, _xscale)
 		alarm[2] = -1;
 		image_blend = c_white;
 		image_xscale = _xscale;
+		image_yscale = _yscale;
 		alpha = 0.8;
 		playerid = noone;
 		spd = 0.15;

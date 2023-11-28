@@ -1,4 +1,4 @@
-if instance_exists(obj_option) && obj_option.menus[obj_option.menu].menu_id != menus.inputdisplay
+if instance_exists(obj_option) && obj_option.menus[obj_option.menu].menu_id != MENUS.inputdisplay
 	exit;
 
 toggle_alphafix(false);

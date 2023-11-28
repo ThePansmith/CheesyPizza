@@ -188,6 +188,9 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"image_get_height","argCount":0,"args":[
             1,
           ],"documentation":"","externalName":"imageHeight","help":"image_get_height(filename)","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"window_show","argCount":0,"args":[
+            2,
+          ],"documentation":"","externalName":"bringWindowToFront","help":"window_show(handle)","hidden":false,"kind":1,"returnType":2,},
       ],"init":"","kind":1,"order":[
         {"name":"launch_external","path":"extensions/CheesyPizza/CheesyPizza.yy",},
         {"name":"test_dll_linkage","path":"extensions/CheesyPizza/CheesyPizza.yy",},

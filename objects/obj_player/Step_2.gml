@@ -22,3 +22,8 @@ if global.sloperot && state != states.knightpepslopes && state != states.Sjumppr
 }
 else
 	angle = 0;
+
+if gravityangle % 180 != 0
+	angle = gravityangle;
+else
+	yscale = flip;

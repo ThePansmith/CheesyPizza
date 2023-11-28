@@ -3,10 +3,8 @@ instance_change(obj_clownmato, false);
 exit;
 
 depth = 0;
-hsp = 0;
-vsp = 0;
+init_collision();
 movespeed = 4;
-grav = 0.5;
 jumpspeed = 5;
 grounded = false;
 state = states.walk;
@@ -17,6 +15,3 @@ stunbuffer = 0;
 stuntouchbuffer = 0;
 stunmax = 50;
 image_speed = 0.35;
-platformid = noone;
-hsp_carry = 0;
-vsp_carry = 0;

@@ -18,7 +18,7 @@ function scr_savescore(level)
 		global.rank = "d";
 	scr_play_rank_music();
 	
-	if global.saveloaded
+	if global.saveloaded && (!MOD.OldLevels or level == "snickchallenge")
 	{
 		trace("[scr_savescore] Saving to: ", get_savefile_ini());
 		

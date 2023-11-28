@@ -99,7 +99,7 @@ if (instance_exists(obj_pizzaface) or global.lapmode == lapmode.laphell)
 		instance_destroy();
 	
 	var tiles = room_get_tile_layers();
-	for(var i = 0; i < array_length(tiles); i++)
+	for(var i = 0, n = array_length(tiles); i < n; ++i)
 	{
 		var thislayer = tiles[i].layer_id;
 		var lap3layer = layer_get_id(tiles[i].layer_name + "_Egg");

@@ -6,26 +6,27 @@ uniform vec2 texel_size;
 uniform vec4 palette_UVs;
 uniform float palette_index;
 
-// pattern stuff
+// patterns
 uniform sampler2D pattern_texture;
-uniform int pattern_enabled;
-uniform float color_array[2];
+uniform bool pattern_enabled;
+uniform float color_array[2]; // indices of the colors that the pattern should replace
 uniform vec4 pattern_tex_data; // (x, y) = trimmed l/t offset | (z, w) = texture size
 uniform vec4 pattern_UVs;
 uniform vec4 sprite_UVs;
 uniform vec4 sprite_tex_data; // (x, y) = trimmed l/t offset | (z, w) = texture size
 uniform vec2 sprite_scale; // (xscale, yscale)
 uniform vec2 pattern_offset;
-uniform float shade_multiplier;
+uniform float shade_multiplier; // seemingly unused for now
 
-uniform int use_palette_override;
+// custom palettes
+uniform bool custom_enable;
 uniform float palette_override[64];
 #define TOLERANCE 0.004
 
 void main()
 {
 	vec4 source = texture2D( gm_BaseTexture, v_vTexcoord );
-	DoAlphaTest( source );
+	DoAlphaTest( source ); // discards if alpha is 0
     
 	for(float color_index = palette_UVs.y; color_index < palette_UVs.w; color_index += texel_size.y) // iterate through each color
 	{
@@ -33,21 +34,25 @@ void main()
 		vec4 palette_color = texture2D(palette_texture, vec2(palette_UVs.x, color_index));
 		if (distance(source, palette_color) <= TOLERANCE) // RX: Check our color vs the reference
 		{
-			float texel_palette_offset = texel_size.x * palette_index;
-			float palette_V = palette_UVs.x + texel_palette_offset;
-			vec4 prev_source = source;
-			source = texture2D(palette_texture, vec2(palette_V, color_index)); // Palette color at specific offset
-			
-			if (use_palette_override == 1)
+			if (custom_enable)
 			{
-				int index = int(raw_color_index   * 4.0);
+				// custom palettes
+				// palette_override: [r,g,b,a,    r,g,...]
 				
-				source = vec4(palette_override[index], palette_override[index + int(1.0)], palette_override[index + int(2.0)], palette_override[index + int(3.0)]);
+				int index = int(raw_color_index * 4.0);
+				source = vec4(palette_override[index], palette_override[index + 1], palette_override[index + 2], palette_override[index + 3]);
+			}
+			else
+			{
+				float texel_palette_offset = texel_size.x * palette_index;
+				float palette_V = palette_UVs.x + texel_palette_offset;
+				vec4 prev_source = source;
+				source = texture2D(palette_texture, vec2(palette_V, color_index)); // Palette color at specific offset
 			}
 			
-			if (pattern_enabled == 1) 
+			if (pattern_enabled) 
 			{
-				for(int j = 0; j < 2; j += 1) 
+				for(int j = 0; j < 2; j += 1) // normal and shading, two passes
 				{
 					if (color_array[j] == floor((color_index - palette_UVs.y) * (1.0 / texel_size.y))) 
 					{

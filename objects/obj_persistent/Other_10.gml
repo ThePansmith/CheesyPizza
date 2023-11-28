@@ -1,6 +1,6 @@
 /// @description get room layers
 var layers = layer_get_all();
-for (var i = 0; i < array_length(layers); i++)
+for (var i = 0, n = array_length(layers); i < n; i++)
 {
 	// tile layers
 	var tilemap = layer_tilemap_get_id(layers[i]);

@@ -1,6 +1,8 @@
 function scr_slope()
 {
-	y++;
+	var f = object_is_ancestor(object_index, obj_player) ? flip : 1;
+	y += f;
+	
 	var slope = check_slope(x, y);
 	if (slope)
 	{
@@ -25,11 +27,11 @@ function scr_slope()
 			slope = slope_start - round(m * (object_side - bbox_left));
 			if (other.bbox_bottom >= slope)
 			{
-				other.y--;
+				other.y -= f;
 				return true;
 			}
 		}
 	}
-	y--;
+	y -= f;
 	return false;
 }

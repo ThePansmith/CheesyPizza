@@ -23,23 +23,30 @@ if key_jump
 			gamesave_async_save_options();
 			
 			// boot up
+			/*
 			if GM_build_type == "run"
 			{
 				show_message("Rebooting the game doesn't work while testing.\nThe setting HAS been saved, though.");
 				instance_destroy();
 			}
 			else
+			*/
 			{
-				if file_exists("CheesyPizza.exe")
+				var str = "";
+				for (var i = 0, n = parameter_count(); i < n; ++i)
 				{
-					launch_external($"\"{program_directory}CheesyPizza.exe\"");
-					alarm[1] = 5;
+					str += parameter_string(i);
+					if i < n - 1
+						str += " ";
 				}
-				else
+				
+				if !launch_external($"\"{str}\"")
 				{
-					show_message("The mod's executable wasn't found.\nPlease reboot the game yourself to see any changes.");
+					show_message("Failed to reboot the game.\nPlease reboot the game yourself to see any changes.");
 					instance_destroy();
 				}
+				else
+					alarm[1] = 5;
 			}
 		}
 		else
