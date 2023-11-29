@@ -252,7 +252,7 @@ function scr_player_ratmount()
 		var p = instance_create(x, y, obj_dashcloud)
 		with p
 		{
-			image_xscale = other.xscale;
+			copy_player_scale;
 			other.dashcloudid = id;
 		}
 		if place_meeting(x, y + 1, obj_water)
@@ -313,7 +313,7 @@ function ratmount_dotaunt()
 		if (!supercharged || !key_up)
 		{
 			scr_create_parryhitbox();
-			if global.Pattern_Texture == spr_pattern_supreme
+			if global.palettetexture == spr_pattern_supreme
 				sound_play_3d("event:/modded/sfx/instinct", x, y);
 			else
 				sound_play_3d("event:/sfx/pep/taunt", x, y);

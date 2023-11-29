@@ -129,7 +129,7 @@ function scr_player_tumble()
 		if (!scr_solid(x, y - 16))
 		{
 			with (instance_create(x, y, obj_highjumpcloud2))
-				image_xscale = other.xscale;
+				copy_player_scale;
 			vsp = -11;
 			image_index = 0;
 		}
@@ -186,7 +186,7 @@ function scr_player_tumble()
 	{
 		with (instance_create(x, y, obj_dashcloud))
 		{
-			image_xscale = other.xscale;
+			copy_player_scale;
 			other.dashcloudid = id;
 		}
 	}

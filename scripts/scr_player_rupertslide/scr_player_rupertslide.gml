@@ -26,7 +26,7 @@ function scr_player_rupertslide()
 		image_index = 0;
 		sprite_index = spr_player_skatedoublejumpstart;
 		with (instance_create(x, y, obj_highjumpcloud2))
-			image_xscale = other.xscale;
+			copy_player_scale;
 		sound_play_3d(sfx_jump, x, y);
 		state = states.rupertjump;
 		movespeed = hsp;

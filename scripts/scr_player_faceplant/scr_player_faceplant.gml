@@ -87,7 +87,7 @@ function scr_player_faceplant()
 	if (!instance_exists(obj_dashcloud2) && grounded && movespeed > 5)
 	{
 		with (instance_create(x, y, obj_dashcloud2))
-			image_xscale = other.xscale;
+			copy_player_scale;
 	}
 	image_speed = 0.5;
 }

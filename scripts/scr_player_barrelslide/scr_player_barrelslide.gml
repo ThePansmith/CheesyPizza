@@ -11,7 +11,7 @@ function scr_player_barrelslide()
 	if ((dashcloudtimer == 0 && abs(hsp) > 8) && grounded)
 	{
 		with (instance_create(x, y, obj_dashcloud2))
-			image_xscale = other.xscale;
+			copy_player_scale;
 		dashcloudtimer = 15;
 	}
 	if (dashcloudtimer > 0)

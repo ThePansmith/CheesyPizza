@@ -19,7 +19,7 @@ function scr_player_revolver()
 		with (instance_create(x + (xscale * 20), y + 20, obj_shotgunbullet))
 		{
 			is_solid = false;
-			image_xscale = other.xscale;
+			copy_player_scale;
 		}
 		sound_play_3d("event:/sfx/pep/pistolshot", x + (xscale * 20), y);
 	}

@@ -25,7 +25,7 @@ function scr_player_rupertjump()
 		image_index = 0;
 		sprite_index = spr_player_skatedoublejumpstart;
 		with (instance_create(x, y, obj_highjumpcloud2))
-			image_xscale = other.xscale;
+			copy_player_scale;
 		sound_play_3d(sfx_jump, x, y);
 	}
 	if (vsp >= 10 || sprite_index == spr_player_skatespin || ((doublejump || sprite_index == spr_player_skatewalljump || sprite_index == spr_player_skatewalljumpstart) && vsp >= 1))
@@ -101,7 +101,7 @@ function scr_player_rupertjump()
 				movespeed = 11;
 				xscale = -slope_direction();
 				with (instance_create(x, y, obj_jumpdust))
-					image_xscale = other.xscale;
+					copy_player_scale;
 				state = states.rupertslide;
 			}
 			else
@@ -141,7 +141,7 @@ function scr_player_rupertjump()
 				movespeed = 8;
 				xscale = -slope_direction();
 				with (instance_create(x, y, obj_jumpdust))
-					image_xscale = other.xscale;
+					copy_player_scale;
 				state = states.rupertslide;
 			}
 			else

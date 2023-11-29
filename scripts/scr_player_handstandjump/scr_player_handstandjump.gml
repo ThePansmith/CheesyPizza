@@ -168,7 +168,7 @@ function scr_player_handstandjump()
 	if (!instance_exists(obj_slidecloud) && grounded && movespeed > 5)
 	{
 		with (instance_create(x, y, obj_slidecloud))
-			image_xscale = other.xscale;
+			copy_player_scale;
 	}
 	image_speed = 0.35;
 	if (state != states.bump && move != xscale && move != 0)

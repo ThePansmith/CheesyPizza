@@ -7,7 +7,7 @@ function scr_snick_roll()
 		if !instance_exists(obj_superdashcloud)
 		{
 			with instance_create(x - xscale * 85, y, obj_superdashcloud)
-				image_xscale = other.xscale;
+				copy_player_scale;
 		}
 		
 		image_speed = 0.5;
@@ -47,7 +47,7 @@ function scr_snick_roll()
 		if !instance_exists(obj_dashcloud)
 		{
 			with instance_create(x, y, obj_dashcloud)
-				image_xscale = other.xscale;
+				copy_player_scale;
 		}
 		
 		movespeed = min(movespeed + 1, 24);
@@ -57,7 +57,7 @@ function scr_snick_roll()
 			if !instance_exists(obj_superdashcloud)
 			{
 				with instance_create(x - xscale * 85, y, obj_superdashcloud)
-					image_xscale = other.xscale;
+					copy_player_scale;
 			}
 		}
 		else if movespeed >= 16

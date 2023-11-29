@@ -1,3 +1,5 @@
+if live_call() return live_result;
+
 // clone vars that lag behind by a frame
 prevhsp = hsp;
 prevvsp = vsp;
@@ -64,30 +66,35 @@ if (check_slope(x, y + 1))
 	collision_flags |= colflag.sloped;
 
 // ceiling running
-if ((state != states.mach2 && state != states.mach3) or !grounded) && state != states.climbwall && state != states.chainsaw && state != states.backbreaker
-	ceilingrun = false;
-
 if MOD.GravityJump
 {
-	if key_jump && state != states.Sjump && !cutscene
+	if state != states.balloon && state != states.ladder && !(state == states.tumble && key_down)
 	{
-		gravityjump = !gravityjump;
-		grounded = false;
+		if gravityangle % 180 != 0 // animation
+			vsp = Approach(vsp, 0, 2);
+		else if key_jump && state != states.Sjump && state != states.climbwall && !cutscene && (grounded or abs(vsp) > 8)
+		{
+			with instance_create(x, y, obj_gravityflipbg)
+				side = -other.flip;
+		
+			gravityjump = !gravityjump;
+			grounded = false;
+			vsp = 12;
+			yscale = 1;
+		}
 		input_buffer_jump = 0;
 		key_jump = false;
 		can_jump = false;
 	}
-	
-	if gravityangle % 180 != 0
-		vsp = Approach(vsp, 0, 1);
-	gravityangle = Approach(gravityangle, gravityjump ? 180 : 0, 15);
 }
 else
-{
 	gravityjump = false;
+
+gravityangle = Approach(gravityangle, gravityjump ? 180 : 0, 15);
+if (state == states.bump or state == states.Sjump or state == states.Sjumpprep or state == states.tumble) && gravityangle != 180
 	gravityangle = 0;
-}
-flip = (ceilingrun xor gravityjump) ? -1 : 1;
+
+flip = ((ceilingrun xor gravityjump) ? -1 : 1);
 
 // state machine
 if character == "S" && !isgustavo
@@ -288,11 +295,16 @@ switch (state)
 	case states.frozen: scr_player_frozen(); break;
 }
 
-if ceilingrun && vsp < 0
+// ceiling run continued
+if ceilingrun && ((state != states.mach2 && state != states.mach3) or !grounded) && state != states.climbwall && state != states.chainsaw && state != states.backbreaker
 {
 	ceilingrun = false;
-	flip = gravityjump;
+	flip = gravityjump ? -1 : 1;
 	vsp *= -1;
+	yscale *= -1;
+	
+	if !MOD.GravityJump
+		gravityangle += 170;
 }
 
 if (state != states.chainsaw)
@@ -399,7 +411,7 @@ if state != states.pistol && state != states.normal && sprite_index != spr_playe
 if (pistolanim != noone)
 {
 	pistolindex += 0.35;
-	if (!machslideAnim && state != states.machslide && state != states.fireass && state != states.handstandjump)
+	if (!machslideAnim && state != states.machslide && state != states.fireass && state != states.handstandjump && !cutscene && state != states.door)
 	{
 		idle = 0;
 		sprite_index = pistolanim;
@@ -928,8 +940,7 @@ if do_macheffect
 		with (create_mach3effect(x, y, sprite_index, image_index - 1))
 		{
 			playerid = other.object_index;
-			image_xscale = other.xscale;
-			image_yscale = other.yscale;
+			copy_player_scale;
 		}
 	}
 }
@@ -943,8 +954,7 @@ if (toomuchalarm1 > 0)
 		with (create_mach3effect(x, y, sprite_index, image_index - 1))
 		{
 			playerid = other.object_index;
-			image_xscale = other.xscale;
-			image_yscale = other.yscale;
+			copy_player_scale;
 		}
 		toomuchalarm1 = 6;
 	}

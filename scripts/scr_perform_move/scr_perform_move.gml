@@ -24,7 +24,7 @@ function scr_perform_move(move, prestate = state)
 				if grounded
 				{
 					with instance_create(x, y, obj_superdashcloud)
-						image_xscale = other.xscale;
+						copy_player_scale;
 					sprite_index = choose(spr_kungfu1, spr_kungfu2, spr_kungfu3);
 				}
 				else
@@ -46,7 +46,7 @@ function scr_perform_move(move, prestate = state)
 				if grounded
 				{
 					with instance_create(x, y, obj_superdashcloud)
-						image_xscale = other.xscale;
+						copy_player_scale;
 					sprite_index = spr_attackdash;
 				}
 				else
@@ -68,7 +68,7 @@ function scr_perform_move(move, prestate = state)
 					if grounded
 					{
 						with instance_create(x, y, obj_superdashcloud)
-							image_xscale = other.xscale;
+							copy_player_scale;
 					}
 					sprite_index = spr_lunge;
 					suplexmove = true;
@@ -111,7 +111,7 @@ function scr_perform_move(move, prestate = state)
 						{
 							sprite_index = spr_attackdash;
 							with instance_create(x + (xscale * -50), y, obj_superdashcloud)
-								image_xscale = other.xscale;
+								copy_player_scale;
 						}
 						else
 						{
@@ -181,7 +181,7 @@ function scr_perform_move(move, prestate = state)
 					create_particle(x, y, part.crazyrunothereffect);
 					
 					with instance_create(x, y, obj_superdashcloud)
-						image_xscale = other.xscale;
+						copy_player_scale;
 					
 					global.fuel = floor(global.fuel - 1);
 					state = states.chainsawbump;
@@ -214,7 +214,7 @@ function scr_perform_move(move, prestate = state)
 				else
 				{
 					with instance_create(x, y, obj_dashcloud2)
-						image_xscale = other.xscale;
+						copy_player_scale;
 				}
 				movespeed = max(movespeed, 9);
 				state = states.punch;

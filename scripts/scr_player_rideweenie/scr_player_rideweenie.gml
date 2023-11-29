@@ -73,7 +73,7 @@ function scr_player_rideweenie()
 	if ((dashcloudtimer == 0 && abs(hsp) > 12) && grounded)
 	{
 		with (instance_create(x, y, obj_superdashcloud))
-			image_xscale = other.xscale;
+			copy_player_scale;
 		dashcloudtimer = 15;
 	}
 	if (dashcloudtimer > 0)

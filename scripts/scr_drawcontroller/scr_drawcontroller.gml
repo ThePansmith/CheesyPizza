@@ -197,8 +197,12 @@ function draw_superslam_enemy()
 }
 function draw_player()
 {
+	if live_call() return live_result;
+	
 	var xx = x + smoothx, yy = y;
-	if state == states.frothstuck && shaketime > 0
+	xx += lengthdir_x(15, angle - 90) * flip;
+	
+	if (state == states.frothstuck or state == states.frozen) && shaketime > 0
 		xx += random_range(shaketime / 6, -shaketime / 6);
 	
 	var b = get_dark(image_blend, obj_drawcontroller.use_dark);

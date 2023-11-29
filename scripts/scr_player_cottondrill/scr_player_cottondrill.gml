@@ -72,7 +72,7 @@ function state_player_cottondrill()
 		instance_create(x, y, obj_highjumpcloud2);
 		with (instance_create(x, y, obj_highjumpcloud2))
 		{
-			image_xscale = other.xscale;
+			copy_player_scale;
 			sprite_index = spr_cottonpoof;
 		}
 		sound_play_3d("event:/modded/sfx/cottonjump", x, y);

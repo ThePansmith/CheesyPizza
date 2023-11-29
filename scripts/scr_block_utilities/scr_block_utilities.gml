@@ -141,35 +141,47 @@ function scr_cutoff_old()
 	
 	var dirs = [[-1, 0], [1, 0], [0, -1], [0, 1]];
 	var list = ds_list_create();
-	for (var i = 0, n = array_length(dirs); i < n; ++i)
+	for (var i = 0; i < array_length(dirs); i++)
 	{
 		var d = dirs[i];
 		if (!place_meeting(x + d[0], y + d[1], obj_cutoff))
-			continue;
-		
-		var num = instance_place_list(x + d[0], y + d[1], obj_cutoff, list, false);
-		for (var j = 0, n = ds_list_size(list); j < n; j++)
 		{
-			with (list[| j])
+			
+		}
+		else
+		{
+			var num = instance_place_list(x + d[0], y + d[1], obj_cutoff, list, false);
+			for (var j = 0; j < ds_list_size(list); j++)
 			{
-				if (!check_solid(x, y))
-					instance_destroy();
-				else if (other.object_index == obj_tiledestroy || ((object_index != obj_cutoffsmall || other.object_index == obj_secretblock) && (object_index != obj_cutoff || (other.object_index == obj_secretbigblock || other.object_index == obj_secretmetalblock))))
+				var b = ds_list_find_value(list, j);
+				if (!is_undefined(b) && instance_exists(b))
 				{
-					var a = scr_cutoff_get_angle(id);
-					if (d[0] < 0)
-						visible = a == 0;
-					else if (d[0] > 0)
-						visible = a == 180;
-					else if (d[1] < 0)
-						visible = a == 270;
-					else if (d[1] > 0)
-						visible = a == 90;
+					with (b)
+					{
+						if (!place_meeting(x, y, obj_solid))
+							instance_destroy();
+						else if (other.object_index == obj_tiledestroy || ((object_index != obj_cutoffsmall || other.object_index == obj_secretblock) && (object_index != obj_cutoff || (other.object_index == obj_secretbigblock || other.object_index == obj_secretmetalblock))))
+						{
+							var a = scr_cutoff_get_angle(b);
+							var da = a;
+							if (d[0] < 0)
+								da = 0;
+							else if (d[0] > 0)
+								da = 180;
+							else if (d[1] < 0)
+								da = 270;
+							else if (d[1] > 0)
+								da = 90;
+							if (a == da)
+								visible = true;
+						}
+					}
 				}
 			}
+			ds_list_clear(list);
 		}
-		ds_list_clear(list);
 	}
+	ds_list_clear(list);
 	ds_list_destroy(list);
 }
 function scr_cutoff_get_angle(cutoff_instance)

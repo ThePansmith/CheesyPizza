@@ -153,7 +153,7 @@ function scr_player_Sjump()
 			sprite_index = spr_Sjumpcancel;
 			state = states.mach3;
 			with (instance_create(x, y, obj_crazyrunothereffect))
-				image_xscale = other.xscale;
+				copy_player_scale;
 		}
 	}
 	
@@ -167,7 +167,7 @@ function scr_player_Sjump()
 			sprite_index = spr_playerN_noisebombspinjump;
 			image_index = 0;
 			with (instance_create(x, y, obj_jumpdust))
-				image_xscale = other.xscale;
+				copy_player_scale;
 		}
 		else
 		{

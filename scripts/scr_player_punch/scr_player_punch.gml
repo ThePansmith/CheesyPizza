@@ -196,7 +196,7 @@ function scr_player_punch()
 			if !instance_exists(obj_dashcloud2) && grounded
 			{
 				with instance_create(x, y, obj_dashcloud2)
-					image_xscale = other.xscale
+					copy_player_scale;
 			}
 		}
 	}
@@ -453,7 +453,7 @@ function scr_player_punch()
 		if !instance_exists(obj_dashcloud2) && grounded && movespeed > 5
 		{
 			with instance_create(x, y, obj_dashcloud2)
-				image_xscale = other.xscale;
+				copy_player_scale;
 		}
 	}
 	

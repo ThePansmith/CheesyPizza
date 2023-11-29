@@ -23,7 +23,7 @@ function scr_player_crouchslide()
 		vsp = -11;
 		with (instance_create(x, y, obj_superdashcloud))
 		{
-			image_xscale = other.xscale;
+			copy_player_scale;
 			other.dashcloudid = id;
 		}
 	}
@@ -51,7 +51,7 @@ function scr_player_crouchslide()
 	if (!instance_exists(obj_slidecloud) && grounded && movespeed > 5)
 	{
 		with (instance_create(x, y, obj_slidecloud))
-			image_xscale = other.xscale;
+			copy_player_scale;
 	}
 	image_speed = movespeed / 24;
 }

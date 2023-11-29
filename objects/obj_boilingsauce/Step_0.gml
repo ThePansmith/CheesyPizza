@@ -12,7 +12,9 @@ with (playerid)
 		if (state != states.fireass)
 			notification_push(notifs.boilingsauce, [room]);
 		state = states.fireass;
-		vsp = -20;
+		vsp = -20 * flip;
+		if !instance_exists(obj_levelLoader)
+			vsp *= sign(other.image_yscale);
 		fireasslock = false;
 		sprite_index = spr_fireass;
 		image_index = 0;

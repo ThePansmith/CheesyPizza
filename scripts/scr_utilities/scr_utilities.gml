@@ -1,3 +1,5 @@
+#region Base game
+
 function Approach(a, b, amount)
 {
 	amount = abs(amount);
@@ -236,7 +238,9 @@ function heat_calculate(heat)
 	return heat;
 }
 
-// PTO
+#endregion
+
+#macro copy_player_scale {image_xscale = other.xscale; image_yscale = other.yscale}
 function draw_set_align(halign = fa_left, valign = fa_top)
 {
 	draw_set_halign(halign);

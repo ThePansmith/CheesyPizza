@@ -9,14 +9,16 @@ function scr_is_p_rank()
 	if global.leveltosave == "snickchallenge"
 		return !global.combodropped && !string_starts_with(room_get_name(room), "medieval");
 	
-	if (global.leveltosave != "exit" && global.leveltosave != "secretworld") && !MOD.DeathMode
+	if MOD.OldLevels
+		return global.secretfound >= 6 && global.treasure && !global.combodropped && enemykilled;
+	else if (global.leveltosave != "exit" && global.leveltosave != "secretworld") && !MOD.DeathMode
 		return global.lap && global.secretfound >= 3 && global.treasure && !global.combodropped && enemykilled;
 	else if MOD.DeathMode
 		return global.secretfound >= 3 && global.treasure && !global.combodropped && enemykilled && global.shroomfollow && global.cheesefollow && global.tomatofollow && global.sausagefollow && global.pineapplefollow;
 	else if (global.leveltosave == "exit")
 		return !global.combodropped;
 	else
-		return !global.combodropped && global.prank_enemykilled;
+		return !global.combodropped && enemykilled;
 }
 function scr_do_rank(showtoppins = true, boss = false)
 {

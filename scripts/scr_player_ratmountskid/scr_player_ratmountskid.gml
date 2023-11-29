@@ -68,7 +68,7 @@ function scr_player_ratmountskid()
 	{
 		with (instance_create(x, y, obj_dashcloud))
 		{
-			image_xscale = other.xscale;
+			copy_player_scale;
 			other.dashcloudid = id;
 		}
 	}

@@ -133,7 +133,7 @@ function scr_player_rocket()
 		{
 			if (other.fightball == 1)
 				instance_create(obj_player.x, obj_player.y, obj_slapstar);
-			image_xscale = other.xscale;
+			copy_player_scale;
 			other.dashcloudid = id;
 		}
 	}
@@ -143,7 +143,7 @@ function scr_player_rocket()
 		{
 			if (other.fightball == 1)
 				instance_create(obj_player.x, obj_player.y, obj_slapstar);
-			image_xscale = other.xscale;
+			copy_player_scale;
 			sprite_index = spr_watereffect;
 			other.dashcloudid = id;
 		}

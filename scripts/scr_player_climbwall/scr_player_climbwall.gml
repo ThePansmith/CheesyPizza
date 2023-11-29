@@ -181,9 +181,9 @@ function scr_player_climbwall()
 			image_yscale *= -1;
 			var slope = instance_place(x, y - flip, obj_slope);
 			
-			if !slope_prev && slope && key_attack && walljumpbuffer <= 0
+			if slope && key_attack && walljumpbuffer <= 0 && state == states.climbwall
 			{
-				while place_meeting(x, y, slope)
+				while place_meeting(x, y, slope) or place_meeting(x, y, slope_prev)
 					y -= image_yscale;
 				
 				walljumpbuffer = 16;
@@ -191,7 +191,7 @@ function scr_player_climbwall()
 				flip = -flip;
 				xscale = -sign(slope.image_xscale);
 				grounded = true;
-				vsp = 0;
+				vsp = 8;
 				
 				movespeed = max(round(wallspeed * 0.8), 6);
 				if movespeed < 12
@@ -209,7 +209,6 @@ function scr_player_climbwall()
 			image_yscale *= -1;
 			
 			if (state != states.mach2 && verticalbuffer <= 0 && scr_solid(x, y - 1) && scr_solid(x + xscale, y) && !place_meeting(x, y - 1, obj_verticalhallway) && !place_meeting(x, y - 1, obj_destructibles) && (!check_slope(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)) && !check_slope(x - sign(hsp), y))
-			or (slope_prev && slope)
 			{
 				//trace("climbwall hit head");
 				if (!skateboarding)

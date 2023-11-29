@@ -75,7 +75,7 @@ var deathmode_allow =
 	//"chateau", "kidsparty", //"war", // W5
 	"etb", "midway", // Extra
 ];
-if array_contains(deathmode_allow, level)// or DEBUG
+if array_contains(deathmode_allow, level, 0, infinity)// or DEBUG
 	add_modifier("Death Mode", "DeathMode", "Avoid Pizzaface within a very tight timer!", [seq_deathmode_off, seq_deathmode_on]);
 
 if level == "medieval" or level == "ruin" or level == "dungeon"
@@ -125,9 +125,12 @@ add_modifier("Lights Out", "Spotlight", "The size of the spotlight is tied to yo
 	draw_sprite(spr_playerN_move, p.image, 384 / 2, 216 / 2);
 });
 
-add_modifier("Anti-Panic", "EscapeInvert", "Escape enemies and John blocks are flipped!");
-add_modifier("Block Land", "PurpleBlockLand", "Removes every asset from a level, leaving only collision visible.");
-add_modifier("From The Top", "FromTheTop", "John and the exit gate are swapped.");
+if level != "custom" && level != ""
+{
+	add_modifier("Anti-Panic", "EscapeInvert", "Escape enemies and John blocks are flipped!");
+	//add_modifier("Block Land", "PurpleBlockLand", "Removes every asset from a level, leaving only collision visible.");
+	add_modifier("From The Top", "FromTheTop", "John and the exit gate are swapped.");
+}
 add_modifier("VVVVVV", "GravityJump", "Flip gravity with the jump button.");
 
 // Level specific

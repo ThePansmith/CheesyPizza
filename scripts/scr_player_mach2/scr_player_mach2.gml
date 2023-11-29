@@ -59,7 +59,7 @@ function scr_player_mach2()
 		image_index = 0;
 		grav = 0.25;
 		with (instance_create(x, y, obj_highjumpcloud2))
-			image_xscale = other.xscale;
+			copy_player_scale;
 		mort = true;
 		mortjump = true;
 	}
@@ -119,7 +119,8 @@ function scr_player_mach2()
 			create_particle(x, y, part.jumpdust, 0);
 		}
 	}
-	if ((!grounded && (check_solid(x + hsp, y) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (check_solid(x + sign(hsp), y - 16) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && check_slope(x, y + 1)))
+	if ((!grounded && (check_solid(x + hsp, y) || scr_solid_slope(x + hsp, y)) && !check_slope(x, y - 1) && !place_meeting(x + hsp, y, obj_destructibles))
+	|| (grounded && (check_solid(x + sign(hsp), y - 16) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && check_slope(x, y + 1)))
 	{
 		wallspeed = movespeed;
 		grabclimbbuffer = 0;
@@ -141,7 +142,7 @@ function scr_player_mach2()
 	{
 		with (instance_create(x, y, obj_dashcloud))
 		{
-			image_xscale = other.xscale;
+			copy_player_scale;
 			other.dashcloudid = id;
 		}
 	}

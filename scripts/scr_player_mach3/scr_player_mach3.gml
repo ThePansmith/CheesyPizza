@@ -8,6 +8,7 @@ function scr_player_mach3()
 	var mach4accel = 0.1;
 	var jumpspeed = -11;
 	var machrollspeed = 10;
+	
 	#region PEPPINO / VIGI
 	
 	if !jetpackcancel
@@ -68,7 +69,7 @@ function scr_player_mach3()
 				flamecloud_buffer = 10;
 				with (instance_create(x, y, obj_dashcloud))
 				{
-					image_xscale = other.xscale;
+					copy_player_scale;
 					sprite_index = spr_flamecloud;
 				}
 			}
@@ -485,8 +486,8 @@ function scr_player_mach3()
 		with p
 		{
 			if (other.fightball == 1)
-				instance_create(obj_player.x, obj_player.y, obj_slapstar);
-			image_xscale = other.xscale;
+				instance_create(other.x, other.y, obj_slapstar);
+			copy_player_scale;
 			other.dashcloudid = id;
 		}
 		if place_meeting(x, y + 1, obj_water)

@@ -91,7 +91,7 @@ switch menu
 				instance_destroy(obj_startgate_secreteye);
 				instance_destroy(obj_startgate);
 				
-				var camy_real = camy / 1.5;
+				var camy_real = max(sel.y * 36 - 260, -120) / 1.5;
 				if curr.type == 1 && curr.rank != ""
 				{
 					var xx = 800, yy = 280;

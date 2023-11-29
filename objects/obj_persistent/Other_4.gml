@@ -1,3 +1,6 @@
+/// @description mostly modifiers
+live_auto_call;
+
 shell_force_off = room == tower_pizzaboy;
 if shell_force_off
 {
@@ -71,7 +74,7 @@ if MOD.JohnGhost
 				xx -= 100;
 		
 			instance_create_unique(xx, yy, obj_ghostfollow);
-		});
+		}, false);
 	}
 }
 
@@ -135,3 +138,103 @@ if (instance_exists(obj_pizzaface) or global.lapmode == lapmode.laphell)
 }
 else
 	instance_destroy(obj_lapblock);
+
+// swap john and gate
+if MOD.FromTheTop
+{
+	MOD.EscapeInvert = true;
+	if obj_player1.targetDoor == "A"
+	{
+		var levelinfo = level_info(global.leveltosave);
+		if levelinfo != noone
+		{
+			if room == levelinfo.gate_room
+			{
+				obj_player1.targetDoor = "GATE";
+				room_goto(levelinfo.john_room);
+				delete levelinfo;
+				exit;
+			}
+		}
+		delete levelinfo;
+	}
+	
+	var gate = noone;
+	if instance_exists(obj_exitgate)
+		var gate = obj_exitgate.id;
+	
+	var john = noone;
+	if instance_exists(obj_hungrypillar)
+		var john = obj_hungrypillar.id;
+	
+	with gate
+	{
+		instance_change(obj_hungrypillar, false);
+		event_perform_object(obj_hungrypillar, ev_create, 0);
+		y += 16;
+	}
+	with john
+	{
+		instance_change(obj_exitgate, false);
+		event_perform_object(obj_exitgate, ev_create, 0);
+		image_xscale = 1;
+		
+		y -= 16;
+		instance_create(x - 16, y + 96, obj_doorX, {door: "GATE"});
+		with obj_ghosthazard
+			if global.panic instance_destroy();
+	}
+	instance_destroy(obj_lapportal, false);
+	instance_destroy(obj_PTG, false);
+}
+
+// escape inversion
+if MOD.EscapeInvert
+{
+	if !room_is_secret(room)
+	{
+		with obj_baddie
+			escape = !escape;
+		with obj_collect
+		{
+			if object_index == obj_escapecollect
+			{
+				image_alpha = 1;
+				instance_change(obj_collect, false);
+			}
+			else if object_index == obj_collect
+				instance_change(obj_escapecollect, false);
+			event_perform_object(object_index, ev_create, 0);
+		}
+		with obj_bigcollect
+		{
+			if object_index == obj_escapecollectbig
+			{
+				image_alpha = 1;
+				x += 32;
+				y += 32;
+				instance_change(obj_bigcollect, false);
+			}
+			else if object_index == obj_bigcollect
+			{
+				x -= 32;
+				y -= 32;
+				instance_change(obj_escapecollectbig, false);
+			}
+			event_perform_object(object_index, ev_create, 0);
+		}
+		instance_destroy(obj_ratblock, false);
+	}
+	
+	with obj_minipillar
+		type = 0;
+	with obj_reverseminipillar
+		type = 1;
+	with obj_minipillar
+		instance_change(obj_reverseminipillar, false);
+	with obj_reverseminipillar
+	{
+		if type == 1
+			instance_change(obj_minipillar, false);
+	}
+}

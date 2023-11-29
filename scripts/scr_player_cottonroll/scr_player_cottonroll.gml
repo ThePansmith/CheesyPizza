@@ -32,7 +32,7 @@ function state_player_cottonroll()
 		sprite_index = spr_cotton_doublejump;
 		with (instance_create(x, y, obj_highjumpcloud2))
 		{
-			image_xscale = other.xscale;
+			copy_player_scale;
 			sprite_index = spr_cottonpoof;
 		}
 		sound_play_3d("event:/modded/sfx/cottondoublejump", x, y);

@@ -16,7 +16,7 @@ function scr_player_chainsawbump()
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_chainsawdashstart)
 	{
 		with (instance_create(x, y, obj_superdashcloud))
-			image_xscale = other.xscale;
+			copy_player_scale;
 		particle_set_scale(part.crazyrunothereffect, xscale, 1);
 		create_particle(x, y, part.crazyrunothereffect, 0);
 		image_index = 0;

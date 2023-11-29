@@ -527,7 +527,7 @@ function state_pepperman_normal()
 		vsp = -pepperman_jumpspeed;
 		state = states.jump;
 		with (instance_create(x, y - 5, obj_highjumpcloud2))
-			image_xscale = other.xscale;
+			copy_player_scale;
 	}
 	if (!grounded && !key_jump)
 	{
@@ -738,7 +738,7 @@ function state_snick_normal()
 						
 						sound_play_3d("event:/modded/sfx/snick/release", x, y);
 						with instance_create(x, y, obj_superdashcloud)
-							image_xscale = other.xscale;
+							copy_player_scale;
 					}
 					else
 					{

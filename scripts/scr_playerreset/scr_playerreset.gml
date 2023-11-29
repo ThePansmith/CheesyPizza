@@ -471,6 +471,9 @@ function scr_playerreset(roomstart = false, restart = false)
 		superjumped = false;
 		image_blend_func = noone;
 		substate = states.normal;
+		gravityjump = false;
+		flip = 1;
+		ceilingrun = false;
 	}
 	with (obj_followcharacter)
 	{

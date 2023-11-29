@@ -25,7 +25,7 @@ function reset_modifier()
 		GravityJump: false,
 		
 		// Entrance
-		//NoiseGutter: false,
+		NoiseGutter: false,
 		
 		// CTOP
 		Lappable: false,

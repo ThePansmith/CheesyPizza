@@ -833,6 +833,7 @@ function scr_wc_draw()
 
 function scr_wc_drawgui()
 {
+	if live_call() return live_result;
 	draw_set_font(consoleFont);
 	
 	// vars
@@ -951,17 +952,19 @@ function scr_wc_drawgui()
 					// snap window to screen sides
 					win_x = clamp(win_x, 0, guiwidth - win_width);
 					win_y = clamp(win_y, 32, guiheight - win_height);
+					
+					if mouse_check_button_pressed(mb_right) && win_moving
+					{
+						trace($"Deleting window {win}");
+					
+						other.WC_win_focus = -1;
+						ds_list_delete(other.WC_win_list, i);
+						delete win;
+						continue;
+					}
 				}
 				else
 					win_moving = false;
-				
-				if mouse_check_button(mb_right) && win_moving
-				{
-					delete win;
-					other.WC_win_focus = -1;
-					ds_list_delete(other.WC_win_list, i);
-					continue;
-				}
 			}
 			else
 				win_moving = false;

@@ -332,6 +332,46 @@ add_music(sucrose_1, "event:/modded/sugary/sucrose", "event:/modded/sugary/sucro
 #endregion
 #region OLD LEVELS
 
+add_music(medieval_1_OLD, "event:/music/w1/medieval", "event:/music/w1/medievalsecret", 0, function(room, event, event_secret)
+{
+	var s = -1;
+	switch room
+	{
+		case medieval_1:
+		case medieval_2:
+			s = 0;
+			break;
+		case medieval_3:
+		case medieval_5:
+			s = 1;
+			break;
+		case medieval_6:
+			s = 2;
+			break;
+	}
+
+	if (s != -1)
+		fmod_event_instance_set_parameter(event, "state", s, 1)
+});
+add_music(ruin_1_OLD, "event:/music/w1/ruin", "event:/music/w1/ruinsecret", 0, function(room, event)
+{
+	var s = -1;
+	switch room
+	{
+		case ruin_1:
+		case ruin_5:
+			s = 0;
+			break;
+		case ruin_6:
+			s = 1;
+			break;
+	}
+
+	if (s != -1)
+		fmod_event_instance_set_parameter(event, "state", s, 1)
+});
+add_music(dungeon_1_OLD, "event:/music/w1/dungeon", "event:/music/w1/dungeonsecret", 0)
+
 add_music(grinch_1, "event:/modded/level/grinch", "event:/music/w1/medievalsecret", 0);
 add_music(dragonlair_1, "event:/modded/level/dragonlair", "event:/music/w1/medievalsecret", 0);
 add_music(beach_1, "event:/music/w3/beach", "event:/music/w3/beachsecret", 0);

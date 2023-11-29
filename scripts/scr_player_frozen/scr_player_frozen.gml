@@ -31,7 +31,7 @@ function scr_player_frozen()
 	
 	if -key_left2 or key_right2 or key_up2 or key_down2 or key_jump or key_slap
 	{
-		shake = 8;
+		shaketime = 8;
 		hitLag -= 5;
 		movespeed = max(movespeed - 0.04, 0);
 		
@@ -54,6 +54,7 @@ function scr_player_frozen()
 			exit;
 		}
 	}
+	shaketime = Approach(shaketime, 0, 1);
 	
 	with obj_music
 		fmod_event_instance_set_pitch(panicmusicID, lerp(1, 0.25, obj_player1.movespeed));

@@ -25,7 +25,7 @@ function scr_player_finishingblow()
 	if (!instance_exists(obj_dashcloud2) && grounded && movespeed > 3)
 	{
 		with (instance_create(x, y, obj_dashcloud2))
-			image_xscale = other.xscale;
+			copy_player_scale;
 	}
 	if (punch_afterimage > 0)
 		punch_afterimage--;

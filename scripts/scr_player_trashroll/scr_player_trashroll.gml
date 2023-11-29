@@ -38,7 +38,7 @@ function scr_player_trashroll()
 		if (!place_meeting(x, y + 1, obj_current))
 		{
 			with (instance_create(x, y, obj_slidecloud))
-				image_xscale = other.xscale;
+				copy_player_scale;
 		}
 	}
 	if (input_buffer_jump > 0 && gravesurfingjumpbuffer <= 15)

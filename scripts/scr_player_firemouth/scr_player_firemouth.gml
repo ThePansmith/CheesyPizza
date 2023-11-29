@@ -183,6 +183,6 @@ function scr_player_firemouth()
 	if (!instance_exists(obj_dashcloud) && grounded && hsp != 0)
 	{
 		with (instance_create(x, y, obj_dashcloud))
-			image_xscale = other.xscale;
+			copy_player_scale;
 	}
 }

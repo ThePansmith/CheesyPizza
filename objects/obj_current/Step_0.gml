@@ -5,7 +5,7 @@ if (place_meeting(x, y - 1, obj_player))
 	{
 		if (state != states.golf && state != states.tackle && state != states.gotoplayer && state != states.stringfall && state != states.stringjump && state != states.stringfling)
 		{
-			if (place_meeting(x, y + 1, other))
+			if (place_meeting(x, y + flip, other))
 			{
 				if (state != states.trashjump && state != states.trashroll)
 				{

@@ -3,6 +3,8 @@ depth = 20;
 
 if instance_exists(obj_levelLoader)
 	exit;
+if !instance_exists(obj_secretportal)
+	exit;
 with (instance_nearest(obj_secretportal.x, obj_secretportal.y, obj_bigcollect))
 {
 	visible = false;

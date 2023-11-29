@@ -50,6 +50,8 @@ add_floor(2, tower_2, "E");
 add_floor(1, tower_1, "E");
 add_floor(0, tower_extra, "G");
 add_floor(6, tower_sugary, "A", ["sugarygroup"]);
+if DEBUG
+	add_floor(7, tower_test, "A");
 
 offload_arr = noone;
 buffer = 0;

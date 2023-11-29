@@ -67,6 +67,11 @@ if !fucker
 }	
 if (!instance_exists(obj_randomsecret))
 {
+	if MOD.OldLevels
+	{
+		secretend = secret;
+		secret = instance_exists(obj_secretfound);
+	}
 	if (secret)
 	{
 		if (music != noone && music.event_secret != noone)

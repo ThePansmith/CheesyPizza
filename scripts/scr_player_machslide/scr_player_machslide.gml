@@ -93,7 +93,7 @@ function scr_player_machslide()
 	{
 		with (instance_create(x, y, obj_dashcloud2))
 		{
-			image_xscale = other.xscale;
+			copy_player_scale;
 			other.dashcloudid = id;
 		}
 	}

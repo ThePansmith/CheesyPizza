@@ -35,7 +35,7 @@ function scr_player_slipnslide()
 	if (!instance_exists(obj_slidecloud) && grounded && movespeed > 1.5 && sprite_index == spr_slipnslide)
 	{
 		with (instance_create(x, y, obj_slidecloud))
-			image_xscale = other.xscale;
+			copy_player_scale;
 	}
 	if (!instance_exists(obj_slidecloud) && grounded && movespeed > 1.5 && place_meeting(x, y + 1, obj_current))
 	{
