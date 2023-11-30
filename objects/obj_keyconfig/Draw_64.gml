@@ -1,4 +1,4 @@
-draw_set_font(SUGARY ? global.bigfont_ss : lang_get_font("bigfont"));
+draw_set_font(check_sugary() ? global.bigfont_ss : lang_get_font("bigfont"));
 draw_set_alpha(1);
 draw_set_halign(0);
 draw_set_valign(0);

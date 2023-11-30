@@ -83,6 +83,7 @@ function scr_pausedraw_ss()
 				case "pause_exit": str = "EXIT\n  STAGE"; break;
 				case "pause_exit_title": str = "EXIT\n  STAGE"; break;
 				case "pause_jukebox": str = "CLEAR\n JUKEBOX"; break;
+				case "pause_achievements": str = "CHEF\n TASKS"; break;
 				default: str = string_upper(str); break;
 			}
 			

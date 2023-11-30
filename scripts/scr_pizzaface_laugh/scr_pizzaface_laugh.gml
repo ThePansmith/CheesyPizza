@@ -1,6 +1,6 @@
 function scr_pizzaface_laugh()
 {
-	if SUGARY
+	if check_sugary()
 		sound_play("event:/modded/sfx/coneballlaugh");
 	else if MIDWAY
 		sound_play("event:/modded/sfx/bonoiselaugh");

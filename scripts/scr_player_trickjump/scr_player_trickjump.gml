@@ -15,7 +15,7 @@ function scr_player_trickjump()
 	}
 	if (scr_solid(x + xscale, y) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || check_solid(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 	{
-		if SUGARY && key_attack
+		if check_sugary() && key_attack
 		{
 			if !place_meeting(x + hsp, y, obj_unclimbablewall)
 				wallspeed = abs(movespeed);

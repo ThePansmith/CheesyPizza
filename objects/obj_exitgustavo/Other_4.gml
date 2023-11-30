@@ -1,5 +1,5 @@
 /// @description switch characters
-var stick = false, sugary = SUGARY;
+var stick = false, sugary = check_sugary();
 if global.leveltosave == "forest" || global.leveltosave == "street"
 	stick = true;
 else if irandom(100) <= 15

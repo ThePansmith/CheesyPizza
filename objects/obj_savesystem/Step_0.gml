@@ -78,7 +78,7 @@ else if (showicon)
 }
 if (showicon)
 {
-	if SUGARY
+	if check_sugary()
 		icon_index += .35;
 	else
 		icon_index = (icon_index + 0.35) % icon_max;

@@ -26,6 +26,7 @@ else
 {
 	captionalpha = Approach(captionalpha, 0, 0.1);
 	if room == Mainmenu or room == editor_entrance or room == Initroom or safe_get(obj_shell, "WC_drag_toggle")
+	or safe_get(obj_modconfig, "control_mouse")
 		cr = cr_default;
 	else if window_get_cursor() != -1 && window_has_focus()
 		cr = cr_none;

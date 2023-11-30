@@ -8,7 +8,7 @@ image_alpha = 0.35;
 gotowardsplayer = false;
 movespeed = 5;
 
-if SUGARY
+if check_sugary()
 	sprite_index = spr_escapecollect_ss;
 if global.blockstyle == blockstyles.old
 {

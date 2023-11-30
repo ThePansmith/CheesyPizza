@@ -145,12 +145,12 @@ function scr_tvdraw()
 	if (room != strongcold_endscreen)
 	{
 		// background
-		if sugarylevel
+		if SUGARY or (check_sugary() && instance_exists(obj_ghostcollectibles))
 		{
 			// secrets
 			var bgindex = tv_bg_index, bgcol = c_white;
 			if instance_exists(obj_ghostcollectibles)
-				bgindex = sugarylevel ? 9 : 20;
+				bgindex = 9; //SUGARY ? 9 : 20;
 			if obj_player1.state == states.secretenter && instance_exists(obj_fadeout)
 				bgcol = merge_color(c_white, c_black, clamp(obj_fadeout.fadealpha, 0, 1));
 			

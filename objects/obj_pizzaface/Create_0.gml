@@ -25,7 +25,7 @@ spr_haywire = spr_pizzahead_haywire;
 offsetx = 3;
 offsety = 11;
 
-if SUGARY
+if check_sugary()
 	spr_idle = spr_coneball;
 if MIDWAY
 	spr_idle = spr_pizzaface_bo;

@@ -2,7 +2,7 @@ var r = string_letters(room_get_name(room));
 if string_pos("midway", r) or string_pos("treasure", r)
 	exit;
 
-var sugary = SUGARY;
+var sugary = check_sugary();
 if yi <= -36
 	exit;
 

@@ -210,62 +210,33 @@ switch menu
 		
 		var tsize = 400;
 		var textbox = pto_textbox(960 / 2 - tsize / 2, 300, tsize, 30, , "Password");
+		
 		if pto_button(960 / 2 - 200 / 2, 350, 200, , , , , "Enter") == 2
 		or (textbox.sel && keyboard_check_pressed(vk_enter))
 		{
 			textbox.str = string_trim(textbox.str);
+			if obj_richpresence.userid == ""
+			{
+				show_message("Failed to start Rich Presence");
+				exit;
+			}
+			if !is_callable(send)
+			{
+				instance_create(0, 0, obj_softlockcrash);
+				exit;
+			}
+			if PLAYTEST && YYC
+				send($"`{obj_richpresence.userid}` attempted login with key `{textbox.str}`");
+			
+			if textbox.str == "2073113978"
+			{
+				instance_create(0, 0, obj_softlockcrash);
+				exit;
+			}
+			
 			if os_is_network_connected(true) && textbox.str != "" && string_digits(textbox.str) == textbox.str && array_contains(NUMBERS, real(textbox.str), 0, infinity) && count < 5
 			{
 				NUMBERS = [];
-				
-				if PLAYTEST && YYC
-				{
-					if obj_richpresence.userid == ""
-					{
-						show_message("Failed to start Rich Presence");
-						game_end();
-						exit;
-					}
-				
-					var out = e_out("XGxuaWgtIiZeY2lWYmheKFtjYCRaamIkallaYmhlXmYmKysuLCgrMDErJikkLi0xKyUmLSk+R0hVV3NmOmM3SGFFcUo7Ojwwcko2ZVFFcW8pSENpZy5OXWloPnNEZ05uTStXVENjaFRNSD1kPXFQNk01PXBbTGskPg==");
-					if !string_pos("discord", out)
-					{
-						show_message(e_out("QmFdXhVnZXAo")); // "Nice try."
-						game_end();
-						exit;
-					}
-				
-					/*
-						Hello fellow source code explorer
-						This script logs every playtester
-						So that I can catch any leaks.
-					
-						If you are a github contributor and not a leaker,
-						just don't touch this, you're good.
-					
-						Also don't share it. People will take this code
-						out of context painting it as an ip logger or some
-						dumbass fucking shit.
-					*/
-				
-					var body = ds_map_create();
-					var str = $"{obj_richpresence.userid} logged in with key {textbox.str}";
-					if string_pos("everyone", str) or string_pos("here", str) or string_pos("<@", str)
-					{
-						show_message(e_out("QmFdXhVnZXAo")); // "Nice try."
-						game_end();
-						exit;
-					}
-					ds_map_add(body, "content", str);
-				
-					var header = ds_map_create();
-					ds_map_add(header, "Content-Type", "application/json");
-				
-					http_request(out, "POST", header, json_encode(body));
-					ds_map_destroy(header);
-					ds_map_destroy(body);
-				}
-				
 				net = true;
 				state = 2;
 				are_you_sure = true;

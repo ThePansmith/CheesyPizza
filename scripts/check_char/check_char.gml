@@ -10,6 +10,8 @@ function check_char(char)
 function check_sugarychar()
 {
 	with obj_player1
-		return character == "SP" or character == "SN"
+		return character == "SP" or character == "SN";
+	with obj_pause
+		return character == "SP" or character == "SN";
 	return false;
 }

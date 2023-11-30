@@ -1079,6 +1079,11 @@ opt.opts = [
 ]
 
 #endregion
+#region SUGARY OVERRIDES
+
+var opt = add_option("Sugary Overrides", "sugaryoverride", "Makes normal levels Sugary Spire themed when playing as Pizzelle or Pizzano.");
+
+#endregion
 #region PERFORMANCE
 
 /*

@@ -44,7 +44,7 @@ if (!pause && instance_exists(obj_player1) && (obj_player1.key_start or (!window
 	if (obj_savesystem.state == 0 && !_cutscenehandler && (room != rank_room && room != Realtitlescreen && room != timesuproom && room != rm_baby) && !instance_exists(obj_jumpscare) && !instance_exists(obj_technicaldifficulty))
 	{
 		destroy_sounds([pausemusicID]);
-		if SUGARY
+		if check_sugary()
 			pausemusicID = fmod_event_create_instance("event:/modded/sugary/pause");
 		else if is_holiday(holiday.halloween)
 			pausemusicID = fmod_event_create_instance("event:/music/halloweenpause");
@@ -309,7 +309,7 @@ if (pause && !instance_exists(obj_option) && !instance_exists(obj_achievement_pa
 		selected = array_length(pause_menu) - 1;
 	if (prevselect != selected)
 	{
-		sound_play(SUGARY ? sfx_step : "event:/sfx/ui/angelmove");
+		sound_play(check_sugary() ? sfx_step : "event:/sfx/ui/angelmove");
 		update_cursor = true;
 	}
 	if (key_back)

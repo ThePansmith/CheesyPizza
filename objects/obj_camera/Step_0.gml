@@ -354,7 +354,7 @@ smooth_buffer = 1;
 if global.panic or global.snickchallenge
 {
 	global.wave = global.maxwave - global.fill;
-	if SUGARY
+	if check_sugary()
 	{
 		if !lock
 		{

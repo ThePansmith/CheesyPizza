@@ -290,5 +290,5 @@ global.crank = floor(global.brank / 2);
 if (room == custom_lvl_room)
 	alarm[1] = 4;
 
-sugarylevel = SUGARY;
+sugarylevel = check_sugary();
 bolevel = MIDWAY;

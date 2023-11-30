@@ -1,9 +1,10 @@
 live_auto_call;
 
 toggle_alphafix(true);
+var sugary = check_sugary();
 
 draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
-if SUGARY
+if sugary
 	draw_sprite_tiled(bg_options_ss, 0, bg_x, bg_y);
 else
 {
@@ -22,7 +23,7 @@ if instance_exists(obj_keyconfig) or instance_exists(obj_screenconfirm) or safe_
 	exit;
 }
 
-draw_set_font(SUGARY ? global.bigfont_ss : lang_get_font("bigfont"));
+draw_set_font(sugary ? global.bigfont_ss : lang_get_font("bigfont"));
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(c_white);
@@ -34,8 +35,9 @@ var len = array_length(options);
 var size = (string_height("A") * len) + (len * m.ypad);
 var xx = SCREEN_WIDTH / 2;
 var yy = (SCREEN_HEIGHT / 2) - (size / 4);
+
 var xpad = m.xpad;
-if SUGARY
+if sugary
 	xpad -= 32;
 
 switch (m.anchor)
@@ -53,7 +55,7 @@ switch (m.anchor)
 				c = c_white;
 			var t = lang_get_value(o.name);
 			draw_text_color(xx, yy + (m.ypad * i), t, c, c, c, c, a);
-			if (menu == MENUS.main && !SUGARY)
+			if (menu == MENUS.main && !sugary)
 				scr_pauseicon_draw(i, xx + (string_width(t) / 2) + 50, yy + (m.ypad * i));
 		}
 		break;
@@ -82,7 +84,7 @@ switch (m.anchor)
 				if is_undefined(txt)
 					txt = o.name;
 			}
-			if SUGARY && o.name == "option_back"
+			if sugary && o.name == "option_back"
 			{
 				draw_set_align(fa_center);
 				draw_text_color(150, yy - 50, txt, c, c, c, c, a);
