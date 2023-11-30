@@ -223,7 +223,7 @@ function live_auto_call_1() {
 	/// live_auto_call_1()->bool
 	/// @returns {bool}
 	if (live_enabled) {
-		#macro live_auto_call if (live_auto_call_1()) { var lac_argc = argument_count, lac_args = array_create(lac_argc), lac_argk = 0; repeat (lac_argc) { lac_args[lac_argk] = argument[lac_argk]; lac_argk++; } if (live_auto_call_2(lac_args)) return live_result; };
+		#macro live_auto_call //if (live_auto_call_1()) { var lac_argc = argument_count, lac_args = array_create(lac_argc), lac_argk = 0; repeat (lac_argc) { lac_args[lac_argk] = argument[lac_argk]; lac_argk++; } if (live_auto_call_2(lac_args)) return live_result; };
 		var l_origin;
 		if (live_request_guid == undefined) {
 			live_name = undefined;

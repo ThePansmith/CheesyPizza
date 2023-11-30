@@ -1052,6 +1052,7 @@
     {"id":{"name":"obj_lapportalentrance","path":"objects/obj_lapportalentrance/obj_lapportalentrance.yy",},},
     {"id":{"name":"spr_playerSP_Sjumpcancel","path":"sprites/spr_playerSP_Sjumpcancel/spr_playerSP_Sjumpcancel.yy",},},
     {"id":{"name":"obj_heatafterimage","path":"objects/obj_heatafterimage/obj_heatafterimage.yy",},},
+    {"id":{"name":"scr_zyle","path":"scripts/scr_zyle/scr_zyle.yy",},},
     {"id":{"name":"obj_ghostdrapes","path":"objects/obj_ghostdrapes/obj_ghostdrapes.yy",},},
     {"id":{"name":"obj_bosscontroller","path":"objects/obj_bosscontroller/obj_bosscontroller.yy",},},
     {"id":{"name":"obj_ladderhorizontal","path":"objects/obj_ladderhorizontal/obj_ladderhorizontal.yy",},},

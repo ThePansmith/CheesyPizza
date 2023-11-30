@@ -44,7 +44,7 @@ else if (state == states.ending)
 
 
 // 
-if GM_build_type != "run" && !code_is_compiled()
+if !DEBUG && !YYC
 {
 	draw_set_font(global.font_small);
 	draw_set_align(fa_center);

@@ -32,34 +32,20 @@ incubic = animcurve_get_channel(curve_menu, "incubic");
 req = -1;
 
 str = "This is an anti-leaking measure.\n\nPlease connect to the internet to continue.\nYou may have the game blocked on your firewall.";
-
-if true//DEBUG
-{
-	if PLAYTEST
-	{
-		menu = 2;
-		state = 1;
-		
-		str = "This is a playtester build. You'll have to use a password.\nAsk loypoll for it.";
-	}
-	else
-	{
-		net = true;
-		state = 2;
-		are_you_sure = true;
-	}
-}
-else
+if PLAYTEST
 {
 	net = os_is_network_connected(true);
-	if net // radix please provide us with a better way...
-	{
-		//req = http_get("http://pto-level-editor.000webhostapp.com/disclaimer");
-		req = http_get(base64_decode("aHR0cDovL3B0by1sZXZlbC1lZGl0b3IuMDAwd2ViaG9zdGFwcC5jb20vZGlzY2xhaW1lcg=="));
-	}
+	if net
+		req = http_get(e_out("XGxuaWgtIiZqbmUgX1twX2QhWFlibmhnISQoKnBbVVtmbW5YY2MjXGllI1dda11lVlxhXGw="));
 	else
 	{
 		t = -.5;
 		state = 1;
 	}
+}
+else
+{
+	net = true;
+	state = 2;
+	are_you_sure = true;
 }
