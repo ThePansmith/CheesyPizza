@@ -68,11 +68,11 @@ if (check_slope(x, y + 1))
 // ceiling running
 if MOD.GravityJump
 {
-	if state != states.balloon && state != states.ladder && !(state == states.tumble && key_down)
+	if state != states.balloon && state != states.ladder && !(state == states.tumble && key_down) && state != states.climbwall && state != states.Sjump
 	{
 		if gravityangle % 180 != 0 // animation
 			vsp = Approach(vsp, 0, 2);
-		else if key_jump && state != states.Sjump && state != states.climbwall && !cutscene && (grounded or abs(vsp) > 8)
+		else if key_jump && !cutscene && (grounded or abs(vsp) > 8)
 		{
 			with instance_create(x, y, obj_gravityflipbg)
 				side = -other.flip;

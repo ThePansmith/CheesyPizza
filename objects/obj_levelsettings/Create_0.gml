@@ -79,7 +79,7 @@ if array_contains(deathmode_allow, level, 0, infinity)// or DEBUG
 	add_modifier("Death Mode", "DeathMode", "Avoid Pizzaface within a very tight timer!", [seq_deathmode_off, seq_deathmode_on]);
 
 if level == "medieval" or level == "ruin" or level == "dungeon"
-	add_modifier("Blueprint", "OldLevels", "Uses old level design from the April 2021 build.", [seq_oldlevels_off, seq_oldlevels_on]);
+	add_modifier("Old Levels", "OldLevels", "TEMPORARY! THIS WILL BE MOVED TO SAGE.", [seq_oldlevels_off, seq_oldlevels_on]);
 
 if !boss && level != "tutorial" && global.experimental
 	add_modifier("No Toppings", "NoToppings", "Summons Pizzaface when collecting a topping.", [seq_notoppings_off, seq_notoppings_on]);
@@ -127,9 +127,11 @@ add_modifier("Lights Out", "Spotlight", "The size of the spotlight is tied to yo
 
 if level != "custom" && level != ""
 {
-	add_modifier("Anti-Panic", "EscapeInvert", "Escape enemies and John blocks are flipped!");
+	//add_modifier("Anti-Panic", "EscapeInvert", "Escape enemies and John blocks are flipped!");
 	//add_modifier("Block Land", "PurpleBlockLand", "Removes every asset from a level, leaving only collision visible.");
-	add_modifier("From The Top", "FromTheTop", "John and the exit gate are swapped.");
+	
+	if global.experimental
+		add_modifier("From The Top", "FromTheTop", "John and the exit gate are swapped.\nVery WIP, so it won't work with every level.");
 }
 add_modifier("VVVVVV", "GravityJump", "Flip gravity with the jump button.");
 
