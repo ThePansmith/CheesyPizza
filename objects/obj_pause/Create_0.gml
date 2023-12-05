@@ -11,9 +11,6 @@ depth = -500;
 backbuffer = 2;
 savedmusicmuffle = 0;
 
-// failsafe
-character = "P";
-
 pause_menu = ["pause_resume", "pause_options", "pause_restart", "pause_exit"];
 pause_menu_map = ds_map_create();
 ds_map_set(pause_menu_map, "pause_resume", [0, function()
