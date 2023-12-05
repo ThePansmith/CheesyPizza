@@ -154,3 +154,7 @@ scr_pauseicon_add(spr_pauseicons, 3, -10);
 scr_pauseicon_add(spr_pauseicons, 4, -10);
 scr_pauseicon_add(spr_pauseicons, 8, 0, -12);
 alarm[1] = 1;
+
+spr_palette = spr_peppalette;
+paletteselect = 1;
+character = "P";

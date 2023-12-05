@@ -119,14 +119,11 @@ function draw_enemy(healthbar, palette, color = c_white)
 		}
 		else
 		{
+			pattern_reset();
 			if (object_index == obj_peppinoclone)
-			{
-				shader_set(shd_pal_swapper);
 				pal_swap_set(spr_peppalette, 1, false);
-			}
 			else if (usepalette && palette)
 			{
-				shader_set(shd_pal_swapper);
 				if (object_index == obj_fakepepboss || object_index == obj_gustavograbbable)
 					pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale * xscale, image_yscale * yscale, global.palettetexture);
 				pal_swap_set(spr_palette, paletteselect, false);
@@ -210,8 +207,7 @@ function draw_player()
 		draw_set_flash(b);
 	else
 	{
-		if object_index == obj_player1
-			pattern_set(global.Base_Pattern_Color, sprite_index, image_index, (xscale * scale_xs), (yscale * scale_ys), global.palettetexture);
+		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, (xscale * scale_xs), (yscale * scale_ys), global.palettetexture);
 	
 		var ps = paletteselect;
 		var spr = spr_palette;

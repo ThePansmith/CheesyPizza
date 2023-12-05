@@ -1,5 +1,7 @@
 function pal_swap_set(_pal_sprite, _pal_index, _surface = false)
 {
+	shader_set(shd_pal_swapper);
+	
 	static shader_multiplier = shader_get_uniform(shd_pal_swapper, "shader_multiplier");
 	if (!_surface)
 	{

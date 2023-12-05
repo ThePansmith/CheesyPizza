@@ -1,5 +1,7 @@
 image_index = playerid.image_index;
 image_xscale = playerid.xscale;
+image_yscale = playerid.yscale;
+image_angle = playerid.angle;
 x = playerid.x;
 y = playerid.y;
 visible = playerid.visible;

@@ -32,7 +32,6 @@ function reset_modifier()
 		
 		// Snick Challenge
 		OldLevels: false,
-		Snickrematch: false,
 		
 		// Grinch - Remove restart cube
 		// GOLF - Remove pizzaball blocks

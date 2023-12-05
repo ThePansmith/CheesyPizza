@@ -8,7 +8,7 @@ uniform float palette_index;
 
 // patterns
 uniform sampler2D pattern_texture;
-uniform bool pattern_enabled;
+uniform int pattern_enabled; // there's no gml function to set a bool
 uniform float color_array[2]; // indices of the colors that the pattern should replace
 uniform vec4 pattern_tex_data; // (x, y) = trimmed l/t offset | (z, w) = texture size
 uniform vec4 pattern_UVs;
@@ -19,22 +19,23 @@ uniform vec2 pattern_offset;
 uniform float shade_multiplier; // seemingly unused for now
 
 // custom palettes
-uniform bool custom_enable;
+uniform int custom_enable;
 uniform float palette_override[64];
 #define TOLERANCE 0.004
 
 void main()
 {
 	vec4 source = texture2D( gm_BaseTexture, v_vTexcoord );
-	DoAlphaTest( source ); // discards if alpha is 0
+	DoAlphaTest( source ); // discards pixel if alpha is 0
     
 	for(float color_index = palette_UVs.y; color_index < palette_UVs.w; color_index += texel_size.y) // iterate through each color
 	{
 		float raw_color_index = (color_index - palette_UVs.y) / texel_size.y;
 		vec4 palette_color = texture2D(palette_texture, vec2(palette_UVs.x, color_index));
-		if (distance(source, palette_color) <= TOLERANCE) // RX: Check our color vs the reference
+		
+		if (distance(source, palette_color) <= TOLERANCE) // Difference between colors
 		{
-			if (custom_enable)
+			if (custom_enable == 1)
 			{
 				// custom palettes
 				// palette_override: [r,g,b,a,    r,g,...]
@@ -50,9 +51,9 @@ void main()
 				source = texture2D(palette_texture, vec2(palette_V, color_index)); // Palette color at specific offset
 			}
 			
-			if (pattern_enabled) 
+			if (pattern_enabled == 1) 
 			{
-				for(int j = 0; j < 2; j += 1) // normal and shading, two passes
+				for(int j = 0; j <= 1; j += 1) // check for normal or shading.
 				{
 					if (color_array[j] == floor((color_index - palette_UVs.y) * (1.0 / texel_size.y))) 
 					{
@@ -88,11 +89,9 @@ void main()
 						// mix the pattern and the palette colors
 						vec4 pat = texture2D(pattern_texture, texcoord);
 						
-						// RadixComet: This isn't a good way of doing this, 
-						// but it will do for now.
+						// Darken
 						vec4 shadeColor = vec4(0.0, 0.0, 0.0, 0.40625);
-
-						if (j != 1) // RX: PT uses 2 for a shade but we can emulate that
+						if (j != 1) // If it is not the second pass
 							shadeColor.a = 0.0;
 						
 						//if (source.rgb == vec3(0.0, 0.0, 0.0))
@@ -100,8 +99,9 @@ void main()
 
 						vec3 m = mix(pat.rgb, shadeColor.rgb, shadeColor.a * shade_multiplier);
 						
-						if (source.rgb == vec3(0.0, 0.0, 0.0) && (source.a != 0.0 && source.a != 1.0))
-							m.rgb = mix(m.rgb, vec3(0.0, 0.0, 0.0), source.a); // RX: if the color is clear, it's a shade color
+						// Radix what the fuck is the point of this
+						//if (source.rgb == vec3(0.0, 0.0, 0.0) && (source.a != 0.0 && source.a != 1.0))
+						//	m.rgb = mix(m.rgb, vec3(0.0, 0.0, 0.0), source.a);
 							
 						source = vec4(m.rgb, pat.a);
 						break;

@@ -23,7 +23,10 @@ function scr_tvdraw()
 	
 	// sugary bobbing
 	if sugary
-		collect_y += Wave(2, -2, 3, 0); // collect_y serves as an offset
+	{
+		collect_x += 13;
+		collect_y += 6 + Wave(2, -2, 3, 0); // collect_y serves as an offset
+	}
 	
 	// combo
 	if !sugary

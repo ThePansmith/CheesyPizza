@@ -1,3 +1,10 @@
+with (obj_player1)
+{
+	other.spr_palette = spr_palette;
+	other.paletteselect = paletteselect;
+	other.character = character;
+}
+
 if (!pause && instance_exists(obj_player1) && (obj_player1.key_start or (!window_has_focus() && global.unfocus_pause)) && room != Mainmenu && room != Finalintro && room != hub_loadingscreen && room != Endingroom && room != Creditsroom && room != Johnresurrectionroom && room != Longintro && room != Realtitlescreen && room != rank_room)
 {
 	var _cutscenehandler = false;
@@ -8,10 +15,6 @@ if (!pause && instance_exists(obj_player1) && (obj_player1.key_start or (!window
 	}
 	with (obj_player1)
 	{
-		other.spr_palette = spr_palette;
-		other.paletteselect = paletteselect;
-		other.character = character;
-		
 		if ((instance_exists(obj_bosskey) && state == states.victory) || (state == states.victory && place_meeting(x, y, obj_startgate)) || (state == states.door && place_meeting(x, y, obj_exitgate)))
 			_cutscenehandler = true;
 	}

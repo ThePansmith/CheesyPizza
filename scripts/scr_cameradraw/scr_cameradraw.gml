@@ -64,6 +64,12 @@ function scr_cameradraw()
 		var b = global.stylemultiplier;
 		var hud_xx = 121 + irandom_range(-collect_shake, collect_shake);
 		var hud_yy = 90 + irandom_range(-collect_shake, collect_shake) + hud_posY;
+		
+		if sugary
+		{
+			hud_xx += 7;
+			hud_yy += 6;
+		}
 	
 		// heat meter
 		if global.heatmeter
@@ -179,8 +185,15 @@ function scr_cameradraw()
 		var str = string(sc);
 		var num = string_length(str);
 		var w = string_width(str);
+		
 		var xx = hud_xx - (w / 2);
-	
+		var yy = hud_yy - 56 + text_y;
+		if sugary
+		{
+			xx -= 6;
+			yy -= 15;
+		}
+		
 		if REMIX
 		{
 			if lastcollect != sc
@@ -196,15 +209,15 @@ function scr_cameradraw()
 		draw_set_alpha(alpha);
 		for (i = 0; i < num; i++)
 		{
-			var yy = (i + 1) % 2 == 0 ? -5 : 0;
-			if REMIX
+			var yy2 = (i + 1) % 2 == 0 ? -5 : 0;
+			if REMIX && !sugary
 				pal_swap_set(spr_font_palette, color_array[i], false);
-			draw_text(floor(xx), floor(hud_yy - 56 + text_y + yy), string_char_at(str, i + 1));
+			draw_text(floor(xx), floor(yy + yy2), string_char_at(str, i + 1));
 			xx += w / num;
 		}
 		draw_set_alpha(1);
 		reset_shader_fix();
-	
+		
 		// bullets
 		var showbullet = player.character != "V" && player.character != "S" && !player.isgustavo;
 		if global.shootstyle == 1 && showbullet

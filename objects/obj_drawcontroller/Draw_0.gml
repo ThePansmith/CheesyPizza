@@ -41,14 +41,13 @@ if (finisher_alpha > 0)
 	draw_rectangle_color(-32, -32, room_width + 32, room_height + 32, 0, 0, 0, 0, false);
 	draw_set_alpha(1);
 }
-var _kungfu = global.kungfu;
+
 with (obj_baddie)
 {
 	if (object_index != obj_pizzafaceboss)
-		draw_enemy(_kungfu, true);
+		draw_enemy(global.kungfu, true);
 }
 
-shader_set(shd_pal_swapper);
 with (obj_heatafterimage)
 {
 	if (visible)
@@ -56,6 +55,7 @@ with (obj_heatafterimage)
 		pattern_set(global.Base_Pattern_Color, obj_player1.sprite_index, obj_player1.image_index, obj_player1.xscale, obj_player1.yscale, global.palettetexture);
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false);
 		draw_sprite_ext(obj_player1.sprite_index, obj_player1.image_index, x, y, obj_player1.xscale, obj_player1.yscale, obj_player1.angle, c_white, alpha);
+		pattern_reset();
 	}
 }
 if (room == boss_fakepep)
@@ -67,6 +67,7 @@ if (room == boss_fakepep)
             pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
             pal_swap_set(spr_peppalette, gustavo_palette(obj_player1.paletteselect), 0);
             draw_self();
+			pattern_reset();
             pal_swap_set(spr_peppalette, 13, 0);
             draw_self();
         }
@@ -173,7 +174,7 @@ draw_set_flash();
 with (obj_player1)
 {
 	if (visible && flash && bbox_in_camera(view_camera[0], 32))
-		draw_sprite_ext(player_sprite(), image_index, x + smoothx, y, xscale, yscale, image_angle, image_blend, image_alpha);
+		draw_sprite_ext(player_sprite(), image_index, x + smoothx, y, xscale, yscale, angle, image_blend, image_alpha);
 }
 draw_reset_flash();
 

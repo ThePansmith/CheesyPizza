@@ -290,7 +290,12 @@ draw = function(curve)
 		if name == "BURNT TRANS FLAG"
 		{
 			name = "DUE TO";
-			desc = "Legal reasons we cannot show this combo name";
+			desc = "Legal reasons we cannot show this combo name.";
+		}
+		if name == "PUMPKIN TRANS FLAG"
+		{
+			name = "YOU'RE NASTY";
+			desc = "YOU'RE NASTY."
 		}
 	}
 	

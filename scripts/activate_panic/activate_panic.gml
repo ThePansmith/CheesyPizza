@@ -197,10 +197,6 @@ function activate_snickchallenge()
 		global.maxwave = global.fill;
 			
 		global.snickchallenge = true;
-		if (MOD.Snickrematch)
-			global.snickrematch = true;
-		else
-			global.snickrematch = false;
 		global.collect = 10000;
 			
 		with obj_camera

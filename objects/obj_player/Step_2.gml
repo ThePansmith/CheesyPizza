@@ -2,7 +2,10 @@
 if global.sloperot && state != states.knightpepslopes && state != states.Sjumpprep && state != states.Sjump && !(state == states.machroll && character == "S") && sprite_index != spr_playerN_jetpackboost
 {
 	var angle_target = 0, angle_spd = 0.6;
-	var slope = check_slope(x, y + 1);
+	
+	var slope = noone;
+	if scr_slope()
+		slope = check_slope(x, y + 1);
 	
 	if state != states.backbreaker && slope && vsp >= 0
 		angle_target = scr_slope_angle(slope);

@@ -21,6 +21,7 @@ function scr_playerreset(roomstart = false, restart = false)
 	{
 		reset_modifier();
 		global.snickchallenge = false;
+		global.snickrematch = false;
 	}
 	if global.snickchallenge
 	{
