@@ -1,2 +1,2 @@
 # Pizza Tower: Cheesed Up!
-The source code got leaked a couple times so enjoy the mod being in an indefinite hiatus
+The December 5th 2023 sourcecode for the Cheesed Up mod, alongside commit history, for archival.
